@@ -677,6 +677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
+                      tabIndex={0}
                       type="button"
                     >
                       <svg
@@ -847,7 +848,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}
-                        onContextMenu={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseOut={[Function]}
@@ -1005,34 +1005,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <div
                       aria-atomic="true"
-                      aria-labelledby="loading-id-10"
+                      aria-labelledby="loading-id-12"
                       aria-live="assertive"
                       className="bx--loading bx--loading--small"
                     >
                       <label
                         className="bx--visually-hidden"
-                        id="loading-id-10"
+                        id="loading-id-12"
                       >
                         Active loading indicator
                       </label>
                       <svg
                         className="bx--loading__svg"
-                        viewBox="0 0 100 100"
+                        viewBox="-75 -75 150 150"
                       >
                         <title>
                           Active loading indicator
                         </title>
                         <circle
                           className="bx--loading__background"
-                          cx="50%"
-                          cy="50%"
-                          r="42"
+                          cx="0"
+                          cy="0"
+                          r="26.8125"
                         />
                         <circle
                           className="bx--loading__stroke"
-                          cx="50%"
-                          cy="50%"
-                          r="42"
+                          cx="0"
+                          cy="0"
+                          r="26.8125"
                         />
                       </svg>
                     </div>

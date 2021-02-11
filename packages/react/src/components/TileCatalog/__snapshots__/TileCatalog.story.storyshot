@@ -2356,11 +2356,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
               Search catalog
             </label>
             <input
+              aria-hidden={true}
               autoComplete="off"
               className="bx--search-input"
               id="entityType-searchbox"
               onChange={[Function]}
-              onKeyDown={[Function]}
               placeholder="Search catalog"
               role="searchbox"
               tabIndex="-1"

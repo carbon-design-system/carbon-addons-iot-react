@@ -413,7 +413,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a value"
                 role="searchbox"
                 type="text"
@@ -783,7 +782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-header--btn-container"
             >
               <button
-                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1970,7 +1969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-header--btn-container"
             >
               <button
-                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2577,7 +2576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-header--btn-container"
             >
               <button
-                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2700,7 +2699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-header--btn-container"
             >
               <button
-                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2852,7 +2851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -2958,6 +2957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -3066,6 +3066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -3764,6 +3765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -3864,7 +3866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -3970,6 +3972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -4078,6 +4081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -4186,6 +4190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -4999,6 +5004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5081,6 +5087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5163,6 +5170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5245,6 +5253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5327,6 +5336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5409,6 +5419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5491,6 +5502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5573,6 +5585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5655,6 +5668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5737,6 +5751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5882,7 +5897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -5954,7 +5969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -6026,7 +6041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -6098,7 +6113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -6170,7 +6185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -6242,7 +6257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -6314,7 +6329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -6386,7 +6401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -6458,7 +6473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -6530,7 +6545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--row-actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                         disabled={false}
                         onClick={[Function]}
                         style={
@@ -7065,17 +7080,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       DJ LeMahieu
                     </div>
                     <div>
-                      <div
+                      <span
                         className="bx--tag bx--tag--blue"
-                        id="tag-13"
+                        title="default"
                       >
-                        
-                        <span
-                          title="default"
-                        >
-                          default
-                        </span>
-                      </div>
+                        default
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -7105,17 +7115,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Luke Voit
                     </div>
                     <div>
-                      <div
+                      <span
                         className="bx--tag bx--tag--blue"
-                        id="tag-14"
+                        title="default"
                       >
-                        
-                        <span
-                          title="default"
-                        >
-                          default
-                        </span>
-                      </div>
+                        default
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -7145,17 +7150,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Gary Sanchez
                     </div>
                     <div>
-                      <div
+                      <span
                         className="bx--tag bx--tag--blue"
-                        id="tag-15"
+                        title="default"
                       >
-                        
-                        <span
-                          title="default"
-                        >
-                          default
-                        </span>
-                      </div>
+                        default
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -7185,17 +7185,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Kendrys Morales
                     </div>
                     <div>
-                      <div
+                      <span
                         className="bx--tag bx--tag--blue"
-                        id="tag-16"
+                        title="default"
                       >
-                        
-                        <span
-                          title="default"
-                        >
-                          default
-                        </span>
-                      </div>
+                        default
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -7225,17 +7220,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Gleyber Torres
                     </div>
                     <div>
-                      <div
+                      <span
                         className="bx--tag bx--tag--blue"
-                        id="tag-17"
+                        title="default"
                       >
-                        
-                        <span
-                          title="default"
-                        >
-                          default
-                        </span>
-                      </div>
+                        default
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -7265,17 +7255,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Clint Frazier
                     </div>
                     <div>
-                      <div
+                      <span
                         className="bx--tag bx--tag--blue"
-                        id="tag-18"
+                        title="default"
                       >
-                        
-                        <span
-                          title="default"
-                        >
-                          default
-                        </span>
-                      </div>
+                        default
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -7305,17 +7290,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Brett Gardner
                     </div>
                     <div>
-                      <div
+                      <span
                         className="bx--tag bx--tag--blue"
-                        id="tag-19"
+                        title="default"
                       >
-                        
-                        <span
-                          title="default"
-                        >
-                          default
-                        </span>
-                      </div>
+                        default
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -7345,17 +7325,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Gio Urshela
                     </div>
                     <div>
-                      <div
+                      <span
                         className="bx--tag bx--tag--blue"
-                        id="tag-20"
+                        title="default"
                       >
-                        
-                        <span
-                          title="default"
-                        >
-                          default
-                        </span>
-                      </div>
+                        default
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -7385,17 +7360,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cameron Maybin
                     </div>
                     <div>
-                      <div
+                      <span
                         className="bx--tag bx--tag--blue"
-                        id="tag-21"
+                        title="default"
                       >
-                        
-                        <span
-                          title="default"
-                        >
-                          default
-                        </span>
-                      </div>
+                        default
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -7425,17 +7395,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Robinson Cano
                     </div>
                     <div>
-                      <div
+                      <span
                         className="bx--tag bx--tag--blue"
-                        id="tag-22"
+                        title="default"
                       >
-                        
-                        <span
-                          title="default"
-                        >
-                          default
-                        </span>
-                      </div>
+                        default
+                      </span>
                     </div>
                   </div>
                 </div>

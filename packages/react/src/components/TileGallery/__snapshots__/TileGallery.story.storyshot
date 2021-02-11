@@ -79,7 +79,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--search-input"
                     id="gallery-search"
                     onChange={[Function]}
-                    onKeyDown={[Function]}
                     placeholder="Search for something"
                     role="searchbox"
                     style={
@@ -289,6 +288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     "height": "2rem",
                                   }
                                 }
+                                tabIndex={0}
                                 type="button"
                               >
                                 <svg
@@ -433,6 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     "height": "2rem",
                                   }
                                 }
+                                tabIndex={0}
                                 type="button"
                               >
                                 <svg
@@ -549,6 +550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     "height": "2rem",
                                   }
                                 }
+                                tabIndex={0}
                                 type="button"
                               >
                                 <svg
@@ -716,6 +718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     "height": "2rem",
                                   }
                                 }
+                                tabIndex={0}
                                 type="button"
                               >
                                 <svg
@@ -860,6 +863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     "height": "2rem",
                                   }
                                 }
+                                tabIndex={0}
                                 type="button"
                               >
                                 <svg
@@ -976,6 +980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     "height": "2rem",
                                   }
                                 }
+                                tabIndex={0}
                                 type="button"
                               >
                                 <svg
@@ -1158,6 +1163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "height": "2rem",
                   }
                 }
+                tabIndex={0}
                 type="button"
               >
                 <svg
@@ -1293,6 +1299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "height": "2rem",
                   }
                 }
+                tabIndex={0}
                 type="button"
               >
                 <svg
@@ -1453,7 +1460,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--search-input"
                     id="gallery-search"
                     onChange={[Function]}
-                    onKeyDown={[Function]}
                     placeholder="__Search Placeholder__"
                     role="searchbox"
                     style={
@@ -1663,6 +1669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     "height": "2rem",
                                   }
                                 }
+                                tabIndex={0}
                                 type="button"
                               >
                                 <svg
@@ -1898,6 +1905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 "height": "2rem",
                               }
                             }
+                            tabIndex={0}
                             type="button"
                           >
                             <svg
@@ -2021,6 +2029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 "height": "2rem",
                               }
                             }
+                            tabIndex={0}
                             type="button"
                           >
                             <svg
@@ -2172,6 +2181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 "height": "2rem",
                               }
                             }
+                            tabIndex={0}
                             type="button"
                           >
                             <svg
@@ -2374,6 +2384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 "height": "2rem",
                               }
                             }
+                            tabIndex={0}
                             type="button"
                           >
                             <svg
@@ -2693,6 +2704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   "height": "2rem",
                                 }
                               }
+                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -2816,6 +2828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   "height": "2rem",
                                 }
                               }
+                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -2967,6 +2980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   "height": "2rem",
                                 }
                               }
+                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -3169,6 +3183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   "height": "2rem",
                                 }
                               }
+                              tabIndex={0}
                               type="button"
                             >
                               <svg

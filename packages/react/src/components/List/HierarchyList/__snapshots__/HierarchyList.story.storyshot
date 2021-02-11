@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HierarchyList Stateful list with nested searching 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/HierarchyList Stateful list with nested searching 1`] = `
 <div
   className="storybook-container"
 >
@@ -21,395 +21,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       }
     >
       <div
-        className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-        data-floating-menu-container={true}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onClose={[Function]}
-        onKeyDown={[Function]}
-        open={false}
-        role="presentation"
-      >
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-        <div
-          className="bx--modal-container"
-          role="dialog"
-        >
-          <div
-            className="bx--modal-header"
-          >
-            <p
-              className="bx--modal-header__heading bx--type-beta"
-            >
-              Move 1 item underneath
-            </p>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              onClick={[Function]}
-              title="Close"
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                className="bx--modal-close__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            className="bx--modal-content"
-          >
-            <div
-              className="iot--hierarchy-list-bulk-modal--title"
-            >
-              Select a destination
-            </div>
-            <div
-              className="breadcrumb--container"
-              data-testid="overflow"
-            >
-              <nav
-                aria-label="Breadcrumb"
-                className={null}
-                data-testid="modal-breadcrumb"
-              >
-                <ol
-                  className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                >
-                  <li
-                    className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                    title="All rows"
-                  >
-                    <button
-                      className="bx--link"
-                      kind="ghost"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      All rows
-                    </button>
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div
-              className="iot--hierarchy-list-bulk-modal--list"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id14"
-                    name="Chicago White Sox"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Chicago White Sox"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id14"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Chicago White Sox
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Chicago White Sox
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id15"
-                    name="New York Yankees"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="New York Yankees"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id15"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      New York Yankees
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    New York Yankees
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id16"
-                    name="Houston Astros"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Houston Astros"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id16"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Houston Astros
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Houston Astros
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id17"
-                    name="Atlanta Braves"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Atlanta Braves"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id17"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Atlanta Braves
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Atlanta Braves
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id18"
-                    name="New York Mets"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="New York Mets"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id18"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      New York Mets
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    New York Mets
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id19"
-                    name="Washington Nationals"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Washington Nationals"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id19"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Washington Nationals
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Washington Nationals
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
-          >
-            <button
-              className="iot--btn bx--btn bx--btn--secondary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              className="iot--btn bx--btn bx--btn--primary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Save
-            </button>
-          </div>
-        </div>
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-      </div>
-      <div
         className="iot--list iot--list__full-height"
       >
         <div
@@ -427,7 +38,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-header--btn-container"
             >
               <button
-                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -493,7 +104,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a value"
                 role="searchbox"
                 type="text"
@@ -873,7 +483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HierarchyList With Nested Reorder 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/HierarchyList With Nested Reorder 1`] = `
 <div
   className="storybook-container"
 >
@@ -994,7 +604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id32"
+                    id="id14"
                     name="Chicago White Sox"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1003,7 +613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id32"
+                    htmlFor="id14"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1038,7 +648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id33"
+                    id="id15"
                     name="New York Yankees"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1047,7 +657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id33"
+                    htmlFor="id15"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1082,7 +692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id34"
+                    id="id16"
                     name="Houston Astros"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1091,7 +701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id34"
+                    htmlFor="id16"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1126,7 +736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id35"
+                    id="id17"
                     name="Atlanta Braves"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1135,7 +745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id35"
+                    htmlFor="id17"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1170,7 +780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id36"
+                    id="id18"
                     name="New York Mets"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1179,7 +789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id36"
+                    htmlFor="id18"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1214,7 +824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id37"
+                    id="id19"
                     name="Washington Nationals"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1223,7 +833,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id37"
+                    htmlFor="id19"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1252,7 +862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+            className="bx--modal-footer iot--composed-modal-footer"
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
@@ -1299,6 +909,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-header--btn-container"
             />
+          </div>
+          <div
+            className="iot--list-header--search"
+          >
+            <div
+              aria-labelledby="iot--list-header--search-search"
+              className="bx--search bx--search--sm"
+              role="search"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--search-magnifier"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                />
+              </svg>
+              <label
+                className="bx--label"
+                htmlFor="iot--list-header--search"
+                id="iot--list-header--search-search"
+              >
+                Enter a value
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                id="iot--list-header--search"
+                onChange={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -2359,7 +2032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HierarchyList With OverflowMenu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/HierarchyList With OverflowMenu 1`] = `
 <div
   className="storybook-container"
 >
@@ -2379,395 +2052,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         }
       }
     >
-      <div
-        className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-        data-floating-menu-container={true}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onClose={[Function]}
-        onKeyDown={[Function]}
-        open={false}
-        role="presentation"
-      >
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-        <div
-          className="bx--modal-container"
-          role="dialog"
-        >
-          <div
-            className="bx--modal-header"
-          >
-            <p
-              className="bx--modal-header__heading bx--type-beta"
-            >
-              Move 1 item underneath
-            </p>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              onClick={[Function]}
-              title="Close"
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                className="bx--modal-close__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            className="bx--modal-content"
-          >
-            <div
-              className="iot--hierarchy-list-bulk-modal--title"
-            >
-              Select a destination
-            </div>
-            <div
-              className="breadcrumb--container"
-              data-testid="overflow"
-            >
-              <nav
-                aria-label="Breadcrumb"
-                className={null}
-                data-testid="modal-breadcrumb"
-              >
-                <ol
-                  className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                >
-                  <li
-                    className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                    title="All rows"
-                  >
-                    <button
-                      className="bx--link"
-                      kind="ghost"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      All rows
-                    </button>
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div
-              className="iot--hierarchy-list-bulk-modal--list"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id26"
-                    name="Chicago White Sox"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Chicago White Sox"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id26"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Chicago White Sox
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Chicago White Sox
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id27"
-                    name="New York Yankees"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="New York Yankees"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id27"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      New York Yankees
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    New York Yankees
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id28"
-                    name="Houston Astros"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Houston Astros"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id28"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Houston Astros
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Houston Astros
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id29"
-                    name="Atlanta Braves"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Atlanta Braves"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id29"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Atlanta Braves
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Atlanta Braves
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id30"
-                    name="New York Mets"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="New York Mets"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id30"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      New York Mets
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    New York Mets
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id31"
-                    name="Washington Nationals"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Washington Nationals"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id31"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Washington Nationals
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Washington Nationals
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
-          >
-            <button
-              className="iot--btn bx--btn bx--btn--secondary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              className="iot--btn bx--btn bx--btn--primary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Save
-            </button>
-          </div>
-        </div>
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-      </div>
       <div
         className="iot--list"
       >
@@ -2821,7 +2105,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a value"
                 role="searchbox"
                 type="text"
@@ -3204,7 +2487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HierarchyList With defaultExpandedIds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/HierarchyList With defaultExpandedIds 1`] = `
 <div
   className="storybook-container"
 >
@@ -3224,395 +2507,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         }
       }
     >
-      <div
-        className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-        data-floating-menu-container={true}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onClose={[Function]}
-        onKeyDown={[Function]}
-        open={false}
-        role="presentation"
-      >
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-        <div
-          className="bx--modal-container"
-          role="dialog"
-        >
-          <div
-            className="bx--modal-header"
-          >
-            <p
-              className="bx--modal-header__heading bx--type-beta"
-            >
-              Move 1 item underneath
-            </p>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              onClick={[Function]}
-              title="Close"
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                className="bx--modal-close__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            className="bx--modal-content"
-          >
-            <div
-              className="iot--hierarchy-list-bulk-modal--title"
-            >
-              Select a destination
-            </div>
-            <div
-              className="breadcrumb--container"
-              data-testid="overflow"
-            >
-              <nav
-                aria-label="Breadcrumb"
-                className={null}
-                data-testid="modal-breadcrumb"
-              >
-                <ol
-                  className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                >
-                  <li
-                    className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                    title="All rows"
-                  >
-                    <button
-                      className="bx--link"
-                      kind="ghost"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      All rows
-                    </button>
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div
-              className="iot--hierarchy-list-bulk-modal--list"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id38"
-                    name="Chicago White Sox"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Chicago White Sox"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id38"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Chicago White Sox
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Chicago White Sox
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id39"
-                    name="New York Yankees"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="New York Yankees"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id39"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      New York Yankees
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    New York Yankees
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id40"
-                    name="Houston Astros"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Houston Astros"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id40"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Houston Astros
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Houston Astros
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id41"
-                    name="Atlanta Braves"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Atlanta Braves"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id41"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Atlanta Braves
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Atlanta Braves
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id42"
-                    name="New York Mets"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="New York Mets"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id42"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      New York Mets
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    New York Mets
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id43"
-                    name="Washington Nationals"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Washington Nationals"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id43"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Washington Nationals
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Washington Nationals
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
-          >
-            <button
-              className="iot--btn bx--btn bx--btn--secondary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              className="iot--btn bx--btn bx--btn--primary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Save
-            </button>
-          </div>
-        </div>
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-      </div>
       <div
         className="iot--list"
       >
@@ -3666,7 +2560,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a value"
                 role="searchbox"
                 type="text"
@@ -4809,7 +3702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HierarchyList With defaultSelectedId 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/HierarchyList With defaultSelectedId 1`] = `
 <div
   className="storybook-container"
 >
@@ -4829,395 +3722,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         }
       }
     >
-      <div
-        className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-        data-floating-menu-container={true}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onClose={[Function]}
-        onKeyDown={[Function]}
-        open={false}
-        role="presentation"
-      >
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-        <div
-          className="bx--modal-container"
-          role="dialog"
-        >
-          <div
-            className="bx--modal-header"
-          >
-            <p
-              className="bx--modal-header__heading bx--type-beta"
-            >
-              Move 1 item underneath
-            </p>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              onClick={[Function]}
-              title="Close"
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                className="bx--modal-close__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            className="bx--modal-content"
-          >
-            <div
-              className="iot--hierarchy-list-bulk-modal--title"
-            >
-              Select a destination
-            </div>
-            <div
-              className="breadcrumb--container"
-              data-testid="overflow"
-            >
-              <nav
-                aria-label="Breadcrumb"
-                className={null}
-                data-testid="modal-breadcrumb"
-              >
-                <ol
-                  className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                >
-                  <li
-                    className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                    title="All rows"
-                  >
-                    <button
-                      className="bx--link"
-                      kind="ghost"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      All rows
-                    </button>
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div
-              className="iot--hierarchy-list-bulk-modal--list"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id20"
-                    name="Chicago White Sox"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Chicago White Sox"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id20"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Chicago White Sox
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Chicago White Sox
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id21"
-                    name="New York Yankees"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="New York Yankees"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id21"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      New York Yankees
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    New York Yankees
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id22"
-                    name="Houston Astros"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Houston Astros"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id22"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Houston Astros
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Houston Astros
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id23"
-                    name="Atlanta Braves"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Atlanta Braves"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id23"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Atlanta Braves
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Atlanta Braves
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id24"
-                    name="New York Mets"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="New York Mets"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id24"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      New York Mets
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    New York Mets
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id25"
-                    name="Washington Nationals"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Washington Nationals"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id25"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Washington Nationals
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Washington Nationals
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
-          >
-            <button
-              className="iot--btn bx--btn bx--btn--secondary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              className="iot--btn bx--btn bx--btn--primary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Save
-            </button>
-          </div>
-        </div>
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-      </div>
       <div
         className="iot--list"
       >
@@ -5271,7 +3775,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a value"
                 role="searchbox"
                 type="text"
@@ -6014,7 +4517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HierarchyList with mixed hierarchies 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/HierarchyList with mixed hierarchies 1`] = `
 <div
   className="storybook-container"
 >
@@ -6033,263 +4536,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         }
       }
     >
-      <div
-        className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-        data-floating-menu-container={true}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onClose={[Function]}
-        onKeyDown={[Function]}
-        open={false}
-        role="presentation"
-      >
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-        <div
-          className="bx--modal-container"
-          role="dialog"
-        >
-          <div
-            className="bx--modal-header"
-          >
-            <p
-              className="bx--modal-header__heading bx--type-beta"
-            >
-              Move 1 item underneath
-            </p>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              onClick={[Function]}
-              title="Close"
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                className="bx--modal-close__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            className="bx--modal-content"
-          >
-            <div
-              className="iot--hierarchy-list-bulk-modal--title"
-            >
-              Select a destination
-            </div>
-            <div
-              className="breadcrumb--container"
-              data-testid="overflow"
-            >
-              <nav
-                aria-label="Breadcrumb"
-                className={null}
-                data-testid="modal-breadcrumb"
-              >
-                <ol
-                  className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                >
-                  <li
-                    className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                    title="All rows"
-                  >
-                    <button
-                      className="bx--link"
-                      kind="ghost"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      All rows
-                    </button>
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div
-              className="iot--hierarchy-list-bulk-modal--list"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id44"
-                    name="Tasks"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Tasks"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id44"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Tasks
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Tasks
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id45"
-                    name="My Reports"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="My Reports"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id45"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      My Reports
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    My Reports
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item"
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                >
-                  <input
-                    checked={false}
-                    className="bx--radio-button"
-                    id="id46"
-                    name="Requests"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="Requests"
-                  />
-                  <label
-                    className="bx--radio-button__label"
-                    htmlFor="id46"
-                  >
-                    <span
-                      className="bx--radio-button__appearance"
-                    />
-                    <span
-                      className="bx--visually-hidden"
-                    >
-                      Requests
-                    </span>
-                  </label>
-                </div>
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-button"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--hierarchy-list-bulk-modal--list-item-value"
-                  >
-                    Requests
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
-          >
-            <button
-              className="iot--btn bx--btn bx--btn--secondary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              className="iot--btn bx--btn bx--btn--primary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Save
-            </button>
-          </div>
-        </div>
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-      </div>
       <div
         className="iot--list"
       >
@@ -6343,7 +4589,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a value"
                 role="searchbox"
                 type="text"
@@ -6461,6 +4706,58 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title="My Reports"
                     >
                       My Reports
+                    </div>
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="My Reports--secondary-value"
+                    >
+                      <div
+                        aria-live="assertive"
+                        className="bx--inline-loading"
+                      >
+                        <div
+                          className="bx--inline-loading__animation"
+                        >
+                          <div
+                            aria-atomic="true"
+                            aria-labelledby="loading-id-8"
+                            aria-live="assertive"
+                            className="bx--loading bx--loading--small"
+                          >
+                            <label
+                              className="bx--visually-hidden"
+                              id="loading-id-8"
+                            >
+                              Active loading indicator
+                            </label>
+                            <svg
+                              className="bx--loading__svg"
+                              viewBox="-75 -75 150 150"
+                            >
+                              <title>
+                                Active loading indicator
+                              </title>
+                              <circle
+                                className="bx--loading__background"
+                                cx="0"
+                                cy="0"
+                                r="26.8125"
+                              />
+                              <circle
+                                className="bx--loading__stroke"
+                                cx="0"
+                                cy="0"
+                                r="26.8125"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          className="bx--inline-loading__text"
+                        >
+                          Loading data..
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
