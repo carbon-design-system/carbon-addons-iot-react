@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.38...v2.143.0-next.39) (2021-02-11)
+
+
+### Bug Fixes
+
+* **cardeditform:** changes to content section were not being sent ([b52afbd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b52afbd6adc4aae6abac909fc4f8ce4c89472c49))
+* **valuecard:** precision is at the attribute level not card level ([1b4f1de](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1b4f1dea7c1de70a637ae530a4636e21e2feaedb))
+
+
+
+
+
 # [2.143.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.37...v2.143.0-next.38) (2021-02-10)
 
 
