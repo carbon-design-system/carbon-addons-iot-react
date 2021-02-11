@@ -177,7 +177,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}
@@ -229,7 +228,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}
@@ -281,7 +279,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}
@@ -1765,7 +1762,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}
@@ -1817,7 +1813,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}
@@ -2349,7 +2344,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}
@@ -2401,7 +2395,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}
@@ -2453,7 +2446,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}

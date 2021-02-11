@@ -66,7 +66,7 @@ describe('SelectUsersModal', () => {
 
     expect(screen.queryAllByRole('button', { name: 'Remove' }).length).toBe(0);
     expect(screen.queryAllByRole('button', { name: 'Add' }).length).toBe(0);
-    fireEvent.click(screen.queryByRole('button', { name: 'Expand' }));
+    fireEvent.click(screen.getByTestId('expand-icon'));
     expect(screen.queryAllByRole('button', { name: 'Add' }).length).toBe(2);
   });
 
@@ -110,12 +110,12 @@ describe('SelectUsersModal', () => {
       />
     );
 
-    let buttons = screen.queryAllByRole('button', { name: 'Expand' });
-    await buttons[0].click(); // expand category
+    var buttons = screen.getAllByRole('img', { label: 'Expand' });
+    fireEvent.click(buttons[0]); // expand category
 
-    buttons = screen.queryAllByRole('button', { name: 'Expand' });
-    await buttons[0].click();
-    await buttons[1].click();
+    buttons = screen.getAllByRole('img', { label: 'Expand' });
+    fireEvent.click(buttons[1]);
+    fireEvent.click(buttons[2]);
 
     expect(screen.queryAllByTitle('Onita Nieves')).toHaveLength(3);
 
