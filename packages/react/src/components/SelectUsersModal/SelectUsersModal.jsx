@@ -76,6 +76,11 @@ const itemsAreEqual = (item1, item2) => {
     return true;
   }
 
+  // they have the same email
+  if (item1.email && item2.email && item1.email === item2.email) {
+    return true;
+  }
+
   return false;
 };
 

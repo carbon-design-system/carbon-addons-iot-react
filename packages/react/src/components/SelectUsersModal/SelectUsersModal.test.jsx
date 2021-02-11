@@ -95,6 +95,44 @@ describe('SelectUsersModal', () => {
     expect(screen.queryByRole('button', { name: 'Remove' })).toBeTruthy();
   });
 
+  it('can add and remove users', () => {
+    render(
+      <SelectUsersModal
+        users={[
+          {
+            name: 'Onita Nieves',
+            username: '@onita',
+            email: 'onita.nieves@example.com',
+          },
+          {
+            name: 'Latonya Densmore',
+            username: '@latonya',
+            email: 'latonya.densmore@example.com',
+          },
+        ]}
+        initialSelectedUsers={[]}
+        onClose={() => {}}
+      />
+    );
+
+    const list = screen.getByTestId('select-users__all');
+    const selected = screen.getByTestId('select-users__selected');
+
+    let selectedItems = within(selected).queryAllByRole('button', { name: 'Remove' });
+    expect(selectedItems).toHaveLength(0);
+
+    let listedItems = within(list).queryAllByRole('button', { name: 'Add' });
+    expect(listedItems).toHaveLength(2);
+
+    fireEvent.click(listedItems[0]);
+    selectedItems = within(selected).queryAllByRole('button', { name: 'Remove' });
+    expect(selectedItems).toHaveLength(1);
+
+    fireEvent.click(selectedItems[0]);
+    selectedItems = within(selected).queryAllByRole('button', { name: 'Remove' });
+    expect(selectedItems).toHaveLength(0);
+  });
+
   it('disables selected items', async () => {
     render(
       <SelectUsersModal
@@ -131,6 +169,69 @@ describe('SelectUsersModal', () => {
     });
 
     expect(listedItems).toHaveLength(2);
+    listedItems.forEach((item) => {
+      expect(item).toHaveClass('iot--list-item--content--values__disabled');
+    });
+  });
+
+  it('disables selected items based on attributes ', async () => {
+    render(
+      <SelectUsersModal
+        users={[
+          {
+            id: 'roles',
+            name: 'Roles',
+            groups: [
+              {
+                id: 'group-1',
+                name: 'Group One',
+                users: [
+                  {
+                    name: 'Onita Nieves',
+                    username: '@onita',
+                    email: 'onita.nieves@example.com',
+                  },
+                  {
+                    name: 'Latonya Densmore',
+                    username: '@latonya',
+                    email: 'latonya.densmore@example.com',
+                  },
+                ],
+              },
+            ],
+          },
+        ]}
+        initialSelectedUsers={[
+          {
+            name: 'Onita Nieves',
+            username: '@onita',
+            email: 'onita.nieves@example.com',
+          },
+        ]}
+        onClose={() => {}}
+      />
+    );
+
+    let buttons = screen.getAllByRole('img', { label: 'Expand' });
+    fireEvent.click(buttons[0]); // expand category
+
+    buttons = screen.getAllByRole('img', { label: 'Expand' });
+    fireEvent.click(buttons[1]);
+
+    expect(screen.queryAllByTitle('Onita Nieves')).toHaveLength(2);
+
+    const list = screen.getByTestId('select-users__all');
+    const selected = screen.getByTestId('select-users__selected');
+
+    const listedItems = within(list).queryAllByTitle('Onita Nieves');
+    const selectedItems = within(selected).queryAllByTitle('Onita Nieves');
+
+    expect(selectedItems).toHaveLength(1);
+    selectedItems.forEach((item) => {
+      expect(item).not.toHaveClass('iot--list-item--content--values__disabled');
+    });
+
+    expect(listedItems).toHaveLength(1);
     listedItems.forEach((item) => {
       expect(item).toHaveClass('iot--list-item--content--values__disabled');
     });
