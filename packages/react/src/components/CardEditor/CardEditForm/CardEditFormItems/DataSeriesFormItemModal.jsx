@@ -120,7 +120,6 @@ const defaultProps = {
     source: 'Source data item',
     aggregationMethod: 'Aggregation method',
     grain: 'Grain',
-    inputLabel: 'Input',
     hourlyLabel: 'Hourly',
     dailyLabel: 'Daily',
     weeklyLabel: 'Weekly',
@@ -201,7 +200,6 @@ const DataSeriesFormItemModal = ({
   );
 
   const availableGrains = [
-    { id: 'input', text: mergedI18n.inputLabel },
     { id: 'hourly', text: mergedI18n.hourlyLabel },
     { id: 'daily', text: mergedI18n.dailyLabel },
     { id: 'weekly', text: mergedI18n.weeklyLabel },
@@ -232,7 +230,8 @@ const DataSeriesFormItemModal = ({
             <TextInput
               id={`${row.dataSourceId}_label-input`}
               light
-              titleText=""
+              labelText={mergedI18n.dataItemEditorDataItemCustomLabel}
+              hideLabel
               onChange={(evt) => {
                 const updatedSeries = cloneDeep(editDataSeries);
                 updatedSeries[seriesIndex].label = evt.target.value;
@@ -327,12 +326,22 @@ const DataSeriesFormItemModal = ({
                 }
                 titleText={mergedI18n.aggregationMethod}
                 light
-                onChange={({ selectedItem }) =>
-                  setEditDataItem({
-                    ...editDataItem,
-                    aggregationMethod: selectedItem.id,
-                  })
-                }
+                onChange={({ selectedItem }) => {
+                  setEditDataItem(
+                    omit(
+                      {
+                        ...editDataItem,
+                        aggregationMethod: selectedItem.id,
+                        // if  we don't have a grain, then default to the first available
+                        ...(isTimeBasedCard && selectedItem.id !== 'none' && !editDataItem.grain
+                          ? { grain: availableGrains[0]?.id }
+                          : {}),
+                      },
+                      // if we're turning off the aggregation method, clear the input grain
+                      ...(selectedItem.id === 'none' ? ['grain'] : [])
+                    )
+                  );
+                }}
               />
             </div>
           ) : (
@@ -350,39 +359,37 @@ const DataSeriesFormItemModal = ({
             </div>
           )}
 
-          {isTimeBasedCard && (
-            <div className={`${baseClassName}--input-group--item-half`}>
-              <Dropdown
-                id={`${id}_grain-selector`}
-                label=""
-                direction="bottom"
-                itemToString={(item) => item.text}
-                items={
-                  isSummaryDashboard && initialAggregation // limit options for aggregated metrics in a summary dash
-                    ? availableGrains.slice(
-                        availableGrains.findIndex((grain) => grain.id === initialGrain)
-                      )
-                    : availableGrains
-                }
-                selectedItem={
-                  availableGrains.find((grain) => grain.id === editDataItem.grain) ||
-                  availableGrains.find((grain) => grain.id === 'input')
-                }
-                titleText={mergedI18n.grain}
-                light
-                onChange={({ selectedItem }) => {
-                  if (selectedItem !== mergedI18n.inputLabel) {
+          {isTimeBasedCard &&
+            editDataItem.aggregationMethod &&
+            editDataItem.aggregationMethod !== 'none' && (
+              <div className={`${baseClassName}--input-group--item-half`}>
+                <Dropdown
+                  id={`${id}_grain-selector`}
+                  label=""
+                  direction="bottom"
+                  itemToString={(item) => item.text}
+                  items={
+                    isSummaryDashboard && initialAggregation // limit options for aggregated metrics in a summary dash
+                      ? availableGrains.slice(
+                          availableGrains.findIndex((grain) => grain.id === initialGrain)
+                        )
+                      : availableGrains
+                  }
+                  selectedItem={
+                    availableGrains.find((grain) => grain.id === editDataItem.grain) ||
+                    availableGrains[0]
+                  }
+                  titleText={mergedI18n.grain}
+                  light
+                  onChange={({ selectedItem }) => {
                     setEditDataItem({
                       ...editDataItem,
                       grain: selectedItem.id,
                     });
-                  } else {
-                    setEditDataItem(omit(editDataItem, 'grain'));
-                  }
-                }}
-              />
-            </div>
-          )}
+                  }}
+                />
+              </div>
+            )}
         </div>
       ) : null}
 
