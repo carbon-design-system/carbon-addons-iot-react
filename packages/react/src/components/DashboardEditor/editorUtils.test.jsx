@@ -392,6 +392,7 @@ describe('editorUtils', () => {
           aggregationMethod: 'last',
           label: 'Key 1',
           dataSourceId: 'key1',
+          type: 'NUMBER',
         },
         {
           id: 'key2',
@@ -400,6 +401,16 @@ describe('editorUtils', () => {
           aggregationMethod: 'last',
           label: 'Key 2',
           dataSourceId: 'key2',
+          type: 'NUMBER',
+        },
+        {
+          id: 'key3',
+          text: 'Key 3',
+          dataItemId: 'key3',
+          aggregationMethod: 'last',
+          label: 'Key 3',
+          dataSourceId: 'key3',
+          type: 'TIMESTAMP',
         },
       ];
       const newCard = handleDataSeriesChange(
@@ -418,10 +429,6 @@ describe('editorUtils', () => {
                 dataSourceId: 'manufacturer',
                 label: 'Manufacturer',
                 type: 'DIMENSION',
-              },
-              {
-                dataSourceId: 'key1',
-                label: 'Key 1',
               },
             ],
           },
@@ -450,6 +457,7 @@ describe('editorUtils', () => {
               aggregationMethod: 'last',
               dataSourceId: 'key1',
               label: 'Key 1',
+              type: 'NUMBER',
             },
             {
               id: 'key2',
@@ -458,6 +466,16 @@ describe('editorUtils', () => {
               aggregationMethod: 'last',
               dataSourceId: 'key2',
               label: 'Key 2',
+              type: 'NUMBER',
+            },
+            {
+              id: 'key3',
+              text: 'Key 3',
+              dataItemId: 'key3',
+              aggregationMethod: 'last',
+              label: 'Key 3',
+              dataSourceId: 'key3',
+              type: 'TIMESTAMP',
             },
           ],
         },

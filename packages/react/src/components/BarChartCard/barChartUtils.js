@@ -525,65 +525,67 @@ export const formatTableData = (
   chartData
 ) => {
   const tableData = [];
-  if (timeDataSourceId) {
-    // First get all of the unique timestamps
-    const uniqueTimestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
-    // For each unique timestamp, get the unique value for each dataset group
-    // Each table row will consist of 1 timestamp and the corresponding values
-    // of each dataset group for that timestamp
-    uniqueTimestamps.forEach((timestamp, index) => {
-      const barTimeValue = {};
-      const filteredData = chartData.filter((data) => data.date?.valueOf() === timestamp);
-      filteredData.forEach((val) => {
-        barTimeValue[val.group] = val.value;
-      });
+  if (!isNil(values) && !isNil(chartData)) {
+    if (timeDataSourceId) {
+      // First get all of the unique timestamps
+      const uniqueTimestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
+      // For each unique timestamp, get the unique value for each dataset group
+      // Each table row will consist of 1 timestamp and the corresponding values
+      // of each dataset group for that timestamp
+      uniqueTimestamps.forEach((timestamp, index) => {
+        const barTimeValue = {};
+        const filteredData = chartData.filter((data) => data.date?.valueOf() === timestamp);
+        filteredData.forEach((val) => {
+          barTimeValue[val.group] = val.value;
+        });
 
+        tableData.push({
+          id: `dataindex-${index}`,
+          values: {
+            ...barTimeValue,
+            // format the date locally
+            [timeDataSourceId]: moment(timestamp).format('L HH:mm'),
+          },
+          isSelectable: false,
+        });
+      });
+    } else if (type === BAR_CHART_TYPES.SIMPLE) {
+      const simpleBarValue = {};
+      chartData.forEach((value) => {
+        // There's only 1 row if its a simple non-timebased graph
+        simpleBarValue[value.group] = value.value;
+      });
       tableData.push({
-        id: `dataindex-${index}`,
+        id: `dataindex-1`,
         values: {
-          ...barTimeValue,
-          // format the date locally
-          [timeDataSourceId]: moment(timestamp).format('L HH:mm'),
+          ...simpleBarValue,
         },
         isSelectable: false,
       });
-    });
-  } else if (type === BAR_CHART_TYPES.SIMPLE) {
-    const simpleBarValue = {};
-    chartData.forEach((value) => {
-      // There's only 1 row if its a simple non-timebased graph
-      simpleBarValue[value.group] = value.value;
-    });
-    tableData.push({
-      id: `dataindex-1`,
-      values: {
-        ...simpleBarValue,
-      },
-      isSelectable: false,
-    });
-  } // Format the tableData for grouped and stacked charts that are NOT time-based
-  else {
-    // First get all of the unique keys
-    const uniqueKeys = [...new Set(values.map((val) => val[categoryDataSourceId]))];
-    // For each unique key, get the unique value for each dataset group
-    // Each table row will consist of 1 key and the corresponding values
-    // of each dataset group for that key
-    uniqueKeys.forEach((key, index) => {
-      const groupBarValue = {};
-      const filteredData = chartData.filter((data) => data.key === key);
-      filteredData.forEach((val) => {
-        groupBarValue[val.group] = val.value;
-      });
+    } // Format the tableData for grouped and stacked charts that are NOT time-based
+    else {
+      // First get all of the unique keys
+      const uniqueKeys = [...new Set(values.map((val) => val[categoryDataSourceId]))];
+      // For each unique key, get the unique value for each dataset group
+      // Each table row will consist of 1 key and the corresponding values
+      // of each dataset group for that key
+      uniqueKeys.forEach((key, index) => {
+        const groupBarValue = {};
+        const filteredData = chartData.filter((data) => data.key === key);
+        filteredData.forEach((val) => {
+          groupBarValue[val.group] = val.value;
+        });
 
-      tableData.push({
-        id: `dataindex-${index}`,
-        values: {
-          ...groupBarValue,
-          [categoryDataSourceId]: key,
-        },
-        isSelectable: false,
+        tableData.push({
+          id: `dataindex-${index}`,
+          values: {
+            ...groupBarValue,
+            [categoryDataSourceId]: key,
+          },
+          isSelectable: false,
+        });
       });
-    });
+    }
   }
 
   return tableData;
