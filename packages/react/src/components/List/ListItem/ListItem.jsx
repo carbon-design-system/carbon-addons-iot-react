@@ -135,7 +135,7 @@ const ListItem = ({
       <div
         className={`${iotPrefix}--list-item--nesting-offset`}
         style={{
-          width: `${nestingLevel * 30 - 30}px`,
+          width: `${nestingLevel * 30}px`,
         }}
       />
     ) : null;

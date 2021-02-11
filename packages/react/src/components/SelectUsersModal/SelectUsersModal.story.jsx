@@ -262,7 +262,7 @@ FlatListModal.story = {
   name: 'flat list of users',
 };
 
-export const GroupListModal = () => {
+export const MixedGroupListModal = () => {
   const testUsers = [
     {
       name: 'Onita Nieves',
@@ -292,6 +292,11 @@ export const GroupListModal = () => {
       name: 'Role Two',
       users: testUsers,
     },
+    {
+      name: 'Katelin Ngo',
+      username: '@katelin',
+      email: 'katelin.ngo@example.com',
+    },
   ];
 
   return (
@@ -305,6 +310,6 @@ export const GroupListModal = () => {
   );
 };
 
-GroupListModal.story = {
+MixedGroupListModal.story = {
   name: 'group list',
 };
