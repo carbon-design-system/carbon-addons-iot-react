@@ -121,7 +121,7 @@ describe('SelectUsersModal', () => {
     let selectedItems = within(selected).queryAllByRole('button', { name: 'Remove' });
     expect(selectedItems).toHaveLength(0);
 
-    let listedItems = within(list).queryAllByRole('button', { name: 'Add' });
+    const listedItems = within(list).queryAllByRole('button', { name: 'Add' });
     expect(listedItems).toHaveLength(2);
 
     fireEvent.click(listedItems[0]);
