@@ -90,26 +90,6 @@
       ]
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn pre-commit",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "lint-staged": {
-    "linters": {
-      "*.{jsx,js}": [
-        "eslint --fix"
-      ],
-      "*.{scss,css}": [
-        "yarn lint:stylelint"
-      ],
-      "*.{scss,css,js,md,jsx,json}": [
-        "yarn format",
-        "git add"
-      ]
-    }
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"

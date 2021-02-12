@@ -39,13 +39,13 @@
   "lint-staged": {
     "linters": {
       "packages/react/*.{jsx,js}": [
-        "cd packages/react && eslint --fix"
+        "eslint --fix"
       ],
       "packages/react/*.{scss,css}": [
-        "cd packages/react && yarn lint:stylelint"
+        "yarn lint:stylelint"
       ],
       "packages/react/*.{scss,css,js,md,jsx,json}": [
-        "cd packages/react && yarn format",
+        "yarn format",
         "git add"
       ]
     }
