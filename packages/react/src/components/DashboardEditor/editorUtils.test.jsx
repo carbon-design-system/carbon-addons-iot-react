@@ -358,6 +358,7 @@ describe('editorUtils', () => {
         content: {
           columns: [
             {
+              dataItemId: 'timestamp',
               dataSourceId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
@@ -489,6 +490,7 @@ describe('editorUtils', () => {
         content: {
           columns: [
             {
+              dataItemId: 'timestamp',
               dataSourceId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
