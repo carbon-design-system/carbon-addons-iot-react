@@ -129,9 +129,13 @@ const TableCardFormContent = ({
       Array.isArray(columns)
         ? columns.map((column) => ({
             ...column, // dataSection expects the thresholds to be in the column definition, though the table expects them to be in content
-            thresholds: thresholds?.filter(
-              (threshold) => column.dataSourceId === threshold.dataSourceId
-            ),
+            ...(!isEmpty(thresholds) // only set thresholds if they exist
+              ? {
+                  thresholds: thresholds?.filter(
+                    (threshold) => column.dataSourceId === threshold.dataSourceId
+                  ),
+                }
+              : {}),
           }))
         : [],
     [columns, thresholds]
@@ -213,7 +217,7 @@ const TableCardFormContent = ({
         content: {
           ...card.content,
           columns: updatedColumns,
-          thresholds: allThresholds,
+          ...(!isEmpty(allThresholds) ? { thresholds: allThresholds } : {}),
         },
       });
     },
