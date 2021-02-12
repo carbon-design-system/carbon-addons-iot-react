@@ -494,6 +494,7 @@ export const handleDataSeriesChange = (
           ? content.columns.filter((col) => col.dataSourceId === 'timestamp')[0]
           : {
               dataSourceId: 'timestamp',
+              dataItemId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
               sort: 'DESC',
