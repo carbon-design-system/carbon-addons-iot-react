@@ -464,6 +464,7 @@ const DashboardEditor = ({
           (image) => image.id === cardConfig.content.id
         )?.src;
       } else if (
+        cardConfig.type === CARD_TYPES.IMAGE &&
         cardConfig.content.imgState === 'new' &&
         !imagesToUpload.some((image) => image.id === cardConfig.content.id)
       ) {
