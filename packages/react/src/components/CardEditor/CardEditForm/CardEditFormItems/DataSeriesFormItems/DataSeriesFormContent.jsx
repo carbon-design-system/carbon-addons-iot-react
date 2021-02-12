@@ -253,21 +253,10 @@ const DataSeriesFormItem = ({
   const canMultiSelectDataItems = cardConfig.content?.type !== BAR_CHART_TYPES.SIMPLE;
 
   // determine which content section to look at
-  const data =
+  const dataSection =
     cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR
       ? cardConfig?.content?.series
       : cardConfig?.content?.attributes;
-
-  // initialize items with a unique dataSourceId if not present
-  const dataSection = useMemo(
-    () =>
-      data?.map((item) =>
-        item.dataSourceId !== item.dataItemId
-          ? item
-          : { ...item, dataSourceId: `${item.dataSourceId}_${uuid.v4()}` }
-      ),
-    [data]
-  );
 
   const validDataItems = useMemo(
     () => (getValidDataItems ? getValidDataItems(cardConfig, selectedTimeRange) : dataItems),
