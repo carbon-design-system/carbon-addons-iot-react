@@ -18,6 +18,13 @@ const commonProps = {
   dataItems: [
     { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
     { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
+    {
+      dataItemId: 'deviceid',
+      dataSourceId: 'deviceid',
+      label: 'deviceid',
+      destination: 'groupBy',
+      type: 'DIMENSION',
+    },
   ],
   availableDimensions: {
     manufacturer: ['Rentech', 'GHI'],
@@ -42,9 +49,45 @@ describe('TableCardFormContent', () => {
     // check for the dimensions to be shown
     fireEvent.click(screen.getByLabelText(/Select dim/));
     expect(screen.queryByText('manufacturer')).toBeDefined();
-    expect(screen.queryByText('deviceid')).toBeDefined();
+    expect(screen.queryAllByText('deviceid')).toBeDefined();
   });
-  it('fires onChange when dataItem is selected', () => {
+  it('puts special data items in groupBy section', () => {
+    render(<TableCardFormContent {...commonProps} />);
+    // check for the temperature and pressure to be shown under data items
+    const dataItemComboBox = screen.getByTestId('combo-box');
+    expect(dataItemComboBox).toBeInTheDocument();
+    fireEvent.click(dataItemComboBox);
+    expect(screen.queryAllByText('deviceid')).toBeDefined();
+    expect(screen.queryByText('pressure')).toBeDefined();
+
+    fireEvent.click(screen.queryAllByText('deviceid')[0]);
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            sort: 'DESC',
+            dataItemId: 'timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'deviceid',
+            destination: 'groupBy',
+            // dataSourceId is generated with a uuid to stay unique
+            dataSourceId: 'deviceid',
+            dataItemId: 'deviceid',
+            type: 'DIMENSION',
+          },
+        ],
+      },
+      dataSource: {
+        groupBy: ['deviceid'],
+      },
+    });
+  });
+  it('fires onChange when dataItem deviceId is selected', () => {
     render(<TableCardFormContent {...commonProps} />);
     // check for the temperature and pressure to be shown under data items
     const dataItemComboBox = screen.getByTestId('combo-box');
@@ -118,12 +161,15 @@ describe('TableCardFormContent', () => {
             sort: 'DESC',
           },
           {
+            dataItemId: 'manufacturer',
             dataSourceId: 'manufacturer',
+            destination: 'groupBy',
             label: 'manufacturer',
             type: 'DIMENSION',
           },
         ],
       },
+      dataSource: { groupBy: ['manufacturer'] },
     });
   });
   it('edit mode with dataitems and dimension columns show work correctly', () => {
@@ -200,6 +246,114 @@ describe('TableCardFormContent', () => {
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
+      },
+    });
+  });
+  it('remove button should remove items from the groupBy list', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                dataItemId: 'manufacturer',
+                type: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+          },
+          dataSource: {
+            groupBy: ['manufacturer'],
+          },
+        }}
+      />
+    );
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Manufacturer')).toBeDefined();
+
+    const removeManufacturerButton = screen.getAllByRole('button', { name: 'Remove' })[1];
+    expect(removeManufacturerButton).toBeInTheDocument();
+
+    fireEvent.click(removeManufacturerButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+      },
+    });
+  });
+  it('remove button should remove items from the groupBy list by leave the dataSource alone', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                dataItemId: 'manufacturer',
+                type: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+          },
+          dataSource: {
+            groupBy: ['manufacturer'],
+            timeGrain: 'hour',
+          },
+        }}
+      />
+    );
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Manufacturer')).toBeDefined();
+
+    const removeManufacturerButton = screen.getAllByRole('button', { name: 'Remove' })[1];
+    expect(removeManufacturerButton).toBeInTheDocument();
+
+    fireEvent.click(removeManufacturerButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+      },
+      dataSource: {
+        timeGrain: 'hour',
       },
     });
   });

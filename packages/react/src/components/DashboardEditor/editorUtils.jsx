@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
+import isEmpty from 'lodash/isEmpty';
 import {
   purple70,
   cyan50,
@@ -504,9 +505,14 @@ export const handleDataSeriesChange = (
         : [];
 
       // new dimension columns should go right after the timestamp column
-      const dimensionColumns = selectedItems
-        .filter((col) => col.type === 'DIMENSION')
-        .map((i) => ({ dataSourceId: i.id, label: i.text, type: i.type }));
+      const dimensionColumns = selectedItems.filter((col) => col.type === 'DIMENSION');
+      const allDimensionColumns = existingDimensionColumns.concat(dimensionColumns);
+
+      // for raw table cards, the dimensions columns go in the attributes section
+      // if groupBy was selected, the dimension columns should go in the groupBy section
+      const updatedGroupBy = uniqBy(allDimensionColumns, 'dataSourceId')
+        .filter((item) => item.destination === 'groupBy')
+        .map((item) => item.dataItemId);
 
       return {
         ...cardConfig,
@@ -516,13 +522,25 @@ export const handleDataSeriesChange = (
             [
               timestampColumn,
               // pop the dimensions up front right after the timestamp
-              ...existingDimensionColumns.concat(dimensionColumns),
+              ...allDimensionColumns,
               ...existingAttributeColumns.concat(attributeColumns),
             ],
             'dataSourceId'
           ) // when columns are removed, their dataSourceId is cleared, we don't want to readd them
             .filter((column) => column.dataSourceId),
         },
+        ...(!isEmpty(updatedGroupBy)
+          ? {
+              dataSource: {
+                ...cardConfig.dataSource,
+                ...(allDimensionColumns.find((item) => item.destination === 'groupBy')
+                  ? {
+                      groupBy: updatedGroupBy,
+                    }
+                  : {}),
+              },
+            }
+          : {}),
       };
     }
     case CARD_TYPES.IMAGE: {
