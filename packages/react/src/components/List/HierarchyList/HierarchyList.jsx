@@ -90,7 +90,7 @@ const defaultProps = {
   hasSearch: false,
   hasPagination: true,
   hasMultiSelect: false,
-  hasDeselection: false,
+  hasDeselection: true,
   buttons: null,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
