@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.41...v2.143.0-next.42) (2021-02-12)
+
+
+### Bug Fixes
+
+* **dashboardeditor:** need to check for image type ([c79324f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c79324f9667fd80ee6bfa0b0663a5ba800cf1904))
+* **dataseriesformcontent:** it should not change existing elements ([aa10d45](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aa10d45f8f3c5df6b651719d64dd85fcab11a8c6))
+* **editorUtils:** when adding timestamp we need the data item id ([8d05131](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8d05131362d27312dad30cb9197dd7cd0cc5cd15))
+
+
+
+
+
 # [2.143.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.40...v2.143.0-next.41) (2021-02-11)
 
 
