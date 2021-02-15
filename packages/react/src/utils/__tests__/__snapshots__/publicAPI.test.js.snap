@@ -4411,7 +4411,7 @@ Map {
       "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
-      "hasDeselection": false,
+      "hasDeselection": true,
       "hasMultiSelect": false,
       "hasPagination": true,
       "hasSearch": false,
