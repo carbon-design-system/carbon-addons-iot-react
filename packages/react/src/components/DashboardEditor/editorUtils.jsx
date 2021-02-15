@@ -512,7 +512,7 @@ export const handleDataSeriesChange = (
       // if groupBy was selected, the dimension columns should go in the groupBy section
       const updatedGroupBy = uniqBy(allDimensionColumns, 'dataSourceId')
         .filter((item) => item.destination === 'groupBy')
-        .map((item) => item.dataItemId);
+        .map((item) => item.dataItemId || item.dataSourceId);
 
       return {
         ...cardConfig,
