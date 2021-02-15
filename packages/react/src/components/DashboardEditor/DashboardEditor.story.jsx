@@ -52,6 +52,7 @@ const mockDataItems = [
       { id: 'max', text: 'Max' },
       { id: 'min', text: 'Min' },
     ],
+    grain: 'hourly',
   },
   {
     dataItemId: 'torque_min',
@@ -65,6 +66,7 @@ const mockDataItems = [
       { id: 'max', text: 'Max' },
       { id: 'min', text: 'Min' },
     ],
+    grain: 'hourly',
   },
   {
     dataItemId: 'torque_mean',
@@ -78,6 +80,7 @@ const mockDataItems = [
       { id: 'max', text: 'Max' },
       { id: 'min', text: 'Min' },
     ],
+    grain: 'hourly',
   },
   {
     dataItemId: 'torque',

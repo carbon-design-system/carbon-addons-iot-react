@@ -61,6 +61,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             sort: 'DESC',
+            dataItemId: 'timestamp',
             dataSourceId: 'timestamp',
             type: 'TIMESTAMP',
           },
@@ -110,6 +111,7 @@ describe('TableCardFormContent', () => {
       content: {
         columns: [
           {
+            dataItemId: 'timestamp',
             dataSourceId: 'timestamp',
             label: 'Timestamp',
             type: 'TIMESTAMP',
