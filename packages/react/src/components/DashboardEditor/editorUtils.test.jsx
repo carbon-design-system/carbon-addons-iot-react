@@ -483,7 +483,14 @@ describe('editorUtils', () => {
       });
     });
     it('handleDataSeriesChange should correctly format the columns for new table card dimensions', () => {
-      const selectedItems = [{ id: 'manufacturer', text: 'Manufacturer', type: 'DIMENSION' }];
+      const selectedItems = [
+        {
+          dataItemId: 'manufacturer',
+          dataSourceId: 'manufacturer',
+          label: 'Manufacturer',
+          type: 'DIMENSION',
+        },
+      ];
       const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {}, null, true);
       expect(newCard).toEqual({
         ...mockTableCard,
@@ -497,6 +504,7 @@ describe('editorUtils', () => {
               sort: 'DESC',
             },
             {
+              dataItemId: 'manufacturer',
               dataSourceId: 'manufacturer',
               label: 'Manufacturer',
               type: 'DIMENSION',
@@ -524,6 +532,11 @@ describe('editorUtils', () => {
               {
                 dataSourceId: 'manufacturer',
                 label: 'Manufacturer',
+                type: 'DIMENSION',
+              },
+              {
+                dataSourceId: 'deviceid',
+                label: 'Device',
                 type: 'DIMENSION',
               },
               {

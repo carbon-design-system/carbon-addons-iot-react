@@ -477,9 +477,15 @@ const DataSeriesFormItem = ({
               key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
               id={`${cardConfig.id}_dataSourceIds-combobox`}
               items={formatDataItemsForDropdown(validDataItems)}
-              itemToString={(item) => item.text}
+              itemToString={(item) => item?.text}
               titleText={mergedI18n.dataItemEditorDataItemTitle}
               addToList={false}
+              shouldFilterItem={({ item, inputValue }) => {
+                return (
+                  isEmpty(inputValue) ||
+                  item?.text?.toLowerCase()?.includes(inputValue?.toLowerCase())
+                );
+              }}
               placeholder={mergedI18n.filter}
               // clears out the input field after each selection
               selectedItem={{ id: '', text: '' }}
