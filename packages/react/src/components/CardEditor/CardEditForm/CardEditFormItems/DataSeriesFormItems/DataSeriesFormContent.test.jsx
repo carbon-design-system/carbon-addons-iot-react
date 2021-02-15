@@ -178,7 +178,7 @@ describe('DataSeriesFormItem', () => {
             {
               dataItemId: 'temperature',
               aggregationMethod: undefined,
-              color: '#6929c4',
+              color: 'red',
               dataSourceId: expect.anything(), // this is the dataSourceId followed by a uuid
               label: 'Temperature',
             },

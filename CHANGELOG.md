@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.41...v2.143.0-next.42) (2021-02-12)
+
+
+### Bug Fixes
+
+* **dashboardeditor:** need to check for image type ([c79324f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c79324f9667fd80ee6bfa0b0663a5ba800cf1904))
+* **dataseriesformcontent:** it should not change existing elements ([aa10d45](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aa10d45f8f3c5df6b651719d64dd85fcab11a8c6))
+* **editorUtils:** when adding timestamp we need the data item id ([8d05131](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8d05131362d27312dad30cb9197dd7cd0cc5cd15))
+
+
+
+
+
+# [2.143.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.40...v2.143.0-next.41) (2021-02-11)
+
+
+### Bug Fixes
+
+* **barchardutils:** need to null check the values ([9aa743b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9aa743b0900af2e886122c6a3db24b0d9a26032f))
+* **barchart:** need to null check the values before formatting ([c63cfb3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c63cfb3f94d5c9a5b2572d8f0d624f5fbea250fa))
+* **barChartUtils:** stop another null ([dbba02a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dbba02aa4cf566344eaa99e6b155d4a7916676a3))
+* **dataitemmodal:** need to hide the grain if no aggregator is selected ([f5efdef](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f5efdefcf3879191b7d8895d17b7c1cb54226aae))
+* **tablecard:** in the editor I need to be allowed to add timestamp columns ([8aa8166](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8aa816603bf227b27e1b38f9f1af79a17c17a70d))
+
+
+
+
+
+# [2.143.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.39...v2.143.0-next.40) (2021-02-11)
+
+
+### Bug Fixes
+
+* **dashboard-grid:** remove the merge error file in the wrong path ([65ce41b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/65ce41b8250100dcbc128cf7ea8fad46c608907b))
+* **repo:** adding a 'browser' field to avoid webpack default config issue ([8858150](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8858150a17897da49ef3a1b7f30122e909365ba1))
+
+
+
+
+
+# [2.143.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.38...v2.143.0-next.39) (2021-02-11)
+
+
+### Bug Fixes
+
+* **cardeditform:** changes to content section were not being sent ([b52afbd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b52afbd6adc4aae6abac909fc4f8ce4c89472c49))
+* **valuecard:** precision is at the attribute level not card level ([1b4f1de](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1b4f1dea7c1de70a637ae530a4636e21e2feaedb))
+
+
+
+
+
 # [2.143.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.37...v2.143.0-next.38) (2021-02-10)
 
 
