@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.42...v2.143.0-next.43) (2021-02-15)
+
+
+### Bug Fixes
+
+* **editorUtils:** sometimes the dimension columns no longer have dataItemId ([4cca311](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4cca311b4cac65d7a4e721958ec12cb7af14ba64))
+* **tablecard:** fix the dashboardeditor for tablecard ([3e9e832](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3e9e83227c9deaa2fcee2f74b7f6fa6fe0c93437))
+* **tablecard:** show column label in threshold column ([71b046e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/71b046e14a9b3c4410efb717a2812a57a6242cda))
+
+
+
+
+
 # [2.143.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.41...v2.143.0-next.42) (2021-02-12)
 
 
