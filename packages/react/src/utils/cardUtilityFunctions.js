@@ -348,6 +348,7 @@ export const useCardResizing = (wrappingCardResizeHandles, children, isResizable
               handleElement.props.onStart(...args);
             }
           },
+          disabled: false,
           onStop: (...args) => {
             setIsResizing(false);
             if (handleElement.props?.onStop) {
