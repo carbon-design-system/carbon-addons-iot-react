@@ -153,7 +153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         </div>
         <button
           className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-          data-testid="dynamic-hotspot-source-picker-clear-dropdown"
+          data-testid="Button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}

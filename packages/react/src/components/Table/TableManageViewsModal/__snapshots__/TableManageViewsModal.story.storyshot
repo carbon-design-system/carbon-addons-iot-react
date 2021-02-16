@@ -207,7 +207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id0-edit"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -238,7 +238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </button>
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id0-delete"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -317,7 +317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id1-edit"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -348,7 +348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </button>
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id1-delete"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -419,7 +419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id2-edit"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -450,7 +450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </button>
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id2-delete"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -521,7 +521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id3-edit"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -552,7 +552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </button>
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id3-delete"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -623,7 +623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id4-edit"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -654,7 +654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </button>
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id4-delete"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -725,7 +725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id5-edit"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -756,7 +756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </button>
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id5-delete"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -827,7 +827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id6-edit"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -858,7 +858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </button>
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id6-delete"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -929,7 +929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id7-edit"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -960,7 +960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </button>
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id7-delete"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -1031,7 +1031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id8-edit"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -1062,7 +1062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </button>
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id8-delete"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -1133,7 +1133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id9-edit"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -1164,7 +1164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </button>
                           <button
                             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-id9-delete"
+                            data-testid="Button"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}

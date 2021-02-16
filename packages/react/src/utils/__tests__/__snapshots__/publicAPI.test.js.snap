@@ -24,6 +24,7 @@ Map {
       "loading": false,
       "recommended": false,
       "selected": false,
+      "testID": "Button",
     },
     "propTypes": Object {
       "children": Object {
@@ -63,6 +64,9 @@ Map {
       },
       "selected": Object {
         "type": "bool",
+      },
+      "testID": Object {
+        "type": "string",
       },
     },
   },
@@ -145,6 +149,7 @@ Map {
       "passiveModal": false,
       "sendingData": null,
       "submitFailed": false,
+      "testID": "ComposedModal",
       "type": null,
     },
     "propTypes": Object {
@@ -246,6 +251,9 @@ Map {
       },
       "submitFailed": Object {
         "type": "bool",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "type": Object {
         "args": Array [
@@ -6621,6 +6629,9 @@ Map {
       },
       "submitFailed": Object {
         "type": "bool",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "type": Object {
         "args": Array [

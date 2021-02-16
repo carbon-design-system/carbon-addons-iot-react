@@ -261,6 +261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -270,6 +271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
             <button
               className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -583,6 +585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -592,6 +595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
             <button
               className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -888,6 +892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -897,6 +902,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
             <button
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+              data-testid="Button"
               disabled={true}
               onClick={[Function]}
               tabIndex={0}

@@ -370,14 +370,11 @@ const TimeSeriesCard = ({
    * @returns {string} fill color
    */
   const handleFillColor = (datasetLabel, label, data, originalFillColor) => {
-    // If it's editable don't fill the dot
-    const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : defaultFillColor;
+      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalFillColor;
     }
-
-    return defaultFillColor;
+    return originalFillColor;
   };
 
   /**

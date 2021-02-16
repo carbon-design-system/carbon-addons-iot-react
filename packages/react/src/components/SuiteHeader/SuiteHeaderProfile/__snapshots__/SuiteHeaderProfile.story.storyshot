@@ -228,7 +228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         >
           <button
             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
-            data-testid="suite-header-profile--profile"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -317,7 +317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         >
           <button
             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
-            data-testid="suite-header-profile--profile"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -331,7 +331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="suite-header-profile--logout"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}

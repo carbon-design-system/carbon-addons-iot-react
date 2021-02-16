@@ -76,6 +76,8 @@ export const ComposedModalPropTypes = {
   onSubmit: PropTypes.func,
   /** Hide the footer */
   passiveModal: PropTypes.bool,
+  /** Id that can be used for testing */
+  testID: PropTypes.string,
 };
 
 /**
@@ -112,6 +114,7 @@ class ComposedModal extends React.Component {
     header: {},
     iconDescription: 'Close',
     passiveModal: false,
+    testID: 'ComposedModal',
   };
 
   componentDidUpdate(prevProps) {
@@ -151,6 +154,7 @@ class ComposedModal extends React.Component {
       submitFailed,
       invalid,
       passiveModal,
+      testID,
       ...props
     } = this.props;
     const { label, title, helpText } = header;
@@ -214,7 +218,11 @@ class ComposedModal extends React.Component {
               footer
             ) : (
               <Fragment>
-                <Button kind="secondary" onClick={onClose}>
+                <Button
+                  kind="secondary"
+                  onClick={onClose}
+                  testID={`${testID}-modal-secondary-button`}
+                >
                   {(footer && footer.secondaryButtonLabel) || 'Cancel'}
                 </Button>
                 {!footer?.isPrimaryButtonHidden ? (
@@ -226,6 +234,7 @@ class ComposedModal extends React.Component {
                       typeof sendingData === 'string'
                     }
                     onClick={onSubmit}
+                    testID={`${testID}-modal-${type === 'warn' ? 'danger' : 'primary'}-button`}
                   >
                     {(footer && footer.primaryButtonLabel) || 'Save'}
                   </Button>
