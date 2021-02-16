@@ -8774,7 +8774,7 @@ Map {
       "onValidateUploadedImage": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
-      "renderIconByName": null,
+      "renderIconByName": [Function],
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",

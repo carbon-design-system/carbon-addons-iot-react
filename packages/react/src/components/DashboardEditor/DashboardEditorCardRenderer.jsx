@@ -5,7 +5,6 @@ import omit from 'lodash/omit';
 import find from 'lodash/find';
 import isEqual from 'lodash/isEqual';
 import isNil from 'lodash/isNil';
-import { Warning24 } from '@carbon/icons-react';
 import update from 'immutability-helper';
 
 import { CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
@@ -19,14 +18,7 @@ import {
   ListCard,
 } from '../../index';
 
-import {
-  validThresholdIcons,
-  validHotspotIcons,
-  timeRangeToJSON,
-  isCardJsonValid,
-  handleKeyDown,
-  handleOnClick,
-} from './editorUtils';
+import { timeRangeToJSON, isCardJsonValid, handleKeyDown, handleOnClick } from './editorUtils';
 
 /**
  * Renders a card and lists the JSON within
@@ -43,27 +35,7 @@ const renderDefaultCard = (props) => (
  * @param {Object} props
  * @returns {Node}
  */
-const renderValueCard = (props) => (
-  <ValueCard
-    // render the icon in the right color in the card preview
-    renderIconByName={
-      props?.renderIconByName
-        ? props.renderIconByName
-        : (iconName, iconProps) => {
-            const iconToRender = validThresholdIcons.find((icon) => icon.name === iconName)
-              ?.carbonIcon || <Warning24 />;
-            // eslint-disable-next-line react/prop-types
-            return (
-              <div style={{ color: iconProps.fill }}>
-                {React.cloneElement(iconToRender, iconProps)}
-              </div>
-            );
-          }
-    }
-    isEditable
-    {...props}
-  />
-);
+const renderValueCard = (props) => <ValueCard isEditable {...props} />;
 /**
  * @param {Object} props
  * @returns {Node}
@@ -118,36 +90,6 @@ const renderTableCard = (props) => (
  */
 const renderImageCard = (props) => (
   <ImageCard
-    renderIconByName={
-      props?.renderIconByName
-        ? props.renderIconByName
-        : (iconName, iconProps) => {
-            // first search the validHotspot Icons
-            const matchingHotspotIcon = validHotspotIcons.find((icon) => icon.id === iconName);
-
-            // then search the validThresholdIcons
-            const matchingThresholdIcon = validThresholdIcons.find(
-              (icon) => icon.name === iconName
-            );
-            const iconToRender = matchingHotspotIcon ? (
-              React.createElement(matchingHotspotIcon.icon, {
-                ...iconProps,
-                title: matchingHotspotIcon.text,
-              })
-            ) : matchingThresholdIcon ? (
-              React.cloneElement(matchingThresholdIcon.carbonIcon, {
-                ...iconProps,
-                title: matchingThresholdIcon.name,
-              })
-            ) : (
-              <Warning24 {...iconProps} />
-            );
-
-            // otherwise default to Warning24
-            // eslint-disable-next-line react/prop-types
-            return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
-          }
-    }
     {...props}
     isEditable // render the icon in the right color in the card preview
     values={{
