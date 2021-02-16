@@ -8754,6 +8754,7 @@ Map {
         "cards": Array [],
         "layouts": Object {},
       },
+      "isCardResizable": true,
       "isLoading": false,
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
@@ -9280,6 +9281,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isCardResizable": Object {
+        "type": "bool",
       },
       "isLoading": Object {
         "type": "bool",

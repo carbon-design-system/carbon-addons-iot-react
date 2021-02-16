@@ -315,6 +315,7 @@ const DashboardEditorCardRenderer = React.memo(
     }
     // If the renderCardPreview function returns a valid value for the card, use it,
     if (
+      typeof renderCardPreview === 'function' &&
       renderCardPreview(
         cardConfig,
         cardProps,

@@ -62,7 +62,7 @@ describe('DashboardEditor', () => {
     // first find and click the the card
     const cardTitle = screen.getByTitle(mockValueCard.title);
     expect(cardTitle).toBeInTheDocument();
-    fireEvent.click(cardTitle);
+    fireEvent.mouseDown(cardTitle);
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
 
