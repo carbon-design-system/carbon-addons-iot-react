@@ -283,8 +283,12 @@ const DataSeriesFormItem = ({
         ...dataSection,
         {
           ...(itemWithMetaData && { ...itemWithMetaData }),
-          // create a unique dataSourceId
-          dataSourceId: `${selectedItem.id}_${uuid.v4()}`,
+          // create a unique dataSourceId if it's going into attributes
+          // if it's going into the groupBy section then just use the dataItem ID
+          dataSourceId:
+            itemWithMetaData?.destination === 'groupBy'
+              ? selectedItem.id
+              : `${selectedItem.id}_${uuid.v4()}`,
         },
       ];
       // need to remove the category if the card is a stacked timeseries bar
