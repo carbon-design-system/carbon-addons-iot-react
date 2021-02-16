@@ -42,7 +42,7 @@ const TableToolbarSVGButton = ({ onClick, testId, className, description, isActi
       onClick={onClick}
       title={description}
       iconDescription={description}
-      data-testid={testId}
+      testID={testId}
     />
   );
 };

@@ -1036,7 +1036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <button
                 className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
-                data-testid="Button"
+                data-testid="card-edit-form-open-editor-button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1643,7 +1643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <button
                 className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
-                data-testid="Button"
+                data-testid="card-edit-form-open-editor-button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2474,7 +2474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <button
                 className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
-                data-testid="Button"
+                data-testid="card-edit-form-open-editor-button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -3492,7 +3492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <button
                 className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
-                data-testid="Button"
+                data-testid="card-edit-form-open-editor-button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -4116,7 +4116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <button
                   className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
-                  data-testid="Button"
+                  data-testid="card-edit-form-open-editor-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}

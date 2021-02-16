@@ -1171,10 +1171,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     </div>
                     <button
                       className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
-                      data-testid="download-button"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
+                      testID="download-button"
                       title="Download table content"
                       type="button"
                     >
@@ -1201,10 +1201,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     </button>
                     <button
                       className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
-                      data-testid="filter-button"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
+                      testID="filter-button"
                       title="Filters"
                       type="button"
                     >

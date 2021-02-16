@@ -58,7 +58,7 @@ const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID }
       <GroupLogic id={id} selected={groupLogic} onChange={handleChangeGroupLogic} />
       <div className={`${iotPrefix}--rule-builder-header__buttons`}>
         <Button
-          data-testid={`${testID}-add-rule-button`}
+          testID={`${testID}-add-rule-button`}
           kind="ghost"
           renderIcon={Add32}
           onClick={onAddRule()}
@@ -66,7 +66,7 @@ const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID }
           {mergedI18n.addRule}
         </Button>
         <Button
-          data-testid={`${testID}-add-group-button`}
+          testID={`${testID}-add-group-button`}
           kind="ghost"
           renderIcon={TextNewLine32}
           onClick={onAddRule(undefined, true)}

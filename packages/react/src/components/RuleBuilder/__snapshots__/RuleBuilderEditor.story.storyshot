@@ -97,10 +97,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="bx--btn bx--btn--ghost"
-            data-testid="rule-builder-header-add-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rule-builder-header-add-rule-button"
             type="button"
           >
             Add rule
@@ -122,10 +122,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost"
-            data-testid="rule-builder-header-add-group-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rule-builder-header-add-group-button"
             type="button"
           >
             Add group
@@ -308,10 +308,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="rsiru4rjba-remove-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rsiru4rjba-remove-rule-button"
             type="button"
           >
             <span
@@ -339,10 +339,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="rsiru4rjba-add-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rsiru4rjba-add-rule-button"
             type="button"
           >
             <span
@@ -370,10 +370,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="rsiru4rjba-add-group-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rsiru4rjba-add-group-button"
             type="button"
           >
             <span
@@ -562,10 +562,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="34bvyub9jq-remove-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="34bvyub9jq-remove-rule-button"
             type="button"
           >
             <span
@@ -593,10 +593,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="34bvyub9jq-add-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="34bvyub9jq-add-rule-button"
             type="button"
           >
             <span
@@ -624,10 +624,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="34bvyub9jq-add-group-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="34bvyub9jq-add-group-button"
             type="button"
           >
             <span
@@ -892,10 +892,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <button
               className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-              data-testid="ewc2z5kyfu-remove-rule-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
+              testID="ewc2z5kyfu-remove-rule-button"
               type="button"
             >
               <span
@@ -923,10 +923,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </button>
             <button
               className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-              data-testid="ewc2z5kyfu-add-rule-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
+              testID="ewc2z5kyfu-add-rule-button"
               type="button"
             >
               <span
@@ -954,10 +954,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </button>
             <button
               className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-              data-testid="ewc2z5kyfu-add-group-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
+              testID="ewc2z5kyfu-add-group-button"
               type="button"
             >
               <span
@@ -1146,10 +1146,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <button
               className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-              data-testid="hks7h2zin4-remove-rule-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
+              testID="hks7h2zin4-remove-rule-button"
               type="button"
             >
               <span
@@ -1177,10 +1177,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </button>
             <button
               className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-              data-testid="hks7h2zin4-add-rule-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
+              testID="hks7h2zin4-add-rule-button"
               type="button"
             >
               <span
@@ -1208,10 +1208,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </button>
             <button
               className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-              data-testid="hks7h2zin4-add-group-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
+              testID="hks7h2zin4-add-group-button"
               type="button"
             >
               <span
@@ -1476,10 +1476,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <button
                 className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-                data-testid="wg9hlv197c-remove-rule-button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
+                testID="wg9hlv197c-remove-rule-button"
                 type="button"
               >
                 <span
@@ -1507,10 +1507,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
               <button
                 className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-                data-testid="wg9hlv197c-add-rule-button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
+                testID="wg9hlv197c-add-rule-button"
                 type="button"
               >
                 <span
@@ -1538,10 +1538,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
               <button
                 className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-                data-testid="wg9hlv197c-add-group-button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
+                testID="wg9hlv197c-add-group-button"
                 type="button"
               >
                 <span
@@ -1806,10 +1806,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <button
                   className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-                  data-testid="7kadk2wfv8-remove-rule-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  testID="7kadk2wfv8-remove-rule-button"
                   type="button"
                 >
                   <span
@@ -1837,10 +1837,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <button
                   className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-                  data-testid="7kadk2wfv8-add-rule-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  testID="7kadk2wfv8-add-rule-button"
                   type="button"
                 >
                   <span
@@ -1868,10 +1868,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <button
                   className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-                  data-testid="7kadk2wfv8-add-group-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  testID="7kadk2wfv8-add-group-button"
                   type="button"
                 >
                   <span
@@ -2060,10 +2060,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <button
                   className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-                  data-testid="49mf09vjhn-remove-rule-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  testID="49mf09vjhn-remove-rule-button"
                   type="button"
                 >
                   <span
@@ -2091,10 +2091,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <button
                   className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-                  data-testid="49mf09vjhn-add-rule-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  testID="49mf09vjhn-add-rule-button"
                   type="button"
                 >
                   <span
@@ -2122,10 +2122,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <button
                   className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-                  data-testid="49mf09vjhn-add-group-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  testID="49mf09vjhn-add-group-button"
                   type="button"
                 >
                   <span
@@ -2281,10 +2281,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="bx--btn bx--btn--ghost"
-            data-testid="rule-builder-header-add-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rule-builder-header-add-rule-button"
             type="button"
           >
             Add rule
@@ -2306,10 +2306,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost"
-            data-testid="rule-builder-header-add-group-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rule-builder-header-add-group-button"
             type="button"
           >
             Add group
@@ -2492,10 +2492,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="rsiru4rjba-remove-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rsiru4rjba-remove-rule-button"
             type="button"
           >
             <span
@@ -2523,10 +2523,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="rsiru4rjba-add-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rsiru4rjba-add-rule-button"
             type="button"
           >
             <span
@@ -2554,10 +2554,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="rsiru4rjba-add-group-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rsiru4rjba-add-group-button"
             type="button"
           >
             <span
@@ -2710,10 +2710,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="bx--btn bx--btn--ghost"
-            data-testid="rule-builder-header-add-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rule-builder-header-add-rule-button"
             type="button"
           >
             Add rule
@@ -2735,10 +2735,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost"
-            data-testid="rule-builder-header-add-group-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rule-builder-header-add-group-button"
             type="button"
           >
             Add group
@@ -2921,10 +2921,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="rsiru4rjba-remove-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rsiru4rjba-remove-rule-button"
             type="button"
           >
             <span
@@ -2952,10 +2952,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="rsiru4rjba-add-rule-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rsiru4rjba-add-rule-button"
             type="button"
           >
             <span
@@ -2983,10 +2983,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </button>
           <button
             className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
-            data-testid="rsiru4rjba-add-group-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
+            testID="rsiru4rjba-add-group-button"
             type="button"
           >
             <span
