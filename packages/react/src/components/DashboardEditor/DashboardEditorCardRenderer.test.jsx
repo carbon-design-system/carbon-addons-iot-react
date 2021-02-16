@@ -92,6 +92,37 @@ describe('DashboardEditorCardRenderer', () => {
     // Should find the correct User icon and text
     expect(screen.getByTitle('User')).toBeInTheDocument();
   });
+  it('renderCardPreview should be respected', () => {
+    render(
+      <DashboardEditorCardRenderer
+        title="Alert Count"
+        id="facilitycard"
+        size="LARGE"
+        type="IMAGE"
+        content={{
+          src: 'landscape',
+          image: 'landscape',
+          alt: 'Sample image',
+          zoomMax: 10,
+          hasInsertFromUrl: true,
+        }}
+        breakpoint="lg"
+        values={{
+          hotspots: [
+            {
+              x: 35,
+              y: 65,
+              color: 'purple',
+              icon: 'Checkmark',
+            },
+          ],
+        }}
+        renderCardPreview={() => <div>Hi there</div>}
+      />
+    );
+    // Should find the correct card preview
+    expect(screen.getByText('Hi there')).toBeInTheDocument();
+  });
   it('image card renders custom default icon', () => {
     render(
       <DashboardEditorCardRenderer

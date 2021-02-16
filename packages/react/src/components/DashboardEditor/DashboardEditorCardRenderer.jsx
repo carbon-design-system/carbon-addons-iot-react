@@ -46,14 +46,20 @@ const renderDefaultCard = (props) => (
 const renderValueCard = (props) => (
   <ValueCard
     // render the icon in the right color in the card preview
-    renderIconByName={(iconName, iconProps) => {
-      const iconToRender = validThresholdIcons.find((icon) => icon.name === iconName)
-        ?.carbonIcon || <Warning24 />;
-      // eslint-disable-next-line react/prop-types
-      return (
-        <div style={{ color: iconProps.fill }}>{React.cloneElement(iconToRender, iconProps)}</div>
-      );
-    }}
+    renderIconByName={
+      props?.renderIconByName
+        ? props.renderIconByName
+        : (iconName, iconProps) => {
+            const iconToRender = validThresholdIcons.find((icon) => icon.name === iconName)
+              ?.carbonIcon || <Warning24 />;
+            // eslint-disable-next-line react/prop-types
+            return (
+              <div style={{ color: iconProps.fill }}>
+                {React.cloneElement(iconToRender, iconProps)}
+              </div>
+            );
+          }
+    }
     isEditable
     {...props}
   />
@@ -112,30 +118,36 @@ const renderTableCard = (props) => (
  */
 const renderImageCard = (props) => (
   <ImageCard
-    renderIconByName={(iconName, iconProps) => {
-      // first search the validHotspot Icons
-      const matchingHotspotIcon = validHotspotIcons.find((icon) => icon.id === iconName);
+    renderIconByName={
+      props?.renderIconByName
+        ? props.renderIconByName
+        : (iconName, iconProps) => {
+            // first search the validHotspot Icons
+            const matchingHotspotIcon = validHotspotIcons.find((icon) => icon.id === iconName);
 
-      // then search the validThresholdIcons
-      const matchingThresholdIcon = validThresholdIcons.find((icon) => icon.name === iconName);
-      const iconToRender = matchingHotspotIcon ? (
-        React.createElement(matchingHotspotIcon.icon, {
-          ...iconProps,
-          title: matchingHotspotIcon.text,
-        })
-      ) : matchingThresholdIcon ? (
-        React.cloneElement(matchingThresholdIcon.carbonIcon, {
-          ...iconProps,
-          title: matchingThresholdIcon.name,
-        })
-      ) : (
-        <Warning24 {...iconProps} />
-      );
+            // then search the validThresholdIcons
+            const matchingThresholdIcon = validThresholdIcons.find(
+              (icon) => icon.name === iconName
+            );
+            const iconToRender = matchingHotspotIcon ? (
+              React.createElement(matchingHotspotIcon.icon, {
+                ...iconProps,
+                title: matchingHotspotIcon.text,
+              })
+            ) : matchingThresholdIcon ? (
+              React.cloneElement(matchingThresholdIcon.carbonIcon, {
+                ...iconProps,
+                title: matchingThresholdIcon.name,
+              })
+            ) : (
+              <Warning24 {...iconProps} />
+            );
 
-      // otherwise default to Warning24
-      // eslint-disable-next-line react/prop-types
-      return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
-    }}
+            // otherwise default to Warning24
+            // eslint-disable-next-line react/prop-types
+            return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
+          }
+    }
     {...props}
     isEditable // render the icon in the right color in the card preview
     values={{
