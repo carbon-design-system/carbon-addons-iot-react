@@ -283,8 +283,7 @@ const TimeSeriesCard = ({
 
   const sampleValues = useMemo(
     () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [series, interval, timeRange]
+    [series, timeDataSourceId, interval, timeRange]
   );
 
   const values = isEditable ? sampleValues : valuesProp;

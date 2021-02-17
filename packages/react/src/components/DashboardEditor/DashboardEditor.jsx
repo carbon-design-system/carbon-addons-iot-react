@@ -668,7 +668,7 @@ const DashboardEditor = ({
                         onDuplicate={duplicateCard}
                         baseClassName={baseClassName}
                         onValidateUploadedImage={onValidateUploadedImage}
-                        onShowGallery={handleShowImageGallery}
+                        onShowImageGallery={handleShowImageGallery}
                         renderIconByName={renderIconByName}
                         setSelectedCardId={setSelectedCardId}
                       />
