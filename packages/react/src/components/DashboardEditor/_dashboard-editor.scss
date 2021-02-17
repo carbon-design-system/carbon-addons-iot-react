@@ -67,11 +67,16 @@
       display: flex;
     }
   }
+
   &--preview {
     flex: 1;
-    background-color: $text-03;
     margin-left: $spacing-05;
     margin-right: $spacing-05;
+
+    &__selected-breakpoint {
+      background-color: $text-03;
+      overflow-x: auto; // allows a larger width
+    }
 
     &__card:focus {
       outline: 2px solid $focus;
@@ -101,10 +106,12 @@
 
     &__grid-container {
       // force a larger height so the background color will stretch the full height
-      height: 100vh;
+      // 3rem for the navbar, 100px for the PageTitleBar header
+      min-height: calc(100vh - 7rem - 100px);
       background-color: $ui-background;
     }
   }
+
   &--sidebar {
     min-height: 100%;
     width: 16rem;
