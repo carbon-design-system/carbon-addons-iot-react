@@ -5,9 +5,10 @@ import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
 import isEqual from 'lodash/isEqual';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import scrollIntoView from 'scroll-into-view-if-needed';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
-import List from '../List';
+import List, { ListItemPropTypes } from '../List';
 import {
   EditingStyle,
   handleEditModeSelect,
@@ -40,7 +41,7 @@ const propTypes = {
   /** Buttons to be presented in List header */
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** ListItems to be displayed */
-  items: PropTypes.arrayOf(PropTypes.any).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
   /** Internationalization text */
   i18n: PropTypes.shape({
     /** Text displayed in search bar */
@@ -58,6 +59,8 @@ const propTypes = {
   isFullHeight: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** optionally makings each list item a large / fat row */
+  isLargeRow: PropTypes.bool,
   /** Determines the number of rows per page */
   pageSize: PropTypes.string,
   /** Item id to be pre-selected */
@@ -74,6 +77,8 @@ const propTypes = {
   cancelMoveClicked: PropTypes.func,
   /**  Is data currently being sent to the backend */
   sendingData: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  /** optional classname to be passed to the dom element */
+  className: PropTypes.string,
 };
 
 const defaultProps = {
@@ -98,6 +103,7 @@ const defaultProps = {
   },
   isFullHeight: false,
   isLoading: false,
+  isLargeRow: false,
   pageSize: null,
   defaultSelectedId: null,
   defaultExpandedIds: [],
@@ -108,6 +114,8 @@ const defaultProps = {
   itemWillMove: () => {
     return true;
   },
+  className: null,
+  items: [],
 };
 
 /**
@@ -138,6 +146,7 @@ export const searchForNestedItemValues = (items, value) => {
     } // if the item matches, add it to the filterItems array
     else if (
       !isNil(item.content.secondaryValue) &&
+      typeof item.content.secondaryValue === 'string' &&
       caseInsensitiveSearch([item.content.value, item.content.secondaryValue], value)
     ) {
       filteredItems.push(item);
@@ -187,6 +196,7 @@ const HierarchyList = ({
   i18n,
   isFullHeight,
   isLoading,
+  isLargeRow,
   pageSize,
   defaultSelectedId,
   defaultExpandedIds,
@@ -195,10 +205,11 @@ const HierarchyList = ({
   itemWillMove,
   cancelMoveClicked,
   sendingData,
+  className,
 }) => {
   const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
   const [searchValue, setSearchValue] = useState('');
-  const [filteredItems, setFilteredItems] = useState(cloneDeep(items));
+  const [filteredItems, setFilteredItems] = useState(items);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
@@ -208,14 +219,15 @@ const HierarchyList = ({
     setFilteredItems(items);
   }, [items]);
 
-  const selectedItemRef = useCallback(
-    (node) => {
-      // eslint-disable-next-line no-unused-expressions
-      node?.parentNode?.scrollIntoView();
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultSelectedId]
-  );
+  const selectedItemRef = useCallback((node) => {
+    if (node && node.parentNode) {
+      scrollIntoView(node.parentNode, {
+        scrollMode: 'if-needed',
+        block: 'nearest',
+        inline: 'nearest',
+      });
+    }
+  }, []);
 
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
@@ -261,7 +273,6 @@ const HierarchyList = ({
         }
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [defaultSelectedId, items]
   );
 
@@ -353,23 +364,25 @@ const HierarchyList = ({
 
   return (
     <>
-      <HierarchyListReorderModal
-        open={showModal}
-        items={items}
-        selectedIds={editModeSelectedIds}
-        i18n={i18n}
-        onClose={() => {
-          setShowModal(false);
-        }}
-        onSubmit={(dropId) => {
-          if (dropId !== null) {
-            handleMove(editModeSelectedIds, dropId, DropLocation.Nested);
-          }
+      {editingStyle ? (
+        <HierarchyListReorderModal
+          open={showModal}
+          items={items}
+          selectedIds={editModeSelectedIds}
+          i18n={i18n}
+          onClose={() => {
+            setShowModal(false);
+          }}
+          onSubmit={(dropId) => {
+            if (dropId !== null) {
+              handleMove(editModeSelectedIds, dropId, DropLocation.Nested);
+            }
 
-          setShowModal(false);
-        }}
-        sendingData={sendingData}
-      />
+            setShowModal(false);
+          }}
+          sendingData={sendingData}
+        />
+      ) : null}
       <List
         title={title}
         buttons={buttons}
@@ -414,11 +427,13 @@ const HierarchyList = ({
         pagination={hasPagination ? pagination : null}
         isFullHeight={isFullHeight}
         isLoading={isLoading}
+        isLargeRow={isLargeRow}
         itemWillMove={itemWillMove}
         selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
         handleSelect={handleSelect}
         ref={selectedItemRef}
         onItemMoved={handleDrag}
+        className={className}
       />
     </>
   );

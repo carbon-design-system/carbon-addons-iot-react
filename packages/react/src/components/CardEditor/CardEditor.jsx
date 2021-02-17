@@ -19,22 +19,26 @@ const propTypes = {
     title: PropTypes.string,
     size: PropTypes.string,
     type: PropTypes.string,
-    content: PropTypes.shape({
-      series: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string,
-          dataSourceId: PropTypes.string,
-          color: PropTypes.string,
-        })
-      ),
-      xLabel: PropTypes.string,
-      yLabel: PropTypes.string,
-      unit: PropTypes.string,
-      includeZeroOnXaxis: PropTypes.bool,
-      includeZeroOnYaxis: PropTypes.bool,
-      timeDataSourceId: PropTypes.string,
-      showLegend: PropTypes.bool,
-    }),
+    content: PropTypes.oneOfType([
+      PropTypes.shape({
+        series: PropTypes.arrayOf(
+          PropTypes.shape({
+            label: PropTypes.string,
+            dataSourceId: PropTypes.string,
+            color: PropTypes.string,
+          })
+        ),
+        xLabel: PropTypes.string,
+        yLabel: PropTypes.string,
+        unit: PropTypes.string,
+        includeZeroOnXaxis: PropTypes.bool,
+        includeZeroOnYaxis: PropTypes.bool,
+        timeDataSourceId: PropTypes.string,
+        showLegend: PropTypes.bool,
+      }),
+      // custom card content is a function
+      PropTypes.func,
+    ]),
     interval: PropTypes.string,
   }),
   /** Callback function when user clicks Show Gallery */
@@ -43,6 +47,11 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Callback function when card is added from list */
   onAddCard: PropTypes.func.isRequired,
+
+  /** if provided, allows the consumer to make changes to the cardConfig for preview in the JSON editor modal.
+   * onCardJsonPreview(card)
+   */
+  onCardJsonPreview: PropTypes.func,
   /** if provided, returns an array of strings which are the dataItems to be allowed
    * on each card
    * getValidDataItems(card, selectedTimeRange)
@@ -131,6 +140,7 @@ const defaultProps = {
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
+  onCardJsonPreview: null,
   dataItems: [],
   availableDimensions: {},
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
@@ -154,6 +164,7 @@ const CardEditor = ({
   getValidTimeRanges,
   dataItems,
   onValidateCardJson,
+  onCardJsonPreview,
   supportedCardTypes,
   availableDimensions,
   icons,
@@ -206,6 +217,7 @@ const CardEditor = ({
             getValidDataItems={getValidDataItems}
             getValidTimeRanges={getValidTimeRanges}
             onValidateCardJson={onValidateCardJson}
+            onCardJsonPreview={onCardJsonPreview}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}

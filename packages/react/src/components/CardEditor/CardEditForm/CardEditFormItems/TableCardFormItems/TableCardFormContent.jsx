@@ -1,14 +1,16 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Edit16 } from '@carbon/icons-react';
+import { Edit16, Subtract16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
+import omit from 'lodash/omit';
+import uuid from 'uuid';
 
 import { settings } from '../../../../../constants/Settings';
 import {
   handleDataSeriesChange,
   DataItemsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
-import { Button, List, MultiSelect } from '../../../../../index';
+import { Button, List, MultiSelect, ComboBox } from '../../../../../index';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import ContentFormItemTitle from '../ContentFormItemTitle';
 import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
@@ -26,8 +28,7 @@ const propTypes = {
         PropTypes.shape({
           label: PropTypes.string,
           dataSourceId: PropTypes.string,
-          // most data item columns won't have types, only dimensions or timestamps
-          type: PropTypes.oneOf(['DIMENSION', 'TIMESTAMP']),
+          type: PropTypes.string,
         })
       ),
     }),
@@ -52,10 +53,16 @@ const propTypes = {
   }),
   /** an array of dataItems to be included on each card */
   dataItems: DataItemsPropTypes,
+  /** if provided, returns an array of strings which are the dataItems to be allowed
+   * on each card
+   * getValidDataItems(card, selectedTimeRange)
+   */
+  getValidDataItems: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  selectedTimeRange: PropTypes.string.isRequired,
   /** list of dataItem names that have been selected to display on the card */
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   /** the callback is called with a list of the new data item names selected */
@@ -83,9 +90,11 @@ const defaultProps = {
     dataItem: 'Data item',
     edit: 'Edit',
     remove: 'Remove',
+    filter: 'Filter',
     customize: 'Customize',
   },
   dataItems: [],
+  getValidDataItems: null,
   selectedDataItems: [],
   availableDimensions: {},
   dataSeriesItemLinks: null,
@@ -94,7 +103,9 @@ const defaultProps = {
 const TableCardFormContent = ({
   cardConfig,
   dataItems,
+  getValidDataItems,
   onChange,
+  selectedTimeRange,
   selectedDataItems,
   setSelectedDataItems,
   availableDimensions,
@@ -110,6 +121,7 @@ const TableCardFormContent = ({
   const [showEditor, setShowEditor] = useState(false);
   // Need to keep track of the data item that's currently being edited so the detailed modal knows which one to show
   const [editDataItem, setEditDataItem] = useState({});
+  const [removedDataItems, setRemovedDataItems] = useState([]);
 
   // Initialize the selected columns if its not currently set
   const dataSection = useMemo(
@@ -117,27 +129,19 @@ const TableCardFormContent = ({
       Array.isArray(columns)
         ? columns.map((column) => ({
             ...column, // dataSection expects the thresholds to be in the column definition, though the table expects them to be in content
-            thresholds: thresholds?.filter(
-              (threshold) => column.dataSourceId === threshold.dataSourceId
-            ),
+            ...(!isEmpty(thresholds) // only set thresholds if they exist
+              ? {
+                  thresholds: thresholds?.filter(
+                    (threshold) => column.dataSourceId === threshold.dataSourceId
+                  ),
+                }
+              : {}),
           }))
         : [],
     [columns, thresholds]
   );
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
-
-  // This is used in the edit case where some of these data items have been selected before
-  const initialSelectedAttributes = useMemo(
-    () =>
-      dataSection
-        .filter((col) => !col.type)
-        .map(({ dataSourceId }) => ({
-          id: dataSourceId,
-          text: dataSourceId,
-        })),
-    [dataSection]
-  );
 
   // find valid dimension data item names
   const validDimensions = useMemo(
@@ -147,23 +151,49 @@ const TableCardFormContent = ({
 
   const initialSelectedDimensions = useMemo(
     () =>
-      dataSection
-        .filter((col) => col.type === 'DIMENSION')
-        .map(({ dataSourceId }) => ({
-          id: dataSourceId,
-          text: dataSourceId,
-        })),
-    [dataSection]
-  );
-
-  const validDataItems = useMemo(
-    () =>
-      dataItems?.map(({ dataSourceId }) => ({
+      cardConfig?.dataSource?.groupBy?.map((dataSourceId) => ({
         id: dataSourceId,
         text: dataSourceId,
       })),
-    [dataItems]
+    [cardConfig]
   );
+
+  const validDataItems = getValidDataItems
+    ? getValidDataItems(cardConfig, selectedTimeRange)
+    : dataItems;
+
+  const validDataItemsForDropdown = useMemo(
+    () =>
+      validDataItems?.map(({ dataSourceId, dataItemId }) => ({
+        id: dataItemId,
+        text: dataSourceId,
+      })),
+    [validDataItems]
+  );
+
+  const handleOnDataSeriesChange = (selectedItem) => {
+    // ignore the extra value added by the "enter" keypress
+    if (selectedItem && !selectedItem.id.includes('iot-input')) {
+      const itemWithMetaData = validDataItems?.find(
+        ({ dataItemId }) => dataItemId === selectedItem.id
+      );
+      const selectedItems = [
+        ...dataSection,
+        {
+          ...(itemWithMetaData && { ...itemWithMetaData }),
+          // create a unique dataSourceId if it's going into the attributes section
+          // if it's going into the groupBy section, then just use the dataItemId
+          dataSourceId:
+            itemWithMetaData?.destination === 'groupBy'
+              ? selectedItem.id
+              : `${selectedItem.id}_${uuid.v4()}`,
+        },
+      ];
+      const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null);
+      setSelectedDataItems(selectedItems.map(({ text }) => text));
+      onChange(newCard);
+    }
+  };
 
   // need to handle thresholds from the DataSeriesFormItemModal and convert it to the right format
   const handleDataItemModalChanges = useCallback(
@@ -189,11 +219,79 @@ const TableCardFormContent = ({
         content: {
           ...card.content,
           columns: updatedColumns,
-          thresholds: allThresholds,
+          ...(!isEmpty(allThresholds) ? { thresholds: allThresholds } : {}),
         },
       });
     },
     [onChange]
+  );
+
+  const handleRemoveButton = useCallback(
+    (dataItem) => {
+      const filteredColumns = dataSection.filter(
+        (item) => item.dataSourceId !== dataItem.dataSourceId
+      );
+      // Need to determine whether we should remove these from the groupBy section
+      const filteredGroupBy = cardConfig?.dataSource?.groupBy?.filter(
+        (groupByItem) => groupByItem !== dataItem.dataSourceId
+      );
+      setSelectedDataItems(filteredColumns.map((item) => item.dataSourceId));
+      setRemovedDataItems([...removedDataItems, dataItem]);
+      // if we no longer have a groupBy, then we can exclude the dataSource from the response
+      onChange(
+        omit({
+          ...cardConfig,
+          content: {
+            ...cardConfig.content,
+            columns: filteredColumns,
+          },
+          ...(dataItem.destination === 'groupBy' && !isEmpty(filteredGroupBy) // if the removed item was from the groupBy section then update it
+            ? { dataSource: { ...cardConfig.dataSource, groupBy: filteredGroupBy } }
+            : cardConfig.dataSource
+            ? { dataSource: { ...omit(cardConfig.dataSource, 'groupBy') } }
+            : {}),
+        })
+      );
+    },
+    [cardConfig, dataSection, onChange, removedDataItems, setSelectedDataItems]
+  );
+
+  const dataListItems = useMemo(
+    () =>
+      dataSection?.map((dataItem) => ({
+        id: dataItem.dataSourceId,
+        content: {
+          value: dataItem.label || dataItem.dataItemId,
+          icon: null,
+          rowActions: () => [
+            <Button
+              key={`data-item-${dataItem.dataSourceId}`}
+              renderIcon={Edit16}
+              hasIconOnly
+              kind="ghost"
+              size="small"
+              onClick={() => {
+                const dataItemWithMetaData = validDataItems.find(
+                  ({ dataItemId }) => dataItemId === dataItem.dataItemId
+                );
+                setEditDataItem({ ...dataItemWithMetaData, ...dataItem });
+                setShowEditor(true);
+              }}
+              iconDescription={mergedI18n.edit}
+            />,
+            <Button
+              key={`data-item-${dataItem.dataSourceId}_remove`}
+              renderIcon={Subtract16}
+              hasIconOnly
+              kind="ghost"
+              size="small"
+              onClick={() => handleRemoveButton(dataItem)}
+              iconDescription={mergedI18n.remove}
+            />,
+          ],
+        },
+      })),
+    [dataSection, handleRemoveButton, mergedI18n.edit, mergedI18n.remove, validDataItems]
   );
 
   return (
@@ -224,23 +322,25 @@ const TableCardFormContent = ({
       <div
         className={`${baseClassName}--input`} // data item selector
       >
-        <MultiSelect
+        <ComboBox
           // need to re-gen if selected card changes or if a dataItem is removed from the list
-          key={`data-item-select-selected_card-id-${cardConfig.id}`}
-          id={`${cardConfig.id}_dataSourceIds`}
-          label={mergedI18n.selectDataItems}
-          direction="bottom"
-          itemToString={(item) => item.id}
-          initialSelectedItems={initialSelectedAttributes}
-          items={validDataItems}
-          translateWithId={translateWithId}
-          light
-          onChange={({ selectedItems }) => {
-            const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null, false);
-            setSelectedDataItems(selectedItems.map(({ id }) => id));
-            onChange(newCard);
-          }}
+          key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
+          id={`${cardConfig.id}_dataSourceIds-combobox`}
+          items={validDataItemsForDropdown}
+          itemToString={(item) => item?.text}
           titleText={mergedI18n.dataItem}
+          addToList={false}
+          placeholder={mergedI18n.filter}
+          translateWithId={translateWithId}
+          shouldFilterItem={({ item, inputValue }) => {
+            return (
+              isEmpty(inputValue) || item?.text?.toLowerCase()?.includes(inputValue?.toLowerCase())
+            );
+          }}
+          // clears out the input field after each selection
+          selectedItem={{ id: '', text: '' }}
+          onChange={handleOnDataSeriesChange}
+          light
         />
       </div>
 
@@ -250,7 +350,7 @@ const TableCardFormContent = ({
         >
           <MultiSelect
             // need to re-gen if selected card changes or if a dataItem is removed from the list
-            key={`data-item-select-selected_card-id-${cardConfig.id}`}
+            key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
             id={`${cardConfig.id}_dataSourceIds`}
             label={mergedI18n.selectGroupByDimensions}
             translateWithId={translateWithId}
@@ -262,11 +362,16 @@ const TableCardFormContent = ({
             onChange={({ selectedItems }) => {
               // Add the new dimensions as dimension columns at the beginning of the table
               const newCard = handleDataSeriesChange(
-                selectedItems.map((i) => ({ ...i, type: 'DIMENSION' })),
+                selectedItems.map((i) => ({
+                  dataItemId: i.id,
+                  dataSourceId: i.id,
+                  label: i.text,
+                  type: 'DIMENSION',
+                  destination: 'groupBy',
+                })),
                 cardConfig,
                 null,
-                null,
-                true
+                null
               );
               // setSelectedDataItems(selectedItems.map(({ id }) => id));
               onChange(newCard);
@@ -281,27 +386,7 @@ const TableCardFormContent = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={dataSection?.map((dataItem) => ({
-          id: dataItem.dataSourceId,
-          content: {
-            value: dataItem.label,
-            icon: null,
-            rowActions: () => [
-              <Button
-                key={`data-item-${dataItem.dataSourceId}`}
-                renderIcon={Edit16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => {
-                  setEditDataItem(dataItem);
-                  setShowEditor(true);
-                }}
-                iconDescription={mergedI18n.edit}
-              />,
-            ],
-          },
-        }))}
+        items={dataListItems}
       />
     </>
   );

@@ -279,12 +279,14 @@ export const determinePrecision = (size, value, precision) => {
  * @param {any} value any value possible, but will only special format if a number
  * @param {string} size card size
  * @param {string} unit any optional units to show
+ * @param {number} the selected precision value
  */
-export const chartValueFormatter = (value, size, unit, locale) => {
-  const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
+export const chartValueFormatter = (value, size, unit, locale, precision) => {
+  const precisionToFormat =
+    precision || determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
   let renderValue = value;
   if (typeof value === 'number') {
-    renderValue = formatNumberWithPrecision(value, precision, locale);
+    renderValue = formatNumberWithPrecision(value, precisionToFormat, locale);
   } else if (isNil(value)) {
     renderValue = '--';
   }

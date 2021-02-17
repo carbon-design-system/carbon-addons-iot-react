@@ -53,6 +53,18 @@ const selectData = [
     id: 'option-C',
     text: 'option-C',
   },
+  {
+    id: 'option-D',
+    text: 'option-D',
+  },
+  {
+    id: 'option-E',
+    text: 'option-E',
+  },
+  {
+    id: 'option-F',
+    text: 'option-F',
+  },
 ];
 
 const STATUS = {
@@ -1115,8 +1127,8 @@ export const StatefulExampleWithCreateSaveViews = () => {
     // Simple description example that can be replaced by any string or node.
     // See the TableSaveViewModal story for more examples.
     const getDescription = ({ table, filters, toolbar }) =>
-      `Columns: ${table.ordering.filter((col) => !col.isHidden).length}, 
-        Filters: ${filters?.length || 0}, 
+      `Columns: ${table.ordering.filter((col) => !col.isHidden).length},
+        Filters: ${filters?.length || 0},
         Search: ${toolbar?.search?.defaultValue}`;
 
     return (
@@ -1542,8 +1554,8 @@ export const TableExampleWithCreateSaveViews = () => {
     // Simple description example that can be replaced by any string or node.
     // See the TableSaveViewModal story for more examples.
     const getDescription = ({ table, filters, toolbar }) =>
-      `Columns: ${table.ordering.filter((col) => !col.isHidden).length}, 
-        Filters: ${filters?.length || 0}, 
+      `Columns: ${table.ordering.filter((col) => !col.isHidden).length},
+        Filters: ${filters?.length || 0},
         Search: ${toolbar?.search?.defaultValue}`;
 
     return (
@@ -1678,11 +1690,11 @@ TableExampleWithCreateSaveViews.story = {
   parameters: {
     info: {
       text: `
-      This story shows a partial implementation of how to add user View Management, 
+      This story shows a partial implementation of how to add user View Management,
       but the implemented examples should be enough to give you an idea on how to use it
-      together with your own state manager. We examplify by providing shallow implementations 
+      together with your own state manager. We examplify by providing shallow implementations
       for onChangeSort, onApplySearch and onApplyFilter. The story is using a simple state
-      object currentTableState and the data objects in the callbacks are just appended to that 
+      object currentTableState and the data objects in the callbacks are just appended to that
       state using the same ref, but in a real situation the state management would be more complex.
       The story's source code is too complex to successfully be shown here, please view
       the actual source code.

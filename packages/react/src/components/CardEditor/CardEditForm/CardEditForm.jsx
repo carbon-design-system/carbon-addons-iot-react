@@ -61,6 +61,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** if provided, allows the consumer to make changes to the cardConfig for preview in the JSON editor modal.
+   * onCardJsonPreview(card)
+   */
+  onCardJsonPreview: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
@@ -116,6 +120,7 @@ const defaultProps = {
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
+  onCardJsonPreview: null,
   dataItems: [],
   availableDimensions: {},
   onValidateCardJson: null,
@@ -164,7 +169,7 @@ export const basicCardValidation = (card) => {
 export const hideCardPropertiesForEditor = (card) => {
   let attributes;
   let series;
-  let hotspotAttributes;
+  let columns;
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
       omit(attribute, ['aggregationMethods', 'grain'])
@@ -175,24 +180,32 @@ export const hideCardPropertiesForEditor = (card) => {
       omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
-  if (card.values?.hotspots) {
-    hotspotAttributes = card.values.hotspots.map((hotspot) => ({
-      ...hotspot,
-      content: {
-        ...hotspot.content,
-        attributes: hotspot.content.attributes?.map((attribute) =>
-          omit(attribute, ['aggregationMethods', 'grain'])
-        ),
-      },
-    }));
+  if (card.content?.columns) {
+    columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
   }
   return omit(
-    attributes
+    attributes // VALUE CARD
       ? { ...card, content: { ...card.content, attributes } }
-      : series
+      : series // TIMESERIES AND BAR CHART CARDS
       ? { ...card, content: { ...card.content, series } }
-      : hotspotAttributes
-      ? { ...card, values: { ...card.values, hotspots: hotspotAttributes } }
+      : card.values?.hotspots // IMAGE CARD
+      ? {
+          ...card,
+          values: {
+            ...card.values,
+            hotspots: card.values?.hotspots?.map((hotspot) => ({
+              ...hotspot,
+              content: {
+                ...hotspot.content,
+                attributes: hotspot.content?.attributes?.map((attribute) =>
+                  omit(attribute, ['aggregationMethods', 'grain'])
+                ),
+              },
+            })),
+          },
+        }
+      : columns // TABLE CARD
+      ? { ...card, content: { ...card.content, columns } }
       : card,
     ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
   );
@@ -206,15 +219,7 @@ export const hideCardPropertiesForEditor = (card) => {
  * @param {Function} onChange
  * @param {Function} setShowEditor
  */
-export const handleSubmit = (
-  card,
-  id,
-  content,
-  setError,
-  onValidateCardJson,
-  onChange,
-  setShowEditor
-) => {
+export const handleSubmit = (card, id, setError, onValidateCardJson, onChange, setShowEditor) => {
   // first validate basic JSON syntax
   const basicErrors = basicCardValidation(card);
   // second validate the consumer's custom function if provided
@@ -225,7 +230,7 @@ export const handleSubmit = (
   const allErrors = basicErrors.concat(customValidationErrors);
   // then submit
   if (isEmpty(allErrors)) {
-    onChange({ ...JSON.parse(card), id, content });
+    onChange({ ...JSON.parse(card), id });
     setShowEditor(false);
     return true;
   }
@@ -241,6 +246,7 @@ const CardEditForm = ({
   i18n,
   dataItems,
   onValidateCardJson,
+  onCardJsonPreview,
   getValidDataItems,
   getValidTimeRanges,
   currentBreakpoint,
@@ -254,7 +260,7 @@ const CardEditForm = ({
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
-  const { id, content } = cardConfig;
+  const { id } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   return (
@@ -262,7 +268,7 @@ const CardEditForm = ({
       {showEditor ? (
         <CardCodeEditor
           onSubmit={(card, setError) =>
-            handleSubmit(card, id, content, setError, onValidateCardJson, onChange, setShowEditor)
+            handleSubmit(card, id, setError, onValidateCardJson, onChange, setShowEditor)
           }
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
@@ -298,19 +304,17 @@ const CardEditForm = ({
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             />
           </Tab>
-          <Tab label={mergedI18n.settingsTabLabel}>
-            <CardEditFormSettings
-              availableDimensions={availableDimensions}
-              cardConfig={
-                cardConfig.type === CARD_TYPES.CUSTOM
-                  ? { ...omit(cardConfig, 'content') }
-                  : cardConfig
-              }
-              onChange={onChange}
-              i18n={mergedI18n}
-              getValidDataItems={getValidDataItems}
-            />
-          </Tab>
+          {cardConfig.type !== CARD_TYPES.CUSTOM ? ( // we don't yet support settings for custom cards
+            <Tab label={mergedI18n.settingsTabLabel}>
+              <CardEditFormSettings
+                availableDimensions={availableDimensions}
+                cardConfig={cardConfig}
+                onChange={onChange}
+                i18n={mergedI18n}
+                getValidDataItems={getValidDataItems}
+              />
+            </Tab>
+          ) : null}
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
@@ -319,7 +323,10 @@ const CardEditForm = ({
             size="small"
             renderIcon={Code16}
             onClick={() => {
-              setModalData(JSON.stringify(hideCardPropertiesForEditor(cardConfig), null, 4));
+              const cardConfigForModal = onCardJsonPreview
+                ? onCardJsonPreview(hideCardPropertiesForEditor(cardConfig))
+                : hideCardPropertiesForEditor(cardConfig);
+              setModalData(JSON.stringify(cardConfigForModal, null, 4));
               setShowEditor(true);
             }}
           >

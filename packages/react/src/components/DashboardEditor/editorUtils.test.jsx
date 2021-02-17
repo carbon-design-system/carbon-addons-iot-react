@@ -335,8 +335,22 @@ describe('editorUtils', () => {
     };
     it('handleDataSeriesChange should correctly format the columns for new table card attributes', () => {
       const selectedItems = [
-        { id: 'key1', text: 'Key 1' },
-        { id: 'key2', text: 'Key 2' },
+        {
+          id: 'key1',
+          text: 'Key 1',
+          dataItemId: 'key1',
+          aggregationMethod: 'last',
+          label: 'Key 1',
+          dataSourceId: 'key1',
+        },
+        {
+          id: 'key2',
+          text: 'Key 2',
+          dataItemId: 'key2',
+          aggregationMethod: 'last',
+          label: 'Key 2',
+          dataSourceId: 'key2',
+        },
       ];
       const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {});
       expect(newCard).toEqual({
@@ -344,16 +358,25 @@ describe('editorUtils', () => {
         content: {
           columns: [
             {
+              dataItemId: 'timestamp',
               dataSourceId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
               sort: 'DESC',
             },
             {
+              id: 'key1',
+              text: 'Key 1',
+              dataItemId: 'key1',
+              aggregationMethod: 'last',
               dataSourceId: 'key1',
               label: 'Key 1',
             },
             {
+              id: 'key2',
+              text: 'Key 2',
+              dataItemId: 'key2',
+              aggregationMethod: 'last',
               dataSourceId: 'key2',
               label: 'Key 2',
             },
@@ -363,8 +386,33 @@ describe('editorUtils', () => {
     });
     it('handleDataSeriesChange existing card should correctly add the columns for new table card attributes', () => {
       const selectedItems = [
-        { id: 'key1', text: 'Key 1' },
-        { id: 'key2', text: 'Key 2' },
+        {
+          id: 'key1',
+          text: 'Key 1',
+          dataItemId: 'key1',
+          aggregationMethod: 'last',
+          label: 'Key 1',
+          dataSourceId: 'key1',
+          type: 'NUMBER',
+        },
+        {
+          id: 'key2',
+          text: 'Key 2',
+          dataItemId: 'key2',
+          aggregationMethod: 'last',
+          label: 'Key 2',
+          dataSourceId: 'key2',
+          type: 'NUMBER',
+        },
+        {
+          id: 'key3',
+          text: 'Key 3',
+          dataItemId: 'key3',
+          aggregationMethod: 'last',
+          label: 'Key 3',
+          dataSourceId: 'key3',
+          type: 'TIMESTAMP',
+        },
       ];
       const newCard = handleDataSeriesChange(
         selectedItems,
@@ -382,10 +430,6 @@ describe('editorUtils', () => {
                 dataSourceId: 'manufacturer',
                 label: 'Manufacturer',
                 type: 'DIMENSION',
-              },
-              {
-                dataSourceId: 'key1',
-                label: 'Key 1',
               },
             ],
           },
@@ -408,31 +452,59 @@ describe('editorUtils', () => {
               type: 'DIMENSION',
             },
             {
+              id: 'key1',
+              text: 'Key 1',
+              dataItemId: 'key1',
+              aggregationMethod: 'last',
               dataSourceId: 'key1',
               label: 'Key 1',
+              type: 'NUMBER',
             },
             {
+              id: 'key2',
+              text: 'Key 2',
+              dataItemId: 'key2',
+              aggregationMethod: 'last',
               dataSourceId: 'key2',
               label: 'Key 2',
+              type: 'NUMBER',
+            },
+            {
+              id: 'key3',
+              text: 'Key 3',
+              dataItemId: 'key3',
+              aggregationMethod: 'last',
+              label: 'Key 3',
+              dataSourceId: 'key3',
+              type: 'TIMESTAMP',
             },
           ],
         },
       });
     });
     it('handleDataSeriesChange should correctly format the columns for new table card dimensions', () => {
-      const selectedItems = [{ id: 'manufacturer', text: 'Manufacturer', type: 'DIMENSION' }];
+      const selectedItems = [
+        {
+          dataItemId: 'manufacturer',
+          dataSourceId: 'manufacturer',
+          label: 'Manufacturer',
+          type: 'DIMENSION',
+        },
+      ];
       const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {}, null, true);
       expect(newCard).toEqual({
         ...mockTableCard,
         content: {
           columns: [
             {
+              dataItemId: 'timestamp',
               dataSourceId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
               sort: 'DESC',
             },
             {
+              dataItemId: 'manufacturer',
               dataSourceId: 'manufacturer',
               label: 'Manufacturer',
               type: 'DIMENSION',
@@ -460,6 +532,11 @@ describe('editorUtils', () => {
               {
                 dataSourceId: 'manufacturer',
                 label: 'Manufacturer',
+                type: 'DIMENSION',
+              },
+              {
+                dataSourceId: 'deviceid',
+                label: 'Device',
                 type: 'DIMENSION',
               },
               {

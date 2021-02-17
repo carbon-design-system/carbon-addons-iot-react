@@ -299,6 +299,8 @@ const TableCard = ({
    */
   const generateThresholdColumn = (columnId) => {
     // Need to find the index of the dataSource regardless of uniqueThresholds ordering
+    // Find the matching column to get the correct label to put on the column
+    const matchingColumn = columnsUpdated.find((column) => column.dataSourceId === columnId);
     const uniqueThresholdIndex = uniqueThresholds.findIndex(
       (threshold) => threshold.dataSourceId === columnId
     );
@@ -306,7 +308,7 @@ const TableCard = ({
       id: `iconColumn-${columnId}`,
       label: uniqueThresholds[uniqueThresholdIndex].label
         ? uniqueThresholds[uniqueThresholdIndex].label
-        : `${capitalize(columnId)} ${mergedI18n.severityLabel}`,
+        : `${matchingColumn?.label || capitalize(columnId)} ${mergedI18n.severityLabel}`,
       width: uniqueThresholds[uniqueThresholdIndex].width,
       isSortable: true,
       renderDataFunction: renderThresholdIcon,
@@ -332,32 +334,29 @@ const TableCard = ({
     };
   };
 
-  // Don't add the icon column in sample mode
-  if (!isEditable) {
-    // Add the new threshold columns to the existing columns
-    uniqueThresholds.forEach((threshold) => {
-      const columnIndex = columnsUpdated.findIndex(
-        (column) => column.dataSourceId === threshold.dataSourceId
-      );
-      // If columnIndex is not -1, there was a match so add the column. Otherwise, skip the column as it will be added
-      // in the next call
-      if (columnIndex !== -1) {
-        columnsUpdated.splice(columnIndex, 0, generateThresholdColumn(threshold.dataSourceId));
-      }
-    });
-
-    // Check for any threshold columns that weren't matched (if the column was hidden) and add to the end of the array
-    const missingThresholdColumns = uniqueThresholds.filter((threshold) => {
-      return !columnsUpdated.find((column) => threshold.dataSourceId === column.dataSourceId);
-    });
-
-    if (missingThresholdColumns.length > 0) {
-      columnsUpdated.splice(
-        columnsUpdated.length,
-        0,
-        ...missingThresholdColumns.map(({ dataSourceId }) => generateThresholdColumn(dataSourceId))
-      );
+  // Add the new threshold columns to the existing columns
+  uniqueThresholds.forEach((threshold) => {
+    const columnIndex = columnsUpdated.findIndex(
+      (column) => column.dataSourceId === threshold.dataSourceId
+    );
+    // If columnIndex is not -1, there was a match so add the column. Otherwise, skip the column as it will be added
+    // in the next call
+    if (columnIndex !== -1) {
+      columnsUpdated.splice(columnIndex, 0, generateThresholdColumn(threshold.dataSourceId));
     }
+  });
+
+  // Check for any threshold columns that weren't matched (if the column was hidden) and add to the end of the array
+  const missingThresholdColumns = uniqueThresholds.filter((threshold) => {
+    return !columnsUpdated.find((column) => threshold.dataSourceId === column.dataSourceId);
+  });
+
+  if (missingThresholdColumns.length > 0) {
+    columnsUpdated.splice(
+      columnsUpdated.length,
+      0,
+      ...missingThresholdColumns.map(({ dataSourceId }) => generateThresholdColumn(dataSourceId))
+    );
   }
 
   const newColumns = thresholds ? columnsUpdated : columnsWithFormattedLinks;
@@ -652,7 +651,7 @@ const TableCard = ({
             tooltip={tooltip}
             options={{
               hasPagination: true,
-              hasSearch: true,
+              hasSearch: !isEditable, // Remove search bar on preview mode. https://github.ibm.com/wiotp/monitoring-dashboard/issues/1749
               hasFilter,
               hasRowExpansion,
             }}

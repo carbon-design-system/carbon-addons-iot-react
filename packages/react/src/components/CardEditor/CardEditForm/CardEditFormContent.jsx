@@ -38,6 +38,8 @@ const propTypes = {
         src: PropTypes.string,
         zoomMax: PropTypes.number,
       }),
+      // custom card content is a function
+      PropTypes.func,
     ]),
   }),
   /** Callback function when form data changes */
@@ -178,6 +180,7 @@ const CardEditFormContent = ({
           onChange={onChange}
           dataItems={dataItems}
           selectedDataItems={selectedDataItems}
+          selectedTimeRange={selectedTimeRange}
           setSelectedDataItems={setSelectedDataItems}
           getValidDataItems={getValidDataItems}
           availableDimensions={availableDimensions}

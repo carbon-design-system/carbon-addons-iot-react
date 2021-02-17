@@ -1,15 +1,55 @@
+import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+
 import { CARD_DIMENSIONS, CARD_SIZES } from '../../../constants/LayoutConstants';
 
-import { getCardSizeText, handleSubmit, hideCardPropertiesForEditor } from './CardEditForm';
+import CardEditForm, {
+  getCardSizeText,
+  handleSubmit,
+  hideCardPropertiesForEditor,
+} from './CardEditForm';
 
 const mockSetError = jest.fn();
 const mockOnChange = jest.fn();
+const mockOnCardJsonPreview = jest.fn();
 const mockSetShowEditor = jest.fn();
 const mockOnValidateCardJson = jest.fn().mockImplementation(() => []);
+
+const cardConfig = {
+  title: 'timeSeries',
+  size: 'MEDIUM',
+  content: {
+    series: [
+      {
+        dataItemId: 'torque',
+        dataSourceId: 'torque_id',
+        label: 'Torque',
+      },
+    ],
+  },
+};
+
 afterEach(() => {
   jest.clearAllMocks();
 });
 describe('CardEditForm', () => {
+  describe('CardEditForm', () => {
+    it('should fire onCardJsonPreview when opening the json modal', () => {
+      render(
+        <CardEditForm
+          cardConfig={cardConfig}
+          onChange={mockOnChange}
+          onCardJsonPreview={mockOnCardJsonPreview}
+        />
+      );
+      const openJsonBtn = screen.getByText('Open JSON editor');
+      expect(openJsonBtn).toBeInTheDocument();
+
+      fireEvent.click(openJsonBtn);
+
+      expect(mockOnCardJsonPreview).toHaveBeenCalledWith(cardConfig);
+    });
+  });
   describe('getCardSizeText', () => {
     const i18n = {
       cardSize_SMALL: 'Small',
@@ -53,34 +93,28 @@ describe('CardEditForm', () => {
   // meaning we can't fire user events on the form
   describe('handleSubmit', () => {
     it('should throw error if JSON is empty', () => {
-      handleSubmit(
-        '',
-        '',
-        '',
-        mockSetError,
-        mockOnValidateCardJson,
-        mockOnChange,
-        mockSetShowEditor
-      );
+      handleSubmit('', '', mockSetError, mockOnValidateCardJson, mockOnChange, mockSetShowEditor);
       expect(mockSetError).toBeCalledWith('Unexpected end of JSON input');
     });
     it('should call onChange and setShowEditor if JSON is valid', () => {
+      handleSubmit('{}', '', mockSetError, mockOnValidateCardJson, mockOnChange, mockSetShowEditor);
+      expect(mockOnChange).toBeCalled();
+      expect(mockSetShowEditor).toBeCalledWith(false);
+    });
+    it('should call onChange with content section changese', () => {
       handleSubmit(
-        '{}',
-        '',
+        '{"content":"my content"}',
         '',
         mockSetError,
         mockOnValidateCardJson,
         mockOnChange,
         mockSetShowEditor
       );
-      expect(mockOnChange).toBeCalled();
-      expect(mockSetShowEditor).toBeCalledWith(false);
+      expect(mockOnChange).toBeCalledWith(expect.objectContaining({ content: 'my content' }));
     });
     it('should throw error if JSON is not valid', () => {
       handleSubmit(
         '1234',
-        '',
         '',
         mockSetError,
         mockOnValidateCardJson,
@@ -138,6 +172,84 @@ describe('CardEditForm', () => {
               aggregationMethod: '',
               dataSourceId: 'torque',
               label: 'Torque',
+            },
+          ],
+        },
+      });
+    });
+    it('should hide properties in the columns section of a card', () => {
+      const sanitizedCard = hideCardPropertiesForEditor({
+        content: {
+          columns: [
+            {
+              aggregationMethods: [],
+              aggregationMethod: '',
+              grain: '',
+              dataSourceId: 'torque',
+              label: 'Torque',
+            },
+          ],
+        },
+      });
+      expect(sanitizedCard).toEqual({
+        content: {
+          columns: [
+            {
+              aggregationMethod: '',
+              dataSourceId: 'torque',
+              label: 'Torque',
+            },
+          ],
+        },
+      });
+    });
+    it('should hide properties in the hotspots section of a card', () => {
+      const sanitizedCard = hideCardPropertiesForEditor({
+        values: {
+          hotspots: [
+            {
+              x: 35,
+              y: 65,
+              icon: 'InformationFilled24',
+              color: 'green',
+              content: {
+                title: 'My Device',
+                description: 'Description',
+                attributes: [
+                  {
+                    dataItemId: 'temperature',
+                    dataSourceId: 'temperature',
+                    grain: '',
+                    aggregationMethods: [],
+                    label: 'Temp',
+                    precision: 2,
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      });
+      expect(sanitizedCard).toEqual({
+        values: {
+          hotspots: [
+            {
+              x: 35,
+              y: 65,
+              icon: 'InformationFilled24',
+              color: 'green',
+              content: {
+                title: 'My Device',
+                description: 'Description',
+                attributes: [
+                  {
+                    dataItemId: 'temperature',
+                    dataSourceId: 'temperature',
+                    label: 'Temp',
+                    precision: 2,
+                  },
+                ],
+              },
             },
           ],
         },

@@ -63,6 +63,7 @@ export const AttributePropTypes = PropTypes.shape({
       icon: PropTypes.string,
     })
   ),
+  precision: PropTypes.number,
   unit: PropTypes.string,
 });
 
@@ -303,6 +304,8 @@ export const BarChartCardPropTypes = {
     xLabel: PropTypes.string,
     /** y-axis display name */
     yLabel: PropTypes.string,
+    /** the amount of decimals to show in a bar chart */
+    decimalPrecision: PropTypes.number,
     /** defined dataset attributes */
     series: PropTypes.arrayOf(PropTypes.shape(BarChartDatasetPropType)).isRequired,
     /** for category type bar charts this is the x-axis value */
