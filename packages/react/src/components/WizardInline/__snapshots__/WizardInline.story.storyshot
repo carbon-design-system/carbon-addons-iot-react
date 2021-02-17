@@ -20,7 +20,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
@@ -75,7 +75,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -329,8 +329,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
-            width={200}
+            className="iot--wizard-inline__sidebar"
+            style={
+              Object {
+                "--min-width": "200px",
+              }
+            }
           >
             <div>
               sidebar
@@ -444,7 +448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
@@ -494,7 +498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -842,7 +846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
@@ -892,7 +896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -1239,7 +1243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
@@ -1289,7 +1293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -1543,8 +1547,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
-            width={200}
+            className="iot--wizard-inline__sidebar"
+            style={
+              Object {
+                "--min-width": "200px",
+              }
+            }
           >
             <div>
               sidebar
@@ -1649,7 +1657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
@@ -1699,7 +1707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -2047,7 +2055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
@@ -2097,7 +2105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li

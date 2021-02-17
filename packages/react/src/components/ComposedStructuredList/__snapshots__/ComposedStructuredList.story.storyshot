@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   >
     <section
       aria-label="Structured list section"
-      className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
+      className="bx--structured-list bx--structured-list--selection"
     >
       <div
         className="bx--structured-list-thead"
@@ -23,19 +23,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--structured-list-row bx--structured-list-row--header-row"
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            className="bx--structured-list-th"
             title="A"
           >
             A
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            className="bx--structured-list-th"
             title="B"
           >
             B
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            className="bx--structured-list-th"
             title="C"
           >
             C
@@ -51,8 +51,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           onClick={[Function]}
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title={null}
           >
             <span
@@ -66,8 +70,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             </span>
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey B"
           >
             <span
@@ -81,8 +89,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             </span>
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey C"
           >
             <span
@@ -101,8 +113,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           onClick={[Function]}
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey A again fixed column width"
           >
             <span
@@ -116,8 +132,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             </span>
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey B again"
           >
             <span
@@ -131,8 +151,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             </span>
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey C again"
           >
             <span
@@ -151,8 +175,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           onClick={[Function]}
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey hey A"
           >
             <span
@@ -166,8 +194,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             </span>
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey hey B"
           >
             <span
@@ -181,8 +213,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             </span>
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey hey C"
           >
             <span
@@ -239,7 +275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   >
     <section
       aria-label="Structured list section"
-      className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
+      className="bx--structured-list bx--structured-list--selection"
     >
       <div
         className="bx--structured-list-thead"
@@ -248,19 +284,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--structured-list-row bx--structured-list-row--header-row"
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            className="bx--structured-list-th"
             title="A"
           >
             A
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            className="bx--structured-list-th"
             title="B"
           >
             B
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            className="bx--structured-list-th"
             title="C"
           >
             C
@@ -276,22 +312,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           onClick={[Function]}
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title={null}
           >
             <div />
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey B"
           >
             hey B
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey C"
           >
             hey C
@@ -302,22 +350,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           onClick={[Function]}
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey A again fixed column width"
           >
             hey A again fixed column width
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey B again"
           >
             hey B again
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey C again"
           >
             hey C again
@@ -328,22 +388,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           onClick={[Function]}
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey hey A"
           >
             hey hey A
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey hey B"
           >
             hey hey B
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": undefined,
+              }
+            }
             title="hey hey C"
           >
             hey hey C
@@ -392,7 +464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   >
     <section
       aria-label="Structured list section"
-      className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
+      className="bx--structured-list bx--structured-list--selection"
     >
       <div
         className="bx--structured-list-thead"
@@ -401,19 +473,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--structured-list-row bx--structured-list-row--header-row"
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            className="bx--structured-list-th"
             title="A"
           >
             A
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            className="bx--structured-list-th"
             title="B"
           >
             B
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            className="bx--structured-list-th"
             title="C"
           >
             C
@@ -425,7 +497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         onKeyDown={[Function]}
       />
       <div
-        className="ComposedStructuredList__EmptyContent-oz9xih-1 cPSxzA"
+        className="iot--composed-structured-list__empty-content"
       >
         <svg
           aria-hidden={true}
@@ -442,7 +514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           />
         </svg>
         <div
-          className="ComposedStructuredList__LoadingDiv-oz9xih-2 jMkcSi"
+          className="iot--composed-structured-list__loading"
         >
           No data is available yet.
         </div>
@@ -489,7 +561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   >
     <section
       aria-label="Structured list section"
-      className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bmhAOa bx--structured-list--selection"
+      className="bx--structured-list iot--composed-structured-list__wrapper bx--structured-list--selection"
     >
       <div
         className="bx--structured-list-thead"
@@ -498,23 +570,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--structured-list-row bx--structured-list-row--header-row"
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-th"
+            className="iot--composed-structured-list__list-cell bx--structured-list-th"
             title="A"
-            width="10rem"
           >
             A
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-th"
+            className="iot--composed-structured-list__list-cell bx--structured-list-th"
             title="B"
-            width="12rem"
           >
             B
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-th"
+            className="iot--composed-structured-list__list-cell bx--structured-list-th"
             title="C"
-            width="14rem"
           >
             C
           </div>
@@ -525,7 +594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         onKeyDown={[Function]}
       />
       <div
-        className="ComposedStructuredList__EmptyContent-oz9xih-1 cPSxzA"
+        className="iot--composed-structured-list__empty-content"
       >
         <svg
           aria-hidden={true}
@@ -542,7 +611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           />
         </svg>
         <div
-          className="ComposedStructuredList__LoadingDiv-oz9xih-2 jMkcSi"
+          className="iot--composed-structured-list__loading"
         >
           No data is available yet.
         </div>
@@ -589,7 +658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   >
     <section
       aria-label="Structured list section"
-      className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bmhAOa bx--structured-list--selection"
+      className="bx--structured-list iot--composed-structured-list__wrapper bx--structured-list--selection"
     >
       <div
         className="bx--structured-list-thead"
@@ -598,23 +667,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--structured-list-row bx--structured-list-row--header-row"
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-th"
+            className="iot--composed-structured-list__list-cell bx--structured-list-th"
             title="A"
-            width="10rem"
           >
             A
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-th"
+            className="iot--composed-structured-list__list-cell bx--structured-list-th"
             title="B"
-            width="12rem"
           >
             B
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-th"
+            className="iot--composed-structured-list__list-cell bx--structured-list-th"
             title="C"
-            width="14rem"
           >
             C
           </div>
@@ -629,26 +695,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           onClick={[Function]}
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": "10rem",
+              }
+            }
             title={null}
-            width="10rem"
           >
             <div />
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": "12rem",
+              }
+            }
             title="hey B"
-            width="12rem"
           >
             hey B
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": "14rem",
+              }
+            }
             title="hey C"
-            width="14rem"
           >
             hey C
           </div>
@@ -658,26 +733,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           onClick={[Function]}
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": "10rem",
+              }
+            }
             title="hey A again fixed column width"
-            width="10rem"
           >
             hey A again fixed column width
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": "12rem",
+              }
+            }
             title="hey B again"
-            width="12rem"
           >
             hey B again
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": "14rem",
+              }
+            }
             title="hey C again"
-            width="14rem"
           >
             hey C again
           </div>
@@ -687,26 +771,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           onClick={[Function]}
         >
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": "10rem",
+              }
+            }
             title="hey hey A"
-            width="10rem"
           >
             hey hey A
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": "12rem",
+              }
+            }
             title="hey hey B"
-            width="12rem"
           >
             hey hey B
           </div>
           <div
-            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-td bx--structured-list-content--nowrap"
-            style={Object {}}
+            className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
+            style={
+              Object {
+                "--width": "14rem",
+              }
+            }
             title="hey hey C"
-            width="14rem"
           >
             hey hey C
           </div>

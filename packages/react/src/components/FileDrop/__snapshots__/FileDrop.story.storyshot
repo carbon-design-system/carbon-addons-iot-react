@@ -34,7 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         type="file"
       />
       <div
-        className="FileDrop__Text-xfd081-2 ctUatE"
+        className="iot--file-drop__text"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}
@@ -51,7 +51,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
             role="presentation"
           >
             <button
-              className="FileDrop__LinkButton-xfd081-1 jAHgUA"
+              className="iot--file-drop__link-button"
+              type="button"
             >
               Try it out!
             </button>
@@ -284,7 +285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         type="file"
       />
       <div
-        className="FileDrop__Text-xfd081-2 ctUatE"
+        className="iot--file-drop__text"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}
@@ -301,7 +302,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
             role="presentation"
           >
             <button
-              className="FileDrop__LinkButton-xfd081-1 jAHgUA"
+              className="iot--file-drop__link-button"
+              type="button"
             >
               Try it out!
             </button>
@@ -372,7 +374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         type="file"
       />
       <div
-        className="FileDrop__Text-xfd081-2 ctUatE"
+        className="iot--file-drop__text"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}
@@ -389,7 +391,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
             role="presentation"
           >
             <button
-              className="FileDrop__LinkButton-xfd081-1 jAHgUA"
+              className="iot--file-drop__link-button"
+              type="button"
             >
               Try it out!
             </button>
@@ -460,7 +463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         type="file"
       />
       <div
-        className="FileDrop__Text-xfd081-2 ctUatE"
+        className="iot--file-drop__text"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}
@@ -477,7 +480,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
             role="presentation"
           >
             <button
-              className="FileDrop__LinkButton-xfd081-1 jAHgUA"
+              className="iot--file-drop__link-button"
+              type="button"
             >
               Try it out!
             </button>
