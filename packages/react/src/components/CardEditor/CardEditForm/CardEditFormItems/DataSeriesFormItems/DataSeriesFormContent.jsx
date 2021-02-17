@@ -27,22 +27,25 @@ const propTypes = {
     title: PropTypes.string,
     size: PropTypes.string,
     type: PropTypes.string,
-    content: PropTypes.shape({
-      series: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string,
-          dataSourceId: PropTypes.string,
-          color: PropTypes.string,
-        })
-      ),
-      xLabel: PropTypes.string,
-      yLabel: PropTypes.string,
-      unit: PropTypes.string,
-      includeZeroOnXaxis: PropTypes.bool,
-      includeZeroOnYaxis: PropTypes.bool,
-      timeDataSourceId: PropTypes.string,
-      showLegend: PropTypes.bool,
-    }),
+    content: PropTypes.oneOfType([
+      PropTypes.shape({
+        series: PropTypes.arrayOf(
+          PropTypes.shape({
+            label: PropTypes.string,
+            dataSourceId: PropTypes.string,
+            color: PropTypes.string,
+          })
+        ),
+        xLabel: PropTypes.string,
+        yLabel: PropTypes.string,
+        unit: PropTypes.string,
+        includeZeroOnXaxis: PropTypes.bool,
+        includeZeroOnYaxis: PropTypes.bool,
+        timeDataSourceId: PropTypes.string,
+        showLegend: PropTypes.bool,
+      }), // custom card content is a function
+      PropTypes.func,
+    ]),
     interval: PropTypes.string,
   }),
   /* callback when data item input value changes */
@@ -253,21 +256,10 @@ const DataSeriesFormItem = ({
   const canMultiSelectDataItems = cardConfig.content?.type !== BAR_CHART_TYPES.SIMPLE;
 
   // determine which content section to look at
-  const data =
+  const dataSection =
     cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR
       ? cardConfig?.content?.series
       : cardConfig?.content?.attributes;
-
-  // initialize items with a unique dataSourceId if not present
-  const dataSection = useMemo(
-    () =>
-      data?.map((item) =>
-        item.dataSourceId !== item.dataItemId
-          ? item
-          : { ...item, dataSourceId: `${item.dataSourceId}_${uuid.v4()}` }
-      ),
-    [data]
-  );
 
   const validDataItems = useMemo(
     () => (getValidDataItems ? getValidDataItems(cardConfig, selectedTimeRange) : dataItems),
@@ -485,9 +477,15 @@ const DataSeriesFormItem = ({
               key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
               id={`${cardConfig.id}_dataSourceIds-combobox`}
               items={formatDataItemsForDropdown(validDataItems)}
-              itemToString={(item) => item.text}
+              itemToString={(item) => item?.text}
               titleText={mergedI18n.dataItemEditorDataItemTitle}
               addToList={false}
+              shouldFilterItem={({ item, inputValue }) => {
+                return (
+                  isEmpty(inputValue) ||
+                  item?.text?.toLowerCase()?.includes(inputValue?.toLowerCase())
+                );
+              }}
               placeholder={mergedI18n.filter}
               // clears out the input field after each selection
               selectedItem={{ id: '', text: '' }}

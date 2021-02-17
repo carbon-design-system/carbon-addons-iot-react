@@ -75,4 +75,27 @@ describe('ValueCard', () => {
     expect(defaultFormattedValue).toBe('10,000');
     expect(screen.queryByText(testValue)).toBeTruthy();
   });
+  it('Precision value for attribute is used', () => {
+    render(
+      <ValueCard
+        id="myIdTest"
+        title="Health score"
+        content={{ attributes: [{ label: 'title', dataSourceId: 'v', precision: 2 }] }}
+        size={CARD_SIZES.SMALL}
+        values={{ v: 10000 }}
+      />
+    );
+    expect(screen.queryByText('10,000.00')).toBeTruthy();
+
+    render(
+      <ValueCard
+        id="myIdTest"
+        title="Health score"
+        content={{ attributes: [{ label: 'title', dataSourceId: 'v', precision: 1 }] }}
+        size={CARD_SIZES.SMALL}
+        values={{ v: 10000 }}
+      />
+    );
+    expect(screen.queryByText('10,000.0')).toBeTruthy();
+  });
 });

@@ -358,6 +358,7 @@ describe('editorUtils', () => {
         content: {
           columns: [
             {
+              dataItemId: 'timestamp',
               dataSourceId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
@@ -392,6 +393,7 @@ describe('editorUtils', () => {
           aggregationMethod: 'last',
           label: 'Key 1',
           dataSourceId: 'key1',
+          type: 'NUMBER',
         },
         {
           id: 'key2',
@@ -400,6 +402,16 @@ describe('editorUtils', () => {
           aggregationMethod: 'last',
           label: 'Key 2',
           dataSourceId: 'key2',
+          type: 'NUMBER',
+        },
+        {
+          id: 'key3',
+          text: 'Key 3',
+          dataItemId: 'key3',
+          aggregationMethod: 'last',
+          label: 'Key 3',
+          dataSourceId: 'key3',
+          type: 'TIMESTAMP',
         },
       ];
       const newCard = handleDataSeriesChange(
@@ -418,10 +430,6 @@ describe('editorUtils', () => {
                 dataSourceId: 'manufacturer',
                 label: 'Manufacturer',
                 type: 'DIMENSION',
-              },
-              {
-                dataSourceId: 'key1',
-                label: 'Key 1',
               },
             ],
           },
@@ -450,6 +458,7 @@ describe('editorUtils', () => {
               aggregationMethod: 'last',
               dataSourceId: 'key1',
               label: 'Key 1',
+              type: 'NUMBER',
             },
             {
               id: 'key2',
@@ -458,25 +467,44 @@ describe('editorUtils', () => {
               aggregationMethod: 'last',
               dataSourceId: 'key2',
               label: 'Key 2',
+              type: 'NUMBER',
+            },
+            {
+              id: 'key3',
+              text: 'Key 3',
+              dataItemId: 'key3',
+              aggregationMethod: 'last',
+              label: 'Key 3',
+              dataSourceId: 'key3',
+              type: 'TIMESTAMP',
             },
           ],
         },
       });
     });
     it('handleDataSeriesChange should correctly format the columns for new table card dimensions', () => {
-      const selectedItems = [{ id: 'manufacturer', text: 'Manufacturer', type: 'DIMENSION' }];
+      const selectedItems = [
+        {
+          dataItemId: 'manufacturer',
+          dataSourceId: 'manufacturer',
+          label: 'Manufacturer',
+          type: 'DIMENSION',
+        },
+      ];
       const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {}, null, true);
       expect(newCard).toEqual({
         ...mockTableCard,
         content: {
           columns: [
             {
+              dataItemId: 'timestamp',
               dataSourceId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
               sort: 'DESC',
             },
             {
+              dataItemId: 'manufacturer',
               dataSourceId: 'manufacturer',
               label: 'Manufacturer',
               type: 'DIMENSION',
@@ -504,6 +532,11 @@ describe('editorUtils', () => {
               {
                 dataSourceId: 'manufacturer',
                 label: 'Manufacturer',
+                type: 'DIMENSION',
+              },
+              {
+                dataSourceId: 'deviceid',
+                label: 'Device',
                 type: 'DIMENSION',
               },
               {

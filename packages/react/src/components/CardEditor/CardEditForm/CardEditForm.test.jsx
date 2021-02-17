@@ -93,34 +93,28 @@ describe('CardEditForm', () => {
   // meaning we can't fire user events on the form
   describe('handleSubmit', () => {
     it('should throw error if JSON is empty', () => {
-      handleSubmit(
-        '',
-        '',
-        '',
-        mockSetError,
-        mockOnValidateCardJson,
-        mockOnChange,
-        mockSetShowEditor
-      );
+      handleSubmit('', '', mockSetError, mockOnValidateCardJson, mockOnChange, mockSetShowEditor);
       expect(mockSetError).toBeCalledWith('Unexpected end of JSON input');
     });
     it('should call onChange and setShowEditor if JSON is valid', () => {
+      handleSubmit('{}', '', mockSetError, mockOnValidateCardJson, mockOnChange, mockSetShowEditor);
+      expect(mockOnChange).toBeCalled();
+      expect(mockSetShowEditor).toBeCalledWith(false);
+    });
+    it('should call onChange with content section changese', () => {
       handleSubmit(
-        '{}',
-        '',
+        '{"content":"my content"}',
         '',
         mockSetError,
         mockOnValidateCardJson,
         mockOnChange,
         mockSetShowEditor
       );
-      expect(mockOnChange).toBeCalled();
-      expect(mockSetShowEditor).toBeCalledWith(false);
+      expect(mockOnChange).toBeCalledWith(expect.objectContaining({ content: 'my content' }));
     });
     it('should throw error if JSON is not valid', () => {
       handleSubmit(
         '1234',
-        '',
         '',
         mockSetError,
         mockOnValidateCardJson,

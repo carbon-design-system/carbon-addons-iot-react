@@ -9400,52 +9400,62 @@ Map {
           Object {
             "content": Object {
               "args": Array [
-                Object {
-                  "includeZeroOnXaxis": Object {
-                    "type": "bool",
-                  },
-                  "includeZeroOnYaxis": Object {
-                    "type": "bool",
-                  },
-                  "series": Object {
+                Array [
+                  Object {
                     "args": Array [
                       Object {
-                        "args": Array [
-                          Object {
-                            "color": Object {
-                              "type": "string",
+                        "includeZeroOnXaxis": Object {
+                          "type": "bool",
+                        },
+                        "includeZeroOnYaxis": Object {
+                          "type": "bool",
+                        },
+                        "series": Object {
+                          "args": Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "color": Object {
+                                    "type": "string",
+                                  },
+                                  "dataSourceId": Object {
+                                    "type": "string",
+                                  },
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
                             },
-                            "dataSourceId": Object {
-                              "type": "string",
-                            },
-                            "label": Object {
-                              "type": "string",
-                            },
-                          },
-                        ],
-                        "type": "shape",
+                          ],
+                          "type": "arrayOf",
+                        },
+                        "showLegend": Object {
+                          "type": "bool",
+                        },
+                        "timeDataSourceId": Object {
+                          "type": "string",
+                        },
+                        "unit": Object {
+                          "type": "string",
+                        },
+                        "xLabel": Object {
+                          "type": "string",
+                        },
+                        "yLabel": Object {
+                          "type": "string",
+                        },
                       },
                     ],
-                    "type": "arrayOf",
+                    "type": "shape",
                   },
-                  "showLegend": Object {
-                    "type": "bool",
+                  Object {
+                    "type": "func",
                   },
-                  "timeDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "unit": Object {
-                    "type": "string",
-                  },
-                  "xLabel": Object {
-                    "type": "string",
-                  },
-                  "yLabel": Object {
-                    "type": "string",
-                  },
-                },
+                ],
               ],
-              "type": "shape",
+              "type": "oneOfType",
             },
             "id": Object {
               "type": "string",
@@ -11595,7 +11605,6 @@ Map {
       "fontSize": 42,
       "isNumberValueCompact": false,
       "locale": "en",
-      "precision": null,
       "size": "MEDIUM",
       "values": null,
     },
@@ -12101,6 +12110,9 @@ Map {
                       },
                       "label": Object {
                         "type": "string",
+                      },
+                      "precision": Object {
+                        "type": "number",
                       },
                       "secondaryValue": Object {
                         "args": Array [
