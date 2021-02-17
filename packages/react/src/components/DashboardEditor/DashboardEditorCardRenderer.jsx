@@ -163,6 +163,10 @@ const CachedEditorCardRenderer = ({ style, children, getValidDataItems, dataItem
   );
 };
 
+CachedEditorCardRenderer.defaultProps = {
+  style: {},
+};
+
 const shouldComponentSkipUpdate = (prevProps, nextProps) => {
   return isEqual(prevProps, nextProps);
 };

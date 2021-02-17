@@ -10,7 +10,7 @@ import {
 let tree;
 
 const NEW_RULE_MATCH = expect.objectContaining({
-  id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
+  id: expect.stringMatching(/[a-zA-Z0-9]{9,10}/),
   columnId: '',
   value: '',
   operand: '',
