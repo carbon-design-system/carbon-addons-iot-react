@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
 import find from 'lodash/find';
 import isEqual from 'lodash/isEqual';
@@ -40,14 +41,17 @@ const renderValueCard = (props) => <ValueCard isEditable {...props} />;
  * @param {Object} props
  * @returns {Node}
  */
-const renderTimeSeriesCard = (props) => {
+const EditorTimeSeriesCard = ({ values, ...props }) => {
   // apply the timeRange for the card preview
   const timeRangeJSON = find(timeRangeToJSON, ({ range }) =>
     isEqual(range, props?.dataSource?.range)
   );
-  return (
-    <TimeSeriesCard isEditable values={[]} interval={timeRangeJSON?.interval || 'day'} {...props} />
-  );
+  const interval = useMemo(() => timeRangeJSON?.interval || 'day', [timeRangeJSON]);
+  return <TimeSeriesCard isEditable values={values} interval={interval} {...props} />;
+};
+
+EditorTimeSeriesCard.defaultProps = {
+  values: [],
 };
 
 /**
@@ -135,7 +139,7 @@ const CachedEditorCardRenderer = ({ style, children, getValidDataItems, dataItem
     [dataItems]
   );
 
-  useEffect(
+  useDeepCompareEffect(
     () => {
       setCachedStyle(style);
     },
@@ -162,6 +166,8 @@ const CachedEditorCardRenderer = ({ style, children, getValidDataItems, dataItem
 const shouldComponentSkipUpdate = (prevProps, nextProps) => {
   return isEqual(prevProps, nextProps);
 };
+
+const availableActions = { clone: true, delete: true };
 /**
  * Returns a Card component for preview in the dashboard
  * @param {Array} dataItems list of dataItems available to the card
@@ -203,6 +209,21 @@ const DashboardEditorCardRenderer = React.memo(
       [cardConfig, onCardChange, onDuplicate, onRemove]
     );
 
+    const handleOnCardKeyDown = useCallback(
+      (e) => {
+        handleKeyDown(e, setSelectedCardId, cardConfig.id);
+      },
+      [cardConfig.id, setSelectedCardId]
+    );
+
+    const handleOnCardMouseDown = useCallback(
+      (e) => {
+        handleOnClick(setSelectedCardId, cardConfig.id);
+        cardConfig.onMouseDown(e);
+      },
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [cardConfig.id, cardConfig.onMouseDown, setSelectedCardId]
+    );
     // Need to memoize these card props at this level to improve performance
     const cardProps = useMemo(
       () => ({
@@ -211,17 +232,12 @@ const DashboardEditorCardRenderer = React.memo(
         key: cardConfig.id,
         tooltip: cardConfig.description,
         i18n,
-        availableActions: { clone: true, delete: true },
+        availableActions,
         onCardAction: handleOnCardAction,
         renderIconByName,
         tabIndex: 0,
-        onKeyDown: (e) => {
-          handleKeyDown(e, setSelectedCardId, cardConfig.id);
-        },
-        onMouseDown: (e) => {
-          handleOnClick(setSelectedCardId, cardConfig.id);
-          cardConfig.onMouseDown(e);
-        },
+        onKeyDown: handleOnCardKeyDown,
+        onMouseDown: handleOnCardMouseDown,
         className: `${baseClassName}--preview__card`,
         isSelected,
         // Add the show gallery to image card
@@ -236,12 +252,13 @@ const DashboardEditorCardRenderer = React.memo(
         baseClassName,
         cardConfig,
         handleOnCardAction,
+        handleOnCardKeyDown,
+        handleOnCardMouseDown,
         i18n,
         isSelected,
         onShowImageGallery,
         onValidateUploadedImage,
         renderIconByName,
-        setSelectedCardId,
         style,
       ]
     );
@@ -296,7 +313,7 @@ const DashboardEditorCardRenderer = React.memo(
       case CARD_TYPES.VALUE:
         return renderValueCard(cardProps);
       case CARD_TYPES.TIMESERIES:
-        return renderTimeSeriesCard(cardProps);
+        return <EditorTimeSeriesCard {...cardProps} />;
       case CARD_TYPES.BAR:
         return (
           <EditorBarChartCard

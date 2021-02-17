@@ -244,7 +244,7 @@ const DataSeriesFormItem = ({
   dataSeriesItemLinks,
   translateWithId,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});
