@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification, SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
-import { Warning24 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { DASHBOARD_EDITOR_CARD_TYPES, CARD_TYPES } from '../../constants/LayoutConstants';
@@ -16,8 +15,7 @@ import {
   getDuplicateCard,
   renderBreakpointInfo,
   DataItemsPropTypes,
-  validThresholdIcons,
-  validHotspotIcons,
+  renderDefaultIconByName,
 } from './editorUtils';
 
 const { iotPrefix } = settings;
@@ -278,30 +276,7 @@ const defaultProps = {
   breakpointSwitcher: null,
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   renderHeader: null,
-  renderIconByName: (iconName, iconProps) => {
-    // first search the validHotspot Icons
-    const matchingHotspotIcon = validHotspotIcons.find((icon) => icon.id === iconName);
-
-    // then search the validThresholdIcons
-    const matchingThresholdIcon = validThresholdIcons.find((icon) => icon.name === iconName);
-    const iconToRender = matchingHotspotIcon ? (
-      React.createElement(matchingHotspotIcon.icon, {
-        ...iconProps,
-        title: matchingHotspotIcon.text,
-      })
-    ) : matchingThresholdIcon ? (
-      React.cloneElement(matchingThresholdIcon.carbonIcon, {
-        ...iconProps,
-        title: matchingThresholdIcon.name,
-      })
-    ) : (
-      <Warning24 {...iconProps} />
-    );
-
-    // otherwise default to Warning24
-    // eslint-disable-next-line react/prop-types
-    return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
-  },
+  renderIconByName: renderDefaultIconByName,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
   notification: null,

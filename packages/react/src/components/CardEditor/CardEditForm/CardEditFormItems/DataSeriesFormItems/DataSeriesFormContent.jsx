@@ -66,7 +66,7 @@ const propTypes = {
   /** list of dataItem names that have been selected to display on the card */
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   setSelectedDataItems: PropTypes.func.isRequired,
-  selectedTimeRange: PropTypes.string.isRequired,
+  selectedTimeRange: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
@@ -107,6 +107,7 @@ const propTypes = {
 
 const defaultProps = {
   cardConfig: {},
+  selectedTimeRange: '',
   i18n: {
     dataItemEditorTitle: 'Edit data series',
     dataItemEditorDataItemTitle: 'Data item',

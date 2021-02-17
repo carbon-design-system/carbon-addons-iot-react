@@ -644,3 +644,28 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
       return cardConfig;
   }
 };
+
+export const renderDefaultIconByName = (iconName, iconProps = {}) => {
+  // first search the validHotspot Icons
+  const matchingHotspotIcon = validHotspotIcons.find((icon) => icon.id === iconName);
+
+  // then search the validThresholdIcons
+  const matchingThresholdIcon = validThresholdIcons.find((icon) => icon.name === iconName);
+  const iconToRender = matchingHotspotIcon ? (
+    React.createElement(matchingHotspotIcon.icon, {
+      ...iconProps,
+      title: matchingHotspotIcon.text,
+    })
+  ) : matchingThresholdIcon ? (
+    React.cloneElement(matchingThresholdIcon.carbonIcon, {
+      ...iconProps,
+      title: matchingThresholdIcon.name,
+    })
+  ) : (
+    <Warning24 {...iconProps} />
+  );
+
+  // otherwise default to Warning24
+  // eslint-disable-next-line react/prop-types
+  return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
+};

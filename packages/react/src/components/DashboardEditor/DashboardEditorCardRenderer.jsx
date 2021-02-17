@@ -225,6 +225,7 @@ const DashboardEditorCardRenderer = React.memo(
         handleOnClick(setSelectedCardId, cardConfig.id);
         cardConfig.onMouseDown(e);
       },
+      // Need to disable the eslint role because I don't want to regen if any other part of cardConfig changes
       // eslint-disable-next-line react-hooks/exhaustive-deps
       [cardConfig.id, cardConfig.onMouseDown, setSelectedCardId]
     );
