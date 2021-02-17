@@ -85,11 +85,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <button
                 aria-disabled={false}
                 className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step1"
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
                 tabIndex={-1}
-                testID="iot--progress-step-button-main-step1"
                 type="button"
               >
                 <div
@@ -145,11 +145,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <button
                 aria-disabled={false}
                 className="iot--progress-step-button iot--progress-step-button--main-step iot--progress-step-button--clickable"
+                data-testid="iot--progress-step-button-main-step2"
                 disabled={false}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex={0}
-                testID="iot--progress-step-button-main-step2"
                 type="button"
               >
                 <div
@@ -200,11 +200,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <button
                 aria-disabled={false}
                 className="iot--progress-step-button iot--progress-step-button--main-step iot--progress-step-button--clickable"
+                data-testid="iot--progress-step-button-main-step3"
                 disabled={false}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex={0}
-                testID="iot--progress-step-button-main-step3"
                 type="button"
               >
                 <span
@@ -402,11 +402,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <button
                 aria-disabled={false}
                 className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step1"
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
                 tabIndex={-1}
-                testID="iot--progress-step-button-main-step1"
                 type="button"
               >
                 <div
@@ -462,11 +462,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <button
                 aria-disabled={false}
                 className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step2"
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
                 tabIndex={0}
-                testID="iot--progress-step-button-main-step2"
                 type="button"
               >
                 <div
@@ -517,11 +517,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <button
                 aria-disabled={false}
                 className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step3"
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
                 tabIndex={0}
-                testID="iot--progress-step-button-main-step3"
                 type="button"
               >
                 <span
@@ -726,11 +726,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <button
                 aria-disabled={false}
                 className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step1"
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
                 tabIndex={0}
-                testID="iot--progress-step-button-main-step1"
                 type="button"
               >
                 <div
@@ -776,11 +776,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <button
                 aria-disabled={false}
                 className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step2"
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
                 tabIndex={0}
-                testID="iot--progress-step-button-main-step2"
                 type="button"
               >
                 <div
@@ -826,11 +826,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <button
                 aria-disabled={false}
                 className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step3"
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
                 tabIndex={-1}
-                testID="iot--progress-step-button-main-step3"
                 type="button"
               >
                 <span

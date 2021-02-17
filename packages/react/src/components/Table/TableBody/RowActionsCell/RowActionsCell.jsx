@@ -159,7 +159,7 @@ class RowActionsCell extends React.Component {
                       {...omit(others, ['isOverflow'])}
                       iconDescription={labelText || iconDescription}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
-                      testID={`${tableId}-${id}-row-actions-button-${actionId}`}
+                      data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
                       hasIconOnly={!labelText}
                       tooltipPosition="left"

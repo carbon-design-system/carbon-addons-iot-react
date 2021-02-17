@@ -268,7 +268,7 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
           tooltipPosition="top"
           iconDescription="Remove rule"
           onClick={onRemoveRule(ruleId)}
-          testID={`${ruleId}-remove-rule-button`}
+          data-testid={`${ruleId}-remove-rule-button`}
         />
         <Button
           hasIconOnly
@@ -277,7 +277,7 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
           tooltipPosition="top"
           iconDescription="Add new rule"
           onClick={onAddRule(ruleId)}
-          testID={`${ruleId}-add-rule-button`}
+          data-testid={`${ruleId}-add-rule-button`}
         />
         <Button
           hasIconOnly
@@ -286,7 +286,7 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
           tooltipPosition="top"
           iconDescription="Add new rule group"
           onClick={onAddRule(ruleId, true)}
-          testID={`${ruleId}-add-group-button`}
+          data-testid={`${ruleId}-add-group-button`}
         />
       </div>
     </div>

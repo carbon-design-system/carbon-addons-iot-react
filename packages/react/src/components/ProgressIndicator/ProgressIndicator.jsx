@@ -152,7 +152,7 @@ const ProgressStep = ({
           disabled={disabled}
           onClick={accessible ? handleClick : null}
           onKeyDown={accessible ? handleKeyDown : null}
-          testID={`${iotPrefix}--progress-step-button-${type}-${dataTestIdLabel}`}
+          data-testid={`${iotPrefix}--progress-step-button-${type}-${dataTestIdLabel}`}
           tabIndex={current || disabled ? -1 : 0}
         >
           <StepLine />
