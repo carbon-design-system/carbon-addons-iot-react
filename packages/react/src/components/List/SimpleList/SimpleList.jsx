@@ -177,7 +177,8 @@ const SimpleList = ({
                   if (item.content.value !== '' && item.content.value !== undefined) {
                     if (
                       item.content.secondaryValue !== '' &&
-                      item.content.secondaryValue !== undefined
+                      item.content.secondaryValue !== undefined &&
+                      typeof item.content.secondaryValue === 'string'
                     ) {
                       return (
                         item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1 ||

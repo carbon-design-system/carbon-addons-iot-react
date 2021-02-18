@@ -38,6 +38,8 @@ const propTypes = {
         src: PropTypes.string,
         zoomMax: PropTypes.number,
       }),
+      // custom card content is a function
+      PropTypes.func,
     ]),
   }),
   /** Callback function when form data changes */

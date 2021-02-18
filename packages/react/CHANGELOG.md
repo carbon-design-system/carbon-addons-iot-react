@@ -3,6 +3,135 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.42...v2.143.0-next.43) (2021-02-15)
+
+
+### Bug Fixes
+
+* **editorUtils:** sometimes the dimension columns no longer have dataItemId ([4cca311](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4cca311b4cac65d7a4e721958ec12cb7af14ba64))
+* **tablecard:** fix the dashboardeditor for tablecard ([3e9e832](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3e9e83227c9deaa2fcee2f74b7f6fa6fe0c93437))
+* **tablecard:** show column label in threshold column ([71b046e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/71b046e14a9b3c4410efb717a2812a57a6242cda))
+
+
+
+
+
+# [2.143.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.41...v2.143.0-next.42) (2021-02-12)
+
+
+### Bug Fixes
+
+* **dashboardeditor:** need to check for image type ([c79324f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c79324f9667fd80ee6bfa0b0663a5ba800cf1904))
+* **dataseriesformcontent:** it should not change existing elements ([aa10d45](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aa10d45f8f3c5df6b651719d64dd85fcab11a8c6))
+* **editorUtils:** when adding timestamp we need the data item id ([8d05131](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8d05131362d27312dad30cb9197dd7cd0cc5cd15))
+
+
+
+
+
+# [2.143.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.40...v2.143.0-next.41) (2021-02-11)
+
+
+### Bug Fixes
+
+* **barchardutils:** need to null check the values ([9aa743b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9aa743b0900af2e886122c6a3db24b0d9a26032f))
+* **barchart:** need to null check the values before formatting ([c63cfb3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c63cfb3f94d5c9a5b2572d8f0d624f5fbea250fa))
+* **barChartUtils:** stop another null ([dbba02a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dbba02aa4cf566344eaa99e6b155d4a7916676a3))
+* **dataitemmodal:** need to hide the grain if no aggregator is selected ([f5efdef](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f5efdefcf3879191b7d8895d17b7c1cb54226aae))
+* **tablecard:** in the editor I need to be allowed to add timestamp columns ([8aa8166](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8aa816603bf227b27e1b38f9f1af79a17c17a70d))
+
+
+
+
+
+# [2.143.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.39...v2.143.0-next.40) (2021-02-11)
+
+
+### Bug Fixes
+
+* **repo:** adding a 'browser' field to avoid webpack default config issue ([8858150](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8858150a17897da49ef3a1b7f30122e909365ba1))
+
+
+
+
+
+# [2.143.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.38...v2.143.0-next.39) (2021-02-11)
+
+
+### Bug Fixes
+
+* **cardeditform:** changes to content section were not being sent ([b52afbd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b52afbd6adc4aae6abac909fc4f8ce4c89472c49))
+* **valuecard:** precision is at the attribute level not card level ([1b4f1de](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1b4f1dea7c1de70a637ae530a4636e21e2feaedb))
+
+
+
+
+
+# [2.143.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.37...v2.143.0-next.38) (2021-02-10)
+
+
+### Features
+
+* **suiteheader:** Adding ids to header action items and menu items. ([a8be348](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a8be34805d18e322db01f05e6fd4c2c681d97193))
+* **suiteheader:** Adding loading states when some properties are missing in SuiteHeader components. Including coverage tests and stories. ([a228f4c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a228f4c8e29f9c701f92f690fdb4cabb69b39b67))
+* **suiteheader:** Adding support for custom help menu items, custom profile menu items and custom app switcher applications in `SuiteHeader` component. ([7a54843](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7a54843de71c557ba4c9136cea6342fb95a6896c))
+* **suiteheader:** fixing dropdown menu separator styling, to match design. ([3906c23](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3906c23ff0b03978e74c9550046e0431bcc205ab))
+* **suiteheader:** Fixing proptype exports in `SuiteHeader` components ([c922da7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c922da7b129ed0bde29337a0cfc89fc414a350bd))
+* **suiteheader:** fixing some linting errors. ([976b138](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/976b1387a0927fc2ff8e17e689129aadac36d977))
+* **suiteheader:** for some reason it is not possible to import SuiteHeader in SuiteHeaderAppSwitcher, so a temporary solution was to redefine some objects in SuiteHeaderAppSwitcher component. ([4c0197b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4c0197be1991f454d67965e7ec71745f5647357e))
+* **suiteheader:** Improving SuiteHeader loading states’ styling. ([602226b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/602226b8eaae9708f263a75f9c48ecd76602d8a4))
+* **suiteheader:** small change in a story caption. ([de982c6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/de982c6e59ceb756e3657c4403791eb1343e8e11))
+
+
+
+
+
+# [2.143.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.36...v2.143.0-next.37) (2021-02-09)
+
+
+### Bug Fixes
+
+* **hierarchylist:** update incorrect syntax ([78be603](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/78be6036e98794495415968348d316b3915bd6e0))
+
+
+
+
+
+# [2.143.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.35...v2.143.0-next.36) (2021-02-09)
+
+
+### Bug Fixes
+
+* **hierarchylist:** lazy initialize the clonedeep items for performance ([a152466](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a1524669dc5f8bfce15475332d059df1dc0c4ecb))
+* **hierarchylist:** remove initial clonedeep state ([a63856d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a63856d85e4e98c52da98b720f8a0c918872d7eb))
+* **hierarchylist:** scroll if needed, allow secondary nodes ([9194c34](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9194c34b16494887ff2c7ed55da29c1e08b02f64))
+* **list:** type check before searching ([640439b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/640439befd7c7a9d0b2824199c562e69bbe0c5de))
+
+
+
+
+
+# [2.143.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.34...v2.143.0-next.35) (2021-02-08)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.143.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.33...v2.143.0-next.34) (2021-02-08)
+
+
+### Bug Fixes
+
+* **hierarchylist:** add isLargeRow prop ([21487c3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/21487c3d87cdf07a3484cf2b028d5d81159ed26c))
+* **hierarchylist:** fire onSelect for defaultSelectedId ([521d822](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/521d822ca57f60fcb77f64579076eba6fe63b6b8))
+* **hierarchylist:** pass classname and only render modal if editing is enabled ([665a8d6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/665a8d6824ae7f3203e5ff706a9f697c42aaf261))
+
+
+
+
+
 # [2.143.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.32...v2.143.0-next.33) (2021-02-04)
 
 

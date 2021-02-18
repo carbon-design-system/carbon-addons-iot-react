@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
+import uniqBy from 'lodash/uniqBy';
+import isEmpty from 'lodash/isEmpty';
 import {
   purple70,
   cyan50,
@@ -454,8 +456,7 @@ export const handleDataSeriesChange = (
   selectedItems,
   cardConfig,
   setEditDataSeries,
-  hotspotIndex,
-  isDimensionUpdate
+  hotspotIndex
 ) => {
   const { type, content } = cardConfig;
   let series;
@@ -477,19 +478,24 @@ export const handleDataSeriesChange = (
         content: { ...cardConfig.content, series },
       };
     case CARD_TYPES.TABLE: {
+      // in certain cases (for groupBy updates) the full set of attribute columns isn't passed
       const existingAttributeColumns = Array.isArray(content?.columns)
-        ? content.columns.filter((col) => !col.type)
+        ? content.columns.filter(
+            (col) => col.type !== 'DIMENSION' && col.dataSourceId !== 'timestamp'
+          )
         : [];
 
-      // find just the attributes to add
-      const attributeColumns = selectedItems.filter((i) => !i.hasOwnProperty('type'));
+      // find the new attributes to add because we're adding dimensions later
+      const attributeColumns = selectedItems.filter((dataItem) => dataItem.type !== 'DIMENSION');
 
       // start off with a default timestamp column if we don't already have one
       const timestampColumn =
-        Array.isArray(content?.columns) && content.columns.find((col) => col.type === 'TIMESTAMP')
-          ? content.columns.filter((col) => col.type === 'TIMESTAMP')[0]
+        Array.isArray(content?.columns) &&
+        content.columns.find((col) => col.dataSourceId === 'timestamp')
+          ? content.columns.filter((col) => col.dataSourceId === 'timestamp')[0]
           : {
               dataSourceId: 'timestamp',
+              dataItemId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
               sort: 'DESC',
@@ -499,20 +505,42 @@ export const handleDataSeriesChange = (
         : [];
 
       // new dimension columns should go right after the timestamp column
-      const dimensionColumns = selectedItems
-        .filter((col) => col.type === 'DIMENSION')
-        .map((i) => ({ dataSourceId: i.id, label: i.text, type: i.type }));
+      const dimensionColumns = selectedItems.filter((col) => col.type === 'DIMENSION');
+      const allDimensionColumns = existingDimensionColumns.concat(dimensionColumns);
+
+      // for raw table cards, the dimensions columns go in the attributes section
+      // if groupBy was selected, the dimension columns should go in the groupBy section
+      const updatedGroupBy = uniqBy(allDimensionColumns, 'dataSourceId')
+        .filter((item) => item.destination === 'groupBy')
+        .map((item) => item.dataItemId || item.dataSourceId);
 
       return {
         ...cardConfig,
         content: {
           ...cardConfig.content,
-          columns: [
-            timestampColumn,
-            ...(isDimensionUpdate ? dimensionColumns : existingDimensionColumns),
-            ...(!isDimensionUpdate ? attributeColumns : existingAttributeColumns),
-          ],
+          columns: uniqBy(
+            [
+              timestampColumn,
+              // pop the dimensions up front right after the timestamp
+              ...allDimensionColumns,
+              ...existingAttributeColumns.concat(attributeColumns),
+            ],
+            'dataSourceId'
+          ) // when columns are removed, their dataSourceId is cleared, we don't want to readd them
+            .filter((column) => column.dataSourceId),
         },
+        ...(!isEmpty(updatedGroupBy)
+          ? {
+              dataSource: {
+                ...cardConfig.dataSource,
+                ...(allDimensionColumns.find((item) => item.destination === 'groupBy')
+                  ? {
+                      groupBy: updatedGroupBy,
+                    }
+                  : {}),
+              },
+            }
+          : {}),
       };
     }
     case CARD_TYPES.IMAGE: {
