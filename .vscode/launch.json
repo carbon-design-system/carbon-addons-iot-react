@@ -9,7 +9,14 @@
       "request": "launch",
       "name": "Debug Story Book",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}/lib/index.js"
+      "webRoot": "${workspaceFolder}/packages/react",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${webRoot}/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///src/*": "${webRoot}/*",
+        "webpack:///./~/*": "${webRoot}/node_modules/*"
+      }
     },
     {
       "type": "node",
