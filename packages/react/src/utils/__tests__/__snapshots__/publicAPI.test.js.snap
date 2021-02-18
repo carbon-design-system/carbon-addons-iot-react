@@ -12557,6 +12557,7 @@ Map {
         "noDataLabel": "No data is available for this time range.",
         "tooltipGroupLabel": "Group",
       },
+      "interval": "hour",
       "locale": "en",
       "showTimeInGMT": false,
       "size": "MEDIUM",

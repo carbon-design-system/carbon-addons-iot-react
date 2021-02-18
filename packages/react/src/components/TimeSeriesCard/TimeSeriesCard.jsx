@@ -647,6 +647,7 @@ TimeSeriesCard.defaultProps = {
     includeZeroOnYaxis: false,
     showLegend: true,
   },
+  interval:'hour',
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
