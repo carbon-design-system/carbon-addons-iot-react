@@ -172,6 +172,7 @@ class ComposedModal extends React.Component {
     ) : (
       <CarbonComposedModal
         {...props}
+        data-testid={testID}
         open={open}
         onClose={this.doNotClose}
         data-floating-menu-container // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662

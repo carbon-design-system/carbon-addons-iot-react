@@ -284,6 +284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                   data-floating-menu-container={true}
+                  data-testid="ComposedModal"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onClose={[Function]}
@@ -2965,6 +2966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
+                data-testid="ComposedModal"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -4315,6 +4317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                   data-floating-menu-container={true}
+                  data-testid="ComposedModal"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onClose={[Function]}
@@ -5670,6 +5673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
+                data-testid="ComposedModal"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -7932,6 +7936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
+                data-testid="ComposedModal"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -10261,6 +10266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                   data-floating-menu-container={true}
+                  data-testid="ComposedModal"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onClose={[Function]}
@@ -11474,6 +11480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
+                data-testid="ComposedModal"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -12792,6 +12799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
+                data-testid="ComposedModal"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -15730,6 +15738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
+                data-testid="ComposedModal"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}

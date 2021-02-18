@@ -15,7 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
-      data-testid="TableSaveViewModal"
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -329,7 +329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
-      data-testid="TableSaveViewModal"
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -494,7 +494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
-      data-testid="TableSaveViewModal"
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -725,7 +725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
-      data-testid="TableSaveViewModal"
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
