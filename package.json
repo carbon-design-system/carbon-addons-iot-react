@@ -5,7 +5,7 @@
   },
   "workspaces": {
     "packages": ["packages/*"],
-    "nohoist": ["**/@angular/*", "**/@angular-devkit/*"]
+    "nohoist": ["carbon-components-angular"]
   },
   "main": "lib/src/index.js",
   "module": "es/src/index.js",

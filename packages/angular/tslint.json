@@ -123,8 +123,8 @@
 			"check-type",
 			"check-preblock"
 		],
-		"directive-selector": [true, "attribute", ["ibm", "app", "test"], "camelCase"],
-		"component-selector": [true, "element", ["ibm", "app", "test"], "kebab-case"],
+		"directive-selector": [true, "attribute", ["ai", "sc", "app", "test"], "camelCase"],
+		"component-selector": [true, "element", ["ai", "sc", "app", "test"], "kebab-case"],
 
 		"no-inputs-metadata-property": true,
 		"no-outputs-metadata-property": true,

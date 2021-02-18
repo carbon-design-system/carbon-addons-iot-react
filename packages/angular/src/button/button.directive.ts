@@ -23,13 +23,13 @@ import { ButtonSize, ButtonType } from "./button.types";
  * <example-url>../../iframe.html?id=button--basic</example-url>
  */
 @Directive({
-	selector: "[ibmButton]"
+	selector: "[aiButton]"
 })
 export class Button implements OnInit {
 	/**
 	 * sets the button type
 	 */
-	@Input() ibmButton: ButtonType = "primary";
+	@Input() aiButton: ButtonType = "primary";
 	/**
 	 * Specify the size of the button
 	 */
@@ -52,19 +52,19 @@ export class Button implements OnInit {
 		return !this.toolbarAction;
 	}
 	@HostBinding("class.bx--btn--primary") get primaryButton() {
-		return this.ibmButton === "primary";
+		return this.aiButton === "primary";
 	}
 	@HostBinding("class.bx--btn--secondary") get secondaryButton() {
-		return this.ibmButton === "secondary";
+		return this.aiButton === "secondary";
 	}
 	@HostBinding("class.bx--btn--tertiary") get tertiaryButton() {
-		return this.ibmButton === "tertiary";
+		return this.aiButton === "tertiary";
 	}
 	@HostBinding("class.bx--btn--ghost") get ghostButton() {
-		return this.ibmButton === "ghost";
+		return this.aiButton === "ghost";
 	}
 	@HostBinding("class.bx--btn--danger") get dangerButton() {
-		return this.ibmButton === "danger" || this.ibmButton === "danger--primary";
+		return this.aiButton === "danger" || this.aiButton === "danger--primary";
 	}
 	@HostBinding("class.bx--skeleton") @Input() skeleton = false;
 	@HostBinding("class.bx--btn--sm") get smallSize() {
@@ -124,8 +124,8 @@ export class Button implements OnInit {
 	}
 
 	ngOnInit() {
-		if (!this.ibmButton) {
-			this.ibmButton = "primary";
+		if (!this.aiButton) {
+			this.aiButton = "primary";
 		}
 	}
 }

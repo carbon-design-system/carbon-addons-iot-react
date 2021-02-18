@@ -1,7 +1,7 @@
 import { storiesOf, moduleMetadata } from "@storybook/angular";
-import { withKnobs, select } from "@storybook/addon-knobs/angular";
+import { withKnobs, select } from "@storybook/addon-knobs";
 
-import { ButtonModule } from "../";
+import { ButtonModule } from "./button.module";
 
 
 storiesOf("Components|Button", module)
@@ -15,23 +15,23 @@ storiesOf("Components|Button", module)
 	.addDecorator(withKnobs)
 	.add("Basic", () => ({
 		template: `
-			<button [ibmButton]="ibmButton" [size]="size">Button</button>
+			<button [aiButton]="aiButton" [size]="size">Button</button>
 			&nbsp;
-			<button [ibmButton]="ibmButton" [size]="size" disabled="true">Button</button>
+			<button [aiButton]="aiButton" [size]="size" disabled="true">Button</button>
 			&nbsp;
-			<button [ibmButton]="ibmButton" [size]="size">
+			<button [aiButton]="aiButton" [size]="size">
 				With icon<svg class="bx--btn__icon" ibmIconAdd size="20"></svg>
 			</button>
 		`,
 		props: {
-			ibmButton: select("Button kind", ["primary", "secondary", "tertiary", "ghost", "danger", "danger--primary"], "primary"),
+			aiButton: select("Button kind", ["primary", "secondary", "tertiary", "ghost", "danger", "danger--primary"], "primary"),
 			size: select("Size of the buttons", ["normal", "sm", "field"], "normal")
 		}
 	}))
 	.add("Icon only", () => ({
 		template: `
 			<button
-				[ibmButton]="ibmButton"
+				[aiButton]="aiButton"
 				[size]="size"
 				[iconOnly]="true"
 				[hasAssistiveText]="true"
@@ -42,7 +42,7 @@ storiesOf("Components|Button", module)
 			</button>
 		`,
 		props: {
-			ibmButton: select("Button kind", ["primary", "secondary", "tertiary", "ghost", "danger", "danger--primary"], "tertiary"),
+			aiButton: select("Button kind", ["primary", "secondary", "tertiary", "ghost", "danger", "danger--primary"], "tertiary"),
 			size: select("Size of the buttons", ["normal", "sm", "field"], "normal"),
 			assistiveTextPlacement: select("Placement of assistive text", ["top", "bottom", "left", "right"], "top"),
 			assistiveTextAlignment: select("Alignment of assistive text", ["center", "start", "end"], "center")
@@ -50,8 +50,8 @@ storiesOf("Components|Button", module)
 	}))
 	.add("Skeleton", () => ({
 		template: `
-			<button ibmButton skeleton="true"></button>
+			<button aiButton skeleton="true"></button>
 			&nbsp;
-			<button ibmButton skeleton="true" size="sm"></button>
+			<button aiButton skeleton="true" size="sm"></button>
 		`
 	}));

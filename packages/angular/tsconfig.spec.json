@@ -25,10 +25,10 @@
 			"node"
 		],
 		"paths": {
-			"@ai-apps/pal": [
+			"@ai-apps/angular": [
 				"./src/index"
 			],
-			"@ai-apps/pal/*": [
+			"@ai-apps/angular/*": [
 				"./src/*/index"
 			]
 		},

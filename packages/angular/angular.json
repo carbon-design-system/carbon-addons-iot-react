@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "../../node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
     "analytics": false
   },
@@ -16,7 +16,7 @@
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "./src/tsconfig.lib.json",
-            "project": "./src/ng-package.json",
+            "project": "./src/ng-package.json"
           },
           "configurations": {
             "production": {
@@ -24,14 +24,17 @@
             }
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "karmaConfig": "./karma.conf.js",
-            "tsConfig": "./tsconfig.spec.json",
-          }
-        },
+		"test": {
+			"builder": "@angular-builders/custom-webpack:karma",
+			"options": {
+				"main": "src/test.ts",
+				"karmaConfig": "./karma.conf.js",
+				"tsConfig": "./tsconfig.spec.json",
+				"customWebpackConfig": {
+					"path": "./custom-webpack.config.js"
+				}
+			}
+		},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -55,7 +58,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "@ai-apps/angular:serve",
+            "devServerTarget": "@ai-apps/angular:serve"
           }
         },
         "lint": {

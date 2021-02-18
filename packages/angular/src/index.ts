@@ -1,1 +1,1 @@
-export * from "@ai-apps/pal/button";
+export * from "@ai-apps/angular/button";
