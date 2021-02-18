@@ -8,6 +8,7 @@
     "build": "cp -R src/ scss && sass src/styles.scss css/ai-apps-pal.css",
     "lint": "echo 'script not defined' && exit 0",
     "test": "echo 'script not defined' && exit 0",
+    "test:ci": "yarn test",
     "start": "echo 'script not defined' && exit 0",
     "clean": "rimraf scss css",
     "format": "echo 'script not defined' && exit 0",

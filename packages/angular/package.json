@@ -11,6 +11,7 @@
     "lint:fix": "tslint --fix 'src/**/*.ts'",
     "test": "ng test --no-watch",
     "test:watch": "ng test --watch",
+	"test:ci": "yarn test",
     "build:storybook": "build-storybook -c .storybook -s .storybook/public -o dist/docs/storybook",
     "ng": "ng",
     "ng:build": "ngcc && ngcc -s ../../node_modules && ng build",

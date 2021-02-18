@@ -25,6 +25,7 @@
     "build": "lerna run --stream build",
     "lint": "lerna run --stream lint",
     "test": "lerna run --stream test",
+    "test:ci": "lerna run --stream test:ci",
     "start": "lerna run --stream start",
     "clean": "lerna run --stream clean",
     "format": "lerna run --stream format",
