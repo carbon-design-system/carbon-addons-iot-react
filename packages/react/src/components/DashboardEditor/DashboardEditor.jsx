@@ -426,7 +426,7 @@ const DashboardEditor = ({
   );
 
   /**
-   * Adds a cloned card with a new unique id to the preview
+   * Adds a cloned card with a new unique id to the preview and place it next to the original card
    * @param {string} id
    */
   const duplicateCard = useCallback((id) => {
