@@ -1,14 +1,13 @@
 import * as React from 'react';
 import { Tooltip as CarbonTooltip } from 'carbon-components-react';
 import PropTypes from 'prop-types';
-import {
-  DIRECTION_BOTTOM,
-  DIRECTION_LEFT,
-  DIRECTION_RIGHT,
-  DIRECTION_TOP,
-} from 'carbon-components-react/lib/internal/FloatingMenu';
 
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
+
+const DIRECTION_BOTTOM = 'bottom';
+const DIRECTION_LEFT = 'left';
+const DIRECTION_RIGHT = 'right';
+const DIRECTION_TOP = 'top';
 
 /**
  * @param {Element} menuBody The menu body with the menu arrow.
