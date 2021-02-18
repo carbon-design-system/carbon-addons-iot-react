@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Accordion, AccordionItem, Form, TextInput, Tab, Tabs } from 'carbon-components-react';
+import { Accordion, AccordionItem, Tag, TextInput, Tab, Tabs } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 import { ToolbarSVGWrapper } from '../Card/CardToolbar';
@@ -242,14 +242,14 @@ const RuleBuilder = ({
                   <FilterTags hasOverflow tagContainer={RuleBuilderTags} onChange={handleOnChange}>
                   {currentFilter?.filterTags?.map((tag) => (
                     <Tag
-                      key={`tag-${tag.id}`}
+                      key={`tag-${tag?.id}`}
                       filter
-                      type={tag.type}
+                      type={tag?.type}
                       title="Clear Filter"
                       style={{ marginRight: '1rem' }}
-                      onClose={() => handleOnClose(tag.id)}
+                      onClose={() => handleOnClose(tag?.id)}
                     >
-                      {tag.text}
+                      {tag}
                     </Tag>
                   )) || []}
                   </FilterTags>
