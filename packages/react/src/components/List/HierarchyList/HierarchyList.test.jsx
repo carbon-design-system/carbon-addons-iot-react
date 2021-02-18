@@ -496,7 +496,13 @@ describe('HierarchyList', () => {
   it('clicking a selected item should not fire onSelect', () => {
     const onSelect = jest.fn();
     render(
-      <HierarchyList items={items} title="Hierarchy List" pageSize="xl" onSelect={onSelect} />
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        onSelect={onSelect}
+        hasDeselection={false}
+      />
     );
     // Expand the category
     fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
