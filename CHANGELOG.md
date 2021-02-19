@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.44...v2.143.0-next.45) (2021-02-19)
+
+
+### Bug Fixes
+
+* **rulebuilder:** pad id generator to fix intermitent failing test ([0d8f60e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0d8f60ee42b77079f3d8bb548147efb5832724ab))
+* **rulebuildereditor:** fix intermittently failing tests ([fe48dd2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fe48dd224f95850c81577df337eeb79c4839962c))
+
+
+
+
+
+# [2.143.0-next.44](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.43...v2.143.0-next.44) (2021-02-19)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.143.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.42...v2.143.0-next.43) (2021-02-15)
 
 
