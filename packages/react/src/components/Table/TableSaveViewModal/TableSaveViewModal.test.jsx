@@ -207,7 +207,7 @@ describe('TableSaveViewModal', () => {
         actions={actions}
         open
         overrides={{
-          composedModal: { props: { 'testID': 'custom-test-modal' } },
+          composedModal: { props: { testID: 'custom-test-modal' } },
           tableSaveViewForm: {
             props: {
               testID: 'custom-test-form',
