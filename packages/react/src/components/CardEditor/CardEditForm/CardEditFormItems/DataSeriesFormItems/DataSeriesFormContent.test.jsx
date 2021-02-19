@@ -123,6 +123,7 @@ describe('DataSeriesFormItem', () => {
           getValidDataItems={mockGetValidDataItems}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
       expect(mockGetValidDataItems).toHaveBeenCalled();
@@ -135,6 +136,7 @@ describe('DataSeriesFormItem', () => {
           getValidDataItems={mockGetValidDataItems}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
       expect(screen.getByText('Data')).toBeInTheDocument();
@@ -146,6 +148,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={[]}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
       expect(screen.queryByText('Data')).toBeNull();
@@ -157,9 +160,10 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
-      const dataItemDropDown = screen.getAllByRole('img')[2];
+      const dataItemDropDown = screen.getAllByRole('img')[0];
       expect(dataItemDropDown).toBeInTheDocument();
       fireEvent.click(dataItemDropDown);
 
@@ -207,6 +211,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
       const dataItemDropDown = screen.getByText('temperature');
@@ -227,6 +232,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
 
@@ -245,6 +251,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
 
@@ -266,10 +273,11 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
 
-      const dataItemsDropdown = screen.getAllByRole('img')[1];
+      const dataItemsDropdown = screen.getByLabelText('Select data items');
       expect(dataItemsDropdown).toBeInTheDocument();
 
       fireEvent.click(dataItemsDropdown);
@@ -287,6 +295,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
 
@@ -305,6 +314,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
 
@@ -329,6 +339,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn()}
         />
       );
 
