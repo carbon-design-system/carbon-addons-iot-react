@@ -145,7 +145,7 @@ const TableSaveViewModal = ({
         isPrimaryButtonDisabled: formValues.title === '',
       }}
       iconDescription={closeIconDescription}
-      data-testid={testID}
+      testID={testID}
       error={error}
       header={{
         title: modalTitle,
