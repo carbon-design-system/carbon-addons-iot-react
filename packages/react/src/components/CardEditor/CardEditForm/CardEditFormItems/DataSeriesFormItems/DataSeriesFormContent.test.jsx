@@ -109,8 +109,8 @@ describe('DataSeriesFormItem', () => {
   describe('formatDataItemsForDropdown', () => {
     it('should correctly format the items for the dropdown', () => {
       expect(formatDataItemsForDropdown(dataItems)).toEqual([
-        { id: 'temperature', text: 'temperature' },
-        { id: 'pressure', text: 'pressure' },
+        { id: 'temperature', text: 'Temperature' },
+        { id: 'pressure', text: 'Pressure' },
       ]);
     });
   });
@@ -167,7 +167,7 @@ describe('DataSeriesFormItem', () => {
       expect(dataItemDropDown).toBeInTheDocument();
       fireEvent.click(dataItemDropDown);
 
-      const pressureOption = screen.getByText('pressure');
+      const pressureOption = screen.getByText('Pressure');
       expect(pressureOption).toBeInTheDocument();
       fireEvent.click(pressureOption);
 
@@ -282,7 +282,7 @@ describe('DataSeriesFormItem', () => {
 
       fireEvent.click(dataItemsDropdown);
 
-      const pressureOption = screen.getByText('pressure');
+      const pressureOption = screen.getByText('Pressure');
       expect(pressureOption).toBeInTheDocument();
 
       fireEvent.click(pressureOption);
@@ -455,7 +455,7 @@ describe('DataSeriesFormItem', () => {
       expect(dataItemsDropdown).toBeInTheDocument();
       fireEvent.click(dataItemsDropdown);
       // click on a data item
-      const pressureDataItem = await screen.findAllByText('pressure');
+      const pressureDataItem = await screen.findAllByText('Pressure');
       expect(pressureDataItem[0]).toBeInTheDocument();
       fireEvent.click(pressureDataItem[0]);
       // assert that onChange was called
