@@ -318,7 +318,7 @@ const CardEditForm = ({
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
-            data-testid={`${testID}-open-editor-button`}
+            testID={`${testID}-open-editor-button`}
             kind="tertiary"
             size="small"
             renderIcon={Code16}
