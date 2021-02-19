@@ -780,6 +780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   "visibility": "hidden",
                 }
               }
+              tooltipId="flyout-tooltip"
             >
               <span
                 className="bx--tooltip__caret"

@@ -44,7 +44,7 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     <Button
       className={`${iotPrefix}--flyout-menu__cancel`}
       kind="secondary"
-      data-testid="flyout-menu-cancel"
+      testID="flyout-menu-cancel"
       onClick={() => {
         setIsOpen(false);
 
@@ -59,7 +59,7 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     <Button
       className={`${iotPrefix}--flyout-menu__submit`}
       aria-label={i18n.applyButtonText}
-      data-testid="flyout-menu-apply"
+      testID="flyout-menu-apply"
       onClick={() => {
         setIsOpen(false);
         if (onApply) {
@@ -249,7 +249,7 @@ const FlyoutMenu = ({
             open={isOpen}
             direction={tooltipDirection}
             menuOffset={calculateMenuOffset}
-            // tooltipId={tooltipId}
+            tooltipId={tooltipId}
             id={tooltipId} // https://github.com/carbon-design-system/carbon/pull/6744
             triggerId={triggerId}
             tabIndex={tabIndex}
