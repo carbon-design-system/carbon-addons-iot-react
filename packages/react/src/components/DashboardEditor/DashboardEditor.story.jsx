@@ -118,6 +118,26 @@ const mockDataItems = [
       { id: 'min', text: 'Min' },
     ],
   },
+  {
+    dataItemId: 'firmware',
+    type: 'DIMENSION',
+    dataSourceId: 'firmware',
+    label: 'firmware',
+    aggregationMethods: [
+      { id: 'none', text: 'None' },
+      { id: 'last', text: 'Last' },
+    ],
+  },
+  {
+    dataItemId: 'manufacturer',
+    type: 'DIMENSION',
+    dataSourceId: 'manufacturer',
+    label: 'manufacturer',
+    aggregationMethods: [
+      { id: 'none', text: 'None' },
+      { id: 'last', text: 'Last' },
+    ],
+  },
 ];
 
 export default {

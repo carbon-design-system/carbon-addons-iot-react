@@ -7,16 +7,9 @@
     {
       "type": "pwa-chrome",
       "request": "launch",
-      "name": "Debug Story Book",
+      "name": "Debug React Story Book",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}/packages/react",
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack:///*": "${webRoot}/*",
-        "webpack:///./*": "${webRoot}/*",
-        "webpack:///src/*": "${webRoot}/*",
-        "webpack:///./~/*": "${webRoot}/node_modules/*"
-      }
+      "webRoot": "${workspaceFolder}/packages/react"
     },
     {
       "type": "node",
@@ -55,7 +48,6 @@
         "NODE_ICU_DATA": "node_modules/full-icu",
         "TZ": "America/Chicago"
       },
-      "cwd": "${workspaceFolder}/packages/react",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
       "windows": {

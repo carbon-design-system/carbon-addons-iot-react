@@ -15,6 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -81,6 +82,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -90,6 +92,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
           <button
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -149,6 +152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -300,6 +304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -309,6 +314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
           <button
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -368,6 +374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -484,6 +491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -616,6 +624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -625,6 +634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
           <button
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -754,6 +764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -819,6 +830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -828,6 +840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
           <button
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -887,6 +900,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -948,6 +962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -957,6 +972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
           <button
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1016,6 +1032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1123,6 +1140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1184,6 +1202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1243,6 +1262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1304,6 +1324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1313,6 +1334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
           <button
             className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={true}
             onClick={[Function]}
             tabIndex={0}
@@ -1405,6 +1427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1471,6 +1494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1480,6 +1504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
           <button
             className="iot--btn bx--btn bx--btn--danger"
+            data-testid="ComposedModal-modal-danger-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
