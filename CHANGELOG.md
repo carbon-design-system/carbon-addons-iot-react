@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.45...v2.143.0-next.46) (2021-02-19)
+
+
+### Features
+
+* **dashboardeditor:** scroll to added cards ([376f782](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/376f782278279fc49ef004c88efd407543395935))
+
+
+
+
+
 # [2.143.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.44...v2.143.0-next.45) (2021-02-19)
 
 
