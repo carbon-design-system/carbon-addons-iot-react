@@ -66,7 +66,7 @@ const propTypes = {
   /** list of dataItem names that have been selected to display on the card */
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   setSelectedDataItems: PropTypes.func.isRequired,
-  selectedTimeRange: PropTypes.string.isRequired,
+  selectedTimeRange: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
@@ -107,6 +107,7 @@ const propTypes = {
 
 const defaultProps = {
   cardConfig: {},
+  selectedTimeRange: '',
   i18n: {
     dataItemEditorTitle: 'Edit data series',
     dataItemEditorDataItemTitle: 'Data item',
@@ -244,7 +245,7 @@ const DataSeriesFormItem = ({
   dataSeriesItemLinks,
   translateWithId,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});
@@ -283,8 +284,12 @@ const DataSeriesFormItem = ({
         ...dataSection,
         {
           ...(itemWithMetaData && { ...itemWithMetaData }),
-          // create a unique dataSourceId
-          dataSourceId: `${selectedItem.id}_${uuid.v4()}`,
+          // create a unique dataSourceId if it's going into attributes
+          // if it's going into the groupBy section then just use the dataItem ID
+          dataSourceId:
+            itemWithMetaData?.destination === 'groupBy'
+              ? selectedItem.id
+              : `${selectedItem.id}_${uuid.v4()}`,
         },
       ];
       // need to remove the category if the card is a stacked timeseries bar
