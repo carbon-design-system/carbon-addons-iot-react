@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification, SkeletonText } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
@@ -404,6 +404,16 @@ const DashboardEditor = ({
     window.dispatchEvent(new Event('resize'));
   }, [selectedBreakpointIndex]);
 
+  const scrollContainerRef = useRef();
+  // when a new card is added, scroll to the bottom of the page. Instead of trying to attach the ref to the card itself,
+  // check if the scrollHeight has changed in the scroll container, meaning a new card has been added
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo(0, scrollContainerRef.current.scrollHeight);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollContainerRef.current?.scrollHeight]);
+
   /**
    * Adds a default, empty card to the preview
    * @param {string} type card type
@@ -597,6 +607,7 @@ const DashboardEditor = ({
           // enables overflow: auto if a specific breakpoint is selected so the width can be managed
           [`${baseClassName}__overflow`]: selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
         })}
+        ref={scrollContainerRef}
       >
         {renderHeader ? (
           renderHeader()
@@ -623,7 +634,8 @@ const DashboardEditor = ({
         <div
           className={classnames(`${baseClassName}--preview`, {
             // enables overflow: auto if a specific breakpoint is selected so the width can be managed
-            [`${baseClassName}__overflow`]: selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+            [`${baseClassName}--preview__selected-breakpoint`]:
+              selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
           })}
         >
           <div
