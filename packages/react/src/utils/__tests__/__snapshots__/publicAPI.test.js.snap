@@ -8769,6 +8769,7 @@ Map {
         "cards": Array [],
         "layouts": Object {},
       },
+      "isCardResizable": true,
       "isLoading": false,
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
@@ -8788,7 +8789,7 @@ Map {
       "onValidateUploadedImage": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
-      "renderIconByName": null,
+      "renderIconByName": [Function],
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -9295,6 +9296,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isCardResizable": Object {
+        "type": "bool",
       },
       "isLoading": Object {
         "type": "bool",

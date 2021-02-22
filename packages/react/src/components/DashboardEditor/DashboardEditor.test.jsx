@@ -25,6 +25,14 @@ describe('DashboardEditor', () => {
           dataSourceId: 'key1',
           unit: '%',
           label: 'Key 1',
+          thresholds: [
+            {
+              comparison: '>=',
+              value: 30,
+              color: 'red',
+              icon: 'User',
+            },
+          ],
         },
         {
           dataSourceId: 'key2',
@@ -33,6 +41,7 @@ describe('DashboardEditor', () => {
         },
       ],
     },
+    values: { key1: 35 },
   };
   const mockOnImport = jest.fn();
   const mockOnExport = jest.fn();
@@ -62,6 +71,29 @@ describe('DashboardEditor', () => {
     ],
   };
 
+  it('verify icon renders in editor', () => {
+    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
+    // no card should be selected, meaning the gallery should be open
+    const galleryTitle = screen.getByText('Gallery');
+    expect(galleryTitle).toBeInTheDocument();
+    // first find and click the the card
+    const cardTitle = screen.getByTitle(mockValueCard.title);
+    // Verify that the threshold icon renders
+    expect(screen.getByTitle('User')).toBeInTheDocument();
+    expect(cardTitle).toBeInTheDocument();
+  });
+  it('verify custom renderIconByName is called with threshold', () => {
+    const mockRenderIconByName = jest.fn();
+    render(
+      <DashboardEditor
+        {...commonProps}
+        renderIconByName={mockRenderIconByName}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
+    // no card should be selected, meaning the gallery should be open
+    expect(mockRenderIconByName).toHaveBeenCalled();
+  });
   it('clicking card should select the card and close gallery', () => {
     render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
     // no card should be selected, meaning the gallery should be open
@@ -70,7 +102,7 @@ describe('DashboardEditor', () => {
     // first find and click the the card
     const cardTitle = screen.getByTitle(mockValueCard.title);
     expect(cardTitle).toBeInTheDocument();
-    fireEvent.click(cardTitle);
+    fireEvent.mouseDown(cardTitle);
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
 

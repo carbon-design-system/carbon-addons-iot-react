@@ -544,10 +544,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     }
                   >
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                       data-testid="Card"
                       id="Table"
-                      onClick={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       onMouseUp={[Function]}
@@ -1555,12 +1554,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </div>
                         </div>
                       </div>
+                      <span
+                        className="react-resizable-handle react-resizable-handle-se"
+                        onMouseDown={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        style={
+                          Object {
+                            "touchAction": "none",
+                          }
+                        }
+                      />
                     </div>
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                       data-testid="Card"
                       id="Custom"
-                      onClick={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       onMouseUp={[Function]}
@@ -1655,10 +1665,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       />
                     </div>
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                       data-testid="Card"
                       id="Standard"
-                      onClick={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       onMouseUp={[Function]}
@@ -1798,13 +1807,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </div>
                           </div>
                         </div>
+                        <span
+                          className="react-resizable-handle react-resizable-handle-se"
+                          onMouseDown={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchStart={[Function]}
+                          style={
+                            Object {
+                              "touchAction": "none",
+                            }
+                          }
+                        />
                       </div>
+                      <span
+                        className="react-resizable-handle react-resizable-handle-se"
+                        onMouseDown={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        style={
+                          Object {
+                            "touchAction": "none",
+                          }
+                        }
+                      />
                     </div>
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                       data-testid="Card"
                       id="Timeseries"
-                      onClick={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       onMouseUp={[Function]}
@@ -1904,12 +1936,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           />
                         </div>
                       </div>
+                      <span
+                        className="react-resizable-handle react-resizable-handle-se"
+                        onMouseDown={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        style={
+                          Object {
+                            "touchAction": "none",
+                          }
+                        }
+                      />
                     </div>
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
+                      className="iot--card iot--dashboard-editor--preview__card iot--bar-chart-card iot--card--wrapper"
                       data-testid="Card"
                       id="Bar"
-                      onClick={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       onMouseUp={[Function]}
@@ -2009,6 +2052,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           />
                         </div>
                       </div>
+                      <span
+                        className="react-resizable-handle react-resizable-handle-se"
+                        onMouseDown={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        style={
+                          Object {
+                            "touchAction": "none",
+                          }
+                        }
+                      />
                     </div>
                   </div>
                 </div>
@@ -3226,10 +3281,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   }
                 >
                   <div
-                    className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                    className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                     data-testid="Card"
                     id="Custom"
-                    onClick={[Function]}
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     onMouseUp={[Function]}
@@ -3246,6 +3300,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       }
                     }
                     tabIndex={0}
+                    type="CUSTOM"
+                    value={35}
                   >
                     <div
                       className="iot--card--header"
@@ -3332,25 +3388,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           35
                         </h3>
                       </div>
-                      <span
-                        className="react-resizable-handle react-resizable-handle-se"
-                        onMouseDown={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchEnd={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "touchAction": "none",
-                          }
-                        }
-                      />
                     </div>
                   </div>
                   <div
-                    className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                    className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                     data-testid="Card"
                     id="Standard"
-                    onClick={[Function]}
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     onMouseUp={[Function]}
@@ -3534,7 +3577,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </div>
                         </div>
                       </div>
+                      <span
+                        className="react-resizable-handle react-resizable-handle-se"
+                        onMouseDown={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        style={
+                          Object {
+                            "touchAction": "none",
+                          }
+                        }
+                      />
                     </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
                   </div>
                 </div>
               </div>
@@ -7420,6 +7487,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             title="Data table"
                           >
                             Data table
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item iot--list-item__selectable"
+                    data_testid={null}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <div
+                      className="iot--list-item--content"
+                    >
+                      <div
+                        className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                      >
+                        <div
+                          className="iot--card-gallery-list__icon"
+                        >
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <defs>
+                              <path
+                                d="M14.94 13.26l-6.5-12a.5.5 0 00-.88 0l-6.5 12a.5.5 0 000 .5.5.5 0 00.44.24h13a.5.5 0 00.44-.74z"
+                                id="alert-table-icon_svg__a"
+                              />
+                              <path
+                                d="M8 10.5A.75.75 0 118 12a.75.75 0 010-1.5zm.565-4.995v4H7.44v-4h1.125z"
+                                id="alert-table-icon_svg__b"
+                              />
+                            </defs>
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M0 0h40v2.759H0z"
+                                fill="#0058FF"
+                              />
+                              <path
+                                d="M.5 3.259h39V31.5H.5z"
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M3.5 6.621h19V9.38h-19zm21.5 0h11V9.38H25zM3.5 18.759h19v2.759h-19zm0-6.069h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 24.828h19v2.759h-19z"
+                                fill="#D8D8D8"
+                              />
+                              <g
+                                transform="translate(21 13.714)"
+                              >
+                                <use
+                                  fill="#0F62FE"
+                                  xlinkHref="#alert-table-icon_svg__a"
+                                />
+                                <use
+                                  fill="#FFF"
+                                  xlinkHref="#alert-table-icon_svg__b"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        className="iot--list-item--content--values"
+                      >
+                        <div
+                          className="iot--list-item--content--values--main"
+                        >
+                          <div
+                            className="iot--list-item--content--values--value"
+                            title="Alert table"
+                          >
+                            Alert table
                           </div>
                         </div>
                       </div>
@@ -11740,10 +11891,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   }
                 >
                   <div
-                    className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                    className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                     data-testid="Card"
                     id="Timeseries"
-                    onClick={[Function]}
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     onMouseUp={[Function]}
@@ -11843,6 +11993,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         />
                       </div>
                     </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
                   </div>
                 </div>
               </div>
@@ -13059,10 +13221,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   }
                 >
                   <div
-                    className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                    className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                     data-testid="Card"
                     id="Table"
-                    onClick={[Function]}
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     onMouseUp={[Function]}
@@ -14070,12 +14231,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </div>
                       </div>
                     </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
                   </div>
                   <div
-                    className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                    className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                     data-testid="Card"
                     id="Custom"
-                    onClick={[Function]}
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     onMouseUp={[Function]}
@@ -14170,10 +14342,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     />
                   </div>
                   <div
-                    className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                    className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                     data-testid="Card"
                     id="Standard"
-                    onClick={[Function]}
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     onMouseUp={[Function]}
@@ -14357,13 +14528,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </div>
                         </div>
                       </div>
+                      <span
+                        className="react-resizable-handle react-resizable-handle-se"
+                        onMouseDown={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        style={
+                          Object {
+                            "touchAction": "none",
+                          }
+                        }
+                      />
                     </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
                   </div>
                   <div
-                    className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                    className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                     data-testid="Card"
                     id="Timeseries"
-                    onClick={[Function]}
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     onMouseUp={[Function]}
@@ -14463,12 +14657,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         />
                       </div>
                     </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
                   </div>
                   <div
-                    className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
+                    className="iot--card iot--dashboard-editor--preview__card iot--bar-chart-card iot--card--wrapper"
                     data-testid="Card"
                     id="Bar"
-                    onClick={[Function]}
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     onMouseUp={[Function]}
@@ -14568,6 +14773,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         />
                       </div>
                     </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
                   </div>
                 </div>
               </div>
