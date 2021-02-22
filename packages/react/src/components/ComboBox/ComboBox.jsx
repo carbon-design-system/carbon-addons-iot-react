@@ -65,6 +65,7 @@ const ComboBox = ({
   helperText,
   shouldFilterItem,
   onBlur,
+  invalid,
   ...rest
 }) => {
   // Ref for the combobox input
@@ -147,6 +148,7 @@ const ComboBox = ({
     }
 
     if (
+      !invalid &&
       (addToList || hasMultiValue) &&
       newItem?.id.startsWith(`${iotPrefix}-input-`) &&
       !isInList
@@ -163,7 +165,7 @@ const ComboBox = ({
   const handleOnKeypress = (evt) => {
     // Current value of input
     const currentValue = comboRef.current.textInput.current.value.trim();
-    if (evt.key === 'Enter' && currentValue) {
+    if (evt.key === 'Enter' && currentValue && !invalid) {
       const newItem = {
         id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${currentValue.length}`,
         text: currentValue,
@@ -174,7 +176,7 @@ const ComboBox = ({
 
   const handleInputChange = (e) => {
     const matchedItem = listItems.filter((x) => itemToString(x) === e)[0];
-    if ((onBlur || addToList || hasMultiValue) && e && e !== '' && !matchedItem) {
+    if ((onBlur || addToList || hasMultiValue) && !invalid && e && e !== '' && !matchedItem) {
       setInputValue({
         id: `${iotPrefix}-input-${e.split(' ').join('-')}-${e.length}`,
         text: e,
@@ -228,6 +230,7 @@ const ComboBox = ({
         disabled={disabled || (loading !== undefined && loading !== false)}
         helperText={helperText}
         shouldFilterItem={hasMultiValue || addToList ? shouldFilterItemForTags : shouldFilterItem}
+        invalid={invalid}
         {...rest}
       />
       {hasMultiValue ? (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
-import { red50, blue50, green50, teal70, purple70 } from '@carbon/colors';
+import { withKnobs, boolean, object } from '@storybook/addon-knobs';
+import { purple70 } from '@carbon/colors';
 
 import ColorDropdown from './ColorDropdown';
 
@@ -18,10 +18,19 @@ export const DefaultExample = () => (
   <div style={{ width: '200px' }}>
     <ColorDropdown
       id="myColorDropdown"
-      label={text('label', 'Select a color')}
       light={boolean('light', false)}
-      titleText={text('titleText', 'Color')}
       onChange={action('onChange')}
+      hideLabels={boolean('hideLabels', false)}
+      selectedColor={object('selectedColor', null)}
+      testID="color-dropdown"
+      i18n={object('i18n', {
+        titleText: 'Color',
+        helperText: '',
+        placeholder: 'Filter colors',
+        invalidText: 'Invalid color',
+      })}
+      allowCustomColors={boolean('allowCustomColors', false)}
+      disabled={boolean('disabled', false)}
     />
   </div>
 );
@@ -30,10 +39,18 @@ export const PresetSelectionExample = () => (
   <div style={{ width: '200px' }}>
     <ColorDropdown
       id="myColorDropdown"
-      label={text('label', 'Select a color')}
-      titleText={text('titleText', 'Color')}
       onChange={action('onChange')}
-      selectedColor={{ carbonColor: teal70, name: 'teal70' }}
+      hideLabels={boolean('hideLabels', false)}
+      selectedColor={object('selectedColor', { id: 'yellow', text: 'yellow' })}
+      testID="color-dropdown"
+      i18n={object('i18n', {
+        titleText: 'Color',
+        helperText: '',
+        placeholder: 'Filter colors',
+        invalidText: 'Invalid color',
+      })}
+      allowCustomColors={boolean('allowCustomColors', true)}
+      disabled={boolean('disabled', false)}
     />
   </div>
 );
@@ -42,14 +59,22 @@ export const CustomColorsExample = () => (
   <div style={{ width: '200px' }}>
     <ColorDropdown
       id="myColorDropdown"
-      label={text('label', 'Select a color')}
-      titleText={text('titleText', 'Color')}
       colors={[
-        { carbonColor: red50, name: 'red' },
-        { carbonColor: green50, name: 'green' },
-        { carbonColor: blue50, name: 'blue' },
+        { id: 'red', text: 'red' },
+        { id: 'green', text: 'green' },
+        { id: 'blue', text: 'blue' },
       ]}
+      hideLabels={boolean('hideLabels', false)}
       onChange={action('onChange')}
+      testID="color-dropdown"
+      i18n={object('i18n', {
+        titleText: 'Color',
+        helperText: '',
+        placeholder: 'Filter colors',
+        invalidText: 'Invalid color',
+      })}
+      allowCustomColors={boolean('allowCustomColors', false)}
+      disabled={boolean('disabled', false)}
     />
   </div>
 );
@@ -58,11 +83,18 @@ export const NoLabelsExample = () => (
   <div style={{ width: '6rem' }}>
     <ColorDropdown
       id="myColorDropdown"
-      label={text('label', 'Select a color')}
-      titleText={text('titleText', 'Color')}
-      selectedColor={{ carbonColor: purple70, name: 'purple70' }}
-      hideLabels={boolean('showLabels', true)}
+      selectedColor={{ id: purple70, text: 'purple70' }}
+      hideLabels={boolean('hideLabels', true)}
       onChange={action('onChange')}
+      testID="color-dropdown"
+      i18n={object('i18n', {
+        titleText: 'Color',
+        helperText: '',
+        placeholder: 'Filter colors',
+        invalidText: 'Invalid color',
+      })}
+      allowCustomColors={boolean('allowCustomColors', false)}
+      disabled={boolean('disabled', false)}
     />
   </div>
 );

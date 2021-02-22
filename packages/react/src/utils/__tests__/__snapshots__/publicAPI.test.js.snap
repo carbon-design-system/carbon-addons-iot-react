@@ -18512,74 +18512,84 @@ Map {
   },
   "ColorDropdown" => Object {
     "defaultProps": Object {
+      "allowCustomColors": false,
       "colors": Array [
         Object {
-          "carbonColor": "#6929c4",
-          "name": "purple70",
+          "id": "#6929c4",
+          "text": "purple70",
         },
         Object {
-          "carbonColor": "#1192e8",
-          "name": "cyan50",
+          "id": "#1192e8",
+          "text": "cyan50",
         },
         Object {
-          "carbonColor": "#005d5d",
-          "name": "teal70",
+          "id": "#005d5d",
+          "text": "teal70",
         },
         Object {
-          "carbonColor": "#9f1853",
-          "name": "magenta70",
+          "id": "#9f1853",
+          "text": "magenta70",
         },
         Object {
-          "carbonColor": "#fa4d56",
-          "name": "red50",
+          "id": "#fa4d56",
+          "text": "red50",
         },
         Object {
-          "carbonColor": "#520408",
-          "name": "red90",
+          "id": "#520408",
+          "text": "red90",
         },
         Object {
-          "carbonColor": "#198038",
-          "name": "green60",
+          "id": "#198038",
+          "text": "green60",
         },
         Object {
-          "carbonColor": "#002d9c",
-          "name": "blue80",
+          "id": "#002d9c",
+          "text": "blue80",
         },
         Object {
-          "carbonColor": "#ee5396",
-          "name": "magenta50",
+          "id": "#ee5396",
+          "text": "magenta50",
         },
         Object {
-          "carbonColor": "#a56eff",
-          "name": "purple50",
+          "id": "#a56eff",
+          "text": "purple50",
         },
         Object {
-          "carbonColor": "#009d9a",
-          "name": "teal50",
+          "id": "#009d9a",
+          "text": "teal50",
         },
         Object {
-          "carbonColor": "#012749",
-          "name": "cyan90",
+          "id": "#012749",
+          "text": "cyan90",
         },
       ],
+      "disabled": false,
       "hideLabels": false,
-      "label": "Select a color",
+      "i18n": Object {
+        "helperText": "",
+        "invalidText": "Invalid color",
+        "placeholder": "Filter colors",
+        "titleText": "Color",
+      },
       "light": false,
+      "onChange": null,
       "selectedColor": undefined,
       "testID": undefined,
-      "titleText": "Color",
       "translateWithId": undefined,
     },
     "propTypes": Object {
+      "allowCustomColors": Object {
+        "type": "bool",
+      },
       "colors": Object {
         "args": Array [
           Object {
             "args": Array [
               Object {
-                "carbonColor": Object {
+                "id": Object {
                   "type": "string",
                 },
-                "name": Object {
+                "text": Object {
                   "type": "string",
                 },
               },
@@ -18589,30 +18599,48 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "disabled": Object {
+        "type": "bool",
+      },
       "hideLabels": Object {
         "type": "bool",
       },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "helperText": Object {
+              "type": "string",
+            },
+            "invalidText": Object {
+              "type": "string",
+            },
+            "placeholder": Object {
+              "type": "string",
+            },
+            "titleText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "id": Object {
         "isRequired": true,
-        "type": "string",
-      },
-      "label": Object {
         "type": "string",
       },
       "light": Object {
         "type": "bool",
       },
       "onChange": Object {
-        "isRequired": true,
         "type": "func",
       },
       "selectedColor": Object {
         "args": Array [
           Object {
-            "carbonColor": Object {
+            "id": Object {
               "type": "string",
             },
-            "name": Object {
+            "text": Object {
               "type": "string",
             },
           },
@@ -18620,9 +18648,6 @@ Map {
         "type": "shape",
       },
       "testID": Object {
-        "type": "string",
-      },
-      "titleText": Object {
         "type": "string",
       },
       "translateWithId": Object {
