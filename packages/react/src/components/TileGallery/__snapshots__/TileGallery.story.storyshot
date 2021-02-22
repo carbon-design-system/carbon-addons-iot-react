@@ -151,6 +151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -1532,6 +1533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 type="button"

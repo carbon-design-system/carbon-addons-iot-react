@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
@@ -38,6 +38,8 @@ const propTypes = {
         src: PropTypes.string,
         zoomMax: PropTypes.number,
       }),
+      // custom card content is a function
+      PropTypes.func,
     ]),
   }),
   /** Callback function when form data changes */
@@ -133,7 +135,7 @@ const CardEditFormContent = ({
   onFetchDynamicDemoHotspots,
 }) => {
   const { type, timeRange } = cardConfig;
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const [selectedDataItems, setSelectedDataItems] = useState([]);
   const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 
