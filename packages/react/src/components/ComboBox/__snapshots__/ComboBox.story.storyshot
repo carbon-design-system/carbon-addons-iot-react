@@ -138,6 +138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       </div>
       <button
         className="iot--btn bx--btn bx--btn--primary"
+        data-testid="Button"
         disabled={false}
         onClick={[Function]}
         style={
@@ -876,6 +877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     </div>
     <button
       className="iot--btn bx--btn bx--btn--primary"
+      data-testid="Button"
       disabled={false}
       onClick={[Function]}
       style={

@@ -10,7 +10,7 @@ import {
 let tree;
 
 const NEW_RULE_MATCH = expect.objectContaining({
-  id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
+  id: expect.stringMatching(/[a-zA-Z0-9]/),
   columnId: '',
   value: '',
   operand: '',
@@ -196,7 +196,7 @@ describe('rule builder utils', () => {
     const addShallowGroup = addRule(tree.rules, undefined, true);
     expect(addShallowGroup).toContainEqual(
       expect.objectContaining({
-        id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
+        id: expect.stringMatching(/[a-zA-Z0-9]/),
         groupLogic: 'ALL',
         rules: expect.arrayContaining([NEW_RULE_MATCH]),
       })

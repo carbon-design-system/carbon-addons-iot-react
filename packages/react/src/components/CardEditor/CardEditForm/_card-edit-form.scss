@@ -112,7 +112,7 @@
   &--input-group {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: baseline;
     padding-bottom: $spacing-05;
     &--item {
       .#{$iot-prefix}--color-dropdown {
