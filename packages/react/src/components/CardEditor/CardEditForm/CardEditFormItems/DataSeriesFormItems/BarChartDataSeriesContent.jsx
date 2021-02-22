@@ -146,6 +146,7 @@ const BarChartDataSeriesContent = ({
         />
       </div>
       {cardConfig.content.timeDataSourceId &&
+      Object.keys(availableDimensions)?.length > 0 &&
       cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
       cardConfig.content.series.length <= 1 ? (
         <div className={`${baseClassName}--input`}>
