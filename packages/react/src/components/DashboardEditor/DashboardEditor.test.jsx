@@ -6,6 +6,14 @@ import { Link } from '../..';
 import DashboardEditor from './DashboardEditor';
 
 describe('DashboardEditor', () => {
+  const realScrollTo = window.HTMLElement.prototype.scrollTo;
+  beforeEach(() => {
+    window.HTMLElement.prototype.scrollTo = jest.fn();
+  });
+  afterEach(() => {
+    window.HTMLElement.prototype.scrollTo = realScrollTo;
+  });
+
   const mockValueCard = {
     id: 'Standard',
     title: 'value card',
