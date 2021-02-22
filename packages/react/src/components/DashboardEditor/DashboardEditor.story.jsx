@@ -52,6 +52,7 @@ const mockDataItems = [
       { id: 'max', text: 'Max' },
       { id: 'min', text: 'Min' },
     ],
+    grain: 'hourly',
   },
   {
     dataItemId: 'torque_min',
@@ -65,6 +66,7 @@ const mockDataItems = [
       { id: 'max', text: 'Max' },
       { id: 'min', text: 'Min' },
     ],
+    grain: 'hourly',
   },
   {
     dataItemId: 'torque_mean',
@@ -78,6 +80,7 @@ const mockDataItems = [
       { id: 'max', text: 'Max' },
       { id: 'min', text: 'Min' },
     ],
+    grain: 'hourly',
   },
   {
     dataItemId: 'torque',
@@ -113,6 +116,26 @@ const mockDataItems = [
       { id: 'mean', text: 'Mean' },
       { id: 'max', text: 'Max' },
       { id: 'min', text: 'Min' },
+    ],
+  },
+  {
+    dataItemId: 'firmware',
+    type: 'DIMENSION',
+    dataSourceId: 'firmware',
+    label: 'firmware',
+    aggregationMethods: [
+      { id: 'none', text: 'None' },
+      { id: 'last', text: 'Last' },
+    ],
+  },
+  {
+    dataItemId: 'manufacturer',
+    type: 'DIMENSION',
+    dataSourceId: 'manufacturer',
+    label: 'manufacturer',
+    aggregationMethods: [
+      { id: 'none', text: 'None' },
+      { id: 'last', text: 'Last' },
     ],
   },
 ];
@@ -158,6 +181,7 @@ export const Default = () => (
       'VALUE',
       'IMAGE',
       'TABLE',
+      'ALERT',
       'CUSTOM',
     ])}
     headerBreadcrumbs={[

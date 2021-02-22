@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
@@ -219,15 +219,7 @@ export const hideCardPropertiesForEditor = (card) => {
  * @param {Function} onChange
  * @param {Function} setShowEditor
  */
-export const handleSubmit = (
-  card,
-  id,
-  content,
-  setError,
-  onValidateCardJson,
-  onChange,
-  setShowEditor
-) => {
+export const handleSubmit = (card, id, setError, onValidateCardJson, onChange, setShowEditor) => {
   // first validate basic JSON syntax
   const basicErrors = basicCardValidation(card);
   // second validate the consumer's custom function if provided
@@ -238,7 +230,7 @@ export const handleSubmit = (
   const allErrors = basicErrors.concat(customValidationErrors);
   // then submit
   if (isEmpty(allErrors)) {
-    onChange({ ...JSON.parse(card), id, content });
+    onChange({ ...JSON.parse(card), id });
     setShowEditor(false);
     return true;
   }
@@ -264,11 +256,11 @@ const CardEditForm = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
-  const { id, content } = cardConfig;
+  const { id } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   return (
@@ -276,7 +268,7 @@ const CardEditForm = ({
       {showEditor ? (
         <CardCodeEditor
           onSubmit={(card, setError) =>
-            handleSubmit(card, id, content, setError, onValidateCardJson, onChange, setShowEditor)
+            handleSubmit(card, id, setError, onValidateCardJson, onChange, setShowEditor)
           }
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
@@ -326,7 +318,7 @@ const CardEditForm = ({
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
-            data-testid={`${testID}-open-editor-button`}
+            testID={`${testID}-open-editor-button`}
             kind="tertiary"
             size="small"
             renderIcon={Code16}

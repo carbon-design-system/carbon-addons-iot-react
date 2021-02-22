@@ -26,6 +26,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <button
           aria-label="Helpful description"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+          data-testid="Button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -155,6 +156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       I'm a custom footer!  
                       <button
                         className="iot--btn bx--btn bx--btn--primary"
+                        data-testid="Button"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -233,6 +235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <button
           aria-label="Helpful description"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+          data-testid="Button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -335,6 +338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <button
           aria-label="Helpful description"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+          data-testid="Button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}

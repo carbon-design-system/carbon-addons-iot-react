@@ -7,9 +7,9 @@
     {
       "type": "pwa-chrome",
       "request": "launch",
-      "name": "Debug Story Book",
+      "name": "Debug React Story Book",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}/lib/index.js"
+      "webRoot": "${workspaceFolder}/packages/react"
     },
     {
       "type": "node",
@@ -43,11 +43,12 @@
       "name": "Jest Current File",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": ["${relativeFile}", "--config", "jest.config.js"],
+      "cwd": "${workspaceFolder}/packages/react",
       "env": {
         "NODE_ICU_DATA": "node_modules/full-icu",
         "TZ": "America/Chicago"
       },
-      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/packages/react",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
       "windows": {

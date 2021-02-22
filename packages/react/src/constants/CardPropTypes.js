@@ -63,6 +63,7 @@ export const AttributePropTypes = PropTypes.shape({
       icon: PropTypes.string,
     })
   ),
+  precision: PropTypes.number,
   unit: PropTypes.string,
 });
 
