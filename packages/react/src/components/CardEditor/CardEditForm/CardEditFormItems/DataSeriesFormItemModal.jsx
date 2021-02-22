@@ -129,6 +129,8 @@ const defaultProps = {
     primaryButtonLabelText: 'Save',
     secondaryButtonLabelText: 'Cancel',
     decimalPlaces: 'Decimal places',
+    filterColors: 'Filter colors',
+    invalidColor: 'Invalid color',
   },
   editDataSeries: [],
   showEditor: false,
@@ -142,18 +144,18 @@ const defaultProps = {
 };
 
 const DATAITEM_COLORS_OPTIONS = [
-  { carbonColor: purple70, name: 'purple70' },
-  { carbonColor: cyan50, name: 'cyan50' },
-  { carbonColor: teal70, name: 'teal70' },
-  { carbonColor: magenta70, name: 'magenta70' },
-  { carbonColor: red50, name: 'red50' },
-  { carbonColor: red90, name: 'red90' },
-  { carbonColor: green60, name: 'green60' },
-  { carbonColor: blue80, name: 'blue80' },
-  { carbonColor: magenta50, name: 'magenta50' },
-  { carbonColor: purple50, name: 'purple50' },
-  { carbonColor: teal50, name: 'teal50' },
-  { carbonColor: cyan90, name: 'cyan90' },
+  { id: purple70, text: 'purple70' },
+  { id: cyan50, text: 'cyan50' },
+  { id: teal70, text: 'teal70' },
+  { id: magenta70, text: 'magenta70' },
+  { id: red50, text: 'red50' },
+  { id: red90, text: 'red90' },
+  { id: green60, text: 'green60' },
+  { id: blue80, text: 'blue80' },
+  { id: magenta50, text: 'magenta50' },
+  { id: purple50, text: 'purple50' },
+  { id: teal50, text: 'teal50' },
+  { id: cyan90, text: 'cyan90' },
 ];
 
 const DataSeriesFormItemModal = ({
@@ -255,20 +257,33 @@ const DataSeriesFormItemModal = ({
           const seriesIndex = editDataSeries.findIndex(
             (series) => series.dataSourceId === row.dataSourceId
           );
-          const selectedColor = DATAITEM_COLORS_OPTIONS.find(
-            ({ carbonColor }) => carbonColor === row.color
-          );
+          const selectedColor = DATAITEM_COLORS_OPTIONS.find((color) => color.id === row.color) || {
+            id: row.color,
+            text: row.color,
+          };
+
           return (
             <ColorDropdown
               id={`${id}_color-dropdown`}
-              label=""
-              titleText=""
               selectedColor={selectedColor}
               translateWithId={handleTranslation}
-              onChange={({ color }) => {
-                const updatedSeries = cloneDeep(editDataSeries);
-                updatedSeries[seriesIndex].color = color.carbonColor;
-                setEditDataSeries(updatedSeries);
+              onChange={(inputColor) => {
+                if (inputColor) {
+                  const updatedSeries = cloneDeep(editDataSeries);
+                  updatedSeries[seriesIndex].color = DATAITEM_COLORS_OPTIONS.find(
+                    (color) => color.id === inputColor.id
+                  )
+                    ? inputColor.id
+                    : inputColor.text;
+                  setEditDataSeries(updatedSeries);
+                }
+              }}
+              allowCustomColors
+              i18n={{
+                titleText: null,
+                helperText: null,
+                placeholder: mergedI18n.filterColors,
+                invalidText: mergedI18n.invalidColor,
               }}
             />
           );
@@ -283,6 +298,8 @@ const DataSeriesFormItemModal = ({
       mergedI18n.dataItemEditorBarColor,
       mergedI18n.dataItemEditorDataItemCustomLabel,
       mergedI18n.dataItemEditorLineColor,
+      mergedI18n.filterColors,
+      mergedI18n.invalidColor,
       setEditDataSeries,
       type,
     ]
@@ -414,21 +431,33 @@ const DataSeriesFormItemModal = ({
           <div className={`${baseClassName}--input-group--item`}>
             <ColorDropdown
               id={`${id}_color-dropdown`}
-              label=""
-              titleText={
-                type === CARD_TYPES.TIMESERIES
-                  ? mergedI18n.dataItemEditorLineColor
-                  : mergedI18n.dataItemEditorBarColor
+              selectedColor={
+                DATAITEM_COLORS_OPTIONS.find((color) => color.id === editDataItem.color) || {
+                  id: editDataItem.color,
+                  text: editDataItem.color,
+                }
               }
-              selectedColor={DATAITEM_COLORS_OPTIONS.find(
-                ({ carbonColor }) => carbonColor === editDataItem.color
-              )}
-              onChange={({ color }) =>
-                setEditDataItem({
-                  ...editDataItem,
-                  color: color.carbonColor,
-                })
-              }
+              onChange={(inputColor) => {
+                if (inputColor) {
+                  setEditDataItem({
+                    ...editDataItem,
+                    color: DATAITEM_COLORS_OPTIONS.find((color) => color.id === inputColor.id)
+                      ? inputColor.id
+                      : inputColor.text,
+                  });
+                }
+              }}
+              translateWithId={handleTranslation}
+              allowCustomColors
+              i18n={{
+                titleText:
+                  type === CARD_TYPES.TIMESERIES
+                    ? mergedI18n.dataItemEditorLineColor
+                    : mergedI18n.dataItemEditorBarColor,
+                helperText: null,
+                placeholder: mergedI18n.filterColors,
+                invalidText: mergedI18n.invalidColor,
+              }}
             />
           </div>
         )}
@@ -563,7 +592,7 @@ const DataSeriesFormItemModal = ({
           thresholds={editDataItem.thresholds}
           translateWithId={handleTranslation}
           selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
-          selectedColor={{ carbonColor: red60, name: 'red60' }}
+          selectedColor={{ id: red60, text: 'red60' }}
           onChange={(thresholds) => {
             setEditDataItem({
               ...editDataItem,
@@ -587,7 +616,7 @@ const DataSeriesFormItemModal = ({
                   ? mergedI18n.dataItemEditorValueCardTitle
                   : mergedI18n.dataItemEditorDataSeriesTitle,
             }}
-            size="xs"
+            size="sm"
             footer={{
               primaryButtonLabel: mergedI18n.primaryButtonLabelText,
               secondaryButtonLabel: mergedI18n.secondaryButtonLabelText,

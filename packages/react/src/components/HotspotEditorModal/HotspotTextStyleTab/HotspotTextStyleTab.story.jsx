@@ -29,18 +29,18 @@ export default {
 };
 
 const colors = [
-  { carbonColor: purple70, name: 'purple70' },
-  { carbonColor: cyan50, name: 'cyan50' },
-  { carbonColor: teal70, name: 'teal70' },
-  { carbonColor: magenta70, name: 'magenta70' },
-  { carbonColor: red50, name: 'red50' },
-  { carbonColor: red90, name: 'red90' },
-  { carbonColor: green60, name: 'green60' },
-  { carbonColor: blue80, name: 'blue80' },
-  { carbonColor: magenta50, name: 'magenta50' },
-  { carbonColor: purple50, name: 'purple50' },
-  { carbonColor: teal50, name: 'teal50' },
-  { carbonColor: cyan90, name: 'cyan90' },
+  { id: purple70, text: 'purple70' },
+  { id: cyan50, text: 'cyan50' },
+  { id: teal70, text: 'teal70' },
+  { id: magenta70, text: 'magenta70' },
+  { id: red50, text: 'red50' },
+  { id: red90, text: 'red90' },
+  { id: green60, text: 'green60' },
+  { id: blue80, text: 'blue80' },
+  { id: magenta50, text: 'magenta50' },
+  { id: purple50, text: 'purple50' },
+  { id: teal50, text: 'teal50' },
+  { id: cyan90, text: 'cyan90' },
 ];
 
 export const Default = () => {

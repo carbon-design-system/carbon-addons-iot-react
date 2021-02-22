@@ -239,7 +239,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -613,7 +612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       aria-controls={null}
                       aria-labelledby="downshift-1-label"
                       autoComplete="off"
-                      className="bx--text-input bx--text-input--empty"
+                      className="bx--text-input"
                       data-testid="combo-box"
                       disabled={false}
                       id="tooltip-form-color"
@@ -623,9 +622,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       placeholder="Filter colors"
                       tabIndex="0"
                       type="text"
-                      value=""
+                      value="green"
                     />
-                    
+                    <div
+                      aria-label="Clear Selection"
+                      className="bx--list-box__selection"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                        />
+                      </svg>
+                    </div>
                     <div
                       className="bx--list-box__menu-icon"
                     >
@@ -648,7 +669,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                 </div>
-                
               </div>
             </div>
           </div>

@@ -20,9 +20,9 @@ const selectableIcons = [
 ];
 
 const colors = [
-  { carbonColor: red50, name: 'red' },
-  { carbonColor: green50, name: 'green' },
-  { carbonColor: blue50, name: 'blue' },
+  { id: red50, text: 'red' },
+  { id: green50, text: 'green' },
+  { id: blue50, text: 'blue' },
 ];
 
 export default {

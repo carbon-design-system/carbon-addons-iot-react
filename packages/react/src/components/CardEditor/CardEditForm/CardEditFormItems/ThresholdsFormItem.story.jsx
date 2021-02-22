@@ -19,7 +19,7 @@ export const DefaultExample = () => (
     <ThresholdsFormItem
       id="myThresholdsFormItem"
       selectedIcon={{ carbonIcon: <Checkmark24 />, name: 'Checkmark' }}
-      selectedColor={{ carbonColor: red60, name: 'red60' }}
+      selectedColor={{ id: red60, text: 'red60' }}
       onChange={(thresholds) => console.log(thresholds)}
     />
   </div>

@@ -63,19 +63,21 @@ const propTypes = {
   }),
   colors: PropTypes.arrayOf(
     PropTypes.shape({
-      carbonColor: PropTypes.string,
-      name: PropTypes.string,
+      id: PropTypes.string,
+      text: PropTypes.string,
     })
   ),
   /** default color for each threshold */
   selectedColor: PropTypes.shape({
-    carbonColor: PropTypes.string,
-    name: PropTypes.string,
+    id: PropTypes.string,
+    text: PropTypes.string,
   }),
   i18n: PropTypes.shape({
     dataItemEditorDataItemThresholds: PropTypes.string,
     dataItemEditorDataItemAddThreshold: PropTypes.string,
     dataItemEditorDataItemRemove: PropTypes.string,
+    filterColors: PropTypes.string,
+    invalidColor: PropTypes.string,
   }),
   /** The current data item's id */
   dataSourceId: PropTypes.string,
@@ -92,6 +94,8 @@ const defaultProps = {
     dataItemEditorDataItemThresholds: 'Thresholds',
     dataItemEditorDataItemAddThreshold: 'Add threshold',
     dataItemEditorDataItemRemove: 'Remove',
+    filterColors: 'Filter colors',
+    invalidColor: 'Invalid color',
   },
   icons: validThresholdIcons,
   selectedIcon: undefined,
@@ -141,7 +145,10 @@ const ThresholdsFormItem = ({
         };
 
         // get threshold color to initialize color dropdown
-        const thresholdColor = colors.find((color) => color.carbonColor === threshold.color);
+        const thresholdColor = colors.find((color) => color.id === threshold.color) || {
+          id: threshold.color,
+          text: threshold.color,
+        };
 
         return (
           <div key={`${threshold.id}_${i}`}>
@@ -170,21 +177,28 @@ const ThresholdsFormItem = ({
                   // need to regen if a threshold is added
                   key={`${thresholds.length}`}
                   id={`${cardConfig.id}_value-card-threshold-color_${i}`}
-                  label=""
-                  titleText=""
-                  hideLabels
                   colors={colors}
                   selectedColor={thresholdColor}
-                  onChange={({ color }) => {
-                    const updatedThresholds = [...thresholds];
-                    updatedThresholds[i] = {
-                      ...updatedThresholds[i],
-                      color: color.carbonColor,
-                    };
-                    onChange(updatedThresholds.map((item) => omit(item, 'id')));
-                    setThresholds(updatedThresholds);
+                  onChange={(inputColor) => {
+                    if (inputColor) {
+                      const updatedThresholds = [...thresholds];
+                      updatedThresholds[i] = {
+                        ...updatedThresholds[i],
+                        color: inputColor.id,
+                      };
+                      onChange(updatedThresholds.map((item) => omit(item, 'id')));
+                      setThresholds(updatedThresholds);
+                    }
                   }}
                   translateWithId={translateWithId}
+                  allowCustomColors
+                  i18n={{
+                    titleText: null,
+                    helperText: null,
+                    placeholder: mergedI18n.filterColors,
+                    invalidText: mergedI18n.invalidColor,
+                  }}
+                  light
                 />
               </div>
               <div className={`${baseClassName}--threshold-input-group--item-dropdown`}>
@@ -208,7 +222,7 @@ const ThresholdsFormItem = ({
                   }}
                 />
               </div>
-              <div className={`${baseClassName}--threshold-input-group--item-end`}>
+              <div>
                 <NumberInput
                   id={`${cardConfig.id}_value-card-threshold-value_${i}`}
                   step={1}
@@ -253,7 +267,7 @@ const ThresholdsFormItem = ({
             comparison: '>',
             value: 0,
             icon: selectedIcon?.name || 'Warning alt',
-            color: selectedColor?.carbonColor || red60,
+            color: selectedColor?.id || red60,
           };
           if (dataSourceId) {
             newThreshold = { dataSourceId, ...newThreshold };

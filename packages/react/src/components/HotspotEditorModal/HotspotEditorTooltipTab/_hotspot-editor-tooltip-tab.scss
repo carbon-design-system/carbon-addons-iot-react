@@ -31,6 +31,10 @@
   .#{$prefix}--dropdown__wrapper {
     width: calc(50% - 1rem);
   }
+
+  .#{$iot-prefix}--combobox {
+    padding-top: 0;
+  }
 }
 
 .#{$iot-prefix}--hotspot-editor-tooltip-tab__delete-button-container {

@@ -2300,7 +2300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         htmlFor="iot--card-edit-form--input-color"
                         id="downshift-2-label"
                       >
-                        Color
+                        Background color
                       </label>
                       <div
                         aria-label="Choose an item"
@@ -2334,7 +2334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             onBlur={[Function]}
                             onChange={[Function]}
                             onKeyDown={[Function]}
-                            placeholder="Filter colors"
+                            placeholder="Select a color"
                             tabIndex="0"
                             type="text"
                             value=""
@@ -2365,7 +2365,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </div>
                         </div>
                       </div>
-                      
                     </div>
                   </div>
                 </div>

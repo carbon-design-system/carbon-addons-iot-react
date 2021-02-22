@@ -8,9 +8,9 @@ import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
 
 describe('HotspotEditorTooltipTab', () => {
   const getColors = () => [
-    { carbonColor: red50, name: 'red' },
-    { carbonColor: green50, name: 'green' },
-    { carbonColor: blue50, name: 'blue' },
+    { id: red50, text: 'red' },
+    { id: green50, text: 'green' },
+    { id: blue50, text: 'blue' },
   ];
 
   const getIcons = () => [
@@ -86,7 +86,7 @@ describe('HotspotEditorTooltipTab', () => {
     const firstItem = screen.getAllByRole('option')[0];
     userEvent.click(firstItem);
     expect(onChange).toHaveBeenCalledWith({
-      color: getColors()[0].carbonColor,
+      color: getColors()[0].id,
     });
 
     userEvent.click(screen.getByText('Select an icon'));
@@ -126,7 +126,7 @@ describe('HotspotEditorTooltipTab', () => {
 
   it('renders preset color string & icon string value', () => {
     const colorObj = getColors()[1];
-    const colorString = colorObj.carbonColor;
+    const colorString = colorObj.id;
     const iconObj = getIcons()[1];
     const iconString = iconObj.id;
     render(

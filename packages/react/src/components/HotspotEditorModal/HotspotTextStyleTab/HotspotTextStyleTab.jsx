@@ -9,6 +9,7 @@ import {
   TextItalic16 as TextItalic,
   TextUnderline16 as TextUnderline,
 } from '@carbon/icons-react';
+import classnames from 'classnames';
 
 import { settings } from '../../../constants/Settings';
 import IconSwitch from '../../IconSwitch/IconSwitch';
@@ -19,8 +20,8 @@ import { isNumberValidForMinMax } from '../../../utils/componentUtilityFunctions
 const { iotPrefix } = settings;
 
 const colorPropType = PropTypes.shape({
-  carbonColor: PropTypes.string,
-  name: PropTypes.string,
+  id: PropTypes.string,
+  text: PropTypes.string,
 });
 
 const propTypes = {
@@ -45,6 +46,8 @@ const propTypes = {
     borderWidthInvalidText: PropTypes.string,
     deleteButtonLabelText: PropTypes.string,
     deleteButtonIconDescription: PropTypes.string,
+    invalidColor: PropTypes.string,
+    selectAColor: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
   /** Callback for when any of the form element's value changes */
@@ -97,6 +100,8 @@ const defaultProps = {
     borderWidthInvalidText: 'Border Width is invalid',
     deleteButtonLabelText: 'Delete hotspot',
     deleteButtonIconDescription: 'Delete this hotspot',
+    invalidColor: 'Invalid color',
+    selectAColor: 'Filter colors',
   },
   formValues: {
     bold: false,
@@ -123,7 +128,10 @@ const defaultProps = {
 
 const getSelectedColorItem = (color, colorCollection) => {
   return typeof color === 'string' && Array.isArray(colorCollection)
-    ? colorCollection.find((colorObj) => colorObj.carbonColor === color)
+    ? colorCollection.find((colorObj) => colorObj.id === color) || {
+        id: color,
+        text: color,
+      }
     : color;
 };
 
@@ -168,6 +176,7 @@ const HotspotTextStyleTab = ({
     deleteButtonLabelText,
     deleteButtonIconDescription,
     selectAColor,
+    invalidColor,
   } = merge({}, defaultProps.i18n, i18n);
 
   const {
@@ -190,7 +199,7 @@ const HotspotTextStyleTab = ({
   );
 
   return (
-    <div className={className}>
+    <div className={classnames(`${iotPrefix}--hotspot-text-style-tab`, className)}>
       {showInfoMessage ? (
         renderInfoMessage()
       ) : (
@@ -233,17 +242,28 @@ const HotspotTextStyleTab = ({
 
             <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
               <ColorDropdown
-                key={fontColor?.carbonColor ?? fontColor}
+                key={fontColor?.id ?? fontColor}
                 id={`${iotPrefix}--hotspot-text-style-tab__font-color`}
-                titleText={fontColorLabelText}
                 light={light}
-                label={selectAColor}
                 selectedColor={getSelectedColorItem(fontColor, fontColors)}
                 colors={fontColors}
                 onChange={(selected) => {
-                  onChange({ fontColor: selected.color.carbonColor });
+                  if (selected) {
+                    onChange({
+                      fontColor: fontColors.find((colorObj) => colorObj.id === selected.id)
+                        ? selected.id
+                        : selected.text,
+                    });
+                  }
                 }}
                 translateWithId={translateWithId}
+                allowCustomColors
+                i18n={{
+                  titleText: fontColorLabelText,
+                  helperText: null,
+                  placeholder: selectAColor,
+                  invalidText: invalidColor,
+                }}
               />
 
               <NumberInput
@@ -269,19 +289,28 @@ const HotspotTextStyleTab = ({
 
             <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
               <ColorDropdown
-                key={backgroundColor?.carbonColor ?? backgroundColor}
+                key={backgroundColor?.id ?? backgroundColor}
                 id={`${iotPrefix}--hotspot-text-style-tab__background-color`}
-                titleText={backgroundLabelText}
                 light={light}
-                label={selectAColor}
                 selectedColor={getSelectedColorItem(backgroundColor, backgroundColors)}
                 colors={backgroundColors}
                 onChange={(selected) => {
-                  onChange({
-                    backgroundColor: selected.color.carbonColor,
-                  });
+                  if (selected) {
+                    onChange({
+                      backgroundColor: fontColors.find((colorObj) => colorObj.id === selected.id)
+                        ? selected.id
+                        : selected.text,
+                    });
+                  }
                 }}
                 translateWithId={translateWithId}
+                allowCustomColors
+                i18n={{
+                  titleText: backgroundLabelText,
+                  helperText: null,
+                  placeholder: selectAColor,
+                  invalidText: invalidColor,
+                }}
               />
 
               <NumberInput
@@ -306,17 +335,30 @@ const HotspotTextStyleTab = ({
 
             <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
               <ColorDropdown
-                key={borderColor?.carbonColor ?? borderColor}
+                key={borderColor?.id ?? borderColor}
                 id={`${iotPrefix}--hotspot-text-style-tab__border-color`}
                 titleText={borderLabelText}
                 light={light}
                 label={i18n.selectAColor}
                 colors={borderColors}
                 onChange={(selected) => {
-                  onChange({ borderColor: selected.color.carbonColor });
+                  if (selected) {
+                    onChange({
+                      borderColor: fontColors.find((colorObj) => colorObj.id === selected.id)
+                        ? selected.id
+                        : selected.text,
+                    });
+                  }
                 }}
                 translateWithId={translateWithId}
                 selectedColor={getSelectedColorItem(borderColor, borderColors)}
+                allowCustomColors
+                i18n={{
+                  titleText: borderLabelText,
+                  helperText: null,
+                  placeholder: selectAColor,
+                  invalidText: invalidColor,
+                }}
               />
 
               <NumberInput

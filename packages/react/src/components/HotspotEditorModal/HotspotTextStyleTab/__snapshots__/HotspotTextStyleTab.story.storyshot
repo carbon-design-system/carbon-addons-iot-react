@@ -20,7 +20,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       }
     >
       <div
-        className=""
+        className="iot--hotspot-text-style-tab"
       >
         <form
           className="iot--hotspot-text-style-tab__form"
@@ -149,7 +149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   htmlFor="iot--hotspot-text-style-tab__font-color"
                   id="downshift-0-label"
                 >
-                  Color
+                  Font color
                 </label>
                 <div
                   aria-label="Choose an item"
@@ -211,7 +211,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                 </div>
-                
               </div>
             </div>
             <div
@@ -325,7 +324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   htmlFor="iot--hotspot-text-style-tab__background-color"
                   id="downshift-1-label"
                 >
-                  Color
+                  Background
                 </label>
                 <div
                   aria-label="Choose an item"
@@ -387,7 +386,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                 </div>
-                
               </div>
             </div>
             <div
@@ -501,7 +499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   htmlFor="iot--hotspot-text-style-tab__border-color"
                   id="downshift-2-label"
                 >
-                  Color
+                  Border
                 </label>
                 <div
                   aria-label="Choose an item"
@@ -563,7 +561,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                 </div>
-                
               </div>
             </div>
             <div

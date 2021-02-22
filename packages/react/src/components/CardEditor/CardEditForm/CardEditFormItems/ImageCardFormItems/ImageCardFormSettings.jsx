@@ -37,6 +37,8 @@ const propTypes = {
     fill: PropTypes.string,
     stretch: PropTypes.string,
     selectAColor: PropTypes.string,
+    filterColors: PropTypes.string,
+    invalidColor: PropTypes.string,
   }),
   /** Callback function to call to translate common elements */
   translateWithId: PropTypes.func.isRequired,
@@ -54,13 +56,15 @@ const defaultProps = {
     fill: 'Fill',
     stretch: 'Stretch',
     selectAColor: 'Select a color',
+    filterColors: 'Filter colors',
+    invalidColor: 'Invalid color',
   },
 };
 
 const colors = [
-  { carbonColor: gray10, name: 'gray10' },
-  { carbonColor: gray80, name: 'gray80' },
-  { carbonColor: white, name: 'white' },
+  { id: gray10, text: 'gray10' },
+  { id: gray80, text: 'gray80' },
+  { id: white, text: 'white' },
 ];
 
 const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) => {
@@ -120,24 +124,36 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
       <div className={`${baseClassName}--input`}>
         <ColorDropdown
           data-testid={`${baseClassName}--input-color-dropdown`}
-          titleText={mergedI18n.colorTitleText}
           light
-          label={mergedI18n.selectAColor}
           colors={colors}
           id={`${baseClassName}--input-color`}
-          selectedColor={colors.find(
-            (color) => color.carbonColor === cardConfig.content?.background
-          )}
-          translateWithId={translateWithId}
-          onChange={(evt) =>
-            onChange({
-              ...cardConfig,
-              content: {
-                ...cardConfig.content,
-                background: evt.color.carbonColor,
-              },
-            })
+          selectedColor={
+            colors.find((color) => color.id === cardConfig.content?.background) || {
+              id: cardConfig.content?.background,
+              text: cardConfig.content?.background,
+            }
           }
+          translateWithId={translateWithId}
+          onChange={(inputColor) => {
+            if (inputColor) {
+              onChange({
+                ...cardConfig,
+                content: {
+                  ...cardConfig.content,
+                  background: colors.find((color) => color.id === inputColor.id)
+                    ? inputColor.id
+                    : inputColor.text,
+                },
+              });
+            }
+          }}
+          allowCustomColors
+          i18n={{
+            titleText: mergedI18n.colorTitleText,
+            helperText: null,
+            placeholder: mergedI18n.selectAColor,
+            invalidText: mergedI18n.invalidColor,
+          }}
         />
       </div>
       <div className={`${baseClassName}--input`}>

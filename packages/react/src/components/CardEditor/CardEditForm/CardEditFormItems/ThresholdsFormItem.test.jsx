@@ -87,7 +87,7 @@ describe('ThresholdsFormItem', () => {
       <ThresholdsFormItem
         {...commonProps}
         selectedIcon={{ carbonIcon: <Help24 />, name: 'Help' }}
-        selectedColor={{ carbonColor: green50, name: 'green50' }}
+        selectedColor={{ id: green50, text: 'green50' }}
       />
     );
 
@@ -109,7 +109,7 @@ describe('ThresholdsFormItem', () => {
         }))}
         icons={validThresholdIcons}
         selectedIcon={{ carbonIcon: <Help24 />, name: 'Help' }}
-        selectedColor={{ carbonColor: green50, name: 'green50' }}
+        selectedColor={{ id: green50, text: 'green50' }}
       />
     );
 

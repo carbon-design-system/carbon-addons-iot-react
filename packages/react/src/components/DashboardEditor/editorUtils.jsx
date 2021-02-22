@@ -326,11 +326,11 @@ export const validThresholdIcons = [
 ];
 
 export const validThresholdColors = [
-  { carbonColor: red60, name: 'red60' },
-  { carbonColor: green50, name: 'green50' },
-  { carbonColor: orange40, name: 'orange40' },
-  { carbonColor: yellow30, name: 'yellow30' },
-  { carbonColor: blue60, name: 'blue60' },
+  { id: red60, text: 'red60' },
+  { id: green50, text: 'green50' },
+  { id: orange40, text: 'orange40' },
+  { id: yellow30, text: 'yellow30' },
+  { id: blue60, text: 'blue60' },
 ];
 
 /**

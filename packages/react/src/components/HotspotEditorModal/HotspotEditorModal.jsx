@@ -27,10 +27,10 @@ import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker/DynamicHots
 const { iotPrefix } = settings;
 
 const selectableColors = [
-  { carbonColor: gray50, name: 'gray' },
-  { carbonColor: red50, name: 'red' },
-  { carbonColor: green50, name: 'green' },
-  { carbonColor: blue50, name: 'blue' },
+  { id: gray50, text: 'gray' },
+  { id: red50, text: 'red' },
+  { id: green50, text: 'green' },
+  { id: blue50, text: 'blue' },
 ];
 
 const propTypes = {
@@ -155,6 +155,8 @@ const propTypes = {
     textStyleLabelText: PropTypes.string,
     textTypeDataSourceTabLabelText: PropTypes.string,
     tooManyHotspotsInfoText: PropTypes.string,
+    filterColors: PropTypes.string,
+    invalidColor: PropTypes.string,
   }),
   translateWithId: PropTypes.func,
 };
@@ -197,6 +199,8 @@ const defaultProps = {
     textStyleLabelText: 'Text style',
     textTypeDataSourceTabLabelText: 'Data source',
     tooManyHotspotsInfoText: 'There are more hotspots than can be shown',
+    filterColors: 'Filter colors',
+    invalidColor: 'Invalid color',
   },
   translateWithId: (idToTranslate) => {
     switch (idToTranslate) {

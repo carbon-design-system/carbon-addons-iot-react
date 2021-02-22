@@ -12,8 +12,8 @@ export const HotspotIconPropType = PropTypes.shape({
 });
 
 export const ColorPropType = PropTypes.shape({
-  carbonColor: PropTypes.string,
-  name: PropTypes.string,
+  id: PropTypes.string,
+  text: PropTypes.string,
 });
 
 export const HotspotContentPropTypes = {

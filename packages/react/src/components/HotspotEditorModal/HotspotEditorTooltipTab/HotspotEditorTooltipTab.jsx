@@ -30,7 +30,7 @@ const propTypes = {
     }),
     /** Can be an icon object or just the name if  there is a matching icon in the hotspotIcons array */
     icon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    /** Can be a colorPropType object or just the carbonColor prop of a colorPropType object */
+    /** Can be a colorPropType object or just the id prop of a colorPropType object */
     color: PropTypes.oneOfType([ColorPropType, PropTypes.string]),
   }),
   /** Internationalisation strings */
@@ -45,6 +45,7 @@ const propTypes = {
     colorDropdownLabelText: PropTypes.string,
     colorDropdownTitleText: PropTypes.string,
     infoMessageText: PropTypes.string,
+    invalidColor: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
   /** Callback for when any of the form element's value changes */
@@ -84,8 +85,9 @@ const defaultProps = {
     iconDropdownTitleText: 'Icon',
     infoMessageText:
       'Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.',
-    colorDropdownLabelText: 'Select a color',
+    colorDropdownLabelText: 'Filter colors',
     colorDropdownTitleText: 'Color',
+    invalidColor: 'Invalid color',
   },
   overrides: undefined,
   primaryInputId: undefined,
@@ -98,7 +100,10 @@ const preventFormSubmission = (e) => e.preventDefault();
 
 const getSelectedColorItem = (color, hotspotIconFillColors) => {
   return typeof color === 'string' && Array.isArray(hotspotIconFillColors)
-    ? hotspotIconFillColors.find((colorObj) => colorObj.carbonColor === color)
+    ? hotspotIconFillColors.find((colorObj) => colorObj.id === color) || {
+        id: color,
+        text: color,
+      }
     : color;
 };
 
@@ -138,9 +143,10 @@ const HotspotEditorTooltipTab = ({
     infoMessageText,
     colorDropdownLabelText,
     colorDropdownTitleText,
+    invalidColor,
   } = merge({}, defaultProps.i18n, i18n);
 
-  const currentIconColor = formValues.color?.carbonColor ?? formValues.color ?? 'currentcolor';
+  const currentIconColor = formValues.color?.id ?? formValues.color ?? 'currentcolor';
 
   const renderInfoMessage = () => (
     <div className={`${iotPrefix}--hotspot-editor--tooltip-info-message`}>
@@ -174,13 +180,24 @@ const HotspotEditorTooltipTab = ({
         selectedColor={getSelectedColorItem(formValues.color, hotspotIconFillColors)}
         id="tooltip-form-color"
         colors={hotspotIconFillColors}
-        label={colorDropdownLabelText}
         light
         onChange={(selectedColorItem) => {
-          onChange({ color: selectedColorItem.color?.carbonColor });
+          if (selectedColorItem) {
+            onChange({
+              color: hotspotIconFillColors.find((colorObj) => colorObj.id === selectedColorItem.id)
+                ? selectedColorItem.id
+                : selectedColorItem.text,
+            });
+          }
         }}
-        titleText={colorDropdownTitleText}
         translateWithId={translateWithId}
+        allowCustomColors
+        i18n={{
+          titleText: colorDropdownTitleText,
+          helperText: null,
+          placeholder: colorDropdownLabelText,
+          invalidText: invalidColor,
+        }}
       />
     </div>
   );

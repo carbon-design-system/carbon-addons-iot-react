@@ -18661,7 +18661,7 @@ Map {
       "hotspotIconFillColors": undefined,
       "hotspotIcons": Array [],
       "i18n": Object {
-        "colorDropdownLabelText": "Select a color",
+        "colorDropdownLabelText": "Filter colors",
         "colorDropdownTitleText": "Color",
         "deleteButtonIconDescriptionText": "Delete this hotspot",
         "deleteButtonLabelText": "Delete hotspot",
@@ -18670,6 +18670,7 @@ Map {
         "iconDropdownLabelText": "Select an icon",
         "iconDropdownTitleText": "Icon",
         "infoMessageText": "Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
+        "invalidColor": "Invalid color",
         "titleInputLabelText": "Title",
         "titleInputPlaceholderText": "Enter title for the tooltip",
       },
@@ -18689,10 +18690,10 @@ Map {
                   Object {
                     "args": Array [
                       Object {
-                        "carbonColor": Object {
+                        "id": Object {
                           "type": "string",
                         },
-                        "name": Object {
+                        "text": Object {
                           "type": "string",
                         },
                       },
@@ -18741,10 +18742,10 @@ Map {
           Object {
             "args": Array [
               Object {
-                "carbonColor": Object {
+                "id": Object {
                   "type": "string",
                 },
-                "name": Object {
+                "text": Object {
                   "type": "string",
                 },
               },
@@ -18800,6 +18801,9 @@ Map {
               "type": "string",
             },
             "infoMessageText": Object {
+              "type": "string",
+            },
+            "invalidColor": Object {
               "type": "string",
             },
             "titleInputLabelText": Object {
@@ -18922,7 +18926,9 @@ Map {
         "fontSizeInvalidText": "Font Size is invalid",
         "fontSizeLabelText": "Font Size",
         "infoMessageText": "Select an existing label on the image to edit it or hold the CTRL key and click on an empty region to create one",
+        "invalidColor": "Invalid color",
         "italicLabelText": "Text Italic",
+        "selectAColor": "Filter colors",
         "underlineLabelText": "Text Underline",
       },
       "light": true,
@@ -18940,10 +18946,10 @@ Map {
           Object {
             "args": Array [
               Object {
-                "carbonColor": Object {
+                "id": Object {
                   "type": "string",
                 },
-                "name": Object {
+                "text": Object {
                   "type": "string",
                 },
               },
@@ -18958,10 +18964,10 @@ Map {
           Object {
             "args": Array [
               Object {
-                "carbonColor": Object {
+                "id": Object {
                   "type": "string",
                 },
-                "name": Object {
+                "text": Object {
                   "type": "string",
                 },
               },
@@ -18979,10 +18985,10 @@ Map {
           Object {
             "args": Array [
               Object {
-                "carbonColor": Object {
+                "id": Object {
                   "type": "string",
                 },
-                "name": Object {
+                "text": Object {
                   "type": "string",
                 },
               },
@@ -19009,10 +19015,10 @@ Map {
                 Object {
                   "args": Array [
                     Object {
-                      "carbonColor": Object {
+                      "id": Object {
                         "type": "string",
                       },
-                      "name": Object {
+                      "text": Object {
                         "type": "string",
                       },
                     },
@@ -19062,7 +19068,13 @@ Map {
             "infoMessageText": Object {
               "type": "string",
             },
+            "invalidColor": Object {
+              "type": "string",
+            },
             "italicLabelText": Object {
+              "type": "string",
+            },
+            "selectAColor": Object {
               "type": "string",
             },
             "underlineLabelText": Object {

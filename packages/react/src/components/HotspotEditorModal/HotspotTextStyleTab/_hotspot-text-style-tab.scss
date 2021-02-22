@@ -30,6 +30,10 @@ $border-radius: 5px;
       width: 100%;
     }
   }
+
+  .#{$iot-prefix}--combobox {
+    padding-top: 0;
+  }
 }
 
 .#{$iot-prefix}--hotspot-editor--text-info-message {

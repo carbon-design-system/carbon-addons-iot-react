@@ -6,9 +6,9 @@ import { purple70, cyan50, teal70 } from '@carbon/colors';
 import HotspotTextStyleTab from './HotspotTextStyleTab';
 
 const colors = [
-  { carbonColor: purple70, name: 'purple70' },
-  { carbonColor: cyan50, name: 'cyan50' },
-  { carbonColor: teal70, name: 'teal70' },
+  { id: purple70, text: 'purple70' },
+  { id: cyan50, text: 'cyan50' },
+  { id: teal70, text: 'teal70' },
 ];
 
 describe('HotspotTextStyleTab', () => {
@@ -64,20 +64,20 @@ describe('HotspotTextStyleTab', () => {
       />
     );
 
-    const dropdowns = screen.getAllByText(colors[0].name);
+    const dropdowns = screen.getAllByText(colors[0].text);
 
     fireEvent.click(dropdowns[0]);
-    fireEvent.click(screen.getAllByText(colors[1].name)[0]);
+    fireEvent.click(screen.getAllByText(colors[1].text)[0]);
 
     fireEvent.click(dropdowns[1]);
-    fireEvent.click(screen.getAllByText(colors[1].name)[1]);
+    fireEvent.click(screen.getAllByText(colors[1].text)[1]);
 
     fireEvent.click(dropdowns[2]);
-    fireEvent.click(screen.getAllByText(colors[1].name)[2]);
+    fireEvent.click(screen.getAllByText(colors[1].text)[2]);
 
-    expect(formValues.fontColor).toEqual(colors[1].carbonColor);
-    expect(formValues.backgroundColor).toEqual(colors[1].carbonColor);
-    expect(formValues.borderColor).toEqual(colors[1].carbonColor);
+    expect(formValues.fontColor).toEqual(colors[1].id);
+    expect(formValues.backgroundColor).toEqual(colors[1].id);
+    expect(formValues.borderColor).toEqual(colors[1].id);
   });
 
   it('handles number input updates', () => {
@@ -123,7 +123,7 @@ describe('HotspotTextStyleTab', () => {
 
   it('renders preset color string value', () => {
     const colorObj = colors[1];
-    const colorString = colorObj.carbonColor;
+    const colorString = colorObj.id;
 
     render(
       <HotspotTextStyleTab

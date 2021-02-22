@@ -67,10 +67,10 @@ const getCardConfig = () => ({
 });
 
 const getSelectableColors = () => [
-  { carbonColor: gray50, name: 'gray' },
-  { carbonColor: red50, name: 'red' },
-  { carbonColor: green50, name: 'green' },
-  { carbonColor: blue50, name: 'blue' },
+  { id: gray50, text: 'gray' },
+  { id: red50, text: 'red' },
+  { id: green50, text: 'green' },
+  { id: blue50, text: 'blue' },
 ];
 
 const getSelectableIcons = () => [

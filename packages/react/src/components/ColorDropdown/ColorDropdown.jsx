@@ -17,17 +17,13 @@ import {
 
 import { ComboBox } from '../../index';
 import { settings } from '../../constants/Settings';
+import { ColorPropType } from '../../constants/SharedPropTypes';
 
 const { iotPrefix } = settings;
 
-const colorPropType = PropTypes.shape({
-  id: PropTypes.string,
-  text: PropTypes.string,
-});
-
 const propTypes = {
   /** Array of colors to be shown */
-  colors: PropTypes.arrayOf(colorPropType),
+  colors: PropTypes.arrayOf(ColorPropType),
   /** True if the dropdown should hide the color names that display next to the color box */
   hideLabels: PropTypes.bool,
   /** Required Id string */
@@ -39,7 +35,7 @@ const propTypes = {
   /** Callback to translate common strings */
   translateWithId: PropTypes.func,
   /** The selected color, use to set initial color */
-  selectedColor: colorPropType,
+  selectedColor: ColorPropType,
   /** Id used if needed for testing */
   testID: PropTypes.string,
   /** Optionally allows user to type a custom color and add it as an option */
@@ -84,29 +80,25 @@ const defaultProps = {
   disabled: false,
 };
 
-const validCarbonColors = [
-  'purple70',
-  'cyan50',
-  'teal70',
-  'magenta70',
-  'red50',
-  'red90',
-  'green60',
-  'blue80',
-  'magenta50',
-  'purple50',
-  'teal50',
-  'cyan90',
-];
-
+/**
+ * Determines if a color is a valid CSS color
+ * @param {string} color
+ * @returns {boolean}
+ */
 const isValidColor = (color) => {
-  const s = new Option().style;
-  s.color = color;
-  return s.color === color;
+  const cssStyle = new Option().style;
+  cssStyle.color = color;
+  return cssStyle.color === color;
 };
 
-const isCarbonColor = (color) => {
-  return validCarbonColors.includes(color);
+/**
+ * Determines if a color is one of the allowed colors within the given color array
+ * @param {string} color the color to compare
+ * @param {colors} colors
+ * @returns {boolean}
+ */
+const isWithinValidColors = (color, colors) => {
+  return colors.find((option) => option.text === color);
 };
 
 const ColorDropdown = ({
@@ -150,7 +142,7 @@ const ColorDropdown = ({
    */
   const renderColorItem = (item) => {
     const backgroundColor = allowCustomColors
-      ? isCarbonColor(item.text)
+      ? isWithinValidColors(item.text, colors)
         ? item.id
         : item.text
       : item.id;
@@ -173,7 +165,10 @@ const ColorDropdown = ({
   };
 
   const handleOnChange = (inputItem) => {
-    if (inputItem && (isValidColor(inputItem.text) || isCarbonColor(inputItem.text))) {
+    if (
+      inputItem &&
+      (isValidColor(inputItem.text) || isWithinValidColors(inputItem.text, colors))
+    ) {
       setInvalid(false);
     } else {
       setInvalid(true);
@@ -184,7 +179,7 @@ const ColorDropdown = ({
   };
 
   const handleOnInputChange = (input) => {
-    if ((isValidColor(input) && input !== '') || isCarbonColor(input)) {
+    if ((isValidColor(input) && input !== '') || isWithinValidColors(input, colors)) {
       setInvalid(false);
     } else {
       setInvalid(true);
