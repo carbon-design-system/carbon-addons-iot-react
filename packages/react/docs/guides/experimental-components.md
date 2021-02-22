@@ -20,7 +20,7 @@ If your application is dependent on a component that has experimental status ple
 
 ## The road to stable
 
-The process of moving a component to stable begins when there are no outstanding requirements or design questions. Once this is the case then the component is subject to our [acceptance criteria](url).
+The process of moving a component over to stable begins when there are no outstanding requirements or design questions. Once this is the case then the component is subject to our [acceptance criteria](url).
 
 - Test coverage must be complete and pass with out exceptions. All production components must meet the 80% threshold level.
 - Documentation of the finalized API must be added to the component story
