@@ -18,6 +18,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
       <div
         className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
         data-floating-menu-container={true}
+        data-testid="ComposedModal"
         onBlur={[Function]}
         onClick={[Function]}
         onClose={[Function]}
@@ -445,6 +446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="ComposedModal-modal-secondary-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -454,6 +456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             </button>
             <button
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+              data-testid="ComposedModal-modal-primary-button"
               disabled={true}
               onClick={[Function]}
               tabIndex={0}
@@ -517,6 +520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
       <div
         className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
         data-floating-menu-container={true}
+        data-testid="ComposedModal"
         onBlur={[Function]}
         onClick={[Function]}
         onClose={[Function]}
@@ -702,6 +706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -776,6 +781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -850,6 +856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -924,6 +931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -998,6 +1006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -1072,6 +1081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -1146,6 +1156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -1220,6 +1231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -1294,6 +1306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -1368,6 +1381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -1531,6 +1545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="ComposedModal-modal-secondary-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -1540,6 +1555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             </button>
             <button
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+              data-testid="ComposedModal-modal-primary-button"
               disabled={true}
               onClick={[Function]}
               tabIndex={0}
@@ -1603,6 +1619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
       <div
         className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
         data-floating-menu-container={true}
+        data-testid="ComposedModal"
         onBlur={[Function]}
         onClick={[Function]}
         onClose={[Function]}
@@ -1898,6 +1915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Add"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   role="button"
@@ -2064,6 +2082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Remove"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   style={
@@ -2113,6 +2132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="ComposedModal-modal-secondary-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -2122,6 +2142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             </button>
             <button
               className="iot--btn bx--btn bx--btn--primary"
+              data-testid="ComposedModal-modal-primary-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -2185,6 +2206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
       <div
         className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
         data-floating-menu-container={true}
+        data-testid="ComposedModal"
         onBlur={[Function]}
         onClick={[Function]}
         onClose={[Function]}
@@ -2615,6 +2637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Remove"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   style={
@@ -2688,6 +2711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                 <button
                                   aria-label="Remove"
                                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
                                   style={
@@ -2737,6 +2761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="ComposedModal-modal-secondary-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -2746,6 +2771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             </button>
             <button
               className="iot--btn bx--btn bx--btn--primary"
+              data-testid="ComposedModal-modal-primary-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
