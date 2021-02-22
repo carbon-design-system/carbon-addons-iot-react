@@ -6,11 +6,11 @@
   }
 
   .#{$iot-prefix}--list {
-    background-color: #f4f4f4;
+    background-color: $ui-01;
     height: 100%;
   }
   .#{$prefix}--search-input {
-    background-color: #fff;
+    background-color: $ui-background;
   }
   .#{$iot-prefix}--list-header--search,
   .#{$iot-prefix}--list-header-container,

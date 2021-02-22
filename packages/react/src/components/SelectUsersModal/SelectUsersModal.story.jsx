@@ -217,7 +217,7 @@ export const DefaultModal = () => {
       initialSelectedUsers={[]}
       onSubmit={action('submit', { depth: 3 })}
       onClose={action('close', { depth: 3 })}
-      open={boolean('open', true)}
+      isOpen={boolean('isOpen', true)}
     />
   );
 };
@@ -235,7 +235,7 @@ export const InitialSelectionModal = () => {
       initialSelectedUsers={[userList[0].users[0], userList[0].users[2]]}
       onSubmit={action('submit', { depth: 3 })}
       onClose={action('close', { depth: 3 })}
-      open={boolean('open', true)}
+      isOpen={boolean('isOpen', true)}
     />
   );
 };
@@ -253,7 +253,7 @@ export const FlatListModal = () => {
       initialSelectedUsers={[]}
       onSubmit={action('submit', { depth: 3 })}
       onClose={action('close', { depth: 3 })}
-      open={boolean('open', true)}
+      isOpen={boolean('isOpen', true)}
     />
   );
 };
@@ -305,7 +305,7 @@ export const MixedGroupListModal = () => {
       initialSelectedUsers={[testRoles[0].users[0]]}
       onSubmit={action('submit', { depth: 3 })}
       onClose={action('close', { depth: 3 })}
-      open={boolean('open', true)}
+      isOpen={boolean('isOpen', true)}
     />
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight16, ArrowLeft16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
@@ -39,7 +39,7 @@ export const propTypes = {
   initialSelectedUsers: PropTypes.arrayOf(GroupShape).isRequired,
 
   /** Should the dialog be open or not */
-  open: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
+  isOpen: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
   /** Close the dialog */
   onClose: PropTypes.func.isRequired,
   /** Callback to submit the dialog/form */
@@ -57,7 +57,7 @@ const defaultProps = {
     removeUser: 'Remove',
     recent: 'Recent',
   },
-  open: false,
+  isOpen: false,
   onSubmit: null,
 };
 
@@ -125,7 +125,7 @@ const mapUsers = (
     };
   });
 
-const SelectUsersModal = ({ open, onClose, onSubmit, users, initialSelectedUsers, i18n }) => {
+const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUsers, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   const [selectedUsers, setSelectedUsers] = useState(initialSelectedUsers);
@@ -166,7 +166,7 @@ const SelectUsersModal = ({ open, onClose, onSubmit, users, initialSelectedUsers
             key={`${username}-list-item-button-${depth}`}
             style={{ color: 'black' }}
             role="button"
-            aria-label="Add"
+            aria-label={mergedI18n.addUser}
             renderIcon={ArrowRight16}
             hasIconOnly
             kind="ghost"
@@ -190,7 +190,7 @@ const SelectUsersModal = ({ open, onClose, onSubmit, users, initialSelectedUsers
             <Button
               key={`${username}-list-item-button-${depth}`}
               style={{ color: 'black' }}
-              aria-label="Remove"
+              aria-label={mergedI18n.removeUser}
               renderIcon={ArrowLeft16}
               hasIconOnly
               kind="ghost"
@@ -206,11 +206,11 @@ const SelectUsersModal = ({ open, onClose, onSubmit, users, initialSelectedUsers
     });
   };
 
-  const flattenUsers = (results, user) => {
+  const flattenUsers = useCallback((results, user) => {
     return user.children && user.children.length > 0
       ? user.children.reduce(flattenUsers, results)
       : results.concat(user);
-  };
+  }, users);
 
   const usersList = displayAllUsersList(users, selectedUsers);
   const userCount = usersList.reduce(flattenUsers, []).length;
@@ -227,7 +227,7 @@ const SelectUsersModal = ({ open, onClose, onSubmit, users, initialSelectedUsers
           label: mergedI18n.modalHeaderLabel,
           title: mergedI18n.modalHeaderTitle,
         }}
-        open={open}
+        open={isOpen}
         onSubmit={onSubmit}
         onClose={onClose}
       >
