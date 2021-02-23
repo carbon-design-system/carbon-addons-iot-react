@@ -1,0 +1,12 @@
+.#{$prefix}--chart-holder {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: $ui-background;
+
+	.DONT_STYLE_ME_css_styles_verifier {
+		overflow: hidden;
+		opacity: 0;
+	}
+}

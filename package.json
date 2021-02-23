@@ -27,7 +27,7 @@
     "test": "lerna run --stream test",
     "test:ci": "lerna run --stream test:ci",
     "start": "lerna run --stream start",
-    "clean": "lerna run --stream clean",
+    "clean": "lerna run --stream clean && lerna clean",
     "format": "lerna run --stream format",
     "format:check": "lerna run --stream format:check",
     "publish-npm": "bash ./scripts/release.sh"

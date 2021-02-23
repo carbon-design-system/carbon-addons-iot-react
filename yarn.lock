@@ -282,6 +282,13 @@
     ora "5.2.0"
     rxjs "6.6.3"
 
+"@angular/animations@^11.2.1":
+  version "11.2.1"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-11.2.1.tgz#970d79add4c2a4abc0ed91e6cf5920c65dda2d99"
+  integrity sha512-U2gtMaiVfTNMn0FPpSDTgOgtYc45QUnQcc2Po40rCmgH7BGyJAOgmaXY9uv319Jjl+vNrX+bbXaZix73Zpjfyg==
+  dependencies:
+    tslib "^2.0.0"
+
 "@angular/cli@11.1.1":
   version "11.1.1"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-11.1.1.tgz#897dd3273434f5092cbcde515737d6c72612eae7"

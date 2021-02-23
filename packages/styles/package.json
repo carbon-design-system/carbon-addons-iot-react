@@ -23,14 +23,13 @@
   "devDependencies": {
     "sass": "1.32.7",
     "rimraf": "3.0.2",
-    "fs-extra": "9.1.0",
-    "glob": "7.1.6",
     "react-grid-layout": "1.2.0",
     "react-resizable": "1.11.0",
     "@carbon/themes": "10.26.0",
     "@carbon/charts": "0.41.31",
     "@carbon/motion": "10.12.0",
-    "carbon-components": "10.20.0"
+    "carbon-components": "10.20.0",
+    "@ai-apps/monorepo-utils": "0.0.0"
   },
   "author": "IBM",
   "license": "Apache-2.0"

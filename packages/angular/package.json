@@ -11,14 +11,15 @@
     "lint:fix": "tslint --fix 'src/**/*.ts'",
     "test": "ng test --no-watch",
     "test:watch": "ng test --watch",
-	"test:ci": "yarn test",
+    "test:ci": "yarn test",
     "build:storybook": "build-storybook -c .storybook -s .storybook/public -o dist/docs/storybook",
     "ng": "ng",
     "ng:build": "ngcc && ngcc -s ../../node_modules && ng build",
     "clean": "rm -rf dist",
     "start": "echo 'script not defined' && exit 0",
     "format": "echo 'script not defined' && exit 0",
-    "format:check": "echo 'script not defined' && exit 0"
+    "format:check": "echo 'script not defined' && exit 0",
+    "postinstall": "node scripts/vendor.js"
   },
   "repository": {
     "type": "git",
@@ -39,10 +40,12 @@
     "zone.js": "^0.8.26 || ^0.9.0 || ^0.10.0"
   },
   "devDependencies": {
+    "@ai-apps/monorepo-utils": "0.0.0",
     "@angular-builders/custom-webpack": "^11.0.0",
     "@angular-devkit/build-angular": "0.1101.1",
     "@angular-devkit/build-ng-packagr": "0.1002.1",
     "@angular-devkit/core": "11.1.1",
+    "@angular/animations": "^11.2.1",
     "@angular/cli": "11.1.1",
     "@angular/common": "11.1.1",
     "@angular/compiler": "11.1.1",

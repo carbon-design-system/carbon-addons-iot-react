@@ -1,0 +1,258 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+//-----------------------------
+// Search
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/import-once';
+
+/// Search styles
+/// @access private
+/// @group search
+@mixin search {
+  .#{$prefix}--search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .#{$prefix}--search .#{$prefix}--label {
+    @include hidden;
+  }
+
+  .#{$prefix}--search-input {
+    @include reset;
+    @include type-style('body-short-01');
+    @include focus-outline('reset');
+
+    order: 1;
+    width: 100%;
+    padding: 0 $carbon--spacing-08;
+    color: $text-01;
+    text-overflow: ellipsis;
+    background-color: $field-01;
+    border: none;
+    border-bottom: 1px solid $ui-04;
+    transition: background-color $duration--fast-02 motion(standard, productive),
+      outline $duration--fast-02 motion(standard, productive);
+    appearance: none;
+
+    &:focus {
+      @include focus-outline('outline');
+    }
+
+    &::placeholder {
+      color: $text-05;
+      font-weight: 400;
+    }
+
+    &::-ms-clear {
+      display: none;
+    }
+  }
+
+  .#{$prefix}--search-input[disabled] {
+    color: $disabled;
+    background-color: $disabled-background-color;
+    border-bottom: 1px solid transparent;
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: $disabled;
+      font-weight: 400;
+    }
+  }
+
+  .#{$prefix}--search-input[disabled] ~ .#{$prefix}--search-magnifier {
+    fill: $disabled;
+  }
+
+  .#{$prefix}--search--light .#{$prefix}--search-input {
+    background: $field-02;
+  }
+
+  // Small styles
+  .#{$prefix}--search--sm .#{$prefix}--search-input {
+    height: rem(32px);
+    // 8px padding on either side of icon + 16px icon (32px)
+    padding: 0 $spacing-07;
+  }
+
+  .#{$prefix}--search--sm .#{$prefix}--search-magnifier {
+    left: rem(8px);
+  }
+
+  // Large styles
+  .#{$prefix}--search--lg .#{$prefix}--search-input {
+    height: rem(40px);
+    // 12px padding on either side of icon + 16px icon (40px)
+    padding: 0 $spacing-08;
+  }
+
+  .#{$prefix}--search--lg .#{$prefix}--search-magnifier {
+    left: rem(12px);
+  }
+
+  .#{$prefix}--search--xl .#{$prefix}--search-input {
+    height: rem(48px);
+    // 16px padding on either side of icon + 16px icon (48px)
+    padding: 0 $spacing-09;
+  }
+
+  .#{$prefix}--search-magnifier {
+    position: absolute;
+    top: 50%;
+    left: $spacing-05;
+    z-index: 2;
+    width: rem(16px);
+    height: rem(16px);
+    transform: translateY(-50%);
+    pointer-events: none;
+    fill: $icon-02;
+  }
+
+  .#{$prefix}--search-close {
+    @include button-reset(false);
+    @include focus-outline('reset');
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &::before {
+      position: absolute;
+      top: rem(1px);
+      left: 0;
+      display: block;
+      width: 2px;
+      height: calc(100% - 2px);
+      background-color: $field-01;
+      transition: background-color $duration--fast-02
+        motion(standard, productive);
+      content: '';
+    }
+
+    &:hover {
+      border-bottom: 1px solid $ui-04;
+
+      &::before {
+        background-color: $hover-field;
+      }
+    }
+  }
+
+  .#{$prefix}--search-button {
+    flex-shrink: 0;
+    margin-left: $carbon--spacing-01;
+    background-color: $field-01;
+
+    svg {
+      vertical-align: middle;
+      fill: currentColor;
+    }
+  }
+
+  .#{$prefix}--search-close svg {
+    fill: inherit;
+  }
+
+  .#{$prefix}--search-close,
+  .#{$prefix}--search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(40px);
+    height: rem(40px);
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px 0;
+    visibility: inherit;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity $duration--fast-02 motion(standard, productive),
+      background-color $duration--fast-02 motion(standard, productive),
+      outline $duration--fast-02 motion(standard, productive),
+      border $duration--fast-02 motion(standard, productive);
+    fill: $icon-01;
+
+    &:hover {
+      background-color: $hover-field;
+    }
+
+    &:focus {
+      @include focus-outline('outline');
+    }
+
+    &:active {
+      @include focus-outline('outline');
+
+      background-color: $selected-ui;
+    }
+  }
+
+  .#{$prefix}--search-close:focus,
+  .#{$prefix}--search-close:active {
+    &::before {
+      background-color: $focus;
+    }
+  }
+
+  .#{$prefix}--search-input:focus ~ .#{$prefix}--search-close:hover {
+    @include focus-outline('outline');
+  }
+
+  .#{$prefix}--search--sm {
+    .#{$prefix}--search-close,
+    ~ .#{$prefix}--search-button {
+      width: rem(32px);
+      height: rem(32px);
+    }
+  }
+
+  .#{$prefix}--search--lg {
+    .#{$prefix}--search-close,
+    ~ .#{$prefix}--search-button {
+      width: rem(40px);
+      height: rem(40px);
+    }
+  }
+
+  .#{$prefix}--search--xl {
+    .#{$prefix}--search-close,
+    ~ .#{$prefix}--search-button {
+      width: rem(48px);
+      height: rem(48px);
+    }
+  }
+
+  .#{$prefix}--search-close--hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .#{$prefix}--search--xl.#{$prefix}--skeleton .#{$prefix}--search-input,
+  .#{$prefix}--search--lg.#{$prefix}--skeleton .#{$prefix}--search-input,
+  .#{$prefix}--search--sm.#{$prefix}--skeleton .#{$prefix}--search-input {
+    @include skeleton;
+
+    width: 100%;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
+
+@include exports('search') {
+  @include search;
+}
