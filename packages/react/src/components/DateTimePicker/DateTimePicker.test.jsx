@@ -18,8 +18,8 @@ const defaultPresets = [
   {
     label: 'Last 70 minutes',
     offset: 70,
-  }
-]
+  },
+];
 
 const dateTimePickerProps = {
   id: 'datetimepicker',
@@ -99,26 +99,33 @@ describe('DateTimePicker', () => {
   });
 
   it('should change to another preset value when clicked', () => {
-    render(<DateTimePicker {...dateTimePickerProps}  presets={[
-      {
-        label: 'Last 30 minutes',
-        offset: 30,
-      },
-      {
-        label: 'Last 1 hour',
-        offset: 60,
-      },
-    ]} />);
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        presets={[
+          {
+            label: 'Last 30 minutes',
+            offset: 30,
+          },
+          {
+            label: 'Last 1 hour',
+            offset: 60,
+          },
+        ]}
+      />
+    );
     userEvent.click(screen.getByTestId('date-time-picker__field'));
     userEvent.click(screen.getByText(/Last 1 hour/));
     expect(screen.getByTitle(/Last 1 hour/)).toBeInTheDocument();
-
   });
 
   it('should show the user defined tooltip for preset', () => {
     const wrapper = mount(
-      <DateTimePicker {...dateTimePickerProps} renderPresetTooltipText={() => 'User tooltip'}
-      preset={defaultPresets} />
+      <DateTimePicker
+        {...dateTimePickerProps}
+        renderPresetTooltipText={() => 'User tooltip'}
+        preset={defaultPresets}
+      />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
@@ -126,8 +133,7 @@ describe('DateTimePicker', () => {
   });
 
   it('should call onApply', () => {
-    const wrapper = mount(<DateTimePicker {...dateTimePickerProps}
-      preset={defaultPresets}/>);
+    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} preset={defaultPresets} />);
     wrapper.find('.iot--date-time-picker__menu-btn-apply').first().simulate('click');
     jest.runAllTimers();
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
@@ -223,17 +229,13 @@ describe('DateTimePicker', () => {
   });
 
   it('should go back to presets when cancel button is picked on Absolute screen', () => {
-    render(
-      <DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />
-    );
+    render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />);
     userEvent.click(screen.getByText(/Back/));
     expect(screen.getByText(/Custom Range/)).toBeInTheDocument();
   });
 
-  it('should switch from relative to absolute and then to preset',  () => {
-    render(
-      <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
-    );
+  it('should switch from relative to absolute and then to preset', () => {
+    render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />);
     // There should only be one on the relative page
     expect(screen.getAllByTitle(/Increment hours/).length).toEqual(1);
 
@@ -244,10 +246,7 @@ describe('DateTimePicker', () => {
     expect(screen.getAllByTitle(/Increment hours/).length).toEqual(2);
 
     userEvent.click(screen.getAllByText('Absolute')[0]);
-
-
   });
-
 
   it('should not show the relative option', () => {
     const wrapper = mount(
@@ -255,6 +254,7 @@ describe('DateTimePicker', () => {
         {...dateTimePickerProps}
         defaultValue={defaultAbsoluteValue}
         showRelativeOption={false}
+        hasTimeInput={false}
       />
     );
     jest.runAllTimers();

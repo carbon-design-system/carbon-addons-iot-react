@@ -260,7 +260,7 @@ const HotspotEditorModal = ({
         'The `HotspotEditorModal` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
       );
     }
-  }, [])
+  }, []);
   const initialHotspots = cardConfig.values?.hotspots || [];
   const myDataItems = useMemo(
     () => sortBy(getValidDataItems ? getValidDataItems(cardConfig) : dataItems, 'label'),

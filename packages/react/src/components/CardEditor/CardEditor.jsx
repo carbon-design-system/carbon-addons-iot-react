@@ -183,7 +183,7 @@ const CardEditor = ({
         'The `CardEditor` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
       );
     }
-  }, [])
+  }, []);
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   // show the gallery if no card is being edited
