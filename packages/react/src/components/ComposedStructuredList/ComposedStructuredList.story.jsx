@@ -53,7 +53,7 @@ const StructuredListInputProps = {
 };
 
 export default {
-  title: 'Watson IoT/ComposedStructuredList (Deprecated)',
+  title: 'Watson IoT/ComposedStructuredList 🚫',
 };
 
 export const Deprecated = () => (

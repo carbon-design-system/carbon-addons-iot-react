@@ -7,7 +7,7 @@ import { validThresholdIcons } from '../DashboardEditor/editorUtils';
 import SimpleIconDropdown from './SimpleIconDropdown';
 
 export default {
-  title: 'Watson IoT Experimental/SimpleIconDropdown',
+  title: 'Watson IoT Experimental/SimpleIconDropdown ☢️',
   decorators: [withKnobs],
   parameters: {
     component: SimpleIconDropdown,

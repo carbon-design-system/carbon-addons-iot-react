@@ -151,7 +151,7 @@ const sidebarComponent = <div>sidebar</div>;
 const footerComponent = <StyledFooterContent>this is footer content</StyledFooterContent>;
 
 export default {
-  title: 'Watson IoT/WizardInline (Deprecated)',
+  title: 'Watson IoT/WizardInline 🚫',
   excludeStories: ['itemsAndComponents'],
 };
 

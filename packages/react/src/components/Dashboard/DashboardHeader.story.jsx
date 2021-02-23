@@ -9,7 +9,7 @@ import { DatePicker, DatePickerInput } from 'carbon-components-react';
 import DashboardHeader from './DashboardHeader';
 
 export default {
-  title: 'Watson IoT/Dashboard Header (Deprecated)',
+  title: 'Watson IoT/Dashboard Header 🚫',
 };
 
 export const Basic = () => {

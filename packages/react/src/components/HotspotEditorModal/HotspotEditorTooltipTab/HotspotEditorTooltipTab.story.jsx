@@ -26,7 +26,7 @@ const colors = [
 ];
 
 export default {
-  title: 'Watson IoT Experimental/HotSpotEditorModal/HotspotEditorTooltipTab',
+  title: 'Watson IoT Experimental/HotSpotEditorModal ☢️/HotspotEditorTooltipTab',
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorTooltipTab,

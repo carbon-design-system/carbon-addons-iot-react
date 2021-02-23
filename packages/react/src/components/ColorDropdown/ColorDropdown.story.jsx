@@ -6,7 +6,7 @@ import { red50, blue50, green50, teal70, purple70 } from '@carbon/colors';
 import ColorDropdown from './ColorDropdown';
 
 export default {
-  title: 'Watson IoT Experimental/ColorDropdown',
+  title: 'Watson IoT Experimental/ColorDropdown ☢️',
   decorators: [withKnobs],
   parameters: {
     component: ColorDropdown,
