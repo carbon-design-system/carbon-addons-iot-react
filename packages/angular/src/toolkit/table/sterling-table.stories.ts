@@ -32,7 +32,7 @@ simpleModel.data = [
 	[new TableItem({data: 'Name 4'}), new TableItem({data: 'twer'}), new TableItem({data: 'twer1'})]
 ];
 
-storiesOf('Components | Sterling table', module)
+storiesOf('Sterling Toolkit/Sterling table', module)
 	.addDecorator(
 		moduleMetadata({
 			imports: [SCTableModule]

@@ -1,0 +1,277 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/vendor/@carbon/elements/scss/import-once/import-once';
+@import '../../globals/scss/css--reset';
+@import '../form/form';
+
+/// Number input styles
+/// @access private
+/// @group number-input
+@mixin number-input {
+  .#{$prefix}--number {
+    @include reset;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .#{$prefix}--number input[type='number'] {
+    @include type-style('body-short-01');
+    @include focus-outline('reset');
+
+    display: inline-flex;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 9.375rem;
+    height: rem(40px);
+    padding-right: $carbon--spacing-07;
+    padding-left: $carbon--spacing-05;
+    color: $text-01;
+    font-weight: 300;
+
+    font-family: carbon--font-family('mono');
+    background-color: $field-01;
+    border: none;
+    border-bottom: 1px solid $ui-04;
+    border-radius: 0;
+    transition: background-color $duration--fast-01 motion(standard, productive),
+      outline $duration--fast-01 motion(standard, productive);
+
+    // Firefox: Hide spinner (up and down buttons)
+    -moz-appearance: textfield;
+
+    &:focus {
+      @include focus-outline('outline');
+    }
+
+    &:disabled ~ .#{$prefix}--number__controls {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &:disabled ~ .#{$prefix}--number__controls svg {
+      fill: $disabled;
+    }
+
+    // IE: Hide "clear-field" `x` button on input field
+    &::-ms-clear {
+      display: none;
+    }
+
+    // Safari: Hide number spinner
+    &::-webkit-inner-spin-button {
+      appearance: none;
+    }
+  }
+
+  .#{$prefix}--number input[type='number']:disabled,
+  .#{$prefix}--number--readonly input[type='number'] {
+    color: $disabled;
+    background-color: $disabled-background-color;
+    border-bottom-color: transparent;
+    cursor: not-allowed;
+  }
+
+  .#{$prefix}--number__input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .#{$prefix}--number__controls {
+    @include reset;
+
+    position: absolute;
+    // vertically center controls within parent container on IE11
+    top: 50%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+  }
+
+  .#{$prefix}--number__control-btn {
+    @include button-reset;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(32px);
+    height: rem(20px);
+    color: $icon-01;
+
+    svg {
+      position: relative;
+      fill: currentColor;
+    }
+
+    &.up-icon svg {
+      top: rem(5px);
+    }
+
+    &.down-icon svg {
+      top: rem(-5px);
+    }
+
+    &:focus {
+      @include focus-outline;
+
+      color: $icon-01;
+      outline-width: 2px;
+      outline-offset: -2px;
+    }
+
+    &:hover {
+      color: $icon-01;
+      cursor: pointer;
+    }
+
+    &:disabled {
+      color: $disabled;
+      cursor: not-allowed;
+    }
+  }
+
+  .#{$prefix}--number--readonly .#{$prefix}--number__control-btn {
+    display: none;
+  }
+
+  .#{$prefix}--number__invalid {
+    position: absolute;
+    right: 2rem;
+    fill: $support-01;
+  }
+
+  .#{$prefix}--number--light input[type='number'] {
+    background-color: $field-02;
+  }
+
+  .#{$prefix}--number--mobile {
+    width: auto;
+    min-width: rem(144px);
+
+    .#{$prefix}--number__control-btn,
+    &.#{$prefix}--number--light .#{$prefix}--number__control-btn {
+      position: static;
+      width: rem(40px);
+      height: rem(40px);
+      background-color: $ui-01;
+
+      &:hover,
+      &:focus {
+        background-color: $hover-ui;
+      }
+
+      &:focus {
+        outline-width: 2px;
+        outline-offset: -2px;
+      }
+
+      svg {
+        position: static;
+      }
+    }
+
+    input[type='number'] {
+      width: auto;
+      min-width: rem(64px);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: $field-01;
+      border-right: 1px solid $ui-03;
+      border-left: 1px solid $ui-03;
+    }
+
+    &.#{$prefix}--number--light {
+      input[type='number'] {
+        background-color: $field-02;
+      }
+
+      .#{$prefix}--number__control-btn {
+        background-color: $ui-02;
+      }
+    }
+  }
+
+  // Size Variant styles
+  .#{$prefix}--number--xl input[type='number'] {
+    height: rem(48px);
+  }
+
+  .#{$prefix}--number--xl .#{$prefix}--number__control-btn {
+    height: rem(24px);
+  }
+
+  .#{$prefix}--number--xl.#{$prefix}--number--mobile
+    .#{$prefix}--number__control-btn {
+    width: rem(48px);
+    height: rem(48px);
+  }
+
+  .#{$prefix}--number--xl .#{$prefix}--number__control-btn.up-icon svg {
+    // Needed to maintain arrow spacing between input sizes.
+    top: rem(6.6px);
+  }
+
+  .#{$prefix}--number--xl .#{$prefix}--number__control-btn.down-icon svg {
+    // Needed to maintain arrow spacing between input sizes.
+    top: rem(-6.6px);
+  }
+
+  .#{$prefix}--number--sm input[type='number'] {
+    height: rem(32px);
+  }
+
+  .#{$prefix}--number--sm .#{$prefix}--number__control-btn {
+    height: rem(16px);
+  }
+
+  .#{$prefix}--number--sm.#{$prefix}--number--mobile
+    .#{$prefix}--number__control-btn {
+    width: rem(32px);
+    height: rem(32px);
+  }
+
+  .#{$prefix}--number--sm .#{$prefix}--number__control-btn.up-icon svg {
+    // Needed to maintain arrow spacing between input sizes.
+    top: rem(3.4px);
+  }
+
+  .#{$prefix}--number--sm .#{$prefix}--number__control-btn.down-icon svg {
+    // Needed to maintain arrow spacing between input sizes.
+    top: rem(-3.4px);
+  }
+
+  //No label positioning adjustment
+  .#{$prefix}--number--nolabel .bx--label + .bx--form__helper-text {
+    margin-top: 0;
+  }
+
+  // Skeleton State
+  .#{$prefix}--number.#{$prefix}--skeleton {
+    @include skeleton;
+
+    width: 100%;
+    height: 2.5rem;
+
+    input[type='number'] {
+      display: none;
+    }
+  }
+}
+
+@include exports('number-input') {
+  @include number-input;
+}

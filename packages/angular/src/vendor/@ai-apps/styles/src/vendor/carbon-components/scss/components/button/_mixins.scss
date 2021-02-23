@@ -1,0 +1,103 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@import '../../globals/scss/typography';
+
+/// Button base styles
+/// @access private
+/// @group button
+@mixin button-base {
+  @include reset;
+  @include type-style('body-short-01');
+
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  max-width: rem(320px);
+  min-height: $button-height;
+  // Fix to remove added margins on buttons in safari (see #5155)
+  margin: 0;
+  padding: $button-padding;
+  text-align: left;
+  text-decoration: none;
+  vertical-align: top;
+  border-radius: $button-border-radius;
+  outline: none;
+  cursor: pointer;
+  transition: all $duration--fast-01 motion(entrance, productive);
+
+  &:disabled,
+  &:hover:disabled,
+  &:focus:disabled,
+  &.#{$prefix}--btn--disabled,
+  &.#{$prefix}--btn--disabled:hover,
+  &.#{$prefix}--btn--disabled:focus {
+    color: $disabled-03;
+    background: $disabled-02;
+    border-color: $disabled-02;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  .#{$prefix}--btn__icon {
+    position: absolute;
+    right: rem(16px);
+    flex-shrink: 0;
+    width: rem(16px);
+    height: rem(16px);
+  }
+}
+
+/// Button variant styles
+/// @access private
+/// @group button
+@mixin button-theme(
+  $bg-color,
+  $border-color,
+  $font-color,
+  $hover-bg-color,
+  $icon-color,
+  $active-color
+) {
+  color: $font-color;
+  background-color: $bg-color;
+  border-color: $border-color;
+  border-style: solid;
+  border-width: $button-outline-width;
+
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+
+  &:focus {
+    border-color: $focus;
+    box-shadow: inset 0 0 0 $button-outline-width $focus,
+      inset 0 0 0 $button-border-width $ui-02;
+  }
+
+  &:disabled:hover,
+  &:disabled:focus,
+  &:hover.#{$prefix}--btn--disabled,
+  &:focus.#{$prefix}--btn--disabled {
+    color: $ui-04;
+    text-decoration: none;
+    background-color: $disabled-02;
+    border-color: $disabled-02;
+    box-shadow: none;
+  }
+
+  &:active {
+    background-color: $active-color;
+  }
+
+  .#{$prefix}--btn__icon,
+  .#{$prefix}--btn__icon path {
+    fill: $icon-color;
+  }
+}

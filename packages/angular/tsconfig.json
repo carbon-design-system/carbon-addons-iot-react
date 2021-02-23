@@ -37,11 +37,12 @@
 		"**/stories/**",
 		"**/*.spec.ts",
 		"**/node_modules/**",
-		"**/dist/**"
+		"**/dist/**",
+		"**/integration/**"
 	],
 	"angularCompilerOptions": {
 		"skipTemplateCodegen": true,
 		"strictMetadataEmit": false,
-		"fullTemplateTypeCheck": false
+		"strictTemplates": false
 	}
 }

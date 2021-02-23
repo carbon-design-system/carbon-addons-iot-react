@@ -4,6 +4,8 @@ import { addDecorator, addParameters } from '@storybook/angular';
 import { withKnobs } from '@storybook/addon-knobs';
 import { CarbonG100 } from './theme';
 
+// load global styles
+require("!style-loader!css-loader!postcss-loader!sass-loader!./preview.scss");
 
 addParameters({
 	options: {

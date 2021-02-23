@@ -1,4 +1,4 @@
-import { storiesOf, moduleMetadata } from "@storybook/angular";
+import { moduleMetadata } from "@storybook/angular";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 
 import { ButtonModule } from "carbon-components-angular";
@@ -91,8 +91,8 @@ import { ButtonModule } from "carbon-components-angular";
 				</g>
 			</svg>
 
-			<h1 class="banner__title"><span class="banner__logo--bold">Carbon</span> Components Angular</h1>
-			<h2 class="banner__subtitle">An Angular implementation of the Carbon Design System</h2>
+			<h1 class="banner__title"><span class="banner__logo--bold">AI Applications</span> PAL Angular</h1>
+			<h2 class="banner__subtitle">An Angular implementation of the AI Applications PAL</h2>
 
 			<div class="banner__links">
 				<a ibmButton="secondary" href="documentation/index.html" target="_blank">
@@ -161,17 +161,20 @@ class WelcomeStory implements OnInit, OnDestroy {
 	}
 }
 
-
-storiesOf("Components|Welcome", module)
-.addDecorator(
-	moduleMetadata({
-		imports: [
-			ButtonModule
-		],
-		declarations: [WelcomeStory]
-	})
-)
-
-.add("to Carbon Angular", () => ({
+export const welcome = () => ({
 	template: `<app-welcome></app-welcome>`
-}));
+});
+
+welcome.storyName = "to AI Apps PAL Angular";
+
+export default {
+	decorators: [
+		moduleMetadata({
+			imports: [
+				ButtonModule
+			],
+			declarations: [WelcomeStory]
+		})
+	],
+	title: "Components/Welcome"
+};

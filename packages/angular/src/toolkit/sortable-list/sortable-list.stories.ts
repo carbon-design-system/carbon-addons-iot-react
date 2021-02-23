@@ -4,7 +4,7 @@ import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { ListItem } from 'carbon-components-angular';
 import { SortableListModule } from './sortable-list.module';
 
-storiesOf('Components | Sortable list', module)
+storiesOf('Sterling Toolkit/Sortable list', module)
 .addDecorator(moduleMetadata({
 	imports: [
 		SortableListModule

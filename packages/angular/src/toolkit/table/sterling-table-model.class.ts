@@ -7,6 +7,7 @@ export class SCTableModel extends TableModel {
 	/**
 	 * Contains information about the header cells of the table.
 	 */
+	//@ts-ignore we're using an accessor here but the base class is a property
 	set header(newHeader: any) {
 		if (!newHeader || (Array.isArray(newHeader) && newHeader.length === 0) ) {
 			newHeader = [[]];
@@ -28,6 +29,7 @@ export class SCTableModel extends TableModel {
 	 *
 	 * Make sure all rows are the same length to keep the column count accurate.
 	 */
+	//@ts-ignore we're using an accessor here but the base class is a property
 	set data(newData: TableItem[][]) {
 		if (!newData || (Array.isArray(newData) && newData.length === 0)) {
 			newData = [[]];

@@ -1,0 +1,237 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+//----------------------------------------------
+// Mixins
+// ---------------------------------------------
+//
+//   Category             ||  Description
+//   ===========================================
+//   Misc                 ||  General helper @mixins
+//   Deprecated           ||  Not used anymore
+//   ===========================================
+
+//----------------------------------------------
+// Misc
+// ---------------------------------------------
+
+@import 'vars';
+@import 'css--reset';
+@import 'typography';
+@import './vendor/@carbon/elements/scss/import-once/import-once';
+
+/// Adds text overflow styling
+/// @access public
+/// @param {Number} $width [false] - Value of width if you want to set width, else nothing
+/// @example @include text-overflow(300px);
+/// @group global-helpers
+@mixin text-overflow($width: false) {
+  display: block;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  // apply a width if width parameter exists
+  @if ($width) {
+    width: $width;
+  }
+}
+
+/// Adds placeholder text color
+/// @access public
+/// @example @include placeholder-colors;
+/// @group global-helpers
+@mixin placeholder-colors {
+  color: $text-03;
+  opacity: 1;
+}
+
+/// Adds box shadow
+/// @access public
+/// @example @include box-shadow;
+/// @group global-helpers
+@mixin box-shadow {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/// Adds outline styles depending on specific type
+/// @access public
+/// @param {String} $type ['border'] - Type of outline from: `border`, `blurred`, `outline`, `invalid`, `reset`
+/// @example @include focus-outline('outline');
+/// @group global-helpers
+@mixin focus-outline($type: 'border') {
+  @if ($type == 'border') {
+    outline: 1px solid $focus;
+  }
+
+  @if ($type == 'blurred') {
+    outline: 1px solid transparent;
+    box-shadow: 0 0 0 3px $focus;
+  }
+
+  @if ($type == 'outline') {
+    outline: 2px solid $focus;
+    outline-offset: -2px;
+  }
+
+  @if ($type == 'outline-compat') {
+    box-sizing: border-box;
+    border: 2px solid $focus;
+  }
+
+  @if ($type == 'invalid') {
+    outline: 2px solid $support-01;
+    outline-offset: -2px;
+  }
+
+  @if ($type == 'reset') {
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+  }
+}
+
+/// Adds rotational transformation
+/// @access public
+/// @param {Number} $deg - How many degrees to rotate
+/// @param {Number} $speed - Speed of rotation
+/// @param {Value} $origin [center] - `transform-origin`
+/// @example @include rotate(90deg, 300ms);
+/// @group global-helpers
+@mixin rotate($deg, $speed, $origin: center) {
+  transform: rotate($deg);
+  transform-origin: $origin;
+  transition: transform $speed;
+}
+
+/// Adds styles to hide content
+/// @access public
+/// @group global-helpers
+@mixin hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  visibility: inherit;
+  clip: rect(0, 0, 0, 0);
+}
+
+/// Resets button styles
+/// @access public
+/// @param {Bool} $width [true] - Sets width to 100% if true
+/// @example @include button-reset($width: false);
+/// @group global-helpers
+@mixin button-reset($width: true) {
+  @include reset;
+
+  display: inline-block;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  appearance: none;
+
+  @if ($width == true) {
+    width: 100%;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+/// Skeleton loading animation
+/// @access public
+/// @example @include skeleton;
+/// @group global-helpers
+@mixin skeleton {
+  position: relative;
+  padding: 0;
+  background: $skeleton-01;
+  border: none;
+  box-shadow: none;
+  pointer-events: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: none;
+    outline: none;
+    cursor: default;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: $skeleton-02;
+    animation: 3000ms ease-in-out skeleton infinite;
+    content: '';
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+}
+
+@include exports('skeleton') {
+  @keyframes skeleton {
+    0% {
+      right: auto;
+      left: 0;
+      width: 0%;
+      opacity: 0.3;
+    }
+    20% {
+      right: auto;
+      left: 0;
+      width: 100%;
+      opacity: 1;
+    }
+    28% {
+      right: 0;
+      left: auto;
+      width: 100%;
+    }
+    51% {
+      right: 0;
+      left: auto;
+      width: 0%;
+    }
+    58% {
+      right: 0;
+      left: auto;
+      width: 0%;
+    }
+    82% {
+      right: 0;
+      left: auto;
+      width: 100%;
+    }
+    83% {
+      right: auto;
+      left: 0;
+      width: 100%;
+    }
+    96% {
+      right: auto;
+      left: 0;
+      width: 0%;
+    }
+    100% {
+      right: auto;
+      left: 0;
+      width: 0%;
+      opacity: 0.3;
+    }
+  }
+}

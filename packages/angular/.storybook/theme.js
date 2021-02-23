@@ -34,6 +34,6 @@ export const CarbonG100 = create({
 	inputTextColor: text01,
 	inputBorderRadius: 0,
 
-	brandTitle: "carbon components angular",
-	brandUrl: "https://github.com/IBM/carbon-components-angular",
+	brandTitle: "AI Apps PAL Angular",
+	brandUrl: "https://github.com/carbon-design-system/carbon-addons-iot-react",
 });

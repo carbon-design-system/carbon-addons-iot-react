@@ -1,24 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { withKnobs } from '@storybook/addon-knobs';
 import { moduleMetadata, storiesOf } from '@storybook/angular';
-import { PlaceholderModule } from 'carbon-components-angular';
 import { SortableList, SortableListOption } from '../sortable-list';
 import { CheckboxSetting, ComponentSetting, RadioSetting } from './settings';
 import { TableSettings } from './table-settings-model.class';
 import { TableSettingsPane } from './table-settings-pane.class';
 import { TableSettingsModule } from './table-settings.module';
-
-storiesOf('Patterns | Table settings', module)
-.addDecorator(moduleMetadata({
-	imports: []
-}))
-.addDecorator(withKnobs)
-.add('Basic', () => ({
-	template: `
-		<p>hello world</p>
-	`,
-	props: {}
-}));
 
 @Component({
 	selector: 'sc-story-custom-component',
@@ -31,14 +18,13 @@ class StoryCustomComponent {
 	@Input() hello;
 }
 
-storiesOf('Components | Table settings modal', module)
+storiesOf('Sterling Toolkit/Table settings modal', module)
 .addDecorator(moduleMetadata({
 	declarations: [
 		StoryCustomComponent
 	],
 	imports: [
-		TableSettingsModule,
-		PlaceholderModule
+		TableSettingsModule
 	],
 	entryComponents: [
 		StoryCustomComponent
@@ -50,9 +36,9 @@ storiesOf('Components | Table settings modal', module)
  		<p>hello world</p>
  		<sc-table-settings-modal
  			[settingsModel]="model()"
- 			(settingsModelChange)="onChange($event)">
+ 			(settingsModelChange)="onChange($event)"
+			[open]="true">
  		</sc-table-settings-modal>
- 		<ibm-placeholder></ibm-placeholder>
  	`,
 	props: {
 		_model: null,

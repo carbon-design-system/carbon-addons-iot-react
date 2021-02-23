@@ -15,7 +15,7 @@ import { TableSettings } from './table-settings-model.class';
 @Component({
 	selector: 'sc-table-settings-modal',
 	template: `
-		<ibm-modal (overlaySelected)="closeModal()" [hasScrollingContent]="false">
+		<ibm-modal (overlaySelected)="closeModal()" [hasScrollingContent]="false" [open]="open">
 			<ibm-modal-header (closeSelect)="closeModal()">
       			<p class="bx--modal-header__heading bx--type-beta">{{ model.title }}</p>
 			</ibm-modal-header>

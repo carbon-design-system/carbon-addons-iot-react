@@ -5,4 +5,4 @@ export * from './table/index';
 export * from './sortable-list/index';
 export * from './table-settings/index';
 export * from './draggable/index';
-export * from './utils/utils.module';
+export * from './utils/index';

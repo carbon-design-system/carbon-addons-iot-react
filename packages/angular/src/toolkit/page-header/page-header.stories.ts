@@ -11,7 +11,7 @@ const createBreadcrumbItems = (count: number, content = 'Breadcrumb'): Breadcrum
 		href: '#' + (i + 1)
 	}));
 
-storiesOf('Patterns | Page header', module)
+storiesOf('Sterling Toolkit/Page header', module)
 	.addDecorator(moduleMetadata({
 		imports: [ PageHeaderModule ]
 	}))

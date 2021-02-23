@@ -4,7 +4,7 @@ import { withKnobs, select } from "@storybook/addon-knobs";
 import { ButtonModule } from "./button.module";
 
 
-storiesOf("Components|Button", module)
+storiesOf("Components/Button", module)
 	.addDecorator(
 		moduleMetadata({
 			imports: [
