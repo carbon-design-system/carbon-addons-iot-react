@@ -22,6 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
         id="iot--date-time-picker__wrapper"
       >
         <div
@@ -29,6 +30,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -200,6 +202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
         id="iot--date-time-picker__wrapper"
       >
         <div
@@ -207,6 +210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -378,6 +382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
         id="iot--date-time-picker__wrapper"
       >
         <div
@@ -385,6 +390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -489,7 +495,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                 </fieldset>
-                <div>
+                <div
+                  data-testId="date-time-picker-datepicker"
+                >
                   <div
                     className="iot--date-time-picker__datepicker"
                   >
@@ -866,6 +874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
         id="iot--date-time-picker__wrapper"
       >
         <div
@@ -873,6 +882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -1044,6 +1054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
         id="iot--date-time-picker__wrapper"
       >
         <div
@@ -1051,6 +1062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -1582,6 +1594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
         id="iot--date-time-picker__wrapper"
       >
         <div
@@ -1589,6 +1602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"

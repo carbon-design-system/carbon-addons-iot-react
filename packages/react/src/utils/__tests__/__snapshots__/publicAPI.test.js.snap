@@ -5698,6 +5698,7 @@ Map {
       ],
       "renderPresetTooltipText": null,
       "showRelativeOption": true,
+      "testId": "date-time-picker",
     },
     "propTypes": Object {
       "dateTimeMask": Object {
@@ -5996,6 +5997,9 @@ Map {
       },
       "showRelativeOption": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -18181,7 +18185,9 @@ Map {
       "wrapperClassName": null,
     },
     "propTypes": Object {
-      "addToList": [Function],
+      "addToList": Object {
+        "type": "bool",
+      },
       "ariaLabel": Object {
         "type": "string",
       },
@@ -18243,7 +18249,9 @@ Map {
       "editOptionText": Object {
         "type": "string",
       },
-      "hasMultiValue": [Function],
+      "hasMultiValue": Object {
+        "type": "bool",
+      },
       "helperText": Object {
         "type": "string",
       },
