@@ -111,7 +111,7 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     <Button
       className={`${iotPrefix}--flyout-menu__cancel`}
       kind="secondary"
-      testId="flyout-menu-cancel"
+      testID="flyout-menu-cancel"
       onClick={() => {
         setIsOpen(false);
 
@@ -126,7 +126,7 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     <Button
       className={`${iotPrefix}--flyout-menu__submit`}
       aria-label={i18n.applyButtonText}
-      testId="flyout-menu-apply"
+      testID="flyout-menu-apply"
       onClick={() => {
         setIsOpen(false);
         if (onApply) {

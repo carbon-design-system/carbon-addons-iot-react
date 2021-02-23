@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import omit from 'lodash/omit';
 
 import DataSeriesFormItemModal from './DataSeriesFormItemModal';
 
@@ -105,12 +106,14 @@ describe('DataSeriesFormItemModal', () => {
     dataSourceId: 'temperature_max',
     color: 'red',
     aggregationMethods: [
+      { id: 'none', text: 'None' },
       { id: 'last', text: 'Last' },
       { id: 'mean', text: 'Mean' },
       { id: 'max', text: 'Max' },
       { id: 'min', text: 'Min' },
     ],
     aggregationMethod: 'max',
+    grain: 'hourly',
   };
 
   const editDataSeriesTimeSeries = [
@@ -407,7 +410,7 @@ describe('DataSeriesFormItemModal', () => {
         {...commonProps}
         showEditor
         cardConfig={timeSeriesCardConfig}
-        editDataItem={editTimeseriesDataItem}
+        editDataItem={editTimeseriesDataItemAggregated}
         editDataSeries={editDataSeriesTimeSeries}
       />
     );
@@ -422,41 +425,22 @@ describe('DataSeriesFormItemModal', () => {
 
     fireEvent.click(magentaColor);
     expect(mockSetEditDataItem).toHaveBeenCalledWith({
-      label: 'Temperature',
-      dataSourceId: 'temperature',
+      ...editTimeseriesDataItemAggregated,
       color: '#520408',
-      aggregationMethods: [
-        {
-          id: 'last',
-          text: 'Last',
-        },
-        {
-          id: 'mean',
-          text: 'Mean',
-        },
-        {
-          id: 'max',
-          text: 'Max',
-        },
-        {
-          id: 'min',
-          text: 'Min',
-        },
-      ],
     });
   });
-  it('Changes grain', () => {
+  it('Changes grain on aggregated item', () => {
     render(
       <DataSeriesFormItemModal
         {...commonProps}
         showEditor
         cardConfig={timeSeriesCardConfig}
-        editDataItem={editTimeseriesDataItem}
+        editDataItem={editTimeseriesDataItemAggregated}
         editDataSeries={editDataSeriesTimeSeries}
       />
     );
 
-    const grainDropdown = screen.getByText('Input');
+    const grainDropdown = screen.getByText('Hourly');
     expect(grainDropdown).toBeInTheDocument();
 
     fireEvent.click(grainDropdown);
@@ -465,7 +449,10 @@ describe('DataSeriesFormItemModal', () => {
     expect(grainOption).toBeInTheDocument();
 
     fireEvent.click(grainOption);
-    expect(mockSetEditDataItem).toHaveBeenCalled();
+    expect(mockSetEditDataItem).toHaveBeenCalledWith({
+      ...editTimeseriesDataItemAggregated,
+      grain: 'weekly',
+    });
   });
   it('Renders an aggregation selector in summary dashboards and fires setEditDataItem', () => {
     render(
@@ -490,6 +477,60 @@ describe('DataSeriesFormItemModal', () => {
     fireEvent.click(aggregationOption);
 
     expect(mockSetEditDataItem).toHaveBeenCalled();
+  });
+  it('Switching between non-aggregated to aggregated should default the grain', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    // First set the aggregator from None to Min, should default a grain
+    const aggregationDropdown = screen.getAllByText('None')[0];
+    expect(aggregationDropdown).toBeInTheDocument();
+
+    fireEvent.click(aggregationDropdown);
+
+    const aggregationOption = screen.getByText('Min');
+    expect(aggregationOption).toBeInTheDocument();
+
+    fireEvent.click(aggregationOption);
+
+    expect(mockSetEditDataItem).toHaveBeenCalledWith({
+      ...editTimeseriesDataItem,
+      aggregationMethod: 'min',
+      grain: 'hourly',
+    });
+  });
+  it('Switching between aggregated to nonaggregated should clear the grain', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItemAggregated}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    // Now set the aggregator back from Max to None
+    const aggregationDropdown2 = screen.getAllByLabelText('Aggregation method')[0];
+    fireEvent.click(aggregationDropdown2);
+    const aggregationOptionNone = screen.getAllByRole('option')[0];
+    expect(aggregationOptionNone).toBeInTheDocument();
+
+    fireEvent.click(aggregationOptionNone);
+
+    expect(mockSetEditDataItem).toHaveBeenCalledWith({
+      ...omit(editTimeseriesDataItemAggregated, 'grain'),
+      aggregationMethod: 'none',
+    });
   });
   it('Renders a read only aggregation field in instance dashboards', () => {
     render(

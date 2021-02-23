@@ -1,5 +1,125 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher Loading state 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "white",
+          "width": "15rem",
+        }
+      }
+    >
+      <ul
+        className="iot--suite-header-app-switcher"
+      >
+        <li
+          className="iot--suite-header-app-switcher--nav-link"
+        >
+          <p>
+            My applications
+          </p>
+          <button
+            className="iot--btn bx--btn bx--btn--tertiary"
+            data-testid="suite-header-app-switcher--all-applications"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            All applications
+            <svg
+              aria-hidden={true}
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          className="iot--suite-header-app-switcher--nav-link--separator"
+        />
+        <li>
+          <div
+            className="iot--suite-header-app-switcher--nav-link--loading"
+            data-testid="suite-header-app-switcher--loading"
+          >
+            <div>
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "calc(100% - 73px)",
+                  }
+                }
+              />
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "calc(100% - 11px)",
+                  }
+                }
+              />
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "calc(100% - 43px)",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher No applications 1`] = `
 <div
   className="storybook-container"
@@ -26,13 +146,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         <li
           className="iot--suite-header-app-switcher--nav-link"
         >
-          <a
+          <p>
+            My applications
+          </p>
+          <button
+            className="iot--btn bx--btn bx--btn--tertiary"
             data-testid="suite-header-app-switcher--all-applications"
-            href="javascript:void(0)"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
+            type="button"
           >
+            All applications
             <svg
               aria-hidden={true}
+              className="bx--btn__icon"
               fill="currentColor"
               focusable="false"
               height={16}
@@ -42,12 +170,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
               />
             </svg>
-            All applications
-          </a>
+          </button>
         </li>
+        <div
+          className="iot--suite-header-app-switcher--nav-link--separator"
+        />
         <div
           className="iot--suite-header-app-switcher--no-app"
         >
@@ -138,13 +268,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         <li
           className="iot--suite-header-app-switcher--nav-link"
         >
-          <a
+          <p>
+            My applications
+          </p>
+          <button
+            className="iot--btn bx--btn bx--btn--tertiary"
             data-testid="suite-header-app-switcher--all-applications"
-            href="javascript:void(0)"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
+            type="button"
           >
+            All applications
             <svg
               aria-hidden={true}
+              className="bx--btn__icon"
               fill="currentColor"
               focusable="false"
               height={16}
@@ -154,14 +292,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
               />
             </svg>
-            All applications
-          </a>
+          </button>
         </li>
+        <div
+          className="iot--suite-header-app-switcher--nav-link--separator"
+        />
         <li
           className="iot--suite-header-app-switcher--app-link"
+          id="suite-header-application-monitor"
         >
           <a
             data-testid="suite-header-app-switcher--monitor"
@@ -173,6 +314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         </li>
         <li
           className="iot--suite-header-app-switcher--app-link"
+          id="suite-header-application-health"
         >
           <a
             data-testid="suite-header-app-switcher--health"

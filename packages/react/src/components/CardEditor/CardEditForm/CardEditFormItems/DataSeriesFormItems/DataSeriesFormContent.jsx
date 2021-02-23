@@ -27,22 +27,25 @@ const propTypes = {
     title: PropTypes.string,
     size: PropTypes.string,
     type: PropTypes.string,
-    content: PropTypes.shape({
-      series: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string,
-          dataSourceId: PropTypes.string,
-          color: PropTypes.string,
-        })
-      ),
-      xLabel: PropTypes.string,
-      yLabel: PropTypes.string,
-      unit: PropTypes.string,
-      includeZeroOnXaxis: PropTypes.bool,
-      includeZeroOnYaxis: PropTypes.bool,
-      timeDataSourceId: PropTypes.string,
-      showLegend: PropTypes.bool,
-    }),
+    content: PropTypes.oneOfType([
+      PropTypes.shape({
+        series: PropTypes.arrayOf(
+          PropTypes.shape({
+            label: PropTypes.string,
+            dataSourceId: PropTypes.string,
+            color: PropTypes.string,
+          })
+        ),
+        xLabel: PropTypes.string,
+        yLabel: PropTypes.string,
+        unit: PropTypes.string,
+        includeZeroOnXaxis: PropTypes.bool,
+        includeZeroOnYaxis: PropTypes.bool,
+        timeDataSourceId: PropTypes.string,
+        showLegend: PropTypes.bool,
+      }), // custom card content is a function
+      PropTypes.func,
+    ]),
     interval: PropTypes.string,
   }),
   /* callback when data item input value changes */
@@ -63,7 +66,7 @@ const propTypes = {
   /** list of dataItem names that have been selected to display on the card */
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   setSelectedDataItems: PropTypes.func.isRequired,
-  selectedTimeRange: PropTypes.string.isRequired,
+  selectedTimeRange: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
@@ -104,6 +107,7 @@ const propTypes = {
 
 const defaultProps = {
   cardConfig: {},
+  selectedTimeRange: '',
   i18n: {
     dataItemEditorTitle: 'Edit data series',
     dataItemEditorDataItemTitle: 'Data item',
@@ -241,7 +245,7 @@ const DataSeriesFormItem = ({
   dataSeriesItemLinks,
   translateWithId,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});
@@ -253,21 +257,10 @@ const DataSeriesFormItem = ({
   const canMultiSelectDataItems = cardConfig.content?.type !== BAR_CHART_TYPES.SIMPLE;
 
   // determine which content section to look at
-  const data =
+  const dataSection =
     cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR
       ? cardConfig?.content?.series
       : cardConfig?.content?.attributes;
-
-  // initialize items with a unique dataSourceId if not present
-  const dataSection = useMemo(
-    () =>
-      data?.map((item) =>
-        item.dataSourceId !== item.dataItemId
-          ? item
-          : { ...item, dataSourceId: `${item.dataSourceId}_${uuid.v4()}` }
-      ),
-    [data]
-  );
 
   const validDataItems = useMemo(
     () => (getValidDataItems ? getValidDataItems(cardConfig, selectedTimeRange) : dataItems),
@@ -291,8 +284,12 @@ const DataSeriesFormItem = ({
         ...dataSection,
         {
           ...(itemWithMetaData && { ...itemWithMetaData }),
-          // create a unique dataSourceId
-          dataSourceId: `${selectedItem.id}_${uuid.v4()}`,
+          // create a unique dataSourceId if it's going into attributes
+          // if it's going into the groupBy section then just use the dataItem ID
+          dataSourceId:
+            itemWithMetaData?.destination === 'groupBy'
+              ? selectedItem.id
+              : `${selectedItem.id}_${uuid.v4()}`,
         },
       ];
       // need to remove the category if the card is a stacked timeseries bar
@@ -485,9 +482,15 @@ const DataSeriesFormItem = ({
               key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
               id={`${cardConfig.id}_dataSourceIds-combobox`}
               items={formatDataItemsForDropdown(validDataItems)}
-              itemToString={(item) => item.text}
+              itemToString={(item) => item?.text}
               titleText={mergedI18n.dataItemEditorDataItemTitle}
               addToList={false}
+              shouldFilterItem={({ item, inputValue }) => {
+                return (
+                  isEmpty(inputValue) ||
+                  item?.text?.toLowerCase()?.includes(inputValue?.toLowerCase())
+                );
+              }}
               placeholder={mergedI18n.filter}
               // clears out the input field after each selection
               selectedItem={{ id: '', text: '' }}

@@ -15,6 +15,8 @@ const propTypes = {
   attribute: PropTypes.shape({
     label: PropTypes.string,
     unit: PropTypes.string,
+    // decimal precision
+    precision: PropTypes.number,
     thresholds: PropTypes.arrayOf(
       PropTypes.shape({
         comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
@@ -28,8 +30,7 @@ const propTypes = {
   isEditable: PropTypes.bool,
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   locale: PropTypes.string,
-  // decimal precision
-  precision: PropTypes.number,
+
   renderIconByName: PropTypes.func,
   /** Optional trend information */
   secondaryValue: PropTypes.shape({
@@ -47,7 +48,6 @@ const propTypes = {
 
 const defaultProps = {
   layout: null,
-  precision: 0,
   renderIconByName: null,
   secondaryValue: null,
   locale: 'en',
@@ -62,13 +62,12 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
-  attribute: { label, unit, thresholds },
+  attribute: { label, unit, thresholds, precision },
   attributeCount,
   customFormatter,
   isEditable,
   layout,
   locale,
-  precision,
   renderIconByName,
   secondaryValue,
   value,
