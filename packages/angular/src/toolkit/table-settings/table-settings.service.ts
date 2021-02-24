@@ -1,7 +1,7 @@
-import { ComponentRef, Injectable } from '@angular/core';
-import { ModalService } from 'carbon-components-angular';
-import { Observable, Subject } from 'rxjs';
-import { TableSettingsModalComponent } from './table-settings-modal.component';
+import { ComponentRef, Injectable } from "@angular/core";
+import { ModalService } from "carbon-components-angular";
+import { Observable, Subject } from "rxjs";
+import { TableSettingsModalComponent } from "./table-settings-modal.component";
 
 @Injectable()
 export class TableSettingsService {

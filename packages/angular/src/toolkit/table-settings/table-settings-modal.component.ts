@@ -6,14 +6,14 @@ import {
 	OnInit,
 	Optional,
 	Output
-} from '@angular/core';
-import { BaseModal } from 'carbon-components-angular';
-import { Subject } from 'rxjs';
-import { SortableListComponent } from '../sortable-list/index';
-import { TableSettings } from './table-settings-model.class';
+} from "@angular/core";
+import { BaseModal } from "carbon-components-angular";
+import { Subject } from "rxjs";
+import { SortableListComponent } from "../sortable-list/index";
+import { TableSettings } from "./table-settings-model.class";
 
 @Component({
-	selector: 'sc-table-settings-modal',
+	selector: "sc-table-settings-modal",
 	template: `
 		<ibm-modal (overlaySelected)="closeModal()" [hasScrollingContent]="false" [open]="open">
 			<ibm-modal-header (closeSelect)="closeModal()">
@@ -51,7 +51,7 @@ import { TableSettings } from './table-settings-model.class';
 			</ibm-modal-footer>
 		</ibm-modal>
 	`,
-	styleUrls: [ './table-settings-modal.scss' ]
+	styleUrls: [ "./table-settings-modal.scss" ]
 })
 export class TableSettingsModalComponent extends BaseModal implements OnInit {
 	listComponent = SortableListComponent;
@@ -61,8 +61,8 @@ export class TableSettingsModalComponent extends BaseModal implements OnInit {
 	@Output() settingsModelChange = new EventEmitter<TableSettings>();
 
 	constructor(
-		@Optional() @Inject('model') public model: TableSettings,
-		@Optional() @Inject('modelChange') protected modelChange: Subject<TableSettings>
+		@Optional() @Inject("model") public model: TableSettings,
+		@Optional() @Inject("modelChange") protected modelChange: Subject<TableSettings>
 	) {
 		super();
 	}

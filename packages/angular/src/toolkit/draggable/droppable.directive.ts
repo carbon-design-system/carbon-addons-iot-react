@@ -3,10 +3,10 @@ import {
 	EventEmitter,
 	HostListener,
 	Output
-} from '@angular/core';
+} from "@angular/core";
 
 @Directive({
-	selector: '[scDropzone]'
+	selector: "[scDropzone]"
 })
 export class DroppableDirective {
 	@Output() active = new EventEmitter<boolean>();
@@ -15,20 +15,20 @@ export class DroppableDirective {
 
 	@Output() dropping = new EventEmitter();
 
-	@HostListener('dragover', ['$event'])
-	@HostListener('dragenter', ['$event'])
+	@HostListener("dragover", ["$event"])
+	@HostListener("dragenter", ["$event"])
 	handleDrag(event: DragEvent) {
 		event.preventDefault();
 		this.active.emit(true);
 	}
 
-	@HostListener('drop')
+	@HostListener("drop")
 	handleDrop() {
 		this.active.emit(false);
 		this.dropping.emit();
 	}
 
-	@HostListener('dragleave')
+	@HostListener("dragleave")
 	handleLeave() {
 		this.leave.emit();
 	}

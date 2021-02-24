@@ -3,14 +3,14 @@ import {
 	EventEmitter,
 	Input,
 	Output
-} from '@angular/core';
-import { RadioChange } from 'carbon-components-angular';
-import { isObservable, Observable, of } from 'rxjs';
-import { RadioOption } from './radio-setting.class';
-import { SettingChanges } from './setting.class';
+} from "@angular/core";
+import { RadioChange } from "carbon-components-angular";
+import { isObservable, Observable, of } from "rxjs";
+import { RadioOption } from "./radio-setting.class";
+import { SettingChanges } from "./setting.class";
 
 @Component({
-	selector: 'sc-radio-setting',
+	selector: "sc-radio-setting",
 	template: `
 		<ibm-radio-group>
 			<ibm-radio

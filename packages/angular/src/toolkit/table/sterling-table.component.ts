@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { Table } from 'carbon-components-angular';
+import { Component, ViewEncapsulation } from "@angular/core";
+import { Table } from "carbon-components-angular";
 
 /**
  * Sterling specific table component
@@ -10,7 +10,7 @@ import { Table } from 'carbon-components-angular';
  * ```
  */
 @Component({
-	selector: 'sc-table',
+	selector: "sc-table",
 	template: `
 	<table
 		ibmTable
@@ -79,7 +79,7 @@ import { Table } from 'carbon-components-angular';
 		</tfoot>
 	</table>
 	`,
-	styleUrls: ['./sterling-table.scss'],
+	styleUrls: ["./sterling-table.scss"],
 	encapsulation: ViewEncapsulation.None
 })
 export class SCTableComponent extends Table {

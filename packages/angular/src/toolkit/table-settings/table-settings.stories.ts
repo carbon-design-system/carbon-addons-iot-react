@@ -1,14 +1,14 @@
-import { Component, Input } from '@angular/core';
-import { withKnobs } from '@storybook/addon-knobs';
-import { moduleMetadata, storiesOf } from '@storybook/angular';
-import { SortableList, SortableListOption } from '../sortable-list';
-import { CheckboxSetting, ComponentSetting, RadioSetting } from './settings';
-import { TableSettings } from './table-settings-model.class';
-import { TableSettingsPane } from './table-settings-pane.class';
-import { TableSettingsModule } from './table-settings.module';
+import { Component, Input } from "@angular/core";
+import { withKnobs } from "@storybook/addon-knobs";
+import { moduleMetadata, storiesOf } from "@storybook/angular";
+import { SortableList, SortableListOption } from "../sortable-list";
+import { CheckboxSetting, ComponentSetting, RadioSetting } from "./settings";
+import { TableSettings } from "./table-settings-model.class";
+import { TableSettingsPane } from "./table-settings-pane.class";
+import { TableSettingsModule } from "./table-settings.module";
 
 @Component({
-	selector: 'sc-story-custom-component',
+	selector: "sc-story-custom-component",
 	template: `
 		<p>This is a custom component</p>
 		<p>It can have any content within it, and additional data can be passed via inputs, like such: {{hello}}</p>
@@ -18,7 +18,7 @@ class StoryCustomComponent {
 	@Input() hello;
 }
 
-storiesOf('Sterling Toolkit/Table settings modal', module)
+storiesOf("Sterling Toolkit/Table settings modal", module)
 .addDecorator(moduleMetadata({
 	declarations: [
 		StoryCustomComponent
@@ -31,7 +31,7 @@ storiesOf('Sterling Toolkit/Table settings modal', module)
 	]
 }))
 .addDecorator(withKnobs)
-.add('Basic', () => ({
+.add("Basic", () => ({
 	template: `
  		<p>hello world</p>
  		<sc-table-settings-modal
@@ -56,40 +56,40 @@ storiesOf('Sterling Toolkit/Table settings modal', module)
 		},
 		initModel() {
 			const tableSettingsModel = new TableSettings({
-				content: 'hello world',
-				title: 'Table settings'
+				content: "hello world",
+				title: "Table settings"
 			});
 
 			const sortableListPane = new TableSettingsPane({
-				title: 'Setting pane title',
-				content: 'Pane content',
+				title: "Setting pane title",
+				content: "Pane content",
 				settings: [
 					new SortableList({
-						content: 'Setting content',
+						content: "Setting content",
 						options: [
 							new SortableListOption({
-								content: 'option 1',
+								content: "option 1",
 								order: 0,
 								disabled: true
 							}),
 							new SortableListOption({
-								content: 'option 2',
+								content: "option 2",
 								order: 1
 							}),
 							new SortableListOption({
-								content: 'option 3',
+								content: "option 3",
 								order: 2
 							}),
 							new SortableListOption({
-								content: 'option 4',
+								content: "option 4",
 								order: 3
 							}),
 							new SortableListOption({
-								content: 'option 5',
+								content: "option 5",
 								order: 4
 							}),
 							new SortableListOption({
-								content: 'option 6',
+								content: "option 6",
 								order: 5
 							})
 						]
@@ -100,51 +100,51 @@ storiesOf('Sterling Toolkit/Table settings modal', module)
 			tableSettingsModel.addPane(sortableListPane);
 
 			tableSettingsModel.addPane({
-				title: 'Custom component',
+				title: "Custom component",
 				settings: [
 					new ComponentSetting({
 						component: StoryCustomComponent,
 						inputs: {
-							hello: 'Hello, world!'
+							hello: "Hello, world!"
 						}
 					})
 				]
 			});
 
 			const checkboxSetting = new CheckboxSetting({
-				content: 'This is one checkbox group',
+				content: "This is one checkbox group",
 				options: [
 					{
-						content: 'hi',
+						content: "hi",
 						checked: false
 					},
 					{
-						content: 'Another option',
+						content: "Another option",
 						checked: false
 					}
 				]
 			});
 
 			tableSettingsModel.addPane({
-				title: 'Checkbox',
+				title: "Checkbox",
 				settings: [checkboxSetting]
 			});
 
 			const radioPane = new TableSettingsPane({
-				title: 'Radio'
+				title: "Radio"
 			});
 
 			radioPane.addSetting(new RadioSetting({
-				content: 'This is a radio setting',
-				active: 'one',
+				content: "This is a radio setting",
+				active: "one",
 				options: [
 					{
-						content: 'Option one',
-						value: 'one'
+						content: "Option one",
+						value: "one"
 					},
 					{
-						content: 'Option two',
-						value: 'two'
+						content: "Option two",
+						value: "two"
 					}
 				]
 			}));

@@ -5,10 +5,10 @@ import {
 	HostListener,
 	Input,
 	Output
-} from '@angular/core';
+} from "@angular/core";
 
 @Directive({
-	selector: '[scDraggable]'
+	selector: "[scDraggable]"
 })
 export class DraggableDirective {
 	@Input() dragImage: Element;
@@ -19,18 +19,18 @@ export class DraggableDirective {
 
 	@Output() end = new EventEmitter();
 
-	@HostBinding('attr.draggable') draggable = true;
+	@HostBinding("attr.draggable") draggable = true;
 
-	@HostListener('dragstart', ['$event'])
+	@HostListener("dragstart", ["$event"])
 	handleDragStart(event: DragEvent) {
 		// 20 is half the element height
 		// 4 is half of a mini-unit, which centers the drag on the handle
 		event.dataTransfer.setDragImage(this.dragImage, this.imageOffset.x, this.imageOffset.y);
-		event.dataTransfer.effectAllowed = 'move';
+		event.dataTransfer.effectAllowed = "move";
 		this.start.emit();
 	}
 
-	@HostListener('dragend')
+	@HostListener("dragend")
 	handleEnd() {
 		this.end.emit();
 	}

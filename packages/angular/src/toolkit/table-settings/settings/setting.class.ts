@@ -1,6 +1,6 @@
-import { TemplateRef } from '@angular/core';
-import { BehaviorSubject, isObservable, Subscription } from 'rxjs';
-import { Content } from '../table-settings-model.class';
+import { TemplateRef } from "@angular/core";
+import { BehaviorSubject, isObservable, Subscription } from "rxjs";
+import { Content } from "../table-settings-model.class";
 
 export interface SettingOption {
 	content?: Content;

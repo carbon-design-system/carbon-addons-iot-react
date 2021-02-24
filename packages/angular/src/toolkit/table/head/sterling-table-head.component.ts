@@ -2,9 +2,9 @@ import {
 	Component,
 	Input,
 	ViewEncapsulation
-} from '@angular/core';
+} from "@angular/core";
 
-import { TableHead } from 'carbon-components-angular';
+import { TableHead } from "carbon-components-angular";
 
 /**
  * A subcomponent that creates the thead of the table
@@ -17,7 +17,7 @@ import { TableHead } from 'carbon-components-angular';
  */
 @Component({
 	// tslint:disable-next-line:component-selector
-	selector: '[scTableHead]',
+	selector: "[scTableHead]",
 	template: `
 	<ng-container *ngIf="model">
 		<tr *ngFor="let headerRow of model.header; let rowIndex = index" class="table-row">
@@ -62,7 +62,7 @@ import { TableHead } from 'carbon-components-angular';
 	</ng-container>
 	<ng-content></ng-content>
 	`,
-	styleUrls: ['./sterling-table-head.scss'],
+	styleUrls: ["./sterling-table-head.scss"],
 	encapsulation: ViewEncapsulation.None
 })
 export class SCTableHeadComponent extends TableHead {

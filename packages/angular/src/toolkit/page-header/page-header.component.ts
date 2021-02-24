@@ -4,8 +4,8 @@ import {
 	HostBinding,
 	Input,
 	Output
-} from '@angular/core';
-import { BreadcrumbItem } from 'carbon-components-angular/breadcrumb';
+} from "@angular/core";
+import { BreadcrumbItem } from "carbon-components-angular/breadcrumb";
 
 /**
  * Adds an item to the end of a `BreadcrumbItem` list to serve as a title for the page header component
@@ -18,7 +18,7 @@ export const itemsWithTitle = (items: BreadcrumbItem[], title: string): Breadcru
 		...items,
 		{
 			content: title,
-			href: ''
+			href: ""
 		}
 	];
 };
@@ -53,7 +53,7 @@ export const itemsWithTitle = (items: BreadcrumbItem[], title: string): Breadcru
  * ```
  */
 @Component({
-	selector: 'sc-page-header',
+	selector: "sc-page-header",
 	template: `
 		<div [ngClass]="{ 'bx--col': onGrid }">
 			<ibm-breadcrumb
@@ -65,7 +65,7 @@ export const itemsWithTitle = (items: BreadcrumbItem[], title: string): Breadcru
 			<h2>{{ title }}</h2>
 		</div>
 	`,
-	styleUrls: ['./page-header.scss']
+	styleUrls: ["./page-header.scss"]
 })
 export class PageHeaderComponent {
 	/**
@@ -90,7 +90,7 @@ export class PageHeaderComponent {
 	 * The page header sits on the grid by default.
 	 * Set to `false` if you need to manually position the page header using the default padding values
 	 */
-	@HostBinding('class.bx--row') @Input() onGrid = true;
+	@HostBinding("class.bx--row") @Input() onGrid = true;
 
 	get title() {
 		return this.items[this.items.length - 1].content;
@@ -100,7 +100,7 @@ export class PageHeaderComponent {
 		return this.items.slice(0, this.items.length - 1);
 	}
 
-	@HostBinding('class.has-breadcrumbs') get hasBreadcrumbs() {
+	@HostBinding("class.has-breadcrumbs") get hasBreadcrumbs() {
 		return this.items.length > 1;
 	}
 }

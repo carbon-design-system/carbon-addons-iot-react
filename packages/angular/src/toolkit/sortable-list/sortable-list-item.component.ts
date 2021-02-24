@@ -4,10 +4,10 @@ import {
 	EventEmitter,
 	Input,
 	Output
-} from '@angular/core';
+} from "@angular/core";
 
 @Component({
-	selector: 'sc-sortable-list-item',
+	selector: "sc-sortable-list-item",
 	template: `
 		<div
 			class="drag-marker"
@@ -41,7 +41,7 @@ import {
 			</div>
 		</div>
 	`,
-	styleUrls: ['./sortable-list-item.scss']
+	styleUrls: ["./sortable-list-item.scss"]
 })
 export class SortableListItemComponent {
 	@Input() checked = true;
@@ -54,7 +54,7 @@ export class SortableListItemComponent {
 
 	@Output() dragEnd = new EventEmitter();
 
-	@Output() move = new EventEmitter<'up'|'down'>();
+	@Output() move = new EventEmitter<"up"|"down">();
 
 	constructor(public elementRef: ElementRef) {}
 }

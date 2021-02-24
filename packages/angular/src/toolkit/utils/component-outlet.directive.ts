@@ -11,16 +11,17 @@ import {
 	SimpleChanges,
 	Type,
 	ViewContainerRef
-} from '@angular/core';
+} from "@angular/core";
 
 @Directive({
-	selector: '[scComponentOutlet]'
+	selector: "[scComponentOutlet]"
 })
 export class ComponentOutletDirective implements OnChanges, OnDestroy {
 	@Input() scComponentOutletInputs = new Map<string, any>();
 
 	@Input() scComponentOutletOutputs = new Map<string, any>();
 
+	// tslint:disable-next-line
 	// copied from https://github.com/angular/angular/blob/263bbd43c1808f1201bc4b50fe76e8fbba672c51/packages/common/src/directives/ng_component_outlet.ts#L10-L116
 	// TODO(issue/24571): remove '!'.
 	@Input() scComponentOutlet!: Type<any>;
@@ -38,6 +39,7 @@ export class ComponentOutletDirective implements OnChanges, OnDestroy {
 	// end copy
 
 	ngOnChanges(changes: SimpleChanges) {
+		// tslint:disable-next-line
 		// copied from https://github.com/angular/angular/blob/263bbd43c1808f1201bc4b50fe76e8fbba672c51/packages/common/src/directives/ng_component_outlet.ts#L10-L116
 		this._viewContainerRef.clear();
 		this._componentRef = null;
@@ -45,8 +47,8 @@ export class ComponentOutletDirective implements OnChanges, OnDestroy {
 		if (this.scComponentOutlet) {
 			const elInjector = this.scComponentOutletInjector || this._viewContainerRef.parentInjector;
 
-			if (changes['scComponentOutletNgModuleFactory']) {
-				if (this._moduleRef) this._moduleRef.destroy();
+			if (changes["scComponentOutletNgModuleFactory"]) {
+				if (this._moduleRef) { this._moduleRef.destroy(); }
 
 				if (this.scComponentOutletNgModuleFactory) {
 					const parentModule = elInjector.get(NgModuleRef);
@@ -71,23 +73,24 @@ export class ComponentOutletDirective implements OnChanges, OnDestroy {
 		if (changes.scComponentOutletInputs) {
 			const inputs: Array<[string, any]> = Array.from(changes.scComponentOutletInputs.currentValue);
 			for (const [key, value] of inputs) {
-				this['_componentRef']['instance'][key] = value;
+				this["_componentRef"]["instance"][key] = value;
 			}
 		}
 
 		if (changes.scComponentOutletOutputs) {
 			const outputs: Array<[string, any]> = Array.from(changes.scComponentOutletOutputs.currentValue);
 			for (const [key, value] of outputs) {
-				this['_componentRef']['instance'][key].subscribe((event) => {
+				this["_componentRef"]["instance"][key].subscribe((event) => {
 					value(event);
 				});
 			}
 		}
 	}
 
+	// tslint:disable-next-line
 	// copied from https://github.com/angular/angular/blob/263bbd43c1808f1201bc4b50fe76e8fbba672c51/packages/common/src/directives/ng_component_outlet.ts#L10-L116
 	ngOnDestroy() {
-		if (this._moduleRef) this._moduleRef.destroy();
+		if (this._moduleRef) { this._moduleRef.destroy(); }
 	}
 	// end copy
 }

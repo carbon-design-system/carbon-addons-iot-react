@@ -1,12 +1,12 @@
 import {
 	Component,
 	ViewEncapsulation
-} from '@angular/core';
-import { TableHeadCell } from 'carbon-components-angular';
+} from "@angular/core";
+import { TableHeadCell } from "carbon-components-angular";
 
 @Component({
 	// tslint:disable-next-line: component-selector
-	selector: '[scTableHeadCell]',
+	selector: "[scTableHeadCell]",
 	template: `
 		<ng-container *ngIf="!skeleton">
 			<button
@@ -97,7 +97,7 @@ import { TableHeadCell } from 'carbon-components-angular';
 			</button>
 		</ng-container>
 	`,
-	styleUrls: ['./sterling-table-head-cell.scss'],
+	styleUrls: ["./sterling-table-head-cell.scss"],
 	encapsulation: ViewEncapsulation.None
 })
 export class SCTableHeadCell extends TableHeadCell { }

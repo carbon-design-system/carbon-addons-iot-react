@@ -3,16 +3,16 @@ import {
 	EventEmitter,
 	Input,
 	Output
-} from '@angular/core';
-import { ListItem } from 'carbon-components-angular';
-import { SortableListOption } from './sortable-list-model.class';
+} from "@angular/core";
+import { ListItem } from "carbon-components-angular";
+import { SortableListOption } from "./sortable-list-model.class";
 
 export type SortableListItem = SortableListOption & ListItem;
 
 export type SortableListItems = SortableListItem[];
 
 @Component({
-	selector: 'sc-sortable-list',
+	selector: "sc-sortable-list",
 	template: `
 		<ol>
 			<ng-container *ngFor="let item of items; trackBy: trackByFn">
@@ -55,7 +55,7 @@ export type SortableListItems = SortableListItem[];
 			</li>
 		</ol>
 	`,
-	styleUrls: ['./sortable-list.scss']
+	styleUrls: ["./sortable-list.scss"]
 })
 export class SortableListComponent {
 	@Input() items: SortableListItems;
@@ -74,7 +74,7 @@ export class SortableListComponent {
 		this.dragging = item;
 	}
 
-	active(item: SortableListItem | 'bottom') {
+	active(item: SortableListItem | "bottom") {
 		this.dragOver = item;
 	}
 
@@ -82,7 +82,7 @@ export class SortableListComponent {
 		this.dragOver = null;
 	}
 
-	isActive(item: SortableListItem | 'bottom') {
+	isActive(item: SortableListItem | "bottom") {
 		return this.dragOver === item;
 	}
 
@@ -101,24 +101,24 @@ export class SortableListComponent {
 		this.itemsChange.emit(this.items);
 	}
 
-	handleMove(direction: 'up' | 'down', item: SortableListItem) {
+	handleMove(direction: "up" | "down", item: SortableListItem) {
 		const itemIndex = this.items.indexOf(item);
-		if (direction === 'up') {
+		if (direction === "up") {
 			if (!this.items[itemIndex - 1]) { return; }
 			this.items = this.insertBefore(item, this.items[itemIndex - 1]);
-		} else if (direction === 'down') {
-			const baseItem = this.items[itemIndex + 2] ? this.items[itemIndex + 2] : 'bottom';
+		} else if (direction === "down") {
+			const baseItem = this.items[itemIndex + 2] ? this.items[itemIndex + 2] : "bottom";
 			this.items = this.insertBefore(item, baseItem);
 		}
 	}
 
-	protected insertBefore(itemToMove: SortableListItem, baseItem: SortableListItem | 'bottom') {
+	protected insertBefore(itemToMove: SortableListItem, baseItem: SortableListItem | "bottom") {
 		const tmpItems = Array.from(this.items);
 
 		const itemToMoveIndex = tmpItems.indexOf(itemToMove);
 		tmpItems.splice(itemToMoveIndex, 1);
 
-		if (baseItem === 'bottom') {
+		if (baseItem === "bottom") {
 			tmpItems.push(itemToMove);
 		} else {
 			const insertionPointIndex = tmpItems.indexOf(baseItem);

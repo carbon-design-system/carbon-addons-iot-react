@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
 
-import { BreadcrumbModule } from 'carbon-components-angular';
+import { BreadcrumbModule } from "carbon-components-angular";
 
-import { CommonModule } from '@angular/common';
-import { PageHeaderComponent } from './page-header.component';
+import { CommonModule } from "@angular/common";
+import { PageHeaderComponent } from "./page-header.component";
 
 @NgModule({
 	declarations: [

@@ -1,6 +1,6 @@
-import { isObservable, of } from 'rxjs';
-import { BaseSetting } from './settings/index';
-import { Content } from './table-settings-model.class';
+import { isObservable, of } from "rxjs";
+import { BaseSetting } from "./settings/index";
+import { Content } from "./table-settings-model.class";
 
 export interface TableSettingsPaneOptions {
 	settings?: BaseSetting[];
