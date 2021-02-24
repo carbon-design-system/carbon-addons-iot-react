@@ -32,7 +32,7 @@ const defaultProps = {
   },
 };
 
-const ComboChartCard = ({ className, title, values, options, isExpanded, others, i18n }) => {
+const ComboChartCard = ({ className, title, values, options, isExpanded, size, others, i18n }) => {
   const { title: chartTitle, timeDataSourceId = 'timestamp', ...otherOptions } = options;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { noDataLabel } = mergedI18n;
@@ -41,6 +41,7 @@ const ComboChartCard = ({ className, title, values, options, isExpanded, others,
       isEmpty={isEmpty(values)}
       className={classnames(className, `${iotPrefix}--combo-chart-card`)}
       title={`${title === '' ? chartTitle : title}`}
+      size={size}
       {...others}
     >
       <div className={`${iotPrefix}--combo-chart-card__container`}>

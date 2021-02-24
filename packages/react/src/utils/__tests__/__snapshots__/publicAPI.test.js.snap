@@ -19192,6 +19192,7 @@ Map {
       "i18n": Object {
         "noDataLabel": "No data",
       },
+      "locale": "en",
       "size": "MEDIUMWIDE",
       "title": "",
     },

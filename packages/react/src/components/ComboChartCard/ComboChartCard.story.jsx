@@ -19,7 +19,7 @@ const acceptableSizes = Object.keys(CARD_SIZES).filter(
 );
 
 export default {
-  title: 'Watson IoT/ComboChartCard (DontTest)',
+  title: 'Watson IoT/ComboChartCard',
   decorators: [withKnobs],
 
   parameters: {
