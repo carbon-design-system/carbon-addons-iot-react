@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.49](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.48...v2.143.0-next.49) (2021-02-23)
+
+
+### Features
+
+* **dashboardeditor:** duplicated card is placed next to the original card ([c2c24ec](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c2c24ec290354401df636d1ed44ace85bc2e9281))
+
+
+
+
+
 # [2.143.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.47...v2.143.0-next.48) (2021-02-19)
 
 
