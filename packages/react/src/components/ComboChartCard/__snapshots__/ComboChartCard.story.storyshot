@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComboChartCard (DontTest) empty 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="iot--card iot--combo-chart-card iot--card--wrapper"
+      data-testid="Card"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "304px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+      >
+        <span
+          className="iot--card--title"
+          title="ComboChartCard Empty"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            ComboChartCard Empty
+          </div>
+        </span>
+      </div>
+      <div
+        className="iot--card--content"
+        style={
+          Object {
+            "--card-content-height": "256px",
+          }
+        }
+      >
+        <div
+          className="iot--card--empty-message-wrapper"
+          style={
+            Object {
+              "--card-content-padding": "16px",
+            }
+          }
+        >
+          No data is available for this time range.
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

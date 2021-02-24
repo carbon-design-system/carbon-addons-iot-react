@@ -1,5 +1,6 @@
 /* istanbul ignore file */
 // Ignoring until we resolve the issue with importing this component in jest
+import PropTypes from 'prop-types';
 import React from 'react';
 import { ComboChart } from '@carbon/charts-react';
 import classnames from 'classnames';
@@ -7,11 +8,19 @@ import isEmpty from 'lodash/isEmpty';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
+import { tableData, tableColumns } from '../../utils/sample';
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import { settings } from '../../constants/Settings';
 import StatefulTable from '../Table/StatefulTable';
 
 const { iotPrefix } = settings;
+
+const propTypes = {
+  id: PropTypes.string.isRequired,
+  i18n: PropTypes.shape({
+    noDataLabel: PropTypes.string,
+  }),
+};
 
 const defaultProps = {
   size: CARD_SIZES.MEDIUMWIDE,
@@ -22,9 +31,10 @@ const defaultProps = {
   },
 };
 
-const ComboChartCard = ({ className, title, values, options, ...others }) => {
-  const { title: chartTitle, ...otherOptions } = options;
-
+const ComboChartCard = ({ className, title, values, options, isExpanded, others, size, i18n }) => {
+  const { title: chartTitle, timeDataSourceId = 'timestamp', ...otherOptions } = options;
+  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const { noDataLabel } = mergedI18n;
   return (
     <Card
       isEmpty={isEmpty(values)}
@@ -69,7 +79,7 @@ const ComboChartCard = ({ className, title, values, options, ...others }) => {
                 },
               },
             }}
-            i18n={i18n}
+            i18n={mergedI18n}
           />
         ) : null}
       </div>

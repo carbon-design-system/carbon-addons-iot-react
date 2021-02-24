@@ -42,7 +42,7 @@ export const ComboChartCardEmpty = () => (
 );
 
 ComboChartCardEmpty.story = {
-  name: 'empty (DontTest)',
+  name: 'empty',
 };
 
 export const ComboChartCardLoading = () => {
@@ -62,7 +62,7 @@ export const ComboChartCardLoading = () => {
 };
 
 ComboChartCardLoading.story = {
-  name: 'loading (DontTest)',
+  name: 'loading',
 };
 
 export const ComboChartCardArea = () => (
@@ -80,5 +80,5 @@ export const ComboChartCardArea = () => (
 );
 
 ComboChartCardArea.story = {
-  name: 'Area and Line (DontTest)',
+  name: 'Area and Line',
 };
