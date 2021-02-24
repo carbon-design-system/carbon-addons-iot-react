@@ -376,7 +376,7 @@ export const HeaderWithCustomSideNav = () => (
       },
     ]}
     hasSideNav
-    onSideNavToggled={(evt) => alert('onSideNavToggled')}
+    onSideNavToggled={() => alert('onSideNavToggled')}
   />
 );
 HeaderWithCustomSideNav.story = {
