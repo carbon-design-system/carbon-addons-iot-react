@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.50...v2.143.0-next.51) (2021-02-24)
+
+
+### Bug Fixes
+
+* **selectusers:** address PR comments ([8fdc9f5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8fdc9f5f5c7e58cc7dc44fcdd096debcd5c11ab9))
+* **selectusers:** another CI lint complaint resolved ([1e0f894](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1e0f89401601bb57bc51627d2e7e3ab8a85013cf))
+* **SelectUsers:** update storyshot ([4c7b100](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4c7b1007dde1588aa2a4c724a3b3e2445cb9bc45))
+
+
+### Features
+
+* **select-users-modal:** added select users modal ([be5e302](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/be5e302249222a6539fb10c79098e02d5b0e6c98))
+
+
+
+
+
 # [2.143.0-next.50](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.49...v2.143.0-next.50) (2021-02-24)
 
 
