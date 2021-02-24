@@ -24,6 +24,7 @@ Map {
       "loading": false,
       "recommended": false,
       "selected": false,
+      "testID": "Button",
     },
     "propTypes": Object {
       "children": Object {
@@ -63,6 +64,9 @@ Map {
       },
       "selected": Object {
         "type": "bool",
+      },
+      "testID": Object {
+        "type": "string",
       },
     },
   },
@@ -145,6 +149,7 @@ Map {
       "passiveModal": false,
       "sendingData": null,
       "submitFailed": false,
+      "testID": "ComposedModal",
       "type": null,
     },
     "propTypes": Object {
@@ -246,6 +251,9 @@ Map {
       },
       "submitFailed": Object {
         "type": "bool",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "type": Object {
         "args": Array [
@@ -6626,6 +6634,9 @@ Map {
       "submitFailed": Object {
         "type": "bool",
       },
+      "testID": Object {
+        "type": "string",
+      },
       "type": Object {
         "args": Array [
           Array [
@@ -8758,6 +8769,7 @@ Map {
         "cards": Array [],
         "layouts": Object {},
       },
+      "isCardResizable": true,
       "isLoading": false,
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
@@ -8777,7 +8789,7 @@ Map {
       "onValidateUploadedImage": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
-      "renderIconByName": null,
+      "renderIconByName": [Function],
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -9284,6 +9296,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isCardResizable": Object {
+        "type": "bool",
       },
       "isLoading": Object {
         "type": "bool",
@@ -12550,6 +12565,7 @@ Map {
         "noDataLabel": "No data is available for this time range.",
         "tooltipGroupLabel": "Group",
       },
+      "interval": "hour",
       "locale": "en",
       "showTimeInGMT": false,
       "size": "MEDIUM",

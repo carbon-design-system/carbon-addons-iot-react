@@ -32,7 +32,7 @@ module.exports = {
       branches: 60,
       lines: 71,
     },
-    './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 68, functions: 78 },
+    './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
       // https://github.com/carbon-design-system/carbon-charts/issues/594

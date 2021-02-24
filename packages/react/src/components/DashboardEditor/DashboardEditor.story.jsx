@@ -181,6 +181,7 @@ export const Default = () => (
       'VALUE',
       'IMAGE',
       'TABLE',
+      'ALERT',
       'CUSTOM',
     ])}
     headerBreadcrumbs={[

@@ -493,6 +493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListI
               >
                 <button
                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                  data-testid="Button"
                   disabled={true}
                   onClick={[Function]}
                   style={
@@ -1104,6 +1105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListI
               >
                 <button
                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   style={
