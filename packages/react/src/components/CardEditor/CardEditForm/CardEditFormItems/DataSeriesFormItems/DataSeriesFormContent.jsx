@@ -147,9 +147,9 @@ const defaultProps = {
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
-  dataItems?.map(({ dataSourceId, dataItemId }) => ({
+  dataItems?.map(({ dataItemId, label }) => ({
     id: dataItemId,
-    text: dataSourceId,
+    text: label,
   })) || [];
 
 /**
