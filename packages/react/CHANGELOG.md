@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.50](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.49...v2.143.0-next.50) (2021-02-24)
+
+
+### Bug Fixes
+
+* **imagehotspots:** need to handle if the page is scrolled down ([b23f824](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b23f82481c690af0165670aa5a2e341b57bbb294))
+* **tablecard:** should only encode variable if it does not contain the whole URL ([4c11372](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4c11372bfe84c8c80ae289772f7739cbeb854275))
+
+
+
+
+
 # [2.143.0-next.49](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.48...v2.143.0-next.49) (2021-02-23)
 
 
