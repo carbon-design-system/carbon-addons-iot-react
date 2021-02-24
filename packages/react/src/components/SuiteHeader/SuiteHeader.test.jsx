@@ -5,8 +5,6 @@ import { mount } from 'enzyme';
 import React from 'react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 
-import { settings } from '../../constants/Settings';
-
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
 
