@@ -12,6 +12,7 @@ import { tableData, tableColumns } from '../../utils/sample';
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import { settings } from '../../constants/Settings';
 import StatefulTable from '../Table/StatefulTable';
+import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -31,7 +32,7 @@ const defaultProps = {
   },
 };
 
-const ComboChartCard = ({ className, title, values, options, isExpanded, others, size, i18n }) => {
+const ComboChartCard = ({ className, title, values, options, isExpanded, others, i18n }) => {
   const { title: chartTitle, timeDataSourceId = 'timestamp', ...otherOptions } = options;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { noDataLabel } = mergedI18n;
