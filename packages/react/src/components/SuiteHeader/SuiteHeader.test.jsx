@@ -1,11 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
+import { mount } from 'enzyme';
 import React from 'react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 
+import { settings } from '../../constants/Settings';
+
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
+
+const { iotPrefix } = settings;
 
 const commonProps = {
   suiteName: 'Application Suite',
@@ -76,6 +81,16 @@ describe('SuiteHeader', () => {
       />
     );
     expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
+  });
+  it('renders with left sidenav toggle button (custom side nav support)', () => {
+    const mockOnSideNavToggled = jest.fn();
+    const wrapper = mount(
+      <SuiteHeader {...commonProps} hasSideNav onSideNavToggled={mockOnSideNavToggled} />
+    );
+    expect(wrapper.find({ title: 'Open menu' })).toHaveLength(1);
+    const sideNavButton = wrapper.find({ title: 'Open menu' }).first();
+    sideNavButton.simulate('click');
+    expect(mockOnSideNavToggled).toHaveBeenCalled();
   });
   it('opens and closes logout modal', () => {
     render(<SuiteHeader {...commonProps} />);
