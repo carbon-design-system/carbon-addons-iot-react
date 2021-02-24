@@ -10,8 +10,6 @@ import { settings } from '../../constants/Settings';
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
 
-const { iotPrefix } = settings;
-
 const commonProps = {
   suiteName: 'Application Suite',
   appName: 'Application Name',
