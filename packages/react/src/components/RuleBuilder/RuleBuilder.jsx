@@ -1,15 +1,19 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Accordion, AccordionItem, Tag, TextInput, Tab, Tabs } from 'carbon-components-react';
+import { Add24, Edit24, Search24 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { ToolbarSVGWrapper } from '../Card/CardToolbar';
 import Button from '../Button';
 import FilterTags from '../FilterTags/FilterTags';
+import SelectUsersModal from '../SelectUsersModal/SelectUsersModal';
 
+import RuleBuilderTags from './RuleBuilderTags';
 import RuleBuilderEditor from './RuleBuilderEditor';
 import { RuleBuilderColumnsPropType, RuleGroupPropType } from './RuleBuilderPropTypes';
+import UserList from './UserList';
 
 const { iotPrefix } = settings;
 
@@ -32,10 +36,9 @@ const propTypes = {
       actionCallback: PropTypes.func.isRequired,
     })
   ),
-  saveLabel: PropTypes.string,
-  handleOnSave: PropTypes.func.isRequired,
-  cancelLabel: PropTypes.string,
-  handleOnCancel: PropTypes.func.isRequired,
+  onSave: PropTypes.func.isRequired,
+
+  onCancel: PropTypes.func.isRequired,
   /** Optional rule editor component to overwrite the default */
   ruleEditor: PropTypes.elementType,
   /** filter object of the current selected filter */
@@ -58,7 +61,7 @@ const propTypes = {
         access: PropTypes.oneOf(['edit', 'read']),
       })
     ),
-    /** All possible uers that can be granted access */
+    /** All possible users that can be granted access */
     filterUsers: PropTypes.arrayOf(
       PropTypes.shape({
         userName: PropTypes.string,
@@ -84,67 +87,87 @@ const propTypes = {
       buttonCallback: PropTypes.func.isRequired,
     })
   ),
-  filterTabText: PropTypes.string,
-  sharingTabText: PropTypes.string,
+
   onChange: PropTypes.func,
+  i18n: PropTypes.shape({
+    addUsers: PropTypes.string,
+    editorAccess: PropTypes.string,
+    readOnlyAccess: PropTypes.string,
+    sharingAndPermissions: PropTypes.string,
+    filterTabText: PropTypes.string,
+    sharingTabText: PropTypes.string,
+    clearFilterTitle: PropTypes.string,
+    saveLabel: PropTypes.string,
+    cancelLabel: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
   filter: {
-    filterColumns: [
-      { id: 'column1', name: 'Column 1' },
-      { id: 'column2', name: 'Column 2' },
-      { id: 'column3', name: 'Column 3' },
-    ],
+    filterTags: [],
+    filterAccess: [],
+    filterUsers: [],
   },
   className: null,
   defaultTitleText: 'Undefined',
   // metaText: null,
   // id: null,
   ruleEditor: null,
-  saveLabel: 'Save',
-  cancelLabel: 'Cancel',
   actionBar: null,
   footerButtons: null,
-  filterTabText: 'Filter builder',
-  sharingTabText: 'Sharing and preferences',
   onChange: () => {},
+  i18n: {
+    addUsersButtonLabel: 'Add users',
+    editorAccessLabel: 'Editor access',
+    readOnlyAccessLabel: 'Read only access',
+    detailsAccordionText: 'Details',
+    sharingAccordionText: 'Sharing and permissions',
+    filterTabText: 'Filter builder',
+    sharingTabText: 'Sharing and preferences',
+    filterNameLabel: 'Filter Name',
+    tagsLabel: 'Tags (optional)',
+    clearFilterTitle: 'Clear Filter',
+    saveLabel: 'Save',
+    cancelLabel: 'Cancel',
+    readModalHeaderLabel: `Selected users will have read access`,
+    editModalHeaderLabel: `Selected users will have edit access`,
+    nameColumnLabel: 'Name',
+    typeColumnLabel: 'Type',
+    groupTypeLabel: 'Group',
+    userTypeLabel: 'User',
+    modalPrimaryButtonLabel: 'OK',
+  },
 };
 
 const baseClass = `${iotPrefix}--rule-builder-wrap`;
-
-const RuleBuilderTags =  React.forwardRef(({ children, ...props }, ref) => {
-  return (
-    <div {...props} ref={ref}>
-      {children}
-      <TextInput
-        type="text"
-        id="rule-builder-tags-input"
-        labelText="Tags (optional)"
-        onChange={(e) => props.onChange(e.target.value, 'TITLE')}
-      />
-    </div>
-  );
-});
 
 const RuleBuilder = ({
   className,
   defaultTitleText,
   // metaText,
   // id,
-  saveLabel,
-  handleOnSave,
-  cancelLabel,
-  handleOnCancel,
+  onSave,
+  onCancel,
   actionBar,
   footerButtons,
-  filterTabText,
-  sharingTabText,
   filter,
   ruleEditor: RuleEditor,
   onChange,
+  i18n,
 }) => {
   const [currentFilter, setCurrentFilter] = React.useState(filter);
+  const [modalState, setModalState] = React.useState({
+    isOpen: false,
+    access: 'READ',
+  });
+  const mergedI18n = useMemo(
+    () => ({
+      ...defaultProps.i18n,
+      ...i18n,
+    }),
+    [i18n]
+  );
+
   const Editor = useMemo(() => RuleEditor || RuleBuilderEditor, [RuleEditor]);
   const actions = useMemo(
     () =>
@@ -153,13 +176,16 @@ const RuleBuilder = ({
           key={i.actionId}
           data-testid={i.actionId}
           title={i.actionLabel}
-          onClick={i.actionCallback}
+          onClick={() => {
+            i.actionCallback(currentFilter);
+          }}
           iconDescription={i.actionLabel}
           renderIcon={i.actionIcon}
         />
       )),
-    [actionBar]
+    [actionBar, currentFilter]
   );
+
   const footer = useMemo(
     () =>
       footerButtons?.map((i) => (
@@ -168,12 +194,14 @@ const RuleBuilder = ({
           key={i.buttonId}
           kind="secondary"
           className={`${baseClass}--footer-actions-preview`}
-          onClick={i.buttonCallback}
+          onClick={() => {
+            i.buttonCallback(currentFilter);
+          }}
         >
           {i.buttonLabel}
         </Button>
       )),
-    [footerButtons]
+    [currentFilter, footerButtons]
   );
 
   const handleOnChange = (update, type) => {
@@ -183,7 +211,7 @@ const RuleBuilder = ({
         updatedFilter = { filterTitleText: update };
         break;
       case 'TAGS':
-        updatedFilter = { filterTags: update };
+        updatedFilter = { filterTags: [...(currentFilter?.filterTags ?? []), update] };
         break;
       default:
         updatedFilter = { filterRules: update };
@@ -191,7 +219,64 @@ const RuleBuilder = ({
     setCurrentFilter((current) => ({ ...current, ...updatedFilter }));
     onChange(updatedFilter);
   };
-  console.log({currentFilter})
+
+  const handleAddAccess = useCallback(
+    (access) => () => {
+      setModalState({
+        access,
+        isOpen: true,
+      });
+    },
+    [setModalState]
+  );
+
+  const handleCloseModal = useCallback(() => {
+    setModalState({
+      ...modalState,
+      isOpen: false,
+    });
+  }, [modalState]);
+
+  const handleTagClose = useCallback(
+    (tag) => () => {
+      setCurrentFilter((prev) => {
+        return {
+          ...prev,
+          filterTags: prev.filterTags.filter((t) => t !== tag),
+        };
+      });
+    },
+    []
+  );
+
+  const editUsers = useMemo(
+    () => currentFilter?.filterAccess?.filter((user) => user.access === 'edit') ?? [],
+    [currentFilter]
+  );
+
+  const readUsers = useMemo(
+    () => currentFilter?.filterAccess?.filter((user) => user.access === 'read') ?? [],
+    [currentFilter]
+  );
+
+  const handleUserSelect = useCallback(
+    (access) => (selectedUsers) => {
+      setModalState((prev) => ({
+        ...prev,
+        isOpen: false,
+      }));
+
+      setCurrentFilter((prev) => ({
+        ...prev,
+        filterAccess: [
+          ...(prev.filterAccess?.filter((user) => user.access !== access) ?? []),
+          ...selectedUsers.map((user) => ({ ...user, access })),
+        ],
+      }));
+    },
+    []
+  );
+
   return (
     <section
       className={classnames(baseClass, className)}
@@ -212,57 +297,133 @@ const RuleBuilder = ({
           <Button
             className={`${baseClass}--header-actions-save`}
             data-testid="rule-builder-save"
-            onClick={() => handleOnSave(currentFilter)}
+            onClick={() => onSave(currentFilter)}
             size="small"
           >
-            {saveLabel}
+            {mergedI18n.saveLabel}
           </Button>
         </div>
       </header>
       <div className={`${baseClass}--body`}>
         <Tabs className={`${baseClass}--tabs`}>
-          <Tab className={`${baseClass}--tab`} label={filterTabText}>
+          <Tab className={`${baseClass}--tab`} label={mergedI18n.filterTabText}>
             <Editor
               defaultRules={currentFilter.filterRules}
               columns={currentFilter.filterColumns}
               onChange={handleOnChange}
             />
           </Tab>
-          <Tab className={`${baseClass}--tab`} label={sharingTabText}>
+          <Tab className={`${baseClass}--tab`} label={mergedI18n.sharingTabText}>
             <Accordion>
-              <AccordionItem title="Section 1 title">
-                  <TextInput
-                    type="text"
-                    id="rule-builder-title-input"
-                    labelText="Title Input"
-                    light
-                    value={currentFilter.filterTitleText}
-                    onChange={(e) => handleOnChange(e.target.value, 'TITLE')}
-                  />
-                  <FilterTags hasOverflow tagContainer={RuleBuilderTags} onChange={handleOnChange}>
+              <AccordionItem title={mergedI18n.detailsAccordionText} open>
+                <TextInput
+                  type="text"
+                  id="rule-builder-title-input"
+                  className={`${baseClass}--title-input`}
+                  labelText={mergedI18n.filterNameLabel}
+                  light
+                  value={currentFilter.filterTitleText}
+                  placeholder="Untitled 01"
+                  onChange={(e) => handleOnChange(e.target.value, 'TITLE')}
+                />
+                <FilterTags
+                  hasOverflow
+                  tagContainer={RuleBuilderTags}
+                  onChange={handleOnChange}
+                  i18n={mergedI18n}
+                >
                   {currentFilter?.filterTags?.map((tag) => (
                     <Tag
-                      key={`tag-${tag?.id}`}
+                      key={`tag-${tag}`}
                       filter
-                      type={tag?.type}
-                      title="Clear Filter"
-                      style={{ marginRight: '1rem' }}
-                      onClose={() => handleOnClose(tag?.id)}
+                      title={mergedI18n.clearFilterTitle}
+                      style={{
+                        marginRight: '1rem',
+                      }}
+                      onClose={handleTagClose(tag)}
                     >
                       {tag}
                     </Tag>
                   )) || []}
-                  </FilterTags>
+                </FilterTags>
               </AccordionItem>
-              <AccordionItem title="Section 2 title">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+              <AccordionItem title={mergedI18n.sharingAccordionText} open>
+                <div className={`${baseClass}--user-container`} style={{}}>
+                  <div>
+                    <strong id="add-editors-label">{mergedI18n.editorAccessLabel}</strong>
+                    <div>
+                      {editUsers.length > 0 ? (
+                        <>
+                          <Button
+                            aria-labelledby="edit-only-access-label"
+                            renderIcon={Search24}
+                            kind="ghost"
+                            iconDescription="Edit users"
+                            hasIconOnly
+                            onClick={handleAddAccess('edit')}
+                          />
+                          <Button
+                            aria-labelledby="edit-only-access-label"
+                            hasIconOnly
+                            iconDescription="Edit users"
+                            renderIcon={Edit24}
+                            kind="ghost"
+                            onClick={handleAddAccess('edit')}
+                          />
+                        </>
+                      ) : null}
+                      <Button
+                        aria-labelledby="add-editors-label"
+                        renderIcon={Add24}
+                        id="add-editors-button"
+                        kind="ghost"
+                        testID="rule-builder-add-edit-users"
+                        onClick={handleAddAccess('edit')}
+                      >
+                        {mergedI18n.addUsersButtonLabel}
+                      </Button>
+                    </div>
+                  </div>
+                  <div>
+                    <strong id="read-only-access-label">{mergedI18n.readOnlyAccessLabel}</strong>
+                    <div>
+                      {readUsers.length > 0 ? (
+                        <>
+                          <Button
+                            aria-labelledby="read-only-access-label"
+                            renderIcon={Search24}
+                            kind="ghost"
+                            iconDescription="Edit users"
+                            hasIconOnly
+                            onClick={handleAddAccess('read')}
+                          />
+                          <Button
+                            aria-labelledby="read-only-access-label"
+                            hasIconOnly
+                            renderIcon={Edit24}
+                            iconDescription="Edit users"
+                            kind="ghost"
+                            onClick={handleAddAccess('read')}
+                          />
+                        </>
+                      ) : null}
+                      <Button
+                        aria-labelledby="read-only-access-label"
+                        renderIcon={Add24}
+                        id="add-read-users"
+                        kind="ghost"
+                        testID="rule-builder-add-read-users"
+                        onClick={handleAddAccess('read')}
+                      >
+                        {mergedI18n.addUsersButtonLabel}
+                      </Button>
+                    </div>
+                  </div>
+                  <UserList users={editUsers} i18n={mergedI18n} />
+                  <UserList users={readUsers} i18n={mergedI18n} />
+                </div>
               </AccordionItem>
             </Accordion>
-            <div>TODO: Build sharing and preferences</div>
           </Tab>
         </Tabs>
       </div>
@@ -270,13 +431,35 @@ const RuleBuilder = ({
         <Button
           kind="secondary"
           className={`${baseClass}--footer-actions-cancel`}
-          data-testid="rule-builder-cancel"
-          onClick={handleOnCancel}
+          testID="rule-builder-cancel"
+          onClick={onCancel}
         >
-          {cancelLabel}
+          {mergedI18n.cancelLabel}
         </Button>
         {footer}
       </footer>
+      <SelectUsersModal
+        users={currentFilter?.filterUsers ?? []}
+        i18n={{
+          modalHeaderLabel: mergedI18n.editModalHeaderLabel,
+          primaryButtonLabel: mergedI18n.modalPrimaryButtonLabel,
+        }}
+        initialSelectedUsers={editUsers}
+        onSubmit={handleUserSelect('edit')}
+        onClose={handleCloseModal}
+        isOpen={modalState.isOpen && modalState.access === 'edit'}
+      />
+      <SelectUsersModal
+        users={currentFilter?.filterUsers ?? []}
+        i18n={{
+          modalHeaderLabel: mergedI18n.readModalHeaderLabel,
+          primaryButtonLabel: mergedI18n.modalPrimaryButtonLabel,
+        }}
+        initialSelectedUsers={readUsers}
+        onSubmit={handleUserSelect('read')}
+        onClose={handleCloseModal}
+        isOpen={modalState.isOpen && modalState.access === 'read'}
+      />
     </section>
   );
 };

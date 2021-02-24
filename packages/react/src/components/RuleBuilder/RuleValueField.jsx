@@ -9,14 +9,20 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   renderColumnField: PropTypes.func,
   renderOperandField: PropTypes.func,
+  i18n: PropTypes.shape({
+    valuePlaceholder: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
   renderColumnField: undefined,
   renderOperandField: undefined,
+  i18n: {
+    valuePlaceholder: 'Enter a value',
+  },
 };
 
-const RuleValueField = ({ rule, onChange, renderColumnField, renderOperandField }) => {
+const RuleValueField = ({ rule, onChange, renderColumnField, renderOperandField, i18n }) => {
   if (renderOperandField) {
     return renderOperandField({ value: rule.value, onChange });
   }
@@ -28,6 +34,7 @@ const RuleValueField = ({ rule, onChange, renderColumnField, renderOperandField 
   return (
     <TextInput
       id={`${rule.id}-value`}
+      placeholder={i18n.valuePlaceholder}
       light
       labelText=""
       defaultValue={rule.value}

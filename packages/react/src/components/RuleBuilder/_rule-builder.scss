@@ -52,6 +52,43 @@
     .#{$prefix}--tab-content {
       flex: 1;
       overflow: auto;
+      padding: 0;
+    }
+
+    .#{$prefix}--accordion {
+      padding-top: 0;
+    }
+
+    .#{$prefix}--accordion__item {
+      border-top: 0;
+      border-bottom: 1px solid $ui-03;
+
+      &--active {
+        border-bottom: 0;
+
+        .#{$prefix}--accordion__content {
+          border-top: 1px solid $ui-03;
+          padding: $spacing-05 0;
+        }
+      }
+    }
+
+    .#{$iot-prefix}--filtertags-container {
+      position: relative;
+    }
+
+    .#{$iot-prefix}--filtertags-overflow-menu {
+      position: relative;
+      bottom: 0;
+    }
+
+    .#{$prefix}--accordion__heading {
+      padding: $spacing-06 0;
+    }
+
+    .#{$prefix}--accordion__title {
+      @include type-style('productive-heading-02');
+      margin-left: 0;
     }
   }
 
@@ -68,7 +105,8 @@
     }
 
     & + .#{$prefix}--tab-content {
-      padding-right: 3rem;
+      padding-top: $spacing-06;
+      padding-right: $spacing-12;
     }
   }
 
@@ -81,6 +119,61 @@
 
     .#{$iot-prefix}--btn:not(:last-child) {
       margin-right: $spacing-03;
+    }
+  }
+
+  &--title-input {
+    margin-bottom: $spacing-06;
+  }
+
+  &--tag-container {
+    height: 0;
+    padding-left: $spacing-02;
+    display: inline-block;
+    position: absolute;
+    bottom: 38px;
+  }
+
+  &--user-list {
+    > li > span {
+      flex: 1;
+    }
+  }
+
+  &--user-list__item,
+  &--user-list__header {
+    display: flex;
+    flex-direction: row;
+    padding: $spacing-02 $spacing-04;
+
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &--user-list__header {
+    background-color: $ui-03;
+    font-weight: bold;
+  }
+
+  &--user-container {
+    display: grid;
+    padding: $spacing-06 0;
+    align-items: center;
+    grid-template-columns: auto auto;
+    grid-row-start: 3;
+    column-gap: $spacing-12;
+
+    > div {
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+
+      > strong {
+        padding-left: $spacing-05;
+        padding-right: $spacing-08;
+      }
     }
   }
 }
