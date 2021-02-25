@@ -72,7 +72,7 @@ export const StatefulListWithNestedSearching = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
-      hasDeselection={boolean('hasDeselection', false)}
+      hasDeselection={boolean('hasDeselection', true)}
       i18n={object('i18n', {
         searchPlaceHolderText: 'Search',
       })}
@@ -124,7 +124,7 @@ export const WithDefaultSelectedId = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
-      hasDeselection={boolean('hasDeselection', false)}
+      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
@@ -194,7 +194,7 @@ export const WithOverflowMenu = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
-      hasDeselection={boolean('hasDeselection', false)}
+      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
@@ -260,7 +260,7 @@ export const WithNestedReorder = () => {
           }}
           hasSearch={boolean('hasSearch', true)}
           onSelect={action('onSelect')}
-          hasDeselection={boolean('hasDeselection', false)}
+          hasDeselection={boolean('hasDeselection', true)}
         />
       </div>
     );
@@ -309,7 +309,7 @@ export const WithDefaultExpandedIds = () => (
       isLargeRow={boolean('isLargeRow', false)}
       defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
       onSelect={action('onSelect')}
-      hasDeselection={boolean('hasDeselection', false)}
+      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
@@ -394,7 +394,7 @@ export const WithMixedHierarchies = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
-      hasDeselection={boolean('hasDeselection', false)}
+      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
