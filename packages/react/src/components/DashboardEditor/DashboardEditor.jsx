@@ -433,16 +433,17 @@ const DashboardEditor = ({
   );
 
   /**
-   * Adds a cloned card with a new unique id to the preview
+   * Adds a cloned card with a new unique id to the preview and place it next to the original card
    * @param {string} id
    */
   const duplicateCard = useCallback((id) => {
-    // eslint-disable-next-line no-shadow
-    setDashboardJson((dashboardJson) => {
-      const cardConfig = getDuplicateCard(dashboardJson.cards.find((i) => i.id === id));
+    setDashboardJson((dashboard) => {
+      const cardConfig = getDuplicateCard(dashboard.cards.find((card) => card.id === id));
+      const originalCardIndex = dashboard.cards.findIndex((card) => card.id === id);
+      dashboard.cards.splice(originalCardIndex, 0, cardConfig);
       return {
-        ...dashboardJson,
-        cards: [...dashboardJson.cards, cardConfig],
+        ...dashboard,
+        cards: dashboard.cards,
       };
     });
     setSelectedCardId(id);
