@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { ComboBox as CarbonComboBox, Tag } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
-import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
