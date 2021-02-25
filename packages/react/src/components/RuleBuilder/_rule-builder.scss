@@ -162,18 +162,5 @@
     grid-template-columns: auto auto;
     grid-row-start: 3;
     column-gap: $spacing-12;
-
-    > div {
-      flex-direction: row;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex: 1;
-
-      > strong {
-        padding-left: $spacing-05;
-        padding-right: $spacing-08;
-      }
-    }
   }
 }

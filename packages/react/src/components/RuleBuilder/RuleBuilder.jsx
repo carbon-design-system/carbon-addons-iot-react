@@ -2,18 +2,18 @@ import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Accordion, AccordionItem, Tag, TextInput, Tab, Tabs } from 'carbon-components-react';
-import { Add24, Edit24, Search24 } from '@carbon/icons-react';
+import { Add24 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { ToolbarSVGWrapper } from '../Card/CardToolbar';
 import Button from '../Button';
 import FilterTags from '../FilterTags/FilterTags';
 import SelectUsersModal from '../SelectUsersModal/SelectUsersModal';
+import StatefulTable from '../Table/StatefulTable';
 
 import RuleBuilderTags from './RuleBuilderTags';
 import RuleBuilderEditor from './RuleBuilderEditor';
 import { RuleBuilderColumnsPropType, RuleGroupPropType } from './RuleBuilderPropTypes';
-import UserList from './UserList';
 
 const { iotPrefix } = settings;
 
@@ -348,8 +348,97 @@ const RuleBuilder = ({
                 </FilterTags>
               </AccordionItem>
               <AccordionItem title={mergedI18n.sharingAccordionText} open>
-                <div className={`${baseClass}--user-container`} style={{}}>
-                  <div>
+                <div className={`${baseClass}--user-container`}>
+                  <StatefulTable
+                    id="edit-table"
+                    secondaryTitle={mergedI18n.editorAccessLabel}
+                    options={{
+                      hasSearch: true,
+                    }}
+                    view={{
+                      toolbar: {
+                        customToolbarContent: (
+                          <Button
+                            aria-labelledby="add-editors-label"
+                            renderIcon={Add24}
+                            id="add-editors-button"
+                            kind="ghost"
+                            testID="rule-builder-add-edit-users"
+                            onClick={handleAddAccess('edit')}
+                          >
+                            {mergedI18n.addUsersButtonLabel}
+                          </Button>
+                        ),
+                      },
+                      table: {},
+                    }}
+                    data={editUsers.map((user) => ({
+                      id: user.name,
+                      values: {
+                        name: user.name,
+                        type:
+                          Array.isArray(user.users) && user.users.length > 0
+                            ? mergedI18n.groupTypeLabel
+                            : mergedI18n.userTypeLabel,
+                      },
+                    }))}
+                    columns={[
+                      {
+                        id: 'name',
+                        name: mergedI18n.nameColumnLabel,
+                      },
+                      {
+                        id: 'type',
+                        name: mergedI18n.typeColumnLabel,
+                      },
+                    ]}
+                  />
+                  <StatefulTable
+                    id="read-table"
+                    secondaryTitle={mergedI18n.readOnlyAccessLabel}
+                    options={{
+                      hasSearch: true,
+                    }}
+                    view={{
+                      toolbar: {
+                        customToolbarContent: (
+                          <Button
+                            aria-labelledby="read-only-access-label"
+                            renderIcon={Add24}
+                            id="add-read-users"
+                            kind="ghost"
+                            testID="rule-builder-add-read-users"
+                            onClick={handleAddAccess('read')}
+                          >
+                            {mergedI18n.addUsersButtonLabel}
+                          </Button>
+                        ),
+                      },
+                      table: {},
+                    }}
+                    data={readUsers.map((user) => ({
+                      id: user.name,
+                      values: {
+                        name: user.name,
+                        type:
+                          Array.isArray(user.users) && user.users.length > 0
+                            ? mergedI18n.groupTypeLabel
+                            : mergedI18n.userTypeLabel,
+                      },
+                    }))}
+                    columns={[
+                      {
+                        id: 'name',
+                        name: mergedI18n.nameColumnLabel,
+                      },
+                      {
+                        id: 'type',
+                        name: mergedI18n.typeColumnLabel,
+                      },
+                    ]}
+                  />
+
+                  {/* <div>
                     <strong id="add-editors-label">{mergedI18n.editorAccessLabel}</strong>
                     <div>
                       {editUsers.length > 0 ? (
@@ -420,7 +509,7 @@ const RuleBuilder = ({
                     </div>
                   </div>
                   <UserList users={editUsers} i18n={mergedI18n} />
-                  <UserList users={readUsers} i18n={mergedI18n} />
+                  <UserList users={readUsers} i18n={mergedI18n} /> */}
                 </div>
               </AccordionItem>
             </Accordion>

@@ -776,78 +776,495 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <div
                     className="iot--rule-builder-wrap--user-container"
-                    style={Object {}}
                   >
-                    <div>
-                      <strong
-                        id="add-editors-label"
+                    <div
+                      className="iot--table-container bx--data-table-container"
+                    >
+                      <section
+                        aria-label="data table toolbar"
+                        className="bx--table-toolbar"
                       >
-                        Editor access
-                      </strong>
-                      <div>
-                        <button
-                          aria-labelledby="add-editors-label"
-                          className="iot--btn bx--btn bx--btn--ghost"
-                          data-testid="rule-builder-add-edit-users"
-                          disabled={false}
-                          id="add-editors-button"
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
+                        <div
+                          className="bx--batch-actions iot--table-batch-actions"
                         >
-                          Add users
-                          <svg
-                            aria-hidden={true}
-                            className="bx--btn__icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={24}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 32 32"
-                            width={24}
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            className="bx--batch-summary"
                           >
-                            <path
-                              d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                            />
-                          </svg>
-                        </button>
+                            <p
+                              className="bx--batch-summary__para"
+                            >
+                              <span>
+                                0 item selected
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            className="bx--action-list"
+                          >
+                            <button
+                              className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+                              disabled={false}
+                              onClick={[Function]}
+                              tabIndex={-1}
+                              type="button"
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                        <label
+                          className="iot--table-toolbar-secondary-title"
+                        >
+                          Editor access
+                        </label>
+                        <div
+                          className="bx--toolbar-content iot--table-toolbar-content"
+                        >
+                          <div
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            tabIndex="0"
+                          >
+                            <div
+                              aria-labelledby="edit-table-toolbar-search-search"
+                              className="bx--search bx--search--sm table-toolbar-search"
+                              role="search"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                className="bx--search-magnifier"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                />
+                              </svg>
+                              <label
+                                className="bx--label"
+                                htmlFor="edit-table-toolbar-search"
+                                id="edit-table-toolbar-search-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                autoComplete="off"
+                                className="bx--search-input"
+                                id="edit-table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                role="searchbox"
+                                tabIndex="-1"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <button
+                            aria-labelledby="add-editors-label"
+                            className="iot--btn bx--btn bx--btn--ghost"
+                            data-testid="rule-builder-add-edit-users"
+                            disabled={false}
+                            id="add-editors-button"
+                            onClick={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            Add users
+                            <svg
+                              aria-hidden={true}
+                              className="bx--btn__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={24}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={24}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </section>
+                      <div
+                        className="addons-iot-table-container"
+                      >
+                        <div
+                          className="bx--data-table-content"
+                        >
+                          <table
+                            className="bx--data-table bx--data-table--no-border"
+                            title={null}
+                          >
+                            <thead
+                              onMouseMove={null}
+                              onMouseUp={null}
+                            >
+                              <tr>
+                                <th
+                                  align="start"
+                                  className="table-header-label-start iot--table-head--table-header"
+                                  data-column="name"
+                                  data-floating-menu-container={true}
+                                  id="column-name"
+                                  scope="col"
+                                  style={
+                                    Object {
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="bx--table-header-label"
+                                  >
+                                    <span
+                                      className=""
+                                      title="Name"
+                                    >
+                                      Name
+                                    </span>
+                                  </span>
+                                </th>
+                                <th
+                                  align="start"
+                                  className="table-header-label-start iot--table-head--table-header"
+                                  data-column="type"
+                                  data-floating-menu-container={true}
+                                  id="column-type"
+                                  scope="col"
+                                  style={
+                                    Object {
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="bx--table-header-label"
+                                  >
+                                    <span
+                                      className=""
+                                      title="Type"
+                                    >
+                                      Type
+                                    </span>
+                                  </span>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody
+                              aria-live="polite"
+                              id="edit-table"
+                            >
+                              <tr
+                                className="iot--empty-table--table-row"
+                              >
+                                <td
+                                  colSpan={2}
+                                >
+                                  <div
+                                    className="empty-table-cell--default"
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height={32}
+                                      preserveAspectRatio="xMidYMid meet"
+                                      viewBox="0 0 32 32"
+                                      width={32}
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
+                                      />
+                                    </svg>
+                                    <p>
+                                      There is no data
+                                    </p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
-                    <div>
-                      <strong
-                        id="read-only-access-label"
+                    <div
+                      className="iot--table-container bx--data-table-container"
+                    >
+                      <section
+                        aria-label="data table toolbar"
+                        className="bx--table-toolbar"
                       >
-                        Read only access
-                      </strong>
-                      <div>
-                        <button
-                          aria-labelledby="read-only-access-label"
-                          className="iot--btn bx--btn bx--btn--ghost"
-                          data-testid="rule-builder-add-read-users"
-                          disabled={false}
-                          id="add-read-users"
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
+                        <div
+                          className="bx--batch-actions iot--table-batch-actions"
                         >
-                          Add users
-                          <svg
-                            aria-hidden={true}
-                            className="bx--btn__icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={24}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 32 32"
-                            width={24}
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            className="bx--batch-summary"
                           >
-                            <path
-                              d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                            />
-                          </svg>
-                        </button>
+                            <p
+                              className="bx--batch-summary__para"
+                            >
+                              <span>
+                                0 item selected
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            className="bx--action-list"
+                          >
+                            <button
+                              className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+                              disabled={false}
+                              onClick={[Function]}
+                              tabIndex={-1}
+                              type="button"
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                        <label
+                          className="iot--table-toolbar-secondary-title"
+                        >
+                          Read only access
+                        </label>
+                        <div
+                          className="bx--toolbar-content iot--table-toolbar-content"
+                        >
+                          <div
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            tabIndex="0"
+                          >
+                            <div
+                              aria-labelledby="read-table-toolbar-search-search"
+                              className="bx--search bx--search--sm table-toolbar-search"
+                              role="search"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                className="bx--search-magnifier"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                />
+                              </svg>
+                              <label
+                                className="bx--label"
+                                htmlFor="read-table-toolbar-search"
+                                id="read-table-toolbar-search-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                autoComplete="off"
+                                className="bx--search-input"
+                                id="read-table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                role="searchbox"
+                                tabIndex="-1"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <button
+                            aria-labelledby="read-only-access-label"
+                            className="iot--btn bx--btn bx--btn--ghost"
+                            data-testid="rule-builder-add-read-users"
+                            disabled={false}
+                            id="add-read-users"
+                            onClick={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            Add users
+                            <svg
+                              aria-hidden={true}
+                              className="bx--btn__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={24}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={24}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </section>
+                      <div
+                        className="addons-iot-table-container"
+                      >
+                        <div
+                          className="bx--data-table-content"
+                        >
+                          <table
+                            className="bx--data-table bx--data-table--no-border"
+                            title={null}
+                          >
+                            <thead
+                              onMouseMove={null}
+                              onMouseUp={null}
+                            >
+                              <tr>
+                                <th
+                                  align="start"
+                                  className="table-header-label-start iot--table-head--table-header"
+                                  data-column="name"
+                                  data-floating-menu-container={true}
+                                  id="column-name"
+                                  scope="col"
+                                  style={
+                                    Object {
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="bx--table-header-label"
+                                  >
+                                    <span
+                                      className=""
+                                      title="Name"
+                                    >
+                                      Name
+                                    </span>
+                                  </span>
+                                </th>
+                                <th
+                                  align="start"
+                                  className="table-header-label-start iot--table-head--table-header"
+                                  data-column="type"
+                                  data-floating-menu-container={true}
+                                  id="column-type"
+                                  scope="col"
+                                  style={
+                                    Object {
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="bx--table-header-label"
+                                  >
+                                    <span
+                                      className=""
+                                      title="Type"
+                                    >
+                                      Type
+                                    </span>
+                                  </span>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody
+                              aria-live="polite"
+                              id="read-table"
+                            >
+                              <tr
+                                className="iot--empty-table--table-row"
+                              >
+                                <td
+                                  colSpan={2}
+                                >
+                                  <div
+                                    className="empty-table-cell--default"
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height={32}
+                                      preserveAspectRatio="xMidYMid meet"
+                                      viewBox="0 0 32 32"
+                                      width={32}
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
+                                      />
+                                    </svg>
+                                    <p>
+                                      There is no data
+                                    </p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -4207,256 +4624,523 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <div
                     className="iot--rule-builder-wrap--user-container"
-                    style={Object {}}
                   >
-                    <div>
-                      <strong
-                        id="add-editors-label"
+                    <div
+                      className="iot--table-container bx--data-table-container"
+                    >
+                      <section
+                        aria-label="data table toolbar"
+                        className="bx--table-toolbar"
                       >
-                        Editor access
-                      </strong>
-                      <div>
-                        <button
-                          aria-labelledby="edit-only-access-label"
-                          className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-                          data-testid="Button"
-                          disabled={false}
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
+                        <div
+                          className="bx--batch-actions iot--table-batch-actions"
                         >
-                          <span
-                            className="bx--assistive-text"
+                          <div
+                            className="bx--batch-summary"
                           >
-                            Edit users
-                          </span>
-                          <svg
-                            aria-hidden="true"
-                            aria-label="Edit users"
-                            className="bx--btn__icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={24}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={24}
-                            xmlns="http://www.w3.org/2000/svg"
+                            <p
+                              className="bx--batch-summary__para"
+                            >
+                              <span>
+                                0 item selected
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            className="bx--action-list"
                           >
-                            <path
-                              d="M30,28.59,22.45,21A11,11,0,1,0,21,22.45L28.59,30ZM5,14a9,9,0,1,1,9,9A9,9,0,0,1,5,14Z"
-                            />
-                          </svg>
-                        </button>
-                        <button
-                          aria-labelledby="edit-only-access-label"
-                          className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-                          data-testid="Button"
-                          disabled={false}
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
+                            <button
+                              className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+                              disabled={false}
+                              onClick={[Function]}
+                              tabIndex={-1}
+                              type="button"
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                        <label
+                          className="iot--table-toolbar-secondary-title"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Edit users
-                          </span>
-                          <svg
-                            aria-hidden="true"
-                            aria-label="Edit users"
-                            className="bx--btn__icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={24}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={24}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                            />
-                          </svg>
-                        </button>
-                        <button
-                          aria-labelledby="add-editors-label"
-                          className="iot--btn bx--btn bx--btn--ghost"
-                          data-testid="rule-builder-add-edit-users"
-                          disabled={false}
-                          id="add-editors-button"
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
+                          Editor access
+                        </label>
+                        <div
+                          className="bx--toolbar-content iot--table-toolbar-content"
                         >
-                          Add users
-                          <svg
-                            aria-hidden={true}
-                            className="bx--btn__icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={24}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 32 32"
-                            width={24}
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            tabIndex="0"
                           >
-                            <path
-                              d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                            />
-                          </svg>
-                        </button>
+                            <div
+                              aria-labelledby="edit-table-toolbar-search-search"
+                              className="bx--search bx--search--sm table-toolbar-search"
+                              role="search"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                className="bx--search-magnifier"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                />
+                              </svg>
+                              <label
+                                className="bx--label"
+                                htmlFor="edit-table-toolbar-search"
+                                id="edit-table-toolbar-search-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                autoComplete="off"
+                                className="bx--search-input"
+                                id="edit-table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                role="searchbox"
+                                tabIndex="-1"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <button
+                            aria-labelledby="add-editors-label"
+                            className="iot--btn bx--btn bx--btn--ghost"
+                            data-testid="rule-builder-add-edit-users"
+                            disabled={false}
+                            id="add-editors-button"
+                            onClick={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            Add users
+                            <svg
+                              aria-hidden={true}
+                              className="bx--btn__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={24}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={24}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </section>
+                      <div
+                        className="addons-iot-table-container"
+                      >
+                        <div
+                          className="bx--data-table-content"
+                        >
+                          <table
+                            className="bx--data-table bx--data-table--no-border"
+                            title={null}
+                          >
+                            <thead
+                              onMouseMove={null}
+                              onMouseUp={null}
+                            >
+                              <tr>
+                                <th
+                                  align="start"
+                                  className="table-header-label-start iot--table-head--table-header"
+                                  data-column="name"
+                                  data-floating-menu-container={true}
+                                  id="column-name"
+                                  scope="col"
+                                  style={
+                                    Object {
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="bx--table-header-label"
+                                  >
+                                    <span
+                                      className=""
+                                      title="Name"
+                                    >
+                                      Name
+                                    </span>
+                                  </span>
+                                </th>
+                                <th
+                                  align="start"
+                                  className="table-header-label-start iot--table-head--table-header"
+                                  data-column="type"
+                                  data-floating-menu-container={true}
+                                  id="column-type"
+                                  scope="col"
+                                  style={
+                                    Object {
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="bx--table-header-label"
+                                  >
+                                    <span
+                                      className=""
+                                      title="Type"
+                                    >
+                                      Type
+                                    </span>
+                                  </span>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody
+                              aria-live="polite"
+                            >
+                              <tr
+                                className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                onClick={[Function]}
+                              >
+                                <td
+                                  align="start"
+                                  className="data-table-start"
+                                  data-column="name"
+                                  data-offset={0}
+                                  id="cell-edit-table-Example User-name"
+                                  offset={0}
+                                >
+                                  <span
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                  >
+                                    <span
+                                      className=""
+                                      title="Example User"
+                                    >
+                                      Example User
+                                    </span>
+                                  </span>
+                                </td>
+                                <td
+                                  align="start"
+                                  className="data-table-start"
+                                  data-column="type"
+                                  data-offset={0}
+                                  id="cell-edit-table-Example User-type"
+                                  offset={0}
+                                >
+                                  <span
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                  >
+                                    <span
+                                      className=""
+                                      title="User"
+                                    >
+                                      User
+                                    </span>
+                                  </span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
-                    <div>
-                      <strong
-                        id="read-only-access-label"
+                    <div
+                      className="iot--table-container bx--data-table-container"
+                    >
+                      <section
+                        aria-label="data table toolbar"
+                        className="bx--table-toolbar"
                       >
-                        Read only access
-                      </strong>
-                      <div>
-                        <button
-                          aria-labelledby="read-only-access-label"
-                          className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-                          data-testid="Button"
-                          disabled={false}
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
+                        <div
+                          className="bx--batch-actions iot--table-batch-actions"
                         >
-                          <span
-                            className="bx--assistive-text"
+                          <div
+                            className="bx--batch-summary"
                           >
-                            Edit users
-                          </span>
-                          <svg
-                            aria-hidden="true"
-                            aria-label="Edit users"
-                            className="bx--btn__icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={24}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={24}
-                            xmlns="http://www.w3.org/2000/svg"
+                            <p
+                              className="bx--batch-summary__para"
+                            >
+                              <span>
+                                0 item selected
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            className="bx--action-list"
                           >
-                            <path
-                              d="M30,28.59,22.45,21A11,11,0,1,0,21,22.45L28.59,30ZM5,14a9,9,0,1,1,9,9A9,9,0,0,1,5,14Z"
-                            />
-                          </svg>
-                        </button>
-                        <button
-                          aria-labelledby="read-only-access-label"
-                          className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-                          data-testid="Button"
-                          disabled={false}
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
+                            <button
+                              className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+                              disabled={false}
+                              onClick={[Function]}
+                              tabIndex={-1}
+                              type="button"
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                        <label
+                          className="iot--table-toolbar-secondary-title"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Edit users
-                          </span>
-                          <svg
-                            aria-hidden="true"
-                            aria-label="Edit users"
-                            className="bx--btn__icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={24}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={24}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                            />
-                          </svg>
-                        </button>
-                        <button
-                          aria-labelledby="read-only-access-label"
-                          className="iot--btn bx--btn bx--btn--ghost"
-                          data-testid="rule-builder-add-read-users"
-                          disabled={false}
-                          id="add-read-users"
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
+                          Read only access
+                        </label>
+                        <div
+                          className="bx--toolbar-content iot--table-toolbar-content"
                         >
-                          Add users
-                          <svg
-                            aria-hidden={true}
-                            className="bx--btn__icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={24}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 32 32"
-                            width={24}
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            tabIndex="0"
                           >
-                            <path
-                              d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                            />
-                          </svg>
-                        </button>
+                            <div
+                              aria-labelledby="read-table-toolbar-search-search"
+                              className="bx--search bx--search--sm table-toolbar-search"
+                              role="search"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                className="bx--search-magnifier"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                />
+                              </svg>
+                              <label
+                                className="bx--label"
+                                htmlFor="read-table-toolbar-search"
+                                id="read-table-toolbar-search-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                autoComplete="off"
+                                className="bx--search-input"
+                                id="read-table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                role="searchbox"
+                                tabIndex="-1"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <button
+                            aria-labelledby="read-only-access-label"
+                            className="iot--btn bx--btn bx--btn--ghost"
+                            data-testid="rule-builder-add-read-users"
+                            disabled={false}
+                            id="add-read-users"
+                            onClick={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            Add users
+                            <svg
+                              aria-hidden={true}
+                              className="bx--btn__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={24}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={24}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </section>
+                      <div
+                        className="addons-iot-table-container"
+                      >
+                        <div
+                          className="bx--data-table-content"
+                        >
+                          <table
+                            className="bx--data-table bx--data-table--no-border"
+                            title={null}
+                          >
+                            <thead
+                              onMouseMove={null}
+                              onMouseUp={null}
+                            >
+                              <tr>
+                                <th
+                                  align="start"
+                                  className="table-header-label-start iot--table-head--table-header"
+                                  data-column="name"
+                                  data-floating-menu-container={true}
+                                  id="column-name"
+                                  scope="col"
+                                  style={
+                                    Object {
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="bx--table-header-label"
+                                  >
+                                    <span
+                                      className=""
+                                      title="Name"
+                                    >
+                                      Name
+                                    </span>
+                                  </span>
+                                </th>
+                                <th
+                                  align="start"
+                                  className="table-header-label-start iot--table-head--table-header"
+                                  data-column="type"
+                                  data-floating-menu-container={true}
+                                  id="column-type"
+                                  scope="col"
+                                  style={
+                                    Object {
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="bx--table-header-label"
+                                  >
+                                    <span
+                                      className=""
+                                      title="Type"
+                                    >
+                                      Type
+                                    </span>
+                                  </span>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody
+                              aria-live="polite"
+                            >
+                              <tr
+                                className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                onClick={[Function]}
+                              >
+                                <td
+                                  align="start"
+                                  className="data-table-start"
+                                  data-column="name"
+                                  data-offset={0}
+                                  id="cell-read-table-Other User-name"
+                                  offset={0}
+                                >
+                                  <span
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                  >
+                                    <span
+                                      className=""
+                                      title="Other User"
+                                    >
+                                      Other User
+                                    </span>
+                                  </span>
+                                </td>
+                                <td
+                                  align="start"
+                                  className="data-table-start"
+                                  data-column="type"
+                                  data-offset={0}
+                                  id="cell-read-table-Other User-type"
+                                  offset={0}
+                                >
+                                  <span
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                  >
+                                    <span
+                                      className=""
+                                      title="User"
+                                    >
+                                      User
+                                    </span>
+                                  </span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
-                    <ul
-                      className="iot--rule-builder-wrap--user-list"
-                    >
-                      <li
-                        className="iot--rule-builder-wrap--user-list__header"
-                      >
-                        <span>
-                          Name
-                        </span>
-                        <span>
-                          Type
-                        </span>
-                      </li>
-                      <li
-                        className="iot--rule-builder-wrap--user-list__item"
-                      >
-                        <span>
-                          Example User
-                        </span>
-                        <span>
-                          User
-                        </span>
-                      </li>
-                    </ul>
-                    <ul
-                      className="iot--rule-builder-wrap--user-list"
-                    >
-                      <li
-                        className="iot--rule-builder-wrap--user-list__header"
-                      >
-                        <span>
-                          Name
-                        </span>
-                        <span>
-                          Type
-                        </span>
-                      </li>
-                      <li
-                        className="iot--rule-builder-wrap--user-list__item"
-                      >
-                        <span>
-                          Other User
-                        </span>
-                        <span>
-                          User
-                        </span>
-                      </li>
-                    </ul>
                   </div>
                 </div>
               </li>
