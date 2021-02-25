@@ -68,6 +68,7 @@ Tooltip.propTypes = {
   ...CarbonTooltip.propTypes,
   useAutoPositioning: PropTypes.bool,
 };
+
 Tooltip.defaultProps = {
   ...CarbonTooltip.defaultProps,
   useAutoPositioning: false,

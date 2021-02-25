@@ -20,8 +20,8 @@ const isOffscreen = (menuBody, menuDirection, menuButton /* , flipped, offset */
 };
 
 export const usePopoverPositioning = ({
-  direction,
   menuOffset,
+  direction = 'bottom',
   flipped = false,
   isOverflowMenu = false,
   useAutoPositioning = true,

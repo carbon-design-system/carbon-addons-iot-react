@@ -29,6 +29,7 @@ const props = {
     triggerText: text('Trigger text (triggerText)', 'Tooltip label'),
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
+    triggerId: 'withIcon',
   }),
   withoutIcon: () => ({
     showIcon: false,
@@ -36,6 +37,7 @@ const props = {
     triggerText: text('Trigger text (triggerText)', 'Tooltip label'),
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
+    triggerId: 'withoutIcon',
   }),
   customIcon: () => ({
     showIcon: true,
@@ -43,6 +45,7 @@ const props = {
     triggerText: text('Trigger text (triggerText)', 'Tooltip label'),
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
+    triggerId: 'customIcon',
     // eslint-disable-next-line react/display-name
     renderIcon: React.forwardRef((props, ref) => (
       <div ref={ref}>
@@ -61,6 +64,7 @@ const props = {
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
     renderIcon: OverflowMenuVertical16,
+    triggerId: 'customIconOnly',
   }),
 };
 
@@ -85,6 +89,9 @@ function UncontrolledTooltipExample() {
       </Button>
       <div style={{ padding: '15px', margin: '4px 20px' }}>
         <Tooltip
+          triggerId="uncontrolled"
+          tooltipId="uncontrolled"
+          id="uncontrolled"
           triggerText={<div>My text wrapped with tooltip</div>}
           open={value}
           showIcon={false}
@@ -97,7 +104,7 @@ function UncontrolledTooltipExample() {
 }
 
 export default {
-  title: 'Tooltip',
+  title: 'Watson IoT/Tooltip',
   decorators: [withKnobs],
 
   parameters: {
@@ -244,7 +251,12 @@ export const AutoPositioningExample = () => {
             flex: 1,
           }}
         >
-          <Tooltip tooltipBodyId="tooltip-body" direction="left" useAutoPositioning>
+          <Tooltip
+            triggerId="top-left"
+            tooltipBodyId="tooltip-body"
+            direction="left"
+            useAutoPositioning
+          >
             <p id="tooltip-body">This is a body.</p>
           </Tooltip>
         </div>
@@ -256,7 +268,12 @@ export const AutoPositioningExample = () => {
             justifyContent: 'center',
           }}
         >
-          <Tooltip tooltipBodyId="tooltip-body" direction="top" useAutoPositioning>
+          <Tooltip
+            triggerId="top-center"
+            tooltipBodyId="tooltip-body"
+            direction="top"
+            useAutoPositioning
+          >
             <p id="tooltip-body">This is a body.</p>
           </Tooltip>
         </div>
@@ -268,7 +285,12 @@ export const AutoPositioningExample = () => {
             justifyContent: 'flex-end',
           }}
         >
-          <Tooltip tooltipBodyId="tooltip-body" direction="right" useAutoPositioning>
+          <Tooltip
+            triggerId="top-right"
+            tooltipBodyId="tooltip-body"
+            direction="right"
+            useAutoPositioning
+          >
             <p id="tooltip-body">This is a body.</p>
           </Tooltip>
         </div>
@@ -282,7 +304,12 @@ export const AutoPositioningExample = () => {
             flex: 1,
           }}
         >
-          <Tooltip tooltipBodyId="tooltip-body" direction="left" useAutoPositioning>
+          <Tooltip
+            triggerId="left-center"
+            tooltipBodyId="tooltip-body"
+            direction="left"
+            useAutoPositioning
+          >
             <p id="tooltip-body">This is a body.</p>
           </Tooltip>
         </div>
@@ -294,7 +321,12 @@ export const AutoPositioningExample = () => {
             justifyContent: 'center',
           }}
         >
-          <Tooltip tooltipBodyId="tooltip-body" direction="top" useAutoPositioning>
+          <Tooltip
+            triggerId="center"
+            tooltipBodyId="tooltip-body"
+            direction="top"
+            useAutoPositioning
+          >
             <p id="tooltip-body">This is a body.</p>
           </Tooltip>
         </div>
@@ -306,7 +338,12 @@ export const AutoPositioningExample = () => {
             justifyContent: 'flex-end',
           }}
         >
-          <Tooltip tooltipBodyId="tooltip-body" direction="right" useAutoPositioning>
+          <Tooltip
+            triggerId="right-center"
+            tooltipBodyId="tooltip-body"
+            direction="right"
+            useAutoPositioning
+          >
             <p id="tooltip-body">This is a body.</p>
           </Tooltip>
         </div>
@@ -320,7 +357,12 @@ export const AutoPositioningExample = () => {
             flex: 1,
           }}
         >
-          <Tooltip tooltipBodyId="tooltip-body" direction="left" useAutoPositioning>
+          <Tooltip
+            triggerId="bottom-left"
+            tooltipBodyId="tooltip-body"
+            direction="left"
+            useAutoPositioning
+          >
             <p id="tooltip-body">This is a body.</p>
           </Tooltip>
         </div>
@@ -332,7 +374,12 @@ export const AutoPositioningExample = () => {
             justifyContent: 'center',
           }}
         >
-          <Tooltip tooltipBodyId="tooltip-body" direction="top" useAutoPositioning>
+          <Tooltip
+            triggerId="bottom-center"
+            tooltipBodyId="tooltip-body"
+            direction="top"
+            useAutoPositioning
+          >
             <p id="tooltip-body">This is a body.</p>
           </Tooltip>
         </div>
@@ -344,7 +391,12 @@ export const AutoPositioningExample = () => {
             justifyContent: 'flex-end',
           }}
         >
-          <Tooltip tooltipBodyId="tooltip-body" direction="right" useAutoPositioning>
+          <Tooltip
+            triggerId="bottom-right"
+            tooltipBodyId="tooltip-body"
+            direction="right"
+            useAutoPositioning
+          >
             <p id="tooltip-body">This is a body.</p>
           </Tooltip>
         </div>
