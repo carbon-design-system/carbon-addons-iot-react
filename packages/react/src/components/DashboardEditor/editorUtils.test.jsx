@@ -1,4 +1,5 @@
 import omit from 'lodash/omit';
+import { render, screen } from '@testing-library/react';
 
 import { CARD_TYPES, BAR_CHART_TYPES } from '../..';
 
@@ -11,6 +12,7 @@ import {
   formatAttributes,
   handleDataSeriesChange,
   handleDataItemEdit,
+  renderDefaultIconByName,
 } from './editorUtils';
 
 describe('editorUtils', () => {
@@ -94,6 +96,17 @@ describe('editorUtils', () => {
     size: 'MEDIUM',
     content: {},
   };
+
+  describe('renderDefaultIconByName', () => {
+    it('verify hotspot icon is found', () => {
+      render(renderDefaultIconByName('User'));
+      expect(screen.queryByTitle('User')).toBeDefined();
+    });
+    it('verify threshold icon is found', () => {
+      render(renderDefaultIconByName('Error filled'));
+      expect(screen.queryByTitle('Error filled')).toBeDefined();
+    });
+  });
 
   describe('getDuplicateCard', () => {
     it('should return same card JSON with unique id', () => {
