@@ -33,13 +33,16 @@ const actions = [
   },
 ];
 
-const getDate = () =>
-  new Date().toLocaleDateString('en', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+const getDate = (realDate = false) => {
+  return realDate === false
+    ? 'Thursday, February 25, 2021'
+    : new Date().toLocaleDateString('en', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+};
 
 const filter = {
   filterId: 'story-filter',
