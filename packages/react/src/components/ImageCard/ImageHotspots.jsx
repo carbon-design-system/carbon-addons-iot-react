@@ -377,8 +377,8 @@ export const handleMouseUp = ({ event, image, cursor, setCursor, isEditable, cal
   if (isEditable && cursor?.imageMousedown) {
     const accumelatedOffset = getAccumulatedOffset(event.currentTarget);
     const relativePosition = {
-      x: event.pageX - accumelatedOffset.left,
-      y: event.pageY - accumelatedOffset.top,
+      x: event.clientX - accumelatedOffset.left,
+      y: event.clientY - accumelatedOffset.top,
     };
     const percentagePosition = {
       x: (relativePosition.x / image.width) * 100,
