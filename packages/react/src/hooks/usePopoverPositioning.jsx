@@ -1,5 +1,16 @@
 import * as React from 'react';
-
+/**
+ * This is used as the callback for menuOffset on Tooltips, OverflowMenus, and FlyoutMenus.
+ * That callback returns the underlying FloatingMenu element, direction, trigger element, and flipped
+ * prop. It grabs the window dimentions and bounds for the menu element and determines if it is
+ * overflowing the window. It returns a string indicating which directions are overflowing using the
+ * same order as positioning in CSS. top, right, bottom, left. So an element can overflow on the
+ * 'top-left', 'right-bottom', 'bottom-left', etc, etc.
+ *
+ * @param {HTMLElement} menuBody The underlying carbon FloatingMenu element
+ * @param {string} menuDirection The direction prop
+ * @param {HTMLElement} menuButton The button triggering the menu
+ */
 const isOffscreen = (menuBody, menuDirection, menuButton /* , flipped, offset */) => {
   const buttonRect = menuButton.getBoundingClientRect();
   const tooltipRect = menuBody.getBoundingClientRect();
@@ -19,11 +30,40 @@ const isOffscreen = (menuBody, menuDirection, menuButton /* , flipped, offset */
   return [T, R, B, L].filter(Boolean).join('-');
 };
 
+/**
+ * Given a subset of props from the Tooltip, OverflowMenu, or FlyoutMenu. This hook returns a decorator
+ * function around the original menuOffset function. It determines if the element overflows using that
+ * internal callback from the cardbon FloatingMenu and adjusts the direction, flipped, and menuOffset
+ * properties accordingly.
+ */
 export const usePopoverPositioning = ({
+  /**
+   * The menuOffset as used by Tooltips, etc.
+   */
   menuOffset,
+  /**
+   * The direction passed to the original Tooltip, OverflowMenu, or FlyoutMenu components.
+   * could be top, bottom, left, right, top-start, top-end, right-start, right-end, bottom-start,
+   * bottom-end, left-start, or left-end
+   */
   direction = 'bottom',
+
+  /**
+   * Boolean to determine if the OverflowMenu is flipped.
+   */
   flipped = false,
+
+  /**
+   * On necessary on the OverflowMenu, b/c we can't know if it's a Tooltip or OverflowMenu
+   * since they both use top and bottom directions. This isn't necessary on the FlyoutMenu b/c
+   * it has `-start` or `-end` suffixes, and lets us presume it's a flyout.
+   */
   isOverflowMenu = false,
+
+  /**
+   * Turn off AutoPositioning and simply return the original menuOffset and directions without
+   * adjustments.
+   */
   useAutoPositioning = true,
 }) => {
   const [adjustedDirection, setAdjustedDirection] = React.useState();
@@ -41,6 +81,11 @@ export const usePopoverPositioning = ({
     setAdjustedFlipped(flipped);
   }, [direction, flipped]);
 
+  /**
+   * if the original menuOffset is a function, splice the updated direction and flipped
+   * properties into the callback to get the appropriate values based on the new state, not
+   * the original props. Otherwise, just return the offset object passed.
+   */
   const getOffset = React.useCallback(
     (...args) => {
       // splice in adjusted direction and flip to calculate new appropriate offset.
@@ -76,6 +121,14 @@ export const usePopoverPositioning = ({
     [adjustedDirection, flyoutAlignment]
   );
 
+  /**
+   * given the directions of overflow, adjust the direction of the tooltip
+   * or flyout menu to allow it to stay within the bounds of the screen.
+   *
+   * For example, a tooltip with given direction of `left` that overflows to the left will adjust
+   * the direction to `right`. A flyout menu given `left-end` that overflows to the `top-left` will
+   * be adjusted to `right-start`.
+   */
   const fixOverflow = React.useCallback(
     (overflow, menuOffsetArgs) => {
       const [tooltipElement] = menuOffsetArgs;
@@ -150,6 +203,8 @@ export const usePopoverPositioning = ({
           break;
       }
 
+      // given the original offset calculate the difference between the original
+      // position and the new position and return that value.
       const adjustedOffset = getAdjustedOffset(...menuOffsetArgs);
       const newOffset = getOffset(...menuOffsetArgs);
 
@@ -163,6 +218,12 @@ export const usePopoverPositioning = ({
     [adjustedDirection, flyoutAlignment, getAdjustedOffset, getOffset, isOverflowMenu]
   );
 
+  /**
+   * calculate menu offset is returned from the hook as a wrapper around the default
+   * menuOffset functions for each component. This function, as a callback passed as menuOffset,
+   * to the tooltips, flyoutmenus, etc, checks if the element overflows and adjusts the direction
+   * and offset accordingly if it's fixable.
+   */
   const calculateMenuOffset = React.useCallback(
     (...args) => {
       const defaultOffset = getOffset(...args);
@@ -171,8 +232,12 @@ export const usePopoverPositioning = ({
         return defaultOffset;
       }
 
+      // determine if the element is off-screen.
       const overflow = isOffscreen(...args, defaultOffset);
 
+      // if it's offscreen in a direction we can fix, do so
+      // otherwise leave it be. ie. 'top-left' is fixable, but
+      // a large element with 'top-right-left' wouldn't be.
       switch (overflow) {
         case 'top-right':
         case 'right-bottom':
@@ -190,5 +255,10 @@ export const usePopoverPositioning = ({
     [fixOverflow, getOffset, useAutoPositioning]
   );
 
+  /**
+   * These adjusted valued are updated when the calculateMenuOffset is called, and are passed
+   * to the tooltip, overflow menu, or flyout menu instead of the original given direction if the
+   * element overflows.
+   */
   return [calculateMenuOffset, { adjustedDirection, adjustedFlipped }];
 };
