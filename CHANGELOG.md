@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.50...v2.143.0-next.51) (2021-02-24)
+
+
+### Bug Fixes
+
+* **selectusers:** address PR comments ([8fdc9f5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8fdc9f5f5c7e58cc7dc44fcdd096debcd5c11ab9))
+* **selectusers:** another CI lint complaint resolved ([1e0f894](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1e0f89401601bb57bc51627d2e7e3ab8a85013cf))
+* **SelectUsers:** update storyshot ([4c7b100](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4c7b1007dde1588aa2a4c724a3b3e2445cb9bc45))
+
+
+### Features
+
+* **select-users-modal:** added select users modal ([be5e302](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/be5e302249222a6539fb10c79098e02d5b0e6c98))
+
+
+
+
+
+# [2.143.0-next.50](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.49...v2.143.0-next.50) (2021-02-24)
+
+
+### Bug Fixes
+
+* **imagehotspots:** need to handle if the page is scrolled down ([b23f824](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b23f82481c690af0165670aa5a2e341b57bbb294))
+* **tablecard:** should only encode variable if it does not contain the whole URL ([4c11372](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4c11372bfe84c8c80ae289772f7739cbeb854275))
+
+
+
+
+
+# [2.143.0-next.49](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.48...v2.143.0-next.49) (2021-02-23)
+
+
+### Features
+
+* **dashboardeditor:** duplicated card is placed next to the original card ([c2c24ec](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c2c24ec290354401df636d1ed44ace85bc2e9281))
+
+
+
+
+
 # [2.143.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.47...v2.143.0-next.48) (2021-02-19)
 
 
