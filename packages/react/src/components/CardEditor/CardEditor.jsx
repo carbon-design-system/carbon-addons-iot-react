@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Apps16 } from '@carbon/icons-react';
 import isNil from 'lodash/isNil';
@@ -175,7 +175,7 @@ const CardEditor = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   // show the gallery if no card is being edited
   const showGallery = isNil(cardConfig);
