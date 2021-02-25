@@ -166,6 +166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                       <button
                         aria-label=""
                         className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        data-testid="Button"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -174,7 +175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                         <span
                           className="bx--assistive-text"
                         >
-
+                          
                         </span>
                         <svg
                           aria-hidden={true}

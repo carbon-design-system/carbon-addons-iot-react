@@ -403,7 +403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="bx--tag bx--tag--blue"
                   id="tag-23"
                 >
-
+                  
                   <span
                     title="default"
                   >
@@ -414,7 +414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="bx--tag bx--tag--disabled bx--tag--red"
                   id="tag-24"
                 >
-
+                  
                   <span
                     title="disabled tag"
                   >
@@ -502,6 +502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <button
                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  data-testid="Button"
                   disabled={true}
                   onClick={[Function]}
                   style={
@@ -1113,6 +1114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <button
                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   style={

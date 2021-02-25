@@ -39,6 +39,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
             >
               <button
                 className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -105,7 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                 id="iot--list-header--search"
                 onChange={[Function]}
                 onKeyDown={[Function]}
-                placeholder="Enter a value"
+                placeholder="Search"
                 role="searchbox"
                 type="text"
                 value=""

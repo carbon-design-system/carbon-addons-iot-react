@@ -3021,7 +3021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           type="text"
                           value=""
                         />
-
+                        
                         <div
                           className="bx--list-box__menu-icon"
                         >
@@ -3098,6 +3098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <button
                                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3128,6 +3129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               </button>
                               <button
                                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3201,6 +3203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <button
                                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3231,6 +3234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               </button>
                               <button
                                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
