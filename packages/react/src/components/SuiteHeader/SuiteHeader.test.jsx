@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
-import { mount } from 'enzyme';
 import React from 'react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 
@@ -80,12 +79,9 @@ describe('SuiteHeader', () => {
   });
   it('renders with left sidenav toggle button (custom side nav support)', () => {
     const mockOnSideNavToggled = jest.fn();
-    const wrapper = mount(
-      <SuiteHeader {...commonProps} hasSideNav onSideNavToggled={mockOnSideNavToggled} />
-    );
-    expect(wrapper.find({ title: 'Open menu' })).toHaveLength(1);
-    const sideNavButton = wrapper.find({ title: 'Open menu' }).first();
-    sideNavButton.simulate('click');
+    render(<SuiteHeader {...commonProps} hasSideNav onSideNavToggled={mockOnSideNavToggled} />);
+    expect(screen.getByTitle('Open menu')).toBeInTheDocument();
+    userEvent.click(screen.getByTitle('Open menu'));
     expect(mockOnSideNavToggled).toHaveBeenCalled();
   });
   it('opens and closes logout modal', () => {
