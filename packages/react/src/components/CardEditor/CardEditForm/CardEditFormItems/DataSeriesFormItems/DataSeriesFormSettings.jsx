@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../../../../constants/Settings';
-import { TextInput, Toggle } from '../../../../../index';
+import { TextInput, ToggleSmall } from '../../../../../index';
 
 const { iotPrefix } = settings;
 
@@ -122,8 +122,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
       </div>
       <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
         <span>{mergedI18n.includeZeroOnXaxis}</span>
-        <Toggle
-          size="sm"
+        <ToggleSmall
           data-testid="includeZeroOnXaxis-toggle"
           id="includeZeroOnXaxis-toggle"
           aria-label={mergedI18n.includeZeroOnXaxis}
@@ -140,8 +139,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
       </div>
       <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
         <span>{mergedI18n.includeZeroOnYaxis}</span>
-        <Toggle
-          size="sm"
+        <ToggleSmall
           data-testid="includeZeroOnYaxis-toggle"
           id="includeZeroOnYaxis-toggle"
           aria-label={mergedI18n.includeZeroOnYaxis}

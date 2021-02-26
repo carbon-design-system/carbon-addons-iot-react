@@ -107,7 +107,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 id="manage-views-modal-search"
                 name="searchValue"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Search views"
                 role="searchbox"
                 type="text"
@@ -306,17 +305,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           myView1 (Public)
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--blue"
-                            id="tag-27"
+                            title="default"
                           >
-                            
-                            <span
-                              title="default"
-                            >
-                              default
-                            </span>
-                          </div>
+                            default
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -1422,7 +1416,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 id="manage-views-modal-search"
                 name="searchValue"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Search views"
                 role="searchbox"
                 type="text"
@@ -1525,17 +1518,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-28"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -1674,28 +1662,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--blue"
-                            id="tag-29"
+                            title="default"
                           >
-                            
-                            <span
-                              title="default"
-                            >
-                              default
-                            </span>
-                          </div>
-                          <div
+                            default
+                          </span>
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-30"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -1834,17 +1812,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-31"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -1983,17 +1956,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-32"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -2132,17 +2100,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-33"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -2281,17 +2244,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-34"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -2430,17 +2388,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-35"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -2579,17 +2532,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-36"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -2728,17 +2676,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-37"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -2877,17 +2820,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-38"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -3026,17 +2964,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-39"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -3175,17 +3108,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-40"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -3324,17 +3252,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-41"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -3473,17 +3396,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-42"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -3622,17 +3540,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-43"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -3771,17 +3684,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-44"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -3920,17 +3828,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-45"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -4069,17 +3972,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-46"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -4218,17 +4116,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-47"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -4367,17 +4260,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-48"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -4516,17 +4404,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-49"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -4665,17 +4548,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-50"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -4814,17 +4692,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-51"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -4963,17 +4836,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-52"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -5112,17 +4980,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-53"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -5261,17 +5124,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-54"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -5410,17 +5268,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-55"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -5559,17 +5412,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-56"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -5708,17 +5556,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-57"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -5857,17 +5700,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-58"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -6006,17 +5844,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-59"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -6155,17 +5988,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-60"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -6304,17 +6132,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-61"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -6453,17 +6276,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-62"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -6602,17 +6420,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-63"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -6751,17 +6564,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-64"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -6900,17 +6708,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-65"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -7049,17 +6852,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-66"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -7198,17 +6996,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-67"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -7347,17 +7140,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-68"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -7496,17 +7284,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-69"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -7645,17 +7428,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-70"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -7794,17 +7572,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-71"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -7943,17 +7716,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-72"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -8092,17 +7860,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-73"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -8241,17 +8004,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-74"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -8390,17 +8148,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-75"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -8539,17 +8292,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-76"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -8688,17 +8436,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-77"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -8837,17 +8580,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-78"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -8986,17 +8724,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-79"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -9135,17 +8868,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-80"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -9284,17 +9012,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-81"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -9433,17 +9156,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-82"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -9582,17 +9300,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-83"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -9731,17 +9444,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-84"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -9880,17 +9588,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-85"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -10029,17 +9732,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-86"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -10178,17 +9876,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-87"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -10327,17 +10020,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-88"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -10476,17 +10164,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-89"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -10625,17 +10308,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-90"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -10774,17 +10452,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-91"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -10923,17 +10596,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-92"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -11072,17 +10740,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-93"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -11221,17 +10884,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-94"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -11370,17 +11028,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-95"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -11519,17 +11172,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-96"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -11668,17 +11316,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-97"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -11817,17 +11460,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-98"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -11966,17 +11604,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-99"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -12115,17 +11748,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-100"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -12264,17 +11892,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-101"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -12413,17 +12036,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-102"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -12562,17 +12180,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-103"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -12711,17 +12324,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-104"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -12860,17 +12468,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-105"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -13009,17 +12612,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-106"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -13158,17 +12756,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-107"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -13307,17 +12900,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-108"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -13456,17 +13044,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-109"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -13605,17 +13188,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-110"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -13754,17 +13332,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-111"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -13903,17 +13476,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-112"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -14052,17 +13620,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-113"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -14201,17 +13764,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-114"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -14350,17 +13908,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-115"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -14499,17 +14052,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-116"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -14648,17 +14196,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-117"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -14797,17 +14340,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-118"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -14946,17 +14484,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-119"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -15095,17 +14628,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-120"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -15244,17 +14772,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-121"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -15393,17 +14916,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-122"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -15542,17 +15060,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-123"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -15691,17 +15204,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-124"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -15840,17 +15348,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-125"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -15989,17 +15492,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-126"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -16138,17 +15636,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--green"
-                            id="tag-127"
+                            title="private"
                           >
-                            
-                            <span
-                              title="private"
-                            >
-                              private
-                            </span>
-                          </div>
+                            private
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
@@ -16287,17 +15780,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           PREFIXED - Entities: 2 filters, Alerts: 3 filters
                         </div>
                         <div>
-                          <div
+                          <span
                             className="bx--tag bx--tag--red"
-                            id="tag-128"
+                            title="public"
                           >
-                            
-                            <span
-                              title="public"
-                            >
-                              public
-                            </span>
-                          </div>
+                            public
+                          </span>
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"

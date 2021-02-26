@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RadioButtonGroup, RadioButton, FormGroup, Toggle } from 'carbon-components-react';
+import { RadioButtonGroup, RadioButton, FormGroup, ToggleSmall } from 'carbon-components-react';
 import { gray10, gray80, white } from '@carbon/colors';
 
 import { settings } from '../../../../../constants/Settings';
@@ -143,8 +143,7 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
       <div className={`${baseClassName}--input`}>
         <div className={`${baseClassName}--input--toggle-field`}>
           <span>{mergedI18n.hideMap}</span>
-          <Toggle
-            size="sm"
+          <ToggleSmall
             data-testid={`${baseClassName}--input-toggle1`}
             id={`${baseClassName}--input-toggle-1`}
             aria-label={mergedI18n.hideMap}
@@ -163,8 +162,7 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
       <div className={`${baseClassName}--input`}>
         <div className={`${baseClassName}--input--toggle-field`}>
           <span>{mergedI18n.hideZoom}</span>
-          <Toggle
-            size="sm"
+          <ToggleSmall
             data-testid={`${baseClassName}--input-toggle2`}
             id={`${baseClassName}--input-toggle-2`}
             aria-label={mergedI18n.hideZoom}
