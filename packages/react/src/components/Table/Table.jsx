@@ -99,6 +99,8 @@ const propTypes = {
           id: PropTypes.string.isRequired,
           /** the primitive value or function that will receive an array of values and returns an aggregated value */
           value: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+          /** allow aligning the results the same as the column */
+          align: PropTypes.oneOf(['start', 'center', 'end']),
         })
       ),
     }),
@@ -494,6 +496,7 @@ const Table = (props) => {
             }
             return calculateValue ? { ...col, value: aggregatedValue.toString() } : col;
           }),
+          align: aggregationsProp.align,
         }
       : undefined;
   }, [data, hasAggregations, aggregationsProp]);

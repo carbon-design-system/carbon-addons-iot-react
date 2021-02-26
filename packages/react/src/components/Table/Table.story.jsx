@@ -263,6 +263,7 @@ export const tableColumnsWithOverflowMenu = [
     name: 'Number',
     filter: { placeholderText: 'enter a number' },
     overflowMenuItems: selectData,
+    align: 'end',
   },
   {
     id: 'boolean',
@@ -3707,6 +3708,7 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => (
           columns: [
             {
               id: 'number',
+              align: 'end',
             },
           ],
         },
