@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.52](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.51...v2.143.0-next.52) (2021-02-25)
+
+
+### Bug Fixes
+
+* **hierarchylist:** default hasdeselection to true in story ([ae7ec05](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ae7ec050438c4d1c2ab564631890ea6e86d0a509))
+* **hierarchylist:** merge and pass i18n ([989e5c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/989e5c5dc1da0c7806ae77e6aac4c7016f75689a))
+* **hierarchylist:** update hasdeselection prop to default true ([f44ecc1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f44ecc180a6a2ce6cc0a237bb0f51ecbe8ddf74d))
+* **list:** side padding should be 16px ([314185d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/314185dce3c25d0c8fe5c8afafff70fd11010e5d))
+
+
+
+
+
 # [2.143.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.50...v2.143.0-next.51) (2021-02-24)
 
 

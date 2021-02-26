@@ -4419,6 +4419,7 @@ Map {
       "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
+      "hasDeselection": true,
       "hasMultiSelect": false,
       "hasPagination": true,
       "hasSearch": false,
@@ -4482,6 +4483,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "hasDeselection": Object {
+        "type": "bool",
       },
       "hasMultiSelect": Object {
         "type": "bool",
