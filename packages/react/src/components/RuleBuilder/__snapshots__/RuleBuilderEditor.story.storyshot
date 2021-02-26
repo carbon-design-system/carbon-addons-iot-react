@@ -288,7 +288,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="bx--text-input__field-wrapper"
               data-invalid={null}
-              data-warn={null}
             >
               <input
                 className="bx--text-input bx--text__input bx--text-input--light"
@@ -309,7 +308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--rule-builder-rule__actions"
         >
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="rsiru4rjba-remove-rule-button"
             disabled={false}
             onClick={[Function]}
@@ -340,7 +339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="rsiru4rjba-add-rule-button"
             disabled={false}
             onClick={[Function]}
@@ -371,7 +370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="rsiru4rjba-add-group-button"
             disabled={false}
             onClick={[Function]}
@@ -544,7 +543,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="bx--text-input__field-wrapper"
               data-invalid={null}
-              data-warn={null}
             >
               <input
                 className="bx--text-input bx--text__input bx--text-input--light"
@@ -565,7 +563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--rule-builder-rule__actions"
         >
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="34bvyub9jq-remove-rule-button"
             disabled={false}
             onClick={[Function]}
@@ -596,7 +594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="34bvyub9jq-add-rule-button"
             disabled={false}
             onClick={[Function]}
@@ -627,7 +625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="34bvyub9jq-add-group-button"
             disabled={false}
             onClick={[Function]}
@@ -876,7 +874,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--text-input__field-wrapper"
                 data-invalid={null}
-                data-warn={null}
               >
                 <input
                   className="bx--text-input bx--text__input bx--text-input--light"
@@ -897,7 +894,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--rule-builder-rule__actions"
           >
             <button
-              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="ewc2z5kyfu-remove-rule-button"
               disabled={false}
               onClick={[Function]}
@@ -928,7 +925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
-              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="ewc2z5kyfu-add-rule-button"
               disabled={false}
               onClick={[Function]}
@@ -959,7 +956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
-              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="ewc2z5kyfu-add-group-button"
               disabled={false}
               onClick={[Function]}
@@ -1132,7 +1129,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--text-input__field-wrapper"
                 data-invalid={null}
-                data-warn={null}
               >
                 <input
                   className="bx--text-input bx--text__input bx--text-input--light"
@@ -1153,7 +1149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--rule-builder-rule__actions"
           >
             <button
-              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="hks7h2zin4-remove-rule-button"
               disabled={false}
               onClick={[Function]}
@@ -1184,7 +1180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
-              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="hks7h2zin4-add-rule-button"
               disabled={false}
               onClick={[Function]}
@@ -1215,7 +1211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
-              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="hks7h2zin4-add-group-button"
               disabled={false}
               onClick={[Function]}
@@ -1464,7 +1460,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="bx--text-input__field-wrapper"
                   data-invalid={null}
-                  data-warn={null}
                 >
                   <input
                     className="bx--text-input bx--text__input bx--text-input--light"
@@ -1485,7 +1480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--rule-builder-rule__actions"
             >
               <button
-                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 data-testid="wg9hlv197c-remove-rule-button"
                 disabled={false}
                 onClick={[Function]}
@@ -1516,7 +1511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 data-testid="wg9hlv197c-add-rule-button"
                 disabled={false}
                 onClick={[Function]}
@@ -1547,7 +1542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 data-testid="wg9hlv197c-add-group-button"
                 disabled={false}
                 onClick={[Function]}
@@ -1796,7 +1791,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <div
                     className="bx--text-input__field-wrapper"
                     data-invalid={null}
-                    data-warn={null}
                   >
                     <input
                       className="bx--text-input bx--text__input bx--text-input--light"
@@ -1817,7 +1811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="iot--rule-builder-rule__actions"
               >
                 <button
-                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="7kadk2wfv8-remove-rule-button"
                   disabled={false}
                   onClick={[Function]}
@@ -1848,7 +1842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                 </button>
                 <button
-                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="7kadk2wfv8-add-rule-button"
                   disabled={false}
                   onClick={[Function]}
@@ -1879,7 +1873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                 </button>
                 <button
-                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="7kadk2wfv8-add-group-button"
                   disabled={false}
                   onClick={[Function]}
@@ -2052,7 +2046,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <div
                     className="bx--text-input__field-wrapper"
                     data-invalid={null}
-                    data-warn={null}
                   >
                     <input
                       className="bx--text-input bx--text__input bx--text-input--light"
@@ -2073,7 +2066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="iot--rule-builder-rule__actions"
               >
                 <button
-                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="49mf09vjhn-remove-rule-button"
                   disabled={false}
                   onClick={[Function]}
@@ -2104,7 +2097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                 </button>
                 <button
-                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="49mf09vjhn-add-rule-button"
                   disabled={false}
                   onClick={[Function]}
@@ -2135,7 +2128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                 </button>
                 <button
-                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                  className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="49mf09vjhn-add-group-button"
                   disabled={false}
                   onClick={[Function]}
@@ -2486,7 +2479,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="bx--text-input__field-wrapper"
               data-invalid={null}
-              data-warn={null}
             >
               <input
                 className="bx--text-input bx--text__input bx--text-input--light"
@@ -2507,7 +2499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--rule-builder-rule__actions"
         >
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="rsiru4rjba-remove-rule-button"
             disabled={false}
             onClick={[Function]}
@@ -2538,7 +2530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="rsiru4rjba-add-rule-button"
             disabled={false}
             onClick={[Function]}
@@ -2569,7 +2561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="rsiru4rjba-add-group-button"
             disabled={false}
             onClick={[Function]}
@@ -2917,7 +2909,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="bx--text-input__field-wrapper"
               data-invalid={null}
-              data-warn={null}
             >
               <input
                 className="bx--text-input bx--text__input bx--text-input--light"
@@ -2938,7 +2929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--rule-builder-rule__actions"
         >
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="rsiru4rjba-remove-rule-button"
             disabled={false}
             onClick={[Function]}
@@ -2969,7 +2960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="rsiru4rjba-add-rule-button"
             disabled={false}
             onClick={[Function]}
@@ -3000,7 +2991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             data-testid="rsiru4rjba-add-group-button"
             disabled={false}
             onClick={[Function]}
@@ -3095,12 +3086,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M29.879,27.5212l-13-25.0363a1.04,1.04,0,0,0-1.7583,0l-13,25.0363A1.0015,1.0015,0,0,0,3,29H29a1.001,1.001,0,0,0,.8789-1.4788ZM14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+          d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+          fill="none"
         />
         <path
-          d="M14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
-          data-icon-path="inner-path"
-          fill="none"
+          d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
         />
         <title>
           warning-alt icon

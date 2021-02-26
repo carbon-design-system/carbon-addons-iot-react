@@ -111,6 +111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             id="tooltipTrigger-0"
             onBlur={[Function]}
             onClick={[Function]}
+            onContextMenu={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onMouseOut={[Function]}
@@ -165,6 +166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             id="tooltipTrigger-1"
             onBlur={[Function]}
             onClick={[Function]}
+            onContextMenu={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onMouseOut={[Function]}

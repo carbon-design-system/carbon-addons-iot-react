@@ -66,7 +66,7 @@ describe('TileCatalogNew', () => {
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: '5' },
     });
-    expect(onSearch).toHaveBeenCalledTimes(1);
+    expect(onSearch).toHaveBeenCalled();
   });
 
   it('TileCatalogNew hasSort set to true', () => {
@@ -91,7 +91,7 @@ describe('TileCatalogNew', () => {
     fireEvent.change(screen.getByDisplayValue('Choose from options'), {
       target: { value: 'Z-A' },
     });
-    expect(onSort).toHaveBeenCalledTimes(1);
+    expect(onSort).toHaveBeenCalled(); // https://github.com/carbon-design-system/carbon/issues/7595
   });
 
   it('TileCatalogNew pagination next button', () => {
