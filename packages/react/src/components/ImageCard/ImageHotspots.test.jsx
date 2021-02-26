@@ -16,6 +16,11 @@ import ImageHotspots, {
   handleMouseUp,
 } from './ImageHotspots';
 
+const commonProps = {
+  height: 100,
+  width: 100,
+};
+
 const getHotspots = () => {
   return [
     {
@@ -157,7 +162,7 @@ describe('ImageHotspots', () => {
   });
   it('shows loading', () => {
     act(() => {
-      ReactDOM.render(<ImageHotspots />, container);
+      ReactDOM.render(<ImageHotspots {...commonProps} />, container);
     });
     const image = container.querySelector('img');
     expect(isDOMComponent(image)).toBe(false);
@@ -248,7 +253,7 @@ describe('ImageHotspots', () => {
 
     const i18nDefault = ImageHotspots.defaultProps.i18n;
 
-    render(<ImageHotspots i18n={i18nTest} />);
+    render(<ImageHotspots {...commonProps} i18n={i18nTest} />);
     expect(screen.getByTitle(i18nTest.zoomIn)).toBeInTheDocument();
     expect(screen.getByTitle(i18nTest.zoomOut)).toBeInTheDocument();
     expect(screen.queryByTitle(i18nDefault.zoomIn)).not.toBeInTheDocument();
