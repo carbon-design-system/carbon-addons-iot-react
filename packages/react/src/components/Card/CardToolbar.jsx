@@ -133,7 +133,7 @@ const CardToolbar = ({
   return isEditable ? (
     <div className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {(availableActions.clone || availableActions.delete) && (
-        <OverflowMenu flipped title={mergedI18n.overflowMenuDescription}>
+        <OverflowMenu flipped title={mergedI18n.overflowMenuDescription} iconDescription={mergedI18n.overflowMenuDescription}>
           {availableActions.clone && (
             <OverflowMenuItem
               onClick={() => {
