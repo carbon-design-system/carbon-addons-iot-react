@@ -31,8 +31,7 @@ describe('StatefulTileCatalog', () => {
     );
     const searchInput = wrapper.find('input[type="text"]');
     searchInput.simulate('change', { target: { value } });
-
-    expect(mockSearch).toHaveBeenCalled(); // https://github.com/carbon-design-system/carbon/issues/7595
+    expect(mockSearch).toHaveBeenCalledTimes(1);
     expect(mockSearch).toHaveBeenCalledWith(value);
   });
   it('handles Clicking on option', () => {

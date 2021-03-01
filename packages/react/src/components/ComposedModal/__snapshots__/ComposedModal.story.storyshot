@@ -78,7 +78,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           Lots of really wide content here...
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -221,6 +221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             onClose={[Function]}
             onKeyDown={[Function]}
             open={false}
+            tabIndex={0}
             title="Test Overflow"
             type="button"
           >
@@ -269,7 +270,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
-              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -300,7 +300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -432,7 +432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <div
             className="ComposedModalstory__CustomFooter-sc-1ctuyyf-0 cxIHUM"
@@ -620,7 +620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -708,16 +708,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         </label>
         <svg
           className="bx--loading__svg"
-          viewBox="0 0 100 100"
+          viewBox="-75 -75 150 150"
         >
           <title>
             Active loading indicator
           </title>
           <circle
             className="bx--loading__stroke"
-            cx="50%"
-            cy="50%"
-            r="44"
+            cx="0"
+            cy="0"
+            r="37.5"
           />
         </svg>
       </div>
@@ -826,7 +826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -958,7 +958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -1198,7 +1198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -1320,7 +1320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -1354,22 +1354,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
               </label>
               <svg
                 className="bx--loading__svg"
-                viewBox="0 0 100 100"
+                viewBox="-75 -75 150 150"
               >
                 <title>
                   Active loading indicator
                 </title>
                 <circle
                   className="bx--loading__background"
-                  cx="50%"
-                  cy="50%"
-                  r="42"
+                  cx="0"
+                  cy="0"
+                  r="26.8125"
                 />
                 <circle
                   className="bx--loading__stroke"
-                  cx="50%"
-                  cy="50%"
-                  r="42"
+                  cx="0"
+                  cy="0"
+                  r="26.8125"
                 />
               </svg>
             </div>
@@ -1490,7 +1490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"

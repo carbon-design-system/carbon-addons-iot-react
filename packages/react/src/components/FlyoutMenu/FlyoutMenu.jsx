@@ -159,7 +159,6 @@ const FlyoutMenu = ({
   customFooter: CustomFooter,
   onApply,
   onCancel,
-  onChange,
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
@@ -221,7 +220,6 @@ const FlyoutMenu = ({
             id={tooltipId} // https://github.com/carbon-design-system/carbon/pull/6744
             triggerId={triggerId}
             tabIndex={tabIndex}
-            onChange={onChange}
           >
             <div ref={tooltipContentRef}>
               <div style={{ overflow: 'scroll' }} tabIndex={-1} />
@@ -341,8 +339,6 @@ const propTypes = {
   buttonSize: PropTypes.string,
 
   light: PropTypes.bool,
-
-  onChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -370,7 +366,6 @@ const defaultProps = {
   onApply: null,
   disabled: false,
   light: true,
-  onChange: () => {},
 };
 
 FlyoutMenu.propTypes = propTypes;

@@ -292,6 +292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   onClose={[Function]}
                   onKeyDown={[Function]}
                   open={false}
+                  tabIndex={0}
                   type="button"
                 >
                   <svg
@@ -399,28 +400,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 List Item
               </div>
               <div>
-                <div
+                <span
                   className="bx--tag bx--tag--blue"
-                  id="tag-23"
+                  title="default"
                 >
-                  
-                  <span
-                    title="default"
-                  >
-                    default
-                  </span>
-                </div>
-                <div
+                  default
+                </span>
+                <span
                   className="bx--tag bx--tag--disabled bx--tag--red"
-                  id="tag-24"
+                  title="disabled tag"
                 >
-                  
-                  <span
-                    title="disabled tag"
-                  >
-                    disabled tag
-                  </span>
-                </div>
+                  disabled tag
+                </span>
               </div>
             </div>
           </div>
@@ -501,7 +492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="iot--list-item--content--row-actions"
               >
                 <button
-                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                   data-testid="Button"
                   disabled={true}
                   onClick={[Function]}
@@ -1113,7 +1104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="iot--list-item--content--row-actions"
               >
                 <button
-                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                   data-testid="Button"
                   disabled={false}
                   onClick={[Function]}

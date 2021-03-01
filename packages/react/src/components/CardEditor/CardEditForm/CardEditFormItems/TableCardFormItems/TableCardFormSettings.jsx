@@ -4,7 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import update from 'immutability-helper';
 
 import { settings } from '../../../../../constants/Settings';
-import { Toggle, Dropdown, RadioButton, RadioButtonGroup } from '../../../../../index';
+import { ToggleSmall, Dropdown, RadioButton, RadioButtonGroup } from '../../../../../index';
 import { TableCardPropTypes } from '../../../../../constants/CardPropTypes';
 
 const { iotPrefix } = settings;
@@ -202,8 +202,7 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
       <div className={`${baseClassName}--input`}>
         <div className={`${baseClassName}--input--toggle-field`}>
           <span>{mergedI18n.showHeader}</span>
-          <Toggle
-            size="sm"
+          <ToggleSmall
             data-testid={`${baseClassName}--input-toggle1`}
             id={`${baseClassName}--input-toggle-1`}
             aria-label={mergedI18n.showHeader}
@@ -222,8 +221,7 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
       <div className={`${baseClassName}--input`}>
         <div className={`${baseClassName}--input--toggle-field`}>
           <span>{mergedI18n.allowNavigation}</span>
-          <Toggle
-            size="sm"
+          <ToggleSmall
             data-testid={`${baseClassName}--input-toggle2`}
             id={`${baseClassName}--input-toggle-2`}
             aria-label={mergedI18n.allowNavigation}

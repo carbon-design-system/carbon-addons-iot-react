@@ -70,11 +70,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Filter table
                   </label>
                   <input
+                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="38"
                     onChange={[Function]}
-                    onKeyDown={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
@@ -439,11 +439,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Filter table
                   </label>
                   <input
+                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="39"
                     onChange={[Function]}
-                    onKeyDown={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
@@ -715,11 +715,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Filter table
                   </label>
                   <input
+                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="41"
                     onChange={[Function]}
-                    onKeyDown={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
@@ -919,11 +919,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Filter table
                   </label>
                   <input
+                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="40"
                     onChange={[Function]}
-                    onKeyDown={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
@@ -1147,11 +1147,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Filter table
                   </label>
                   <input
+                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="44"
                     onChange={[Function]}
-                    onKeyDown={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
@@ -1629,11 +1629,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Filter table
                   </label>
                   <input
+                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="42"
                     onChange={[Function]}
-                    onKeyDown={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
@@ -2232,11 +2232,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Filter table
                   </label>
                   <input
+                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="43"
                     onChange={[Function]}
-                    onKeyDown={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
