@@ -199,6 +199,7 @@ const CardEditFormContent = ({
           key={`card_${id}`}
           id={`${id}_time_range`}
           label={mergedI18n.selectATimeRange}
+          title={mergedI18n.selectATimeRange}
           direction="bottom"
           itemToString={(item) => item.text}
           items={validTimeRangeOptions}

@@ -111,6 +111,7 @@ const ColorDropdown = ({
       items={colors}
       label={label}
       light={light}
+      title={label}
       translateWithId={translateWithId}
       onChange={({ selectedItem }) => {
         setSelectedColor(selectedItem);
