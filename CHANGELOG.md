@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.56](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.55...v2.143.0-next.56) (2021-03-01)
+
+
+### Bug Fixes
+
+* **cardeditform:** need to pass title to dropdowns so it shows full string on hover ([8867df9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8867df9e7ef33e532aff2485c3b25ebb6014967e))
+* **cardtoolbar:** need to add tooltips to the clone and delete ([72a23ef](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/72a23efbb321a9dc18774d3189139c19d31a25a4))
+
+
+
+
+
 # [2.143.0-next.55](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.54...v2.143.0-next.55) (2021-03-01)
 
 
