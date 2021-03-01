@@ -199,6 +199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                       </button>
                       <div
                         className="iot--flyout-menu--tooltip-anchor"
+                        data-floating-menu-container={true}
                       >
                         <div
                           aria-describedby={null}
