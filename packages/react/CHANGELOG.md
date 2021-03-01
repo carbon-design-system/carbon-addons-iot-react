@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.56...v2.143.0-next.57) (2021-03-01)
+
+
+### Bug Fixes
+
+* **use-popover-position:** move tooltip/overflow stories to IoT ([b081805](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b081805e6024af2e0c914c896eab30aa1c00554c))
+* **use-popover-positiong:** use testID on PAL button ([ea00961](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ea009616e5eff6d7d6862918627f19fc3a4cc457))
+* **use-popover-positioning:** fix build error import from floating menu ([964d8cf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/964d8cf2537a4cc7bffddbc0638d079be6592b12))
+
+
+### Features
+
+* **use-popover-positioning:** initial commit ([a6f37cd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a6f37cde9f025ecfbe461b2f62db5084cb59b653))
+
+
+
+
+
+# [2.143.0-next.56](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.55...v2.143.0-next.56) (2021-03-01)
+
+
+### Bug Fixes
+
+* **cardeditform:** need to pass title to dropdowns so it shows full string on hover ([8867df9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8867df9e7ef33e532aff2485c3b25ebb6014967e))
+* **cardtoolbar:** need to add tooltips to the clone and delete ([72a23ef](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/72a23efbb321a9dc18774d3189139c19d31a25a4))
+
+
+
+
+
 # [2.143.0-next.55](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.54...v2.143.0-next.55) (2021-03-01)
 
 
