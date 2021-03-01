@@ -94,6 +94,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <div
                   className="bx--text-input__field-wrapper"
                   data-invalid={null}
+                  data-warn={null}
                 >
                   <input
                     className="bx--text-input bx--text__input"
@@ -254,7 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -411,7 +412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   id="myTextArea"
                   onChange={[Function]}
                   onClick={[Function]}
-                  placeholder={null}
+                  placeholder=""
                   rows={4}
                 />
               </div>
@@ -419,7 +420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -572,6 +573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <div
                   className="bx--text-input__field-wrapper"
                   data-invalid={null}
+                  data-warn={null}
                 >
                   <input
                     className="bx--text-input bx--text__input"
@@ -649,7 +651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -802,6 +804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <div
                   className="bx--text-input__field-wrapper"
                   data-invalid={null}
+                  data-warn={null}
                 >
                   <input
                     className="bx--text-input bx--text__input"
@@ -877,7 +880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"

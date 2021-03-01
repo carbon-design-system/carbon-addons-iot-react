@@ -30,7 +30,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--hotspot-text-style-tab__text-style"
           >
             <button
-              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
               data-testid="hotspot-bold"
               disabled={false}
               onClick={[Function]}
@@ -62,7 +62,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
-              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
               data-testid="hotspot-italic"
               disabled={false}
               onClick={[Function]}
@@ -94,7 +94,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
-              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
               data-testid="hotspot-underline"
               disabled={false}
               onClick={[Function]}
@@ -131,6 +131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
+              title="Select a color"
             >
               <label
                 className="bx--label"
@@ -288,6 +289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
+              title="Select a color"
             >
               <label
                 className="bx--label"
@@ -445,6 +447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
+              title="Select a color"
             >
               <label
                 className="bx--label"

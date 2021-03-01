@@ -4,7 +4,6 @@ module.exports = {
     '!src/**/*.story.js?(x)',
     '!src/**/hooks/*.js',
     '!src/components/SuiteHeader/util/suiteHeaderData.js',
-    '!src/components/FileUploader/stories/*.jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov'],

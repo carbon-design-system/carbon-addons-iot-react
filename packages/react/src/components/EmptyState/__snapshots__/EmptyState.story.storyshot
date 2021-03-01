@@ -2491,7 +2491,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           <a
             className="bx--link"
             onClick={[Function]}
-            rel={null}
           >
             Secondary action
           </a>
