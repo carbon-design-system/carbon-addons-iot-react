@@ -7122,6 +7122,7 @@ Map {
       "customApplications": Array [],
       "customHelpLinks": Array [],
       "customProfileLinks": Array [],
+      "hasSideNav": false,
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -7151,6 +7152,7 @@ Map {
       },
       "isAdminView": false,
       "onRouteChange": [Function],
+      "onSideNavToggled": [Function],
       "routes": null,
       "sideNavProps": null,
       "surveyData": null,
@@ -7322,6 +7324,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "hasSideNav": Object {
+        "type": "bool",
+      },
       "i18n": Object {
         "args": Array [
           Object {
@@ -7422,6 +7427,9 @@ Map {
         "type": "bool",
       },
       "onRouteChange": Object {
+        "type": "func",
+      },
+      "onSideNavToggled": Object {
         "type": "func",
       },
       "routes": Object {

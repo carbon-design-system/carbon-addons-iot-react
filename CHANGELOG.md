@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.55](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.54...v2.143.0-next.55) (2021-03-01)
+
+
+### Bug Fixes
+
+* **suiteheader:** props to use hamburger to trigger custom side nav ([a129635](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a1296359091fba97ba7a1e3b54b40d78b28457ba))
+
+
+### Features
+
+* **suiteheader:** adding a test for SuiteHeader to increase coverage. ([b4f46a8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b4f46a8379546a199dfa768584239df9496b6def))
+* **suiteheader:** converting a test from enzyme to react testing library, per feedback. ([96b53a1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/96b53a1bda6b40b500fc179f4a26b03aa3798f67))
+* **suiteheader:** fixing a lint error, updating snaps and storyshots. ([9ff4a1b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ff4a1b0d70ef870bbececf3ee5f862b8bd69d91))
+* **suiteheader:** fixing another lint error ([dfe819b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dfe819b89fee617df7fc42286e018e2327713478))
+* **SuiteHeader:** fixing a lint error ([2e43b66](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2e43b6683bac2aef65841ec32d12f34eb21c03b6))
+
+
+
+
+
 # [2.143.0-next.54](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.53...v2.143.0-next.54) (2021-03-01)
 
 **Note:** Version bump only for package ibm-ai-applications
