@@ -255,7 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <div
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
@@ -573,7 +573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <div
             className="WizardInline-custom-footer-content"
@@ -888,7 +888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          className="bx--modal-footer iot--composed-modal-footer"
         >
           <div
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
@@ -925,22 +925,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 </label>
                 <svg
                   className="bx--loading__svg"
-                  viewBox="0 0 100 100"
+                  viewBox="-75 -75 150 150"
                 >
                   <title>
                     Active loading indicator
                   </title>
                   <circle
                     className="bx--loading__background"
-                    cx="50%"
-                    cy="50%"
-                    r="42"
+                    cx="0"
+                    cy="0"
+                    r="26.8125"
                   />
                   <circle
                     className="bx--loading__stroke"
-                    cx="50%"
-                    cy="50%"
-                    r="42"
+                    cx="0"
+                    cy="0"
+                    r="26.8125"
                   />
                 </svg>
               </div>

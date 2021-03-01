@@ -59,21 +59,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
       >
         <div
-          className="bx--tabs--scrollable"
+          className="bx--tabs"
           hidden={false}
-          onScroll={[Function]}
+          role="navigation"
           selected={0}
         >
-          <button
-            aria-hidden="true"
-            aria-label="Scroll left"
-            className="bx--tab--overflow-nav-button--hidden"
+          <div
+            aria-label="listbox"
+            className="bx--tabs-trigger"
             onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
+            onKeyPress={[Function]}
+            role="listbox"
+            tabIndex={0}
           >
+            <a
+              className="bx--tabs-trigger-text"
+              href="#"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Tab 1
+            </a>
             <svg
               aria-hidden={true}
               fill="currentColor"
@@ -85,81 +91,55 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
               />
+              <title>
+                show menu options
+              </title>
             </svg>
-          </button>
+          </div>
           <ul
-            className="bx--tabs--scrollable__nav"
+            className="bx--tabs__nav bx--tabs__nav--hidden"
             role="tablist"
-            tabIndex={-1}
           >
             <li
-              className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+              aria-controls="undefined__panel"
+              aria-selected={true}
+              className="bx--tabs__nav-item bx--tabs__nav-item--selected"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
+              role="tab"
+              tabIndex={-1}
             >
-              <button
-                aria-controls="tab-25__panel"
-                aria-selected={true}
-                className="bx--tabs--scrollable__nav-link"
+              <a
+                className="bx--tabs__nav-link"
                 href="#"
-                id="tab-25"
-                role="tab"
                 tabIndex={0}
-                type="button"
               >
                 Tab 1
-              </button>
+              </a>
             </li>
             <li
-              className="bx--tabs--scrollable__nav-item"
+              aria-controls="undefined__panel"
+              aria-selected={false}
+              className="bx--tabs__nav-item"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
+              role="tab"
+              tabIndex={-1}
             >
-              <button
-                aria-controls="tab-26__panel"
-                aria-selected={false}
-                className="bx--tabs--scrollable__nav-link"
+              <a
+                className="bx--tabs__nav-link"
                 href="#"
-                id="tab-26"
-                role="tab"
                 tabIndex={-1}
-                type="button"
               >
                 Tab 2
-              </button>
+              </a>
             </li>
           </ul>
-          <button
-            aria-hidden="true"
-            aria-label="Scroll right"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-          </button>
         </div>
         <div
+          aria-hidden={false}
           className="bx--tab-content"
           hidden={false}
           role="tabpanel"
@@ -176,6 +156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           </div>
         </div>
         <div
+          aria-hidden={true}
           className="bx--tab-content"
           hidden={true}
           role="tabpanel"
@@ -287,21 +268,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
       >
         <div
-          className="bx--tabs--scrollable"
+          className="bx--tabs"
           hidden={false}
-          onScroll={[Function]}
+          role="navigation"
           selected={0}
         >
-          <button
-            aria-hidden="true"
-            aria-label="Scroll left"
-            className="bx--tab--overflow-nav-button--hidden"
+          <div
+            aria-label="listbox"
+            className="bx--tabs-trigger"
             onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
+            onKeyPress={[Function]}
+            role="listbox"
+            tabIndex={0}
           >
+            <a
+              className="bx--tabs-trigger-text"
+              href="#"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Tab 1
+            </a>
             <svg
               aria-hidden={true}
               fill="currentColor"
@@ -313,81 +300,55 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
               />
+              <title>
+                show menu options
+              </title>
             </svg>
-          </button>
+          </div>
           <ul
-            className="bx--tabs--scrollable__nav"
+            className="bx--tabs__nav bx--tabs__nav--hidden"
             role="tablist"
-            tabIndex={-1}
           >
             <li
-              className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+              aria-controls="undefined__panel"
+              aria-selected={true}
+              className="bx--tabs__nav-item bx--tabs__nav-item--selected"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
+              role="tab"
+              tabIndex={-1}
             >
-              <button
-                aria-controls="tab-19__panel"
-                aria-selected={true}
-                className="bx--tabs--scrollable__nav-link"
+              <a
+                className="bx--tabs__nav-link"
                 href="#"
-                id="tab-19"
-                role="tab"
                 tabIndex={0}
-                type="button"
               >
                 Tab 1
-              </button>
+              </a>
             </li>
             <li
-              className="bx--tabs--scrollable__nav-item"
+              aria-controls="undefined__panel"
+              aria-selected={false}
+              className="bx--tabs__nav-item"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
+              role="tab"
+              tabIndex={-1}
             >
-              <button
-                aria-controls="tab-20__panel"
-                aria-selected={false}
-                className="bx--tabs--scrollable__nav-link"
+              <a
+                className="bx--tabs__nav-link"
                 href="#"
-                id="tab-20"
-                role="tab"
                 tabIndex={-1}
-                type="button"
               >
                 Tab 2
-              </button>
+              </a>
             </li>
           </ul>
-          <button
-            aria-hidden="true"
-            aria-label="Scroll right"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-          </button>
         </div>
         <div
+          aria-hidden={false}
           className="bx--tab-content"
           hidden={false}
           role="tabpanel"
@@ -404,6 +365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           </div>
         </div>
         <div
+          aria-hidden={true}
           className="bx--tab-content"
           hidden={true}
           role="tabpanel"
@@ -502,21 +464,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
       >
         <div
-          className="bx--tabs--scrollable"
+          className="bx--tabs"
           hidden={false}
-          onScroll={[Function]}
+          role="navigation"
           selected={1}
         >
-          <button
-            aria-hidden="true"
-            aria-label="Scroll left"
-            className="bx--tab--overflow-nav-button--hidden"
+          <div
+            aria-label="listbox"
+            className="bx--tabs-trigger"
             onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
+            onKeyPress={[Function]}
+            role="listbox"
+            tabIndex={0}
           >
+            <a
+              className="bx--tabs-trigger-text"
+              href="#"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Tab 2
+            </a>
             <svg
               aria-hidden={true}
               fill="currentColor"
@@ -528,81 +496,55 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
               />
+              <title>
+                show menu options
+              </title>
             </svg>
-          </button>
+          </div>
           <ul
-            className="bx--tabs--scrollable__nav"
+            className="bx--tabs__nav bx--tabs__nav--hidden"
             role="tablist"
-            tabIndex={-1}
           >
             <li
-              className="bx--tabs--scrollable__nav-item"
+              aria-controls="undefined__panel"
+              aria-selected={false}
+              className="bx--tabs__nav-item"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
+              role="tab"
+              tabIndex={-1}
             >
-              <button
-                aria-controls="tab-21__panel"
-                aria-selected={false}
-                className="bx--tabs--scrollable__nav-link"
+              <a
+                className="bx--tabs__nav-link"
                 href="#"
-                id="tab-21"
-                role="tab"
                 tabIndex={-1}
-                type="button"
               >
                 Tab 1
-              </button>
+              </a>
             </li>
             <li
-              className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+              aria-controls="undefined__panel"
+              aria-selected={true}
+              className="bx--tabs__nav-item bx--tabs__nav-item--selected"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
+              role="tab"
+              tabIndex={-1}
             >
-              <button
-                aria-controls="tab-22__panel"
-                aria-selected={true}
-                className="bx--tabs--scrollable__nav-link"
+              <a
+                className="bx--tabs__nav-link"
                 href="#"
-                id="tab-22"
-                role="tab"
                 tabIndex={0}
-                type="button"
               >
                 Tab 2
-              </button>
+              </a>
             </li>
           </ul>
-          <button
-            aria-hidden="true"
-            aria-label="Scroll right"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-          </button>
         </div>
         <div
+          aria-hidden={true}
           className="bx--tab-content"
           hidden={true}
           role="tabpanel"
@@ -619,6 +561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           </div>
         </div>
         <div
+          aria-hidden={false}
           className="bx--tab-content"
           hidden={false}
           role="tabpanel"
@@ -717,21 +660,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
       >
         <div
-          className="bx--tabs--scrollable"
+          className="bx--tabs"
           hidden={false}
-          onScroll={[Function]}
+          role="navigation"
           selected={0}
         >
-          <button
-            aria-hidden="true"
-            aria-label="Scroll left"
-            className="bx--tab--overflow-nav-button--hidden"
+          <div
+            aria-label="listbox"
+            className="bx--tabs-trigger"
             onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
+            onKeyPress={[Function]}
+            role="listbox"
+            tabIndex={0}
           >
+            <a
+              className="bx--tabs-trigger-text"
+              href="#"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Tab 1
+            </a>
             <svg
               aria-hidden={true}
               fill="currentColor"
@@ -743,81 +692,55 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
               />
+              <title>
+                show menu options
+              </title>
             </svg>
-          </button>
+          </div>
           <ul
-            className="bx--tabs--scrollable__nav"
+            className="bx--tabs__nav bx--tabs__nav--hidden"
             role="tablist"
-            tabIndex={-1}
           >
             <li
-              className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+              aria-controls="undefined__panel"
+              aria-selected={true}
+              className="bx--tabs__nav-item bx--tabs__nav-item--selected"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
+              role="tab"
+              tabIndex={-1}
             >
-              <button
-                aria-controls="tab-23__panel"
-                aria-selected={true}
-                className="bx--tabs--scrollable__nav-link"
+              <a
+                className="bx--tabs__nav-link"
                 href="#"
-                id="tab-23"
-                role="tab"
                 tabIndex={0}
-                type="button"
               >
                 Tab 1
-              </button>
+              </a>
             </li>
             <li
-              className="bx--tabs--scrollable__nav-item"
+              aria-controls="undefined__panel"
+              aria-selected={false}
+              className="bx--tabs__nav-item"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
+              role="tab"
+              tabIndex={-1}
             >
-              <button
-                aria-controls="tab-24__panel"
-                aria-selected={false}
-                className="bx--tabs--scrollable__nav-link"
+              <a
+                className="bx--tabs__nav-link"
                 href="#"
-                id="tab-24"
-                role="tab"
                 tabIndex={-1}
-                type="button"
               >
                 Tab 2
-              </button>
+              </a>
             </li>
           </ul>
-          <button
-            aria-hidden="true"
-            aria-label="Scroll right"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-          </button>
         </div>
         <div
+          aria-hidden={false}
           className="bx--tab-content"
           hidden={false}
           role="tabpanel"
@@ -834,6 +757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           </div>
         </div>
         <div
+          aria-hidden={true}
           className="bx--tab-content"
           hidden={true}
           role="tabpanel"

@@ -53,7 +53,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
                 onClick={[Function]}
-                onContextMenu={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 onMouseOut={[Function]}
@@ -244,7 +243,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
                 onClick={[Function]}
-                onContextMenu={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 onMouseOut={[Function]}
@@ -468,7 +466,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
                 onClick={[Function]}
-                onContextMenu={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 onMouseOut={[Function]}
@@ -534,7 +531,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   id="iot--data-state-grid__icon-GaugeCard"
                   onBlur={[Function]}
                   onClick={[Function]}
-                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
