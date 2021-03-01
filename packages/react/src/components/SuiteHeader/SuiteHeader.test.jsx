@@ -77,6 +77,13 @@ describe('SuiteHeader', () => {
     );
     expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
   });
+  it('renders with left sidenav toggle button (custom side nav support)', () => {
+    const mockOnSideNavToggled = jest.fn();
+    render(<SuiteHeader {...commonProps} hasSideNav onSideNavToggled={mockOnSideNavToggled} />);
+    expect(screen.getByTitle('Open menu')).toBeInTheDocument();
+    userEvent.click(screen.getByTitle('Open menu'));
+    expect(mockOnSideNavToggled).toHaveBeenCalled();
+  });
   it('opens and closes logout modal', () => {
     render(<SuiteHeader {...commonProps} />);
     expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();

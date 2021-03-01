@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
@@ -6,6 +6,7 @@ import { SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
 import Button from '../Button/Button';
 import { Tooltip } from '../Tooltip';
 import { settings } from '../../constants/Settings';
+import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
 
 const { iotPrefix } = settings;
 
@@ -34,74 +35,6 @@ const getTooltipDirection = (direction) => {
     default:
       return 'bottom';
   }
-};
-
-const getMenuOffset = (direction, menuOffset, tooltipContentRef, buttonRef) => {
-  let topOffset = 0;
-  let leftOffset = 0;
-
-  const caretWidth = 16;
-  const caretHeight = 14;
-  const borderWidth = 1;
-
-  const tooltipWidth = tooltipContentRef.current
-    ? tooltipContentRef.current.getBoundingClientRect().width
-    : 0;
-  const tooltipHeight = tooltipContentRef.current
-    ? tooltipContentRef.current.getBoundingClientRect().height
-    : 0;
-
-  const buttonWidth = buttonRef.current ? buttonRef.current.getBoundingClientRect().width : 0;
-
-  let rtlOffset = buttonWidth;
-
-  switch (direction) {
-    case FlyoutMenuDirection.LeftStart:
-      topOffset = tooltipHeight / 2 + caretHeight - borderWidth;
-      rtlOffset = 0;
-      break;
-
-    // off
-    case FlyoutMenuDirection.LeftEnd:
-      topOffset = -tooltipHeight / 2 + caretHeight + caretWidth - borderWidth - (48 - buttonWidth);
-      rtlOffset = 0;
-      break;
-    case FlyoutMenuDirection.RightStart:
-      topOffset = tooltipHeight / 2 + borderWidth;
-      rtlOffset = -rtlOffset;
-      break;
-
-    // off
-    case FlyoutMenuDirection.RightEnd:
-      topOffset = caretWidth - tooltipHeight / 2 + borderWidth - (48 - buttonWidth);
-      rtlOffset = -rtlOffset;
-      break;
-    case FlyoutMenuDirection.TopStart:
-      leftOffset = caretWidth + tooltipWidth / 2;
-      topOffset = caretHeight;
-      break;
-    case FlyoutMenuDirection.TopEnd:
-      leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
-      topOffset = caretHeight;
-      break;
-    case FlyoutMenuDirection.BottomEnd:
-      topOffset = -caretHeight;
-      leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
-      break;
-    default:
-      // Bottom Start
-      leftOffset = caretWidth + tooltipWidth / 2;
-      topOffset = -caretHeight;
-  }
-
-  if (document.dir === 'rtl') {
-    leftOffset -= rtlOffset;
-  }
-
-  return {
-    top: topOffset + menuOffset.top,
-    left: leftOffset + menuOffset.left,
-  };
 };
 
 // No need to do prop checks since these are alredy done in flyout
@@ -159,14 +92,113 @@ const FlyoutMenu = ({
   customFooter: CustomFooter,
   onApply,
   onCancel,
-  onChange,
+  useAutoPositioning,
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
-
+  const [tooltipDirection, setTooltipDirection] = useState(getTooltipDirection(direction));
   const buttonRef = useRef(null);
-  const tooltipContentRef = useRef(null);
 
-  const tooltipDirection = getTooltipDirection(direction);
+  const getFlyoutMenuOffset = React.useCallback(
+    (tooltipElement, flyoutDirection, tooltipButtonElement, flipped) => {
+      let topOffset = 0;
+      let leftOffset = 0;
+
+      const caretWidth = 16;
+      const caretHeight = 14;
+      const borderWidth = 1;
+
+      const tooltipContent = tooltipElement.querySelector('[role="dialog"]');
+      const tooltipWidth = tooltipContent ? tooltipContent.getBoundingClientRect().width : 0;
+      const tooltipHeight = tooltipContent ? tooltipContent.getBoundingClientRect().height : 0;
+      const buttonWidth = buttonRef.current ? buttonRef.current.getBoundingClientRect().width : 0;
+
+      let rtlOffset = buttonWidth;
+
+      switch (flyoutDirection) {
+        case FlyoutMenuDirection.LeftStart:
+          topOffset = tooltipHeight / 2 + caretHeight - borderWidth;
+          rtlOffset = 0;
+          break;
+
+        // off
+        case FlyoutMenuDirection.LeftEnd:
+          topOffset =
+            -tooltipHeight / 2 + caretHeight + caretWidth - borderWidth - (48 - buttonWidth);
+          rtlOffset = 0;
+          break;
+        case FlyoutMenuDirection.RightStart:
+          topOffset = tooltipHeight / 2 + borderWidth;
+          rtlOffset = -rtlOffset;
+          break;
+
+        // off
+        case FlyoutMenuDirection.RightEnd:
+          topOffset = caretWidth - tooltipHeight / 2 + borderWidth - (48 - buttonWidth);
+          rtlOffset = -rtlOffset;
+          break;
+        case FlyoutMenuDirection.TopStart:
+          leftOffset = caretWidth + tooltipWidth / 2;
+          topOffset = caretHeight;
+          break;
+        case FlyoutMenuDirection.TopEnd:
+          leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
+          topOffset = caretHeight;
+          break;
+        case FlyoutMenuDirection.BottomEnd:
+          topOffset = -caretHeight;
+          leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
+          break;
+        default:
+          // Bottom Start
+          leftOffset = caretWidth + tooltipWidth / 2;
+          topOffset = -caretHeight;
+      }
+
+      if (document.dir === 'rtl') {
+        leftOffset -= rtlOffset;
+      }
+
+      let propTop = 0;
+      let propLeft = 0;
+
+      if (typeof menuOffset === 'function') {
+        const { top, left } = menuOffset(
+          tooltipElement,
+          flyoutDirection,
+          tooltipButtonElement,
+          flipped
+        );
+
+        propTop = top;
+        propLeft = left;
+      } else if (
+        typeof menuOffset === 'object' &&
+        (menuOffset.hasOwnProperty('top') || menuOffset.hasOwnProperty('left'))
+      ) {
+        const { top = 0, left = 0 } = menuOffset;
+
+        propTop = top;
+        propLeft = left;
+      }
+
+      return {
+        top: topOffset + propTop,
+        left: leftOffset + propLeft,
+      };
+    },
+    [menuOffset]
+  );
+
+  const [calculateMenuOffset, { adjustedDirection }] = usePopoverPositioning({
+    direction,
+    menuOffset: getFlyoutMenuOffset,
+    useAutoPositioning,
+  });
+
+  useEffect(() => {
+    setTooltipDirection(getTooltipDirection(adjustedDirection));
+  }, [adjustedDirection]);
+
   const Footer = CustomFooter ? (
     <CustomFooter setIsOpen={setIsOpen} isOpen={isOpen} />
   ) : (
@@ -198,13 +230,13 @@ const FlyoutMenu = ({
         }}
       />
       {
-        <div className={`${iotPrefix}--flyout-menu--tooltip-anchor`}>
+        <div className={`${iotPrefix}--flyout-menu--tooltip-anchor`} data-floating-menu-container>
           <Tooltip
             disabled={disabled}
             className={classnames(
               tooltipClassName,
               `${iotPrefix}--flyout-menu--body`,
-              `${iotPrefix}--flyout-menu--body__${direction}`,
+              `${iotPrefix}--flyout-menu--body__${adjustedDirection}`,
               {
                 [`${iotPrefix}--flyout-menu--body__light`]: light,
                 [`${iotPrefix}--flyout-menu--body__open`]: isOpen,
@@ -216,14 +248,14 @@ const FlyoutMenu = ({
             showIcon={false}
             open={isOpen}
             direction={tooltipDirection}
-            menuOffset={() => getMenuOffset(direction, menuOffset, tooltipContentRef, buttonRef)}
+            menuOffset={calculateMenuOffset}
             tooltipId={tooltipId}
             id={tooltipId} // https://github.com/carbon-design-system/carbon/pull/6744
             triggerId={triggerId}
             tabIndex={tabIndex}
-            onChange={onChange}
+            useAutoPositioning={false}
           >
-            <div ref={tooltipContentRef}>
+            <div>
               <div style={{ overflow: 'scroll' }} tabIndex={-1} />
               {children}
 
@@ -342,7 +374,7 @@ const propTypes = {
 
   light: PropTypes.bool,
 
-  onChange: PropTypes.func,
+  useAutoPositioning: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -359,8 +391,8 @@ const defaultProps = {
   testId: 'flyout-menu',
   direction: FlyoutMenuDirection.BottomStart,
   menuOffset: {
-    left: 0,
     top: 0,
+    left: 0,
   },
   i18n: {
     cancelButtonText: 'Cancel',
@@ -370,7 +402,7 @@ const defaultProps = {
   onApply: null,
   disabled: false,
   light: true,
-  onChange: () => {},
+  useAutoPositioning: false,
 };
 
 FlyoutMenu.propTypes = propTypes;
