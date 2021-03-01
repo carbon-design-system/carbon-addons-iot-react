@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.56](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.55...v2.143.0-next.56) (2021-03-01)
+
+
+### Bug Fixes
+
+* **cardeditform:** need to pass title to dropdowns so it shows full string on hover ([8867df9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8867df9e7ef33e532aff2485c3b25ebb6014967e))
+* **cardtoolbar:** need to add tooltips to the clone and delete ([72a23ef](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/72a23efbb321a9dc18774d3189139c19d31a25a4))
+
+
+
+
+
+# [2.143.0-next.55](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.54...v2.143.0-next.55) (2021-03-01)
+
+
+### Bug Fixes
+
+* **suiteheader:** props to use hamburger to trigger custom side nav ([a129635](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a1296359091fba97ba7a1e3b54b40d78b28457ba))
+
+
+### Features
+
+* **suiteheader:** adding a test for SuiteHeader to increase coverage. ([b4f46a8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b4f46a8379546a199dfa768584239df9496b6def))
+* **suiteheader:** converting a test from enzyme to react testing library, per feedback. ([96b53a1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/96b53a1bda6b40b500fc179f4a26b03aa3798f67))
+* **suiteheader:** fixing a lint error, updating snaps and storyshots. ([9ff4a1b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ff4a1b0d70ef870bbececf3ee5f862b8bd69d91))
+* **suiteheader:** fixing another lint error ([dfe819b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dfe819b89fee617df7fc42286e018e2327713478))
+* **SuiteHeader:** fixing a lint error ([2e43b66](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2e43b6683bac2aef65841ec32d12f34eb21c03b6))
+
+
+
+
+
+# [2.143.0-next.54](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.53...v2.143.0-next.54) (2021-03-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.143.0-next.53](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.52...v2.143.0-next.53) (2021-02-26)
+
+
+### Bug Fixes
+
+* **fileuploader:** do not need the uploader fix locally ([314b309](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/314b3091177474d0d3085d5a0820091eaf1f0c36))
+* **index:** missed exporting a few components ([d5a2f11](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d5a2f115106d4e99d4e104a9ef5cb11d4592441e))
+* **index:** missed exporting a few components ([54e5b5c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/54e5b5c05da43d3e85b3150f358ffd9eadcbf429))
+* **snapshots:** updated snapshots after running yarn install ([f7c7913](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f7c79138370cbe925b100c7516b495d6083e0d1e))
+
+
+
+
+
+# [2.143.0-next.52](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.51...v2.143.0-next.52) (2021-02-25)
+
+
+### Bug Fixes
+
+* **hierarchylist:** default hasdeselection to true in story ([ae7ec05](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ae7ec050438c4d1c2ab564631890ea6e86d0a509))
+* **hierarchylist:** merge and pass i18n ([989e5c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/989e5c5dc1da0c7806ae77e6aac4c7016f75689a))
+* **hierarchylist:** update hasdeselection prop to default true ([f44ecc1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f44ecc180a6a2ce6cc0a237bb0f51ecbe8ddf74d))
+* **list:** side padding should be 16px ([314185d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/314185dce3c25d0c8fe5c8afafff70fd11010e5d))
+
+
+
+
+
 # [2.143.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.50...v2.143.0-next.51) (2021-02-24)
 
 

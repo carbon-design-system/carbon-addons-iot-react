@@ -6660,7 +6660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -6689,7 +6689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -8020,7 +8020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -8049,7 +8049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>

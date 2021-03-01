@@ -4419,6 +4419,7 @@ Map {
       "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
+      "hasDeselection": true,
       "hasMultiSelect": false,
       "hasPagination": true,
       "hasSearch": false,
@@ -4482,6 +4483,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "hasDeselection": Object {
+        "type": "bool",
       },
       "hasMultiSelect": Object {
         "type": "bool",
@@ -7118,6 +7122,7 @@ Map {
       "customApplications": Array [],
       "customHelpLinks": Array [],
       "customProfileLinks": Array [],
+      "hasSideNav": false,
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -7147,6 +7152,7 @@ Map {
       },
       "isAdminView": false,
       "onRouteChange": [Function],
+      "onSideNavToggled": [Function],
       "routes": null,
       "sideNavProps": null,
       "surveyData": null,
@@ -7318,6 +7324,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "hasSideNav": Object {
+        "type": "bool",
+      },
       "i18n": Object {
         "args": Array [
           Object {
@@ -7418,6 +7427,9 @@ Map {
         "type": "bool",
       },
       "onRouteChange": Object {
+        "type": "func",
+      },
+      "onSideNavToggled": Object {
         "type": "func",
       },
       "routes": Object {

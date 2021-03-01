@@ -773,6 +773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <div
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  title="Select a time range"
                 >
                   <label
                     className="bx--label"
@@ -1380,6 +1381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <div
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  title="Select a time range"
                 >
                   <label
                     className="bx--label"
@@ -1987,6 +1989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <div
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  title="Select a time range"
                 >
                   <label
                     className="bx--label"
@@ -2285,6 +2288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <div
                     className="bx--dropdown__wrapper bx--list-box__wrapper"
+                    title="Select a color"
                   >
                     <label
                       className="bx--label"
@@ -2818,6 +2822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <div
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  title="Select a time range"
                 >
                   <label
                     className="bx--label"
@@ -3853,6 +3858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <div
                     className="bx--dropdown__wrapper bx--list-box__wrapper"
+                    title="Select a time range"
                   >
                     <label
                       className="bx--label"
