@@ -77,7 +77,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
         <div
-          className="bx--modal-footer"
+          className="bx--modal-footer bx--btn-set"
         >
           <button
             className="bx--btn bx--btn--secondary"

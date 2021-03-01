@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.53](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.52...v2.143.0-next.53) (2021-02-26)
+
+
+### Bug Fixes
+
+* **fileuploader:** do not need the uploader fix locally ([314b309](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/314b3091177474d0d3085d5a0820091eaf1f0c36))
+* **index:** missed exporting a few components ([d5a2f11](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d5a2f115106d4e99d4e104a9ef5cb11d4592441e))
+* **index:** missed exporting a few components ([54e5b5c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/54e5b5c05da43d3e85b3150f358ffd9eadcbf429))
+* **snapshots:** updated snapshots after running yarn install ([f7c7913](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f7c79138370cbe925b100c7516b495d6083e0d1e))
+
+
+
+
+
+# [2.143.0-next.52](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.51...v2.143.0-next.52) (2021-02-25)
+
+
+### Bug Fixes
+
+* **hierarchylist:** default hasdeselection to true in story ([ae7ec05](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ae7ec050438c4d1c2ab564631890ea6e86d0a509))
+* **hierarchylist:** merge and pass i18n ([989e5c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/989e5c5dc1da0c7806ae77e6aac4c7016f75689a))
+* **hierarchylist:** update hasdeselection prop to default true ([f44ecc1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f44ecc180a6a2ce6cc0a237bb0f51ecbe8ddf74d))
+* **list:** side padding should be 16px ([314185d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/314185dce3c25d0c8fe5c8afafff70fd11010e5d))
+
+
+
+
+
 # [2.143.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.50...v2.143.0-next.51) (2021-02-24)
 
 

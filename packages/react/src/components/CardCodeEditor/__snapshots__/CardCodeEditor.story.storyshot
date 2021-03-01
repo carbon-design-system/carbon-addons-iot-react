@@ -76,7 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           className="bx--modal-content"
         >
           <button
-            className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+            className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -192,7 +192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -327,7 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           className="bx--modal-content"
         >
           <button
-            className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+            className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -443,7 +443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
