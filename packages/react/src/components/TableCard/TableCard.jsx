@@ -641,7 +641,7 @@ const TableCard = ({
     >
       {({ height }) => {
         const numberOfRowsPerPage = Math.max(
-          !isNil(height) ? Math.floor((height - 48) / 48) : 10,
+          !isNil(height) && height !== 0 ? Math.floor((height - 48) / 48) : 10,
           1 // at least pass 1 row per page
         );
         return (
