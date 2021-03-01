@@ -51,7 +51,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -81,7 +81,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -146,7 +146,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -1282,7 +1281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1312,7 +1311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -1377,7 +1376,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -1654,7 +1652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1684,7 +1682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -1749,7 +1747,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -2290,7 +2287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2320,7 +2317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -2385,7 +2382,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -2452,6 +2448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -2534,6 +2531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -2616,6 +2614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -2698,6 +2697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -2780,6 +2780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -2926,7 +2927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2956,7 +2957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -3021,7 +3022,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -3339,7 +3339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -3369,7 +3369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -3434,7 +3434,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -3778,7 +3777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -3808,7 +3807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -3873,7 +3872,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -4384,7 +4382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -4414,7 +4412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -4479,7 +4477,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -5250,7 +5247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -5280,7 +5277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -5345,7 +5342,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -5412,6 +5408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5488,6 +5485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5564,6 +5562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5640,6 +5639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5716,6 +5716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
+                        tabIndex={0}
                         type="button"
                       >
                         <svg
@@ -5856,7 +5857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -5886,7 +5887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -5951,7 +5952,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -6287,7 +6287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -6317,7 +6317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -6382,7 +6382,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -7308,7 +7307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -7338,7 +7337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -7403,7 +7402,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"
@@ -7630,7 +7628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 />
               </svg>
               <button
-                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -7660,7 +7658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -7725,7 +7723,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                onKeyDown={[Function]}
                 placeholder="Enter a search"
                 role="searchbox"
                 type="text"

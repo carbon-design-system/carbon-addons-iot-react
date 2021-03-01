@@ -25,7 +25,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <button
           aria-label="Helpful description"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
           data-testid="Button"
           disabled={false}
           onClick={[Function]}
@@ -67,7 +67,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             id="test-trigger-id-2"
             onBlur={[Function]}
             onClick={[Function]}
-            onContextMenu={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onMouseOut={[Function]}
@@ -86,13 +85,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               Focus sentinel
             </span>
             <div
-              className="bx--tooltip bx--tooltip--shown bx--tooltip--bottom bx--tooltip--align-center iot--flyout-menu--body iot--flyout-menu--body__bottom-start iot--flyout-menu--body__light iot--flyout-menu--body__open"
+              className="bx--tooltip bx--tooltip--shown iot--flyout-menu--body iot--flyout-menu--body__bottom-start iot--flyout-menu--body__light iot--flyout-menu--body__open"
               data-floating-menu-direction="bottom"
               data-testid="flyout-menu"
               disabled={false}
               id="flyout-tooltip"
               onBlur={[Function]}
-              onChange={[Function]}
               onContextMenu={[Function]}
               onFocus={[Function]}
               onMouseOut={[Function]}
@@ -117,6 +115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 aria-labelledby="test-trigger-id-2"
                 className="bx--tooltip__content"
                 role="dialog"
+                tabIndex="-1"
               >
                 <div>
                   <div
@@ -235,7 +234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <button
           aria-label="Helpful description"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
           data-testid="Button"
           disabled={false}
           onClick={[Function]}
@@ -276,7 +275,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             id="test-trigger-id-2"
             onBlur={[Function]}
             onClick={[Function]}
-            onContextMenu={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onMouseOut={[Function]}
@@ -339,7 +337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <button
           aria-label="Helpful description"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
           data-testid="Button"
           disabled={false}
           onClick={[Function]}
@@ -380,7 +378,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             id="test-trigger-id-2"
             onBlur={[Function]}
             onClick={[Function]}
-            onContextMenu={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onMouseOut={[Function]}
