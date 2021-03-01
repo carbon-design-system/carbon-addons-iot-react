@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.58](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.57...v2.143.0-next.58) (2021-03-01)
+
+
+### Bug Fixes
+
+* **tablecard:** at least pass 1 as pageSize ([ddb231c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ddb231ca136f1f88547bb2e491cf121980f75112))
+* **tablecard:** need to regenerate the table card if the number of columns change ([f38076d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f38076d3a9fdfb40834e73fb17f29e94e9fabe9d))
+* **TableCard:** handle 0 heights like testcases ([ef78503](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ef78503f5a151cbab8c5efa8852716d4ec0e6e38))
+
+
+
+
+
 # [2.143.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.56...v2.143.0-next.57) (2021-03-01)
 
 
