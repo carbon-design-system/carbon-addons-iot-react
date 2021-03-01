@@ -640,7 +640,10 @@ const TableCard = ({
       {...others}
     >
       {({ height }) => {
-        const numberOfRowsPerPage = Math.max(!isNil(height) && Math.floor((height - 48) / 48), 10);
+        const numberOfRowsPerPage = Math.max(
+          !isNil(height) ? Math.floor((height - 48) / 48) : 10,
+          1 // at least pass 1 row per page
+        );
         return (
           <StyledStatefulTable
             columns={columnsToRender}
