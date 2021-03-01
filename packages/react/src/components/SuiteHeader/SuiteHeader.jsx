@@ -91,10 +91,12 @@ const defaultProps = {
   userDisplayName: null,
   username: null,
   isAdminView: false,
+  hasSideNav: false,
   routes: null,
   applications: null,
   sideNavProps: null,
   surveyData: null,
+  onSideNavToggled: async () => Promise.resolve(true),
   onRouteChange: async () => Promise.resolve(true),
   i18n: SuiteHeaderI18N.en,
   customActionItems: [],
@@ -116,6 +118,8 @@ const propTypes = {
   username: PropTypes.string,
   /** If true, renders the admin button in Header as selected */
   isAdminView: PropTypes.bool,
+  /** If true, will render the hamburger icon even if no sideNavProps are provided */
+  hasSideNav: PropTypes.bool,
   /** URLs for various routes on Header buttons and submenus */
   routes: PropTypes.shape(SuiteHeaderRoutePropTypes),
   /** Applications to render in AppSwitcher */
@@ -124,6 +128,8 @@ const propTypes = {
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** If surveyData is present, show a ToastNotification */
   surveyData: PropTypes.shape(SuiteHeaderSurveyDataPropTypes),
+  /** Function called when side nav button is toggled */
+  onSideNavToggled: PropTypes.func,
   /** Function called before any route change. Returns a Promise<Boolean>. False means the redirect will not happen. This function should never throw an error. */
   onRouteChange: PropTypes.func,
   /** I18N strings */
@@ -144,11 +150,13 @@ const SuiteHeader = ({
   appName,
   userDisplayName,
   username,
+  hasSideNav,
   isAdminView,
   routes,
   applications,
   sideNavProps,
   surveyData,
+  onSideNavToggled,
   onRouteChange,
   i18n,
   customActionItems,
@@ -278,8 +286,11 @@ const SuiteHeader = ({
                 .filter((i) => i)
                 .join(' ')}
               url={navigatorRoute}
-              hasSideNav={sideNavProps !== null}
-              onClickSideNavExpand={onClickSideNavExpand}
+              hasSideNav={hasSideNav || sideNavProps !== null}
+              onClickSideNavExpand={(evt) => {
+                onSideNavToggled(evt);
+                onClickSideNavExpand(evt);
+              }}
               headerPanel={{
                 content: React.forwardRef(() => (
                   <SuiteHeaderAppSwitcher
