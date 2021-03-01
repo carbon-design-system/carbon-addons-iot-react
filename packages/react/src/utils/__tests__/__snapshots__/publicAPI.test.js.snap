@@ -18403,6 +18403,7 @@ Map {
       "tooltipClassName": "",
       "tooltipId": "flyout-tooltip",
       "triggerId": "flyout-trigger-id",
+      "useAutoPositioning": false,
     },
     "propTypes": Object {
       "buttonSize": Object {
@@ -18514,6 +18515,9 @@ Map {
       },
       "triggerId": Object {
         "type": "string",
+      },
+      "useAutoPositioning": Object {
+        "type": "bool",
       },
     },
   },

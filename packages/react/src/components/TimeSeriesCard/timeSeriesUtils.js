@@ -74,7 +74,7 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
  * @param {*} columns
  */
 export const generateTableSampleValues = (id, columns) => {
-  const sampleValues = Array(10).fill(1);
+  const sampleValues = Array(100).fill(1);
   return sampleValues.map((item, index) => ({
     id: `sample-values-${id}-${index}`,
     values: columns.reduce((obj, column) => {
