@@ -403,9 +403,11 @@ export const SummaryDashboardWithInitialValue = () => (
       dataItems={mockDataItems.map((item) => ({ ...item, grain: 'Weekly' }))}
       availableDimensions={{
         firmware: ['1.2', '1.3'],
+        axes: [1, 2, 3],
+        deviceid: ['73004', '73000', '73001'],
       }}
+      isSummaryDashboard
       initialValue={{
-        isSummaryDashboard: true,
         cards: [
           {
             id: 'Table',

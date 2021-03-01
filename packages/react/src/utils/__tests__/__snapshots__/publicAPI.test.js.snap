@@ -8781,6 +8781,7 @@ Map {
       "isLoading": false,
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
+      "isSummaryDashboard": false,
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -9295,9 +9296,6 @@ Map {
             "cards": Object {
               "type": "array",
             },
-            "isSummaryDashboard": Object {
-              "type": "bool",
-            },
             "layouts": Object {
               "type": "object",
             },
@@ -9315,6 +9313,9 @@ Map {
         "type": "bool",
       },
       "isSubmitLoading": Object {
+        "type": "bool",
+      },
+      "isSummaryDashboard": Object {
         "type": "bool",
       },
       "notification": Object {
