@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import PropTypes from 'prop-types';
 import { InlineNotification, SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
+import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
 import { DASHBOARD_EDITOR_CARD_TYPES, CARD_TYPES } from '../../constants/LayoutConstants';
@@ -27,8 +28,8 @@ const propTypes = {
   initialValue: PropTypes.shape({
     cards: PropTypes.array,
     layouts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    isSummaryDashboard: PropTypes.bool,
   }),
+  isSummaryDashboard: PropTypes.bool,
   /** supported card types */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
   /** if enabled, renders a ContentSwitcher with IconSwitches that allow for manually changing the breakpoint,
@@ -273,6 +274,7 @@ const defaultProps = {
     cards: [],
     layouts: {},
   },
+  isSummaryDashboard: false,
   breakpointSwitcher: null,
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   renderHeader: null,
@@ -366,12 +368,21 @@ const DashboardEditor = ({
   onValidateCardJson,
   onValidateUploadedImage,
   availableDimensions,
+  isSummaryDashboard,
   isLoading,
   i18n,
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
 }) => {
+  React.useEffect(() => {
+    if (__DEV__) {
+      warning(
+        false,
+        'The `DashboardEditor` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
+      );
+    }
+  }, []);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   // Need to keep track of whether the image gallery is open or not
   const [isImageGalleryModalOpen, setIsImageGalleryModalOpen] = useState(false);
@@ -681,7 +692,7 @@ const DashboardEditor = ({
         >
           <CardEditor
             cardConfig={dashboardJson.cards.find((card) => card.id === selectedCardId)}
-            isSummaryDashboard={dashboardJson.isSummaryDashboard}
+            isSummaryDashboard={isSummaryDashboard}
             onShowGallery={() => setSelectedCardId(null)}
             onChange={handleOnCardChange}
             getValidDataItems={getValidDataItems}

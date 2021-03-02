@@ -101,6 +101,7 @@ const BarChartDataSeriesContent = ({
           id={`${cardConfig.id}_group-by`}
           direction="bottom"
           label={mergedI18n.selectGroupBy}
+          title={mergedI18n.selectGroupBy}
           light
           translateWithId={translateWithId}
           titleText={mergedI18n.groupBy}
@@ -154,6 +155,7 @@ const BarChartDataSeriesContent = ({
             id={`${cardConfig.id}_sub-group-by`}
             direction="bottom"
             label={mergedI18n.selectCategory}
+            title={mergedI18n.selectCategory}
             light
             translateWithId={translateWithId}
             titleText={mergedI18n.subGroup}

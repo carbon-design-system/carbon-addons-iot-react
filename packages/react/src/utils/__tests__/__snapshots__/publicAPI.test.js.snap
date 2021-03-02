@@ -4419,6 +4419,7 @@ Map {
       "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
+      "hasDeselection": true,
       "hasMultiSelect": false,
       "hasPagination": true,
       "hasSearch": false,
@@ -4482,6 +4483,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "hasDeselection": Object {
+        "type": "bool",
       },
       "hasMultiSelect": Object {
         "type": "bool",
@@ -5706,6 +5710,7 @@ Map {
       ],
       "renderPresetTooltipText": null,
       "showRelativeOption": true,
+      "testId": "date-time-picker",
     },
     "propTypes": Object {
       "dateTimeMask": Object {
@@ -6004,6 +6009,9 @@ Map {
       },
       "showRelativeOption": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -7118,6 +7126,7 @@ Map {
       "customApplications": Array [],
       "customHelpLinks": Array [],
       "customProfileLinks": Array [],
+      "hasSideNav": false,
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -7147,6 +7156,7 @@ Map {
       },
       "isAdminView": false,
       "onRouteChange": [Function],
+      "onSideNavToggled": [Function],
       "routes": null,
       "sideNavProps": null,
       "surveyData": null,
@@ -7318,6 +7328,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "hasSideNav": Object {
+        "type": "bool",
+      },
       "i18n": Object {
         "args": Array [
           Object {
@@ -7418,6 +7431,9 @@ Map {
         "type": "bool",
       },
       "onRouteChange": Object {
+        "type": "func",
+      },
+      "onSideNavToggled": Object {
         "type": "func",
       },
       "routes": Object {
@@ -8769,6 +8785,7 @@ Map {
       "isLoading": false,
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
+      "isSummaryDashboard": false,
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -9283,9 +9300,6 @@ Map {
             "cards": Object {
               "type": "array",
             },
-            "isSummaryDashboard": Object {
-              "type": "bool",
-            },
             "layouts": Object {
               "type": "object",
             },
@@ -9303,6 +9317,9 @@ Map {
         "type": "bool",
       },
       "isSubmitLoading": Object {
+        "type": "bool",
+      },
+      "isSummaryDashboard": Object {
         "type": "bool",
       },
       "notification": Object {
@@ -18197,7 +18214,9 @@ Map {
       "wrapperClassName": null,
     },
     "propTypes": Object {
-      "addToList": [Function],
+      "addToList": Object {
+        "type": "bool",
+      },
       "ariaLabel": Object {
         "type": "string",
       },
@@ -18259,7 +18278,9 @@ Map {
       "editOptionText": Object {
         "type": "string",
       },
-      "hasMultiValue": [Function],
+      "hasMultiValue": Object {
+        "type": "bool",
+      },
       "helperText": Object {
         "type": "string",
       },
@@ -18390,6 +18411,7 @@ Map {
       "tooltipClassName": "",
       "tooltipId": "flyout-tooltip",
       "triggerId": "flyout-trigger-id",
+      "useAutoPositioning": false,
     },
     "propTypes": Object {
       "buttonSize": Object {
@@ -18501,6 +18523,9 @@ Map {
       },
       "triggerId": Object {
         "type": "string",
+      },
+      "useAutoPositioning": Object {
+        "type": "bool",
       },
     },
   },

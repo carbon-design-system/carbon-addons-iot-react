@@ -144,8 +144,6 @@ const baseClass = `${iotPrefix}--rule-builder-wrap`;
 const RuleBuilder = ({
   className,
   defaultTitleText,
-  // metaText,
-  // id,
   onSave,
   onCancel,
   actionBar,
@@ -437,79 +435,6 @@ const RuleBuilder = ({
                       },
                     ]}
                   />
-
-                  {/* <div>
-                    <strong id="add-editors-label">{mergedI18n.editorAccessLabel}</strong>
-                    <div>
-                      {editUsers.length > 0 ? (
-                        <>
-                          <Button
-                            aria-labelledby="edit-only-access-label"
-                            renderIcon={Search24}
-                            kind="ghost"
-                            iconDescription="Edit users"
-                            hasIconOnly
-                            onClick={handleAddAccess('edit')}
-                          />
-                          <Button
-                            aria-labelledby="edit-only-access-label"
-                            hasIconOnly
-                            iconDescription="Edit users"
-                            renderIcon={Edit24}
-                            kind="ghost"
-                            onClick={handleAddAccess('edit')}
-                          />
-                        </>
-                      ) : null}
-                      <Button
-                        aria-labelledby="add-editors-label"
-                        renderIcon={Add24}
-                        id="add-editors-button"
-                        kind="ghost"
-                        testID="rule-builder-add-edit-users"
-                        onClick={handleAddAccess('edit')}
-                      >
-                        {mergedI18n.addUsersButtonLabel}
-                      </Button>
-                    </div>
-                  </div>
-                  <div>
-                    <strong id="read-only-access-label">{mergedI18n.readOnlyAccessLabel}</strong>
-                    <div>
-                      {readUsers.length > 0 ? (
-                        <>
-                          <Button
-                            aria-labelledby="read-only-access-label"
-                            renderIcon={Search24}
-                            kind="ghost"
-                            iconDescription="Edit users"
-                            hasIconOnly
-                            onClick={handleAddAccess('read')}
-                          />
-                          <Button
-                            aria-labelledby="read-only-access-label"
-                            hasIconOnly
-                            renderIcon={Edit24}
-                            iconDescription="Edit users"
-                            kind="ghost"
-                            onClick={handleAddAccess('read')}
-                          />
-                        </>
-                      ) : null}
-                      <Button
-                        aria-labelledby="read-only-access-label"
-                        renderIcon={Add24}
-                        id="add-read-users"
-                        kind="ghost"
-                        testID="rule-builder-add-read-users"
-                        onClick={handleAddAccess('read')}
-                      >
-                        {mergedI18n.addUsersButtonLabel}
-                      </Button>
-                    </div>
-                  </div>
-                  <UserList users={editUsers} i18n={mergedI18n} />
-                  <UserList users={readUsers} i18n={mergedI18n} /> */}
                 </div>
               </AccordionItem>
             </Accordion>
