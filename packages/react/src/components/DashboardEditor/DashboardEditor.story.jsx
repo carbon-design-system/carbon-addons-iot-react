@@ -403,6 +403,7 @@ export const SummaryDashboardWithInitialValue = () => (
       dataItems={mockDataItems.map((item) => ({ ...item, grain: 'Weekly' }))}
       availableDimensions={{
         firmware: ['1.2', '1.3'],
+        manufacturer: ['Rentech', 'Manu Inc'],
       }}
       initialValue={{
         isSummaryDashboard: true,
