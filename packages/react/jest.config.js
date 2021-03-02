@@ -97,6 +97,7 @@ module.exports = {
     './src/components/Table/TableHead/ColumnHeaderSelect/ColumnHeaderSelect.jsx': {
       branches: 75,
     },
+    './src/components/Page/PageHero.jsx': { branches: 77 },
     './src/components/Page/PageTitle.jsx': { branches: 75 },
     './src/components/ImageCard/ImageCard.jsx': { branches: 71 },
     './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
