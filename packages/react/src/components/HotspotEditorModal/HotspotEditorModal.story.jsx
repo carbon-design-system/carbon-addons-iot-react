@@ -5,9 +5,16 @@ import { gray50, red50, green50, blue50 } from '@carbon/colors';
 import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
 
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import landscape from './landscape.jpg';
 import HotspotEditorModal from './HotspotEditorModal';
+
+
+export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
+Experimental.story = {
+  name: experimentalStoryTitle,
+};
 
 const selectableIcons = [
   {
@@ -83,7 +90,7 @@ const getDemoHotspots = (reqObj) => {
 };
 
 export default {
-  title: 'Watson IoT Experimental/HotSpotEditorModal ☢️',
+  title: 'Watson IoT Experimental/☢️ HotSpotEditorModal',
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorModal,

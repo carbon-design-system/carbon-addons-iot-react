@@ -6,8 +6,14 @@ import { Basketball32, Code24 } from '@carbon/icons-react';
 
 import munichBuilding from '../ImageCard/MunichBuilding.png';
 import { CARD_SIZES, DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
+import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import CardEditor from './CardEditor';
+
+export const Experimental = () => <StoryNotice componentName="CardEditor" experimental />;
+Experimental.story = {
+  name: experimentalStoryTitle,
+};
 
 const CardEditorInteractive = () => {
   const defaultCard = {
@@ -46,7 +52,7 @@ const CardEditorInteractive = () => {
 };
 
 export default {
-  title: 'Watson IoT Experimental/CardEditor ☢️',
+  title: 'Watson IoT Experimental/☢️ CardEditor',
   decorators: [withKnobs],
 
   parameters: {

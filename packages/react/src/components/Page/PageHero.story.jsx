@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
-import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
+import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 
 import PageHero from './PageHero';
 
@@ -15,12 +15,12 @@ const commonPageHeroProps = {
 };
 
 export default {
-  title: 'Watson IoT/PageHero 🚫',
+  title: 'Watson IoT/🚫 PageHero',
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 
 export const Deprecated = () => (
-  <DeprecationNotice deprecatedComponentName="PageHero" replacementComponentName="Hero" />
+  <StoryNotice componentName="PageHero" replacementComponentName="Hero" />
 );
 Deprecated.story = {
   name: deprecatedStoryTitle,
