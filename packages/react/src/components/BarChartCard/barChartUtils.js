@@ -220,7 +220,7 @@ export const formatChartData = (
     series = series.map((item) => omit(item, 'label'));
   }
 
-  let data = !isNil(values) ? values : [];
+  let data =  values ?? [];
   if (!isNil(values) && !isEmpty(series)) {
     data = [];
     // grouped or stacked
