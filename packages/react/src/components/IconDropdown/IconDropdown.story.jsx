@@ -16,11 +16,7 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 
 import IconDropdown from './IconDropdown';
 
-
-
-export const Experimental = () => (
-  <StoryNotice componentName="IconDropdown" experimental/>
-);
+export const Experimental = () => <StoryNotice componentName="IconDropdown" experimental />;
 Experimental.story = {
   name: experimentalStoryTitle,
 };

@@ -24,10 +24,10 @@ const StoryNotice = ({ componentName, replacementComponentName, experimental }) 
   const noticeTitle = experimental ? 'Experimental Component Notice' : 'Deprecation Notice';
   const noticeSubTitle = experimental ? (
     <span>
-      {componentName} is an{' '}
+      {componentName} is an
       <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md">
         experimental component
-      </a>{' '}
+      </a>
       and may have changing APIs with no major version bump and/or insufficient test coverage. Use
       of this component in production is discouraged.
     </span>

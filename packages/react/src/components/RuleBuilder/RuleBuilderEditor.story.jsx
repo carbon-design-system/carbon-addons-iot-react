@@ -7,11 +7,7 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 
 import RuleBuilderEditor from './RuleBuilderEditor';
 
-
-
-export const Experimental = () => (
-  <StoryNotice componentName="RuleBuilder" experimental/>
-);
+export const Experimental = () => <StoryNotice componentName="RuleBuilder" experimental />;
 Experimental.story = {
   name: experimentalStoryTitle,
 };

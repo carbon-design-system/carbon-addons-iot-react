@@ -10,7 +10,6 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 import landscape from './landscape.jpg';
 import HotspotEditorModal from './HotspotEditorModal';
 
-
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
 Experimental.story = {
   name: experimentalStoryTitle,

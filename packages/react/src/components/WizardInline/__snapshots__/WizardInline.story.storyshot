@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline 🚫 Stateful example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Stateful example 1`] = `
 <div
   className="storybook-container"
 >
@@ -427,7 +427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline 🚫 Static 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static 1`] = `
 <div
   className="storybook-container"
 >
@@ -828,7 +828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline 🚫 Static with Footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static with Footer 1`] = `
 <div
   className="storybook-container"
 >
@@ -1228,7 +1228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline 🚫 Static with Sidebar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static with Sidebar 1`] = `
 <div
   className="storybook-container"
 >
@@ -1641,7 +1641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline 🚫 with breadcrumbs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline with breadcrumbs 1`] = `
 <div
   className="storybook-container"
 >
@@ -2042,7 +2042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline 🚫 with error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline with error 1`] = `
 <div
   className="storybook-container"
 >
@@ -2518,7 +2518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline 🚫 ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >
