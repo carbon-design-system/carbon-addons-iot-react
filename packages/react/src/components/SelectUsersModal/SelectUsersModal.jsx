@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight16, ArrowLeft16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
@@ -56,6 +56,7 @@ const defaultProps = {
     addUser: 'Add',
     removeUser: 'Remove',
     recent: 'Recent',
+    primaryButtonLabel: 'OK',
   },
   isOpen: false,
   onSubmit: null,
@@ -125,16 +126,26 @@ const mapUsers = (
     };
   });
 
+const flattenUsers = (results, user) => {
+  return user.children && user.children.length > 0
+    ? user.children.reduce(flattenUsers, results)
+    : results.concat(user);
+};
+
 const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUsers, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   const [selectedUsers, setSelectedUsers] = useState(initialSelectedUsers);
 
+  const canSaveRef = useRef(false);
+
   const handleRemove = (row) => {
+    canSaveRef.current = true;
     setSelectedUsers(selectedUsers.filter((s) => s !== row));
   };
 
   const handleAdd = (row) => {
+    canSaveRef.current = true;
     setSelectedUsers([row].concat(...selectedUsers));
   };
 
@@ -206,14 +217,8 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
     });
   };
 
-  const flattenUsers = useCallback((results, user) => {
-    return user.children && user.children.length > 0
-      ? user.children.reduce(flattenUsers, results)
-      : results.concat(user);
-  }, users);
-
   const usersList = displayAllUsersList(users, selectedUsers);
-  const userCount = usersList.reduce(flattenUsers, []).length;
+  const userCount = useMemo(() => usersList.reduce(flattenUsers, []).length, [usersList]);
   const selectedList = displaySelectedUsersList(selectedUsers);
 
   return (
@@ -221,15 +226,23 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
       <ComposedModal
         isLarge
         footer={{
-          isPrimaryButtonDisabled: selectedUsers.length === 0,
+          isPrimaryButtonDisabled: !canSaveRef.current,
+          primaryButtonLabel: i18n.primaryButtonLabel,
         }}
         header={{
           label: mergedI18n.modalHeaderLabel,
           title: mergedI18n.modalHeaderTitle,
         }}
         open={isOpen}
-        onSubmit={onSubmit}
-        onClose={onClose}
+        onSubmit={() => {
+          onSubmit(selectedUsers);
+          canSaveRef.current = false;
+        }}
+        onClose={(e) => {
+          setSelectedUsers(initialSelectedUsers);
+          onClose(e);
+          canSaveRef.current = false;
+        }}
       >
         <div className={`${iotPrefix}--select-users-modal-content`}>
           <div

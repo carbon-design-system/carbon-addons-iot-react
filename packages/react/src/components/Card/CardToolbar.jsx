@@ -13,7 +13,7 @@ import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
 const { iotPrefix, prefix } = settings;
 
-const ToolbarSVGWrapper = (props) => {
+export const ToolbarSVGWrapper = (props) => {
   return (
     <Button
       kind="ghost"

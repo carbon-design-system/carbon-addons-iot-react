@@ -12,13 +12,13 @@ Experimental.story = {
   name: experimentalStoryTitle,
 };
 
-const columns = [
+export const columns = [
   { id: 'column1', name: 'Column 1' },
   { id: 'column2', name: 'Column 2' },
   { id: 'column3', name: 'Column 3' },
 ];
 
-const TEST_TREE_DATA = {
+export const TEST_TREE_DATA = {
   id: '14p5ho3pcu',
   groupLogic: 'ALL',
   rules: [
@@ -144,12 +144,18 @@ export const RuleBuilderCustomOperandsAndFieldRenderer = () => (
         ],
         renderField: ({ value, onChange }) => (
           <DatePicker
+            light
             onChange={onChange}
             defaultValue={value}
             dateFormat="m/d/Y"
             datePickerType="single"
           >
-            <DatePickerInput id="date-picker-default-id" placeholder="mm/dd/yyyy" labelText="" />
+            <DatePickerInput
+              id="date-picker-default-id"
+              placeholder="mm/dd/yyyy"
+              labelText=""
+              light
+            />
           </DatePicker>
         ),
       },
@@ -158,6 +164,7 @@ export const RuleBuilderCustomOperandsAndFieldRenderer = () => (
         name: 'Integer',
         renderField: ({ value, onChange }) => (
           <NumberInput
+            light
             id="column2-input"
             defaultValue={value}
             onChange={(e) => onChange(e.imaginaryTarget.value)}
@@ -169,7 +176,12 @@ export const RuleBuilderCustomOperandsAndFieldRenderer = () => (
         name: 'HTML Input',
         operands: [{ id: 'includes', name: 'Includes' }],
         renderField: ({ value, onChange }) => (
-          <input type="text" defaultValue={value} onChange={(e) => onChange(e.target.value)} />
+          <input
+            className="bx--text-input bx--text__input bx--text-input--light"
+            type="text"
+            defaultValue={value}
+            onChange={(e) => onChange(e.target.value)}
+          />
         ),
       },
     ]}
@@ -188,4 +200,5 @@ export default {
   parameters: {
     component: RuleBuilderEditor,
   },
+  excludeStories: ['columns', 'TEST_TREE_DATA'],
 };
