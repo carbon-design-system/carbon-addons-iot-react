@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.60](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.59...v2.143.0-next.60) (2021-03-02)
+
+
+### Bug Fixes
+
+* **barChartUtils:** pass back empty data instead of null for chartData ([3e5c403](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3e5c403c1699b34e7c18d632622712e719993fdf))
+* **barChartUtils:** prettify file ([3e30f40](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3e30f404754f697236afb7a39ab29824675769da))
+* **dashboardeditor:** data filter was not showing ([6020f3b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6020f3b89442eccd6340f9f07aee5bfb5ae09a2c))
+
+
+
+
+
 # [2.143.0-next.59](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.58...v2.143.0-next.59) (2021-03-02)
 
 
