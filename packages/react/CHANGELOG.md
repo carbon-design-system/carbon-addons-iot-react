@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.62](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.61...v2.143.0-next.62) (2021-03-02)
+
+
+### Bug Fixes
+
+* **rulebuilder:** pass fake date in story to prevent snapshot failures ([1adb491](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1adb49196ac42f35882673c378951360a10e246c))
+
+
+### Features
+
+* **rule-builder-page:** RuleBuilder page w/ SelectUsersModal integrated ([0f43800](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0f43800d124cbcad4c21e331b88ecbc0322e6678))
+* **rulebuilder:** add onChange ([1c57a0d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1c57a0d9cde045ed2a6573845804135280dca847))
+* **rulebuilder:** add props to story ([aae6642](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aae66426690195cd37418e5970d19a48042126e0))
+* **rulebuilder:** change structure to allow more flexiblity ([ea7ccf0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ea7ccf03bca5d9f7b0ca9b25949efc5960291954))
+* **rulebuilder:** pull in the rule editor ([eba0b56](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eba0b56e68e160c02bda02390e76feb4a6fb46ff))
+* **rulebuilder:** refactor props ([ec2bab7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ec2bab710f01b71dd9217529982057f65809b35d))
+* **rulebuilder:** remove error from not importing component ([a1c84d1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a1c84d1154f116e43c2024f33593cb410eb792ab))
+* **rulebuilder:** replace user list with StatefulTable ([4a0e807](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4a0e8073520d469da2d2a47c43c9738b43113443))
+
+
+
+
+
 # [2.143.0-next.61](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.60...v2.143.0-next.61) (2021-03-02)
 
 
