@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.61](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.60...v2.143.0-next.61) (2021-03-02)
+
+
+### Features
+
+* **experimental:** remove components from experimental that don't meet requirements ([4f7ba84](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4f7ba84b50dfdfad1fa8a7dcde03b10c47e4c780))
+* **repo:** add legend for new story icons on welcome ([164e85b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/164e85bf001569485f4ea076fe55def629b13d02))
+* **repo:** add sort to ignore story emojis for storybook ([4754b30](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4754b307099e9ea77da7645afda41d27cc5f1797))
+* **repo:** added icons to different story types ([b0f66b6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b0f66b6e41540b261db366e7240c85651cfc6ea6))
+* **repo:** added notification to experimental stories ([a5b8c2e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a5b8c2ec3c22290fe992a31578c827027f4ab66c))
+* **repo:** added notification to experimental stories ([323f89c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/323f89ccba37e5c81863131766e4d4d7598c9a21))
+
+
+
+
+
 # [2.143.0-next.60](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.59...v2.143.0-next.60) (2021-03-02)
 
 

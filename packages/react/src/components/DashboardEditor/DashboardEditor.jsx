@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import PropTypes from 'prop-types';
 import { InlineNotification, SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
+import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
 import { DASHBOARD_EDITOR_CARD_TYPES, CARD_TYPES } from '../../constants/LayoutConstants';
@@ -374,6 +375,14 @@ const DashboardEditor = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
 }) => {
+  React.useEffect(() => {
+    if (__DEV__) {
+      warning(
+        false,
+        'The `DashboardEditor` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
+      );
+    }
+  }, []);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   // Need to keep track of whether the image gallery is open or not
   const [isImageGalleryModalOpen, setIsImageGalleryModalOpen] = useState(false);

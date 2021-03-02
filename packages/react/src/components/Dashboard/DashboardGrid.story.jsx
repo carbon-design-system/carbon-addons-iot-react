@@ -59,7 +59,7 @@ const commonGridProps = {
 };
 
 export default {
-  title: 'Watson IoT/Dashboard Grid',
+  title: __DEV__ ? 'Watson IoT/⚠️ Dashboard Grid' : 'Watson IoT/Dashboard Grid',
 };
 
 export const DashboardDefaultLayouts = () => {
@@ -148,7 +148,7 @@ DashboardCustomLayout.story = {
     info: {
       text: `
       The breakpoint property tells the dashboard which
-      layout to use. You should listen to the onBreakpointChange event to keep 
+      layout to use. You should listen to the onBreakpointChange event to keep
       track of which breakpoint is currently being used in your local components state, and pass back in the breakpoint accordingly.
       # Component Overview
       `,
@@ -423,7 +423,7 @@ DashboardResizableCard.story = {
           </FullWidthWrapper>
         </Fragment>
       );
-      ~~~           
+      ~~~
     `,
     },
   },
@@ -850,7 +850,7 @@ DashboardAllCardsAsResizable.story = {
       source: true,
       text: `
       This story demonstrates how all cards can be resizable by dragging. During reszie the cards' size prop is
-      automatically updated to match the new size. Some cards have a minimal size defined. 
+      automatically updated to match the new size. Some cards have a minimal size defined.
 
       See the source code for the full example.
     `,

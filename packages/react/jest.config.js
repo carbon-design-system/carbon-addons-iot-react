@@ -14,7 +14,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|WizardInline|FilterHeaderRow|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|ImageUploader|WizardHeader|TableHead|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|Dashboard|CardRenderer|ImageHotspots|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|ImageUploader|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -24,28 +24,28 @@ module.exports = {
     './src/components/WizardInline/WizardInline.jsx': {
       branches: 70,
     },
+    './src/components/WizardInline//WizardHeader/WizardHeader.jsx': {
+      branches: 75,
+    },
     './src/components/Dashboard/DashboardGrid.jsx': {
       statements: 72,
       branches: 60,
       lines: 71,
     },
-    './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 61 },
+    './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
       // https://github.com/carbon-design-system/carbon-charts/issues/594
-      functions: 60,
+      functions: 69,
     },
-    './src/components/Table/TableHead/TableHead.jsx': {
-      statements: 73,
-      branches: 77,
-      lines: 73,
-      functions: 57,
+    './src/components/Table/TableHead/TableHeader.js': {
+      statements: 60,
+      branches: 50,
+      lines: 60,
+      functions: 33,
     },
     './src/components/Table/TableHead/ColumnResize.jsx': {
-      statements: 36,
-      branches: 11,
-      lines: 36,
-      functions: 20,
+      branches: 71,
     },
     './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': {
       branches: 70,
@@ -74,10 +74,7 @@ module.exports = {
       functions: 66,
     },
     './src/components/ImageCard/ImageHotspots.jsx': {
-      statements: 54,
-      branches: 61,
-      lines: 78,
-      functions: 50,
+      branches: 79,
     },
     './src/components/ImageCard/ImageUploader.jsx': {
       statements: 46,
@@ -85,7 +82,6 @@ module.exports = {
       lines: 47,
       functions: 26,
     },
-    './src/components/ImageCard/ImageControls.jsx': { branches: 66 },
     './src/components/Page/EditPage.jsx': {
       statements: 63,
       branches: 50,
@@ -104,12 +100,14 @@ module.exports = {
     './src/components/Page/PageTitle.jsx': { branches: 75 },
     './src/components/ImageCard/ImageCard.jsx': { branches: 71 },
     './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
-      branches: 78,
+      statements: 77,
+      functions: 70,
+      lines: 77,
     },
     './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': {
       branches: 76,
     },
-    './src/components/DateTimePicker/DateTimePicker.jsx': { branches: 67 },
+    './src/components/ColorDropdown/ColorDropdown.jsx': { branches: 75 },
   },
   globals: {
     __DEV__: false,

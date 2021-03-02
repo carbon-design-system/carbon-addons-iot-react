@@ -72,6 +72,7 @@ export const RELATIVE_VALUES = {
 };
 
 const propTypes = {
+  testId: PropTypes.string,
   /** default value for the picker */
   defaultValue: PropTypes.oneOfType([
     PropTypes.exact({
@@ -173,6 +174,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  testId: 'date-time-picker',
   defaultValue: null,
   dateTimeMask: 'YYYY-MM-DD HH:mm',
   presets: PRESET_VALUES,
@@ -255,6 +257,7 @@ const defaultProps = {
 };
 
 const DateTimePicker = ({
+  testId,
   defaultValue,
   dateTimeMask,
   presets,
@@ -691,6 +694,7 @@ const DateTimePicker = ({
 
   return (
     <div
+      data-testid={testId}
       id={`${iotPrefix}--date-time-picker__wrapper`}
       className={`${iotPrefix}--date-time-picker__wrapper`}
     >
@@ -700,6 +704,7 @@ const DateTimePicker = ({
         }`}
       >
         <div
+          data-testid={`${testId}__field`}
           className={`${iotPrefix}--date-time-picker__field`}
           role="button"
           onClick={onFieldClick}
@@ -871,7 +876,7 @@ const DateTimePicker = ({
                     </FormGroup>
                   </div>
                 ) : (
-                  <div>
+                  <div data-testId={`${testId}-datepicker`}>
                     <div className={`${iotPrefix}--date-time-picker__datepicker`}>
                       <DatePicker
                         datePickerType="range"

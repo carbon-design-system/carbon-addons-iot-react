@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Apps16 } from '@carbon/icons-react';
 import isNil from 'lodash/isNil';
+import warning from 'warning';
 
 import { Button } from '../../index';
 import { settings } from '../../constants/Settings';
@@ -175,6 +176,14 @@ const CardEditor = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
 }) => {
+  React.useEffect(() => {
+    if (__DEV__) {
+      warning(
+        false,
+        'The `CardEditor` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
+      );
+    }
+  }, []);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   // show the gallery if no card is being edited

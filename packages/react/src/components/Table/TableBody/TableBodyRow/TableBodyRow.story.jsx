@@ -37,7 +37,7 @@ const TableDecorator = (storyFn) => (
 );
 
 export default {
-  title: 'Watson IoT/TableBodyRow',
+  title: __DEV__ ? 'Watson IoT/⚠️ Table/TableBodyRow' : 'Watson IoT/Table/TableBodyRow',
   decorators: [TableDecorator],
 
   parameters: {
