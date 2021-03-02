@@ -153,7 +153,7 @@ describe('DashboardEditor', () => {
     // there should only be one card with the same title to start
     expect(screen.getAllByText('value card')).toHaveLength(1);
     // first find and click the cards overflow menu
-    const cardOverflowMenu = screen.getByTitle('Open and close list of options');
+    const cardOverflowMenu = screen.getAllByTitle('Open and close list of options')[0];
     expect(cardOverflowMenu).toBeInTheDocument();
     fireEvent.click(cardOverflowMenu);
     // once open, find and click the edit card option
@@ -169,7 +169,7 @@ describe('DashboardEditor', () => {
     // there should only be one card with the same title to start
     expect(screen.getAllByText('value card')).toHaveLength(1);
     // first find and click the cards overflow menu
-    const cardOverflowMenu = screen.getByTitle('Open and close list of options');
+    const cardOverflowMenu = screen.getAllByTitle('Open and close list of options')[0];
     expect(cardOverflowMenu).toBeInTheDocument();
     fireEvent.click(cardOverflowMenu);
     // once open, find and click the edit card option

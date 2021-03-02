@@ -508,6 +508,7 @@ const DataSeriesFormItem = ({
             label={mergedI18n.selectDataItem}
             light
             translateWithId={translateWithId}
+            title={mergedI18n.selectDataItem}
             titleText={mergedI18n.dataItem}
             items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
             selectedItem={
