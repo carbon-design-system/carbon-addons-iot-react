@@ -405,6 +405,7 @@ export const SummaryDashboardWithInitialValue = () => (
         firmware: ['1.2', '1.3'],
         axes: [1, 2, 3],
         deviceid: ['73004', '73000', '73001'],
+        manufacturer: ['Rentech', 'Manu Inc'],
       }}
       isSummaryDashboard
       initialValue={{
