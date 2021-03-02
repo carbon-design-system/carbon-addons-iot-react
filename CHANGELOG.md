@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.59](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.58...v2.143.0-next.59) (2021-03-02)
+
+
+### Bug Fixes
+
+* **dashboardeditor:** groupby should not be removed when data item is selected ([3b9e245](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3b9e24569048ca0e9d1362a52058bc64fb40f7a3))
+
+
+
+
+
 # [2.143.0-next.58](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.57...v2.143.0-next.58) (2021-03-01)
 
 
