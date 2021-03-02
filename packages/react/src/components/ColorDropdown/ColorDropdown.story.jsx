@@ -3,10 +3,17 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { red50, blue50, green50, teal70, purple70 } from '@carbon/colors';
 
+import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
+
 import ColorDropdown from './ColorDropdown';
 
+export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
+Experimental.story = {
+  name: experimentalStoryTitle,
+};
+
 export default {
-  title: 'Watson IoT Experimental/ColorDropdown',
+  title: 'Watson IoT Experimental/☢️ ColorDropdown',
   decorators: [withKnobs],
   parameters: {
     component: ColorDropdown,
