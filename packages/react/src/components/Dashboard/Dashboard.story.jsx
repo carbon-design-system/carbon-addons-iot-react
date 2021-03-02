@@ -466,7 +466,7 @@ const commonDashboardProps = {
 };
 
 export default {
-  title: 'Watson IoT/🚫 Dashboard',
+  title: 'Watson IoT/ 🚫 Dashboard',
   excludeStories: ['originalCards'],
 };
 
