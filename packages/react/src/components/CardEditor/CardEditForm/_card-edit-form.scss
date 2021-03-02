@@ -114,6 +114,9 @@
     flex-direction: row;
     align-items: baseline;
     padding-bottom: $spacing-05;
+    &--bottom {
+      align-items: flex-end;
+    }
     &--item {
       .#{$iot-prefix}--color-dropdown {
         margin-bottom: 1.25rem;

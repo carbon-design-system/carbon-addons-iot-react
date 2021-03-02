@@ -27,8 +27,8 @@ const propTypes = {
   initialValue: PropTypes.shape({
     cards: PropTypes.array,
     layouts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    isSummaryDashboard: PropTypes.bool,
   }),
+  isSummaryDashboard: PropTypes.bool,
   /** supported card types */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
   /** if enabled, renders a ContentSwitcher with IconSwitches that allow for manually changing the breakpoint,
@@ -273,6 +273,7 @@ const defaultProps = {
     cards: [],
     layouts: {},
   },
+  isSummaryDashboard: false,
   breakpointSwitcher: null,
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   renderHeader: null,
@@ -366,6 +367,7 @@ const DashboardEditor = ({
   onValidateCardJson,
   onValidateUploadedImage,
   availableDimensions,
+  isSummaryDashboard,
   isLoading,
   i18n,
   dataSeriesItemLinks,
@@ -681,7 +683,7 @@ const DashboardEditor = ({
         >
           <CardEditor
             cardConfig={dashboardJson.cards.find((card) => card.id === selectedCardId)}
-            isSummaryDashboard={dashboardJson.isSummaryDashboard}
+            isSummaryDashboard={isSummaryDashboard}
             onShowGallery={() => setSelectedCardId(null)}
             onChange={handleOnCardChange}
             getValidDataItems={getValidDataItems}
