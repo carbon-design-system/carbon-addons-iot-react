@@ -22,7 +22,6 @@ const defaultPresets = [
 ];
 
 const dateTimePickerProps = {
-  id: 'datetimepicker',
   onCancel: jest.fn(),
   onApply: jest.fn(),
 };

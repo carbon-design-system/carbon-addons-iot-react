@@ -18,6 +18,7 @@ import {
 import moment from 'moment';
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
+import uuid from 'uuid';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -172,7 +173,7 @@ const propTypes = {
   /** The language locale used to format the days of the week, months, and numbers. */
   locale: PropTypes.string,
   /** Unique id of the component */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 };
 
 const defaultProps = {
@@ -256,6 +257,7 @@ const defaultProps = {
   },
   light: false,
   locale: 'en',
+  id: undefined,
 };
 
 const DateTimePicker = ({
@@ -275,7 +277,7 @@ const DateTimePicker = ({
   i18n,
   light,
   locale,
-  id,
+  id = uuid.v4(),
   ...others
 }) => {
   const strings = {
