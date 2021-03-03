@@ -5648,6 +5648,7 @@ Map {
         "toLabel": "to",
         "toNowLabel": "to Now",
       },
+      "id": undefined,
       "intervals": Array [
         Object {
           "label": "minutes",
@@ -5944,6 +5945,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "id": Object {
+        "type": "string",
       },
       "intervals": Object {
         "args": Array [

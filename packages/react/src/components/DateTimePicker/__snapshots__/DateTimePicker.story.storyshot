@@ -23,7 +23,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
       <div
         className="iot--date-time-picker__wrapper"
         data-testid="date-time-picker"
-        id="iot--date-time-picker__wrapper"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box "
@@ -203,7 +203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
       <div
         className="iot--date-time-picker__wrapper"
         data-testid="date-time-picker"
-        id="iot--date-time-picker__wrapper"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box iot--date-time-picker__box--light"
@@ -383,7 +383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
       <div
         className="iot--date-time-picker__wrapper"
         data-testid="date-time-picker"
-        id="iot--date-time-picker__wrapper"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box "
@@ -446,15 +446,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                         <input
                           checked={false}
                           className="bx--radio-button"
-                          id="relative"
-                          name="radiogroup"
+                          id="datetimepicker-relative"
+                          name="datetimepicker-radiogroup"
                           onChange={[Function]}
                           type="radio"
                           value="RELATIVE"
                         />
                         <label
                           className="bx--radio-button__label"
-                          htmlFor="relative"
+                          htmlFor="datetimepicker-relative"
                         >
                           <span
                             className="bx--radio-button__appearance"
@@ -472,15 +472,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                         <input
                           checked={true}
                           className="bx--radio-button"
-                          id="absolute"
-                          name="radiogroup"
+                          id="datetimepicker-absolute"
+                          name="datetimepicker-radiogroup"
                           onChange={[Function]}
                           type="radio"
                           value="ABSOLUTE"
                         />
                         <label
                           className="bx--radio-button__label"
-                          htmlFor="absolute"
+                          htmlFor="datetimepicker-absolute"
                         >
                           <span
                             className="bx--radio-button__appearance"
@@ -517,7 +517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                             <input
                               className="bx--date-picker__input"
                               disabled={false}
-                              id="date-picker-input-start"
+                              id="datetimepicker-date-picker-input-start"
                               onChange={[Function]}
                               onClick={[Function]}
                               pattern="\\\\d{1,2}\\\\/\\\\d{1,2}\\\\/\\\\d{4}"
@@ -551,7 +551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                             <input
                               className="bx--date-picker__input"
                               disabled={false}
-                              id="date-picker-input-end"
+                              id="datetimepicker-date-picker-input-end"
                               onChange={[Function]}
                               onClick={[Function]}
                               pattern="\\\\d{1,2}\\\\/\\\\d{1,2}\\\\/\\\\d{4}"
@@ -598,7 +598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                         >
                           <label
                             className="bx--label"
-                            htmlFor="start-time"
+                            htmlFor="datetimepicker-start-time"
                           >
                             Start time
                           </label>
@@ -612,7 +612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                                 autoComplete="off"
                                 className="bx--time-picker__input-field bx--text-input"
                                 disabled={false}
-                                id="start-time"
+                                id="datetimepicker-start-time"
                                 maxLength={5}
                                 onBlur={[Function]}
                                 onChange={[Function]}
@@ -700,7 +700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                         >
                           <label
                             className="bx--label"
-                            htmlFor="end-time"
+                            htmlFor="datetimepicker-end-time"
                           >
                             End time
                           </label>
@@ -714,7 +714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                                 autoComplete="off"
                                 className="bx--time-picker__input-field bx--text-input"
                                 disabled={false}
-                                id="end-time"
+                                id="datetimepicker-end-time"
                                 maxLength={5}
                                 onBlur={[Function]}
                                 onChange={[Function]}
@@ -875,7 +875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
       <div
         className="iot--date-time-picker__wrapper"
         data-testid="date-time-picker"
-        id="iot--date-time-picker__wrapper"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box "
@@ -1055,7 +1055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
       <div
         className="iot--date-time-picker__wrapper"
         data-testid="date-time-picker"
-        id="iot--date-time-picker__wrapper"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box "
@@ -1118,15 +1118,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                         <input
                           checked={true}
                           className="bx--radio-button"
-                          id="relative"
-                          name="radiogroup"
+                          id="datetimepicker-relative"
+                          name="datetimepicker-radiogroup"
                           onChange={[Function]}
                           type="radio"
                           value="RELATIVE"
                         />
                         <label
                           className="bx--radio-button__label"
-                          htmlFor="relative"
+                          htmlFor="datetimepicker-relative"
                         >
                           <span
                             className="bx--radio-button__appearance"
@@ -1144,15 +1144,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                         <input
                           checked={false}
                           className="bx--radio-button"
-                          id="absolute"
-                          name="radiogroup"
+                          id="datetimepicker-absolute"
+                          name="datetimepicker-radiogroup"
                           onChange={[Function]}
                           type="radio"
                           value="ABSOLUTE"
                         />
                         <label
                           className="bx--radio-button__label"
-                          htmlFor="absolute"
+                          htmlFor="datetimepicker-absolute"
                         >
                           <span
                             className="bx--radio-button__appearance"
@@ -1192,7 +1192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                               aria-describedby={null}
                               aria-label="Numeric input field with increment and decrement buttons"
                               disabled={false}
-                              id="last-number"
+                              id="datetimepicker-last-number"
                               min={0}
                               onChange={[Function]}
                               pattern="[0-9]*"
@@ -1267,7 +1267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                         >
                           <label
                             className="bx--label bx--visually-hidden"
-                            htmlFor="last-interval"
+                            htmlFor="datetimepicker-last-interval"
                           >
                             Select
                           </label>
@@ -1278,7 +1278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                             <select
                               className="bx--select-input"
                               defaultValue="MINUTES"
-                              id="last-interval"
+                              id="datetimepicker-last-interval"
                               onChange={[Function]}
                             >
                               <option
@@ -1369,7 +1369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                         >
                           <label
                             className="bx--label bx--visually-hidden"
-                            htmlFor="relative-to-when"
+                            htmlFor="datetimepicker-relative-to-when"
                           >
                             Select
                           </label>
@@ -1380,7 +1380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                             <select
                               className="bx--select-input"
                               defaultValue="TODAY"
-                              id="relative-to-when"
+                              id="datetimepicker-relative-to-when"
                               onChange={[Function]}
                             >
                               <option
@@ -1434,7 +1434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                                 autoComplete="off"
                                 className="bx--time-picker__input-field bx--text-input"
                                 disabled={false}
-                                id="relative-to-time"
+                                id="datetimepicker-relative-to-time"
                                 maxLength={5}
                                 onBlur={[Function]}
                                 onChange={[Function]}
@@ -1595,7 +1595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
       <div
         className="iot--date-time-picker__wrapper"
         data-testid="date-time-picker"
-        id="iot--date-time-picker__wrapper"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box "

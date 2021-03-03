@@ -18,6 +18,7 @@ import {
 import moment from 'moment';
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
+import uuid from 'uuid';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -171,6 +172,8 @@ const propTypes = {
   light: PropTypes.bool,
   /** The language locale used to format the days of the week, months, and numbers. */
   locale: PropTypes.string,
+  /** Unique id of the component */
+  id: PropTypes.string,
 };
 
 const defaultProps = {
@@ -254,6 +257,7 @@ const defaultProps = {
   },
   light: false,
   locale: 'en',
+  id: undefined,
 };
 
 const DateTimePicker = ({
@@ -273,6 +277,7 @@ const DateTimePicker = ({
   i18n,
   light,
   locale,
+  id = uuid.v4(),
   ...others
 }) => {
   const strings = {
@@ -325,10 +330,10 @@ const DateTimePicker = ({
         datePickerRef.current.cal.open();
         // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
         // the only way to display the calendar inline is to reparent its DOM to our component
-        const wrapper = document.getElementById(`${iotPrefix}--date-time-picker__wrapper`);
+        const wrapper = document.getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`);
         if (typeof wrapper !== 'undefined' && wrapper !== null) {
           const dp = document
-            .getElementById(`${iotPrefix}--date-time-picker__wrapper`)
+            .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
             .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
           dp.appendChild(datePickerRef.current.cal.calendarContainer);
         }
@@ -337,7 +342,7 @@ const DateTimePicker = ({
     return () => {
       clearTimeout(timeout);
     };
-  }, [datePickerRef]);
+  }, [datePickerRef, id]);
 
   /**
    * Parses a value object into a human readable value
@@ -695,7 +700,7 @@ const DateTimePicker = ({
   return (
     <div
       data-testid={testId}
-      id={`${iotPrefix}--date-time-picker__wrapper`}
+      id={`${id}-${iotPrefix}--date-time-picker__wrapper`}
       className={`${iotPrefix}--date-time-picker__wrapper`}
     >
       <div
@@ -778,16 +783,16 @@ const DateTimePicker = ({
                     <RadioButtonGroup
                       valueSelected={customRangeKind}
                       onChange={onCustomRangeChange}
-                      name="radiogroup"
+                      name={`${id}-radiogroup`}
                     >
                       <RadioButton
                         value={PICKER_KINDS.RELATIVE}
-                        id="relative"
+                        id={`${id}-relative`}
                         labelText={strings.relativeLabel}
                       />
                       <RadioButton
                         value={PICKER_KINDS.ABSOLUTE}
-                        id="absolute"
+                        id={`${id}-absolute`}
                         labelText={strings.absoluteLabel}
                       />
                     </RadioButtonGroup>
@@ -801,23 +806,23 @@ const DateTimePicker = ({
                     >
                       <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                         <NumberInput
-                          id="last-number"
+                          id={`${id}-last-number`}
                           invalidText={strings.invalidNumberLabel}
                           step={1}
                           min={0}
                           value={relativeValue ? relativeValue.lastNumber : 0}
                           onChange={onRelativeLastNumberChange}
-                          translateWithId={(id) =>
-                            id === 'increment.number'
+                          translateWithId={(messageId) =>
+                            messageId === 'increment.number'
                               ? `${i18n.increment} ${i18n.number}`
-                              : id === 'decrement.number'
+                              : messageId === 'decrement.number'
                               ? `${i18n.decrement} ${i18n.number}`
                               : null
                           }
                         />
                         <Select
                           {...others}
-                          id="last-interval"
+                          id={`${id}-last-interval`}
                           defaultValue={
                             relativeValue ? relativeValue.lastInterval : INTERVAL_VALUES.MINUTES
                           }
@@ -844,7 +849,7 @@ const DateTimePicker = ({
                         <Select
                           {...others}
                           ref={relativeSelect}
-                          id="relative-to-when"
+                          id={`${id}-relative-to-when`}
                           defaultValue={relativeValue ? relativeValue.relativeToWhen : ''}
                           onChange={onRelativeToWhenChange}
                           hideLabel
@@ -864,7 +869,7 @@ const DateTimePicker = ({
                         </Select>
                         {hasTimeInput ? (
                           <TimePickerSpinner
-                            id="relative-to-time"
+                            id={`${id}-relative-to-time`}
                             value={relativeValue ? relativeValue.relativeToTime : ''}
                             i18n={i18n}
                             onChange={onRelativeToTimeChange}
@@ -889,8 +894,16 @@ const DateTimePicker = ({
                         }
                         locale={locale}
                       >
-                        <DatePickerInput labelText="" id="date-picker-input-start" hideLabel />
-                        <DatePickerInput labelText="" id="date-picker-input-end" hideLabel />
+                        <DatePickerInput
+                          labelText=""
+                          id={`${id}-date-picker-input-start`}
+                          hideLabel
+                        />
+                        <DatePickerInput
+                          labelText=""
+                          id={`${id}-date-picker-input-end`}
+                          hideLabel
+                        />
                       </DatePicker>
                     </div>
                     {hasTimeInput ? (
@@ -900,7 +913,7 @@ const DateTimePicker = ({
                       >
                         <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                           <TimePickerSpinner
-                            id="start-time"
+                            id={`${id}-start-time`}
                             labelText={strings.startTimeLabel}
                             value={absoluteValue ? absoluteValue.startTime : '00:00'}
                             i18n={i18n}
@@ -909,7 +922,7 @@ const DateTimePicker = ({
                             autoComplete="off"
                           />
                           <TimePickerSpinner
-                            id="end-time"
+                            id={`${id}-end-time`}
                             labelText={strings.endTimeLabel}
                             value={absoluteValue ? absoluteValue.endTime : '00:00'}
                             i18n={i18n}
