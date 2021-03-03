@@ -5938,6 +5938,10 @@ Map {
         ],
         "type": "shape",
       },
+      "id": Object {
+        "isRequired": true,
+        "type": "string",
+      },
       "intervals": Object {
         "args": Array [
           Object {

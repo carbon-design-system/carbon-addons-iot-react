@@ -432,7 +432,9 @@ describe('DateTimePicker', () => {
       },
     ];
 
-    render(<DateTimePicker presets={presets} i18n={i18nTest} relatives={relatives} />);
+    render(
+      <DateTimePicker id="datetimepicker" presets={presets} i18n={i18nTest} relatives={relatives} />
+    );
     i18nTest.presetLabels.forEach((label) => {
       expect(screen.getAllByText(label)[0]).toBeInTheDocument();
     });
