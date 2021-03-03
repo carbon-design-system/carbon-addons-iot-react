@@ -32,22 +32,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         Focus sentinel
       </span>
       <div
+        aria-label="landscape.jpg"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             landscape.jpg
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit image
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -525,22 +527,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         Focus sentinel
       </span>
       <div
+        aria-label="landscape.jpg"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             landscape.jpg
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit image
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1018,22 +1022,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         Focus sentinel
       </span>
       <div
+        aria-label="landscape.jpg"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             landscape.jpg
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit image
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1484,22 +1490,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         Focus sentinel
       </span>
       <div
+        aria-label="landscape.jpg"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             landscape.jpg
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit image
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"

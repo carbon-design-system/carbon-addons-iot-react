@@ -286,7 +286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListI
                 <button
                   aria-expanded={false}
                   aria-haspopup={true}
-                  aria-label="Menu"
+                  aria-label="open and close list of options"
                   className="bx--overflow-menu"
                   onClick={[Function]}
                   onClose={[Function]}

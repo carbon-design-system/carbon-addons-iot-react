@@ -32,17 +32,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         Focus sentinel
       </span>
       <div
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Save new view
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -117,7 +118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 onAnimationEnd={[Function]}
               >
                 <button
-                  aria-controls="accordion-item-8"
+                  aria-controls="accordion-item-115"
                   aria-expanded={false}
                   className="bx--accordion__heading"
                   onClick={[Function]}
@@ -147,7 +148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
                 <div
                   className="bx--accordion__content"
-                  id="accordion-item-8"
+                  id="accordion-item-115"
                 >
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -159,7 +160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 onAnimationEnd={[Function]}
               >
                 <button
-                  aria-controls="accordion-item-9"
+                  aria-controls="accordion-item-116"
                   aria-expanded={false}
                   className="bx--accordion__heading"
                   onClick={[Function]}
@@ -189,7 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
                 <div
                   className="bx--accordion__content"
-                  id="accordion-item-9"
+                  id="accordion-item-116"
                 >
                   <p>
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -345,17 +346,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         Focus sentinel
       </span>
       <div
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Save new view
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -510,17 +512,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         Focus sentinel
       </span>
       <div
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Save new view
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -740,17 +743,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         Focus sentinel
       </span>
       <div
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Save new view
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"

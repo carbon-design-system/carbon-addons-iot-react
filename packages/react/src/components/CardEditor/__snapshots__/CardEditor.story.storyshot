@@ -1034,6 +1034,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
                           />
                         </svg>
+                        <span
+                          aria-hidden="true"
+                          className="bx--toggle__text--off"
+                        >
+                          
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="bx--toggle__text--on"
+                        >
+                          
+                        </span>
                       </span>
                     </label>
                   </div>
@@ -1649,6 +1661,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
                           />
                         </svg>
+                        <span
+                          aria-hidden="true"
+                          className="bx--toggle__text--off"
+                        >
+                          
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="bx--toggle__text--on"
+                        >
+                          
+                        </span>
                       </span>
                     </label>
                   </div>
@@ -2431,6 +2455,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
                             />
                           </svg>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--off"
+                          >
+                            
+                          </span>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--on"
+                          >
+                            
+                          </span>
                         </span>
                       </label>
                     </div>
@@ -2476,6 +2512,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
                             />
                           </svg>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--off"
+                          >
+                            
+                          </span>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--on"
+                          >
+                            
+                          </span>
                         </span>
                       </label>
                     </div>
@@ -3447,6 +3495,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
                         />
                       </svg>
+                      <span
+                        aria-hidden="true"
+                        className="bx--toggle__text--off"
+                      >
+                        
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="bx--toggle__text--on"
+                      >
+                        
+                      </span>
                     </span>
                   </label>
                 </div>
@@ -3488,6 +3548,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
                         />
                       </svg>
+                      <span
+                        aria-hidden="true"
+                        className="bx--toggle__text--off"
+                      >
+                        
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="bx--toggle__text--on"
+                      >
+                        
+                      </span>
                     </span>
                   </label>
                 </div>
@@ -4119,6 +4191,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
                             />
                           </svg>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--off"
+                          >
+                            
+                          </span>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--on"
+                          >
+                            
+                          </span>
                         </span>
                       </label>
                     </div>

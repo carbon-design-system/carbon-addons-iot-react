@@ -32,17 +32,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         Focus sentinel
       </span>
       <div
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Manage views
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1347,17 +1348,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         Focus sentinel
       </span>
       <div
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Manage views
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"

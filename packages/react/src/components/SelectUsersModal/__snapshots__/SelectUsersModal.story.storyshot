@@ -35,22 +35,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
           Focus sentinel
         </span>
         <div
+          aria-label="Selected users will have edit access"
+          aria-modal="true"
           className="bx--modal-container"
           role="dialog"
         >
           <div
             className="bx--modal-header"
           >
-            <p
+            <h2
               className="bx--modal-header__label bx--type-delta"
             >
               Selected users will have edit access
-            </p>
-            <p
+            </h2>
+            <h3
               className="bx--modal-header__heading bx--type-beta"
             >
               Select users
-            </p>
+            </h3>
             <button
               aria-label="Close"
               className="bx--modal-close"
@@ -539,22 +541,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
           Focus sentinel
         </span>
         <div
+          aria-label="Selected users will have edit access"
+          aria-modal="true"
           className="bx--modal-container"
           role="dialog"
         >
           <div
             className="bx--modal-header"
           >
-            <p
+            <h2
               className="bx--modal-header__label bx--type-delta"
             >
               Selected users will have edit access
-            </p>
-            <p
+            </h2>
+            <h3
               className="bx--modal-header__heading bx--type-beta"
             >
               Select users
-            </p>
+            </h3>
             <button
               aria-label="Close"
               className="bx--modal-close"
@@ -1640,22 +1644,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
           Focus sentinel
         </span>
         <div
+          aria-label="Selected users will have edit access"
+          aria-modal="true"
           className="bx--modal-container"
           role="dialog"
         >
           <div
             className="bx--modal-header"
           >
-            <p
+            <h2
               className="bx--modal-header__label bx--type-delta"
             >
               Selected users will have edit access
-            </p>
-            <p
+            </h2>
+            <h3
               className="bx--modal-header__heading bx--type-beta"
             >
               Select users
-            </p>
+            </h3>
             <button
               aria-label="Close"
               className="bx--modal-close"
@@ -2229,22 +2235,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
           Focus sentinel
         </span>
         <div
+          aria-label="Selected users will have edit access"
+          aria-modal="true"
           className="bx--modal-container"
           role="dialog"
         >
           <div
             className="bx--modal-header"
           >
-            <p
+            <h2
               className="bx--modal-header__label bx--type-delta"
             >
               Selected users will have edit access
-            </p>
-            <p
+            </h2>
+            <h3
               className="bx--modal-header__heading bx--type-beta"
             >
               Select users
-            </p>
+            </h3>
             <button
               aria-label="Close"
               className="bx--modal-close"

@@ -2493,6 +2493,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    SideNavDivider
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     SideNavFooter
                   </div>
                   <div

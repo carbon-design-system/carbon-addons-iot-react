@@ -33,22 +33,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         Focus sentinel
       </span>
       <div
+        aria-label="Basic Wizard"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Basic Wizard
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Gimme 3 Steps
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -351,22 +353,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         Focus sentinel
       </span>
       <div
+        aria-label="Wizard With Custom Footer "
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Wizard With Custom Footer 
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Gimme 3 Steps
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -676,22 +680,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         Focus sentinel
       </span>
       <div
+        aria-label="Basic Wizard"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Basic Wizard
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Gimme 3 Steps
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"

@@ -299,7 +299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
@@ -592,7 +592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
@@ -1005,7 +1005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
@@ -1172,7 +1172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
@@ -1558,7 +1558,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 <button
                   aria-expanded={false}
                   aria-haspopup={true}
-                  aria-label="Menu"
+                  aria-label="open and close list of options"
                   className="iot--card--toolbar-date-range-action bx--overflow-menu"
                   onClick={[Function]}
                   onClose={[Function]}
@@ -1646,6 +1646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                   className="bx--table-toolbar"
                 >
                   <div
+                    aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
                   >
                     <div
@@ -1655,7 +1656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         className="bx--batch-summary__para"
                       >
                         <span>
-                          0 item selected
+                          0 items selected
                         </span>
                       </p>
                     </div>
@@ -2813,7 +2814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}

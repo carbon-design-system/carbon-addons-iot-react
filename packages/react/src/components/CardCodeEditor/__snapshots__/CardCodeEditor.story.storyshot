@@ -32,22 +32,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
         Focus sentinel
       </span>
       <div
+        aria-label="JSON Editor"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             JSON Editor
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit the JSONs
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -283,22 +285,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
         Focus sentinel
       </span>
       <div
+        aria-label="JSON Editor"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             JSON Editor
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit the JSONs
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"

@@ -103,6 +103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                   className="bx--table-toolbar"
                 >
                   <div
+                    aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
                   >
                     <div
@@ -112,7 +113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                         className="bx--batch-summary__para"
                       >
                         <span>
-                          0 item selected
+                          0 items selected
                         </span>
                       </p>
                     </div>

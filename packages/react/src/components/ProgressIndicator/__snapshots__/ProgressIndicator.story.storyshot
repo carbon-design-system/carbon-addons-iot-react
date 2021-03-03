@@ -214,6 +214,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             <path
               d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
             />
+            <title>
+              Step 4: Getting started with Carbon Design System
+            </title>
           </svg>
           <p
             className="bx--progress-label"

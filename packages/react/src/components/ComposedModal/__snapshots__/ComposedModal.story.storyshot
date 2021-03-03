@@ -32,22 +32,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Big Modal"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Big Modal
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Needs a lot of space to contain all the info
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -169,22 +171,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Translated bottom buttons"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Translated bottom buttons
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Dialog with bottom buttons and close button flyover translated
-          </p>
+          </h3>
           <button
             aria-label="My Close Button"
             className="bx--modal-close"
@@ -215,7 +219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           <button
             aria-expanded={false}
             aria-haspopup={true}
-            aria-label="Menu"
+            aria-label="open and close list of options"
             className="bx--overflow-menu"
             onClick={[Function]}
             onClose={[Function]}
@@ -391,22 +395,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Custom footer"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Custom footer
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Custom footer element
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -508,22 +514,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="DataError"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             DataError
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Cannot communicate with server
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -781,26 +789,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label={
+          <strong>
+            Custom node label
+          </strong>
+        }
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             <strong>
               Custom node label
             </strong>
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             <strong>
               Custom node title
             </strong>
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -917,22 +931,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Translated bottom buttons"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Translated bottom buttons
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Dialog with bottom buttons and close button flyover translated
-          </p>
+          </h3>
           <button
             aria-label="My Close Button"
             className="bx--modal-close"
@@ -1049,22 +1065,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="No footer"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             No footer
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Dialog without footer
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1157,22 +1175,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Custom footer"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Custom footer
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Custom footer element
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1279,22 +1299,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Sending data"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Sending data
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             We are submitting data to the backend
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1444,22 +1466,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Scary Operation"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Scary Operation
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Delete Stuff
-          </p>
+          </h3>
           <p
             className="bx--modal-content__text"
           >

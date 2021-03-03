@@ -179,7 +179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-10"
+                    aria-controls="accordion-item-117"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -209,15 +209,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-10"
+                    id="accordion-item-117"
                   >
                     <div
                       className="tile-gallery--section--items"
                     >
                       <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        rel={null}
                       >
                         <div>
                           <div
@@ -279,7 +280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                               <button
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                aria-label="Menu"
+                                aria-label="open and close list of options"
                                 className="bx--overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
@@ -331,9 +332,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                         </div>
                       </a>
                       <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        rel={null}
                       >
                         <div>
                           <div
@@ -423,7 +425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                               <button
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                aria-label="Menu"
+                                aria-label="open and close list of options"
                                 className="bx--overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
@@ -475,9 +477,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                         </div>
                       </a>
                       <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        rel={null}
                       >
                         <div>
                           <div
@@ -539,7 +542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                               <button
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                aria-label="Menu"
+                                aria-label="open and close list of options"
                                 className="bx--overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
@@ -606,7 +609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-11"
+                    aria-controls="accordion-item-118"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -636,15 +639,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-11"
+                    id="accordion-item-118"
                   >
                     <div
                       className="tile-gallery--section--items"
                     >
                       <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        rel={null}
                       >
                         <div>
                           <div
@@ -706,7 +710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                               <button
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                aria-label="Menu"
+                                aria-label="open and close list of options"
                                 className="bx--overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
@@ -758,9 +762,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                         </div>
                       </a>
                       <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        rel={null}
                       >
                         <div>
                           <div
@@ -850,7 +855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                               <button
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                aria-label="Menu"
+                                aria-label="open and close list of options"
                                 className="bx--overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
@@ -902,9 +907,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                         </div>
                       </a>
                       <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        rel={null}
                       >
                         <div>
                           <div
@@ -966,7 +972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                               <button
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                aria-label="Menu"
+                                aria-label="open and close list of options"
                                 className="bx--overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
@@ -1073,9 +1079,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
       }
     >
       <a
-        className="bx--tile bx--tile--clickable not-active tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+        className="bx--link bx--tile bx--tile--clickable not-active tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
         onClick={[Function]}
         onKeyDown={[Function]}
+        rel={null}
       >
         <div>
           <div
@@ -1148,7 +1155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
@@ -1247,9 +1254,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
       }
     >
       <a
-        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-list-title"
+        className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-list-title"
         onClick={[Function]}
         onKeyDown={[Function]}
+        rel={null}
       >
         <div>
           <div
@@ -1283,7 +1291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
@@ -1554,7 +1562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-16"
+                    aria-controls="accordion-item-123"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1584,15 +1592,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-16"
+                    id="accordion-item-123"
                   >
                     <div
                       className="tile-gallery--section--items"
                     >
                       <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        rel={null}
                       >
                         <div>
                           <div
@@ -1654,7 +1663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                               <button
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                aria-label="Menu"
+                                aria-label="open and close list of options"
                                 className="bx--overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
@@ -1778,7 +1787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-14"
+                aria-controls="accordion-item-121"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -1808,15 +1817,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-14"
+                id="accordion-item-121"
               >
                 <div
                   className="tile-gallery--section--items"
                 >
                   <a
-                    className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    rel={null}
                   >
                     <div>
                       <div
@@ -1889,7 +1899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -1941,9 +1951,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                     </div>
                   </a>
                   <a
-                    className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    rel={null}
                   >
                     <div>
                       <div
@@ -2012,7 +2023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -2064,9 +2075,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                     </div>
                   </a>
                   <a
-                    className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    rel={null}
                   >
                     <div>
                       <div
@@ -2163,7 +2175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -2230,7 +2242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-15"
+                aria-controls="accordion-item-122"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2260,15 +2272,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-15"
+                id="accordion-item-122"
               >
                 <div
                   className="tile-gallery--section--items"
                 >
                   <a
-                    className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    rel={null}
                   >
                     <div>
                       <div
@@ -2365,7 +2378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -2573,7 +2586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                 onAnimationEnd={[Function]}
               >
                 <button
-                  aria-controls="accordion-item-12"
+                  aria-controls="accordion-item-119"
                   aria-expanded={true}
                   className="bx--accordion__heading"
                   onClick={[Function]}
@@ -2603,15 +2616,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                 </button>
                 <div
                   className="bx--accordion__content"
-                  id="accordion-item-12"
+                  id="accordion-item-119"
                 >
                   <div
                     className="tile-gallery--section--items"
                   >
                     <a
-                      className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                      className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      rel={null}
                     >
                       <div>
                         <div
@@ -2684,7 +2698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                             <button
                               aria-expanded={false}
                               aria-haspopup={true}
-                              aria-label="Menu"
+                              aria-label="open and close list of options"
                               className="bx--overflow-menu"
                               onClick={[Function]}
                               onClose={[Function]}
@@ -2736,9 +2750,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                       </div>
                     </a>
                     <a
-                      className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                      className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      rel={null}
                     >
                       <div>
                         <div
@@ -2807,7 +2822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                             <button
                               aria-expanded={false}
                               aria-haspopup={true}
-                              aria-label="Menu"
+                              aria-label="open and close list of options"
                               className="bx--overflow-menu"
                               onClick={[Function]}
                               onClose={[Function]}
@@ -2859,9 +2874,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                       </div>
                     </a>
                     <a
-                      className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                      className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      rel={null}
                     >
                       <div>
                         <div
@@ -2958,7 +2974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                             <button
                               aria-expanded={false}
                               aria-haspopup={true}
-                              aria-label="Menu"
+                              aria-label="open and close list of options"
                               className="bx--overflow-menu"
                               onClick={[Function]}
                               onClose={[Function]}
@@ -3025,7 +3041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                 onAnimationEnd={[Function]}
               >
                 <button
-                  aria-controls="accordion-item-13"
+                  aria-controls="accordion-item-120"
                   aria-expanded={true}
                   className="bx--accordion__heading"
                   onClick={[Function]}
@@ -3055,15 +3071,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                 </button>
                 <div
                   className="bx--accordion__content"
-                  id="accordion-item-13"
+                  id="accordion-item-120"
                 >
                   <div
                     className="tile-gallery--section--items"
                   >
                     <a
-                      className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                      className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      rel={null}
                     >
                       <div>
                         <div
@@ -3160,7 +3177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                             <button
                               aria-expanded={false}
                               aria-haspopup={true}
-                              aria-label="Menu"
+                              aria-label="open and close list of options"
                               className="bx--overflow-menu"
                               onClick={[Function]}
                               onClose={[Function]}

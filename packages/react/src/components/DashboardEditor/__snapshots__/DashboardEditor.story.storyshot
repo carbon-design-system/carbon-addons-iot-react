@@ -302,22 +302,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Focus sentinel
                   </span>
                   <div
+                    aria-label="New image card"
+                    aria-modal="true"
                     className="bx--modal-container"
                     role="dialog"
                   >
                     <div
                       className="bx--modal-header"
                     >
-                      <p
+                      <h2
                         className="bx--modal-header__label bx--type-delta"
                       >
                         New image card
-                      </p>
-                      <p
+                      </h2>
+                      <h3
                         className="bx--modal-header__heading bx--type-beta"
                       >
                         Image gallery
-                      </p>
+                      </h3>
                       <button
                         aria-label="Close"
                         className="bx--modal-close"
@@ -584,6 +586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--table-toolbar"
                           >
                             <div
+                              aria-hidden={true}
                               className="bx--batch-actions iot--table-batch-actions"
                             >
                               <div
@@ -593,7 +596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="bx--batch-summary__para"
                                 >
                                   <span>
-                                    0 item selected
+                                    0 items selected
                                   </span>
                                 </p>
                               </div>
@@ -679,7 +682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <button
                                   aria-expanded={false}
                                   aria-haspopup={true}
-                                  aria-label="Menu"
+                                  aria-label="open and close list of options"
                                   className="bx--overflow-menu"
                                   onClick={[Function]}
                                   onClose={[Function]}
@@ -1680,7 +1683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -1775,7 +1778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -1943,7 +1946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -2058,7 +2061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -3107,22 +3110,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Focus sentinel
                 </span>
                 <div
+                  aria-label="New image card"
+                  aria-modal="true"
                   className="bx--modal-container"
                   role="dialog"
                 >
                   <div
                     className="bx--modal-header"
                   >
-                    <p
+                    <h2
                       className="bx--modal-header__label bx--type-delta"
                     >
                       New image card
-                    </p>
-                    <p
+                    </h2>
+                    <h3
                       className="bx--modal-header__heading bx--type-beta"
                     >
                       Image gallery
-                    </p>
+                    </h3>
                     <button
                       aria-label="Close"
                       className="bx--modal-close"
@@ -3393,7 +3398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <button
                           aria-expanded={false}
                           aria-haspopup={true}
-                          aria-label="Menu"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
@@ -3501,7 +3506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <button
                           aria-expanded={false}
                           aria-haspopup={true}
-                          aria-label="Menu"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
@@ -4470,22 +4475,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Focus sentinel
                   </span>
                   <div
+                    aria-label="New image card"
+                    aria-modal="true"
                     className="bx--modal-container"
                     role="dialog"
                   >
                     <div
                       className="bx--modal-header"
                     >
-                      <p
+                      <h2
                         className="bx--modal-header__label bx--type-delta"
                       >
                         New image card
-                      </p>
-                      <p
+                      </h2>
+                      <h3
                         className="bx--modal-header__heading bx--type-beta"
                       >
                         Image gallery
-                      </p>
+                      </h3>
                       <button
                         aria-label="Close"
                         className="bx--modal-close"
@@ -5830,22 +5837,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Focus sentinel
                 </span>
                 <div
+                  aria-label="New image card"
+                  aria-modal="true"
                   className="bx--modal-container"
                   role="dialog"
                 >
                   <div
                     className="bx--modal-header"
                   >
-                    <p
+                    <h2
                       className="bx--modal-header__label bx--type-delta"
                     >
                       New image card
-                    </p>
-                    <p
+                    </h2>
+                    <h3
                       className="bx--modal-header__heading bx--type-beta"
                     >
                       Image gallery
-                    </p>
+                    </h3>
                     <button
                       aria-label="Close"
                       className="bx--modal-close"
@@ -8181,22 +8190,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Focus sentinel
                 </span>
                 <div
+                  aria-label="imageGalleryModalLabelText"
+                  aria-modal="true"
                   className="bx--modal-container"
                   role="dialog"
                 >
                   <div
                     className="bx--modal-header"
                   >
-                    <p
+                    <h2
                       className="bx--modal-header__label bx--type-delta"
                     >
                       imageGalleryModalLabelText
-                    </p>
-                    <p
+                    </h2>
+                    <h3
                       className="bx--modal-header__heading bx--type-beta"
                     >
                       imageGalleryModalTitleText
-                    </p>
+                    </h3>
                     <button
                       aria-label="imageGalleryModalCloseIconDescriptionText"
                       className="bx--modal-close"
@@ -10515,22 +10526,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Focus sentinel
                   </span>
                   <div
+                    aria-label="New image card"
+                    aria-modal="true"
                     className="bx--modal-container"
                     role="dialog"
                   >
                     <div
                       className="bx--modal-header"
                     >
-                      <p
+                      <h2
                         className="bx--modal-header__label bx--type-delta"
                       >
                         New image card
-                      </p>
-                      <p
+                      </h2>
+                      <h3
                         className="bx--modal-header__heading bx--type-beta"
                       >
                         Image gallery
-                      </p>
+                      </h3>
                       <button
                         aria-label="Close"
                         className="bx--modal-close"
@@ -11733,22 +11746,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Focus sentinel
                 </span>
                 <div
+                  aria-label="New image card"
+                  aria-modal="true"
                   className="bx--modal-container"
                   role="dialog"
                 >
                   <div
                     className="bx--modal-header"
                   >
-                    <p
+                    <h2
                       className="bx--modal-header__label bx--type-delta"
                     >
                       New image card
-                    </p>
-                    <p
+                    </h2>
+                    <h3
                       className="bx--modal-header__heading bx--type-beta"
                     >
                       Image gallery
-                    </p>
+                    </h3>
                     <button
                       aria-label="Close"
                       className="bx--modal-close"
@@ -12018,7 +12033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <button
                           aria-expanded={false}
                           aria-haspopup={true}
-                          aria-label="Menu"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
@@ -13066,22 +13081,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Focus sentinel
                 </span>
                 <div
+                  aria-label="New image card"
+                  aria-modal="true"
                   className="bx--modal-container"
                   role="dialog"
                 >
                   <div
                     className="bx--modal-header"
                   >
-                    <p
+                    <h2
                       className="bx--modal-header__label bx--type-delta"
                     >
                       New image card
-                    </p>
-                    <p
+                    </h2>
+                    <h3
                       className="bx--modal-header__heading bx--type-beta"
                     >
                       Image gallery
-                    </p>
+                    </h3>
                     <button
                       aria-label="Close"
                       className="bx--modal-close"
@@ -13348,6 +13365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="bx--table-toolbar"
                         >
                           <div
+                            aria-hidden={true}
                             className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
@@ -13357,7 +13375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 className="bx--batch-summary__para"
                               >
                                 <span>
-                                  0 item selected
+                                  0 items selected
                                 </span>
                               </p>
                             </div>
@@ -13443,7 +13461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               <button
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                aria-label="Menu"
+                                aria-label="open and close list of options"
                                 className="bx--overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
@@ -14444,7 +14462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <button
                           aria-expanded={false}
                           aria-haspopup={true}
-                          aria-label="Menu"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
@@ -14539,7 +14557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <button
                           aria-expanded={false}
                           aria-haspopup={true}
-                          aria-label="Menu"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
@@ -14751,7 +14769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <button
                           aria-expanded={false}
                           aria-haspopup={true}
-                          aria-label="Menu"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
@@ -14866,7 +14884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <button
                           aria-expanded={false}
                           aria-haspopup={true}
-                          aria-label="Menu"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
@@ -16127,22 +16145,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Focus sentinel
                 </span>
                 <div
+                  aria-label="New image card"
+                  aria-modal="true"
                   className="bx--modal-container"
                   role="dialog"
                 >
                   <div
                     className="bx--modal-header"
                   >
-                    <p
+                    <h2
                       className="bx--modal-header__label bx--type-delta"
                     >
                       New image card
-                    </p>
-                    <p
+                    </h2>
+                    <h3
                       className="bx--modal-header__heading bx--type-beta"
                     >
                       Image gallery
-                    </p>
+                    </h3>
                     <button
                       aria-label="Close"
                       className="bx--modal-close"
