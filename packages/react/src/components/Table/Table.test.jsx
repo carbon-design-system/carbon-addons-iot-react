@@ -125,6 +125,7 @@ const i18nTest = {
   openMenuAria: 'open-menu',
   batchCancel: 'cancel',
   itemSelected: 'item-selected',
+  itemsSelected: 'items-selected',
   /** empty state */
   emptyMessage: 'empty-message',
   emptyMessageWithFilters: 'empty-filters',
@@ -868,7 +869,7 @@ describe('Table', () => {
     expect(screen.getAllByLabelText(i18nTest.filterAria)[0]).toBeInTheDocument();
     expect(screen.getAllByLabelText(i18nTest.openMenuAria)[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.batchCancel)[0]).toBeInTheDocument();
-    expect(screen.getByText(new RegExp(`.*\\s${i18nTest.itemSelected}.*`))).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(`.*\\s${i18nTest.itemsSelected}.*`))).toBeInTheDocument();
 
     expect(screen.queryByLabelText(i18nDefault.overflowMenuAria)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.clickToExpandAria)).not.toBeInTheDocument();
