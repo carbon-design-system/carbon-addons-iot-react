@@ -26,7 +26,7 @@ describe('StatefulTileCatalog', () => {
     const wrapper = mount(
       <StatefulTileCatalog
         {...commonTileProps}
-        search={{ placeHolderText: 'My search', onSearch: mockSearch }}
+        search={{ placeholder: 'My search', onSearch: mockSearch }}
       />
     );
     const searchInput = wrapper.find('input[type="text"]');

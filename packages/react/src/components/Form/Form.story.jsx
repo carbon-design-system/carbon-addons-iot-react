@@ -196,7 +196,7 @@ export const Default = () => (
     </FormGroup>
 
     <FormGroup {...fieldsetSearchProps}>
-      <Search {...searchProps} id="search-1" labelText="Search" placeHolderText="Search" />
+      <Search {...searchProps} id="search-1" labelText="Search" placeholder="Search" />
     </FormGroup>
 
     <Select {...selectProps} id="select-1" defaultValue="placeholder-item">

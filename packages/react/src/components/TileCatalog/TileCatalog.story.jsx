@@ -84,7 +84,7 @@ export const WithSearch = () => (
   <StatefulTileCatalog
     {...commonTileCatalogProps}
     search={{
-      placeHolderText: 'Search catalog',
+      placeholder: 'Search catalog',
       onSearch: action('search'),
     }}
     pagination={{ pageSize: 6, onPage: action('onPage') }}
