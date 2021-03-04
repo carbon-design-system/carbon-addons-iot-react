@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal/HotspotEditorDataSourceTab Example with no hotspots 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab Example with no hotspots 1`] = `
 <div
   className="storybook-container"
 >
@@ -129,7 +129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal/HotspotEditorDataSourceTab With preset values 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab With preset values 1`] = `
 <div
   className="storybook-container"
 >
@@ -277,6 +277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       >
                         <button
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                          data-testid="Button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
@@ -338,6 +339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       >
                         <button
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                          data-testid="Button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
@@ -399,6 +401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       >
                         <button
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                          data-testid="Button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
@@ -460,6 +463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       >
                         <button
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                          data-testid="Button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}

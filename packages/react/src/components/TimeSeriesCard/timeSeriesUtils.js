@@ -74,7 +74,7 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
  * @param {*} columns
  */
 export const generateTableSampleValues = (id, columns) => {
-  const sampleValues = Array(10).fill(1);
+  const sampleValues = Array(100).fill(1);
   return sampleValues.map((item, index) => ({
     id: `sample-values-${id}-${index}`,
     values: columns.reduce((obj, column) => {
@@ -113,33 +113,45 @@ export const formatGraphTick = (
   const dailyFormat = !locale.includes('zh') ? 'MMM DD' : 'MMMDD日';
   const fullFormat = !locale.includes('zh') ? 'MMM DD YYYY' : 'MMMDD日 YYYY';
 
-  return interval === 'hour' && index === 0
-    ? ticks.length > 1
+  if (interval === 'hour' && index === 0) {
+    return ticks.length > 1
       ? currentTimestamp.format(dailyFormat)
-      : currentTimestamp.format(`${dailyFormat} HH:mm`)
-    : interval === 'hour' && index !== 0 && !sameDay
-    ? currentTimestamp.format(dailyFormat)
-    : interval === 'hour'
-    ? currentTimestamp.format('HH:mm')
-    : (interval === 'day' || interval === 'week') && sameDay
-    ? '' // if we're on the day and week and the same day then skip
-    : (interval === 'day' || interval === 'week') && index === 0
-    ? currentTimestamp.format(dailyFormat)
-    : (interval === 'day' || interval === 'week') && index !== 0
-    ? currentTimestamp.format(dailyFormat)
-    : interval === 'month' && sameMonth // don't repeat same month
-    ? ''
-    : interval === 'month' && !sameYear
-    ? currentTimestamp.format('MMM YYYY')
-    : interval === 'month' && sameYear && index === 0
-    ? currentTimestamp.format('MMM YYYY')
-    : interval === 'month' && sameYear
-    ? currentTimestamp.format('MMM')
-    : interval === 'year' && sameYear
-    ? '' // if we're on the year boundary and the same year, then don't repeat
-    : interval === 'year' && (!sameYear || index === 0)
-    ? currentTimestamp.format('YYYY')
-    : interval === 'minute'
+      : currentTimestamp.format(`${dailyFormat} HH:mm`);
+  }
+  if (interval === 'hour' && index !== 0 && !sameDay) {
+    return currentTimestamp.format(dailyFormat);
+  }
+  if (interval === 'hour') {
+    return currentTimestamp.format('HH:mm');
+  }
+  if ((interval === 'day' || interval === 'week') && sameDay) {
+    return ''; // if we're on the day and week and the same day then skip
+  }
+  if ((interval === 'day' || interval === 'week') && index === 0) {
+    return currentTimestamp.format(dailyFormat);
+  }
+  if ((interval === 'day' || interval === 'week') && index !== 0) {
+    return currentTimestamp.format(dailyFormat);
+  }
+  if (interval === 'month' && sameMonth) {
+    return ''; // don't repeat same month
+  }
+  if (interval === 'month' && !sameYear) {
+    return currentTimestamp.format('MMM YYYY');
+  }
+  if (interval === 'month' && sameYear && index === 0) {
+    return currentTimestamp.format('MMM YYYY');
+  }
+  if (interval === 'month' && sameYear) {
+    return currentTimestamp.format('MMM');
+  }
+  if (interval === 'year' && sameYear) {
+    return ''; // if we're on the year boundary and the same year, then don't repeat
+  }
+  if (interval === 'year' && (!sameYear || index === 0)) {
+    return currentTimestamp.format('YYYY');
+  }
+  return interval === 'minute'
     ? currentTimestamp.format('HH:mm')
     : currentTimestamp.format(fullFormat);
 };

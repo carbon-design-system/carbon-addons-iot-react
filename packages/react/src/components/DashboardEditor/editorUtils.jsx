@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
+import isEmpty from 'lodash/isEmpty';
 import {
   purple70,
   cyan50,
@@ -494,6 +495,7 @@ export const handleDataSeriesChange = (
           ? content.columns.filter((col) => col.dataSourceId === 'timestamp')[0]
           : {
               dataSourceId: 'timestamp',
+              dataItemId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
               sort: 'DESC',
@@ -503,9 +505,14 @@ export const handleDataSeriesChange = (
         : [];
 
       // new dimension columns should go right after the timestamp column
-      const dimensionColumns = selectedItems
-        .filter((col) => col.type === 'DIMENSION')
-        .map((i) => ({ dataSourceId: i.id, label: i.text, type: i.type }));
+      const dimensionColumns = selectedItems.filter((col) => col.type === 'DIMENSION');
+      const allDimensionColumns = existingDimensionColumns.concat(dimensionColumns);
+
+      // for raw table cards, the dimensions columns go in the attributes section
+      // if groupBy was selected, the dimension columns should go in the groupBy section
+      const updatedGroupBy = uniqBy(allDimensionColumns, 'dataSourceId')
+        .filter((item) => item.destination === 'groupBy')
+        .map((item) => item.dataItemId || item.dataSourceId);
 
       return {
         ...cardConfig,
@@ -515,13 +522,25 @@ export const handleDataSeriesChange = (
             [
               timestampColumn,
               // pop the dimensions up front right after the timestamp
-              ...existingDimensionColumns.concat(dimensionColumns),
+              ...allDimensionColumns,
               ...existingAttributeColumns.concat(attributeColumns),
             ],
             'dataSourceId'
           ) // when columns are removed, their dataSourceId is cleared, we don't want to readd them
             .filter((column) => column.dataSourceId),
         },
+        ...(!isEmpty(updatedGroupBy)
+          ? {
+              dataSource: {
+                ...cardConfig.dataSource,
+                ...(allDimensionColumns.find((item) => item.destination === 'groupBy')
+                  ? {
+                      groupBy: updatedGroupBy,
+                    }
+                  : {}),
+              },
+            }
+          : {}),
       };
     }
     case CARD_TYPES.IMAGE: {
@@ -624,4 +643,29 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
     default:
       return cardConfig;
   }
+};
+
+export const renderDefaultIconByName = (iconName, iconProps = {}) => {
+  // first search the validHotspot Icons
+  const matchingHotspotIcon = validHotspotIcons.find((icon) => icon.id === iconName);
+
+  // then search the validThresholdIcons
+  const matchingThresholdIcon = validThresholdIcons.find((icon) => icon.name === iconName);
+  const iconToRender = matchingHotspotIcon ? (
+    React.createElement(matchingHotspotIcon.icon, {
+      ...iconProps,
+      title: matchingHotspotIcon.text,
+    })
+  ) : matchingThresholdIcon ? (
+    React.cloneElement(matchingThresholdIcon.carbonIcon, {
+      ...iconProps,
+      title: matchingThresholdIcon.name,
+    })
+  ) : (
+    <Warning24 {...iconProps} />
+  );
+
+  // otherwise default to Warning24
+  // eslint-disable-next-line react/prop-types
+  return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
 };

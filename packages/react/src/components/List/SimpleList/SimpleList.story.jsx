@@ -119,7 +119,7 @@ const buttonsToRender = [
 ];
 
 export default {
-  title: 'Watson IoT Experimental/SimpleList',
+  title: 'Watson IoT/SimpleList',
 
   parameters: {
     component: SimpleList,

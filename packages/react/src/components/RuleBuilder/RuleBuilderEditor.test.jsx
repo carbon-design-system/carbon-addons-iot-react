@@ -24,7 +24,7 @@ const columns = [
 ];
 
 const NEW_RULE_MATCH = expect.objectContaining({
-  id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
+  id: expect.stringMatching(/[a-zA-Z0-9]/),
   columnId: '',
   value: '',
   operand: '',
@@ -111,7 +111,7 @@ describe('RuleBuilderEditor', () => {
     expect(onChange).toBeCalledTimes(1);
     expect(onChange).toBeCalledWith(
       expect.objectContaining({
-        id: expect.stringMatching(/[a-zA-Z0-9]{9,10}/),
+        id: expect.stringMatching(/[a-zA-Z0-9]/),
         groupLogic: 'ANY',
         rules: expect.arrayContaining([NEW_RULE_MATCH]),
       })
@@ -352,13 +352,13 @@ describe('RuleBuilderEditor', () => {
           value: '45',
         },
         {
-          id: expect.stringMatching(/[a-zA-Z0-9]{9}|[a-zA-Z0-9]{10}/),
+          id: expect.stringMatching(/[a-zA-Z0-9]/),
           columnId: 'column3',
           operand: 'includes',
           value: 'asdf',
         },
         {
-          id: expect.stringMatching(/[a-zA-Z0-9]{9}|[a-zA-Z0-9]{10}/),
+          id: expect.stringMatching(/[a-zA-Z0-9]/),
           columnId: 'column1',
           operand: 'between',
           value: expect.arrayContaining(['2021-01-01', '2021-02-01']),

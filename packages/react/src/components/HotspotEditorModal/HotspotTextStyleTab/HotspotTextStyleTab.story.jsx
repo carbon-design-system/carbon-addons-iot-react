@@ -20,7 +20,7 @@ import {
 import HotspotTextStyleTab from './HotspotTextStyleTab';
 
 export default {
-  title: 'Watson IoT Experimental/HotSpotEditorModal/HotspotTextStyleTab',
+  title: 'Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab',
   decorators: [withKnobs],
 
   parameters: {
@@ -85,7 +85,7 @@ Default.story = {
     info: {
       propTables: [HotspotTextStyleTab],
       text: `This is an example of the <HotspotTextStyleTab> HotSpot sub component. The state needs to be managed by the consuming application.
-        
+
       ~~~js
     const [formValues, setFormValues] = useState({});
 
@@ -101,7 +101,7 @@ Default.story = {
           }}
         />
       );
-      ~~~       
+      ~~~
       `,
     },
   },

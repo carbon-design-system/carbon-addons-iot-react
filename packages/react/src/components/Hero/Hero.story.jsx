@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { Button } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
-import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
+import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 
 import Hero from './Hero';
 
@@ -24,12 +24,12 @@ const tooltip = {
 };
 
 export default {
-  title: 'Watson IoT/Hero (Deprecated)',
+  title: 'Watson IoT/🚫 Hero',
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 
 export const Deprecated = () => (
-  <DeprecationNotice deprecatedComponentName="Hero" replacementComponentName="PageTitleBar" />
+  <StoryNotice componentName="Hero" replacementComponentName="PageTitleBar" />
 );
 Deprecated.story = {
   name: deprecatedStoryTitle,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) has breadcrumb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 PageHero has breadcrumb 1`] = `
 <div
   className="storybook-container"
 >
@@ -54,7 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) has left content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 PageHero has left content 1`] = `
 <div
   className="storybook-container"
 >
@@ -147,7 +147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 PageHero normal 1`] = `
 <div
   className="storybook-container"
 >
@@ -233,7 +233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) normal with content switcher 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 PageHero normal with content switcher 1`] = `
 <div
   className="storybook-container"
 >
@@ -357,7 +357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) with section 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 PageHero with section 1`] = `
 <div
   className="storybook-container"
 >
@@ -448,7 +448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 PageHero ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >
@@ -461,7 +461,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
     }
   >
     <div
-      style={Object {}}
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
     >
       <div
         className="bx--toast-notification bx--toast-notification--warning"

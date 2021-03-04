@@ -123,7 +123,7 @@ describe('barChartUtils', () => {
       },
     ];
     // check horizontal layout
-    expect(formatChartData(series, null, 'city', null, BAR_CHART_TYPES.GROUPED)).toEqual(null);
+    expect(formatChartData(series, null, 'city', null, BAR_CHART_TYPES.GROUPED)).toEqual([]);
   });
 
   it('formatChartData returns formatted data for group-based chart', () => {
@@ -164,7 +164,7 @@ describe('barChartUtils', () => {
         value: 270,
       },
     ]);
-    expect(formatChartData(series, null, 'city', null, BAR_CHART_TYPES.GROUPED)).toBeNull();
+    expect(formatChartData(series, null, 'city', null, BAR_CHART_TYPES.GROUPED)).toEqual([]);
   });
 
   it('formatChartData returns formatted data for time-based and group-based chart', () => {
@@ -239,7 +239,7 @@ describe('barChartUtils', () => {
     ]);
 
     // Handle nulls
-    expect(formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.STACKED)).toBeNull();
+    expect(formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.STACKED)).toEqual([]);
   });
 
   it('formatChartData returns formatted data for simple, non-time and non-group chart', () => {
@@ -275,7 +275,7 @@ describe('barChartUtils', () => {
         value: 388,
       },
     ]);
-    expect(formatChartData(series, null, 'city', null, BAR_CHART_TYPES.SIMPLE)).toBeNull();
+    expect(formatChartData(series, null, 'city', null, BAR_CHART_TYPES.SIMPLE)).toEqual([]);
   });
 
   it('formatChartData returns formatted data for time-based, non-group chart', () => {
@@ -316,7 +316,7 @@ describe('barChartUtils', () => {
         value: 565,
       },
     ]);
-    expect(formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.SIMPLE)).toBeNull();
+    expect(formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.SIMPLE)).toEqual([]);
   });
 
   it('formatChartData doesnt return null values', () => {

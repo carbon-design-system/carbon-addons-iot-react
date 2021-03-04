@@ -12,7 +12,14 @@ import {
   ChartSunburst32,
 } from '@carbon/icons-react';
 
+import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
+
 import IconDropdown from './IconDropdown';
+
+export const Experimental = () => <StoryNotice componentName="IconDropdown" experimental />;
+Experimental.story = {
+  name: experimentalStoryTitle,
+};
 
 export const items = [
   {
@@ -77,7 +84,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'Watson IoT Experimental/IconDropdown',
+  title: 'Watson IoT Experimental/☢️ IconDropdown',
   decorators: [withKnobs],
   parameters: {
     component: IconDropdown,

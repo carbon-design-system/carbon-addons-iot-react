@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
@@ -256,7 +256,7 @@ const CardEditForm = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
@@ -318,7 +318,7 @@ const CardEditForm = ({
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
-            data-testid={`${testID}-open-editor-button`}
+            testID={`${testID}-open-editor-button`}
             kind="tertiary"
             size="small"
             renderIcon={Code16}
