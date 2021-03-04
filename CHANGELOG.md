@@ -1,5 +1,21 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [2.144.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.41...v2.144.0) (2021-03-04)
+
+
+### Features
+
+* **repo:** pull in next to maste and fix memory leak ([8ae0cff](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8ae0cffb6a6cf8b0490023a8edf1855f8ef17d17))
+
+
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
