@@ -15,7 +15,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
     <div
       className="bx--modal is-visible iot--editor iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
-      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -196,7 +195,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -206,7 +204,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           </button>
           <button
             className="iot--btn bx--btn bx--btn--primary"
-            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -266,7 +263,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
     <div
       className="bx--modal is-visible iot--editor iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
-      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -447,7 +443,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -457,7 +452,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           </button>
           <button
             className="iot--btn bx--btn bx--btn--primary"
-            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}

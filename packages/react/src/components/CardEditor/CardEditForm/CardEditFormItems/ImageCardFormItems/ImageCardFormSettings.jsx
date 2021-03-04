@@ -122,7 +122,6 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
           data-testid={`${baseClassName}--input-color-dropdown`}
           titleText={mergedI18n.colorTitleText}
           light
-          title={mergedI18n.selectAColor}
           label={mergedI18n.selectAColor}
           colors={colors}
           id={`${baseClassName}--input-color`}

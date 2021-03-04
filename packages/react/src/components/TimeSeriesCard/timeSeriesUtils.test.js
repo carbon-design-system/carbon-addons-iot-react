@@ -76,7 +76,7 @@ describe('timeSeriesUtils', () => {
       { dataSourceId: 'column2' },
       { dataSourceId: 'column3', type: 'TIMESTAMP' },
     ]);
-    expect(tableSampleValues).toHaveLength(100);
+    expect(tableSampleValues).toHaveLength(10);
     expect(every(tableSampleValues, 'id')).toEqual(true); // every row should have its own id
     expect(every(tableSampleValues, 'values')).toEqual(true); // every row should have its own values
     expect(tableSampleValues[0].values).toHaveProperty('column1');

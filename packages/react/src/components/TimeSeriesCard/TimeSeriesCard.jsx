@@ -283,7 +283,8 @@ const TimeSeriesCard = ({
 
   const sampleValues = useMemo(
     () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
-    [series, timeDataSourceId, interval, timeRange]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [series, interval, timeRange]
   );
 
   const values = isEditable ? sampleValues : valuesProp;
@@ -342,7 +343,7 @@ const TimeSeriesCard = ({
   );
 
   // Set the colors for each dataset
-  const colors = useMemo(() => formatColors(series), [series]);
+  const colors = formatColors(series);
 
   /**
    * Determines the dot stroke color (the border of the data point)
@@ -352,16 +353,13 @@ const TimeSeriesCard = ({
    * @param {string} originalStrokeColor from carbon charts
    * @returns {string} stroke color
    */
-  const handleStrokeColor = useCallback(
-    (datasetLabel, label, data, originalStrokeColor) => {
-      if (!isNil(data)) {
-        const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-        return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
-      }
-      return originalStrokeColor;
-    },
-    [alertRanges]
-  );
+  const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
+    if (!isNil(data)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
+    }
+    return originalStrokeColor;
+  };
 
   /**
    * Determines the dot fill color based on matching alerts
@@ -371,16 +369,16 @@ const TimeSeriesCard = ({
    * @param {string} originalFillColor from carbon charts
    * @returns {string} fill color
    */
-  const handleFillColor = useCallback(
-    (datasetLabel, label, data, originalFillColor) => {
-      if (!isNil(data)) {
-        const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-        return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalFillColor;
-      }
-      return originalFillColor;
-    },
-    [alertRanges]
-  );
+  const handleFillColor = (datasetLabel, label, data, originalFillColor) => {
+    // If it's editable don't fill the dot
+    const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
+    if (!isNil(data)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : defaultFillColor;
+    }
+
+    return defaultFillColor;
+  };
 
   /**
    * Determines if the dot is filled based on matching alerts
@@ -390,17 +388,14 @@ const TimeSeriesCard = ({
    * @param {Boolean} isFilled default setting from carbon charts
    * @returns {Boolean}
    */
-  const handleIsFilled = useCallback(
-    (datasetLabel, label, data, isFilled) => {
-      if (!isNil(data)) {
-        const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-        return matchingAlertRange?.length > 0 ? true : isFilled;
-      }
+  const handleIsFilled = (datasetLabel, label, data, isFilled) => {
+    if (!isNil(data)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange?.length > 0 ? true : isFilled;
+    }
 
-      return isFilled;
-    },
-    [alertRanges]
-  );
+    return isFilled;
+  };
 
   /** This is needed to update the chart when the lines and values change */
   useDeepCompareEffect(() => {
@@ -491,108 +486,6 @@ const TimeSeriesCard = ({
 
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
-  const options = useMemo(
-    () => ({
-      animations: false,
-      accessibility: false,
-      axes: {
-        bottom: {
-          title: xLabel || ' ',
-          mapsTo: 'date',
-          scaleType: 'time',
-          ticks: {
-            max: maxTicksPerSize,
-            formatter: formatTick,
-          },
-          includeZero: includeZeroOnXaxis,
-          ...(domainRange ? { domain: domainRange } : {}),
-        },
-        left: {
-          title: `${yLabel || ''} ${unit ? `(${unit})` : ''}`,
-          mapsTo: 'value',
-          ticks: {
-            formatter: (axisValue) =>
-              chartValueFormatter(axisValue, newSize, null, locale, decimalPrecision),
-          },
-          ...(chartType !== TIME_SERIES_TYPES.BAR
-            ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
-            : {}),
-          stacked: chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
-          includeZero: includeZeroOnYaxis,
-          scaleType: 'linear',
-        },
-      },
-      legend: {
-        position: 'bottom',
-        clickable: !isEditable,
-        enabled: showLegend ?? series.length > 1,
-      },
-      containerResizable: true,
-      tooltip: {
-        valueFormatter: (tooltipValue) =>
-          chartValueFormatter(tooltipValue, newSize, unit, locale, decimalPrecision),
-        customHTML: (...args) =>
-          handleTooltip(
-            ...args,
-            alertRanges,
-            alertDetected,
-            showTimeInGMT,
-            tooltipDateFormatPattern
-          ),
-        groupLabel: i18n.tooltipGroupLabel,
-      },
-      getStrokeColor: handleStrokeColor,
-      getFillColor: handleFillColor,
-      getIsFilled: handleIsFilled,
-      color: colors,
-      ...(zoomBar?.enabled && (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
-        ? {
-            zoomBar: {
-              // [zoomBar.axes]: {    TODO: the top axis is the only axis supported at the moment so default to top
-              top: {
-                enabled: zoomBar.enabled,
-                initialZoomDomain: zoomBar.initialZoomDomain,
-                type: zoomBar.view || 'slider_view', // default to slider view
-              },
-            },
-          }
-        : {}),
-      timeScale: {
-        addSpaceOnEdges: !isNil(addSpaceOnEdges) ? addSpaceOnEdges : 1,
-      },
-    }),
-    [
-      addSpaceOnEdges,
-      alertDetected,
-      alertRanges,
-      chartType,
-      colors,
-      decimalPrecision,
-      domainRange,
-      formatTick,
-      handleFillColor,
-      handleIsFilled,
-      handleStrokeColor,
-      i18n.tooltipGroupLabel,
-      includeZeroOnXaxis,
-      includeZeroOnYaxis,
-      isEditable,
-      isExpanded,
-      locale,
-      maxTicksPerSize,
-      newSize,
-      series.length,
-      showLegend,
-      showTimeInGMT,
-      size,
-      tooltipDateFormatPattern,
-      unit,
-      xLabel,
-      yLabel,
-      zoomBar,
-    ]
-  );
-
   return (
     <Card
       title={title}
@@ -622,7 +515,75 @@ const TimeSeriesCard = ({
                 chartRef = el;
               }}
               data={chartData}
-              options={options}
+              options={{
+                animations: false,
+                accessibility: false,
+                axes: {
+                  bottom: {
+                    title: xLabel || ' ',
+                    mapsTo: 'date',
+                    scaleType: 'time',
+                    ticks: {
+                      max: maxTicksPerSize,
+                      formatter: formatTick,
+                    },
+                    includeZero: includeZeroOnXaxis,
+                    ...(domainRange ? { domain: domainRange } : {}),
+                  },
+                  left: {
+                    title: `${yLabel || ''} ${unit ? `(${unit})` : ''}`,
+                    mapsTo: 'value',
+                    ticks: {
+                      formatter: (axisValue) =>
+                        chartValueFormatter(axisValue, newSize, null, locale, decimalPrecision),
+                    },
+                    ...(chartType !== TIME_SERIES_TYPES.BAR
+                      ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
+                      : {}),
+                    stacked: chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
+                    includeZero: includeZeroOnYaxis,
+                    scaleType: 'linear',
+                  },
+                },
+                legend: {
+                  position: 'bottom',
+                  clickable: !isEditable,
+                  enabled: showLegend ?? series.length > 1,
+                },
+                containerResizable: true,
+                tooltip: {
+                  valueFormatter: (tooltipValue) =>
+                    chartValueFormatter(tooltipValue, newSize, unit, locale, decimalPrecision),
+                  customHTML: (...args) =>
+                    handleTooltip(
+                      ...args,
+                      alertRanges,
+                      alertDetected,
+                      showTimeInGMT,
+                      tooltipDateFormatPattern
+                    ),
+                  groupLabel: i18n.tooltipGroupLabel,
+                },
+                getStrokeColor: handleStrokeColor,
+                getFillColor: handleFillColor,
+                getIsFilled: handleIsFilled,
+                color: colors,
+                ...(zoomBar?.enabled && (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
+                  ? {
+                      zoomBar: {
+                        // [zoomBar.axes]: {    TODO: the top axis is the only axis supported at the moment so default to top
+                        top: {
+                          enabled: zoomBar.enabled,
+                          initialZoomDomain: zoomBar.initialZoomDomain,
+                          type: zoomBar.view || 'slider_view', // default to slider view
+                        },
+                      },
+                    }
+                  : {}),
+                timeScale: {
+                  addSpaceOnEdges: !isNil(addSpaceOnEdges) ? addSpaceOnEdges : 1,
+                },
+              }}
               width="100%"
               height="100%"
             />
@@ -689,7 +650,6 @@ TimeSeriesCard.defaultProps = {
     includeZeroOnYaxis: false,
     showLegend: true,
   },
-  interval: 'hour',
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',

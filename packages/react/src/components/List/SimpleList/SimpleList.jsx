@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -92,7 +92,7 @@ const SimpleList = ({
   onSelect,
   title,
 }) => {
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   const [selectedIds, setSelectedIds] = useState([]);
   const [searchValue, setSearchValue] = useState('');

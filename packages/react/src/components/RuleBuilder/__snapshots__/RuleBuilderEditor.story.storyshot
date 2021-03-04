@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ RuleBuilder with a deeply nested rule tree 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/RuleBuilder with a deeply nested rule tree 1`] = `
 <div
   className="storybook-container"
 >
@@ -29,7 +29,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               
               <div
-                className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                className="bx--dropdown bx--list-box"
                 id="14p5ho3pcu"
                 onClick={[Function]}
                 onKeyDown={[Function]}
@@ -157,7 +157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           
           <div
-            className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+            className="bx--dropdown bx--list-box"
             id="rsiru4rjba-column-dropdown"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -221,7 +221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           
           <div
-            className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+            className="bx--dropdown bx--list-box"
             id="rsiru4rjba-operand-dropdown"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -280,7 +280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
         </div>
         <div
-          className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+          className="bx--form-item bx--text-input-wrapper"
         >
           <div
             className="bx--text-input__field-outer-wrapper"
@@ -291,15 +291,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               data-warn={null}
             >
               <input
-                className="bx--text-input bx--text__input bx--text-input--light"
+                className="bx--text-input bx--text__input"
                 data-testid="rsiru4rjba-value"
                 defaultValue="45"
                 disabled={false}
                 id="rsiru4rjba-value"
                 onChange={[Function]}
                 onClick={[Function]}
-                placeholder="Enter a value"
-                title="Enter a value"
                 type="text"
               />
             </div>
@@ -413,7 +411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           
           <div
-            className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+            className="bx--dropdown bx--list-box"
             id="34bvyub9jq-column-dropdown"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -477,7 +475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           
           <div
-            className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+            className="bx--dropdown bx--list-box"
             id="34bvyub9jq-operand-dropdown"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -536,7 +534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
         </div>
         <div
-          className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+          className="bx--form-item bx--text-input-wrapper"
         >
           <div
             className="bx--text-input__field-outer-wrapper"
@@ -547,15 +545,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               data-warn={null}
             >
               <input
-                className="bx--text-input bx--text__input bx--text-input--light"
+                className="bx--text-input bx--text__input"
                 data-testid="34bvyub9jq-value"
                 defaultValue="14"
                 disabled={false}
                 id="34bvyub9jq-value"
                 onChange={[Function]}
                 onClick={[Function]}
-                placeholder="Enter a value"
-                title="Enter a value"
                 type="text"
               />
             </div>
@@ -672,7 +668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               
               <div
-                className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                className="bx--dropdown bx--list-box"
                 id="i34imt0geh"
                 onClick={[Function]}
                 onKeyDown={[Function]}
@@ -745,7 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             
             <div
-              className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              className="bx--dropdown bx--list-box"
               id="ewc2z5kyfu-column-dropdown"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -809,7 +805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             
             <div
-              className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              className="bx--dropdown bx--list-box"
               id="ewc2z5kyfu-operand-dropdown"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -868,7 +864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+            className="bx--form-item bx--text-input-wrapper"
           >
             <div
               className="bx--text-input__field-outer-wrapper"
@@ -879,15 +875,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-warn={null}
               >
                 <input
-                  className="bx--text-input bx--text__input bx--text-input--light"
+                  className="bx--text-input bx--text__input"
                   data-testid="ewc2z5kyfu-value"
                   defaultValue="46"
                   disabled={false}
                   id="ewc2z5kyfu-value"
                   onChange={[Function]}
                   onClick={[Function]}
-                  placeholder="Enter a value"
-                  title="Enter a value"
                   type="text"
                 />
               </div>
@@ -1001,7 +995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             
             <div
-              className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              className="bx--dropdown bx--list-box"
               id="hks7h2zin4-column-dropdown"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1065,7 +1059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             
             <div
-              className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              className="bx--dropdown bx--list-box"
               id="hks7h2zin4-operand-dropdown"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1124,7 +1118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+            className="bx--form-item bx--text-input-wrapper"
           >
             <div
               className="bx--text-input__field-outer-wrapper"
@@ -1135,15 +1129,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-warn={null}
               >
                 <input
-                  className="bx--text-input bx--text__input bx--text-input--light"
+                  className="bx--text-input bx--text__input"
                   data-testid="hks7h2zin4-value"
                   defaultValue="45"
                   disabled={false}
                   id="hks7h2zin4-value"
                   onChange={[Function]}
                   onClick={[Function]}
-                  placeholder="Enter a value"
-                  title="Enter a value"
                   type="text"
                 />
               </div>
@@ -1260,7 +1252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 
                 <div
-                  className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                  className="bx--dropdown bx--list-box"
                   id="qzn8477mbg"
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -1333,7 +1325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               
               <div
-                className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                className="bx--dropdown bx--list-box"
                 id="wg9hlv197c-column-dropdown"
                 onClick={[Function]}
                 onKeyDown={[Function]}
@@ -1397,7 +1389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               
               <div
-                className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                className="bx--dropdown bx--list-box"
                 id="wg9hlv197c-operand-dropdown"
                 onClick={[Function]}
                 onKeyDown={[Function]}
@@ -1456,7 +1448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+              className="bx--form-item bx--text-input-wrapper"
             >
               <div
                 className="bx--text-input__field-outer-wrapper"
@@ -1467,15 +1459,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   data-warn={null}
                 >
                   <input
-                    className="bx--text-input bx--text__input bx--text-input--light"
+                    className="bx--text-input bx--text__input"
                     data-testid="wg9hlv197c-value"
                     defaultValue=""
                     disabled={false}
                     id="wg9hlv197c-value"
                     onChange={[Function]}
                     onClick={[Function]}
-                    placeholder="Enter a value"
-                    title="Enter a value"
                     type="text"
                   />
                 </div>
@@ -1592,7 +1582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   
                   <div
-                    className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                    className="bx--dropdown bx--list-box"
                     id="eobo3s5tie"
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -1665,7 +1655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 
                 <div
-                  className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                  className="bx--dropdown bx--list-box"
                   id="7kadk2wfv8-column-dropdown"
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -1729,7 +1719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 
                 <div
-                  className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                  className="bx--dropdown bx--list-box"
                   id="7kadk2wfv8-operand-dropdown"
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -1788,7 +1778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </div>
               </div>
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item bx--text-input-wrapper"
               >
                 <div
                   className="bx--text-input__field-outer-wrapper"
@@ -1799,15 +1789,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     data-warn={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      className="bx--text-input bx--text__input"
                       data-testid="7kadk2wfv8-value"
                       defaultValue="44"
                       disabled={false}
                       id="7kadk2wfv8-value"
                       onChange={[Function]}
                       onClick={[Function]}
-                      placeholder="Enter a value"
-                      title="Enter a value"
                       type="text"
                     />
                   </div>
@@ -1921,7 +1909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 
                 <div
-                  className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                  className="bx--dropdown bx--list-box"
                   id="49mf09vjhn-column-dropdown"
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -1985,7 +1973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 
                 <div
-                  className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                  className="bx--dropdown bx--list-box"
                   id="49mf09vjhn-operand-dropdown"
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -2044,7 +2032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </div>
               </div>
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item bx--text-input-wrapper"
               >
                 <div
                   className="bx--text-input__field-outer-wrapper"
@@ -2055,15 +2043,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     data-warn={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      className="bx--text-input bx--text__input"
                       data-testid="49mf09vjhn-value"
                       defaultValue="46"
                       disabled={false}
                       id="49mf09vjhn-value"
                       onChange={[Function]}
                       onClick={[Function]}
-                      placeholder="Enter a value"
-                      title="Enter a value"
                       type="text"
                     />
                   </div>
@@ -2198,7 +2184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ RuleBuilder with an empty tree 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/RuleBuilder with an empty tree 1`] = `
 <div
   className="storybook-container"
 >
@@ -2227,7 +2213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               
               <div
-                className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                className="bx--dropdown bx--list-box"
                 id="14p5ho3pcu"
                 onClick={[Function]}
                 onKeyDown={[Function]}
@@ -2355,7 +2341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           
           <div
-            className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+            className="bx--dropdown bx--list-box"
             id="rsiru4rjba-column-dropdown"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -2419,7 +2405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           
           <div
-            className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+            className="bx--dropdown bx--list-box"
             id="rsiru4rjba-operand-dropdown"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -2478,7 +2464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
         </div>
         <div
-          className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+          className="bx--form-item bx--text-input-wrapper"
         >
           <div
             className="bx--text-input__field-outer-wrapper"
@@ -2489,15 +2475,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               data-warn={null}
             >
               <input
-                className="bx--text-input bx--text__input bx--text-input--light"
+                className="bx--text-input bx--text__input"
                 data-testid="rsiru4rjba-value"
                 defaultValue=""
                 disabled={false}
                 id="rsiru4rjba-value"
                 onChange={[Function]}
                 onClick={[Function]}
-                placeholder="Enter a value"
-                title="Enter a value"
                 type="text"
               />
             </div>
@@ -2629,7 +2613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ RuleBuilder with custom column operands and field renderers 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/RuleBuilder with custom column operands and field renderers 1`] = `
 <div
   className="storybook-container"
 >
@@ -2658,7 +2642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               
               <div
-                className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                className="bx--dropdown bx--list-box"
                 id="14p5ho3pcu"
                 onClick={[Function]}
                 onKeyDown={[Function]}
@@ -2786,7 +2770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           
           <div
-            className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+            className="bx--dropdown bx--list-box"
             id="rsiru4rjba-column-dropdown"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -2850,7 +2834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           
           <div
-            className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+            className="bx--dropdown bx--list-box"
             id="rsiru4rjba-operand-dropdown"
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -2909,7 +2893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
         </div>
         <div
-          className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+          className="bx--form-item bx--text-input-wrapper"
         >
           <div
             className="bx--text-input__field-outer-wrapper"
@@ -2920,15 +2904,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               data-warn={null}
             >
               <input
-                className="bx--text-input bx--text__input bx--text-input--light"
+                className="bx--text-input bx--text__input"
                 data-testid="rsiru4rjba-value"
                 defaultValue=""
                 disabled={false}
                 id="rsiru4rjba-value"
                 onChange={[Function]}
                 onClick={[Function]}
-                placeholder="Enter a value"
-                title="Enter a value"
                 type="text"
               />
             </div>
@@ -3031,106 +3013,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
         </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ RuleBuilder ️⚠️ Experimental Notice  1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--toast-notification bx--toast-notification--warning-alt"
-      kind="warning-alt"
-      role="alert"
-      style={
-        Object {
-          "marginBottom": "0.5rem",
-          "minWidth": "30rem",
-        }
-      }
-    >
-      <svg
-        aria-hidden={true}
-        className="bx--toast-notification__icon"
-        fill="currentColor"
-        focusable="false"
-        height={20}
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 32 32"
-        width={20}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M29.879,27.5212l-13-25.0363a1.04,1.04,0,0,0-1.7583,0l-13,25.0363A1.0015,1.0015,0,0,0,3,29H29a1.001,1.001,0,0,0,.8789-1.4788ZM14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
-        />
-        <path
-          d="M14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
-          data-icon-path="inner-path"
-          fill="none"
-        />
-        <title>
-          warning-alt icon
-        </title>
-      </svg>
-      <div
-        className="bx--toast-notification__details"
-      >
-        <h3
-          className="bx--toast-notification__title"
-        >
-          Experimental Component Notice
-        </h3>
-        <div
-          className="bx--toast-notification__subtitle"
-        >
-          <span>
-            RuleBuilder
-             is an
-            <a
-              href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
-            >
-              experimental component
-            </a>
-            and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
-          </span>
-        </div>
-        <div
-          className="bx--toast-notification__caption"
-        />
       </div>
     </div>
   </div>

@@ -3,17 +3,11 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 import { validThresholdIcons } from '../DashboardEditor/editorUtils';
-import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import SimpleIconDropdown from './SimpleIconDropdown';
 
-export const Experimental = () => <StoryNotice componentName="SimpleIconDropdown" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
-
 export default {
-  title: 'Watson IoT Experimental/☢️ SimpleIconDropdown',
+  title: 'Watson IoT Experimental/SimpleIconDropdown',
   decorators: [withKnobs],
   parameters: {
     component: SimpleIconDropdown,

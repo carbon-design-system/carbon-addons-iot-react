@@ -109,8 +109,8 @@ describe('DataSeriesFormItem', () => {
   describe('formatDataItemsForDropdown', () => {
     it('should correctly format the items for the dropdown', () => {
       expect(formatDataItemsForDropdown(dataItems)).toEqual([
-        { id: 'temperature', text: 'Temperature' },
-        { id: 'pressure', text: 'Pressure' },
+        { id: 'temperature', text: 'temperature' },
+        { id: 'pressure', text: 'pressure' },
       ]);
     });
   });
@@ -123,7 +123,6 @@ describe('DataSeriesFormItem', () => {
           getValidDataItems={mockGetValidDataItems}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
       expect(mockGetValidDataItems).toHaveBeenCalled();
@@ -136,7 +135,6 @@ describe('DataSeriesFormItem', () => {
           getValidDataItems={mockGetValidDataItems}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
       expect(screen.getByText('Data')).toBeInTheDocument();
@@ -148,7 +146,6 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={[]}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
       expect(screen.queryByText('Data')).toBeNull();
@@ -160,14 +157,13 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
-      const dataItemDropDown = screen.getAllByRole('img')[0];
+      const dataItemDropDown = screen.getAllByRole('img')[2];
       expect(dataItemDropDown).toBeInTheDocument();
       fireEvent.click(dataItemDropDown);
 
-      const pressureOption = screen.getByText('Pressure');
+      const pressureOption = screen.getByText('pressure');
       expect(pressureOption).toBeInTheDocument();
       fireEvent.click(pressureOption);
 
@@ -182,7 +178,7 @@ describe('DataSeriesFormItem', () => {
             {
               dataItemId: 'temperature',
               aggregationMethod: undefined,
-              color: 'red',
+              color: '#6929c4',
               dataSourceId: expect.anything(), // this is the dataSourceId followed by a uuid
               label: 'Temperature',
             },
@@ -211,7 +207,6 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
       const dataItemDropDown = screen.getByText('temperature');
@@ -232,7 +227,6 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
 
@@ -251,7 +245,6 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
 
@@ -273,16 +266,15 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
 
-      const dataItemsDropdown = screen.getByLabelText('Select data items');
+      const dataItemsDropdown = screen.getAllByRole('img')[1];
       expect(dataItemsDropdown).toBeInTheDocument();
 
       fireEvent.click(dataItemsDropdown);
 
-      const pressureOption = screen.getByText('Pressure');
+      const pressureOption = screen.getByText('pressure');
       expect(pressureOption).toBeInTheDocument();
 
       fireEvent.click(pressureOption);
@@ -295,7 +287,6 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
 
@@ -314,7 +305,6 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
 
@@ -339,7 +329,6 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-          translateWithId={jest.fn()}
         />
       );
 
@@ -455,7 +444,7 @@ describe('DataSeriesFormItem', () => {
       expect(dataItemsDropdown).toBeInTheDocument();
       fireEvent.click(dataItemsDropdown);
       // click on a data item
-      const pressureDataItem = await screen.findAllByText('Pressure');
+      const pressureDataItem = await screen.findAllByText('pressure');
       expect(pressureDataItem[0]).toBeInTheDocument();
       fireEvent.click(pressureDataItem[0]);
       // assert that onChange was called

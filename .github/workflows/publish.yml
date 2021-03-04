@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          token: ${{ secrets.CARBON_BOT_TOKEN }}
+          token: ${{ secrets.ADMIN_TOKEN }}
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -49,6 +49,6 @@ jobs:
 
       - name: Publish
         env:
-          GH_TOKEN: ${{ secrets.CARBON_BOT_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn publish-npm

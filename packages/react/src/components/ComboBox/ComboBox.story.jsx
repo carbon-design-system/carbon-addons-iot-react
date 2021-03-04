@@ -132,7 +132,7 @@ const ControlledComboBoxApp = ({ onBlur, ...props }) => {
 const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
 
 export default {
-  title: 'Watson IoT/ComboBox',
+  title: 'Watson IoT Experimental/ComboBox',
   decorators: [withKnobs],
 
   parameters: {
@@ -205,7 +205,7 @@ export const ExperimentalMultiValueTags = () => (
 );
 
 ExperimentalMultiValueTags.story = {
-  name: 'multi-value tags',
+  name: 'Experimental multi-value tags',
 
   parameters: {
     info: {
@@ -228,7 +228,7 @@ export const ExperimentalAddNewItemsToList = () => (
 );
 
 ExperimentalAddNewItemsToList.story = {
-  name: 'add new items to list',
+  name: 'Experimental add new items to list',
 
   parameters: {
     info: {

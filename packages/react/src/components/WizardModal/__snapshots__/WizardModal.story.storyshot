@@ -15,7 +15,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     <div
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
-      data-testid="ComposedModal"
       onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
@@ -262,7 +261,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
-              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -272,7 +270,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
             <button
               className="iot--btn bx--btn bx--btn--primary"
-              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -333,7 +330,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     <div
       className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI iot--composed-modal"
       data-floating-menu-container={true}
-      data-testid="ComposedModal"
       onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
@@ -587,7 +583,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
-              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -597,7 +592,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
             <button
               className="iot--btn bx--btn bx--btn--primary"
-              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -658,7 +652,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     <div
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
-      data-testid="ComposedModal"
       onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
@@ -895,7 +888,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
-              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -905,7 +897,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
             <button
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
-              data-testid="Button"
               disabled={true}
               onClick={[Function]}
               tabIndex={0}

@@ -6,7 +6,6 @@ import sortBy from 'lodash/sortBy';
 import withSize from 'react-sizeme';
 import update from 'immutability-helper';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
-import warning from 'warning';
 
 import { HotspotIconPropType, ColorPropType } from '../../constants/SharedPropTypes';
 import ImageHotspots from '../ImageCard/ImageHotspots';
@@ -253,14 +252,6 @@ const HotspotEditorModal = ({
 
   translateWithId,
 }) => {
-  React.useEffect(() => {
-    if (__DEV__) {
-      warning(
-        false,
-        'The `HotspotEditorModal` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
-      );
-    }
-  }, []);
   const initialHotspots = cardConfig.values?.hotspots || [];
   const myDataItems = useMemo(
     () => sortBy(getValidDataItems ? getValidDataItems(cardConfig) : dataItems, 'label'),

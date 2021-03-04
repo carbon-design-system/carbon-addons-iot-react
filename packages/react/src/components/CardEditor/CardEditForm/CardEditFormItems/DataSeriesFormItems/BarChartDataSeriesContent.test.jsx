@@ -56,11 +56,6 @@ describe('BarChartDataSeriesContent', () => {
     const defaultedGroupBy = screen.getByText('Time interval');
     expect(defaultedGroupBy).toBeInTheDocument();
   });
-  it('Should not show subgroup if there are no available Dimensions', () => {
-    render(<BarChartDataSeriesContent cardConfig={barChartConfig} onChange={mockOnChange} />);
-    const defaultedGroupBy = screen.queryByText('Sub-group');
-    expect(defaultedGroupBy).toBeNull();
-  });
   it('handles onChange function for groupBy', () => {
     render(
       <BarChartDataSeriesContent

@@ -24,7 +24,6 @@ Map {
       "loading": false,
       "recommended": false,
       "selected": false,
-      "testID": "Button",
     },
     "propTypes": Object {
       "children": Object {
@@ -64,9 +63,6 @@ Map {
       },
       "selected": Object {
         "type": "bool",
-      },
-      "testID": Object {
-        "type": "string",
       },
     },
   },
@@ -149,7 +145,6 @@ Map {
       "passiveModal": false,
       "sendingData": null,
       "submitFailed": false,
-      "testID": "ComposedModal",
       "type": null,
     },
     "propTypes": Object {
@@ -251,9 +246,6 @@ Map {
       },
       "submitFailed": Object {
         "type": "bool",
-      },
-      "testID": Object {
-        "type": "string",
       },
       "type": Object {
         "args": Array [
@@ -4419,7 +4411,6 @@ Map {
       "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
-      "hasDeselection": true,
       "hasMultiSelect": false,
       "hasPagination": true,
       "hasSearch": false,
@@ -4483,9 +4474,6 @@ Map {
           ],
         ],
         "type": "oneOf",
-      },
-      "hasDeselection": Object {
-        "type": "bool",
       },
       "hasMultiSelect": Object {
         "type": "bool",
@@ -5641,7 +5629,6 @@ Map {
         "toLabel": "to",
         "toNowLabel": "to Now",
       },
-      "id": undefined,
       "intervals": Array [
         Object {
           "label": "minutes",
@@ -5711,7 +5698,6 @@ Map {
       ],
       "renderPresetTooltipText": null,
       "showRelativeOption": true,
-      "testId": "date-time-picker",
     },
     "propTypes": Object {
       "dateTimeMask": Object {
@@ -5939,9 +5925,6 @@ Map {
         ],
         "type": "shape",
       },
-      "id": Object {
-        "type": "string",
-      },
       "intervals": Object {
         "args": Array [
           Object {
@@ -6013,9 +5996,6 @@ Map {
       },
       "showRelativeOption": Object {
         "type": "bool",
-      },
-      "testId": Object {
-        "type": "string",
       },
     },
   },
@@ -6642,9 +6622,6 @@ Map {
       "submitFailed": Object {
         "type": "bool",
       },
-      "testID": Object {
-        "type": "string",
-      },
       "type": Object {
         "args": Array [
           Array [
@@ -7130,7 +7107,6 @@ Map {
       "customApplications": Array [],
       "customHelpLinks": Array [],
       "customProfileLinks": Array [],
-      "hasSideNav": false,
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -7160,7 +7136,6 @@ Map {
       },
       "isAdminView": false,
       "onRouteChange": [Function],
-      "onSideNavToggled": [Function],
       "routes": null,
       "sideNavProps": null,
       "surveyData": null,
@@ -7332,9 +7307,6 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "hasSideNav": Object {
-        "type": "bool",
-      },
       "i18n": Object {
         "args": Array [
           Object {
@@ -7435,9 +7407,6 @@ Map {
         "type": "bool",
       },
       "onRouteChange": Object {
-        "type": "func",
-      },
-      "onSideNavToggled": Object {
         "type": "func",
       },
       "routes": Object {
@@ -8785,11 +8754,9 @@ Map {
         "cards": Array [],
         "layouts": Object {},
       },
-      "isCardResizable": true,
       "isLoading": false,
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
-      "isSummaryDashboard": false,
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -8806,7 +8773,7 @@ Map {
       "onValidateUploadedImage": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
-      "renderIconByName": [Function],
+      "renderIconByName": null,
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -9304,15 +9271,15 @@ Map {
             "cards": Object {
               "type": "array",
             },
+            "isSummaryDashboard": Object {
+              "type": "bool",
+            },
             "layouts": Object {
               "type": "object",
             },
           },
         ],
         "type": "shape",
-      },
-      "isCardResizable": Object {
-        "type": "bool",
       },
       "isLoading": Object {
         "type": "bool",
@@ -9321,9 +9288,6 @@ Map {
         "type": "bool",
       },
       "isSubmitLoading": Object {
-        "type": "bool",
-      },
-      "isSummaryDashboard": Object {
         "type": "bool",
       },
       "notification": Object {
@@ -9436,62 +9400,52 @@ Map {
           Object {
             "content": Object {
               "args": Array [
-                Array [
-                  Object {
+                Object {
+                  "includeZeroOnXaxis": Object {
+                    "type": "bool",
+                  },
+                  "includeZeroOnYaxis": Object {
+                    "type": "bool",
+                  },
+                  "series": Object {
                     "args": Array [
                       Object {
-                        "includeZeroOnXaxis": Object {
-                          "type": "bool",
-                        },
-                        "includeZeroOnYaxis": Object {
-                          "type": "bool",
-                        },
-                        "series": Object {
-                          "args": Array [
-                            Object {
-                              "args": Array [
-                                Object {
-                                  "color": Object {
-                                    "type": "string",
-                                  },
-                                  "dataSourceId": Object {
-                                    "type": "string",
-                                  },
-                                  "label": Object {
-                                    "type": "string",
-                                  },
-                                },
-                              ],
-                              "type": "shape",
+                        "args": Array [
+                          Object {
+                            "color": Object {
+                              "type": "string",
                             },
-                          ],
-                          "type": "arrayOf",
-                        },
-                        "showLegend": Object {
-                          "type": "bool",
-                        },
-                        "timeDataSourceId": Object {
-                          "type": "string",
-                        },
-                        "unit": Object {
-                          "type": "string",
-                        },
-                        "xLabel": Object {
-                          "type": "string",
-                        },
-                        "yLabel": Object {
-                          "type": "string",
-                        },
+                            "dataSourceId": Object {
+                              "type": "string",
+                            },
+                            "label": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
                       },
                     ],
-                    "type": "shape",
+                    "type": "arrayOf",
                   },
-                  Object {
-                    "type": "func",
+                  "showLegend": Object {
+                    "type": "bool",
                   },
-                ],
+                  "timeDataSourceId": Object {
+                    "type": "string",
+                  },
+                  "unit": Object {
+                    "type": "string",
+                  },
+                  "xLabel": Object {
+                    "type": "string",
+                  },
+                  "yLabel": Object {
+                    "type": "string",
+                  },
+                },
               ],
-              "type": "oneOfType",
+              "type": "shape",
             },
             "id": Object {
               "type": "string",
@@ -12582,7 +12536,6 @@ Map {
         "noDataLabel": "No data is available for this time range.",
         "tooltipGroupLabel": "Group",
       },
-      "interval": "hour",
       "locale": "en",
       "showTimeInGMT": false,
       "size": "MEDIUM",
@@ -18218,9 +18171,7 @@ Map {
       "wrapperClassName": null,
     },
     "propTypes": Object {
-      "addToList": Object {
-        "type": "bool",
-      },
+      "addToList": [Function],
       "ariaLabel": Object {
         "type": "string",
       },
@@ -18282,9 +18233,7 @@ Map {
       "editOptionText": Object {
         "type": "string",
       },
-      "hasMultiValue": Object {
-        "type": "bool",
-      },
+      "hasMultiValue": [Function],
       "helperText": Object {
         "type": "string",
       },
@@ -18415,7 +18364,6 @@ Map {
       "tooltipClassName": "",
       "tooltipId": "flyout-tooltip",
       "triggerId": "flyout-trigger-id",
-      "useAutoPositioning": false,
     },
     "propTypes": Object {
       "buttonSize": Object {
@@ -18528,17 +18476,12 @@ Map {
       "triggerId": Object {
         "type": "string",
       },
-      "useAutoPositioning": Object {
-        "type": "bool",
-      },
     },
   },
   "FilterTags" => Object {
     "defaultProps": Object {
       "hasOverflow": true,
-      "i18n": Object {},
       "id": "filter-tag-container",
-      "onChange": null,
       "tagContainer": null,
     },
     "propTypes": Object {
@@ -18549,14 +18492,8 @@ Map {
       "hasOverflow": Object {
         "type": "bool",
       },
-      "i18n": Object {
-        "type": "object",
-      },
       "id": Object {
         "type": "string",
-      },
-      "onChange": Object {
-        "type": "func",
       },
       "tagContainer": Object {
         "type": "elementType",

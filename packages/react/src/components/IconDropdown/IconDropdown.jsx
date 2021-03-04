@@ -217,7 +217,7 @@ const IconDropdown = ({
           hasIconOnly
           disabled={disabled}
           selected={item.id === selectedItem?.id}
-          testID={`dropdown-button__${item?.id}`}
+          data-testid={`dropdown-button__${item?.id}`}
           iconDescription={item.text}
           title={item?.text}
         />

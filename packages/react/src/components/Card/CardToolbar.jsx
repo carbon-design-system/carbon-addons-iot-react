@@ -13,7 +13,7 @@ import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
 const { iotPrefix, prefix } = settings;
 
-export const ToolbarSVGWrapper = (props) => {
+const ToolbarSVGWrapper = (props) => {
   return (
     <Button
       kind="ghost"
@@ -133,19 +133,13 @@ const CardToolbar = ({
   return isEditable ? (
     <div className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {(availableActions.clone || availableActions.delete) && (
-        <OverflowMenu
-          flipped
-          title={mergedI18n.overflowMenuDescription}
-          iconDescription={mergedI18n.overflowMenuDescription}
-        >
+        <OverflowMenu flipped title={mergedI18n.overflowMenuDescription}>
           {availableActions.clone && (
             <OverflowMenuItem
               onClick={() => {
                 onCardAction(CARD_ACTIONS.CLONE_CARD);
               }}
               itemText={mergedI18n.cloneCardLabel}
-              title={mergedI18n.cloneCardLabel}
-              requireTitle
             />
           )}
           {availableActions.delete && (
@@ -155,8 +149,6 @@ const CardToolbar = ({
                 onCardAction(CARD_ACTIONS.DELETE_CARD);
               }}
               itemText={mergedI18n.deleteCardLabel}
-              title={mergedI18n.deleteCardLabel}
-              requireTitle
             />
           )}
         </OverflowMenu>

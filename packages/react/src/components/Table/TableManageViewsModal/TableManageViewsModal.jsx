@@ -163,7 +163,7 @@ const TableManageViewsModal = ({
     <>
       <MyMainModal
         className={`${iotPrefix}--manage-views-modal`}
-        testID={testID}
+        data-testid={testID}
         error={error}
         header={{
           title: modalTitle,

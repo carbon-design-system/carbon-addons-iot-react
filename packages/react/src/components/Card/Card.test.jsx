@@ -159,13 +159,13 @@ describe('Card', () => {
         availableActions={{ edit: true, clone: true, delete: true }}
       />
     );
-    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    fireEvent.click(screen.getByTitle('Open and close list of options'));
     const secondElement = await screen.findByText('Clone card');
     fireEvent.click(secondElement);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CLONE_CARD);
 
     // Reopen menu
-    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    fireEvent.click(screen.getByTitle('Open and close list of options'));
     mockOnCardAction.mockClear();
     const thirdElement = await screen.findByText('Delete card');
     fireEvent.click(thirdElement);

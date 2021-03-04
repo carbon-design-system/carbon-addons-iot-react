@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor/CardEditFormItems/ThresholdFormItem Default Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor/CardEditFormItems/ThresholdFormItem Default Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -21,7 +21,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <button
         className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-        data-testid="Button"
         disabled={false}
         onClick={[Function]}
         tabIndex={0}
@@ -72,7 +71,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor/CardEditFormItems/ThresholdFormItem Example With Initial Values 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor/CardEditFormItems/ThresholdFormItem Example With Initial Values 1`] = `
 <div
   className="storybook-container"
 >
@@ -201,7 +200,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title=""
             >
               
               <div
@@ -433,7 +431,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
           <button
             className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -572,7 +569,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title=""
             >
               
               <div
@@ -804,7 +800,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
           <button
             className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -943,7 +938,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title=""
             >
               
               <div
@@ -1175,7 +1169,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
           <button
             className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1211,7 +1204,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       </div>
       <button
         className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-        data-testid="Button"
         disabled={false}
         onClick={[Function]}
         tabIndex={0}

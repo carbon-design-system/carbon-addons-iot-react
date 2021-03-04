@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ DashboardEditor/DashboardEditorHeader default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DashboardEditor/DashboardEditorHeader default 1`] = `
 <div
   className="storybook-container"
 >
@@ -144,7 +144,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -178,7 +177,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -212,7 +210,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -222,7 +219,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--primary"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -263,7 +259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ DashboardEditor/DashboardEditorHeader with editable title and no import/export/delete 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DashboardEditor/DashboardEditorHeader with editable title and no import/export/delete 1`] = `
 <div
   className="storybook-container"
 >
@@ -334,7 +330,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </h2>
                 <button
                   className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -380,7 +375,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -390,7 +384,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--primary"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}

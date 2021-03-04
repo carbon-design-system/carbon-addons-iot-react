@@ -5,15 +5,13 @@ import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 
 import DashboardEditorCardRenderer from './DashboardEditorCardRenderer';
 
-const commonProps = { style: { x: '10', y: '20' } };
-
 describe('DashboardEditorCardRenderer', () => {
   it('default card just renders id', () => {
-    render(<DashboardEditorCardRenderer {...commonProps} type="custom" id="myid" />);
+    render(<DashboardEditorCardRenderer type="custom" id="myid" />);
     expect(screen.getByText(/myid/)).toBeInTheDocument();
   });
   it('timeseries card just renders id', () => {
-    render(<DashboardEditorCardRenderer {...commonProps} type={CARD_TYPES.TIMESERIES} id="myid" />);
+    render(<DashboardEditorCardRenderer type={CARD_TYPES.TIMESERIES} id="myid" />);
     expect(screen.getByText(/myid/)).toBeInTheDocument();
   });
   it('value card renders threshold icon', () => {
@@ -22,7 +20,6 @@ describe('DashboardEditorCardRenderer', () => {
       <DashboardEditorCardRenderer
         title="Alert Count"
         id="facilitycard"
-        {...commonProps}
         renderIconByName={mockRenderIconByName}
         content={{
           attributes: [
@@ -68,7 +65,6 @@ describe('DashboardEditorCardRenderer', () => {
         title="Alert Count"
         id="facilitycard"
         size="LARGE"
-        {...commonProps}
         type="IMAGE"
         content={{
           src: 'landscape',
@@ -96,44 +92,11 @@ describe('DashboardEditorCardRenderer', () => {
     // Should find the correct User icon and text
     expect(screen.getByTitle('User')).toBeInTheDocument();
   });
-  it('renderCardPreview should be respected', () => {
-    render(
-      <DashboardEditorCardRenderer
-        title="Alert Count"
-        id="facilitycard"
-        size="LARGE"
-        type="IMAGE"
-        {...commonProps}
-        content={{
-          src: 'landscape',
-          image: 'landscape',
-          alt: 'Sample image',
-          zoomMax: 10,
-          hasInsertFromUrl: true,
-        }}
-        breakpoint="lg"
-        values={{
-          hotspots: [
-            {
-              x: 35,
-              y: 65,
-              color: 'purple',
-              icon: 'Checkmark',
-            },
-          ],
-        }}
-        renderCardPreview={() => <div>Hi there</div>}
-      />
-    );
-    // Should find the correct card preview
-    expect(screen.getByText('Hi there')).toBeInTheDocument();
-  });
   it('image card renders custom default icon', () => {
     render(
       <DashboardEditorCardRenderer
         title="Alert Count"
         id="facilitycard"
-        {...commonProps}
         size="LARGE"
         type="IMAGE"
         content={{
@@ -165,7 +128,6 @@ describe('DashboardEditorCardRenderer', () => {
       <DashboardEditorCardRenderer
         title="Alert Count"
         id="facilitycard"
-        {...commonProps}
         size="LARGE"
         type="IMAGE"
         renderIconByName={mockRenderIconByName}
@@ -204,7 +166,6 @@ describe('DashboardEditorCardRenderer', () => {
       <DashboardEditorCardRenderer
         type={CARD_TYPES.LIST}
         id="listCard"
-        {...commonProps}
         isResizable
         key="listCard"
         title="ListCard render"
@@ -221,7 +182,6 @@ describe('DashboardEditorCardRenderer', () => {
       <DashboardEditorCardRenderer
         type="unsupported card type"
         id="defaultCard"
-        {...commonProps}
         size={CARD_SIZES.SMALL}
       />
     );

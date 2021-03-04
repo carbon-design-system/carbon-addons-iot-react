@@ -12,7 +12,6 @@ function mockDate(isoDate) {
   };
 }
 const realScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
-const realScrollTo = window.HTMLElement.prototype.scrollTo;
 
 describe(`Storybook Snapshot tests and console checks`, () => {
   const spy = {};
@@ -93,7 +92,6 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     // Mock the scroll function as its not implemented in jsdom
     // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
-    window.HTMLElement.prototype.scrollTo = jest.fn();
   });
   initStoryshots({
     storyKindRegex: /Watson\sIoT.*$|.*Getting\sStarted/g,
@@ -158,6 +156,5 @@ describe(`Storybook Snapshot tests and console checks`, () => {
   afterEach(() => {
     global.Date = RealDate;
     window.HTMLElement.prototype.scrollIntoView = realScrollIntoView;
-    window.HTMLElement.prototype.scrollTo = realScrollTo;
   });
 });

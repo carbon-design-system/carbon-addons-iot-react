@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import debounce from 'lodash/debounce';
@@ -38,9 +38,6 @@ const propTypes = {
   hasPagination: PropTypes.bool,
   /** Determines if multi-select is enabled */
   hasMultiSelect: PropTypes.bool,
-  /** Determines if items can be deselected, meaning once an item is selected,
-   * it can only be deselected by selecting another item */
-  hasDeselection: PropTypes.bool,
   /** Buttons to be presented in List header */
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** ListItems to be displayed */
@@ -90,7 +87,6 @@ const defaultProps = {
   hasSearch: false,
   hasPagination: true,
   hasMultiSelect: false,
-  hasDeselection: true,
   buttons: null,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
@@ -195,7 +191,6 @@ const HierarchyList = ({
   hasSearch,
   hasPagination,
   hasMultiSelect,
-  hasDeselection,
   buttons,
   items,
   i18n,
@@ -212,8 +207,6 @@ const HierarchyList = ({
   sendingData,
   className,
 }) => {
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-
   const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
@@ -239,9 +232,8 @@ const HierarchyList = ({
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
       setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
-    } else if (selectedIds.includes(id) && hasDeselection) {
+    } else if (selectedIds.includes(id)) {
       setSelectedIds(selectedIds.filter((item) => item !== id));
-      // else, no-op because the item can't be deselected
     } else if (hasMultiSelect) {
       setSelectedIds([...selectedIds, id]);
     } else {
@@ -252,8 +244,7 @@ const HierarchyList = ({
   const handleSelect = (id, parentId = null) => {
     setSelected(id, parentId);
 
-    // only select if the item is not already selected
-    if (onSelect && (!selectedIds.includes(id) || hasDeselection)) {
+    if (onSelect) {
       onSelect(id);
     }
   };
@@ -378,7 +369,7 @@ const HierarchyList = ({
           open={showModal}
           items={items}
           selectedIds={editModeSelectedIds}
-          i18n={mergedI18n}
+          i18n={i18n}
           onClose={() => {
             setShowModal(false);
           }}
@@ -424,7 +415,7 @@ const HierarchyList = ({
                 ? BulkActionHeader
                 : null,
             props: {
-              mergedI18n,
+              i18n,
               editModeSelectedIds,
               cancelMoveClicked: handleBulkModalCancel,
               setShowModal,
@@ -432,7 +423,7 @@ const HierarchyList = ({
             },
           },
         }}
-        i18n={mergedI18n}
+        i18n={i18n}
         pagination={hasPagination ? pagination : null}
         isFullHeight={isFullHeight}
         isLoading={isLoading}

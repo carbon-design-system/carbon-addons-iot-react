@@ -6660,7 +6660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     type="button"
                   >
                     <svg
-                      aria-label="Open and close list of options"
+                      aria-label="open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -6689,7 +6689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         r="2"
                       />
                       <title>
-                        Open and close list of options
+                        open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -7661,7 +7661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <span
                   className="bx--pagination__text bx--pagination__items-count"
                 >
-                  1–10 of 100 items
+                  1–10 of 10 items
                 </span>
               </div>
               <div
@@ -7677,7 +7677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       className="bx--label bx--visually-hidden"
                       htmlFor="bx-pagination-select-46-right"
                     >
-                      Page number, of 10 pages
+                      Page number, of 1 pages
                     </label>
                     <div
                       className="bx--select-input--inline__wrapper"
@@ -7699,78 +7699,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             value={1}
                           >
                             1
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={2}
-                          >
-                            2
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={3}
-                          >
-                            3
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={4}
-                          >
-                            4
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={5}
-                          >
-                            5
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={6}
-                          >
-                            6
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={7}
-                          >
-                            7
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={8}
-                          >
-                            8
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={9}
-                          >
-                            9
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={10}
-                          >
-                            10
                           </option>
                         </select>
                         <svg
@@ -7795,7 +7723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <span
                   className="bx--pagination__text"
                 >
-                  1 of 10 pages
+                  1 of 1 pages
                 </span>
                 <div
                   className="bx--pagination__control-buttons"
@@ -7831,8 +7759,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </svg>
                   </button>
                   <button
-                    className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-                    disabled={false}
+                    className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                    disabled={true}
                     onClick={[Function]}
                     tabIndex={0}
                     type="button"
@@ -8092,7 +8020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     type="button"
                   >
                     <svg
-                      aria-label="Open and close list of options"
+                      aria-label="open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -8121,7 +8049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         r="2"
                       />
                       <title>
-                        Open and close list of options
+                        open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -9427,7 +9355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <span
                   className="bx--pagination__text bx--pagination__items-count"
                 >
-                  1–10 of 100 items
+                  1–10 of 10 items
                 </span>
               </div>
               <div
@@ -9443,7 +9371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       className="bx--label bx--visually-hidden"
                       htmlFor="bx-pagination-select-47-right"
                     >
-                      Page number, of 10 pages
+                      Page number, of 1 pages
                     </label>
                     <div
                       className="bx--select-input--inline__wrapper"
@@ -9465,78 +9393,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             value={1}
                           >
                             1
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={2}
-                          >
-                            2
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={3}
-                          >
-                            3
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={4}
-                          >
-                            4
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={5}
-                          >
-                            5
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={6}
-                          >
-                            6
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={7}
-                          >
-                            7
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={8}
-                          >
-                            8
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={9}
-                          >
-                            9
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={10}
-                          >
-                            10
                           </option>
                         </select>
                         <svg
@@ -9561,7 +9417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <span
                   className="bx--pagination__text"
                 >
-                  1 of 10 pages
+                  1 of 1 pages
                 </span>
                 <div
                   className="bx--pagination__control-buttons"
@@ -9597,8 +9453,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </svg>
                   </button>
                   <button
-                    className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-                    disabled={false}
+                    className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                    disabled={true}
                     onClick={[Function]}
                     tabIndex={0}
                     type="button"

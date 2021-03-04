@@ -7,7 +7,7 @@ import TimePickerSpinner, { TIMEGROUPS } from './TimePickerSpinner';
 export { default as TimePickerStory } from 'carbon-components-react/lib/components/TimePicker/TimePicker-story';
 
 export default {
-  title: 'Watson IoT/TimePickerSpinner',
+  title: 'Watson IoT Experimental/TimePickerSpinner',
 
   parameters: {
     component: TimePickerSpinner,

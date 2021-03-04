@@ -101,7 +101,6 @@ const BarChartDataSeriesContent = ({
           id={`${cardConfig.id}_group-by`}
           direction="bottom"
           label={mergedI18n.selectGroupBy}
-          title={mergedI18n.selectGroupBy}
           light
           translateWithId={translateWithId}
           titleText={mergedI18n.groupBy}
@@ -147,7 +146,6 @@ const BarChartDataSeriesContent = ({
         />
       </div>
       {cardConfig.content.timeDataSourceId &&
-      Object.keys(availableDimensions)?.length > 0 &&
       cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
       cardConfig.content.series.length <= 1 ? (
         <div className={`${baseClassName}--input`}>
@@ -155,7 +153,6 @@ const BarChartDataSeriesContent = ({
             id={`${cardConfig.id}_sub-group-by`}
             direction="bottom"
             label={mergedI18n.selectCategory}
-            title={mergedI18n.selectCategory}
             light
             translateWithId={translateWithId}
             titleText={mergedI18n.subGroup}

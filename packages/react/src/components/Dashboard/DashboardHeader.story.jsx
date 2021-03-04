@@ -6,17 +6,10 @@ import { TrashCan20 } from '@carbon/icons-react';
 import { action } from '@storybook/addon-actions';
 import { DatePicker, DatePickerInput } from 'carbon-components-react';
 
-import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
-
 import DashboardHeader from './DashboardHeader';
 
 export default {
-  title: 'Watson IoT/🚫 Dashboard Header',
-};
-
-export const Deprecated = () => <StoryNotice componentName="DashboardHeader" />;
-Deprecated.story = {
-  name: deprecatedStoryTitle,
+  title: 'Watson IoT/Dashboard Header (Deprecated)',
 };
 
 export const Basic = () => {

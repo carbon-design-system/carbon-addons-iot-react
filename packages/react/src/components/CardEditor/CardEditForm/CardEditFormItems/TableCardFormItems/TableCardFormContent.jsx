@@ -2,7 +2,6 @@ import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
-import omit from 'lodash/omit';
 import uuid from 'uuid';
 
 import { settings } from '../../../../../constants/Settings';
@@ -28,7 +27,8 @@ const propTypes = {
         PropTypes.shape({
           label: PropTypes.string,
           dataSourceId: PropTypes.string,
-          type: PropTypes.string,
+          // most data item columns won't have types, only dimensions or timestamps
+          type: PropTypes.oneOf(['DIMENSION', 'TIMESTAMP']),
         })
       ),
     }),
@@ -129,13 +129,9 @@ const TableCardFormContent = ({
       Array.isArray(columns)
         ? columns.map((column) => ({
             ...column, // dataSection expects the thresholds to be in the column definition, though the table expects them to be in content
-            ...(!isEmpty(thresholds) // only set thresholds if they exist
-              ? {
-                  thresholds: thresholds?.filter(
-                    (threshold) => column.dataSourceId === threshold.dataSourceId
-                  ),
-                }
-              : {}),
+            thresholds: thresholds?.filter(
+              (threshold) => column.dataSourceId === threshold.dataSourceId
+            ),
           }))
         : [],
     [columns, thresholds]
@@ -151,11 +147,13 @@ const TableCardFormContent = ({
 
   const initialSelectedDimensions = useMemo(
     () =>
-      cardConfig?.dataSource?.groupBy?.map((dataSourceId) => ({
-        id: dataSourceId,
-        text: dataSourceId,
-      })),
-    [cardConfig]
+      dataSection
+        .filter((col) => col.type === 'DIMENSION')
+        .map(({ dataSourceId }) => ({
+          id: dataSourceId,
+          text: dataSourceId,
+        })),
+    [dataSection]
   );
 
   const validDataItems = getValidDataItems
@@ -181,15 +179,11 @@ const TableCardFormContent = ({
         ...dataSection,
         {
           ...(itemWithMetaData && { ...itemWithMetaData }),
-          // create a unique dataSourceId if it's going into the attributes section
-          // if it's going into the groupBy section, then just use the dataItemId
-          dataSourceId:
-            itemWithMetaData?.destination === 'groupBy'
-              ? selectedItem.id
-              : `${selectedItem.id}_${uuid.v4()}`,
+          // create a unique dataSourceId
+          dataSourceId: `${selectedItem.id}_${uuid.v4()}`,
         },
       ];
-      const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null);
+      const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null, false);
       setSelectedDataItems(selectedItems.map(({ text }) => text));
       onChange(newCard);
     }
@@ -219,7 +213,7 @@ const TableCardFormContent = ({
         content: {
           ...card.content,
           columns: updatedColumns,
-          ...(!isEmpty(allThresholds) ? { thresholds: allThresholds } : {}),
+          thresholds: allThresholds,
         },
       });
     },
@@ -231,29 +225,14 @@ const TableCardFormContent = ({
       const filteredColumns = dataSection.filter(
         (item) => item.dataSourceId !== dataItem.dataSourceId
       );
-      // Need to determine whether we should remove these from the groupBy section
-      const filteredGroupBy = cardConfig?.dataSource?.groupBy?.filter(
-        (groupByItem) => groupByItem !== dataItem.dataSourceId
-      );
-
       setSelectedDataItems(filteredColumns.map((item) => item.dataSourceId));
       setRemovedDataItems([...removedDataItems, dataItem]);
-
-      // if we no longer have a groupBy, then we can exclude the dataSource from the response
-      let updatedDataSource = {};
-      if (!isEmpty(filteredGroupBy)) {
-        updatedDataSource = { dataSource: { ...cardConfig.dataSource, groupBy: filteredGroupBy } };
-      } else if (cardConfig.dataSource) {
-        updatedDataSource = { dataSource: { ...omit(cardConfig.dataSource, 'groupBy') } };
-      }
-
       onChange({
         ...cardConfig,
         content: {
           ...cardConfig.content,
           columns: filteredColumns,
         },
-        ...updatedDataSource,
       });
     },
     [cardConfig, dataSection, onChange, removedDataItems, setSelectedDataItems]
@@ -330,16 +309,11 @@ const TableCardFormContent = ({
           key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
           id={`${cardConfig.id}_dataSourceIds-combobox`}
           items={validDataItemsForDropdown}
-          itemToString={(item) => item?.text}
+          itemToString={(item) => item.text}
           titleText={mergedI18n.dataItem}
           addToList={false}
           placeholder={mergedI18n.filter}
           translateWithId={translateWithId}
-          shouldFilterItem={({ item, inputValue }) => {
-            return (
-              isEmpty(inputValue) || item?.text?.toLowerCase()?.includes(inputValue?.toLowerCase())
-            );
-          }}
           // clears out the input field after each selection
           selectedItem={{ id: '', text: '' }}
           onChange={handleOnDataSeriesChange}
@@ -365,16 +339,11 @@ const TableCardFormContent = ({
             onChange={({ selectedItems }) => {
               // Add the new dimensions as dimension columns at the beginning of the table
               const newCard = handleDataSeriesChange(
-                selectedItems.map((i) => ({
-                  dataItemId: i.id,
-                  dataSourceId: i.id,
-                  label: i.text,
-                  type: 'DIMENSION',
-                  destination: 'groupBy',
-                })),
+                selectedItems.map((i) => ({ ...i, type: 'DIMENSION' })),
                 cardConfig,
                 null,
-                null
+                null,
+                true
               );
               // setSelectedDataItems(selectedItems.map(({ id }) => id));
               onChange(newCard);

@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
-import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
 
 import EditPage from './EditPage';
 
@@ -16,12 +16,12 @@ const commonEditPageProps = {
 const breadcrumb = [<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>];
 
 export default {
-  title: 'Watson IoT/🚫 EditPage',
+  title: 'Watson IoT/EditPage (Deprecated)',
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 
 export const Deprecated = () => (
-  <StoryNotice componentName="EditPage" replacementComponentName="PageWizard" />
+  <DeprecationNotice deprecatedComponentName="EditPage" replacementComponentName="PageWizard" />
 );
 Deprecated.story = {
   name: deprecatedStoryTitle,

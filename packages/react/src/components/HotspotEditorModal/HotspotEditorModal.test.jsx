@@ -288,7 +288,7 @@ describe('HotspotEditorModal', () => {
         }),
       })
     );
-  }, 30000);
+  });
 
   it('exports cardConfig with modified static hotspot settings', async () => {
     const onSave = jest.fn();

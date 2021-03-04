@@ -124,7 +124,7 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
 
   const getColumnById = React.useMemo(
     () => (id) => {
-      return columns?.find(({ id: colId }) => id === colId);
+      return columns.find(({ id: colId }) => id === colId);
     },
     [columns]
   );
@@ -236,7 +236,6 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
     <div data-testid={`${ruleId}-rule`} className={`${iotPrefix}--rule-builder-rule`}>
       <Dropdown
         id={`${ruleId}-column-dropdown`}
-        light
         items={columns}
         label={(selectedColumn && selectedColumn.name) || mergedI18n.selectAColumn}
         itemToString={(item) => item.name}
@@ -247,7 +246,6 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
       />
       <Dropdown
         id={`${ruleId}-operand-dropdown`}
-        light
         items={columnOperands}
         itemToString={(item) => item.name}
         label={(selectedOperand && selectedOperand.name) || mergedI18n.selectAnOperand}

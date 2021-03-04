@@ -275,7 +275,7 @@ class ListCardExtraContentLong extends Component {
 }
 
 export default {
-  title: 'Watson IoT/ListCard',
+  title: 'Watson IoT Experimental/ListCard',
 
   parameters: {
     component: ListCard,

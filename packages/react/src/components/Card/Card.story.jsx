@@ -236,7 +236,6 @@ export const IsEditable = () => {
         isEmpty={boolean('isEmpty', false)}
         isEditable={boolean('isEditable', true)}
         isExpanded={boolean('isExpanded', false)}
-        i18n={object('i18n', { overflowMenuDescription: 'Open and close list of options' })}
         breakpoint="lg"
         onCardAction={action('onCardAction')}
         availableActions={{

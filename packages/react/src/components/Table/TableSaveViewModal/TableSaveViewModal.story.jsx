@@ -8,7 +8,7 @@ import { TextArea } from '../../TextArea';
 import TableSaveViewModal from './TableSaveViewModal';
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ Table/TableSaveViewModal' : 'Watson IoT/Table/TableSaveViewModal',
+  title: 'Watson IoT/Table/TableSaveViewModal',
 
   parameters: {
     component: TableSaveViewModal,
@@ -69,7 +69,7 @@ Prefilled.story = {
   parameters: {
     info: {
       text: `
-    This story demonstrates how to set the initial default values of the form by using the initialFormValues.
+    This story demonstrates how to set the initial default values of the form by using the initialFormValues. 
     By default the modal contains the following values {title: '', isDefault: false, isPublic: false }`,
     },
   },
@@ -139,22 +139,22 @@ CustomDescriptionAndPublicCheckboxUsingOverrides.story = {
   parameters: {
     info: {
       text: `
-      This story demonstrates how to customise parts of the TableSaveViewModal internals,
-      i.e. the description and the publicCheckbox.
-
+      This story demonstrates how to customise parts of the TableSaveViewModal internals, 
+      i.e. the description and the publicCheckbox. 
+      
       We use the overrides pattern to go two levels deep in our customization.
 
       ~~~js
-      // Overrides example
+      // Overrides example 
       <TableSaveViewModal overrides={{
         // We use the overrides property tableSaveViewForm to get access to that internal component
         tableSaveViewForm: {
           props: {
             // In the tableSaveViewForm we use props and overrides again to get access to its internals
             overrides: {
-              // The internal component called viewDescriptionContainer is changed from a <p> to
-              // an Accordion component and the children prop is overridden and served AccordionItems
-              // instead of a normal string.
+              // The internal component called viewDescriptionContainer is changed from a <p> to 
+              // an Accordion component and the children prop is overridden and served AccordionItems 
+              // instead of a normal string.                
               viewDescriptionContainer: {
                 component: Accordion,
                 props: { children: (
@@ -171,17 +171,17 @@ CustomDescriptionAndPublicCheckboxUsingOverrides.story = {
                       ea commodo consequat.
                     </p>
                   </AccordionItem>
-                </Fragment>
+                </Fragment>                    
                 ) },
               },
-              // The public checkbox is overridden with the prop 'disabled' that forces
-              // it to always stay disabled, no matter the status of the form or modal.
+              // The public checkbox is overridden with the prop 'disabled' that forces 
+              // it to always stay disabled, no matter the status of the form or modal.                
               publicCheckbox: { props: { disabled: true } },
             },
           },
         },
       }} />
-      ~~~
+      ~~~        
       `,
       propTables: [TableSaveViewModal],
     },
@@ -253,8 +253,8 @@ CustomFormUsingOverrides.story = {
   parameters: {
     info: {
       text: `
-    This story demonstrates how to change the complete form of the modal using the overrides pattern.
-    The overrides section of the code is examplified below.
+    This story demonstrates how to change the complete form of the modal using the overrides pattern. 
+    The overrides section of the code is examplified below. 
 
     ~~~js
     <TableSaveViewModal overrides={{
@@ -263,7 +263,7 @@ CustomFormUsingOverrides.story = {
         props: {
           // We override the selectorPrimaryFocus prop to use the ID of our new primary input
           selectorPrimaryFocus: 'myTextArea'},
-          // We also override the footer to remove the isPrimaryButtonDisabled that was dependent
+          // We also override the footer to remove the isPrimaryButtonDisabled that was dependent 
           // on the old title not being empty. For simplicity here we always keep it enabled.
         footer: { isPrimaryButtonDisabled: false },
         },
@@ -280,7 +280,7 @@ CustomFormUsingOverrides.story = {
                 // ID is needed to make this element focused by default
                 id="myTextArea"
                 onChange={evt => {
-                  // We need to emit the name and the value of our changed form element so that
+                  // We need to emit the name and the value of our changed form element so that 
                   // the parent (TableSaveViewModal) can manage the state for us.
                   onChange({ myTextArea: evt.target.value });
                 }}
@@ -291,7 +291,7 @@ CustomFormUsingOverrides.story = {
       },
     }}
   />
-    ~~~
+    ~~~        
     `,
       propTables: [TableSaveViewModal],
     },

@@ -27,7 +27,7 @@
   align-items: center;
   column-gap: $spacing-04;
   padding: $spacing-04 0 0 $spacing-06;
-  grid-template-columns: 1fr 1fr 1fr minmax(145px, 0.5fr);
+  grid-template-columns: 1fr 1fr 1fr minmax(130px, 0.5fr);
   margin-left: $spacing-04;
   position: relative;
   &:before {

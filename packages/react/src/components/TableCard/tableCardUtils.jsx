@@ -43,9 +43,7 @@ export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
             variables.forEach((variable) => {
               const variableValue = row[variable];
               // encode value so the URL can be valid
-              const encodedValue = variableValue?.includes('https')
-                ? variableValue
-                : encodeURIComponent(variableValue);
+              const encodedValue = encodeURIComponent(variableValue);
 
               variableLink = variableLink.replace(`{${variable}}`, encodedValue);
             });

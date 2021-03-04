@@ -22,9 +22,7 @@ const demoViews = Array(100)
   }));
 
 export default {
-  title: __DEV__
-    ? 'Watson IoT/⚠️ Table/TableManageViewsModal'
-    : 'Watson IoT/Table/TableManageViewsModal',
+  title: 'Watson IoT/Table/TableManageViewsModal',
 
   parameters: {
     component: TableManageViewsModal,
@@ -128,7 +126,7 @@ WithCallbacksImplemented.story = {
     info: {
       text: `
         This TableManageViewsModal story demonstrates a fully implemented example with data
-        and actions working properly in the default configuration. The avaiability of
+        and actions working properly in the default configuration. The avaiability of 
         'Delete' and 'Edit' actions are determined by the respective views data properties.
 
         ~~~js
@@ -139,14 +137,14 @@ WithCallbacksImplemented.story = {
           const [isOpen, setIsOpen] = useState(true);
           const [filteredViews, setFilteredViews] = useState(demoViews);
           const [viewsToShow, setViewsToShow] = useState(demoViews.slice(0, rowPerPage));
-
+  
           const showPage = (pageNumber, views) => {
             const rowUpperLimit = pageNumber * rowPerPage;
             const currentItemsOnPage = views.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
             setCurrentPageNumber(pageNumber);
             setViewsToShow(currentItemsOnPage);
           };
-
+  
           const applyFiltering = ({ searchTerm, showPublic }) => {
             const views = demoViews
               .filter(
@@ -155,51 +153,51 @@ WithCallbacksImplemented.story = {
                   view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
               )
               .filter(view => (showPublic ? view : !view.isPublic));
-
+  
             setFilteredViews(views);
             showPage(1, views);
           };
-
+  
           const onDelete = viewId => {
             const deleteIndex = demoViews.findIndex(view => view.id === viewId);
             demoViews.splice(deleteIndex, 1);
             setFilteredViews(demoViews);
             showPage(1, demoViews);
           };
-
+  
           const onClose = () => {
             setIsOpen(false);
           };
-
+  
           const onEdit = viewId => {
             /* eslint-disable-next-line no-alert */
             alert(
               'This action should close this modal and open TableSaveViewModal with the data of this view prefilled.'
             );
           };
-
+  
           const onPage = pageNumber => showPage(pageNumber, filteredViews);
-
+  
           const onSearchChange = val => {
             const searchTerm = val === undefined ? '' : val;
             const newFilters = { ...currentFilters, searchTerm };
             setCurrentFilters(newFilters);
             applyFiltering(newFilters);
           };
-
+  
           const onDisplayPublicChange = showPublic => {
             const newFilters = { ...currentFilters, showPublic };
             setCurrentFilters(newFilters);
             applyFiltering(newFilters);
           };
-
+  
           const pagination = {
             page: currentPageNumber,
             onPage,
             maxPage: Math.ceil(filteredViews.length / rowPerPage),
             pageOfPagesText: pageNumber => 'Page ' + pageNumber,
           };
-
+  
           return (
             <TableManageViewsModal
               actions={{
@@ -218,8 +216,8 @@ WithCallbacksImplemented.story = {
               pagination={pagination}
             />
           );
-        });
-        ~~~
+        });          
+        ~~~             
         `,
       propTables: [TableManageViewsModal],
     },
@@ -325,7 +323,7 @@ WithCustomRowActionsCustomRenderingAndNoPagination.story = {
     info: {
       text: `
       This TableManageViewsModal story demonstrates how the component and subcomponents can
-      be customized using the 'overrides pattern'. Here we override the rendering props
+      be customized using the 'overrides pattern'. Here we override the rendering props 
       for the internal TableManageViewsList to get different row actions and modify the row
       rendering in general. We also override the internal component List to make the rows small.`,
     },

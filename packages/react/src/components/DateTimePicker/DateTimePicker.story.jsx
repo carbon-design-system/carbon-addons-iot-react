@@ -36,7 +36,7 @@ export const defaultAbsoluteValue = {
 };
 
 export default {
-  title: 'Watson IoT/DateTime Picker',
+  title: 'Watson IoT Experimental/DateTime Picker',
   excludeStories: ['defaultRelativeValue', 'defaultAbsoluteValue'],
 };
 
@@ -50,7 +50,6 @@ export const Default = () => {
       }}
     >
       <DateTimePicker
-        id="datetimepicker"
         dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
         relatives={[
           {
@@ -74,7 +73,6 @@ export const SelectedPreset = () => {
       }}
     >
       <DateTimePicker
-        id="datetimepicker"
         defaultValue={{
           timeRangeKind: PICKER_KINDS.PRESET,
           timeRangeValue: PRESET_VALUES[3],
@@ -101,7 +99,6 @@ export const SelectedRelative = () => {
       }}
     >
       <DateTimePicker
-        id="datetimepicker"
         defaultValue={defaultRelativeValue}
         hasTimeInput={boolean('hasTimeInput', true)}
         onApply={action('onApply')}
@@ -125,7 +122,6 @@ export const SelectedAbsolute = () => {
       }}
     >
       <DateTimePicker
-        id="datetimepicker"
         defaultValue={defaultAbsoluteValue}
         hasTimeInput={boolean('hasTimeInput', true)}
         onApply={action('onApply')}
@@ -149,7 +145,6 @@ export const WithoutARelativeOption = () => {
       }}
     >
       <DateTimePicker
-        id="datetimepicker"
         defaultValue={{
           timeRangeKind: PICKER_KINDS.PRESET,
           timeRangeValue: PRESET_VALUES[3],
@@ -177,7 +172,6 @@ export const LightVersion = () => {
       }}
     >
       <DateTimePicker
-        id="datetimepicker"
         dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
         relatives={[
           {

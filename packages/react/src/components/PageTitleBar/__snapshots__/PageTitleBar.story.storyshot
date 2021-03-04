@@ -637,7 +637,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 </h2>
                 <button
                   className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -823,7 +822,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 </div>
                 <button
                   className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -878,7 +876,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
               >
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -909,7 +906,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 </button>
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -943,7 +939,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 </button>
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--primary"
-                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -1221,7 +1216,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
               </span>
               <button
                 className="some-right-content iot--btn bx--btn bx--btn--primary"
-                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}

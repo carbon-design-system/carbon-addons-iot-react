@@ -60,7 +60,7 @@ export const commonTileCatalogProps = {
 };
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ TileCatalog' : 'Watson IoT/TileCatalog',
+  title: 'Watson IoT/TileCatalog',
   excludeStories: ['commonTileCatalogProps'],
 };
 

@@ -91,7 +91,7 @@
   display: flex;
   height: rem(40px);
   color: $text-02;
-  padding: $spacing-03 $spacing-05;
+  padding: $spacing-03;
   align-items: center;
   overflow-x: hidden;
 
@@ -122,7 +122,7 @@
 
   &__selected {
     border-left: solid $spacing-02 $interactive-01;
-    padding-left: $spacing-04; // account for the border
+    padding-left: $spacing-01;
     color: $text-01;
     background: $selected-ui;
   }

@@ -339,8 +339,6 @@ describe('ImageHotspots', () => {
       const event = {
         pageX: 100,
         pageY: 100,
-        clientX: 100,
-        clientY: 100,
         currentTarget: {
           offsetTop: 5,
           offsetLeft: 5,

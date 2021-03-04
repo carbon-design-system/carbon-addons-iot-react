@@ -494,7 +494,7 @@ const DataSeriesFormItemModal = ({
       )}
 
       {isSummaryDashboard && type !== CARD_TYPES.TABLE ? ( // only show data filter in summary dashboards
-        <div className={`${baseClassName}--input-group ${baseClassName}--input-group--bottom `}>
+        <div className={`${baseClassName}--input-group`}>
           <div
             className={classnames({
               [`${baseClassName}--input-group--item`]: !isEmpty(editDataItem.dataFilter),
@@ -515,7 +515,7 @@ const DataSeriesFormItemModal = ({
               onChange={({ selectedItem }) => {
                 if (selectedItem !== mergedI18n.none) {
                   const dataFilter = {
-                    [selectedItem]: availableDimensions[selectedItem].sort()[0],
+                    [selectedItem]: availableDimensions[selectedItem][0],
                   };
                   setEditDataItem({
                     ...editDataItem,
@@ -536,14 +536,9 @@ const DataSeriesFormItemModal = ({
                 id={`${id}_data-filter-value`}
                 label=""
                 direction="bottom"
-                items={availableDimensions[selectedDimensionFilter]?.sort()}
+                items={availableDimensions[selectedDimensionFilter]}
                 light
-                itemToString={(item) => item?.toString()}
-                selectedItem={
-                  editDataItem.dataFilter
-                    ? editDataItem.dataFilter[selectedDimensionFilter]
-                    : undefined
-                }
+                selectedItem={editDataItem.dataFilter[selectedDimensionFilter]}
                 onChange={({ selectedItem }) => {
                   const dataFilter = {
                     [selectedDimensionFilter]: selectedItem,

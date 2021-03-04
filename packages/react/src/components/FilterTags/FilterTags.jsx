@@ -23,7 +23,7 @@ const OverflowTag = ({ children }) => (
   </span>
 );
 
-const FilterTags = ({ children, hasOverflow, id, tagContainer, onChange, i18n }) => {
+const FilterTags = ({ children, hasOverflow, id, tagContainer }) => {
   const TagContainer = tagContainer || DefaultWrapper;
   const overFlowContainerRef = useRef(null);
   useResize(overFlowContainerRef);
@@ -87,8 +87,6 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer, onChange, i18n })
         [`${iotPrefix}--filtertags-container__wrap`]: hasOverflow,
       })}
       ref={overFlowContainerRef}
-      onChange={onChange}
-      i18n={i18n}
     >
       {visibleItems}
       {overflowItems.length > 0 && (
@@ -135,26 +133,12 @@ const propTypes = {
    * Optional container for filter tags
    */
   tagContainer: PropTypes.elementType,
-
-  /**
-   * OnChange handled passed to the tagContainer
-   */
-  onChange: PropTypes.func,
-
-  /**
-   * This is an object of {[key: string]: string}, but it's
-   * unknown what they are as it's dependent on the tagContainer
-   */
-  // eslint-disable-next-line react/forbid-prop-types
-  i18n: PropTypes.object,
 };
 
 const defaultProps = {
   id: 'filter-tag-container',
   hasOverflow: true,
   tagContainer: null,
-  onChange: null,
-  i18n: {},
 };
 
 FilterTags.propTypes = propTypes;

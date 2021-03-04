@@ -63,7 +63,7 @@ const SuiteHeaderAppSwitcher = ({
         ) : (
           <Button
             kind="tertiary"
-            testID="suite-header-app-switcher--all-applications"
+            data-testid="suite-header-app-switcher--all-applications"
             onClick={async () => {
               const result = await onRouteChange(
                 SuiteHeader.ROUTE_TYPES.NAVIGATOR,

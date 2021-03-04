@@ -2,7 +2,7 @@ import React from 'react';
 import { select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
 
 import ComposedStructuredList from './ComposedStructuredList';
 
@@ -53,11 +53,14 @@ const StructuredListInputProps = {
 };
 
 export default {
-  title: 'Watson IoT/🚫 ComposedStructuredList',
+  title: 'Watson IoT/ComposedStructuredList (Deprecated)',
 };
 
 export const Deprecated = () => (
-  <StoryNotice componentName="ComposedStructuredList" replacementComponentName="StructuredList" />
+  <DeprecationNotice
+    deprecatedComponentName="ComposedStructuredList"
+    replacementComponentName="StructuredList"
+  />
 );
 Deprecated.story = {
   name: deprecatedStoryTitle,

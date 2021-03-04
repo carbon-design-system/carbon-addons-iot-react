@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, select, boolean, object } from '@storybook/addon-knobs';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
@@ -72,10 +72,6 @@ export const StatefulListWithNestedSearching = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
-      hasDeselection={boolean('hasDeselection', true)}
-      i18n={object('i18n', {
-        searchPlaceHolderText: 'Search',
-      })}
     />
   </div>
 );
@@ -124,7 +120,6 @@ export const WithDefaultSelectedId = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
-      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
@@ -194,7 +189,6 @@ export const WithOverflowMenu = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
-      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
@@ -260,7 +254,6 @@ export const WithNestedReorder = () => {
           }}
           hasSearch={boolean('hasSearch', true)}
           onSelect={action('onSelect')}
-          hasDeselection={boolean('hasDeselection', true)}
         />
       </div>
     );
@@ -309,7 +302,6 @@ export const WithDefaultExpandedIds = () => (
       isLargeRow={boolean('isLargeRow', false)}
       defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
       onSelect={action('onSelect')}
-      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
@@ -394,7 +386,6 @@ export const WithMixedHierarchies = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
-      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );

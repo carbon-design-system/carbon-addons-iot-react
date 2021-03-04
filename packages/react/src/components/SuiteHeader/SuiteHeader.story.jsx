@@ -344,45 +344,6 @@ HeaderWithSideNav.story = {
   name: 'Header with side nav',
 };
 
-export const HeaderWithCustomSideNav = () => (
-  <SuiteHeader
-    suiteName="Application Suite"
-    appName="Application Name"
-    userDisplayName="Admin User"
-    username="adminuser"
-    routes={{
-      profile: 'https://www.ibm.com',
-      navigator: 'https://www.ibm.com',
-      admin: 'https://www.ibm.com',
-      logout: 'https://www.ibm.com',
-      whatsNew: 'https://www.ibm.com',
-      gettingStarted: 'https://www.ibm.com',
-      documentation: 'https://www.ibm.com',
-      requestEnhancement: 'https://www.ibm.com',
-      support: 'https://www.ibm.com',
-      about: 'https://www.ibm.com',
-    }}
-    applications={[
-      {
-        id: 'monitor',
-        name: 'Monitor',
-        href: 'https://www.ibm.com',
-      },
-      {
-        id: 'health',
-        name: 'Health',
-        href: 'https://www.ibm.com',
-        isExternal: true,
-      },
-    ]}
-    hasSideNav
-    onSideNavToggled={() => alert('onSideNavToggled')}
-  />
-);
-HeaderWithCustomSideNav.story = {
-  name: 'Header with application-controlled side nav',
-};
-
 export const HeaderWithCustomActionItems = () => (
   <SuiteHeader
     suiteName="Application Suite"

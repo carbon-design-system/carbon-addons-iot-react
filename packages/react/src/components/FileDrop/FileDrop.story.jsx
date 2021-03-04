@@ -14,7 +14,7 @@ const FileDropProps = {
 };
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ FileDrop' : 'Watson IoT/FileDrop',
+  title: 'Watson IoT/FileDrop',
 
   parameters: {
     component: FileDrop,

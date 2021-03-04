@@ -105,7 +105,7 @@ const DynamicHotspotSourcePicker = ({
       />
       {
         <Button
-          testID={`${testID}-clear-dropdown`}
+          data-testid={`${testID}-clear-dropdown`}
           className={classnames(`${classname}__clear-button`, {
             [`${classname}__clear-button--invisible`]: !selectedSourceIdX || !selectedSourceIdY,
           })}
