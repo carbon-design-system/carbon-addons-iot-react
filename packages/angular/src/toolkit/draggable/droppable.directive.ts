@@ -6,7 +6,7 @@ import {
 } from "@angular/core";
 
 @Directive({
-	selector: "[scDropzone]"
+	selector: "[scDropzone], [aiDropzone]"
 })
 export class DroppableDirective {
 	@Output() active = new EventEmitter<boolean>();

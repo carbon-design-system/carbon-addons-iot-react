@@ -8,7 +8,7 @@ import {
 } from "@angular/core";
 
 @Directive({
-	selector: "[scDraggable]"
+	selector: "[scDraggable], [aiDraggable]"
 })
 export class DraggableDirective {
 	@Input() dragImage: Element;

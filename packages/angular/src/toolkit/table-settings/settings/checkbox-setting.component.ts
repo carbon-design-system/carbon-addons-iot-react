@@ -5,7 +5,7 @@ import { CheckboxOption } from "./checkbox-setting.class";
 import { SettingChanges } from "./setting.class";
 
 @Component({
-	selector: "sc-checkbox-setting",
+	selector: "sc-checkbox-setting, ai-checkbox-setting",
 	template: `
 		<ibm-checkbox
 		*ngFor="let option of options"

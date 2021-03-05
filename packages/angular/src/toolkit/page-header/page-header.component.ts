@@ -26,6 +26,8 @@ export const itemsWithTitle = (items: BreadcrumbItem[], title: string): Breadcru
 /**
  * Page header
  *
+ * **Warning:** This component will be deprecated in the future in favour of a spec compliant ai-page-header component
+ *
  * The page header component uses the _last_ item in the `items` array as the title.
  *
  * For conveninence we provide a `itemsWithTitle` function that will take an existing

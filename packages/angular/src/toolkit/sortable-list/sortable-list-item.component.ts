@@ -5,7 +5,9 @@ import {
 	Input,
 	Output
 } from "@angular/core";
-
+/**
+ * **Warning:** This component will be deprecated in the future in favour of a spec compliant ai-sortable-list-item component
+ */
 @Component({
 	selector: "sc-sortable-list-item",
 	template: `

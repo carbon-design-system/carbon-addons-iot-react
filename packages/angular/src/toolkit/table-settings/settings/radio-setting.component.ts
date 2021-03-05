@@ -10,7 +10,7 @@ import { RadioOption } from "./radio-setting.class";
 import { SettingChanges } from "./setting.class";
 
 @Component({
-	selector: "sc-radio-setting",
+	selector: "sc-radio-setting, ai-radio-setting",
 	template: `
 		<ibm-radio-group>
 			<ibm-radio

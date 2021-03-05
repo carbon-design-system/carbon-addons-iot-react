@@ -13,7 +13,7 @@ import { SortableListComponent } from "../sortable-list/index";
 import { TableSettings } from "./table-settings-model.class";
 
 @Component({
-	selector: "sc-table-settings-modal",
+	selector: "sc-table-settings-modal, ai-table-settings-modal",
 	template: `
 		<ibm-modal (overlaySelected)="closeModal()" [hasScrollingContent]="false" [open]="open">
 			<ibm-modal-header (closeSelect)="closeModal()">

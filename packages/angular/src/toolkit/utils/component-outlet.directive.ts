@@ -14,7 +14,7 @@ import {
 } from "@angular/core";
 
 @Directive({
-	selector: "[scComponentOutlet]"
+	selector: "[scComponentOutlet], [aiComponentOutlet]"
 })
 export class ComponentOutletDirective implements OnChanges, OnDestroy {
 	@Input() scComponentOutletInputs = new Map<string, any>();

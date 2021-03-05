@@ -4,6 +4,8 @@ import { Table } from "carbon-components-angular";
 /**
  * Sterling specific table component
  *
+ * **Warning:** This component will be deprecated in the future in favour of a spec compliant ai-table component
+ *
  * Example:
  * ```
  * <sc-table></sc-table>

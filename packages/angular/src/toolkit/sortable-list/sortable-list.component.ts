@@ -11,6 +11,9 @@ export type SortableListItem = SortableListOption & ListItem;
 
 export type SortableListItems = SortableListItem[];
 
+/**
+ * **Warning:** This component will be deprecated in the future in favour of a spec compliant ai-sortable-list component
+ */
 @Component({
 	selector: "sc-sortable-list",
 	template: `
