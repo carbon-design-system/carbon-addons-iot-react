@@ -141,7 +141,7 @@ warmGray100; // Using the `warmGray100` variable.
 
 If you're looking for `@carbon/colors` API documentation, check out:
 
-- [Sass](./docs/sass.md)
+-   [Sass](./docs/sass.md)
 
 ## 🙌 Contributing
 

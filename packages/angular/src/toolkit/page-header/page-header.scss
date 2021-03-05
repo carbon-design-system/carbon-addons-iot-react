@@ -1,5 +1,5 @@
-@import "../vendor/@carbon/layout/scss/index";
-@import "../vendor/@carbon/colors/scss/index";
+@import '../vendor/@carbon/layout/scss/index';
+@import '../vendor/@carbon/colors/scss/index';
 
 :host {
 	display: block;
@@ -22,7 +22,7 @@ h2 {
 	padding-right: 0;
 }
 
-@include carbon--breakpoint("sm") {
+@include carbon--breakpoint('sm') {
 	:host {
 		max-height: unset;
 	}

@@ -1,5 +1,5 @@
-import { RadioSettingComponent } from "./radio-setting.component";
-import { BaseSetting, SettingOption, SettingOptions } from "./setting.class";
+import { RadioSettingComponent } from './radio-setting.component';
+import { BaseSetting, SettingOption, SettingOptions } from './setting.class';
 
 export interface RadioOption extends SettingOption {
 	value: any;
@@ -21,20 +21,22 @@ export class RadioSetting extends BaseSetting {
 		super(options);
 		this.options = options.options;
 		this.active = options.active;
-		this._inputs.set("options", options.options);
-		this._inputs.set("active", options.active);
-		this._outputs.set("activeChange", this.onChanges.bind(this));
+		this._inputs.set('options', options.options);
+		this._inputs.set('active', options.active);
+		this._outputs.set('activeChange', this.onChanges.bind(this));
 	}
 
 	toJSON(): object {
 		let jsonOptions = null;
 		if (this.options) {
-			jsonOptions = this.options.map((option) => option.toJSON ? option.toJSON() : JSON.parse(JSON.stringify(option)));
+			jsonOptions = this.options.map((option) =>
+				option.toJSON ? option.toJSON() : JSON.parse(JSON.stringify(option))
+			);
 		}
 		return {
 			content: this.content.value,
 			options: jsonOptions,
-			active: this.active
+			active: this.active,
 		};
 	}
 }

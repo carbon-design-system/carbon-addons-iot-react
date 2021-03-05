@@ -4,25 +4,25 @@ import { ListItem } from 'carbon-components-angular';
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss']
+	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
 	items: ListItem[] = [
 		{
 			content: 'One',
-			selected: false
+			selected: false,
 		},
 		{
 			content: 'Two',
-			selected: false
+			selected: false,
 		},
 		{
 			content: 'Three',
-			selected: false
+			selected: false,
 		},
 		{
 			content: 'Four',
-			selected: false
-		}
+			selected: false,
+		},
 	];
 }

@@ -1,7 +1,5 @@
-
-describe("Button", () => {
-
-	it("should work", () => {
+describe('Button', () => {
+	it('should work', () => {
 		expect(true).toBe(true);
 	});
 });

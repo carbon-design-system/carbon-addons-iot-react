@@ -74,15 +74,15 @@ Inline theming can be done by using the mixin. For example:
 // Use the default white theme here
 
 .my-dark-theme {
-  @include carbon--theme($carbon--theme--g90) {
-    // Use the dark theme here
-  }
+	@include carbon--theme($carbon--theme--g90) {
+		// Use the dark theme here
+	}
 }
 
 .my-darker-theme {
-  @include carbon--theme($carbon--theme--g100) {
-    // Use the darker theme here
-  }
+	@include carbon--theme($carbon--theme--g100) {
+		// Use the darker theme here
+	}
 }
 ```
 
@@ -93,18 +93,18 @@ bindings for you to use, including:
 
 ```js
 import {
-  // An object of all themes
-  themes,
+	// An object of all themes
+	themes,
 
-  // Direct theme values
-  white,
-  g10,
-  g90,
-  g100,
+	// Direct theme values
+	white,
+	g10,
+	g90,
+	g100,
 
-  // Specific token values
-  interactive01,
-  interactive02,
+	// Specific token values
+	interactive01,
+	interactive02,
 } from '@carbon/themes';
 ```
 
@@ -112,7 +112,7 @@ import {
 
 If you're looking for `@carbon/themes` API documentation, check out:
 
-- [Sass](./docs/sass.md)
+-   [Sass](./docs/sass.md)
 
 ## 🙌 Contributing
 

@@ -1,6 +1,6 @@
-import { TemplateRef } from "@angular/core";
-import { BehaviorSubject, isObservable, Subscription } from "rxjs";
-import { Content } from "../table-settings-model.class";
+import { TemplateRef } from '@angular/core';
+import { BehaviorSubject, isObservable, Subscription } from 'rxjs';
+import { Content } from '../table-settings-model.class';
 
 export interface SettingOption {
 	content?: Content;
@@ -76,11 +76,13 @@ export class BaseSetting {
 	toJSON(): object {
 		let jsonOptions = null;
 		if (this.options) {
-			jsonOptions = this.options.map((option) => option.toJSON ? option.toJSON() : JSON.parse(JSON.stringify(option)));
+			jsonOptions = this.options.map((option) =>
+				option.toJSON ? option.toJSON() : JSON.parse(JSON.stringify(option))
+			);
 		}
 		return {
 			content: this.content.value,
-			options: jsonOptions
+			options: jsonOptions,
 		};
 	}
 

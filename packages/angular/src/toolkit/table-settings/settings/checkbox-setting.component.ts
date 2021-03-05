@@ -1,19 +1,20 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { CheckboxChange } from "carbon-components-angular/checkbox/checkbox.component";
-import { isObservable, Observable, of } from "rxjs";
-import { CheckboxOption } from "./checkbox-setting.class";
-import { SettingChanges } from "./setting.class";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CheckboxChange } from 'carbon-components-angular/checkbox/checkbox.component';
+import { isObservable, Observable, of } from 'rxjs';
+import { CheckboxOption } from './checkbox-setting.class';
+import { SettingChanges } from './setting.class';
 
 @Component({
-	selector: "sc-checkbox-setting, ai-checkbox-setting",
+	selector: 'sc-checkbox-setting, ai-checkbox-setting',
 	template: `
 		<ibm-checkbox
-		*ngFor="let option of options"
-		[checked]="option.checked"
-		(change)="onChange($event, option)">
-		{{getContent(option) | async}}
-	</ibm-checkbox>
-	`
+			*ngFor="let option of options"
+			[checked]="option.checked"
+			(change)="onChange($event, option)"
+		>
+			{{ getContent(option) | async }}
+		</ibm-checkbox>
+	`,
 })
 export class CheckboxSettingComponent {
 	@Input() options: CheckboxOption[];
@@ -34,7 +35,7 @@ export class CheckboxSettingComponent {
 					return Object.assign({}, option, { checked: event.checked });
 				}
 				return option;
-			})
+			}),
 		};
 		this.optionsChange.emit(changes);
 	}

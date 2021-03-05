@@ -1,5 +1,5 @@
-import { CheckboxSettingComponent } from "./checkbox-setting.component";
-import { BaseSetting, SettingOption, SettingOptions } from "./setting.class";
+import { CheckboxSettingComponent } from './checkbox-setting.component';
+import { BaseSetting, SettingOption, SettingOptions } from './setting.class';
 
 export interface CheckboxOption extends SettingOption {
 	checked: boolean;
@@ -17,7 +17,7 @@ export class CheckboxSetting extends BaseSetting {
 	constructor(options?: CheckboxSettingOptions) {
 		super(options);
 		this.options = options.options;
-		this._inputs.set("options", options.options);
-		this._outputs.set("optionsChange", this.onChanges.bind(this));
+		this._inputs.set('options', options.options);
+		this._outputs.set('optionsChange', this.onChanges.bind(this));
 	}
 }

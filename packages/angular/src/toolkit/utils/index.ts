@@ -1,2 +1,2 @@
-export * from "./component-outlet.directive";
-export * from "./utils.module";
+export * from './component-outlet.directive';
+export * from './utils.module';

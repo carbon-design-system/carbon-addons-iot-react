@@ -13,10 +13,10 @@
 /// @return {*} Desired value
 /// @group @carbon/layout
 @function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
-  }
-  @return $map;
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
+	@return $map;
 }
 
 /// Provide a map and index, and get back the relevant key value
@@ -26,8 +26,8 @@
 /// @return {String} Desired value
 /// @group @carbon/layout
 @function carbon--key-by-index($map, $index) {
-  $keys: map-keys($map);
-  @return nth($keys, $index);
+	$keys: map-keys($map);
+	@return nth($keys, $index);
 }
 
 /// Pass in a map, and get the last one in the list back
@@ -36,6 +36,6 @@
 /// @return {*} Desired value
 /// @group @carbon/layout
 @function last-map-item($map) {
-  $total-length: length($map);
-  @return map-get($map, carbon--key-by-index($map, $total-length));
+	$total-length: length($map);
+	@return map-get($map, carbon--key-by-index($map, $total-length));
 }

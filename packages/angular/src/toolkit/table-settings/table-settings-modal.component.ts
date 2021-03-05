@@ -1,41 +1,42 @@
-import {
-	Component,
-	EventEmitter,
-	Inject,
-	Input,
-	OnInit,
-	Optional,
-	Output
-} from "@angular/core";
-import { BaseModal } from "carbon-components-angular";
-import { Subject } from "rxjs";
-import { SortableListComponent } from "../sortable-list/index";
-import { TableSettings } from "./table-settings-model.class";
+import { Component, EventEmitter, Inject, Input, OnInit, Optional, Output } from '@angular/core';
+import { BaseModal } from 'carbon-components-angular';
+import { Subject } from 'rxjs';
+import { SortableListComponent } from '../sortable-list/index';
+import { TableSettings } from './table-settings-model.class';
 
 @Component({
-	selector: "sc-table-settings-modal, ai-table-settings-modal",
+	selector: 'sc-table-settings-modal, ai-table-settings-modal',
 	template: `
 		<ibm-modal (overlaySelected)="closeModal()" [hasScrollingContent]="false" [open]="open">
 			<ibm-modal-header (closeSelect)="closeModal()">
-      			<p class="bx--modal-header__heading bx--type-beta">{{ model.title }}</p>
+				<p class="bx--modal-header__heading bx--type-beta">{{ model.title }}</p>
 			</ibm-modal-header>
 			<div class="bx--modal-content content">
-				<ng-container *ngIf="!model.template">{{ model.getContent() | async }}</ng-container>
+				<ng-container *ngIf="!model.template">{{
+					model.getContent() | async
+				}}</ng-container>
 				<ng-template
 					*ngIf="model.template"
 					[ngTemplateOutlet]="model.template"
-					[ngTemplateOutletContext]="model">
+					[ngTemplateOutletContext]="model"
+				>
 				</ng-template>
 				<ibm-tabs>
-					<ibm-tab
-						*ngFor="let pane of model.getPanes()"
-						[heading]="pane.title">
+					<ibm-tab *ngFor="let pane of model.getPanes()" [heading]="pane.title">
 						<p>{{ pane.getContent() | async }}</p>
 						<div *ngFor="let setting of pane.getSettings()">
 							<p>{{ setting.getContent() | async }}</p>
-							<ng-template [ngTemplateOutlet]="setting.getTemplate()" [ngTemplateOutletContext]="setting"></ng-template>
+							<ng-template
+								[ngTemplateOutlet]="setting.getTemplate()"
+								[ngTemplateOutletContext]="setting"
+							></ng-template>
 							<ng-container
-								*scComponentOutlet="setting.component; inputs: setting.getInputs(); outputs: setting.getOutputs()">
+								*scComponentOutlet="
+									setting.component;
+									inputs: setting.getInputs();
+									outputs: setting.getOutputs()
+								"
+							>
 							</ng-container>
 						</div>
 					</ibm-tab>
@@ -51,7 +52,7 @@ import { TableSettings } from "./table-settings-model.class";
 			</ibm-modal-footer>
 		</ibm-modal>
 	`,
-	styleUrls: [ "./table-settings-modal.scss" ]
+	styleUrls: ['./table-settings-modal.scss'],
 })
 export class TableSettingsModalComponent extends BaseModal implements OnInit {
 	listComponent = SortableListComponent;
@@ -61,8 +62,8 @@ export class TableSettingsModalComponent extends BaseModal implements OnInit {
 	@Output() settingsModelChange = new EventEmitter<TableSettings>();
 
 	constructor(
-		@Optional() @Inject("model") public model: TableSettings,
-		@Optional() @Inject("modelChange") protected modelChange: Subject<TableSettings>
+		@Optional() @Inject('model') public model: TableSettings,
+		@Optional() @Inject('modelChange') protected modelChange: Subject<TableSettings>
 	) {
 		super();
 	}

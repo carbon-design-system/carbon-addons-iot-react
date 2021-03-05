@@ -10,11 +10,11 @@ import {
 	OnDestroy,
 	SimpleChanges,
 	Type,
-	ViewContainerRef
-} from "@angular/core";
+	ViewContainerRef,
+} from '@angular/core';
 
 @Directive({
-	selector: "[scComponentOutlet], [aiComponentOutlet]"
+	selector: '[scComponentOutlet], [aiComponentOutlet]',
 })
 export class ComponentOutletDirective implements OnChanges, OnDestroy {
 	@Input() scComponentOutletInputs = new Map<string, any>();
@@ -35,7 +35,7 @@ export class ComponentOutletDirective implements OnChanges, OnDestroy {
 	private _componentRef: ComponentRef<any> | null = null;
 	private _moduleRef: NgModuleRef<any> | null = null;
 
-	constructor(private _viewContainerRef: ViewContainerRef) { }
+	constructor(private _viewContainerRef: ViewContainerRef) {}
 	// end copy
 
 	ngOnChanges(changes: SimpleChanges) {
@@ -45,42 +45,56 @@ export class ComponentOutletDirective implements OnChanges, OnDestroy {
 		this._componentRef = null;
 
 		if (this.scComponentOutlet) {
-			const elInjector = this.scComponentOutletInjector || this._viewContainerRef.parentInjector;
+			const elInjector =
+				this.scComponentOutletInjector || this._viewContainerRef.parentInjector;
 
-			if (changes["scComponentOutletNgModuleFactory"]) {
-				if (this._moduleRef) { this._moduleRef.destroy(); }
+			if (changes['scComponentOutletNgModuleFactory']) {
+				if (this._moduleRef) {
+					this._moduleRef.destroy();
+				}
 
 				if (this.scComponentOutletNgModuleFactory) {
 					const parentModule = elInjector.get(NgModuleRef);
-					this._moduleRef = this.scComponentOutletNgModuleFactory.create(parentModule.injector);
+					this._moduleRef = this.scComponentOutletNgModuleFactory.create(
+						parentModule.injector
+					);
 				} else {
 					this._moduleRef = null;
 				}
 			}
 
-			const componentFactoryResolver = this._moduleRef ? this._moduleRef.componentFactoryResolver :
-				elInjector.get(ComponentFactoryResolver);
+			const componentFactoryResolver = this._moduleRef
+				? this._moduleRef.componentFactoryResolver
+				: elInjector.get(ComponentFactoryResolver);
 
-			const componentFactory =
-				componentFactoryResolver.resolveComponentFactory(this.scComponentOutlet);
+			const componentFactory = componentFactoryResolver.resolveComponentFactory(
+				this.scComponentOutlet
+			);
 
 			this._componentRef = this._viewContainerRef.createComponent(
-				componentFactory, this._viewContainerRef.length, elInjector,
-				this.scComponentOutletContent);
+				componentFactory,
+				this._viewContainerRef.length,
+				elInjector,
+				this.scComponentOutletContent
+			);
 		}
 		// end copy
 
 		if (changes.scComponentOutletInputs) {
-			const inputs: Array<[string, any]> = Array.from(changes.scComponentOutletInputs.currentValue);
+			const inputs: Array<[string, any]> = Array.from(
+				changes.scComponentOutletInputs.currentValue
+			);
 			for (const [key, value] of inputs) {
-				this["_componentRef"]["instance"][key] = value;
+				this['_componentRef']['instance'][key] = value;
 			}
 		}
 
 		if (changes.scComponentOutletOutputs) {
-			const outputs: Array<[string, any]> = Array.from(changes.scComponentOutletOutputs.currentValue);
+			const outputs: Array<[string, any]> = Array.from(
+				changes.scComponentOutletOutputs.currentValue
+			);
 			for (const [key, value] of outputs) {
-				this["_componentRef"]["instance"][key].subscribe((event) => {
+				this['_componentRef']['instance'][key].subscribe((event) => {
 					value(event);
 				});
 			}
@@ -90,7 +104,9 @@ export class ComponentOutletDirective implements OnChanges, OnDestroy {
 	// tslint:disable-next-line
 	// copied from https://github.com/angular/angular/blob/263bbd43c1808f1201bc4b50fe76e8fbba672c51/packages/common/src/directives/ng_component_outlet.ts#L10-L116
 	ngOnDestroy() {
-		if (this._moduleRef) { this._moduleRef.destroy(); }
+		if (this._moduleRef) {
+			this._moduleRef.destroy();
+		}
 	}
 	// end copy
 }

@@ -1,11 +1,11 @@
 // disable max-classes-per-file since these are very small classes
 // tslint:disable: max-classes-per-file
 
-import { TemplateRef } from "@angular/core";
-import { BehaviorSubject, isObservable, Subscription } from "rxjs";
-import { BaseSetting, SettingOptions } from "../table-settings/settings/setting.class";
-import { Content } from "../table-settings/table-settings-model.class";
-import { SortableListComponent } from "./sortable-list.component";
+import { TemplateRef } from '@angular/core';
+import { BehaviorSubject, isObservable, Subscription } from 'rxjs';
+import { BaseSetting, SettingOptions } from '../table-settings/settings/setting.class';
+import { Content } from '../table-settings/table-settings-model.class';
+import { SortableListComponent } from './sortable-list.component';
 
 export interface ListOptionOptions {
 	content?: Content;
@@ -54,7 +54,7 @@ export class SortableListOption {
 			content: this.contentSubject.value,
 			disabled: this.disabled,
 			order: this.order,
-			options: jsonOptions
+			options: jsonOptions,
 		};
 	}
 
@@ -76,13 +76,9 @@ export class SortableList extends BaseSetting {
 
 	protected stagedOptions: SortableListOption[];
 
-	protected _outputs = new Map([
-		["itemsChange", this.onChanges.bind(this)]
-	]);
+	protected _outputs = new Map([['itemsChange', this.onChanges.bind(this)]]);
 
-	protected _inputs = new Map([
-		["items", this.options]
-	]);
+	protected _inputs = new Map([['items', this.options]]);
 
 	constructor(options: SortableListOptions) {
 		super(options as SettingOptions);

@@ -9,14 +9,8 @@ import { By } from '@angular/platform-browser';
 describe('AppComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			imports: [
-				RouterTestingModule,
-				ButtonModule,
-				DropdownModule
-			],
-			declarations: [
-				AppComponent
-			],
+			imports: [RouterTestingModule, ButtonModule, DropdownModule],
+			declarations: [AppComponent],
 		}).compileComponents();
 	}));
 

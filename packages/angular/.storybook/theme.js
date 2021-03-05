@@ -1,10 +1,10 @@
-import { create } from "@storybook/theming";
-import { g100 } from "@carbon/themes";
+import { create } from '@storybook/theming';
+import { g100 } from '@carbon/themes';
 
 const { field01, interactive01, text01, text04, ui01, ui03, ui04, uiBackground } = g100;
 
 export const CarbonG100 = create({
-	base: "dark",
+	base: 'dark',
 
 	colorPrimary: interactive01,
 	colorSecondary: ui04,
@@ -34,6 +34,6 @@ export const CarbonG100 = create({
 	inputTextColor: text01,
 	inputBorderRadius: 0,
 
-	brandTitle: "AI Apps PAL Angular",
-	brandUrl: "https://github.com/carbon-design-system/carbon-addons-iot-react",
+	brandTitle: 'AI Apps PAL Angular',
+	brandUrl: 'https://github.com/carbon-design-system/carbon-addons-iot-react',
 });

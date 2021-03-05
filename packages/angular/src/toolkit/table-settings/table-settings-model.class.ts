@@ -1,6 +1,6 @@
-import { TemplateRef } from "@angular/core";
-import { isObservable, Observable, of } from "rxjs";
-import { TableSettingsPane, TableSettingsPaneOptions } from "./table-settings-pane.class";
+import { TemplateRef } from '@angular/core';
+import { isObservable, Observable, of } from 'rxjs';
+import { TableSettingsPane, TableSettingsPaneOptions } from './table-settings-pane.class';
 
 export type Content = string | Observable<string>;
 
@@ -61,7 +61,7 @@ export class TableSettings {
 		return {
 			content: jsonContent,
 			title: jsonTitle,
-			panes: jsonPanes
+			panes: jsonPanes,
 		};
 	}
 

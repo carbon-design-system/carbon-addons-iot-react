@@ -1,4 +1,4 @@
-import { BaseSetting } from "./setting.class";
+import { BaseSetting } from './setting.class';
 
 export interface InputMap {
 	[inputName: string]: any;

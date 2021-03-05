@@ -45,7 +45,7 @@ proposing the new addition!
 
 If you're looking for `@carbon/layout` API documentation, check out:
 
-- [Sass](./docs/sass.md)
+-   [Sass](./docs/sass.md)
 
 ## 🙌 Contributing
 

@@ -1,5 +1,5 @@
-import { TableHeaderItem, TableItem, TableModel } from "carbon-components-angular";
-import { Subject } from "rxjs";
+import { TableHeaderItem, TableItem, TableModel } from 'carbon-components-angular';
+import { Subject } from 'rxjs';
 
 export class SCTableModel extends TableModel {
 	headerChange = new Subject();
@@ -9,7 +9,7 @@ export class SCTableModel extends TableModel {
 	 */
 	// @ts-ignore we're using an accessor here but the base class is a property
 	set header(newHeader: any) {
-		if (!newHeader || (Array.isArray(newHeader) && newHeader.length === 0) ) {
+		if (!newHeader || (Array.isArray(newHeader) && newHeader.length === 0)) {
 			newHeader = [[]];
 		}
 
@@ -49,7 +49,10 @@ export class SCTableModel extends TableModel {
 
 		// only create a fresh header if necessary (header doesn't exist or differs in length)
 		// this will only create a single level of headers (it will destroy any existing header items)
-		if (this.header == null || (this.header[0].length !== this._data[0].length && this._data[0].length > 0)) {
+		if (
+			this.header == null ||
+			(this.header[0].length !== this._data[0].length && this._data[0].length > 0)
+		) {
 			const newHeader = [[]];
 			// disable this tslint here since we don't actually want to
 			// loop the contents of the data
@@ -77,15 +80,13 @@ export class SCTableModel extends TableModel {
 
 	isRowFiltered(index: number): boolean {
 		const realIndex = this.realRowIndex(index);
-		return this.header.some(
-			(headerRow: TableHeaderItem[]) => headerRow.some(
-				(item, i) => item && item.filter(this.row(realIndex)[i])
-			)
+		return this.header.some((headerRow: TableHeaderItem[]) =>
+			headerRow.some((item, i) => item && item.filter(this.row(realIndex)[i]))
 		);
 	}
 
-	getHeaderId(column: number | "select" | "expand", colSpan = 1): string  {
-		if (column === "select" || column === "expand") {
+	getHeaderId(column: number | 'select' | 'expand', colSpan = 1): string {
+		if (column === 'select' || column === 'expand') {
 			return this.getId(column);
 		}
 
@@ -101,7 +102,7 @@ export class SCTableModel extends TableModel {
 			}
 		}
 
-		return ids.join(" ");
+		return ids.join(' ');
 	}
 
 	/**
@@ -142,11 +143,15 @@ export class SCTableModel extends TableModel {
 	sort(index: number) {
 		const headerToSort = this.getHeader(index);
 		this.pushRowStateToModelData();
-		this.data.sort((a, b) => (headerToSort.descending ? -1 : 1) * headerToSort.compare(a[index], b[index]));
+		this.data.sort(
+			(a, b) => (headerToSort.descending ? -1 : 1) * headerToSort.compare(a[index], b[index])
+		);
 		this.popRowStateFromModelData();
 		this.header.forEach((headerRow: TableHeaderItem[]) => {
 			headerRow.forEach((column) => {
-				if (column) { column.sorted = false; }
+				if (column) {
+					column.sorted = false;
+				}
 			});
 		});
 		headerToSort.sorted = true;

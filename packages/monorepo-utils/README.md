@@ -11,13 +11,13 @@ Vendors packages. `vendorAsync` returns a promise that will resolve when complet
 ```javascript
 const defaultOptions = {
   // pattern for files we want to vendor from each package
-  pattern: "**/*.+(scss|css)",
+  pattern: '**/*.+(scss|css)',
   // pattern(s) for files we want to ignore from the set of files matched by the `pattern`
-  ignorePatterns: ["**/node_modules/**"],
+  ignorePatterns: ['**/node_modules/**'],
   // list of packages we want to vendor
   packages: [],
   // where we want to store the packages we vendor
-  destination: "src/vendor"
+  destination: 'src/vendor',
 };
 ```
 
@@ -26,11 +26,9 @@ By using a pattern/file based vendoring strategy we can reduce the number of fil
 Example usage:
 
 ```javascript
-const { vendor } = require("@ai-apps/monorepo-utils");
+const { vendor } = require('@ai-apps/monorepo-utils');
 
 vendor({
-	packages: [
-		"@ai-apps/styles"
-	]
+  packages: ['@ai-apps/styles'],
 });
 ```

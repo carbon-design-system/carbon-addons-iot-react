@@ -2,9 +2,7 @@ const path = require('path');
 
 module.exports = {
 	stories: ['../src/index.stories.ts', '../src/**/*.stories.ts'],
-	addons: [
-		'@storybook/addon-knobs'
-	],
+	addons: ['@storybook/addon-knobs'],
 	webpackFinal: async (config) => {
 		config.module.rules.push({
 			test: [/\.stories\.tsx?$/, /index\.ts$/],
@@ -24,8 +22,8 @@ module.exports = {
 		// more info here: https://webpack.js.org/configuration/resolve/#resolvemodules
 		config.resolve.modules = [path.resolve(__dirname, '../node_modules'), 'node_modules'];
 
-		config.mode = "development";
-		config.devtool = "source-map";
+		config.mode = 'development';
+		config.devtool = 'source-map';
 		return config;
-	}
+	},
 };

@@ -1,7 +1,7 @@
-import { ComponentRef, Injectable } from "@angular/core";
-import { ModalService } from "carbon-components-angular";
-import { Observable, Subject } from "rxjs";
-import { TableSettingsModalComponent } from "./table-settings-modal.component";
+import { ComponentRef, Injectable } from '@angular/core';
+import { ModalService } from 'carbon-components-angular';
+import { Observable, Subject } from 'rxjs';
+import { TableSettingsModalComponent } from './table-settings-modal.component';
 
 @Injectable()
 export class TableSettingsService {
@@ -16,13 +16,15 @@ export class TableSettingsService {
 	}
 
 	openSettings(settingsModel) {
-		if (this.modalRef) { return; }
+		if (this.modalRef) {
+			return;
+		}
 
 		this.modalRef = this.modalService.create({
 			component: TableSettingsModalComponent,
 			inputs: {
-				model: settingsModel
-			}
+				model: settingsModel,
+			},
 		});
 
 		this.modalRef.instance.close.subscribe(() => {
@@ -31,7 +33,9 @@ export class TableSettingsService {
 	}
 
 	closeSettings() {
-		if (!this.modalRef) { return; }
+		if (!this.modalRef) {
+			return;
+		}
 
 		this.modalRef.instance.closeModal();
 		this.modalRef = null;

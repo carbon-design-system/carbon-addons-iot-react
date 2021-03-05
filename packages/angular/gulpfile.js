@@ -1,22 +1,22 @@
 ////////////////////////////////////
 // Gulp all the things
 ////////////////////////////////////
-"use strict";
+'use strict';
 
 //
 // Requires
 // =================================
-const gulp = require("gulp");
-const sass = require("sass");
-const tap = require("gulp-tap");
-const path = require("path");
-const fs = require("fs");
+const gulp = require('gulp');
+const sass = require('sass');
+const tap = require('gulp-tap');
+const path = require('path');
+const fs = require('fs');
 
 //
 // Variables
 // =================================
 const dirs = {
-	DIST: "dist"
+	DIST: 'dist',
 };
 
 const licenseTemplate = `/**
@@ -43,23 +43,20 @@ const licenseTemplate = `/**
 //
 // Build tasks
 // =================================
-const moveLicense = () =>
-	gulp.src("LICENSE.md")
-		.pipe(gulp.dest(dirs.DIST));
+const moveLicense = () => gulp.src('LICENSE.md').pipe(gulp.dest(dirs.DIST));
 
 const buildLicense = () =>
-	gulp.src([
-		`${dirs.DIST}/**/*.scss`,
-		`${dirs.DIST}/**/*.css`,
-		`${dirs.DIST}/**/*.ts`,
-		`${dirs.DIST}/**/*.js`
-	])
-	.pipe(licenseHeaders())
-	.pipe(gulp.dest(dirs.DIST));
-
-const buildReadme = () =>
-	gulp.src("README.md")
+	gulp
+		.src([
+			`${dirs.DIST}/**/*.scss`,
+			`${dirs.DIST}/**/*.css`,
+			`${dirs.DIST}/**/*.ts`,
+			`${dirs.DIST}/**/*.js`,
+		])
+		.pipe(licenseHeaders())
 		.pipe(gulp.dest(dirs.DIST));
+
+const buildReadme = () => gulp.src('README.md').pipe(gulp.dest(dirs.DIST));
 
 //
 // Running tasks
@@ -71,19 +68,19 @@ module.exports = {
 	buildReadme,
 	moveLicense,
 	buildMeta,
-	default: buildMeta
+	default: buildMeta,
 };
 
 //
 // Functions
 // =================================
 function licenseHeaders() {
-  return tap(function(file) {
-	const packageJSON = require("./package.json");
-	const updatedTemplate = licenseTemplate
-		.replace("@PACKAGE_VERSION@", packageJSON.version)
-		.replace("@FILE_NAME@", path.basename(file.path))
-		.replace("@THIS_YEAR@", new Date().getFullYear());
-	file.contents = Buffer.concat([new Buffer(updatedTemplate), file.contents]);
-  });
+	return tap(function (file) {
+		const packageJSON = require('./package.json');
+		const updatedTemplate = licenseTemplate
+			.replace('@PACKAGE_VERSION@', packageJSON.version)
+			.replace('@FILE_NAME@', path.basename(file.path))
+			.replace('@THIS_YEAR@', new Date().getFullYear());
+		file.contents = Buffer.concat([new Buffer(updatedTemplate), file.contents]);
+	});
 }
