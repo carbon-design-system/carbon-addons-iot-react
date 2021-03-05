@@ -129,7 +129,9 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
   const data = [];
 
   // Series is the different groups of datasets
-  series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+  // ensure is actually is an array since proptypes allow for an object, too.
+  const seriesArray = Array.isArray(series) ? series : [series];
+  seriesArray.forEach(({ dataSourceId, dataFilter = {}, label }) => {
     timestamps.forEach((timestamp) => {
       // First filter based on on the dataFilter
       const filteredData = filter(values, dataFilter);
@@ -207,8 +209,12 @@ export const handleTooltip = (
     matchingAlertLabels,
   ]);
 
-  // The first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
-  defaultTooltipDOM.querySelector('li:first-child').replaceWith(dateLabelDOM.querySelector('li'));
+  // if the data has no timestamp, there will no dateLabel
+  // and without this check a null string was being inserted into the DOM.
+  if (dateLabelDOM.querySelector('li')) {
+    // The first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
+    defaultTooltipDOM.querySelector('li:first-child').replaceWith(dateLabelDOM.querySelector('li'));
+  }
 
   // Append all the matching alert labels
   matchingAlertLabelsDOM.querySelectorAll('li').forEach((label) => {

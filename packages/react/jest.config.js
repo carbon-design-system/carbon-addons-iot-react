@@ -102,9 +102,7 @@ module.exports = {
     './src/components/Page/PageTitle.jsx': { branches: 75 },
     './src/components/ImageCard/ImageCard.jsx': { branches: 71 },
     './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
-      statements: 77,
-      functions: 70,
-      lines: 77,
+      functions: 75,
     },
     './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': {
       branches: 76,
