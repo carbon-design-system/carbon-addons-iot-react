@@ -235,23 +235,26 @@ const TableCardFormContent = ({
       const filteredGroupBy = cardConfig?.dataSource?.groupBy?.filter(
         (groupByItem) => groupByItem !== dataItem.dataSourceId
       );
+
       setSelectedDataItems(filteredColumns.map((item) => item.dataSourceId));
       setRemovedDataItems([...removedDataItems, dataItem]);
+
       // if we no longer have a groupBy, then we can exclude the dataSource from the response
-      onChange(
-        omit({
-          ...cardConfig,
-          content: {
-            ...cardConfig.content,
-            columns: filteredColumns,
-          },
-          ...(dataItem.destination === 'groupBy' && !isEmpty(filteredGroupBy) // if the removed item was from the groupBy section then update it
-            ? { dataSource: { ...cardConfig.dataSource, groupBy: filteredGroupBy } }
-            : cardConfig.dataSource
-            ? { dataSource: { ...omit(cardConfig.dataSource, 'groupBy') } }
-            : {}),
-        })
-      );
+      let updatedDataSource = {};
+      if (!isEmpty(filteredGroupBy)) {
+        updatedDataSource = { dataSource: { ...cardConfig.dataSource, groupBy: filteredGroupBy } };
+      } else if (cardConfig.dataSource) {
+        updatedDataSource = { dataSource: { ...omit(cardConfig.dataSource, 'groupBy') } };
+      }
+
+      onChange({
+        ...cardConfig,
+        content: {
+          ...cardConfig.content,
+          columns: filteredColumns,
+        },
+        ...updatedDataSource,
+      });
     },
     [cardConfig, dataSection, onChange, removedDataItems, setSelectedDataItems]
   );

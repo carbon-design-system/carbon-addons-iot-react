@@ -15,6 +15,7 @@ import {
   teal50,
   cyan90,
 } from '@carbon/colors';
+import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
 
@@ -84,6 +85,14 @@ const ColorDropdown = ({
   testID,
   translateWithId,
 }) => {
+  React.useEffect(() => {
+    if (__DEV__) {
+      warning(
+        false,
+        'The `ColorDropdown` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
+      );
+    }
+  }, []);
   const [selectedColor, setSelectedColor] = useState(selectedColorProp);
 
   const renderColorItem = (item) => {
@@ -111,6 +120,7 @@ const ColorDropdown = ({
       items={colors}
       label={label}
       light={light}
+      title={label}
       translateWithId={translateWithId}
       onChange={({ selectedItem }) => {
         setSelectedColor(selectedItem);

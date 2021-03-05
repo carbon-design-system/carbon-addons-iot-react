@@ -48,7 +48,6 @@
         "NODE_ICU_DATA": "node_modules/full-icu",
         "TZ": "America/Chicago"
       },
-      "cwd": "${workspaceFolder}/packages/react",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
       "windows": {

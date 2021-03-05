@@ -301,7 +301,7 @@ describe('TableCardFormContent', () => {
       },
     });
   });
-  it('remove button should remove items from the groupBy list by leave the dataSource alone', () => {
+  it('remove button should remove items from the groupBy list but leave the dataSource alone', () => {
     render(
       <TableCardFormContent
         {...commonProps}
@@ -353,6 +353,68 @@ describe('TableCardFormContent', () => {
         ],
       },
       dataSource: {
+        timeGrain: 'hour',
+      },
+    });
+  });
+  it('remove button should remove items from the columns but leave groupby alone', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                dataItemId: 'manufacturer',
+                type: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+          },
+          dataSource: {
+            groupBy: ['manufacturer'],
+            timeGrain: 'hour',
+          },
+        }}
+      />
+    );
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Manufacturer')).toBeDefined();
+
+    const removeTemperatureButton = screen.getAllByRole('button', { name: 'Remove' })[2];
+    expect(removeTemperatureButton).toBeInTheDocument();
+
+    fireEvent.click(removeTemperatureButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Manufacturer',
+            dataSourceId: 'manufacturer',
+            dataItemId: 'manufacturer',
+            type: 'DIMENSION',
+          },
+        ],
+      },
+      dataSource: {
+        groupBy: ['manufacturer'],
         timeGrain: 'hour',
       },
     });

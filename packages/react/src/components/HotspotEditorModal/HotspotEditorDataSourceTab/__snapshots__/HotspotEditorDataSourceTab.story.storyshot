@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal/HotspotEditorDataSourceTab Example with no hotspots 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab Example with no hotspots 1`] = `
 <div
   className="storybook-container"
 >
@@ -129,7 +129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal/HotspotEditorDataSourceTab With preset values 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab With preset values 1`] = `
 <div
   className="storybook-container"
 >

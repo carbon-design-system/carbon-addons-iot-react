@@ -60,7 +60,7 @@ export const commonTileCatalogProps = {
 };
 
 export default {
-  title: 'Watson IoT/TileCatalog',
+  title: __DEV__ ? 'Watson IoT/⚠️ TileCatalog' : 'Watson IoT/TileCatalog',
   excludeStories: ['commonTileCatalogProps'],
 };
 
@@ -132,10 +132,12 @@ export const AsyncLoadedWaitOneSecond = () => {
     const [tilesProp, setTiles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setTiles(commonTileCatalogProps.tiles);
         setIsLoading(false);
       }, 1000);
+
+      return () => clearTimeout(timer);
     }, []);
     return (
       <StatefulTileCatalog {...commonTileCatalogProps} isLoading={isLoading} tiles={tilesProp} />
