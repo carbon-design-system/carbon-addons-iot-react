@@ -77,7 +77,7 @@
 		],
 		"quotemark": [
 			true,
-			"double"
+			"single"
 		],
 		"radix": true,
 		"semicolon": [
@@ -87,8 +87,7 @@
 		"trailing-comma": [
 			true,
 			{
-				"multiline": "never",
-				"singleline": "never"
+				"esSpecCompliant": true
 			}
 		],
 		"triple-equals": [
