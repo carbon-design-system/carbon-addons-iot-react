@@ -526,6 +526,11 @@ const TimeSeriesCard = ({
         position: 'bottom',
         clickable: !isEditable,
         enabled: showLegend ?? series.length > 1,
+        truncation: {
+          type: 'end-line',
+          // only truncate if there is more than 20 characters
+          threshold: 20,
+        },
       },
       containerResizable: true,
       tooltip: {
