@@ -27,6 +27,9 @@ function createWidthsMap(ordering, columnWidths, adjustedCols) {
     newColumnWidths[orderedColumn.columnId] = {
       width: current && current.width !== undefined ? parseInt(current.width, 10) : undefined,
       id: orderedColumn.columnId,
+      visibleColumnsWhenRemoved: orderedColumn.isHidden
+        ? (current && current.visibleColumnsWhenRemoved) || adjustedCols.length
+        : undefined,
     };
   });
 
@@ -86,7 +89,7 @@ export const checkColumnWidthFormat = (columns) => {
       ) {
         warning(
           !__DEV__,
-          `Column width should be a string containing the width and the pixel unit 
+          `Column width should be a string containing the width and the pixel unit
           e.g. '100px' or have the value undefined.`
         );
       }
@@ -146,10 +149,60 @@ export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs
     return [...accumulator, { id: colToShowId, width: Math.round(widthOfColumnToShow) }];
   }, []);
   const totalWidthNeeded = newColumnsToShow.reduce((acc, col) => acc + col.width, 0);
-  const shrinkableColumns = visibleColumns.filter((col) => col.width > MIN_COLUMN_WIDTH);
 
-  const adjustedCols = shrinkColumns(shrinkableColumns, totalWidthNeeded);
-  adjustedCols.push(...newColumnsToShow);
+  // when the column was removed were there more columns than now when re-adding?
+  const visibleColumnsWereGreater = colToShowIDs.every(
+    (colId) => currentColumnWidths[colId]?.visibleColumnsWhenRemoved > visibleColumns.length
+  );
+
+  // when the column was removed were there less columns than now when re-adding?
+  const visibleColumnsWereFewer = colToShowIDs.every(
+    (colId) => currentColumnWidths[colId]?.visibleColumnsWhenRemoved < visibleColumns.length
+  );
+
+  // are there columns large enough to subtract the entire width from?
+  const largeColumns = visibleColumns.filter((col) => col.width > totalWidthNeeded);
+
+  let adjustedCols = [];
+
+  // if we have some large columns to subtract the width from
+  // just use them and move on.
+  if (largeColumns.length) {
+    adjustedCols = shrinkColumns(largeColumns, totalWidthNeeded);
+    adjustedCols.push(...newColumnsToShow);
+  }
+  // if there were more columns visible, remove a shared percentage of width
+  // from all columns greater than the minimum without changing the width of the
+  // columns being inserted.
+  else if (visibleColumnsWereGreater) {
+    adjustedCols = shrinkColumns(
+      visibleColumns.filter((col) => col.width > MIN_COLUMN_WIDTH),
+      totalWidthNeeded
+    );
+    adjustedCols.push(...newColumnsToShow);
+  }
+  // if there were less columns visible then also include the columns being inserted when adjusting
+  // the widths. In this case, the width is shared between the existing and new columns equally.
+  // this is to handle situations where many columns were removed in a specific order
+  // see https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2061
+  else if (visibleColumnsWereFewer) {
+    adjustedCols = shrinkColumns(
+      [...newColumnsToShow, ...visibleColumns]
+        .filter((col) => col.width > MIN_COLUMN_WIDTH)
+        .sort((a, b) => b.width - a.width)
+        .slice(0, newColumnsToShow.length + 1),
+      totalWidthNeeded
+    );
+  }
+  // otherwise fallback to the default behavior of sharing is between all columns greater than
+  // the minimum.
+  else {
+    adjustedCols = shrinkColumns(
+      visibleColumns.filter((col) => col.width > MIN_COLUMN_WIDTH),
+      totalWidthNeeded
+    );
+    adjustedCols.push(...newColumnsToShow);
+  }
 
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 };
@@ -163,7 +216,12 @@ export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs
 export const calculateWidthOnHide = (currentColumnWidths, ordering, colToHideIDs) => {
   const columnsToHide = colToHideIDs.map((hideId) => {
     const col = currentColumnWidths[hideId];
-    return Number.isNaN(parseInt(col.width, 10)) ? { width: 0, id: hideId } : col;
+    return Number.isNaN(parseInt(col.width, 10))
+      ? {
+          width: 0,
+          id: hideId,
+        }
+      : col;
   });
 
   const widthToDistribute = getTotalWidth(columnsToHide);
