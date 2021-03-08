@@ -43,12 +43,8 @@ import { TableSettings } from './table-settings-model.class';
 				</ibm-tabs>
 			</div>
 			<ibm-modal-footer>
-				<button ibmButton="secondary" (click)="cancel()">
-					Cancel
-				</button>
-				<button ibmButton="primary" (click)="acceptChanges()">
-					Okay
-				</button>
+				<button ibmButton="secondary" (click)="cancel()">Cancel</button>
+				<button ibmButton="primary" (click)="acceptChanges()">Okay</button>
 			</ibm-modal-footer>
 		</ibm-modal>
 	`,
