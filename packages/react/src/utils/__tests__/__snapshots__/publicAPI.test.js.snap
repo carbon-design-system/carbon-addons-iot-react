@@ -4620,6 +4620,10 @@ Map {
     "defaultProps": Object {
       "content": Object {
         "layout": "VERTICAL",
+        "truncation": Object {
+          "threshold": 20,
+          "type": "end_line",
+        },
         "type": "SIMPLE",
       },
       "domainRange": null,
@@ -5153,6 +5157,27 @@ Map {
               "type": "arrayOf",
             },
             "timeDataSourceId": [Function],
+            "truncation": Object {
+              "args": Array [
+                Object {
+                  "threshold": Object {
+                    "type": "number",
+                  },
+                  "type": Object {
+                    "args": Array [
+                      Array [
+                        "end_line",
+                        "mid_line",
+                        "front_line",
+                        "none",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
             "type": [Function],
             "unit": Object {
               "type": "string",
@@ -10779,6 +10804,10 @@ Map {
         "colors": undefined,
         "groupDataSourceId": "group",
         "legendPosition": "bottom",
+        "truncation": Object {
+          "threshold": 20,
+          "type": "end_line",
+        },
       },
       "i18n": Object {
         "noDataLabel": "No data",
@@ -11258,7 +11287,34 @@ Map {
               "type": "func",
             },
             "legendPosition": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  "top",
+                  "bottom",
+                ],
+              ],
+              "type": "oneOf",
+            },
+            "truncation": Object {
+              "args": Array [
+                Object {
+                  "threshold": Object {
+                    "type": "number",
+                  },
+                  "type": Object {
+                    "args": Array [
+                      Array [
+                        "end_line",
+                        "mid_line",
+                        "front_line",
+                        "none",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                },
+              ],
+              "type": "shape",
             },
           },
         ],
@@ -12575,6 +12631,10 @@ Map {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
         "showLegend": true,
+        "truncation": Object {
+          "threshold": 20,
+          "type": "end_line",
+        },
       },
       "domainRange": null,
       "i18n": Object {
@@ -13155,6 +13215,27 @@ Map {
             },
             "timeDataSourceId": Object {
               "type": "string",
+            },
+            "truncation": Object {
+              "args": Array [
+                Object {
+                  "threshold": Object {
+                    "type": "number",
+                  },
+                  "type": Object {
+                    "args": Array [
+                      Array [
+                        "end_line",
+                        "mid_line",
+                        "front_line",
+                        "none",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                },
+              ],
+              "type": "shape",
             },
             "unit": Object {
               "type": "string",
