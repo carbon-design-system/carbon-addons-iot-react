@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.0...v2.145.0-next.1) (2021-03-08)
+
+
+### Bug Fixes
+
+* **rulebuilder:** story showing up incorrectly. ([68aa385](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/68aa3858a969a4ccbecfd3cb4deb8f15ddb3556b))
+* **table:** resize inserted column in situations where it's too large ([d2058dc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d2058dc205e8f64440735b30e6fc963aa225e9ee))
+* **valuecard:** fix icon and secondary value position/color ([f86882b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f86882baa045ef2b0e241d690d644d263611faab))
+
+
+
+
+
 # [2.145.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.144.0...v2.145.0-next.0) (2021-03-04)
 
 
