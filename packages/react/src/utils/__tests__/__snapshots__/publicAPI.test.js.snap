@@ -5641,6 +5641,7 @@ Map {
         "toLabel": "to",
         "toNowLabel": "to Now",
       },
+      "id": undefined,
       "intervals": Array [
         Object {
           "label": "minutes",
@@ -5710,6 +5711,7 @@ Map {
       ],
       "renderPresetTooltipText": null,
       "showRelativeOption": true,
+      "testId": "date-time-picker",
     },
     "propTypes": Object {
       "dateTimeMask": Object {
@@ -5937,6 +5939,9 @@ Map {
         ],
         "type": "shape",
       },
+      "id": Object {
+        "type": "string",
+      },
       "intervals": Object {
         "args": Array [
           Object {
@@ -6008,6 +6013,9 @@ Map {
       },
       "showRelativeOption": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -8781,6 +8789,7 @@ Map {
       "isLoading": false,
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
+      "isSummaryDashboard": false,
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -9295,9 +9304,6 @@ Map {
             "cards": Object {
               "type": "array",
             },
-            "isSummaryDashboard": Object {
-              "type": "bool",
-            },
             "layouts": Object {
               "type": "object",
             },
@@ -9315,6 +9321,9 @@ Map {
         "type": "bool",
       },
       "isSubmitLoading": Object {
+        "type": "bool",
+      },
+      "isSummaryDashboard": Object {
         "type": "bool",
       },
       "notification": Object {
@@ -18209,7 +18218,9 @@ Map {
       "wrapperClassName": null,
     },
     "propTypes": Object {
-      "addToList": [Function],
+      "addToList": Object {
+        "type": "bool",
+      },
       "ariaLabel": Object {
         "type": "string",
       },
@@ -18271,7 +18282,9 @@ Map {
       "editOptionText": Object {
         "type": "string",
       },
-      "hasMultiValue": [Function],
+      "hasMultiValue": Object {
+        "type": "bool",
+      },
       "helperText": Object {
         "type": "string",
       },
@@ -18523,7 +18536,9 @@ Map {
   "FilterTags" => Object {
     "defaultProps": Object {
       "hasOverflow": true,
+      "i18n": Object {},
       "id": "filter-tag-container",
+      "onChange": null,
       "tagContainer": null,
     },
     "propTypes": Object {
@@ -18534,8 +18549,14 @@ Map {
       "hasOverflow": Object {
         "type": "bool",
       },
+      "i18n": Object {
+        "type": "object",
+      },
       "id": Object {
         "type": "string",
+      },
+      "onChange": Object {
+        "type": "func",
       },
       "tagContainer": Object {
         "type": "elementType",
