@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.1...v2.145.0-next.2) (2021-03-08)
+
+
+### Features
+
+* **table:** add alignment to aggregate columns ([4ccc6e1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4ccc6e1063db81f68aac488b86de48b4ebe8932c))
+
+
+
+
+
 # [2.145.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.0...v2.145.0-next.1) (2021-03-08)
 
 
