@@ -5641,6 +5641,7 @@ Map {
         "toLabel": "to",
         "toNowLabel": "to Now",
       },
+      "id": undefined,
       "intervals": Array [
         Object {
           "label": "minutes",
@@ -5937,6 +5938,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "id": Object {
+        "type": "string",
       },
       "intervals": Object {
         "args": Array [
@@ -18532,7 +18536,9 @@ Map {
   "FilterTags" => Object {
     "defaultProps": Object {
       "hasOverflow": true,
+      "i18n": Object {},
       "id": "filter-tag-container",
+      "onChange": null,
       "tagContainer": null,
     },
     "propTypes": Object {
@@ -18543,8 +18549,14 @@ Map {
       "hasOverflow": Object {
         "type": "bool",
       },
+      "i18n": Object {
+        "type": "object",
+      },
       "id": Object {
         "type": "string",
+      },
+      "onChange": Object {
+        "type": "func",
       },
       "tagContainer": Object {
         "type": "elementType",

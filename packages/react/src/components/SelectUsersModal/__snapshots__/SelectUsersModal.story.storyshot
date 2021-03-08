@@ -462,7 +462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
               tabIndex={0}
               type="button"
             >
-              Save
+              OK
             </button>
           </div>
         </div>
@@ -1561,7 +1561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
               tabIndex={0}
               type="button"
             >
-              Save
+              OK
             </button>
           </div>
         </div>
@@ -2141,14 +2141,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
               Cancel
             </button>
             <button
-              className="iot--btn bx--btn bx--btn--primary"
+              className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
               data-testid="ComposedModal-modal-primary-button"
-              disabled={false}
+              disabled={true}
               onClick={[Function]}
               tabIndex={0}
               type="button"
             >
-              Save
+              OK
             </button>
           </div>
         </div>
@@ -2770,14 +2770,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
               Cancel
             </button>
             <button
-              className="iot--btn bx--btn bx--btn--primary"
+              className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
               data-testid="ComposedModal-modal-primary-button"
-              disabled={false}
+              disabled={true}
               onClick={[Function]}
               tabIndex={0}
               type="button"
             >
-              Save
+              OK
             </button>
           </div>
         </div>

@@ -32,7 +32,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Filte
       <div
         className="iot--filtertags-container iot--filtertags-container__wrap"
         data-testid="filter-tag-container"
+        i18n={Object {}}
         id="filter-tag-container"
+        onChange={null}
       >
         <div
           aria-label="Clear Filter Hello World"
@@ -234,7 +236,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Filte
     <div
       className="iot--filtertags-container"
       data-testid="filter-tag-container"
+      i18n={Object {}}
       id="filter-tag-container"
+      onChange={null}
     >
       <div
         aria-label="Clear Filter Hello World"
@@ -435,7 +439,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Filte
     <div
       className="iot--filtertags-container"
       data-testid="filter-tag-container"
+      i18n={Object {}}
       id="filter-tag-container"
+      onChange={null}
       style={
         Object {
           "border": "1px solid red",
