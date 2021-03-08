@@ -31,7 +31,8 @@
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:check": "prettier --check \"**/*.{scss,css,js,jsx,md,ts}\" --loglevel warn",
     "publish-npm": "bash ./scripts/release.sh",
-    "version": "yarn format"
+    "version": "yarn format",
+    "storybook": "node ./scripts/storybook.js"
   },
   "husky": {
     "hooks": {
