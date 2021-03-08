@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
 
-import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
+import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 
 import WizardInline from './WizardInline';
 import StatefulWizardInline from './StatefulWizardInline';
@@ -151,12 +151,12 @@ const sidebarComponent = <div>sidebar</div>;
 const footerComponent = <StyledFooterContent>this is footer content</StyledFooterContent>;
 
 export default {
-  title: 'Watson IoT/WizardInline (Deprecated)',
+  title: 'Watson IoT/🚫 WizardInline',
   excludeStories: ['itemsAndComponents'],
 };
 
 export const Deprecated = () => (
-  <DeprecationNotice deprecatedComponentName="WizardInline" replacementComponentName="PageWizard" />
+  <StoryNotice componentName="WizardInline" replacementComponentName="PageWizard" />
 );
 Deprecated.story = {
   name: deprecatedStoryTitle,

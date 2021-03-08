@@ -412,6 +412,7 @@ describe('Table', () => {
 
     expect(wrapper.find('.bx--search-input')).toHaveLength(1);
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
 
     wrapper.setProps({
       view: { toolbar: { search: { defaultValue: 'ferrari' } } },
@@ -419,11 +420,13 @@ describe('Table', () => {
     wrapper.update();
 
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
 
     wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
     wrapper.update();
 
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
   });
 
   it('cells should always wrap by default', () => {

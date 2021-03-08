@@ -40,7 +40,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
             <a
               className="bx--link"
               href="#"
-              rel={null}
             >
               Breadcrumb 2
             </a>
@@ -52,7 +51,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
               aria-current="page"
               className="bx--link"
               href="#"
-              rel={null}
             >
               Breadcrumb 3
             </a>
@@ -117,7 +115,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
             <a
               className="bx--link"
               href="#"
-              rel={null}
             >
               Breadcrumb 1
             </a>
@@ -128,7 +125,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
             <a
               className="bx--link"
               href="#"
-              rel={null}
             >
               Breadcrumb 2
             </a>
@@ -139,7 +135,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
             <a
               className="bx--link"
               href="#"
-              rel={null}
             >
               Breadcrumb 3
             </a>
@@ -214,7 +209,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
               <a
                 className="bx--link"
                 href="#"
-                rel={null}
               >
                 1 Homexxxxxxxxxxxxxxxxxxxxxx
               </a>
@@ -227,7 +221,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
               <a
                 className="bx--link"
                 href="#"
-                rel={null}
               >
                 2 Devices
               </a>
@@ -239,7 +232,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
               <a
                 className="bx--link"
                 href="#"
-                rel={null}
               >
                 3 A really long page name
               </a>
@@ -251,7 +243,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
               <a
                 className="bx--link"
                 href="#"
-                rel={null}
               >
                 4 Another page
               </a>
@@ -263,7 +254,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
               <a
                 className="bx--link"
                 href="#"
-                rel={null}
               >
                 5th level page
               </a>

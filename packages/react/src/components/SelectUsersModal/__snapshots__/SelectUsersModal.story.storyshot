@@ -138,7 +138,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                           className="bx--search-input"
                           id="iot--list-header--search"
                           onChange={[Function]}
-                          onKeyDown={[Function]}
                           placeholder="Enter a value"
                           role="searchbox"
                           type="text"
@@ -384,7 +383,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                           className="bx--search-input"
                           id="iot--list-header--search"
                           onChange={[Function]}
-                          onKeyDown={[Function]}
                           placeholder="Enter a value"
                           role="searchbox"
                           type="text"
@@ -444,7 +442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             </div>
           </div>
           <div
-            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+            className="bx--modal-footer iot--composed-modal-footer"
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
@@ -464,7 +462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
               tabIndex={0}
               type="button"
             >
-              Save
+              OK
             </button>
           </div>
         </div>
@@ -642,7 +640,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                           className="bx--search-input"
                           id="iot--list-header--search"
                           onChange={[Function]}
-                          onKeyDown={[Function]}
                           placeholder="Enter a value"
                           role="searchbox"
                           type="text"
@@ -708,7 +705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -783,7 +780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -858,7 +855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -933,7 +930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -1008,7 +1005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -1083,7 +1080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -1158,7 +1155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -1233,7 +1230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -1308,7 +1305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -1383,7 +1380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -1485,7 +1482,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                           className="bx--search-input"
                           id="iot--list-header--search"
                           onChange={[Function]}
-                          onKeyDown={[Function]}
                           placeholder="Enter a value"
                           role="searchbox"
                           type="text"
@@ -1545,7 +1541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             </div>
           </div>
           <div
-            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+            className="bx--modal-footer iot--composed-modal-footer"
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
@@ -1565,7 +1561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
               tabIndex={0}
               type="button"
             >
-              Save
+              OK
             </button>
           </div>
         </div>
@@ -1743,7 +1739,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                           className="bx--search-input"
                           id="iot--list-header--search"
                           onChange={[Function]}
-                          onKeyDown={[Function]}
                           placeholder="Enter a value"
                           role="searchbox"
                           type="text"
@@ -1919,7 +1914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Add"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -2021,7 +2016,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                           className="bx--search-input"
                           id="iot--list-header--search"
                           onChange={[Function]}
-                          onKeyDown={[Function]}
                           placeholder="Enter a value"
                           role="searchbox"
                           type="text"
@@ -2087,7 +2081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Remove"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -2134,7 +2128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             </div>
           </div>
           <div
-            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+            className="bx--modal-footer iot--composed-modal-footer"
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
@@ -2147,14 +2141,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
               Cancel
             </button>
             <button
-              className="iot--btn bx--btn bx--btn--primary"
+              className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
               data-testid="ComposedModal-modal-primary-button"
-              disabled={false}
+              disabled={true}
               onClick={[Function]}
               tabIndex={0}
               type="button"
             >
-              Save
+              OK
             </button>
           </div>
         </div>
@@ -2332,7 +2326,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                           className="bx--search-input"
                           id="iot--list-header--search"
                           onChange={[Function]}
-                          onKeyDown={[Function]}
                           placeholder="Enter a value"
                           role="searchbox"
                           type="text"
@@ -2578,7 +2571,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                           className="bx--search-input"
                           id="iot--list-header--search"
                           onChange={[Function]}
-                          onKeyDown={[Function]}
                           placeholder="Enter a value"
                           role="searchbox"
                           type="text"
@@ -2644,7 +2636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Remove"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -2718,7 +2710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               >
                                 <button
                                   aria-label="Remove"
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   data-testid="Button"
                                   disabled={false}
                                   onClick={[Function]}
@@ -2765,7 +2757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             </div>
           </div>
           <div
-            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+            className="bx--modal-footer iot--composed-modal-footer"
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
@@ -2778,14 +2770,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
               Cancel
             </button>
             <button
-              className="iot--btn bx--btn bx--btn--primary"
+              className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
               data-testid="ComposedModal-modal-primary-button"
-              disabled={false}
+              disabled={true}
               onClick={[Function]}
               tabIndex={0}
               type="button"
             >
-              Save
+              OK
             </button>
           </div>
         </div>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ListCard basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListCard basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -65,7 +65,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               }
             }
           >
-            <div
+            <section
               aria-label="Structured list section"
               className="bx--structured-list"
             >
@@ -85,7 +85,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link"
                         href="https://internetofthings.ibmcloud.com/"
-                        rel="noopener"
                         style={
                           Object {
                             "display": "inherit",
@@ -110,7 +109,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link"
                         href="https://internetofthings.ibmcloud.com/"
-                        rel="noopener"
                         style={
                           Object {
                             "display": "inherit",
@@ -148,7 +146,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link"
                         href="https://internetofthings.ibmcloud.com/"
-                        rel="noopener"
                         style={
                           Object {
                             "display": "inherit",
@@ -231,7 +228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
         </div>
       </div>
@@ -263,7 +260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ListCard empty 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListCard empty 1`] = `
 <div
   className="storybook-container"
 >
@@ -357,7 +354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ListCard with extra content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListCard with extra content 1`] = `
 <div
   className="storybook-container"
 >
@@ -422,7 +419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               }
             }
           >
-            <div
+            <section
               aria-label="Structured list section"
               className="bx--structured-list"
             >
@@ -442,7 +439,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link"
                         href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html"
-                        rel="noopener"
                         style={
                           Object {
                             "display": "inherit",
@@ -474,7 +470,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link"
                         href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html"
-                        rel="noopener"
                         style={
                           Object {
                             "display": "inherit",
@@ -506,7 +501,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link"
                         href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html"
-                        rel="noopener"
                         style={
                           Object {
                             "display": "inherit",
@@ -527,7 +521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
         </div>
       </div>
@@ -559,7 +553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ListCard with extra long content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListCard with extra long content 1`] = `
 <div
   className="storybook-container"
 >
@@ -624,7 +618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               }
             }
           >
-            <div
+            <section
               aria-label="Structured list section"
               className="bx--structured-list"
             >
@@ -644,7 +638,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link"
                         href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html"
-                        rel="noopener"
                         style={
                           Object {
                             "display": "inherit",
@@ -676,7 +669,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link"
                         href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html"
-                        rel="noopener"
                         style={
                           Object {
                             "display": "inherit",
@@ -708,7 +700,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link"
                         href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html"
-                        rel="noopener"
                         style={
                           Object {
                             "display": "inherit",
@@ -729,7 +720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
         </div>
       </div>

@@ -63,6 +63,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -222,6 +223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -603,6 +605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
+                    tabIndex={0}
                     title="Select time range"
                     type="button"
                   >
@@ -868,11 +871,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               onClose={[Function]}
               onKeyDown={[Function]}
               open={false}
+              tabIndex={0}
               title="Open and close list of options"
               type="button"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 fill="currentColor"
                 focusable="false"
@@ -901,7 +905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   r="2"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </button>
@@ -1293,6 +1297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1398,6 +1403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1503,6 +1509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1608,6 +1615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1713,6 +1721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1818,6 +1827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1923,6 +1933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -2064,6 +2075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -2188,7 +2200,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
                 onClick={[Function]}
-                onContextMenu={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 onMouseOut={[Function]}
@@ -2233,6 +2244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -2392,6 +2404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -2651,6 +2664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
+                tabIndex={0}
                 title="Select time range"
                 type="button"
               >

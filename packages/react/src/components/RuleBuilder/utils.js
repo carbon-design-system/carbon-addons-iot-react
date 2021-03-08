@@ -132,7 +132,7 @@ export const getRuleByPath = (arr, path) => {
  */
 export const generateRule = () => {
   return {
-    id: Math.random().toString(36).substring(2, 12).padStart(10, '0'),
+    id: Math.random().toString(36).substring(2, 12),
     columnId: '',
     operand: '',
     value: '',
@@ -144,7 +144,7 @@ export const generateRule = () => {
  */
 export const generateRuleGroup = () => {
   return {
-    id: Math.random().toString(36).substring(2, 12).padStart(10, '0'),
+    id: Math.random().toString(36).substring(2, 12),
     groupLogic: 'ALL',
     rules: [generateRule()],
   };
@@ -168,4 +168,19 @@ export const addRule = (arr, ruleId, isGroup = false) => {
   }
 
   return [...arr, generate()];
+};
+
+export const slugify = (text) => {
+  if (!text) {
+    return '';
+  }
+
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/[^\w-]+/g, '') // Remove all non-word chars
+    .replace(/--+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, ''); // Trim - from end of text
 };

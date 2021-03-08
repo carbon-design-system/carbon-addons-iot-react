@@ -18,7 +18,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
       role="tablist"
     >
       <button
-        className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+        className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
         disabled={false}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -49,7 +49,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
         </svg>
       </button>
       <button
-        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
         disabled={false}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -129,7 +129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
       role="tablist"
     >
       <button
-        className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+        className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
         disabled={false}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -160,7 +160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
         </svg>
       </button>
       <button
-        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
         disabled={false}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -235,7 +235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
     }
   >
     <button
-      className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+      className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
       disabled={false}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -305,7 +305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
     }
   >
     <button
-      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
       disabled={false}
       onClick={[Function]}
       onKeyDown={[Function]}

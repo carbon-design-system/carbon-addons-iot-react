@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) custom cell renderer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList custom cell renderer 1`] = `
 <div
   className="storybook-container"
 >
@@ -12,7 +12,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       }
     }
   >
-    <div
+    <section
       aria-label="Structured list section"
       className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
     >
@@ -197,7 +197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
   <button
     className="info__show-button"
@@ -225,7 +225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) default  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList default  1`] = `
 <div
   className="storybook-container"
 >
@@ -237,7 +237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       }
     }
   >
-    <div
+    <section
       aria-label="Structured list section"
       className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
     >
@@ -350,7 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
   <button
     className="info__show-button"
@@ -378,7 +378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) with empty state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList with empty state 1`] = `
 <div
   className="storybook-container"
 >
@@ -390,7 +390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       }
     }
   >
-    <div
+    <section
       aria-label="Structured list section"
       className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
     >
@@ -447,7 +447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           No data is available yet.
         </div>
       </div>
-    </div>
+    </section>
   </div>
   <button
     className="info__show-button"
@@ -475,7 +475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) with empty state with fixed column width 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList with empty state with fixed column width 1`] = `
 <div
   className="storybook-container"
 >
@@ -487,7 +487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       }
     }
   >
-    <div
+    <section
       aria-label="Structured list section"
       className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bmhAOa bx--structured-list--selection"
     >
@@ -547,7 +547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           No data is available yet.
         </div>
       </div>
-    </div>
+    </section>
   </div>
   <button
     className="info__show-button"
@@ -575,7 +575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) with fixed column widths 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList with fixed column widths 1`] = `
 <div
   className="storybook-container"
 >
@@ -587,7 +587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       }
     }
   >
-    <div
+    <section
       aria-label="Structured list section"
       className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bmhAOa bx--structured-list--selection"
     >
@@ -712,7 +712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
   <button
     className="info__show-button"
@@ -740,7 +740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >

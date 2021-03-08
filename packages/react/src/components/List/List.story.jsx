@@ -114,7 +114,7 @@ const headerButton = (
 );
 
 export default {
-  title: 'Watson IoT Experimental/List',
+  title: 'Watson IoT/List',
 
   parameters: {
     component: List,
