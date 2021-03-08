@@ -2,11 +2,18 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Star16, Share16, TrashCan16 } from '@carbon/icons-react';
 
+import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
+
 import RuleBuilder from './RuleBuilder';
 import { columns, TEST_TREE_DATA } from './RuleBuilderEditor.story';
 
+export const Experimental = () => <StoryNotice componentName="RuleBuilder" experimental />;
+Experimental.story = {
+  name: experimentalStoryTitle,
+};
+
 export default {
-  title: 'Watson IoT Experimental/RuleBuilder',
+  title: 'Watson IoT Experimental/☢️ RuleBuilder',
   parameters: {
     component: RuleBuilder,
   },
