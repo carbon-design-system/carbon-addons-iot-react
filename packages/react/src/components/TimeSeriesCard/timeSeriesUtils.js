@@ -1,6 +1,12 @@
 import moment from 'moment';
+import 'moment/min/locales';
+import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
+import filter from 'lodash/filter';
 import find from 'lodash/find';
+
+import { convertStringsToDOMElement } from '../../utils/componentUtilityFunctions';
+import { CHART_COLORS } from '../../constants/CardPropTypes';
 
 /** Generate fake values for my line chart */
 export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day', timeRange) => {
@@ -168,4 +174,129 @@ export const findMatchingAlertRange = (alertRanges, data) => {
         currentDatapointTimestamp >= alert.startTimestamp
     )
   );
+};
+
+/**
+ * Translates our raw data into a language the carbon-charts understand
+ * @param {string} timeDataSourceId, the field that identifies the timestamp value in the data
+ * @param {array} series, an array of lines to create in our chart
+ * @param {array} values, the array of values from our data layer
+ *
+ * TODO: Handle empty data lines gracefully and notify the user of data lines that did not
+ * match the dataFilter
+ *
+ * @returns {object} with a labels array and a datasets array
+ */
+export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
+  // Generate a set of unique timestamps for the values
+  const timestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
+  const data = [];
+
+  // Series is the different groups of datasets
+  series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+    timestamps.forEach((timestamp) => {
+      // First filter based on on the dataFilter
+      const filteredData = filter(values, dataFilter);
+      if (!isEmpty(filteredData)) {
+        // have to filter out null values from the dataset, as it causes Carbon Charts to break
+        filteredData
+          .filter((dataItem) => {
+            // only allow valid timestamp matches
+            return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+          })
+          .forEach((dataItem) => {
+            // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
+            if (dataItem[dataSourceId]) {
+              data.push({
+                date:
+                  dataItem[timeDataSourceId] instanceof Date
+                    ? dataItem[timeDataSourceId]
+                    : new Date(dataItem[timeDataSourceId]),
+                value: dataItem[dataSourceId],
+                group: label,
+              });
+            }
+          });
+      }
+    });
+  });
+
+  return data;
+};
+
+/**
+ * Extends default tooltip with the additional date information, and optionally alert information
+ * @param {object} dataOrHoveredElement data object for this particular datapoint should have a date field containing the timestamp
+ * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
+ * @param {array} alertRanges Array of alert range information to search
+ * @param {string} alertDetected Translated string to indicate that the alert is detected
+ * @param {bool} showTimeInGMT
+ * @param {string} tooltipDateFormatPattern
+ * @returns {string} DOM representation of the tooltip
+ */
+export const handleTooltip = (
+  dataOrHoveredElement,
+  defaultTooltip,
+  alertRanges,
+  alertDetected,
+  showTimeInGMT,
+  tooltipDateFormatPattern = 'L HH:mm:ss'
+) => {
+  const data = dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+    ? dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+    : dataOrHoveredElement;
+  const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
+  const dateLabel = timeStamp
+    ? `<li class='datapoint-tooltip'>
+        <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
+          ? moment.utc(timeStamp)
+          : moment(timeStamp)
+        ).format(tooltipDateFormatPattern)}</p>
+      </li>`
+    : '';
+  const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
+  const matchingAlertLabels = Array.isArray(matchingAlertRanges)
+    ? matchingAlertRanges
+        .map(
+          (matchingAlertRange) =>
+            `<li class='datapoint-tooltip'><a style="background-color:${matchingAlertRange.color}" class="tooltip-color"></a><p class='label'>${alertDetected} ${matchingAlertRange.details}</p></li>`
+        )
+        .join('')
+    : '';
+
+  // Convert strings to DOM Elements so we can easily reason about them and manipulate/replace pieces.
+  const [defaultTooltipDOM, dateLabelDOM, matchingAlertLabelsDOM] = convertStringsToDOMElement([
+    defaultTooltip,
+    dateLabel,
+    matchingAlertLabels,
+  ]);
+
+  // The first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
+  defaultTooltipDOM.querySelector('li:first-child').replaceWith(dateLabelDOM.querySelector('li'));
+
+  // Append all the matching alert labels
+  matchingAlertLabelsDOM.querySelectorAll('li').forEach((label) => {
+    defaultTooltipDOM.querySelector('ul').append(label);
+  });
+
+  return defaultTooltipDOM.innerHTML;
+};
+
+/**
+ * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
+ * @param {Array} series an array of dataset group classifications
+ * @returns {Object} colors - formatted
+ */
+export const formatColors = (series) => {
+  const colors = {
+    scale: {},
+  };
+  if (Array.isArray(series)) {
+    series.forEach((dataset, index) => {
+      colors.scale[dataset.label] = dataset.color || CHART_COLORS[index % CHART_COLORS.length];
+    });
+  } else {
+    colors.scale[series.label] = series.color || CHART_COLORS[0];
+  }
+  return colors;
 };

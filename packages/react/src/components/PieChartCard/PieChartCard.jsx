@@ -96,6 +96,10 @@ const defaultProps = {
     colors: undefined,
     groupDataSourceId: 'group',
     legendPosition: 'bottom',
+    truncation: {
+      type: 'end_line',
+      threshold: 20,
+    },
   },
   overrides: undefined,
 };
@@ -126,6 +130,7 @@ const PieChartCard = ({
       groupDataSourceId,
       labelsFormatter,
       legendPosition,
+      truncation,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, contentWithDefaults, initialValuesProp, others);
@@ -162,6 +167,7 @@ const PieChartCard = ({
         position: legendPosition,
         enabled: values.length > 1,
         clickable: !isEditable,
+        truncation,
       },
       pie: {
         labels: {
