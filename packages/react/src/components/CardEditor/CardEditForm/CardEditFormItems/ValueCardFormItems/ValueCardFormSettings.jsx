@@ -83,7 +83,7 @@ const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
         <div className={`${baseClassName}--input--toggle-field`}>
           <span>{mergedI18n.abbreviateNumbers}</span>
           <Tooltip
-            direction="bottom"
+            direction="left"
             triggerText={null}
             triggerId={`${id}-abbreviate-numbers-tooltip`}
           >

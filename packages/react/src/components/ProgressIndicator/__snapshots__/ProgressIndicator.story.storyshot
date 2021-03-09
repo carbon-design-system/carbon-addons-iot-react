@@ -323,7 +323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="iot--progress-step-button iot--progress-step-button--main-step iot--progress-step-button--clickable"
-          data-testid="iot--progress-step-button-main-first-step"
+          data-testid="iot--progress-step-button-main-first-step-is-very,-very-long"
           disabled={false}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -362,7 +362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               className="iot--progress-text-label"
               value="This is displayed when step icon is hovered"
             >
-              First step
+              First step is very, very long
             </p>
             <p
               className="iot--progress-text-label--optional"
@@ -854,7 +854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="iot--progress-step-button iot--progress-step-button--main-step"
-          data-testid="iot--progress-step-button-main-first-step"
+          data-testid="iot--progress-step-button-main-first-step-is-very,-very-long"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -903,7 +903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               className="iot--progress-text-label"
               value="This is displayed when step icon is hovered"
             >
-              First step
+              First step is very, very long
             </p>
             <p
               className="iot--progress-text-label--optional"
@@ -1432,7 +1432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="iot--progress-step-button iot--progress-step-button--main-step iot--progress-step-button--clickable"
-          data-testid="iot--progress-step-button-main-first-step"
+          data-testid="iot--progress-step-button-main-first-step-is-very,-very-long"
           disabled={false}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1471,7 +1471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               className="iot--progress-text-label"
               value="This is displayed when step icon is hovered"
             >
-              First step
+              First step is very, very long
             </p>
             <p
               className="iot--progress-text-label--optional"
@@ -2082,7 +2082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="iot--progress-step-button iot--progress-step-button--main-step iot--progress-step-button--clickable"
-          data-testid="iot--progress-step-button-main-first-step"
+          data-testid="iot--progress-step-button-main-first-step-is-very,-very-long"
           disabled={false}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2121,7 +2121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               className="iot--progress-text-label"
               value="This is displayed when step icon is hovered"
             >
-              First step
+              First step is very, very long
             </p>
             <p
               className="iot--progress-text-label--optional"

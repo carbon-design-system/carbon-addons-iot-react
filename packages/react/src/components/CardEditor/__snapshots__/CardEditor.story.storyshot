@@ -3072,7 +3072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="iot--list-item--content--row-actions"
                             >
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
@@ -3103,7 +3103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 </svg>
                               </button>
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
@@ -3177,7 +3177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="iot--list-item--content--row-actions"
                             >
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
@@ -3208,7 +3208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 </svg>
                               </button>
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}

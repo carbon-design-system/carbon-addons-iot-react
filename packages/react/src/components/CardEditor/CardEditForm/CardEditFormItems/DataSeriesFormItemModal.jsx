@@ -394,7 +394,7 @@ const DataSeriesFormItemModal = ({
       ) : null}
 
       <div className={`${baseClassName}--input-group`}>
-        <div className={`${baseClassName}--input-group--item`}>
+        <div className={`${baseClassName}--input-group--item-half`}>
           <TextInput
             id={`${id}_attribute-label`}
             labelText={mergedI18n.dataItemEditorDataItemCustomLabel}
@@ -411,7 +411,7 @@ const DataSeriesFormItemModal = ({
         </div>
 
         {(type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR) && ( // show color selector
-          <div className={`${baseClassName}--input-group--item`}>
+          <div className={`${baseClassName}--input-group--item-half`}>
             <ColorDropdown
               id={`${id}_color-dropdown`}
               label=""
