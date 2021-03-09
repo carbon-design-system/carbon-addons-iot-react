@@ -555,11 +555,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "624px",
+                          "MozTransform": "translate(0px,0px)",
+                          "OTransform": "translate(0px,0px)",
+                          "WebkitTransform": "translate(0px,0px)",
                           "height": "624px",
-                          "left": "0%",
+                          "msTransform": "translate(0px,0px)",
                           "position": "absolute",
-                          "top": "0px",
-                          "width": "49.375%",
+                          "transform": "translate(0px,0px)",
+                          "width": "632px",
                         }
                       }
                       tabIndex={0}
@@ -1651,11 +1654,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
+                          "MozTransform": "translate(648px,0px)",
+                          "OTransform": "translate(648px,0px)",
+                          "WebkitTransform": "translate(648px,0px)",
                           "height": "304px",
-                          "left": "50.625%",
+                          "msTransform": "translate(648px,0px)",
                           "position": "absolute",
-                          "top": "0px",
-                          "width": "49.375%",
+                          "transform": "translate(648px,0px)",
+                          "width": "632px",
                         }
                       }
                       tabIndex={0}
@@ -1748,11 +1754,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
+                          "MozTransform": "translate(648px,320px)",
+                          "OTransform": "translate(648px,320px)",
+                          "WebkitTransform": "translate(648px,320px)",
                           "height": "304px",
-                          "left": "50.625%",
+                          "msTransform": "translate(648px,320px)",
                           "position": "absolute",
-                          "top": "320px",
-                          "width": "49.375%",
+                          "transform": "translate(648px,320px)",
+                          "width": "632px",
                         }
                       }
                       tabIndex={0}
@@ -1919,11 +1928,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
+                          "MozTransform": "translate(0px,640px)",
+                          "OTransform": "translate(0px,640px)",
+                          "WebkitTransform": "translate(0px,640px)",
                           "height": "304px",
-                          "left": "0%",
+                          "msTransform": "translate(0px,640px)",
                           "position": "absolute",
-                          "top": "640px",
-                          "width": "100%",
+                          "transform": "translate(0px,640px)",
+                          "width": "1280px",
                         }
                       }
                       tabIndex={0}
@@ -2035,11 +2047,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
+                          "MozTransform": "translate(0px,960px)",
+                          "OTransform": "translate(0px,960px)",
+                          "WebkitTransform": "translate(0px,960px)",
                           "height": "144px",
-                          "left": "0%",
+                          "msTransform": "translate(0px,960px)",
                           "position": "absolute",
-                          "top": "960px",
-                          "width": "5.078125%",
+                          "transform": "translate(0px,960px)",
+                          "width": "65px",
                         }
                       }
                       tabIndex={0}
@@ -3366,11 +3381,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     style={
                       Object {
                         "--card-default-height": "304px",
+                        "MozTransform": "translate(0px,0px)",
+                        "OTransform": "translate(0px,0px)",
+                        "WebkitTransform": "translate(0px,0px)",
                         "height": "304px",
-                        "left": "0%",
+                        "msTransform": "translate(0px,0px)",
                         "position": "absolute",
-                        "top": "0px",
-                        "width": "49.375%",
+                        "transform": "translate(0px,0px)",
+                        "width": "632px",
                       }
                     }
                     tabIndex={0}
@@ -3476,11 +3494,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     style={
                       Object {
                         "--card-default-height": "304px",
+                        "MozTransform": "translate(648px,0px)",
+                        "OTransform": "translate(648px,0px)",
+                        "WebkitTransform": "translate(648px,0px)",
                         "height": "304px",
-                        "left": "50.625%",
+                        "msTransform": "translate(648px,0px)",
                         "position": "absolute",
-                        "top": "0px",
-                        "width": "49.375%",
+                        "transform": "translate(648px,0px)",
+                        "width": "632px",
                       }
                     }
                     tabIndex={0}
@@ -11980,11 +12001,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     style={
                       Object {
                         "--card-default-height": "304px",
+                        "MozTransform": "translate(0px,0px)",
+                        "OTransform": "translate(0px,0px)",
+                        "WebkitTransform": "translate(0px,0px)",
                         "height": "304px",
-                        "left": "0%",
+                        "msTransform": "translate(0px,0px)",
                         "position": "absolute",
-                        "top": "0px",
-                        "width": "100%",
+                        "transform": "translate(0px,0px)",
+                        "width": "1280px",
                       }
                     }
                     tabIndex={0}
@@ -13310,11 +13334,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     style={
                       Object {
                         "--card-default-height": "624px",
+                        "MozTransform": "translate(0px,0px)",
+                        "OTransform": "translate(0px,0px)",
+                        "WebkitTransform": "translate(0px,0px)",
                         "height": "624px",
-                        "left": "0%",
+                        "msTransform": "translate(0px,0px)",
                         "position": "absolute",
-                        "top": "0px",
-                        "width": "49.375%",
+                        "transform": "translate(0px,0px)",
+                        "width": "632px",
                       }
                     }
                     tabIndex={0}
@@ -14406,11 +14433,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     style={
                       Object {
                         "--card-default-height": "304px",
+                        "MozTransform": "translate(648px,0px)",
+                        "OTransform": "translate(648px,0px)",
+                        "WebkitTransform": "translate(648px,0px)",
                         "height": "304px",
-                        "left": "50.625%",
+                        "msTransform": "translate(648px,0px)",
                         "position": "absolute",
-                        "top": "0px",
-                        "width": "49.375%",
+                        "transform": "translate(648px,0px)",
+                        "width": "632px",
                       }
                     }
                     tabIndex={0}
@@ -14503,11 +14533,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     style={
                       Object {
                         "--card-default-height": "304px",
+                        "MozTransform": "translate(648px,320px)",
+                        "OTransform": "translate(648px,320px)",
+                        "WebkitTransform": "translate(648px,320px)",
                         "height": "304px",
-                        "left": "50.625%",
+                        "msTransform": "translate(648px,320px)",
                         "position": "absolute",
-                        "top": "320px",
-                        "width": "49.375%",
+                        "transform": "translate(648px,320px)",
+                        "width": "632px",
                       }
                     }
                     tabIndex={0}
@@ -14720,11 +14753,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     style={
                       Object {
                         "--card-default-height": "304px",
+                        "MozTransform": "translate(0px,640px)",
+                        "OTransform": "translate(0px,640px)",
+                        "WebkitTransform": "translate(0px,640px)",
                         "height": "304px",
-                        "left": "0%",
+                        "msTransform": "translate(0px,640px)",
                         "position": "absolute",
-                        "top": "640px",
-                        "width": "100%",
+                        "transform": "translate(0px,640px)",
+                        "width": "1280px",
                       }
                     }
                     tabIndex={0}
@@ -14836,11 +14872,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     style={
                       Object {
                         "--card-default-height": "304px",
+                        "MozTransform": "translate(0px,960px)",
+                        "OTransform": "translate(0px,960px)",
+                        "WebkitTransform": "translate(0px,960px)",
                         "height": "144px",
-                        "left": "0%",
+                        "msTransform": "translate(0px,960px)",
                         "position": "absolute",
-                        "top": "960px",
-                        "width": "5.078125%",
+                        "transform": "translate(0px,960px)",
+                        "width": "65px",
                       }
                     }
                     tabIndex={0}
