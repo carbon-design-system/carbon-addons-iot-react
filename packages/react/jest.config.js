@@ -15,7 +15,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|WizardInline|WizardHeader|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|Dashboard|CardRenderer|ImageHotspots|PageHero|PageTitle|EditPage|ImageCard|ImageUploader|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|Dashboard|CardRenderer|ImageHotspots|PageHero|PageTitle|EditPage|ImageCard|ImageUploader|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -51,7 +51,6 @@ module.exports = {
     './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': {
       branches: 70,
     },
-    './src/components/Table/TableToolbar/TableToolbar.jsx': { functions: 66 },
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': {
       statements: 79,
       branches: 70,
