@@ -11,7 +11,14 @@ import { barChartData } from '../../utils/barChartDataSample';
 import { getIntervalChartData } from '../../utils/sample';
 import Table from '../Table/Table';
 
-import TimeSeriesCard, { formatChartData, formatColors, handleTooltip } from './TimeSeriesCard';
+import TimeSeriesCard, {
+  formatChartData,
+  formatColors,
+  handleFillColor,
+  handleIsFilled,
+  handleStrokeColor,
+  handleTooltip,
+} from './TimeSeriesCard';
 
 jest.mock('js-file-download');
 
@@ -474,6 +481,70 @@ describe('TimeSeriesCard', () => {
     expect(fileDownload).toHaveBeenCalledWith(
       `temperature,timestamp\n100,03/05/2021 15:30,\n`,
       'Temperature.csv'
+    );
+  });
+
+  it('Fills points with the correct fill/stroke of matching alertRanges', () => {
+    const data = {
+      date: new Date(2019, 9, 29, 18, 38, 40),
+      value: 82,
+      group: 'Temperature',
+    };
+
+    const alertRanges = [
+      {
+        startTimestamp: 1572313622000,
+        endTimestamp: 1572486422000,
+        color: '#FF0000',
+        details: 'Alert name',
+      },
+      {
+        startTimestamp: 1572313622000,
+        endTimestamp: 1572824320000,
+        color: '#FFFF00',
+        details: 'Less severe',
+      },
+    ];
+
+    const isFilledCallback = handleIsFilled(alertRanges);
+    const fillColorCallback = handleFillColor(alertRanges);
+    const strokeColorCallback = handleStrokeColor(alertRanges);
+
+    expect(isFilledCallback('Temperature', data.date.toString(), data, false)).toBe(true);
+    expect(fillColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe('#FF0000');
+    expect(strokeColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+      '#FF0000'
+    );
+  });
+
+  it('Fills points with the original fill/stroke when no data given', () => {
+    const alertRanges = [];
+
+    const isFilledCallback = handleIsFilled(alertRanges);
+    const fillColorCallback = handleFillColor(alertRanges);
+    const strokeColorCallback = handleStrokeColor(alertRanges);
+
+    expect(isFilledCallback('Temperature', undefined, undefined, false)).toBe(false);
+    expect(fillColorCallback('Temperature', undefined, undefined, '#6929c4')).toBe('#6929c4');
+    expect(strokeColorCallback('Temperature', undefined, undefined, '#6929c4')).toBe('#6929c4');
+  });
+
+  it('Fills points with the original fill/stroke when no ranges match', () => {
+    const data = {
+      date: new Date(2019, 9, 29, 18, 38, 40),
+      value: 82,
+      group: 'Temperature',
+    };
+    const alertRanges = [];
+
+    const isFilledCallback = handleIsFilled(alertRanges);
+    const fillColorCallback = handleFillColor(alertRanges);
+    const strokeColorCallback = handleStrokeColor(alertRanges);
+
+    expect(isFilledCallback('Temperature', data.date.toString(), data, false)).toBe(false);
+    expect(fillColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe('#6929c4');
+    expect(strokeColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+      '#6929c4'
     );
   });
 });

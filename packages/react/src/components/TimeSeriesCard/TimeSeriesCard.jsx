@@ -10,6 +10,7 @@ import omit from 'lodash/omit';
 import filter from 'lodash/filter';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import memoize from 'lodash/memoize';
 
 import {
   convertStringsToDOMElement,
@@ -243,6 +244,72 @@ export const formatColors = (series) => {
   return colors;
 };
 
+const memoizeAlertRanges = (alertRanges) => {
+  if (Array.isArray(alertRanges)) {
+    return alertRanges.reduce((key, range) => `${key}:${Object.values(range).join('_')}`, '');
+  }
+
+  return undefined;
+};
+
+/**
+ * Determines the dot stroke color (the border of the data point)
+ * @param {string} datasetLabel
+ * @param {string} label
+ * @param {Object} data
+ * @param {string} originalStrokeColor from carbon charts
+ * @returns {string} stroke color
+ */
+export const handleStrokeColor = memoize(
+  (alertRanges) => (datasetLabel, label, data, originalStrokeColor) => {
+    if (!isNil(data)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
+    }
+    return originalStrokeColor;
+  },
+  memoizeAlertRanges
+);
+
+/**
+ * Determines the dot fill color based on matching alerts
+ * @param {string} datasetLabel
+ * @param {string} label
+ * @param {Object} data
+ * @param {string} originalFillColor from carbon charts
+ * @returns {string} fill color
+ */
+export const handleFillColor = memoize(
+  (alertRanges) => (datasetLabel, label, data, originalFillColor) => {
+    if (!isNil(data)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalFillColor;
+    }
+    return originalFillColor;
+  },
+  memoizeAlertRanges
+);
+
+/**
+ * Determines if the dot is filled based on matching alerts
+ * @param {string} datasetLabel
+ * @param {string} label
+ * @param {Object} data
+ * @param {Boolean} isFilled default setting from carbon charts
+ * @returns {Boolean}
+ */
+export const handleIsFilled = memoize(
+  (alertRanges) => (datasetLabel, label, data, isFilled) => {
+    if (!isNil(data)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange?.length > 0 ? true : isFilled;
+    }
+
+    return isFilled;
+  },
+  memoizeAlertRanges
+);
+
 const TimeSeriesCard = ({
   title: titleProp,
   content,
@@ -349,64 +416,6 @@ const TimeSeriesCard = ({
 
   // Set the colors for each dataset
   const colors = useMemo(() => formatColors(series), [series]);
-
-  /**
-   * Determines the dot stroke color (the border of the data point)
-   * @param {string} datasetLabel
-   * @param {string} label
-   * @param {Object} data
-   * @param {string} originalStrokeColor from carbon charts
-   * @returns {string} stroke color
-   */
-  const handleStrokeColor = useCallback(
-    (datasetLabel, label, data, originalStrokeColor) => {
-      if (!isNil(data)) {
-        const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-        return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
-      }
-      return originalStrokeColor;
-    },
-    [alertRanges]
-  );
-
-  /**
-   * Determines the dot fill color based on matching alerts
-   * @param {string} datasetLabel
-   * @param {string} label
-   * @param {Object} data
-   * @param {string} originalFillColor from carbon charts
-   * @returns {string} fill color
-   */
-  const handleFillColor = useCallback(
-    (datasetLabel, label, data, originalFillColor) => {
-      if (!isNil(data)) {
-        const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-        return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalFillColor;
-      }
-      return originalFillColor;
-    },
-    [alertRanges]
-  );
-
-  /**
-   * Determines if the dot is filled based on matching alerts
-   * @param {string} datasetLabel
-   * @param {string} label
-   * @param {Object} data
-   * @param {Boolean} isFilled default setting from carbon charts
-   * @returns {Boolean}
-   */
-  const handleIsFilled = useCallback(
-    (datasetLabel, label, data, isFilled) => {
-      if (!isNil(data)) {
-        const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-        return matchingAlertRange?.length > 0 ? true : isFilled;
-      }
-
-      return isFilled;
-    },
-    [alertRanges]
-  );
 
   /** This is needed to update the chart when the lines and values change */
   useDeepCompareEffect(() => {
@@ -547,9 +556,9 @@ const TimeSeriesCard = ({
           ),
         groupLabel: i18n.tooltipGroupLabel,
       },
-      getStrokeColor: handleStrokeColor,
-      getFillColor: handleFillColor,
-      getIsFilled: handleIsFilled,
+      getStrokeColor: handleStrokeColor(alertRanges),
+      getFillColor: handleFillColor(alertRanges),
+      getIsFilled: handleIsFilled(alertRanges),
       color: colors,
       ...(zoomBar?.enabled && (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
         ? {
@@ -576,9 +585,6 @@ const TimeSeriesCard = ({
       decimalPrecision,
       domainRange,
       formatTick,
-      handleFillColor,
-      handleIsFilled,
-      handleStrokeColor,
       i18n.tooltipGroupLabel,
       includeZeroOnXaxis,
       includeZeroOnYaxis,
