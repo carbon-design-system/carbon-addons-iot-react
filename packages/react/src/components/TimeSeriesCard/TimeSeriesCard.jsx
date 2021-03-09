@@ -10,7 +10,6 @@ import omit from 'lodash/omit';
 import filter from 'lodash/filter';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import memoize from 'lodash/memoize';
 
 import {
   convertStringsToDOMElement,
@@ -244,14 +243,6 @@ export const formatColors = (series) => {
   return colors;
 };
 
-const memoizeAlertRanges = (alertRanges) => {
-  if (Array.isArray(alertRanges)) {
-    return alertRanges.reduce((key, range) => `${key}:${Object.values(range).join('_')}`, '');
-  }
-
-  return undefined;
-};
-
 /**
  * Determines the dot stroke color (the border of the data point)
  * @param {string} datasetLabel
@@ -260,16 +251,18 @@ const memoizeAlertRanges = (alertRanges) => {
  * @param {string} originalStrokeColor from carbon charts
  * @returns {string} stroke color
  */
-export const handleStrokeColor = memoize(
-  (alertRanges) => (datasetLabel, label, data, originalStrokeColor) => {
-    if (!isNil(data)) {
-      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
-    }
-    return originalStrokeColor;
-  },
-  memoizeAlertRanges
-);
+export const applyStrokeColor = (alertRanges) => (
+  datasetLabel,
+  label,
+  data,
+  originalStrokeColor
+) => {
+  if (!isNil(data)) {
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
+  }
+  return originalStrokeColor;
+};
 
 /**
  * Determines the dot fill color based on matching alerts
@@ -279,16 +272,13 @@ export const handleStrokeColor = memoize(
  * @param {string} originalFillColor from carbon charts
  * @returns {string} fill color
  */
-export const handleFillColor = memoize(
-  (alertRanges) => (datasetLabel, label, data, originalFillColor) => {
-    if (!isNil(data)) {
-      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalFillColor;
-    }
-    return originalFillColor;
-  },
-  memoizeAlertRanges
-);
+export const applyFillColor = (alertRanges) => (datasetLabel, label, data, originalFillColor) => {
+  if (!isNil(data)) {
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalFillColor;
+  }
+  return originalFillColor;
+};
 
 /**
  * Determines if the dot is filled based on matching alerts
@@ -298,17 +288,14 @@ export const handleFillColor = memoize(
  * @param {Boolean} isFilled default setting from carbon charts
  * @returns {Boolean}
  */
-export const handleIsFilled = memoize(
-  (alertRanges) => (datasetLabel, label, data, isFilled) => {
-    if (!isNil(data)) {
-      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange?.length > 0 ? true : isFilled;
-    }
+export const applyIsFilled = (alertRanges) => (datasetLabel, label, data, isFilled) => {
+  if (!isNil(data)) {
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    return matchingAlertRange?.length > 0 ? true : isFilled;
+  }
 
-    return isFilled;
-  },
-  memoizeAlertRanges
-);
+  return isFilled;
+};
 
 const TimeSeriesCard = ({
   title: titleProp,
@@ -506,6 +493,10 @@ const TimeSeriesCard = ({
 
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
+  const handleStrokeColor = useMemo(() => applyStrokeColor(alertRanges), [alertRanges]);
+  const handleFillColor = useMemo(() => applyFillColor(alertRanges), [alertRanges]);
+  const handleIsFilled = useMemo(() => applyIsFilled(alertRanges), [alertRanges]);
+
   const options = useMemo(
     () => ({
       animations: false,
@@ -556,9 +547,9 @@ const TimeSeriesCard = ({
           ),
         groupLabel: i18n.tooltipGroupLabel,
       },
-      getStrokeColor: handleStrokeColor(alertRanges),
-      getFillColor: handleFillColor(alertRanges),
-      getIsFilled: handleIsFilled(alertRanges),
+      getStrokeColor: handleStrokeColor,
+      getFillColor: handleFillColor,
+      getIsFilled: handleIsFilled,
       color: colors,
       ...(zoomBar?.enabled && (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
         ? {
@@ -585,6 +576,9 @@ const TimeSeriesCard = ({
       decimalPrecision,
       domainRange,
       formatTick,
+      handleFillColor,
+      handleIsFilled,
+      handleStrokeColor,
       i18n.tooltipGroupLabel,
       includeZeroOnXaxis,
       includeZeroOnYaxis,

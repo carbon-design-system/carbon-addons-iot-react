@@ -14,9 +14,9 @@ import Table from '../Table/Table';
 import TimeSeriesCard, {
   formatChartData,
   formatColors,
-  handleFillColor,
-  handleIsFilled,
-  handleStrokeColor,
+  applyFillColor,
+  applyIsFilled,
+  applyStrokeColor,
   handleTooltip,
 } from './TimeSeriesCard';
 
@@ -506,9 +506,9 @@ describe('TimeSeriesCard', () => {
       },
     ];
 
-    const isFilledCallback = handleIsFilled(alertRanges);
-    const fillColorCallback = handleFillColor(alertRanges);
-    const strokeColorCallback = handleStrokeColor(alertRanges);
+    const isFilledCallback = applyIsFilled(alertRanges);
+    const fillColorCallback = applyFillColor(alertRanges);
+    const strokeColorCallback = applyStrokeColor(alertRanges);
 
     expect(isFilledCallback('Temperature', data.date.toString(), data, false)).toBe(true);
     expect(fillColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe('#FF0000');
@@ -520,9 +520,9 @@ describe('TimeSeriesCard', () => {
   it('Fills points with the original fill/stroke when no data given', () => {
     const alertRanges = [];
 
-    const isFilledCallback = handleIsFilled(alertRanges);
-    const fillColorCallback = handleFillColor(alertRanges);
-    const strokeColorCallback = handleStrokeColor(alertRanges);
+    const isFilledCallback = applyIsFilled(alertRanges);
+    const fillColorCallback = applyFillColor(alertRanges);
+    const strokeColorCallback = applyStrokeColor(alertRanges);
 
     expect(isFilledCallback('Temperature', undefined, undefined, false)).toBe(false);
     expect(fillColorCallback('Temperature', undefined, undefined, '#6929c4')).toBe('#6929c4');
@@ -537,9 +537,9 @@ describe('TimeSeriesCard', () => {
     };
     const alertRanges = [];
 
-    const isFilledCallback = handleIsFilled(alertRanges);
-    const fillColorCallback = handleFillColor(alertRanges);
-    const strokeColorCallback = handleStrokeColor(alertRanges);
+    const isFilledCallback = applyIsFilled(alertRanges);
+    const fillColorCallback = applyFillColor(alertRanges);
+    const strokeColorCallback = applyStrokeColor(alertRanges);
 
     expect(isFilledCallback('Temperature', data.date.toString(), data, false)).toBe(false);
     expect(fillColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe('#6929c4');
