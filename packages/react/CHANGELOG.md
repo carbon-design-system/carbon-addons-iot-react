@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.3...v2.145.0-next.4) (2021-03-09)
+
+
+### Bug Fixes
+
+* **dashboardgrid:** workaround to trigger resize event ([8b9c801](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8b9c8012f91cba24037c58cee195de654468fc70))
+
+
+
+
+
 # [2.145.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.2...v2.145.0-next.3) (2021-03-09)
 
 **Note:** Version bump only for package carbon-addons-iot-react
