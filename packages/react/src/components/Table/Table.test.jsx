@@ -1,5 +1,6 @@
 import { mount } from 'enzyme';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import merge from 'lodash/merge';
@@ -16,7 +17,7 @@ import TableBodyRow from './TableBody/TableBodyRow/TableBodyRow';
 import TableHead from './TableHead/TableHead';
 import { initialState } from './Table.story';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const selectData = [
   {
@@ -1206,6 +1207,7 @@ describe('Table', () => {
   it('automatically marks "select all" as Indeterminate if some but not all rows are selected', () => {
     const rows = tableData.slice(0, 5);
     const selectedIds = rows.map((row) => row.id);
+    const onApplyBatchAction = jest.fn();
     const { rerender } = render(
       <Table
         id="tableid1"
@@ -1214,6 +1216,20 @@ describe('Table', () => {
         options={{ hasRowSelection: 'multi' }}
         view={{
           table: { selectedIds: selectedIds.slice(1, 5) },
+          toolbar: {
+            batchActions: [
+              {
+                id: 'test-batch-action',
+                labelText: 'test batch action',
+                iconDescription: 'test batch action',
+              },
+            ],
+          },
+        }}
+        actions={{
+          toolbar: {
+            onApplyBatchAction,
+          },
         }}
       />
     );
@@ -1221,6 +1237,13 @@ describe('Table', () => {
     const selectAllCheckbox = screen.getByLabelText('Select all items');
     expect(selectAllCheckbox).toBeInTheDocument();
     expect(selectAllCheckbox).toHaveProperty('indeterminate', true);
+
+    // add extra check to ensure onApplyBatchAction is called correctly to help
+    // us meet test requirements.
+    const alertAction = screen.getByRole('button', { name: 'test batch action' });
+    expect(alertAction).toBeVisible();
+    userEvent.click(alertAction);
+    expect(onApplyBatchAction).toHaveBeenCalledWith('test-batch-action');
 
     rerender(
       <Table
@@ -1291,6 +1314,7 @@ describe('Table', () => {
     );
     expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
   });
+
   describe('Foot', () => {
     const tableTestId = 'test';
     const tableFootTestId = 'table-foot-aggregation';
@@ -1313,6 +1337,7 @@ describe('Table', () => {
         screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`).textContent
       ).toEqual('2470');
     });
+
     it('shows aggregation for specified columns using custom aggregation function', () => {
       const sumFunction = jest.fn((values) => {
         const sum = values.reduce((total, num) => total + num, 0);
@@ -1324,6 +1349,7 @@ describe('Table', () => {
           id="test"
           columns={tableColumns}
           data={tableData}
+          tooltip="this is a tooltip"
           options={{ hasAggregations: true }}
           view={{
             aggregations: {
@@ -1342,6 +1368,25 @@ describe('Table', () => {
         screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`).textContent
       ).toEqual('2471');
       expect(sumFunction).toHaveBeenCalled();
+
+      const overflow = screen.getByTestId('table-head--overflow');
+
+      userEvent.click(overflow);
+
+      userEvent.click(screen.getByText('Toggle Aggregations'));
+      // should throw, because the footer isn't in the document anymore.
+      expect(() => screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`)).toThrow();
+
+      // simple extra test to confirm the tooltip is there and help us
+      // meet testing requirements.
+      const buttons = screen.getAllByRole('button');
+      const tooltipButton = buttons.find((button) =>
+        button.classList.contains(`${prefix}--tooltip__trigger`)
+      );
+
+      expect(tooltipButton).toBeInTheDocument();
+      userEvent.click(tooltipButton);
+      expect(screen.getByText('this is a tooltip')).toBeVisible();
     });
   });
 });

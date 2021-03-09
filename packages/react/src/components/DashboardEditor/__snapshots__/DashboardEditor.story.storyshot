@@ -1845,7 +1845,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <div
                               className="iot--value-card__attribute-label"
                             >
-                              Torque Min
+                              <span>
+                                Torque Min
+                              </span>
                             </div>
                             <div
                               className="iot--value-card__attribute"
@@ -3573,7 +3575,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <div
                             className="iot--value-card__attribute-label"
                           >
-                            Key 1
+                            <span>
+                              Key 1
+                            </span>
                           </div>
                           <div
                             className="iot--value-card__attribute"
@@ -3617,7 +3621,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <div
                             className="iot--value-card__attribute-label"
                           >
-                            Key 2
+                            <span>
+                              Key 2
+                            </span>
                           </div>
                           <div
                             className="iot--value-card__attribute"
@@ -14624,7 +14630,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <div
                             className="iot--value-card__attribute-label"
                           >
-                            Torque
+                            <span>
+                              Torque
+                            </span>
                           </div>
                           <div
                             className="iot--value-card__attribute"
@@ -14668,7 +14676,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <div
                             className="iot--value-card__attribute-label"
                           >
-                            Pressure
+                            <span>
+                              Pressure
+                            </span>
                           </div>
                           <div
                             className="iot--value-card__attribute"

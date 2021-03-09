@@ -123,7 +123,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Comfort Level
+                        <span>
+                          Comfort Level
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -167,7 +169,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Utilization
+                        <span>
+                          Utilization
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -211,7 +215,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Pressure
+                        <span>
+                          Pressure
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -389,7 +395,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -482,7 +490,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -615,7 +625,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Average
+                        <span>
+                          Average
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -710,7 +722,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        weekly
+                        <span>
+                          weekly
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -830,7 +844,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <svg
+                          aria-label="= Bad"
+                          fill="red"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          title="= Bad"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                          />
+                        </svg>
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -860,24 +892,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         >
                           
                         </span>
-                      </div>
-                      <div>
-                        <svg
-                          aria-label="= Bad"
-                          fill="red"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          title="= Bad"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -941,7 +955,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -1212,7 +1228,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <svg
+                          aria-label="= Healthy"
+                          fill="green"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          title="= Healthy"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                          />
+                          <path
+                            d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            data-icon-path="inner-path"
+                            opacity="0"
+                          />
+                        </svg>
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -1242,29 +1281,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         >
                           
                         </span>
-                      </div>
-                      <div>
-                        <svg
-                          aria-label="= Healthy"
-                          fill="green"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          title="= Healthy"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                          />
-                          <path
-                            d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            data-icon-path="inner-path"
-                            opacity="0"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -2600,7 +2616,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Comfort Level
+                        <span>
+                          Comfort Level
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -2644,7 +2662,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Utilization
+                        <span>
+                          Utilization
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -2688,7 +2708,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Pressure
+                        <span>
+                          Pressure
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -2866,7 +2888,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -2959,7 +2983,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -3092,7 +3118,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Average
+                        <span>
+                          Average
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -3187,7 +3215,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        weekly
+                        <span>
+                          weekly
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -3307,7 +3337,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <svg
+                          aria-label="= Bad"
+                          fill="red"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          title="= Bad"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                          />
+                        </svg>
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -3337,24 +3385,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         >
                           
                         </span>
-                      </div>
-                      <div>
-                        <svg
-                          aria-label="= Bad"
-                          fill="red"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          title="= Bad"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -3418,7 +3448,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -3689,7 +3721,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <svg
+                          aria-label="= Healthy"
+                          fill="green"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          title="= Healthy"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                          />
+                          <path
+                            d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            data-icon-path="inner-path"
+                            opacity="0"
+                          />
+                        </svg>
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -3719,29 +3774,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         >
                           
                         </span>
-                      </div>
-                      <div>
-                        <svg
-                          aria-label="= Healthy"
-                          fill="green"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          title="= Healthy"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                          />
-                          <path
-                            d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            data-icon-path="inner-path"
-                            opacity="0"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -5105,7 +5137,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Comfort Level
+                        <span>
+                          Comfort Level
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -5149,7 +5183,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Utilization
+                        <span>
+                          Utilization
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -5193,7 +5229,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Pressure
+                        <span>
+                          Pressure
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -5371,7 +5409,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -5464,7 +5504,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -5597,7 +5639,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Average
+                        <span>
+                          Average
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -5692,7 +5736,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        weekly
+                        <span>
+                          weekly
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -5812,7 +5858,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <svg
+                          aria-label="= Bad"
+                          fill="red"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          title="= Bad"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                          />
+                        </svg>
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -5842,24 +5906,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         >
                           
                         </span>
-                      </div>
-                      <div>
-                        <svg
-                          aria-label="= Bad"
-                          fill="red"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          title="= Bad"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -5923,7 +5969,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -6194,7 +6242,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <svg
+                          aria-label="= Healthy"
+                          fill="green"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          title="= Healthy"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                          />
+                          <path
+                            d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            data-icon-path="inner-path"
+                            opacity="0"
+                          />
+                        </svg>
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -6224,29 +6295,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         >
                           
                         </span>
-                      </div>
-                      <div>
-                        <svg
-                          aria-label="= Healthy"
-                          fill="green"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          title="= Healthy"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                          />
-                          <path
-                            d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            data-icon-path="inner-path"
-                            opacity="0"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -10184,7 +10232,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Comfort Level
+                        <span>
+                          Comfort Level
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -10228,7 +10278,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Utilization
+                        <span>
+                          Utilization
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -10272,7 +10324,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Pressure
+                        <span>
+                          Pressure
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -10450,7 +10504,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -10543,7 +10599,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -10676,7 +10734,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Average
+                        <span>
+                          Average
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -10771,7 +10831,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        weekly
+                        <span>
+                          weekly
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -10891,7 +10953,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <svg
+                          aria-label="= Bad"
+                          fill="red"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          title="= Bad"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                          />
+                        </svg>
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -10921,24 +11001,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         >
                           
                         </span>
-                      </div>
-                      <div>
-                        <svg
-                          aria-label="= Bad"
-                          fill="red"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          title="= Bad"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -11002,7 +11064,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -11273,7 +11337,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <svg
+                          aria-label="= Healthy"
+                          fill="green"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          title="= Healthy"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                          />
+                          <path
+                            d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            data-icon-path="inner-path"
+                            opacity="0"
+                          />
+                        </svg>
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -11303,29 +11390,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         >
                           
                         </span>
-                      </div>
-                      <div>
-                        <svg
-                          aria-label="= Healthy"
-                          fill="green"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          title="= Healthy"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                          />
-                          <path
-                            d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            data-icon-path="inner-path"
-                            opacity="0"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -12818,7 +12882,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -12906,7 +12972,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -12996,7 +13064,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -13086,7 +13156,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -13176,7 +13248,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -13369,7 +13443,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -13530,7 +13606,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -13618,7 +13696,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -13708,7 +13788,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -13798,7 +13880,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -13888,7 +13972,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -14081,7 +14167,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -14242,7 +14330,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -14333,7 +14423,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Weekly Avg
+                          <span>
+                            Weekly Avg
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -14424,7 +14516,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -14541,7 +14635,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Long label that might not fit
+                          <span>
+                            Long label that might not fit
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -14727,7 +14823,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -14818,7 +14916,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Weekly Avg
+                          <span>
+                            Weekly Avg
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -14909,7 +15009,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -15026,7 +15128,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Long label that might not fit
+                          <span>
+                            Long label that might not fit
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -15212,7 +15316,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 40"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 40"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -15242,24 +15364,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 40"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 40"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -15320,7 +15424,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 70"
+                            fill="green"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 70"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            />
+                            <path
+                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              data-icon-path="inner-path"
+                              opacity="0"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -15350,29 +15477,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 70"
-                            fill="green"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 70"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            />
-                            <path
-                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                              data-icon-path="inner-path"
-                              opacity="0"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -15433,7 +15537,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 80"
+                            fill="orange"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 80"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                              fill="none"
+                            />
+                            <path
+                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -15463,28 +15589,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 80"
-                            fill="orange"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 80"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                              fill="none"
-                            />
-                            <path
-                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -15545,7 +15649,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label=">= 90"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title=">= 90"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -15575,24 +15697,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label=">= 90"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title=">= 90"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -15722,7 +15826,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 40"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 40"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -15752,24 +15874,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 40"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 40"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -15830,7 +15934,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 70"
+                            fill="green"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 70"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            />
+                            <path
+                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              data-icon-path="inner-path"
+                              opacity="0"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -15860,29 +15987,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 70"
-                            fill="green"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 70"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            />
-                            <path
-                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                              data-icon-path="inner-path"
-                              opacity="0"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -15943,7 +16047,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 80"
+                            fill="orange"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 80"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                              fill="none"
+                            />
+                            <path
+                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -15973,28 +16099,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 80"
-                            fill="orange"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 80"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                              fill="none"
-                            />
-                            <path
-                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -16055,7 +16159,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label=">= 90"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title=">= 90"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -16085,24 +16207,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label=">= 90"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title=">= 90"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -16232,7 +16336,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -16322,7 +16428,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -16412,7 +16520,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -16502,7 +16612,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -16592,7 +16704,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -16751,7 +16865,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -16841,7 +16957,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -16931,7 +17049,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17021,7 +17141,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17111,7 +17233,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17270,7 +17394,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17358,7 +17484,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17448,7 +17576,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17538,7 +17668,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17628,7 +17760,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17718,7 +17852,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17810,7 +17946,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17902,7 +18040,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -17993,7 +18133,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Weekly Avg
+                          <span>
+                            Weekly Avg
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -18084,7 +18226,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -18201,7 +18345,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Long label that might not fit
+                          <span>
+                            Long label that might not fit
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -18318,7 +18464,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 40"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 40"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -18348,24 +18512,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 40"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 40"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -18426,7 +18572,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 70"
+                            fill="green"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 70"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            />
+                            <path
+                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              data-icon-path="inner-path"
+                              opacity="0"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -18456,29 +18625,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 70"
-                            fill="green"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 70"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            />
-                            <path
-                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                              data-icon-path="inner-path"
-                              opacity="0"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -18539,7 +18685,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 80"
+                            fill="orange"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 80"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                              fill="none"
+                            />
+                            <path
+                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -18569,28 +18737,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 80"
-                            fill="orange"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 80"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                              fill="none"
-                            />
-                            <path
-                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -18651,7 +18797,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label=">= 90"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title=">= 90"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -18681,24 +18845,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label=">= 90"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title=">= 90"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -18759,7 +18905,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -18849,7 +18997,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -18939,7 +19089,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -19029,7 +19181,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -19119,7 +19273,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -19278,7 +19434,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -19366,7 +19524,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -19456,7 +19616,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -19546,7 +19708,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -19636,7 +19800,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -19726,7 +19892,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -19818,7 +19986,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -19910,7 +20080,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -20001,7 +20173,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Weekly Avg
+                          <span>
+                            Weekly Avg
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -20092,7 +20266,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -20209,7 +20385,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Long label that might not fit
+                          <span>
+                            Long label that might not fit
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -20326,7 +20504,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 40"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 40"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -20356,24 +20552,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 40"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 40"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -20434,7 +20612,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 70"
+                            fill="green"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 70"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            />
+                            <path
+                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              data-icon-path="inner-path"
+                              opacity="0"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -20464,29 +20665,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 70"
-                            fill="green"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 70"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            />
-                            <path
-                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                              data-icon-path="inner-path"
-                              opacity="0"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -20547,7 +20725,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label="< 80"
+                            fill="orange"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 80"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                              fill="none"
+                            />
+                            <path
+                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -20577,28 +20777,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 80"
-                            fill="orange"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 80"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                              fill="none"
-                            />
-                            <path
-                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -20659,7 +20837,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <svg
+                            aria-label=">= 90"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title=">= 90"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -20689,24 +20885,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label=">= 90"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title=">= 90"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -20767,7 +20945,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -20857,7 +21037,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -20947,7 +21129,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -21037,7 +21221,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -21127,7 +21313,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <div
                           className="iot--value-card__attribute-label"
-                        />
+                        >
+                          <span />
+                        </div>
                         <div
                           className="iot--value-card__attribute"
                         >
@@ -21287,7 +21475,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Comfort Level
+                          <span>
+                            Comfort Level
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -21331,7 +21521,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Pressure
+                          <span>
+                            Pressure
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -21423,7 +21615,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Temperature
+                          <span>
+                            Temperature
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -21467,7 +21661,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Danger Level
+                          <span>
+                            Danger Level
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -21557,7 +21753,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Temperature
+                          <span>
+                            Temperature
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -21601,7 +21799,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Foot Traffic
+                          <span>
+                            Foot Traffic
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -21762,7 +21962,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Comfort Level
+                          <span>
+                            Comfort Level
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -21806,7 +22008,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Pressure
+                          <span>
+                            Pressure
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -21898,7 +22102,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Temperature
+                          <span>
+                            Temperature
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -21942,7 +22148,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Danger Level
+                          <span>
+                            Danger Level
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -22032,7 +22240,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Temperature
+                          <span>
+                            Temperature
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -22076,7 +22286,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Foot Traffic
+                          <span>
+                            Foot Traffic
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -22237,7 +22449,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Comfort Level
+                          <span>
+                            Comfort Level
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -22307,7 +22521,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Pressure
+                          <span>
+                            Pressure
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -22425,7 +22641,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Temperature
+                          <span>
+                            Temperature
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -22495,7 +22713,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Danger Level
+                          <span>
+                            Danger Level
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -22585,7 +22805,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Temperature
+                          <span>
+                            Temperature
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -22654,7 +22876,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Foot Traffic
+                          <span>
+                            Foot Traffic
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -22841,7 +23065,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Comfort Level
+                          <span>
+                            Comfort Level
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -22911,7 +23137,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Pressure
+                          <span>
+                            Pressure
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23029,7 +23257,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Temperature
+                          <span>
+                            Temperature
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23099,7 +23329,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Danger Level
+                          <span>
+                            Danger Level
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23189,7 +23421,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Temperature
+                          <span>
+                            Temperature
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23258,7 +23492,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Foot Traffic
+                          <span>
+                            Foot Traffic
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23445,7 +23681,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Average
+                          <svg
+                            aria-label="< 40"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 40"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span>
+                            Average
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23477,24 +23731,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                             %
                           </span>
                         </div>
-                        <div>
-                          <svg
-                            aria-label="< 40"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 40"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
-                        </div>
                       </div>
                       <div
                         className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
@@ -23507,7 +23743,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Max
+                          <svg
+                            aria-label="< 70"
+                            fill="green"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 70"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            />
+                            <path
+                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              data-icon-path="inner-path"
+                              opacity="0"
+                            />
+                          </svg>
+                          <span>
+                            Max
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23538,29 +23797,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 70"
-                            fill="green"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 70"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            />
-                            <path
-                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                              data-icon-path="inner-path"
-                              opacity="0"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -23622,7 +23858,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Average
+                          <svg
+                            aria-label="< 80"
+                            fill="orange"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 80"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                              fill="none"
+                            />
+                            <path
+                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                            />
+                          </svg>
+                          <span>
+                            Average
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23654,28 +23912,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                             ˚F
                           </span>
                         </div>
-                        <div>
-                          <svg
-                            aria-label="< 80"
-                            fill="orange"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 80"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                              fill="none"
-                            />
-                            <path
-                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                            />
-                          </svg>
-                        </div>
                       </div>
                       <div
                         className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
@@ -23688,7 +23924,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Max
+                          <svg
+                            aria-label=">= 90"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title=">= 90"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span>
+                            Max
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23719,24 +23973,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             ˚F
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label=">= 90"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title=">= 90"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -23867,7 +24103,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Average
+                          <svg
+                            aria-label="< 40"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 40"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span>
+                            Average
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23899,24 +24153,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                             %
                           </span>
                         </div>
-                        <div>
-                          <svg
-                            aria-label="< 40"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 40"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
-                        </div>
                       </div>
                       <div
                         className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
@@ -23929,7 +24165,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Max
+                          <svg
+                            aria-label="< 70"
+                            fill="green"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 70"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            />
+                            <path
+                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              data-icon-path="inner-path"
+                              opacity="0"
+                            />
+                          </svg>
+                          <span>
+                            Max
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -23960,29 +24219,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             %
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="< 70"
-                            fill="green"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 70"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            />
-                            <path
-                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                              data-icon-path="inner-path"
-                              opacity="0"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -24044,7 +24280,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Average
+                          <svg
+                            aria-label="< 80"
+                            fill="orange"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="< 80"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                              fill="none"
+                            />
+                            <path
+                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                            />
+                          </svg>
+                          <span>
+                            Average
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24076,28 +24334,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                             ˚F
                           </span>
                         </div>
-                        <div>
-                          <svg
-                            aria-label="< 80"
-                            fill="orange"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="< 80"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                              fill="none"
-                            />
-                            <path
-                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                            />
-                          </svg>
-                        </div>
                       </div>
                       <div
                         className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
@@ -24110,7 +24346,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Max
+                          <svg
+                            aria-label=">= 90"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title=">= 90"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span>
+                            Max
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24141,24 +24395,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             ˚F
                           </span>
-                        </div>
-                        <div>
-                          <svg
-                            aria-label=">= 90"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title=">= 90"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -24289,7 +24525,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          YTD
+                          <span>
+                            YTD
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24333,7 +24571,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          MTD
+                          <span>
+                            MTD
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24403,7 +24643,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Last Week
+                          <span>
+                            Last Week
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24521,7 +24763,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Current
+                          <span>
+                            Current
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24563,7 +24807,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Last Week
+                          <span>
+                            Last Week
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24605,7 +24851,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Last Month
+                          <span>
+                            Last Month
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24695,7 +24943,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Current
+                          <svg
+                            aria-label="= Low"
+                            fill="green"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="= Low"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            />
+                            <path
+                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              data-icon-path="inner-path"
+                              opacity="0"
+                            />
+                          </svg>
+                          <span>
+                            Current
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24725,29 +24996,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                             }
                           />
                         </div>
-                        <div>
-                          <svg
-                            aria-label="= Low"
-                            fill="green"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="= Low"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            />
-                            <path
-                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                              data-icon-path="inner-path"
-                              opacity="0"
-                            />
-                          </svg>
-                        </div>
                       </div>
                       <div
                         className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
@@ -24760,7 +25008,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Last Week
+                          <svg
+                            aria-label="= Severe"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="= Severe"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span>
+                            Last Week
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24790,24 +25056,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                             }
                           />
                         </div>
-                        <div>
-                          <svg
-                            aria-label="= Severe"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="= Severe"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
-                        </div>
                       </div>
                       <div
                         className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
@@ -24820,7 +25068,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Last Month
+                          <svg
+                            aria-label="= Elevated"
+                            fill="gold"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="= Elevated"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                              fill="none"
+                            />
+                            <path
+                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                            />
+                          </svg>
+                          <span>
+                            Last Month
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -24849,28 +25119,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               }
                             }
                           />
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="= Elevated"
-                            fill="gold"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="= Elevated"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                              fill="none"
-                            />
-                            <path
-                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -25001,7 +25249,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          YTD
+                          <span>
+                            YTD
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -25045,7 +25295,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          MTD
+                          <span>
+                            MTD
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -25115,7 +25367,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Last Week
+                          <span>
+                            Last Week
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -25233,7 +25487,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Current
+                          <span>
+                            Current
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -25275,7 +25531,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Last Week
+                          <span>
+                            Last Week
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -25317,7 +25575,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Last Month
+                          <span>
+                            Last Month
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -25407,7 +25667,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Current
+                          <svg
+                            aria-label="= Low"
+                            fill="green"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="= Low"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            />
+                            <path
+                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              data-icon-path="inner-path"
+                              opacity="0"
+                            />
+                          </svg>
+                          <span>
+                            Current
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -25437,29 +25720,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                             }
                           />
                         </div>
-                        <div>
-                          <svg
-                            aria-label="= Low"
-                            fill="green"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="= Low"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            />
-                            <path
-                              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                              data-icon-path="inner-path"
-                              opacity="0"
-                            />
-                          </svg>
-                        </div>
                       </div>
                       <div
                         className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
@@ -25472,7 +25732,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Last Week
+                          <svg
+                            aria-label="= Severe"
+                            fill="red"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="= Severe"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                            />
+                          </svg>
+                          <span>
+                            Last Week
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -25502,24 +25780,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                             }
                           />
                         </div>
-                        <div>
-                          <svg
-                            aria-label="= Severe"
-                            fill="red"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="= Severe"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                            />
-                          </svg>
-                        </div>
                       </div>
                       <div
                         className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
@@ -25532,7 +25792,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          Last Month
+                          <svg
+                            aria-label="= Elevated"
+                            fill="gold"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            title="= Elevated"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                              fill="none"
+                            />
+                            <path
+                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                            />
+                          </svg>
+                          <span>
+                            Last Month
+                          </span>
                         </div>
                         <div
                           className="iot--value-card__attribute"
@@ -25561,28 +25843,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               }
                             }
                           />
-                        </div>
-                        <div>
-                          <svg
-                            aria-label="= Elevated"
-                            fill="gold"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            title="= Elevated"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                              fill="none"
-                            />
-                            <path
-                              d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>
@@ -25776,7 +26036,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Comfort Level
+                        <span>
+                          Comfort Level
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -25820,7 +26082,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Utilization
+                        <span>
+                          Utilization
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -25864,7 +26128,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Pressure
+                        <span>
+                          Pressure
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -26042,7 +26308,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -26135,7 +26403,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -26268,7 +26538,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        Average
+                        <span>
+                          Average
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -26363,7 +26635,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         className="iot--value-card__attribute-label"
                       >
-                        weekly
+                        <span>
+                          weekly
+                        </span>
                       </div>
                       <div
                         className="iot--value-card__attribute"
@@ -26483,7 +26757,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <svg
+                          aria-label="= Bad"
+                          fill="red"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          title="= Bad"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
+                          />
+                        </svg>
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -26513,24 +26805,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         >
                           
                         </span>
-                      </div>
-                      <div>
-                        <svg
-                          aria-label="= Bad"
-                          fill="red"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          title="= Bad"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -26594,7 +26868,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -26865,7 +27141,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                     >
                       <div
                         className="iot--value-card__attribute-label"
-                      />
+                      >
+                        <svg
+                          aria-label="= Healthy"
+                          fill="green"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          title="= Healthy"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                          />
+                          <path
+                            d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                            data-icon-path="inner-path"
+                            opacity="0"
+                          />
+                        </svg>
+                        <span />
+                      </div>
                       <div
                         className="iot--value-card__attribute"
                       >
@@ -26895,29 +27194,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         >
                           
                         </span>
-                      </div>
-                      <div>
-                        <svg
-                          aria-label="= Healthy"
-                          fill="green"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          title="= Healthy"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                          />
-                          <path
-                            d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                            data-icon-path="inner-path"
-                            opacity="0"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>

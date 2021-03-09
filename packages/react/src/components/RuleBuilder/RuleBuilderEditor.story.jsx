@@ -3,14 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { DatePicker, DatePickerInput, NumberInput } from 'carbon-components-react';
 
-import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
-
 import RuleBuilderEditor from './RuleBuilderEditor';
-
-export const Experimental = () => <StoryNotice componentName="RuleBuilder" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
 
 export const columns = [
   { id: 'column1', name: 'Column 1' },
@@ -194,7 +187,7 @@ RuleBuilderCustomOperandsAndFieldRenderer.story = {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ RuleBuilder',
+  title: 'Watson IoT Experimental/☢️ RuleBuilder/RuleBuilderEditor',
   decorators: [withKnobs],
 
   parameters: {
