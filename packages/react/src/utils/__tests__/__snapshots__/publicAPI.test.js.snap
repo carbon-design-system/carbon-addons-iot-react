@@ -1071,6 +1071,16 @@ Map {
                       Object {
                         "args": Array [
                           Object {
+                            "align": Object {
+                              "args": Array [
+                                Array [
+                                  "start",
+                                  "center",
+                                  "end",
+                                ],
+                              ],
+                              "type": "oneOf",
+                            },
                             "id": Object {
                               "isRequired": true,
                               "type": "string",
