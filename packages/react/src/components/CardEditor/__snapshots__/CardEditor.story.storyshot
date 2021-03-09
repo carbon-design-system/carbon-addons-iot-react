@@ -2985,7 +2985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           aria-labelledby="downshift-2-label"
                           autoComplete="off"
                           className="bx--text-input bx--text-input--empty"
-                          data-testid="combo-box"
+                          data-testid="editor--data-series--combobox"
                           disabled={false}
                           id="timeseries_dataSourceIds-combobox"
                           onBlur={[Function]}
