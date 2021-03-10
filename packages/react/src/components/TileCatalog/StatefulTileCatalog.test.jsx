@@ -26,12 +26,13 @@ describe('StatefulTileCatalog', () => {
     const wrapper = mount(
       <StatefulTileCatalog
         {...commonTileProps}
-        search={{ placeHolderText: 'My search', onSearch: mockSearch }}
+        search={{ placeholder: 'My search', onSearch: mockSearch }}
       />
     );
     const searchInput = wrapper.find('input[type="text"]');
     searchInput.simulate('change', { target: { value } });
-    expect(mockSearch).toHaveBeenCalledTimes(1);
+
+    expect(mockSearch).toHaveBeenCalled(); // https://github.com/carbon-design-system/carbon/issues/7595
     expect(mockSearch).toHaveBeenCalledWith(value);
   });
   it('handles Clicking on option', () => {

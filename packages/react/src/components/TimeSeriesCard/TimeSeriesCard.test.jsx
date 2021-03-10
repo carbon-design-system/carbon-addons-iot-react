@@ -1,15 +1,26 @@
-import React from 'react';
-import { mount } from 'enzyme';
 import { render, screen } from '@testing-library/react';
+import { mount } from 'enzyme';
 import omit from 'lodash/omit';
+import React from 'react';
+import userEvent from '@testing-library/user-event';
+import fileDownload from 'js-file-download';
 
-import Table from '../Table/Table';
-import { getIntervalChartData } from '../../utils/sample';
-import { CARD_SIZES, COLORS, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
+import { CARD_SIZES, COLORS, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 import { barChartData } from '../../utils/barChartDataSample';
+import { getIntervalChartData } from '../../utils/sample';
+import Table from '../Table/Table';
 
-import TimeSeriesCard, { handleTooltip, formatChartData, formatColors } from './TimeSeriesCard';
+import TimeSeriesCard, {
+  formatChartData,
+  formatColors,
+  applyFillColor,
+  applyIsFilled,
+  applyStrokeColor,
+  handleTooltip,
+} from './TimeSeriesCard';
+
+jest.mock('js-file-download');
 
 const timeSeriesCardProps = {
   title: 'Temperature',
@@ -73,7 +84,7 @@ describe('TimeSeriesCard', () => {
           ...timeSeriesCardProps.content,
           chartType: TIME_SERIES_TYPES.BAR,
         }}
-        size={CARD_SIZES.MEDIUMTHIN}
+        size={CARD_SIZES.MEDIUMWIDE}
       />
     );
     expect(wrapper.find('#mock-bar-chart-stacked')).toHaveLength(1);
@@ -92,6 +103,15 @@ describe('TimeSeriesCard', () => {
     expect(updatedTooltip).toContain('<ul');
     expect(updatedTooltip).toContain('2017');
   });
+
+  // handle edge case were there is no date data available for the tooltip to increase
+  // branch testing coverage
+  it('handleTooltip should not add date if missing', () => {
+    const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+    const updatedTooltip = handleTooltip([], defaultTooltip, [], 'Detected alert:');
+    expect(updatedTooltip).toEqual(defaultTooltip);
+  });
+
   it('handleTooltip with __data__ and GMT', () => {
     const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
     // the date is from 2017
@@ -171,7 +191,7 @@ describe('TimeSeriesCard', () => {
       ),
       interval: 'hour',
       breakpoint: 'lg',
-      size: 'LARGE',
+      size: CARD_SIZES.LARGE,
       onCardAction: () => {},
     };
     const wrapper = mount(<TimeSeriesCard {...timeSeriesCardWithOneColorProps} />);
@@ -391,9 +411,140 @@ describe('TimeSeriesCard', () => {
     });
   });
   it('tableColumn headers should use the label, not the dataSourceId', () => {
-    render(<TimeSeriesCard {...timeSeriesCardProps} isExpanded size={CARD_SIZES.MEDIUM} />);
+    const props = {
+      ...timeSeriesCardProps,
+      isExpanded: true,
+      size: CARD_SIZES.LARGEWIDE,
+    };
+    // use the xlarge card size for additional code coverage on maxTicksPerSize
+    render(<TimeSeriesCard {...props} />);
 
     // the dataSourceId is temperature so this should show the appreviated label Temp instead
     expect(screen.getByText('Temp')).toBeInTheDocument();
+  });
+
+  it('should show no data', () => {
+    const props = {
+      ...timeSeriesCardProps,
+      content: {
+        ...timeSeriesCardProps.content,
+        timeDataSourceId: undefined,
+      },
+      values: undefined,
+      isExpanded: true,
+      size: CARD_SIZES.SMALL,
+      isEditable: false,
+    };
+    render(<TimeSeriesCard {...props} />);
+
+    expect(screen.getByText(/No data/i)).toBeInTheDocument();
+  });
+
+  // adding to increase branching test coverage.
+  it('is editable, resizable, expanded, and csv download works', () => {
+    const props = {
+      ...timeSeriesCardProps,
+      content: {
+        ...timeSeriesCardProps.content,
+        series: {
+          label: 'Temp',
+          dataSourceId: 'temperature',
+        },
+        unit: '˚F',
+        yLabel: undefined,
+        xLabel: undefined,
+        zoomBar: {
+          enabled: true,
+          axes: 'top',
+        },
+        addSpaceOnEdges: 1,
+      },
+      values: [
+        {
+          temperature: 100,
+          timestamp: new Date(2021, 2, 5, 15, 30, 0),
+        },
+      ],
+      domainRange: [new Date(), new Date()],
+      interval: 'quarter',
+      isExpanded: true,
+      isResizable: true,
+      size: CARD_SIZES.SMALL,
+    };
+
+    const { container } = render(<TimeSeriesCard {...props} />);
+
+    expect(screen.getByText('Temperature')).toBeInTheDocument();
+    expect(screen.getByText('Timestamp')).toBeInTheDocument();
+    expect(container.querySelector('#mock-line-chart')).toBeInTheDocument();
+    userEvent.click(screen.getByLabelText('Download table content'));
+    expect(fileDownload).toHaveBeenCalledWith(
+      `temperature,timestamp\n100,03/05/2021 15:30,\n`,
+      'Temperature.csv'
+    );
+  });
+
+  it('Fills points with the correct fill/stroke of matching alertRanges', () => {
+    const data = {
+      date: new Date(2019, 9, 29, 18, 38, 40),
+      value: 82,
+      group: 'Temperature',
+    };
+
+    const alertRanges = [
+      {
+        startTimestamp: 1572313622000,
+        endTimestamp: 1572486422000,
+        color: '#FF0000',
+        details: 'Alert name',
+      },
+      {
+        startTimestamp: 1572313622000,
+        endTimestamp: 1572824320000,
+        color: '#FFFF00',
+        details: 'Less severe',
+      },
+    ];
+
+    const isFilledCallback = applyIsFilled(alertRanges);
+    const fillColorCallback = applyFillColor(alertRanges);
+    const strokeColorCallback = applyStrokeColor(alertRanges);
+
+    expect(isFilledCallback('Temperature', data.date.toString(), data, false)).toBe(true);
+    expect(fillColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe('#FF0000');
+    expect(strokeColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+      '#FF0000'
+    );
+  });
+
+  it('Fills points with the original fill/stroke when no data given', () => {
+    const alertRanges = [];
+
+    const isFilledCallback = applyIsFilled(alertRanges);
+    const fillColorCallback = applyFillColor(alertRanges);
+    const strokeColorCallback = applyStrokeColor(alertRanges);
+
+    expect(isFilledCallback('Temperature', undefined, undefined, false)).toBe(false);
+    expect(fillColorCallback('Temperature', undefined, undefined, '#6929c4')).toBe('#6929c4');
+    expect(strokeColorCallback('Temperature', undefined, undefined, '#6929c4')).toBe('#6929c4');
+  });
+
+  it('Fills points with the original fill/stroke when no ranges match', () => {
+    const data = {
+      date: new Date(2019, 9, 29, 18, 38, 40),
+      value: 82,
+      group: 'Temperature',
+    };
+    const alertRanges = [];
+
+    const isFilledCallback = applyIsFilled(alertRanges);
+    const fillColorCallback = applyFillColor(alertRanges);
+    const strokeColorCallback = applyStrokeColor(alertRanges);
+
+    expect(isFilledCallback('Temperature', data.date.toString(), data, false)).toBe(false);
+    expect(fillColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe('#6929c4');
+    expect(strokeColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+      '#6929c4'
+    );
   });
 });

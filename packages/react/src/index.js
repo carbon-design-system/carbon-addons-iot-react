@@ -119,8 +119,16 @@ export { useDNDProviderElement } from './hooks/useDNDProviderElement';
 export {
   Accordion,
   AccordionItem,
+  AspectRatio,
+  // TODO: unify breadcrumb
+  // Breadcrumb,
+  // BreadcrumbItem
+  // TODO: unify button
+  // Button,
+  ButtonSet,
   Checkbox,
   CodeSnippet,
+  // TODO: unify combobox
   // ComboBox,
   ModalHeader,
   ModalBody,
@@ -187,11 +195,8 @@ export {
   OrderedList,
   OverflowMenu,
   OverflowMenuItem,
-  PageSelector,
-  Unstable_Pagination, // eslint-disable-line camelcase
   Pagination,
   PaginationNav,
-  PaginationSkeleton,
   PrimaryButton,
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,
@@ -245,12 +250,15 @@ export {
   SkeletonPlaceholder,
   DataTableSkeleton,
   AccordionSkeleton,
+  // TODO unify breadcrumb skeleton
+  // BreadcrumbSkeleton,
   ButtonSkeleton,
   CheckboxSkeleton,
   CodeSnippetSkeleton,
   DropdownSkeleton,
   FileUploaderSkeleton,
   NumberInputSkeleton,
+  PaginationSkeleton,
   ProgressIndicatorSkeleton,
   RadioButtonSkeleton,
   SearchSkeleton,
@@ -298,6 +306,16 @@ export {
   SideNavMenu,
   SideNavMenuItem,
   SideNavSwitcher,
+  // Experimental components from Carbon
+
+  // eslint-disable-next-line camelcase
+  unstable_Pagination,
+  // eslint-disable-next-line camelcase
+  unstable_PageSelector,
+  // eslint-disable-next-line camelcase
+  unstable_TreeNode,
+  // eslint-disable-next-line camelcase
+  unstable_TreeView,
 } from 'carbon-components-react';
 
 export {

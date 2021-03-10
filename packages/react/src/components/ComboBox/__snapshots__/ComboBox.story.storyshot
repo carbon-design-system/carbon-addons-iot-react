@@ -80,7 +80,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                 value="Option 1"
               />
               <div
-                aria-label="Clear Selection"
+                aria-label="Clear selected item"
                 className="bx--list-box__selection"
                 onClick={[Function]}
                 onKeyDown={[Function]}
@@ -674,7 +674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
               value="Option 1"
             />
             <div
-              aria-label="Clear Selection"
+              aria-label="Clear selected item"
               className="bx--list-box__selection"
               onClick={[Function]}
               onKeyDown={[Function]}

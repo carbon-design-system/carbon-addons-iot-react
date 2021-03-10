@@ -141,7 +141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
             <p>
               The following table shows a comparison of exports from carbon-components-react and this library. These are primarily used for snapshot purposes to track and ensure that as the exports change upstream in Carbon we continue to provide parity with their package.
             </p>
-            <section
+            <div
               aria-label="Structured list section"
               className="bx--structured-list"
             >
@@ -201,6 +201,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    AspectRatio
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    AspectRatio
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     Breadcrumb
                   </div>
                   <div
@@ -235,6 +249,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     Button
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    ButtonSet
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    ButtonSet
                   </div>
                 </div>
                 <div
@@ -2213,34 +2241,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
-                    PageSelector
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    PageSelector
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    Unstable_Pagination
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    Unstable_Pagination
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  >
                     Content
                   </div>
                   <div
@@ -2493,6 +2493,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    SideNavDivider
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     SideNavFooter
                   </div>
                   <div
@@ -2625,6 +2637,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     SideNavSwitcher
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    unstable_PageSelector
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    unstable_PageSelector
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    unstable_Pagination
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    unstable_Pagination
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    unstable_TreeView
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    unstable_TreeView
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    unstable_TreeNode
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    unstable_TreeNode
                   </div>
                 </div>
                 <div
@@ -4020,7 +4088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
           </div>
         </li>
       </ul>

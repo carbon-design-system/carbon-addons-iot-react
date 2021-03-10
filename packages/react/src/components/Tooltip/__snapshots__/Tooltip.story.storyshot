@@ -50,6 +50,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -98,6 +99,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -146,6 +148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -204,6 +207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -252,6 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -300,6 +305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -358,6 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -406,6 +413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -454,6 +462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -545,6 +554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
           className="bx--tooltip__trigger"
           onBlur={[Function]}
           onClick={[Function]}
+          onContextMenu={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseOut={[Function]}
@@ -630,6 +640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
         id="withoutIcon"
         onBlur={[Function]}
         onClick={[Function]}
+        onContextMenu={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseOut={[Function]}
@@ -699,6 +710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
           className="bx--tooltip__trigger"
           onBlur={[Function]}
           onClick={[Function]}
+          onContextMenu={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseOut={[Function]}
@@ -797,6 +809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
           className="bx--tooltip__trigger"
           onBlur={[Function]}
           onClick={[Function]}
+          onContextMenu={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseOut={[Function]}
@@ -913,6 +926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
         id="uncontrolled"
         onBlur={[Function]}
         onClick={[Function]}
+        onContextMenu={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseOut={[Function]}
@@ -935,7 +949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
           Focus sentinel
         </span>
         <div
-          className="bx--tooltip bx--tooltip--shown"
+          className="bx--tooltip bx--tooltip--shown bx--tooltip--bottom bx--tooltip--align-center"
           data-floating-menu-direction="bottom"
           id="uncontrolled"
           onBlur={[Function]}
@@ -963,7 +977,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
             aria-labelledby="uncontrolled"
             className="bx--tooltip__content"
             role="dialog"
-            tabIndex="-1"
           >
             Some text
           </div>

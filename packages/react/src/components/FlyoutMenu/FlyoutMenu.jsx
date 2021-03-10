@@ -93,6 +93,7 @@ const FlyoutMenu = ({
   onApply,
   onCancel,
   useAutoPositioning,
+  onChange,
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [tooltipDirection, setTooltipDirection] = useState(getTooltipDirection(direction));
@@ -254,6 +255,7 @@ const FlyoutMenu = ({
             triggerId={triggerId}
             tabIndex={tabIndex}
             useAutoPositioning={false}
+            onChange={onChange}
           >
             <div>
               <div style={{ overflow: 'scroll' }} tabIndex={-1} />
@@ -375,6 +377,7 @@ const propTypes = {
   light: PropTypes.bool,
 
   useAutoPositioning: PropTypes.bool,
+  onChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -403,6 +406,7 @@ const defaultProps = {
   disabled: false,
   light: true,
   useAutoPositioning: false,
+  onChange: () => {},
 };
 
 FlyoutMenu.propTypes = propTypes;

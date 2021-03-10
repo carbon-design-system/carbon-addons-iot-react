@@ -157,6 +157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-35-65"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -210,6 +211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-45-75"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -237,10 +239,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22zM15 11H17V20H15z"
+                          d="M16 23a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 23zM15 12H17V21H15z"
                         />
                         <path
-                          d="M29,29H3a1,1,0,0,1-.89-1.46l13-25a1,1,0,0,1,1.78,0l13,25A1,1,0,0,1,29,29ZM4.65,27h22.7L16,5.17Z"
+                          d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
                         />
                       </svg>
                     </div>
@@ -480,6 +482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-35-65"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -527,6 +530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-45-25"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -578,6 +582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-45-50"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -629,6 +634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-45-75"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -1139,22 +1145,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     </label>
                     <svg
                       className="bx--loading__svg"
-                      viewBox="-75 -75 150 150"
+                      viewBox="0 0 100 100"
                     >
                       <title>
                         Active loading indicator
                       </title>
                       <circle
                         className="bx--loading__background"
-                        cx="0"
-                        cy="0"
-                        r="26.8125"
+                        cx="50%"
+                        cy="50%"
+                        r="42"
                       />
                       <circle
                         className="bx--loading__stroke"
-                        cx="0"
-                        cy="0"
-                        r="26.8125"
+                        cx="50%"
+                        cy="50%"
+                        r="42"
                       />
                     </svg>
                   </div>
