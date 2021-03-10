@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.5...v2.145.0-next.6) (2021-03-10)
+
+
+### Bug Fixes
+
+* **cardeditor:** fix tabs to fill space without overflow scrolling ([67716a2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/67716a2a61944e990c355c0c7ebdf3a9b302b916))
+
+
+
+
+
 # [2.145.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.4...v2.145.0-next.5) (2021-03-10)
 
 **Note:** Version bump only for package ibm-ai-applications
