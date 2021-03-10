@@ -73,8 +73,9 @@ const TableFoot = ({
               className={classnames({
                 [`${iotPrefix}-table-foot--value`]: true,
                 'data-table-end': aggregated.align === 'end',
-                'data-table-start': aggregated.align === 'start',
+                'data-table-start': !aggregated.align || aggregated.align === 'start',
                 'data-table-center': aggregated.align === 'center',
+                [`${iotPrefix}-table-foot--value__sortable`]: aggregated.isSortable,
               })}
               align={aggregated.align ? aggregated.align : undefined}
               data-testid={cellTestId}
