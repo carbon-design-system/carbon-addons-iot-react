@@ -1,4 +1,5 @@
-import { mount } from 'enzyme';
+import { screen, render, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal';
@@ -13,20 +14,22 @@ describe('SuiteHeaderLogoutModal', () => {
   it('renders and callbacks are triggered', () => {
     const mockOnClose = jest.fn();
     const mockOnLogout = jest.fn();
-    const wrapper = mount(
+    const { container } = render(
       <SuiteHeaderLogoutModal {...commonProps} onClose={mockOnClose} onLogout={mockOnLogout} />
     );
 
-    const modalCloseButton = wrapper.find('.bx--modal-close');
-    modalCloseButton.simulate('click');
+    const modalCloseButton = within(container.querySelector('.bx--modal-header')).getByTitle(
+      'Close'
+    );
+    userEvent.click(modalCloseButton);
     expect(mockOnClose).toHaveBeenCalled();
 
-    const closeButton = wrapper.find('.bx--modal-footer > [kind="secondary"]');
-    closeButton.simulate('click');
+    const closeButton = screen.getByText('Cancel');
+    userEvent.click(closeButton);
     expect(mockOnClose).toHaveBeenCalled();
 
-    const logoutButton = wrapper.find('.bx--modal-footer > [kind="primary"]');
-    logoutButton.simulate('click');
+    const logoutButton = screen.getByText('Log out');
+    userEvent.click(logoutButton);
     expect(mockOnLogout).toHaveBeenCalled();
   });
 });
