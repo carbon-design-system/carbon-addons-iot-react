@@ -19189,12 +19189,24 @@ Map {
   },
   "ComboChartCard" => Object {
     "defaultProps": Object {
+      "content": Object {
+        "includeZeroOnXaxis": false,
+        "includeZeroOnYaxis": false,
+        "showLegend": true,
+      },
+      "domainRange": null,
       "i18n": Object {
+        "defaultFilterStringPlaceholdText": "type and hit enter to apply",
         "noDataLabel": "No data",
       },
+      "isExpanded": false,
+      "isLoading": false,
       "locale": "en",
+      "showTimeInGMT": false,
       "size": "MEDIUMWIDE",
       "title": "",
+      "tooltipDateFormatPattern": "L HH:mm:ss",
+      "values": Array [],
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -19647,6 +19659,156 @@ Map {
                 },
               ],
               "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "content": Object {
+        "args": Array [
+          Object {
+            "addSpaceOnEdges": Object {
+              "type": "bool",
+            },
+            "comboChartTypes": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "correspondingDatasets": Object {
+                        "args": Array [
+                          Object {
+                            "type": "string",
+                          },
+                        ],
+                        "type": "arrayOf",
+                      },
+                      "options": Object {
+                        "type": "object",
+                      },
+                      "type": Object {
+                        "args": Array [
+                          Array [
+                            "scatter",
+                            "line",
+                            "simple-bar",
+                            "stacked-bar",
+                            "grouped-bar",
+                            "area",
+                            "stacked-area",
+                          ],
+                        ],
+                        "type": "oneOf",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "curve": Object {
+              "type": "string",
+            },
+            "decimalPrecision": Object {
+              "type": "bool",
+            },
+            "includeZeroOnXaxis": Object {
+              "type": "bool",
+            },
+            "includeZeroOnYaxis": Object {
+              "type": "bool",
+            },
+            "legend": Object {
+              "args": Array [
+                Object {
+                  "alignment": Object {
+                    "args": Array [
+                      Array [
+                        "center",
+                        "left",
+                        "right",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                  "clickable": undefined,
+                  "enabled": undefined,
+                  "order": Object {
+                    "args": Array [
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "position": Object {
+                    "args": Array [
+                      Array [
+                        "bottom",
+                        "left",
+                        "right",
+                        "top",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                  "truncation": Object {
+                    "args": Array [
+                      Object {
+                        "numCharater": Object {
+                          "type": "number",
+                        },
+                        "threshold": Object {
+                          "type": "number",
+                        },
+                        "types": Object {
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "thresholds": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "fillColor": Object {
+                        "type": "string",
+                      },
+                      "label": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "number",
+                            },
+                            Object {
+                              "type": "object",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "valueFormatter": Object {
+                        "type": "func",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "timeDataSourceId": Object {
+              "type": "string",
             },
           },
         ],

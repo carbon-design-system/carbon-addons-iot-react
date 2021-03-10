@@ -243,13 +243,13 @@ export const handleCardVariables = (title, content, values, card) => {
     values,
     ...card,
   };
+
   if (!updatedCard.cardVariables) {
     return updatedCard;
   }
   const { cardVariables } = updatedCard;
 
   const variablesArray = getCardVariables(updatedCard);
-
   return replaceVariables(variablesArray, cardVariables, updatedCard);
 };
 

@@ -1,52 +1,129 @@
-/* istanbul ignore file */
-// Ignoring until we resolve the issue with importing this component in jest
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useRef } from 'react';
 import { ComboChart } from '@carbon/charts-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
+import {
+  getResizeHandles,
+  handleCardVariables,
+  increaseSmallCardSize,
+} from '../../utils/cardUtilityFunctions';
 import Card from '../Card/Card';
-import { tableData, tableColumns } from '../../utils/sample';
-import { CardPropTypes } from '../../constants/CardPropTypes';
+import { CardPropTypes, ComboChartPropTypes } from '../../constants/CardPropTypes';
 import { settings } from '../../constants/Settings';
 import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
+import { useTableData, useTableColumns, useChartData, useChartOptions } from './comboChartHelpers';
+
 const { iotPrefix } = settings;
 
 const propTypes = {
-  id: PropTypes.string.isRequired,
-  i18n: PropTypes.shape({
-    noDataLabel: PropTypes.string,
-  }),
+  ...CardPropTypes,
+  ...ComboChartPropTypes,
 };
 
 const defaultProps = {
   size: CARD_SIZES.MEDIUMWIDE,
   locale: 'en',
   title: '',
+  isLoading: false,
+  isExpanded: false,
   i18n: {
     noDataLabel: 'No data',
+    defaultFilterStringPlaceholdText: 'type and hit enter to apply',
   },
+  values: [],
+  content: {
+    includeZeroOnXaxis: false,
+    includeZeroOnYaxis: false,
+    showLegend: true,
+  },
+  showTimeInGMT: false,
+  domainRange: null,
+  tooltipDateFormatPattern: 'L HH:mm:ss',
 };
 
-const ComboChartCard = ({ className, title, values, options, isExpanded, size, others, i18n }) => {
-  const { title: chartTitle, timeDataSourceId = 'timestamp', ...otherOptions } = options;
+const ComboChartCard = ({
+  className,
+  children,
+  content: contentProp,
+  title: titleProp,
+  size: sizeProp,
+  values: initialValues,
+  availableDimensions,
+  locale,
+  i18n,
+  isExpanded,
+  isLazyLoading,
+  isEditable,
+  isDashboardPreview,
+  isLoading,
+  isResizable,
+  interval,
+  domainRange,
+  timeRange,
+  tooltipDateFormatPattern,
+  content: { categoryDataSourceId, timeDataSourceId },
+  ...others
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { noDataLabel } = mergedI18n;
+
+  const { content, title, values } = handleCardVariables(
+    titleProp,
+    contentProp,
+    initialValues,
+    others
+  );
+
+  const previousTick = useRef();
+  const chartOptions = useChartOptions({
+    previousTick,
+    isEditable,
+    interval,
+    isLoading,
+    tooltipDateFormatPattern,
+    chartTitle: content.title,
+    values,
+    i18n: mergedI18n,
+    ...content,
+  });
+  const chartData = useChartData(values, {
+    series: chartOptions.series,
+    timeDataSourceId,
+    categoryDataSourceId,
+    type: chartOptions.type,
+  });
+
+  const tableColumns = useTableColumns(values, chartOptions);
+  const tableData = useTableData(values, chartOptions);
+
   return (
     <Card
-      isEmpty={isEmpty(values)}
+      isEmpty={isEmpty(chartData)}
       className={classnames(className, `${iotPrefix}--combo-chart-card`)}
-      title={`${title === '' ? chartTitle : title}`}
-      size={size}
+      title={title}
+      isLazyLoading={isLazyLoading}
+      isExpanded={isExpanded}
+      isEditable={isEditable}
+      isResizable={isResizable}
+      i18n={mergedI18n}
+      resizeHandles={isResizable ? getResizeHandles(children) : []}
+      timeRange={timeRange}
+      size={increaseSmallCardSize(sizeProp, 'ComboChartCard')}
       {...others}
     >
       <div className={`${iotPrefix}--combo-chart-card__container`}>
-        <ComboChart key="combo-chart" data={values} {...others} options={otherOptions} />
-        {isExpanded ? (
+        <ComboChart
+          key="combo-chart"
+          data={chartData}
+          options={chartOptions}
+          width="100%"
+          height="100%"
+        />
+        {isExpanded && !isLoading ? (
           <StatefulTable
             id="BarChartCard-table"
             className={`${iotPrefix}--bar-chart-card--stateful-table`}
@@ -89,9 +166,6 @@ const ComboChartCard = ({ className, title, values, options, isExpanded, size, o
   );
 };
 
-ComboChartCard.propTypes = {
-  ...propTypes,
-  ...CardPropTypes,
-};
+ComboChartCard.propTypes = propTypes;
 ComboChartCard.defaultProps = defaultProps;
 export default ComboChartCard;

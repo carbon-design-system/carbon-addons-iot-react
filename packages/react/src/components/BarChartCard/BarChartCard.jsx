@@ -214,7 +214,7 @@ const BarChartCard = ({
   const options = useMemo(
     () => ({
       animations: false,
-      accessibility: true,
+      accessibility: false,
       axes: {
         bottom: {
           title: `${xLabel || ''} ${

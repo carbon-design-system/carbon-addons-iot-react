@@ -514,277 +514,51 @@ export const TimeRangeOptionsPropTypes = (props, propName, componentName) => {
 };
 
 export const ComboChartPropTypes = {
-  animations: PropTypes.bool,
-  /**
-   *  axes example: for left, top, bottom, or right
-   * "axes": {
-      "left": {
-        "mapsTo": "value",
-        "scaleType": "linear",
-        "title": "USA Summer School Attendance"
-      },
-    },
-   */
-  axes: PropTypes.objectOf(
-    PropTypes.shape({
-      /**
-       * Whether the Axis should use the specified domain
-       * instead of it being dynamically generated based on data extents.
-       * The type of values should depend on the scale type.
-       * Example for continuous axis scale: [-100, 100]
-       * Example for discrete axis scale: ['Qty', 'More', 'Sold']
-       * No need to define domain for percentage axis scale
-       */
-      domain: PropTypes.array,
-      /**
-       * Whether the Axis should be forced to include 0 as a starting point
-       * (or ending point, in case of all negative axis).
-       * Default: true
-       */
-      includeZero: PropTypes.bool,
-      /** identifies what key within the data the axis values would map to */
-      mapsTo: PropTypes.string,
-      /** option for percentage axis scale */
-      percentage: PropTypes.boolean,
-      /** type of the scale used on axis */
-      scaleType: PropTypes.oneOf(['labels', 'linear', 'log', 'time']),
-      /** Option for stacked axis */
-      stacked: PropTypes.bool,
-      /**
-       * Example:
-       * [
-       *		{value: 10000},
-       *		{value: 40020, valueFormatter: (x) => x},
-       *		{value: 55000, label: "Custom label", fillColor: "#03a9f4"},
-       * ]
-       */
-      thresholds: PropTypes.shape({
+  content: PropTypes.shape({
+    comboChartTypes: PropTypes.arrayOf(
+      PropTypes.shape({
+        type: PropTypes.oneOf([
+          'scatter',
+          'line',
+          'simple-bar',
+          'stacked-bar',
+          'grouped-bar',
+          'area',
+          'stacked-area',
+        ]),
+        options: PropTypes.object,
+        correspondingDatasets: PropTypes.arrayOf(PropTypes.string),
+      })
+    ),
+    includeZeroOnXaxis: PropTypes.bool,
+    includeZeroOnYaxis: PropTypes.bool,
+    addSpaceOnEdges: PropTypes.bool,
+    decimalPrecision: PropTypes.bool,
+    curve: PropTypes.string,
+    legend: PropTypes.shape({
+      alignment: PropTypes.oneOf(['center', 'left', 'right']),
+      /** the clickability of legend items */
+      clickable: PropTypes.boolean,
+      enabled: PropTypes.boolean,
+      order: PropTypes.arrayOf(PropTypes.string),
+      position: PropTypes.oneOf(['bottom', 'left', 'right', 'top']),
+      truncation: PropTypes.shape({
+        numCharater: PropTypes.number,
+        threshold: PropTypes.number,
+        types: PropTypes.string,
+      }),
+    }),
+
+    timeDataSourceId: PropTypes.string,
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
         fillColor: PropTypes.string,
         label: PropTypes.string,
         value: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
         /** a function to format the threshold values */
         valueFormatter: PropTypes.func,
-      }),
-      /** number of ticks to show */
-      ticks: PropTypes.shape({
-        /**
-         * number of ticks to show
-         */
-        number: PropTypes.number,
-        /**
-         * minimum tick value
-         */
-        min: PropTypes.number,
-        /**
-         * maximum tick value
-         */
-        max: PropTypes.number,
-        /**
-         * minimum width of a tick
-         * before getting rotated (in pixels)
-         */
-        rotateIfSmallerThan: PropTypes.number,
-        /**
-         * when to rotate ticks
-         */
-        rotation: PropTypes.oneOf(['always', 'auto', 'never']),
-        /**
-         * function to format the ticks
-         */
-        formatter: PropTypes.func,
-        /**
-         * optional custom array of tick values that is within the domain of data
-         */
-        values: PropTypes.array,
-      }),
-      title: PropTypes.string,
-      truncation: PropTypes.shape({
-        /** how many characters to be shown */
-        numCharater: PropTypes.number,
-        /** truncation threshold */
-        threshold: PropTypes.number,
-        /** truncation configuration */
-        type: PropTypes.string,
-      }),
-      visible: PropTypes.bool,
-    })
-  ),
-  /** options related to color scales */
-  color: PropTypes.shape({
-    /**
-     * e.g. { "Dataset 1": "blue" }
-     */
-    scale: PropTypes.object,
-    /**
-     * use a carbon dataviz preset color palette
-     * put the index (selection of which variant)
-     */
-    pairing: PropTypes.shape({
-      /**
-       * the number of color variants in the palette (defaults to using the number of data groups in the given data)
-       */
-      numberOfVariants: PropTypes.number,
-      /**
-       * the option number of the color paring
-       */
-      option: PropTypes.number,
-    }),
-    /*
-     * options related to gradient
-     * e.g. { enabled: true }
-     */
-    gradient: PropTypes.object,
-  }),
-  comboChartTypes: PropTypes.arrayOf(
-    PropTypes.shape({
-      type: PropTypes.oneOf([
-        'scatter',
-        'line',
-        'simple-bar',
-        'stacked-bar',
-        'grouped-bar',
-        'area',
-        'stacked-area',
-      ]),
-      options: PropTypes.object,
-      correspondingDatasets: PropTypes.arrayOf(PropTypes.string),
-    })
-  ),
-  /** options related to charting data */
-  data: PropTypes.shape({
-    /**
-     * identifier for data groups
-     */
-    groupMapsTo: PropTypes.string,
-    /**
-     * used to simulate data loading in skeleton way
-     */
-    loading: PropTypes.bool,
-    /**
-     * options related to pre-selected data groups
-     * Remains empty if every legend item is active or dataset doesn't have the data groups.
-     */
-    selectedGroups: PropTypes.arrayOf(PropTypes.string),
-  }),
-  /**
-   * Optional function to generate the fill color based on datasetLabel, label, and/or data
-   * @param {*} datasetLabel
-   * @param {*} label
-   * @param {*} data
-   * @param {string} defaultFillColor?: string
-   * @return {string}
-   */
-  getFillColor: PropTypes.func,
-  /**
-   * Optional function to determine whether is filled based on datasetLabel, label, and/or data
-   *
-   * @param {*} datasetLabel
-   * @param {*} label
-   * @param {*} data
-   * @param {boolean} defaultFilled
-   * @return {boolean}
-   */
-  getIsFilled: PropTypes.func,
-  /**
-   * Optional function to generate the stroke color based on datasetLabel, label, and/or data
-   * @param {*} datasetLabel
-   * @param {*} label
-   * @param {*} data
-   * @param {string} defaultStrokeColor
-   * @return {string}
-   */
-  getStrokeColor: PropTypes.func,
-  gridOptions: PropTypes.shape({
-    x: PropTypes.shape({
-      enabled: PropTypes.boolean,
-      numberOfTicks: PropTypes.number,
-    }),
-    y: PropTypes.shape({
-      enabled: PropTypes.boolean,
-      numberOfTicks: PropTypes.number,
-    }),
-  }),
-  height: PropTypes.string,
-  /** legend configuration */
-  legend: PropTypes.shape({
-    alignment: PropTypes.oneOf(['center', 'left', 'right']),
-    /** the clickability of legend items */
-    clickable: PropTypes.boolean,
-    enabled: PropTypes.boolean,
-    order: PropTypes.arrayOf(PropTypes.string),
-    position: PropTypes.oneOf(['bottom', 'left', 'right', 'top']),
-    truncation: PropTypes.shape({
-      numCharater: PropTypes.number,
-      threshold: PropTypes.number,
-      types: PropTypes.string,
-    }),
-  }),
-  resizable: PropTypes.boolean,
-  style: PropTypes.shape({
-    /** optional prefixing string for css classes (defaults to 'cc') */
-    prefix: PropTypes.string,
-  }),
-  timeScale: PropTypes.shape({
-    addSpaceOnEdges: PropTypes.number,
-    /**
-     * locale object, for more information see https://date-fns.org/v2.11.0/docs/Locale.
-     * example: `import enUSLocaleObject from "date-fns/locale/en-US/index"`.
-     * available locale objects are: https://github.com/date-fns/date-fns/tree/master/src/locale
-     */
-    localObject: PropTypes.object,
-    showDayName: PropTypes.boolean,
-    /** formats for each time interval */
-    timeIntervalFormats: PropTypes.shape({
-      /**
-       * all shaped
-       * {
-       *  primary: PropTypes.string,
-       *  secondary: PropTypes.string,
-       * }
-       */
-      '15seconds': PropTypes.object,
-      '30seconds': PropTypes.object,
-      daily: PropTypes.object,
-      hourly: PropTypes.object,
-      minute: PropTypes.object,
-      monthly: PropTypes.object,
-      quarterly: PropTypes.object,
-      weekly: PropTypes.object,
-      yearly: PropTypes.object,
-    }),
-  }),
-  title: PropTypes.string,
-  toolTip: PropTypes.shape({
-    /**
-     * custom function for returning tooltip HTML
-     * passed an array or object with the data, and then the default tooltip markup
-     */
-    customHTML: PropTypes.func,
-    enabled: PropTypes.boolean,
-    groupLabel: PropTypes.string,
-    showTotal: PropTypes.boolean,
-    totalLabel: PropTypes.string,
-    truncation: PropTypes.shape({
-      numCharater: PropTypes.number,
-      threshold: PropTypes.number,
-      types: PropTypes.string,
-    }),
-    /** a function to format the tooltip values */
-    valueFormatter: PropTypes.func,
-  }),
-  width: PropTypes.string,
-  zoomBar: PropTypes.shape({
-    minZoomRatio: PropTypes.number,
-    top: PropTypes.shape({
-      data: PropTypes.arrayOf(PropTypes.object),
-      enabled: PropTypes.boolean,
-      initialZoomDomain: PropTypes.arrayOf(PropTypes.object),
-      loading: PropTypes.boolean,
-      locked: PropTypes.boolean,
-      type: PropTypes.oneOf(['graph_view', 'slider_view']),
-    }),
-    updateRangeAxis: PropTypes.boolean,
-    zoomRatio: PropTypes.number,
+      })
+    ),
   }),
 };
 

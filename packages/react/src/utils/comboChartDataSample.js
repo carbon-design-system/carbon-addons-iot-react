@@ -1,35 +1,15 @@
-export const comboEmptyData = [];
-
-export const comboEmptyOptions = {
-  experimental: true,
-  title: 'Combo Chart (empty)',
-  axes: {
-    left: {
-      mapsTo: 'value',
-      title: 'Attendance',
-    },
-    bottom: {
-      scaleType: 'labels',
-      mapsTo: 'key',
-    },
-    right: {
-      title: 'Temperature (°C)',
-      mapsTo: 'temp',
-      scaleType: 'linear',
-      correspondingDatasets: ['Temperature'],
-    },
-  },
-  comboChartTypes: [
-    {
-      type: 'simple-bar',
-      correspondingDatasets: ['Attendance'],
-    },
-    {
-      type: 'line',
-      correspondingDatasets: ['Temperature'],
-    },
-  ],
-};
+// import {
+//   comboSimpleData, comboSimpleOptions,
+//   comboHorizontalData, comboHorizontalOptions,
+//   comboStackedData, comboStackedOptions,
+//   comboGroupedData, comboGroupedOptions,
+//   comboGroupedHorizontalData, comboGroupedHorizontalOptions,
+//   comboAreaLineData, comboAreaLineOptions,
+//   comboLineScatterData, comboLineScatterOptions,
+//   comboEmptyData, comboEmptyOptions,
+//   comboLoadingData, comboLoadingOptions,
+//   comboStackedAreaLine, comboStackedAreaLineOptions
+// } from '@carbon/charts/demo/data/combo';
 
 export const comboLoadingData = [
   { group: 'Paris', key: 'Monday', temp: 25 },
@@ -73,9 +53,7 @@ export const comboLoadingOptions = {
       correspondingDatasets: ['Temperature'],
     },
   },
-  data: {
-    loading: true,
-  },
+  isLoading: true,
   comboChartTypes: [
     {
       type: 'simple-bar',
@@ -87,6 +65,191 @@ export const comboLoadingOptions = {
     },
   ],
 };
+
+export const comboHealthData = [
+  {
+    date: '2018-12-01T00:00:00',
+    health: 85,
+    age: 78,
+    condition: 97,
+    rul: 93,
+  },
+  {
+    date: '2018-12-15T00:00:00',
+    health: 83,
+    age: 77,
+    condition: 95,
+    rul: 92,
+  },
+  {
+    date: '2019-01-01T00:00:00',
+    health: 83,
+    age: 77,
+    condition: 94,
+    rul: 92,
+  },
+  {
+    date: '2019-01-15T00:00:00',
+    health: 81,
+    age: 75,
+    condition: 93,
+    rul: 92,
+  },
+  {
+    date: '2019-02-01T00:00:00',
+    health: 80,
+    age: 74,
+    condition: 92,
+    rul: 90,
+  },
+  {
+    date: '2019-02-10T00:00:00',
+    health: 70,
+    age: 74,
+    condition: 82,
+    rul: 90,
+  },
+  {
+    date: '2019-02-20T00:00:00',
+    health: 70,
+    age: 74,
+    condition: 82,
+    rul: 90,
+  },
+  {
+    date: '2019-03-01T00:00:00',
+    health: 80,
+    age: 74,
+    condition: 92,
+    rul: 88,
+  },
+  {
+    date: '2019-03-15T00:00:00',
+    health: 77,
+    age: 74,
+    condition: 92,
+    rul: 83,
+  },
+  {
+    date: '2019-04-01T00:00:00',
+    health: 77,
+    age: 74,
+    condition: 92,
+    rul: 83,
+  },
+  {
+    date: '2019-04-15T00:00:00',
+    health: 76,
+    age: 71,
+    condition: 87,
+    rul: 80,
+  },
+  {
+    date: '2019-05-01T00:00:00',
+    health: 60,
+    age: 71,
+    condition: 59,
+    rul: 77,
+  },
+  {
+    date: '2019-05-10T00:00:00',
+    health: 50,
+    age: 71,
+    condition: 45,
+    rul: 77,
+  },
+  {
+    date: '2019-05-20T00:00:00',
+    health: 70,
+    age: 71,
+    condition: 90,
+    rul: 70,
+  },
+  {
+    date: '2019-06-01T00:00:00',
+    health: 65,
+    age: 70,
+    condition: 90,
+    rul: 70,
+  },
+  {
+    date: '2019-06-15T00:00:00',
+    health: 63,
+    age: 70,
+    condition: 90,
+    rul: 65,
+  },
+  {
+    date: '2019-07-01T00:00:00',
+    health: 65,
+    age: 70,
+    condition: 90,
+    rul: 60,
+  },
+  {
+    date: '2019-07-15T00:00:00',
+    health: 62,
+    age: 68,
+    condition: 87,
+    rul: 55,
+  },
+  {
+    date: '2019-07-15T00:00:00',
+    health: 70,
+    age: 68,
+    condition: 87,
+    rul: 55,
+  },
+  {
+    date: '2019-08-01T00:00:00',
+    health: 62,
+    age: 68,
+    condition: 87,
+    rul: 55,
+  },
+  {
+    date: '2019-08-15T00:00:00',
+    health: 62,
+    age: 68,
+    condition: 87,
+    rul: 55,
+  },
+  {
+    date: '2019-09-01T00:00:00',
+    health: 70,
+    age: 68,
+    condition: 76,
+    rul: 50,
+  },
+  {
+    date: '2019-09-16T00:00:00',
+    health: 60,
+    age: 60,
+    condition: 68,
+    rul: 45,
+  },
+  {
+    date: '2019-10-01T00:00:00',
+    health: 30,
+    age: 57,
+    condition: 25,
+    rul: 40,
+  },
+  {
+    date: '2019-10-15T00:00:00',
+    health: 70,
+    age: 68,
+    condition: 76,
+    rul: 50,
+  },
+  {
+    date: '2019-10-15T00:00:00',
+    health: 70,
+    age: 68,
+    condition: 76,
+    rul: 50,
+  },
+];
 
 export const comboData = [
   {
@@ -610,62 +773,3 @@ export const comboData = [
     value: 80,
   },
 ];
-
-export const comboDataOptions = {
-  experimental: true,
-  legend: {
-    position: 'top',
-  },
-
-  title: 'Area + Line',
-  axes: {
-    bottom: {
-      title: 'Date',
-      mapsTo: 'date',
-      scaleType: 'time',
-      correspondingDatasets: ['Dataset 1', 'Dataset 2'],
-    },
-    left: {
-      mapsTo: 'value',
-      title: 'Score',
-      scaleType: 'linear',
-      correspondingDatasets: ['Dataset 1', 'Dataset 2'],
-      thresholds: [
-        {
-          value: 100,
-          label: 'Custom label',
-          fillColor: 'green',
-        },
-        {
-          value: 70,
-          fillColor: 'yellow',
-        },
-        {
-          value: 33,
-          fillColor: 'red',
-        },
-      ],
-    },
-  },
-
-  comboChartTypes: [
-    {
-      type: 'area',
-      options: {
-        points: {
-          enabled: false,
-        },
-      },
-      correspondingDatasets: ['Dataset 1'],
-    },
-    {
-      type: 'line',
-      options: {
-        points: {
-          enabled: false,
-        },
-      },
-      correspondingDatasets: ['Dataset 2'],
-    },
-  ],
-};
