@@ -176,7 +176,8 @@ const DataSeriesFormItemModal = ({
 
   const isTimeBasedCard =
     type === CARD_TYPES.TIMESERIES ||
-    type === CARD_TYPES.TABLE ||
+    (type === CARD_TYPES.TABLE &&
+      content?.columns?.find((column) => column.type === 'TIMESTAMP')) ||
     (content?.type === BAR_CHART_TYPES.SIMPLE && content?.timeDataSourceId) ||
     (content?.type === BAR_CHART_TYPES.STACKED && content?.timeDataSourceId);
 
