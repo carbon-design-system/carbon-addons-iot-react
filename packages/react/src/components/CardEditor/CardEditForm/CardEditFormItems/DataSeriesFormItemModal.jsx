@@ -177,8 +177,8 @@ const DataSeriesFormItemModal = ({
   const isTimeBasedCard =
     type === CARD_TYPES.TIMESERIES ||
     type === CARD_TYPES.TABLE ||
-    content?.type === BAR_CHART_TYPES.SIMPLE ||
-    content?.type === BAR_CHART_TYPES.STACKED;
+    (content?.type === BAR_CHART_TYPES.SIMPLE && content?.timeDataSourceId) ||
+    (content?.type === BAR_CHART_TYPES.STACKED && content?.timeDataSourceId);
 
   const handleTranslation = useCallback(
     (idToTranslate) => {
