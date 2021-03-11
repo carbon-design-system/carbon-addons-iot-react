@@ -140,7 +140,7 @@ const TileCatalogNew = ({
             ) : null}
             {hasSearch ? (
               <TableToolbarSearch
-                placeHolderText={i18n.searchPlaceHolderText}
+                placeholder={i18n.searchPlaceHolderText}
                 onChange={onSearch}
                 className={`${iotPrefix}--tile-catalog--tile-canvas--header--search`}
               />

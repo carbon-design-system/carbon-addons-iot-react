@@ -13,6 +13,9 @@ import {
   handleTooltip,
   formatChartData,
   formatColors,
+  applyFillColor,
+  applyIsFilled,
+  applyStrokeColor,
 } from './timeSeriesUtils';
 
 describe('timeSeriesUtils', () => {
@@ -156,6 +159,13 @@ describe('timeSeriesUtils', () => {
   });
 
   describe('handleTooltip', () => {
+    // handle edge case were there is no date data available for the tooltip to increase
+    // branch testing coverage
+    it('should not add date if missing', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      const updatedTooltip = handleTooltip([], defaultTooltip, [], 'Detected alert:');
+      expect(updatedTooltip).toEqual(defaultTooltip);
+    });
     it('should add date', () => {
       const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
       // the date is from 2017
@@ -423,6 +433,76 @@ describe('timeSeriesUtils', () => {
       expect(formatColors(omit(series, 'color'))).toEqual({
         scale: { Amsterdam: CHART_COLORS[0] },
       });
+    });
+  });
+
+  describe('fill', () => {
+    it('Fills points with the correct fill/stroke of matching alertRanges', () => {
+      const data = {
+        date: new Date(2019, 9, 29, 18, 38, 40),
+        value: 82,
+        group: 'Temperature',
+      };
+
+      const alertRanges = [
+        {
+          startTimestamp: 1572313622000,
+          endTimestamp: 1572486422000,
+          color: '#FF0000',
+          details: 'Alert name',
+        },
+        {
+          startTimestamp: 1572313622000,
+          endTimestamp: 1572824320000,
+          color: '#FFFF00',
+          details: 'Less severe',
+        },
+      ];
+
+      const isFilledCallback = applyIsFilled(alertRanges);
+      const fillColorCallback = applyFillColor(alertRanges);
+      const strokeColorCallback = applyStrokeColor(alertRanges);
+
+      expect(isFilledCallback('Temperature', data.date.toString(), data, false)).toBe(true);
+      expect(fillColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+        '#FF0000'
+      );
+      expect(strokeColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+        '#FF0000'
+      );
+    });
+
+    it('Fills points with the original fill/stroke when no data given', () => {
+      const alertRanges = [];
+
+      const isFilledCallback = applyIsFilled(alertRanges);
+      const fillColorCallback = applyFillColor(alertRanges);
+      const strokeColorCallback = applyStrokeColor(alertRanges);
+
+      expect(isFilledCallback('Temperature', undefined, undefined, false)).toBe(false);
+      expect(fillColorCallback('Temperature', undefined, undefined, '#6929c4')).toBe('#6929c4');
+      expect(strokeColorCallback('Temperature', undefined, undefined, '#6929c4')).toBe('#6929c4');
+    });
+
+    it('Fills points with the original fill/stroke when no ranges match', () => {
+      const data = {
+        date: new Date(2019, 9, 29, 18, 38, 40),
+        value: 82,
+        group: 'Temperature',
+      };
+      const alertRanges = [];
+
+      const isFilledCallback = applyIsFilled(alertRanges);
+      const fillColorCallback = applyFillColor(alertRanges);
+      const strokeColorCallback = applyStrokeColor(alertRanges);
+
+      expect(isFilledCallback('Temperature', data.date.toString(), data, false)).toBe(false);
+      expect(fillColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+        '#6929c4'
+      );
+      expect(strokeColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+        '#6929c4'
+      );
     });
   });
 });

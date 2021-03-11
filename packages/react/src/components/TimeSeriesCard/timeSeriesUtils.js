@@ -41,7 +41,9 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
 
   // number of each record to define
   const sampleValues = Array(count).fill(1);
-  return series.reduce((sampleData, { dataSourceId, dataFilter }) => {
+  // ensure the series is actually an array since it can also be an object
+  const seriesArray = Array.isArray(series) ? series : [series];
+  return seriesArray.reduce((sampleData, { dataSourceId, dataFilter }) => {
     const now =
       timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
         ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
@@ -165,6 +167,11 @@ export const formatGraphTick = (
 /** compare the current datapoint to a list of alert ranges */
 export const findMatchingAlertRange = (alertRanges, data) => {
   const currentDataPoint = Array.isArray(data) ? data[0]?.date : data.date;
+
+  if (!currentDataPoint) {
+    return false;
+  }
+
   const currentDatapointTimestamp = currentDataPoint.valueOf();
   return (
     Array.isArray(alertRanges) &&
@@ -193,7 +200,9 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
   const data = [];
 
   // Series is the different groups of datasets
-  series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+  // ensure is actually is an array since proptypes allow for an object, too.
+  const seriesArray = Array.isArray(series) ? series : [series];
+  seriesArray.forEach(({ dataSourceId, dataFilter = {}, label }) => {
     timestamps.forEach((timestamp) => {
       // First filter based on on the dataFilter
       const filteredData = filter(values, dataFilter);
@@ -271,8 +280,12 @@ export const handleTooltip = (
     matchingAlertLabels,
   ]);
 
-  // The first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
-  defaultTooltipDOM.querySelector('li:first-child').replaceWith(dateLabelDOM.querySelector('li'));
+  // if the data has no timestamp, there will no dateLabel
+  // and without this check a null string was being inserted into the DOM.
+  if (dateLabelDOM.querySelector('li')) {
+    // The first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
+    defaultTooltipDOM.querySelector('li:first-child').replaceWith(dateLabelDOM.querySelector('li'));
+  }
 
   // Append all the matching alert labels
   matchingAlertLabelsDOM.querySelectorAll('li').forEach((label) => {
@@ -299,4 +312,58 @@ export const formatColors = (series) => {
     colors.scale[series.label] = series.color || CHART_COLORS[0];
   }
   return colors;
+};
+
+/**
+ * Determines the dot stroke color (the border of the data point)
+ * @param {string} datasetLabel
+ * @param {string} label
+ * @param {Object} data
+ * @param {string} originalStrokeColor from carbon charts
+ * @returns {string} stroke color
+ */
+export const applyStrokeColor = (alertRanges) => (
+  datasetLabel,
+  label,
+  data,
+  originalStrokeColor
+) => {
+  if (!isNil(data)) {
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
+  }
+  return originalStrokeColor;
+};
+
+/**
+ * Determines the dot fill color based on matching alerts
+ * @param {string} datasetLabel
+ * @param {string} label
+ * @param {Object} data
+ * @param {string} originalFillColor from carbon charts
+ * @returns {string} fill color
+ */
+export const applyFillColor = (alertRanges) => (datasetLabel, label, data, originalFillColor) => {
+  if (!isNil(data)) {
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalFillColor;
+  }
+  return originalFillColor;
+};
+
+/**
+ * Determines if the dot is filled based on matching alerts
+ * @param {string} datasetLabel
+ * @param {string} label
+ * @param {Object} data
+ * @param {Boolean} isFilled default setting from carbon charts
+ * @returns {Boolean}
+ */
+export const applyIsFilled = (alertRanges) => (datasetLabel, label, data, isFilled) => {
+  if (!isNil(data)) {
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    return matchingAlertRange?.length > 0 ? true : isFilled;
+  }
+
+  return isFilled;
 };

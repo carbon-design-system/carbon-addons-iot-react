@@ -31,10 +31,12 @@ import deprecate from '../../internal/deprecate';
 import {
   generateSampleValues,
   formatGraphTick,
-  findMatchingAlertRange,
   formatColors,
   formatChartData,
   handleTooltip,
+  applyStrokeColor,
+  applyFillColor,
+  applyIsFilled,
 } from './timeSeriesUtils';
 
 const { iotPrefix } = settings;
@@ -172,21 +174,23 @@ const TimeSeriesCard = ({
     [series, timeDataSourceId, interval, timeRange]
   );
 
-  const values = isEditable ? sampleValues : valuesProp;
+  const values = useMemo(() => (isEditable ? sampleValues : valuesProp), [
+    isEditable,
+    sampleValues,
+    valuesProp,
+  ]);
 
   // Unfortunately the API returns the data out of order sometimes
   const valueSort = useMemo(
     () =>
-      values
-        ? values.sort((left, right) =>
-            moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
-          )
-        : [],
+      values.sort((left, right) =>
+        moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
+      ),
     [values, timeDataSourceId]
   );
 
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
-  const newSize = getUpdatedCardSize(size);
+  const newSize = useMemo(() => getUpdatedCardSize(size), [size]);
 
   const maxTicksPerSize = useMemo(() => {
     switch (newSize) {
@@ -229,64 +233,6 @@ const TimeSeriesCard = ({
 
   // Set the colors for each dataset
   const colors = useMemo(() => formatColors(series), [series]);
-
-  /**
-   * Determines the dot stroke color (the border of the data point)
-   * @param {string} datasetLabel
-   * @param {string} label
-   * @param {Object} data
-   * @param {string} originalStrokeColor from carbon charts
-   * @returns {string} stroke color
-   */
-  const handleStrokeColor = useCallback(
-    (datasetLabel, label, data, originalStrokeColor) => {
-      if (!isNil(data)) {
-        const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-        return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
-      }
-      return originalStrokeColor;
-    },
-    [alertRanges]
-  );
-
-  /**
-   * Determines the dot fill color based on matching alerts
-   * @param {string} datasetLabel
-   * @param {string} label
-   * @param {Object} data
-   * @param {string} originalFillColor from carbon charts
-   * @returns {string} fill color
-   */
-  const handleFillColor = useCallback(
-    (datasetLabel, label, data, originalFillColor) => {
-      if (!isNil(data)) {
-        const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-        return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalFillColor;
-      }
-      return originalFillColor;
-    },
-    [alertRanges]
-  );
-
-  /**
-   * Determines if the dot is filled based on matching alerts
-   * @param {string} datasetLabel
-   * @param {string} label
-   * @param {Object} data
-   * @param {Boolean} isFilled default setting from carbon charts
-   * @returns {Boolean}
-   */
-  const handleIsFilled = useCallback(
-    (datasetLabel, label, data, isFilled) => {
-      if (!isNil(data)) {
-        const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-        return matchingAlertRange?.length > 0 ? true : isFilled;
-      }
-
-      return isFilled;
-    },
-    [alertRanges]
-  );
 
   /** This is needed to update the chart when the lines and values change */
   useDeepCompareEffect(() => {
@@ -376,6 +322,10 @@ const TimeSeriesCard = ({
   const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
 
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
+
+  const handleStrokeColor = useMemo(() => applyStrokeColor(alertRanges), [alertRanges]);
+  const handleFillColor = useMemo(() => applyFillColor(alertRanges), [alertRanges]);
+  const handleIsFilled = useMemo(() => applyIsFilled(alertRanges), [alertRanges]);
 
   const options = useMemo(
     () => ({

@@ -67,7 +67,10 @@ export const DashboardDefaultLayouts = () => {
     <Fragment>
       Resize your window to see the callback handlers get triggered in the Actions tab.
       <FullWidthWrapper>
-        <DashboardGrid {...commonGridProps}>{Cards}</DashboardGrid>
+        <div style={{ display: 'flex' }}>
+          <div style={{ width: '200px' }}>Sample sidebar</div>
+          <DashboardGrid {...commonGridProps}>{Cards}</DashboardGrid>
+        </div>
       </FullWidthWrapper>
     </Fragment>
   );
