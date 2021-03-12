@@ -48,7 +48,7 @@
   }
 
   /* Need to force the colors of the selected-items counter in
-     the multiselect box back to their original colors as they 
+     the multiselect box back to their original colors as they
      were being overridden by other styles */
   .#{$iot-prefix}--filterheader-multiselect {
     .bx--list-box__selection--multi {
@@ -60,8 +60,6 @@
   }
 
   .#{$prefix}--tag--filter {
-    background-color: transparent;
-
     &:focus {
       outline: 2px solid $interactive-01;
       outline-offset: -2px;

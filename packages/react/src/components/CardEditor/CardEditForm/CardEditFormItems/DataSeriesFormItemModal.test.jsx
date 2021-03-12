@@ -160,6 +160,343 @@ describe('DataSeriesFormItemModal', () => {
     expect(label).toBeInTheDocument();
     expect(legendColorLabel).toBeInTheDocument();
   });
+  it('Non-timebased simple bar should hide grain', () => {
+    const simpleNonTimeBasedBar = {
+      title: 'Untitled',
+      size: 'MEDIUM',
+      type: 'BAR',
+      content: {
+        type: 'SIMPLE',
+        layout: 'VERTICAL',
+        series: [
+          {
+            dataItemId: 'torque',
+            dataSourceId: 'torque_4b840252-adca-4075-8272-edd6705c2353',
+            label: 'Torque',
+            aggregationMethod: 'mean',
+            color: '#6929c4',
+          },
+        ],
+        categoryDataSourceId: 'deviceid',
+      },
+      dataSource: {
+        groupBy: ['deviceid'],
+      },
+    };
+
+    const aggregatedBarChartDataItem = {
+      label: 'Temperature Max',
+      dataSourceId: 'torque_4b840252-adca-4075-8272-edd6705c2353',
+      color: 'red',
+      aggregationMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'last', text: 'Last' },
+        { id: 'mean', text: 'Mean' },
+        { id: 'max', text: 'Max' },
+        { id: 'min', text: 'Min' },
+      ],
+      aggregationMethod: 'max',
+    };
+
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={simpleNonTimeBasedBar}
+        editDataItem={aggregatedBarChartDataItem}
+      />
+    );
+    // grain field should be hidden though aggregator should be shown
+    expect(screen.queryByLabelText('Grain')).not.toBeInTheDocument();
+    const aggregationValue = screen.getByText('Max');
+    expect(aggregationValue).toBeInTheDocument();
+  });
+  it('Timebased simple bar should show grain', () => {
+    const simpleTimeBasedBar = {
+      title: 'Untitled',
+      size: 'MEDIUM',
+      type: 'BAR',
+      content: {
+        type: 'SIMPLE',
+        layout: 'VERTICAL',
+        series: [
+          {
+            dataItemId: 'torque',
+            dataSourceId: 'torque_4b840252-adca-4075-8272-edd6705c2353',
+            label: 'Torque',
+            aggregationMethod: 'mean',
+            color: '#6929c4',
+          },
+        ],
+        timeDataSourceId: 'timestamp',
+      },
+      dataSource: {},
+    };
+
+    const aggregatedBarChartDataItem = {
+      label: 'Temperature Max',
+      dataSourceId: 'torque_4b840252-adca-4075-8272-edd6705c2353',
+      color: 'red',
+      aggregationMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'last', text: 'Last' },
+        { id: 'mean', text: 'Mean' },
+        { id: 'max', text: 'Max' },
+        { id: 'min', text: 'Min' },
+      ],
+      aggregationMethod: 'max',
+    };
+
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={simpleTimeBasedBar}
+        editDataItem={aggregatedBarChartDataItem}
+      />
+    );
+    // grain field and aggregator should be shown
+    expect(screen.queryAllByLabelText('Grain')[0]).toBeInTheDocument();
+    const aggregationValue = screen.getByText('Max');
+    expect(aggregationValue).toBeInTheDocument();
+  });
+  it('Non-timebased stacked bar should hide grain', () => {
+    const stackedNonTimeBasedBar = {
+      title: 'Untitled',
+      size: 'MEDIUM',
+      type: 'BAR',
+      content: {
+        type: 'STACKED',
+        layout: 'VERTICAL',
+        series: [
+          {
+            dataItemId: 'torque',
+            dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+            label: 'Torque',
+            aggregationMethod: 'mean',
+            color: '#6929c4',
+          },
+        ],
+        categoryDataSourceId: 'deviceid',
+      },
+      dataSource: {
+        groupBy: ['deviceid'],
+      },
+    };
+
+    const aggregatedBarChartDataItem = {
+      label: 'Temperature Max',
+      dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+      color: 'red',
+      aggregationMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'last', text: 'Last' },
+        { id: 'mean', text: 'Mean' },
+        { id: 'max', text: 'Max' },
+        { id: 'min', text: 'Min' },
+      ],
+      aggregationMethod: 'max',
+    };
+
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={stackedNonTimeBasedBar}
+        editDataItem={aggregatedBarChartDataItem}
+      />
+    );
+
+    // grain field should be hidden though aggregator should be shown
+    expect(screen.queryByLabelText('Grain')).not.toBeInTheDocument();
+    const aggregationValue = screen.getByText('Max');
+    expect(aggregationValue).toBeInTheDocument();
+  });
+  it('timebased stacked bar should show grain', () => {
+    const stackedTimeBasedBar = {
+      title: 'Untitled',
+      size: 'MEDIUM',
+      type: 'BAR',
+      content: {
+        type: 'STACKED',
+        layout: 'VERTICAL',
+        series: [
+          {
+            dataItemId: 'torque',
+            dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+            label: 'Torque',
+            aggregationMethod: 'mean',
+            color: '#6929c4',
+          },
+        ],
+        timeDataSourceId: 'timestamp',
+      },
+      dataSource: {},
+    };
+
+    const aggregatedBarChartDataItem = {
+      label: 'Temperature Max',
+      dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+      color: 'red',
+      aggregationMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'last', text: 'Last' },
+        { id: 'mean', text: 'Mean' },
+        { id: 'max', text: 'Max' },
+        { id: 'min', text: 'Min' },
+      ],
+      aggregationMethod: 'max',
+    };
+
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={stackedTimeBasedBar}
+        editDataItem={aggregatedBarChartDataItem}
+      />
+    );
+
+    // grain field and aggregator should be shown
+    expect(screen.queryAllByLabelText('Grain')[0]).toBeInTheDocument();
+    const aggregationValue = screen.getByText('Max');
+    expect(aggregationValue).toBeInTheDocument();
+  });
+  it('Non-timebased table card should hide grain', () => {
+    const stackedNonTimeBasedTableCard = {
+      title: 'table without timestamp',
+      size: 'LARGE',
+      type: 'TABLE',
+      content: {
+        columns: [
+          {
+            dataItemId: 'deviceid',
+            dataSourceId: 'deviceid',
+            label: 'deviceid',
+            type: 'DIMENSION',
+            destination: 'groupBy',
+          },
+          {
+            dataItemId: 'torque',
+            dataSourceId: 'torque_308e4cf2-7da1-4dd1-be90-d99db81da6f5',
+            label: 'Torque',
+          },
+          {
+            dataItemId: 'temperature',
+            dataSourceId: 'temperature_b7853ab7-49ab-4337-9682-4be94b31fd06',
+            label: 'Temperature',
+          },
+        ],
+        allowNavigation: true,
+        showHeader: true,
+      },
+      dataSource: {
+        groupBy: ['deviceid'],
+      },
+    };
+
+    const aggregatedBarChartDataItem = {
+      label: 'Temperature Max',
+      dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+      color: 'red',
+      aggregationMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'last', text: 'Last' },
+        { id: 'mean', text: 'Mean' },
+        { id: 'max', text: 'Max' },
+        { id: 'min', text: 'Min' },
+      ],
+      aggregationMethod: 'max',
+    };
+
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={stackedNonTimeBasedTableCard}
+        editDataItem={aggregatedBarChartDataItem}
+      />
+    );
+
+    // grain field should be hidden though aggregator should be shown
+    expect(screen.queryByLabelText('Grain')).not.toBeInTheDocument();
+    const aggregationValue = screen.getByText('Max');
+    expect(aggregationValue).toBeInTheDocument();
+  });
+  it('timebased table card should show grain', () => {
+    const stackedTimeBasedTableCard = {
+      title: 'table without timestamp',
+      size: 'LARGE',
+      type: 'TABLE',
+      content: {
+        columns: [
+          {
+            dataSourceId: 'timestamp',
+            dataItemId: 'timestamp',
+            label: 'Timestamp',
+            type: 'TIMESTAMP',
+            sort: 'DESC',
+          },
+          {
+            dataItemId: 'deviceid',
+            dataSourceId: 'deviceid',
+            label: 'deviceid',
+            type: 'DIMENSION',
+            destination: 'groupBy',
+          },
+          {
+            dataItemId: 'torque',
+            dataSourceId: 'torque_308e4cf2-7da1-4dd1-be90-d99db81da6f5',
+            label: 'Torque',
+          },
+          {
+            dataItemId: 'temperature',
+            dataSourceId: 'temperature_b7853ab7-49ab-4337-9682-4be94b31fd06',
+            label: 'Temperature',
+          },
+        ],
+        allowNavigation: true,
+        showHeader: true,
+      },
+      dataSource: {
+        groupBy: ['deviceid'],
+      },
+    };
+
+    const aggregatedBarChartDataItem = {
+      label: 'Temperature Max',
+      dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+      color: 'red',
+      aggregationMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'last', text: 'Last' },
+        { id: 'mean', text: 'Mean' },
+        { id: 'max', text: 'Max' },
+        { id: 'min', text: 'Min' },
+      ],
+      aggregationMethod: 'max',
+    };
+
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={stackedTimeBasedTableCard}
+        editDataItem={aggregatedBarChartDataItem}
+      />
+    );
+
+    // grain field and aggregator should be shown
+    expect(screen.queryAllByLabelText('Grain')[0]).toBeInTheDocument();
+    const aggregationValue = screen.getByText('Max');
+    expect(aggregationValue).toBeInTheDocument();
+  });
   it('Renders for value card data', () => {
     render(
       <DataSeriesFormItemModal

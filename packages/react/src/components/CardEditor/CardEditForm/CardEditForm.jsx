@@ -288,7 +288,7 @@ const CardEditForm = ({
         />
       ) : null}
       <div className={baseClassName}>
-        <Tabs>
+        <Tabs scrollIntoView={false}>
           <Tab label={mergedI18n.contentTabLabel}>
             <CardEditFormContent
               cardConfig={cardConfig}

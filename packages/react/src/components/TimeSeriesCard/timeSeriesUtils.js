@@ -35,7 +35,9 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
 
   // number of each record to define
   const sampleValues = Array(count).fill(1);
-  return series.reduce((sampleData, { dataSourceId, dataFilter }) => {
+  // ensure the series is actually an array since it can also be an object
+  const seriesArray = Array.isArray(series) ? series : [series];
+  return seriesArray.reduce((sampleData, { dataSourceId, dataFilter }) => {
     const now =
       timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
         ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
@@ -159,6 +161,11 @@ export const formatGraphTick = (
 /** compare the current datapoint to a list of alert ranges */
 export const findMatchingAlertRange = (alertRanges, data) => {
   const currentDataPoint = Array.isArray(data) ? data[0]?.date : data.date;
+
+  if (!currentDataPoint) {
+    return false;
+  }
+
   const currentDatapointTimestamp = currentDataPoint.valueOf();
   return (
     Array.isArray(alertRanges) &&

@@ -33,7 +33,7 @@ const TileGallerySearch = ({ i18n, searchValue, onChange, width }) => {
         style={{ background: white, width }}
         value={searchValue}
         labelText={i18n.iconDescription}
-        placeHolderText={i18n.placeHolderText}
+        placeholder={i18n.placeHolderText}
         onChange={(event) => onChange(event)}
         closeButtonLabelText={i18n.closeButtonText}
         id="gallery-search"

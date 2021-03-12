@@ -103,6 +103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                   className="bx--table-toolbar"
                 >
                   <div
+                    aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
                   >
                     <div
@@ -112,7 +113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                         className="bx--batch-summary__para"
                       >
                         <span>
-                          0 item selected
+                          0 items selected
                         </span>
                       </p>
                     </div>
@@ -156,10 +157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                        />
-                        <path
-                          d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                          d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                         />
                       </svg>
                     </button>
@@ -168,7 +166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                     >
                       <button
                         aria-label=""
-                        className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                        className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         data-testid="Button"
                         disabled={false}
                         onClick={[Function]}
@@ -209,6 +207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                           id="test-flyout-id"
                           onBlur={[Function]}
                           onClick={[Function]}
+                          onContextMenu={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
                           onMouseOut={[Function]}

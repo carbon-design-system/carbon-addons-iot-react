@@ -4,6 +4,7 @@ module.exports = {
     '!src/**/*.story.js?(x)',
     '!src/**/hooks/*.js',
     '!src/components/SuiteHeader/util/suiteHeaderData.js',
+    '!src/components/FileUploader/stories/*.jsx',
     '!src/components/Table/AsyncTable/*.js?(x)',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
@@ -15,7 +16,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|Dashboard|CardRenderer|ImageHotspots|PageHero|PageTitle|EditPage|ImageCard|ImageUploader|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|Dashboard|CardRenderer|ImageHotspots|PageHero|PageTitle|EditPage|TableHead|ColumnResize|ColorDropdown|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -77,12 +78,6 @@ module.exports = {
     './src/components/ImageCard/ImageHotspots.jsx': {
       branches: 79,
     },
-    './src/components/ImageCard/ImageUploader.jsx': {
-      statements: 46,
-      branches: 35,
-      lines: 47,
-      functions: 26,
-    },
     './src/components/Page/EditPage.jsx': {
       statements: 63,
       branches: 50,
@@ -94,12 +89,6 @@ module.exports = {
     },
     './src/components/Page/PageHero.jsx': { branches: 77 },
     './src/components/Page/PageTitle.jsx': { branches: 75 },
-    './src/components/ImageCard/ImageCard.jsx': { branches: 71 },
-    './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
-      statements: 77,
-      functions: 70,
-      lines: 77,
-    },
     './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': {
       branches: 76,
     },
