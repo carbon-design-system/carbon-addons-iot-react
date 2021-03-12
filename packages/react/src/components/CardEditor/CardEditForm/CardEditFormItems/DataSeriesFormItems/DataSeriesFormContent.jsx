@@ -486,6 +486,7 @@ const DataSeriesFormItem = ({
                   {
                     id: selectedItem,
                     ...(itemWithMetaData && { ...itemWithMetaData }),
+                    dataSourceId: `${selectedItem}_${uuid.v4()}`,
                   },
                 ],
                 cardConfig,

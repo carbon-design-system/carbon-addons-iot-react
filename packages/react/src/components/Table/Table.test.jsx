@@ -126,6 +126,7 @@ const i18nTest = {
   openMenuAria: 'open-menu',
   batchCancel: 'cancel',
   itemSelected: 'item-selected',
+  itemsSelected: 'items-selected',
   /** empty state */
   emptyMessage: 'empty-message',
   emptyMessageWithFilters: 'empty-filters',
@@ -413,7 +414,6 @@ describe('Table', () => {
 
     expect(wrapper.find('.bx--search-input')).toHaveLength(1);
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
-    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
 
     wrapper.setProps({
       view: { toolbar: { search: { defaultValue: 'ferrari' } } },
@@ -421,13 +421,11 @@ describe('Table', () => {
     wrapper.update();
 
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
-    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
 
     wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
     wrapper.update();
 
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
-    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
   });
 
   it('cells should always wrap by default', () => {
@@ -872,7 +870,7 @@ describe('Table', () => {
     expect(screen.getAllByLabelText(i18nTest.filterAria)[0]).toBeInTheDocument();
     expect(screen.getAllByLabelText(i18nTest.openMenuAria)[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.batchCancel)[0]).toBeInTheDocument();
-    expect(screen.getByText(new RegExp(`.*\\s${i18nTest.itemSelected}.*`))).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(`.*\\s${i18nTest.itemsSelected}.*`))).toBeInTheDocument();
 
     expect(screen.queryByLabelText(i18nDefault.overflowMenuAria)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.clickToExpandAria)).not.toBeInTheDocument();

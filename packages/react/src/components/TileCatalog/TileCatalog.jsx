@@ -6,6 +6,7 @@ import classnames from 'classnames';
 
 import SimplePagination from '../SimplePagination/SimplePagination';
 import { settings } from '../../constants/Settings';
+import deprecate from '../../internal/deprecate';
 
 import TileGroup from './TileGroup';
 
@@ -33,7 +34,11 @@ export const propTypes = {
 
   /** We will callback with the search value */
   search: PropTypes.shape({
-    placeHolderText: PropTypes.string,
+    placeHolderText: deprecate(
+      PropTypes.string,
+      '\n The prop `placeHolderText` has been deprecated in favor `placeholder`'
+    ),
+    placeholder: PropTypes.string,
     noMatchesFoundText: PropTypes.string,
     /** current search value */
     value: PropTypes.string,
@@ -94,12 +99,12 @@ const TileCatalog = ({
   return (
     <div className={classnames(className, `${iotPrefix}--tile-catalog`)}>
       <div className={`${iotPrefix}--tile-catalog--header`}>
-        {search && search.placeHolderText ? (
+        {search && (search.placeHolderText || search.placeholder) ? (
           <TableToolbarSearch
             size="sm"
             value={searchState}
-            labelText={search.placeHolderText}
-            placeHolderText={search.placeHolderText}
+            labelText={search.placeHolderText ?? search.placeholder}
+            placeholder={search.placeHolderText ?? search.placeholder}
             onChange={handleSearch}
             id={`${id}-searchbox`}
           />
