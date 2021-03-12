@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.7...v2.145.0-next.8) (2021-03-11)
+
+
+### Bug Fixes
+
+* **dataseries:** do not show grain selector if the card is not time-based ([5d88312](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5d883126e880ce01096aa5d87db0f0603d6affa6))
+* **dataseriesformitemmodel:** do not show grain for more types of cards ([20e3d29](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/20e3d2973afea846767737cd2d772b03f517c2f2))
+
+
+
+
+
+# [2.145.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.6...v2.145.0-next.7) (2021-03-11)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.145.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.5...v2.145.0-next.6) (2021-03-10)
+
+
+### Bug Fixes
+
+* **cardeditor:** fix tabs to fill space without overflow scrolling ([67716a2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/67716a2a61944e990c355c0c7ebdf3a9b302b916))
+
+
+
+
+
 # [2.145.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.4...v2.145.0-next.5) (2021-03-10)
 
 **Note:** Version bump only for package carbon-addons-iot-react
