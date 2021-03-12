@@ -72,6 +72,7 @@ const BarChartCard = ({
       showTimeInGMT,
       decimalPrecision,
       tooltipDateFormatPattern,
+      truncation,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -260,6 +261,7 @@ const BarChartCard = ({
         position: 'bottom',
         enabled: chartData.length > 1,
         clickable: !isEditable,
+        truncation,
       },
       containerResizable: true,
       color: colors,
@@ -305,6 +307,7 @@ const BarChartCard = ({
       size,
       timeDataSourceId,
       tooltipDateFormatPattern,
+      truncation,
       type,
       unit,
       xLabel,
@@ -406,6 +409,10 @@ BarChartCard.defaultProps = {
   content: {
     type: BAR_CHART_TYPES.SIMPLE,
     layout: BAR_CHART_LAYOUTS.VERTICAL,
+    truncation: {
+      type: 'end_line',
+      threshold: 20,
+    },
   },
   locale: 'en',
   showTimeInGMT: false,
