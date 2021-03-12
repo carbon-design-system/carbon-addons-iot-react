@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.8...v2.145.0-next.9) (2021-03-12)
+
+
+### Bug Fixes
+
+* **table:** add padding to table columns when sortable ([87fd1af](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/87fd1af9c6da045889472931ae73a8099440ba0a))
+* usability issues ([d6c6022](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d6c60221beb0aa760e20c72b124e059572e57822))
+* **chartcards:** add truncation prop and enablement ([3ccc6f0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3ccc6f02113a9103e76f01c39cd64c655523c08e))
+* **chartcards:** update api snapshot ([a0113da](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a0113da67d52368fde0ad5ece59378952c2d31cc))
+* **timeseriescard:** allow truncation editing ([1e57004](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1e5700447f68393b2b718727ca0947035bc6c3c0))
+
+
+
+
+
 # [2.145.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.7...v2.145.0-next.8) (2021-03-11)
 
 
