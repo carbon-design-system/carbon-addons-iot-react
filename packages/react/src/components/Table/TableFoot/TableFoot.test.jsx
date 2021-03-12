@@ -2,10 +2,13 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Add16, Add20, ArrowRight16 } from '@carbon/icons-react';
 
+import { settings } from '../../../constants/Settings';
 import { tableColumns } from '../Table.story';
 import Table from '../Table';
 
 import TableFoot from './TableFoot';
+
+const { iotPrefix } = settings;
 
 const ordering = [
   { columnId: 'a' },
@@ -14,6 +17,7 @@ const ordering = [
     isHidden: true,
   },
   { columnId: 'c' },
+  { columnId: 'd' },
 ];
 
 const selectData = [
@@ -189,6 +193,51 @@ describe('TableFoot', () => {
     expect(screen.getByTestId(firstColumnTestId).textContent).toEqual(label);
     expect(screen.getByTestId(thirdColumnTestId).textContent).toEqual('10');
     expect(container.querySelectorAll('tr').length).toEqual(1);
-    expect(container.querySelectorAll('td').length).toEqual(5);
+    expect(container.querySelectorAll('td').length).toEqual(6);
+  });
+
+  it('has the correct classes for alignment and sorting', () => {
+    const tableFootTestId = 'table-foot';
+    const label = 'Total';
+    const firstColumnTestId = `${tableFootTestId}-aggregation-${ordering[0].columnId}`;
+    const thirdColumnTestId = `${tableFootTestId}-aggregation-${ordering[2].columnId}`;
+    const fourthColumnTestId = `${tableFootTestId}-aggregation-${ordering[3].columnId}`;
+
+    render(
+      <table>
+        <TableFoot
+          testID={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: true,
+            hasRowSelection: 'multi',
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'a', value: '300', align: 'center', isSortable: false },
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    const aColumnTotalCell = screen.getByTestId(firstColumnTestId);
+    expect(aColumnTotalCell).toHaveClass('data-table-center');
+    expect(aColumnTotalCell).not.toHaveClass(`${iotPrefix}-table-foot--value__sortable`);
+
+    const cColumnTotalCell = screen.getByTestId(thirdColumnTestId);
+    expect(cColumnTotalCell).toHaveClass(
+      'data-table-end',
+      `${iotPrefix}-table-foot--value__sortable`
+    );
+
+    const dColumnTotalCell = screen.getByTestId(fourthColumnTestId);
+    expect(dColumnTotalCell).toHaveClass('data-table-start');
   });
 });
