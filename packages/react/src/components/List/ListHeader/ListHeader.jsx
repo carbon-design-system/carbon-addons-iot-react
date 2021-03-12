@@ -47,7 +47,7 @@ const ListHeader = ({ title, buttons, search, i18n, isLoading }) => {
         <div className={`${iotPrefix}--list-header--search`}>
           <Search
             id={`${iotPrefix}--list-header--search`}
-            placeHolderText={i18n.searchPlaceHolderText}
+            placeholder={i18n.searchPlaceHolderText}
             onChange={search.onChange}
             size="sm"
             value={search.value}

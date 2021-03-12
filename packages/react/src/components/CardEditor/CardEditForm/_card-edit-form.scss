@@ -8,11 +8,20 @@
     flex: 1;
   }
 
-  .#{$prefix}--tabs__nav--hidden {
+  // give the tabs the full space available in the editor column
+  .#{$prefix}--tabs--scrollable__nav {
     width: 100%;
 
-    .#{$prefix}--tabs__nav-link {
-      width: 100%;
+    // stretch each tabe to evenly fill the space
+    .#{$prefix}--tabs--scrollable__nav-item {
+      flex: 1;
+
+      // overfide width on buttons within tabs, so they don't
+      // have a width of 10rem, and fill space evently.
+      .#{$prefix}--tabs--scrollable__nav-link {
+        width: auto;
+        flex: 1;
+      }
     }
   }
 

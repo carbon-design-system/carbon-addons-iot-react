@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../../../../constants/Settings';
-import { NumberInput, ToggleSmall, Tooltip } from '../../../../../index';
+import { NumberInput, Toggle, Tooltip } from '../../../../../index';
 import { DEFAULT_FONT_SIZE } from '../../../../ValueCard/valueCardUtils';
 import { isNumberValidForMinMax } from '../../../../../utils/componentUtilityFunctions';
 
@@ -89,7 +89,8 @@ const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           >
             <p>{mergedI18n.abbreviateNumbersTooltip}</p>
           </Tooltip>
-          <ToggleSmall
+          <Toggle
+            size="sm"
             id={`${id}_value-card-number-compact`}
             labelA=""
             labelB=""
