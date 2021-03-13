@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.9...v2.145.0-next.10) (2021-03-12)
+
+
+### Bug Fixes
+
+* **timeseriesUtils:** month should show one tick ([5670b8e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5670b8e0a417db06d0ba8e5ee09d560d56cbbf61))
+
+
+
+
+
 # [2.145.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.8...v2.145.0-next.9) (2021-03-12)
 
 
