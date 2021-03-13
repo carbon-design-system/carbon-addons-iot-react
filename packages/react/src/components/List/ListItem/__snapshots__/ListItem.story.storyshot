@@ -401,7 +401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListI
               <div>
                 <div
                   className="bx--tag bx--tag--blue"
-                  id="tag-23"
+                  id="tag-24"
                 >
                   
                   <span
@@ -412,7 +412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListI
                 </div>
                 <div
                   className="bx--tag bx--tag--disabled bx--tag--red"
-                  id="tag-24"
+                  id="tag-25"
                 >
                   
                   <span

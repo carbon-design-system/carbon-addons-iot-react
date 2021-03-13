@@ -6949,6 +6949,7 @@ Map {
     "defaultProps": Object {
       "appSwitcherLabel": "AppSwitcher",
       "className": "main-header",
+      "extraContent": null,
       "hasSideNav": true,
       "headerPanel": null,
       "i18n": Object {
@@ -7026,6 +7027,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "extraContent": Object {
+        "type": "element",
       },
       "hasSideNav": Object {
         "type": "bool",
@@ -7172,6 +7176,7 @@ Map {
       "customApplications": Array [],
       "customHelpLinks": Array [],
       "customProfileLinks": Array [],
+      "extraContent": null,
       "hasSideNav": false,
       "i18n": Object {
         "about": "About",
@@ -7373,6 +7378,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "extraContent": Object {
+        "type": "element",
       },
       "hasSideNav": Object {
         "type": "bool",

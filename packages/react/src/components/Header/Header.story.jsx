@@ -6,6 +6,8 @@ import NotificationOn from '@carbon/icons-react/lib/notification/16';
 import HeaderHelp from '@carbon/icons-react/lib/help/16';
 import Avatar from '@carbon/icons-react/lib/user--avatar/16';
 
+import { Tag } from '../Tag';
+
 import Header from './Header';
 
 React.Fragment = ({ children }) => children;
@@ -217,4 +219,14 @@ export const HeaderSubtitle = () => (
 
 HeaderSubtitle.story = {
   name: 'header subtitle',
+};
+
+export const HeaderSubtitleAndExtraContent = () => (
+  <div style={{ width: '100%', height: '100vh' }}>
+    <StyledHeader {...HeaderMenuProps} subtitle="Monitor" extraContent={<Tag>Admin Mode</Tag>} />
+  </div>
+);
+
+HeaderSubtitleAndExtraContent.story = {
+  name: 'header subtitle and extra content',
 };
