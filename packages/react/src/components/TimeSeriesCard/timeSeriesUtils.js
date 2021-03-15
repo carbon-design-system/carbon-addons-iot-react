@@ -141,13 +141,15 @@ export const formatGraphTick = (
   if ((interval === 'day' || interval === 'week') && index !== 0) {
     return currentTimestamp.format(dailyFormat);
   }
+
+  if (interval === 'month' && index === 0) {
+    return currentTimestamp.format('MMM YYYY');
+  }
+
   if (interval === 'month' && sameMonth) {
     return ''; // don't repeat same month
   }
   if (interval === 'month' && !sameYear) {
-    return currentTimestamp.format('MMM YYYY');
-  }
-  if (interval === 'month' && sameYear && index === 0) {
     return currentTimestamp.format('MMM YYYY');
   }
   if (interval === 'month' && sameYear) {
