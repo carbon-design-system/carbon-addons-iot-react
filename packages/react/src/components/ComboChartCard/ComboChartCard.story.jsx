@@ -13,12 +13,186 @@ const acceptableSizes = Object.keys(CARD_SIZES).filter(
 );
 
 export default {
-  title: 'Watson IoT/ComboChartCard',
+  title: 'Watson IoT Experimental/ComboChartCard',
   decorators: [withKnobs],
 
   parameters: {
     component: ComboChartCard,
   },
+};
+
+export const HealthDataAreaLine = () => {
+  const size = select ('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
+  return (
+    <div style={{width: `${getCardMinSize ('lg', size).x}px`, margin: 20}}>
+      <ComboChartCard
+        title={text ('title', 'Health history')}
+        id="stacked-sample"
+        isLoading={boolean ('isLoading', false)}
+        isEditable={boolean ('isEditable', false)}
+        isExpanded={boolean ('isExpanded', false)}
+        content={object ('content', {
+          xLabel: 'Date',
+          yLabel: 'Score',
+          series: [
+            {
+              dataSourceId: 'health',
+              label: 'Health',
+            },
+            {
+              dataSourceId: 'age',
+              label: 'Age',
+            },
+            {
+              dataSourceId: 'condition',
+              label: 'Condition',
+            },
+            {
+              dataSourceId: 'rul',
+              label: 'RUL',
+            },
+          ],
+          comboChartTypes: [
+            {
+              type: 'area',
+              correspondingDatasets: ['Health'],
+              options: {
+                points: {
+                  enabled: false,
+                },
+              },
+            },
+            {
+              type: 'line',
+              correspondingDatasets: ['Age', 'Condition', 'RUL'],
+              points: {
+                enabled: true,
+              },
+            },
+          ],
+          thresholds: [
+            {
+              value: 100,
+              label: 'Custom label',
+              fillColor: 'green',
+            },
+            {
+              value: 70,
+              fillColor: 'yellow',
+            },
+            {
+              value: 33,
+              fillColor: 'red',
+            },
+          ],
+          includeZeroOnXaxis: true,
+          includeZeroOnYaxis: true,
+          curve: 'curveNatural',
+          addSpaceOnEdges: 0,
+          decimalPrecision: false,
+          timeDataSourceId: 'date',
+          legend: {
+            position: 'top',
+          },
+        })}
+        values={comboHealthData}
+        size={size}
+        onCardAction={action ('onCardAction')}
+        availableActions={{expand: true, range: true}}
+      />
+    </div>
+  );
+};
+
+HealthDataAreaLine.story = {
+  name: 'Area/Line with health data',
+};
+
+export const ExpandedHealthDataAreaLine = () => {
+  const size = select('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
+  return (
+    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <ComboChartCard
+        title={text('title', 'Health history')}
+        id="stacked-sample"
+        isLoading={boolean('isLoading', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', true)}
+        content={object('content', {
+          xLabel: 'Date',
+          yLabel: 'Score',
+          series: [
+            {
+              dataSourceId: 'health',
+              label: 'Health',
+            },
+            {
+              dataSourceId: 'age',
+              label: 'Age',
+            },
+            {
+              dataSourceId: 'condition',
+              label: 'Condition',
+            },
+            {
+              dataSourceId: 'rul',
+              label: 'RUL',
+            },
+          ],
+          comboChartTypes: [
+            {
+              type: 'area',
+              correspondingDatasets: ['Health'],
+              options: {
+                points: {
+                  enabled: false,
+                },
+              },
+            },
+            {
+              type: 'line',
+              correspondingDatasets: ['Age', 'Condition', 'RUL'],
+              points: {
+                enabled: true,
+              },
+            },
+          ],
+          thresholds: [
+            {
+              value: 100,
+              label: 'Custom label',
+              fillColor: 'green',
+            },
+            {
+              value: 70,
+              fillColor: 'yellow',
+            },
+            {
+              value: 33,
+              fillColor: 'red',
+            },
+          ],
+          includeZeroOnXaxis: true,
+          includeZeroOnYaxis: true,
+          curve: 'curveNatural',
+          addSpaceOnEdges: 0,
+          decimalPrecision: false,
+          timeDataSourceId: 'date',
+          legend: {
+            position: 'top',
+          },
+        })}
+        values={comboHealthData}
+        size={size}
+        onCardAction={action('onCardAction')}
+        availableActions={{ expand: true, range: true }}
+      />
+    </div>
+  );
+};
+
+ExpandedHealthDataAreaLine.story = {
+  name: 'Area/Line with expanded health data',
 };
 
 export const ComboChartCardEmpty = () => {
@@ -88,7 +262,7 @@ export const ComboChartCardLoading = () => {
           ],
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
-          addSpaceOnEdges: false,
+          addSpaceOnEdges: 0,
           timeDataSourceId: 'date',
         })}
         values={comboHealthData}
@@ -102,89 +276,3 @@ ComboChartCardLoading.story = {
   name: 'loading',
 };
 
-export const HealthDataAreaLine = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <ComboChartCard
-        title={text('title', 'Health history')}
-        id="stacked-sample"
-        isLoading={boolean('isLoading', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          xLabel: 'Date',
-          yLabel: 'Score',
-          series: [
-            {
-              dataSourceId: 'health',
-              label: 'Health',
-            },
-            {
-              dataSourceId: 'age',
-              label: 'Age',
-            },
-            {
-              dataSourceId: 'condition',
-              label: 'Condition',
-            },
-            {
-              dataSourceId: 'rul',
-              label: 'RUL',
-            },
-          ],
-          comboChartTypes: [
-            {
-              type: 'area',
-              correspondingDatasets: ['Health'],
-              options: {
-                points: {
-                  enabled: false,
-                },
-              },
-            },
-            {
-              type: 'line',
-              correspondingDatasets: ['Age', 'Condition', 'RUL'],
-              points: {
-                enabled: true,
-              },
-            },
-          ],
-          thresholds: [
-            {
-              value: 100,
-              label: 'Custom label',
-              fillColor: 'green',
-            },
-            {
-              value: 70,
-              fillColor: 'yellow',
-            },
-            {
-              value: 33,
-              fillColor: 'red',
-            },
-          ],
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          curve: 'curveNatural',
-          addSpaceOnEdges: false,
-          decimalPrecision: false,
-          timeDataSourceId: 'date',
-          legend: {
-            position: 'top',
-          },
-        })}
-        values={comboHealthData}
-        size={size}
-        onCardAction={action('onCardAction')}
-        availableActions={{ expand: true, range: true }}
-      />
-    </div>
-  );
-};
-
-HealthDataAreaLine.story = {
-  name: 'Area/Line with health data',
-};

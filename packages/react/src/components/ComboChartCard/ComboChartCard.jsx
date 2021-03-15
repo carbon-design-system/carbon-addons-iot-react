@@ -65,7 +65,6 @@ const ComboChartCard = ({
   domainRange,
   timeRange,
   tooltipDateFormatPattern,
-  content: { categoryDataSourceId, timeDataSourceId },
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -78,7 +77,10 @@ const ComboChartCard = ({
     others
   );
 
+  const { timeDataSourceId } = content;
+
   const previousTick = useRef();
+
   const chartOptions = useChartOptions({
     previousTick,
     isEditable,
@@ -93,7 +95,6 @@ const ComboChartCard = ({
   const chartData = useChartData(values, {
     series: chartOptions.series,
     timeDataSourceId,
-    categoryDataSourceId,
     type: chartOptions.type,
   });
 
@@ -168,4 +169,5 @@ const ComboChartCard = ({
 
 ComboChartCard.propTypes = propTypes;
 ComboChartCard.defaultProps = defaultProps;
+
 export default ComboChartCard;

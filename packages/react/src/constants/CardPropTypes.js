@@ -515,6 +515,7 @@ export const TimeRangeOptionsPropTypes = (props, propName, componentName) => {
 
 export const ComboChartPropTypes = {
   content: PropTypes.shape({
+    /** Which combination of charts should be rendered in the underlying <ComboChart> control */
     comboChartTypes: PropTypes.arrayOf(
       PropTypes.shape({
         type: PropTypes.oneOf([
@@ -527,13 +528,20 @@ export const ComboChartPropTypes = {
           'stacked-area',
         ]),
         options: PropTypes.object,
+        /* Name of the dataset/series the chart should follow */
         correspondingDatasets: PropTypes.arrayOf(PropTypes.string),
       })
     ),
+  
+    /** the number of decimals to show in the legend and on the y-axis */
+    decimalPrecision: PropTypes.number,
+    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
     includeZeroOnXaxis: PropTypes.bool,
+    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
     includeZeroOnYaxis: PropTypes.bool,
-    addSpaceOnEdges: PropTypes.bool,
-    decimalPrecision: PropTypes.bool,
+    /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
+    addSpaceOnEdges: PropTypes.number,
+
     curve: PropTypes.string,
     legend: PropTypes.shape({
       alignment: PropTypes.oneOf(['center', 'left', 'right']),
@@ -550,6 +558,8 @@ export const ComboChartPropTypes = {
     }),
 
     timeDataSourceId: PropTypes.string,
+
+    /** Dotted x-axis lines used for denoting data thresholds, etc */
     thresholds: PropTypes.arrayOf(
       PropTypes.shape({
         fillColor: PropTypes.string,
