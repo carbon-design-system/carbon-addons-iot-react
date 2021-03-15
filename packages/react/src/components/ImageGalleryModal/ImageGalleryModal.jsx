@@ -197,7 +197,7 @@ const ImageGalleryModal = ({
               onChange={filterContent}
               labelText=""
               light
-              placeHolderText={searchPlaceHolderText}
+              placeholder={searchPlaceHolderText}
             />
             <ContentSwitcher
               className={`${baseClass}__content-switcher`}

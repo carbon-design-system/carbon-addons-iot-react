@@ -28,7 +28,7 @@ const ContentFormItemTitle = ({ title, tooltip }) => {
       <div>
         {tooltip ? (
           <Tooltip
-            direction="bottom"
+            direction="left"
             triggerId={`card-edit-form-${title}`}
             tooltipId={`card-edit-form-${title}`}
           >

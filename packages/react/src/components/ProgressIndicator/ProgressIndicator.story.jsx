@@ -14,7 +14,7 @@ const { prefix } = settings;
 const items = [
   {
     id: 'step1',
-    label: 'First step',
+    label: 'First step is very, very long',
     secondaryLabel: 'Optional label',
     description: 'This is displayed when step icon is hovered',
   },
