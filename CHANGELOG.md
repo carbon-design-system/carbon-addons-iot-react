@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.11...v2.145.0-next.12) (2021-03-16)
+
+
+### Bug Fixes
+
+* **dashboardgrid:** should not set state if component unmounts ([3cd8024](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3cd8024d6718eee399bd4a13666aab9ab19efd30))
+
+
+
+
+
 # [2.145.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.10...v2.145.0-next.11) (2021-03-15)
 
 
