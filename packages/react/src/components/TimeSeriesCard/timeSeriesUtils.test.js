@@ -1,88 +1,103 @@
 import every from 'lodash/every';
+import omit from 'lodash/omit';
+
+import { COLORS } from '../../constants/LayoutConstants';
+import { CHART_COLORS } from '../../constants/CardPropTypes';
+import { barChartData } from '../../utils/barChartDataSample';
 
 import {
   generateSampleValues,
   generateTableSampleValues,
   formatGraphTick,
   findMatchingAlertRange,
+  handleTooltip,
+  formatChartData,
+  formatColors,
+  applyFillColor,
+  applyIsFilled,
+  applyStrokeColor,
 } from './timeSeriesUtils';
 
 describe('timeSeriesUtils', () => {
-  it('generateSampleValues', () => {
-    const sampleValues = generateSampleValues(
-      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
-      'timestamp'
-    );
-    expect(sampleValues).toHaveLength(7);
-    expect(sampleValues[0].temperature).toBeDefined();
-    expect(sampleValues[0].pressure).toBeDefined();
+  describe('generateSampleValues', () => {
+    it('generateSampleValues', () => {
+      const sampleValues = generateSampleValues(
+        [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+        'timestamp'
+      );
+      expect(sampleValues).toHaveLength(7);
+      expect(sampleValues[0].temperature).toBeDefined();
+      expect(sampleValues[0].pressure).toBeDefined();
+    });
+    it('generateSampleValues with data Filters', () => {
+      const sampleValues = generateSampleValues(
+        [
+          { dataSourceId: 'temperature', dataFilter: { severity: 5 } },
+          { dataSourceId: 'temperature', dataFilter: { severity: 3 } },
+        ],
+        'timestamp'
+      );
+      expect(sampleValues).toHaveLength(14);
+      expect(sampleValues[0].temperature).toBeDefined();
+      expect(sampleValues[0].severity).toEqual(5);
+      expect(sampleValues[7].temperature).toBeDefined();
+      expect(sampleValues[7].severity).toEqual(3);
+    });
+    it('generateSampleValues hour', () => {
+      const sampleValues = generateSampleValues(
+        [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+        'timestamp',
+        'hour'
+      );
+
+      expect(sampleValues).toHaveLength(24);
+      expect(sampleValues[0].temperature).toBeDefined();
+      expect(sampleValues[0].pressure).toBeDefined();
+
+      const sampleValues2 = generateSampleValues(
+        [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+        'timestamp',
+        'week'
+      );
+      expect(sampleValues2).toHaveLength(4);
+
+      const sampleValues3 = generateSampleValues(
+        [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+        'timestamp',
+        'month'
+      );
+      expect(sampleValues3).toHaveLength(12);
+
+      const sampleValues4 = generateSampleValues(
+        [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+        'timestamp',
+        'year'
+      );
+      expect(sampleValues4).toHaveLength(5);
+
+      const sampleValues5 = generateSampleValues(
+        [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+        'timestamp',
+        'day'
+      );
+      expect(sampleValues5).toHaveLength(7);
+    });
   });
-  it('generateSampleValues with data Filters', () => {
-    const sampleValues = generateSampleValues(
-      [
-        { dataSourceId: 'temperature', dataFilter: { severity: 5 } },
-        { dataSourceId: 'temperature', dataFilter: { severity: 3 } },
-      ],
-      'timestamp'
-    );
-    expect(sampleValues).toHaveLength(14);
-    expect(sampleValues[0].temperature).toBeDefined();
-    expect(sampleValues[0].severity).toEqual(5);
-    expect(sampleValues[7].temperature).toBeDefined();
-    expect(sampleValues[7].severity).toEqual(3);
-  });
-  it('generateSampleValues hour', () => {
-    const sampleValues = generateSampleValues(
-      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
-      'timestamp',
-      'hour'
-    );
 
-    expect(sampleValues).toHaveLength(24);
-    expect(sampleValues[0].temperature).toBeDefined();
-    expect(sampleValues[0].pressure).toBeDefined();
-
-    const sampleValues2 = generateSampleValues(
-      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
-      'timestamp',
-      'week'
-    );
-    expect(sampleValues2).toHaveLength(4);
-
-    const sampleValues3 = generateSampleValues(
-      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
-      'timestamp',
-      'month'
-    );
-    expect(sampleValues3).toHaveLength(12);
-
-    const sampleValues4 = generateSampleValues(
-      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
-      'timestamp',
-      'year'
-    );
-    expect(sampleValues4).toHaveLength(5);
-
-    const sampleValues5 = generateSampleValues(
-      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
-      'timestamp',
-      'day'
-    );
-    expect(sampleValues5).toHaveLength(7);
-  });
   it('generateTableSampleValues', () => {
     const tableSampleValues = generateTableSampleValues('test', [
       { dataSourceId: 'column1' },
       { dataSourceId: 'column2' },
       { dataSourceId: 'column3', type: 'TIMESTAMP' },
     ]);
-    expect(tableSampleValues).toHaveLength(10);
+    expect(tableSampleValues).toHaveLength(100);
     expect(every(tableSampleValues, 'id')).toEqual(true); // every row should have its own id
     expect(every(tableSampleValues, 'values')).toEqual(true); // every row should have its own values
     expect(tableSampleValues[0].values).toHaveProperty('column1');
     expect(tableSampleValues[0].values).toHaveProperty('column2');
     expect(tableSampleValues[0].values).toHaveProperty('column3');
   });
+
   it('formatGraphTick', () => {
     // hour different day
     expect(
@@ -124,6 +139,7 @@ describe('timeSeriesUtils', () => {
       formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1572933600000)
     ).toEqual('');
   });
+
   it('findMatchingAlertRange', () => {
     const data = {
       date: new Date(1573073951),
@@ -140,5 +156,353 @@ describe('timeSeriesUtils', () => {
     expect(matchingAlertRange).toHaveLength(1);
     expect(matchingAlertRange[0].color).toEqual('#FF0000');
     expect(matchingAlertRange[0].details).toEqual('Alert details');
+  });
+
+  describe('handleTooltip', () => {
+    // handle edge case were there is no date data available for the tooltip to increase
+    // branch testing coverage
+    it('should not add date if missing', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      const updatedTooltip = handleTooltip([], defaultTooltip, [], 'Detected alert:');
+      expect(updatedTooltip).toEqual(defaultTooltip);
+    });
+    it('should add date', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      // the date is from 2017
+      const updatedTooltip = handleTooltip(
+        { date: new Date(1500000000000) },
+        defaultTooltip,
+        [],
+        'Detected alert:'
+      );
+      expect(updatedTooltip).not.toEqual(defaultTooltip);
+      expect(updatedTooltip).toContain('<ul');
+      expect(updatedTooltip).toContain('2017');
+    });
+    it('with __data__ and GMT', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      // the date is from 2017
+      const updatedTooltip = handleTooltip(
+        { __data__: { date: new Date(1500000000000) } },
+        defaultTooltip,
+        [],
+        'Detected alert:',
+        true,
+        'dddd' // custom format
+      );
+      expect(updatedTooltip).not.toEqual(defaultTooltip);
+      expect(updatedTooltip).toContain('<ul');
+      expect(updatedTooltip).toContain('Friday');
+    });
+    it('should add alert ranges if they exist', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      // the date is from 2017
+      const updatedTooltip = handleTooltip(
+        [{ date: new Date(1573073950) }],
+        defaultTooltip,
+        [
+          {
+            startTimestamp: 1573073950,
+            endTimestamp: 1573073951,
+            color: '#FF0000',
+            details: 'Alert details',
+          },
+        ],
+        'Detected alert:'
+      );
+      expect(updatedTooltip).not.toEqual(defaultTooltip);
+      expect(updatedTooltip).toContain('<ul');
+      expect(updatedTooltip).toContain('Detected alert:');
+      expect(updatedTooltip).toContain('Alert details');
+    });
+  });
+
+  describe('formatChartData', () => {
+    it('returns properly formatted data without dataFilter set', () => {
+      const series = [
+        {
+          label: 'Amsterdam',
+          dataSourceId: 'particles',
+        },
+      ];
+
+      expect(
+        formatChartData(
+          'timestamp',
+          series,
+          barChartData.timestamps.filter((data) => data.city === 'Amsterdam')
+        )
+      ).toEqual([
+        {
+          date: new Date('2020-02-09T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 447,
+        },
+        {
+          date: new Date('2020-02-10T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 450,
+        },
+        {
+          date: new Date('2020-02-11T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 512,
+        },
+        {
+          date: new Date('2020-02-12T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 565,
+        },
+      ]);
+    });
+    it('respects dates', () => {
+      const series = [
+        {
+          label: 'Amsterdam',
+          dataSourceId: 'particles',
+        },
+      ];
+
+      expect(
+        formatChartData(
+          undefined,
+          series,
+          barChartData.timestamps
+            .filter((data) => data.city === 'Amsterdam')
+            .map((data) => ({ ...data, timestamp: new Date(data.timestamp) }))
+        )
+      ).toEqual([
+        {
+          date: new Date('2020-02-09T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 447,
+        },
+        {
+          date: new Date('2020-02-10T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 450,
+        },
+        {
+          date: new Date('2020-02-11T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 512,
+        },
+        {
+          date: new Date('2020-02-12T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 565,
+        },
+      ]);
+    });
+    it('returns properly formatted data with dataFilter set', () => {
+      const series = [
+        {
+          label: 'Amsterdam',
+          dataSourceId: 'particles',
+          dataFilter: {
+            city: 'Amsterdam',
+          },
+          color: COLORS.MAGENTA,
+        },
+        {
+          label: 'New York',
+          dataSourceId: 'particles',
+          dataFilter: {
+            city: 'New York',
+          },
+          // no color set here
+        },
+      ];
+
+      expect(formatChartData('timestamp', series, barChartData.timestamps)).toEqual([
+        {
+          date: new Date('2020-02-09T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 447,
+        },
+        {
+          date: new Date('2020-02-10T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 450,
+        },
+        {
+          date: new Date('2020-02-11T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 512,
+        },
+        {
+          date: new Date('2020-02-12T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 565,
+        },
+        {
+          date: new Date('2020-02-09T16:23:45.000Z'),
+          group: 'New York',
+          value: 528,
+        },
+        {
+          date: new Date('2020-02-10T16:23:45.000Z'),
+          group: 'New York',
+          value: 365,
+        },
+        {
+          date: new Date('2020-02-11T16:23:45.000Z'),
+          group: 'New York',
+          value: 442,
+        },
+        {
+          date: new Date('2020-02-12T16:23:45.000Z'),
+          group: 'New York',
+          value: 453,
+        },
+      ]);
+    });
+    it('can handle sparse values from the backend', () => {
+      const series = [
+        {
+          label: 'particles',
+          dataSourceId: 'particles',
+        },
+        {
+          label: 'emissions',
+          dataSourceId: 'emissions',
+        },
+      ];
+      const formattedChartData = formatChartData(
+        'timestamp',
+        series,
+        barChartData.timestamps.slice(0, 2).map(
+          (dataPoint, index) => (index % 2 === 0 ? omit(dataPoint, 'emissions') : dataPoint) // make the data sparse (this skips the emissions datapoint in a few points)
+        )
+      );
+      expect(formattedChartData).toHaveLength(3);
+      expect(formattedChartData.every((dataPoint) => dataPoint.value)).toEqual(true); // every value should be valid
+    });
+    it('returns empty array if no data matches dataFilter', () => {
+      const series = [
+        {
+          label: 'Amsterdam',
+          dataSourceId: 'particles',
+          dataFilter: {
+            city: 'Not Amsterdam',
+          },
+        },
+      ];
+
+      expect(
+        formatChartData(
+          'timestamp',
+          series,
+          barChartData.timestamps.filter((data) => data.city === 'Amsterdam')
+        )
+      ).toEqual([]);
+    });
+  });
+
+  describe('formatColors', () => {
+    it('returns correct format if series is array', () => {
+      const series = [
+        {
+          label: 'Amsterdam',
+          dataSourceId: 'particles',
+          color: 'blue',
+        },
+        {
+          label: 'New York',
+          dataSourceId: 'particles',
+          color: 'yellow',
+        },
+      ];
+
+      expect(formatColors(series)).toEqual({
+        scale: { Amsterdam: 'blue', 'New York': 'yellow' },
+      });
+    });
+    it('returns correct format if series is object', () => {
+      const series = {
+        label: 'Amsterdam',
+        dataSourceId: 'particles',
+        color: 'blue',
+      };
+
+      expect(formatColors(series)).toEqual({
+        scale: { Amsterdam: 'blue' },
+      });
+
+      // Default color should be used if no color is passed
+      expect(formatColors(omit(series, 'color'))).toEqual({
+        scale: { Amsterdam: CHART_COLORS[0] },
+      });
+    });
+  });
+
+  describe('fill', () => {
+    it('Fills points with the correct fill/stroke of matching alertRanges', () => {
+      const data = {
+        date: new Date(2019, 9, 29, 18, 38, 40),
+        value: 82,
+        group: 'Temperature',
+      };
+
+      const alertRanges = [
+        {
+          startTimestamp: 1572313622000,
+          endTimestamp: 1572486422000,
+          color: '#FF0000',
+          details: 'Alert name',
+        },
+        {
+          startTimestamp: 1572313622000,
+          endTimestamp: 1572824320000,
+          color: '#FFFF00',
+          details: 'Less severe',
+        },
+      ];
+
+      const isFilledCallback = applyIsFilled(alertRanges);
+      const fillColorCallback = applyFillColor(alertRanges);
+      const strokeColorCallback = applyStrokeColor(alertRanges);
+
+      expect(isFilledCallback('Temperature', data.date.toString(), data, false)).toBe(true);
+      expect(fillColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+        '#FF0000'
+      );
+      expect(strokeColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+        '#FF0000'
+      );
+    });
+
+    it('Fills points with the original fill/stroke when no data given', () => {
+      const alertRanges = [];
+
+      const isFilledCallback = applyIsFilled(alertRanges);
+      const fillColorCallback = applyFillColor(alertRanges);
+      const strokeColorCallback = applyStrokeColor(alertRanges);
+
+      expect(isFilledCallback('Temperature', undefined, undefined, false)).toBe(false);
+      expect(fillColorCallback('Temperature', undefined, undefined, '#6929c4')).toBe('#6929c4');
+      expect(strokeColorCallback('Temperature', undefined, undefined, '#6929c4')).toBe('#6929c4');
+    });
+
+    it('Fills points with the original fill/stroke when no ranges match', () => {
+      const data = {
+        date: new Date(2019, 9, 29, 18, 38, 40),
+        value: 82,
+        group: 'Temperature',
+      };
+      const alertRanges = [];
+
+      const isFilledCallback = applyIsFilled(alertRanges);
+      const fillColorCallback = applyFillColor(alertRanges);
+      const strokeColorCallback = applyStrokeColor(alertRanges);
+
+      expect(isFilledCallback('Temperature', data.date.toString(), data, false)).toBe(false);
+      expect(fillColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+        '#6929c4'
+      );
+      expect(strokeColorCallback('Temperature', data.date.toString(), data, '#6929c4')).toBe(
+        '#6929c4'
+      );
+    });
   });
 });

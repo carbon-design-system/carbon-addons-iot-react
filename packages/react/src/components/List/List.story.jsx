@@ -114,7 +114,7 @@ const headerButton = (
 );
 
 export default {
-  title: 'Watson IoT Experimental/List',
+  title: 'Watson IoT/List',
 
   parameters: {
     component: List,
@@ -172,6 +172,34 @@ export const BasicSingleColumnWithSearch = () => {
 
 BasicSingleColumnWithSearch.story = {
   name: 'basic (single column) with search',
+};
+
+export const SelectableItems = () => {
+  const ListWithSelectableItems = () => {
+    const [selected, setSelected] = useState();
+    return (
+      <div style={{ width: 400 }}>
+        <List
+          title={text('title', 'NY Yankees')}
+          items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+            ([key]) => ({
+              id: key,
+              content: { value: key },
+              isSelectable: true,
+            })
+          )}
+          isLoading={boolean('isLoading', false)}
+          handleSelect={(id) => setSelected(id)}
+          selectedIds={[selected]}
+        />
+      </div>
+    );
+  };
+  return <ListWithSelectableItems />;
+};
+
+SelectableItems.story = {
+  name: 'with selectable items',
 };
 
 export const WithSecondaryValue = () => (

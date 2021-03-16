@@ -65,6 +65,7 @@ const GroupLogic = ({ id, i18n, selected, onChange }) => {
       <div className={`${iotPrefix}--rule-builder-header__dropdown`}>
         <Dropdown
           id={id}
+          light
           itemToString={(item) => item.name}
           items={groupLogic}
           label={initialSelectedItem.name}

@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { ComboBox as CarbonComboBox, Tag } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
-import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -23,15 +22,9 @@ const propTypes = {
   // Allow custom onBlur function to be passed to the combobox textinput
   onBlur: PropTypes.func,
   // Bit that will allow mult value and tag feature
-  hasMultiValue: deprecate(
-    PropTypes.bool,
-    '\nThe prop `hasMultiValue` for ComboBox is experimental. The functionality that is enabled by this prop is subject to change until ComboBox moves out of experimental.'
-  ),
+  hasMultiValue: PropTypes.bool,
   // On submit/enter, new items should be added to the listbox
-  addToList: deprecate(
-    PropTypes.bool,
-    '\nThe prop `addToList` for ComboBox is experimental. The functionality that is enabled by this prop is subject to change until ComboBox moves out of experimental.'
-  ),
+  addToList: PropTypes.bool,
 };
 
 const defaultProps = {

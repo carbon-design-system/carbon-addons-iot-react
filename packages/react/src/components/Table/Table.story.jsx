@@ -263,6 +263,7 @@ export const tableColumnsWithOverflowMenu = [
     name: 'Number',
     filter: { placeholderText: 'enter a number' },
     overflowMenuItems: selectData,
+    align: 'end',
   },
   {
     id: 'boolean',
@@ -589,7 +590,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
 };
 
 export default {
-  title: 'Watson IoT/Table',
+  title: __DEV__ ? 'Watson IoT/⚠️ Table' : 'Watson IoT/Table',
 
   parameters: {
     component: Table,
@@ -2621,6 +2622,7 @@ export const WithSorting = () => (
     columns={tableColumns.map((i, idx) => ({
       ...i,
       isSortable: idx !== 1,
+      align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
     }))}
     data={getSortedData(tableData, 'string', 'ASC')}
     actions={actions}
@@ -2628,9 +2630,20 @@ export const WithSorting = () => (
       hasFilter: false,
       hasPagination: true,
       hasRowSelection: 'multi',
+      hasAggregations: true,
     }}
     view={{
       filters: [],
+      aggregations: {
+        label: 'Total',
+        columns: [
+          {
+            id: 'number',
+            align: 'end',
+            isSortable: true,
+          },
+        ],
+      },
       table: {
         ordering: defaultOrdering,
         sort: {
@@ -3707,6 +3720,7 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => (
           columns: [
             {
               id: 'number',
+              align: 'end',
             },
           ],
         },

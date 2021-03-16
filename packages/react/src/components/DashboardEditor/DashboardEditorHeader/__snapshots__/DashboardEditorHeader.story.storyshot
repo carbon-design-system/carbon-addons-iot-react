@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DashboardEditor/DashboardEditorHeader default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ DashboardEditor/DashboardEditorHeader default 1`] = `
 <div
   className="storybook-container"
 >
@@ -43,6 +43,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <a
                       className="bx--link bx--link"
                       href="www.ibm.com"
+                      rel={null}
                     >
                       Dashboard library
                     </a>
@@ -53,6 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <a
                       className="bx--link bx--link"
                       href="www.ibm.com"
+                      rel={null}
                     >
                       Favorites
                     </a>
@@ -263,7 +265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DashboardEditor/DashboardEditorHeader with editable title and no import/export/delete 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ DashboardEditor/DashboardEditorHeader with editable title and no import/export/delete 1`] = `
 <div
   className="storybook-container"
 >
@@ -306,6 +308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <a
                       className="bx--link bx--link"
                       href="www.ibm.com"
+                      rel={null}
                     >
                       Dashboard library
                     </a>
@@ -316,6 +319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <a
                       className="bx--link bx--link"
                       href="www.ibm.com"
+                      rel={null}
                     >
                       Favorites
                     </a>

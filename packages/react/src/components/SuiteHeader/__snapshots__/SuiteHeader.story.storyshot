@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with custom action items 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with application-controlled side nav 1`] = `
 <div
   className="storybook-container"
 >
@@ -76,7 +76,661 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
         <div
-          className="bx--modal-footer"
+          className="bx--modal-footer bx--btn-set"
+        >
+          <button
+            className="bx--btn bx--btn--secondary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="bx--btn bx--btn--primary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Log out
+          </button>
+        </div>
+      </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+    </div>
+    <span
+      className="iot--suite-header-data"
+      data-type="workspaceId"
+    />
+    <span
+      className="iot--suite-header-data"
+      data-type="domain"
+    />
+    <header
+      aria-label="main header"
+      className="bx--header iot--suite-header"
+    >
+      <a
+        className="bx--skip-to-content"
+        href="#main-content"
+        tabIndex="0"
+      >
+        Skip to main content
+      </a>
+      <button
+        aria-label="Open menu"
+        className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+        onClick={[Function]}
+        title="Open menu"
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          fill="currentColor"
+          focusable="false"
+          height={20}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 20 20"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
+          />
+        </svg>
+      </button>
+      <a
+        className="bx--header__name"
+        href="https://www.ibm.com"
+      >
+        <span
+          className="bx--header__name--prefix"
+        >
+          IBM
+        </span>
+         
+        Application Suite
+        <div
+          className="iot--header__subtitle"
+        >
+          Application Name
+        </div>
+      </a>
+      <div
+        className="bx--header__global"
+      >
+        <button
+          aria-label="Administration"
+          className="bx--header-action-btn admin-icon bx--header__action"
+          data-testid="menu-item-Administration-global"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            id="suite-header-action-item-admin"
+          >
+            <svg
+              aria-hidden={true}
+              data-testid="admin-icon"
+              description="Settings"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27,16.76c0-.25,0-.5,0-.76s0-.51,0-.77l1.92-1.68A2,2,0,0,0,29.3,11L26.94,7a2,2,0,0,0-1.73-1,2,2,0,0,0-.64.1l-2.43.82a11.35,11.35,0,0,0-1.31-.75l-.51-2.52a2,2,0,0,0-2-1.61H13.64a2,2,0,0,0-2,1.61l-.51,2.52a11.48,11.48,0,0,0-1.32.75L7.43,6.06A2,2,0,0,0,6.79,6,2,2,0,0,0,5.06,7L2.7,11a2,2,0,0,0,.41,2.51L5,15.24c0,.25,0,.5,0,.76s0,.51,0,.77L3.11,18.45A2,2,0,0,0,2.7,21L5.06,25a2,2,0,0,0,1.73,1,2,2,0,0,0,.64-.1l2.43-.82a11.35,11.35,0,0,0,1.31.75l.51,2.52a2,2,0,0,0,2,1.61h4.72a2,2,0,0,0,2-1.61l.51-2.52a11.48,11.48,0,0,0,1.32-.75l2.42.82a2,2,0,0,0,.64.1,2,2,0,0,0,1.73-1L29.3,21a2,2,0,0,0-.41-2.51ZM25.21,24l-3.43-1.16a8.86,8.86,0,0,1-2.71,1.57L18.36,28H13.64l-.71-3.55a9.36,9.36,0,0,1-2.7-1.57L6.79,24,4.43,20l2.72-2.4a8.9,8.9,0,0,1,0-3.13L4.43,12,6.79,8l3.43,1.16a8.86,8.86,0,0,1,2.71-1.57L13.64,4h4.72l.71,3.55a9.36,9.36,0,0,1,2.7,1.57L25.21,8,27.57,12l-2.72,2.4a8.9,8.9,0,0,1,0,3.13L27.57,20Z"
+              />
+              <path
+                d="M16,22a6,6,0,1,1,6-6A5.94,5.94,0,0,1,16,22Zm0-10a3.91,3.91,0,0,0-4,4,3.91,3.91,0,0,0,4,4,3.91,3.91,0,0,0,4-4A3.91,3.91,0,0,0,16,12Z"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          className="bx--header__submenu bx--header-action-btn action-btn__group"
+          data-testid="action-btn__group"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+        >
+          <div
+            className="bx--header__submenu bx--header-action-btn"
+          >
+            <a
+              aria-expanded={false}
+              aria-haspopup="menu"
+              aria-label="Help"
+              className="bx--header__menu-item bx--header__menu-title"
+              data-testid="menuitem"
+              href=""
+              onClick={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              <span
+                id="suite-header-action-item-help"
+              >
+                <svg
+                  aria-hidden={true}
+                  description="Help"
+                  fill="white"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  />
+                  <circle
+                    cx="16"
+                    cy="23.5"
+                    r="1.5"
+                  />
+                  <path
+                    d="M17,8H15.5A4.49,4.49,0,0,0,11,12.5V13h2v-.5A2.5,2.5,0,0,1,15.5,10H17a2.5,2.5,0,0,1,0,5H15v4.5h2V17a4.5,4.5,0,0,0,0-9Z"
+                  />
+                </svg>
+              </span>
+            </a>
+            <ul
+              aria-label="Help"
+              className="bx--header__menu"
+              role="menu"
+            >
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--whatsNew"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="What's new"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-whatsNew"
+                    >
+                      What's new
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--gettingStarted"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="Getting started"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-gettingStarted"
+                    >
+                      Getting started
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--documentation"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="Documentation"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-documentation"
+                    >
+                      Documentation
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--requestEnhancement"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="Request enhancement"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-requestEnhancement"
+                    >
+                      Request enhancement
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--support"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="Support"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-support"
+                    >
+                      Support
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--about"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="About"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-about"
+                    >
+                      About
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="bx--header__submenu bx--header-action-btn action-btn__group"
+          data-testid="action-btn__group"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+        >
+          <div
+            className="bx--header__submenu bx--header-action-btn"
+          >
+            <a
+              aria-expanded={false}
+              aria-haspopup="menu"
+              aria-label="user"
+              className="bx--header__menu-item bx--header__menu-title"
+              data-testid="menuitem"
+              href=""
+              onClick={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              <span
+                id="suite-header-action-item-profile"
+              >
+                <svg
+                  aria-hidden={true}
+                  data-testid="user-icon"
+                  description="User"
+                  fill="white"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16,8a5,5,0,1,0,5,5A5,5,0,0,0,16,8Zm0,8a3,3,0,1,1,3-3A3.0034,3.0034,0,0,1,16,16Z"
+                  />
+                  <path
+                    d="M16,2A14,14,0,1,0,30,16,14.0158,14.0158,0,0,0,16,2ZM10,26.3765V25a3.0033,3.0033,0,0,1,3-3h6a3.0033,3.0033,0,0,1,3,3v1.3765a11.8989,11.8989,0,0,1-12,0Zm13.9925-1.4507A5.0016,5.0016,0,0,0,19,20H13a5.0016,5.0016,0,0,0-4.9925,4.9258,12,12,0,1,1,15.985,0Z"
+                  />
+                </svg>
+              </span>
+            </a>
+            <ul
+              aria-label="user"
+              className="bx--header__menu"
+              role="menu"
+            >
+              <li>
+                <div
+                  className="bx--header__menu-item"
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-profile-menu-profile"
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        className="iot--suite-header-profile"
+                      >
+                        <h5>
+                          Profile
+                        </h5>
+                        <div
+                          className="iot--suite-header-profile--user"
+                        >
+                          <div
+                            className="iot--suite-header-profile--user--chip"
+                          >
+                            AU
+                          </div>
+                          <div
+                            className="iot--suite-header-profile--user--detail"
+                          >
+                            <div>
+                              <strong>
+                                Admin User
+                              </strong>
+                            </div>
+                            <div>
+                              adminuser
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
+                        >
+                          <button
+                            className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
+                            data-testid="suite-header-profile--profile"
+                            disabled={false}
+                            onClick={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            Manage profile
+                          </button>
+                        </div>
+                      </div>
+                    </span>
+                  </span>
+                </div>
+              </li>
+              <li
+                className="iot--suite-header--logout"
+              >
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-profile--logout"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="Logout"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-profile-menu-logout"
+                    >
+                      Logout
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="bx--header__submenu bx--header-action-btn action-btn__group"
+          data-testid="action-btn__group"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-expanded={false}
+            aria-haspopup="menu"
+            aria-label="AppSwitcher"
+            className="bx--header-action-btn action-btn__trigger bx--header__action"
+            onClick={[Function]}
+            title="AppSwitcher"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--header__menu-item bx--header__menu-title"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 4H18V8H14zM4 4H8V8H4zM24 4H28V8H24zM14 14H18V18H14zM4 14H8V18H4zM24 14H28V18H24zM14 24H18V28H14zM4 24H8V28H4zM24 24H28V28H24z"
+              />
+            </svg>
+          </button>
+          <div
+            aria-label="Header Panel"
+            className="bx--header-panel bx--app-switcher"
+            data-testid="action-btn__panel"
+            tabIndex="-1"
+          >
+            <ul
+              aria-label="AppSwitcher"
+            >
+              <li
+                className="action-btn__headerpanel-li"
+              >
+                <a
+                  className="bx--app-switcher undefined"
+                  element="a"
+                >
+                  <ul
+                    className="iot--suite-header-app-switcher"
+                  >
+                    <li
+                      className="iot--suite-header-app-switcher--nav-link"
+                    >
+                      <p>
+                        My applications
+                      </p>
+                      <button
+                        className="iot--btn bx--btn bx--btn--tertiary"
+                        data-testid="suite-header-app-switcher--all-applications"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        All applications
+                        <svg
+                          aria-hidden={true}
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <div
+                      className="iot--suite-header-app-switcher--nav-link--separator"
+                    />
+                    <li
+                      className="iot--suite-header-app-switcher--app-link"
+                      id="suite-header-application-monitor"
+                    >
+                      <a
+                        data-testid="suite-header-app-switcher--monitor"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
+                      >
+                        Monitor
+                      </a>
+                    </li>
+                    <li
+                      className="iot--suite-header-app-switcher--app-link"
+                      id="suite-header-application-health"
+                    >
+                      <a
+                        data-testid="suite-header-app-switcher--health"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
+                      >
+                        Health
+                      </a>
+                    </li>
+                  </ul>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with custom action items 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--modal bx--modal-tall"
+      onBlur={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="presentation"
+    >
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+      <div
+        aria-label="Do you wish to log out?"
+        aria-modal="true"
+        className="bx--modal-container"
+        role="dialog"
+        tabIndex="-1"
+      >
+        <div
+          className="bx--modal-header"
+        >
+          
+          <h3
+            className="bx--modal-header__heading"
+            id="bx--modal-header__heading--modal-4"
+          >
+            Do you wish to log out?
+          </h3>
+          <button
+            aria-label="Close"
+            className="bx--modal-close"
+            onClick={[Function]}
+            title="Close"
+            type="button"
+          >
+            <svg
+              aria-label="Close"
+              className="bx--modal-close__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          aria-labelledby="bx--modal-header__heading--modal-4"
+          className="bx--modal-content"
+          id="bx--modal-body--modal-4"
+        >
+          You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
+        </div>
+        <div
+          className="bx--modal-footer bx--btn-set"
         >
           <button
             className="bx--btn bx--btn--secondary"
@@ -168,7 +822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M28.7,20.3,26,17.6V13A10.07,10.07,0,0,0,17,3V1H15V3A10.15,10.15,0,0,0,6,13v4.6L3.3,20.3A.91.91,0,0,0,3,21v3a.94.94,0,0,0,1,1h7a5,5,0,0,0,10,0h7a.94.94,0,0,0,1-1V21A.91.91,0,0,0,28.7,20.3ZM16,28a3,3,0,0,1-3-3h6A3,3,0,0,1,16,28Zm11-5H5V21.4l2.7-2.7A.91.91,0,0,0,8,18V13a8,8,0,0,1,16,0v5a.91.91,0,0,0,.3.7L27,21.4Z"
+                d="M28.7071,19.293,26,16.5859V13a10.0136,10.0136,0,0,0-9-9.9492V1H15V3.0508A10.0136,10.0136,0,0,0,6,13v3.5859L3.2929,19.293A1,1,0,0,0,3,20v3a1,1,0,0,0,1,1h7v.7768a5.152,5.152,0,0,0,4.5,5.1987A5.0057,5.0057,0,0,0,21,25V24h7a1,1,0,0,0,1-1V20A1,1,0,0,0,28.7071,19.293ZM19,25a3,3,0,0,1-6,0V24h6Zm8-3H5V20.4141L7.707,17.707A1,1,0,0,0,8,17V13a8,8,0,0,1,16,0v4a1,1,0,0,0,.293.707L27,20.4141Z"
               />
             </svg>
           </span>
@@ -684,10 +1338,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
+                    d="M16,8a5,5,0,1,0,5,5A5,5,0,0,0,16,8Zm0,8a3,3,0,1,1,3-3A3.0034,3.0034,0,0,1,16,16Z"
                   />
                   <path
-                    d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
+                    d="M16,2A14,14,0,1,0,30,16,14.0158,14.0158,0,0,0,16,2ZM10,26.3765V25a3.0033,3.0033,0,0,1,3-3h6a3.0033,3.0033,0,0,1,3,3v1.3765a11.8989,11.8989,0,0,1-12,0Zm13.9925-1.4507A5.0016,5.0016,0,0,0,19,20H13a5.0016,5.0016,0,0,0-4.9925,4.9258,12,12,0,1,1,15.985,0Z"
                   />
                 </svg>
               </span>
@@ -1084,7 +1738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
         <div
-          className="bx--modal-footer"
+          className="bx--modal-footer bx--btn-set"
         >
           <button
             className="bx--btn bx--btn--secondary"
@@ -1418,10 +2072,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
+                    d="M16,8a5,5,0,1,0,5,5A5,5,0,0,0,16,8Zm0,8a3,3,0,1,1,3-3A3.0034,3.0034,0,0,1,16,16Z"
                   />
                   <path
-                    d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
+                    d="M16,2A14,14,0,1,0,30,16,14.0158,14.0158,0,0,0,16,2ZM10,26.3765V25a3.0033,3.0033,0,0,1,3-3h6a3.0033,3.0033,0,0,1,3,3v1.3765a11.8989,11.8989,0,0,1-12,0Zm13.9925-1.4507A5.0016,5.0016,0,0,0,19,20H13a5.0016,5.0016,0,0,0-4.9925,4.9258,12,12,0,1,1,15.985,0Z"
                   />
                 </svg>
               </span>
@@ -1979,12 +2633,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+          d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+          fill="none"
         />
         <path
-          d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-          data-icon-path="inner-path"
-          fill="none"
+          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
         />
         <title>
           info icon
@@ -2005,6 +2658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             className="bx--link"
             href="javascript:void(0)"
             onClick={[Function]}
+            rel={null}
           >
             Click here to help us improve the product
           </a>
@@ -2015,6 +2669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               className="bx--link"
               href="javascript:void(0)"
               onClick={[Function]}
+              rel={null}
             >
               Privacy Policy
             </a>
@@ -2078,7 +2733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           
           <h3
             className="bx--modal-header__heading"
-            id="bx--modal-header__heading--modal-4"
+            id="bx--modal-header__heading--modal-5"
           >
             Do you wish to log out?
           </h3>
@@ -2108,14 +2763,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </button>
         </div>
         <div
-          aria-labelledby="bx--modal-header__heading--modal-4"
+          aria-labelledby="bx--modal-header__heading--modal-5"
           className="bx--modal-content"
-          id="bx--modal-body--modal-4"
+          id="bx--modal-body--modal-5"
         >
           You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
         <div
-          className="bx--modal-footer"
+          className="bx--modal-footer bx--btn-set"
         >
           <button
             className="bx--btn bx--btn--secondary"
@@ -2427,10 +3082,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
+                    d="M16,8a5,5,0,1,0,5,5A5,5,0,0,0,16,8Zm0,8a3,3,0,1,1,3-3A3.0034,3.0034,0,0,1,16,16Z"
                   />
                   <path
-                    d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
+                    d="M16,2A14,14,0,1,0,30,16,14.0158,14.0158,0,0,0,16,2ZM10,26.3765V25a3.0033,3.0033,0,0,1,3-3h6a3.0033,3.0033,0,0,1,3,3v1.3765a11.8989,11.8989,0,0,1-12,0Zm13.9925-1.4507A5.0016,5.0016,0,0,0,19,20H13a5.0016,5.0016,0,0,0-4.9925,4.9258,12,12,0,1,1,15.985,0Z"
                   />
                 </svg>
               </span>
@@ -2710,7 +3365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           
           <h3
             className="bx--modal-header__heading"
-            id="bx--modal-header__heading--modal-5"
+            id="bx--modal-header__heading--modal-6"
           >
             Do you wish to log out?
           </h3>
@@ -2740,14 +3395,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </button>
         </div>
         <div
-          aria-labelledby="bx--modal-header__heading--modal-5"
+          aria-labelledby="bx--modal-header__heading--modal-6"
           className="bx--modal-content"
-          id="bx--modal-body--modal-5"
+          id="bx--modal-body--modal-6"
         >
           You are logged in to Application Name as null.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
         <div
-          className="bx--modal-footer"
+          className="bx--modal-footer bx--btn-set"
         >
           <button
             className="bx--btn bx--btn--secondary"
@@ -2966,10 +3621,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
+                    d="M16,8a5,5,0,1,0,5,5A5,5,0,0,0,16,8Zm0,8a3,3,0,1,1,3-3A3.0034,3.0034,0,0,1,16,16Z"
                   />
                   <path
-                    d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
+                    d="M16,2A14,14,0,1,0,30,16,14.0158,14.0158,0,0,0,16,2ZM10,26.3765V25a3.0033,3.0033,0,0,1,3-3h6a3.0033,3.0033,0,0,1,3,3v1.3765a11.8989,11.8989,0,0,1-12,0Zm13.9925-1.4507A5.0016,5.0016,0,0,0,19,20H13a5.0016,5.0016,0,0,0-4.9925,4.9258,12,12,0,1,1,15.985,0Z"
                   />
                 </svg>
               </span>
@@ -3270,7 +3925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
         <div
-          className="bx--modal-footer"
+          className="bx--modal-footer bx--btn-set"
         >
           <button
             className="bx--btn bx--btn--secondary"
@@ -3586,10 +4241,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
+                    d="M16,8a5,5,0,1,0,5,5A5,5,0,0,0,16,8Zm0,8a3,3,0,1,1,3-3A3.0034,3.0034,0,0,1,16,16Z"
                   />
                   <path
-                    d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
+                    d="M16,2A14,14,0,1,0,30,16,14.0158,14.0158,0,0,0,16,2ZM10,26.3765V25a3.0033,3.0033,0,0,1,3-3h6a3.0033,3.0033,0,0,1,3,3v1.3765a11.8989,11.8989,0,0,1-12,0Zm13.9925-1.4507A5.0016,5.0016,0,0,0,19,20H13a5.0016,5.0016,0,0,0-4.9925,4.9258,12,12,0,1,1,15.985,0Z"
                   />
                 </svg>
               </span>

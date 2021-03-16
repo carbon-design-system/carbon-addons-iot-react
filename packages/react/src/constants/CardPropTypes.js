@@ -337,6 +337,13 @@ export const BarChartCardPropTypes = {
     unit: PropTypes.string,
     /** Optionally addes a zoom bar to the chart */
     zoomBar: ZoomBarPropTypes,
+    /** carbon charts legend truncation options */
+    truncation: PropTypes.shape({
+      /** truncation type */
+      type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
+      /** number of characters needed to enable truncation */
+      threshold: PropTypes.number,
+    }),
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
@@ -370,7 +377,14 @@ export const PieCardPropTypes = {
      * chart label info such as x & y positions etc */
     labelsFormatter: PropTypes.func,
     /** The position of the legend in relation to the chart, can be 'bottom' or 'top'. */
-    legendPosition: PropTypes.string,
+    legendPosition: PropTypes.oneOf(['top', 'bottom']),
+    /** carbon charts legend truncation options */
+    truncation: PropTypes.shape({
+      /** truncation type */
+      type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
+      /** number of characters needed to enable truncation */
+      threshold: PropTypes.number,
+    }),
   }),
   /** Used to overide the internal components and props for advanced customisation */
   overrides: PropTypes.shape({
