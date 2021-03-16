@@ -4,11 +4,7 @@ import omit from 'lodash/omit';
 import { COLORS } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { barChartData } from '../../utils/barChartDataSample';
-
-import { 
-  findMatchingAlertRange,
-  handleTooltip
-} from '../../utils/cardUtilityFunctions';
+import { findMatchingAlertRange, handleTooltip } from '../../utils/cardUtilityFunctions';
 
 import {
   generateSampleValues,
