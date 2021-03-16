@@ -3,7 +3,7 @@ import { g10 } from '@carbon/themes';
 
 const { field01, interactive01, text01, text04, ui01, ui03, ui04, uiBackground } = g10;
 
-export const CarbonG100 = create({
+export const CarbonG10 = create({
   base: 'light',
 
   colorPrimary: interactive01,
