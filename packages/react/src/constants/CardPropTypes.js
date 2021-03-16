@@ -546,7 +546,7 @@ export const ComboChartPropTypes = {
         correspondingDatasets: PropTypes.arrayOf(PropTypes.string),
       })
     ),
-  
+
     /** the number of decimals to show in the legend and on the y-axis */
     decimalPrecision: PropTypes.number,
     /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */

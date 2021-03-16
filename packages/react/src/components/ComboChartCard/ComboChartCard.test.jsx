@@ -51,13 +51,12 @@ const commonOptions = {
   size: CARD_SIZES.MEDIUMWIDE,
   title: 'ComboChartCard Test',
   content: commonContent,
-  values: comboHealthData
-}
+  values: comboHealthData,
+};
 // jest.unmock('@carbon/charts-react');
 
-
 describe('ComboChartCard', () => {
-    const originalCreateObjectURL = global.URL.createObjectURL;
+  const originalCreateObjectURL = global.URL.createObjectURL;
   const originalRevokeObjectURL = global.URL.revokeObjectURL;
 
   beforeAll(() => {
@@ -71,14 +70,12 @@ describe('ComboChartCard', () => {
   });
 
   it('Renders another card ', () => {
-    render(<ComboChartCard {...commonOptions} isExpanded/>);
+    render(<ComboChartCard {...commonOptions} isExpanded />);
     expect(screen.queryByText(commonOptions.title)).toBeDefined();
   });
 
   it('Renders card ', () => {
-    render(<ComboChartCard {...commonOptions}/>);
+    render(<ComboChartCard {...commonOptions} />);
     expect(screen.queryByText(commonOptions.title)).toBeDefined();
   });
-
-
 });

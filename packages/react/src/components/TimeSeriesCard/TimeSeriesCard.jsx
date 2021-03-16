@@ -11,7 +11,7 @@ import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
-import { CardPropTypes, ZoomBarPropTypes } from '../../constants/CardPropTypes';
+import { CardPropTypes, ZoomBarPropTypes, CHART_COLORS } from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   TIME_SERIES_TYPES,
@@ -25,19 +25,11 @@ import {
   handleCardVariables,
   chartValueFormatter,
   getResizeHandles,
+  handleTooltip,
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
-import {
-  generateSampleValues,
-  formatGraphTick,
-  formatColors,
-  formatChartData,
-  handleTooltip,
-  applyStrokeColor,
-  applyFillColor,
-  applyIsFilled,
-} from './timeSeriesUtils';
+import { generateSampleValues, formatGraphTick } from './timeSeriesUtils';
 
 const { iotPrefix } = settings;
 
@@ -122,6 +114,73 @@ const TimeSeriesCardPropTypes = {
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the moment formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
+};
+
+/**
+ * Translates our raw data into a language the carbon-charts understand
+ * @param {string} timeDataSourceId, the field that identifies the timestamp value in the data
+ * @param {array} series, an array of lines to create in our chart
+ * @param {array} values, the array of values from our data layer
+ *
+ * TODO: Handle empty data lines gracefully and notify the user of data lines that did not
+ * match the dataFilter
+ *
+ * @returns {object} with a labels array and a datasets array
+ */
+export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
+  // Generate a set of unique timestamps for the values
+  const timestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
+  const data = [];
+
+  // Series is the different groups of datasets
+  series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+    timestamps.forEach((timestamp) => {
+      // First filter based on on the dataFilter
+      const filteredData = filter(values, dataFilter);
+      if (!isEmpty(filteredData)) {
+        // have to filter out null values from the dataset, as it causes Carbon Charts to break
+        filteredData
+          .filter((dataItem) => {
+            // only allow valid timestamp matches
+            return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+          })
+          .forEach((dataItem) => {
+            // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
+            if (dataItem[dataSourceId]) {
+              data.push({
+                date:
+                  dataItem[timeDataSourceId] instanceof Date
+                    ? dataItem[timeDataSourceId]
+                    : new Date(dataItem[timeDataSourceId]),
+                value: dataItem[dataSourceId],
+                group: label,
+              });
+            }
+          });
+      }
+    });
+  });
+
+  return data;
+};
+
+/**
+ * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
+ * @param {Array} series an array of dataset group classifications
+ * @returns {Object} colors - formatted
+ */
+export const formatColors = (series) => {
+  const colors = {
+    scale: {},
+  };
+  if (Array.isArray(series)) {
+    series.forEach((dataset, index) => {
+      colors.scale[dataset.label] = dataset.color || CHART_COLORS[index % CHART_COLORS.length];
+    });
+  } else {
+    colors.scale[series.label] = series.color || CHART_COLORS[0];
+  }
+  return colors;
 };
 
 const TimeSeriesCard = ({

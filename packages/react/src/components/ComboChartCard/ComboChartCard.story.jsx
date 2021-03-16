@@ -22,16 +22,16 @@ export default {
 };
 
 export const HealthDataAreaLine = () => {
-  const size = select ('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
+  const size = select('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
   return (
-    <div style={{width: `${getCardMinSize ('lg', size).x}px`, margin: 20}}>
+    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
       <ComboChartCard
-        title={text ('title', 'Health history')}
+        title={text('title', 'Health history')}
         id="stacked-sample"
-        isLoading={boolean ('isLoading', false)}
-        isEditable={boolean ('isEditable', false)}
-        isExpanded={boolean ('isExpanded', false)}
-        content={object ('content', {
+        isLoading={boolean('isLoading', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        content={object('content', {
           xLabel: 'Date',
           yLabel: 'Score',
           series: [
@@ -97,8 +97,8 @@ export const HealthDataAreaLine = () => {
         })}
         values={comboHealthData}
         size={size}
-        onCardAction={action ('onCardAction')}
-        availableActions={{expand: true, range: true}}
+        onCardAction={action('onCardAction')}
+        availableActions={{ expand: true, range: true }}
       />
     </div>
   );
@@ -275,4 +275,3 @@ export const ComboChartCardLoading = () => {
 ComboChartCardLoading.story = {
   name: 'loading',
 };
-

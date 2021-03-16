@@ -2,8 +2,11 @@ import React, { useMemo, useState } from 'react';
 import warning from 'warning';
 import isNil from 'lodash/isNil';
 import mapValues from 'lodash/mapValues';
+import moment from 'moment';
 
 import { CARD_SIZES } from '../constants/LayoutConstants';
+
+import { convertStringsToDOMElement } from './componentUtilityFunctions';
 
 /**
  * determine time range from drop down action
@@ -442,4 +445,85 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
       }
       return highestSeverityThreshold;
     }, []);
+};
+
+/** compare the current datapoint to a list of alert ranges */
+export const findMatchingAlertRange = (alertRanges, data) => {
+  const currentDataPoint = Array.isArray(data) ? data[0]?.date : data.date;
+
+  if (!currentDataPoint) {
+    return false;
+  }
+
+  const currentDatapointTimestamp = currentDataPoint.valueOf();
+  return (
+    Array.isArray(alertRanges) &&
+    alertRanges.filter(
+      (alert) =>
+        currentDatapointTimestamp <= alert.endTimestamp &&
+        currentDatapointTimestamp >= alert.startTimestamp
+    )
+  );
+};
+
+/**
+ * Extends default tooltip with the additional date information, and optionally alert information
+ * @param {object} dataOrHoveredElement data object for this particular datapoint should have a date field containing the timestamp
+ * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
+ * @param {array} alertRanges Array of alert range information to search
+ * @param {string} alertDetected Translated string to indicate that the alert is detected
+ * @param {bool} showTimeInGMT
+ * @param {string} tooltipDateFormatPattern
+ * @returns {string} DOM representation of the tooltip
+ */
+export const handleTooltip = (
+  dataOrHoveredElement,
+  defaultTooltip,
+  alertRanges,
+  alertDetected,
+  showTimeInGMT,
+  tooltipDateFormatPattern = 'L HH:mm:ss'
+) => {
+  const data = dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+    ? dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+    : dataOrHoveredElement;
+  const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
+  const dateLabel = timeStamp
+    ? `<li class='datapoint-tooltip'>
+        <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
+          ? moment.utc(timeStamp)
+          : moment(timeStamp)
+        ).format(tooltipDateFormatPattern)}</p>
+      </li>`
+    : '';
+  const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
+  const matchingAlertLabels = Array.isArray(matchingAlertRanges)
+    ? matchingAlertRanges
+        .map(
+          (matchingAlertRange) =>
+            `<li class='datapoint-tooltip'><a style="background-color:${matchingAlertRange.color}" class="tooltip-color"></a><p class='label'>${alertDetected} ${matchingAlertRange.details}</p></li>`
+        )
+        .join('')
+    : '';
+
+  // Convert strings to DOM Elements so we can easily reason about them and manipulate/replace pieces.
+  const [defaultTooltipDOM, dateLabelDOM, matchingAlertLabelsDOM] = convertStringsToDOMElement([
+    defaultTooltip,
+    dateLabel,
+    matchingAlertLabels,
+  ]);
+
+  // if the data has no timestamp, there will no dateLabel
+  // and without this check a null string was being inserted into the DOM.
+  if (dateLabelDOM.querySelector('li')) {
+    // The first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
+    defaultTooltipDOM.querySelector('li:first-child').replaceWith(dateLabelDOM.querySelector('li'));
+  }
+
+  // Append all the matching alert labels
+  matchingAlertLabelsDOM.querySelectorAll('li').forEach((label) => {
+    defaultTooltipDOM.querySelector('ul').append(label);
+  });
+
+  return defaultTooltipDOM.innerHTML;
 };
