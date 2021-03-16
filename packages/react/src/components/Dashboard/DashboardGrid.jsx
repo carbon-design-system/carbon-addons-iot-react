@@ -1,10 +1,11 @@
-import React, { useMemo, useCallback, useState, useEffect } from 'react';
+import React, { useMemo, useCallback, useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import find from 'lodash/find';
 import pick from 'lodash/pick';
 import classnames from 'classnames';
 
+import { useResize } from '../../internal/UseResizeObserver';
 import { settings } from '../../constants/Settings';
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -202,6 +203,7 @@ const DashboardGrid = ({
   onResizeStop: onResizeStopCallback,
   ...others
 }) => {
+  const gridRef = useResize(useRef(null));
   // Unfortunately can't use React.Children.map because it breaks the original key which breaks react-grid-layout
   const childrenArray = useMemo(() => children, [children]);
   const generatedLayouts = useMemo(
@@ -219,6 +221,14 @@ const DashboardGrid = ({
     (layout, allLayouts) => onLayoutChange && onLayoutChange(layout, allLayouts),
     [onLayoutChange]
   );
+
+  // listen for the width to be adjusted and then dispatch the resize event
+  // Work around for a bug in React-Grid-Layout. Issue here: https://github.com/STRML/react-grid-layout/issues/1204
+  useEffect(() => {
+    window.dispatchEvent(new Event('resize'));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gridRef?.current?.clientWidth]);
 
   // add the common measurements and key to the card so that the grid layout can find it
   const cards = useMemo(() => {
@@ -296,7 +306,7 @@ const DashboardGrid = ({
   };
 
   return (
-    <div style={{ flex: 1 }}>
+    <div style={{ flex: 1 }} ref={gridRef}>
       <GridLayout
         className={classnames(`${iotPrefix}--dashboard-grid`, {
           // Stop the initial animation unless we need to support editing drag-and-drop

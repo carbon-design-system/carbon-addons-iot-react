@@ -383,6 +383,8 @@ const DataSeriesFormItem = ({
                   size="small"
                   onClick={() => handleEditButton(dataItem, i)}
                   iconDescription={mergedI18n.edit}
+                  tooltipPosition="left"
+                  tooltipAlignment="center"
                 />,
               ],
               <Button
@@ -393,6 +395,8 @@ const DataSeriesFormItem = ({
                 size="small"
                 onClick={() => handleRemoveButton(dataItem)}
                 iconDescription={mergedI18n.remove}
+                tooltipPosition="left"
+                tooltipAlignment="center"
               />,
             ],
           },
@@ -523,6 +527,7 @@ const DataSeriesFormItem = ({
                   {
                     id: selectedItem,
                     ...(itemWithMetaData && { ...itemWithMetaData }),
+                    dataSourceId: `${selectedItem}_${uuid.v4()}`,
                   },
                 ],
                 cardConfig,
