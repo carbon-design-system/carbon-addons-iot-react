@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.10...v2.145.0-next.11) (2021-03-15)
+
+
+### Bug Fixes
+
+* **editor:** update edit modal for grouped bar charts ([e39eb53](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e39eb53ce066b6369d52ed6414a502d4543268d4))
+
+
+
+
+
 # [2.145.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.9...v2.145.0-next.10) (2021-03-12)
 
 
