@@ -44,7 +44,7 @@ export const itemsWithTitle = (items: BreadcrumbItem[], title: string): Breadcru
  * ```
  *
  * component.html
- * ```
+ * ```html
  * <sc-page-header [items]="currentPath"></sc-page-header>
  * ```
  */
