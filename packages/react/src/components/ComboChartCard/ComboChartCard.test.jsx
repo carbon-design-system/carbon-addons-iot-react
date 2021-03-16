@@ -1,11 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { comboHealthData } from '../../utils/comboChartDataSample';
-import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import ComboChartCard from './ComboChartCard';
 

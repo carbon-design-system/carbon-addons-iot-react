@@ -5,12 +5,15 @@ import { COLORS } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { barChartData } from '../../utils/barChartDataSample';
 
+import { 
+  findMatchingAlertRange,
+  handleTooltip
+} from '../../utils/cardUtilityFunctions';
+
 import {
   generateSampleValues,
   generateTableSampleValues,
   formatGraphTick,
-  findMatchingAlertRange,
-  handleTooltip,
   formatChartData,
   formatColors,
   applyFillColor,
