@@ -4,14 +4,14 @@ import { withKnobs, select } from '@storybook/addon-knobs';
 import { ButtonModule } from './button.module';
 
 storiesOf('Components/Button', module)
-	.addDecorator(
-		moduleMetadata({
-			imports: [ButtonModule],
-		})
-	)
-	.addDecorator(withKnobs)
-	.add('Basic', () => ({
-		template: `
+  .addDecorator(
+    moduleMetadata({
+      imports: [ButtonModule],
+    })
+  )
+  .addDecorator(withKnobs)
+  .add('Basic', () => ({
+    template: `
 			<button [aiButton]="aiButton" [size]="size">Button</button>
 			&nbsp;
 			<button [aiButton]="aiButton" [size]="size" disabled="true">Button</button>
@@ -20,17 +20,17 @@ storiesOf('Components/Button', module)
 				With icon<svg class="bx--btn__icon" ibmIconAdd size="20"></svg>
 			</button>
 		`,
-		props: {
-			aiButton: select(
-				'Button kind',
-				['primary', 'secondary', 'tertiary', 'ghost', 'danger', 'danger--primary'],
-				'primary'
-			),
-			size: select('Size of the buttons', ['normal', 'sm', 'field'], 'normal'),
-		},
-	}))
-	.add('Icon only', () => ({
-		template: `
+    props: {
+      aiButton: select(
+        'Button kind',
+        ['primary', 'secondary', 'tertiary', 'ghost', 'danger', 'danger--primary'],
+        'primary'
+      ),
+      size: select('Size of the buttons', ['normal', 'sm', 'field'], 'normal'),
+    },
+  }))
+  .add('Icon only', () => ({
+    template: `
 			<button
 				[aiButton]="aiButton"
 				[size]="size"
@@ -42,29 +42,29 @@ storiesOf('Components/Button', module)
 				<span class="bx--assistive-text">Icon description</span>
 			</button>
 		`,
-		props: {
-			aiButton: select(
-				'Button kind',
-				['primary', 'secondary', 'tertiary', 'ghost', 'danger', 'danger--primary'],
-				'tertiary'
-			),
-			size: select('Size of the buttons', ['normal', 'sm', 'field'], 'normal'),
-			assistiveTextPlacement: select(
-				'Placement of assistive text',
-				['top', 'bottom', 'left', 'right'],
-				'top'
-			),
-			assistiveTextAlignment: select(
-				'Alignment of assistive text',
-				['center', 'start', 'end'],
-				'center'
-			),
-		},
-	}))
-	.add('Skeleton', () => ({
-		template: `
+    props: {
+      aiButton: select(
+        'Button kind',
+        ['primary', 'secondary', 'tertiary', 'ghost', 'danger', 'danger--primary'],
+        'tertiary'
+      ),
+      size: select('Size of the buttons', ['normal', 'sm', 'field'], 'normal'),
+      assistiveTextPlacement: select(
+        'Placement of assistive text',
+        ['top', 'bottom', 'left', 'right'],
+        'top'
+      ),
+      assistiveTextAlignment: select(
+        'Alignment of assistive text',
+        ['center', 'start', 'end'],
+        'center'
+      ),
+    },
+  }))
+  .add('Skeleton', () => ({
+    template: `
 			<button aiButton skeleton="true"></button>
 			&nbsp;
 			<button aiButton skeleton="true" size="sm"></button>
 		`,
-	}));
+  }));

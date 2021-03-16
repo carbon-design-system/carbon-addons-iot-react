@@ -6,8 +6,8 @@ import { CommonModule } from '@angular/common';
 import { PageHeaderComponent } from './page-header.component';
 
 @NgModule({
-	declarations: [PageHeaderComponent],
-	imports: [CommonModule, BreadcrumbModule],
-	exports: [PageHeaderComponent],
+  declarations: [PageHeaderComponent],
+  imports: [CommonModule, BreadcrumbModule],
+  exports: [PageHeaderComponent],
 })
 export class PageHeaderModule {}

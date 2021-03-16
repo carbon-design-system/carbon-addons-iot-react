@@ -8,8 +8,8 @@ import { SCTableHeadComponent } from './head/sterling-table-head.component';
 import { SCTableComponent } from './sterling-table.component';
 
 @NgModule({
-	declarations: [SCTableComponent, SCTableHeadComponent, SCTableHeadCell],
-	imports: [DialogModule, ButtonModule, CommonModule, TableModule],
-	exports: [SCTableComponent, SCTableHeadComponent, SCTableHeadCell],
+  declarations: [SCTableComponent, SCTableHeadComponent, SCTableHeadCell],
+  imports: [DialogModule, ButtonModule, CommonModule, TableModule],
+  exports: [SCTableComponent, SCTableHeadComponent, SCTableHeadCell],
 })
 export class SCTableModule {}

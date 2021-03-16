@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { Button } from './button.directive';
 
 @NgModule({
-	declarations: [Button],
-	exports: [Button],
-	imports: [CommonModule],
+  declarations: [Button],
+  exports: [Button],
+  imports: [CommonModule],
 })
 export class ButtonModule {}

@@ -8,13 +8,13 @@ import { BreadcrumbItem } from 'carbon-components-angular/breadcrumb';
  * @param title the title to add to the list of items
  */
 export const itemsWithTitle = (items: BreadcrumbItem[], title: string): BreadcrumbItem[] => {
-	return [
-		...items,
-		{
-			content: title,
-			href: '',
-		},
-	];
+  return [
+    ...items,
+    {
+      content: title,
+      href: '',
+    },
+  ];
 };
 
 /**
@@ -49,55 +49,55 @@ export const itemsWithTitle = (items: BreadcrumbItem[], title: string): Breadcru
  * ```
  */
 @Component({
-	selector: 'sc-page-header',
-	template: `
-		<div [ngClass]="{ 'bx--col': onGrid }">
-			<ibm-breadcrumb
-				class="breadcrumbs"
-				[ariaLabel]="ariaLabel"
-				[items]="breadcrumbItems"
-				(navigation)="navigation.emit($event)"
-			>
-			</ibm-breadcrumb>
-			<h2>{{ title }}</h2>
-		</div>
-	`,
-	styleUrls: ['./page-header.scss'],
+  selector: 'sc-page-header',
+  template: `
+    <div [ngClass]="{ 'bx--col': onGrid }">
+      <ibm-breadcrumb
+        class="breadcrumbs"
+        [ariaLabel]="ariaLabel"
+        [items]="breadcrumbItems"
+        (navigation)="navigation.emit($event)"
+      >
+      </ibm-breadcrumb>
+      <h2>{{ title }}</h2>
+    </div>
+  `,
+  styleUrls: ['./page-header.scss'],
 })
 export class PageHeaderComponent {
-	/**
-	 * Items to display in the header. The last item is used as the title
-	 */
-	@Input() items: BreadcrumbItem[] = [];
+  /**
+   * Items to display in the header. The last item is used as the title
+   */
+  @Input() items: BreadcrumbItem[] = [];
 
-	/**
-	 * Accessible label for the underlying `<nav></nav>` element that the breadcrumb
-	 * items reside in
-	 */
-	@Input() ariaLabel: string;
+  /**
+   * Accessible label for the underlying `<nav></nav>` element that the breadcrumb
+   * items reside in
+   */
+  @Input() ariaLabel: string;
 
-	/**
-	 * Emits the navigation status promise when the link is activated
-	 *
-	 * (event forwarded from the underlying `ibm-breadcrumb`)
-	 */
-	@Output() navigation = new EventEmitter<Promise<boolean>>();
+  /**
+   * Emits the navigation status promise when the link is activated
+   *
+   * (event forwarded from the underlying `ibm-breadcrumb`)
+   */
+  @Output() navigation = new EventEmitter<Promise<boolean>>();
 
-	/**
-	 * The page header sits on the grid by default.
-	 * Set to `false` if you need to manually position the page header using the default padding values
-	 */
-	@HostBinding('class.bx--row') @Input() onGrid = true;
+  /**
+   * The page header sits on the grid by default.
+   * Set to `false` if you need to manually position the page header using the default padding values
+   */
+  @HostBinding('class.bx--row') @Input() onGrid = true;
 
-	get title() {
-		return this.items[this.items.length - 1].content;
-	}
+  get title() {
+    return this.items[this.items.length - 1].content;
+  }
 
-	get breadcrumbItems() {
-		return this.items.slice(0, this.items.length - 1);
-	}
+  get breadcrumbItems() {
+    return this.items.slice(0, this.items.length - 1);
+  }
 
-	@HostBinding('class.has-breadcrumbs') get hasBreadcrumbs() {
-		return this.items.length > 1;
-	}
+  @HostBinding('class.has-breadcrumbs') get hasBreadcrumbs() {
+    return this.items.length > 1;
+  }
 }

@@ -16,7 +16,7 @@ const fs = require('fs');
 // Variables
 // =================================
 const dirs = {
-	DIST: 'dist',
+  DIST: 'dist',
 };
 
 const licenseTemplate = `/**
@@ -46,15 +46,15 @@ const licenseTemplate = `/**
 const moveLicense = () => gulp.src('LICENSE.md').pipe(gulp.dest(dirs.DIST));
 
 const buildLicense = () =>
-	gulp
-		.src([
-			`${dirs.DIST}/**/*.scss`,
-			`${dirs.DIST}/**/*.css`,
-			`${dirs.DIST}/**/*.ts`,
-			`${dirs.DIST}/**/*.js`,
-		])
-		.pipe(licenseHeaders())
-		.pipe(gulp.dest(dirs.DIST));
+  gulp
+    .src([
+      `${dirs.DIST}/**/*.scss`,
+      `${dirs.DIST}/**/*.css`,
+      `${dirs.DIST}/**/*.ts`,
+      `${dirs.DIST}/**/*.js`,
+    ])
+    .pipe(licenseHeaders())
+    .pipe(gulp.dest(dirs.DIST));
 
 const buildReadme = () => gulp.src('README.md').pipe(gulp.dest(dirs.DIST));
 
@@ -64,23 +64,23 @@ const buildReadme = () => gulp.src('README.md').pipe(gulp.dest(dirs.DIST));
 const buildMeta = gulp.parallel(moveLicense, buildLicense, buildReadme);
 
 module.exports = {
-	buildLicense,
-	buildReadme,
-	moveLicense,
-	buildMeta,
-	default: buildMeta,
+  buildLicense,
+  buildReadme,
+  moveLicense,
+  buildMeta,
+  default: buildMeta,
 };
 
 //
 // Functions
 // =================================
 function licenseHeaders() {
-	return tap(function (file) {
-		const packageJSON = require('./package.json');
-		const updatedTemplate = licenseTemplate
-			.replace('@PACKAGE_VERSION@', packageJSON.version)
-			.replace('@FILE_NAME@', path.basename(file.path))
-			.replace('@THIS_YEAR@', new Date().getFullYear());
-		file.contents = Buffer.concat([new Buffer(updatedTemplate), file.contents]);
-	});
+  return tap(function (file) {
+    const packageJSON = require('./package.json');
+    const updatedTemplate = licenseTemplate
+      .replace('@PACKAGE_VERSION@', packageJSON.version)
+      .replace('@FILE_NAME@', path.basename(file.path))
+      .replace('@THIS_YEAR@', new Date().getFullYear());
+    file.contents = Buffer.concat([new Buffer(updatedTemplate), file.contents]);
+  });
 }
