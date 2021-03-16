@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { comboHealthData } from '../../utils/comboChartDataSample';
+import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import ComboChartCard from './ComboChartCard';
 
@@ -12,13 +13,19 @@ const acceptableSizes = Object.keys(CARD_SIZES).filter(
   (size) => size.includes('MEDIUM') || size.includes('LARGE')
 );
 
+export const Experimental = () => <StoryNotice componentName="ComboChartCard" experimental />;
+Experimental.story = {
+  name: experimentalStoryTitle,
+};
+
 export default {
-  title: 'Watson IoT Experimental/ComboChartCard',
+  title: 'Watson IoT Experimental/☢️ ComboChartCard',
   decorators: [withKnobs],
 
   parameters: {
     component: ComboChartCard,
   },
+  excludeStories: [],
 };
 
 export const HealthDataAreaLine = () => {
