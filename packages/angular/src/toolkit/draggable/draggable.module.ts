@@ -4,8 +4,8 @@ import { DraggableDirective } from './draggable.directive';
 import { DroppableDirective } from './droppable.directive';
 
 @NgModule({
-	declarations: [DraggableDirective, DroppableDirective],
-	imports: [CommonModule],
-	exports: [DraggableDirective, DroppableDirective],
+  declarations: [DraggableDirective, DroppableDirective],
+  imports: [CommonModule],
+  exports: [DraggableDirective, DroppableDirective],
 })
 export class DraggableModule {}

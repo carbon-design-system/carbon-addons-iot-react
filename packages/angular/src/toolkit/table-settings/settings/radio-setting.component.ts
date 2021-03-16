@@ -5,35 +5,35 @@ import { RadioOption } from './radio-setting.class';
 import { SettingChanges } from './setting.class';
 
 @Component({
-	selector: 'sc-radio-setting, ai-radio-setting',
-	template: `
-		<ibm-radio-group>
-			<ibm-radio
-				*ngFor="let option of options"
-				[checked]="option.value === active"
-				[value]="option.value"
-				(change)="onChange($event)"
-			>
-				{{ getContent(option) | async }}
-			</ibm-radio>
-		</ibm-radio-group>
-	`,
+  selector: 'sc-radio-setting, ai-radio-setting',
+  template: `
+    <ibm-radio-group>
+      <ibm-radio
+        *ngFor="let option of options"
+        [checked]="option.value === active"
+        [value]="option.value"
+        (change)="onChange($event)"
+      >
+        {{ getContent(option) | async }}
+      </ibm-radio>
+    </ibm-radio-group>
+  `,
 })
 export class RadioSettingComponent {
-	@Input() options: RadioOption[];
+  @Input() options: RadioOption[];
 
-	@Input() active: any;
+  @Input() active: any;
 
-	@Output() activeChange = new EventEmitter<SettingChanges>();
+  @Output() activeChange = new EventEmitter<SettingChanges>();
 
-	getContent(option: RadioOption): Observable<string> {
-		if (isObservable(option.content)) {
-			return option.content;
-		}
-		return of(option.content);
-	}
+  getContent(option: RadioOption): Observable<string> {
+    if (isObservable(option.content)) {
+      return option.content;
+    }
+    return of(option.content);
+  }
 
-	onChange(event: RadioChange) {
-		this.activeChange.emit({ active: event.value });
-	}
+  onChange(event: RadioChange) {
+    this.activeChange.emit({ active: event.value });
+  }
 }

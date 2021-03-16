@@ -14,7 +14,8 @@
 		"import-spacing": true,
 		"indent": [
 			true,
-			"tabs"
+			"spaces",
+      2
 		],
 		"label-position": true,
 		"max-line-length": [

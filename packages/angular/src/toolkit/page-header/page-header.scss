@@ -2,28 +2,28 @@
 @import '../vendor/@carbon/colors/scss/index';
 
 :host {
-	display: block;
-	padding: carbon--mini-units(4);
-	max-height: carbon--mini-units(12.5);
-	background: $carbon--gray-10;
+  display: block;
+  padding: carbon--mini-units(4);
+  max-height: carbon--mini-units(12.5);
+  background: $carbon--gray-10;
 }
 
 :host.has-breadcrumbs {
-	padding-top: carbon--mini-units(2);
+  padding-top: carbon--mini-units(2);
 }
 
 h2 {
-	font-size: 1.75rem;
-	line-height: 2.25rem;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
 }
 
 :host.bx--row {
-	padding-left: 0;
-	padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @include carbon--breakpoint('sm') {
-	:host {
-		max-height: unset;
-	}
+  :host {
+    max-height: unset;
+  }
 }

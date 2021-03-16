@@ -5,39 +5,39 @@ import { TableSettingsModalComponent } from './table-settings-modal.component';
 
 @Injectable()
 export class TableSettingsService {
-	public readonly onClose: Observable<any>;
+  public readonly onClose: Observable<any>;
 
-	protected closeSubject = new Subject();
+  protected closeSubject = new Subject();
 
-	protected modalRef: ComponentRef<TableSettingsModalComponent>;
+  protected modalRef: ComponentRef<TableSettingsModalComponent>;
 
-	constructor(protected modalService: ModalService) {
-		this.onClose = this.closeSubject.asObservable();
-	}
+  constructor(protected modalService: ModalService) {
+    this.onClose = this.closeSubject.asObservable();
+  }
 
-	openSettings(settingsModel) {
-		if (this.modalRef) {
-			return;
-		}
+  openSettings(settingsModel) {
+    if (this.modalRef) {
+      return;
+    }
 
-		this.modalRef = this.modalService.create({
-			component: TableSettingsModalComponent,
-			inputs: {
-				model: settingsModel,
-			},
-		});
+    this.modalRef = this.modalService.create({
+      component: TableSettingsModalComponent,
+      inputs: {
+        model: settingsModel,
+      },
+    });
 
-		this.modalRef.instance.close.subscribe(() => {
-			this.closeSubject.next();
-		});
-	}
+    this.modalRef.instance.close.subscribe(() => {
+      this.closeSubject.next();
+    });
+  }
 
-	closeSettings() {
-		if (!this.modalRef) {
-			return;
-		}
+  closeSettings() {
+    if (!this.modalRef) {
+      return;
+    }
 
-		this.modalRef.instance.closeModal();
-		this.modalRef = null;
-	}
+    this.modalRef.instance.closeModal();
+    this.modalRef = null;
+  }
 }
