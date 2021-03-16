@@ -24,17 +24,17 @@
             }
           }
         },
-		"test": {
-			"builder": "@angular-builders/custom-webpack:karma",
-			"options": {
-				"main": "src/test.ts",
-				"karmaConfig": "./karma.conf.js",
-				"tsConfig": "./tsconfig.spec.json",
-				"customWebpackConfig": {
-					"path": "./custom-webpack.config.js"
-				}
-			}
-		},
+        "test": {
+          "builder": "@angular-builders/custom-webpack:karma",
+          "options": {
+            "main": "src/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "tsConfig": "./tsconfig.spec.json",
+            "customWebpackConfig": {
+              "path": "./custom-webpack.config.js"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
