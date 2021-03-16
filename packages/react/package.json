@@ -137,6 +137,7 @@
     "immutability-helper": "^2.9.0",
     "js-file-download": "^0.4.7",
     "lodash": "^4.17.19",
+    "mapbox-gl": "^2.1.1",
     "moment": "^2.24.0",
     "polished": "^2.3.3",
     "prop-types": "^15.7.2",
