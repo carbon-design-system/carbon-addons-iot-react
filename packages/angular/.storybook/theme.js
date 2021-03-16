@@ -1,10 +1,10 @@
 import { create } from '@storybook/theming';
-import { g100 } from '@carbon/themes';
+import { g10 } from '@carbon/themes';
 
-const { field01, interactive01, text01, text04, ui01, ui03, ui04, uiBackground } = g100;
+const { field01, interactive01, text01, text04, ui01, ui03, ui04, uiBackground } = g10;
 
 export const CarbonG100 = create({
-	base: 'dark',
+	base: 'light',
 
 	colorPrimary: interactive01,
 	colorSecondary: ui04,

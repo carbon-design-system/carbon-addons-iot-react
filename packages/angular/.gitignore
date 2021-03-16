@@ -14,4 +14,4 @@ doc/
 documentation/
 dist/
 a11y/results*
-!**/vendor/**/*css
+src/vendor
