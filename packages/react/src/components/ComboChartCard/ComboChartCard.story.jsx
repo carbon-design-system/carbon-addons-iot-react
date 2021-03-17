@@ -96,7 +96,7 @@ export const HealthDataAreaLine = () => {
           includeZeroOnYaxis: true,
           curve: 'curveNatural',
           addSpaceOnEdges: 0,
-          decimalPrecision: false,
+          decimalPrecision: 0,
           timeDataSourceId: 'date',
           legend: {
             position: 'top',
@@ -183,7 +183,7 @@ export const ExpandedHealthDataAreaLine = () => {
           includeZeroOnYaxis: true,
           curve: 'curveNatural',
           addSpaceOnEdges: 0,
-          decimalPrecision: false,
+          decimalPrecision: 0,
           timeDataSourceId: 'date',
           legend: {
             position: 'top',

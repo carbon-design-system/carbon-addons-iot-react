@@ -19821,7 +19821,7 @@ Map {
         "args": Array [
           Object {
             "addSpaceOnEdges": Object {
-              "type": "bool",
+              "type": "number",
             },
             "comboChartTypes": Object {
               "args": Array [
@@ -19864,7 +19864,7 @@ Map {
               "type": "string",
             },
             "decimalPrecision": Object {
-              "type": "bool",
+              "type": "number",
             },
             "includeZeroOnXaxis": Object {
               "type": "bool",
