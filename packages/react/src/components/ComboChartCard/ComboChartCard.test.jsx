@@ -52,9 +52,10 @@ const commonOptions = {
   values: comboHealthData,
 };
 
-jest.mock('@carbon/charts-react/combo-chart', () => () => (
-  <div id="mock-combo-chart">mock combo chart</div>
-));
+/* 
+  the underlying <ComboChart> control is mocked. 
+  Check __mocks__/@carbon/charts-react/combo-chart for details
+*/
 
 describe('ComboChartCard', () => {
   it('Renders basic card ', () => {

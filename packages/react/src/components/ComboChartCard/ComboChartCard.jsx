@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import ComboChart from '@carbon/charts-react/combo-chart';
+import { ComboChart } from '@carbon/charts-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 
