@@ -40,7 +40,7 @@ const commonContent = {
   ],
   includeZeroOnXaxis: true,
   includeZeroOnYaxis: true,
-  addSpaceOnEdges: false,
+  addSpaceOnEdges: 0,
   timeDataSourceId: 'date',
 };
 
@@ -51,29 +51,25 @@ const commonOptions = {
   content: commonContent,
   values: comboHealthData,
 };
-// jest.unmock('@carbon/charts-react');
+
+jest.mock('@carbon/charts-react/combo-chart', () => () => (
+  <div id="mock-combo-chart">mock combo chart</div>
+));
 
 describe('ComboChartCard', () => {
-  const originalCreateObjectURL = global.URL.createObjectURL;
-  const originalRevokeObjectURL = global.URL.revokeObjectURL;
-
-  beforeAll(() => {
-    global.URL.createObjectURL = jest.fn();
-    global.URL.revokeObjectURL = jest.fn();
-  });
-
-  afterAll(() => {
-    global.URL.createObjectURL = originalCreateObjectURL;
-    global.URL.revokeObjectURL = originalRevokeObjectURL;
-  });
-
-  it('Renders another card ', () => {
-    render(<ComboChartCard {...commonOptions} isExpanded />);
-    expect(screen.queryByText(commonOptions.title)).toBeDefined();
-  });
-
-  it('Renders card ', () => {
+  it('Renders basic card ', () => {
     render(<ComboChartCard {...commonOptions} />);
     expect(screen.queryByText(commonOptions.title)).toBeDefined();
+    expect(screen.queryAllByText('data table toolbar')).toHaveLength(0);
+  });
+
+  it('Renders table when expanded', () => {
+    render(<ComboChartCard {...commonOptions} isExpanded />);
+    expect(screen.getByLabelText('data table toolbar')).toBeDefined();
+  });
+
+  it('When expanded and loading it does not show the table', () => {
+    render(<ComboChartCard {...commonOptions} isExpanded isLoading />);
+    expect(screen.queryAllByText('data table toolbar')).toHaveLength(0);
   });
 });
