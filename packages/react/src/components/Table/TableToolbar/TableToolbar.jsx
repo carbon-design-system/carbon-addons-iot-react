@@ -15,6 +15,8 @@ import {
   OverflowMenuItem,
 } from 'carbon-components-react';
 import classnames from 'classnames';
+import isNil from 'lodash/isNil';
+import pick from 'lodash/pick';
 
 import deprecate from '../../../internal/deprecate';
 import {
@@ -26,6 +28,7 @@ import {
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 
+import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout';
 import TableToolbarSVGButton from './TableToolbarSVGButton';
 
 const { iotPrefix } = settings;
@@ -45,6 +48,7 @@ const propTypes = {
   tooltip: PropTypes.node,
   /** global table options */
   options: PropTypes.shape({
+    hasAdvancedFilter: PropTypes.bool,
     hasAggregations: PropTypes.bool,
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
@@ -135,6 +139,7 @@ const TableToolbar = ({
   secondaryTitle,
   tooltip,
   options: {
+    hasAdvancedFilter,
     hasAggregations,
     hasColumnSelection,
     hasFilter,
@@ -154,8 +159,14 @@ const TableToolbar = ({
     onShowRowEdit,
     onApplySearch,
     onDownloadCSV,
+    onApplyFilter,
+    onCancelFilter,
+    onCreateAdvancedFilter,
+    onChangeAdvancedFilter,
   },
   tableState: {
+    advancedFilterFlyoutOpen,
+    advancedFilters,
     totalSelected,
     totalFilters,
     batchActions,
@@ -165,6 +176,10 @@ const TableToolbar = ({
     isDisabled,
     totalItemsCount,
     rowEditBarButtons,
+    filters,
+    selectedAdvancedFilterId,
+    columns,
+    ordering,
   },
   data,
 }) => (
@@ -268,6 +283,49 @@ const TableToolbar = ({
             testId="filter-button"
             renderIcon={Filter20}
             disabled={isDisabled}
+          />
+        ) : null}
+        {hasAdvancedFilter ? (
+          <TableToolbarAdvancedFilterFlyout
+            actions={{
+              onApplyFilter,
+              onCancelFilter,
+              onCreateAdvancedFilter,
+              onChangeAdvancedFilter,
+              onToggleFilter,
+            }}
+            columns={columns.map((column) => ({
+              ...column.filter,
+              id: column.id,
+              name: column.name,
+              isFilterable: !isNil(column.filter),
+              isMultiselect: column.filter?.isMultiselect,
+            }))}
+            tableState={{
+              filters,
+              advancedFilters,
+              selectedAdvancedFilterId,
+              advancedFilterFlyoutOpen,
+              ordering,
+              hasFastFilter: hasAdvancedFilter === 'onKeyPress',
+            }}
+            i18n={{
+              ...pick(
+                i18n,
+                'filterText',
+                'clearFilterText',
+                'clearSelectionText',
+                'openMenuText',
+                'closeMenuText',
+                'applyButtonText',
+                'cancelButtonText',
+                'advancedFilterLabelText',
+                'createNewAdvancedFilterText',
+                'advancedFilterPlaceholderText',
+                'simpleFiltersTabLabel',
+                'advancedFiltersTabLabel'
+              ),
+            }}
           />
         ) : null}
         {hasRowEdit ? (

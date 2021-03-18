@@ -403,6 +403,10 @@ const actions = {
     onCancelBatchAction: action('onCancelBatchAction'),
     onApplyBatchAction: action('onApplyBatchAction'),
     onApplySearch: action('onApplySearch'),
+    onCancelFilter: action('onCancelFilter'),
+    onRemoveAdvancedFilter: action('onRemoveAdvancedFilter'),
+    onCreateAdvancedFilter: action('onCreateAdvancedFilter'),
+    onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
@@ -2723,9 +2727,10 @@ export const WithFilters = () => {
       data={filteredData}
       actions={actions}
       options={{
-        hasFilter: true,
+        // hasFilter: true,
         hasPagination: true,
         hasRowSelection: 'multi',
+        hasAdvancedFilter: true,
       }}
       view={{
         filters: [
@@ -2754,6 +2759,158 @@ export const WithFilters = () => {
 
 WithFilters.story = {
   name: 'with filters',
+};
+
+export const WithAdvancedFilters = () => {
+  const operands = {
+    EQ: (a, b) => a === b,
+  };
+
+  const advancedFilters = [
+    {
+      filterId: 'story-filter',
+      /** Text for main tilte of page */
+      filterTitleText: 'My Filter',
+      /** Text for metadata for the filter */
+      filterMetaText: `last updated: 2021-03-11 15:34:01`,
+      /** tags associated with particular filter */
+      filterTags: ['fav', 'other-tag'],
+      /** users that have access to particular filter */
+      filterAccess: [
+        {
+          username: 'Example-User',
+          email: 'example@pal.com',
+          name: 'Example User',
+          access: 'edit',
+        },
+        {
+          username: 'Other-User',
+          email: 'other@pal.com',
+          name: 'Other User',
+          access: 'read',
+        },
+      ],
+      /** All possible users that can be granted access */
+      filterUsers: [
+        {
+          id: 'teams',
+          name: 'Teams',
+          groups: [
+            {
+              id: 'team-a',
+              name: 'Team A',
+              users: [
+                {
+                  username: '@tpeck',
+                  email: 'tpeck@pal.com',
+                  name: 'Templeton Peck',
+                },
+                {
+                  username: '@jsmith',
+                  email: 'jsmith@pal.com',
+                  name: 'John Smith',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          username: 'Example-User',
+          email: 'example@pal.com',
+          name: 'Example User',
+        },
+        {
+          username: 'Test-User',
+          email: 'test@pal.com',
+          name: 'Test User',
+        },
+        {
+          username: 'Other-User',
+          email: 'other@pal.com',
+          name: 'Other User',
+        },
+      ],
+      /**
+       * the rules passed into the component. The RuleBuilder is a controlled component, so
+       * this works the same as passing defaultValue to a controlled input component.
+       */
+      filterRules: {
+        id: '14p5ho3pcu',
+        groupLogic: 'ALL',
+        rules: [
+          {
+            id: 'rsiru4rjba',
+            columnId: 'select',
+            operand: 'EQ',
+            value: 'option-B',
+          },
+          {
+            id: '34bvyub9jq',
+            columnId: 'boolean',
+            operand: 'EQ',
+            value: 'true',
+          },
+        ],
+      },
+      filterColumns: tableColumns,
+    },
+  ];
+
+  const filteredData = tableData.filter(({ values }) => {
+    // return false if a value doesn't match a valid filter
+    return advancedFilters[0].filterRules.rules.reduce(
+      (acc, { columnId, operand, value: filterValue }) => {
+        const columnValue = values[columnId].toString();
+        const comparitor = operands[operand];
+        if (advancedFilters[0].filterRules.groupLogic === 'ALL') {
+          return acc && comparitor(columnValue, filterValue);
+        }
+
+        return comparitor(columnValue, filterValue);
+      },
+      true
+    );
+  });
+  return (
+    <Table
+      id="table"
+      columns={tableColumns}
+      data={filteredData}
+      actions={actions}
+      options={{
+        hasPagination: true,
+        hasRowSelection: 'multi',
+        hasAdvancedFilter: true,
+      }}
+      view={{
+        filters: [
+          {
+            columnId: 'string',
+            value: 'whiteboard',
+          },
+          {
+            columnId: 'select',
+            value: 'option-B',
+          },
+        ],
+        advancedFilters,
+        selectedAdvancedFilterId: 'story-filter',
+        pagination: {
+          totalItems: filteredData.length,
+        },
+        table: {
+          ordering: defaultOrdering,
+        },
+        toolbar: {
+          advancedFilterFlyoutOpen: true,
+        },
+      }}
+    />
+  );
+};
+
+WithAdvancedFilters.story = {
+  name: 'with advanced filters',
 };
 
 export const WithColumnSelection = () => (

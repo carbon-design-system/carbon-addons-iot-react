@@ -345,6 +345,8 @@ Map {
         "toolbar": Object {
           "onApplyBatchAction": [Function],
           "onCancelBatchAction": [Function],
+          "onCancelFilter": [Function],
+          "onRemoveAdvancedFilter": [Function],
           "onShowRowEdit": [Function],
           "onToggleColumnSelection": [Function],
           "onToggleFilter": [Function],
@@ -416,6 +418,7 @@ Map {
       "tooltip": null,
       "useZebraStyles": false,
       "view": Object {
+        "advancedFilters": Array [],
         "aggregations": Object {
           "columns": Array [],
         },
@@ -432,6 +435,7 @@ Map {
           ],
           "totalItems": undefined,
         },
+        "selectedAdvancedFilterId": null,
         "table": Object {
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
@@ -445,6 +449,7 @@ Map {
           "sort": Object {},
         },
         "toolbar": Object {
+          "advancedFilterFlyoutOpen": false,
           "batchActions": Array [],
           "search": Object {},
         },
@@ -526,10 +531,22 @@ Map {
                   "onCancelBatchAction": Object {
                     "type": "func",
                   },
+                  "onCancelFilter": Object {
+                    "type": "func",
+                  },
+                  "onChangeAdvancedFilter": Object {
+                    "type": "func",
+                  },
                   "onClearAllFilters": Object {
                     "type": "func",
                   },
+                  "onCreateAdvancedFilter": Object {
+                    "type": "func",
+                  },
                   "onDownloadCSV": Object {
+                    "type": "func",
+                  },
+                  "onRemoveAdvancedFilter": Object {
                     "type": "func",
                   },
                   "onShowRowEdit": Object {
@@ -950,6 +967,7 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasAdvancedFilter": [Function],
             "hasAggregations": Object {
               "type": "bool",
             },
@@ -1425,7 +1443,12 @@ Map {
       "filterText": "Filter",
       "hasFastFilter": true,
       "i18n": Object {
+        "advancedFilterLabelText": "Select an existing filter or",
+        "advancedFilterPlaceholderText": "Select a filter",
+        "advancedFiltersTabLabel": "Advanced filters",
+        "applyButtonText": "Apply filters",
         "batchCancel": "Cancel",
+        "cancelButtonText": "Cancel",
         "clearAllFilters": "Clear all filters",
         "clearFilterAria": "Clear filter",
         "clearSelectionAria": "Clear selection",
@@ -1434,6 +1457,7 @@ Map {
         "closeMenuAria": "Close menu",
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
+        "createNewAdvancedFilterText": "create a new advanced filter",
         "currentPage": [Function],
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
@@ -1461,6 +1485,7 @@ Map {
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
+        "simpleFiltersTabLabel": "Simple filters",
       },
       "lightweight": false,
       "openMenuText": "Open menu",
@@ -2967,7 +2992,12 @@ Map {
   "TableToolbar" => Object {
     "defaultProps": Object {
       "i18n": Object {
+        "advancedFilterLabelText": "Select an existing filter or",
+        "advancedFilterPlaceholderText": "Select a filter",
+        "advancedFiltersTabLabel": "Advanced filters",
+        "applyButtonText": "Apply filters",
         "batchCancel": "Cancel",
+        "cancelButtonText": "Cancel",
         "clearAllFilters": "Clear all filters",
         "clearFilterAria": "Clear filter",
         "clearSelectionAria": "Clear selection",
@@ -2976,6 +3006,7 @@ Map {
         "closeMenuAria": "Close menu",
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
+        "createNewAdvancedFilterText": "create a new advanced filter",
         "currentPage": [Function],
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
@@ -3003,6 +3034,7 @@ Map {
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
+        "simpleFiltersTabLabel": "Simple filters",
       },
       "secondaryTitle": null,
       "tooltip": null,
@@ -3214,6 +3246,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasAdvancedFilter": Object {
+              "type": "bool",
+            },
             "hasAggregations": Object {
               "type": "bool",
             },
@@ -18419,6 +18454,7 @@ Map {
   },
   "FlyoutMenu" => Object {
     "defaultProps": Object {
+      "buttonProps": Object {},
       "buttonSize": "default",
       "children": undefined,
       "customFooter": null,
@@ -18429,6 +18465,7 @@ Map {
         "applyButtonText": "Apply",
         "cancelButtonText": "Cancel",
       },
+      "isOpen": null,
       "light": true,
       "menuOffset": Object {
         "left": 0,
@@ -18450,6 +18487,16 @@ Map {
       "useAutoPositioning": false,
     },
     "propTypes": Object {
+      "buttonProps": Object {
+        "args": Array [
+          Object {
+            "className": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "buttonSize": Object {
         "type": "string",
       },
@@ -18496,6 +18543,9 @@ Map {
       "iconDescription": Object {
         "isRequired": true,
         "type": "string",
+      },
+      "isOpen": Object {
+        "type": "bool",
       },
       "light": Object {
         "type": "bool",
