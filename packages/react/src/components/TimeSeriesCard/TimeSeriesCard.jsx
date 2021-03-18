@@ -8,10 +8,15 @@ import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import capitalize from 'lodash/capitalize';
+import defaultsDeep from 'lodash/defaultsDeep';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
-import { CardPropTypes, ZoomBarPropTypes } from '../../constants/CardPropTypes';
+import {
+  CardPropTypes,
+  ZoomBarPropTypes,
+  TruncationPropTypes,
+} from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   TIME_SERIES_TYPES,
@@ -85,17 +90,13 @@ const TimeSeriesCardPropTypes = {
      */
     showLegend: PropTypes.bool,
     /** carbon charts legend truncation options */
-    truncation: PropTypes.shape({
-      /** truncation type */
-      type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
-      /** number of characters needed to enable truncation */
-      threshold: PropTypes.number,
-    }),
+    truncation: TruncationPropTypes,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
     noData: PropTypes.string,
     tooltipGroupLabel: PropTypes.string,
+    defaultFilterStringPlaceholdText: PropTypes.string,
   }),
   /** array of data from the backend for instance [{timestamp: Date object || ms timestamp, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(
@@ -124,6 +125,35 @@ const TimeSeriesCardPropTypes = {
   tooltipDateFormatPattern: PropTypes.string,
 };
 
+const defaultProps = {
+  size: CARD_SIZES.MEDIUM,
+  values: [],
+  i18n: {
+    alertDetected: 'Alert detected:',
+    noDataLabel: 'No data is available for this time range.',
+    tooltipGroupLabel: 'Group',
+    defaultFilterStringPlaceholdText: 'Filter',
+  },
+  chartType: TIME_SERIES_TYPES.LINE,
+  locale: 'en',
+  content: {
+    series: [],
+    timeDataSourceId: 'timestamp',
+    includeZeroOnXaxis: false,
+    includeZeroOnYaxis: false,
+    showLegend: true,
+    truncation: {
+      type: 'end_line',
+      threshold: 20,
+      numCharacter: 20,
+    },
+  },
+  interval: 'hour',
+  showTimeInGMT: false,
+  domainRange: null,
+  tooltipDateFormatPattern: 'L HH:mm:ss',
+};
+
 const TimeSeriesCard = ({
   title: titleProp,
   content,
@@ -134,20 +164,24 @@ const TimeSeriesCard = ({
   isResizable,
   values: initialValues,
   locale,
-  i18n: { alertDetected, noDataLabel },
   i18n,
   isExpanded,
   timeRange,
   isLazyLoading,
   isLoading,
   domainRange,
+  tooltipDateFormatPattern,
+  showTimeInGMT,
   ...others
 }) => {
+  // need to deep merge the nested content default props as default props only uses a shallow merge natively
+  const contentWithDefaults = useMemo(() => defaultsDeep(content, defaultProps.content), [content]);
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const {
     title,
     content: {
       series,
-      timeDataSourceId = 'timestamp',
+      timeDataSourceId,
       alertRanges,
       xLabel,
       yLabel,
@@ -157,14 +191,12 @@ const TimeSeriesCard = ({
       unit,
       chartType,
       zoomBar,
-      showTimeInGMT,
       showLegend,
-      tooltipDateFormatPattern,
       addSpaceOnEdges,
       truncation,
     },
     values: valuesProp,
-  } = handleCardVariables(titleProp, content, initialValues, others);
+  } = handleCardVariables(titleProp, contentWithDefaults, initialValues, others);
   let chartRef = useRef();
   const previousTick = useRef();
   moment.locale(locale);
@@ -297,7 +329,7 @@ const TimeSeriesCard = ({
               : matchingDataSource.label
             : columnName,
           isSortable: true,
-          filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
+          filter: { placeholderText: mergedI18n.defaultFilterStringPlaceholdText },
           renderDataFunction: ({ value }) => {
             if (typeof value === 'number' && !isNil(decimalPrecision)) {
               return chartValueFormatter(value, size, unit, locale, decimalPrecision);
@@ -310,7 +342,7 @@ const TimeSeriesCard = ({
   }, [
     columnNames,
     decimalPrecision,
-    i18n.defaultFilterStringPlaceholdText,
+    mergedI18n.defaultFilterStringPlaceholdText,
     locale,
     series,
     size,
@@ -372,11 +404,11 @@ const TimeSeriesCard = ({
           handleTooltip(
             ...args,
             alertRanges,
-            alertDetected,
+            mergedI18n.alertDetected,
             showTimeInGMT,
             tooltipDateFormatPattern
           ),
-        groupLabel: i18n.tooltipGroupLabel,
+        groupLabel: mergedI18n.tooltipGroupLabel,
       },
       getStrokeColor: handleStrokeColor,
       getFillColor: handleFillColor,
@@ -399,35 +431,35 @@ const TimeSeriesCard = ({
       },
     }),
     [
-      addSpaceOnEdges,
-      alertDetected,
-      alertRanges,
-      chartType,
-      colors,
-      decimalPrecision,
-      domainRange,
+      xLabel,
+      maxTicksPerSize,
       formatTick,
-      handleFillColor,
-      handleIsFilled,
-      handleStrokeColor,
-      i18n.tooltipGroupLabel,
       includeZeroOnXaxis,
+      domainRange,
+      yLabel,
+      unit,
+      chartType,
+      series.length,
       includeZeroOnYaxis,
       isEditable,
-      isExpanded,
-      locale,
-      maxTicksPerSize,
-      newSize,
-      series.length,
       showLegend,
-      showTimeInGMT,
-      size,
-      tooltipDateFormatPattern,
       truncation,
-      unit,
-      xLabel,
-      yLabel,
+      mergedI18n.tooltipGroupLabel,
+      mergedI18n.alertDetected,
+      handleStrokeColor,
+      handleFillColor,
+      handleIsFilled,
+      colors,
       zoomBar,
+      size,
+      isExpanded,
+      addSpaceOnEdges,
+      newSize,
+      locale,
+      decimalPrecision,
+      alertRanges,
+      showTimeInGMT,
+      tooltipDateFormatPattern,
     ]
   );
 
@@ -435,7 +467,7 @@ const TimeSeriesCard = ({
     <Card
       title={title}
       size={newSize}
-      i18n={i18n}
+      i18n={mergedI18n}
       timeRange={timeRange}
       {...others}
       isExpanded={isExpanded}
@@ -496,11 +528,11 @@ const TimeSeriesCard = ({
                     direction: 'DESC',
                   },
                   emptyState: {
-                    message: noDataLabel,
+                    message: mergedI18n.noDataLabel,
                   },
                 },
               }}
-              i18n={i18n}
+              i18n={mergedI18n}
             />
           ) : null}
         </>
@@ -510,30 +542,6 @@ const TimeSeriesCard = ({
 };
 
 TimeSeriesCard.propTypes = { ...CardPropTypes, ...TimeSeriesCardPropTypes };
-
-TimeSeriesCard.defaultProps = {
-  size: CARD_SIZES.MEDIUM,
-  values: [],
-  i18n: {
-    alertDetected: 'Alert detected:',
-    noDataLabel: 'No data is available for this time range.',
-    tooltipGroupLabel: 'Group',
-  },
-  chartType: TIME_SERIES_TYPES.LINE,
-  locale: 'en',
-  content: {
-    includeZeroOnXaxis: false,
-    includeZeroOnYaxis: false,
-    showLegend: true,
-    truncation: {
-      type: 'end_line',
-      threshold: 20,
-    },
-  },
-  interval: 'hour',
-  showTimeInGMT: false,
-  domainRange: null,
-  tooltipDateFormatPattern: 'L HH:mm:ss',
-};
+TimeSeriesCard.defaultProps = defaultProps;
 
 export default TimeSeriesCard;

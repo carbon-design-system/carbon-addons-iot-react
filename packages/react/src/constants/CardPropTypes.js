@@ -215,6 +215,16 @@ export const TableCardPropTypes = {
   ),
 };
 
+/** carbon charts legend truncation options */
+export const TruncationPropTypes = PropTypes.shape({
+  /** truncation type */
+  type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
+  /** number of characters needed to enable truncation */
+  threshold: PropTypes.number,
+  /** number of characters needed to enable truncation */
+  numCharacter: PropTypes.number,
+});
+
 /** Optionally addes a zoom bar to the chart */
 export const ZoomBarPropTypes = PropTypes.shape({
   /** Determines which axis to put the zoomBar */
@@ -338,12 +348,7 @@ export const BarChartCardPropTypes = {
     /** Optionally addes a zoom bar to the chart */
     zoomBar: ZoomBarPropTypes,
     /** carbon charts legend truncation options */
-    truncation: PropTypes.shape({
-      /** truncation type */
-      type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
-      /** number of characters needed to enable truncation */
-      threshold: PropTypes.number,
-    }),
+    truncation: TruncationPropTypes,
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
@@ -352,6 +357,7 @@ export const BarChartCardPropTypes = {
     alertDetected: PropTypes.string,
     tooltipGroupLabel: PropTypes.string,
     tooltipTotalLabel: PropTypes.string,
+    defaultFilterStringPlaceholdText: PropTypes.string,
   }),
   /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
    * can be date instance or timestamp */
@@ -379,12 +385,7 @@ export const PieCardPropTypes = {
     /** The position of the legend in relation to the chart, can be 'bottom' or 'top'. */
     legendPosition: PropTypes.oneOf(['top', 'bottom']),
     /** carbon charts legend truncation options */
-    truncation: PropTypes.shape({
-      /** truncation type */
-      type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
-      /** number of characters needed to enable truncation */
-      threshold: PropTypes.number,
-    }),
+    truncation: TruncationPropTypes,
   }),
   /** Used to overide the internal components and props for advanced customisation */
   overrides: PropTypes.shape({
