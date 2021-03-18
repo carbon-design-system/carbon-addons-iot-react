@@ -277,7 +277,7 @@ describe('DataSeriesFormItem', () => {
         />
       );
 
-      const dataItemsDropdown = screen.getByLabelText('Select data items');
+      const dataItemsDropdown = screen.getByTestId('editor--data-series--combobox');
       expect(dataItemsDropdown).toBeInTheDocument();
 
       fireEvent.click(dataItemsDropdown);
@@ -299,10 +299,12 @@ describe('DataSeriesFormItem', () => {
         />
       );
 
-      const customizeButton = screen.getByText('Customize');
-      expect(customizeButton).toBeInTheDocument();
+      const editButton = screen.getByRole('button', {
+        name: 'Edit',
+      });
+      expect(editButton).toBeInTheDocument();
 
-      fireEvent.click(customizeButton);
+      fireEvent.click(editButton);
 
       const modalTitle = screen.getByText('Customize data series');
       expect(modalTitle).toBeInTheDocument();
