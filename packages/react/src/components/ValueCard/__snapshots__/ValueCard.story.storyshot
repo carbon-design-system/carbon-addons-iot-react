@@ -2637,7 +2637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--value-card__vertical iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -2670,13 +2670,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
           }
         >
           <div
-            className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
+            className="iot--value-card__content-wrapper"
           >
             <div
-              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
               style={
                 Object {
-                  "--value-card-attribute-width": "100%",
+                  "--value-card-attribute-width": "33.333333333333336%",
                 }
               }
             >
@@ -2694,7 +2694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   className="iot--value-card__value-renderer--wrapper"
                 >
                   <span
-                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                    className="iot--value-card__value-renderer--value"
                     style={
                       Object {
                         "--value-renderer-color": null,
@@ -2719,10 +2719,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
               style={
                 Object {
-                  "--value-card-attribute-width": "100%",
+                  "--value-card-attribute-width": "33.333333333333336%",
                 }
               }
             >
@@ -2740,7 +2740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   className="iot--value-card__value-renderer--wrapper"
                 >
                   <span
-                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                    className="iot--value-card__value-renderer--value"
                     style={
                       Object {
                         "--value-renderer-color": null,
@@ -2765,10 +2765,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
               style={
                 Object {
-                  "--value-card-attribute-width": "100%",
+                  "--value-card-attribute-width": "33.333333333333336%",
                 }
               }
             >
@@ -2786,7 +2786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   className="iot--value-card__value-renderer--wrapper"
                 >
                   <span
-                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                    className="iot--value-card__value-renderer--value"
                     style={
                       Object {
                         "--value-renderer-color": null,
