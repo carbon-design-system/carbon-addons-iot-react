@@ -9863,6 +9863,32 @@ Map {
             "w": 4,
           },
         },
+        "SMALLFULL": Object {
+          "lg": Object {
+            "h": 1,
+            "w": 16,
+          },
+          "max": Object {
+            "h": 1,
+            "w": 16,
+          },
+          "md": Object {
+            "h": 1,
+            "w": 8,
+          },
+          "sm": Object {
+            "h": 2,
+            "w": 4,
+          },
+          "xl": Object {
+            "h": 1,
+            "w": 16,
+          },
+          "xs": Object {
+            "h": 1,
+            "w": 4,
+          },
+        },
         "SMALLWIDE": Object {
           "lg": Object {
             "h": 1,
@@ -10784,6 +10810,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -11645,6 +11672,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -12592,6 +12620,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -13505,6 +13534,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -14316,6 +14346,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -16153,6 +16184,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -16217,6 +16249,7 @@ Map {
     "MEDIUMTHIN": "MEDIUMTHIN",
     "MEDIUMWIDE": "MEDIUMWIDE",
     "SMALL": "SMALL",
+    "SMALLFULL": "SMALLFULL",
     "SMALLWIDE": "SMALLWIDE",
   },
   "CARD_ACTIONS" => Object {
@@ -16989,6 +17022,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
