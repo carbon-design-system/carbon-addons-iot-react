@@ -6949,7 +6949,6 @@ Map {
     "defaultProps": Object {
       "appSwitcherLabel": "AppSwitcher",
       "className": "main-header",
-      "extraContent": null,
       "hasSideNav": true,
       "headerPanel": null,
       "i18n": Object {
@@ -7027,9 +7026,6 @@ Map {
       },
       "className": Object {
         "type": "string",
-      },
-      "extraContent": Object {
-        "type": "element",
       },
       "hasSideNav": Object {
         "type": "bool",

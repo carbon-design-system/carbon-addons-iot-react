@@ -52,8 +52,6 @@ const propTypes = {
   appName: PropTypes.string.isRequired,
   /** Optional prop that provides additional app information */
   subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  /** Optional prop that provides extra content */
-  extraContent: PropTypes.element,
   /** Add a class name to Header */
   className: PropTypes.string,
   /** Provide ID for the skip to content functionality */
@@ -85,7 +83,6 @@ const defaultProps = {
   skipto: '#main-content',
   headerPanel: null,
   subtitle: null,
-  extraContent: null,
   url: '#',
   appSwitcherLabel: APP_SWITCHER,
   i18n: {
@@ -100,7 +97,6 @@ const defaultProps = {
 const Header = ({
   appName,
   subtitle,
-  extraContent,
   className,
   actionItems: actionItemsProp,
   prefix,
