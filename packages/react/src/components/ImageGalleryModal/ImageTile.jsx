@@ -34,9 +34,9 @@ const defaultProps = {
   onDelete: null,
 };
 
-const matchFilename = /^(.+\/)*(.+)\.(.+)$/;
+const matchFilename = /([^\\/]+)\.(\w+)$/;
 const extractFileName = (path) => {
-  const fileNameGroupIndex = 2;
+  const fileNameGroupIndex = 1;
   const result = matchFilename.exec(path);
   return result && result[fileNameGroupIndex];
 };
