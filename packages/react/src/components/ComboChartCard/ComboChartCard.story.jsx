@@ -28,6 +28,38 @@ export default {
   excludeStories: [],
 };
 
+/* Configuration details: 
+  comboChartTypes.correspondingDatasets should be an array containing the values of series.label
+  This connects a dataset with a comboChartType. 
+
+  For instance: 
+   series: [{
+      dataSourceId: 'health',
+      label: 'Health',
+    },
+    {
+      dataSourceId: 'age',
+      label: 'Age',
+    },
+    {
+      dataSourceId: 'condition',
+      label: 'Condition',
+    },
+  ... ],
+  comboChartTypes: [{
+      type: 'area',
+      correspondingDatasets: ['Health']
+    },
+    {
+      type: 'line',
+      correspondingDatasets: ['Age', 'Condition']
+    },
+  ]
+
+  The above configuration snippet creates an area chart containing the data 
+  from the 'health' dataset, and line chart from the 'age' and 'condition datasets
+*/
+
 export const HealthDataAreaLine = () => {
   const size = select('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
   return (
