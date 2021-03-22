@@ -281,6 +281,8 @@ const TableCardFormContent = ({
                 setShowEditor(true);
               }}
               iconDescription={mergedI18n.edit}
+              tooltipPosition="left"
+              tooltipAlignment="center"
             />,
             <Button
               key={`data-item-${dataItem.dataSourceId}_remove`}
@@ -290,6 +292,8 @@ const TableCardFormContent = ({
               size="small"
               onClick={() => handleRemoveButton(dataItem)}
               iconDescription={mergedI18n.remove}
+              tooltipPosition="left"
+              tooltipAlignment="center"
             />,
           ],
         },

@@ -3063,7 +3063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           aria-labelledby="downshift-2-label"
                           autoComplete="off"
                           className="bx--text-input bx--text-input--empty"
-                          data-testid="combo-box"
+                          data-testid="editor--data-series--combobox"
                           disabled={false}
                           id="timeseries_dataSourceIds-combobox"
                           onBlur={[Function]}
@@ -3181,7 +3181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 </svg>
                               </button>
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
@@ -3286,7 +3286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 </svg>
                               </button>
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}

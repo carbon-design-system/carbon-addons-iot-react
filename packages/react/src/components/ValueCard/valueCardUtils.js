@@ -31,11 +31,12 @@ export const determineLayout = (size) => {
   switch (size) {
     case CARD_SIZES.SMALL:
     case CARD_SIZES.SMALLWIDE:
+    case CARD_SIZES.SMALLFULL:
+    case CARD_SIZES.MEDIUMWIDE:
       return CARD_LAYOUTS.HORIZONTAL;
 
     case CARD_SIZES.MEDIUM:
     case CARD_SIZES.MEDIUMTHIN:
-    case CARD_SIZES.MEDIUMWIDE:
     case CARD_SIZES.LARGETHIN:
     case CARD_SIZES.LARGE:
     case CARD_SIZES.LARGEWIDE:
@@ -66,8 +67,11 @@ export const determineMaxValueCardAttributeCount = (size, currentAttributeCount)
       break;
     case CARD_SIZES.MEDIUMTHIN:
     case CARD_SIZES.MEDIUM:
-    case CARD_SIZES.MEDIUMWIDE:
       attributeCount = 3;
+      break;
+    case CARD_SIZES.SMALLFULL:
+    case CARD_SIZES.MEDIUMWIDE:
+      attributeCount = 4;
       break;
     case CARD_SIZES.LARGE:
       attributeCount = 5;

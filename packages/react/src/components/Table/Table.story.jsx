@@ -2631,6 +2631,7 @@ export const WithSorting = () => (
     columns={tableColumns.map((i, idx) => ({
       ...i,
       isSortable: idx !== 1,
+      align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
     }))}
     data={getSortedData(tableData, 'string', 'ASC')}
     actions={actions}
@@ -2638,9 +2639,20 @@ export const WithSorting = () => (
       hasFilter: false,
       hasPagination: true,
       hasRowSelection: 'multi',
+      hasAggregations: true,
     }}
     view={{
       filters: [],
+      aggregations: {
+        label: 'Total',
+        columns: [
+          {
+            id: 'number',
+            align: 'end',
+            isSortable: true,
+          },
+        ],
+      },
       table: {
         ordering: defaultOrdering,
         sort: {
