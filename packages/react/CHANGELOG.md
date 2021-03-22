@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.14...v2.145.0-next.15) (2021-03-22)
+
+
+### Bug Fixes
+
+* **ImageTile:** improve regex efficiency to pass codeql ([ecf2ed5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ecf2ed51b9fc31eb3868b4f504eb70f9c298fefe))
+
+
+
+
+
 # [2.145.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.13...v2.145.0-next.14) (2021-03-22)
 
 
