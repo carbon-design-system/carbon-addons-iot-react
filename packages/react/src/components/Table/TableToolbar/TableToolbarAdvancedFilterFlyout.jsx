@@ -8,16 +8,19 @@ import {
   Tabs,
   TextInput,
 } from 'carbon-components-react';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import memoize from 'lodash/memoize';
 import PropTypes from 'prop-types';
+import isEqual from 'lodash/isEqual';
 
 import { settings } from '../../../constants/Settings';
 import FlyoutMenu, { FlyoutMenuDirection } from '../../FlyoutMenu/FlyoutMenu';
-import { handleEnterKeyDown } from '../../../utils/componentUtilityFunctions';
+import { defaultFunction, handleEnterKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const { iotPrefix, prefix } = settings;
+
+const itemToString = (key) => (item) => item?.[key] ?? '';
 
 const propTypes = {
   columns: PropTypes.arrayOf(
@@ -57,7 +60,6 @@ const propTypes = {
         ]).isRequired,
       })
     ),
-    hasFastFilter: PropTypes.bool,
     advancedFilters: PropTypes.arrayOf(
       PropTypes.shape({
         filterId: PropTypes.string.isRequired,
@@ -65,14 +67,15 @@ const propTypes = {
       })
     ),
     advancedFilterFlyoutOpen: PropTypes.bool,
-    selectedAdvancedFilterId: PropTypes.string,
+    selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
     isDisabled: PropTypes.bool,
   }),
   actions: PropTypes.shape({
-    onApplyFilter: PropTypes.func,
-    onCancelFilter: PropTypes.func,
+    onApplyAdvancedFilter: PropTypes.func,
+    onCancelAdvancedFilter: PropTypes.func,
     onCreateAdvancedFilter: PropTypes.func,
     onChangeAdvancedFilter: PropTypes.func,
+    onToggleAdvancedFilter: PropTypes.func,
   }),
   i18n: PropTypes.shape({
     applyButtonText: PropTypes.string,
@@ -90,20 +93,46 @@ const propTypes = {
   }),
 };
 
+const reduceFilterState = (filters, selectedAdvancedFilterIds) => {
+  let simple = {};
+  let advanced = {
+    filterIds: [],
+  };
+  if (Array.isArray(filters) && filters.length) {
+    simple = filters.reduce((state, { columnId, value }) => {
+      return {
+        ...state,
+        [columnId]: value,
+      };
+    }, {});
+  }
+
+  if (Array.isArray(selectedAdvancedFilterIds) && selectedAdvancedFilterIds.length) {
+    advanced = {
+      filterIds: selectedAdvancedFilterIds,
+    };
+  }
+
+  return {
+    simple,
+    advanced,
+  };
+};
+
 const defaultProps = {
   tableState: {
     filters: [],
-    hasFastFilter: true,
     advancedFilters: [],
     advancedFilterFlyoutOpen: false,
-    selectedAdvancedFilterId: '',
+    selectedAdvancedFilterIds: [],
     isDisabled: false,
   },
   actions: {
-    onApplyFilter: null,
-    onCancelFilter: null,
-    onCreateAdvancedFilter: null,
-    onChangeAdvancedFilter: null,
+    onApplyAdvancedFilter: defaultFunction('on AdvancedFilter'),
+    onCancelAdvancedFilter: defaultFunction('onCancelAdvancedFilter'),
+    onCreateAdvancedFilter: defaultFunction('onCreateAdvancedFilter'),
+    onChangeAdvancedFilter: defaultFunction('onChangeAdvancedFilter'),
+    onToggleAdvancedFilter: defaultFunction('onToggleAdvancedFilter'),
   },
   i18n: {
     applyButtonText: 'Apply filters',
@@ -126,19 +155,18 @@ const TableToolbarAdvancedFilterFlyout = ({
   tableState: {
     ordering,
     filters,
-    hasFastFilter,
     advancedFilters,
     advancedFilterFlyoutOpen,
-    selectedAdvancedFilterId,
+    selectedAdvancedFilterIds,
     isDisabled,
   },
   i18n,
   actions: {
-    onApplyFilter,
-    onCancelFilter,
+    onApplyAdvancedFilter,
+    onCancelAdvancedFilter,
     onCreateAdvancedFilter,
     onChangeAdvancedFilter,
-    onToggleFilter,
+    onToggleAdvancedFilter,
   },
 }) => {
   const {
@@ -160,26 +188,30 @@ const TableToolbarAdvancedFilterFlyout = ({
   };
 
   const [filterState, setFilterState] = useState(
-    filters?.reduce((state, { columnId, value }) => {
-      return {
-        ...state,
-        simple: {
-          ...state.simple,
-          [columnId]: value,
-        },
-        advanced: {
-          filterId: selectedAdvancedFilterId ?? null,
-        },
-      };
-    }, {}) ?? {}
+    reduceFilterState(filters, selectedAdvancedFilterIds)
   );
-  const handleApplyFilter = useCallback(() => {
-    if (typeof onApplyFilter === 'function') {
-      onApplyFilter(filterState);
-    }
-  }, [filterState, onApplyFilter]);
 
-  const handleClearFilter = (event, { id }) => {
+  const previousFilters = useRef(null);
+
+  useEffect(() => {
+    if (!isEqual(previousFilters.current, { filters, selectedAdvancedFilterIds })) {
+      const newState = reduceFilterState(filters, selectedAdvancedFilterIds);
+
+      if (!isEqual(newState, filterState)) {
+        setFilterState(newState);
+        onApplyAdvancedFilter(newState);
+      }
+    }
+  }, [filterState, filters, onApplyAdvancedFilter, selectedAdvancedFilterIds]);
+
+  useEffect(() => {
+    previousFilters.current = {
+      filters,
+      selectedAdvancedFilterIds,
+    };
+  });
+
+  const handleClearFilter = useCallback((event, { id }) => {
     // when a user clicks or hits ENTER, we'll clear the input
     if (event.keyCode === 13 || !event.keyCode) {
       setFilterState((prev) => ({
@@ -190,7 +222,7 @@ const TableToolbarAdvancedFilterFlyout = ({
         },
       }));
     }
-  };
+  }, []);
 
   const handleTranslation = useCallback(
     (idToTranslate) => {
@@ -210,10 +242,6 @@ const TableToolbarAdvancedFilterFlyout = ({
     [clearSelectionAria, closeMenuAria, openMenuAria]
   );
 
-  useEffect(() => {
-    handleApplyFilter();
-  }, [handleApplyFilter]);
-
   return (
     <FlyoutMenu
       testId="advanced-filter-flyout"
@@ -223,11 +251,12 @@ const TableToolbarAdvancedFilterFlyout = ({
       light
       isOpen={advancedFilterFlyoutOpen}
       onApply={() => {
-        if (typeof onApplyFilter === 'function') {
-          onApplyFilter(filterState);
-        }
+        onApplyAdvancedFilter(filterState);
       }}
-      onCancel={onCancelFilter}
+      onCancel={() => {
+        setFilterState(reduceFilterState(filters, selectedAdvancedFilterIds));
+        onCancelAdvancedFilter();
+      }}
       buttonProps={{
         className: classnames(
           `${prefix}--btn--icon-only`,
@@ -237,7 +266,7 @@ const TableToolbarAdvancedFilterFlyout = ({
             [`${iotPrefix}--table-toolbar-button-active`]: advancedFilterFlyoutOpen,
           }
         ),
-        onClick: onToggleFilter,
+        onClick: onToggleAdvancedFilter,
       }}
       i18n={{
         applyButtonText,
@@ -293,7 +322,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                             translateWithId={handleTranslation}
                             items={memoizeColumnOptions(column.options)}
                             label={column.placeholderText || 'Choose an option'}
-                            itemToString={(item) => (item ? item.text : '')}
+                            itemToString={itemToString('text')}
                             titleText={column.name}
                             initialSelectedItems={
                               Array.isArray(columnStateValue)
@@ -305,12 +334,13 @@ const TableToolbarAdvancedFilterFlyout = ({
                                 : []
                             }
                             onChange={(evt) => {
+                              const { selectedItems } = evt;
                               setFilterState((prev) => {
                                 return {
                                   ...prev,
                                   simple: {
                                     ...prev.simple,
-                                    [column.id]: evt.selectedItems.map((item) => item.text),
+                                    [column.id]: selectedItems.map((item) => item.text),
                                   },
                                 };
                               });
@@ -326,7 +356,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                           aria-label={filterAria}
                           translateWithId={handleTranslation}
                           items={memoizeColumnOptions(column.options)}
-                          itemToString={(item) => (item ? item.text : '')}
+                          itemToString={itemToString('text')}
                           initialSelectedItem={{
                             id: columnStateValue,
                             text: (
@@ -338,12 +368,13 @@ const TableToolbarAdvancedFilterFlyout = ({
                           placeholder={column.placeholderText || 'Choose an option'}
                           titleText={column.name}
                           onChange={(evt) => {
+                            const { selectedItem } = evt;
                             setFilterState((prev) => {
                               return {
                                 ...prev,
                                 simple: {
                                   ...prev.simple,
-                                  [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
+                                  [column.id]: selectedItem === null ? '' : selectedItem.id,
                                 },
                               };
                             });
@@ -363,24 +394,17 @@ const TableToolbarAdvancedFilterFlyout = ({
                           placeholder={column.placeholderText || 'Type and hit enter to apply'}
                           title={filterState?.[column.id] || column.placeholderText}
                           onChange={(event) => {
-                            event.persist();
-
+                            const { value } = event.target;
                             setFilterState((prev) => {
                               return {
                                 ...prev,
                                 simple: {
                                   ...prev.simple,
-                                  [column.id]: event.target.value,
+                                  [column.id]: value,
                                 },
                               };
                             });
                           }}
-                          onKeyDown={
-                            !hasFastFilter
-                              ? (event) => handleEnterKeyDown(event, handleApplyFilter)
-                              : null
-                          } // if fast filter off, then filter on key press
-                          onBlur={!hasFastFilter ? handleApplyFilter : null} // if fast filter off, then filter on blur
                           value={filterState?.simple?.[column.id]}
                         />
                         {filterState?.simple?.[column.id] ? (
@@ -415,8 +439,8 @@ const TableToolbarAdvancedFilterFlyout = ({
             })}
         </Tab>
         <Tab label={advancedFiltersTabLabel} title={advancedFiltersTabLabel}>
-          <ComboBox
-            id="advanced-filter-combobox"
+          <MultiSelect
+            id="advanced-filter-multiselect"
             titleText={
               <>
                 {advancedFilterLabelText}{' '}
@@ -430,24 +454,22 @@ const TableToolbarAdvancedFilterFlyout = ({
               </>
             }
             onChange={(e) => {
-              if (typeof onChangeAdvancedFilter === 'function') {
-                onChangeAdvancedFilter(e);
-              }
+              onChangeAdvancedFilter(e);
               setFilterState((prev) => {
                 return {
                   ...prev,
                   advanced: {
-                    filterId: e.selectedItem.filterId,
+                    filterIds: e.selectedItems?.map((advFilter) => advFilter.filterId) ?? [],
                   },
                 };
               });
             }}
-            itemToString={(item) => item?.filterTitleText ?? ''}
+            itemToString={itemToString('filterTitleText')}
             items={advancedFilters ?? []}
-            initialSelectedItem={advancedFilters?.find(
-              (filter) => filter.filterId === selectedAdvancedFilterId
+            initialSelectedItems={advancedFilters?.filter((advFilter) =>
+              selectedAdvancedFilterIds.includes(advFilter.filterId)
             )}
-            placeholder={advancedFilterPlaceholderText}
+            label={advancedFilterPlaceholderText}
           />
         </Tab>
       </Tabs>

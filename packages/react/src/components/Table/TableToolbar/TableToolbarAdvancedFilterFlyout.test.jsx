@@ -115,6 +115,8 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
         'Choose an option'
       )
     ).not.toBeNull();
+
+    userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
   });
 
   it('should not clear filters when isDisabled is true', () => {
@@ -122,7 +124,7 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
     render(
       <TableToolbarAdvancedFilterFlyout
         actions={{
-          onApplyFilter: handleApplyFilter,
+          onApplyAdvancedFilter: handleApplyFilter,
         }}
         columns={[
           {
@@ -205,7 +207,7 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
     );
     const numberInputClear = screen.getByRole('button', { name: 'Clear filter' });
     userEvent.click(numberInputClear);
-    expect(handleApplyFilter).toHaveBeenCalledTimes(1);
+    expect(handleApplyFilter).toHaveBeenCalledTimes(0);
   });
 
   it('should handle multi-select columns, too', () => {
@@ -213,7 +215,7 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
     render(
       <TableToolbarAdvancedFilterFlyout
         actions={{
-          onApplyFilter: handleApplyFilter,
+          onApplyAdvancedFilter: handleApplyFilter,
         }}
         columns={[
           {
@@ -294,14 +296,14 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
             },
           ],
           advancedFilterFlyoutOpen: true,
-          isDisabled: true,
         }}
       />
     );
     userEvent.click(screen.getAllByTitle('Clear selection')[1]);
+    userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
     expect(handleApplyFilter).toHaveBeenLastCalledWith({
       advanced: {
-        filterId: null,
+        filterIds: [],
       },
       simple: {
         'select-column': 'option-A',
@@ -311,14 +313,127 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
     });
     userEvent.click(screen.getAllByLabelText('Multi-Select Column')[1]);
     userEvent.click(within(screen.getByTestId('advanced-filter-flyout')).getByText('option-X'));
+    userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
     expect(handleApplyFilter).toHaveBeenLastCalledWith({
       advanced: {
-        filterId: null,
+        filterIds: [],
       },
       simple: {
         'select-column': 'option-A',
         'number-column': '16',
         'multi-select-column': ['option-X'],
+      },
+    });
+  });
+
+  it('should reset the filter state if on cancel is called', () => {
+    const handleApplyFilter = jest.fn();
+    const handleCancelFilter = jest.fn();
+    render(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter: handleApplyFilter,
+          onCancelAdvancedFilter: handleCancelFilter,
+        }}
+        columns={[
+          {
+            id: 'test-column',
+            name: 'Test Column',
+            isFilterable: false,
+            placeholderText: 'place-holder-text-for-test-column',
+          },
+          {
+            id: 'string-column',
+            name: 'String Column',
+            isFilterable: true,
+            placeholderText: 'place-holder-text-for-string-column',
+          },
+          {
+            id: 'number-column',
+            name: 'Number Column',
+            isFilterable: true,
+          },
+          {
+            id: 'select-column',
+            name: 'Select Column',
+            isFilterable: true,
+            options: [
+              { text: 'option-A', id: 'option-A' },
+              { text: 'option-B', id: 'option-B' },
+              { text: 'option-C', id: 'option-C' },
+            ],
+          },
+          {
+            id: 'multi-select-column',
+            name: 'Multi-Select Column',
+            isFilterable: true,
+            options: [
+              { text: 'option-X', id: 'option-X' },
+              { text: 'option-Y', id: 'option-Y' },
+              { text: 'option-Z', id: 'option-Z' },
+            ],
+            isMultiselect: true,
+          },
+        ]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'test-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'string-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'number-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'select-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'multi-select-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'number-column',
+              value: '16',
+            },
+            {
+              columnId: 'select-column',
+              value: 'option-A',
+            },
+            {
+              columnId: 'multi-select-column',
+              value: ['option-X', 'option-Y'],
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+        }}
+      />
+    );
+
+    userEvent.type(
+      screen.getByPlaceholderText('place-holder-text-for-string-column'),
+      'a-test-string'
+    );
+    userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+    expect(handleCancelFilter).toHaveBeenCalledTimes(1);
+    userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+    // 'a-test-string' should not appear, because 'Cancel' resets the state.
+    expect(handleApplyFilter).toHaveBeenLastCalledWith({
+      advanced: {
+        filterIds: [],
+      },
+      simple: {
+        'select-column': 'option-A',
+        'number-column': '16',
+        'multi-select-column': ['option-X', 'option-Y'],
       },
     });
   });

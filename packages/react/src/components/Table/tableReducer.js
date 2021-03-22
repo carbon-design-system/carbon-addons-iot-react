@@ -25,6 +25,12 @@ import {
   TABLE_COLUMN_RESIZE,
   TABLE_REGISTER,
   TABLE_SEARCH_APPLY,
+  TABLE_ADVANCED_FILTER_REMOVE,
+  TABLE_ADVANCED_FILTER_CHANGE,
+  TABLE_ADVANCED_FILTER_CREATE,
+  TABLE_ADVANCED_FILTER_TOGGLE,
+  TABLE_ADVANCED_FILTER_CANCEL,
+  TABLE_ADVANCED_FILTER_APPLY,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -41,50 +47,133 @@ export const defaultComparison = (value1, value2) =>
       value1.toString &&
       caseInsensitiveSearch([value1.toString()], value2.toString());
 
+export const runSimpleFilters = (data, filters, columns) => {
+  return data.filter(({ values }) =>
+    // return false if a value doesn't match a valid filter
+    filters.reduce((acc, { columnId, value }) => {
+      if (
+        typeof value === 'number' ||
+        typeof value === 'string' ||
+        typeof value === 'boolean' ||
+        Array.isArray(value)
+      ) {
+        if (!isNil(columns)) {
+          const { filter } = find(columns, { id: columnId }) || {};
+          const filterFunction = filter?.filterFunction;
+          if (Array.isArray(value) && !isEmpty(value)) {
+            return (
+              acc &&
+              (filterFunction
+                ? filterFunction(values[columnId], value)
+                : value.includes(values[columnId]))
+            );
+          }
+          return (
+            acc &&
+            (filterFunction
+              ? filterFunction(values[columnId], value)
+              : defaultComparison(values[columnId], value))
+          );
+        }
+        if (Array.isArray(value) && !isEmpty(value)) {
+          return acc && value.includes(values[columnId]);
+        }
+        return acc && defaultComparison(values[columnId], value);
+      }
+      return false;
+    }, true)
+  );
+};
+
+const operands = {
+  NEQ: (a, b) => a !== b,
+  LT: (a, b) => a < b,
+  LTOET: (a, b) => a <= b,
+  EQ: (a, b) => a === b,
+  GTOET: (a, b) => a >= b,
+  GT: (a, b) => a > b,
+  CONTAINS: (a, b) => a.includes(b),
+};
+
+/**
+ * Recursively check each rule and determine if it's a normal rule or a ruleGroup.
+ * If it's a group dig deeper into the tree passing the values and logic down as we go.
+ * If it's a normal rule just run `every` on all the rules for 'ALL' logic and `some`
+ * for 'ANY' logic.
+ *
+ * @param {string} logic 'ALL' or 'ANY'
+ * @param {array} rules Array of all the rules in this group
+ * @param {object} values The values for each column in this row of the data
+ *
+ * @returns boolean
+ */
+const reduceRuleGroup = (logic, rules, values) => {
+  const processRules = ({
+    columnId,
+    operand,
+    groupLogic: childLogic,
+    rules: childRules,
+    value: filterValue,
+  }) => {
+    if (childLogic && Array.isArray(childRules)) {
+      return reduceRuleGroup(childLogic, childRules, values);
+    }
+
+    const columnValue = values[columnId].toString();
+    const comparitor = operands[operand];
+
+    return comparitor(columnValue, filterValue);
+  };
+
+  if (logic === 'ALL') {
+    return rules.every(processRules);
+  }
+
+  if (logic === 'ANY') {
+    return rules.some(processRules);
+  }
+
+  return false;
+};
+
+/**
+ * Loop through all the currently active advanced filters TREATING THEM AS 'AND' CONDITIONS
+ * to determine which rows should be shown.
+ *
+ * @param {array} data tableData
+ * @param {array} advancedFilters All the currently active filters
+ * @returns boolean
+ */
+export const runAdvancedFilters = (data, advancedFilters) => {
+  return data.filter(({ values }) => {
+    return advancedFilters.every(({ filterRules: { groupLogic, rules } }) => {
+      return reduceRuleGroup(groupLogic, rules, values);
+    });
+  });
+};
 /**
  * Little utility to filter data
  * @param {Array<Object>} data data to filter
  * @param {Array<{columnId: string, value: any}>} filters
  * @param {Array<Object>} columns AKA headers
  */
-export const filterData = (data, filters, columns) => {
-  return !filters || filters.length === 0
-    ? data
-    : data.filter(({ values }) =>
-        // return false if a value doesn't match a valid filter
-        filters.reduce((acc, { columnId, value }) => {
-          if (
-            typeof value === 'number' ||
-            typeof value === 'string' ||
-            typeof value === 'boolean' ||
-            Array.isArray(value)
-          ) {
-            if (!isNil(columns)) {
-              const { filter } = find(columns, { id: columnId }) || {};
-              const filterFunction = filter?.filterFunction;
-              if (Array.isArray(value) && !isEmpty(value)) {
-                return (
-                  acc &&
-                  (filterFunction
-                    ? filterFunction(values[columnId], value)
-                    : value.includes(values[columnId]))
-                );
-              }
-              return (
-                acc &&
-                (filterFunction
-                  ? filterFunction(values[columnId], value)
-                  : defaultComparison(values[columnId], value))
-              );
-            }
-            if (Array.isArray(value) && !isEmpty(value)) {
-              return acc && value.includes(values[columnId]);
-            }
-            return acc && defaultComparison(values[columnId], value);
-          }
-          return false;
-        }, true)
-      );
+export const filterData = (data, filters, columns, advancedFilters) => {
+  const hasSimpleFilters = Array.isArray(filters) && filters.length;
+  const hasAdvancedFilters = Array.isArray(advancedFilters) && advancedFilters.length;
+
+  if (!hasSimpleFilters && !hasAdvancedFilters) {
+    return data;
+  }
+
+  if (!hasAdvancedFilters) {
+    return runSimpleFilters(data, filters, columns);
+  }
+
+  if (!hasSimpleFilters) {
+    return runAdvancedFilters(data, advancedFilters);
+  }
+
+  return runSimpleFilters(runAdvancedFilters(data, advancedFilters), filters, columns);
 };
 
 // Little utility to search
@@ -115,11 +204,18 @@ export const getCustomColumnSort = (columns, columnId) => {
 };
 
 // little utility to both sort and filter
-export const filterSearchAndSort = (data, sort = {}, search = {}, filters = [], columns) => {
+export const filterSearchAndSort = (
+  data,
+  sort = {},
+  search = {},
+  filters = [],
+  columns,
+  advancedFilters = []
+) => {
   const { columnId, direction } = sort;
 
   const { value: searchValue } = search;
-  const filteredData = filterData(data, filters, columns);
+  const filteredData = filterData(data, filters, columns, advancedFilters);
   const searchedData =
     searchValue && searchValue !== '' ? searchData(filteredData, searchValue) : filteredData;
   return !isEmpty(sort)
@@ -168,6 +264,9 @@ export const tableReducer = (state = {}, action) => {
       return baseTableReducer(
         update(state, {
           view: {
+            selectedAdvancedFilterIds: {
+              $set: [],
+            },
             table: {
               filteredData: {
                 $set: filterSearchAndSort(
@@ -175,7 +274,8 @@ export const tableReducer = (state = {}, action) => {
                   get(state, 'view.table.sort'),
                   get(state, 'view.toolbar.search'),
                   [],
-                  get(state, 'columns')
+                  get(state, 'columns'),
+                  []
                 ),
               },
             },
@@ -316,12 +416,22 @@ export const tableReducer = (state = {}, action) => {
             pageSizes: { $set: pageSizes },
           }
         : {};
+
+      const advancedFilters = get(view, 'advancedFilters', []);
+      const selectedAdvancedFilterIds =
+        get(view, 'selectedAdvancedFilterIds') || get(state, 'view.selectedAdvancedFilterIds', []);
+      const selectedAdvancedFilters = advancedFilters.filter((advFilter) =>
+        selectedAdvancedFilterIds.includes(advFilter.filterId)
+      );
       return update(state, {
         data: {
           $set: updatedData,
         },
         view: {
           pagination,
+          advancedFilters: {
+            $set: advancedFilters,
+          },
           toolbar: {
             initialDefaultSearch: { $set: initialDefaultSearch },
             search: { $set: searchFromState },
@@ -334,7 +444,8 @@ export const tableReducer = (state = {}, action) => {
                 get(state, 'view.table.sort'),
                 { value: searchTermFromState },
                 get(state, 'view.filters'),
-                get(state, 'columns')
+                get(state, 'columns'),
+                selectedAdvancedFilters
               ),
             },
             loadingState: {
@@ -357,6 +468,99 @@ export const tableReducer = (state = {}, action) => {
         },
       });
     }
+
+    case TABLE_ADVANCED_FILTER_TOGGLE: {
+      const isOpen = state.view.toolbar.advancedFilterFlyoutOpen === true;
+      return update(state, {
+        view: {
+          toolbar: {
+            $set: {
+              advancedFilterFlyoutOpen: !isOpen,
+            },
+          },
+        },
+      });
+    }
+    case TABLE_ADVANCED_FILTER_REMOVE: {
+      const { filterId } = action.payload;
+      const newSelectedFilters = state.view.selectedAdvancedFilterIds.filter(
+        (id) => id !== filterId
+      );
+      return update(state, {
+        view: {
+          selectedAdvancedFilterIds: {
+            $set: newSelectedFilters,
+          },
+        },
+      });
+    }
+
+    case TABLE_ADVANCED_FILTER_CHANGE: {
+      return state;
+    }
+
+    case TABLE_ADVANCED_FILTER_CREATE: {
+      return state;
+    }
+
+    case TABLE_ADVANCED_FILTER_CANCEL: {
+      const isOpen = state.view.toolbar.advancedFilterFlyoutOpen === true;
+      return update(state, {
+        view: {
+          toolbar: {
+            $set: {
+              advancedFilterFlyoutOpen: !isOpen,
+            },
+          },
+        },
+      });
+    }
+
+    case TABLE_ADVANCED_FILTER_APPLY: {
+      const newSimpleFilters = Object.entries(action.payload?.simple ?? {})
+        .map(([key, value]) =>
+          value !== ''
+            ? {
+                columnId: key,
+                value,
+              }
+            : null
+        )
+        .filter((i) => i);
+
+      const newAdvancedFilters = state.view.advancedFilters.filter((advFilter) =>
+        action?.payload?.advanced?.filterIds?.includes(advFilter.filterId)
+      );
+
+      return baseTableReducer(
+        update(state, {
+          view: {
+            selectedAdvancedFilterIds: {
+              $set: newAdvancedFilters.map((advFilter) => advFilter.filterId),
+            },
+            table: {
+              filteredData: {
+                $set: filterSearchAndSort(
+                  state.data,
+                  get(state, 'view.table.sort'),
+                  get(state, 'view.toolbar.search'),
+                  newSimpleFilters,
+                  get(state, 'columns'),
+                  newAdvancedFilters
+                ),
+              },
+            },
+            toolbar: {
+              advancedFilterFlyoutOpen: {
+                $set: false,
+              },
+            },
+          },
+        }),
+        action
+      );
+    }
+
     // Actions that are handled by the base reducer
     case TABLE_PAGE_CHANGE:
     case TABLE_ROW_ACTION_START:

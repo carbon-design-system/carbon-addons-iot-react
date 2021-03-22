@@ -343,11 +343,15 @@ Map {
           "onRowExpanded": [Function],
         },
         "toolbar": Object {
+          "onApplyAdvancedFilter": [Function],
           "onApplyBatchAction": [Function],
+          "onCancelAdvancedFilter": [Function],
           "onCancelBatchAction": [Function],
-          "onCancelFilter": [Function],
+          "onChangeAdvancedFilter": [Function],
+          "onCreateAdvancedFilter": [Function],
           "onRemoveAdvancedFilter": [Function],
           "onShowRowEdit": [Function],
+          "onToggleAdvancedFilter": [Function],
           "onToggleColumnSelection": [Function],
           "onToggleFilter": [Function],
         },
@@ -395,6 +399,7 @@ Map {
       "lightweight": false,
       "locale": null,
       "options": Object {
+        "hasAdvancedFilter": false,
         "hasAggregations": false,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
@@ -435,7 +440,7 @@ Map {
           ],
           "totalItems": undefined,
         },
-        "selectedAdvancedFilterId": null,
+        "selectedAdvancedFilterIds": Array [],
         "table": Object {
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
@@ -519,6 +524,9 @@ Map {
             "toolbar": Object {
               "args": Array [
                 Object {
+                  "onApplyAdvancedFilter": Object {
+                    "type": "func",
+                  },
                   "onApplyBatchAction": Object {
                     "type": "func",
                   },
@@ -528,10 +536,10 @@ Map {
                   "onApplySearch": Object {
                     "type": "func",
                   },
-                  "onCancelBatchAction": Object {
+                  "onCancelAdvancedFilter": Object {
                     "type": "func",
                   },
-                  "onCancelFilter": Object {
+                  "onCancelBatchAction": Object {
                     "type": "func",
                   },
                   "onChangeAdvancedFilter": Object {
@@ -550,6 +558,9 @@ Map {
                     "type": "func",
                   },
                   "onShowRowEdit": Object {
+                    "type": "func",
+                  },
+                  "onToggleAdvancedFilter": Object {
                     "type": "func",
                   },
                   "onToggleColumnSelection": Object {
@@ -1086,6 +1097,17 @@ Map {
       "view": Object {
         "args": Array [
           Object {
+            "advancedFilters": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {},
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "aggregations": Object {
               "args": Array [
                 Object {
@@ -1205,6 +1227,14 @@ Map {
                 },
               ],
               "type": "shape",
+            },
+            "selectedAdvancedFilterIds": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
             },
             "table": Object {
               "args": Array [
@@ -3046,13 +3076,25 @@ Map {
             "onApplyBatchAction": Object {
               "type": "func",
             },
+            "onCancelAdvancedFilter": Object {
+              "type": "func",
+            },
             "onCancelBatchAction": Object {
+              "type": "func",
+            },
+            "onChangeAdvancedFilter": Object {
               "type": "func",
             },
             "onClearAllFilters": Object {
               "type": "func",
             },
+            "onCreateAdvancedFilter": Object {
+              "type": "func",
+            },
             "onShowRowEdit": Object {
+              "type": "func",
+            },
+            "onToggleAdvancedFilter": Object {
               "type": "func",
             },
             "onToggleAggregations": Object {
@@ -3357,6 +3399,14 @@ Map {
                 },
               ],
               "type": "shape",
+            },
+            "selectedAdvancedFilterIds": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
             },
             "totalItemsCount": Object {
               "type": "number",
@@ -25632,6 +25682,12 @@ Map {
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",
     "TABLE_ACTION_CANCEL": "TABLE_ACTION_CANCEL",
+    "TABLE_ADVANCED_FILTER_APPLY": "TABLE_ADVANCED_FILTER_APPLY",
+    "TABLE_ADVANCED_FILTER_CANCEL": "TABLE_ADVACNED_FILTER_CANCEL",
+    "TABLE_ADVANCED_FILTER_CHANGE": "TABLE_ADVANCED_FILTER_CHANGE",
+    "TABLE_ADVANCED_FILTER_CREATE": "TABLE_ADVANCED_FILTER_CREATE",
+    "TABLE_ADVANCED_FILTER_REMOVE": "TABLE_ADVANCED_FILTER_REMOVE",
+    "TABLE_ADVANCED_FILTER_TOGGLE": "TABLE_ADVANCED_FILTER_TOGGLE",
     "TABLE_COLUMN_ORDER": "TABLE_COLUMN_ORDER",
     "TABLE_COLUMN_RESIZE": "TABLE_COLUMN_RESIZE",
     "TABLE_COLUMN_SORT": "TABLE_COLUMN_SORT",
@@ -25654,6 +25710,12 @@ Map {
     "TABLE_TOOLBAR_TOGGLE": "TABLE_TOOLBAR_TOGGLE",
     "tableActionApply": Object {},
     "tableActionCancel": Object {},
+    "tableAdvancedFiltersApply": Object {},
+    "tableAdvancedFiltersCancel": Object {},
+    "tableAdvancedFiltersChange": Object {},
+    "tableAdvancedFiltersCreate": Object {},
+    "tableAdvancedFiltersRemove": Object {},
+    "tableAdvancedFiltersToggle": Object {},
     "tableColumnOrder": Object {},
     "tableColumnResize": Object {},
     "tableColumnSort": Object {},

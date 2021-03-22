@@ -1435,7 +1435,7 @@ describe('Table', () => {
           data={tableData}
           actions={{
             toolbar: {
-              onToggleFilter: handleToggleFilters,
+              onToggleAdvancedFilter: handleToggleFilters,
             },
           }}
           options={{ hasAdvancedFilter: true }}
@@ -1461,12 +1461,12 @@ describe('Table', () => {
           data={tableData}
           actions={{
             toolbar: {
-              onApplyFilter: handleApplyFilter,
-              onCancelFilter: handleCancelFilter,
+              onApplyAdvancedFilter: handleApplyFilter,
+              onCancelAdvancedFilter: handleCancelFilter,
               onRemoveAdvancedFilter: handleRemoveAdvancedFilter,
               onCreateAdvancedFilter: handleCreateAdvancedFilter,
               onChangeAdvancedFilter: handleChangeAdvancedFiler,
-              onToggleFilter: handleToggleFilter,
+              onToggleAdvancedFilter: handleToggleFilter,
             },
           }}
           options={{ hasAdvancedFilter: true }}
@@ -1487,13 +1487,18 @@ describe('Table', () => {
       expect(filterFlyout).toHaveAttribute('open');
 
       userEvent.click(screen.getByTestId('flyout-menu-apply'));
-      expect(handleApplyFilter).toBeCalledWith({});
+      expect(handleApplyFilter).toBeCalledWith({
+        simple: {},
+        advanced: {
+          filterIds: [],
+        },
+      });
       userEvent.click(screen.getByTestId('flyout-menu-cancel'));
       expect(handleCancelFilter).toBeCalledTimes(1);
       userEvent.click(screen.getByRole('tab', { name: 'Advanced filters' }));
       userEvent.click(screen.getByRole('button', { name: 'create a new advanced filter' }));
       expect(handleCreateAdvancedFilter).toBeCalledTimes(1);
-      expect(screen.getByPlaceholderText('Select a filter')).toBeVisible();
+      expect(screen.getByText('Select a filter')).toBeVisible();
 
       rerender(
         <Table
@@ -1502,12 +1507,12 @@ describe('Table', () => {
           data={tableData}
           actions={{
             toolbar: {
-              onApplyFilter: handleApplyFilter,
-              onCancelFilter: handleCancelFilter,
+              onApplyAdvancedFilter: handleApplyFilter,
+              onCancelAdvancedFilter: handleCancelFilter,
               onRemoveAdvancedFilter: handleRemoveAdvancedFilter,
               onCreateAdvancedFilter: handleCreateAdvancedFilter,
               onChangeAdvancedFilter: handleChangeAdvancedFiler,
-              onToggleFilter: handleToggleFilter,
+              onToggleAdvancedFilter: handleToggleFilter,
             },
           }}
           options={{ hasAdvancedFilter: true }}
@@ -1535,12 +1540,12 @@ describe('Table', () => {
           data={tableData}
           actions={{
             toolbar: {
-              onApplyFilter: handleApplyFilter,
-              onCancelFilter: handleCancelFilter,
+              onApplyAdvancedFilter: handleApplyFilter,
+              onCancelAdvancedFilter: handleCancelFilter,
               onRemoveAdvancedFilter: handleRemoveAdvancedFilter,
               onCreateAdvancedFilter: handleCreateAdvancedFilter,
               onChangeAdvancedFilter: handleChangeAdvancedFiler,
-              onToggleFilter: handleToggleFilter,
+              onToggleAdvancedFilter: handleToggleFilter,
             },
           }}
           options={{
@@ -1573,27 +1578,7 @@ describe('Table', () => {
           }}
         />
       );
-      // initial setting of internal state
-      expect(handleApplyFilter).toHaveBeenNthCalledWith(1, {
-        advanced: {
-          filterId: null,
-        },
-        simple: {
-          string: 'whiteboard',
-          select: 'option-B',
-        },
-      });
       userEvent.click(screen.getAllByRole('button', { name: 'Clear filter' })[0]);
-      // new state after clearing the whiteboard filter
-      expect(handleApplyFilter).toHaveBeenNthCalledWith(2, {
-        advanced: {
-          filterId: null,
-        },
-        simple: {
-          string: '',
-          select: 'option-B',
-        },
-      });
       fireEvent.change(screen.getByPlaceholderText('pick a number'), { target: { value: '16' } });
       // ensure keyDown events also get called with hasFastFilter is false
       fireEvent.keyDown(screen.getByPlaceholderText('pick a number'), {
@@ -1602,9 +1587,10 @@ describe('Table', () => {
         keyCode: 13,
         charCode: 13,
       });
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
         advanced: {
-          filterId: null,
+          filterIds: [],
         },
         simple: {
           string: '',
@@ -1613,9 +1599,10 @@ describe('Table', () => {
         },
       });
       userEvent.click(screen.getAllByRole('button', { name: 'Clear selection' })[0]);
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
         advanced: {
-          filterId: null,
+          filterIds: [],
         },
         simple: {
           string: '',
@@ -1626,9 +1613,10 @@ describe('Table', () => {
       const withinFlyout = within(screen.getByTestId('advanced-filter-flyout'));
       userEvent.click(screen.getByPlaceholderText('pick an option'));
       userEvent.click(withinFlyout.getByText('option-A'));
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
         advanced: {
-          filterId: null,
+          filterIds: [],
         },
         simple: {
           string: '',
@@ -1637,8 +1625,9 @@ describe('Table', () => {
         },
       });
       userEvent.click(screen.getByRole('tab', { name: 'Advanced filters' }));
-      userEvent.click(screen.getByPlaceholderText('Select a filter'));
+      userEvent.click(screen.getByText('Select a filter'));
       userEvent.click(withinFlyout.getByText('My Filter'));
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
         simple: {
           string: '',
@@ -1646,7 +1635,7 @@ describe('Table', () => {
           number: '16',
         },
         advanced: {
-          filterId: 'my-filter',
+          filterIds: ['my-filter'],
         },
       });
     });
@@ -1665,12 +1654,12 @@ describe('Table', () => {
           data={tableData}
           actions={{
             toolbar: {
-              onApplyFilter: handleApplyFilter,
-              onCancelFilter: handleCancelFilter,
+              onApplyAdvancedFilter: handleApplyFilter,
+              onCancelAdvancedFilter: handleCancelFilter,
               onRemoveAdvancedFilter: handleRemoveAdvancedFilter,
               onCreateAdvancedFilter: handleCreateAdvancedFilter,
               onChangeAdvancedFilter: handleChangeAdvancedFiler,
-              onToggleFilter: handleToggleFilter,
+              onToggleAdvancedFilter: handleToggleFilter,
             },
           }}
           options={{
@@ -1687,7 +1676,7 @@ describe('Table', () => {
                 value: 'option-B',
               },
             ],
-            selectedAdvancedFilterId: 'my-filter',
+            selectedAdvancedFilterIds: ['my-filter'],
             advancedFilters: [
               {
                 filterId: 'my-filter',
@@ -1708,9 +1697,10 @@ describe('Table', () => {
       fireEvent.focus(screen.getByPlaceholderText('pick a number'));
       fireEvent.change(screen.getByPlaceholderText('pick a number'), { target: { value: '16' } });
       fireEvent.blur(screen.getByPlaceholderText('pick a number'));
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
         advanced: {
-          filterId: 'my-filter',
+          filterIds: ['my-filter'],
         },
         simple: {
           string: 'whiteboard',
@@ -1726,9 +1716,10 @@ describe('Table', () => {
         keyCode: 13,
         charCode: 13,
       });
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
         advanced: {
-          filterId: 'my-filter',
+          filterIds: ['my-filter'],
         },
         simple: {
           string: 'whiteboard',

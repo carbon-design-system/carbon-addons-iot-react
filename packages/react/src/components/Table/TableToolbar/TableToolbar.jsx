@@ -90,6 +90,10 @@ const propTypes = {
     onToggleAggregations: PropTypes.func,
     onToggleColumnSelection: PropTypes.func,
     onToggleFilter: PropTypes.func,
+    onToggleAdvancedFilter: PropTypes.func,
+    onCreateAdvancedFilter: PropTypes.func,
+    onChangeAdvancedFilter: PropTypes.func,
+    onCancelAdvancedFilter: PropTypes.func,
     onShowRowEdit: PropTypes.func,
   }).isRequired,
   /**
@@ -119,6 +123,9 @@ const propTypes = {
     search: TableSearchPropTypes,
     /** buttons to be shown with when activeBar is 'rowEdit' */
     rowEditBarButtons: PropTypes.node,
+
+    /** currently selected advanced filters */
+    selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
@@ -159,10 +166,11 @@ const TableToolbar = ({
     onShowRowEdit,
     onApplySearch,
     onDownloadCSV,
-    onApplyFilter,
-    onCancelFilter,
+    onApplyAdvancedFilter,
+    onCancelAdvancedFilter,
     onCreateAdvancedFilter,
     onChangeAdvancedFilter,
+    onToggleAdvancedFilter,
   },
   tableState: {
     advancedFilterFlyoutOpen,
@@ -177,7 +185,7 @@ const TableToolbar = ({
     totalItemsCount,
     rowEditBarButtons,
     filters,
-    selectedAdvancedFilterId,
+    selectedAdvancedFilterIds,
     columns,
     ordering,
   },
@@ -288,11 +296,11 @@ const TableToolbar = ({
         {hasAdvancedFilter ? (
           <TableToolbarAdvancedFilterFlyout
             actions={{
-              onApplyFilter,
-              onCancelFilter,
+              onApplyAdvancedFilter,
+              onCancelAdvancedFilter,
               onCreateAdvancedFilter,
               onChangeAdvancedFilter,
-              onToggleFilter,
+              onToggleAdvancedFilter,
             }}
             columns={columns.map((column) => ({
               ...column.filter,
@@ -304,7 +312,7 @@ const TableToolbar = ({
             tableState={{
               filters,
               advancedFilters,
-              selectedAdvancedFilterId,
+              selectedAdvancedFilterIds,
               advancedFilterFlyoutOpen,
               ordering,
               hasFastFilter: hasAdvancedFilter === 'onKeyPress',

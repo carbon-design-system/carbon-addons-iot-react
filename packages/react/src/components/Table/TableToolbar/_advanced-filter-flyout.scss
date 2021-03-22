@@ -21,9 +21,9 @@
 .#{$iot-prefix}--filter-flyout__simple-row {
   display: flex;
   flex: 1 1 0%;
-  gap: 1rem;
+  gap: $spacing-05;
   flex-direction: row;
-  padding-bottom: 1rem;
+  padding-bottom: $spacing-05;
 
   &:last-of-type {
     padding-bottom: 0;

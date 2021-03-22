@@ -146,6 +146,8 @@ const propTypes = {
         ]).isRequired,
       })
     ),
+    advancedFilters: PropTypes.arrayOf(PropTypes.shape({})),
+    selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
       activeBar: ActiveTableToolbarPropType,
@@ -213,12 +215,16 @@ const propTypes = {
       onApplySearch: PropTypes.func,
       /** Download the table contents */
       onDownloadCSV: PropTypes.func,
+      /** When advanced filters are applied */
+      onApplyAdvancedFilter: PropTypes.func,
+      /** Toggles the advanced filter flyout open */
+      onToggleAdvancedFilter: PropTypes.func,
       /** Remove the selected advancedFilter from the table */
       onRemoveAdvancedFilter: PropTypes.func,
       /** Fired the 'create new advanced filter' button is clicked. */
       onCreateAdvancedFilter: PropTypes.func,
       /** Fired when then 'Cancel' button is clicked in the advanced filter flyout menu */
-      onCancelFilter: PropTypes.func,
+      onCancelAdvancedFilter: PropTypes.func,
       /** Fired when an advanced filter is selected or removed. */
       onChangeAdvancedFilter: PropTypes.func,
     }),
@@ -261,6 +267,7 @@ export const defaultProps = (baseProps) => ({
     hasRowActions: false,
     hasRowNesting: false,
     hasFilter: false,
+    hasAdvancedFilter: false,
     hasOnlyPageData: false,
     hasSearch: false,
     hasColumnSelection: false,
@@ -284,7 +291,7 @@ export const defaultProps = (baseProps) => ({
     },
     filters: [],
     advancedFilters: [],
-    selectedAdvancedFilterId: null,
+    selectedAdvancedFilterIds: [],
     toolbar: {
       advancedFilterFlyoutOpen: false,
       batchActions: [],
@@ -314,7 +321,11 @@ export const defaultProps = (baseProps) => ({
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
       onRemoveAdvancedFilter: defaultFunction('actions.toolbar.onRemoveAdvancedFilter'),
-      onCancelFilter: defaultFunction('actions.toolbar.onCancelFilter'),
+      onCancelAdvancedFilter: defaultFunction('actions.toolbar.onCancelFilter'),
+      onCreateAdvancedFilter: defaultFunction('actions.toolbar.onCreateAdvancedFilter'),
+      onApplyAdvancedFilter: defaultFunction('actions.toolbar.onApplyAdvancedFilter'),
+      onChangeAdvancedFilter: defaultFunction('actions.toolbar.onChangeAdvancedFilter'),
+      onToggleAdvancedFilter: defaultFunction('actions.toolbar.onToggleAdvancedFilter'),
     },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
@@ -544,7 +555,7 @@ const Table = (props) => {
 
   const isFiltered =
     view.filters.length > 0 ||
-    view.selectedAdvancedFilterId ||
+    view.selectedAdvancedFilterIds.length ||
     (!isNil(view.toolbar) &&
       !isNil(view.toolbar.search) &&
       !isNil(view.toolbar.search.value) &&
@@ -616,9 +627,12 @@ const Table = (props) => {
                 'onShowRowEdit',
                 'onDownloadCSV',
                 'onApplyFilter',
-                'onCancelFilter',
+                'onApplyAdvancedFilter',
+                'onCancelAdvancedFilter',
                 'onCreateAdvancedFilter',
-                'onChangeAdvancedFilter'
+                'onChangeAdvancedFilter',
+                'onRemoveAdvancedFilter',
+                'onToggleAdvancedFilter'
               ),
               onApplySearch: (value) => {
                 searchValue.current = value;
@@ -645,12 +659,13 @@ const Table = (props) => {
             tableState={{
               totalSelected: view.table.selectedIds.length,
               totalFilters:
-                (view.filters ? view.filters.length : 0) + (view.selectedAdvancedFilterId ? 1 : 0),
+                (view.filters ? view.filters.length : 0) +
+                (view.selectedAdvancedFilterIds.length ? view.selectedAdvancedFilterIds.length : 0),
               totalItemsCount: view.pagination.totalItems,
               isDisabled: singleRowEditMode || view.toolbar.isDisabled,
               ordering: view.table.ordering,
               columns,
-              ...pick(view, 'filters', 'advancedFilters', 'selectedAdvancedFilterId'),
+              ...pick(view, 'filters', 'advancedFilters', 'selectedAdvancedFilterIds'),
               ...pick(
                 view.toolbar,
                 'batchActions',
@@ -665,11 +680,12 @@ const Table = (props) => {
           />
         ) : null
       }
-      {Array.isArray(view.advancedFilters) && view.advancedFilters.length > 0 ? (
+      {view.selectedAdvancedFilterIds.length ? (
         <section className={`${iotPrefix}--table__advanced-filters-container`}>
           <FilterTags>
-            {view.advancedFilters.map((advancedFilter) => {
-              if (view.selectedAdvancedFilterId === advancedFilter.filterId) {
+            {view.advancedFilters
+              .filter((advFilter) => view.selectedAdvancedFilterIds.includes(advFilter.filterId))
+              .map((advancedFilter) => {
                 return (
                   <Tag
                     key={advancedFilter.filterId}
@@ -677,17 +693,14 @@ const Table = (props) => {
                     title={advancedFilter.filterTitleText}
                     onClose={(e) => {
                       if (typeof actions?.toolbar?.onRemoveAdvancedFilter === 'function') {
-                        actions.toolbar.onRemoveAdvancedFilter(advancedFilter.filterId, e);
+                        actions.toolbar.onRemoveAdvancedFilter(e, advancedFilter.filterId);
                       }
                     }}
                   >
                     {advancedFilter.filterTitleText}
                   </Tag>
                 );
-              }
-
-              return null;
-            })}
+              })}
           </FilterTags>
         </section>
       ) : null}
