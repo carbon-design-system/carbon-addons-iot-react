@@ -1805,18 +1805,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         <div
           className="iot--header__subtitle"
         >
-          Application Name
-        </div>
-        <div
-          className="bx--tag"
-          id="tag-28"
-        >
-          
-          <span
-            title="Admin Mode"
-          >
-            Admin Mode
-          </span>
+          <div>
+            Application Name
+            <span
+              className="iot--suite-header-subtitle"
+            >
+              <div
+                className="bx--tag"
+                id="tag-28"
+              >
+                
+                <span
+                  title="Admin Mode"
+                >
+                  Admin Mode
+                </span>
+              </div>
+            </span>
+          </div>
         </div>
       </a>
       <div

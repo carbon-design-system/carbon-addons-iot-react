@@ -51,7 +51,7 @@ const propTypes = {
   /** Name to follow the IBM prefix up top, left */
   appName: PropTypes.string.isRequired,
   /** Optional prop that provides additional app information */
-  subtitle: PropTypes.string,
+  subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /** Optional prop that provides extra content */
   extraContent: PropTypes.element,
   /** Add a class name to Header */
@@ -148,7 +148,6 @@ const Header = ({
       <HeaderName href={url} prefix={prefix}>
         {appName}
         {subtitle ? <div className={`${iotPrefix}--header__subtitle`}>{subtitle}</div> : null}
-        {extraContent}
       </HeaderName>
       <HeaderActionGroup actionItems={actionItems} />
     </CarbonHeader>

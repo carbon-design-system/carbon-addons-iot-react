@@ -887,7 +887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Header header subtitle and extra content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Header header subtitle component 1`] = `
 <div
   className="storybook-container"
 >
@@ -954,18 +954,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
           <div
             className="iot--header__subtitle"
           >
-            Monitor
-          </div>
-          <div
-            className="bx--tag"
-            id="tag-13"
-          >
-            
-            <span
-              title="Admin Mode"
-            >
-              Admin Mode
-            </span>
+            <div>
+              Monitor
+              <span
+                style={
+                  Object {
+                    "margin-left": "1rem",
+                  }
+                }
+              >
+                <div
+                  className="bx--tag"
+                  id="tag-13"
+                >
+                  
+                  <span
+                    title="Admin Mode"
+                  >
+                    Admin Mode
+                  </span>
+                </div>
+              </span>
+            </div>
           </div>
         </a>
         <div

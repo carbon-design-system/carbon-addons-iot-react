@@ -7070,7 +7070,17 @@ Map {
         "type": "string",
       },
       "subtitle": Object {
-        "type": "string",
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "element",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "url": Object {
         "type": "string",

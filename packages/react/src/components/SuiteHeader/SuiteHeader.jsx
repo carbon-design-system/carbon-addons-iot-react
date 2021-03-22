@@ -313,8 +313,18 @@ const SuiteHeader = ({
                 )),
               }}
               appName={suiteName}
-              subtitle={appName}
-              extraContent={extraContent}
+              subtitle={
+                extraContent ? (
+                  <div>
+                    {appName}
+                    <span className={`${settings.iotPrefix}--suite-header-subtitle`}>
+                      {extraContent}
+                    </span>
+                  </div>
+                ) : (
+                  appName
+                )
+              }
               actionItems={[
                 ...customActionItems,
                 routes?.admin

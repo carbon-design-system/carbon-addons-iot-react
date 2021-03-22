@@ -221,12 +221,22 @@ HeaderSubtitle.story = {
   name: 'header subtitle',
 };
 
-export const HeaderSubtitleAndExtraContent = () => (
+export const HeaderComponentSubtitle = () => (
   <div style={{ width: '100%', height: '100vh' }}>
-    <StyledHeader {...HeaderMenuProps} subtitle="Monitor" extraContent={<Tag>Admin Mode</Tag>} />
+    <StyledHeader
+      {...HeaderMenuProps}
+      subtitle={
+        <div>
+          {'Monitor'}
+          <span style={{ 'margin-left': '1rem' }}>
+            <Tag>Admin Mode</Tag>
+          </span>
+        </div>
+      }
+    />
   </div>
 );
 
-HeaderSubtitleAndExtraContent.story = {
-  name: 'header subtitle and extra content',
+HeaderComponentSubtitle.story = {
+  name: 'header subtitle component',
 };
