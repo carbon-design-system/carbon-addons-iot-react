@@ -9989,8 +9989,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       >
                         <label
                           className="bx--pagination__text"
-                          htmlFor="bx-pagination-select-2"
-                          id="bx-pagination-select-2-count-label"
+                          htmlFor="bx-pagination-select-3"
+                          id="bx-pagination-select-3-count-label"
                         >
                           Items per page:
                         </label>
@@ -10009,7 +10009,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               >
                                 <select
                                   className="bx--select-input"
-                                  id="bx-pagination-select-2"
+                                  id="bx-pagination-select-3"
                                   onChange={[Function]}
                                   value={10}
                                 >
@@ -10074,7 +10074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           >
                             <label
                               className="bx--label bx--visually-hidden"
-                              htmlFor="bx-pagination-select-2-right"
+                              htmlFor="bx-pagination-select-3-right"
                             >
                               Page number, of 4 pages
                             </label>
@@ -10087,7 +10087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               >
                                 <select
                                   className="bx--select-input"
-                                  id="bx-pagination-select-2-right"
+                                  id="bx-pagination-select-3-right"
                                   onChange={[Function]}
                                   value={1}
                                 >

@@ -147,8 +147,10 @@ export const useChartData = (values, { series = [], timeDataSourceId }) => {
   const timestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
   const data = [];
 
+  const seriesArray = Array.isArray(series) ? series : [series];
+
   // Series is the different groups of datasets
-  series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+  seriesArray.forEach(({ dataSourceId, dataFilter = {}, label }) => {
     timestamps.forEach((timestamp) => {
       // First filter based on on the dataFilter
       const filteredData = filter(values, dataFilter);
@@ -272,16 +274,7 @@ export const useTableData = (values, chartOptions) => {
 };
 
 export const useTableColumns = (values, chartOptions) => {
-  const {
-    timeDataSourceId,
-    // categoryDataSourceId,
-    decimalPrecision,
-    i18n,
-    size,
-    series,
-    unit,
-    locale,
-  } = chartOptions;
+  const { timeDataSourceId, decimalPrecision, i18n, size, series, unit, locale } = chartOptions;
   const { columnNames } = extractDataAndColumnNames(values, chartOptions);
 
   // In expanded mode we show the data underneath the linechart in a table so need to build the columns
