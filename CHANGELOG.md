@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.14...v2.145.0-next.15) (2021-03-22)
+
+
+### Bug Fixes
+
+* **ImageTile:** improve regex efficiency to pass codeql ([ecf2ed5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ecf2ed51b9fc31eb3868b4f504eb70f9c298fefe))
+
+
+
+
+
+# [2.145.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.13...v2.145.0-next.14) (2021-03-22)
+
+
+### Features
+
+* **valuecard:** add new SMALLFULL size ([9ec88e3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ec88e3d6bd025c7e24670fc5e335f9e4a165c62))
+
+
+
+
+
+# [2.145.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.12...v2.145.0-next.13) (2021-03-20)
+
+
+### Bug Fixes
+
+* **button:** update spacing ([d840a7e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d840a7ee905ceb9c6b8a8c7fa4203b5eedec5dc8))
+
+
+
+
+
 # [2.145.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.11...v2.145.0-next.12) (2021-03-16)
 
 
