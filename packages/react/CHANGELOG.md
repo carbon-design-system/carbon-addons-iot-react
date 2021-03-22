@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.13...v2.145.0-next.14) (2021-03-22)
+
+
+### Features
+
+* **valuecard:** add new SMALLFULL size ([9ec88e3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ec88e3d6bd025c7e24670fc5e335f9e4a165c62))
+
+
+
+
+
 # [2.145.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.12...v2.145.0-next.13) (2021-03-20)
 
 
