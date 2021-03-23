@@ -102,7 +102,7 @@ const operands = {
  * for 'ANY' logic.
  *
  * @param {string} logic 'ALL' or 'ANY'
- * @param {array} rules Array of all the rules in this group
+ * @param {Array<Object>} rules Array of all the rules in this group
  * @param {object} values The values for each column in this row of the data
  *
  * @returns boolean
@@ -140,8 +140,8 @@ const reduceRuleGroup = (logic, rules, values) => {
  * Loop through all the currently active advanced filters TREATING THEM AS 'AND' CONDITIONS
  * to determine which rows should be shown.
  *
- * @param {array} data tableData
- * @param {array} advancedFilters All the currently active filters
+ * @param {Array<Object>} data tableData
+ * @param {Array<{filterId: string; filterTitleText: string; filterRules: Object}>} advancedFilters All the currently active filters
  * @returns boolean
  */
 export const runAdvancedFilters = (data, advancedFilters) => {
@@ -151,6 +151,7 @@ export const runAdvancedFilters = (data, advancedFilters) => {
     });
   });
 };
+
 /**
  * Little utility to filter data
  * @param {Array<Object>} data data to filter

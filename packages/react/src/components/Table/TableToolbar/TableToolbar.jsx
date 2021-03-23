@@ -27,6 +27,7 @@ import {
 } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
+import { RuleGroupPropType } from '../../RuleBuilder/RuleBuilderPropTypes';
 
 import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout';
 import TableToolbarSVGButton from './TableToolbarSVGButton';
@@ -124,6 +125,16 @@ const propTypes = {
     /** buttons to be shown with when activeBar is 'rowEdit' */
     rowEditBarButtons: PropTypes.node,
 
+    /** a stripped down version of the RuleBuilderFilterPropType */
+    advancedFilters: PropTypes.arrayOf(
+      PropTypes.shape({
+        /** Unique id for particular filter */
+        filterId: PropTypes.string.isRequired,
+        /** Text for main tilte of page */
+        filterTitleText: PropTypes.string.isRequired,
+        filterRules: RuleGroupPropType.isRequired,
+      })
+    ),
     /** currently selected advanced filters */
     selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,

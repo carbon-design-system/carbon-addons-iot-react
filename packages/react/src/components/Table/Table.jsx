@@ -12,6 +12,7 @@ import { useLangDirection } from 'use-lang-direction';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
 import FilterTags from '../FilterTags/FilterTags';
+import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
 
 import {
   TableColumnsPropTypes,
@@ -146,7 +147,16 @@ const propTypes = {
         ]).isRequired,
       })
     ),
-    advancedFilters: PropTypes.arrayOf(PropTypes.shape({})),
+    /** a stripped down version of the RuleBuilderFilterPropType */
+    advancedFilters: PropTypes.arrayOf(
+      PropTypes.shape({
+        /** Unique id for particular filter */
+        filterId: PropTypes.string.isRequired,
+        /** Text for main tilte of page */
+        filterTitleText: PropTypes.string.isRequired,
+        filterRules: RuleGroupPropType.isRequired,
+      })
+    ),
     selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */

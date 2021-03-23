@@ -62,7 +62,9 @@ const propTypes = {
     ),
     advancedFilters: PropTypes.arrayOf(
       PropTypes.shape({
+        /** Unique id for particular filter */
         filterId: PropTypes.string.isRequired,
+        /** Text for main tilte of page */
         filterTitleText: PropTypes.string.isRequired,
       })
     ),

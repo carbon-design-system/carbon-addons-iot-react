@@ -1101,7 +1101,38 @@ Map {
               "args": Array [
                 Object {
                   "args": Array [
-                    Object {},
+                    Object {
+                      "filterId": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "filterRules": Object {
+                        "args": Array [
+                          Object {
+                            "groupLogic": Object {
+                              "args": Array [
+                                Array [
+                                  "ALL",
+                                  "ANY",
+                                ],
+                              ],
+                              "isRequired": true,
+                              "type": "oneOf",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "isRequired": true,
+                        "type": "shape",
+                      },
+                      "filterTitleText": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
                   ],
                   "type": "shape",
                 },
@@ -3334,6 +3365,48 @@ Map {
                 ],
               ],
               "type": "oneOf",
+            },
+            "advancedFilters": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "filterId": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "filterRules": Object {
+                        "args": Array [
+                          Object {
+                            "groupLogic": Object {
+                              "args": Array [
+                                Array [
+                                  "ALL",
+                                  "ANY",
+                                ],
+                              ],
+                              "isRequired": true,
+                              "type": "oneOf",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "isRequired": true,
+                        "type": "shape",
+                      },
+                      "filterTitleText": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
             },
             "batchActions": Object {
               "args": Array [
