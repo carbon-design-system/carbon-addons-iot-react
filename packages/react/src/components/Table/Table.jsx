@@ -79,14 +79,8 @@ const propTypes = {
           );
         }
 
-        if (
-          ![true, false, undefined, 'onKeyPress', 'onEnterAndBlur'].includes(
-            props?.hasAdvancedFilter
-          )
-        ) {
-          return new Error(
-            `'options.hasAdvancedFilter' should be a boolean, undefined, 'onKeyPress', or 'onEnterAndBlur'.`
-          );
+        if (![true, false, undefined].includes(props?.hasAdvancedFilter)) {
+          return new Error(`'options.hasAdvancedFilter' should be a boolean or undefined.`);
         }
       }
     },
