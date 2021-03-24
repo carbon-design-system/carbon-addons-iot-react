@@ -34,8 +34,7 @@ jobs:
         run: yarn lint
 
       - name: Test, collect coverage
-        # we need the "-- --" to pass the options through yarn and lerna and back to yarn
-        run: yarn test -- -- --maxWorkers=2 --ci --logHeapUsage --coverage
+        run: yarn test:ci
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
