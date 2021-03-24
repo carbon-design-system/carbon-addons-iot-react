@@ -305,9 +305,9 @@ describe('TableHead', () => {
       onColumnToggleFunc('col1', orderingAfterTogleShow);
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
-        { id: 'col1', name: 'Column 1', width: '200px' },
-        { id: 'col2', name: 'Column 2', width: '100px' },
-        { id: 'col3', name: 'Column 3', width: '100px' },
+        { id: 'col1', name: 'Column 1', width: '133px' },
+        { id: 'col2', name: 'Column 2', width: '133px' },
+        { id: 'col3', name: 'Column 3', width: '133px' },
       ]);
       expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
     });
@@ -338,10 +338,15 @@ describe('TableHead', () => {
       onColumnToggleFunc('col1', orderingAfterTogleShow);
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
-        { id: 'col1', name: 'Column 1', width: '100px' },
-        { id: 'col2', name: 'Column 2', width: `${MIN_COLUMN_WIDTH}px` },
-        { id: 'col3', name: 'Column 3', width: `${MIN_COLUMN_WIDTH}px` },
+        { id: 'col1', name: 'Column 1', width: '67px' },
+        { id: 'col2', name: 'Column 2', width: `67px` },
+        { id: 'col3', name: 'Column 3', width: `67px` },
       ]);
+
+      myActions.onColumnResize.mock.calls[0][0].forEach((column) => {
+        expect(parseInt(column.width, 10)).toBeGreaterThanOrEqual(MIN_COLUMN_WIDTH);
+      });
+
       expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
     });
 
@@ -375,9 +380,9 @@ describe('TableHead', () => {
       onColumnToggleFunc('col3', orderingAfterTogleShow);
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
-        { id: 'col1', name: 'Column 1', width: '100px' },
-        { id: 'col2', name: 'Column 2', width: '100px' },
-        { id: 'col3', name: 'Column 3', width: '200px' },
+        { id: 'col1', name: 'Column 1', width: '133px' },
+        { id: 'col2', name: 'Column 2', width: '133px' },
+        { id: 'col3', name: 'Column 3', width: '133px' },
       ]);
       expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
     });
@@ -590,19 +595,19 @@ describe('TableHead', () => {
       rerender(<TableHead {...myProps} />);
 
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
-        width: '100px',
+        width: '120px',
       });
       expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
-        width: '100px',
+        width: '120px',
       });
       expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
-        width: '100px',
+        width: '120px',
       });
       expect(screen.getAllByText('Column 4')[0].closest('th')).toHaveStyle({
-        width: '150px',
+        width: '120px',
       });
       expect(screen.getAllByText('Column 5')[0].closest('th')).toHaveStyle({
-        width: '150px',
+        width: '120px',
       });
     });
 
@@ -644,13 +649,13 @@ describe('TableHead', () => {
       rerender(<TableHead {...myProps} />);
 
       expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
-        width: '100px',
+        width: '150px',
       });
       expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
-        width: '100px',
+        width: '150px',
       });
       expect(screen.getAllByText('Column 4')[0].closest('th')).toHaveStyle({
-        width: '200px',
+        width: '150px',
       });
     });
 
