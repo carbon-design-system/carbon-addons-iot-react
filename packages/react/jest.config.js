@@ -6,6 +6,7 @@ module.exports = {
     '!src/components/SuiteHeader/util/suiteHeaderData.js',
     '!src/components/FileUploader/stories/*.jsx',
     '!src/components/Table/AsyncTable/*.js?(x)',
+    '!src/components/Page/EditPage.jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov'],
@@ -16,7 +17,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|Dashboard|CardRenderer|ImageHotspots|PageHero|PageTitle|EditPage|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|Dashboard|CardRenderer|ImageHotspots|PageHero|PageTitle|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -82,12 +83,6 @@ module.exports = {
     },
     './src/components/ImageCard/ImageHotspots.jsx': {
       branches: 79,
-    },
-    './src/components/Page/EditPage.jsx': {
-      statements: 63,
-      branches: 50,
-      lines: 63,
-      functions: 50,
     },
     './src/components/Table/TableHead/ColumnHeaderSelect/ColumnHeaderSelect.jsx': {
       branches: 75,
