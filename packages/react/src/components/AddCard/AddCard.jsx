@@ -9,7 +9,6 @@ import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
 
-// const prop = 'foo'
 
 const propTypes = {
   /** Title to show on the card */
