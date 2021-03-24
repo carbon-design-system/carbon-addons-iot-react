@@ -143,106 +143,111 @@ const configureAxes = (content) => {
  */
 
 export const useChartData = (values, { series = [], timeDataSourceId }) => {
-  // Generate a set of unique timestamps for the values
-  const timestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
-  const data = [];
+  // Carbon charts is incredibly slow with large datasets sometimes, so let's shave off a little time where we can
+  return useMemo(() => {
+    // Generate a set of unique timestamps for the values
+    const timestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
+    const data = [];
 
-  const seriesArray = Array.isArray(series) ? series : [series];
+    const seriesArray = Array.isArray(series) ? series : [series];
 
-  // Series is the different groups of datasets
-  seriesArray.forEach(({ dataSourceId, dataFilter = {}, label }) => {
-    timestamps.forEach((timestamp) => {
-      // First filter based on on the dataFilter
-      const filteredData = filter(values, dataFilter);
-      if (!isEmpty(filteredData)) {
-        // have to filter out null values from the dataset, as it causes Carbon Charts to break
-        filteredData
-          .filter((dataItem) => {
-            // only allow valid timestamp matches
-            return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
-          })
-          .forEach((dataItem) => {
-            // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
-            if (dataItem[dataSourceId]) {
-              data.push({
-                date:
-                  dataItem[timeDataSourceId] instanceof Date
-                    ? dataItem[timeDataSourceId]
-                    : new Date(dataItem[timeDataSourceId]),
-                value: dataItem[dataSourceId],
-                group: label,
-              });
-            }
-          });
-      }
+    // Series is the different groups of datasets
+    seriesArray.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+      timestamps.forEach((timestamp) => {
+        // First filter based on on the dataFilter
+        const filteredData = filter(values, dataFilter);
+        if (!isEmpty(filteredData)) {
+          // have to filter out null values from the dataset, as it causes Carbon Charts to break
+          filteredData
+            .filter((dataItem) => {
+              // only allow valid timestamp matches
+              return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+            })
+            .forEach((dataItem) => {
+              // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
+              if (dataItem[dataSourceId]) {
+                data.push({
+                  date:
+                    dataItem[timeDataSourceId] instanceof Date
+                      ? dataItem[timeDataSourceId]
+                      : new Date(dataItem[timeDataSourceId]),
+                  value: dataItem[dataSourceId],
+                  group: label,
+                });
+              }
+            });
+        }
+      });
     });
-  });
 
-  return data;
+    return data;
+  }, [values, series, timeDataSourceId]);
 };
 
 export const useChartOptions = (content) => {
-  const {
-    comboChartTypes,
-    decimalPrecision,
-    i18n,
-    isEditable,
-    isExpanded,
-    isLoading,
-    locale,
-    series,
-    showTimeInGMT,
-    size,
-    timeDataSourceId,
-    tooltipDateFormatPattern,
-    unit,
-    values,
-    zoomBar,
-  } = content;
+  return useMemo(() => {
+    const {
+      comboChartTypes,
+      decimalPrecision,
+      i18n,
+      isEditable,
+      isExpanded,
+      isLoading,
+      locale,
+      series,
+      showTimeInGMT,
+      size,
+      timeDataSourceId,
+      tooltipDateFormatPattern,
+      unit,
+      values,
+      zoomBar,
+    } = content;
 
-  const options = {
-    experimental: true,
-    animations: false,
-    accessibility: true,
-    axes: configureAxes(content),
-    legend: {
-      position: 'bottom',
-      enabled: values.length > 1,
-      clickable: !isEditable,
-    },
-    containerResizable: true,
-    comboChartTypes,
-    series,
-    color: formatColors(series),
-    timeScale: {
-      addSpaceOnEdges: 0,
-    },
-    tooltip: {
-      valueFormatter: (tooltipValue) =>
-        chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
-      customHTML: (...args) =>
-        handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
-      groupLabel: i18n.tooltipGroupLabel,
-      totalLabel: i18n.tooltipTotalLabel,
-    },
-    // zoomBar should only be enabled for time-based charts
-    ...(zoomBar?.enabled &&
-    timeDataSourceId &&
-    (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
-      ? {
-          zoomBar: {
-            top: {
-              enabled: zoomBar.enabled,
-              initialZoomDomain: zoomBar.initialZoomDomain,
-              type: zoomBar.view || 'slider_view', // default to slider view
+    const options = {
+      experimental: true,
+      animations: false,
+      accessibility: true,
+      axes: configureAxes(content),
+      legend: {
+        position: 'bottom',
+        enabled: values.length > 1,
+        clickable: !isEditable,
+      },
+      containerResizable: true,
+      comboChartTypes,
+      series,
+      color: formatColors(series),
+      timeScale: {
+        addSpaceOnEdges: 0,
+      },
+      tooltip: {
+        valueFormatter: (tooltipValue) =>
+          chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
+        customHTML: (...args) =>
+          handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
+        groupLabel: i18n.tooltipGroupLabel,
+        totalLabel: i18n.tooltipTotalLabel,
+      },
+      // zoomBar should only be enabled for time-based charts
+      ...(zoomBar?.enabled &&
+      timeDataSourceId &&
+      (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
+        ? {
+            zoomBar: {
+              top: {
+                enabled: zoomBar.enabled,
+                initialZoomDomain: zoomBar.initialZoomDomain,
+                type: zoomBar.view || 'slider_view', // default to slider view
+              },
             },
-          },
-        }
-      : {}),
-  };
+          }
+        : {}),
+    };
 
-  options.data = merge(options.data, { loading: isLoading });
-  return { ...options, ...content };
+    options.data = merge(options.data, { loading: isLoading });
+    return { ...options, ...content };
+  }, [content]);
 };
 
 const extractDataAndColumnNames = (values, chartOptions) => {

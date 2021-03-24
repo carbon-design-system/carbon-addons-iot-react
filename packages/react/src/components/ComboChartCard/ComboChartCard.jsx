@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { ComboChart } from '@carbon/charts-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
+import defaultsDeep from 'lodash/defaultsDeep';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import {
@@ -72,7 +73,7 @@ const ComboChartCard = ({
 
   const { content, title, values } = handleCardVariables(
     titleProp,
-    contentProp,
+    defaultsDeep({}, contentProp, defaultProps.content),
     initialValues,
     others
   );
