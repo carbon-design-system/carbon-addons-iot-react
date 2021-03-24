@@ -1,0 +1,46 @@
+@import '../../globals/vars';
+@import '../../globals/spacing';
+@import '../../globals/typography';
+
+.#{$iot-prefix}--empty-state {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: $spacing-06;
+  &--icon {
+    margin-bottom: $spacing-05;
+    height: 80px;
+    width: auto;
+  }
+
+  &--content {
+    max-width: 30rem;
+    overflow-wrap: break-word;
+    text-align: left;
+  }
+
+  &--title {
+    @include type-style('productive-heading-03');
+    color: $text-01;
+    text-align: left;
+    margin-bottom: $spacing-03;
+  }
+
+  &--text {
+    color: $text-01;
+    text-align: left;
+    @include type-style('body-short-01');
+  }
+
+  &--action {
+    margin-top: $spacing-06;
+  }
+
+  &--link {
+    margin-top: $spacing-05;
+    @include type-style('body-short-01');
+    color: $interactive-01;
+  }
+}
