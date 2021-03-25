@@ -1090,6 +1090,9 @@ Map {
                               "isRequired": true,
                               "type": "string",
                             },
+                            "isSortable": Object {
+                              "type": "bool",
+                            },
                             "value": Object {
                               "args": Array [
                                 Array [
