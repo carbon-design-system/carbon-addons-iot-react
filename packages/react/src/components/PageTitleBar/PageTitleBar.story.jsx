@@ -99,24 +99,26 @@ WithTooltipDescriptionWithNode.story = {
 };
 
 export const WithContent = () => (
-  <PageTitleBar
-    title={commonPageTitleBarProps.title}
-    description={commonPageTitleBarProps.description}
-    breadcrumb={pageTitleBarBreadcrumb}
-    content={
-      <Tabs>
-        <Tab label="Tab 1">
-          <div>Content for first tab.</div>
-        </Tab>
-        <Tab label="Tab 2">
-          <div>Content for second tab.</div>
-        </Tab>
-        <Tab label="Tab 3">
-          <div>Content for third tab.</div>
-        </Tab>
-      </Tabs>
-    }
-  />
+  <>
+    <PageTitleBar
+      title={commonPageTitleBarProps.title}
+      description={commonPageTitleBarProps.description}
+      breadcrumb={pageTitleBarBreadcrumb}
+      content={
+        <Tabs>
+          <Tab label="Tab 1">
+            <div>Content for first tab.</div>
+          </Tab>
+          <Tab label="Tab 2">
+            <div>Content for second tab.</div>
+          </Tab>
+          <Tab label="Tab 3">
+            <div>Content for third tab.</div>
+          </Tab>
+        </Tabs>
+      }
+    />
+  </>
 );
 
 WithContent.story = {
@@ -152,13 +154,10 @@ export const WithEverything = () => (
         <div
           className="top"
           style={{
-            marginBottom: '8px',
             display: 'flex',
             flexDirection: 'row-reverse',
           }}
-        >
-          <span>Last updated: yesterday</span>
-        </div>
+         />
         <div className="bottom">
           <Button
             renderIcon={Add24}
@@ -190,7 +189,7 @@ export const WithEverything = () => (
     content={
       <Tabs>
         <Tab label="Tab 1">
-          <div>Content for first tab.</div>
+          <div style={{ height: '100rem', backgroundColor: 'purple' }}>Content for first tab.</div>
         </Tab>
         <Tab label="Tab 2">
           <div>Content for second tab.</div>

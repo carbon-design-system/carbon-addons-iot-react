@@ -3,10 +3,28 @@
 
 .page-title-bar {
   &-title {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-
+    &-dynamic {
+      position: absolute;
+      margin: -1rem 0 1.5rem 2rem;
+    }
+    &--condensed {
+      &-static {
+        margin-left: 0.5rem;
+      }
+      &-before {
+        margin-top: 2rem;
+        margin-left: 0.5rem;
+        transition: all 240ms;
+      }
+      &-after {
+        margin-top: 0;
+        margin-left: 0.5rem;
+        transition: all 240ms;
+        display: flex;
+        align-items: center;
+      }
+    }
     &--text {
       align-items: center;
       display: flex;
@@ -38,11 +56,34 @@
     height: 100px;
     padding: $spacing-05 $spacing-07 $spacing-06 $spacing-07;
 
+    &-sticky {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      border-bottom: $ui-03;
+      background-color: $ui-01;
+    }
+    &-condensed {
+      position: sticky;
+      top: 0;
+      border-bottom: $ui-03;
+      height: unset;
+      padding: 0 $spacing-07;
+      transition: background-color 240ms;
+      background-color: $ui-01;
+    }
     &-left {
-      margin-right: $spacing-05;
+      float: left;
     }
     &-right {
-      margin-left: $spacing-05;
+      float: right;
+      &-dynamic {
+        margin: -0.5rem 2rem 1.5rem 0;
+        margin-left: $spacing-05;
+        position: sticky;
+        top: 0;
+        z-index: 2000;
+      }
     }
   }
 
@@ -53,8 +94,27 @@
   }
 
   &-breadcrumb {
-    display: flex;
-    justify-content: space-between;
+    &-dynamic {
+      height: 3rem;
+      overflow: hidden;
+      display: flex;
+      padding: 1rem 0 1rem 2rem;
+      transition: all 240ms;
+      position: sticky;
+      top: 0;
+    }
+    &-condensed-static {
+      display: flex;
+      align-items: center;
+    }
+    &-condensed {
+      position: sticky;
+      top: 0;
+      transition: all 240ms;
+      background: $ui-01;
+      z-index: 1000;
+      border-bottom: $ui-03;
+    }
   }
 
   &-loading {
