@@ -46,7 +46,8 @@
     "test:update": "yarn test:engines && cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot --no-watchman --colors",
     "test:story": "yarn test:engines && cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js --no-watchman --colors",
     "test:clear": "yarn test:engines && cross-env TZ=America/Chicago jest --no-watchman --clearCache --colors",
-    "test:engines": "check-node-version --node $(cat ../../.nvmrc) --yarn 1.x"
+    "test:engines": "check-node-version --node $(cat ../../.nvmrc) --yarn 1.x",
+    "test:ci": "yarn test --maxWorkers=2 --ci --logHeapUsage --coverage"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
@@ -276,5 +277,5 @@
   "resolutions": {
     "chokidar": "3.3.1"
   },
-  "version": "2.145.0-next.15"
+  "version": "2.145.0-next.17"
 }

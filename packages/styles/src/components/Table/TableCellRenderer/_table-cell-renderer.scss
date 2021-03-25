@@ -1,0 +1,26 @@
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--table__cell--truncate .#{$prefix}--tooltip__label {
+  // Revert the styles added by the tooltip since we want
+  // normal table cell content style even if a tooltip is triggered.
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  display: inherit;
+  align-items: inherit;
+  color: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.#{$iot-prefix}--table__cell-text--truncate {
+  @include text-overflow();
+  display: block;
+}
+
+.#{$iot-prefix}--table__cell-text--no-wrap {
+  white-space: nowrap;
+}
