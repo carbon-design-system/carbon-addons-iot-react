@@ -8,8 +8,6 @@ import { Add20 } from '@carbon/icons-react';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
-
-
 const propTypes = {
   /** Title to show on the card */
   title: PropTypes.string.isRequired,
