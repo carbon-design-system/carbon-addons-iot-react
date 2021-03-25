@@ -22,6 +22,10 @@ const propTypes = {
           id: PropTypes.string.isRequired,
           /** the value to be displayed */
           value: PropTypes.string,
+          /** allow aligning the results the same as the column */
+          align: PropTypes.oneOf(['start', 'center', 'end']),
+          /** allows the aggregation to align with sortable columns extra padding */
+          isSortable: PropTypes.bool,
         })
       ),
     }),
