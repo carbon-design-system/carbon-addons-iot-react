@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.17...v2.145.0-next.18) (2021-03-25)
+
+
+### Bug Fixes
+
+* **table:** add missing isSortable prop for aggregations ([c82f227](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c82f2277478445fdd4b33b21aaaf31fb14a82aa6))
+
+
+### Features
+
+* **suiteheader:** Including the `extraContent` property to the Header component (and also to SuiteHeader) so that a custom component can be rendered after the header subtitle. ([017de49](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/017de492c5f344b0484c661735a3026f909dce4a)), closes [#2116](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2116)
+* **suiteheader:** Removing `extraContent` from `Header`. In `SuiteHeader`, when `extraContent` is passed, an element with `appName` and `extraContent` is passed to `Header`’s `subtitle` property. ([b3524f8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b3524f8241da611db36fff2c638380b92c8df166))
+* **suiteheader:** Removing references to `extraContent` in `Header`. ([d894b0c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d894b0c50b631e8b8ce1c7de0c37feb8572dda2e))
+
+
+
+
+
 # [2.145.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.16...v2.145.0-next.17) (2021-03-25)
 
 
