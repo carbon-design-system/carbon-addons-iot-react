@@ -4542,7 +4542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <div
                         aria-label="Clear Filter fav"
                         className="bx--tag bx--tag--filter"
-                        id="tag-25"
+                        id="tag-26"
                         style={
                           Object {
                             "marginRight": "1rem",
@@ -4556,7 +4556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           fav
                         </span>
                         <button
-                          aria-labelledby="tag-25"
+                          aria-labelledby="tag-26"
                           className="bx--tag__close-icon"
                           onClick={[Function]}
                           title="Clear Filter"
@@ -4581,7 +4581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <div
                         aria-label="Clear Filter other-tag"
                         className="bx--tag bx--tag--filter"
-                        id="tag-26"
+                        id="tag-27"
                         style={
                           Object {
                             "marginRight": "1rem",
@@ -4595,7 +4595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           other-tag
                         </span>
                         <button
-                          aria-labelledby="tag-26"
+                          aria-labelledby="tag-27"
                           className="bx--tag__close-icon"
                           onClick={[Function]}
                           title="Clear Filter"
