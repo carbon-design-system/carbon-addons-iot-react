@@ -22,6 +22,10 @@ table.#{$prefix}--side-nav--data-table {
   max-width: 0;
 }
 
+td.#{$iot-prefix}--table__cell--sortable {
+  padding-right: $spacing-09;
+}
+
 .#{$iot-prefix}--data-table--resize td {
   word-break: break-all;
 }
@@ -42,6 +46,10 @@ html[dir='rtl'] {
   }
   .#{$iot-prefix}--expanded-tablerow > td * {
     text-align: right;
+  }
+
+  td.#{$iot-prefix}--table__cell--sortable {
+    padding-left: $spacing-08;
   }
 }
 

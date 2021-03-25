@@ -1,0 +1,12 @@
+@import '../../../globals/vars';
+
+.#{$iot-prefix}-table-foot {
+  border-top: 2px solid $carbon--gray-20;
+}
+.#{$iot-prefix}-table-foot--label {
+  font-weight: 600;
+}
+
+.#{$iot-prefix}-table-foot--value {
+  font-weight: 600;
+}

@@ -101,12 +101,6 @@
     }
   }
   &--modal-wrapper {
-    .#{$prefix}--modal.is-visible .#{$prefix}--modal-container {
-      overflow: visible;
-    }
-    .#{$prefix}--modal-content {
-      overflow: visible;
-    }
     .#{$prefix}--number,
     input[type='number'] {
       min-width: unset;

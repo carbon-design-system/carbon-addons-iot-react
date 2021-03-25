@@ -4637,6 +4637,10 @@ Map {
     "defaultProps": Object {
       "content": Object {
         "layout": "VERTICAL",
+        "truncation": Object {
+          "threshold": 20,
+          "type": "end_line",
+        },
         "type": "SIMPLE",
       },
       "domainRange": null,
@@ -5170,6 +5174,27 @@ Map {
               "type": "arrayOf",
             },
             "timeDataSourceId": [Function],
+            "truncation": Object {
+              "args": Array [
+                Object {
+                  "threshold": Object {
+                    "type": "number",
+                  },
+                  "type": Object {
+                    "args": Array [
+                      Array [
+                        "end_line",
+                        "mid_line",
+                        "front_line",
+                        "none",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
             "type": [Function],
             "unit": Object {
               "type": "string",
@@ -9838,6 +9863,32 @@ Map {
             "w": 4,
           },
         },
+        "SMALLFULL": Object {
+          "lg": Object {
+            "h": 1,
+            "w": 16,
+          },
+          "max": Object {
+            "h": 1,
+            "w": 16,
+          },
+          "md": Object {
+            "h": 1,
+            "w": 8,
+          },
+          "sm": Object {
+            "h": 2,
+            "w": 4,
+          },
+          "xl": Object {
+            "h": 1,
+            "w": 16,
+          },
+          "xs": Object {
+            "h": 1,
+            "w": 4,
+          },
+        },
         "SMALLWIDE": Object {
           "lg": Object {
             "h": 1,
@@ -10759,6 +10810,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -10796,6 +10848,10 @@ Map {
         "colors": undefined,
         "groupDataSourceId": "group",
         "legendPosition": "bottom",
+        "truncation": Object {
+          "threshold": 20,
+          "type": "end_line",
+        },
       },
       "i18n": Object {
         "noDataLabel": "No data",
@@ -11275,7 +11331,34 @@ Map {
               "type": "func",
             },
             "legendPosition": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  "top",
+                  "bottom",
+                ],
+              ],
+              "type": "oneOf",
+            },
+            "truncation": Object {
+              "args": Array [
+                Object {
+                  "threshold": Object {
+                    "type": "number",
+                  },
+                  "type": Object {
+                    "args": Array [
+                      Array [
+                        "end_line",
+                        "mid_line",
+                        "front_line",
+                        "none",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                },
+              ],
+              "type": "shape",
             },
           },
         ],
@@ -11589,6 +11672,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -12536,6 +12620,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -12592,6 +12677,10 @@ Map {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
         "showLegend": true,
+        "truncation": Object {
+          "threshold": 20,
+          "type": "end_line",
+        },
       },
       "domainRange": null,
       "i18n": Object {
@@ -13173,6 +13262,27 @@ Map {
             "timeDataSourceId": Object {
               "type": "string",
             },
+            "truncation": Object {
+              "args": Array [
+                Object {
+                  "threshold": Object {
+                    "type": "number",
+                  },
+                  "type": Object {
+                    "args": Array [
+                      Array [
+                        "end_line",
+                        "mid_line",
+                        "front_line",
+                        "none",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
             "unit": Object {
               "type": "string",
             },
@@ -13424,6 +13534,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -14235,6 +14346,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -16072,6 +16184,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -16136,6 +16249,7 @@ Map {
     "MEDIUMTHIN": "MEDIUMTHIN",
     "MEDIUMWIDE": "MEDIUMWIDE",
     "SMALL": "SMALL",
+    "SMALLFULL": "SMALLFULL",
     "SMALLWIDE": "SMALLWIDE",
   },
   "CARD_ACTIONS" => Object {
@@ -16908,6 +17022,7 @@ Map {
             "XLARGE",
             "SMALL",
             "SMALLWIDE",
+            "SMALLFULL",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",

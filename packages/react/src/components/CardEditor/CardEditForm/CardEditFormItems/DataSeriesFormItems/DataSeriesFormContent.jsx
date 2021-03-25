@@ -392,6 +392,8 @@ const DataSeriesFormItem = ({
                 size="small"
                 onClick={() => handleRemoveButton(dataItem)}
                 iconDescription={mergedI18n.remove}
+                tooltipPosition="left"
+                tooltipAlignment="center"
               />,
             ],
           },

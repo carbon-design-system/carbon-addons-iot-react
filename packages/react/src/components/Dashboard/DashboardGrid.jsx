@@ -245,9 +245,10 @@ const DashboardGrid = ({
 
   const [shouldAnimate, setShouldAnimate] = useState(false);
   useEffect(() => {
-    requestAnimationFrame(() => {
+    const animationFramePromise = requestAnimationFrame(() => {
       setShouldAnimate(isEditable);
     });
+    return () => animationFramePromise && cancelAnimationFrame(animationFramePromise);
   }, [isEditable]);
 
   const breakpointSizes = useMemo(
@@ -312,6 +313,7 @@ const DashboardGrid = ({
           // Stop the initial animation unless we need to support editing drag-and-drop
           [`${iotPrefix}--dashboard-grid__animate`]: shouldAnimate,
         })}
+        key={shouldAnimate} // forced to throw away and regen the GridLayout as it doesn't update when className is updated for shouldAnimate
         layouts={generatedLayouts}
         cols={DASHBOARD_COLUMNS}
         breakpoints={pick(DASHBOARD_BREAKPOINTS, supportedLayouts)}
