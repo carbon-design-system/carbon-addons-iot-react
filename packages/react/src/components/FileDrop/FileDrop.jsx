@@ -126,6 +126,7 @@ class FileDrop extends React.Component {
    */
   readFileContent = (files) => {
     const { fileType } = this.props;
+
     Array.prototype.forEach.call(files, (file) => {
       this.readers[file.name] = new FileReader();
       this.readers[file.name].onload = () => this.handleFileLoad(file);
@@ -153,31 +154,35 @@ class FileDrop extends React.Component {
    * Finally it clears the reader
    */
   handleFileLoad = (file) => {
-    this.setState((state) => {
-      const newState = {
-        files: state.files.map((i) =>
-          i.name === file.name // only change the new reader result, preserve the rest
-            ? {
-                name: i.name,
-                uploadState: 'edit',
-                contents: this.readers[file.name].result,
-              }
-            : i
-        ),
-      };
+    this.setState(
+      (state) => {
+        const newState = {
+          files: state.files.map((i) =>
+            i.name === file.name // only change the new reader result, preserve the rest
+              ? {
+                  name: i.name,
+                  uploadState: 'edit',
+                  contents: this.readers[file.name].result,
+                }
+              : i
+          ),
+        };
 
-      if (newState.files.filter((i) => i.contents === null).length === 0) {
-        // all data is loaded, trigger callback
-        this.props.onData(
-          newState.files.map((i) => ({
-            name: i.name,
-            contents: i.contents,
-          }))
-        );
+        if (newState.files.filter((i) => i.contents === null).length === 0) {
+          // all data is loaded, trigger callback
+          this.props.onData(
+            newState.files.map((i) => ({
+              name: i.name,
+              contents: i.contents,
+            }))
+          );
+        }
+        return newState;
+      },
+      () => {
+        delete this.readers[file.name];
       }
-      return newState;
-    });
-    delete this.readers[file.name];
+    );
   };
 
   addNewFiles = (files) => {
@@ -272,14 +277,16 @@ class FileDrop extends React.Component {
               <Span
                 key={`${name}-${index}`}
                 className="bx--file__selected-file"
-                ref={(node) => (this.nodes[index] = node)} // eslint-disable-line no-return-assign
+                ref={(node) => {
+                  this.nodes[index] = node;
+                }}
               >
                 <p className="bx--file-filename">{name}</p>
                 <span className="bx--file__state-container">
                   <Filename
                     status={uploadState}
                     onKeyDown={(evt) => {
-                      if (evt.which === 13 || evt.which === 32) {
+                      if (evt.key === 'Enter' || evt.key === 'Space') {
                         this.handleClick(evt, index);
                       }
                     }}
