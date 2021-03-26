@@ -1,3 +1,4 @@
+/* stylelint-disable */
 .storybook-welcome {
   margin: 0 auto;
   max-width: 600px;
@@ -24,3 +25,4 @@
 .bx--accordion__content {
   padding: 1rem;
 }
+/* stylelint-enable */

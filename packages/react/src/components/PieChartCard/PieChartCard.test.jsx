@@ -58,6 +58,7 @@ const pieChartCardProps = {
   testID: 'test-pie-chart-card',
   values: chartDataExample,
 };
+
 describe('utility functions', () => {
   it('formatColors with array', () => {
     const mockColors = {
@@ -76,6 +77,11 @@ describe('utility functions', () => {
     expect(formattedColors.scale['cat B']).toEqual('#1192e8');
   });
 });
+
+/* 
+  FYI: the underlying Carbon Charts controls have been mocked.
+  Check __mocks__/@carbon/charts-react/ for details
+*/
 
 describe('PieChartCard', () => {
   it('shows loading skeleton for isLoading even for empty data  ', () => {
