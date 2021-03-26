@@ -61,25 +61,14 @@ export default {
   excludeStories: ['commonPageTitleBarProps', 'pageTitleBarBreadcrumb', 'PageTitleBarNodeTooltip'],
 };
 
-export const Base = () => (
-  <PageTitleBar
-    title={commonPageTitleBarProps.title}
-    headerMode={select('headerMode', ['STATIC', 'STICKY', 'CONDENSED', 'DYNAMIC'])}
-    headerModeDynamicOffSet={50}
-  />
-);
+export const Base = () => <PageTitleBar title={commonPageTitleBarProps.title} />;
 
 Base.story = {
   name: 'base',
 };
 
 export const WithBreadcrumb = () => (
-  <PageTitleBar
-    title={commonPageTitleBarProps.title}
-    breadcrumb={pageTitleBarBreadcrumb}
-    headerMode={select('headerMode', ['STATIC', 'STICKY', 'CONDENSED', 'DYNAMIC'])}
-    headerModeDynamicOffSet={50}
-  />
+  <PageTitleBar title={commonPageTitleBarProps.title} breadcrumb={pageTitleBarBreadcrumb} />
 );
 
 WithBreadcrumb.story = {
@@ -90,8 +79,6 @@ export const WithDescription = () => (
   <PageTitleBar
     title={commonPageTitleBarProps.title}
     description={commonPageTitleBarProps.description}
-    headerMode={select('headerMode', ['STATIC', 'STICKY', 'CONDENSED', 'DYNAMIC'])}
-    headerModeDynamicOffSet={50}
   />
 );
 
@@ -118,8 +105,6 @@ export const WithContent = () => (
       title={commonPageTitleBarProps.title}
       description={commonPageTitleBarProps.description}
       breadcrumb={pageTitleBarBreadcrumb}
-      headerMode={select('headerMode', ['STATIC', 'STICKY', 'CONDENSED', 'DYNAMIC'])}
-      headerModeDynamicOffSet={50}
       content={
         <Tabs>
           <Tab label="Tab 1">
@@ -145,8 +130,6 @@ export const WithEditableTitleBar = () => (
   <PageTitleBar
     title={commonPageTitleBarProps.title}
     description={commonPageTitleBarProps.description}
-    headerMode={select('headerMode', ['STATIC', 'STICKY', 'CONDENSED', 'DYNAMIC'])}
-    headerModeDynamicOffSet={50}
     editable
     onEdit={action('edit')}
   />

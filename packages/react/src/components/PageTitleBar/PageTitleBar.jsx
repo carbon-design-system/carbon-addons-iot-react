@@ -20,7 +20,9 @@ const PageTitleBarPropTypes = {
   title: PropTypes.node.isRequired,
   /** Details about what the page shows */
   description: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  /** How the header should react to scrolling */
   headerMode: PropTypes.oneOf(Object.values(HEADER_MODES)),
+  /** offset for when the dynamic headerMode flips the header size to condensed  */
   headerModeDynamicOffSet: PropTypes.number,
   /** Optional node to render in the right side of the PageTitleBar
    *  NOTE: Deprecated in favor of extraContent
