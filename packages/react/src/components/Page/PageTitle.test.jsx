@@ -14,4 +14,10 @@ describe('PageTitle', () => {
 
     expect(wrapper.find('h1 span').text()).toEqual('section text /');
   });
+
+  it('renders empty div if no title is given', () => {
+    const wrapper = mount(<PageTitle />);
+
+    expect(wrapper.find('h1')).toHaveLength(0);
+  });
 });
