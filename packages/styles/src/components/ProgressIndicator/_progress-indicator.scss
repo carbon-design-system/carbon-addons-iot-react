@@ -65,7 +65,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: inherit;
+        width: 100%;
         height: 100%;
         display: block;
         margin-left: $spacing-01;
@@ -83,7 +83,7 @@
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          width: max-content;
+          width: auto;
 
           transition: box-shadow $duration--fast-02 motion(standard, productive),
             color $duration--fast-02 motion(standard, productive);
@@ -128,8 +128,15 @@
           &--main-step {
             fill: $interactive-01;
 
+            // force the correct color for the svg
             text {
               fill: $text-04;
+            }
+            circle {
+              fill: $interactive-01;
+            }
+            path {
+              fill: $interactive-01;
             }
           }
           &--sub-step {
