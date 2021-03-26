@@ -422,9 +422,7 @@ describe('ImageHotspots', () => {
       );
 
       const img = screen.getByAltText('landscape-test-image');
-      act(() => {
-        fireEvent.load(img);
-      });
+      fireEvent.load(img);
       expect(img).toHaveStyle({
         height: '100%',
       });
@@ -436,9 +434,7 @@ describe('ImageHotspots', () => {
       );
 
       const img = screen.getByAltText('landscape-test-image');
-      act(() => {
-        fireEvent.load(img);
-      });
+      fireEvent.load(img);
       expect(img).toHaveStyle({
         height: '1150px',
       });
@@ -467,9 +463,7 @@ describe('ImageHotspots', () => {
       );
 
       const img = screen.getByAltText('portrait-test-image');
-      act(() => {
-        fireEvent.load(img);
-      });
+      fireEvent.load(img);
       expect(img).toHaveStyle({
         width: '100%',
       });
@@ -479,9 +473,7 @@ describe('ImageHotspots', () => {
       render(<ImageHotspots height={2048} width={1536} src={portrait} alt="portrait-test-image" />);
 
       const img = screen.getByAltText('portrait-test-image');
-      act(() => {
-        fireEvent.load(img);
-      });
+      fireEvent.load(img);
       expect(img).toHaveStyle({
         width: '1536px',
       });
@@ -499,9 +491,7 @@ describe('ImageHotspots', () => {
       );
 
       const img = screen.getByAltText('portrait-test-image');
-      act(() => {
-        fireEvent.load(img);
-      });
+      fireEvent.load(img);
       expect(img).toHaveStyle({
         width: '512px',
       });
@@ -527,9 +517,7 @@ describe('ImageHotspots', () => {
       );
 
       const img = screen.getByAltText('portrait-test-image');
-      act(() => {
-        fireEvent.load(img);
-      });
+      fireEvent.load(img);
 
       userEvent.click(screen.getByTitle('Zoom in'));
       expect(img).toHaveStyle({
@@ -562,30 +550,6 @@ describe('ImageHotspots', () => {
         top: '-441.3333333333333px',
         left: '-356px',
       });
-      // clientX = 256;
-      // clientY = 341.5;
-      // fireEvent.mouseDown(img, {
-      //   clientX,
-      //   clientY,
-      // });
-      // distance = 1000;
-      // while (distance >= 0) {
-      //   clientX -= 10;
-      //   clientY -= 10;
-      //   fireEvent.mouseMove(img, {
-      //     clientX,
-      //     clientY,
-      //   });
-      //   distance -= 10;
-      // }
-      // fireEvent.mouseUp(img, {
-      //   clientX,
-      //   clientY,
-      // });
-      // expect(img).toHaveStyle({
-      //   top: '-682px',
-      //   left: '-512px',
-      // });
     });
 
     it('should stop dragging if we leave the container', () => {
@@ -600,9 +564,7 @@ describe('ImageHotspots', () => {
       );
 
       const img = screen.getByAltText('portrait-test-image');
-      act(() => {
-        fireEvent.load(img);
-      });
+      fireEvent.load(img);
 
       userEvent.click(screen.getByTitle('Zoom in'));
       expect(img).toHaveStyle({
@@ -646,9 +608,7 @@ describe('ImageHotspots', () => {
       );
 
       const img = screen.getByAltText('portrait-test-image');
-      act(() => {
-        fireEvent.load(img);
-      });
+      fireEvent.load(img);
 
       userEvent.click(screen.getByTitle('Zoom in'));
       expect(img).toHaveStyle({
