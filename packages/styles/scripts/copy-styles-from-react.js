@@ -7,14 +7,14 @@ const reactPath = packagePath('carbon-addons-iot-react');
 const main = async () => {
   console.log('syncing styles from react');
   const matches = await promiseGlob('src/**/*.+(scss|css)', {
-    cwd: reactPath
+    cwd: reactPath,
   });
 
   const filesToWrite = [];
 
   for (const match of matches) {
     const source = join(reactPath, match);
-    const dest = join(__dirname, '../', match)
+    const dest = join(__dirname, '../', match);
     // the depth of the file is the base path ignoring the root src directory
     // so the depth of src/components/Accordion/_accordion.scss would be 2
     // (components/Accordion being the levels we have to go up, so 2 `../` are required)
@@ -27,10 +27,16 @@ const main = async () => {
 
     await ensureDir(dirname(dest));
 
-    const filePromise = readFile(source, { encoding: 'UTF-8' }).then(fileContents => {
-      return fileContents.replace(/(@import.*)(~)(.*)/g, (match, importStatement, tilde, rest) => `${importStatement}${relativeTraversal}vendor/${rest}`);
-      }).then(newContents => {
-        return writeFile(dest, newContents, { encoding: 'UTF-8'});
+    const filePromise = readFile(source, { encoding: 'UTF-8' })
+      .then((fileContents) => {
+        return fileContents.replace(
+          /(@import.*)(~)(.*)/g,
+          (match, importStatement, tilde, rest) =>
+            `${importStatement}${relativeTraversal}vendor/${rest}`
+        );
+      })
+      .then((newContents) => {
+        return writeFile(dest, newContents, { encoding: 'UTF-8' });
       });
     filesToWrite.push(filePromise);
   }

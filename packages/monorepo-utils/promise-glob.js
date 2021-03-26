@@ -12,5 +12,5 @@ const promiseGlob = (pattern, opts) =>
   });
 
 module.exports = {
-  promiseGlob
+  promiseGlob,
 };

@@ -1,5 +1,5 @@
 module.exports = {
   ...require('./vendor'),
   ...require('./promise-glob'),
-  ...require('./package-tools')
+  ...require('./package-tools'),
 };
