@@ -1,5 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import { select } from '@storybook/addon-knobs';
 import { Add24, TrashCan24 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 import { Tabs, Tab } from 'carbon-components-react';
@@ -60,14 +61,25 @@ export default {
   excludeStories: ['commonPageTitleBarProps', 'pageTitleBarBreadcrumb', 'PageTitleBarNodeTooltip'],
 };
 
-export const Base = () => <PageTitleBar title={commonPageTitleBarProps.title} />;
+export const Base = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    headerMode={select('headerMode', ['STATIC', 'STICKY', 'CONDENSED', 'DYNAMIC'])}
+    headerModeDynamicOffSet={50}
+  />
+);
 
 Base.story = {
   name: 'base',
 };
 
 export const WithBreadcrumb = () => (
-  <PageTitleBar title={commonPageTitleBarProps.title} breadcrumb={pageTitleBarBreadcrumb} />
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    breadcrumb={pageTitleBarBreadcrumb}
+    headerMode={select('headerMode', ['STATIC', 'STICKY', 'CONDENSED', 'DYNAMIC'])}
+    headerModeDynamicOffSet={50}
+  />
 );
 
 WithBreadcrumb.story = {
@@ -78,6 +90,8 @@ export const WithDescription = () => (
   <PageTitleBar
     title={commonPageTitleBarProps.title}
     description={commonPageTitleBarProps.description}
+    headerMode={select('headerMode', ['STATIC', 'STICKY', 'CONDENSED', 'DYNAMIC'])}
+    headerModeDynamicOffSet={50}
   />
 );
 
@@ -104,10 +118,12 @@ export const WithContent = () => (
       title={commonPageTitleBarProps.title}
       description={commonPageTitleBarProps.description}
       breadcrumb={pageTitleBarBreadcrumb}
+      headerMode={select('headerMode', ['STATIC', 'STICKY', 'CONDENSED', 'DYNAMIC'])}
+      headerModeDynamicOffSet={50}
       content={
         <Tabs>
           <Tab label="Tab 1">
-            <div>Content for first tab.</div>
+            <div style={{ height: '100rem' }}>Content for first tab.</div>
           </Tab>
           <Tab label="Tab 2">
             <div>Content for second tab.</div>
@@ -129,6 +145,8 @@ export const WithEditableTitleBar = () => (
   <PageTitleBar
     title={commonPageTitleBarProps.title}
     description={commonPageTitleBarProps.description}
+    headerMode={select('headerMode', ['STATIC', 'STICKY', 'CONDENSED', 'DYNAMIC'])}
+    headerModeDynamicOffSet={50}
     editable
     onEdit={action('edit')}
   />
@@ -154,10 +172,13 @@ export const WithEverything = () => (
         <div
           className="top"
           style={{
+            marginBottom: '8px',
             display: 'flex',
             flexDirection: 'row-reverse',
           }}
-         />
+        >
+          <span>Last updated: yesterday</span>
+        </div>
         <div className="bottom">
           <Button
             renderIcon={Add24}
@@ -189,7 +210,7 @@ export const WithEverything = () => (
     content={
       <Tabs>
         <Tab label="Tab 1">
-          <div style={{ height: '100rem', backgroundColor: 'purple' }}>Content for first tab.</div>
+          <div>Content for first tab.</div>
         </Tab>
         <Tab label="Tab 2">
           <div>Content for second tab.</div>
@@ -205,6 +226,69 @@ export const WithEverything = () => (
 
 WithEverything.story = {
   name: 'with everything',
+};
+
+export const WithDynamicScrolling = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+    breadcrumb={pageTitleBarBreadcrumb}
+    headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'])}
+    headerModeDynamicOffSet={50} // need to offset the padding that storybook forces
+    extraContent={
+      <div>
+        <div
+          className="top"
+          style={{
+            display: 'flex',
+            flexDirection: 'row-reverse',
+          }}
+        />
+        <div style={{ display: 'flex' }} className="bottom">
+          <Button
+            renderIcon={Add24}
+            onClick={action('click')}
+            size="field"
+            hasIconOnly
+            iconDescription="Add"
+            kind="ghost"
+            tooltipPosition="bottom"
+            tooltipAlignment="center"
+          />
+          <Button
+            renderIcon={TrashCan24}
+            onClick={action('click')}
+            size="field"
+            hasIconOnly
+            iconDescription="Remove"
+            kind="ghost"
+            tooltipPosition="bottom"
+            tooltipAlignment="center"
+          />
+          <Button onClick={action('click')}>Take an action</Button>
+        </div>
+      </div>
+    }
+    editable
+    content={
+      <Tabs>
+        <Tab label="Tab 1">
+          <div style={{ height: '100rem' }}>Scroll me.</div>
+        </Tab>
+        <Tab label="Tab 2">
+          <div>Content for second tab.</div>
+        </Tab>
+        <Tab label="Tab 3">
+          <div>Content for third tab.</div>
+        </Tab>
+      </Tabs>
+    }
+    onEdit={action('edit')}
+  />
+);
+
+WithDynamicScrolling.story = {
+  name: 'With dynamic scrolling',
 };
 
 export const IsLoading = () => <PageTitleBar title={commonPageTitleBarProps.title} isLoading />;

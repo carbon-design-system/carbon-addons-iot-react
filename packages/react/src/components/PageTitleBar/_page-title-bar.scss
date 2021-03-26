@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-property-unit-blacklist */
 @import '~carbon-components/scss/globals/scss/vars';
 @import '~carbon-components/scss/globals/scss/typography';
 
@@ -5,21 +6,21 @@
   &-title {
     justify-content: space-between;
     &-dynamic {
-      position: absolute;
-      margin: -1rem 0 1.5rem 2rem;
+      position: var(--bar-title-position);
+      margin: -$spacing-05 0 $spacing-06 $spacing-07;
     }
     &--condensed {
       &-static {
-        margin-left: 0.5rem;
+        margin-left: $spacing-03;
       }
       &-before {
-        margin-top: 2rem;
-        margin-left: 0.5rem;
+        margin-top: $spacing-07;
+        margin-left: $spacing-03;
         transition: all 240ms;
       }
       &-after {
         margin-top: 0;
-        margin-left: 0.5rem;
+        margin-left: $spacing-03;
         transition: all 240ms;
         display: flex;
         align-items: center;
@@ -78,7 +79,7 @@
     &-right {
       float: right;
       &-dynamic {
-        margin: -0.5rem 2rem 1.5rem 0;
+        margin: -$spacing-03 $spacing-07 $spacing-06 0;
         margin-left: $spacing-05;
         position: sticky;
         top: 0;
@@ -95,10 +96,10 @@
 
   &-breadcrumb {
     &-dynamic {
-      height: 3rem;
+      height: $spacing-09;
       overflow: hidden;
       display: flex;
-      padding: 1rem 0 1rem 2rem;
+      padding: $spacing-05 0 $spacing-05 $spacing-07;
       transition: all 240ms;
       position: sticky;
       top: 0;
