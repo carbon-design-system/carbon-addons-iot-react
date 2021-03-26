@@ -25,6 +25,7 @@ import {
   handleCardVariables,
   chartValueFormatter,
   getResizeHandles,
+  handleTooltip,
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
@@ -33,7 +34,6 @@ import {
   formatGraphTick,
   formatColors,
   formatChartData,
-  handleTooltip,
   applyStrokeColor,
   applyFillColor,
   applyIsFilled,

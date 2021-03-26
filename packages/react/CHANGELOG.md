@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.17...v2.145.0-next.18) (2021-03-25)
+
+
+### Bug Fixes
+
+* **table:** add missing isSortable prop for aggregations ([c82f227](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c82f2277478445fdd4b33b21aaaf31fb14a82aa6))
+
+
+### Features
+
+* **suiteheader:** Including the `extraContent` property to the Header component (and also to SuiteHeader) so that a custom component can be rendered after the header subtitle. ([017de49](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/017de492c5f344b0484c661735a3026f909dce4a)), closes [#2116](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2116)
+* **suiteheader:** Removing `extraContent` from `Header`. In `SuiteHeader`, when `extraContent` is passed, an element with `appName` and `extraContent` is passed to `Header`’s `subtitle` property. ([b3524f8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b3524f8241da611db36fff2c638380b92c8df166))
+* **suiteheader:** Removing references to `extraContent` in `Header`. ([d894b0c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d894b0c50b631e8b8ce1c7de0c37feb8572dda2e))
+
+
+
+
+
+# [2.145.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.16...v2.145.0-next.17) (2021-03-25)
+
+
+### Bug Fixes
+
+* **combochart:** an empty line breaks the build ([4598d65](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4598d658685fef20bf90063d4d83af1827b198de))
+* **combochart:** properly mock the combocharts control like it (turns out) the others are and leave a hint for future travelers ([cdae530](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cdae530776c50c80dd2587ebed780be2e2107be8))
+* **combochart:** use defaults deep, memoize potentially expensive ops ([e7d3e50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e7d3e50c5689672728a9e06b6a2952db5d022c3a))
+* **combochartcard:** mock combo charts with simple div, add a couple more tests ([4d5f732](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4d5f732ab903f631b04c1e718e292901944d1a75))
+* **comboChartCard:** address review comments ([6737f0f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6737f0f502a541445fffaa212c78ec6d6b223931))
+* **comboChartCard:** change setup to be more like TimeSeriesCard/BarSeriesCard ([2d9c2bd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2d9c2bd4ae784db5647ba72685214eed05e730c4))
+* **comboChartCard:** Extract shared tooltip helper to common helper file ([6c138cb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6c138cbd1d1b3af983c012e8cf42008fd129236d))
+* **comboChartCard:** fix linting issue ([c738cea](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c738ceafe86371a6a8a15bd8a3a874165df32026))
+* **comboChartCard:** Label experimental stories ([3168a56](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3168a569921727aae5af43db35b812e718ce7623))
+* **comboChartCard:** linting and importing fixes ([1a07c39](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1a07c394fb329d857196788b55ed9c0bfeb25116))
+* **comboChartCard:** pass size prop to card ([dfcebcb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dfcebcbd060dd124e340c64d48721c6c9c9b4c44))
+* **comboChartCard:** resolve build errors ([9796d8b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9796d8b34d19b3ad7183944efb05a5e7c9bdcd52))
+* **ComboChartCard:** linting + storyshot update ([709c693](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/709c6935eb4bb70224b6e6381a877a1b03ce1bc2))
+* **snapshot:** update snapshots after type change ([80d7726](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/80d772692a1dc7bf2b0ae8fdefaf8d26d23f677b))
+* **TimeSeriesCard:** fix bad merge from previous commit ([f995682](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f9956829e2d7db8e8f937b79a55d987a74a243a1))
+
+
+### Features
+
+* **combochartcard:** add proptypes for combochart ([143d6d1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/143d6d12a75601667dc9f07fd9bbcd58cb4d9dbb))
+* **combochartcard:** ignore storyshots since import error ([bb7530e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb7530e3e4f8a86b6a94457bc59cbed9ca9b8796))
+
+
+
+
+
+# [2.145.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.15...v2.145.0-next.16) (2021-03-24)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
 # [2.145.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.14...v2.145.0-next.15) (2021-03-22)
 
 
