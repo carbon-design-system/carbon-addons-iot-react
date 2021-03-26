@@ -88,6 +88,7 @@ export const SuiteHeaderI18NPropTypes = {
 const defaultProps = {
   className: null,
   appName: null,
+  extraContent: null,
   userDisplayName: null,
   username: null,
   isAdminView: false,
@@ -112,6 +113,8 @@ const propTypes = {
   suiteName: PropTypes.string.isRequired,
   /** Application name in suite (maps to subtitle in Header) */
   appName: PropTypes.string,
+  /** Extra content (a Tag, for example) */
+  extraContent: PropTypes.element,
   /** Display name of current user */
   userDisplayName: PropTypes.string,
   /** Username of current user */
@@ -148,6 +151,7 @@ const SuiteHeader = ({
   className,
   suiteName,
   appName,
+  extraContent,
   userDisplayName,
   username,
   hasSideNav,
@@ -309,7 +313,18 @@ const SuiteHeader = ({
                 )),
               }}
               appName={suiteName}
-              subtitle={appName}
+              subtitle={
+                extraContent ? (
+                  <div>
+                    {appName}
+                    <span className={`${settings.iotPrefix}--suite-header-subtitle`}>
+                      {extraContent}
+                    </span>
+                  </div>
+                ) : (
+                  appName
+                )
+              }
               actionItems={[
                 ...customActionItems,
                 routes?.admin

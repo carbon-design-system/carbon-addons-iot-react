@@ -1,0 +1,27 @@
+{
+  "name": "@ai-apps/angular",
+  "version": "0.0.0",
+  "description": "AI Applications PAL in Angular",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IBM/carbon-components-angular.git"
+  },
+  "scripts": {
+    "postinstall": "carbon-telemetry collect --install"
+  },
+  "license": "Apache-2.0",
+  "author": "IBM",
+  "peerDependencies": {
+    "@angular/common": "^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@angular/core": "^9.0.0 || ^10.0.0 || ^11.0.0",
+    "carbon-components": "^10.0.0",
+    "carbon-components-angular": "^4.0.0"
+  },
+  "dependencies": {
+    "@carbon/icons": "10.20.0",
+    "@carbon/telemetry": "0.0.0-alpha.6",
+    "flatpickr": "4.6.1",
+    "@ai-apps/styles": "0.0.0"
+  }
+}

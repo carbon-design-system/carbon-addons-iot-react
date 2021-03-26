@@ -17,7 +17,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|Dashboard|CardRenderer|ImageHotspots|PageHero|PageTitle|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|Dashboard|CardRenderer|ImageHotspots|PageHero|PageTitle|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -69,7 +69,6 @@ module.exports = {
     },
     './src/components/Table/StatefulTable.jsx': { branches: 66 },
     './src/components/TileCatalog/CatalogContent.jsx': { branches: 50 },
-    './src/components/FileDrop/FileDrop.jsx': { branches: 53, functions: 75 },
     './src/components/Dashboard/Dashboard.jsx': {
       statements: 79,
       branches: 50,
