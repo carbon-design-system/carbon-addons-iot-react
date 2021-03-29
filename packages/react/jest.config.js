@@ -6,7 +6,7 @@ module.exports = {
     '!src/components/SuiteHeader/util/suiteHeaderData.js',
     '!src/components/FileUploader/stories/*.jsx',
     '!src/components/Table/AsyncTable/*.js?(x)',
-    '!src/components/Page/EditPage.jsx',
+    '!src/components/Page/(EditPage|PageHero).jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov'],
@@ -17,7 +17,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|Dashboard|CardRenderer|ImageHotspots|PageHero|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|Dashboard|CardRenderer|ImageHotspots|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -83,7 +83,6 @@ module.exports = {
     './src/components/ImageCard/ImageHotspots.jsx': {
       branches: 79,
     },
-    './src/components/Page/PageHero.jsx': { branches: 77 },
     './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': {
       branches: 76,
     },
