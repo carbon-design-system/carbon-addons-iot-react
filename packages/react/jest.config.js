@@ -17,7 +17,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|Dashboard|CardRenderer|ImageHotspots|PageHero|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|Dashboard|CardRenderer|ImageHotspots|PageHero|TableHead|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -51,9 +51,6 @@ module.exports = {
       branches: 50,
       lines: 60,
       functions: 33,
-    },
-    './src/components/Table/TableHead/ColumnResize.jsx': {
-      branches: 71,
     },
     './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': {
       branches: 70,

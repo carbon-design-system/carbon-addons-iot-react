@@ -22,7 +22,7 @@ const propTypes = {
 const dragHandleWidth = 4;
 const { iotPrefix } = settings;
 
-const getColumnDragBounds = (myColumn, siblingColumn, paddingExtra) => {
+export const getColumnDragBounds = (myColumn, siblingColumn, paddingExtra) => {
   const minWidth = MIN_COLUMN_WIDTH + paddingExtra;
 
   return {
@@ -35,7 +35,7 @@ const getColumnDragBounds = (myColumn, siblingColumn, paddingExtra) => {
   };
 };
 
-const getUpdatedColumnWidths = (dropXPos, myColumn, affectedSiblingColumn) => {
+export const getUpdatedColumnWidths = (dropXPos, myColumn, affectedSiblingColumn) => {
   const myColumnNewWidth = document.dir === 'rtl' ? myColumn.width - dropXPos : dropXPos;
   const newAffectedSiblingColumnWidth =
     document.dir === 'rtl'
@@ -109,6 +109,7 @@ const ColumnResize = React.forwardRef((props, ref) => {
     forwardMouseEvent(e) {
       if (e.nativeEvent.type === 'mousemove') {
         onMouseMove(e);
+        /* instanbul ignore else */
       } else if (e.nativeEvent.type === 'mouseup') {
         onMouseUp();
       }
