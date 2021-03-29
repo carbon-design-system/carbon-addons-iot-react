@@ -17,7 +17,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|Dashboard|CardRenderer|ImageHotspots|PageHero|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(WizardInline|WizardHeader|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|Dashboard|CardRenderer|ImageHotspots|PageHero|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -54,18 +54,6 @@ module.exports = {
     },
     './src/components/Table/TableHead/ColumnResize.jsx': {
       branches: 71,
-    },
-    './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': {
-      branches: 70,
-    },
-    './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': {
-      statements: 79,
-      branches: 70,
-      lines: 78,
-      functions: 75,
-    },
-    './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': {
-      functions: 66,
     },
     './src/components/Table/StatefulTable.jsx': { branches: 66 },
     './src/components/TileCatalog/CatalogContent.jsx': { branches: 50 },
