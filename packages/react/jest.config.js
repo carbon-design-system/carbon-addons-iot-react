@@ -46,12 +46,6 @@ module.exports = {
       // https://github.com/carbon-design-system/carbon-charts/issues/594
       functions: 77,
     },
-    './src/components/Table/TableHead/TableHeader.js': {
-      statements: 60,
-      branches: 50,
-      lines: 60,
-      functions: 33,
-    },
     './src/components/Table/TableHead/ColumnResize.jsx': {
       branches: 71,
     },
