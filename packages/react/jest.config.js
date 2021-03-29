@@ -17,7 +17,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|Dashboard|CardRenderer|ImageHotspots|PageHero|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|CatalogContent|Dashboard|CardRenderer|PageHero|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -79,9 +79,6 @@ module.exports = {
       branches: 38,
       lines: 51,
       functions: 66,
-    },
-    './src/components/ImageCard/ImageHotspots.jsx': {
-      branches: 79,
     },
     './src/components/Page/PageHero.jsx': { branches: 77 },
     './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': {
