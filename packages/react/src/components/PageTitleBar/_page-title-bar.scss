@@ -16,12 +16,12 @@
       &-before {
         margin-top: $spacing-07;
         margin-left: $spacing-03;
-        transition: all 240ms;
+        transition: all $duration--moderate-02;
       }
       &-after {
         margin-top: 0;
         margin-left: $spacing-03;
-        transition: all 240ms;
+        transition: all $duration--moderate-02;
         display: flex;
         align-items: center;
       }
@@ -70,7 +70,7 @@
       border-bottom: $ui-03;
       height: unset;
       padding: 0 $spacing-07;
-      transition: background-color 240ms;
+      transition: background-color $duration--moderate-02;
       background-color: $ui-01;
     }
     &-left {
@@ -100,7 +100,7 @@
       overflow: hidden;
       display: flex;
       padding: $spacing-05 0 $spacing-05 $spacing-07;
-      transition: all 240ms;
+      transition: all $duration--moderate-02;
       position: sticky;
       top: 0;
     }
@@ -111,7 +111,7 @@
     &-condensed {
       position: sticky;
       top: 0;
-      transition: all 240ms;
+      transition: all $duration--moderate-02;
       background: $ui-01;
       z-index: 1000;
       border-bottom: $ui-03;
