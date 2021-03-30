@@ -19,6 +19,7 @@ const defaultProps = {
   i18n: {
     all: 'ALL',
     any: 'ANY',
+    contains: 'Contains',
     lessThan: 'Less than',
     lessThanOrEqual: 'Less than or equal to',
     notEqual: 'Not equal',
@@ -70,6 +71,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     all: PropTypes.string,
     any: PropTypes.string,
+    contains: PropTypes.string,
     lessThan: PropTypes.string,
     lessThanOrEqual: PropTypes.string,
     notEqual: PropTypes.string,
@@ -117,6 +119,10 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
       {
         id: 'GT',
         name: mergedI18n.greaterThan,
+      },
+      {
+        id: 'CONTAINS',
+        name: mergedI18n.contains,
       },
     ],
     [mergedI18n]
