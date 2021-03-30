@@ -73,6 +73,7 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
 );
 
 const FlyoutMenu = ({
+  buttonProps,
   buttonSize,
   direction,
   menuOffset,
@@ -94,8 +95,9 @@ const FlyoutMenu = ({
   onCancel,
   useAutoPositioning,
   onChange,
+  isOpen,
 }) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [isControlledOpen, setIsOpen] = useState(defaultOpen);
   const [tooltipDirection, setTooltipDirection] = useState(getTooltipDirection(direction));
   const buttonRef = useRef(null);
 
@@ -201,7 +203,7 @@ const FlyoutMenu = ({
   }, [adjustedDirection]);
 
   const Footer = CustomFooter ? (
-    <CustomFooter setIsOpen={setIsOpen} isOpen={isOpen} />
+    <CustomFooter setIsOpen={setIsOpen} isOpen={isControlledOpen} />
   ) : (
     <DefaultFooter setIsOpen={setIsOpen} onCancel={onCancel} onApply={onApply} i18n={i18n} />
   );
@@ -213,21 +215,25 @@ const FlyoutMenu = ({
         `${iotPrefix}--flyout-menu__${tooltipDirection}`,
         {
           [`${iotPrefix}--flyout-menu__light`]: light,
-          [`${iotPrefix}--flyout-menu__open`]: isOpen,
+          [`${iotPrefix}--flyout-menu__open`]: isControlledOpen,
         }
       )}
     >
       <Button
         aria-label={iconDescription}
         iconDescription={iconDescription}
-        className={`${iotPrefix}--flyout-menu--trigger-button`}
+        className={classnames(`${iotPrefix}--flyout-menu--trigger-button`, buttonProps?.className)}
         disabled={disabled}
         hasIconOnly
         kind="ghost"
+        testID={`${testId}-button`}
         size={buttonSize}
         renderIcon={renderIcon}
         onClick={() => {
-          setIsOpen(!isOpen);
+          if (typeof buttonProps.onClick === 'function') {
+            buttonProps.onClick();
+          }
+          setIsOpen(!isControlledOpen);
         }}
       />
       {
@@ -240,14 +246,15 @@ const FlyoutMenu = ({
               `${iotPrefix}--flyout-menu--body__${adjustedDirection}`,
               {
                 [`${iotPrefix}--flyout-menu--body__light`]: light,
-                [`${iotPrefix}--flyout-menu--body__open`]: isOpen,
+                [`${iotPrefix}--flyout-menu--body__open`]:
+                  typeof isOpen === 'boolean' ? isOpen : isControlledOpen,
                 [`${iotPrefix}--flyout-menu--body__${buttonSize}`]: buttonSize !== 'default',
               }
             )}
             iconDescription={iconDescription}
             data-testid={testId}
             showIcon={false}
-            open={isOpen}
+            open={typeof isOpen === 'boolean' ? isOpen : isControlledOpen}
             direction={tooltipDirection}
             menuOffset={calculateMenuOffset}
             tooltipId={tooltipId}
@@ -258,7 +265,6 @@ const FlyoutMenu = ({
             onChange={onChange}
           >
             <div>
-              <div style={{ overflow: 'scroll' }} tabIndex={-1} />
               {children}
 
               {!passive && (
@@ -378,9 +384,17 @@ const propTypes = {
 
   useAutoPositioning: PropTypes.bool,
   onChange: PropTypes.func,
+
+  /** classes that can be passed to the button used for the flyout menu */
+  buttonProps: PropTypes.shape({
+    className: PropTypes.string,
+  }),
+
+  isOpen: PropTypes.bool,
 };
 
 const defaultProps = {
+  buttonProps: {},
   renderIcon: SettingsAdjust,
   buttonSize: 'default',
   tooltipId: 'flyout-tooltip',
@@ -401,6 +415,7 @@ const defaultProps = {
     cancelButtonText: 'Cancel',
     applyButtonText: 'Apply',
   },
+  isOpen: null,
   onCancel: null,
   onApply: null,
   disabled: false,

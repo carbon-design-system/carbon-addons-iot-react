@@ -20,6 +20,12 @@ export const TABLE_ROW_EXPAND = 'TABLE_ROW_EXPAND';
 export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
 export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
+export const TABLE_ADVANCED_FILTER_CANCEL = 'TABLE_ADVACNED_FILTER_CANCEL';
+export const TABLE_ADVANCED_FILTER_CREATE = 'TABLE_ADVANCED_FILTER_CREATE';
+export const TABLE_ADVANCED_FILTER_REMOVE = 'TABLE_ADVANCED_FILTER_REMOVE';
+export const TABLE_ADVANCED_FILTER_CHANGE = 'TABLE_ADVANCED_FILTER_CHANGE';
+export const TABLE_ADVANCED_FILTER_TOGGLE = 'TABLE_ADVANCED_FILTER_TOGGLE';
+export const TABLE_ADVANCED_FILTER_APPLY = 'TABLE_ADVANCED_FILTER_APPLY';
 
 export const tableRegister = ({
   data,
@@ -157,4 +163,35 @@ export const tableLoadingSet = (isLoading, rowCount, instanceId = null) => ({
   type: TABLE_LOADING_SET,
   payload: { isLoading, rowCount },
   instanceId,
+});
+
+/**
+ * Advanced filters
+ */
+export const tableAdvancedFiltersToggle = () => ({
+  type: TABLE_ADVANCED_FILTER_TOGGLE,
+});
+
+export const tableAdvancedFiltersCancel = () => ({
+  type: TABLE_ADVANCED_FILTER_CANCEL,
+});
+
+export const tableAdvancedFiltersCreate = () => ({
+  type: TABLE_ADVANCED_FILTER_CREATE,
+});
+
+export const tableAdvancedFiltersRemove = (filterId) => ({
+  type: TABLE_ADVANCED_FILTER_REMOVE,
+  payload: {
+    filterId,
+  },
+});
+
+export const tableAdvancedFiltersChange = () => ({
+  type: TABLE_ADVANCED_FILTER_CHANGE,
+});
+
+export const tableAdvancedFiltersApply = (filterState) => ({
+  type: TABLE_ADVANCED_FILTER_APPLY,
+  payload: filterState,
 });
