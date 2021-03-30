@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { SkeletonText, Tabs, Tab } from 'carbon-components-react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import Button from '../Button';
@@ -60,6 +60,7 @@ describe('PageTitleBar', () => {
     const wrapper = mount(
       <PageTitleBar
         title={commonPageTitleBarProps.title}
+        headerMode="STICKY"
         breadcrumb={pageTitleBarBreadcrumb}
         collapsed
       />
@@ -73,6 +74,7 @@ describe('PageTitleBar', () => {
       <PageTitleBar
         title={commonPageTitleBarProps.title}
         breadcrumb={pageTitleBarBreadcrumb}
+        headerMode="CONDENSED"
         content={
           <Tabs>
             <Tab label="Tab 1">
@@ -135,5 +137,23 @@ describe('PageTitleBar', () => {
 
     expect(screen.queryByText(i18nDefault.editIconDescription)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.tooltipIconDescription)).not.toBeInTheDocument();
+  });
+
+  it('Reacts to scrollY when set to dynamic', () => {
+    const { container } = render(
+      <div style={{ height: '200rem' }}>
+        <PageTitleBar
+          breadcrumb={[<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>]}
+          title="testTitle"
+          headerMode="DYNAMIC"
+          description="test"
+          collapsed
+        />
+      </div>
+    );
+    expect(container.querySelector('.page-title-bar-title--condensed-before')).toBeInTheDocument();
+    expect(container.querySelector('.page-title-bar-title--condensed-after')).toBeFalsy();
+    fireEvent.scroll(window, { target: { scrollY: 25 } });
+    expect(container.querySelector('.page-title-bar-title--condensed-after')).toBeInTheDocument();
   });
 });
