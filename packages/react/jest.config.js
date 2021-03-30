@@ -19,7 +19,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|TableHead|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -40,9 +40,6 @@ module.exports = {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
       // https://github.com/carbon-design-system/carbon-charts/issues/594
       functions: 77,
-    },
-    './src/components/Table/TableHead/ColumnResize.jsx': {
-      branches: 71,
     },
     './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': {
       branches: 70,
