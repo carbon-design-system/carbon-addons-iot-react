@@ -109,7 +109,7 @@ const ColumnResize = React.forwardRef((props, ref) => {
     forwardMouseEvent(e) {
       if (e.nativeEvent.type === 'mousemove') {
         onMouseMove(e);
-        /* instanbul ignore else */
+        /* istanbul ignore else */
       } else if (e.nativeEvent.type === 'mouseup') {
         onMouseUp();
       }
