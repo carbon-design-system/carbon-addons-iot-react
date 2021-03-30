@@ -198,6 +198,9 @@
   &-data {
     display: none;
   }
+  &-subtitle {
+    margin-left: $spacing-05;
+  }
   button.admin-icon {
     .#{$prefix}--tooltip__trigger svg {
       fill: $ui-01;

@@ -1090,6 +1090,9 @@ Map {
                               "isRequired": true,
                               "type": "string",
                             },
+                            "isSortable": Object {
+                              "type": "bool",
+                            },
                             "value": Object {
                               "args": Array [
                                 Array [
@@ -7066,7 +7069,17 @@ Map {
         "type": "string",
       },
       "subtitle": Object {
-        "type": "string",
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "element",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "url": Object {
         "type": "string",
@@ -7172,6 +7185,7 @@ Map {
       "customApplications": Array [],
       "customHelpLinks": Array [],
       "customProfileLinks": Array [],
+      "extraContent": null,
       "hasSideNav": false,
       "i18n": Object {
         "about": "About",
@@ -7373,6 +7387,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "extraContent": Object {
+        "type": "element",
       },
       "hasSideNav": Object {
         "type": "bool",
