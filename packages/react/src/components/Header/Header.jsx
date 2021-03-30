@@ -51,7 +51,7 @@ const propTypes = {
   /** Name to follow the IBM prefix up top, left */
   appName: PropTypes.string.isRequired,
   /** Optional prop that provides additional app information */
-  subtitle: PropTypes.string,
+  subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /** Add a class name to Header */
   className: PropTypes.string,
   /** Provide ID for the skip to content functionality */
