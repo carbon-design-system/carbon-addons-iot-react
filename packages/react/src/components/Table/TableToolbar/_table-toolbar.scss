@@ -1,5 +1,6 @@
 @import '../../../globals/vars';
 @import './table-toolbar-svg-button';
+@import './advanced-filter-flyout';
 
 div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {

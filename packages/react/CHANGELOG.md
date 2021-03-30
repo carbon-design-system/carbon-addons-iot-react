@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.23...v2.145.0-next.24) (2021-03-30)
+
+
+### Bug Fixes
+
+* **table:** distribute widths between all columns when re-inserting ([1079c95](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1079c95dc13f6fda6eb28b30618258e3f9a49cf3))
+
+
+### Features
+
+* **page-title-bar:** clean up and add test for dynamic scrolling ([81a5f8b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/81a5f8b472d5402240c5638735283aca63caf457))
+* **page-title-bar:** first drop of dynamic styling options ([a342397](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a342397a78f6f93b49708e7dd5a1bc39df59bd82))
+* **table:** add advanced rule builder to table/stateful table ([bae0c54](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bae0c541119df36dcaab10a6d99ed2af7aec35cc))
+* **table:** advanced filters flyout integration ([e0196ed](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e0196edf03c8d6efd483e12352a13bd8c6b02d67))
+* **table:** fix proptypes for advancedFilters ([dafbca3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dafbca3711aa01a3690de8dd7d82703bf5d7089a))
+* **table:** fix warning function on hasAdvancedFilters ([7c920fa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7c920fae76463c51078c7d2c182b13c02dec2ac2))
+
+
+
+
+
 # [2.145.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.22...v2.145.0-next.23) (2021-03-29)
 
 **Note:** Version bump only for package carbon-addons-iot-react
