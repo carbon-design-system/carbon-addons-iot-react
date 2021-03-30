@@ -27,9 +27,6 @@ function createWidthsMap(ordering, columnWidths, adjustedCols) {
     newColumnWidths[orderedColumn.columnId] = {
       width: current && current.width !== undefined ? parseInt(current.width, 10) : undefined,
       id: orderedColumn.columnId,
-      visibleColumnsWhenRemoved: orderedColumn.isHidden
-        ? (current && current.visibleColumnsWhenRemoved) || adjustedCols.length
-        : undefined,
     };
   });
 
@@ -67,8 +64,7 @@ function getAverageVisibleColumnWidth(visibleColumns) {
 function shrinkColumns(shrinkableColumns, widthOfColumnToShow) {
   const availableWidth = getTotalWidth(shrinkableColumns);
   const shrunkenColumns = shrinkableColumns.map((col) => {
-    const preferredShrinkWidth = (col.width / availableWidth) * widthOfColumnToShow;
-    const preferredNewWidth = col.width - preferredShrinkWidth;
+    const preferredNewWidth = (availableWidth - widthOfColumnToShow) / shrinkableColumns.length;
     const newWidth = preferredNewWidth >= MIN_COLUMN_WIDTH ? preferredNewWidth : MIN_COLUMN_WIDTH;
     return { id: col.id, width: Math.round(newWidth) };
   });
@@ -149,60 +145,11 @@ export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs
     return [...accumulator, { id: colToShowId, width: Math.round(widthOfColumnToShow) }];
   }, []);
   const totalWidthNeeded = newColumnsToShow.reduce((acc, col) => acc + col.width, 0);
-
-  // when the column was removed were there more columns than now when re-adding?
-  const visibleColumnsWereGreater = colToShowIDs.every(
-    (colId) => currentColumnWidths[colId]?.visibleColumnsWhenRemoved > visibleColumns.length
+  const shrinkableColumns = [...newColumnsToShow, ...visibleColumns].filter(
+    (col) => col.width > MIN_COLUMN_WIDTH
   );
 
-  // when the column was removed were there less columns than now when re-adding?
-  const visibleColumnsWereFewer = colToShowIDs.every(
-    (colId) => currentColumnWidths[colId]?.visibleColumnsWhenRemoved < visibleColumns.length
-  );
-
-  // are there columns large enough to subtract the entire width from?
-  const largeColumns = visibleColumns.filter((col) => col.width > totalWidthNeeded);
-
-  let adjustedCols = [];
-
-  // if we have some large columns to subtract the width from
-  // just use them and move on.
-  if (largeColumns.length) {
-    adjustedCols = shrinkColumns(largeColumns, totalWidthNeeded);
-    adjustedCols.push(...newColumnsToShow);
-  }
-  // if there were more columns visible, remove a shared percentage of width
-  // from all columns greater than the minimum without changing the width of the
-  // columns being inserted.
-  else if (visibleColumnsWereGreater) {
-    adjustedCols = shrinkColumns(
-      visibleColumns.filter((col) => col.width > MIN_COLUMN_WIDTH),
-      totalWidthNeeded
-    );
-    adjustedCols.push(...newColumnsToShow);
-  }
-  // if there were less columns visible then also include the columns being inserted when adjusting
-  // the widths. In this case, the width is shared between the existing and new columns equally.
-  // this is to handle situations where many columns were removed in a specific order
-  // see https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2061
-  else if (visibleColumnsWereFewer) {
-    adjustedCols = shrinkColumns(
-      [...newColumnsToShow, ...visibleColumns]
-        .filter((col) => col.width > MIN_COLUMN_WIDTH)
-        .sort((a, b) => b.width - a.width)
-        .slice(0, newColumnsToShow.length + 1),
-      totalWidthNeeded
-    );
-  }
-  // otherwise fallback to the default behavior of sharing is between all columns greater than
-  // the minimum.
-  else {
-    adjustedCols = shrinkColumns(
-      visibleColumns.filter((col) => col.width > MIN_COLUMN_WIDTH),
-      totalWidthNeeded
-    );
-    adjustedCols.push(...newColumnsToShow);
-  }
+  const adjustedCols = shrinkColumns(shrinkableColumns, totalWidthNeeded);
 
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 };

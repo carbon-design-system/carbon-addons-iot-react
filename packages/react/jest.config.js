@@ -6,8 +6,8 @@ module.exports = {
     '!src/components/SuiteHeader/util/suiteHeaderData.js',
     '!src/components/FileUploader/stories/*.jsx',
     '!src/components/Table/AsyncTable/*.js?(x)',
-    '!src/components/Page/EditPage.jsx',
     '!src/components/WizardInline/**/*.js?(x)',
+    '!src/components/Page/(EditPage|PageHero).jsx',
     '!src/components/Dashboard/(Dashboard|CardRenderer).jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
@@ -19,7 +19,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|PageHero|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -63,7 +63,6 @@ module.exports = {
       functions: 66,
     },
     './src/components/Table/StatefulTable.jsx': { branches: 66 },
-    './src/components/Page/PageHero.jsx': { branches: 77 },
     './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': {
       branches: 76,
     },
