@@ -15,6 +15,33 @@ git config user.email "carbon@us.ibm.com"
 git config credential.helper "store --file=.git/credentials"
 echo "https://${GH_TOKEN}:@github.com" > .git/credentials 2>/dev/null
 
+# fetch everything to make sure our refs are up to date
+git fetch --all
+
+# if we're on the master branch, check if we're up to date, otherwise kill the build
+if [[ $GITHUB_REF =~ "master" ]]; then
+  currentRef=$(git rev-parse next) # sha of the local branch
+  headRef=$(git rev-parse origin/master) # sha of the remote branch
+  if [[ $currentRef == $headRef ]]; then
+    echo "up to date"
+  else
+    echo "current branch ahead/behind origin exiting"
+    exit 0;
+  fi
+fi
+
+# if we're on the next branch, check if we're up to date, otherwise kill the build
+if [[ $GITHUB_REF =~ "next" ]]; then
+  currentRef=$(git rev-parse next) # sha of the local branch
+  headRef=$(git rev-parse origin/next) # sha of the remote branch
+  if [[ $currentRef == $headRef ]]; then
+    echo "up to date"
+  else
+    echo "current branch ahead/behind origin exiting"
+    exit 0;
+  fi
+fi
+
 # authenticate with the npm registry
 npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
 
