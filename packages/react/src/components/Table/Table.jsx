@@ -118,6 +118,8 @@ const propTypes = {
           value: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
           /** allow aligning the results the same as the column */
           align: PropTypes.oneOf(['start', 'center', 'end']),
+          /** allows the aggregation to align with sortable columns extra padding */
+          isSortable: PropTypes.bool,
         })
       ),
     }),

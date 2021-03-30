@@ -178,11 +178,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-33__panel"
+                  aria-controls="tab-36__panel"
                   aria-selected={true}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-33"
+                  id="tab-36"
                   role="tab"
                   tabIndex={0}
                   type="button"
@@ -197,11 +197,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-34__panel"
+                  aria-controls="tab-37__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-34"
+                  id="tab-37"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -2205,11 +2205,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-35__panel"
+                  aria-controls="tab-38__panel"
                   aria-selected={true}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-35"
+                  id="tab-38"
                   role="tab"
                   tabIndex={0}
                   type="button"
@@ -2224,11 +2224,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-36__panel"
+                  aria-controls="tab-39__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-36"
+                  id="tab-39"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -4542,7 +4542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <div
                         aria-label="Clear Filter fav"
                         className="bx--tag bx--tag--filter"
-                        id="tag-25"
+                        id="tag-26"
                         style={
                           Object {
                             "marginRight": "1rem",
@@ -4556,7 +4556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           fav
                         </span>
                         <button
-                          aria-labelledby="tag-25"
+                          aria-labelledby="tag-26"
                           className="bx--tag__close-icon"
                           onClick={[Function]}
                           title="Clear Filter"
@@ -4581,7 +4581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <div
                         aria-label="Clear Filter other-tag"
                         className="bx--tag bx--tag--filter"
-                        id="tag-26"
+                        id="tag-27"
                         style={
                           Object {
                             "marginRight": "1rem",
@@ -4595,7 +4595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           other-tag
                         </span>
                         <button
-                          aria-labelledby="tag-26"
+                          aria-labelledby="tag-27"
                           className="bx--tag__close-icon"
                           onClick={[Function]}
                           title="Clear Filter"
