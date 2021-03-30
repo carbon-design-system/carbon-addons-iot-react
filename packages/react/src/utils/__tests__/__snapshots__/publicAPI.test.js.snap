@@ -343,9 +343,15 @@ Map {
           "onRowExpanded": [Function],
         },
         "toolbar": Object {
+          "onApplyAdvancedFilter": [Function],
           "onApplyBatchAction": [Function],
+          "onCancelAdvancedFilter": [Function],
           "onCancelBatchAction": [Function],
+          "onChangeAdvancedFilter": [Function],
+          "onCreateAdvancedFilter": [Function],
+          "onRemoveAdvancedFilter": [Function],
           "onShowRowEdit": [Function],
+          "onToggleAdvancedFilter": [Function],
           "onToggleColumnSelection": [Function],
           "onToggleFilter": [Function],
         },
@@ -393,6 +399,7 @@ Map {
       "lightweight": false,
       "locale": null,
       "options": Object {
+        "hasAdvancedFilter": false,
         "hasAggregations": false,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
@@ -416,6 +423,7 @@ Map {
       "tooltip": null,
       "useZebraStyles": false,
       "view": Object {
+        "advancedFilters": Array [],
         "aggregations": Object {
           "columns": Array [],
         },
@@ -432,6 +440,7 @@ Map {
           ],
           "totalItems": undefined,
         },
+        "selectedAdvancedFilterIds": Array [],
         "table": Object {
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
@@ -445,6 +454,7 @@ Map {
           "sort": Object {},
         },
         "toolbar": Object {
+          "advancedFilterFlyoutOpen": false,
           "batchActions": Array [],
           "search": Object {},
         },
@@ -514,6 +524,9 @@ Map {
             "toolbar": Object {
               "args": Array [
                 Object {
+                  "onApplyAdvancedFilter": Object {
+                    "type": "func",
+                  },
                   "onApplyBatchAction": Object {
                     "type": "func",
                   },
@@ -523,16 +536,31 @@ Map {
                   "onApplySearch": Object {
                     "type": "func",
                   },
+                  "onCancelAdvancedFilter": Object {
+                    "type": "func",
+                  },
                   "onCancelBatchAction": Object {
+                    "type": "func",
+                  },
+                  "onChangeAdvancedFilter": Object {
                     "type": "func",
                   },
                   "onClearAllFilters": Object {
                     "type": "func",
                   },
+                  "onCreateAdvancedFilter": Object {
+                    "type": "func",
+                  },
                   "onDownloadCSV": Object {
                     "type": "func",
                   },
+                  "onRemoveAdvancedFilter": Object {
+                    "type": "func",
+                  },
                   "onShowRowEdit": Object {
+                    "type": "func",
+                  },
+                  "onToggleAdvancedFilter": Object {
                     "type": "func",
                   },
                   "onToggleColumnSelection": Object {
@@ -950,6 +978,7 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasAdvancedFilter": [Function],
             "hasAggregations": Object {
               "type": "bool",
             },
@@ -1068,6 +1097,48 @@ Map {
       "view": Object {
         "args": Array [
           Object {
+            "advancedFilters": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "filterId": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "filterRules": Object {
+                        "args": Array [
+                          Object {
+                            "groupLogic": Object {
+                              "args": Array [
+                                Array [
+                                  "ALL",
+                                  "ANY",
+                                ],
+                              ],
+                              "isRequired": true,
+                              "type": "oneOf",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "isRequired": true,
+                        "type": "shape",
+                      },
+                      "filterTitleText": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "aggregations": Object {
               "args": Array [
                 Object {
@@ -1190,6 +1261,14 @@ Map {
                 },
               ],
               "type": "shape",
+            },
+            "selectedAdvancedFilterIds": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
             },
             "table": Object {
               "args": Array [
@@ -1428,7 +1507,12 @@ Map {
       "filterText": "Filter",
       "hasFastFilter": true,
       "i18n": Object {
+        "advancedFilterLabelText": "Select an existing filter or",
+        "advancedFilterPlaceholderText": "Select a filter",
+        "advancedFiltersTabLabel": "Advanced filters",
+        "applyButtonText": "Apply filters",
         "batchCancel": "Cancel",
+        "cancelButtonText": "Cancel",
         "clearAllFilters": "Clear all filters",
         "clearFilterAria": "Clear filter",
         "clearSelectionAria": "Clear selection",
@@ -1437,6 +1521,7 @@ Map {
         "closeMenuAria": "Close menu",
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
+        "createNewAdvancedFilterText": "create a new advanced filter",
         "currentPage": [Function],
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
@@ -1464,6 +1549,7 @@ Map {
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
+        "simpleFiltersTabLabel": "Simple filters",
       },
       "lightweight": false,
       "openMenuText": "Open menu",
@@ -2970,7 +3056,12 @@ Map {
   "TableToolbar" => Object {
     "defaultProps": Object {
       "i18n": Object {
+        "advancedFilterLabelText": "Select an existing filter or",
+        "advancedFilterPlaceholderText": "Select a filter",
+        "advancedFiltersTabLabel": "Advanced filters",
+        "applyButtonText": "Apply filters",
         "batchCancel": "Cancel",
+        "cancelButtonText": "Cancel",
         "clearAllFilters": "Clear all filters",
         "clearFilterAria": "Clear filter",
         "clearSelectionAria": "Clear selection",
@@ -2979,6 +3070,7 @@ Map {
         "closeMenuAria": "Close menu",
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
+        "createNewAdvancedFilterText": "create a new advanced filter",
         "currentPage": [Function],
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
@@ -3006,6 +3098,7 @@ Map {
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
+        "simpleFiltersTabLabel": "Simple filters",
       },
       "secondaryTitle": null,
       "tooltip": null,
@@ -3017,13 +3110,25 @@ Map {
             "onApplyBatchAction": Object {
               "type": "func",
             },
+            "onCancelAdvancedFilter": Object {
+              "type": "func",
+            },
             "onCancelBatchAction": Object {
+              "type": "func",
+            },
+            "onChangeAdvancedFilter": Object {
               "type": "func",
             },
             "onClearAllFilters": Object {
               "type": "func",
             },
+            "onCreateAdvancedFilter": Object {
+              "type": "func",
+            },
             "onShowRowEdit": Object {
+              "type": "func",
+            },
+            "onToggleAdvancedFilter": Object {
               "type": "func",
             },
             "onToggleAggregations": Object {
@@ -3217,6 +3322,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasAdvancedFilter": Object {
+              "type": "bool",
+            },
             "hasAggregations": Object {
               "type": "bool",
             },
@@ -3260,6 +3368,48 @@ Map {
                 ],
               ],
               "type": "oneOf",
+            },
+            "advancedFilters": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "filterId": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "filterRules": Object {
+                        "args": Array [
+                          Object {
+                            "groupLogic": Object {
+                              "args": Array [
+                                Array [
+                                  "ALL",
+                                  "ANY",
+                                ],
+                              ],
+                              "isRequired": true,
+                              "type": "oneOf",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "isRequired": true,
+                        "type": "shape",
+                      },
+                      "filterTitleText": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
             },
             "batchActions": Object {
               "args": Array [
@@ -3325,6 +3475,14 @@ Map {
                 },
               ],
               "type": "shape",
+            },
+            "selectedAdvancedFilterIds": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
             },
             "totalItemsCount": Object {
               "type": "number",
@@ -18567,6 +18725,7 @@ Map {
   },
   "FlyoutMenu" => Object {
     "defaultProps": Object {
+      "buttonProps": Object {},
       "buttonSize": "default",
       "children": undefined,
       "customFooter": null,
@@ -18577,6 +18736,7 @@ Map {
         "applyButtonText": "Apply",
         "cancelButtonText": "Cancel",
       },
+      "isOpen": null,
       "light": true,
       "menuOffset": Object {
         "left": 0,
@@ -18598,6 +18758,16 @@ Map {
       "useAutoPositioning": false,
     },
     "propTypes": Object {
+      "buttonProps": Object {
+        "args": Array [
+          Object {
+            "className": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "buttonSize": Object {
         "type": "string",
       },
@@ -18644,6 +18814,9 @@ Map {
       "iconDescription": Object {
         "isRequired": true,
         "type": "string",
+      },
+      "isOpen": Object {
+        "type": "bool",
       },
       "light": Object {
         "type": "bool",
@@ -26621,6 +26794,12 @@ Map {
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",
     "TABLE_ACTION_CANCEL": "TABLE_ACTION_CANCEL",
+    "TABLE_ADVANCED_FILTER_APPLY": "TABLE_ADVANCED_FILTER_APPLY",
+    "TABLE_ADVANCED_FILTER_CANCEL": "TABLE_ADVACNED_FILTER_CANCEL",
+    "TABLE_ADVANCED_FILTER_CHANGE": "TABLE_ADVANCED_FILTER_CHANGE",
+    "TABLE_ADVANCED_FILTER_CREATE": "TABLE_ADVANCED_FILTER_CREATE",
+    "TABLE_ADVANCED_FILTER_REMOVE": "TABLE_ADVANCED_FILTER_REMOVE",
+    "TABLE_ADVANCED_FILTER_TOGGLE": "TABLE_ADVANCED_FILTER_TOGGLE",
     "TABLE_COLUMN_ORDER": "TABLE_COLUMN_ORDER",
     "TABLE_COLUMN_RESIZE": "TABLE_COLUMN_RESIZE",
     "TABLE_COLUMN_SORT": "TABLE_COLUMN_SORT",
@@ -26643,6 +26822,12 @@ Map {
     "TABLE_TOOLBAR_TOGGLE": "TABLE_TOOLBAR_TOGGLE",
     "tableActionApply": Object {},
     "tableActionCancel": Object {},
+    "tableAdvancedFiltersApply": Object {},
+    "tableAdvancedFiltersCancel": Object {},
+    "tableAdvancedFiltersChange": Object {},
+    "tableAdvancedFiltersCreate": Object {},
+    "tableAdvancedFiltersRemove": Object {},
+    "tableAdvancedFiltersToggle": Object {},
     "tableColumnOrder": Object {},
     "tableColumnResize": Object {},
     "tableColumnSort": Object {},
