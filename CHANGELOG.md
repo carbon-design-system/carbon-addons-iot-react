@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.24...v2.145.0-next.25) (2021-03-30)
+
+
+### Bug Fixes
+
+* **build:** skip publishing if the local and remote heads are out of sync ([1b6bb6a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1b6bb6a6bef2832983e0ce056636486fe3a69097))
+
+
+
+
+
 # [2.145.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.23...v2.145.0-next.24) (2021-03-30)
 
 
