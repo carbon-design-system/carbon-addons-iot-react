@@ -4361,6 +4361,8 @@ Map {
       "description": null,
       "editable": false,
       "extraContent": undefined,
+      "headerMode": "STATIC",
+      "headerModeDynamicOffSet": 0,
       "i18n": Object {
         "editIconDescription": "Edit page title",
         "tooltipIconDescription": "More information",
@@ -4406,6 +4408,20 @@ Map {
       },
       "extraContent": Object {
         "type": "node",
+      },
+      "headerMode": Object {
+        "args": Array [
+          Array [
+            "STATIC",
+            "STICKY",
+            "DYNAMIC",
+            "CONDENSED",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "headerModeDynamicOffSet": Object {
+        "type": "number",
       },
       "i18n": Object {
         "args": Array [
