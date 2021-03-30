@@ -6,6 +6,7 @@ module.exports = {
     '!src/components/SuiteHeader/util/suiteHeaderData.js',
     '!src/components/FileUploader/stories/*.jsx',
     '!src/components/Table/AsyncTable/*.js?(x)',
+    '!src/components/WizardInline/**/*.js?(x)',
     '!src/components/Page/(EditPage|PageHero).jsx',
     '!src/components/Dashboard/(Dashboard|CardRenderer).jsx',
   ],
@@ -18,18 +19,11 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(WizardInline|WizardHeader|FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(FilterHeaderRow|RowActionsCell|RowActionsError|TableHead|StatefulTable|StatefulTableDetailWizard|TableHead|ColumnResize|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
       lines: 80,
-    },
-    // TODO: remove in next release
-    './src/components/WizardInline/WizardInline.jsx': {
-      branches: 70,
-    },
-    './src/components/WizardInline//WizardHeader/WizardHeader.jsx': {
-      branches: 75,
     },
     './src/components/Dashboard/DashboardGrid.jsx': {
       statements: 72,
