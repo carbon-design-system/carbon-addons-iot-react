@@ -12,7 +12,7 @@ import React from 'react';
 import { settings } from 'carbon-components';
 import { ArrowUp20 as Arrow, ArrowsVertical20 as Arrows } from '@carbon/icons-react';
 
-const sortStates = {
+export const sortStates = {
   NONE: 'NONE',
   DESC: 'DESC',
   ASC: 'ASC',
@@ -20,11 +20,11 @@ const sortStates = {
 
 const { prefix } = settings;
 
-const translationKeys = {
+export const translationKeys = {
   iconDescription: 'carbon.table.header.icon.description',
 };
 
-const translateWithId = (key, { sortDirection, isSortHeader }) => {
+export const translateWithId = (key, { sortDirection, isSortHeader }) => {
   if (key === translationKeys.iconDescription) {
     if (isSortHeader) {
       // When transitioning, we know that the sequence of states is as follows:
@@ -181,6 +181,7 @@ TableHeader.propTypes = {
   thStyle: PropTypes.object,
 };
 
+/* instanbul ignore next: ignoring the default onCLick */
 TableHeader.defaultProps = {
   className: '',
   children: '',
