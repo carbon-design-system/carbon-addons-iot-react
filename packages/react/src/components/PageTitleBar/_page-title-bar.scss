@@ -61,17 +61,19 @@
       position: sticky;
       top: var(--header-offset);
       width: 100%;
-      border-bottom: $ui-03;
+      border-bottom: 1px solid $ui-03;
       background-color: $ui-01;
+      z-index: 1000;
     }
     &-condensed {
       position: sticky;
       top: var(--header-offset);
-      border-bottom: $ui-03;
+      border-bottom: 1px solid $ui-03;
       height: unset;
       padding: 0 $spacing-07;
       transition: background-color $duration--moderate-02;
       background-color: $ui-01;
+      z-index: 1000;
     }
     &-left {
       float: left;
@@ -114,7 +116,7 @@
       transition: all $duration--moderate-02;
       background: $ui-01;
       z-index: 1000;
-      border-bottom: $ui-03;
+      border-bottom: 1px solid $ui-03;
     }
   }
 
