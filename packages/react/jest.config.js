@@ -25,11 +25,6 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/Dashboard/DashboardGrid.jsx': {
-      statements: 72,
-      branches: 60,
-      lines: 71,
-    },
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
