@@ -211,13 +211,15 @@ WithEverything.story = {
   name: 'with everything',
 };
 
+/* Note: We need to set the sticky offset to 0 (from the default 3rem) because storybook sets everything relative to their container with 3rem padding.
+   The dynamicTransitionOffset isn't needed here, because the default 3rem is relative to the overall window scrollY and handles the storybook padding */
 export const WithDynamicScrolling = () => (
   <PageTitleBar
+    stickyHeaderOffset={0}
     title={commonPageTitleBarProps.title}
     description={commonPageTitleBarProps.description}
     breadcrumb={pageTitleBarBreadcrumb}
     headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'])}
-    headerModeDynamicOffSet={50} // need to offset the padding that storybook forces
     extraContent={
       <div>
         <div
