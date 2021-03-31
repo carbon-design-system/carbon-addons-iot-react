@@ -106,7 +106,7 @@ const PageTitleBar = ({
   useEffect(() => {
     // if we have scrolled passed the offset, we should be in condensed state
     const handleScroll = throttle(() => {
-      if (Math.round(window.scrollY) > 5 + dynamicTransitionOffset || stickyHeaderOffsetProp) {
+      if (Math.round(window.scrollY) > 5 + dynamicTransitionOffset) {
         setCondensed(true);
       } else {
         setCondensed(false);
