@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
@@ -1387,6 +1387,346 @@ describe('Table', () => {
       expect(tooltipButton).toBeInTheDocument();
       userEvent.click(tooltipButton);
       expect(screen.getByText('this is a tooltip')).toBeVisible();
+    });
+  });
+
+  describe('TableToolbarAdvancedFilterFlyout', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    beforeAll(() => {
+      Element.prototype.getBoundingClientRect = jest.fn(() => ({
+        x: 900,
+        y: 300,
+        height: 200,
+        width: 400,
+        top: 300,
+        bottom: 500,
+        left: 500,
+        right: 900,
+      }));
+    });
+    afterAll(() => {
+      Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+    });
+    it('throws an error when using both hasFilter and hasAdvancedFilter props', () => {
+      const { __DEV__ } = global;
+      global.__DEV__ = true;
+      render(
+        <Table
+          id="test"
+          columns={tableColumns}
+          data={tableData}
+          options={{ hasFilter: true, hasAdvancedFilter: true }}
+        />
+      );
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `Only one of props 'options.hasFilter' or 'options.hasAdvancedFilter' can be specified in 'Table'.`
+        )
+      );
+      global.__DEV__ = __DEV__;
+    });
+
+    it('shows the filter button when hasAdvancedFilter is true and onToggleFilter is called on click', () => {
+      const handleToggleFilters = jest.fn();
+      render(
+        <Table
+          id="test"
+          columns={tableColumns}
+          data={tableData}
+          actions={{
+            toolbar: {
+              onToggleAdvancedFilter: handleToggleFilters,
+            },
+          }}
+          options={{ hasAdvancedFilter: true }}
+        />
+      );
+      const filterButton = screen.getByTestId('advanced-filter-flyout-button');
+      expect(filterButton).toBeVisible();
+      userEvent.click(filterButton);
+      expect(handleToggleFilters).toHaveBeenCalledTimes(1);
+    });
+
+    it('handles the callbacks for the advancedfilterflyout properly', () => {
+      const handleApplyFilter = jest.fn();
+      const handleCancelFilter = jest.fn();
+      const handleRemoveAdvancedFilter = jest.fn();
+      const handleCreateAdvancedFilter = jest.fn();
+      const handleChangeAdvancedFiler = jest.fn();
+      const handleToggleFilter = jest.fn();
+      const { rerender } = render(
+        <Table
+          id="test"
+          columns={tableColumns}
+          data={tableData}
+          actions={{
+            toolbar: {
+              onApplyAdvancedFilter: handleApplyFilter,
+              onCancelAdvancedFilter: handleCancelFilter,
+              onRemoveAdvancedFilter: handleRemoveAdvancedFilter,
+              onCreateAdvancedFilter: handleCreateAdvancedFilter,
+              onChangeAdvancedFilter: handleChangeAdvancedFiler,
+              onToggleAdvancedFilter: handleToggleFilter,
+            },
+          }}
+          options={{ hasAdvancedFilter: true }}
+          view={{
+            toolbar: {
+              advancedFilterFlyoutOpen: true,
+            },
+          }}
+        />
+      );
+      const filterButton = screen.getByTestId('advanced-filter-flyout-button');
+      const filterFlyout = screen.getByTestId('advanced-filter-flyout');
+      expect(filterButton).toBeVisible();
+      expect(filterFlyout).toHaveAttribute('open');
+      userEvent.click(filterButton);
+      expect(handleToggleFilter).toHaveBeenCalledTimes(1);
+      // it should still be open b/c this component is controlled via the advancedFilterFlyoutOpen prop
+      expect(filterFlyout).toHaveAttribute('open');
+
+      userEvent.click(screen.getByTestId('flyout-menu-apply'));
+      expect(handleApplyFilter).toBeCalledWith({
+        simple: {},
+        advanced: {
+          filterIds: [],
+        },
+      });
+      userEvent.click(screen.getByTestId('flyout-menu-cancel'));
+      expect(handleCancelFilter).toBeCalledTimes(1);
+      userEvent.click(screen.getByRole('tab', { name: 'Advanced filters' }));
+      userEvent.click(screen.getByRole('button', { name: 'create a new advanced filter' }));
+      expect(handleCreateAdvancedFilter).toBeCalledTimes(1);
+      expect(screen.getByText('Select a filter')).toBeVisible();
+
+      rerender(
+        <Table
+          id="test"
+          columns={tableColumns}
+          data={tableData}
+          actions={{
+            toolbar: {
+              onApplyAdvancedFilter: handleApplyFilter,
+              onCancelAdvancedFilter: handleCancelFilter,
+              onRemoveAdvancedFilter: handleRemoveAdvancedFilter,
+              onCreateAdvancedFilter: handleCreateAdvancedFilter,
+              onChangeAdvancedFilter: handleChangeAdvancedFiler,
+              onToggleAdvancedFilter: handleToggleFilter,
+            },
+          }}
+          options={{ hasAdvancedFilter: true }}
+          view={{
+            toolbar: {
+              advancedFilterFlyoutOpen: false,
+            },
+          }}
+        />
+      );
+      expect(screen.queryByTestId('advanced-filter-flyout')).toBeNull();
+    });
+
+    it('calls onApplyFilter when simple filters are updated.', async () => {
+      const handleApplyFilter = jest.fn();
+      const handleCancelFilter = jest.fn();
+      const handleRemoveAdvancedFilter = jest.fn();
+      const handleCreateAdvancedFilter = jest.fn();
+      const handleChangeAdvancedFiler = jest.fn();
+      const handleToggleFilter = jest.fn();
+      render(
+        <Table
+          id="test"
+          columns={tableColumns}
+          data={tableData}
+          actions={{
+            toolbar: {
+              onApplyAdvancedFilter: handleApplyFilter,
+              onCancelAdvancedFilter: handleCancelFilter,
+              onRemoveAdvancedFilter: handleRemoveAdvancedFilter,
+              onCreateAdvancedFilter: handleCreateAdvancedFilter,
+              onChangeAdvancedFilter: handleChangeAdvancedFiler,
+              onToggleAdvancedFilter: handleToggleFilter,
+            },
+          }}
+          options={{
+            hasAdvancedFilter: true,
+          }}
+          view={{
+            filters: [
+              {
+                columnId: 'string',
+                value: 'whiteboard',
+              },
+              {
+                columnId: 'select',
+                value: 'option-B',
+              },
+            ],
+            advancedFilters: [
+              {
+                filterId: 'my-filter',
+                filterTitleText: 'My Filter',
+              },
+              {
+                filterId: 'next-filter',
+                filterTitleText: 'Next Filter',
+              },
+            ],
+            toolbar: {
+              advancedFilterFlyoutOpen: true,
+            },
+          }}
+        />
+      );
+      userEvent.click(screen.getAllByRole('button', { name: 'Clear filter' })[0]);
+      fireEvent.change(screen.getByPlaceholderText('pick a number'), { target: { value: '16' } });
+      // ensure keyDown events also get called with hasFastFilter is false
+      fireEvent.keyDown(screen.getByPlaceholderText('pick a number'), {
+        key: 'Enter',
+        code: 'Enter',
+        keyCode: 13,
+        charCode: 13,
+      });
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+      expect(handleApplyFilter).toHaveBeenLastCalledWith({
+        advanced: {
+          filterIds: [],
+        },
+        simple: {
+          string: '',
+          select: 'option-B',
+          number: '16',
+        },
+      });
+      userEvent.click(screen.getAllByRole('button', { name: 'Clear selection' })[0]);
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+      expect(handleApplyFilter).toHaveBeenLastCalledWith({
+        advanced: {
+          filterIds: [],
+        },
+        simple: {
+          string: '',
+          select: '',
+          number: '16',
+        },
+      });
+      const withinFlyout = within(screen.getByTestId('advanced-filter-flyout'));
+      userEvent.click(screen.getByPlaceholderText('pick an option'));
+      userEvent.click(withinFlyout.getByText('option-A'));
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+      expect(handleApplyFilter).toHaveBeenLastCalledWith({
+        advanced: {
+          filterIds: [],
+        },
+        simple: {
+          string: '',
+          select: 'option-A',
+          number: '16',
+        },
+      });
+      userEvent.click(screen.getByRole('tab', { name: 'Advanced filters' }));
+      userEvent.click(screen.getByText('Select a filter'));
+      userEvent.click(withinFlyout.getByText('My Filter'));
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+      expect(handleApplyFilter).toHaveBeenLastCalledWith({
+        simple: {
+          string: '',
+          select: 'option-A',
+          number: '16',
+        },
+        advanced: {
+          filterIds: ['my-filter'],
+        },
+      });
+    });
+
+    it('calls onApplyFilter when fastfiltering is enabled', async () => {
+      const handleApplyFilter = jest.fn();
+      const handleCancelFilter = jest.fn();
+      const handleRemoveAdvancedFilter = jest.fn();
+      const handleCreateAdvancedFilter = jest.fn();
+      const handleChangeAdvancedFiler = jest.fn();
+      const handleToggleFilter = jest.fn();
+      render(
+        <Table
+          id="test"
+          columns={tableColumns}
+          data={tableData}
+          actions={{
+            toolbar: {
+              onApplyAdvancedFilter: handleApplyFilter,
+              onCancelAdvancedFilter: handleCancelFilter,
+              onRemoveAdvancedFilter: handleRemoveAdvancedFilter,
+              onCreateAdvancedFilter: handleCreateAdvancedFilter,
+              onChangeAdvancedFilter: handleChangeAdvancedFiler,
+              onToggleAdvancedFilter: handleToggleFilter,
+            },
+          }}
+          options={{
+            hasAdvancedFilter: 'onKeyPress',
+          }}
+          view={{
+            filters: [
+              {
+                columnId: 'string',
+                value: 'whiteboard',
+              },
+              {
+                columnId: 'select',
+                value: 'option-B',
+              },
+            ],
+            selectedAdvancedFilterIds: ['my-filter'],
+            advancedFilters: [
+              {
+                filterId: 'my-filter',
+                filterTitleText: 'My Filter',
+              },
+              {
+                filterId: 'next-filter',
+                filterTitleText: 'Next Filter',
+              },
+            ],
+            toolbar: {
+              advancedFilterFlyoutOpen: true,
+            },
+          }}
+        />
+      );
+
+      fireEvent.focus(screen.getByPlaceholderText('pick a number'));
+      fireEvent.change(screen.getByPlaceholderText('pick a number'), { target: { value: '16' } });
+      fireEvent.blur(screen.getByPlaceholderText('pick a number'));
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+      expect(handleApplyFilter).toHaveBeenLastCalledWith({
+        advanced: {
+          filterIds: ['my-filter'],
+        },
+        simple: {
+          string: 'whiteboard',
+          select: 'option-B',
+          number: '16',
+        },
+      });
+      const numberInputClear = screen.getAllByRole('button', { name: 'Clear filter' })[1];
+      fireEvent.focus(numberInputClear);
+      fireEvent.keyDown(numberInputClear, {
+        key: 'Enter',
+        code: 'Enter',
+        keyCode: 13,
+        charCode: 13,
+      });
+      userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+      expect(handleApplyFilter).toHaveBeenLastCalledWith({
+        advanced: {
+          filterIds: ['my-filter'],
+        },
+        simple: {
+          string: 'whiteboard',
+          select: 'option-B',
+          number: '',
+        },
+      });
     });
   });
 });
