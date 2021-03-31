@@ -118,7 +118,7 @@ const PageTitleBar = ({
     }
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [dynamicTransitionOffset, headerMode, stickyHeaderOffsetProp]);
+  }, [dynamicTransitionOffset, headerMode]);
 
   const titleActions = useMemo(
     () => (
