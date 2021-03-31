@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import {
@@ -361,6 +361,306 @@ describe('DashboardGrid', () => {
 
       const sizeI = getMatchingCardSize({ w: 16, h: 2 }, breakpointSizes);
       expect(sizeI.name).toEqual(CARD_SIZES.MEDIUMWIDE);
+    });
+
+    describe('resizes properly when dragging', () => {
+      const generateParentBoundingClientRect = ({ width }) => () => {
+        return {
+          bottom: 206,
+          height: 144,
+          left: 48,
+          right: width + 48,
+          top: 62,
+          width,
+          x: 48,
+          y: 62,
+        };
+      };
+      const generateHandleBoundingClientRect = ({ parentWidth }) => () => {
+        return {
+          bottom: 204,
+          height: 20,
+          left: parentWidth + 26,
+          right: parentWidth + 46,
+          top: 184,
+          width: 20,
+          x: parentWidth + 26,
+          y: 184,
+        };
+      };
+
+      const resizeHandleClass = 'react-resizable-handle';
+      const getResizeHandle = (testId, resizeHandleIndex = 2) =>
+        screen.getByTestId(testId).childNodes[resizeHandleIndex];
+
+      const expectToBeResizable = (testId, resizeHandleIndex = 2) => {
+        const resizeHandle = getResizeHandle(testId, resizeHandleIndex);
+        expect(resizeHandle).toHaveClass(resizeHandleClass);
+        expect(resizeHandle).toBeVisible();
+      };
+
+      beforeEach(() => {
+        Object.defineProperty(HTMLElement.prototype, 'offsetParent', {
+          get() {
+            return this.parentNode;
+          },
+        });
+        Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+          get() {
+            return 1280;
+          },
+        });
+      });
+      afterEach(() => {
+        Object.defineProperty(HTMLElement.prototype, 'offsetParent', {
+          get() {
+            return undefined;
+          },
+        });
+        Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+          get() {
+            return undefined;
+          },
+        });
+      });
+      it('does not resize the card if it was not dragged far enough', () => {
+        render(
+          <DashboardGrid
+            {...callbackMocks}
+            layouts={{ lg: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }] }}
+            breakpoint="lg"
+            isEditable
+          >
+            {[
+              <Card
+                testID="test-card"
+                title="Card"
+                id="card"
+                key="card"
+                isResizable
+                size={CARD_SIZES.SMALL}
+              />,
+            ]}
+          </DashboardGrid>
+        );
+
+        expectToBeResizable('test-card');
+
+        const cardHandle = getResizeHandle('test-card');
+        let width = 444;
+        let clientX = 486;
+        const clientY = 199;
+        cardHandle.parentNode.getBoundingClientRect = generateParentBoundingClientRect({ width });
+        cardHandle.getBoundingClientRect = generateHandleBoundingClientRect({ parentWidth: width });
+        fireEvent.mouseDown(cardHandle, {
+          clientX,
+          clientY,
+        });
+        let distance = 20;
+        while (distance >= 0) {
+          width += 10;
+          clientX += 10;
+          cardHandle.parentNode.getBoundingClientRect = generateParentBoundingClientRect({ width });
+          cardHandle.getBoundingClientRect = generateHandleBoundingClientRect({
+            parentWidth: width,
+          });
+          fireEvent.mouseMove(cardHandle, {
+            clientX,
+            clientY,
+            x: clientX,
+            y: clientY,
+          });
+          distance -= 10;
+        }
+        fireEvent.mouseUp(cardHandle, {
+          clientX,
+          clientY,
+        });
+        expect(callbackMocks.onCardSizeChange).not.toHaveBeenCalled();
+        expect(callbackMocks.onResizeStop).not.toHaveBeenCalled();
+      });
+      it('resizes the card when dragging far enough', () => {
+        render(
+          <DashboardGrid
+            {...callbackMocks}
+            layouts={{ lg: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }] }}
+            breakpoint="lg"
+            isEditable
+          >
+            {[
+              <Card
+                testID="test-card"
+                title="Card"
+                id="card"
+                key="card"
+                isResizable
+                size={CARD_SIZES.SMALL}
+              />,
+            ]}
+          </DashboardGrid>
+        );
+
+        expectToBeResizable('test-card');
+
+        const cardHandle = getResizeHandle('test-card');
+        let width = 444;
+        let clientX = 486;
+        const clientY = 199;
+        cardHandle.parentNode.getBoundingClientRect = generateParentBoundingClientRect({ width });
+        cardHandle.getBoundingClientRect = generateHandleBoundingClientRect({ parentWidth: width });
+        fireEvent.mouseDown(cardHandle, {
+          clientX,
+          clientY,
+        });
+        let distance = 200;
+        while (distance >= 0) {
+          width += 10;
+          clientX += 10;
+          cardHandle.parentNode.getBoundingClientRect = generateParentBoundingClientRect({ width });
+          cardHandle.getBoundingClientRect = generateHandleBoundingClientRect({
+            parentWidth: width,
+          });
+          fireEvent.mouseMove(cardHandle, {
+            clientX,
+            clientY,
+            x: clientX,
+            y: clientY,
+          });
+          distance -= 10;
+        }
+        fireEvent.mouseUp(cardHandle, {
+          clientX,
+          clientY,
+        });
+        expect(callbackMocks.onCardSizeChange).toHaveBeenCalledWith(
+          {
+            id: 'card',
+            size: 'SMALLWIDE',
+          },
+          expect.objectContaining({
+            element: expect.anything(),
+            event: expect.anything(),
+            layout: [
+              {
+                h: 1,
+                i: 'card',
+                isBounded: undefined,
+                isDraggable: undefined,
+                isResizable: true,
+                maxH: undefined,
+                maxW: undefined,
+                minH: undefined,
+                minW: undefined,
+                moved: false,
+                resizeHandles: undefined,
+                static: false,
+                w: 8,
+                x: 0,
+                y: 0,
+              },
+            ],
+            newItem: {
+              h: 1,
+              i: 'card',
+              isBounded: undefined,
+              isDraggable: undefined,
+              isResizable: true,
+              maxH: undefined,
+              maxW: undefined,
+              minH: undefined,
+              minW: undefined,
+              moved: false,
+              resizeHandles: undefined,
+              static: false,
+              w: 8,
+              x: 0,
+              y: 0,
+            },
+            oldItem: {
+              h: 1,
+              i: 'card',
+              isBounded: undefined,
+              isDraggable: undefined,
+              isResizable: true,
+              maxH: undefined,
+              maxW: undefined,
+              minH: undefined,
+              minW: undefined,
+              moved: false,
+              resizeHandles: undefined,
+              static: false,
+              w: 4,
+              x: 0,
+              y: 0,
+            },
+            placeholder: { h: 1, i: 'card', static: true, w: 8, x: 0, y: 0 },
+          })
+        );
+        expect(callbackMocks.onResizeStop).toHaveBeenCalledWith(
+          {
+            id: 'card',
+            size: 'SMALLWIDE',
+          },
+          expect.objectContaining({
+            element: expect.anything(),
+            event: expect.anything(),
+            layout: [
+              {
+                h: 1,
+                i: 'card',
+                isBounded: undefined,
+                isDraggable: undefined,
+                isResizable: true,
+                maxH: undefined,
+                maxW: undefined,
+                minH: undefined,
+                minW: undefined,
+                moved: false,
+                resizeHandles: undefined,
+                static: false,
+                w: 8,
+                x: 0,
+                y: 0,
+              },
+            ],
+            newItem: {
+              h: 1,
+              i: 'card',
+              isBounded: undefined,
+              isDraggable: undefined,
+              isResizable: true,
+              maxH: undefined,
+              maxW: undefined,
+              minH: undefined,
+              minW: undefined,
+              moved: false,
+              resizeHandles: undefined,
+              static: false,
+              w: 8,
+              x: 0,
+              y: 0,
+            },
+            oldItem: {
+              h: 1,
+              i: 'card',
+              isBounded: undefined,
+              isDraggable: undefined,
+              isResizable: true,
+              maxH: undefined,
+              maxW: undefined,
+              minH: undefined,
+              minW: undefined,
+              moved: false,
+              resizeHandles: undefined,
+              static: false,
+              w: 4,
+              x: 0,
+              y: 0,
+            },
+            placeholder: null,
+          })
+        );
+      });
     });
   });
 });
