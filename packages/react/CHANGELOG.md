@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.26...v2.145.0-next.27) (2021-03-31)
+
+
+### Bug Fixes
+
+* **value-card:** fix error/warning icons not visible on card ([faac33d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/faac33d1f2ce0c11e638cafe53a393af3fa17552))
+
+
+
+
+
 # [2.145.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.25...v2.145.0-next.26) (2021-03-30)
 
 **Note:** Version bump only for package carbon-addons-iot-react
