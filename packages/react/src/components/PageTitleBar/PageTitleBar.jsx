@@ -22,8 +22,10 @@ const PageTitleBarPropTypes = {
   description: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   /** How the header should react to scrolling */
   headerMode: PropTypes.oneOf(Object.values(HEADER_MODES)),
-  /** offset for when the dynamic headerMode flips the header size to condensed  */
-  headerModeDynamicOffSet: PropTypes.number,
+  /** offset for the 'top' attribute on the sticky header. Number will be converted to px */
+  stickyHeaderOffset: PropTypes.number,
+  /** offset for the dynamic transition from 'STATIC' size to 'CONDENSED' size. Number will be converted to px */
+  dynamicTransitionOffset: PropTypes.number,
   /** Optional node to render in the right side of the PageTitleBar
    *  NOTE: Deprecated in favor of extraContent
    */
@@ -74,7 +76,8 @@ const defaultProps = {
   tabs: undefined,
   content: undefined,
   headerMode: HEADER_MODES.STATIC,
-  headerModeDynamicOffSet: 0,
+  stickyHeaderOffset: 48, // default to 3rem to stick to the bottom of the suite header
+  dynamicTransitionOffset: 48, // default to 3rem to stick to the bottom of the suite header
 };
 
 const PageTitleBar = ({
@@ -86,7 +89,8 @@ const PageTitleBar = ({
   breadcrumb,
   collapsed,
   headerMode,
-  headerModeDynamicOffSet,
+  stickyHeaderOffset: stickyHeaderOffsetProp,
+  dynamicTransitionOffset,
   editable,
   isLoading,
   i18n: { editIconDescription, tooltipIconDescription },
@@ -97,10 +101,12 @@ const PageTitleBar = ({
   const titleBarContent = content || tabs;
   const [condensed, setCondensed] = useState(headerMode === HEADER_MODES.CONDENSED);
 
+  const stickyHeaderOffset = `${stickyHeaderOffsetProp}px`; // convert to px for styling
+
   useEffect(() => {
     // if we have scrolled passed the offset, we should be in condensed state
     const handleScroll = throttle(() => {
-      if (Math.round(window.scrollY) > 5 + headerModeDynamicOffSet) {
+      if (Math.round(window.scrollY) > 5 + dynamicTransitionOffset) {
         setCondensed(true);
       } else {
         setCondensed(false);
@@ -112,7 +118,7 @@ const PageTitleBar = ({
     }
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [headerMode, headerModeDynamicOffSet]);
+  }, [dynamicTransitionOffset, headerMode]);
 
   const titleActions = useMemo(
     () => (
@@ -162,6 +168,7 @@ const PageTitleBar = ({
       ) : (
         <>
           <div
+            style={{ '--header-offset': stickyHeaderOffset }}
             className={classnames('page-title-bar-header', {
               'page-title-bar-header-sticky': headerMode === HEADER_MODES.STICKY,
               'page-title-bar-header-condensed': headerMode === HEADER_MODES.CONDENSED,
@@ -223,6 +230,9 @@ const PageTitleBar = ({
         <>
           {breadcrumb ? (
             <div
+              style={{
+                '--header-offset': stickyHeaderOffset,
+              }}
               className={classnames(
                 'page-title-bar-breadcrumb',
                 'page-title-bar-breadcrumb-dynamic',
@@ -249,7 +259,10 @@ const PageTitleBar = ({
           ) : null}
           <div
             className={classnames('page-title-bar-title', 'page-title-bar-title-dynamic')}
-            style={{ '--bar-title-position': extraContent || rightContent ? 'absolute' : 'static' }}
+            style={{
+              '--bar-title-position': extraContent || rightContent ? 'absolute' : 'static',
+              '--header-offset': stickyHeaderOffset,
+            }}
           >
             <div className="page-title-bar-title--text">
               <h2>{title}</h2>
@@ -261,6 +274,9 @@ const PageTitleBar = ({
           ) : null}
           {extraContent || rightContent ? (
             <div
+              style={{
+                '--header-offset': stickyHeaderOffset,
+              }}
               className={classnames(
                 'page-title-bar-header-right',
                 'page-title-bar-header-right-dynamic'
