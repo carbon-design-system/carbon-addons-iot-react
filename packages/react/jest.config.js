@@ -19,7 +19,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(TableHead|StatefulTable|StatefulTableDetailWizard|TableHead|TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
+    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -35,10 +35,6 @@ module.exports = {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
       // https://github.com/carbon-design-system/carbon-charts/issues/594
       functions: 77,
-    },
-    './src/components/Table/StatefulTable.jsx': { branches: 66 },
-    './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': {
-      branches: 76,
     },
   },
   globals: {
