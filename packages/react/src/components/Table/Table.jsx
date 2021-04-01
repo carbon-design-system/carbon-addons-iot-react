@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import { Table as CarbonTable, TableContainer } from 'carbon-components-react';
+import { Table as CarbonTable, TableContainer, Tag } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import uniqueId from 'lodash/uniqueId';
 import classnames from 'classnames';
@@ -11,6 +11,8 @@ import { useLangDirection } from 'use-lang-direction';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
+import FilterTags from '../FilterTags/FilterTags';
+import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
 
 import {
   TableColumnsPropTypes,
@@ -67,6 +69,21 @@ const propTypes = {
       PropTypes.bool,
       PropTypes.oneOf(['onKeyPress', 'onEnterAndBlur']),
     ]),
+    /* Turns on the Advanced Rule Builder Filtering. Is a boolean value */
+    // eslint-disable-next-line consistent-return
+    hasAdvancedFilter: (props, propName, componentName) => {
+      if (__DEV__) {
+        if (props?.hasFilter && props?.hasAdvancedFilter) {
+          return new Error(
+            `Only one of props 'options.hasFilter' or 'options.hasAdvancedFilter' can be specified in '${componentName}'.`
+          );
+        }
+
+        if (![true, false, undefined].includes(props?.hasAdvancedFilter)) {
+          return new Error(`'options.hasAdvancedFilter' should be a boolean or undefined.`);
+        }
+      }
+    },
     /** if true, the data prop will be assumed to only represent the currently visible page */
     hasOnlyPageData: PropTypes.bool,
     /** has simple search capability */
@@ -126,6 +143,17 @@ const propTypes = {
         ]).isRequired,
       })
     ),
+    /** a stripped down version of the RuleBuilderFilterPropType */
+    advancedFilters: PropTypes.arrayOf(
+      PropTypes.shape({
+        /** Unique id for particular filter */
+        filterId: PropTypes.string.isRequired,
+        /** Text for main tilte of page */
+        filterTitleText: PropTypes.string.isRequired,
+        filterRules: RuleGroupPropType.isRequired,
+      })
+    ),
+    selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
       activeBar: ActiveTableToolbarPropType,
@@ -193,6 +221,18 @@ const propTypes = {
       onApplySearch: PropTypes.func,
       /** Download the table contents */
       onDownloadCSV: PropTypes.func,
+      /** When advanced filters are applied */
+      onApplyAdvancedFilter: PropTypes.func,
+      /** Toggles the advanced filter flyout open */
+      onToggleAdvancedFilter: PropTypes.func,
+      /** Remove the selected advancedFilter from the table */
+      onRemoveAdvancedFilter: PropTypes.func,
+      /** Fired the 'create new advanced filter' button is clicked. */
+      onCreateAdvancedFilter: PropTypes.func,
+      /** Fired when then 'Cancel' button is clicked in the advanced filter flyout menu */
+      onCancelAdvancedFilter: PropTypes.func,
+      /** Fired when an advanced filter is selected or removed. */
+      onChangeAdvancedFilter: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -233,6 +273,7 @@ export const defaultProps = (baseProps) => ({
     hasRowActions: false,
     hasRowNesting: false,
     hasFilter: false,
+    hasAdvancedFilter: false,
     hasOnlyPageData: false,
     hasSearch: false,
     hasColumnSelection: false,
@@ -255,7 +296,10 @@ export const defaultProps = (baseProps) => ({
       isItemPerPageHidden: false,
     },
     filters: [],
+    advancedFilters: [],
+    selectedAdvancedFilterIds: [],
     toolbar: {
+      advancedFilterFlyoutOpen: false,
       batchActions: [],
       search: {},
     },
@@ -282,6 +326,12 @@ export const defaultProps = (baseProps) => ({
       onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
+      onRemoveAdvancedFilter: defaultFunction('actions.toolbar.onRemoveAdvancedFilter'),
+      onCancelAdvancedFilter: defaultFunction('actions.toolbar.onCancelFilter'),
+      onCreateAdvancedFilter: defaultFunction('actions.toolbar.onCreateAdvancedFilter'),
+      onApplyAdvancedFilter: defaultFunction('actions.toolbar.onApplyAdvancedFilter'),
+      onChangeAdvancedFilter: defaultFunction('actions.toolbar.onChangeAdvancedFilter'),
+      onToggleAdvancedFilter: defaultFunction('actions.toolbar.onToggleAdvancedFilter'),
     },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
@@ -511,6 +561,7 @@ const Table = (props) => {
 
   const isFiltered =
     view.filters.length > 0 ||
+    view.selectedAdvancedFilterIds.length ||
     (!isNil(view.toolbar) &&
       !isNil(view.toolbar.search) &&
       !isNil(view.toolbar.search.value) &&
@@ -540,6 +591,7 @@ const Table = (props) => {
         /* If there is no items being rendered in the toolbar, don't render the toolbar */
         options.hasAggregations ||
         options.hasFilter ||
+        options.hasAdvancedFilter ||
         options.hasSearch ||
         (hasMultiSelect && view.table.selectedIds.length > 0) ||
         options.hasRowCountInHeader ||
@@ -579,7 +631,14 @@ const Table = (props) => {
                 'onToggleColumnSelection',
                 'onToggleFilter',
                 'onShowRowEdit',
-                'onDownloadCSV'
+                'onDownloadCSV',
+                'onApplyFilter',
+                'onApplyAdvancedFilter',
+                'onCancelAdvancedFilter',
+                'onCreateAdvancedFilter',
+                'onChangeAdvancedFilter',
+                'onRemoveAdvancedFilter',
+                'onToggleAdvancedFilter'
               ),
               onApplySearch: (value) => {
                 searchValue.current = value;
@@ -601,25 +660,56 @@ const Table = (props) => {
                 'hasUserViewManagement'
               ),
               hasFilter: Boolean(options?.hasFilter),
+              hasAdvancedFilter: Boolean(options?.hasAdvancedFilter),
             }}
             tableState={{
               totalSelected: view.table.selectedIds.length,
-              totalFilters: view.filters ? view.filters.length : 0,
+              totalFilters:
+                (view.filters ? view.filters.length : 0) +
+                (view.selectedAdvancedFilterIds.length ? view.selectedAdvancedFilterIds.length : 0),
               totalItemsCount: view.pagination.totalItems,
               isDisabled: singleRowEditMode || view.toolbar.isDisabled,
+              ordering: view.table.ordering,
+              columns,
+              ...pick(view, 'filters', 'advancedFilters', 'selectedAdvancedFilterIds'),
               ...pick(
                 view.toolbar,
                 'batchActions',
                 'search',
                 'activeBar',
                 'customToolbarContent',
-                'rowEditBarButtons'
+                'rowEditBarButtons',
+                'advancedFilterFlyoutOpen'
               ),
             }}
             data={data}
           />
         ) : null
       }
+      {view.selectedAdvancedFilterIds.length ? (
+        <section className={`${iotPrefix}--table__advanced-filters-container`}>
+          <FilterTags>
+            {view.advancedFilters
+              .filter((advFilter) => view.selectedAdvancedFilterIds.includes(advFilter.filterId))
+              .map((advancedFilter) => {
+                return (
+                  <Tag
+                    key={advancedFilter.filterId}
+                    filter
+                    title={advancedFilter.filterTitleText}
+                    onClose={(e) => {
+                      if (typeof actions?.toolbar?.onRemoveAdvancedFilter === 'function') {
+                        actions.toolbar.onRemoveAdvancedFilter(e, advancedFilter.filterId);
+                      }
+                    }}
+                  >
+                    {advancedFilter.filterTitleText}
+                  </Tag>
+                );
+              })}
+          </FilterTags>
+        </section>
+      ) : null}
       <div className="addons-iot-table-container">
         <CarbonTable
           className={classnames({

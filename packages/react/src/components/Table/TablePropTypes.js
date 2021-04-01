@@ -220,6 +220,13 @@ export const defaultI18NPropTypes = {
   batchCancel: 'Cancel',
   itemsSelected: 'items selected',
   itemSelected: 'item selected',
+  applyButtonText: 'Apply filters',
+  cancelButtonText: 'Cancel',
+  advancedFilterLabelText: 'Select an existing filter or',
+  createNewAdvancedFilterText: 'create a new advanced filter',
+  advancedFilterPlaceholderText: 'Select a filter',
+  simpleFiltersTabLabel: 'Simple filters',
+  advancedFiltersTabLabel: 'Advanced filters',
   /** empty state */
   emptyMessage: 'There is no data',
   emptyMessageWithFilters: 'No results match the current filters',
