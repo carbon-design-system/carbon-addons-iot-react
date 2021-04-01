@@ -290,9 +290,11 @@ const DashboardGrid = ({
     const [, oldLayoutItem, layoutItem] = params;
     const newSize = getMatchingCardSize(layoutItem, breakpointSizes);
     const oldSize = getMatchingCardSize(oldLayoutItem, breakpointSizes);
+    /* istanbul ignore else */
     if (newSize !== oldSize) {
       layoutItem.h = newSize.h;
       layoutItem.w = newSize.w;
+      /* istanbul ignore else */
       if (onResizeStopCallback) {
         const gridResponse = formatResizeResponse(params);
         onResizeStopCallback(
