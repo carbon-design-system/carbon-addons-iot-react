@@ -19,7 +19,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(TableHead|StatefulTable|StatefulTableDetailWizard|TableHead|ColorDropdown|TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
+    './src/components/**/!(TableHead|StatefulTable|StatefulTableDetailWizard|TableHead|TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -40,7 +40,6 @@ module.exports = {
     './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': {
       branches: 76,
     },
-    './src/components/ColorDropdown/ColorDropdown.jsx': { branches: 75 },
   },
   globals: {
     __DEV__: false,
