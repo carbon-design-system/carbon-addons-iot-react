@@ -156,7 +156,9 @@ describe('HotspotEditorModal', () => {
     // Let the callback onFetchDynamicDemoHotspots finish
     await waitFor(() => expect(screen.queryByText(loading)).toBeFalsy());
 
-    const textHotspot = screen.getByText('Storage');
+    const textHotspot = screen.getByRole('button', {
+      name: 'Storage'
+    });
     expect(textHotspot).toBeVisible();
 
     const fixedHotspot = screen.getByTestId('hotspot-35-65');

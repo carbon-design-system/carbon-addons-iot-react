@@ -108,7 +108,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (4x2)');
+    const cardSizeFormInput = screen.getByText('Medium (8x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -126,7 +126,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (4x2)');
+    const cardSizeFormInput = screen.getByText('Medium (8x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -144,7 +144,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (4x2)');
+    const cardSizeFormInput = screen.getByText('Medium (8x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 

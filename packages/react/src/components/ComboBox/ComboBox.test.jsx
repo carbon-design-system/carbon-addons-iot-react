@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import ComboBox from './ComboBox';
 import { items } from './ComboBox.story';
+import { keyCodes } from '../../constants/KeyCodeConstants';
 
 const defaultProps = {
   items,
@@ -25,7 +26,7 @@ describe('ComboBox', () => {
   // Helper function to open the list and return it
   const getListBox = async () => {
     // open the list by clicking the open menu icon
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     const list = await screen.findByRole('listbox');
     return list;
   };
@@ -100,7 +101,7 @@ describe('ComboBox', () => {
     render(<ComboBox {...defaultProps} />);
     const tags = screen.getByTestId('combo-tags');
 
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     userEvent.click(screen.getByTitle('Option 1'));
 
     expect(tags.childElementCount).toEqual(1);
@@ -116,9 +117,9 @@ describe('ComboBox', () => {
   it('does not add duplicate tag when user selects same value from list', async () => {
     render(<ComboBox {...defaultProps} />);
 
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
 
     userEvent.click(screen.getByTitle('Clear selected item'));
@@ -189,17 +190,13 @@ describe('ComboBox', () => {
   it('adds tag via keyboard interaction only', async () => {
     render(<ComboBox {...defaultProps} />);
     const tags = screen.getByTestId('combo-tags');
+    expect(tags.childElementCount).toEqual(0);
 
-    await userEvent.click(screen.getByPlaceholderText('Filter...'));
+    let control = screen.getByPlaceholderText('Filter...');
 
-    fireEvent.keyDown(screen.getByPlaceholderText('Filter...'), {
-      key: 'ArrowDown',
-      code: 'ArrowDown',
-      keyCode: 'ArrowDown',
-      which: 40,
-      charCode: 40,
-    });
-    await userEvent.type(screen.getByPlaceholderText('Filter...'), '{enter}');
+    await userEvent.click(control);
+    fireEvent.keyDown(control, { keyCode: keyCodes.DOWN });
+    fireEvent.keyDown(control, { keyCode: keyCodes.ENTER });
 
     expect(tags.childElementCount).toEqual(1);
 

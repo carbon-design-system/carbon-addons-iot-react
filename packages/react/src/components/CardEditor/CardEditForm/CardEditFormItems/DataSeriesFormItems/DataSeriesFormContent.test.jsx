@@ -163,11 +163,15 @@ describe('DataSeriesFormItem', () => {
           translateWithId={jest.fn()}
         />
       );
-      const dataItemDropDown = screen.getAllByRole('img')[0];
+      screen.getByRole('button', {
+        name: "Open"
+      });
       expect(dataItemDropDown).toBeInTheDocument();
       fireEvent.click(dataItemDropDown);
 
-      const pressureOption = screen.getByText('Pressure');
+      const pressureOption = screen.getByRole('option', {
+        name: "Pressure"
+      });
       expect(pressureOption).toBeInTheDocument();
       fireEvent.click(pressureOption);
 
@@ -453,7 +457,9 @@ describe('DataSeriesFormItem', () => {
           setSelectedDataItems={mockSetSelectedDataItems}
         />
       );
-      const dataItemsDropdown = screen.getByRole('img');
+      const dataItemsDropdown = screen.getByRole('button', {
+        name: "Open",
+      });
       expect(dataItemsDropdown).toBeInTheDocument();
       fireEvent.click(dataItemsDropdown);
       // click on a data item
