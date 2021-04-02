@@ -286,13 +286,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListI
                 <button
                   aria-expanded={false}
                   aria-haspopup={true}
-                  aria-label="Menu"
+                  aria-label="open and close list of options"
                   className="bx--overflow-menu"
                   onClick={[Function]}
                   onClose={[Function]}
                   onKeyDown={[Function]}
                   open={false}
-                  tabIndex={0}
                   type="button"
                 >
                   <svg
@@ -400,18 +399,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListI
                 List Item
               </div>
               <div>
-                <span
+                <div
                   className="bx--tag bx--tag--blue"
-                  title="default"
+                  id="tag-24"
                 >
-                  default
-                </span>
-                <span
+                  
+                  <span
+                    title="default"
+                  >
+                    default
+                  </span>
+                </div>
+                <div
                   className="bx--tag bx--tag--disabled bx--tag--red"
-                  title="disabled tag"
+                  id="tag-25"
                 >
-                  disabled tag
-                </span>
+                  
+                  <span
+                    title="disabled tag"
+                  >
+                    disabled tag
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -492,7 +501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListI
                 className="iot--list-item--content--row-actions"
               >
                 <button
-                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="Button"
                   disabled={true}
                   onClick={[Function]}
@@ -1104,7 +1113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListI
                 className="iot--list-item--content--row-actions"
               >
                 <button
-                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="Button"
                   disabled={false}
                   onClick={[Function]}

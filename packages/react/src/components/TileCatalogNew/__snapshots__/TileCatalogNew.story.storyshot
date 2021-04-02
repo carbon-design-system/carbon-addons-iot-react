@@ -70,12 +70,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                     Filter table
                   </label>
                   <input
-                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="43"
                     onChange={[Function]}
-                    placeholder="Filter table"
+                    onKeyDown={[Function]}
+                    placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
                     type="text"
@@ -439,12 +439,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                     Filter table
                   </label>
                   <input
-                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="44"
                     onChange={[Function]}
-                    placeholder="Filter table"
+                    onKeyDown={[Function]}
+                    placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
                     type="text"
@@ -715,12 +715,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                     Filter table
                   </label>
                   <input
-                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="46"
                     onChange={[Function]}
-                    placeholder="Filter table"
+                    onKeyDown={[Function]}
+                    placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
                     type="text"
@@ -919,12 +919,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                     Filter table
                   </label>
                   <input
-                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="45"
                     onChange={[Function]}
-                    placeholder="Filter table"
+                    onKeyDown={[Function]}
+                    placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
                     type="text"
@@ -1147,12 +1147,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                     Filter table
                   </label>
                   <input
-                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="49"
                     onChange={[Function]}
-                    placeholder="Filter table"
+                    onKeyDown={[Function]}
+                    placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
                     type="text"
@@ -1629,12 +1629,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                     Filter table
                   </label>
                   <input
-                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="47"
                     onChange={[Function]}
-                    placeholder="Filter table"
+                    onKeyDown={[Function]}
+                    placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
                     type="text"
@@ -2232,12 +2232,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                     Filter table
                   </label>
                   <input
-                    aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
                     id="48"
                     onChange={[Function]}
-                    placeholder="Filter table"
+                    onKeyDown={[Function]}
+                    placeholder="Enter a value"
                     role="searchbox"
                     tabIndex="-1"
                     type="text"

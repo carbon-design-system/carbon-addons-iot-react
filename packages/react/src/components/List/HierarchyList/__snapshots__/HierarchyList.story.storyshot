@@ -38,7 +38,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-header--btn-container"
             >
               <button
-                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
@@ -105,7 +105,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder=""
+                onKeyDown={[Function]}
+                placeholder="Search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -523,17 +524,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
           Focus sentinel
         </span>
         <div
+          aria-modal="true"
           className="bx--modal-container"
           role="dialog"
         >
           <div
             className="bx--modal-header"
           >
-            <p
+            <h3
               className="bx--modal-header__heading bx--type-beta"
             >
               Move 1 item underneath
-            </p>
+            </h3>
             <button
               aria-label="Close"
               className="bx--modal-close"
@@ -864,7 +866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
             </div>
           </div>
           <div
-            className="bx--modal-footer iot--composed-modal-footer"
+            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
@@ -949,7 +951,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder=""
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
                 role="searchbox"
                 type="text"
                 value=""
@@ -2109,7 +2112,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder=""
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
                 role="searchbox"
                 type="text"
                 value=""
@@ -2564,7 +2568,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder=""
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
                 role="searchbox"
                 type="text"
                 value=""
@@ -3779,7 +3784,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder=""
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
                 role="searchbox"
                 type="text"
                 value=""
@@ -4593,7 +4599,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder=""
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
                 role="searchbox"
                 type="text"
                 value=""
@@ -4736,22 +4743,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                             </label>
                             <svg
                               className="bx--loading__svg"
-                              viewBox="-75 -75 150 150"
+                              viewBox="0 0 100 100"
                             >
                               <title>
                                 Active loading indicator
                               </title>
                               <circle
                                 className="bx--loading__background"
-                                cx="0"
-                                cy="0"
-                                r="26.8125"
+                                cx="50%"
+                                cy="50%"
+                                r="42"
                               />
                               <circle
                                 className="bx--loading__stroke"
-                                cx="0"
-                                cy="0"
-                                r="26.8125"
+                                cx="50%"
+                                cy="50%"
+                                r="42"
                               />
                             </svg>
                           </div>

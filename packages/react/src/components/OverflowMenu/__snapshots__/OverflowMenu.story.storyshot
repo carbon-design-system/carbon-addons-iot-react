@@ -22,7 +22,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
       onFocus={[Function]}
       onKeyDown={[Function]}
       open={false}
-      tabIndex={0}
       type="button"
     >
       <svg
@@ -111,7 +110,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
           "width": "auto",
         }
       }
-      tabIndex={0}
       type="button"
     >
       <div
@@ -173,7 +171,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
       onFocus={[Function]}
       onKeyDown={[Function]}
       open={false}
-      tabIndex={0}
       type="button"
     >
       <svg
@@ -286,7 +283,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
             onFocus={[Function]}
             onKeyDown={[Function]}
             open={false}
-            tabIndex={0}
             type="button"
           >
             <svg
@@ -342,7 +338,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
             onFocus={[Function]}
             onKeyDown={[Function]}
             open={false}
-            tabIndex={0}
             type="button"
           >
             <svg
@@ -398,7 +393,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
             onFocus={[Function]}
             onKeyDown={[Function]}
             open={false}
-            tabIndex={0}
             type="button"
           >
             <svg
@@ -464,7 +458,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
             onFocus={[Function]}
             onKeyDown={[Function]}
             open={false}
-            tabIndex={0}
             type="button"
           >
             <svg
@@ -520,7 +513,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
             onFocus={[Function]}
             onKeyDown={[Function]}
             open={false}
-            tabIndex={0}
             type="button"
           >
             <svg
@@ -576,7 +568,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
             onFocus={[Function]}
             onKeyDown={[Function]}
             open={false}
-            tabIndex={0}
             type="button"
           >
             <svg
@@ -642,7 +633,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
             onFocus={[Function]}
             onKeyDown={[Function]}
             open={false}
-            tabIndex={0}
             type="button"
           >
             <svg
@@ -698,7 +688,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
             onFocus={[Function]}
             onKeyDown={[Function]}
             open={false}
-            tabIndex={0}
             type="button"
           >
             <svg
@@ -754,7 +743,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
             onFocus={[Function]}
             onKeyDown={[Function]}
             open={false}
-            tabIndex={0}
             type="button"
           >
             <svg

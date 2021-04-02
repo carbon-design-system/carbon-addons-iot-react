@@ -963,12 +963,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                   }
                 }
               >
-                <span
+                <div
                   className="bx--tag"
-                  title="Admin Mode"
+                  id="tag-13"
                 >
-                  Admin Mode
-                </span>
+                  
+                  <span
+                    title="Admin Mode"
+                  >
+                    Admin Mode
+                  </span>
+                </div>
               </span>
             </div>
           </div>

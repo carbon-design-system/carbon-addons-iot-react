@@ -12,7 +12,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
       }
     }
   >
-    <section
+    <div
       aria-label="Structured list section"
       className="bx--structured-list bx--structured-list--selection"
     >
@@ -233,7 +233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
   <button
     className="info__show-button"
@@ -273,7 +273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
       }
     }
   >
-    <section
+    <div
       aria-label="Structured list section"
       className="bx--structured-list bx--structured-list--selection"
     >
@@ -422,7 +422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
   <button
     className="info__show-button"
@@ -462,7 +462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
       }
     }
   >
-    <section
+    <div
       aria-label="Structured list section"
       className="bx--structured-list bx--structured-list--selection"
     >
@@ -519,7 +519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           No data is available yet.
         </div>
       </div>
-    </section>
+    </div>
   </div>
   <button
     className="info__show-button"
@@ -559,7 +559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
       }
     }
   >
-    <section
+    <div
       aria-label="Structured list section"
       className="bx--structured-list iot--composed-structured-list__wrapper bx--structured-list--selection"
     >
@@ -616,7 +616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           No data is available yet.
         </div>
       </div>
-    </section>
+    </div>
   </div>
   <button
     className="info__show-button"
@@ -656,7 +656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
       }
     }
   >
-    <section
+    <div
       aria-label="Structured list section"
       className="bx--structured-list iot--composed-structured-list__wrapper bx--structured-list--selection"
     >
@@ -805,7 +805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
   <button
     className="info__show-button"
