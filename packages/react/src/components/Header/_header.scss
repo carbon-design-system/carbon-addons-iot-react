@@ -126,16 +126,3 @@ button.#{$prefix}--header__menu-item {
     outline: none;
   }
 }
-
-.#{$iot-prefix}--header--story-test-class {
-  .#{$prefix}--text-truncate--end span {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .#{$prefix}--header__menu-title[role='menuitem'][aria-expanded='true']
-    + .#{$prefix}--header__menu {
-    z-index: 6001;
-  }
-}
