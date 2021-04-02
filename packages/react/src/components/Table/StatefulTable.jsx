@@ -74,7 +74,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         data: initialData,
         isLoading,
         view: initialState,
-        totalItems: pagination.totalItems || initialData.length,
+        totalItems: totalItems || initialData.length,
         hasUserViewManagement,
       })
     );

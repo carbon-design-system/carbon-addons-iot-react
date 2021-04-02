@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.31...v2.145.0-next.32) (2021-04-01)
+
+
+### Bug Fixes
+
+* **page-title-bar:** remove the dynamic offset default ([6615958](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6615958825bb50b354d0c05c96b0f9094d2a5ad9))
+* **page-title-bar:** remove the dynamic offset default ([ea7906d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ea7906d6aa7cc35cbc1795f5e56c7c1bc4786c7f))
+
+
+
+
+
+# [2.145.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.30...v2.145.0-next.31) (2021-04-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.145.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.29...v2.145.0-next.30) (2021-04-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.145.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.28...v2.145.0-next.29) (2021-03-31)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.145.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.27...v2.145.0-next.28) (2021-03-31)
 
 **Note:** Version bump only for package ibm-ai-applications

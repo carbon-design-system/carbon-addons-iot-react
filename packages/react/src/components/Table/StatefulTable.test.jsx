@@ -106,6 +106,29 @@ describe('stateful table with real reducer', () => {
     fireEvent.click(screen.getByText('Add'));
 
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
+
+    userEvent.click(
+      screen
+        .getByText('can pinocchio whiteboard 4')
+        .closest('tr')
+        .querySelector('.bx--table-expand__button')
+    );
+    userEvent.click(
+      screen
+        .getByText('can pinocchio whiteboard 4B')
+        .closest('tr')
+        .querySelector('.bx--table-expand__button')
+    );
+    userEvent.click(
+      screen
+        .getByText('can pinocchio whiteboard 4B-2')
+        .closest('tr')
+        .querySelector('.bx--table-expand__button')
+    );
+    expect(screen.getByText('can pinocchio whiteboard 4B-2-B')).toBeTruthy();
+    userEvent.click(screen.getByTestId(`${tableId}-row-4_B-2-B-row-actions-cell-overflow`));
+    userEvent.click(screen.getByText('Add'));
+    expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
   });
 
   it('multiselect should filter properly with pre-selected filter', async () => {
@@ -227,6 +250,15 @@ describe('stateful table with real reducer', () => {
           toolbar: {
             activeBar: 'filter',
           },
+          table: {
+            ...initialState.view.table,
+            sort: {
+              select: {
+                columnId: 'select',
+                direction: 'DESC',
+              },
+            },
+          },
         }}
         secondaryTitle={`Row count: ${initialState.data.length}`}
         actions={mockActions}
@@ -278,6 +310,9 @@ describe('stateful table with real reducer', () => {
     expect(fourthFilteredRowsOptionB).toHaveLength(3);
     expect(fourthFilteredRowsOptionC).toHaveLength(3);
     expect(fourthItemCount).toBeInTheDocument();
+
+    userEvent.click(screen.getByTitle('Select'));
+    expect(mockActions.table.onChangeSort).toHaveBeenCalledWith('select', undefined);
   });
 
   it('re-renders custom toolbar elements', () => {
@@ -443,6 +478,22 @@ describe('stateful table with real reducer', () => {
         expect(box).toHaveProperty('checked', false);
       }
     });
+  });
+
+  it('should use callback fallbacks when props not passed', () => {
+    expect(() =>
+      render(
+        <StatefulTable
+          {...initialState}
+          actions={{
+            pagination: null,
+            toolbar: null,
+            table: null,
+            onUserViewModified: null,
+          }}
+        />
+      )
+    ).not.toThrowError();
   });
 
   describe('AdvancedFilters', () => {
