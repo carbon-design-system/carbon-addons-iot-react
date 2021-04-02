@@ -11047,6 +11047,23 @@ Map {
     },
   },
   "PieChartCard" => Object {
+    "defaultProps": Object {
+      "content": Object {
+        "colors": undefined,
+        "groupDataSourceId": "group",
+        "legendPosition": "bottom",
+        "truncation": Object {
+          "numCharacter": 20,
+          "threshold": 20,
+          "type": "end_line",
+        },
+      },
+      "i18n": Object {
+        "noDataLabel": "No data",
+      },
+      "overrides": undefined,
+      "size": "MEDIUMWIDE",
+    },
     "propTypes": Object {
       "availableActions": Object {
         "args": Array [
