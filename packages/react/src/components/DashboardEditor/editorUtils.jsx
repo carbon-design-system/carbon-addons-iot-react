@@ -592,26 +592,13 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
     case CARD_TYPES.TIMESERIES:
     case CARD_TYPES.BAR:
       dataSection = [...content.series];
-      // TODO: not needed after Grouped charts gets updated
-      if (content.type === BAR_CHART_TYPES.GROUPED) {
-        // Grouped bars can make batch edits, so we need to search through the whole dataSection
-        dataSection = dataSection.map(
-          (item) =>
-            editDataSeries.find((editedItem) => editedItem.dataSourceId === item.dataSourceId) ||
-            item
-        );
-      } else {
-        editDataItemIndex = dataSection.findIndex(
-          (dataItem) =>
-            dataItem.dataSourceId === editDataItem.dataSourceId ||
-            (dataItem.dataItemId === editDataItem.dataItemId &&
-              dataItem.label === editDataItem.label)
-        );
-        // if there isn't an item found, place it at the end
-        dataSection[
-          editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length
-        ] = editDataItem;
-      }
+      editDataItemIndex = dataSection.findIndex(
+        (dataItem) =>
+          dataItem.dataSourceId === editDataItem.dataSourceId ||
+          (dataItem.dataItemId === editDataItem.dataItemId && dataItem.label === editDataItem.label)
+      );
+      // if there isn't an item found, place it at the end
+      dataSection[editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length] = editDataItem;
       return {
         ...cardConfig,
         content: {
@@ -643,4 +630,29 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
     default:
       return cardConfig;
   }
+};
+
+export const renderDefaultIconByName = (iconName, iconProps = {}) => {
+  // first search the validHotspot Icons
+  const matchingHotspotIcon = validHotspotIcons.find((icon) => icon.id === iconName);
+
+  // then search the validThresholdIcons
+  const matchingThresholdIcon = validThresholdIcons.find((icon) => icon.name === iconName);
+  const iconToRender = matchingHotspotIcon ? (
+    React.createElement(matchingHotspotIcon.icon, {
+      ...iconProps,
+      title: matchingHotspotIcon.text,
+    })
+  ) : matchingThresholdIcon ? (
+    React.cloneElement(matchingThresholdIcon.carbonIcon, {
+      ...iconProps,
+      title: matchingThresholdIcon.name,
+    })
+  ) : (
+    <Warning24 {...iconProps} />
+  );
+
+  // otherwise default to Warning24
+  // eslint-disable-next-line react/prop-types
+  return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
 };

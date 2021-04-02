@@ -493,6 +493,27 @@ describe('HierarchyList', () => {
     expect(onSelect).toHaveBeenCalledTimes(1);
   });
 
+  it('clicking a selected item should not fire onSelect', () => {
+    const onSelect = jest.fn();
+    render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        onSelect={onSelect}
+        hasDeselection={false}
+      />
+    );
+    // Expand the category
+    fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
+    // Select the item once to initially select it
+    fireEvent.click(screen.getAllByTitle('Leury Garcia')[0]);
+    expect(onSelect).toHaveBeenCalledTimes(1);
+    // click it again
+    fireEvent.click(screen.getAllByTitle('Leury Garcia')[0]);
+    expect(onSelect).toHaveBeenCalledTimes(1);
+  });
+
   it('shows custom header when item is selected', () => {
     render(
       <HierarchyList

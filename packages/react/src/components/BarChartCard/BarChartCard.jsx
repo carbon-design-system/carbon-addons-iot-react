@@ -72,13 +72,17 @@ const BarChartCard = ({
       showTimeInGMT,
       decimalPrecision,
       tooltipDateFormatPattern,
+      truncation,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
 
-  const size = increaseSmallCardSize(sizeProp, 'BarChartCard');
+  const size = useMemo(() => increaseSmallCardSize(sizeProp, 'BarChartCard'), [sizeProp]);
 
-  const resizeHandles = isResizable ? getResizeHandles(children) : [];
+  const resizeHandles = useMemo(() => (isResizable ? getResizeHandles(children) : []), [
+    children,
+    isResizable,
+  ]);
 
   const memoizedGenerateSampleValues = useMemo(
     () =>
@@ -114,22 +118,37 @@ const BarChartCard = ({
 
   // If editable, show sample presentation data
   // If there is no series defined, there is no datasets to make sample data from
-  const values = isDashboardPreview
-    ? memoizedGenerateSampleValuesForEditor
-    : isEditable && !isEmpty(series)
-    ? memoizedGenerateSampleValues
-    : valuesProp;
-
-  const chartData = formatChartData(
-    series,
-    values,
-    categoryDataSourceId,
-    timeDataSourceId,
-    type,
-    isDashboardPreview
+  const values = useMemo(
+    () =>
+      isDashboardPreview
+        ? memoizedGenerateSampleValuesForEditor
+        : isEditable && !isEmpty(series)
+        ? memoizedGenerateSampleValues
+        : valuesProp,
+    [
+      isDashboardPreview,
+      isEditable,
+      memoizedGenerateSampleValues,
+      memoizedGenerateSampleValuesForEditor,
+      series,
+      valuesProp,
+    ]
   );
 
-  const isAllValuesEmpty = isEmpty(chartData);
+  const chartData = useMemo(
+    () =>
+      formatChartData(
+        series,
+        values,
+        categoryDataSourceId,
+        timeDataSourceId,
+        type,
+        isDashboardPreview
+      ),
+    [categoryDataSourceId, isDashboardPreview, series, timeDataSourceId, type, values]
+  );
+
+  const isAllValuesEmpty = useMemo(() => isEmpty(chartData), [chartData]);
 
   let ChartComponent = SimpleBarChart;
   if (type === BAR_CHART_TYPES.GROUPED) {
@@ -138,17 +157,24 @@ const BarChartCard = ({
     ChartComponent = StackedBarChart;
   }
 
-  const scaleType = timeDataSourceId ? 'time' : 'labels';
+  const scaleType = useMemo(() => (timeDataSourceId ? 'time' : 'labels'), [timeDataSourceId]);
 
-  const axes = mapValuesToAxes(layout, categoryDataSourceId, timeDataSourceId, type);
+  const axes = useMemo(
+    () => mapValuesToAxes(layout, categoryDataSourceId, timeDataSourceId, type),
+    [categoryDataSourceId, layout, timeDataSourceId, type]
+  );
 
   // Set the colors for each dataset
-  const uniqueDatasets = !isAllValuesEmpty
-    ? [...new Set(chartData.map((dataset) => dataset.group))]
-    : [];
-  const colors = !isAllValuesEmpty
-    ? formatColors(series, uniqueDatasets, isDashboardPreview, type)
-    : null;
+  const uniqueDatasets = useMemo(
+    () => (!isAllValuesEmpty ? [...new Set(chartData.map((dataset) => dataset.group))] : []),
+    [chartData, isAllValuesEmpty]
+  );
+
+  const colors = useMemo(
+    () =>
+      !isAllValuesEmpty ? formatColors(series, uniqueDatasets, isDashboardPreview, type) : null,
+    [isAllValuesEmpty, isDashboardPreview, series, type, uniqueDatasets]
+  );
 
   const tableColumns = useMemo(() => {
     return isAllValuesEmpty
@@ -186,6 +212,110 @@ const BarChartCard = ({
     [categoryDataSourceId, chartData, timeDataSourceId, type, values]
   );
 
+  const options = useMemo(
+    () => ({
+      animations: false,
+      accessibility: true,
+      axes: {
+        bottom: {
+          title: `${xLabel || ''} ${
+            layout === BAR_CHART_LAYOUTS.HORIZONTAL ? (unit ? `(${unit})` : '') : ''
+          }`,
+          scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
+          stacked:
+            type === BAR_CHART_TYPES.STACKED &&
+            layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
+            timeDataSourceId,
+          mapsTo: axes.bottomAxesMapsTo,
+          ...(domainRange && layout === BAR_CHART_LAYOUTS.VERTICAL ? { domain: domainRange } : {}),
+          ...(layout === BAR_CHART_LAYOUTS.HORIZONTAL && !isNil(decimalPrecision)
+            ? {
+                ticks: {
+                  formatter: (axisValue) =>
+                    chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
+                },
+              }
+            : {}),
+        },
+        left: {
+          title: `${yLabel || ''} ${
+            layout === BAR_CHART_LAYOUTS.VERTICAL ? (unit ? `(${unit})` : '') : ''
+          }`,
+          ...(layout === BAR_CHART_LAYOUTS.VERTICAL && !isNil(decimalPrecision)
+            ? {
+                ticks: {
+                  formatter: (axisValue) =>
+                    chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
+                },
+              }
+            : {}),
+          scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
+          stacked: type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
+          mapsTo: axes.leftAxesMapsTo,
+          ...(domainRange && layout === BAR_CHART_LAYOUTS.HORIZONTAL && timeDataSourceId
+            ? { domain: domainRange }
+            : {}),
+        },
+      },
+      legend: {
+        position: 'bottom',
+        enabled: chartData.length > 1,
+        clickable: !isEditable,
+        truncation,
+      },
+      containerResizable: true,
+      color: colors,
+      tooltip: {
+        valueFormatter: (tooltipValue) =>
+          chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
+        customHTML: (...args) =>
+          handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
+        groupLabel: i18n.tooltipGroupLabel,
+        totalLabel: i18n.tooltipTotalLabel,
+      },
+      // zoomBar should only be enabled for time-based charts
+      ...(zoomBar?.enabled &&
+      timeDataSourceId &&
+      (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
+        ? {
+            zoomBar: {
+              // [zoomBar.axes]: {    TODO: the top axes is the only one supported at the moment so default to top
+              top: {
+                enabled: zoomBar.enabled,
+                initialZoomDomain: zoomBar.initialZoomDomain,
+                type: zoomBar.view || 'slider_view', // default to slider view
+              },
+            },
+          }
+        : {}),
+    }),
+    [
+      axes.bottomAxesMapsTo,
+      axes.leftAxesMapsTo,
+      chartData.length,
+      colors,
+      decimalPrecision,
+      domainRange,
+      i18n.tooltipGroupLabel,
+      i18n.tooltipTotalLabel,
+      isEditable,
+      isExpanded,
+      layout,
+      locale,
+      scaleType,
+      showTimeInGMT,
+      size,
+      timeDataSourceId,
+      tooltipDateFormatPattern,
+      truncation,
+      type,
+      unit,
+      xLabel,
+      yLabel,
+      zoomBar,
+    ]
+  );
+
   return (
     <Card
       title={title}
@@ -218,84 +348,7 @@ const BarChartCard = ({
                 : 'bar-chart'
             }
             data={chartData}
-            options={{
-              animations: false,
-              accessibility: true,
-              axes: {
-                bottom: {
-                  title: `${xLabel || ''} ${
-                    layout === BAR_CHART_LAYOUTS.HORIZONTAL ? (unit ? `(${unit})` : '') : ''
-                  }`,
-                  scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
-                  stacked:
-                    type === BAR_CHART_TYPES.STACKED &&
-                    layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
-                    timeDataSourceId,
-                  mapsTo: axes.bottomAxesMapsTo,
-                  ...(domainRange && layout === BAR_CHART_LAYOUTS.VERTICAL
-                    ? { domain: domainRange }
-                    : {}),
-                  ...(layout === BAR_CHART_LAYOUTS.HORIZONTAL && !isNil(decimalPrecision)
-                    ? {
-                        ticks: {
-                          formatter: (axisValue) =>
-                            chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
-                        },
-                      }
-                    : {}),
-                },
-                left: {
-                  title: `${yLabel || ''} ${
-                    layout === BAR_CHART_LAYOUTS.VERTICAL ? (unit ? `(${unit})` : '') : ''
-                  }`,
-                  ...(layout === BAR_CHART_LAYOUTS.VERTICAL && !isNil(decimalPrecision)
-                    ? {
-                        ticks: {
-                          formatter: (axisValue) =>
-                            chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
-                        },
-                      }
-                    : {}),
-                  scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
-                  stacked:
-                    type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
-                  mapsTo: axes.leftAxesMapsTo,
-                  ...(domainRange && layout === BAR_CHART_LAYOUTS.HORIZONTAL && timeDataSourceId
-                    ? { domain: domainRange }
-                    : {}),
-                },
-              },
-              legend: {
-                position: 'bottom',
-                enabled: chartData.length > 1,
-                clickable: !isEditable,
-              },
-              containerResizable: true,
-              color: colors,
-              tooltip: {
-                valueFormatter: (tooltipValue) =>
-                  chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
-                customHTML: (...args) =>
-                  handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
-                groupLabel: i18n.tooltipGroupLabel,
-                totalLabel: i18n.tooltipTotalLabel,
-              },
-              // zoomBar should only be enabled for time-based charts
-              ...(zoomBar?.enabled &&
-              timeDataSourceId &&
-              (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
-                ? {
-                    zoomBar: {
-                      // [zoomBar.axes]: {    TODO: the top axes is the only one supported at the moment so default to top
-                      top: {
-                        enabled: zoomBar.enabled,
-                        initialZoomDomain: zoomBar.initialZoomDomain,
-                        type: zoomBar.view || 'slider_view', // default to slider view
-                      },
-                    },
-                  }
-                : {}),
-            }}
+            options={options}
             width="100%"
             height="100%"
           />
@@ -356,6 +409,10 @@ BarChartCard.defaultProps = {
   content: {
     type: BAR_CHART_TYPES.SIMPLE,
     layout: BAR_CHART_LAYOUTS.VERTICAL,
+    truncation: {
+      type: 'end_line',
+      threshold: 20,
+    },
   },
   locale: 'en',
   showTimeInGMT: false,

@@ -1,16 +1,11 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification, SkeletonText } from 'carbon-components-react';
-import isNil from 'lodash/isNil';
 import classnames from 'classnames';
-import update from 'immutability-helper';
+import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
-import {
-  DASHBOARD_EDITOR_CARD_TYPES,
-  CARD_ACTIONS,
-  CARD_TYPES,
-} from '../../constants/LayoutConstants';
+import { DASHBOARD_EDITOR_CARD_TYPES, CARD_TYPES } from '../../constants/LayoutConstants';
 import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
 import ImageGalleryModal, { ImagePropTypes } from '../ImageGalleryModal/ImageGalleryModal';
 
@@ -20,9 +15,8 @@ import {
   getDefaultCard,
   getDuplicateCard,
   renderBreakpointInfo,
-  handleKeyDown,
-  handleOnClick,
   DataItemsPropTypes,
+  renderDefaultIconByName,
 } from './editorUtils';
 
 const { iotPrefix } = settings;
@@ -34,8 +28,8 @@ const propTypes = {
   initialValue: PropTypes.shape({
     cards: PropTypes.array,
     layouts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    isSummaryDashboard: PropTypes.bool,
   }),
+  isSummaryDashboard: PropTypes.bool,
   /** supported card types */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
   /** if enabled, renders a ContentSwitcher with IconSwitches that allow for manually changing the breakpoint,
@@ -271,6 +265,8 @@ const propTypes = {
   }),
   /** return demo hotspots while we're editing image cards */
   onFetchDynamicDemoHotspots: PropTypes.func,
+  /** should we allow resizing cards dynamically */
+  isCardResizable: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -278,10 +274,11 @@ const defaultProps = {
     cards: [],
     layouts: {},
   },
+  isSummaryDashboard: false,
   breakpointSwitcher: null,
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   renderHeader: null,
-  renderIconByName: null,
+  renderIconByName: renderDefaultIconByName,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
   notification: null,
@@ -306,6 +303,7 @@ const defaultProps = {
   onValidateCardJson: null,
   onValidateUploadedImage: null,
   isLoading: false,
+  isCardResizable: true,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -343,6 +341,7 @@ export const baseClassName = `${iotPrefix}--dashboard-editor`;
 const DashboardEditor = ({
   title,
   initialValue,
+  isCardResizable,
   supportedCardTypes,
   breakpointSwitcher,
   renderHeader,
@@ -369,12 +368,21 @@ const DashboardEditor = ({
   onValidateCardJson,
   onValidateUploadedImage,
   availableDimensions,
+  isSummaryDashboard,
   isLoading,
   i18n,
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
 }) => {
+  React.useEffect(() => {
+    if (__DEV__) {
+      warning(
+        false,
+        'The `DashboardEditor` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
+      );
+    }
+  }, []);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   // Need to keep track of whether the image gallery is open or not
   const [isImageGalleryModalOpen, setIsImageGalleryModalOpen] = useState(false);
@@ -404,6 +412,16 @@ const DashboardEditor = ({
     window.dispatchEvent(new Event('resize'));
   }, [selectedBreakpointIndex]);
 
+  const scrollContainerRef = useRef();
+  // when a new card is added, scroll to the bottom of the page. Instead of trying to attach the ref to the card itself,
+  // check if the scrollHeight has changed in the scroll container, meaning a new card has been added
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo(0, scrollContainerRef.current.scrollHeight);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollContainerRef.current?.scrollHeight]);
+
   /**
    * Adds a default, empty card to the preview
    * @param {string} type card type
@@ -426,16 +444,17 @@ const DashboardEditor = ({
   );
 
   /**
-   * Adds a cloned card with a new unique id to the preview
+   * Adds a cloned card with a new unique id to the preview and place it next to the original card
    * @param {string} id
    */
   const duplicateCard = useCallback((id) => {
-    // eslint-disable-next-line no-shadow
-    setDashboardJson((dashboardJson) => {
-      const cardConfig = getDuplicateCard(dashboardJson.cards.find((i) => i.id === id));
+    setDashboardJson((dashboard) => {
+      const cardConfig = getDuplicateCard(dashboard.cards.find((card) => card.id === id));
+      const originalCardIndex = dashboard.cards.findIndex((card) => card.id === id);
+      dashboard.cards.splice(originalCardIndex, 0, cardConfig);
       return {
-        ...dashboardJson,
-        cards: [...dashboardJson.cards, cardConfig],
+        ...dashboard,
+        cards: dashboard.cards,
       };
     });
     setSelectedCardId(id);
@@ -491,99 +510,35 @@ const DashboardEditor = ({
     [availableImages, imagesToUpload, onCardChange]
   );
 
-  // Show the image gallery
-  const handleShowImageGallery = () => setIsImageGalleryModalOpen(true);
-
-  const handleImageSelection = (selectedImage) => {
-    let cardConfig = dashboardJson.cards.find((card) => card.id === selectedCardId);
-    // Update the card with the new image information
-    cardConfig = {
-      ...cardConfig,
-      content: { ...cardConfig.content, ...selectedImage },
-    };
-    handleOnCardChange(cardConfig);
-    setIsImageGalleryModalOpen(false);
-  };
-
-  const commonCardProps = useCallback(
-    (cardConfig, isSelected) => ({
-      key: cardConfig.id,
-      tooltip: cardConfig.description,
-      i18n: mergedI18n,
-      availableActions: { clone: true, delete: true },
-      onCardAction: (id, actionId, payload) => {
-        if (actionId === CARD_ACTIONS.CLONE_CARD) {
-          duplicateCard(id);
-        } else if (actionId === CARD_ACTIONS.DELETE_CARD) {
-          removeCard(id);
-        } else if (actionId === CARD_ACTIONS.ON_CARD_CHANGE) {
-          handleOnCardChange(update(cardConfig, payload));
-        }
-      },
-      renderIconByName,
-      tabIndex: 0,
-      onKeyDown: (e) => handleKeyDown(e, setSelectedCardId, cardConfig.id),
-      onClick: () => handleOnClick(setSelectedCardId, cardConfig.id),
-      className: `${baseClassName}--preview__card`,
-      isSelected,
-      // Add the show gallery to image card
-      onBrowseClick:
-        cardConfig.type === CARD_TYPES.IMAGE && isNil(cardConfig.content?.src)
-          ? handleShowImageGallery
-          : undefined,
-      validateUploadedImage:
-        cardConfig.type === CARD_TYPES.IMAGE ? onValidateUploadedImage : undefined,
-    }),
-    [
-      duplicateCard,
-      handleOnCardChange,
-      mergedI18n,
-      onValidateUploadedImage,
-      removeCard,
-      renderIconByName,
-    ]
+  const handleCardResize = useCallback(
+    ({ id, size }) => {
+      let cardConfig = dashboardJson.cards.find((card) => card.id === id);
+      // Update the card with the new image information
+      cardConfig = {
+        ...cardConfig,
+        size,
+      };
+      handleOnCardChange(cardConfig);
+    },
+    [dashboardJson.cards, handleOnCardChange]
   );
 
-  const cards = useMemo(
-    () =>
-      dashboardJson?.cards?.map((cardConfig) => {
-        const isSelected = cardConfig.id === selectedCardId;
-        const cardProps = commonCardProps(cardConfig, isSelected);
-        const dataItemsForCard = getValidDataItems ? getValidDataItems(cardConfig) : dataItems;
-        // if renderCardPreview function not defined, or it returns null, render default preview
-        return (
-          renderCardPreview(
-            cardConfig,
-            cardProps,
-            setSelectedCardId,
-            duplicateCard,
-            removeCard,
-            isSelected,
-            handleShowImageGallery
-          ) ?? (
-            <DashboardEditorCardRenderer
-              key={cardConfig.id}
-              {...cardConfig}
-              {...cardProps}
-              dataItems={dataItemsForCard}
-              availableDimensions={availableDimensions}
-              onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-            />
-          )
-        );
-      }),
-    [
-      availableDimensions,
-      commonCardProps,
-      dashboardJson,
-      dataItems,
-      duplicateCard,
-      getValidDataItems,
-      onFetchDynamicDemoHotspots,
-      removeCard,
-      renderCardPreview,
-      selectedCardId,
-    ]
+  const handleClose = useCallback(() => setIsImageGalleryModalOpen(false), []);
+  // Show the image gallery
+  const handleShowImageGallery = useCallback(() => setIsImageGalleryModalOpen(true), []);
+
+  const handleImageSelection = useCallback(
+    (selectedImage) => {
+      let cardConfig = dashboardJson.cards.find((card) => card.id === selectedCardId);
+      // Update the card with the new image information
+      cardConfig = {
+        ...cardConfig,
+        content: { ...cardConfig.content, ...selectedImage },
+      };
+      handleOnCardChange(cardConfig);
+      setIsImageGalleryModalOpen(false);
+    },
+    [dashboardJson.cards, handleOnCardChange, selectedCardId]
   );
 
   return isLoading ? (
@@ -597,6 +552,7 @@ const DashboardEditor = ({
           // enables overflow: auto if a specific breakpoint is selected so the width can be managed
           [`${baseClassName}__overflow`]: selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
         })}
+        ref={scrollContainerRef}
       >
         {renderHeader ? (
           renderHeader()
@@ -623,7 +579,8 @@ const DashboardEditor = ({
         <div
           className={classnames(`${baseClassName}--preview`, {
             // enables overflow: auto if a specific breakpoint is selected so the width can be managed
-            [`${baseClassName}__overflow`]: selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+            [`${baseClassName}--preview__selected-breakpoint`]:
+              selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
           })}
         >
           <div
@@ -656,7 +613,7 @@ const DashboardEditor = ({
                 <ImageGalleryModal
                   open={isImageGalleryModalOpen}
                   content={availableImages}
-                  onClose={() => setIsImageGalleryModalOpen(false)}
+                  onClose={handleClose}
                   onSubmit={handleImageSelection}
                   onDelete={onImageDelete}
                   gridButtonText={i18n.imageGalleryGridButtonText}
@@ -688,9 +645,34 @@ const DashboardEditor = ({
                       layouts: newLayouts,
                     });
                   }}
+                  onResizeStop={handleCardResize}
                   supportedLayouts={['lg', 'md', 'sm']}
                 >
-                  {cards}
+                  {dashboardJson?.cards?.map((cardConfig) => {
+                    const isSelected = cardConfig.id === selectedCardId;
+                    return (
+                      <DashboardEditorCardRenderer
+                        {...cardConfig}
+                        key={cardConfig.id}
+                        isResizable={isCardResizable}
+                        i18n={mergedI18n}
+                        isSelected={isSelected}
+                        getValidDataItems={getValidDataItems}
+                        dataItems={dataItems}
+                        availableDimensions={availableDimensions}
+                        onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+                        renderCardPreview={renderCardPreview}
+                        onCardChange={handleOnCardChange}
+                        onRemove={removeCard}
+                        onDuplicate={duplicateCard}
+                        baseClassName={baseClassName}
+                        onValidateUploadedImage={onValidateUploadedImage}
+                        onShowImageGallery={handleShowImageGallery}
+                        renderIconByName={renderIconByName}
+                        setSelectedCardId={setSelectedCardId}
+                      />
+                    );
+                  })}
                 </DashboardGrid>
               </ErrorBoundary>
             </div>
@@ -710,7 +692,7 @@ const DashboardEditor = ({
         >
           <CardEditor
             cardConfig={dashboardJson.cards.find((card) => card.id === selectedCardId)}
-            isSummaryDashboard={dashboardJson.isSummaryDashboard}
+            isSummaryDashboard={isSummaryDashboard}
             onShowGallery={() => setSelectedCardId(null)}
             onChange={handleOnCardChange}
             getValidDataItems={getValidDataItems}

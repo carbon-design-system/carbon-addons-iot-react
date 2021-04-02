@@ -107,7 +107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 id="manage-views-modal-search"
                 name="searchValue"
                 onChange={[Function]}
-                placeholder="Search views"
+                placeholder=""
                 role="searchbox"
                 type="text"
               />
@@ -1416,7 +1416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 id="manage-views-modal-search"
                 name="searchValue"
                 onChange={[Function]}
-                placeholder="Search views"
+                placeholder=""
                 role="searchbox"
                 type="text"
               />

@@ -159,6 +159,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/HotspotEditorModal/hotspot-editor-modal';
 @import 'components/HotspotEditorModal/DynamicHotspotSourcePicker/dynamic-hotspot-source-picker';
 @import 'components/SimpleIconDropdown/simple-icon-dropdown';
+@import 'components/RuleBuilder/rule-builder';
 
 //-------------------------------------
 // 🙈 Hidden (Not exposed on website)
@@ -188,6 +189,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/ComposedStructuredList/composed-structured-list';
 @import 'components/CardCodeEditor/card-code-editor';
 @import 'components/Dashboard/dashboard';
+@import 'components/Dashboard/dashboard-grid';
 @import 'components/DashboardEditor/dashboard-editor';
 @import 'components/DateTimePicker/date-time-picker';
 @import 'components/EmptyState/emptystate';
@@ -214,6 +216,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/PieChartCard/pie-chart-card';
 @import 'components/ProgressIndicator/progress-indicator';
 @import 'components/RuleBuilder/rulebuilder';
+@import 'components/SelectUsersModal/select-users-modal';
 @import 'components/SideNav/side-nav';
 @import 'components/SimplePagination/simple-pagination';
 @import 'components/SuiteHeader/suite-header';
@@ -240,3 +243,4 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/ValueCard/value-renderer';
 @import 'components/WizardInline/wizard-inline';
 @import 'components/WizardModal/wizard-modal';
+@import 'components/ComboChartCard/combo-chart-card';

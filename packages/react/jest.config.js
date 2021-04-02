@@ -4,6 +4,11 @@ module.exports = {
     '!src/**/*.story.js?(x)',
     '!src/**/hooks/*.js',
     '!src/components/SuiteHeader/util/suiteHeaderData.js',
+    '!src/components/FileUploader/stories/*.jsx',
+    '!src/components/Table/AsyncTable/*.js?(x)',
+    '!src/components/WizardInline/**/*.js?(x)',
+    '!src/components/Page/(EditPage|PageHero).jsx',
+    '!src/components/Dashboard/(Dashboard|CardRenderer).jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov'],
@@ -14,104 +19,23 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|WizardInline|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|ImageUploader|WizardHeader|TableHead|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
+    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
       lines: 80,
     },
-    // TODO: remove in next release
-    './src/components/WizardInline/WizardInline.jsx': {
-      branches: 70,
-    },
-    './src/components/Dashboard/DashboardGrid.jsx': {
-      statements: 72,
-      branches: 60,
-      lines: 71,
-    },
-    './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 61 },
+    './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
       // https://github.com/carbon-design-system/carbon-charts/issues/594
-      functions: 60,
+      functions: 69,
     },
-    './src/components/Table/TableHead/TableHead.jsx': {
-      statements: 73,
-      branches: 77,
-      lines: 73,
-      functions: 57,
-    },
-    './src/components/Table/TableHead/ColumnResize.jsx': {
-      statements: 36,
-      branches: 11,
-      lines: 36,
-      functions: 20,
-    },
-    './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': {
-      branches: 70,
-    },
-    './src/components/Table/TableToolbar/TableToolbar.jsx': { functions: 66 },
-    './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': {
-      statements: 79,
-      branches: 70,
-      lines: 78,
-      functions: 75,
-    },
-    './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': {
-      functions: 66,
-    },
-    './src/components/Table/StatefulTable.jsx': { branches: 66 },
-    './src/components/TileCatalog/CatalogContent.jsx': { branches: 50 },
-    './src/components/FileDrop/FileDrop.jsx': { branches: 53, functions: 75 },
-    './src/components/Dashboard/Dashboard.jsx': {
-      statements: 79,
-      branches: 50,
-      lines: 78,
-    },
-    './src/components/Dashboard/CardRenderer.jsx': {
-      statements: 51,
-      branches: 38,
-      lines: 51,
-      functions: 66,
-    },
-    './src/components/ImageCard/ImageHotspots.jsx': {
-      statements: 54,
-      branches: 61,
-      lines: 78,
-      functions: 50,
-    },
-    './src/components/ImageCard/ImageUploader.jsx': {
-      statements: 46,
-      branches: 35,
-      lines: 47,
-      functions: 26,
-    },
-    './src/components/ImageCard/ImageControls.jsx': { branches: 66 },
-    './src/components/Page/EditPage.jsx': {
-      statements: 63,
-      branches: 50,
-      lines: 63,
-      functions: 50,
-    },
-    './src/components/Table/AsyncTable/AsyncTable.jsx': {
-      statements: 56,
-      branches: 50,
-      lines: 57,
-      functions: 13,
-    },
-    './src/components/Table/TableHead/ColumnHeaderSelect/ColumnHeaderSelect.jsx': {
-      branches: 75,
-    },
-    './src/components/Page/PageHero.jsx': { branches: 77 },
-    './src/components/Page/PageTitle.jsx': { branches: 75 },
-    './src/components/ImageCard/ImageCard.jsx': { branches: 71 },
     './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
-      branches: 78,
+      // TODO: Add tests for tooltip interaction and formatting when below issue is solved
+      // https://github.com/carbon-design-system/carbon-charts/issues/594
+      functions: 77,
     },
-    './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': {
-      branches: 76,
-    },
-    './src/components/DateTimePicker/DateTimePicker.jsx': { branches: 67 },
   },
   globals: {
     __DEV__: false,

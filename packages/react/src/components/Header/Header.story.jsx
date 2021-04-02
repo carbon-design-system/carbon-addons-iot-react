@@ -6,6 +6,7 @@ import HeaderHelp from '@carbon/icons-react/lib/help/16';
 import Avatar from '@carbon/icons-react/lib/user--avatar/16';
 
 import { settings } from '../../constants/Settings';
+import { Tag } from '../Tag';
 
 import Header from './Header';
 
@@ -202,14 +203,31 @@ HeaderNoSubmenu.story = {
 
 export const HeaderSubtitle = () => (
   <div style={{ width: '100%', height: '100vh' }}>
-    <Header
-      {...HeaderMenuProps}
-      subtitle="Monitor"
-      className={`${iotPrefix}--header--story-test-class`}
-    />
+    <Header {...HeaderMenuProps} subtitle="Monitor" />
   </div>
 );
 
 HeaderSubtitle.story = {
   name: 'header subtitle',
+};
+
+export const HeaderComponentSubtitle = () => (
+  <div style={{ width: '100%', height: '100vh' }}>
+    <Header
+      {...HeaderMenuProps}
+      className={`${iotPrefix}--header--story-test-class`}
+      subtitle={
+        <div>
+          {'Monitor'}
+          <span style={{ 'margin-left': '1rem' }}>
+            <Tag>Admin Mode</Tag>
+          </span>
+        </div>
+      }
+    />
+  </div>
+);
+
+HeaderComponentSubtitle.story = {
+  name: 'header subtitle component',
 };

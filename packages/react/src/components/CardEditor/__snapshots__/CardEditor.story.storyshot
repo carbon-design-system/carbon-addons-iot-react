@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor With No Card Defined Gallery View And Custom Cards 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor With No Card Defined Gallery View And Custom Cards 1`] = `
 <div
   className="storybook-container"
 >
@@ -78,7 +78,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--search-input"
                     id="iot--list-header--search"
                     onChange={[Function]}
-                    placeholder="Enter a search"
+                    placeholder=""
                     role="searchbox"
                     type="text"
                     value=""
@@ -488,7 +488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor With Tooltip Link 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor With Tooltip Link 1`] = `
 <div
   className="storybook-container"
 >
@@ -518,6 +518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -550,6 +551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="bx--tabs"
               role="navigation"
+              scrollIntoView={false}
               selected={0}
             >
               <div
@@ -772,6 +774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <div
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  title="Select a time range"
                 >
                   <label
                     className="bx--label"
@@ -988,10 +991,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <input
                       aria-label={null}
                       checked={false}
-                      className="bx--toggle-input bx--toggle-input--small"
+                      className="bx--toggle-input"
                       id="calculated_value-card-number-compact"
                       onChange={[Function]}
                       onKeyUp={[Function]}
+                      size="sm"
                       type="checkbox"
                     />
                     <label
@@ -1002,16 +1006,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <span
                         className="bx--toggle__switch"
                       >
-                        <svg
-                          className="bx--toggle__check"
-                          height="5px"
-                          viewBox="0 0 6 5"
-                          width="6px"
-                        >
-                          <path
-                            d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
-                          />
-                        </svg>
                         <span
                           aria-hidden="true"
                           className="bx--toggle__text--off"
@@ -1094,7 +1088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor default 1`] = `
 <div
   className="storybook-container"
 >
@@ -1124,6 +1118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1156,6 +1151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="bx--tabs"
               role="navigation"
+              scrollIntoView={false}
               selected={0}
             >
               <div
@@ -1378,6 +1374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <div
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  title="Select a time range"
                 >
                   <label
                     className="bx--label"
@@ -1594,10 +1591,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <input
                       aria-label={null}
                       checked={false}
-                      className="bx--toggle-input bx--toggle-input--small"
+                      className="bx--toggle-input"
                       id="calculated_value-card-number-compact"
                       onChange={[Function]}
                       onKeyUp={[Function]}
+                      size="sm"
                       type="checkbox"
                     />
                     <label
@@ -1608,16 +1606,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <span
                         className="bx--toggle__switch"
                       >
-                        <svg
-                          className="bx--toggle__check"
-                          height="5px"
-                          viewBox="0 0 6 5"
-                          width="6px"
-                        >
-                          <path
-                            d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
-                          />
-                        </svg>
                         <span
                           aria-hidden="true"
                           className="bx--toggle__text--off"
@@ -1700,7 +1688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor for Image 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor for Image 1`] = `
 <div
   className="storybook-container"
 >
@@ -1730,6 +1718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1762,6 +1751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="bx--tabs"
               role="navigation"
+              scrollIntoView={false}
               selected={0}
             >
               <div
@@ -1984,6 +1974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <div
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  title="Select a time range"
                 >
                   <label
                     className="bx--label"
@@ -2282,6 +2273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <div
                     className="bx--dropdown__wrapper bx--list-box__wrapper"
+                    title="Select a color"
                   >
                     <label
                       className="bx--label"
@@ -2364,12 +2356,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <input
                         aria-label={null}
-                        className="bx--toggle-input bx--toggle-input--small"
+                        className="bx--toggle-input"
                         data-testid="iot--card-edit-form--input-toggle1"
                         defaultChecked={false}
                         id="iot--card-edit-form--input-toggle-1"
                         onChange={[Function]}
                         onKeyUp={[Function]}
+                        size="sm"
                         type="checkbox"
                       />
                       <label
@@ -2380,16 +2373,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <span
                           className="bx--toggle__switch"
                         >
-                          <svg
-                            className="bx--toggle__check"
-                            height="5px"
-                            viewBox="0 0 6 5"
-                            width="6px"
-                          >
-                            <path
-                              d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
-                            />
-                          </svg>
                           <span
                             aria-hidden="true"
                             className="bx--toggle__text--off"
@@ -2421,12 +2404,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <input
                         aria-label={null}
-                        className="bx--toggle-input bx--toggle-input--small"
+                        className="bx--toggle-input"
                         data-testid="iot--card-edit-form--input-toggle2"
                         defaultChecked={false}
                         id="iot--card-edit-form--input-toggle-2"
                         onChange={[Function]}
                         onKeyUp={[Function]}
+                        size="sm"
                         type="checkbox"
                       />
                       <label
@@ -2437,16 +2421,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <span
                           className="bx--toggle__switch"
                         >
-                          <svg
-                            className="bx--toggle__check"
-                            height="5px"
-                            viewBox="0 0 6 5"
-                            width="6px"
-                          >
-                            <path
-                              d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
-                            />
-                          </svg>
                           <span
                             aria-hidden="true"
                             className="bx--toggle__text--off"
@@ -2530,7 +2504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor for TimeSeries 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor for TimeSeries 1`] = `
 <div
   className="storybook-container"
 >
@@ -2560,6 +2534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <button
             className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -2592,6 +2567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="bx--tabs"
               role="navigation"
+              scrollIntoView={false}
               selected={0}
             >
               <div
@@ -2814,6 +2790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                 <div
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  title="Select a time range"
                 >
                   <label
                     className="bx--label"
@@ -2976,7 +2953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           aria-labelledby="downshift-2-label"
                           autoComplete="off"
                           className="bx--text-input bx--text-input--empty"
-                          data-testid="combo-box"
+                          data-testid="editor--data-series--combobox"
                           disabled={false}
                           id="timeseries_dataSourceIds-combobox"
                           onBlur={[Function]}
@@ -3064,6 +3041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <button
                                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3093,7 +3071,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 </svg>
                               </button>
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
+                                data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3167,6 +3146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <button
                                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3196,7 +3176,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 </svg>
                               </button>
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
+                                data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3384,11 +3365,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     aria-label={null}
                     checked={true}
-                    className="bx--toggle-input bx--toggle-input--small"
+                    className="bx--toggle-input"
                     data-testid="includeZeroOnXaxis-toggle"
                     id="includeZeroOnXaxis-toggle"
                     onChange={[Function]}
                     onKeyUp={[Function]}
+                    size="sm"
                     type="checkbox"
                   />
                   <label
@@ -3399,16 +3381,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <span
                       className="bx--toggle__switch"
                     >
-                      <svg
-                        className="bx--toggle__check"
-                        height="5px"
-                        viewBox="0 0 6 5"
-                        width="6px"
-                      >
-                        <path
-                          d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
-                        />
-                      </svg>
                       <span
                         aria-hidden="true"
                         className="bx--toggle__text--off"
@@ -3437,11 +3409,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     aria-label={null}
                     checked={true}
-                    className="bx--toggle-input bx--toggle-input--small"
+                    className="bx--toggle-input"
                     data-testid="includeZeroOnYaxis-toggle"
                     id="includeZeroOnYaxis-toggle"
                     onChange={[Function]}
                     onKeyUp={[Function]}
+                    size="sm"
                     type="checkbox"
                   />
                   <label
@@ -3452,16 +3425,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <span
                       className="bx--toggle__switch"
                     >
-                      <svg
-                        className="bx--toggle__check"
-                        height="5px"
-                        viewBox="0 0 6 5"
-                        width="6px"
-                      >
-                        <path
-                          d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
-                        />
-                      </svg>
                       <span
                         aria-hidden="true"
                         className="bx--toggle__text--off"
@@ -3543,7 +3506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor interactive 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor interactive 1`] = `
 <div
   className="storybook-container"
 >
@@ -3590,6 +3553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <button
               className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -3622,6 +3586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--tabs"
                 role="navigation"
+                scrollIntoView={false}
                 selected={0}
               >
                 <div
@@ -3844,6 +3809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <div
                     className="bx--dropdown__wrapper bx--list-box__wrapper"
+                    title="Select a time range"
                   >
                     <label
                       className="bx--label"
@@ -4060,10 +4026,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         aria-label={null}
                         checked={false}
-                        className="bx--toggle-input bx--toggle-input--small"
+                        className="bx--toggle-input"
                         id="card-1_value-card-number-compact"
                         onChange={[Function]}
                         onKeyUp={[Function]}
+                        size="sm"
                         type="checkbox"
                       />
                       <label
@@ -4074,16 +4041,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <span
                           className="bx--toggle__switch"
                         >
-                          <svg
-                            className="bx--toggle__check"
-                            height="5px"
-                            viewBox="0 0 6 5"
-                            width="6px"
-                          >
-                            <path
-                              d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
-                            />
-                          </svg>
                           <span
                             aria-hidden="true"
                             className="bx--toggle__text--off"
@@ -4167,7 +4124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor with no card defined (gallery view) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor with no card defined (gallery view) 1`] = `
 <div
   className="storybook-container"
 >
@@ -4245,7 +4202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--search-input"
                     id="iot--list-header--search"
                     onChange={[Function]}
-                    placeholder="Enter a search"
+                    placeholder=""
                     role="searchbox"
                     type="text"
                     value=""
@@ -4969,6 +4926,108 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor ️⚠️ Experimental Notice  1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--toast-notification bx--toast-notification--warning-alt"
+      kind="warning-alt"
+      role="alert"
+      style={
+        Object {
+          "marginBottom": "0.5rem",
+          "minWidth": "30rem",
+        }
+      }
+    >
+      <svg
+        aria-hidden={true}
+        className="bx--toast-notification__icon"
+        fill="currentColor"
+        focusable="false"
+        height={20}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M29.879,27.5212l-13-25.0363a1.04,1.04,0,0,0-1.7583,0l-13,25.0363A1.0015,1.0015,0,0,0,3,29H29a1.001,1.001,0,0,0,.8789-1.4788ZM14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+        />
+        <path
+          d="M14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+          data-icon-path="inner-path"
+          fill="none"
+        />
+        <title>
+          warning-alt icon
+        </title>
+      </svg>
+      <div
+        className="bx--toast-notification__details"
+      >
+        <h3
+          className="bx--toast-notification__title"
+        >
+          Experimental Component Notice
+        </h3>
+        <div
+          className="bx--toast-notification__subtitle"
+        >
+          <span>
+            CardEditor
+             is an
+             
+            <a
+              href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
+            >
+              experimental component
+            </a>
+             
+            and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
+          </span>
+        </div>
+        <div
+          className="bx--toast-notification__caption"
+        />
       </div>
     </div>
   </div>

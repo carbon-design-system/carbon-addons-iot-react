@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Stateful example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Stateful example 1`] = `
 <div
   className="storybook-container"
 >
@@ -24,6 +24,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -50,6 +55,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -380,6 +386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -389,6 +396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -428,7 +436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static 1`] = `
 <div
   className="storybook-container"
 >
@@ -452,6 +460,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -473,6 +486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -778,6 +792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -787,6 +802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -826,7 +842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static with Footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static with Footer 1`] = `
 <div
   className="storybook-container"
 >
@@ -850,6 +866,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -871,6 +892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -1175,6 +1197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1184,6 +1207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1223,7 +1247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static with Sidebar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static with Sidebar 1`] = `
 <div
   className="storybook-container"
 >
@@ -1247,6 +1271,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -1268,6 +1297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -1589,6 +1619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1598,6 +1629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1637,7 +1669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) with breadcrumbs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline with breadcrumbs 1`] = `
 <div
   className="storybook-container"
 >
@@ -1661,6 +1693,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -1682,6 +1719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -1987,6 +2025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1996,6 +2035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2035,7 +2075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) with error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline with error 1`] = `
 <div
   className="storybook-container"
 >
@@ -2059,6 +2099,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -2080,6 +2125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -2460,6 +2506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2469,6 +2516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2508,7 +2556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >

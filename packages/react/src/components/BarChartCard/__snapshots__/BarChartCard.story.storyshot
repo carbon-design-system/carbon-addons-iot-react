@@ -2171,7 +2171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="timestamp"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-0-timestamp"
@@ -2190,7 +2190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="Amsterdam"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-0-Amsterdam"
@@ -2206,7 +2206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="New York"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-0-New York"
@@ -2222,7 +2222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="Bangkok"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-0-Bangkok"
@@ -2238,7 +2238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="San Francisco"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-0-San Francisco"
@@ -2259,7 +2259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="timestamp"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-1-timestamp"
@@ -2278,7 +2278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="Amsterdam"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-1-Amsterdam"
@@ -2294,7 +2294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="New York"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-1-New York"
@@ -2310,7 +2310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="Bangkok"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-1-Bangkok"
@@ -2326,7 +2326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="San Francisco"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-1-San Francisco"
@@ -2347,7 +2347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="timestamp"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-2-timestamp"
@@ -2366,7 +2366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="Amsterdam"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-2-Amsterdam"
@@ -2382,7 +2382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="New York"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-2-New York"
@@ -2398,7 +2398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="Bangkok"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-2-Bangkok"
@@ -2414,7 +2414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="San Francisco"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-2-San Francisco"
@@ -2435,7 +2435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="timestamp"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-3-timestamp"
@@ -2454,7 +2454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="Amsterdam"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-3-Amsterdam"
@@ -2470,7 +2470,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="New York"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-3-New York"
@@ -2486,7 +2486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="Bangkok"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-3-Bangkok"
@@ -2502,7 +2502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="San Francisco"
                             data-offset={0}
                             id="cell-BarChartCard-table-dataindex-3-San Francisco"

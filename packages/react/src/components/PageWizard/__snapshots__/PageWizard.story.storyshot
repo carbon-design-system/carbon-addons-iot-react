@@ -558,6 +558,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
             >
               <button
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -567,6 +568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               </button>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -624,6 +626,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -963,6 +970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <button
                     className="iot--btn bx--btn bx--btn--secondary"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -972,6 +980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   </button>
                   <button
                     className="iot--btn bx--btn bx--btn--primary"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -1031,6 +1040,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -1378,6 +1392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   </button>
                   <button
                     className="iot--btn bx--btn bx--btn--secondary"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -1387,6 +1402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   </button>
                   <button
                     className="iot--btn bx--btn bx--btn--primary"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -1488,6 +1504,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -1644,6 +1665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <button
                     className="iot--btn bx--btn bx--btn--secondary"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -1653,6 +1675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   </button>
                   <button
                     className="iot--btn bx--btn bx--btn--primary"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -2252,6 +2275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
             >
               <button
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2261,6 +2285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               </button>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2318,6 +2343,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -2657,6 +2687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <button
                     className="iot--btn bx--btn bx--btn--secondary"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -2666,6 +2697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   </button>
                   <button
                     className="iot--btn bx--btn bx--btn--primary"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -3265,6 +3297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
             >
               <button
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -3274,6 +3307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               </button>
               <button
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -3331,6 +3365,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -3977,6 +4016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <button
                     className="iot--btn bx--btn bx--btn--secondary"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -3986,6 +4026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   </button>
                   <button
                     className="iot--btn bx--btn bx--btn--primary"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}

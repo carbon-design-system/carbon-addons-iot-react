@@ -399,6 +399,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"

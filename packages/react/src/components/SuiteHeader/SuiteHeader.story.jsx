@@ -12,6 +12,8 @@ import Bee from '@carbon/icons-react/lib/bee/24';
 import Car from '@carbon/icons-react/lib/car/24';
 import Chat from '@carbon/icons-react/lib/chat/24';
 
+import { Tag } from '../Tag';
+
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
 
@@ -303,6 +305,51 @@ Default.story = {
   name: 'default',
 };
 
+export const HeaderWithExtraContent = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName="Application Suite"
+      appName="Application Name"
+      extraContent={<Tag>Admin Mode</Tag>}
+      userDisplayName="Admin User"
+      username="adminuser"
+      routes={{
+        profile: 'https://www.ibm.com',
+        navigator: 'https://www.ibm.com',
+        admin: 'https://www.ibm.com',
+        logout: 'https://www.ibm.com',
+        whatsNew: 'https://www.ibm.com',
+        gettingStarted: 'https://www.ibm.com',
+        documentation: 'https://www.ibm.com',
+        requestEnhancement: 'https://www.ibm.com',
+        support: 'https://www.ibm.com',
+        about: 'https://www.ibm.com',
+        workspaceId: 'workspace1',
+        domain: 'ibm.com',
+      }}
+      i18n={SuiteHeaderI18N[language]}
+      applications={object('applications', [
+        {
+          id: 'monitor',
+          name: 'Monitor',
+          href: 'https://www.ibm.com',
+        },
+        {
+          id: 'health',
+          name: 'Health',
+          href: 'https://www.ibm.com',
+          isExternal: true,
+        },
+      ])}
+    />
+  );
+};
+
+HeaderWithExtraContent.story = {
+  name: 'Header with extra content',
+};
+
 export const HeaderWithSideNav = () => (
   <SuiteHeader
     suiteName="Application Suite"
@@ -342,6 +389,45 @@ export const HeaderWithSideNav = () => (
 
 HeaderWithSideNav.story = {
   name: 'Header with side nav',
+};
+
+export const HeaderWithCustomSideNav = () => (
+  <SuiteHeader
+    suiteName="Application Suite"
+    appName="Application Name"
+    userDisplayName="Admin User"
+    username="adminuser"
+    routes={{
+      profile: 'https://www.ibm.com',
+      navigator: 'https://www.ibm.com',
+      admin: 'https://www.ibm.com',
+      logout: 'https://www.ibm.com',
+      whatsNew: 'https://www.ibm.com',
+      gettingStarted: 'https://www.ibm.com',
+      documentation: 'https://www.ibm.com',
+      requestEnhancement: 'https://www.ibm.com',
+      support: 'https://www.ibm.com',
+      about: 'https://www.ibm.com',
+    }}
+    applications={[
+      {
+        id: 'monitor',
+        name: 'Monitor',
+        href: 'https://www.ibm.com',
+      },
+      {
+        id: 'health',
+        name: 'Health',
+        href: 'https://www.ibm.com',
+        isExternal: true,
+      },
+    ]}
+    hasSideNav
+    onSideNavToggled={() => alert('onSideNavToggled')}
+  />
+);
+HeaderWithCustomSideNav.story = {
+  name: 'Header with application-controlled side nav',
 };
 
 export const HeaderWithCustomActionItems = () => (

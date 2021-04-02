@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DateTime Picker Default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateTime Picker Default 1`] = `
 <div
   className="storybook-container"
 >
@@ -22,13 +22,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
-        id="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box "
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -178,7 +180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DateTime Picker Light version 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateTime Picker Light version 1`] = `
 <div
   className="storybook-container"
 >
@@ -200,13 +202,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
-        id="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box iot--date-time-picker__box--light"
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -356,7 +360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DateTime Picker Selected absolute 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateTime Picker Selected absolute 1`] = `
 <div
   className="storybook-container"
 >
@@ -378,13 +382,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
-        id="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box "
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -440,15 +446,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <input
                           checked={false}
                           className="bx--radio-button"
-                          id="relative"
-                          name="radiogroup"
+                          id="datetimepicker-relative"
+                          name="datetimepicker-radiogroup"
                           onChange={[Function]}
                           type="radio"
                           value="RELATIVE"
                         />
                         <label
                           className="bx--radio-button__label"
-                          htmlFor="relative"
+                          htmlFor="datetimepicker-relative"
                         >
                           <span
                             className="bx--radio-button__appearance"
@@ -466,15 +472,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <input
                           checked={true}
                           className="bx--radio-button"
-                          id="absolute"
-                          name="radiogroup"
+                          id="datetimepicker-absolute"
+                          name="datetimepicker-radiogroup"
                           onChange={[Function]}
                           type="radio"
                           value="ABSOLUTE"
                         />
                         <label
                           className="bx--radio-button__label"
-                          htmlFor="absolute"
+                          htmlFor="datetimepicker-absolute"
                         >
                           <span
                             className="bx--radio-button__appearance"
@@ -489,7 +495,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                 </fieldset>
-                <div>
+                <div
+                  data-testId="date-time-picker-datepicker"
+                >
                   <div
                     className="iot--date-time-picker__datepicker"
                   >
@@ -509,7 +517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <input
                               className="bx--date-picker__input"
                               disabled={false}
-                              id="date-picker-input-start"
+                              id="datetimepicker-date-picker-input-start"
                               onChange={[Function]}
                               onClick={[Function]}
                               pattern="\\\\d{1,2}\\\\/\\\\d{1,2}\\\\/\\\\d{4}"
@@ -543,7 +551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <input
                               className="bx--date-picker__input"
                               disabled={false}
-                              id="date-picker-input-end"
+                              id="datetimepicker-date-picker-input-end"
                               onChange={[Function]}
                               onClick={[Function]}
                               pattern="\\\\d{1,2}\\\\/\\\\d{1,2}\\\\/\\\\d{4}"
@@ -590,7 +598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <label
                             className="bx--label"
-                            htmlFor="start-time"
+                            htmlFor="datetimepicker-start-time"
                           >
                             Start time
                           </label>
@@ -604,7 +612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 autoComplete="off"
                                 className="bx--time-picker__input-field bx--text-input"
                                 disabled={false}
-                                id="start-time"
+                                id="datetimepicker-start-time"
                                 maxLength={5}
                                 onBlur={[Function]}
                                 onChange={[Function]}
@@ -692,7 +700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <label
                             className="bx--label"
-                            htmlFor="end-time"
+                            htmlFor="datetimepicker-end-time"
                           >
                             End time
                           </label>
@@ -706,7 +714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 autoComplete="off"
                                 className="bx--time-picker__input-field bx--text-input"
                                 disabled={false}
-                                id="end-time"
+                                id="datetimepicker-end-time"
                                 maxLength={5}
                                 onBlur={[Function]}
                                 onChange={[Function]}
@@ -844,7 +852,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DateTime Picker Selected preset 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateTime Picker Selected preset 1`] = `
 <div
   className="storybook-container"
 >
@@ -866,13 +874,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
-        id="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box "
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -1022,7 +1032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DateTime Picker Selected relative 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateTime Picker Selected relative 1`] = `
 <div
   className="storybook-container"
 >
@@ -1044,13 +1054,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
-        id="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box "
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -1106,15 +1118,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <input
                           checked={true}
                           className="bx--radio-button"
-                          id="relative"
-                          name="radiogroup"
+                          id="datetimepicker-relative"
+                          name="datetimepicker-radiogroup"
                           onChange={[Function]}
                           type="radio"
                           value="RELATIVE"
                         />
                         <label
                           className="bx--radio-button__label"
-                          htmlFor="relative"
+                          htmlFor="datetimepicker-relative"
                         >
                           <span
                             className="bx--radio-button__appearance"
@@ -1132,15 +1144,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <input
                           checked={false}
                           className="bx--radio-button"
-                          id="absolute"
-                          name="radiogroup"
+                          id="datetimepicker-absolute"
+                          name="datetimepicker-radiogroup"
                           onChange={[Function]}
                           type="radio"
                           value="ABSOLUTE"
                         />
                         <label
                           className="bx--radio-button__label"
-                          htmlFor="absolute"
+                          htmlFor="datetimepicker-absolute"
                         >
                           <span
                             className="bx--radio-button__appearance"
@@ -1180,7 +1192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               aria-describedby={null}
                               aria-label="Numeric input field with increment and decrement buttons"
                               disabled={false}
-                              id="last-number"
+                              id="datetimepicker-last-number"
                               min={0}
                               onChange={[Function]}
                               pattern="[0-9]*"
@@ -1255,7 +1267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <label
                             className="bx--label bx--visually-hidden"
-                            htmlFor="last-interval"
+                            htmlFor="datetimepicker-last-interval"
                           >
                             Select
                           </label>
@@ -1266,7 +1278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <select
                               className="bx--select-input"
                               defaultValue="MINUTES"
-                              id="last-interval"
+                              id="datetimepicker-last-interval"
                               onChange={[Function]}
                             >
                               <option
@@ -1357,7 +1369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <label
                             className="bx--label bx--visually-hidden"
-                            htmlFor="relative-to-when"
+                            htmlFor="datetimepicker-relative-to-when"
                           >
                             Select
                           </label>
@@ -1368,7 +1380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <select
                               className="bx--select-input"
                               defaultValue="TODAY"
-                              id="relative-to-when"
+                              id="datetimepicker-relative-to-when"
                               onChange={[Function]}
                             >
                               <option
@@ -1422,7 +1434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 autoComplete="off"
                                 className="bx--time-picker__input-field bx--text-input"
                                 disabled={false}
-                                id="relative-to-time"
+                                id="datetimepicker-relative-to-time"
                                 maxLength={5}
                                 onBlur={[Function]}
                                 onChange={[Function]}
@@ -1560,7 +1572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DateTime Picker Without a relative option 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateTime Picker Without a relative option 1`] = `
 <div
   className="storybook-container"
 >
@@ -1582,13 +1594,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--date-time-picker__wrapper"
-        id="iot--date-time-picker__wrapper"
+        data-testid="date-time-picker"
+        id="datetimepicker-iot--date-time-picker__wrapper"
       >
         <div
           className="iot--date-time-picker__box "
         >
           <div
             className="iot--date-time-picker__field"
+            data-testid="date-time-picker__field"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"

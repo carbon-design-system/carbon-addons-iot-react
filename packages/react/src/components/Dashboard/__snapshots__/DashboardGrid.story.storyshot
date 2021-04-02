@@ -709,7 +709,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 >
                   <div
                     className="iot--value-card__attribute-label"
-                  />
+                  >
+                    <span />
+                  </div>
                   <div
                     className="iot--value-card__attribute"
                   >
@@ -1539,7 +1541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-10-alert"
@@ -1559,7 +1561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-10-hour"
@@ -1579,7 +1581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-10-pressure"
@@ -1604,7 +1606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-11-alert"
@@ -1624,7 +1626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-11-hour"
@@ -1644,7 +1646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-11-pressure"
@@ -1669,7 +1671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-1-alert"
@@ -1689,7 +1691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-1-hour"
@@ -1709,7 +1711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-1-pressure"
@@ -1734,7 +1736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-2-alert"
@@ -1754,7 +1756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-2-hour"
@@ -1774,7 +1776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-2-pressure"
@@ -1799,7 +1801,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-6-alert"
@@ -1819,7 +1821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-6-hour"
@@ -1839,7 +1841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-6-pressure"
@@ -1864,7 +1866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-3-alert"
@@ -1884,7 +1886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-3-hour"
@@ -1904,7 +1906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-3-pressure"
@@ -1929,7 +1931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-4-alert"
@@ -1949,7 +1951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-4-hour"
@@ -1969,7 +1971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-4-pressure"
@@ -1994,7 +1996,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-8-alert"
@@ -2014,7 +2016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-8-hour"
@@ -2034,7 +2036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-8-pressure"
@@ -2059,7 +2061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-9-alert"
@@ -2079,7 +2081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-9-hour"
@@ -2099,7 +2101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-9-pressure"
@@ -2124,7 +2126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-5-alert"
@@ -2144,7 +2146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-5-hour"
@@ -2164,7 +2166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-5-pressure"
@@ -2200,8 +2202,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-3"
-                      id="bx-pagination-select-3-count-label"
+                      htmlFor="bx-pagination-select-4"
+                      id="bx-pagination-select-4-count-label"
                     >
                       Items per page:
                     </label>
@@ -2220,7 +2222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-3"
+                              id="bx-pagination-select-4"
                               onChange={[Function]}
                               value={10}
                             >
@@ -2285,7 +2287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-3-right"
+                          htmlFor="bx-pagination-select-4-right"
                         >
                           Page number, of 2 pages
                         </label>
@@ -2298,7 +2300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-3-right"
+                              id="bx-pagination-select-4-right"
                               onChange={[Function]}
                               value={1}
                             >
@@ -3324,200 +3326,217 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "flex": 1,
+            "display": "flex",
           }
         }
       >
         <div
-          className="react-grid-layout iot--dashboard-grid"
-          onDragEnter={[Function]}
-          onDragLeave={[Function]}
-          onDragOver={[Function]}
-          onDrop={[Function]}
           style={
             Object {
-              "height": "304px",
+              "width": "200px",
+            }
+          }
+        >
+          Sample sidebar
+        </div>
+        <div
+          style={
+            Object {
+              "flex": 1,
             }
           }
         >
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My Facility Metrics"
-            data-testid="Card"
-            id="facility"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="react-grid-layout iot--dashboard-grid"
+            onDragEnter={[Function]}
+            onDragLeave={[Function]}
+            onDragOver={[Function]}
+            onDrop={[Function]}
             style={
               Object {
-                "--card-default-height": "304px",
                 "height": "304px",
-                "left": "0%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "49.375%",
               }
             }
-            type="VALUE"
           >
             <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Facility Metrics"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Facility Metrics
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+              className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+              content="My Facility Metrics"
+              data-testid="Card"
+              id="facility"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              role="presentation"
               style={
                 Object {
-                  "--card-content-height": "256px",
+                  "--card-default-height": "304px",
+                  "height": "304px",
+                  "left": "0%",
+                  "position": "absolute",
+                  "top": "0px",
+                  "width": "49.375%",
                 }
               }
+              type="VALUE"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
+              <div
+                className="iot--card--header"
+              >
+                <span
+                  className="iot--card--title"
+                  title="Facility Metrics"
+                >
+                  <div
+                    className="iot--card--title--text"
+                  >
+                    Facility Metrics
+                  </div>
+                </span>
+                <div
+                  className="iot--card--toolbar"
+                />
+              </div>
+              <div
+                className="iot--card--content"
                 style={
                   Object {
-                    "touchAction": "none",
+                    "--card-content-height": "256px",
                   }
                 }
-              />
-            </div>
-          </div>
-          <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My Humidity Values"
-            data-testid="Card"
-            id="humidity"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
-            style={
-              Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "50.625%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
-              }
-            }
-            type="VALUE"
-          >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Humidity"
               >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Humidity
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
+                <span
+                  className="react-resizable-handle react-resizable-handle-se"
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "touchAction": "none",
+                    }
+                  }
+                />
+              </div>
             </div>
             <div
-              className="iot--card--content"
+              className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+              content="My Humidity Values"
+              data-testid="Card"
+              id="humidity"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              role="presentation"
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "--card-default-height": "144px",
+                  "height": "144px",
+                  "left": "50.625%",
+                  "position": "absolute",
+                  "top": "0px",
+                  "width": "24.0625%",
                 }
               }
+              type="VALUE"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
+              <div
+                className="iot--card--header"
+              >
+                <span
+                  className="iot--card--title"
+                  title="Humidity"
+                >
+                  <div
+                    className="iot--card--title--text"
+                  >
+                    Humidity
+                  </div>
+                </span>
+                <div
+                  className="iot--card--toolbar"
+                />
+              </div>
+              <div
+                className="iot--card--content"
                 style={
                   Object {
-                    "touchAction": "none",
+                    "--card-content-height": "96px",
                   }
                 }
-              />
-            </div>
-          </div>
-          <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My utilization chart"
-            data-testid="Card"
-            id="utilization"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
-            style={
-              Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "75.9375%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
-              }
-            }
-            type="VALUE"
-          >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Utilization"
               >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Utilization
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
+                <span
+                  className="react-resizable-handle react-resizable-handle-se"
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "touchAction": "none",
+                    }
+                  }
+                />
+              </div>
             </div>
             <div
-              className="iot--card--content"
+              className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+              content="My utilization chart"
+              data-testid="Card"
+              id="utilization"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              role="presentation"
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "--card-default-height": "144px",
+                  "height": "144px",
+                  "left": "75.9375%",
+                  "position": "absolute",
+                  "top": "0px",
+                  "width": "24.0625%",
                 }
               }
+              type="VALUE"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
+              <div
+                className="iot--card--header"
+              >
+                <span
+                  className="iot--card--title"
+                  title="Utilization"
+                >
+                  <div
+                    className="iot--card--title--text"
+                  >
+                    Utilization
+                  </div>
+                </span>
+                <div
+                  className="iot--card--toolbar"
+                />
+              </div>
+              <div
+                className="iot--card--content"
                 style={
                   Object {
-                    "touchAction": "none",
+                    "--card-content-height": "96px",
                   }
                 }
-              />
+              >
+                <span
+                  className="react-resizable-handle react-resizable-handle-se"
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "touchAction": "none",
+                    }
+                  }
+                />
+              </div>
             </div>
           </div>
         </div>

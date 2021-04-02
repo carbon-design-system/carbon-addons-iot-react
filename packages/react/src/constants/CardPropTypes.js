@@ -337,6 +337,13 @@ export const BarChartCardPropTypes = {
     unit: PropTypes.string,
     /** Optionally addes a zoom bar to the chart */
     zoomBar: ZoomBarPropTypes,
+    /** carbon charts legend truncation options */
+    truncation: PropTypes.shape({
+      /** truncation type */
+      type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
+      /** number of characters needed to enable truncation */
+      threshold: PropTypes.number,
+    }),
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
@@ -370,7 +377,14 @@ export const PieCardPropTypes = {
      * chart label info such as x & y positions etc */
     labelsFormatter: PropTypes.func,
     /** The position of the legend in relation to the chart, can be 'bottom' or 'top'. */
-    legendPosition: PropTypes.string,
+    legendPosition: PropTypes.oneOf(['top', 'bottom']),
+    /** carbon charts legend truncation options */
+    truncation: PropTypes.shape({
+      /** truncation type */
+      type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
+      /** number of characters needed to enable truncation */
+      threshold: PropTypes.number,
+    }),
   }),
   /** Used to overide the internal components and props for advanced customisation */
   overrides: PropTypes.shape({
@@ -511,6 +525,65 @@ export const TimeRangeOptionsPropTypes = (props, propName, componentName) => {
     }
   }
   return error;
+};
+
+export const ComboChartPropTypes = {
+  content: PropTypes.shape({
+    /** Which combination of charts should be rendered in the underlying <ComboChart> control */
+    comboChartTypes: PropTypes.arrayOf(
+      PropTypes.shape({
+        type: PropTypes.oneOf([
+          'scatter',
+          'line',
+          'simple-bar',
+          'stacked-bar',
+          'grouped-bar',
+          'area',
+          'stacked-area',
+        ]),
+        options: PropTypes.object,
+        /* Name of the dataset/series the chart should follow */
+        correspondingDatasets: PropTypes.arrayOf(PropTypes.string),
+      })
+    ),
+
+    /** the number of decimals to show in the legend and on the y-axis */
+    decimalPrecision: PropTypes.number,
+    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
+    includeZeroOnXaxis: PropTypes.bool,
+    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
+    includeZeroOnYaxis: PropTypes.bool,
+    /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
+    addSpaceOnEdges: PropTypes.number,
+
+    curve: PropTypes.string,
+    legend: PropTypes.shape({
+      alignment: PropTypes.oneOf(['center', 'left', 'right']),
+      /** the clickability of legend items */
+      clickable: PropTypes.boolean,
+      enabled: PropTypes.boolean,
+      order: PropTypes.arrayOf(PropTypes.string),
+      position: PropTypes.oneOf(['bottom', 'left', 'right', 'top']),
+      truncation: PropTypes.shape({
+        numCharater: PropTypes.number,
+        threshold: PropTypes.number,
+        types: PropTypes.string,
+      }),
+    }),
+
+    timeDataSourceId: PropTypes.string,
+
+    /** Dotted x-axis lines used for denoting data thresholds, etc */
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        fillColor: PropTypes.string,
+        label: PropTypes.string,
+        value: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+        /** a function to format the threshold values */
+        valueFormatter: PropTypes.func,
+      })
+    ),
+  }),
 };
 
 export const CardPropTypes = {

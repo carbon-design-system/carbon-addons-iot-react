@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -146,7 +146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -1230,7 +1230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList hidden pagination 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList hidden pagination 1`] = `
 <div
   className="storybook-container"
 >
@@ -1376,7 +1376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -1598,7 +1598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList large row list with multiple actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList large row list with multiple actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -1747,7 +1747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -2233,7 +2233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList large row list with overflow menu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList large row list with overflow menu 1`] = `
 <div
   className="storybook-container"
 >
@@ -2382,7 +2382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -2873,7 +2873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList list with empty row 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList list with empty row 1`] = `
 <div
   className="storybook-container"
 >
@@ -3022,7 +3022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -3285,7 +3285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList list with large row 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList list with large row 1`] = `
 <div
   className="storybook-container"
 >
@@ -3434,7 +3434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -3723,7 +3723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList list with multiple actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList list with multiple actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -3872,7 +3872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -4328,7 +4328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList list with overflow grow 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList list with overflow grow 1`] = `
 <div
   className="storybook-container"
 >
@@ -4477,7 +4477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -5193,7 +5193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList list with overflow menu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList list with overflow menu 1`] = `
 <div
   className="storybook-container"
 >
@@ -5342,7 +5342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -5803,7 +5803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList list with pageSize 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList list with pageSize 1`] = `
 <div
   className="storybook-container"
 >
@@ -5952,7 +5952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -6236,7 +6236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList list with reorder 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList list with reorder 1`] = `
 <div
   className="storybook-container"
 >
@@ -6382,7 +6382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -7253,7 +7253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList tall list (isFullHeight = false) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList tall list (isFullHeight = false) 1`] = `
 <div
   className="storybook-container"
 >
@@ -7402,7 +7402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""
@@ -7574,7 +7574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/SimpleList tall list (isFullHeight = true) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimpleList tall list (isFullHeight = true) 1`] = `
 <div
   className="storybook-container"
 >
@@ -7723,7 +7723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a search"
+                placeholder=""
                 role="searchbox"
                 type="text"
                 value=""

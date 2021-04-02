@@ -23,6 +23,11 @@ import {
   tableRowActionComplete,
   tableRowActionError,
   tableColumnResize,
+  tableAdvancedFiltersToggle,
+  tableAdvancedFiltersRemove,
+  tableAdvancedFiltersApply,
+  tableAdvancedFiltersCancel,
+  tableAdvancedFiltersCreate,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -69,7 +74,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         data: initialData,
         isLoading,
         view: initialState,
-        totalItems: pagination.totalItems || initialData.length,
+        totalItems: totalItems || initialData.length,
         hasUserViewManagement,
       })
     );
@@ -83,6 +88,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     isLoading,
     initialState.pagination,
     initialState.filters,
+    initialState.advancedFilters,
     initialState.toolbar.activeBar,
     // Remove the icon as it's a React.Element which can not be compared
     initialState.toolbar.batchActions.map((action) => {
@@ -120,6 +126,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onApplyBatchAction,
     onApplySearch,
     onDownloadCSV,
+    onToggleAdvancedFilter,
+    onRemoveAdvancedFilter,
+    onApplyAdvancedFilter,
+    onCancelAdvancedFilter,
+    onCreateAdvancedFilter,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -201,6 +212,26 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onApplySearch: (string) => {
         dispatch(tableSearchApply(string));
         callbackParent(onApplySearch, string);
+      },
+      onToggleAdvancedFilter: () => {
+        dispatch(tableAdvancedFiltersToggle());
+        callbackParent(onToggleAdvancedFilter);
+      },
+      onRemoveAdvancedFilter: (event, filterId) => {
+        dispatch(tableAdvancedFiltersRemove(filterId));
+        callbackParent(onRemoveAdvancedFilter);
+      },
+      onApplyAdvancedFilter: (filterState) => {
+        dispatch(tableAdvancedFiltersApply(filterState));
+        callbackParent(onApplyAdvancedFilter);
+      },
+      onCancelAdvancedFilter: () => {
+        dispatch(tableAdvancedFiltersCancel());
+        callbackParent(onCancelAdvancedFilter);
+      },
+      onCreateAdvancedFilter: () => {
+        dispatch(tableAdvancedFiltersCreate());
+        callbackParent(onCreateAdvancedFilter);
       },
       onDownloadCSV,
     },

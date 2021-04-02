@@ -3,9 +3,10 @@
   "engines": {
     "node": "12.x || 14.x"
   },
-  "workspaces": [
-    "packages/react"
-  ],
+  "workspaces": {
+    "packages": ["packages/*"],
+    "nohoist": ["carbon-components-angular"]
+  },
   "main": "lib/src/index.js",
   "module": "es/src/index.js",
   "unpkg": "umd/carbon-addons-iot-react.js",
@@ -24,11 +25,14 @@
     "build": "lerna run --stream build",
     "lint": "lerna run --stream lint",
     "test": "lerna run --stream test",
+    "test:ci": "lerna run --stream test:ci",
     "start": "lerna run --stream start",
     "clean": "lerna run --stream clean",
-    "format": "lerna run --stream format",
-    "format:check": "lerna run --stream format:check",
-    "publish-npm": "bash ./scripts/release.sh"
+    "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
+    "format:check": "prettier --check \"**/*.{scss,css,js,jsx,md,ts}\" --loglevel warn",
+    "publish-npm": "bash ./scripts/release.sh",
+    "version": "yarn format",
+    "storybook": "node ./scripts/storybook.js"
   },
   "husky": {
     "hooks": {
@@ -58,7 +62,9 @@
   "devDependencies": {
     "husky": "^1.3.1",
     "lerna": "^3.22.1",
-    "lint-staged": "^8.1.0"
+    "lint-staged": "^8.1.0",
+    "prettier": "^2.1.2",
+    "prettier-config-carbon": "^0.4.0"
   },
   "sideEffects": false,
   "version": "0.0.0-development"
