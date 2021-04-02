@@ -163,14 +163,14 @@ describe('DataSeriesFormItem', () => {
           translateWithId={jest.fn()}
         />
       );
-      screen.getByRole('button', {
-        name: "Open"
+      const dataItemDropDown = screen.getByRole('button', {
+        name: 'Open',
       });
       expect(dataItemDropDown).toBeInTheDocument();
       fireEvent.click(dataItemDropDown);
 
       const pressureOption = screen.getByRole('option', {
-        name: "Pressure"
+        name: 'Pressure',
       });
       expect(pressureOption).toBeInTheDocument();
       fireEvent.click(pressureOption);
@@ -458,7 +458,7 @@ describe('DataSeriesFormItem', () => {
         />
       );
       const dataItemsDropdown = screen.getByRole('button', {
-        name: "Open",
+        name: 'Open',
       });
       expect(dataItemsDropdown).toBeInTheDocument();
       fireEvent.click(dataItemsDropdown);
