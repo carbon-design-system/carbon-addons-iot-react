@@ -106,4 +106,5 @@ const dt = DropTarget('ColumnHeaderSelect', cardTarget, (connect, monitor) => ({
 
 ColumnHeaderSelect.displayName = 'ColumnHeaderSelect';
 
+export { ColumnHeaderSelect as UnconnectedColumnHeaderSelect };
 export default ds(dt(ColumnHeaderSelect));

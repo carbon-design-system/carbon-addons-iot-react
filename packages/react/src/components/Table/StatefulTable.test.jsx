@@ -106,6 +106,29 @@ describe('stateful table with real reducer', () => {
     fireEvent.click(screen.getByText('Add'));
 
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
+
+    userEvent.click(
+      screen
+        .getByText('can pinocchio whiteboard 4')
+        .closest('tr')
+        .querySelector('.bx--table-expand__button')
+    );
+    userEvent.click(
+      screen
+        .getByText('can pinocchio whiteboard 4B')
+        .closest('tr')
+        .querySelector('.bx--table-expand__button')
+    );
+    userEvent.click(
+      screen
+        .getByText('can pinocchio whiteboard 4B-2')
+        .closest('tr')
+        .querySelector('.bx--table-expand__button')
+    );
+    expect(screen.getByText('can pinocchio whiteboard 4B-2-B')).toBeTruthy();
+    userEvent.click(screen.getByTestId(`${tableId}-row-4_B-2-B-row-actions-cell-overflow`));
+    userEvent.click(screen.getByText('Add'));
+    expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
   });
 
   it('multiselect should filter properly with pre-selected filter', async () => {
@@ -227,6 +250,15 @@ describe('stateful table with real reducer', () => {
           toolbar: {
             activeBar: 'filter',
           },
+          table: {
+            ...initialState.view.table,
+            sort: {
+              select: {
+                columnId: 'select',
+                direction: 'DESC',
+              },
+            },
+          },
         }}
         secondaryTitle={`Row count: ${initialState.data.length}`}
         actions={mockActions}
@@ -278,6 +310,9 @@ describe('stateful table with real reducer', () => {
     expect(fourthFilteredRowsOptionB).toHaveLength(3);
     expect(fourthFilteredRowsOptionC).toHaveLength(3);
     expect(fourthItemCount).toBeInTheDocument();
+
+    userEvent.click(screen.getByTitle('Select'));
+    expect(mockActions.table.onChangeSort).toHaveBeenCalledWith('select', undefined);
   });
 
   it('re-renders custom toolbar elements', () => {
@@ -442,6 +477,167 @@ describe('stateful table with real reducer', () => {
       } else {
         expect(box).toHaveProperty('checked', false);
       }
+    });
+  });
+
+  it('should use callback fallbacks when props not passed', () => {
+    expect(() =>
+      render(
+        <StatefulTable
+          {...initialState}
+          actions={{
+            pagination: null,
+            toolbar: null,
+            table: null,
+            onUserViewModified: null,
+          }}
+        />
+      )
+    ).not.toThrowError();
+  });
+
+  describe('AdvancedFilters', () => {
+    it('properly filters the table when advancedRules have simple logic', async () => {
+      const { container } = render(
+        <StatefulTable
+          id="advanced-filters-with-simple-logic"
+          {...initialState}
+          options={{
+            ...initialState.options,
+            hasFilter: false,
+            hasAdvancedFilter: true,
+          }}
+          view={{
+            ...initialState.view,
+            toolbar: {
+              ...initialState.view.toolbar,
+              advancedFilterFlyoutOpen: true,
+            },
+            selectedAdvancedFilterIds: ['my-filter', 'next-filter'],
+            advancedFilters: [
+              {
+                filterId: 'my-filter',
+                filterTitleText: 'My Filter',
+                filterRules: {
+                  id: '14p5ho3pcu',
+                  groupLogic: 'ALL',
+                  rules: [
+                    {
+                      id: 'rsiru4rjba',
+                      columnId: 'date',
+                      operand: 'CONTAINS',
+                      value: '19',
+                    },
+                    {
+                      id: '34bvyub9jq',
+                      columnId: 'boolean',
+                      operand: 'EQ',
+                      value: 'true',
+                    },
+                  ],
+                },
+              },
+              {
+                filterId: 'next-filter',
+                filterTitleText: 'Next Filter',
+                filterRules: {
+                  id: '14p5ho3pcu',
+                  groupLogic: 'ANY',
+                  rules: [
+                    {
+                      id: 'rsiru4rjb1',
+                      columnId: 'string',
+                      operand: 'CONTAINS',
+                      value: 'eat',
+                    },
+                    {
+                      id: '34bvyub9j2',
+                      columnId: 'number',
+                      operand: 'EQ',
+                      value: '4096',
+                    },
+                  ],
+                },
+              },
+            ],
+          }}
+        />
+      );
+
+      expect(container.querySelectorAll('tbody > tr')).toHaveLength(3);
+    });
+
+    it('properly filters the table when advancedRules have complex logic', async () => {
+      const { container } = render(
+        <StatefulTable
+          id="advanced-filters-with-simple-logic"
+          {...initialState}
+          options={{
+            ...initialState.options,
+            hasFilter: false,
+            hasAdvancedFilter: true,
+          }}
+          view={{
+            ...initialState.view,
+            toolbar: {
+              ...initialState.view.toolbar,
+              advancedFilterFlyoutOpen: true,
+            },
+            selectedAdvancedFilterIds: ['my-filter', 'next-filter'],
+            advancedFilters: [
+              {
+                filterId: 'my-filter',
+                filterTitleText: 'My Filter',
+                filterRules: {
+                  id: '14p5ho3pcu',
+                  groupLogic: 'ANY',
+                  rules: [
+                    {
+                      id: 'rsiru4rjba',
+                      columnId: 'date',
+                      operand: 'CONTAINS',
+                      value: '19',
+                    },
+                    {
+                      id: '14p5ho3pcu',
+                      groupLogic: 'ANY',
+                      rules: [
+                        {
+                          id: 'rsiru4rjb1',
+                          columnId: 'string',
+                          operand: 'CONTAINS',
+                          value: 'eat',
+                        },
+                        {
+                          id: '34bvyub9j2',
+                          columnId: 'number',
+                          operand: 'EQ',
+                          value: '4096',
+                        },
+                        {
+                          id: '14p5ho3pcu',
+                          groupLogic: 'ANY',
+                          rules: [
+                            {
+                              id: '34bvyub9jq',
+                              columnId: 'boolean',
+                              operand: 'EQ',
+                              value: 'true',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              },
+            ],
+          }}
+        />
+      );
+
+      expect(container.querySelectorAll('tbody > tr')).toHaveLength(10);
+      expect(screen.getByText('1–10 of 11 items')).toBeVisible();
     });
   });
 });

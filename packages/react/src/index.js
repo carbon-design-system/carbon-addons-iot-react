@@ -111,6 +111,7 @@ export ColorDropdown from './components/ColorDropdown/ColorDropdown';
 export HotspotEditorTooltipTab from './components/HotspotEditorModal/HotspotEditorTooltipTab/HotspotEditorTooltipTab';
 export HotspotTextStyleTab from './components/HotspotEditorModal/HotspotTextStyleTab/HotspotTextStyleTab';
 export DynamicHotspotSourcePicker from './components/HotspotEditorModal/DynamicHotspotSourcePicker/DynamicHotspotSourcePicker';
+export ComboChartCard from './components/ComboChartCard/ComboChartCard';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';

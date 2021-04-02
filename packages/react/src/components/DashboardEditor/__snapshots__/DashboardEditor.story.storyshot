@@ -30,6 +30,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="page-title-bar-header"
+              style={
+                Object {
+                  "--header-offset": "48px",
+                }
+              }
             >
               <div
                 className="page-title-bar-header-left"
@@ -1356,8 +1361,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <label
                                 className="bx--pagination__text"
-                                htmlFor="bx-pagination-select-5"
-                                id="bx-pagination-select-5-count-label"
+                                htmlFor="bx-pagination-select-6"
+                                id="bx-pagination-select-6-count-label"
                               >
                                 Items per page:
                               </label>
@@ -1376,7 +1381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     >
                                       <select
                                         className="bx--select-input"
-                                        id="bx-pagination-select-5"
+                                        id="bx-pagination-select-6"
                                         onChange={[Function]}
                                         value={10}
                                       >
@@ -1441,7 +1446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 >
                                   <label
                                     className="bx--label bx--visually-hidden"
-                                    htmlFor="bx-pagination-select-5-right"
+                                    htmlFor="bx-pagination-select-6-right"
                                   >
                                     Page number, of 10 pages
                                   </label>
@@ -1454,7 +1459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     >
                                       <select
                                         className="bx--select-input"
-                                        id="bx-pagination-select-5-right"
+                                        id="bx-pagination-select-6-right"
                                         onChange={[Function]}
                                         value={1}
                                       >
@@ -2855,6 +2860,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -5592,6 +5602,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -7807,6 +7822,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -10143,6 +10163,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="page-title-bar-header"
+              style={
+                Object {
+                  "--header-offset": "48px",
+                }
+              }
             >
               <div
                 className="page-title-bar-header-left"
@@ -11501,6 +11526,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -12839,6 +12869,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -14165,8 +14200,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           >
                             <label
                               className="bx--pagination__text"
-                              htmlFor="bx-pagination-select-4"
-                              id="bx-pagination-select-4-count-label"
+                              htmlFor="bx-pagination-select-5"
+                              id="bx-pagination-select-5-count-label"
                             >
                               Items per page:
                             </label>
@@ -14185,7 +14220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   >
                                     <select
                                       className="bx--select-input"
-                                      id="bx-pagination-select-4"
+                                      id="bx-pagination-select-5"
                                       onChange={[Function]}
                                       value={10}
                                     >
@@ -14250,7 +14285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               >
                                 <label
                                   className="bx--label bx--visually-hidden"
-                                  htmlFor="bx-pagination-select-4-right"
+                                  htmlFor="bx-pagination-select-5-right"
                                 >
                                   Page number, of 10 pages
                                 </label>
@@ -14263,7 +14298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   >
                                     <select
                                       className="bx--select-input"
-                                      id="bx-pagination-select-4-right"
+                                      id="bx-pagination-select-5-right"
                                       onChange={[Function]}
                                       value={1}
                                     >
@@ -15709,6 +15744,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -17239,11 +17279,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           <span>
             DashboardEditor
              is an
+             
             <a
               href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
             >
               experimental component
             </a>
+             
             and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
           </span>
         </div>
