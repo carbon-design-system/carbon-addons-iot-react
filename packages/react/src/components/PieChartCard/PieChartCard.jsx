@@ -251,5 +251,5 @@ const PieChartCard = ({
 };
 
 PieChartCard.propTypes = propTypes;
-PieChart.defaultProps = defaultProps;
+PieChartCard.defaultProps = defaultProps;
 export default PieChartCard;
