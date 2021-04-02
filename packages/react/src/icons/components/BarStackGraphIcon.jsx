@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgBarStackGraphIcon(props) {
   return (
-    <svg width={40} height={32} {...props}>
+    <svg width={40} height={32} xmlns="http://www.w3.org/2000/svg" {...props}>
       <g fill="none">
         <path fill="#97C1FF" d="M38.108 7.467H40v24.178h-1.892z" />
         <path fill="#0062FF" d="M38.108 17.067H40v14.578h-1.892z" />

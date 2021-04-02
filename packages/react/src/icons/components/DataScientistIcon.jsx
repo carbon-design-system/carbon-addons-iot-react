@@ -2,7 +2,12 @@ import * as React from 'react';
 
 function SvgDataScientistIcon(props) {
   return (
-    <svg viewBox="0 0 170.76 146.75" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 170.76 146.75"
+      {...props}
+    >
       <defs>
         <linearGradient
           id="data-scientist-icon_svg__a"
