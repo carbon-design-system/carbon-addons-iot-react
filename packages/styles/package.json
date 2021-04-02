@@ -14,7 +14,8 @@
     "format": "echo 'script not defined' && exit 0",
     "format:check": "echo 'script not defined' && exit 0",
     "postinstall": "node scripts/vendor.js && yarn build",
-    "prepublishOnly": "node scripts/clean-package-json.js"
+    "prepublishOnly": "node scripts/clean-package-json.js",
+    "sync": "node scripts/copy-styles-from-react.js"
   },
   "files": [
     "scss/**/*",
