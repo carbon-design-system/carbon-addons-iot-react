@@ -96,6 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -255,6 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -571,6 +573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 className="bx--action-list"
               >
                 <button
+                  aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
                   onClick={[Function]}
@@ -637,6 +640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   </button>
                 </div>
                 <button
+                  aria-pressed={null}
                   className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
                   disabled={false}
                   onClick={[Function]}
@@ -993,6 +997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -1108,6 +1113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -2372,6 +2378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}

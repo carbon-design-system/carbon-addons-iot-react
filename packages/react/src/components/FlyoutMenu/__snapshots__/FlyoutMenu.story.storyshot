@@ -801,7 +801,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
                   "visibility": "hidden",
                 }
               }
-              tooltipId="flyout-tooltip"
             >
               <span
                 className="bx--tooltip__caret"
@@ -841,6 +840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
                     >
                       I'm a custom footer!  
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--primary"
                         data-testid="Button"
                         disabled={false}

@@ -151,6 +151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                 </button>
               </div>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -1534,6 +1535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
                 </button>
               </div>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}

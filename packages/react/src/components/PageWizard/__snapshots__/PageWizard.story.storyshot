@@ -557,6 +557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               className="iot--page-wizard--content--actions"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -567,6 +568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 Cancel
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -966,6 +968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   className="iot--page-wizard--content--actions--sticky"
                 >
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -976,6 +979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     Cancel
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
@@ -1377,6 +1381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   className="iot--page-wizard--content--actions--sticky iot--page-wizard--content--after-footer"
                 >
                   <button
+                    aria-pressed={null}
                     className="bx--btn bx--btn--tertiary"
                     disabled={false}
                     tabIndex={0}
@@ -1385,6 +1390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     Save and close
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -1395,6 +1401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     Cancel
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
@@ -1656,6 +1663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   className="iot--page-wizard--content--actions"
                 >
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -1666,6 +1674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     Cancel
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
@@ -2266,6 +2275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               className="iot--page-wizard--content--actions"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -2276,6 +2286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 Cancel
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -2675,6 +2686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   className="iot--page-wizard--content--actions"
                 >
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -2685,6 +2697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     Cancel
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
@@ -3285,6 +3298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               className="iot--page-wizard--content--actions"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -3295,6 +3309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 Cancel
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -4003,6 +4018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   className="iot--page-wizard--content--actions"
                 >
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -4013,6 +4029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     Cancel
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--primary"
                     data-testid="Button"
                     disabled={false}

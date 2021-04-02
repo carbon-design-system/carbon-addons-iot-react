@@ -416,7 +416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             aria-live="polite"
           >
             <tr
-              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
+              className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
               data-child-count={0}
               data-nesting-offset={0}
               data-parent-row={true}
@@ -571,7 +571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             aria-live="polite"
           >
             <tr
-              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
+              className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
               data-child-count={0}
               data-nesting-offset={0}
               data-parent-row={true}
@@ -773,7 +773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             aria-live="polite"
           >
             <tr
-              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
+              className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
               data-child-count={0}
               data-nesting-offset={0}
               data-parent-row={true}
@@ -939,7 +939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             aria-live="polite"
           >
             <tr
-              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
+              className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
               data-child-count={0}
               data-nesting-offset={0}
               data-parent-row={true}
@@ -1005,13 +1005,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <div
                       aria-atomic="true"
-                      aria-labelledby="loading-id-12"
+                      aria-labelledby="loading-id-13"
                       aria-live="assertive"
                       className="bx--loading bx--loading--small"
                     >
                       <label
                         className="bx--visually-hidden"
-                        id="loading-id-12"
+                        id="loading-id-13"
                       >
                         Active loading indicator
                       </label>

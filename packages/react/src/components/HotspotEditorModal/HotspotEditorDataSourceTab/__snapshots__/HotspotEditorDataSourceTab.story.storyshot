@@ -157,6 +157,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               id="downshift-0-label"
             >
               Data items
+              <span
+                className="bx--visually-hidden"
+              >
+                Total items selected: 
+                 
+                4
+                ,
+                To clear selection, press Delete or Backspace,
+              </span>
             </label>
             <div
               className="bx--multi-select bx--multi-select--selected bx--list-box bx--list-box--light"
@@ -186,6 +195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     4
                   </span>
                   <div
+                    aria-hidden={true}
                     className="bx--tag__close-icon"
                     disabled={false}
                     onClick={[Function]}

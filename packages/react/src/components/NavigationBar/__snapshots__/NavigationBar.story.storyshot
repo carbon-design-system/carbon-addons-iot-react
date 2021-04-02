@@ -101,11 +101,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               role="presentation"
             >
               <button
-                aria-controls="tab-25__panel"
+                aria-controls="tab-27__panel"
                 aria-selected={true}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-25"
+                id="tab-27"
                 role="tab"
                 tabIndex={0}
                 type="button"
@@ -120,11 +120,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               role="presentation"
             >
               <button
-                aria-controls="tab-26__panel"
+                aria-controls="tab-28__panel"
                 aria-selected={false}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-26"
+                id="tab-28"
                 role="tab"
                 tabIndex={-1}
                 type="button"
@@ -164,6 +164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -180,6 +181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -196,6 +198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
       >
         <button
+          aria-pressed={null}
           className="bx--btn bx--btn--primary"
           disabled={false}
           onClick={[Function]}
@@ -329,11 +332,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               role="presentation"
             >
               <button
-                aria-controls="tab-19__panel"
+                aria-controls="tab-21__panel"
                 aria-selected={true}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-19"
+                id="tab-21"
                 role="tab"
                 tabIndex={0}
                 type="button"
@@ -348,11 +351,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               role="presentation"
             >
               <button
-                aria-controls="tab-20__panel"
+                aria-controls="tab-22__panel"
                 aria-selected={false}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-20"
+                id="tab-22"
                 role="tab"
                 tabIndex={-1}
                 type="button"
@@ -392,6 +395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -408,6 +412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -544,11 +549,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               role="presentation"
             >
               <button
-                aria-controls="tab-21__panel"
+                aria-controls="tab-23__panel"
                 aria-selected={false}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-21"
+                id="tab-23"
                 role="tab"
                 tabIndex={-1}
                 type="button"
@@ -563,11 +568,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               role="presentation"
             >
               <button
-                aria-controls="tab-22__panel"
+                aria-controls="tab-24__panel"
                 aria-selected={true}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-22"
+                id="tab-24"
                 role="tab"
                 tabIndex={0}
                 type="button"
@@ -607,6 +612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -623,6 +629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -759,11 +766,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               role="presentation"
             >
               <button
-                aria-controls="tab-23__panel"
+                aria-controls="tab-25__panel"
                 aria-selected={true}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-23"
+                id="tab-25"
                 role="tab"
                 tabIndex={0}
                 type="button"
@@ -778,11 +785,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               role="presentation"
             >
               <button
-                aria-controls="tab-24__panel"
+                aria-controls="tab-26__panel"
                 aria-selected={false}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-24"
+                id="tab-26"
                 role="tab"
                 tabIndex={-1}
                 type="button"
@@ -822,6 +829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -838,6 +846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -854,6 +863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
       >
         <button
+          aria-pressed={null}
           className="bx--btn bx--btn--primary"
           disabled={false}
           onClick={[Function]}
@@ -863,6 +873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           New Entity Type
         </button>
         <button
+          aria-pressed={null}
           className="bx--btn bx--btn--secondary"
           disabled={false}
           onClick={[Function]}

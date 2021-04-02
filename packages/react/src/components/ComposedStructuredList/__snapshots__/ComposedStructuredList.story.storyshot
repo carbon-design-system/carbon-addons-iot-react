@@ -15,27 +15,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
     <div
       aria-label="Structured list section"
       className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
+      role="table"
     >
       <div
         className="bx--structured-list-thead"
+        role="rowgroup"
       >
         <div
           className="bx--structured-list-row bx--structured-list-row--header-row"
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            role="columnheader"
             title="A"
           >
             A
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            role="columnheader"
             title="B"
           >
             B
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            role="columnheader"
             title="C"
           >
             C
@@ -45,6 +50,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
       <div
         className="bx--structured-list-tbody"
         onKeyDown={[Function]}
+        role="rowgroup"
       >
         <div
           className="bx--structured-list-row"
@@ -52,6 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title={null}
           >
@@ -67,6 +74,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey B"
           >
@@ -82,6 +90,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey C"
           >
@@ -102,6 +111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey A again fixed column width"
           >
@@ -117,6 +127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey B again"
           >
@@ -132,6 +143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey C again"
           >
@@ -152,6 +164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey hey A"
           >
@@ -167,6 +180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey hey B"
           >
@@ -182,6 +196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey hey C"
           >
@@ -240,27 +255,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
     <div
       aria-label="Structured list section"
       className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
+      role="table"
     >
       <div
         className="bx--structured-list-thead"
+        role="rowgroup"
       >
         <div
           className="bx--structured-list-row bx--structured-list-row--header-row"
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            role="columnheader"
             title="A"
           >
             A
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            role="columnheader"
             title="B"
           >
             B
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            role="columnheader"
             title="C"
           >
             C
@@ -270,6 +290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
       <div
         className="bx--structured-list-tbody"
         onKeyDown={[Function]}
+        role="rowgroup"
       >
         <div
           className="bx--structured-list-row"
@@ -277,6 +298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title={null}
           >
@@ -284,6 +306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey B"
           >
@@ -291,6 +314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey C"
           >
@@ -303,6 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey A again fixed column width"
           >
@@ -310,6 +335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey B again"
           >
@@ -317,6 +343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey C again"
           >
@@ -329,6 +356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey hey A"
           >
@@ -336,6 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey hey B"
           >
@@ -343,6 +372,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey hey C"
           >
@@ -393,27 +423,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
     <div
       aria-label="Structured list section"
       className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
+      role="table"
     >
       <div
         className="bx--structured-list-thead"
+        role="rowgroup"
       >
         <div
           className="bx--structured-list-row bx--structured-list-row--header-row"
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            role="columnheader"
             title="A"
           >
             A
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            role="columnheader"
             title="B"
           >
             B
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            role="columnheader"
             title="C"
           >
             C
@@ -423,6 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
       <div
         className="bx--structured-list-tbody"
         onKeyDown={[Function]}
+        role="rowgroup"
       />
       <div
         className="ComposedStructuredList__EmptyContent-oz9xih-1 cPSxzA"
@@ -490,15 +526,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
     <div
       aria-label="Structured list section"
       className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bmhAOa bx--structured-list--selection"
+      role="table"
     >
       <div
         className="bx--structured-list-thead"
+        role="rowgroup"
       >
         <div
           className="bx--structured-list-row bx--structured-list-row--header-row"
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-th"
+            role="columnheader"
             title="A"
             width="10rem"
           >
@@ -506,6 +545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-th"
+            role="columnheader"
             title="B"
             width="12rem"
           >
@@ -513,6 +553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-th"
+            role="columnheader"
             title="C"
             width="14rem"
           >
@@ -523,6 +564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
       <div
         className="bx--structured-list-tbody"
         onKeyDown={[Function]}
+        role="rowgroup"
       />
       <div
         className="ComposedStructuredList__EmptyContent-oz9xih-1 cPSxzA"
@@ -590,15 +632,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
     <div
       aria-label="Structured list section"
       className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bmhAOa bx--structured-list--selection"
+      role="table"
     >
       <div
         className="bx--structured-list-thead"
+        role="rowgroup"
       >
         <div
           className="bx--structured-list-row bx--structured-list-row--header-row"
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-th"
+            role="columnheader"
             title="A"
             width="10rem"
           >
@@ -606,6 +651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-th"
+            role="columnheader"
             title="B"
             width="12rem"
           >
@@ -613,6 +659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-th"
+            role="columnheader"
             title="C"
             width="14rem"
           >
@@ -623,6 +670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
       <div
         className="bx--structured-list-tbody"
         onKeyDown={[Function]}
+        role="rowgroup"
       >
         <div
           className="bx--structured-list-row"
@@ -630,6 +678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title={null}
             width="10rem"
@@ -638,6 +687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey B"
             width="12rem"
@@ -646,6 +696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey C"
             width="14rem"
@@ -659,6 +710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey A again fixed column width"
             width="10rem"
@@ -667,6 +719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey B again"
             width="12rem"
@@ -675,6 +728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey C again"
             width="14rem"
@@ -688,6 +742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey hey A"
             width="10rem"
@@ -696,6 +751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey hey B"
             width="12rem"
@@ -704,6 +760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
           <div
             className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-td bx--structured-list-content--nowrap"
+            role="cell"
             style={Object {}}
             title="hey hey C"
             width="14rem"

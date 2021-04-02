@@ -396,6 +396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={false}
               role="tabpanel"
               selected={true}
+              tabIndex={0}
             >
               <div
                 className="iot--hotspot-editor-tooltip-tab"
@@ -432,6 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={true}
               role="tabpanel"
               selected={false}
+              tabIndex={0}
             />
           </div>
         </div>
@@ -439,6 +441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -449,6 +452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
@@ -891,6 +895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={false}
               role="tabpanel"
               selected={true}
+              tabIndex={0}
             >
               <div
                 className="iot--hotspot-editor-tooltip-tab"
@@ -927,6 +932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={true}
               role="tabpanel"
               selected={false}
+              tabIndex={0}
             />
           </div>
         </div>
@@ -934,6 +940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -944,6 +951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
@@ -1402,6 +1410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -1412,6 +1421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
             data-testid="ComposedModal-modal-primary-button"
             disabled={true}
@@ -1854,6 +1864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={false}
               role="tabpanel"
               selected={true}
+              tabIndex={0}
             >
               <div
                 className="iot--hotspot-editor-tooltip-tab"
@@ -1890,6 +1901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={true}
               role="tabpanel"
               selected={false}
+              tabIndex={0}
             />
           </div>
         </div>
@@ -1897,6 +1909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -1907,9 +1920,412 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal wtf 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
+      data-floating-menu-container={true}
+      data-testid="ComposedModal"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onClose={[Function]}
+      onKeyDown={[Function]}
+      onTransitionEnd={[Function]}
+      open={true}
+      role="presentation"
+    >
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+      <div
+        aria-label="landscape.jpg"
+        aria-modal="true"
+        className="bx--modal-container"
+        role="dialog"
+      >
+        <div
+          className="bx--modal-header"
+        >
+          <h2
+            className="bx--modal-header__label bx--type-delta"
+          >
+            landscape.jpg
+          </h2>
+          <h3
+            className="bx--modal-header__heading bx--type-beta"
+          >
+            Edit image
+          </h3>
+          <button
+            aria-label="Close"
+            className="bx--modal-close"
+            onClick={[Function]}
+            title="Close"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--modal-close__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="bx--modal-content"
+        >
+          <div />
+          <div>
+            <div
+              className="bx--content-switcher"
+              onChange={[Function]}
+              role="tablist"
+            >
+              <button
+                aria-selected={true}
+                className="bx--content-switcher-btn bx--content-switcher--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="tab"
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="bx--content-switcher__label"
+                >
+                  Hotspots
+                </span>
+              </button>
+              <button
+                aria-selected={false}
+                className="bx--content-switcher-btn"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="tab"
+                tabIndex="-1"
+                type="button"
+              >
+                <span
+                  className="bx--content-switcher__label"
+                >
+                  Labels
+                </span>
+              </button>
+            </div>
+            <div
+              className="iot--dynamic-hotspot-source-picker"
+              data-testid="dynamic-hotspot-source-picker"
+            >
+              <div
+                className="bx--dropdown__wrapper bx--list-box__wrapper"
+                data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="downshift-2-toggle-button"
+                  id="downshift-2-label"
+                >
+                  X coordinate
+                </label>
+                <div
+                  className="bx--dropdown bx--list-box"
+                  id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                >
+                  <button
+                    aria-disabled={false}
+                    aria-expanded={false}
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-2-label downshift-2-toggle-button"
+                    className="bx--list-box__field"
+                    disabled={false}
+                    id="downshift-2-toggle-button"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--list-box__label"
+                    >
+                      {high} temp
+                    </span>
+                    <div
+                      className="bx--list-box__menu-icon"
+                    >
+                      <svg
+                        aria-label="Open menu"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        name="chevron--down"
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                        />
+                        <title>
+                          Open menu
+                        </title>
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    aria-labelledby="downshift-2-label"
+                    className="bx--list-box__menu"
+                    id="downshift-2-menu"
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseLeave={[Function]}
+                    role="listbox"
+                    tabIndex={-1}
+                  />
+                </div>
+              </div>
+              <div
+                className="bx--dropdown__wrapper bx--list-box__wrapper"
+                data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="downshift-3-toggle-button"
+                  id="downshift-3-label"
+                >
+                  Y coordinate
+                </label>
+                <div
+                  className="bx--dropdown bx--list-box"
+                  id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                >
+                  <button
+                    aria-disabled={false}
+                    aria-expanded={false}
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-3-label downshift-3-toggle-button"
+                    className="bx--list-box__field"
+                    disabled={false}
+                    id="downshift-3-toggle-button"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--list-box__label"
+                    >
+                      Temperature
+                    </span>
+                    <div
+                      className="bx--list-box__menu-icon"
+                    >
+                      <svg
+                        aria-label="Open menu"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        name="chevron--down"
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                        />
+                        <title>
+                          Open menu
+                        </title>
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    aria-labelledby="downshift-3-label"
+                    className="bx--list-box__menu"
+                    id="downshift-3-menu"
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseLeave={[Function]}
+                    role="listbox"
+                    tabIndex={-1}
+                  />
+                </div>
+              </div>
+              <button
+                className="iot--dynamic-hotspot-source-picker__clear-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                data-testid="dynamic-hotspot-source-picker-clear-dropdown"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Clear coordinate sources
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Clear coordinate sources"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={32}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={32}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              aria-live="assertive"
+              className="bx--inline-loading iot--hotspot-editor-modal__dynamic-loading"
+            >
+              <div
+                className="bx--inline-loading__animation"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-labelledby="loading-id-6"
+                  aria-live="assertive"
+                  className="bx--loading bx--loading--small"
+                >
+                  <label
+                    className="bx--visually-hidden"
+                    id="loading-id-6"
+                  >
+                    Active loading indicator
+                  </label>
+                  <svg
+                    className="bx--loading__svg"
+                    viewBox="0 0 100 100"
+                  >
+                    <title>
+                      Active loading indicator
+                    </title>
+                    <circle
+                      className="bx--loading__background"
+                      cx="50%"
+                      cy="50%"
+                      r="42"
+                    />
+                    <circle
+                      className="bx--loading__stroke"
+                      cx="50%"
+                      cy="50%"
+                      r="42"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                className="bx--inline-loading__text"
+              >
+                Locating hotspots
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+        >
+          <button
+            aria-pressed={null}
+            className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            aria-pressed={null}
+            className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+            data-testid="ComposedModal-modal-primary-button"
+            disabled={true}
             onClick={[Function]}
             tabIndex={0}
             type="button"
@@ -2022,9 +2438,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
           </span>
         </div>
-        <div
-          className="bx--toast-notification__caption"
-        />
       </div>
     </div>
   </div>

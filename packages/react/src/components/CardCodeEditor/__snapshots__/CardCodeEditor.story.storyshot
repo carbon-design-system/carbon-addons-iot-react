@@ -197,6 +197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -207,6 +208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
@@ -450,6 +452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -460,6 +463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
