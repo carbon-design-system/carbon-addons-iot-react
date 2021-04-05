@@ -8,11 +8,20 @@
     flex: 1;
   }
 
-  .#{$prefix}--tabs__nav--hidden {
+  // give the tabs the full space available in the editor column
+  .#{$prefix}--tabs--scrollable__nav {
     width: 100%;
 
-    .#{$prefix}--tabs__nav-link {
-      width: 100%;
+    // stretch each tabe to evenly fill the space
+    .#{$prefix}--tabs--scrollable__nav-item {
+      flex: 1;
+
+      // overfide width on buttons within tabs, so they don't
+      // have a width of 10rem, and fill space evently.
+      .#{$prefix}--tabs--scrollable__nav-link {
+        width: auto;
+        flex: 1;
+      }
     }
   }
 
@@ -92,12 +101,6 @@
     }
   }
   &--modal-wrapper {
-    .#{$prefix}--modal.is-visible .#{$prefix}--modal-container {
-      overflow: visible;
-    }
-    .#{$prefix}--modal-content {
-      overflow: visible;
-    }
     .#{$prefix}--number,
     input[type='number'] {
       min-width: unset;
@@ -112,8 +115,11 @@
   &--input-group {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: baseline;
     padding-bottom: $spacing-05;
+    &--bottom {
+      align-items: flex-end;
+    }
     &--item {
       .#{$iot-prefix}--color-dropdown {
         margin-bottom: 1.25rem;
@@ -239,5 +245,10 @@ div.#{$iot-prefix}--card-edit-form--data-item-list {
     width: $spacing-05;
     height: $spacing-05;
     background-color: var(--icon-color-option);
+  }
+
+  .#{$iot-prefix}--list-item--content--values--value__with-actions {
+    // need to make room for 2 actions
+    padding-right: $layout-05;
   }
 }

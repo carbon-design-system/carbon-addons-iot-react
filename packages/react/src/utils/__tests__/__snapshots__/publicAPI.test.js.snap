@@ -4517,10 +4517,10 @@ Map {
       "collapsed": false,
       "content": undefined,
       "description": null,
+      "dynamicTransitionOffset": 48,
       "editable": false,
       "extraContent": undefined,
       "headerMode": "STATIC",
-      "headerModeDynamicOffSet": 0,
       "i18n": Object {
         "editIconDescription": "Edit page title",
         "tooltipIconDescription": "More information",
@@ -4528,6 +4528,7 @@ Map {
       "isLoading": false,
       "onEdit": null,
       "rightContent": undefined,
+      "stickyHeaderOffset": 48,
       "tabs": undefined,
     },
     "propTypes": Object {
@@ -4561,6 +4562,9 @@ Map {
         ],
         "type": "oneOfType",
       },
+      "dynamicTransitionOffset": Object {
+        "type": "number",
+      },
       "editable": Object {
         "type": "bool",
       },
@@ -4577,9 +4581,6 @@ Map {
           ],
         ],
         "type": "oneOf",
-      },
-      "headerModeDynamicOffSet": Object {
-        "type": "number",
       },
       "i18n": Object {
         "args": Array [
@@ -4598,6 +4599,9 @@ Map {
         "type": "func",
       },
       "rightContent": [Function],
+      "stickyHeaderOffset": Object {
+        "type": "number",
+      },
       "tabs": [Function],
       "title": Object {
         "isRequired": true,

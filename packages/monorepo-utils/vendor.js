@@ -1,17 +1,7 @@
-const { dirname, join } = require('path');
+const { join } = require('path');
 const { copy, emptyDir } = require('fs-extra');
-const glob = require('glob');
-
-const promiseGlob = (pattern, opts) =>
-  new Promise((resolve, reject) => {
-    glob(pattern, opts, (err, matches) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      resolve(matches);
-    });
-  });
+const { promiseGlob } = require('./promise-glob');
+const { packagePath } = require('./package-tools');
 
 const defaultOptions = {
   // pattern for files we want to vendor from each package
@@ -32,7 +22,7 @@ const vendorAsync = async (options) => {
   const packageAndPaths = packages.map((package) => {
     return {
       name: package,
-      path: dirname(require.resolve(`${package}/package.json`)),
+      path: packagePath(package),
     };
   });
 

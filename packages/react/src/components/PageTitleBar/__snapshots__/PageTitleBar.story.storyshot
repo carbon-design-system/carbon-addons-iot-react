@@ -24,6 +24,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "0px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -464,6 +469,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -593,6 +603,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -704,6 +719,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -1014,6 +1034,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -1089,6 +1114,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -1195,6 +1225,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -1629,6 +1664,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -1789,6 +1829,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
