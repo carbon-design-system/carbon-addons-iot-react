@@ -1,11 +1,15 @@
 import React from "react";
+import classnames  from "classnames";
+
+import { settings } from '../../constants/Settings';
+const { iotPrefix } = settings;
 
 const Legend = (props) => {
   const renderLegendKeys = (stop, i) => {
     return (
-      <div key={i} className="txt-s">
+      <div key={i} className={`${iotPrefix}--map-legend-keys`}>
         <span
-          className="mr6 round-full w12 h12 inline-block align-middle"
+          className={`${iotPrefix}--map-legend-keys-color`}
           style={{ backgroundColor: stop[1] }}
         />
         <span>{`${stop[0].toLocaleString()}`}</span>
@@ -15,11 +19,7 @@ const Legend = (props) => {
 
   return (
     <>
-      <div className="bg-white absolute bottom right mr12 mb24 py12 px12 shadow-darken10 round z1 wmax180">
-        <div className="mb6">
-          <h2 className="txt-bold txt-s block">{props.active.name}</h2>
-          <p className="txt-s color-gray">{props.active.description}</p>
-        </div>
+      <div className={classnames(`${iotPrefix}--map-legend`, {[`${iotPrefix}--map-legend__fullwidth`]: props.isFullWidth})}>
         {props.stops.map(renderLegendKeys)}
       </div>
     </>

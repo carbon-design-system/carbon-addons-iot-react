@@ -10,14 +10,14 @@ const Optionsfield = (props) => {
           name="toggle"
           type="radio"
         />
-        <div className="toggle txt-s py3 toggle--active-white">
+        <div className="toggle">
           {option.name}
         </div>
       </label>
     );
   };
   return (
-    <div className="toggle-group absolute top left ml12 mt12 border border--2 border--white bg-white shadow-darken10 z1">
+    <div className="toggle-group">
       {props.options.map(renderOptions)}
     </div>
   );

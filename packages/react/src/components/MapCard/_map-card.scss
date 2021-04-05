@@ -1,0 +1,114 @@
+@import '~carbon-components/scss/globals/scss/vars';
+@import './zoom-control';
+
+.#{$iot-prefix}--map {
+  &-container {
+    position: relative;
+    height: 100%;
+
+    canvas {
+      min-height: 100%;
+    }
+  }
+
+  &-header {
+    padding: $spacing-05;
+  }
+
+  &-header-title {
+    @include type-style('productive-heading-02');
+  }
+
+  &-legend {
+    background: #fff;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 1rem;
+    position: absolute;
+    z-index: 2;
+  }
+
+  &-legend.#{$iot-prefix}--map-legend__fullwidth {
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    overflow-x: auto;
+    right: 0;
+    width: 100%;
+
+    & > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-legend-keys {
+    display: flex;
+  }
+
+  &-legend-keys-color {
+    height: 1rem;
+    margin-right: 0.5rem;
+    width: 1rem;
+  }
+
+  &__has-fullwidth-legend .#{$iot-prefix}--map-zoom {
+    bottom: 4rem;
+  }
+
+  .mapboxgl-canvas-container {
+    height: 100%;
+  }
+
+  .#{$iot-prefix}--card--content {
+    display: flex;
+  }
+
+  &-container {
+    width: 100%;
+    transition: width $duration--fast-02 motion(entrance, productive);
+  }
+
+  &-settings-side-bar {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    width: 0%;
+    padding: 1rem;
+    transition: opacity $duration--fast-02 motion(entrance, productive),
+      width $duration--fast-02 motion(entrance, productive);
+  }
+
+  &__settings-open {
+    .#{$iot-prefix}--map-container {
+      width: 75%;
+    }
+  }
+}
+
+.mapboxgl-control-container {
+  display: none;
+}
+
+// .iot-map {
+//   min-height: 500px;
+// }
+
+.toggle-group {
+  position: absolute;
+  z-index: 2;
+}
+
+// Open Layers
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.ol-viewport {
+  z-index: 1;
+}

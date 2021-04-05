@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
-import { Close16, Popup16 } from '@carbon/icons-react';
+import { Close16, Popup16, Settings16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem, Button } from 'carbon-components-react';
 import classnames from 'classnames';
 
@@ -194,6 +194,14 @@ const CardToolbar = ({
             />
           )}
         </>
+      ) : null}
+      {availableActions.settings ? (
+        <ToolbarSVGWrapper
+        title={mergedI18n.settingsLabel}
+        onClick={() => onCardAction(CARD_ACTIONS.ON_SETTINGS_CLICK)}
+        iconDescription={mergedI18n.settingsLabel}
+        renderIcon={Settings16}
+      />
       ) : null}
     </div>
   );

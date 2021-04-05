@@ -1,0 +1,15 @@
+.#{$iot-prefix}--map {
+  &-zoom {
+    background: #fff;
+    bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 1rem;
+    z-index: 2;
+
+    & > *:first-child {
+      border-bottom: 1px solid $ui-03; // should be updated to $button-separator once available
+    }
+  }
+}

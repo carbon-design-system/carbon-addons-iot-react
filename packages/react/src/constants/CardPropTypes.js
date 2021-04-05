@@ -550,6 +550,7 @@ export const CardPropTypes = {
     delete: PropTypes.bool,
     expand: PropTypes.bool,
     range: PropTypes.bool,
+    settings: PropTypes.bool,
   }),
   /** All the labels that need translation */
   i18n: PropTypes.shape({
