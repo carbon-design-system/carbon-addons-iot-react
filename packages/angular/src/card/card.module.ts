@@ -16,7 +16,7 @@ import { IconModule } from 'carbon-components-angular';
     CardTitleComponent,
     CardToolbarActionDirective,
     CardToolbarComponent,
-    CardComponent
+    CardComponent,
   ],
   exports: [
     CardContentComponent,
@@ -24,7 +24,7 @@ import { IconModule } from 'carbon-components-angular';
     CardTitleComponent,
     CardToolbarActionDirective,
     CardToolbarComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [CommonModule, IconModule],
 })

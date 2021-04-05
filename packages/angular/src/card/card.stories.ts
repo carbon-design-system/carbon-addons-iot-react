@@ -15,17 +15,13 @@ import { DialogModule, IconModule } from 'carbon-components-angular';
         <ai-card-header>
           <ai-card-title text="Card Title"></ai-card-title>
         </ai-card-header>
-        <ai-card-content>
-          Demo Card content
-        </ai-card-content>
+        <ai-card-content> Demo Card content </ai-card-content>
       </ai-card>
       <ai-card>
         <ai-card-header>
           <ai-card-title text="Card Title"></ai-card-title>
         </ai-card-header>
-        <ai-card-content>
-          Demo Card content
-        </ai-card-content>
+        <ai-card-content> Demo Card content </ai-card-content>
       </ai-card>
     </div>
   `,
@@ -40,8 +36,8 @@ import { DialogModule, IconModule } from 'carbon-components-angular';
         margin: 10px;
         flex-grow: 1;
       }
-    `
-  ]
+    `,
+  ],
 })
 class AppDemo implements OnInit {
   constructor(protected cardService: CardService) {}
@@ -55,7 +51,7 @@ storiesOf('Components/Card', module)
   .addDecorator(
     moduleMetadata({
       imports: [CardModule, DialogModule, IconModule],
-      declarations: [AppDemo]
+      declarations: [AppDemo],
     })
   )
   .addDecorator(withKnobs)
@@ -99,7 +95,8 @@ storiesOf('Components/Card', module)
 		`,
     props: {},
   }))
-  .add("With a long title", () => ({
+  /* tslint:disable:max-line-length */
+  .add('With a long title', () => ({
     template: `
       <div style="width: 450px">
         <ai-card style="margin-bottom: 50px" [defaultHeight]="200">
@@ -125,9 +122,10 @@ storiesOf('Components/Card', module)
           </ai-card-content>
         </ai-card>
       </div>
-    `
+    `,
   }))
-  .add("Without content", () => ({
+  /* tslint:enable:max-line-length */
+  .add('Without content', () => ({
     template: `
       <ai-card [defaultHeight]="400">
         <ai-card-header>
@@ -140,9 +138,9 @@ storiesOf('Components/Card', module)
         </ai-card-header>
         <ai-card-content isEmpty="true" emptyText="No content available"></ai-card-content>
       </ai-card>
-    `
+    `,
   }))
-  .add("Expanded", () => ({
+  .add('Expanded', () => ({
     template: `
       <div style="width: 450px">
         <ai-card [defaultHeight]="400" [expanded]="expanded">
@@ -159,6 +157,6 @@ storiesOf('Components/Card', module)
       <div style="width: 450px">
     `,
     props: {
-      expanded: boolean("Expanded", true)
-    }
+      expanded: boolean('Expanded', true),
+    },
   }));

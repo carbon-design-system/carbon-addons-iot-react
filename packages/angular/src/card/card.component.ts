@@ -1,5 +1,13 @@
-import { AfterViewInit, Component, ElementRef, HostBinding, Input, Optional, SkipSelf } from "@angular/core";
-import { CardService } from "./card.service";
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostBinding,
+  Input,
+  Optional,
+  SkipSelf,
+} from '@angular/core';
+import { CardService } from './card.service';
 
 /**
  * Provider for `CardService` that lets us either use a service provided to us
@@ -10,11 +18,11 @@ const CARD_SERVICE_PROVIDER = {
   deps: [[new Optional(), new SkipSelf(), CardService]],
   useFactory: (parentCardService: CardService) => {
     return parentCardService || new CardService();
-  }
-}
+  },
+};
 
 @Component({
-  selector: "ai-card",
+  selector: 'ai-card',
   template: `
     <ng-template #content>
       <ng-content></ng-content>
@@ -27,18 +35,20 @@ const CARD_SERVICE_PROVIDER = {
     </div>
   `,
   providers: [CARD_SERVICE_PROVIDER],
-  styles: [`
-    .expanded {
-      height: calc(100% - 50px);
-      width: calc(100% - 50px);
-    }
-  `]
+  styles: [
+    `
+      .expanded {
+        height: calc(100% - 50px);
+        width: calc(100% - 50px);
+      }
+    `,
+  ],
 })
 export class CardComponent implements AfterViewInit {
   @Input() defaultHeight: number = null;
   @Input() expanded = false;
-  @HostBinding("class.iot--card") cardClass = true;
-  @HostBinding("class.iot--card--wrapper") wrapperClass = true;
+  @HostBinding('class.iot--card') cardClass = true;
+  @HostBinding('class.iot--card--wrapper') wrapperClass = true;
 
   constructor(protected cardService: CardService, protected elementRef: ElementRef) {}
 
@@ -47,6 +57,6 @@ export class CardComponent implements AfterViewInit {
       this.cardService.setCardHeight(this.defaultHeight);
     }
     const hostElement: HTMLElement = this.elementRef.nativeElement;
-    hostElement.style.setProperty("--card-default-height", this.cardService.getCardHeight());
+    hostElement.style.setProperty('--card-default-height', this.cardService.getCardHeight());
   }
 }

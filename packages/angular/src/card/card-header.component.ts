@@ -1,11 +1,9 @@
-import { Component, HostBinding } from "@angular/core";
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-  selector: "ai-card-header",
-  template: `
-    <ng-content></ng-content>
-  `
+  selector: 'ai-card-header',
+  template: ` <ng-content></ng-content> `,
 })
 export class CardHeaderComponent {
-  @HostBinding("class.iot--card--header") hostClass="true";
+  @HostBinding('class.iot--card--header') hostClass = 'true';
 }

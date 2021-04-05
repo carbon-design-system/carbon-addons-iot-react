@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 /**
  * Service for data and config shared between card components
@@ -26,7 +26,7 @@ export class CardService {
    */
   getCardHeight() {
     if (!this.height) {
-      return "";
+      return '';
     }
     return `${this.height}px`;
   }
@@ -38,7 +38,7 @@ export class CardService {
    */
   getContentHeight() {
     if (!this.height) {
-      return "";
+      return '';
     }
     return `${this.height - 48}px`;
   }

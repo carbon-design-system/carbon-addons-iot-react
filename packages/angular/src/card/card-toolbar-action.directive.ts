@@ -1,5 +1,5 @@
-import { Directive, HostBinding, OnInit, Optional } from "@angular/core";
-import { OverflowMenu } from "carbon-components-angular";
+import { Directive, HostBinding, OnInit, Optional } from '@angular/core';
+import { OverflowMenu } from 'carbon-components-angular';
 
 /**
  * Directive to apply toolbar specific styles and behavior.
@@ -24,10 +24,11 @@ import { OverflowMenu } from "carbon-components-angular";
  * For the overflow-menu it will override the `flip`, `offset`, and `triggerClass` to toolbar specific values.
  */
 @Directive({
-  selector: '[aiCardToolbarAction]'
+  selector: '[aiCardToolbarAction]',
 })
 export class CardToolbarActionDirective implements OnInit {
-  @HostBinding("class") classList = "iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+  @HostBinding('class') classList =
+    'iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost';
 
   /**
    *
@@ -37,10 +38,11 @@ export class CardToolbarActionDirective implements OnInit {
 
   ngOnInit() {
     if (this.overflowMenuRef) {
-      this.overflowMenuRef.triggerClass = "iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost";
+      this.overflowMenuRef.triggerClass =
+        'iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost';
       this.overflowMenuRef.flip = true;
       this.overflowMenuRef.offset = { x: 4, y: 0 };
-      this.classList = "";
+      this.classList = '';
     }
   }
 }
