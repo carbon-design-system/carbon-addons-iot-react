@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.33...v2.145.0-next.34) (2021-04-06)
+
+
+### Bug Fixes
+
+* **hierarchylist:** cloneDeep can blow up and clone the whole tree ([7ea48bf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7ea48bfb7034a52c3c3d803b46ff65e0b8d950ed))
+
+
+
+
+
 # [2.145.0-next.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.31...v2.145.0-next.32) (2021-04-01)
 
 
