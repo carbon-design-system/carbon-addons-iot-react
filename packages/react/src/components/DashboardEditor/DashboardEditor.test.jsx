@@ -108,7 +108,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (8x2)');
+    const cardSizeFormInput = screen.getByText('Medium (4x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -126,7 +126,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (8x2)');
+    const cardSizeFormInput = screen.getByText('Medium (4x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -144,7 +144,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (8x2)');
+    const cardSizeFormInput = screen.getByText('Medium (4x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -297,7 +297,7 @@ describe('DashboardEditor', () => {
     expect(screen.getByTitle('My new card title')).toBeInTheDocument();
   });
 
-  it('selecting medium breakpoint should render breakpoint info', () => {
+  it('selecting medium breakpoint should render breakpoint info', async () => {
     render(<DashboardEditor {...commonProps} breakpointSwitcher={{ enabled: true }} />);
     // there should be no breakpoint text on initial render
     expect(screen.queryByText('Edit dashboard at')).not.toBeInTheDocument();
@@ -306,7 +306,11 @@ describe('DashboardEditor', () => {
     expect(smallBtn).toBeInTheDocument();
     fireEvent.click(smallBtn);
     // there should now be breakpoint text
-    expect(screen.getByText('Edit dashboard at small layout (481 - 672px)')).toBeInTheDocument();
+
+    const breakpointMessage = await screen.findByText(
+      'Edit dashboard at small layout (481 - 672px)'
+    );
+    expect(breakpointMessage).toBeInTheDocument(breakpointMessage);
   });
 
   it('triggering an error should show error message', () => {

@@ -1721,10 +1721,18 @@
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.15.0.tgz#3a358bdf6b6743a44a39d0f8302bebc98a96562e"
   integrity sha512-TpCvRARVI1XnyuhxM8BgHl3m+HRlUkkef32SC6NGhz2cF99/3EsWAzcPz98JNCojAYYXHjGiEfO6K61z53u+lg==
 
-"@carbon/icons-react@10.28.0", "@carbon/icons-react@^10.28.0":
+"@carbon/icons-react@10.28.0":
   version "10.28.0"
   resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.28.0.tgz#c4a18cdf1a72d56df67b498d1dbe9a792f428d5d"
   integrity sha512-y7BKGPCqF6xJx/VMU/KHJdXsGKk+cY9F9Mi18Si9oJlY14foV/Us9Nw2eJjgPNO6MRdcxb2H6lmakngGEznB1Q==
+  dependencies:
+    "@carbon/icon-helpers" "^10.15.0"
+    prop-types "^15.7.2"
+
+"@carbon/icons-react@^10.28.0":
+  version "10.29.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.29.0.tgz#dea9920921f087b2c0e969f2ae2d95cee70e7ae9"
+  integrity sha512-EIupNXYnz9nJQyJO0/ZW4c8vrVjrWzXrJCFkN+x6Y7wtjDrrmN/AgRlp/m8D+AmojsdDAtY9fXBLN/93XowmRw==
   dependencies:
     "@carbon/icon-helpers" "^10.15.0"
     prop-types "^15.7.2"
@@ -19346,10 +19354,10 @@ react-grid-layout@1.2.0:
     react-draggable "^4.0.0"
     react-resizable "^1.10.0"
 
-react-grid-layout@^1.2.2:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/react-grid-layout/-/react-grid-layout-1.2.4.tgz#d04f9784fe47b27d0dcd3eb92f20e1a17454003c"
-  integrity sha512-AWorwRmkEyOPWF516BDbEhMjGhTCPf6zALQ3HIYrJdRmbbj1n5PDPNEI1eI818zhB07KwGVtF0WBxq2CmA2CNA==
+react-grid-layout@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-grid-layout/-/react-grid-layout-1.2.2.tgz#42cdb4b27fcdc4fad1655d8862b9d54c6f011d6d"
+  integrity sha512-i5/xPkyi0llA6PCEW2B26e7pTY+JLp0zPvs6MYbbEXWaO1FWG0xr6Q/FqPrh6K86glV5ZRU7DEbvnedZVdFglg==
   dependencies:
     classnames "2.x"
     lodash.isequal "^4.0.0"

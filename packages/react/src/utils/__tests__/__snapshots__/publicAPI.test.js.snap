@@ -21623,15 +21623,15 @@ Map {
                   "sk",
                   "sl",
                   "sq",
-                  "sr-cyr",
                   "sr",
                   "sv",
                   "th",
                   "tr",
                   "uk",
                   "uz",
+                  "uz_latn",
                   "vn",
-                  "zh-tw",
+                  "zh_tw",
                   "zh",
                 ],
               ],
@@ -23051,6 +23051,8 @@ Map {
       },
     },
     "defaultProps": Object {
+      "clearSelectionDescription": "Total items selected: ",
+      "clearSelectionText": "To clear selection, press Delete or Backspace,",
       "compareItems": [Function],
       "direction": "bottom",
       "disabled": false,
@@ -23066,6 +23068,12 @@ Map {
     },
     "displayName": "MultiSelect",
     "propTypes": Object {
+      "clearSelectionDescription": Object {
+        "type": "string",
+      },
+      "clearSelectionText": Object {
+        "type": "string",
+      },
       "compareItems": Object {
         "isRequired": true,
         "type": "func",
@@ -23210,7 +23218,6 @@ Map {
   },
   "ToastNotification" => Object {
     "defaultProps": Object {
-      "caption": "provide a caption",
       "hideCloseButton": false,
       "iconDescription": "closes notification",
       "kind": "error",
@@ -23407,7 +23414,6 @@ Map {
   },
   "NotificationTextDetails" => Object {
     "defaultProps": Object {
-      "caption": "caption",
       "notificationType": "toast",
       "title": "title",
     },
@@ -23773,6 +23779,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "legendText": Object {
+        "type": "node",
+      },
       "name": Object {
         "isRequired": true,
         "type": "string",
@@ -23993,6 +24002,12 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "warn": Object {
+        "type": "bool",
+      },
+      "warnText": Object {
+        "type": "node",
       },
     },
     "render": [Function],
@@ -25662,7 +25677,6 @@ Map {
     "defaultProps": Object {
       "columnCount": 5,
       "compact": false,
-      "headers": Array [],
       "rowCount": 5,
       "showHeader": true,
       "showToolbar": true,
@@ -25889,6 +25903,16 @@ Map {
       "className": Object {
         "type": "string",
       },
+      "type": Object {
+        "args": Array [
+          Array [
+            "",
+            "default",
+            "container",
+          ],
+        ],
+        "type": "oneOf",
+      },
     },
   },
   "TagSkeleton" => Object {
@@ -26033,6 +26057,16 @@ Map {
       },
       "onClick": Object {
         "type": "func",
+      },
+      "tooltipAlignment": Object {
+        "args": Array [
+          Array [
+            "start",
+            "center",
+            "end",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
     "render": [Function],
