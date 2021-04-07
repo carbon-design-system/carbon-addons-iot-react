@@ -6,8 +6,9 @@ import { CardHeaderComponent } from './card-header.component';
 import { CardTitleComponent } from './card-title.component';
 import { CardToolbarActionDirective } from './card-toolbar-action.directive';
 import { CardToolbarComponent } from './card-toolbar.component';
+import { CardDateRangeComponent } from './card-date-range.component';
 import { CardComponent } from './card.component';
-import { IconModule } from 'carbon-components-angular';
+import { DialogModule, IconModule } from 'carbon-components-angular';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { IconModule } from 'carbon-components-angular';
     CardTitleComponent,
     CardToolbarActionDirective,
     CardToolbarComponent,
+    CardDateRangeComponent,
     CardComponent,
   ],
   exports: [
@@ -24,8 +26,9 @@ import { IconModule } from 'carbon-components-angular';
     CardTitleComponent,
     CardToolbarActionDirective,
     CardToolbarComponent,
+    CardDateRangeComponent,
     CardComponent,
   ],
-  imports: [CommonModule, IconModule],
+  imports: [CommonModule, IconModule, DialogModule],
 })
 export class CardModule {}

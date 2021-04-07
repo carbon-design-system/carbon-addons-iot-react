@@ -4,6 +4,7 @@ import {
   ElementRef,
   HostBinding,
   Input,
+  OnInit,
   TemplateRef,
 } from '@angular/core';
 import { CardService } from './card.service';
@@ -18,12 +19,19 @@ import { CardService } from './card.service';
     </div>
   `,
 })
-export class CardContentComponent implements AfterViewInit {
+export class CardContentComponent implements OnInit, AfterViewInit {
   @HostBinding('class.iot--card--content') contentClass = true;
+  @HostBinding('class.iot--card--content--expanded') expandedClass = false;
   @Input() emptyText: string | TemplateRef<any>;
   @Input() isEmpty = false;
 
   constructor(protected cardService: CardService, protected elementRef: ElementRef) {}
+
+  ngOnInit() {
+    this.cardService.onExpand((value) => {
+      this.expandedClass = value;
+    });
+  }
 
   ngAfterViewInit() {
     const hostElement: HTMLElement = this.elementRef.nativeElement;

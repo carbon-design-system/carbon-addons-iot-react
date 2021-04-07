@@ -4,7 +4,9 @@ import { boolean, withKnobs } from '@storybook/addon-knobs';
 import { CardModule } from './card.module';
 import { Component, OnInit } from '@angular/core';
 import { CardService } from './card.service';
-import { DialogModule, IconModule } from 'carbon-components-angular';
+import { DialogModule, IconModule, IconService } from 'carbon-components-angular';
+import Popup16 from '@carbon/icons/lib/popup/16';
+import Close16 from '@carbon/icons/lib/close/16';
 
 @Component({
   selector: 'app-demo',
@@ -47,11 +49,21 @@ class AppDemo implements OnInit {
   }
 }
 
+@Component({
+  selector: 'app-demo-icons',
+  template: '',
+})
+class AppDemoIcons {
+  constructor(protected iconService: IconService) {
+    iconService.registerAll([Popup16, Close16]);
+  }
+}
+
 storiesOf('Components/Card', module)
   .addDecorator(
     moduleMetadata({
       imports: [CardModule, DialogModule, IconModule],
-      declarations: [AppDemo],
+      declarations: [AppDemo, AppDemoIcons],
     })
   )
   .addDecorator(withKnobs)
@@ -63,7 +75,7 @@ storiesOf('Components/Card', module)
             <ai-card-title text="Card Title"></ai-card-title>
             <ai-card-toolbar>
               <button aiCardToolbarAction>
-                <svg ibmIcon="calendar" size="16"></svg>
+                <svg ibmIcon="popup" size="16"></svg>
               </button>
             </ai-card-toolbar>
           </ai-card-header>
@@ -82,7 +94,7 @@ storiesOf('Components/Card', module)
                 <ibm-overflow-menu-option>Fourth option</ibm-overflow-menu-option>
               </ibm-overflow-menu>
               <button aiCardToolbarAction>
-                <svg ibmIcon="calendar" size="16"></svg>
+                <svg ibmIcon="popup" size="16"></svg>
               </button>
             </ai-card-toolbar>
           </ai-card-header>
@@ -92,6 +104,7 @@ storiesOf('Components/Card', module)
         </ai-card>
       </div>
       <app-demo></app-demo>
+      <app-demo-icons></app-demo-icons>
 		`,
     props: {},
   }))
@@ -113,7 +126,7 @@ storiesOf('Components/Card', module)
             </ai-card-title>
             <ai-card-toolbar>
               <button aiCardToolbarAction>
-                <svg ibmIcon="calendar" size="16"></svg>
+                <svg ibmIcon="popup" size="16"></svg>
               </button>
             </ai-card-toolbar>
           </ai-card-header>
@@ -122,6 +135,7 @@ storiesOf('Components/Card', module)
           </ai-card-content>
         </ai-card>
       </div>
+      <app-demo-icons></app-demo-icons>
     `,
   }))
   /* tslint:enable:max-line-length */
@@ -132,12 +146,34 @@ storiesOf('Components/Card', module)
           <ai-card-title text="Card Title"></ai-card-title>
           <ai-card-toolbar>
             <button aiCardToolbarAction>
-              <svg ibmIcon="calendar" size="16"></svg>
+              <svg ibmIcon="popup" size="16"></svg>
             </button>
           </ai-card-toolbar>
         </ai-card-header>
         <ai-card-content isEmpty="true" emptyText="No content available"></ai-card-content>
       </ai-card>
+      <app-demo-icons></app-demo-icons>
+    `,
+  }))
+  .add('With date range selector', () => ({
+    template: `
+      <div style="width: 450px">
+        <ai-card [defaultHeight]="400">
+          <ai-card-header>
+            <ai-card-title text="Card Title"></ai-card-title>
+            <ai-card-toolbar>
+              <ai-card-date-range></ai-card-date-range>
+              <button aiCardToolbarAction>
+                <svg ibmIcon="popup" size="16"></svg>
+              </button>
+            </ai-card-toolbar>
+          </ai-card-header>
+          <ai-card-content>
+            Card Content
+          </ai-card-content>
+        </ai-card>
+      </div>
+      <app-demo-icons></app-demo-icons>
     `,
   }))
   .add('Expanded', () => ({
@@ -147,14 +183,18 @@ storiesOf('Components/Card', module)
           <ai-card-header>
             <ai-card-title text="Card Title"></ai-card-title>
             <ai-card-toolbar>
-              <button aiCardToolbarAction>
-                <svg ibmIcon="calendar" size="16"></svg>
+              <button aiCardToolbarAction *ngIf="!expanded" (click)="expanded = true">
+                <svg ibmIcon="popup" size="16"></svg>
+              </button>
+              <button aiCardToolbarAction *ngIf="expanded" (click)="expanded = false">
+                <svg ibmIcon="close" size="16"></svg>
               </button>
             </ai-card-toolbar>
           </ai-card-header>
           <ai-card-content isEmpty="true" emptyText="No content available"></ai-card-content>
         </ai-card>
       <div style="width: 450px">
+      <app-demo-icons></app-demo-icons>
     `,
     props: {
       expanded: boolean('Expanded', true),

@@ -4,7 +4,9 @@ import {
   ElementRef,
   HostBinding,
   Input,
+  OnChanges,
   Optional,
+  SimpleChanges,
   SkipSelf,
 } from '@angular/core';
 import { CardService } from './card.service';
@@ -44,13 +46,21 @@ const CARD_SERVICE_PROVIDER = {
     `,
   ],
 })
-export class CardComponent implements AfterViewInit {
+export class CardComponent implements OnChanges, AfterViewInit {
   @Input() defaultHeight: number = null;
   @Input() expanded = false;
   @HostBinding('class.iot--card') cardClass = true;
   @HostBinding('class.iot--card--wrapper') wrapperClass = true;
+  @HostBinding('class.iot--card--wrapper__selected') @Input() selected = false;
+  @HostBinding('attr.role') role = 'presentation';
 
   constructor(protected cardService: CardService, protected elementRef: ElementRef) {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.expanded) {
+      this.cardService.setExpanded(changes.expanded.currentValue);
+    }
+  }
 
   ngAfterViewInit() {
     if (this.defaultHeight) {
