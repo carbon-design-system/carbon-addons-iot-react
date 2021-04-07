@@ -21,6 +21,9 @@
     "scss/**/*",
     "css/**/*"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@carbon/charts": "0.41.31",
     "@carbon/motion": "10.12.0",

@@ -26,7 +26,8 @@
     "url": "git@github.com:IBM/carbon-components-angular.git"
   },
   "publishConfig": {
-    "directory": "dist"
+    "directory": "dist",
+    "access": "public"
   },
   "license": "Apache-2.0",
   "author": "IBM",
