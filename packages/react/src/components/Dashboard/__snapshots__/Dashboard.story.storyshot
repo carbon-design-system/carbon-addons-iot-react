@@ -29125,7 +29125,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           <svg
                             viewBox="0 0 170.76 146.75"
                             width="50%"
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <defs>
                               <linearGradient
@@ -29276,7 +29275,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                           <svg
                             viewBox="0 0 170.76 146.75"
                             width="50%"
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <defs>
                               <linearGradient
@@ -29710,8 +29708,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <svg
                           viewBox="0 0 170.76 146.75"
                           width="50%"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlnsXlink="http://www.w3.org/1999/xlink"
                         >
                           <defs>
                             <linearGradient

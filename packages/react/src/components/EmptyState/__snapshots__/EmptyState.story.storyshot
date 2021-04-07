@@ -25,7 +25,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-icon"
           height={80}
           width={80}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient
@@ -242,7 +241,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-icon"
           height={80}
           width={80}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient
@@ -564,7 +562,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-icon"
           height={80}
           width={80}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient
@@ -870,7 +867,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-icon"
           height={80}
           width={80}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient
@@ -1192,7 +1188,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-icon"
           height={80}
           width={80}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient
@@ -1567,7 +1562,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-icon"
           height={80}
           width={80}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <radialGradient
@@ -1909,7 +1903,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-icon"
           height={80}
           width={80}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient
@@ -2231,7 +2224,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-icon"
           height={80}
           width={80}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient
@@ -2565,7 +2557,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-icon"
           height={80}
           width={80}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient
@@ -2745,7 +2736,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           className="iot--empty-state--icon"
           data-testid="EmptyState-icon"
           viewBox="0 0 170.76 146.75"
-          xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient

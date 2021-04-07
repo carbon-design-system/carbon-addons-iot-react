@@ -13,7 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
     }
   >
     <section
-      className="ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz bx--structured-list bx--structured-list--border bx--structured-list--selection"
+      className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
     >
       <div
         className="bx--structured-list-tbody"
@@ -204,7 +204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
     }
   >
     <section
-      className="ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz bx--structured-list bx--structured-list--border bx--structured-list--selection"
+      className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
     >
       <div
         className="bx--structured-list-tbody"
@@ -228,7 +228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
             Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
           </div>
           <div
-            className="ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR bx--structured-list-td bx--structured-list-content--nowrap"
+            className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
             role="presentation"
           >
             <button
@@ -277,7 +277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
             Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
           </div>
           <div
-            className="ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR bx--structured-list-td bx--structured-list-content--nowrap"
+            className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
             role="presentation"
           >
             <button
@@ -326,7 +326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
             Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed. Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
           </div>
           <div
-            className="ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR bx--structured-list-td bx--structured-list-content--nowrap"
+            className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
             role="presentation"
           >
             <button
@@ -398,7 +398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
     }
   >
     <section
-      className="ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz bx--structured-list bx--structured-list--border bx--structured-list--selection"
+      className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
     >
       <div
         className="bx--structured-list-tbody"

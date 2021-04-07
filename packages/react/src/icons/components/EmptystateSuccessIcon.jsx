@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgEmptystateSuccessIcon(props) {
   return (
-    <svg width={80} height={80} xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg width={80} height={80} {...props}>
       <defs>
         <linearGradient x1="0%" y1="50%" x2="99.938%" y2="50%" id="emptystate-Success-icon_svg__a">
           <stop stopColor="#F6F6F6" offset="0%" />

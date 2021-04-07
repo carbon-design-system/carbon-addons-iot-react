@@ -87,7 +87,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="iot--dashboard-editor-header--bottom"
               >
                 <button
-                  aria-describedby="icon-tooltip-10"
+                  aria-describedby="icon-tooltip-9"
                   className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                   onFocus={[Function]}
                   onMouseEnter={[Function]}
@@ -95,7 +95,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <span
                     className="bx--assistive-text"
-                    id="icon-tooltip-10"
+                    id="icon-tooltip-9"
                   >
                     Import
                   </span>
@@ -107,7 +107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
-                    htmlFor="id10"
+                    htmlFor="id9"
                     onKeyDown={[Function]}
                     tabIndex={0}
                   >
@@ -136,7 +136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     className="bx--visually-hidden"
                     disabled={false}
-                    id="id10"
+                    id="id9"
                     multiple={false}
                     onChange={[Function]}
                     onClick={[Function]}

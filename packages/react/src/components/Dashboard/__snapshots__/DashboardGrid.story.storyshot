@@ -92,6 +92,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -148,6 +154,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -204,6 +216,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -260,6 +278,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -316,6 +340,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -372,6 +402,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -428,6 +464,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -484,6 +526,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -613,6 +661,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
             <span
@@ -620,6 +674,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
             />
           </div>
           <div
@@ -744,6 +804,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
             <span
@@ -751,6 +817,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
             />
           </div>
           <div
@@ -911,6 +983,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
             />
           </div>
           <div
@@ -969,6 +1047,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
             <span
@@ -976,6 +1060,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
             />
           </div>
           <div
@@ -2369,6 +2459,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
             />
           </div>
           <div
@@ -2610,6 +2706,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
             />
           </div>
           <div
@@ -2669,6 +2771,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
             />
           </div>
           <div
@@ -2911,6 +3019,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
             />
           </div>
           <div
@@ -2970,6 +3084,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
             />
           </div>
         </div>
@@ -3095,6 +3215,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -3152,6 +3278,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -3209,6 +3341,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -3351,6 +3489,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "touchAction": "none",
+                    }
+                  }
                 />
               </div>
             </div>
@@ -3408,6 +3552,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "touchAction": "none",
+                    }
+                  }
                 />
               </div>
             </div>
@@ -3465,6 +3615,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "touchAction": "none",
+                    }
+                  }
                 />
               </div>
             </div>
@@ -3592,6 +3748,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -3649,6 +3811,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -3706,6 +3874,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
           </div>
@@ -3827,6 +4001,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
               />
             </div>
             <span
@@ -3834,6 +4014,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               onMouseDown={[Function]}
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
             />
           </div>
         </div>

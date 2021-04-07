@@ -609,7 +609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id15"
+                    id="id14"
                     name="Chicago White Sox"
                     onChange={[Function]}
                     tabIndex={0}
@@ -618,7 +618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id15"
+                    htmlFor="id14"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -653,7 +653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id16"
+                    id="id15"
                     name="New York Yankees"
                     onChange={[Function]}
                     tabIndex={0}
@@ -662,7 +662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id16"
+                    htmlFor="id15"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -697,7 +697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id17"
+                    id="id16"
                     name="Houston Astros"
                     onChange={[Function]}
                     tabIndex={0}
@@ -706,7 +706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id17"
+                    htmlFor="id16"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -741,7 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id18"
+                    id="id17"
                     name="Atlanta Braves"
                     onChange={[Function]}
                     tabIndex={0}
@@ -750,7 +750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id18"
+                    htmlFor="id17"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -785,7 +785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id19"
+                    id="id18"
                     name="New York Mets"
                     onChange={[Function]}
                     tabIndex={0}
@@ -794,7 +794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id19"
+                    htmlFor="id18"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -829,7 +829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id20"
+                    id="id19"
                     name="Washington Nationals"
                     onChange={[Function]}
                     tabIndex={0}
@@ -838,7 +838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id20"
+                    htmlFor="id19"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -4734,13 +4734,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                         >
                           <div
                             aria-atomic="true"
-                            aria-labelledby="loading-id-9"
+                            aria-labelledby="loading-id-8"
                             aria-live="assertive"
                             className="bx--loading bx--loading--small"
                           >
                             <label
                               className="bx--visually-hidden"
-                              id="loading-id-9"
+                              id="loading-id-8"
                             >
                               Active loading indicator
                             </label>

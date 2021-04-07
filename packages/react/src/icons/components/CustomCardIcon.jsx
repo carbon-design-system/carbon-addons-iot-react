@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgCustomCardIcon(props) {
   return (
-    <svg width={40} height={32} xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg width={40} height={32} {...props}>
       <g fill="none" fillRule="evenodd">
         <path stroke="#2160F8" d="M.5.5h39v31H.5z" />
         <path fill="#D8D8D8" d="M25 5h11v3H25zm0 6h11v3H25zm0 12h11v3H25zm0-6h11v3H25z" />

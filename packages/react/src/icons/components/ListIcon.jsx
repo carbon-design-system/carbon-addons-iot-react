@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgListIcon(props) {
   return (
-    <svg width={40} height={32} xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg width={40} height={32} {...props}>
       <g fill="none" fillRule="evenodd">
         <path
           fill="#D8D8D8"

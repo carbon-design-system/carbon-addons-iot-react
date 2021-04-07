@@ -182,11 +182,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-38__panel"
+                  aria-controls="tab-36__panel"
                   aria-selected={true}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-38"
+                  id="tab-36"
                   role="tab"
                   tabIndex={0}
                   type="button"
@@ -201,11 +201,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-39__panel"
+                  aria-controls="tab-37__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-39"
+                  id="tab-37"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -2228,11 +2228,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-40__panel"
+                  aria-controls="tab-38__panel"
                   aria-selected={true}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-40"
+                  id="tab-38"
                   role="tab"
                   tabIndex={0}
                   type="button"
@@ -2247,11 +2247,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-41__panel"
+                  aria-controls="tab-39__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-41"
+                  id="tab-39"
                   role="tab"
                   tabIndex={-1}
                   type="button"

@@ -2,13 +2,7 @@ import * as React from 'react';
 
 function SvgAlertTableIcon(props) {
   return (
-    <svg
-      width={40}
-      height={32}
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      {...props}
-    >
+    <svg width={40} height={32} {...props}>
       <defs>
         <path
           d="M14.94 13.26l-6.5-12a.5.5 0 00-.88 0l-6.5 12a.5.5 0 000 .5.5.5 0 00.44.24h13a.5.5 0 00.44-.74z"
