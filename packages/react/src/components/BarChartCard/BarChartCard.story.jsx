@@ -116,7 +116,7 @@ export const SimpleBarTimeSeriesCustomDomainRange = () => {
             {
               dataSourceId: 'particles',
               // colors: COLORS,
-              label: 'Particles',
+              label: 'Particles really long label to check trunc',
             },
           ],
           timeDataSourceId: 'timestamp',
