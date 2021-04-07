@@ -185,6 +185,7 @@ const CardRenderer = React.memo(
 
     const commonCardProps = {
       ...card, // pass all the card props, including the card data to the card
+      ...(card.type === 'CUSTOM' && cardProp.content ? { content: cardProp.content } : {}), // the card content function cannot be cached for custom cards
       style: cardProp.style, // these come from grid layout and not state
       className: cardProp.className, // these come from grid layout and not state
       key: cardProp.id,
