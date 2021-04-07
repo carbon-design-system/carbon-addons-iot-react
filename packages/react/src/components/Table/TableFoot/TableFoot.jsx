@@ -22,6 +22,10 @@ const propTypes = {
           id: PropTypes.string.isRequired,
           /** the value to be displayed */
           value: PropTypes.string,
+          /** allow aligning the results the same as the column */
+          align: PropTypes.oneOf(['start', 'center', 'end']),
+          /** allows the aggregation to align with sortable columns extra padding */
+          isSortable: PropTypes.bool,
         })
       ),
     }),
@@ -73,8 +77,9 @@ const TableFoot = ({
               className={classnames({
                 [`${iotPrefix}-table-foot--value`]: true,
                 'data-table-end': aggregated.align === 'end',
-                'data-table-start': aggregated.align === 'start',
+                'data-table-start': !aggregated.align || aggregated.align === 'start',
                 'data-table-center': aggregated.align === 'center',
+                [`${iotPrefix}-table-foot--value__sortable`]: aggregated.isSortable,
               })}
               align={aggregated.align ? aggregated.align : undefined}
               data-testid={cellTestId}

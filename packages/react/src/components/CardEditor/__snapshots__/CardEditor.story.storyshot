@@ -78,6 +78,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--search-input"
                     id="iot--list-header--search"
                     onChange={[Function]}
+                    onKeyDown={[Function]}
                     placeholder="Enter a search"
                     role="searchbox"
                     type="text"
@@ -549,26 +550,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-edit-form"
           >
             <div
-              className="bx--tabs"
-              role="navigation"
+              className="bx--tabs--scrollable"
+              onScroll={[Function]}
               selected={0}
             >
-              <div
-                aria-label="listbox"
-                className="bx--tabs-trigger"
+              <button
+                aria-hidden="true"
+                aria-label="Scroll left"
+                className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
-                onKeyPress={[Function]}
-                role="listbox"
-                tabIndex={0}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
               >
-                <a
-                  className="bx--tabs-trigger-text"
-                  href="#"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                >
-                  Content
-                </a>
                 <svg
                   aria-hidden={true}
                   fill="currentColor"
@@ -580,55 +575,81 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                   />
-                  <title>
-                    show menu options
-                  </title>
                 </svg>
-              </div>
+              </button>
               <ul
-                className="bx--tabs__nav bx--tabs__nav--hidden"
+                className="bx--tabs--scrollable__nav"
                 role="tablist"
+                tabIndex={-1}
               >
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={true}
-                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-9__panel"
+                    aria-selected={true}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-9"
+                    role="tab"
                     tabIndex={0}
+                    type="button"
                   >
                     Content
-                  </a>
+                  </button>
                 </li>
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
+                  className="bx--tabs--scrollable__nav-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-10__panel"
+                    aria-selected={false}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-10"
+                    role="tab"
                     tabIndex={-1}
+                    type="button"
                   >
                     Settings
-                  </a>
+                  </button>
                 </li>
               </ul>
+              <button
+                aria-hidden="true"
+                aria-label="Scroll right"
+                className="bx--tab--overflow-nav-button--hidden"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
-              aria-hidden={false}
               className="bx--tab-content"
               hidden={false}
               role="tabpanel"
@@ -652,7 +673,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="bx--text-input__field-wrapper"
                       data-invalid={null}
-                      data-warn={null}
                     >
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
@@ -692,7 +712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       id="calculated_description"
                       onChange={[Function]}
                       onClick={[Function]}
-                      placeholder=""
+                      placeholder={null}
                       rows={4}
                     />
                   </div>
@@ -841,7 +861,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
               className="bx--tab-content"
               hidden={true}
               role="tabpanel"
@@ -956,6 +975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
+                      onContextMenu={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseOut={[Function]}
@@ -1157,26 +1177,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-edit-form"
           >
             <div
-              className="bx--tabs"
-              role="navigation"
+              className="bx--tabs--scrollable"
+              onScroll={[Function]}
               selected={0}
             >
-              <div
-                aria-label="listbox"
-                className="bx--tabs-trigger"
+              <button
+                aria-hidden="true"
+                aria-label="Scroll left"
+                className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
-                onKeyPress={[Function]}
-                role="listbox"
-                tabIndex={0}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
               >
-                <a
-                  className="bx--tabs-trigger-text"
-                  href="#"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                >
-                  Content
-                </a>
                 <svg
                   aria-hidden={true}
                   fill="currentColor"
@@ -1188,55 +1202,81 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                   />
-                  <title>
-                    show menu options
-                  </title>
                 </svg>
-              </div>
+              </button>
               <ul
-                className="bx--tabs__nav bx--tabs__nav--hidden"
+                className="bx--tabs--scrollable__nav"
                 role="tablist"
+                tabIndex={-1}
               >
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={true}
-                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-1__panel"
+                    aria-selected={true}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-1"
+                    role="tab"
                     tabIndex={0}
+                    type="button"
                   >
                     Content
-                  </a>
+                  </button>
                 </li>
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
+                  className="bx--tabs--scrollable__nav-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-2__panel"
+                    aria-selected={false}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-2"
+                    role="tab"
                     tabIndex={-1}
+                    type="button"
                   >
                     Settings
-                  </a>
+                  </button>
                 </li>
               </ul>
+              <button
+                aria-hidden="true"
+                aria-label="Scroll right"
+                className="bx--tab--overflow-nav-button--hidden"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
-              aria-hidden={false}
               className="bx--tab-content"
               hidden={false}
               role="tabpanel"
@@ -1260,7 +1300,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="bx--text-input__field-wrapper"
                       data-invalid={null}
-                      data-warn={null}
                     >
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
@@ -1300,7 +1339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       id="calculated_description"
                       onChange={[Function]}
                       onClick={[Function]}
-                      placeholder=""
+                      placeholder={null}
                       rows={4}
                     />
                   </div>
@@ -1449,7 +1488,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
               className="bx--tab-content"
               hidden={true}
               role="tabpanel"
@@ -1564,6 +1602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
+                      onContextMenu={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseOut={[Function]}
@@ -1765,26 +1804,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-edit-form"
           >
             <div
-              className="bx--tabs"
-              role="navigation"
+              className="bx--tabs--scrollable"
+              onScroll={[Function]}
               selected={0}
             >
-              <div
-                aria-label="listbox"
-                className="bx--tabs-trigger"
+              <button
+                aria-hidden="true"
+                aria-label="Scroll left"
+                className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
-                onKeyPress={[Function]}
-                role="listbox"
-                tabIndex={0}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
               >
-                <a
-                  className="bx--tabs-trigger-text"
-                  href="#"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                >
-                  Content
-                </a>
                 <svg
                   aria-hidden={true}
                   fill="currentColor"
@@ -1796,55 +1829,81 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                   />
-                  <title>
-                    show menu options
-                  </title>
                 </svg>
-              </div>
+              </button>
               <ul
-                className="bx--tabs__nav bx--tabs__nav--hidden"
+                className="bx--tabs--scrollable__nav"
                 role="tablist"
+                tabIndex={-1}
               >
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={true}
-                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-7__panel"
+                    aria-selected={true}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-7"
+                    role="tab"
                     tabIndex={0}
+                    type="button"
                   >
                     Content
-                  </a>
+                  </button>
                 </li>
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
+                  className="bx--tabs--scrollable__nav-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-8__panel"
+                    aria-selected={false}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-8"
+                    role="tab"
                     tabIndex={-1}
+                    type="button"
                   >
                     Settings
-                  </a>
+                  </button>
                 </li>
               </ul>
+              <button
+                aria-hidden="true"
+                aria-label="Scroll right"
+                className="bx--tab--overflow-nav-button--hidden"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
-              aria-hidden={false}
               className="bx--tab-content"
               hidden={false}
               role="tabpanel"
@@ -1868,7 +1927,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="bx--text-input__field-wrapper"
                       data-invalid={null}
-                      data-warn={null}
                     >
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
@@ -1908,7 +1966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       id="image_description"
                       onChange={[Function]}
                       onClick={[Function]}
-                      placeholder=""
+                      placeholder={null}
                       rows={4}
                     />
                   </div>
@@ -2071,6 +2129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
+                      onContextMenu={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseOut={[Function]}
@@ -2172,7 +2231,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
               className="bx--tab-content"
               hidden={true}
               role="tabpanel"
@@ -2598,26 +2656,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-edit-form"
           >
             <div
-              className="bx--tabs"
-              role="navigation"
+              className="bx--tabs--scrollable"
+              onScroll={[Function]}
               selected={0}
             >
-              <div
-                aria-label="listbox"
-                className="bx--tabs-trigger"
+              <button
+                aria-hidden="true"
+                aria-label="Scroll left"
+                className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
-                onKeyPress={[Function]}
-                role="listbox"
-                tabIndex={0}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
               >
-                <a
-                  className="bx--tabs-trigger-text"
-                  href="#"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                >
-                  Content
-                </a>
                 <svg
                   aria-hidden={true}
                   fill="currentColor"
@@ -2629,55 +2681,81 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                   />
-                  <title>
-                    show menu options
-                  </title>
                 </svg>
-              </div>
+              </button>
               <ul
-                className="bx--tabs__nav bx--tabs__nav--hidden"
+                className="bx--tabs--scrollable__nav"
                 role="tablist"
+                tabIndex={-1}
               >
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={true}
-                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-3__panel"
+                    aria-selected={true}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-3"
+                    role="tab"
                     tabIndex={0}
+                    type="button"
                   >
                     Content
-                  </a>
+                  </button>
                 </li>
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
+                  className="bx--tabs--scrollable__nav-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-4__panel"
+                    aria-selected={false}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-4"
+                    role="tab"
                     tabIndex={-1}
+                    type="button"
                   >
                     Settings
-                  </a>
+                  </button>
                 </li>
               </ul>
+              <button
+                aria-hidden="true"
+                aria-label="Scroll right"
+                className="bx--tab--overflow-nav-button--hidden"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
-              aria-hidden={false}
               className="bx--tab-content"
               hidden={false}
               role="tabpanel"
@@ -2701,7 +2779,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="bx--text-input__field-wrapper"
                       data-invalid={null}
-                      data-warn={null}
                     >
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
@@ -2741,7 +2818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       id="timeseries_description"
                       onChange={[Function]}
                       onClick={[Function]}
-                      placeholder=""
+                      placeholder={null}
                       rows={4}
                     />
                   </div>
@@ -2904,6 +2981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
+                      onContextMenu={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseOut={[Function]}
@@ -2985,7 +3063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           aria-labelledby="downshift-2-label"
                           autoComplete="off"
                           className="bx--text-input bx--text-input--empty"
-                          data-testid="combo-box"
+                          data-testid="editor--data-series--combobox"
                           disabled={false}
                           id="timeseries_dataSourceIds-combobox"
                           onBlur={[Function]}
@@ -3072,7 +3150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="iot--list-item--content--row-actions"
                             >
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
@@ -3103,7 +3181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 </svg>
                               </button>
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
@@ -3177,7 +3255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="iot--list-item--content--row-actions"
                             >
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
@@ -3208,7 +3286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 </svg>
                               </button>
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
@@ -3248,7 +3326,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
               className="bx--tab-content"
               hidden={true}
               role="tabpanel"
@@ -3272,7 +3349,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="bx--text-input__field-wrapper"
                       data-invalid={null}
-                      data-warn={null}
                     >
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
@@ -3305,7 +3381,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="bx--text-input__field-wrapper"
                       data-invalid={null}
-                      data-warn={null}
                     >
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
@@ -3338,7 +3413,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="bx--text-input__field-wrapper"
                       data-invalid={null}
-                      data-warn={null}
                     >
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
@@ -3371,7 +3445,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="bx--text-input__field-wrapper"
                       data-invalid={null}
-                      data-warn={null}
                     >
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
@@ -3634,26 +3707,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--card-edit-form"
             >
               <div
-                className="bx--tabs"
-                role="navigation"
+                className="bx--tabs--scrollable"
+                onScroll={[Function]}
                 selected={0}
               >
-                <div
-                  aria-label="listbox"
-                  className="bx--tabs-trigger"
+                <button
+                  aria-hidden="true"
+                  aria-label="Scroll left"
+                  className="bx--tab--overflow-nav-button--hidden"
                   onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="listbox"
-                  tabIndex={0}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  tabIndex="-1"
+                  type="button"
                 >
-                  <a
-                    className="bx--tabs-trigger-text"
-                    href="#"
-                    onClick={[Function]}
-                    tabIndex={-1}
-                  >
-                    Content
-                  </a>
                   <svg
                     aria-hidden={true}
                     fill="currentColor"
@@ -3665,55 +3732,81 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                     />
-                    <title>
-                      show menu options
-                    </title>
                   </svg>
-                </div>
+                </button>
                 <ul
-                  className="bx--tabs__nav bx--tabs__nav--hidden"
+                  className="bx--tabs--scrollable__nav"
                   role="tablist"
+                  tabIndex={-1}
                 >
                   <li
-                    aria-controls="undefined__panel"
-                    aria-selected={true}
-                    className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                    className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    role="tab"
-                    tabIndex={-1}
+                    role="presentation"
                   >
-                    <a
-                      className="bx--tabs__nav-link"
+                    <button
+                      aria-controls="tab-5__panel"
+                      aria-selected={true}
+                      className="bx--tabs--scrollable__nav-link"
                       href="#"
+                      id="tab-5"
+                      role="tab"
                       tabIndex={0}
+                      type="button"
                     >
                       Content
-                    </a>
+                    </button>
                   </li>
                   <li
-                    aria-controls="undefined__panel"
-                    aria-selected={false}
-                    className="bx--tabs__nav-item"
+                    className="bx--tabs--scrollable__nav-item"
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    role="tab"
-                    tabIndex={-1}
+                    role="presentation"
                   >
-                    <a
-                      className="bx--tabs__nav-link"
+                    <button
+                      aria-controls="tab-6__panel"
+                      aria-selected={false}
+                      className="bx--tabs--scrollable__nav-link"
                       href="#"
+                      id="tab-6"
+                      role="tab"
                       tabIndex={-1}
+                      type="button"
                     >
                       Settings
-                    </a>
+                    </button>
                   </li>
                 </ul>
+                <button
+                  aria-hidden="true"
+                  aria-label="Scroll right"
+                  className="bx--tab--overflow-nav-button--hidden"
+                  onClick={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  tabIndex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
               </div>
               <div
-                aria-hidden={false}
                 className="bx--tab-content"
                 hidden={false}
                 role="tabpanel"
@@ -3737,7 +3830,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <div
                         className="bx--text-input__field-wrapper"
                         data-invalid={null}
-                        data-warn={null}
                       >
                         <input
                           className="bx--text-input bx--text__input bx--text-input--light"
@@ -3777,7 +3869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         id="card-1_description"
                         onChange={[Function]}
                         onClick={[Function]}
-                        placeholder=""
+                        placeholder={null}
                         rows={4}
                       />
                     </div>
@@ -3926,7 +4018,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </div>
               </div>
               <div
-                aria-hidden={true}
                 className="bx--tab-content"
                 hidden={true}
                 role="tabpanel"
@@ -4041,6 +4132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}
+                        onContextMenu={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseOut={[Function]}
@@ -4260,6 +4352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--search-input"
                     id="iot--list-header--search"
                     onChange={[Function]}
+                    onKeyDown={[Function]}
                     placeholder="Enter a search"
                     role="searchbox"
                     type="text"
@@ -5048,12 +5141,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M29.879,27.5212l-13-25.0363a1.04,1.04,0,0,0-1.7583,0l-13,25.0363A1.0015,1.0015,0,0,0,3,29H29a1.001,1.001,0,0,0,.8789-1.4788ZM14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+          d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+          fill="none"
         />
         <path
-          d="M14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
-          data-icon-path="inner-path"
-          fill="none"
+          d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
         />
         <title>
           warning-alt icon
@@ -5073,11 +5165,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           <span>
             CardEditor
              is an
+             
             <a
               href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
             >
               experimental component
             </a>
+             
             and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
           </span>
         </div>

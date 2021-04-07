@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act, isDOMComponent } from 'react-dom/test-utils';
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
+import { Error32 } from '@carbon/icons-react';
 
 import landscape from './landscape.jpg';
+import portrait from './portrait.jpg';
 import ImageHotspots, {
   calculateImageHeight,
   calculateImageWidth,
@@ -15,6 +17,11 @@ import ImageHotspots, {
   zoom,
   handleMouseUp,
 } from './ImageHotspots';
+
+const commonProps = {
+  height: 100,
+  width: 100,
+};
 
 const getHotspots = () => {
   return [
@@ -157,7 +164,7 @@ describe('ImageHotspots', () => {
   });
   it('shows loading', () => {
     act(() => {
-      ReactDOM.render(<ImageHotspots />, container);
+      ReactDOM.render(<ImageHotspots {...commonProps} />, container);
     });
     const image = container.querySelector('img');
     expect(isDOMComponent(image)).toBe(false);
@@ -248,7 +255,7 @@ describe('ImageHotspots', () => {
 
     const i18nDefault = ImageHotspots.defaultProps.i18n;
 
-    render(<ImageHotspots i18n={i18nTest} />);
+    render(<ImageHotspots {...commonProps} i18n={i18nTest} />);
     expect(screen.getByTitle(i18nTest.zoomIn)).toBeInTheDocument();
     expect(screen.getByTitle(i18nTest.zoomOut)).toBeInTheDocument();
     expect(screen.queryByTitle(i18nDefault.zoomIn)).not.toBeInTheDocument();
@@ -333,7 +340,27 @@ describe('ImageHotspots', () => {
       // difficulties setting the event.pageX & event.pageY in the test,
       // which are needed for getting the position of the click correct.
       expect(onAddHotspotPosition).toHaveBeenCalled();
+
+      // dumb tests for branching coverage on keyUp/Down handlers
+      fireEvent.keyDown(screen.getByAltText(testImageText), {
+        key: 'a',
+        keyCode: 65,
+      });
+      fireEvent.keyUp(screen.getByAltText(testImageText), {
+        key: 'a',
+        keyCode: 65,
+      });
+      fireEvent.keyDown(screen.getByAltText(testImageText), {
+        key: 'Control',
+        keyCode: 17,
+        ctrlKey: true,
+      });
+      fireEvent.keyUp(screen.getByAltText(testImageText), {
+        key: 'Control',
+        keyCode: 17,
+      });
     });
+
     it('calculates the proper percentage coordinates for image click', () => {
       const onAddHotspotPositionCallback = jest.fn();
       const event = {
@@ -371,5 +398,470 @@ describe('ImageHotspots', () => {
         imageMousedown: false,
       });
     });
+  });
+
+  describe('with landscape Image mocking', () => {
+    beforeEach(() => {
+      jest.spyOn(Image.prototype, 'offsetWidth', 'get').mockImplementation(() => 2370);
+      jest.spyOn(Image.prototype, 'offsetHeight', 'get').mockImplementation(() => 1150);
+    });
+
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
+    it('should fit landscape images', () => {
+      render(
+        <ImageHotspots
+          height={1150}
+          width={2370}
+          src={landscape}
+          alt="landscape-test-image"
+          displayOption="fit"
+        />
+      );
+
+      const img = screen.getByAltText('landscape-test-image');
+      fireEvent.load(img);
+      expect(img).toHaveStyle({
+        height: '100%',
+      });
+    });
+
+    it('should show whole landscape images when no displayOption', () => {
+      render(
+        <ImageHotspots height={1150} width={2370} src={landscape} alt="landscape-test-image" />
+      );
+
+      const img = screen.getByAltText('landscape-test-image');
+      fireEvent.load(img);
+      expect(img).toHaveStyle({
+        height: '1150px',
+      });
+    });
+  });
+
+  describe('with portrait Image mocking', () => {
+    beforeEach(() => {
+      jest.spyOn(Image.prototype, 'offsetWidth', 'get').mockImplementation(() => 1536);
+      jest.spyOn(Image.prototype, 'offsetHeight', 'get').mockImplementation(() => 2048);
+    });
+
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
+    it('should fit portrait images', () => {
+      render(
+        <ImageHotspots
+          height={2048}
+          width={1536}
+          src={portrait}
+          alt="portrait-test-image"
+          displayOption="fit"
+        />
+      );
+
+      const img = screen.getByAltText('portrait-test-image');
+      fireEvent.load(img);
+      expect(img).toHaveStyle({
+        width: '100%',
+      });
+    });
+
+    it('should show whole portrait images when no displayOption', () => {
+      render(<ImageHotspots height={2048} width={1536} src={portrait} alt="portrait-test-image" />);
+
+      const img = screen.getByAltText('portrait-test-image');
+      fireEvent.load(img);
+      expect(img).toHaveStyle({
+        width: '1536px',
+      });
+    });
+
+    it('should zoom in/out properly', () => {
+      render(
+        <ImageHotspots
+          height={683}
+          width={512}
+          src={portrait}
+          alt="portrait-test-image"
+          hideHotspots
+        />
+      );
+
+      const img = screen.getByAltText('portrait-test-image');
+      fireEvent.load(img);
+      expect(img).toHaveStyle({
+        width: '512px',
+      });
+      userEvent.click(screen.getByTitle('Zoom in'));
+      expect(img).toHaveStyle({ width: '1024px' });
+      userEvent.click(screen.getByTitle('Zoom out'));
+      expect(img).toHaveStyle({ width: '512px' });
+      userEvent.click(screen.getByTitle('Zoom in'));
+      expect(img).toHaveStyle({ width: '1024px' });
+      userEvent.click(screen.getByLabelText('Zoom to fit'));
+      expect(img).toHaveStyle({ width: '512px' });
+    });
+
+    it('should allow dragging the image around', () => {
+      render(
+        <ImageHotspots
+          height={683}
+          width={512}
+          src={portrait}
+          alt="portrait-test-image"
+          hideHotspots
+        />
+      );
+
+      const img = screen.getByAltText('portrait-test-image');
+      fireEvent.load(img);
+
+      userEvent.click(screen.getByTitle('Zoom in'));
+      expect(img).toHaveStyle({
+        top: '-341.3333333333333px',
+        left: '-256px',
+        width: '1024px',
+      });
+
+      let clientX = 256;
+      let clientY = 341.5;
+      fireEvent.mouseDown(img, {
+        clientX,
+        clientY,
+      });
+      let distance = 100;
+      while (distance >= 0) {
+        clientX -= 10;
+        clientY -= 10;
+        fireEvent.mouseMove(img, {
+          clientX,
+          clientY,
+        });
+        distance -= 10;
+      }
+      fireEvent.mouseUp(img, {
+        clientX,
+        clientY,
+      });
+      expect(img).toHaveStyle({
+        top: '-441.3333333333333px',
+        left: '-356px',
+      });
+    });
+
+    it('should stop dragging if we leave the container', () => {
+      render(
+        <ImageHotspots
+          height={683}
+          width={512}
+          src={portrait}
+          alt="portrait-test-image"
+          hideHotspots
+        />
+      );
+
+      const img = screen.getByAltText('portrait-test-image');
+      fireEvent.load(img);
+
+      userEvent.click(screen.getByTitle('Zoom in'));
+      expect(img).toHaveStyle({
+        top: '-341.3333333333333px',
+        left: '-256px',
+        width: '1024px',
+      });
+
+      let clientX = 256;
+      let clientY = 341.5;
+      fireEvent.mouseDown(img, {
+        clientX,
+        clientY,
+      });
+      let distance = 1000;
+      while (distance >= 0) {
+        clientX -= 10;
+        clientY -= 10;
+        fireEvent.mouseMove(img, {
+          clientX,
+          clientY,
+        });
+        distance -= 10;
+      }
+      fireEvent.mouseLeave(img);
+      expect(img).toHaveStyle({
+        top: '-682px',
+        left: '-512px',
+      });
+    });
+
+    it('should stop dragging if we blur the container', () => {
+      render(
+        <ImageHotspots
+          height={683}
+          width={512}
+          src={portrait}
+          alt="portrait-test-image"
+          hideHotspots
+        />
+      );
+
+      const img = screen.getByAltText('portrait-test-image');
+      fireEvent.load(img);
+
+      userEvent.click(screen.getByTitle('Zoom in'));
+      expect(img).toHaveStyle({
+        top: '-341.3333333333333px',
+        left: '-256px',
+        width: '1024px',
+      });
+
+      let clientX = 256;
+      let clientY = 341.5;
+      fireEvent.mouseDown(img, {
+        clientX,
+        clientY,
+      });
+      let distance = 1000;
+      while (distance >= 0) {
+        clientX -= 10;
+        clientY -= 10;
+        fireEvent.mouseMove(img, {
+          clientX,
+          clientY,
+        });
+        distance -= 10;
+      }
+      fireEvent.blur(img);
+      expect(img).toHaveStyle({
+        top: '-682px',
+        left: '-512px',
+      });
+    });
+  });
+
+  it('should show loading when isHotspotDataLoading is true', () => {
+    render(
+      <ImageHotspots
+        height={2048}
+        width={1536}
+        src={portrait}
+        alt="portrait-test-image"
+        isHotspotDataLoading
+        hotspots={getHotspots()}
+      />
+    );
+
+    expect(screen.getByText('Loading hotspot data...')).toBeInTheDocument();
+    expect(screen.getByText('Loading hotspot data...')).toBeVisible();
+  });
+
+  it('should show default HotspotContent element when hotspot.content is not a react element', () => {
+    render(
+      <ImageHotspots
+        height={2048}
+        width={1536}
+        src={portrait}
+        alt="portrait-test-image"
+        hotspots={[
+          {
+            x: 35,
+            y: 65,
+            icon: 'User',
+            color: 'purple',
+            content: {
+              title: 'My Device',
+              description: 'Description',
+              values: { deviceid: '73000', temperature: 35.05 },
+              attributes: [
+                {
+                  dataSourceId: 'temperature',
+                  label: 'Temp',
+                  precision: 2,
+                  thresholds: [
+                    {
+                      comparison: '>',
+                      value: 0,
+                      icon: 'Error filled',
+                      color: 'purple',
+                    },
+                  ],
+                },
+              ],
+            },
+          },
+          {
+            x: 50,
+            y: 60,
+            content: 'Hotspot4',
+            color: 'green',
+          },
+        ]}
+      />
+    );
+    const hotspot = screen.getByTestId('hotspot-50-60');
+    expect(hotspot).toBeVisible();
+  });
+
+  it('should show matching threshold icons and colors', () => {
+    render(
+      <ImageHotspots
+        height={2048}
+        width={1536}
+        src={portrait}
+        alt="portrait-test-image"
+        hotspots={[
+          {
+            x: 35,
+            y: 65,
+            icon: 'User',
+            color: 'purple',
+            content: {
+              title: 'My Device',
+              description: 'Description',
+              values: { deviceid: '73000', temperature: 35.05 },
+              attributes: [
+                {
+                  dataSourceId: 'temperature',
+                  label: 'Temp',
+                  precision: 2,
+                  thresholds: [
+                    {
+                      comparison: '>',
+                      value: 0,
+                      icon: 'Error',
+                      color: 'purple',
+                    },
+                  ],
+                },
+              ],
+            },
+          },
+        ]}
+      />
+    );
+    const hotspot = screen.getByTestId('hotspot-35-65');
+    expect(hotspot).toBeVisible();
+    expect(hotspot).toHaveAttribute('icon', 'Error');
+    const errorIcon = within(hotspot).getByRole('button').firstChild;
+    expect(errorIcon).toBeVisible();
+    expect(errorIcon).toHaveAttribute('fill', 'purple');
+  });
+
+  it('should render custom icons from an array', () => {
+    render(
+      <ImageHotspots
+        height={683}
+        width={512}
+        src={portrait}
+        alt="portrait-test-image"
+        hotspots={[
+          {
+            x: 10,
+            y: 20,
+            content: <span>Hotspot1</span>,
+            icon: 'CustomError',
+            color: 'red',
+            width: 20,
+            height: 20,
+          },
+        ]}
+        icons={[
+          {
+            id: 'CustomError',
+            icon: Error32,
+            text: 'CustomError',
+          },
+        ]}
+      />
+    );
+    const hotspot = screen.getByTestId('hotspot-10-20');
+    expect(hotspot).toBeVisible();
+    expect(hotspot).toHaveAttribute('icon', 'CustomError');
+  });
+
+  it('should return no icon if not found in the array', () => {
+    const originalDEV = global.__DEV__;
+    const originalError = console.error;
+
+    global.__DEV__ = true;
+    console.error = jest.fn();
+
+    render(
+      <ImageHotspots
+        height={683}
+        width={512}
+        src={portrait}
+        alt="portrait-test-image"
+        hotspots={[
+          {
+            x: 10,
+            y: 20,
+            content: <span>Hotspot1</span>,
+            icon: 'invalid_icon_name', // missing from icons array
+            color: 'red',
+            width: 20,
+            height: 20,
+          },
+        ]}
+        icons={[
+          {
+            id: 'CustomError',
+            icon: Error32,
+            text: 'CustomError',
+          },
+        ]}
+      />
+    );
+    const hotspot = screen.getByTestId('hotspot-10-20');
+    expect(hotspot).toBeVisible();
+    expect(hotspot).toHaveAttribute('icon', 'invalid_icon_name');
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: An array of available icons was provided to the ImageHotspots but a hotspot was trying to use an icon with name 'invalid_icon_name' that was not found in that array.`
+    );
+    console.error = originalError;
+    global.__DEV__ = originalDEV;
+  });
+
+  it("should allow editing a text hotspot title that's editable and selected", () => {
+    render(
+      <ImageHotspots
+        height={683}
+        width={512}
+        src={portrait}
+        alt="portrait-test-image"
+        hotspots={[
+          {
+            x: 10,
+            y: 20,
+            icon: 'Error',
+            color: 'red',
+            width: 20,
+            height: 20,
+            type: 'text',
+            content: {
+              title: '',
+            },
+          },
+        ]}
+        selectedHotspots={[
+          {
+            x: 10,
+            y: 20,
+          },
+        ]}
+        isEditable
+      />
+    );
+    const hotspot = screen.getByTestId('hotspot-10-20');
+    const editableHotspotTitle = screen.getByTestId('hotspot-content-10-20-title-test');
+    expect(hotspot).toBeVisible();
+    userEvent.click(hotspot);
+    const hotspotTitle = within(hotspot).getByTitle('Click to edit label');
+    expect(hotspotTitle).toBeVisible();
+    fireEvent.focus(hotspotTitle);
+    userEvent.click(hotspotTitle);
+    expect(editableHotspotTitle).toBeVisible();
   });
 });

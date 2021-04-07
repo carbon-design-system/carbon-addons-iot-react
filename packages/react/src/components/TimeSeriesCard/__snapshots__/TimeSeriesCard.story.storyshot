@@ -53,13 +53,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -221,13 +220,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -389,13 +387,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -528,13 +525,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -699,13 +695,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -867,13 +862,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1134,13 +1128,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 <button
                   aria-expanded={false}
                   aria-haspopup={true}
-                  aria-label="Menu"
+                  aria-label="open and close list of options"
                   className="iot--card--toolbar-date-range-action bx--overflow-menu"
                   onClick={[Function]}
                   onClose={[Function]}
                   onKeyDown={[Function]}
                   open={false}
-                  tabIndex={0}
                   title="Select time range"
                   type="button"
                 >
@@ -1224,6 +1217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 className="bx--table-toolbar"
               >
                 <div
+                  aria-hidden={true}
                   className="bx--batch-actions iot--table-batch-actions"
                 >
                   <div
@@ -1233,7 +1227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       className="bx--batch-summary__para"
                     >
                       <span>
-                        0 item selected
+                        0 items selected
                       </span>
                     </p>
                   </div>
@@ -1290,11 +1284,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         Search
                       </label>
                       <input
-                        aria-hidden={true}
                         autoComplete="off"
                         className="bx--search-input"
                         id="TimeSeries-table-toolbar-search"
                         onChange={[Function]}
+                        onKeyDown={[Function]}
                         placeholder="Search"
                         role="searchbox"
                         tabIndex="-1"
@@ -1347,10 +1341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                      />
-                      <path
-                        d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                        d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                       />
                     </svg>
                   </button>
@@ -1444,7 +1435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                               />
                             </svg>
                             <svg
@@ -1511,7 +1502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                               />
                             </svg>
                             <svg
@@ -1578,7 +1569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                               />
                             </svg>
                             <svg
@@ -1645,7 +1636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                               />
                             </svg>
                             <svg
@@ -1712,7 +1703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                               />
                             </svg>
                             <svg
@@ -1779,7 +1770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                               />
                             </svg>
                             <svg
@@ -1846,7 +1837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                               />
                             </svg>
                             <svg
@@ -1913,7 +1904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                               />
                             </svg>
                             <svg
@@ -1945,7 +1936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       >
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="timestamp"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-0-timestamp"
@@ -1964,7 +1955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ENTITY_ID"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-0-ENTITY_ID"
@@ -1983,7 +1974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="temperature"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-0-temperature"
@@ -2002,7 +1993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="humidity"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-0-humidity"
@@ -2021,7 +2012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ecount"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-0-ecount"
@@ -2040,7 +2031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="devname"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-0-devname"
@@ -2059,7 +2050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="pressure"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-0-pressure"
@@ -2078,7 +2069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="status"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-0-status"
@@ -2099,7 +2090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       >
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="timestamp"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-1-timestamp"
@@ -2118,7 +2109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ENTITY_ID"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-1-ENTITY_ID"
@@ -2137,7 +2128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="temperature"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-1-temperature"
@@ -2156,7 +2147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="humidity"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-1-humidity"
@@ -2175,7 +2166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ecount"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-1-ecount"
@@ -2194,7 +2185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="devname"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-1-devname"
@@ -2213,7 +2204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="pressure"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-1-pressure"
@@ -2232,7 +2223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="status"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-1-status"
@@ -2253,7 +2244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       >
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="timestamp"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-2-timestamp"
@@ -2272,7 +2263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ENTITY_ID"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-2-ENTITY_ID"
@@ -2291,7 +2282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="temperature"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-2-temperature"
@@ -2310,7 +2301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="humidity"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-2-humidity"
@@ -2329,7 +2320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ecount"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-2-ecount"
@@ -2348,7 +2339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="devname"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-2-devname"
@@ -2367,7 +2358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="pressure"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-2-pressure"
@@ -2386,7 +2377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="status"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-2-status"
@@ -2407,7 +2398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       >
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="timestamp"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-3-timestamp"
@@ -2426,7 +2417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ENTITY_ID"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-3-ENTITY_ID"
@@ -2445,7 +2436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="temperature"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-3-temperature"
@@ -2464,7 +2455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="humidity"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-3-humidity"
@@ -2483,7 +2474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ecount"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-3-ecount"
@@ -2502,7 +2493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="devname"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-3-devname"
@@ -2521,7 +2512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="pressure"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-3-pressure"
@@ -2540,7 +2531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="status"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-3-status"
@@ -2561,7 +2552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       >
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="timestamp"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-4-timestamp"
@@ -2580,7 +2571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ENTITY_ID"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-4-ENTITY_ID"
@@ -2599,7 +2590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="temperature"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-4-temperature"
@@ -2618,7 +2609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="humidity"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-4-humidity"
@@ -2637,7 +2628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ecount"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-4-ecount"
@@ -2656,7 +2647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="devname"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-4-devname"
@@ -2675,7 +2666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="pressure"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-4-pressure"
@@ -2694,7 +2685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="status"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-4-status"
@@ -2715,7 +2706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       >
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="timestamp"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-5-timestamp"
@@ -2734,7 +2725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ENTITY_ID"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-5-ENTITY_ID"
@@ -2753,7 +2744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="temperature"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-5-temperature"
@@ -2772,7 +2763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="humidity"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-5-humidity"
@@ -2791,7 +2782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="ecount"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-5-ecount"
@@ -2810,7 +2801,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="devname"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-5-devname"
@@ -2829,7 +2820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="pressure"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-5-pressure"
@@ -2848,7 +2839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         </td>
                         <td
                           align="start"
-                          className="data-table-start"
+                          className="data-table-start iot--table__cell--sortable"
                           data-column="status"
                           data-offset={0}
                           id="cell-TimeSeries-table-dataindex-5-status"
@@ -2880,8 +2871,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 >
                   <label
                     className="bx--pagination__text"
-                    htmlFor="bx-pagination-select-49"
-                    id="bx-pagination-select-49-count-label"
+                    htmlFor="bx-pagination-select-52"
+                    id="bx-pagination-select-52-count-label"
                   >
                     Items per page:
                   </label>
@@ -2900,7 +2891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-49"
+                            id="bx-pagination-select-52"
                             onChange={[Function]}
                             value={10}
                           >
@@ -2965,7 +2956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="bx-pagination-select-49-right"
+                        htmlFor="bx-pagination-select-52-right"
                       >
                         Page number, of 1 pages
                       </label>
@@ -2978,7 +2969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-49-right"
+                            id="bx-pagination-select-52-right"
                             onChange={[Function]}
                             value={1}
                           >
@@ -3166,13 +3157,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -3334,13 +3324,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -3502,13 +3491,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -3670,13 +3658,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -3838,13 +3825,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -4006,13 +3992,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -4174,13 +4159,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -4342,13 +4326,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -4510,13 +4493,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -4672,13 +4654,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -4840,13 +4821,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -5008,13 +4988,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -5176,13 +5155,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -5344,13 +5322,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -5512,13 +5489,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -5680,13 +5656,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -5848,13 +5823,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -6016,13 +5990,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >

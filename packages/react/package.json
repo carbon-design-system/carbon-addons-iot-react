@@ -41,12 +41,14 @@
     "svg-convert": "svgr --ext jsx -d src/icons/components src/icons/svg && prettier --write src/icons/components/index.jsx ",
     "test": "yarn test:engines && yarn test:a11y&& yarn test:base",
     "test:base": "yarn test:engines && cross-env TZ=America/Chicago jest --no-watchman --testPathPattern='.*\\.test\\.js(x)?' --coverage --colors",
+    "test:debug": "yarn test:engines && cross-env TZ=America/Chicago node --inspect node_modules/.bin/jest --no-watchman --testPathPattern='.*\\.test\\.js(x)?' --watch --coverage --colors --runInBand",
     "test:a11y": "yarn test:engines && cross-env TZ=America/Chicago jest --no-watchman --forceExit --testPathPattern='.*\\.a11y\\.js(x)?' --colors",
     "test:watch": "yarn test:engines && cross-env TZ=America/Chicago jest --no-watchman --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage --colors",
     "test:update": "yarn test:engines && cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot --no-watchman --colors",
     "test:story": "yarn test:engines && cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js --no-watchman --colors",
     "test:clear": "yarn test:engines && cross-env TZ=America/Chicago jest --no-watchman --clearCache --colors",
-    "test:engines": "check-node-version --node $(cat ../../.nvmrc) --yarn 1.x"
+    "test:engines": "check-node-version --node $(cat ../../.nvmrc) --yarn 1.x",
+    "test:ci": "yarn test --maxWorkers=2 --ci --logHeapUsage --coverage"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
@@ -120,16 +122,16 @@
     "@babel/runtime": "^7.10.2",
     "@carbon/charts": "^0.41.11",
     "@carbon/charts-react": "^0.41.11",
-    "@carbon/colors": "10.15.0",
-    "@carbon/icons-react": "10.17.0",
-    "@carbon/layout": "10.12.0",
-    "@carbon/motion": "10.6.0",
-    "@carbon/pictograms-react": "11.0.0",
-    "@carbon/telemetry": "^0.0.0-alpha.5",
-    "@carbon/themes": "10.16.0",
+    "@carbon/colors": "10.21.0",
+    "@carbon/icons-react": "10.26.0",
+    "@carbon/layout": "10.19.0",
+    "@carbon/motion": "10.14.0",
+    "@carbon/pictograms-react": "11.4.0",
+    "@carbon/telemetry": "^0.0.0-alpha.6",
+    "@carbon/themes": "10.28.0",
     "@monaco-editor/react": "^3.6.2",
-    "carbon-components": "10.17.0",
-    "carbon-components-react": "7.17.0",
+    "carbon-components": "10.29.0",
+    "carbon-components-react": "7.29.0",
     "carbon-icons": "^7.0.7",
     "classnames": "^2.2.5",
     "core-js": "3.6.5",
@@ -142,7 +144,7 @@
     "prop-types": "^15.7.2",
     "react-dnd": "11.1.3",
     "react-dnd-html5-backend": "11.1.3",
-    "react-grid-layout": "^0.18.3",
+    "react-grid-layout": "^1.2.2",
     "react-sizeme": "^2.6.3",
     "react-transition-group": "^2.6.0",
     "react-visibility-sensor": "^5.0.2",
@@ -278,5 +280,5 @@
   "resolutions": {
     "chokidar": "3.3.1"
   },
-  "version": "2.145.0-next.3"
+  "version": "2.145.0-next.34"
 }

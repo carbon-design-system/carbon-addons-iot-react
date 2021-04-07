@@ -27,6 +27,7 @@ const propTypes = {
     settingsTabLabel: PropTypes.string,
     cardSize_SMALL: PropTypes.string,
     cardSize_SMALLWIDE: PropTypes.string,
+    cardSize_SMALLFULL: PropTypes.string,
     cardSize_MEDIUM: PropTypes.string,
     cardSize_MEDIUMTHIN: PropTypes.string,
     cardSize_MEDIUMWIDE: PropTypes.string,
@@ -98,6 +99,7 @@ const defaultProps = {
     settingsTabLabel: 'Settings',
     cardSize_SMALL: 'Small',
     cardSize_SMALLWIDE: 'Small wide',
+    cardSize_SMALLFULL: 'Small full',
     cardSize_MEDIUM: 'Medium',
     cardSize_MEDIUMTHIN: 'Medium thin',
     cardSize_MEDIUMWIDE: 'Medium wide',
@@ -288,7 +290,7 @@ const CardEditForm = ({
         />
       ) : null}
       <div className={baseClassName}>
-        <Tabs>
+        <Tabs scrollIntoView={false}>
           <Tab label={mergedI18n.contentTabLabel}>
             <CardEditFormContent
               cardConfig={cardConfig}

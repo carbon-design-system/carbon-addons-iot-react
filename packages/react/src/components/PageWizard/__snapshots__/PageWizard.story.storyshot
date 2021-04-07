@@ -626,6 +626,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -644,6 +649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Home
@@ -654,6 +660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Something
@@ -664,6 +671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Something Else
@@ -692,6 +700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -712,7 +721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
                       />
                       <path
                         d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
@@ -906,7 +915,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             <div
                               className="bx--text-input__field-wrapper"
                               data-invalid={null}
-                              data-warn={null}
                             >
                               <input
                                 className="bx--text-input bx--text__input"
@@ -940,7 +948,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             <div
                               className="bx--text-input__field-wrapper"
                               data-invalid={null}
-                              data-warn={null}
                             >
                               <input
                                 className="bx--text-input bx--text__input"
@@ -1035,6 +1042,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -1053,6 +1065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Home
@@ -1063,6 +1076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Something
@@ -1073,6 +1087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Something Else
@@ -1101,6 +1116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -1121,7 +1137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
                       />
                       <path
                         d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
@@ -1315,7 +1331,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             <div
                               className="bx--text-input__field-wrapper"
                               data-invalid={null}
-                              data-warn={null}
                             >
                               <input
                                 className="bx--text-input bx--text__input"
@@ -1349,7 +1364,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             <div
                               className="bx--text-input__field-wrapper"
                               data-invalid={null}
-                              data-warn={null}
                             >
                               <input
                                 className="bx--text-input bx--text__input"
@@ -1431,12 +1445,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                          d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                          fill="none"
                         />
                         <path
-                          d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-                          data-icon-path="inner-path"
-                          fill="none"
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
                         />
                       </svg>
                       Additional footer content
@@ -1494,6 +1507,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -1512,6 +1530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Home
@@ -1522,6 +1541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Something
@@ -1532,6 +1552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Something Else
@@ -1560,6 +1581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -1580,7 +1602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
                       />
                       <path
                         d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
@@ -2328,6 +2350,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -2346,6 +2373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Home
@@ -2356,6 +2384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Something
@@ -2366,6 +2395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Something Else
@@ -2394,6 +2424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -2414,7 +2445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
                       />
                       <path
                         d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
@@ -2608,7 +2639,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             <div
                               className="bx--text-input__field-wrapper"
                               data-invalid={null}
-                              data-warn={null}
                             >
                               <input
                                 className="bx--text-input bx--text__input"
@@ -2642,7 +2672,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             <div
                               className="bx--text-input__field-wrapper"
                               data-invalid={null}
-                              data-warn={null}
                             >
                               <input
                                 className="bx--text-input bx--text__input"
@@ -3345,6 +3374,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -3363,6 +3397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Home
@@ -3373,6 +3408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Something
@@ -3383,6 +3419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     <a
                       className="bx--link bx--link"
+                      rel={null}
                       to="www.ibm.com"
                     >
                       Something Else
@@ -3411,6 +3448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -3431,7 +3469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
                       />
                       <path
                         d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"

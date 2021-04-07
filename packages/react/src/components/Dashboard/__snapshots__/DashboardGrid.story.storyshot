@@ -40,7 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Small"
             onMouseDown={[Function]}
@@ -50,11 +50,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "144px",
+                "MozTransform": "translate(0px,0px)",
+                "OTransform": "translate(0px,0px)",
+                "WebkitTransform": "translate(0px,0px)",
                 "height": "144px",
-                "left": "0%",
+                "msTransform": "translate(0px,0px)",
                 "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "transform": "translate(0px,0px)",
+                "width": "308px",
               }
             }
             type="VALUE"
@@ -99,7 +102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Small Wide"
             onMouseDown={[Function]}
@@ -109,11 +112,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "144px",
+                "MozTransform": "translate(324px,0px)",
+                "OTransform": "translate(324px,0px)",
+                "WebkitTransform": "translate(324px,0px)",
                 "height": "144px",
-                "left": "25.3125%",
+                "msTransform": "translate(324px,0px)",
                 "position": "absolute",
-                "top": "0px",
-                "width": "49.375%",
+                "transform": "translate(324px,0px)",
+                "width": "632px",
               }
             }
             type="VALUE"
@@ -158,7 +164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Medium Thin"
             onMouseDown={[Function]}
@@ -168,11 +174,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "304px",
+                "MozTransform": "translate(0px,160px)",
+                "OTransform": "translate(0px,160px)",
+                "WebkitTransform": "translate(0px,160px)",
                 "height": "304px",
-                "left": "0%",
+                "msTransform": "translate(0px,160px)",
                 "position": "absolute",
-                "top": "160px",
-                "width": "24.0625%",
+                "transform": "translate(0px,160px)",
+                "width": "308px",
               }
             }
             type="VALUE"
@@ -217,7 +226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Medium"
             onMouseDown={[Function]}
@@ -227,11 +236,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "304px",
+                "MozTransform": "translate(324px,160px)",
+                "OTransform": "translate(324px,160px)",
+                "WebkitTransform": "translate(324px,160px)",
                 "height": "304px",
-                "left": "25.3125%",
+                "msTransform": "translate(324px,160px)",
                 "position": "absolute",
-                "top": "160px",
-                "width": "49.375%",
+                "transform": "translate(324px,160px)",
+                "width": "632px",
               }
             }
             type="VALUE"
@@ -276,7 +288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Medium Wide"
             onMouseDown={[Function]}
@@ -286,11 +298,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "304px",
+                "MozTransform": "translate(0px,480px)",
+                "OTransform": "translate(0px,480px)",
+                "WebkitTransform": "translate(0px,480px)",
                 "height": "304px",
-                "left": "0%",
+                "msTransform": "translate(0px,480px)",
                 "position": "absolute",
-                "top": "480px",
-                "width": "100%",
+                "transform": "translate(0px,480px)",
+                "width": "1280px",
               }
             }
             type="VALUE"
@@ -335,7 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Large Thin"
             onMouseDown={[Function]}
@@ -345,11 +360,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "624px",
+                "MozTransform": "translate(0px,800px)",
+                "OTransform": "translate(0px,800px)",
+                "WebkitTransform": "translate(0px,800px)",
                 "height": "624px",
-                "left": "0%",
+                "msTransform": "translate(0px,800px)",
                 "position": "absolute",
-                "top": "800px",
-                "width": "24.0625%",
+                "transform": "translate(0px,800px)",
+                "width": "308px",
               }
             }
             type="VALUE"
@@ -394,7 +412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Large"
             onMouseDown={[Function]}
@@ -404,11 +422,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "624px",
+                "MozTransform": "translate(324px,800px)",
+                "OTransform": "translate(324px,800px)",
+                "WebkitTransform": "translate(324px,800px)",
                 "height": "624px",
-                "left": "25.3125%",
+                "msTransform": "translate(324px,800px)",
                 "position": "absolute",
-                "top": "800px",
-                "width": "49.375%",
+                "transform": "translate(324px,800px)",
+                "width": "632px",
               }
             }
             type="VALUE"
@@ -453,7 +474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Large Wide"
             onMouseDown={[Function]}
@@ -463,11 +484,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "624px",
+                "MozTransform": "translate(0px,1440px)",
+                "OTransform": "translate(0px,1440px)",
+                "WebkitTransform": "translate(0px,1440px)",
                 "height": "624px",
-                "left": "0%",
+                "msTransform": "translate(0px,1440px)",
                 "position": "absolute",
-                "top": "1440px",
-                "width": "100%",
+                "transform": "translate(0px,1440px)",
+                "width": "1280px",
               }
             }
             type="VALUE"
@@ -583,7 +607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable iot--card--wrapper"
             data-testid="Card"
             id="card"
             onMouseDown={[Function]}
@@ -593,11 +617,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "144px",
+                "MozTransform": "translate(0px,0px)",
+                "OTransform": "translate(0px,0px)",
+                "WebkitTransform": "translate(0px,0px)",
                 "height": "144px",
-                "left": "0%",
+                "msTransform": "translate(0px,0px)",
                 "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "transform": "translate(0px,0px)",
+                "width": "308px",
               }
             }
           >
@@ -656,7 +683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable iot--card--wrapper"
             data-testid="Card"
             id="valueCard"
             onMouseDown={[Function]}
@@ -666,11 +693,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "144px",
+                "MozTransform": "translate(324px,0px)",
+                "OTransform": "translate(324px,0px)",
+                "WebkitTransform": "translate(324px,0px)",
                 "height": "144px",
-                "left": "25.3125%",
+                "msTransform": "translate(324px,0px)",
                 "position": "absolute",
-                "top": "0px",
-                "width": "49.375%",
+                "transform": "translate(324px,0px)",
+                "width": "632px",
               }
             }
           >
@@ -806,11 +836,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "304px",
+                "MozTransform": "translate(0px,160px)",
+                "OTransform": "translate(0px,160px)",
+                "WebkitTransform": "translate(0px,160px)",
                 "height": "304px",
-                "left": "0%",
+                "msTransform": "translate(0px,160px)",
                 "position": "absolute",
-                "top": "160px",
-                "width": "24.0625%",
+                "transform": "translate(0px,160px)",
+                "width": "308px",
               }
             }
           >
@@ -836,6 +869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -875,7 +909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="iot--gauge-container react-grid-item react-resizable"
+                className="iot--gauge-container react-grid-item cssTransforms react-resizable"
                 style={
                   Object {
                     "paddingBottom": 0,
@@ -887,7 +921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <svg
                   aria-labelledby="gauge-label"
-                  className="iot--gauge react-grid-item react-resizable"
+                  className="iot--gauge react-grid-item cssTransforms react-resizable"
                   percent="0"
                   style={
                     Object {
@@ -958,7 +992,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable iot--card--wrapper"
             data-testid="Card"
             id="pieChartCard"
             onMouseDown={[Function]}
@@ -968,11 +1002,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "304px",
+                "MozTransform": "translate(324px,160px)",
+                "OTransform": "translate(324px,160px)",
+                "WebkitTransform": "translate(324px,160px)",
                 "height": "304px",
-                "left": "25.3125%",
+                "msTransform": "translate(324px,160px)",
                 "position": "absolute",
-                "top": "160px",
-                "width": "49.375%",
+                "transform": "translate(324px,160px)",
+                "width": "632px",
               }
             }
           >
@@ -1032,7 +1069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable iot--card--wrapper"
             data-testid="Card"
             id="tableCard"
             onMouseDown={[Function]}
@@ -1042,11 +1079,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "624px",
+                "MozTransform": "translate(324px,1120px)",
+                "OTransform": "translate(324px,1120px)",
+                "WebkitTransform": "translate(324px,1120px)",
                 "height": "624px",
-                "left": "25.3125%",
+                "msTransform": "translate(324px,1120px)",
                 "position": "absolute",
-                "top": "1120px",
-                "width": "49.375%",
+                "transform": "translate(324px,1120px)",
+                "width": "632px",
               }
             }
           >
@@ -1066,6 +1106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   className="bx--table-toolbar"
                 >
                   <div
+                    aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
                   >
                     <div
@@ -1075,7 +1116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--batch-summary__para"
                       >
                         <span>
-                          0 item selected
+                          0 items selected
                         </span>
                       </p>
                     </div>
@@ -1137,11 +1178,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           Search
                         </label>
                         <input
-                          aria-hidden={true}
                           autoComplete="off"
                           className="bx--search-input"
                           id="table-for-card-tableCard-toolbar-search"
                           onChange={[Function]}
+                          onKeyDown={[Function]}
                           placeholder="Search"
                           role="searchbox"
                           tabIndex="-1"
@@ -1194,10 +1235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                        />
-                        <path
-                          d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                          d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                         />
                       </svg>
                     </button>
@@ -1237,13 +1275,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         <button
                           aria-expanded={false}
                           aria-haspopup={true}
-                          aria-label="Menu"
+                          aria-label="open and close list of options"
                           className="iot--card--toolbar-date-range-action bx--overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
                           open={false}
-                          tabIndex={0}
                           title="Select time range"
                           type="button"
                         >
@@ -1371,7 +1408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                                 />
                               </svg>
                               <svg
@@ -1440,7 +1477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                                 />
                               </svg>
                               <svg
@@ -1509,7 +1546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                                 />
                               </svg>
                               <svg
@@ -1541,7 +1578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-10-alert"
@@ -1561,7 +1598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-10-hour"
@@ -1581,7 +1618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-10-pressure"
@@ -1606,7 +1643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-11-alert"
@@ -1626,7 +1663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-11-hour"
@@ -1646,7 +1683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-11-pressure"
@@ -1671,7 +1708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-1-alert"
@@ -1691,7 +1728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-1-hour"
@@ -1711,7 +1748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-1-pressure"
@@ -1736,7 +1773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-2-alert"
@@ -1756,7 +1793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-2-hour"
@@ -1776,7 +1813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-2-pressure"
@@ -1801,7 +1838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-6-alert"
@@ -1821,7 +1858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-6-hour"
@@ -1841,7 +1878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-6-pressure"
@@ -1866,7 +1903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-3-alert"
@@ -1886,7 +1923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-3-hour"
@@ -1906,7 +1943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-3-pressure"
@@ -1931,7 +1968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-4-alert"
@@ -1951,7 +1988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-4-hour"
@@ -1971,7 +2008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-4-pressure"
@@ -1996,7 +2033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-8-alert"
@@ -2016,7 +2053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-8-hour"
@@ -2036,7 +2073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-8-pressure"
@@ -2061,7 +2098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-9-alert"
@@ -2081,7 +2118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-9-hour"
@@ -2101,7 +2138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-9-pressure"
@@ -2126,7 +2163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="alert"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-5-alert"
@@ -2146,7 +2183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="hour"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-5-hour"
@@ -2166,7 +2203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                           <td
                             align="start"
-                            className="data-table-start"
+                            className="data-table-start iot--table__cell--sortable"
                             data-column="pressure"
                             data-offset={0}
                             id="cell-table-for-card-tableCard-row-5-pressure"
@@ -2202,8 +2239,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-3"
-                      id="bx-pagination-select-3-count-label"
+                      htmlFor="bx-pagination-select-4"
+                      id="bx-pagination-select-4-count-label"
                     >
                       Items per page:
                     </label>
@@ -2222,7 +2259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-3"
+                              id="bx-pagination-select-4"
                               onChange={[Function]}
                               value={10}
                             >
@@ -2287,7 +2324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-3-right"
+                          htmlFor="bx-pagination-select-4-right"
                         >
                           Page number, of 2 pages
                         </label>
@@ -2300,7 +2337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-3-right"
+                              id="bx-pagination-select-4-right"
                               onChange={[Function]}
                               value={1}
                             >
@@ -2428,7 +2465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           </div>
           <div
             accept={null}
-            className="iot--card react-grid-item react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable iot--card--wrapper"
             data-testid="Card"
             id="imageCard"
             onMouseDown={[Function]}
@@ -2438,11 +2475,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "624px",
+                "MozTransform": "translate(648px,480px)",
+                "OTransform": "translate(648px,480px)",
+                "WebkitTransform": "translate(648px,480px)",
                 "height": "624px",
-                "left": "50.625%",
+                "msTransform": "translate(648px,480px)",
                 "position": "absolute",
-                "top": "480px",
-                "width": "49.375%",
+                "transform": "translate(648px,480px)",
+                "width": "632px",
               }
             }
           >
@@ -2571,6 +2611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         id="hotspot-35-65"
                         onBlur={[Function]}
                         onClick={[Function]}
+                        onContextMenu={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseOut={[Function]}
@@ -2669,7 +2710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable iot--card--wrapper"
             data-testid="Card"
             id="timeSeriesCard"
             onMouseDown={[Function]}
@@ -2679,11 +2720,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "624px",
+                "MozTransform": "translate(0px,480px)",
+                "OTransform": "translate(0px,480px)",
+                "WebkitTransform": "translate(0px,480px)",
                 "height": "624px",
-                "left": "0%",
+                "msTransform": "translate(0px,480px)",
                 "position": "absolute",
-                "top": "480px",
-                "width": "24.0625%",
+                "transform": "translate(0px,480px)",
+                "width": "308px",
               }
             }
           >
@@ -2742,11 +2786,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "624px",
+                "MozTransform": "translate(324px,1760px)",
+                "OTransform": "translate(324px,1760px)",
+                "WebkitTransform": "translate(324px,1760px)",
                 "height": "624px",
-                "left": "25.3125%",
+                "msTransform": "translate(324px,1760px)",
                 "position": "absolute",
-                "top": "1760px",
-                "width": "24.0625%",
+                "transform": "translate(324px,1760px)",
+                "width": "308px",
               }
             }
           >
@@ -2773,7 +2820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="list-card react-grid-item react-resizable"
+                className="list-card react-grid-item cssTransforms react-resizable"
                 style={
                   Object {
                     "paddingBottom": 0,
@@ -2783,7 +2830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 }
               >
-                <section
+                <div
                   aria-label="Structured list section"
                   className="bx--structured-list"
                 >
@@ -2803,6 +2850,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <a
                             className="bx--link"
                             href="https://internetofthings.ibmcloud.com/"
+                            rel="noopener"
                             style={
                               Object {
                                 "display": "inherit",
@@ -2827,6 +2875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <a
                             className="bx--link"
                             href="https://internetofthings.ibmcloud.com/"
+                            rel="noopener"
                             style={
                               Object {
                                 "display": "inherit",
@@ -2864,6 +2913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <a
                             className="bx--link"
                             href="https://internetofthings.ibmcloud.com/"
+                            rel="noopener"
                             style={
                               Object {
                                 "display": "inherit",
@@ -2946,7 +2996,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                   </div>
-                </section>
+                </div>
               </div>
             </div>
             <span
@@ -2963,7 +3013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable iot--bar-chart-card iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable iot--bar-chart-card iot--card--wrapper"
             data-testid="Card"
             id="barChartCard"
             onMouseDown={[Function]}
@@ -2973,11 +3023,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "624px",
+                "MozTransform": "translate(0px,2400px)",
+                "OTransform": "translate(0px,2400px)",
+                "WebkitTransform": "translate(0px,2400px)",
                 "height": "624px",
-                "left": "0%",
+                "msTransform": "translate(0px,2400px)",
                 "position": "absolute",
-                "top": "2400px",
-                "width": "100%",
+                "transform": "translate(0px,2400px)",
+                "width": "1280px",
               }
             }
           >
@@ -3094,7 +3147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             content="My Facility Metrics"
             data-testid="Card"
             id="facility"
@@ -3105,11 +3158,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "304px",
+                "MozTransform": "translate(324px,320px)",
+                "OTransform": "translate(324px,320px)",
+                "WebkitTransform": "translate(324px,320px)",
                 "height": "304px",
-                "left": "25.3125%",
+                "msTransform": "translate(324px,320px)",
                 "position": "absolute",
-                "top": "320px",
-                "width": "49.375%",
+                "transform": "translate(324px,320px)",
+                "width": "632px",
               }
             }
             type="VALUE"
@@ -3154,7 +3210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             content="My Humidity Values"
             data-testid="Card"
             id="humidity"
@@ -3165,11 +3221,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "144px",
+                "MozTransform": "translate(0px,0px)",
+                "OTransform": "translate(0px,0px)",
+                "WebkitTransform": "translate(0px,0px)",
                 "height": "144px",
-                "left": "0%",
+                "msTransform": "translate(0px,0px)",
                 "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "transform": "translate(0px,0px)",
+                "width": "308px",
               }
             }
             type="VALUE"
@@ -3214,7 +3273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             content="My utilization chart"
             data-testid="Card"
             id="utilization"
@@ -3225,11 +3284,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "144px",
+                "MozTransform": "translate(243px,160px)",
+                "OTransform": "translate(243px,160px)",
+                "WebkitTransform": "translate(243px,160px)",
                 "height": "144px",
-                "left": "18.984375%",
+                "msTransform": "translate(243px,160px)",
                 "position": "absolute",
-                "top": "160px",
-                "width": "24.0625%",
+                "transform": "translate(243px,160px)",
+                "width": "308px",
               }
             }
             type="VALUE"
@@ -3326,200 +3388,226 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "flex": 1,
+            "display": "flex",
           }
         }
       >
         <div
-          className="react-grid-layout iot--dashboard-grid"
-          onDragEnter={[Function]}
-          onDragLeave={[Function]}
-          onDragOver={[Function]}
-          onDrop={[Function]}
           style={
             Object {
-              "height": "304px",
+              "width": "200px",
+            }
+          }
+        >
+          Sample sidebar
+        </div>
+        <div
+          style={
+            Object {
+              "flex": 1,
             }
           }
         >
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My Facility Metrics"
-            data-testid="Card"
-            id="facility"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="react-grid-layout iot--dashboard-grid"
+            onDragEnter={[Function]}
+            onDragLeave={[Function]}
+            onDragOver={[Function]}
+            onDrop={[Function]}
             style={
               Object {
-                "--card-default-height": "304px",
                 "height": "304px",
-                "left": "0%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "49.375%",
               }
             }
-            type="VALUE"
           >
             <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Facility Metrics"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Facility Metrics
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+              className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
+              content="My Facility Metrics"
+              data-testid="Card"
+              id="facility"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              role="presentation"
               style={
                 Object {
-                  "--card-content-height": "256px",
+                  "--card-default-height": "304px",
+                  "MozTransform": "translate(0px,0px)",
+                  "OTransform": "translate(0px,0px)",
+                  "WebkitTransform": "translate(0px,0px)",
+                  "height": "304px",
+                  "msTransform": "translate(0px,0px)",
+                  "position": "absolute",
+                  "transform": "translate(0px,0px)",
+                  "width": "632px",
                 }
               }
+              type="VALUE"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
+              <div
+                className="iot--card--header"
+              >
+                <span
+                  className="iot--card--title"
+                  title="Facility Metrics"
+                >
+                  <div
+                    className="iot--card--title--text"
+                  >
+                    Facility Metrics
+                  </div>
+                </span>
+                <div
+                  className="iot--card--toolbar"
+                />
+              </div>
+              <div
+                className="iot--card--content"
                 style={
                   Object {
-                    "touchAction": "none",
+                    "--card-content-height": "256px",
                   }
                 }
-              />
-            </div>
-          </div>
-          <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My Humidity Values"
-            data-testid="Card"
-            id="humidity"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
-            style={
-              Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "50.625%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
-              }
-            }
-            type="VALUE"
-          >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Humidity"
               >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Humidity
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
+                <span
+                  className="react-resizable-handle react-resizable-handle-se"
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "touchAction": "none",
+                    }
+                  }
+                />
+              </div>
             </div>
             <div
-              className="iot--card--content"
+              className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
+              content="My Humidity Values"
+              data-testid="Card"
+              id="humidity"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              role="presentation"
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "--card-default-height": "144px",
+                  "MozTransform": "translate(648px,0px)",
+                  "OTransform": "translate(648px,0px)",
+                  "WebkitTransform": "translate(648px,0px)",
+                  "height": "144px",
+                  "msTransform": "translate(648px,0px)",
+                  "position": "absolute",
+                  "transform": "translate(648px,0px)",
+                  "width": "308px",
                 }
               }
+              type="VALUE"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
+              <div
+                className="iot--card--header"
+              >
+                <span
+                  className="iot--card--title"
+                  title="Humidity"
+                >
+                  <div
+                    className="iot--card--title--text"
+                  >
+                    Humidity
+                  </div>
+                </span>
+                <div
+                  className="iot--card--toolbar"
+                />
+              </div>
+              <div
+                className="iot--card--content"
                 style={
                   Object {
-                    "touchAction": "none",
+                    "--card-content-height": "96px",
                   }
                 }
-              />
-            </div>
-          </div>
-          <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My utilization chart"
-            data-testid="Card"
-            id="utilization"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
-            style={
-              Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "75.9375%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
-              }
-            }
-            type="VALUE"
-          >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Utilization"
               >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Utilization
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
+                <span
+                  className="react-resizable-handle react-resizable-handle-se"
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "touchAction": "none",
+                    }
+                  }
+                />
+              </div>
             </div>
             <div
-              className="iot--card--content"
+              className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
+              content="My utilization chart"
+              data-testid="Card"
+              id="utilization"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              role="presentation"
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "--card-default-height": "144px",
+                  "MozTransform": "translate(972px,0px)",
+                  "OTransform": "translate(972px,0px)",
+                  "WebkitTransform": "translate(972px,0px)",
+                  "height": "144px",
+                  "msTransform": "translate(972px,0px)",
+                  "position": "absolute",
+                  "transform": "translate(972px,0px)",
+                  "width": "308px",
                 }
               }
+              type="VALUE"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
+              <div
+                className="iot--card--header"
+              >
+                <span
+                  className="iot--card--title"
+                  title="Utilization"
+                >
+                  <div
+                    className="iot--card--title--text"
+                  >
+                    Utilization
+                  </div>
+                </span>
+                <div
+                  className="iot--card--toolbar"
+                />
+              </div>
+              <div
+                className="iot--card--content"
                 style={
                   Object {
-                    "touchAction": "none",
+                    "--card-content-height": "96px",
                   }
                 }
-              />
+              >
+                <span
+                  className="react-resizable-handle react-resizable-handle-se"
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "touchAction": "none",
+                    }
+                  }
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -3592,7 +3680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             content="My Facility Metrics"
             data-testid="Card"
             id="facility"
@@ -3603,11 +3691,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "304px",
+                "MozTransform": "translate(0px,0px)",
+                "OTransform": "translate(0px,0px)",
+                "WebkitTransform": "translate(0px,0px)",
                 "height": "304px",
-                "left": "0%",
+                "msTransform": "translate(0px,0px)",
                 "position": "absolute",
-                "top": "0px",
-                "width": "49.375%",
+                "transform": "translate(0px,0px)",
+                "width": "632px",
               }
             }
             type="VALUE"
@@ -3652,7 +3743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             content="My Humidity Values"
             data-testid="Card"
             id="humidity"
@@ -3663,11 +3754,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "144px",
+                "MozTransform": "translate(648px,0px)",
+                "OTransform": "translate(648px,0px)",
+                "WebkitTransform": "translate(648px,0px)",
                 "height": "144px",
-                "left": "50.625%",
+                "msTransform": "translate(648px,0px)",
                 "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "transform": "translate(648px,0px)",
+                "width": "308px",
               }
             }
             type="VALUE"
@@ -3712,7 +3806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
             content="My utilization chart"
             data-testid="Card"
             id="utilization"
@@ -3723,11 +3817,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "144px",
+                "MozTransform": "translate(972px,0px)",
+                "OTransform": "translate(972px,0px)",
+                "WebkitTransform": "translate(972px,0px)",
                 "height": "144px",
-                "left": "75.9375%",
+                "msTransform": "translate(972px,0px)",
                 "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "transform": "translate(972px,0px)",
+                "width": "308px",
               }
             }
             type="VALUE"
@@ -3841,7 +3938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms react-resizable iot--card--wrapper"
             data-testid="Card"
             id="card"
             onMouseDown={[Function]}
@@ -3851,11 +3948,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             style={
               Object {
                 "--card-default-height": "144px",
+                "MozTransform": "translate(0px,0px)",
+                "OTransform": "translate(0px,0px)",
+                "WebkitTransform": "translate(0px,0px)",
                 "height": "144px",
-                "left": "0%",
+                "msTransform": "translate(0px,0px)",
                 "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "transform": "translate(0px,0px)",
+                "width": "308px",
               }
             }
           >

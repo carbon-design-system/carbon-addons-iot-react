@@ -31,6 +31,11 @@ const barChartCardProps = {
   onCardAction: () => {},
 };
 
+/* 
+  FYI: the underlying Carbon Charts controls have been mocked.
+  Check __mocks__/@carbon/charts-react/ for details
+*/
+
 describe('BarChartCard', () => {
   const originalCreateObjectURL = global.URL.createObjectURL;
   const originalRevokeObjectURL = global.URL.revokeObjectURL;

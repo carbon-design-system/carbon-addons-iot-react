@@ -1,6 +1,12 @@
 import moment from 'moment';
+import 'moment/min/locales';
+import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
+import filter from 'lodash/filter';
 import find from 'lodash/find';
+
+import { CHART_COLORS } from '../../constants/CardPropTypes';
+import { findMatchingAlertRange } from '../../utils/cardUtilityFunctions';
 
 /** Generate fake values for my line chart */
 export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day', timeRange) => {
@@ -35,7 +41,9 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
 
   // number of each record to define
   const sampleValues = Array(count).fill(1);
-  return series.reduce((sampleData, { dataSourceId, dataFilter }) => {
+  // ensure the series is actually an array since it can also be an object
+  const seriesArray = Array.isArray(series) ? series : [series];
+  return seriesArray.reduce((sampleData, { dataSourceId, dataFilter }) => {
     const now =
       timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
         ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
@@ -133,13 +141,15 @@ export const formatGraphTick = (
   if ((interval === 'day' || interval === 'week') && index !== 0) {
     return currentTimestamp.format(dailyFormat);
   }
+
+  if (interval === 'month' && index === 0) {
+    return currentTimestamp.format('MMM YYYY');
+  }
+
   if (interval === 'month' && sameMonth) {
     return ''; // don't repeat same month
   }
   if (interval === 'month' && !sameYear) {
-    return currentTimestamp.format('MMM YYYY');
-  }
-  if (interval === 'month' && sameYear && index === 0) {
     return currentTimestamp.format('MMM YYYY');
   }
   if (interval === 'month' && sameYear) {
@@ -156,16 +166,125 @@ export const formatGraphTick = (
     : currentTimestamp.format(fullFormat);
 };
 
-/** compare the current datapoint to a list of alert ranges */
-export const findMatchingAlertRange = (alertRanges, data) => {
-  const currentDataPoint = Array.isArray(data) ? data[0]?.date : data.date;
-  const currentDatapointTimestamp = currentDataPoint.valueOf();
-  return (
-    Array.isArray(alertRanges) &&
-    alertRanges.filter(
-      (alert) =>
-        currentDatapointTimestamp <= alert.endTimestamp &&
-        currentDatapointTimestamp >= alert.startTimestamp
-    )
-  );
+/**
+ * Translates our raw data into a language the carbon-charts understand
+ * @param {string} timeDataSourceId, the field that identifies the timestamp value in the data
+ * @param {array} series, an array of lines to create in our chart
+ * @param {array} values, the array of values from our data layer
+ *
+ * TODO: Handle empty data lines gracefully and notify the user of data lines that did not
+ * match the dataFilter
+ *
+ * @returns {object} with a labels array and a datasets array
+ */
+export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
+  // Generate a set of unique timestamps for the values
+  const timestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
+  const data = [];
+
+  // Series is the different groups of datasets
+  // ensure is actually is an array since proptypes allow for an object, too.
+  const seriesArray = Array.isArray(series) ? series : [series];
+  seriesArray.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+    timestamps.forEach((timestamp) => {
+      // First filter based on on the dataFilter
+      const filteredData = filter(values, dataFilter);
+      if (!isEmpty(filteredData)) {
+        // have to filter out null values from the dataset, as it causes Carbon Charts to break
+        filteredData
+          .filter((dataItem) => {
+            // only allow valid timestamp matches
+            return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+          })
+          .forEach((dataItem) => {
+            // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
+            if (dataItem[dataSourceId]) {
+              data.push({
+                date:
+                  dataItem[timeDataSourceId] instanceof Date
+                    ? dataItem[timeDataSourceId]
+                    : new Date(dataItem[timeDataSourceId]),
+                value: dataItem[dataSourceId],
+                group: label,
+              });
+            }
+          });
+      }
+    });
+  });
+
+  return data;
+};
+
+/**
+ * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
+ * @param {Array} series an array of dataset group classifications
+ * @returns {Object} colors - formatted
+ */
+export const formatColors = (series) => {
+  const colors = {
+    scale: {},
+  };
+  if (Array.isArray(series)) {
+    series.forEach((dataset, index) => {
+      colors.scale[dataset.label] = dataset.color || CHART_COLORS[index % CHART_COLORS.length];
+    });
+  } else {
+    colors.scale[series.label] = series.color || CHART_COLORS[0];
+  }
+  return colors;
+};
+
+/**
+ * Determines the dot stroke color (the border of the data point)
+ * @param {string} datasetLabel
+ * @param {string} label
+ * @param {Object} data
+ * @param {string} originalStrokeColor from carbon charts
+ * @returns {string} stroke color
+ */
+export const applyStrokeColor = (alertRanges) => (
+  datasetLabel,
+  label,
+  data,
+  originalStrokeColor
+) => {
+  if (!isNil(data)) {
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
+  }
+  return originalStrokeColor;
+};
+
+/**
+ * Determines the dot fill color based on matching alerts
+ * @param {string} datasetLabel
+ * @param {string} label
+ * @param {Object} data
+ * @param {string} originalFillColor from carbon charts
+ * @returns {string} fill color
+ */
+export const applyFillColor = (alertRanges) => (datasetLabel, label, data, originalFillColor) => {
+  if (!isNil(data)) {
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalFillColor;
+  }
+  return originalFillColor;
+};
+
+/**
+ * Determines if the dot is filled based on matching alerts
+ * @param {string} datasetLabel
+ * @param {string} label
+ * @param {Object} data
+ * @param {Boolean} isFilled default setting from carbon charts
+ * @returns {Boolean}
+ */
+export const applyIsFilled = (alertRanges) => (datasetLabel, label, data, isFilled) => {
+  if (!isNil(data)) {
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    return matchingAlertRange?.length > 0 ? true : isFilled;
+  }
+
+  return isFilled;
 };

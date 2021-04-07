@@ -156,6 +156,8 @@ class FilterHeaderRow extends Component {
         return '';
       case 'clear.selection':
         return clearSelectionText;
+      case 'clear.all':
+        return clearSelectionText;
       case 'open.menu':
         return openMenuText;
       case 'close.menu':

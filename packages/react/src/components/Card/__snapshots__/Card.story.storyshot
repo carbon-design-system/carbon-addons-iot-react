@@ -57,13 +57,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -217,13 +216,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -555,6 +553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             className="bx--table-toolbar"
           >
             <div
+              aria-hidden={true}
               className="bx--batch-actions iot--table-batch-actions"
             >
               <div
@@ -564,7 +563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   className="bx--batch-summary__para"
                 >
                   <span>
-                    0 item selected
+                    0 items selected
                   </span>
                 </p>
               </div>
@@ -599,13 +598,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="Menu"
+                    aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    tabIndex={0}
                     title="Select time range"
                     type="button"
                   >
@@ -865,13 +863,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             <button
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="Menu"
+              aria-label="open and close list of options"
               className="bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
               open={false}
-              tabIndex={0}
               title="Open and close list of options"
               type="button"
             >
@@ -1291,13 +1288,117 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
+                title="Select time range"
+                type="button"
+              >
+                <svg
+                  aria-label="Select time range"
+                  className="bx--overflow-menu__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
+                  />
+                  <path
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
+                  />
+                  <title>
+                    Select time range
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
+        >
+          <div
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
+          >
+            No data is available for this time range.
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      SMALLFULL
+    </h3>
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
+        id="facilitycard-size-gallery-SMALLFULL"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Card Title"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar"
+          >
+            <div
+              className="iot--card--toolbar-date-range-wrapper"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="open and close list of options"
+                className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
                 title="Select time range"
                 type="button"
               >
@@ -1397,13 +1498,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1503,13 +1603,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1609,13 +1708,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1715,13 +1813,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1821,13 +1918,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1927,13 +2023,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -2069,13 +2164,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -2200,6 +2294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
                 onClick={[Function]}
+                onContextMenu={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 onMouseOut={[Function]}
@@ -2238,13 +2333,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -2398,13 +2492,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -2658,13 +2751,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
