@@ -5,6 +5,7 @@ import {
   HostBinding,
   Input,
   OnChanges,
+  OnInit,
   Optional,
   SimpleChanges,
   SkipSelf,
@@ -46,7 +47,7 @@ const CARD_SERVICE_PROVIDER = {
     `,
   ],
 })
-export class CardComponent implements OnChanges, AfterViewInit {
+export class CardComponent implements OnChanges, OnInit, AfterViewInit {
   @Input() defaultHeight: number = null;
   @Input() expanded = false;
   @HostBinding('class.iot--card') cardClass = true;
@@ -62,10 +63,13 @@ export class CardComponent implements OnChanges, AfterViewInit {
     }
   }
 
-  ngAfterViewInit() {
+  ngOnInit() {
     if (this.defaultHeight) {
       this.cardService.setCardHeight(this.defaultHeight);
     }
+  }
+
+  ngAfterViewInit() {
     const hostElement: HTMLElement = this.elementRef.nativeElement;
     hostElement.style.setProperty('--card-default-height', this.cardService.getCardHeight());
   }

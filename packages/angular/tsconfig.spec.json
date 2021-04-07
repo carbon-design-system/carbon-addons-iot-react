@@ -25,12 +25,13 @@
 			"node"
 		],
 		"paths": {
-			"@ai-apps/angular": [
-				"./src/index"
-			],
 			"@ai-apps/angular/*": [
 				"./src/*/index"
-			]
+			],
+      "@angular/*": [
+        "./node_modules/@angular/*",
+        "../../node_modules/@angular/*"
+      ]
 		},
 	},
 	"files": [

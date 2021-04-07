@@ -1,4 +1,12 @@
-import { Component, EventEmitter, HostBinding, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { ListItem } from 'carbon-components-angular';
 
@@ -120,8 +128,8 @@ export class CardDateRangeComponent implements ControlValueAccessor, OnChanges {
     this.onTouched = fn;
   }
 
-  protected onChange = (obj: any) => { };
-  protected onTouched = () => { };
+  protected onChange = (obj: any) => {};
+  protected onTouched = () => {};
 
   /**
    * Updates the `ranges` list to only select the provided id.

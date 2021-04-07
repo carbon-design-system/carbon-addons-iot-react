@@ -35,7 +35,7 @@ export class CardContentComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     const hostElement: HTMLElement = this.elementRef.nativeElement;
-    hostElement.style.setProperty('--card-default-height', this.cardService.getContentHeight());
+    hostElement.style.setProperty('--card-content-height', this.cardService.getContentHeight());
   }
 
   public isTemplate(value) {
