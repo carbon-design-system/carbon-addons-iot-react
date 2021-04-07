@@ -38,8 +38,7 @@ export class CardToolbarActionDirective implements OnInit {
 
   ngOnInit() {
     if (this.overflowMenuRef) {
-      this.overflowMenuRef.triggerClass =
-        'iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost';
+      this.overflowMenuRef.triggerClass = this.classList;
       this.overflowMenuRef.flip = true;
       this.overflowMenuRef.offset = { x: 4, y: 0 };
       this.classList = '';

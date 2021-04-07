@@ -11,6 +11,8 @@ export class CardService implements OnDestroy {
    */
   private height: number = null;
 
+  private headerHeight = 48;
+
   private expandedSubject = new BehaviorSubject(false);
 
   private subscriptions = new Subscription();
@@ -45,7 +47,7 @@ export class CardService implements OnDestroy {
     if (!this.height) {
       return '';
     }
-    return `${this.height - 48}px`;
+    return `${this.height - this.headerHeight}px`;
   }
 
   setExpanded(isExpanded: boolean) {
