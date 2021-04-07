@@ -1,4 +1,4 @@
-const { vendor } = require('@ai-apps/monorepo-utils');
+const { vendor } = require('ai-apps-monorepo-utils');
 
 vendor({
   packages: [

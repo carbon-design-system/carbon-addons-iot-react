@@ -1,6 +1,6 @@
 const { dirname, join, sep } = require('path');
 const { copy, readFile, writeFile, ensureDir } = require('fs-extra');
-const { promiseGlob, packagePath } = require('@ai-apps/monorepo-utils');
+const { promiseGlob, packagePath } = require('ai-apps-monorepo-utils');
 
 const reactPath = packagePath('carbon-addons-iot-react');
 

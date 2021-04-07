@@ -1,4 +1,4 @@
-# @ai-apps/monorepo-utils
+# ai-apps-monorepo-utils
 
 As the monorepo grows a variety of custom tools and integrations are required. This (private!) package can be included in `devDependencies` and allows us to centralize and de-duplicate our utility tooling.
 
@@ -26,7 +26,7 @@ By using a pattern/file based vendoring strategy we can reduce the number of fil
 Example usage:
 
 ```javascript
-const { vendor } = require('@ai-apps/monorepo-utils');
+const { vendor } = require('ai-apps-monorepo-utils');
 
 vendor({
   packages: ['@ai-apps/styles'],
