@@ -4818,7 +4818,9 @@ Map {
     "defaultProps": Object {
       "content": Object {
         "layout": "VERTICAL",
+        "series": Array [],
         "truncation": Object {
+          "numCharacter": 20,
           "threshold": 20,
           "type": "end_line",
         },
@@ -4826,6 +4828,7 @@ Map {
       },
       "domainRange": null,
       "i18n": Object {
+        "defaultFilterStringPlaceholdText": "Filter",
         "noDataLabel": "No data",
         "tooltipGroupLabel": "Group",
         "tooltipTotalLabel": "Total",
@@ -5358,6 +5361,9 @@ Map {
             "truncation": Object {
               "args": Array [
                 Object {
+                  "numCharacter": Object {
+                    "type": "number",
+                  },
                   "threshold": Object {
                     "type": "number",
                   },
@@ -5499,6 +5505,9 @@ Map {
         "args": Array [
           Object {
             "alertDetected": Object {
+              "type": "string",
+            },
+            "defaultFilterStringPlaceholdText": Object {
               "type": "string",
             },
             "tooltipGroupLabel": Object {
@@ -11044,6 +11053,7 @@ Map {
         "groupDataSourceId": "group",
         "legendPosition": "bottom",
         "truncation": Object {
+          "numCharacter": 20,
           "threshold": 20,
           "type": "end_line",
         },
@@ -11537,6 +11547,9 @@ Map {
             "truncation": Object {
               "args": Array [
                 Object {
+                  "numCharacter": Object {
+                    "type": "number",
+                  },
                   "threshold": Object {
                     "type": "number",
                   },
@@ -12871,8 +12884,11 @@ Map {
       "content": Object {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
+        "series": Array [],
         "showLegend": true,
+        "timeDataSourceId": "timestamp",
         "truncation": Object {
+          "numCharacter": 20,
           "threshold": 20,
           "type": "end_line",
         },
@@ -12880,6 +12896,7 @@ Map {
       "domainRange": null,
       "i18n": Object {
         "alertDetected": "Alert detected:",
+        "defaultFilterStringPlaceholdText": "Filter",
         "noDataLabel": "No data is available for this time range.",
         "tooltipGroupLabel": "Group",
       },
@@ -13460,6 +13477,9 @@ Map {
             "truncation": Object {
               "args": Array [
                 Object {
+                  "numCharacter": Object {
+                    "type": "number",
+                  },
                   "threshold": Object {
                     "type": "number",
                   },
@@ -13600,6 +13620,9 @@ Map {
         "args": Array [
           Object {
             "alertDetected": Object {
+              "type": "string",
+            },
+            "defaultFilterStringPlaceholdText": Object {
               "type": "string",
             },
             "noData": Object {

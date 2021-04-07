@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.35...v2.145.0-next.36) (2021-04-07)
+
+
+### Bug Fixes
+
+* **barchartcard:** do not mutate content ([145bfce](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/145bfceb5b7a5f30204b6190711070cfa9cc9f46))
+* **chartcards:** deep merge the default props ([a6a2934](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a6a293445ba12ccf2f6a404e278779e5a06d9090))
+* **defaults:** do not mutate content prop ([03753c1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/03753c17391e53c7e544658a028d4f9ec7f8d076))
+* **piechartcard:** proptype typo ([e0f733d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e0f733d8b3390c4d71a81b2f96238f7e9df0ce92))
+
+
+
+
+
+# [2.145.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.34...v2.145.0-next.35) (2021-04-07)
+
+
+### Bug Fixes
+
+* **repo:** un-scope monorepo-utils to prevent npm from trying to publish it ([0390827](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/03908279d7b2a5f4b69ee38cfe7f27c9ac515150))
+
+
+
+
+
 # [2.145.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.33...v2.145.0-next.34) (2021-04-06)
 
 
