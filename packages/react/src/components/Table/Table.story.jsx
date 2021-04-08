@@ -169,7 +169,11 @@ export const tableColumns = [
     id: 'customHeader',
     name: (
       <Tooltip
-        triggerText={<strong>Default value (optional)</strong>}
+        triggerText={
+          <div style={{ 'font-weight': 'bold', color: '#161616', 'font-size': '14px' }}>
+            {'Default value (optional)'}
+          </div>
+        }
         triggerId="default-value-tooltip"
         iconDescription="Default value (optional)"
       >

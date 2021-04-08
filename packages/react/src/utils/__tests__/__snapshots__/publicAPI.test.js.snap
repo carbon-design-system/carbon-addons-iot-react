@@ -649,8 +649,18 @@ Map {
                   "type": "bool",
                 },
                 "name": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "node",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                  ],
                   "isRequired": true,
-                  "type": "node",
+                  "type": "oneOfType",
                 },
                 "options": Object {
                   "args": Array [
@@ -1667,8 +1677,18 @@ Map {
                   "type": "bool",
                 },
                 "name": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "node",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                  ],
                   "isRequired": true,
-                  "type": "node",
+                  "type": "oneOfType",
                 },
                 "options": Object {
                   "args": Array [
@@ -2140,8 +2160,18 @@ Map {
                   "type": "bool",
                 },
                 "name": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "node",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                  ],
                   "isRequired": true,
-                  "type": "node",
+                  "type": "oneOfType",
                 },
                 "options": Object {
                   "args": Array [
