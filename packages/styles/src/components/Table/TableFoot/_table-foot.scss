@@ -10,3 +10,13 @@
 .#{$iot-prefix}-table-foot--value {
   font-weight: 600;
 }
+
+td.#{$iot-prefix}-table-foot--value__sortable {
+  padding-right: $spacing-09;
+}
+
+html[dir='rtl'] {
+  td.#{$iot-prefix}-table-foot--value__sortable {
+    padding-left: $spacing-08;
+  }
+}

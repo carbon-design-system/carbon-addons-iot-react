@@ -153,7 +153,7 @@ describe('PageTitleBar', () => {
     );
     expect(container.querySelector('.page-title-bar-title--condensed-before')).toBeInTheDocument();
     expect(container.querySelector('.page-title-bar-title--condensed-after')).toBeFalsy();
-    fireEvent.scroll(window, { target: { scrollY: 25 } });
+    fireEvent.scroll(window, { target: { scrollY: 55 } });
     expect(container.querySelector('.page-title-bar-title--condensed-after')).toBeInTheDocument();
   });
 });

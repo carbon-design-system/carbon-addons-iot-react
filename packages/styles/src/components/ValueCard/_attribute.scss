@@ -39,14 +39,24 @@
     // set the height so the height and value will always be in the same position regardless if they exist
     height: $layout-01;
     margin-bottom: $spacing-02;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > span {
+      height: $layout-01;
+    }
+
+    & > svg {
+      margin-right: $spacing-02;
+    }
   }
 
-  &--secondary-value {
-    height: rem(24px);
+  &-secondary-value {
+    height: $layout-01;
     display: flex;
     align-items: center;
     font-size: 0.875rem;
-    padding-left: $spacing-02;
     margin-bottom: $spacing-02;
     color: var(--secondary-value-color);
   }

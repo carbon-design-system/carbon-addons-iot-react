@@ -7,6 +7,7 @@
   .#{$prefix}--loading {
     margin-top: -$spacing-05;
     margin-bottom: -$spacing-05;
+    margin-right: $spacing-03;
   }
   .#{$prefix}--loading__stroke {
     stroke: $carbon--gray-50;

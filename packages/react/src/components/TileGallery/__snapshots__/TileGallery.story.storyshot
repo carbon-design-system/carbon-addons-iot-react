@@ -24,6 +24,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
@@ -1408,6 +1413,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileG
       >
         <div
           className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
         >
           <div
             className="page-title-bar-header-left"
