@@ -2,9 +2,10 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { keyCodes } from '../../constants/KeyCodeConstants';
+
 import ComboBox from './ComboBox';
 import { items } from './ComboBox.story';
-import { keyCodes } from '../../constants/KeyCodeConstants';
 
 const defaultProps = {
   items,
@@ -192,7 +193,7 @@ describe('ComboBox', () => {
     const tags = screen.getByTestId('combo-tags');
     expect(tags.childElementCount).toEqual(0);
 
-    let control = screen.getByPlaceholderText('Filter...');
+    const control = screen.getByPlaceholderText('Filter...');
 
     await userEvent.click(control);
     fireEvent.keyDown(control, { keyCode: keyCodes.DOWN });
