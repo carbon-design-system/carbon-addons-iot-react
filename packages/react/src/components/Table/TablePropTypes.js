@@ -88,7 +88,7 @@ export const TableRowPropTypes = PropTypes.arrayOf(
 export const TableColumnsPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    name: PropTypes.node.isRequired,
     isSortable: PropTypes.bool,
     /** optional sort function for this column, called back with the column to sort on and the in-memory data as parameters
      * { columnId: PropTypes.string, direction: PropTypes.oneOf(['ASC','DESC']), data: PropTypes.array }

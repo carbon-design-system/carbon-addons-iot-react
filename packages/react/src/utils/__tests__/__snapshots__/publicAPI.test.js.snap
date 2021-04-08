@@ -650,7 +650,7 @@ Map {
                 },
                 "name": Object {
                   "isRequired": true,
-                  "type": "string",
+                  "type": "node",
                 },
                 "options": Object {
                   "args": Array [
@@ -1668,7 +1668,7 @@ Map {
                 },
                 "name": Object {
                   "isRequired": true,
-                  "type": "string",
+                  "type": "node",
                 },
                 "options": Object {
                   "args": Array [
@@ -2141,7 +2141,7 @@ Map {
                 },
                 "name": Object {
                   "isRequired": true,
-                  "type": "string",
+                  "type": "node",
                 },
                 "options": Object {
                   "args": Array [
