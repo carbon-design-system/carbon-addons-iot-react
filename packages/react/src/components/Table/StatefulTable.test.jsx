@@ -347,9 +347,9 @@ describe('stateful table with real reducer', () => {
     let viewProps;
     const onUserViewModified = jest
       .fn()
-      .mockImplementation(({ view, state: { currentSearchValue } }) => {
+      .mockImplementation(({ view, columns, state: { currentSearchValue } }) => {
         viewProps = {
-          columns: initialState.columns,
+          columns,
           view: {
             filters: view.filters,
             table: { ordering: view.table.ordering, sort: view.table.sort },
@@ -377,8 +377,11 @@ describe('stateful table with real reducer', () => {
 
     fireEvent.click(screen.getByText('Clear all filters'));
 
-    expect(viewProps).toEqual({
-      columns: initialState.columns,
+    expect({
+      ...viewProps,
+      columns: viewProps.columns.filter((column) => !React.isValidElement(column.name)),
+    }).toEqual({
+      columns: initialState.columns.filter((column) => !React.isValidElement(column.name)),
       view: {
         filters: [],
         table: { ordering: initialState.view.table.ordering, sort: {} },
@@ -395,8 +398,11 @@ describe('stateful table with real reducer', () => {
     const searchField = screen.queryByRole('searchbox');
     fireEvent.change(searchField, { target: { value: 'testval1' } });
 
-    expect(viewProps).toEqual({
-      columns: initialState.columns,
+    expect({
+      ...viewProps,
+      columns: viewProps.columns.filter((column) => !React.isValidElement(column.name)),
+    }).toEqual({
+      columns: initialState.columns.filter((column) => !React.isValidElement(column.name)),
       view: {
         filters: [],
         table: { ordering: initialState.view.table.ordering, sort: {} },
