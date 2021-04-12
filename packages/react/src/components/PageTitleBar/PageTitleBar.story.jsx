@@ -1,9 +1,9 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { select } from '@storybook/addon-knobs';
-import { Add24, TrashCan24 } from '@carbon/icons-react';
+import { select, text } from '@storybook/addon-knobs';
+import { Add24, TrashCan24, SettingsAdjust24 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
-import { Tabs, Tab } from 'carbon-components-react';
+import { Tabs, Tab, Search, Select, SelectItem, InlineLoading } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Button from '../Button';
@@ -99,6 +99,18 @@ WithTooltipDescriptionWithNode.story = {
   name: 'with tooltip description with node',
 };
 
+export const WithStatusDescriptionAndCrumbs = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={<InlineLoading status="finished" description="Running" />}
+    breadcrumb={pageTitleBarBreadcrumb}
+  />
+);
+
+WithStatusDescriptionAndCrumbs.story = {
+  name: 'with status description and breadcrumbs',
+};
+
 export const WithContent = () => (
   <>
     <PageTitleBar
@@ -136,7 +148,7 @@ export const WithEditableTitleBar = () => (
 );
 
 WithEditableTitleBar.story = {
-  name: 'with editable title bar',
+  name: 'with editable title bar and subtitle',
 };
 
 export const WithRichContent = () => <PageTitleBar {...commonPageTitleBarProps} collapsed />;
@@ -145,10 +157,149 @@ WithRichContent.story = {
   name: 'with rich content',
 };
 
-export const WithEverything = () => (
+export const WithSelect = () => (
   <PageTitleBar
     title={commonPageTitleBarProps.title}
     description={commonPageTitleBarProps.description}
+    breadcrumb={pageTitleBarBreadcrumb}
+    extraContent={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Button
+          renderIcon={SettingsAdjust24}
+          onClick={action('click')}
+          size="field"
+          hasIconOnly
+          iconDescription="Add"
+          kind="ghost"
+          tooltipPosition="bottom"
+          tooltipAlignment="center"
+        />
+        <Select hideLabel id="select-1" defaultValue="placeholder-item">
+          <SelectItem disabled hidden value="placeholder-item" text="Choose an option" />
+          <SelectItem value="option-3" text="Option 3" />
+          <SelectItem value="option-4" text="Option 4" />
+        </Select>
+        <Button
+          renderIcon={Add24}
+          onClick={action('click')}
+          size="field"
+          hasIconOnly
+          iconDescription="Add"
+          kind="ghost"
+          tooltipPosition="bottom"
+          tooltipAlignment="center"
+        />
+        <Button
+          renderIcon={TrashCan24}
+          onClick={action('click')}
+          size="field"
+          hasIconOnly
+          iconDescription="Remove"
+          kind="ghost"
+          tooltipPosition="bottom"
+          tooltipAlignment="center"
+        />
+        <Button onClick={action('click')} size="field">
+          Take an action
+        </Button>
+      </div>
+    }
+    editable
+    content={
+      <Tabs>
+        <Tab label="Tab 1">
+          <div>Content for first tab.</div>
+        </Tab>
+        <Tab label="Tab 2">
+          <div>Content for second tab.</div>
+        </Tab>
+        <Tab label="Tab 3">
+          <div>Content for third tab.</div>
+        </Tab>
+      </Tabs>
+    }
+    onEdit={action('edit')}
+  />
+);
+
+WithSelect.story = {
+  name: 'with select',
+};
+
+export const WithSearch = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+    breadcrumb={pageTitleBarBreadcrumb}
+    extraContent={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Button
+          renderIcon={SettingsAdjust24}
+          onClick={action('click')}
+          size="field"
+          hasIconOnly
+          iconDescription="Add"
+          kind="ghost"
+          tooltipPosition="bottom"
+          tooltipAlignment="center"
+        />
+        <Search
+          id="search-1"
+          placeholder="Search"
+          onChange={action('search')}
+          size="lg"
+          labelText="Search"
+        />
+        <Button
+          renderIcon={Add24}
+          onClick={action('click')}
+          size="field"
+          hasIconOnly
+          iconDescription="Add"
+          kind="ghost"
+          tooltipPosition="bottom"
+          tooltipAlignment="center"
+        />
+        <Button
+          renderIcon={TrashCan24}
+          onClick={action('click')}
+          size="field"
+          hasIconOnly
+          iconDescription="Remove"
+          kind="ghost"
+          tooltipPosition="bottom"
+          tooltipAlignment="center"
+        />
+        <Button onClick={action('click')} size="field">
+          Take an action
+        </Button>
+      </div>
+    }
+    editable
+    content={
+      <Tabs>
+        <Tab label="Tab 1">
+          <div>Content for first tab.</div>
+        </Tab>
+        <Tab label="Tab 2">
+          <div>Content for second tab.</div>
+        </Tab>
+        <Tab label="Tab 3">
+          <div>Content for third tab.</div>
+        </Tab>
+      </Tabs>
+    }
+    onEdit={action('edit')}
+  />
+);
+
+WithSearch.story = {
+  name: 'with search',
+};
+
+export const WithEverything = () => (
+  <PageTitleBar
+    title={text('title', commonPageTitleBarProps.title)}
     breadcrumb={pageTitleBarBreadcrumb}
     extraContent={
       <div>
@@ -211,13 +362,57 @@ WithEverything.story = {
   name: 'with everything',
 };
 
+export const WithCondensedHeader = () => (
+  <PageTitleBar
+    stickyHeaderOffset={0}
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+    breadcrumb={pageTitleBarBreadcrumb}
+    headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'CONDENSED')}
+    extraContent={
+      <div>
+        <div
+          className="top"
+          style={{
+            display: 'flex',
+            flexDirection: 'row-reverse',
+          }}
+        />
+        <div style={{ display: 'flex' }} className="bottom">
+          <Button kind="secondary">Secondary button</Button>
+          <Button kind="primary">Primary button</Button>
+        </div>
+      </div>
+    }
+    editable
+    content={
+      <Tabs>
+        <Tab label="Tab 1">
+          <div style={{ height: '100rem' }}>Scroll me.</div>
+        </Tab>
+        <Tab label="Tab 2">
+          <div>Content for second tab.</div>
+        </Tab>
+        <Tab label="Tab 3">
+          <div>Content for third tab.</div>
+        </Tab>
+      </Tabs>
+    }
+    onEdit={action('edit')}
+  />
+);
+
+WithCondensedHeader.story = {
+  name: 'with condensed header',
+};
+
 export const WithDynamicScrolling = () => (
   <PageTitleBar
     stickyHeaderOffset={0}
     title={commonPageTitleBarProps.title}
     description={commonPageTitleBarProps.description}
     breadcrumb={pageTitleBarBreadcrumb}
-    headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'])}
+    headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'DYNAMIC')}
     extraContent={
       <div>
         <div
@@ -271,7 +466,7 @@ export const WithDynamicScrolling = () => (
 );
 
 WithDynamicScrolling.story = {
-  name: 'With dynamic scrolling',
+  name: 'with dynamic scrolling',
 };
 
 WithDynamicScrolling.parameters = {

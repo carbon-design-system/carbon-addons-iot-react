@@ -1,450 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar With dynamic scrolling 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
-    >
-      <div
-        className="page-title-bar"
-      >
-        <div
-          className="page-title-bar-header"
-          style={
-            Object {
-              "--header-offset": "0px",
-            }
-          }
-        >
-          <div
-            className="page-title-bar-header-left"
-          >
-            <div
-              className="page-title-bar-breadcrumb"
-            >
-              <nav
-                aria-label="Breadcrumb"
-              >
-                <ol
-                  className="bx--breadcrumb"
-                >
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Type
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <span
-                      className="bx--link"
-                    >
-                      Instance
-                    </span>
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div
-              className="page-title-bar-title"
-            >
-              <div
-                className="page-title-bar-title--text"
-              >
-                <h2>
-                  Page title
-                </h2>
-                <div
-                  className="bx--tooltip__label"
-                  id="tooltip"
-                >
-                  
-                  <div
-                    aria-describedby={null}
-                    aria-label="More information"
-                    className="bx--tooltip__trigger"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <svg
-                      aria-hidden={true}
-                      description={null}
-                      fill="currentColor"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role={null}
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
-                      />
-                      <path
-                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <button
-                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                  data-testid="Button"
-                  disabled={false}
-                  onClick={[Function]}
-                  tabIndex={0}
-                  type="button"
-                >
-                  <span
-                    className="bx--assistive-text"
-                  >
-                    Edit page title
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    aria-label="Edit page title"
-                    className="bx--btn__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div
-            className="page-title-bar-header-right"
-          >
-            <div>
-              <div
-                className="top"
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "row-reverse",
-                  }
-                }
-              />
-              <div
-                className="bottom"
-                style={
-                  Object {
-                    "display": "flex",
-                  }
-                }
-              >
-                <button
-                  className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                  data-testid="Button"
-                  disabled={false}
-                  onClick={[Function]}
-                  tabIndex={0}
-                  type="button"
-                >
-                  <span
-                    className="bx--assistive-text"
-                  >
-                    Add
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    aria-label="Add"
-                    className="bx--btn__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                  data-testid="Button"
-                  disabled={false}
-                  onClick={[Function]}
-                  tabIndex={0}
-                  type="button"
-                >
-                  <span
-                    className="bx--assistive-text"
-                  >
-                    Remove
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    aria-label="Remove"
-                    className="bx--btn__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 12H14V24H12zM18 12H20V24H18z"
-                    />
-                    <path
-                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  className="iot--btn bx--btn bx--btn--primary"
-                  data-testid="Button"
-                  disabled={false}
-                  onClick={[Function]}
-                  tabIndex={0}
-                  type="button"
-                >
-                  Take an action
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="page-title-bar-content"
-        >
-          <div
-            className="bx--tabs--scrollable"
-            onScroll={[Function]}
-            selected={0}
-          >
-            <button
-              aria-hidden="true"
-              aria-label="Scroll left"
-              className="bx--tab--overflow-nav-button--hidden"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseUp={[Function]}
-              tabIndex="-1"
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
-                />
-              </svg>
-            </button>
-            <ul
-              className="bx--tabs--scrollable__nav"
-              role="tablist"
-              tabIndex={-1}
-            >
-              <li
-                className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="presentation"
-              >
-                <button
-                  aria-controls="tab-33__panel"
-                  aria-selected={true}
-                  className="bx--tabs--scrollable__nav-link"
-                  href="#"
-                  id="tab-33"
-                  role="tab"
-                  tabIndex={0}
-                  type="button"
-                >
-                  Tab 1
-                </button>
-              </li>
-              <li
-                className="bx--tabs--scrollable__nav-item"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="presentation"
-              >
-                <button
-                  aria-controls="tab-34__panel"
-                  aria-selected={false}
-                  className="bx--tabs--scrollable__nav-link"
-                  href="#"
-                  id="tab-34"
-                  role="tab"
-                  tabIndex={-1}
-                  type="button"
-                >
-                  Tab 2
-                </button>
-              </li>
-              <li
-                className="bx--tabs--scrollable__nav-item"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="presentation"
-              >
-                <button
-                  aria-controls="tab-35__panel"
-                  aria-selected={false}
-                  className="bx--tabs--scrollable__nav-link"
-                  href="#"
-                  id="tab-35"
-                  role="tab"
-                  tabIndex={-1}
-                  type="button"
-                >
-                  Tab 3
-                </button>
-              </li>
-            </ul>
-            <button
-              aria-hidden="true"
-              aria-label="Scroll right"
-              className="bx--tab--overflow-nav-button--hidden"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseUp={[Function]}
-              tabIndex="-1"
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            className="bx--tab-content"
-            hidden={false}
-            role="tabpanel"
-            selected={true}
-          >
-            <div
-              style={
-                Object {
-                  "height": "100rem",
-                }
-              }
-            >
-              Scroll me.
-            </div>
-          </div>
-          <div
-            className="bx--tab-content"
-            hidden={true}
-            role="tabpanel"
-            selected={false}
-          >
-            <div>
-              Content for second tab.
-            </div>
-          </div>
-          <div
-            className="bx--tab-content"
-            hidden={true}
-            role="tabpanel"
-            selected={false}
-          >
-            <div>
-              Content for third tab.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar base 1`] = `
 <div
   className="storybook-container"
@@ -663,6 +218,394 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   Page title
                 </h2>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with condensed header 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
+    >
+      <div
+        className="page-title-bar"
+      >
+        <div
+          className="page-title-bar-header page-title-bar-header-condensed"
+          style={
+            Object {
+              "--header-offset": "0px",
+            }
+          }
+        >
+          <div
+            className="page-title-bar-header-left"
+          >
+            <div
+              className="page-title-bar-breadcrumb page-title-bar-breadcrumb-condensed-static"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Type
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <span
+                      className="bx--link"
+                    >
+                      Instance
+                    </span>
+                  </li>
+                </ol>
+              </nav>
+              <div
+                className="page-title-bar-title page-title-bar-title--condensed-static"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <span>
+                    Page title
+                  </span>
+                  <div
+                    className="bx--tooltip__label"
+                    id="tooltip"
+                  >
+                    
+                    <div
+                      aria-describedby={null}
+                      aria-label="More information"
+                      className="bx--tooltip__trigger"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onContextMenu={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        description={null}
+                        fill="currentColor"
+                        focusable="false"
+                        height={20}
+                        preserveAspectRatio="xMidYMid meet"
+                        role={null}
+                        viewBox="0 0 32 32"
+                        width={20}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
+                        />
+                        <path
+                          d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <button
+                    className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                    data-testid="Button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Edit page title
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Edit page title"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="page-title-bar-header-right"
+          >
+            <div>
+              <div
+                className="top"
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "row-reverse",
+                  }
+                }
+              />
+              <div
+                className="bottom"
+                style={
+                  Object {
+                    "display": "flex",
+                  }
+                }
+              >
+                <button
+                  className="iot--btn bx--btn bx--btn--secondary"
+                  data-testid="Button"
+                  disabled={false}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Secondary button
+                </button>
+                <button
+                  className="iot--btn bx--btn bx--btn--primary"
+                  data-testid="Button"
+                  disabled={false}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Primary button
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="page-title-bar-content"
+        >
+          <div
+            className="bx--tabs--scrollable"
+            onScroll={[Function]}
+            selected={0}
+          >
+            <button
+              aria-hidden="true"
+              aria-label="Scroll left"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                />
+              </svg>
+            </button>
+            <ul
+              className="bx--tabs--scrollable__nav"
+              role="tablist"
+              tabIndex={-1}
+            >
+              <li
+                className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-39__panel"
+                  aria-selected={true}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-39"
+                  role="tab"
+                  tabIndex={0}
+                  type="button"
+                >
+                  Tab 1
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-40__panel"
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-40"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Tab 2
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-41__panel"
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-41"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Tab 3
+                </button>
+              </li>
+            </ul>
+            <button
+              aria-hidden="true"
+              aria-label="Scroll right"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={false}
+            role="tabpanel"
+            selected={true}
+          >
+            <div
+              style={
+                Object {
+                  "height": "100rem",
+                }
+              }
+            >
+              Scroll me.
+            </div>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <div>
+              Content for second tab.
+            </div>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <div>
+              Content for third tab.
             </div>
           </div>
         </div>
@@ -1090,7 +1033,533 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with editable title bar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with dynamic scrolling 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
+    >
+      <div
+        className="page-title-bar"
+      >
+        <div
+          className="page-title-bar-breadcrumb page-title-bar-breadcrumb-dynamic"
+          style={
+            Object {
+              "--header-offset": "0px",
+            }
+          }
+        >
+          <nav
+            aria-label="Breadcrumb"
+          >
+            <ol
+              className="bx--breadcrumb"
+            >
+              <li
+                className="bx--breadcrumb-item"
+              >
+                <a
+                  className="bx--link"
+                  href="/"
+                >
+                  Home
+                </a>
+              </li>
+              <li
+                className="bx--breadcrumb-item"
+              >
+                <a
+                  className="bx--link"
+                  href="/"
+                >
+                  Type
+                </a>
+              </li>
+              <li
+                className="bx--breadcrumb-item"
+              >
+                <span
+                  className="bx--link"
+                >
+                  Instance
+                </span>
+              </li>
+            </ol>
+          </nav>
+          <div
+            className="page-title-bar-title--condensed page-title-bar-title--condensed-before"
+          >
+            <span>
+              Page title
+            </span>
+            <div
+              className="bx--tooltip__label"
+              id="tooltip"
+            >
+              
+              <div
+                aria-describedby={null}
+                aria-label="More information"
+                className="bx--tooltip__trigger"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-hidden={true}
+                  description={null}
+                  fill="currentColor"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  role={null}
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
+                  />
+                  <path
+                    d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <button
+              className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+              data-testid="Button"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="bx--assistive-text"
+              >
+                Edit page title
+              </span>
+              <svg
+                aria-hidden="true"
+                aria-label="Edit page title"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="page-title-bar-title page-title-bar-title-dynamic"
+          style={
+            Object {
+              "--bar-title-position": "absolute",
+              "--header-offset": "0px",
+            }
+          }
+        >
+          <div
+            className="page-title-bar-title--text"
+          >
+            <h2>
+              Page title
+            </h2>
+            <div
+              className="bx--tooltip__label"
+              id="tooltip"
+            >
+              
+              <div
+                aria-describedby={null}
+                aria-label="More information"
+                className="bx--tooltip__trigger"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-hidden={true}
+                  description={null}
+                  fill="currentColor"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  role={null}
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
+                  />
+                  <path
+                    d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <button
+              className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+              data-testid="Button"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="bx--assistive-text"
+              >
+                Edit page title
+              </span>
+              <svg
+                aria-hidden="true"
+                aria-label="Edit page title"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="page-title-bar-header-right page-title-bar-header-right-dynamic"
+          style={
+            Object {
+              "--header-offset": "0px",
+            }
+          }
+        >
+          <div>
+            <div
+              className="top"
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row-reverse",
+                }
+              }
+            />
+            <div
+              className="bottom"
+              style={
+                Object {
+                  "display": "flex",
+                }
+              }
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Add
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Add"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  />
+                </svg>
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Remove
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Remove"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 12H14V24H12zM18 12H20V24H18z"
+                  />
+                  <path
+                    d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                  />
+                </svg>
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Take an action
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="page-title-bar-content"
+        >
+          <div
+            className="bx--tabs--scrollable"
+            onScroll={[Function]}
+            selected={0}
+          >
+            <button
+              aria-hidden="true"
+              aria-label="Scroll left"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                />
+              </svg>
+            </button>
+            <ul
+              className="bx--tabs--scrollable__nav"
+              role="tablist"
+              tabIndex={-1}
+            >
+              <li
+                className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-42__panel"
+                  aria-selected={true}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-42"
+                  role="tab"
+                  tabIndex={0}
+                  type="button"
+                >
+                  Tab 1
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-43__panel"
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-43"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Tab 2
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-44__panel"
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-44"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Tab 3
+                </button>
+              </li>
+            </ul>
+            <button
+              aria-hidden="true"
+              aria-label="Scroll right"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={false}
+            role="tabpanel"
+            selected={true}
+          >
+            <div
+              style={
+                Object {
+                  "height": "100rem",
+                }
+              }
+            >
+              Scroll me.
+            </div>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <div>
+              Content for second tab.
+            </div>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <div>
+              Content for third tab.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with editable title bar and subtitle 1`] = `
 <div
   className="storybook-container"
 >
@@ -1284,46 +1753,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 <h2>
                   Page title
                 </h2>
-                <div
-                  className="bx--tooltip__label"
-                  id="tooltip"
-                >
-                  
-                  <div
-                    aria-describedby={null}
-                    aria-label="More information"
-                    className="bx--tooltip__trigger"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <svg
-                      aria-hidden={true}
-                      description={null}
-                      fill="currentColor"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role={null}
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
-                      />
-                      <path
-                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
-                      />
-                    </svg>
-                  </div>
-                </div>
                 <button
                   className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
                   data-testid="Button"
@@ -1503,11 +1932,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-30__panel"
+                  aria-controls="tab-36__panel"
                   aria-selected={true}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-30"
+                  id="tab-36"
                   role="tab"
                   tabIndex={0}
                   type="button"
@@ -1522,11 +1951,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-31__panel"
+                  aria-controls="tab-37__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-31"
+                  id="tab-37"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -1541,11 +1970,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-32__panel"
+                  aria-controls="tab-38__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-32"
+                  id="tab-38"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -1774,6 +2203,1201 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 </svg>
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with search 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
+    >
+      <div
+        className="page-title-bar"
+      >
+        <div
+          className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
+        >
+          <div
+            className="page-title-bar-header-left"
+          >
+            <div
+              className="page-title-bar-breadcrumb"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Type
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <span
+                      className="bx--link"
+                    >
+                      Instance
+                    </span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
+            >
+              <div
+                className="page-title-bar-title--text"
+              >
+                <h2>
+                  Page title
+                </h2>
+                <div
+                  className="bx--tooltip__label"
+                  id="tooltip"
+                >
+                  
+                  <div
+                    aria-describedby={null}
+                    aria-label="More information"
+                    className="bx--tooltip__trigger"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      description={null}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role={null}
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
+                      />
+                      <path
+                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <button
+                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <span
+                    className="bx--assistive-text"
+                  >
+                    Edit page title
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Edit page title"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="page-title-bar-header-right"
+          >
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                }
+              }
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Add
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Add"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M30 8h-4.1c-.5-2.3-2.5-4-4.9-4s-4.4 1.7-4.9 4H2v2h14.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H30V8zM21 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3S22.7 12 21 12zM2 24h4.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H30v-2H15.9c-.5-2.3-2.5-4-4.9-4s-4.4 1.7-4.9 4H2V24zM11 20c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3S9.3 20 11 20z"
+                  />
+                </svg>
+              </button>
+              <div
+                aria-labelledby="search-1-search"
+                className="bx--search bx--search--lg"
+                role="search"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+                <label
+                  className="bx--label"
+                  htmlFor="search-1"
+                  id="search-1-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  id="search-1"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  type="text"
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <button
+                className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Add
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Add"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  />
+                </svg>
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Remove
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Remove"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 12H14V24H12zM18 12H20V24H18z"
+                  />
+                  <path
+                    d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                  />
+                </svg>
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--field bx--btn--primary"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Take an action
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="page-title-bar-content"
+        >
+          <div
+            className="bx--tabs--scrollable"
+            onScroll={[Function]}
+            selected={0}
+          >
+            <button
+              aria-hidden="true"
+              aria-label="Scroll left"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                />
+              </svg>
+            </button>
+            <ul
+              className="bx--tabs--scrollable__nav"
+              role="tablist"
+              tabIndex={-1}
+            >
+              <li
+                className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-33__panel"
+                  aria-selected={true}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-33"
+                  role="tab"
+                  tabIndex={0}
+                  type="button"
+                >
+                  Tab 1
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-34__panel"
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-34"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Tab 2
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-35__panel"
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-35"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Tab 3
+                </button>
+              </li>
+            </ul>
+            <button
+              aria-hidden="true"
+              aria-label="Scroll right"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={false}
+            role="tabpanel"
+            selected={true}
+          >
+            <div>
+              Content for first tab.
+            </div>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <div>
+              Content for second tab.
+            </div>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <div>
+              Content for third tab.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with select 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
+    >
+      <div
+        className="page-title-bar"
+      >
+        <div
+          className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
+        >
+          <div
+            className="page-title-bar-header-left"
+          >
+            <div
+              className="page-title-bar-breadcrumb"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Type
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <span
+                      className="bx--link"
+                    >
+                      Instance
+                    </span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
+            >
+              <div
+                className="page-title-bar-title--text"
+              >
+                <h2>
+                  Page title
+                </h2>
+                <div
+                  className="bx--tooltip__label"
+                  id="tooltip"
+                >
+                  
+                  <div
+                    aria-describedby={null}
+                    aria-label="More information"
+                    className="bx--tooltip__trigger"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      description={null}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role={null}
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
+                      />
+                      <path
+                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <button
+                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <span
+                    className="bx--assistive-text"
+                  >
+                    Edit page title
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Edit page title"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="page-title-bar-header-right"
+          >
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                }
+              }
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Add
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Add"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M30 8h-4.1c-.5-2.3-2.5-4-4.9-4s-4.4 1.7-4.9 4H2v2h14.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H30V8zM21 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3S22.7 12 21 12zM2 24h4.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H30v-2H15.9c-.5-2.3-2.5-4-4.9-4s-4.4 1.7-4.9 4H2V24zM11 20c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3S9.3 20 11 20z"
+                  />
+                </svg>
+              </button>
+              <div
+                className="bx--form-item"
+              >
+                <div
+                  className="bx--select"
+                >
+                  <label
+                    className="bx--label bx--visually-hidden"
+                    htmlFor="select-1"
+                  >
+                    Select
+                  </label>
+                  <div
+                    className="bx--select-input__wrapper"
+                    data-invalid={null}
+                  >
+                    <select
+                      className="bx--select-input"
+                      defaultValue="placeholder-item"
+                      id="select-1"
+                    >
+                      <option
+                        className="bx--select-option"
+                        disabled={true}
+                        hidden={true}
+                        value="placeholder-item"
+                      >
+                        Choose an option
+                      </option>
+                      <option
+                        className="bx--select-option"
+                        disabled={false}
+                        hidden={false}
+                        value="option-3"
+                      >
+                        Option 3
+                      </option>
+                      <option
+                        className="bx--select-option"
+                        disabled={false}
+                        hidden={false}
+                        value="option-4"
+                      >
+                        Option 4
+                      </option>
+                    </select>
+                    <svg
+                      aria-hidden={true}
+                      className="bx--select__arrow"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <button
+                className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Add
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Add"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  />
+                </svg>
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Remove
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Remove"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 12H14V24H12zM18 12H20V24H18z"
+                  />
+                  <path
+                    d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                  />
+                </svg>
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--field bx--btn--primary"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Take an action
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="page-title-bar-content"
+        >
+          <div
+            className="bx--tabs--scrollable"
+            onScroll={[Function]}
+            selected={0}
+          >
+            <button
+              aria-hidden="true"
+              aria-label="Scroll left"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                />
+              </svg>
+            </button>
+            <ul
+              className="bx--tabs--scrollable__nav"
+              role="tablist"
+              tabIndex={-1}
+            >
+              <li
+                className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-30__panel"
+                  aria-selected={true}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-30"
+                  role="tab"
+                  tabIndex={0}
+                  type="button"
+                >
+                  Tab 1
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-31__panel"
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-31"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Tab 2
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-controls="tab-32__panel"
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  id="tab-32"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Tab 3
+                </button>
+              </li>
+            </ul>
+            <button
+              aria-hidden="true"
+              aria-label="Scroll right"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={false}
+            role="tabpanel"
+            selected={true}
+          >
+            <div>
+              Content for first tab.
+            </div>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <div>
+              Content for second tab.
+            </div>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <div>
+              Content for third tab.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with status description and breadcrumbs 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
+    >
+      <div
+        className="page-title-bar"
+      >
+        <div
+          className="page-title-bar-header"
+          style={
+            Object {
+              "--header-offset": "48px",
+            }
+          }
+        >
+          <div
+            className="page-title-bar-header-left"
+          >
+            <div
+              className="page-title-bar-breadcrumb"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Type
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <span
+                      className="bx--link"
+                    >
+                      Instance
+                    </span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
+            >
+              <div
+                className="page-title-bar-title--text"
+              >
+                <h2>
+                  Page title
+                </h2>
+              </div>
+            </div>
+            <p
+              className="page-title-bar-description"
+            >
+              <div
+                aria-live="assertive"
+                className="bx--inline-loading"
+              >
+                <div
+                  className="bx--inline-loading__animation"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--inline-loading__checkmark-container"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                    />
+                    <path
+                      d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                      data-icon-path="inner-path"
+                      opacity="0"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="bx--inline-loading__text"
+                >
+                  Running
+                </div>
+              </div>
+            </p>
           </div>
         </div>
       </div>

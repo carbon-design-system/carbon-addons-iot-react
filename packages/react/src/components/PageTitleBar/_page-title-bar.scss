@@ -87,13 +87,40 @@
         top: var(--header-offset);
         z-index: 2000;
       }
+
+      display: flex;
+      flex-direction: row;
+      .#{$prefix}--btn--primary {
+        margin-left: $spacing-03;
+      }
+
+      .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary {
+        margin-left: 0;
+      }
+
+      /* search boxes, selects, etc should have slightly wider margin */
+      .#{$prefix}--btn ~ :not(.#{$prefix}--btn) {
+        margin-left: $spacing-05;
+        margin-right: $spacing-05;
+      }
     }
   }
 
   &-description {
-    @include type-style('body-short-01');
-    margin-top: $spacing-05;
+    @include type-style('body-long-01');
+    margin-top: $spacing-03;
     max-width: 40rem;
+
+    .#{$prefix}--inline-loading {
+      @include type-style('label-01');
+      height: $spacing-04;
+      min-height: unset;
+      &__animation {
+        width: $spacing-05;
+        height: $spacing-05;
+        margin-right: $spacing-03;
+      }
+    }
   }
 
   &-breadcrumb {
@@ -127,5 +154,9 @@
 
   &-content {
     padding: 0 $spacing-07;
+
+    .#{$prefix}--tabs--scrollable {
+      margin-left: -1rem;
+    }
   }
 }
