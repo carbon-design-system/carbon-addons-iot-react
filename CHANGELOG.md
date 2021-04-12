@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.36...v2.145.0-next.37) (2021-04-12)
+
+
+### Bug Fixes
+
+* **repo:** reset yarn.lock from next and re-run install --force ([8e52796](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e527969d52a15680ba9064e712e08de61edaaf6))
+* **storybook:** fix 'show info' button ([a0e9b28](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a0e9b289e80fde20d49fda6392833df0187ba000))
+
+
+
+
+
 # [2.145.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.35...v2.145.0-next.36) (2021-04-07)
 
 
