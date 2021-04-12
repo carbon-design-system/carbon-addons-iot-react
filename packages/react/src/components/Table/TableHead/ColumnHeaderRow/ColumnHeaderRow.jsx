@@ -17,7 +17,7 @@ class ColumnHeaderRow extends Component {
     columns: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
-        name: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+        name: PropTypes.node.isRequired,
       })
     ).isRequired,
     ordering: PropTypes.arrayOf(
