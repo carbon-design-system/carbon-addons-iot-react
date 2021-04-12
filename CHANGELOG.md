@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.36...v2.145.0-next.37) (2021-04-12)
+
+
+### Bug Fixes
+
+* **repo:** reset yarn.lock from next and re-run install --force ([8e52796](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e527969d52a15680ba9064e712e08de61edaaf6))
+* **storybook:** fix 'show info' button ([a0e9b28](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a0e9b289e80fde20d49fda6392833df0187ba000))
+
+
+
+
+
+# [2.145.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.35...v2.145.0-next.36) (2021-04-07)
+
+
+### Bug Fixes
+
+* **barchartcard:** do not mutate content ([145bfce](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/145bfceb5b7a5f30204b6190711070cfa9cc9f46))
+* **chartcards:** deep merge the default props ([a6a2934](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a6a293445ba12ccf2f6a404e278779e5a06d9090))
+* **defaults:** do not mutate content prop ([03753c1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/03753c17391e53c7e544658a028d4f9ec7f8d076))
+* **piechartcard:** proptype typo ([e0f733d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e0f733d8b3390c4d71a81b2f96238f7e9df0ce92))
+
+
+
+
+
 # [2.145.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.34...v2.145.0-next.35) (2021-04-07)
 
 
