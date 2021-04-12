@@ -347,9 +347,9 @@ describe('stateful table with real reducer', () => {
     let viewProps;
     const onUserViewModified = jest
       .fn()
-      .mockImplementation(({ view, state: { currentSearchValue } }) => {
+      .mockImplementation(({ view, columns, state: { currentSearchValue } }) => {
         viewProps = {
-          columns: initialState.columns,
+          columns,
           view: {
             filters: view.filters,
             table: { ordering: view.table.ordering, sort: view.table.sort },
