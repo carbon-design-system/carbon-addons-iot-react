@@ -165,18 +165,6 @@ export const tableColumns = [
     id: 'node',
     name: 'React Node',
   },
-  {
-    id: 'customHeader',
-    name: (
-      <Tooltip
-        triggerText={<strong>Default value (optional)</strong>}
-        triggerId="default-value-tooltip"
-        iconDescription="Default value (optional)"
-      >
-        {'Default value descriptions'}
-      </Tooltip>
-    ),
-  },
 ];
 
 export const tableColumnsWithAlignment = [
@@ -348,7 +336,6 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
     status: getStatus(idx),
     boolean: getBoolean(idx),
     node: <Add20 />,
-    customHeader: idx + getString(idx, 5),
   },
   rowActions: withActions
     ? [
