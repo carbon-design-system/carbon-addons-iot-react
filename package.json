@@ -4,8 +4,12 @@
     "node": "12.x || 14.x"
   },
   "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": ["carbon-components-angular"]
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "carbon-components-angular"
+    ]
   },
   "main": "lib/src/index.js",
   "module": "es/src/index.js",
@@ -67,5 +71,11 @@
     "prettier-config-carbon": "^0.4.0"
   },
   "sideEffects": false,
-  "version": "0.0.0-development"
+  "version": "0.0.0-development",
+  "resolutions": {
+    "carbon-addons-iot-react/@emotion/core": "10.0.27",
+    "carbon-addons-iot-react/@storybook/theming": "5.3.17",
+    "carbon-addons-iot-react/chokidar": "3.3.1",
+    "carbon-addons-iot-react/react-grid-layout": "1.2.2"
+  }
 }
