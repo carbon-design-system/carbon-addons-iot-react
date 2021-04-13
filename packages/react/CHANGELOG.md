@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.38...v2.145.0-next.39) (2021-04-13)
+
+
+### Bug Fixes
+
+* **header:** move story styles to separate stylesheet ([c115619](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c115619ac03274a70804ed5bc1c85b9e791baeb4))
+* lint warnings ([7fbdc11](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7fbdc11de3f0cba292e4fe229053065bc6cd04d6))
+* **repo:** swap styled components to scss ([d4234e9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d4234e99b5926729c2ea46eb2c9e500b1735b75d))
+
+
+
+
+
+# [2.145.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.37...v2.145.0-next.38) (2021-04-13)
+
+
+### Bug Fixes
+
+* **attribute:** remove the required value proptype ([597f69b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/597f69b339f1942fde851ccbc2d2e6cc04f6529c))
+* **valuecard:** do not truncate if there is room ([c5795c8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c5795c8a5dd080abcf9c6e3ea03269f9a8fa2ce2))
+
+
+### Reverts
+
+* Revert "test(table): the testcase can no longer do a direct isEqual comparison" ([52fa4e2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/52fa4e26d280a37a82c08e5480eb9cfb807631bf))
+* Revert "feat(Table) allow non string elements in the table header" ([dba36a7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dba36a775f2b208aabc2f5a157dceb853e3d03f5))
+
+
+
+
+
+# [2.145.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.36...v2.145.0-next.37) (2021-04-12)
+
+
+### Bug Fixes
+
+* **storybook:** fix 'show info' button ([a0e9b28](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a0e9b289e80fde20d49fda6392833df0187ba000))
+
+
+
+
+
 # [2.145.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.35...v2.145.0-next.36) (2021-04-07)
 
 
