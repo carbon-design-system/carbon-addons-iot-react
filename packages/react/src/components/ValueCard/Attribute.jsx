@@ -38,7 +38,7 @@ const propTypes = {
     trend: PropTypes.oneOf(['up', 'down']),
     value: PropTypes.any,
   }),
-  value: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   fontSize: PropTypes.number.isRequired,
   /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool.isRequired,
@@ -48,6 +48,7 @@ const propTypes = {
 
 const defaultProps = {
   layout: null,
+  value: null,
   renderIconByName: null,
   secondaryValue: null,
   locale: 'en',

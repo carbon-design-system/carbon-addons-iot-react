@@ -441,7 +441,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <div
-            className="ComposedModalstory__CustomFooter-sc-1ctuyyf-0 cxIHUM"
+            style={
+              Object {
+                "padding": "2rem",
+              }
+            }
           >
             custom footer element
           </div>
