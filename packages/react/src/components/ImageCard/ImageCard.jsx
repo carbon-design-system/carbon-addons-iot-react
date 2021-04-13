@@ -1,32 +1,19 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import pick from 'lodash/pick';
 import { Image32, Warning24 } from '@carbon/icons-react';
-import { spacing05 } from '@carbon/layout';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import { validThresholdIcons, validHotspotIcons } from '../DashboardEditor/editorUtils';
+import { settings } from '../../constants/Settings';
 
 import ImageHotspots from './ImageHotspots';
 import ImageUploader from './ImageUploader';
 
-const ContentWrapper = styled.div`
-  height: 100%;
-  max-height: 100%;
-  padding: 0 ${spacing05} ${spacing05};
-`;
-
-const EmptyDiv = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+const { iotPrefix } = settings;
 
 const propTypes = { ...CardPropTypes, ...ImageCardPropTypes };
 
@@ -164,7 +151,7 @@ const ImageCard = ({
             // Get width and height from parent card
             { width, height } // eslint-disable-line react/prop-types
           ) => (
-            <ContentWrapper>
+            <div className={`${iotPrefix}--image-card__wrapper`}>
               {supportedSize ? (
                 isEditable && !imgContent.src ? (
                   <ImageUploader
@@ -210,14 +197,14 @@ const ImageCard = ({
                     )}
                   />
                 ) : (
-                  <EmptyDiv>
+                  <div className={`${iotPrefix}--image-card__empty`} i>
                     <Image32 width={250} height={250} fill="gray" />
-                  </EmptyDiv>
+                  </div>
                 )
               ) : (
                 <p>Size not supported.</p>
               )}
-            </ContentWrapper>
+            </div>
           )
         : null}
     </Card>
