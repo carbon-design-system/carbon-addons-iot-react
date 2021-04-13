@@ -8,7 +8,8 @@
       "packages/*"
     ],
     "nohoist": [
-      "carbon-components-angular"
+      "carbon-components-angular",
+      "**@storybook/**"
     ]
   },
   "main": "lib/src/index.js",
@@ -25,7 +26,7 @@
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
-    "build:storybook": "lerna run --stream build:storybook",
+    "build:storybook": "node ./scripts/storybook.js --build",
     "build": "lerna run --stream build",
     "lint": "lerna run --stream lint",
     "test": "lerna run --stream test",
@@ -68,7 +69,8 @@
     "lerna": "^3.22.1",
     "lint-staged": "^8.1.0",
     "prettier": "^2.1.2",
-    "prettier-config-carbon": "^0.4.0"
+    "prettier-config-carbon": "^0.4.0",
+    "arg": "5.0.0"
   },
   "sideEffects": false,
   "version": "0.0.0-development",

@@ -1,7 +1,5 @@
 name: Publish
 
-# We should search around on semantic release github issues to see if there's any known issues with github actions running our publish command
-
 on:
   push:
     branches:
@@ -24,8 +22,20 @@ jobs:
         with:
           node-version: '14.x'
 
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: yarn --frozen-lockfile --prefer-offline
 
       - name: Validate formatting
         run: yarn format:check

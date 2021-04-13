@@ -1,9 +1,30 @@
 const { spawn } = require('child_process');
 const { resolve } = require('path');
+const arg = require('arg');
+
+const args = arg({
+  '--help': Boolean,
+  '--build': Boolean,
+});
+
+if (args['--help']) {
+  console.log(`
+  storybook.js - monorepo helper to run storybook commands efficiently
+
+  usage: node storybook.js [framework] [--build]
+
+  By deafult the script will serve the react storybook.
+
+  Flags:
+  --build
+    boolean flag. When passed will invoke build:storybook instead of storybook
+  `);
+  process.exit(0);
+}
 
 const storyPackages = ['angular', 'react'];
 
-let packageToRun = process.argv[2];
+let packageToRun = args._[0];
 
 if (!packageToRun) {
   console.log(`no package specified, defaulting to react`);
@@ -15,4 +36,8 @@ if (!storyPackages.includes(packageToRun)) {
   packageToRun = 'react';
 }
 
-spawn('yarn', ['storybook'], { stdio: 'inherit', cwd: resolve('packages', packageToRun) });
+if (args['--build']) {
+  spawn('yarn', ['build:storybook'], { stdio: 'inherit', cwd: resolve('packages', packageToRun) });
+} else {
+  spawn('yarn', ['storybook'], { stdio: 'inherit', cwd: resolve('packages', packageToRun) });
+}
