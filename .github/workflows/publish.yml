@@ -33,7 +33,8 @@ jobs:
       - name: Install dependencies
         run: |
           yarn --frozen-lockfile
-          yarn lerna bootstrap -- -- --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
 
       - name: Validate formatting
         run: yarn format:check

@@ -27,7 +27,8 @@ jobs:
       - name: Install dependencies
         run: |
           yarn --frozen-lockfile
-          yarn lerna bootstrap -- -- --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
 
       - name: Run build
         run: yarn build
