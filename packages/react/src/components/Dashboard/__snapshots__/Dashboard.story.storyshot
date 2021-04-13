@@ -2205,7 +2205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+                    className="iot--image-card__wrapper"
                   >
                     <div
                       onBlur={[Function]}
@@ -4743,7 +4743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+                    className="iot--image-card__wrapper"
                   >
                     <div
                       onBlur={[Function]}
@@ -7309,7 +7309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+                    className="iot--image-card__wrapper"
                   >
                     <div
                       onBlur={[Function]}
@@ -7982,7 +7982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+                    className="iot--image-card__wrapper"
                   >
                     <div
                       onBlur={[Function]}
@@ -12461,7 +12461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+                    className="iot--image-card__wrapper"
                   >
                     <div
                       onBlur={[Function]}
@@ -28619,7 +28619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+                    className="iot--image-card__wrapper"
                   >
                     <div
                       onBlur={[Function]}
