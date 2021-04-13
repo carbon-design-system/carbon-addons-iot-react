@@ -22,7 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
     >
       <header
         aria-label="main header"
-        className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hyHMot"
+        className="bx--header iot--header--story-test-class"
       >
         <a
           className="bx--skip-to-content"
@@ -389,7 +389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
   >
     <header
       aria-label="main header"
-      className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hyHMot"
+      className="bx--header iot--header--story-test-class"
     >
       <a
         className="bx--skip-to-content"
@@ -512,7 +512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
     >
       <header
         aria-label="main header"
-        className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hyHMot"
+        className="bx--header iot--header--story-test-class"
       >
         <a
           className="bx--skip-to-content"
@@ -708,7 +708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
     >
       <header
         aria-label="main header"
-        className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hyHMot"
+        className="bx--header custom-class-name"
       >
         <a
           className="bx--skip-to-content"
@@ -909,7 +909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
     >
       <header
         aria-label="main header"
-        className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hyHMot"
+        className="bx--header iot--header--story-test-class"
       >
         <a
           className="bx--skip-to-content"

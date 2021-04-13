@@ -19,7 +19,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** Dashboard title */
-  title: PropTypes.string,
+  title: PropTypes.node,
   /** initial dashboard data to edit */
   breadcrumbs: PropTypes.arrayOf(PropTypes.node),
   /** if provided, renders edit button next to title linked to this callback */

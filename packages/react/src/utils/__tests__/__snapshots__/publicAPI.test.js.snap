@@ -9632,7 +9632,7 @@ Map {
         "type": "arrayOf",
       },
       "title": Object {
-        "type": "string",
+        "type": "node",
       },
     },
   },
@@ -10082,7 +10082,7 @@ Map {
           },
           "sm": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "xl": Object {
             "h": 1,

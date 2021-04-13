@@ -5,6 +5,9 @@ import { Close20 } from '@carbon/icons-react';
 import PageTitleBar from '../../PageTitleBar/PageTitleBar';
 import Button from '../../Button/Button';
 import ProgressIndicator from '../../ProgressIndicator/ProgressIndicator';
+import { settings } from '../../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 class WizardHeader extends Component {
   static propTypes = {
@@ -65,13 +68,13 @@ class WizardHeader extends Component {
     return (
       <Fragment>
         <PageTitleBar
-          className="wizard-inline-header"
+          className={`${iotPrefix}--wizard-inline__header`}
           title={title}
           description={blurb || description}
           extraContent={onClose ? closeButton : null}
         />
         <ProgressIndicator
-          className="wizard-inline-progress-indicator"
+          className={`${iotPrefix}--wizard-inline__progress-indicator`}
           currentItemId={currentItemId}
           items={items.map((item) => ({ id: item.id, label: item.name }))}
           showLabels={showLabels}
