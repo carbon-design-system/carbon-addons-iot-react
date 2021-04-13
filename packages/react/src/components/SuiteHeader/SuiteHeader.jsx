@@ -221,7 +221,7 @@ const SuiteHeader = ({
                 onClick={async () => {
                   const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
                   if (result) {
-                    window.open(surveyData.surveyLink, 'blank');
+                    window.open(surveyData.surveyLink, '_blank', 'noopener noreferrer');
                   }
                 }}
               >
@@ -233,7 +233,7 @@ const SuiteHeader = ({
                   onClick={async () => {
                     const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
                     if (result) {
-                      window.open(surveyData.privacyLink, 'blank');
+                      window.open(surveyData.privacyLink, '_blank', 'noopener noreferrer');
                     }
                   }}
                 >
@@ -391,7 +391,7 @@ const SuiteHeader = ({
                                 routes[item]
                               );
                               if (result) {
-                                window.open(routes[item], 'blank');
+                                window.open(routes[item], '_blank', 'noopener noreferrer');
                               }
                             },
                           },
