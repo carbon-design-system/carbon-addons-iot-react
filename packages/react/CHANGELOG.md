@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.38...v2.145.0-next.39) (2021-04-13)
+
+
+### Bug Fixes
+
+* **header:** move story styles to separate stylesheet ([c115619](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c115619ac03274a70804ed5bc1c85b9e791baeb4))
+* lint warnings ([7fbdc11](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7fbdc11de3f0cba292e4fe229053065bc6cd04d6))
+* **repo:** swap styled components to scss ([d4234e9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d4234e99b5926729c2ea46eb2c9e500b1735b75d))
+
+
+
+
+
 # [2.145.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.37...v2.145.0-next.38) (2021-04-13)
 
 
