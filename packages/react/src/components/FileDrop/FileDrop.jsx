@@ -1,38 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Filename, FileUploaderButton } from 'carbon-components-react';
-import { spacing05 } from '@carbon/layout';
-import styled from 'styled-components';
 
-import { COLORS } from '../../styles/styles';
+import { settings } from '../../constants/Settings';
 
-const Span = styled.span`
-   {
-    background-color: rgba(85, 150, 230, 0.1);
-  }
-`;
-
-const LinkButton = styled.button`
-   {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    outline: none;
-    color: ${COLORS.blue60};
-    cursor: pointer;
-    margin-left: 0.25rem;
-    text-decoration: underline;
-  }
-`;
-
-const Text = styled.div`
-   {
-    padding: ${spacing05};
-    line-height: 30px;
-  }
-`;
+const { iotPrefix } = settings;
 
 export const FILE_TYPES = {
   TEXT: 'TEXT',
@@ -263,7 +235,9 @@ class FileDrop extends React.Component {
           }}
           role="presentation"
         >
-          <LinkButton>{buttonLabel}</LinkButton>
+          <button type="button" className={`${iotPrefix}--file-drop__link-button`}>
+            {buttonLabel}
+          </button>
         </span>
         <div>{description}</div>
       </div>
@@ -274,9 +248,9 @@ class FileDrop extends React.Component {
         {this.state.files.length === 0
           ? null
           : this.state.files.map(({ name, uploadState }, index) => (
-              <Span
+              <span
                 key={`${name}-${index}`}
-                className="bx--file__selected-file"
+                className={`bx--file__selected-file ${iotPrefix}--file-drop__selected-file`}
                 ref={(node) => {
                   this.nodes[index] = node;
                 }}
@@ -297,7 +271,7 @@ class FileDrop extends React.Component {
                     }}
                   />
                 </span>
-              </Span>
+              </span>
             ))}
       </div>
     );
@@ -313,14 +287,15 @@ class FileDrop extends React.Component {
           multiple={multiple}
           onChange={this.handleChange}
         />
-        <Text
+        <div
+          className={`${iotPrefix}--file-drop__text`}
           style={hover ? { border: '1px solid #3D70B2' } : { border: '1px dashed #8C8C8C' }}
           onDragOver={this.fileDragHover}
           onDragLeave={this.fileDragHover}
           onDrop={this.fileDrop}
         >
           {linkElement}
-        </Text>
+        </div>
         {showFiles ? fileNameElements : null}
       </div>
     ) : (
