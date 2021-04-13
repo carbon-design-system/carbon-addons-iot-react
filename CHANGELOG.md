@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.37...v2.145.0-next.38) (2021-04-13)
+
+
+### Bug Fixes
+
+* **attribute:** remove the required value proptype ([597f69b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/597f69b339f1942fde851ccbc2d2e6cc04f6529c))
+* **valuecard:** do not truncate if there is room ([c5795c8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c5795c8a5dd080abcf9c6e3ea03269f9a8fa2ce2))
+
+
+### Reverts
+
+* Revert "test(table): the testcase can no longer do a direct isEqual comparison" ([52fa4e2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/52fa4e26d280a37a82c08e5480eb9cfb807631bf))
+* Revert "feat(Table) allow non string elements in the table header" ([dba36a7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dba36a775f2b208aabc2f5a157dceb853e3d03f5))
+
+
+
+
+
 # [2.145.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.36...v2.145.0-next.37) (2021-04-12)
 
 
