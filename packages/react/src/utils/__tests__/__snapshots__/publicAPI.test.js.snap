@@ -15,6 +15,7 @@ Map {
     },
   },
   "Button" => Object {
+    "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
       "children": null,
       "className": null,
@@ -71,6 +72,7 @@ Map {
         "type": "string",
       },
     },
+    "render": [Function],
   },
   "Breadcrumb" => Object {
     "defaultProps": Object {
@@ -20495,6 +20497,81 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+    },
+  },
+  "MenuButton" => Object {
+    "defaultProps": Object {
+      "closeIconDescription": "close menu button",
+      "label": null,
+      "onPrimaryActionClick": null,
+      "openIconDescription": "open menu button",
+      "renderCloseIcon": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "renderOpenIcon": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "testID": "menu-button",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "isRequired": true,
+        "type": "oneOfType",
+      },
+      "closeIconDescription": [Function],
+      "label": Object {
+        "type": "string",
+      },
+      "onPrimaryActionClick": Object {
+        "type": "func",
+      },
+      "openIconDescription": [Function],
+      "renderCloseIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "renderOpenIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "testID": Object {
+        "type": "string",
       },
     },
   },
