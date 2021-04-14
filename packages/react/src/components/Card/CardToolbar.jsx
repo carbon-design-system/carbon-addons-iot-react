@@ -197,11 +197,11 @@ const CardToolbar = ({
       ) : null}
       {availableActions.settings ? (
         <ToolbarSVGWrapper
-        title={mergedI18n.settingsLabel}
-        onClick={() => onCardAction(CARD_ACTIONS.ON_SETTINGS_CLICK)}
-        iconDescription={mergedI18n.settingsLabel}
-        renderIcon={Settings16}
-      />
+          title={mergedI18n.settingsLabel}
+          onClick={() => onCardAction(CARD_ACTIONS.ON_SETTINGS_CLICK)}
+          iconDescription={mergedI18n.settingsLabel}
+          renderIcon={Settings16}
+        />
       ) : null}
     </div>
   );

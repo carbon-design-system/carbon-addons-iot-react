@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Optionsfield = (props) => {
   const renderOptions = (option, i) => {
@@ -10,17 +10,11 @@ const Optionsfield = (props) => {
           name="toggle"
           type="radio"
         />
-        <div className="toggle">
-          {option.name}
-        </div>
+        <div className="toggle">{option.name}</div>
       </label>
     );
   };
-  return (
-    <div className="toggle-group">
-      {props.options.map(renderOptions)}
-    </div>
-  );
+  return <div className="toggle-group">{props.options.map(renderOptions)}</div>;
 };
 
 export default Optionsfield;

@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
-import { Events32, SkillLevelAdvanced32 }  from '@carbon/icons-react';
-
+import { Events32, SkillLevelAdvanced32 } from '@carbon/icons-react';
+import { Accordion, AccordionItem } from 'carbon-components-react';
 
 import mapboxgl from 'mapbox-gl';
 
@@ -11,6 +11,7 @@ import data from './data.json';
 
 import MapBoxCard from './MapCard';
 import OpenLayerMapCard from './OLMapCard';
+import Optionsfield from './Optionsfield';
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
@@ -28,8 +29,8 @@ const options = [
       [100000000, '#dd5ca8'],
       [250000000, '#c44cc0'],
       [500000000, '#9f43d7'],
-      [1000000000, '#6e40e6']
-    ]
+      [1000000000, '#6e40e6'],
+    ],
   },
   {
     name: 'GDP',
@@ -44,10 +45,47 @@ const options = [
       [100000, '#dd5ca8'],
       [250000, '#c44cc0'],
       [5000000, '#9f43d7'],
-      [10000000, '#6e40e6']
-    ]
-  }
+      [10000000, '#6e40e6'],
+    ],
+  },
 ];
+
+const mapControls = [
+  {
+    group: [
+      {
+        icon: Events32,
+        iconDescription: 'Map control 1A',
+        onClick: () => action('Map Control 1A')
+      },
+      {
+        icon: Events32,
+        iconDescription: 'Map control 2A',
+        onClick: () => action('Map Control 2A')
+      },
+      {
+        icon: Events32,
+        iconDescription: 'Map control 3A',
+        onClick: () => action('Map Control 3A')
+      }
+    ]
+  },
+  {
+    icon: Events32,
+    iconDescription: 'Map control 1',
+    onClick: () => action('Map Control 1')
+  },
+  {
+    icon: Events32,
+    iconDescription: 'Map control 2',
+    onClick: () => action('Map Control 2')
+  },
+  {
+    icon: Events32,
+    iconDescription: 'Map control 3',
+    onClick: () => action('Map Control 3')
+  }
+]
 
 export const Experimental = () => <StoryNotice componentName="MapCard" experimental />;
 Experimental.story = {
@@ -62,11 +100,10 @@ export default {
 };
 
 export const MapCard = () => {
-
-
   const mapContainerRef = useRef(null);
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
+  const [activeSideBar, setActiveSideBar] = useState(1);
 
   // Initialize map when component mounts
   useEffect(() => {
@@ -74,13 +111,13 @@ export const MapCard = () => {
       container: mapContainerRef.current,
       style: 'mapbox://styles/carbondesignsystem/ck7c8ce1y05h61ipb2fixfe76',
       center: [5, 34],
-      zoom: 1.5
+      zoom: 1.5,
     });
 
     map.on('load', () => {
       map.addSource('countries', {
         type: 'geojson',
-        data
+        data,
       });
 
       map.setLayoutProperty('country-label', 'text-field', [
@@ -103,15 +140,17 @@ export const MapCard = () => {
         {
           id: 'countries',
           type: 'fill',
-          source: 'countries'
+          source: 'countries',
         },
         'country-label'
       );
 
       map.setPaintProperty('countries', 'fill-color', {
         property: active.property,
-        stops: active.stops
+        stops: active.stops,
       });
+
+      map.resize();
 
       setMap(map);
     });
@@ -128,41 +167,51 @@ export const MapCard = () => {
     if (map) {
       map.setPaintProperty('countries', 'fill-color', {
         property: active.property,
-        stops: active.stops
+        stops: active.stops,
       });
     }
   };
 
   const onZoomIn = () => {
-    map.zoomIn({duration: 250});
-  }
+    map.zoomIn({ duration: 250 });
+  };
 
   const onZoomOut = () => {
-    map.zoomOut({duration: 250});
-  }
+    map.zoomOut({ duration: 250 });
+  };
 
-  const changeState = i => {
+  const changeState = (i) => {
     setActive(options[i]);
   };
 
   const cardActions = [
     {
       icon: SkillLevelAdvanced32,
-
-    }
-  ]
+    },
+  ];
 
   const onCardAction = (id, actionType) => {
-    if (actionType === 'ON_SETTINGS_CLICK') {
-      map.resize();
-      console.log("yeeap")
-    }
-    action('card action clickety clacked',id,actionType)
-  }
+    action('card action clickety clacked', id, actionType);
+  };
+
+  const sideBarContent = () => (
+    <Accordion className="settings-accordion" style={{paddingTop: 0}}>
+      <AccordionItem title="GDP vs Population" onClick={() => setActiveSideBar(1)} open={activeSideBar === 1}>
+        <Optionsfield options={options} property={active.property} changeState={changeState} />
+      </AccordionItem>
+      <AccordionItem title="Panel B" onClick={() => setActiveSideBar(2)} open={activeSideBar === 2}>
+        More Map settings
+      </AccordionItem>
+      <AccordionItem title="Panel C" onClick={() => setActiveSideBar(3)} open={activeSideBar === 3}>
+        Even more settings
+      </AccordionItem>
+    </Accordion>
+);
 
   return (
     <MapBoxCard
       id="map-card"
+      mapControls={mapControls}
       mapContainerRef={mapContainerRef}
       isLegendFullWidth={boolean('isFullWidth', false)}
       options={options}
@@ -172,18 +221,17 @@ export const MapCard = () => {
       onZoomOut={onZoomOut}
       changeState={changeState}
       onCardAction={onCardAction}
-      i18n={{cardTitle: active.name}}
+      i18n={{ cardTitle: active.name }}
+      sideBarContent={sideBarContent}
     />
-  )
+  );
 };
 
 MapCard.story = {
   name: 'MapBox example',
-  decorators: [React.createElement]
+  decorators: [React.createElement],
 };
 
 export const OpenLayerExample = () => (
-  <OpenLayerMapCard features={data} isFullWidth={boolean('isFullWidth', false)}/>
+  <OpenLayerMapCard features={data} isFullWidth={boolean('isFullWidth', false)} />
 );
-
-

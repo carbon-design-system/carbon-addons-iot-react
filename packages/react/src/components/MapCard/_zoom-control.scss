@@ -13,3 +13,12 @@
     }
   }
 }
+
+[dir='rtl'] {
+  .#{$iot-prefix}--map {
+    &-zoom {
+      right: unset;
+      left: 1rem;
+    }
+  }
+}

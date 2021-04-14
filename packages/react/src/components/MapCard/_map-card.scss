@@ -2,6 +2,7 @@
 @import './zoom-control';
 
 .#{$iot-prefix}--map {
+  // container and map canvas
   &-container {
     position: relative;
     height: 100%;
@@ -11,14 +12,7 @@
     }
   }
 
-  &-header {
-    padding: $spacing-05;
-  }
-
-  &-header-title {
-    @include type-style('productive-heading-02');
-  }
-
+  // legend
   &-legend {
     background: #fff;
     bottom: 1rem;
@@ -26,6 +20,11 @@
     padding: 1rem;
     position: absolute;
     z-index: 2;
+
+    [dir='rtl'] & {
+      left: unset;
+      right: 1rem;
+    }
   }
 
   &-legend.#{$iot-prefix}--map-legend__fullwidth {
@@ -42,6 +41,13 @@
     }
   }
 
+  [dir='rtl']
+    &-legend.#{$iot-prefix}--map-legend__fullwidth
+    > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
+    margin-left: 0.5rem;
+    margin-right: unset;
+  }
+
   &-legend-keys {
     display: flex;
   }
@@ -50,6 +56,11 @@
     height: 1rem;
     margin-right: 0.5rem;
     width: 1rem;
+
+    [dir='rtl'] & {
+      margin-left: 0.5rem;
+      margin-right: unset;
+    }
   }
 
   &__has-fullwidth-legend .#{$iot-prefix}--map-zoom {
@@ -60,44 +71,106 @@
     height: 100%;
   }
 
-  .#{$iot-prefix}--card--content {
-    display: flex;
-  }
-
   &-container {
     width: 100%;
     transition: width $duration--fast-02 motion(entrance, productive);
   }
 
-  &-settings-side-bar {
-    position: relative;
+  &-settings {
+    opacity: 0;
+    left: 100%;
+    top: 0;
+    position: absolute;
     z-index: 2;
     background: #fff;
-    width: 0%;
-    padding: 1rem;
+    width: 256px;
+    height: 100%;
+    transform: translateX(0%);
     transition: opacity $duration--fast-02 motion(entrance, productive),
-      width $duration--fast-02 motion(entrance, productive);
+      transform $duration--fast-02 motion(entrance, productive);
+
+    [dir='rtl'] & {
+      left: unset;
+      right: 100%;
+    }
+  }
+
+  &-settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.25rem 0.5rem 0.25rem 1rem;
+
+    [dir='rtl'] & {
+      padding: 0.25rem 1rem 0.25rem 0.5rem;
+    }
+  }
+
+  &-settings-header-title {
+    @include type-style('productive-heading-01');
+    margin-right: auto;
+
+    [dir='rtl'] & {
+      margin-left: auto;
+      margin-right: unset;
+    }
   }
 
   &__settings-open {
     .#{$iot-prefix}--map-container {
-      width: 75%;
+      width: calc(100% - 256px);
     }
+    .#{$iot-prefix}--map-settings {
+      opacity: 1;
+      transform: translateX(-100%);
+    }
+
+    &-legend.#{$iot-prefix}--map-legend__fullwidth {
+      width: calc(100% - 256px);
+    }
+  }
+
+  [dir='rtl'] &__settings-open {
+    .#{$iot-prefix}--map-settings {
+      transform: translateX(100%);
+    }
+  }
+
+  &-controls-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  &-controls-btn-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  &-controls-btn {
+    background: #fff;
+  }
+
+  &-controls-btn:not(:last-child) {
+    border-bottom: 1px solid $ui-03;
   }
 }
 
-.mapboxgl-control-container {
-  display: none;
-}
+// .mapboxgl-control-container {
+//   display: none;
+// }
 
 // .iot-map {
 //   min-height: 500px;
 // }
 
-.toggle-group {
-  position: absolute;
-  z-index: 2;
-}
+// .toggle-group {
+//   position: absolute;
+//   z-index: 2;
+// }
 
 // Open Layers
 #map {

@@ -1,5 +1,5 @@
-import React from "react";
-import classnames  from "classnames";
+import React from 'react';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
@@ -19,7 +19,11 @@ const Legend = (props) => {
 
   return (
     <>
-      <div className={classnames(`${iotPrefix}--map-legend`, {[`${iotPrefix}--map-legend__fullwidth`]: props.isFullWidth})}>
+      <div
+        className={classnames(`${iotPrefix}--map-legend`, {
+          [`${iotPrefix}--map-legend__fullwidth`]: props.isFullWidth,
+        })}
+      >
         {props.stops.map(renderLegendKeys)}
       </div>
     </>

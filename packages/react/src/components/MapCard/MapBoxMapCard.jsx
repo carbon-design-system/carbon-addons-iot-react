@@ -12,9 +12,7 @@ import {
   handleCardVariables,
 } from '../../utils/cardUtilityFunctions';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
-import {
-  determineLayout
-} from '../ValueCard/valueCardUtils';
+import { determineLayout } from '../ValueCard/valueCardUtils';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -36,8 +34,8 @@ const options = [
       [100000000, '#dd5ca8'],
       [250000000, '#c44cc0'],
       [500000000, '#9f43d7'],
-      [1000000000, '#6e40e6']
-    ]
+      [1000000000, '#6e40e6'],
+    ],
   },
   {
     name: 'GDP',
@@ -52,9 +50,9 @@ const options = [
       [100000, '#dd5ca8'],
       [250000, '#c44cc0'],
       [5000000, '#9f43d7'],
-      [10000000, '#6e40e6']
-    ]
-  }
+      [10000000, '#6e40e6'],
+    ],
+  },
 ];
 
 const MapBoxCard = ({
@@ -64,7 +62,7 @@ const MapBoxCard = ({
   resizeHandles,
   i18n = {
     zoomIn: 'Zoom In',
-    zoomOut: 'Zoom out'
+    zoomOut: 'Zoom out',
   },
   id,
   isFullWidth,
@@ -80,13 +78,13 @@ const MapBoxCard = ({
       container: mapContainerRef.current,
       style: 'mapbox://styles/carbondesignsystem/ck7c8ce1y05h61ipb2fixfe76',
       center: [5, 34],
-      zoom: 1.5
+      zoom: 1.5,
     });
 
     map.on('load', () => {
       map.addSource('countries', {
         type: 'geojson',
-        data
+        data,
       });
 
       map.setLayoutProperty('country-label', 'text-field', [
@@ -98,25 +96,22 @@ const MapBoxCard = ({
         ['get', 'name'],
         {
           'font-scale': 0.8,
-          'text-font': [
-            'literal',
-            ['DIN Offc Pro Italic', 'Arial Unicode MS Regular']
-          ]
-        }
+          'text-font': ['literal', ['DIN Offc Pro Italic', 'Arial Unicode MS Regular']],
+        },
       ]);
 
       map.addLayer(
         {
           id: 'countries',
           type: 'fill',
-          source: 'countries'
+          source: 'countries',
         },
         'country-label'
       );
 
       map.setPaintProperty('countries', 'fill-color', {
         property: active.property,
-        stops: active.stops
+        stops: active.stops,
       });
 
       setMap(map);
@@ -134,36 +129,36 @@ const MapBoxCard = ({
     if (map) {
       map.setPaintProperty('countries', 'fill-color', {
         property: active.property,
-        stops: active.stops
+        stops: active.stops,
       });
     }
   };
 
   const defaultOnZoomIn = () => {
-    map.zoomIn({duration: 250});
-  }
+    map.zoomIn({ duration: 250 });
+  };
 
   const defaultOnZoomOut = () => {
-    map.zoomOut({duration: 250});
-  }
+    map.zoomOut({ duration: 250 });
+  };
 
-  const changeState = i => {
+  const changeState = (i) => {
     setActive(options[i]);
     map.setPaintProperty('countries', 'fill-color', {
       property: active.property,
-      stops: active.stops
+      stops: active.stops,
     });
   };
 
   const i18n = {
     cardTitle: 'GDP vs. Population',
     legendTitle: active.title,
-  }
+  };
 
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
   const layout = determineLayout(newSize);
-  const BASE_CLASS_NAME = `${iotPrefix}--map`
+  const BASE_CLASS_NAME = `${iotPrefix}--map`;
   return (
     <Card
       title={active.name}
@@ -173,26 +168,26 @@ const MapBoxCard = ({
       resizeHandles={resizeHandles}
       i18n={i18n}
       id={id}
-      className={classnames(`${BASE_CLASS_NAME}`,{
+      className={classnames(`${BASE_CLASS_NAME}`, {
         // allows attribute overflow scrolling
         [`${BASE_CLASS_NAME}__has-fullwidth-legend`]: isFullWidth,
         [`${BASE_CLASS_NAME}__vertical`]: layout === CARD_LAYOUTS.VERTICAL,
       })}
       {...others}
     >
-    <div ref={mapContainerRef} className={`${BASE_CLASS_NAME}-container`} >
-      {/* <div className="map-header">
+      <div ref={mapContainerRef} className={`${BASE_CLASS_NAME}-container`}>
+        {/* <div className="map-header">
         <h2 className="map-header-title">{active.name}</h2>
         <p className="map-header-description">{active.description}</p>
       </div> */}
-      <ZoomControl i18n={{zoomIn: i18n.zoomIn, zoomOut: i18n.zoomOut}} onZoomIn={defaultOnZoomIn} onZoomOut={defaultOnZoomOut} />
-      <Legend active={active} stops={active.stops} isFullWidth={isFullWidth}  />
-      <Optionsfield
-        options={options}
-        property={active.property}
-        changeState={changeState}
-      />
-    </div>
+        <ZoomControl
+          i18n={{ zoomIn: i18n.zoomIn, zoomOut: i18n.zoomOut }}
+          onZoomIn={defaultOnZoomIn}
+          onZoomOut={defaultOnZoomOut}
+        />
+        <Legend active={active} stops={active.stops} isFullWidth={isFullWidth} />
+        <Optionsfield options={options} property={active.property} changeState={changeState} />
+      </div>
     </Card>
   );
 };
