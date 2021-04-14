@@ -79,6 +79,8 @@ const propTypes = {
    * direction of document
    */
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
+
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -103,6 +105,7 @@ const defaultProps = {
   rowEditMode: false,
   singleRowEditButtons: null,
   langDir: 'ltr',
+  testID: '',
 };
 
 const TableBody = ({
@@ -136,6 +139,7 @@ const TableBody = ({
   rowEditMode,
   singleRowEditButtons,
   langDir,
+  testID,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -217,7 +221,7 @@ const TableBody = ({
   };
 
   return (
-    <CarbonTableBody>
+    <CarbonTableBody data-testID={testID}>
       {rows.map((row) => {
         return shouldLazyRender ? (
           <VisibilitySensor
