@@ -386,15 +386,18 @@ const TableCard = ({
                 { value } // default render function is to handle timestamp
               ) =>
                 // if it's a timestamp column type make sure to format it
-                filteredTimestampColumns.includes(i.dataSourceId)
+                filteredTimestampColumns.includes(i.dataSourceId) && !isEditable
                   ? moment(value).format('L HH:mm')
-                  : value,
+                  : isNil(value)
+                  ? ''
+                  : value.toString(),
         }))
         .concat(hasActionColumn ? actionColumn : []),
     [
       actionColumn,
       filteredTimestampColumns,
       hasActionColumn,
+      isEditable,
       mergedI18n.defaultFilterStringPlaceholdText,
       newColumns,
       newSize,
