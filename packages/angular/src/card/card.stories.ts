@@ -83,7 +83,7 @@ storiesOf('Components/Card', module)
             Card content
           </ai-card-content>
         </ai-card>
-        <ai-card [defaultHeight]="400" style="margin-bottom:50px">
+        <ai-card [defaultHeight]="400" style="margin-bottom: 50px">
           <ai-card-header>
             <ai-card-title text="Card Title"></ai-card-title>
             <ai-card-toolbar>
