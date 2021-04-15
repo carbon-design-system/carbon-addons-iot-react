@@ -19,7 +19,8 @@
     "start": "echo 'script not defined' && exit 0",
     "format": "echo 'script not defined' && exit 0",
     "format:check": "echo 'script not defined' && exit 0",
-    "postinstall": "node scripts/vendor.js"
+    "postinstall": "node scripts/vendor.js",
+    "prepublishOnly": "node scripts/sync-version.js"
   },
   "repository": {
     "type": "git",
