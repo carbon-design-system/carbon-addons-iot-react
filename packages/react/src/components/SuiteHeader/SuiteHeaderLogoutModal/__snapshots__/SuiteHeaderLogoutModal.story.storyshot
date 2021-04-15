@@ -80,7 +80,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="bx--modal-footer bx--btn-set"
         >
           <button
-            aria-pressed={null}
             className="bx--btn bx--btn--secondary"
             disabled={false}
             onClick={[Function]}
@@ -90,7 +89,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             Cancel
           </button>
           <button
-            aria-pressed={null}
             className="bx--btn bx--btn--primary"
             disabled={false}
             onClick={[Function]}

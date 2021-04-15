@@ -155,7 +155,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   role="tablist"
                 >
                   <button
-                    aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                     disabled={false}
                     onClick={[Function]}
@@ -187,7 +186,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     </svg>
                   </button>
                   <button
-                    aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                     disabled={false}
                     onClick={[Function]}
@@ -1083,7 +1081,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
           >
             <button
-              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="ComposedModal-modal-secondary-button"
               disabled={false}
@@ -1094,7 +1091,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               Cancel
             </button>
             <button
-              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
               data-testid="ComposedModal-modal-primary-button"
               disabled={true}
@@ -1297,7 +1293,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   role="tablist"
                 >
                   <button
-                    aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                     disabled={false}
                     onClick={[Function]}
@@ -1329,7 +1324,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     </svg>
                   </button>
                   <button
-                    aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                     disabled={false}
                     onClick={[Function]}
@@ -2225,7 +2219,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
           >
             <button
-              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="ComposedModal-modal-secondary-button"
               disabled={false}
@@ -2236,7 +2229,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               Cancel
             </button>
             <button
-              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
               data-testid="ComposedModal-modal-primary-button"
               disabled={true}

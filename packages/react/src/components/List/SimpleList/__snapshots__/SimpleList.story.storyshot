@@ -51,7 +51,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -82,7 +81,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -1284,7 +1282,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -1315,7 +1312,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -1658,7 +1654,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -1689,7 +1684,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -2296,7 +2290,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -2327,7 +2320,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -2934,7 +2926,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -2965,7 +2956,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -3349,7 +3339,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -3380,7 +3369,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -3790,7 +3778,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -3821,7 +3808,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -4398,7 +4384,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -4429,7 +4414,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -5266,7 +5250,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -5297,7 +5280,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -5874,7 +5856,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -5905,7 +5886,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -6307,7 +6287,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -6338,7 +6317,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -7330,7 +7308,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -7361,7 +7338,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}
@@ -7654,7 +7630,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 />
               </svg>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 onClick={[Function]}
@@ -7685,7 +7660,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 </svg>
               </button>
               <button
-                aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
                 tabIndex={0}

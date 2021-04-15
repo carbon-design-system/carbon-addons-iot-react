@@ -121,7 +121,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
             className="dashboard--header-actions"
           >
             <button
-              aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--edit"
@@ -149,7 +148,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               </svg>
             </button>
             <button
-              aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--delete"
@@ -508,7 +506,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
             className="dashboard--header-actions"
           >
             <button
-              aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--edit"
@@ -536,7 +533,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               </svg>
             </button>
             <button
-              aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--delete"
@@ -567,7 +563,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               </svg>
             </button>
             <button
-              aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--pin"
@@ -684,6 +679,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           DashboardHeader has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
         </div>
+        <div
+          className="bx--toast-notification__caption"
+        />
       </div>
     </div>
   </div>

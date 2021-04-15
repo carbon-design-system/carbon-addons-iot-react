@@ -518,7 +518,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--card-editor--header"
         >
           <button
-            aria-pressed={null}
             className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Button"
             disabled={false}
@@ -655,7 +654,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={false}
               role="tabpanel"
               selected={true}
-              tabIndex={0}
             >
               <div
                 className="iot--card-edit-form--input"
@@ -867,7 +865,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={true}
               role="tabpanel"
               selected={false}
-              tabIndex={0}
             >
               <div
                 className="iot--card-edit-form--input"
@@ -904,39 +901,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--number__controls"
                       >
                         <button
-                          aria-label="Decrement number"
-                          className="bx--number__control-btn down-icon"
-                          disabled={false}
-                          onClick={[Function]}
-                          tabIndex="-1"
-                          title="Decrement number"
-                          type="button"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            className="down-icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8 15H24V17H8z"
-                            />
-                          </svg>
-                        </button>
-                        <div
-                          className="bx--number__rule-divider"
-                        />
-                        <button
+                          aria-atomic="true"
                           aria-label="Increment number"
+                          aria-live="polite"
                           className="bx--number__control-btn up-icon"
                           disabled={false}
                           onClick={[Function]}
-                          tabIndex="-1"
                           title="Increment number"
                           type="button"
                         >
@@ -945,20 +915,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="up-icon"
                             fill="currentColor"
                             focusable="false"
-                            height={16}
+                            height={4}
                             preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 32 32"
-                            width={16}
+                            viewBox="0 0 8 4"
+                            width={8}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                              d="M0 4L4 0 8 4z"
                             />
                           </svg>
                         </button>
-                        <div
-                          className="bx--number__rule-divider"
-                        />
+                        <button
+                          aria-atomic="true"
+                          aria-label="Decrement number"
+                          aria-live="polite"
+                          className="bx--number__control-btn down-icon"
+                          disabled={false}
+                          onClick={[Function]}
+                          title="Decrement number"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            className="down-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={4}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 8 4"
+                            width={8}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 0L4 4 0 0z"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -1063,7 +1056,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--card-edit-form--footer"
             >
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
                 data-testid="card-edit-form-open-editor-button"
                 disabled={false}
@@ -1153,7 +1145,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--card-editor--header"
         >
           <button
-            aria-pressed={null}
             className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Button"
             disabled={false}
@@ -1290,7 +1281,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={false}
               role="tabpanel"
               selected={true}
-              tabIndex={0}
             >
               <div
                 className="iot--card-edit-form--input"
@@ -1502,7 +1492,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={true}
               role="tabpanel"
               selected={false}
-              tabIndex={0}
             >
               <div
                 className="iot--card-edit-form--input"
@@ -1539,39 +1528,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--number__controls"
                       >
                         <button
-                          aria-label="Decrement number"
-                          className="bx--number__control-btn down-icon"
-                          disabled={false}
-                          onClick={[Function]}
-                          tabIndex="-1"
-                          title="Decrement number"
-                          type="button"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            className="down-icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8 15H24V17H8z"
-                            />
-                          </svg>
-                        </button>
-                        <div
-                          className="bx--number__rule-divider"
-                        />
-                        <button
+                          aria-atomic="true"
                           aria-label="Increment number"
+                          aria-live="polite"
                           className="bx--number__control-btn up-icon"
                           disabled={false}
                           onClick={[Function]}
-                          tabIndex="-1"
                           title="Increment number"
                           type="button"
                         >
@@ -1580,20 +1542,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="up-icon"
                             fill="currentColor"
                             focusable="false"
-                            height={16}
+                            height={4}
                             preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 32 32"
-                            width={16}
+                            viewBox="0 0 8 4"
+                            width={8}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                              d="M0 4L4 0 8 4z"
                             />
                           </svg>
                         </button>
-                        <div
-                          className="bx--number__rule-divider"
-                        />
+                        <button
+                          aria-atomic="true"
+                          aria-label="Decrement number"
+                          aria-live="polite"
+                          className="bx--number__control-btn down-icon"
+                          disabled={false}
+                          onClick={[Function]}
+                          title="Decrement number"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            className="down-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={4}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 8 4"
+                            width={8}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 0L4 4 0 0z"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -1698,7 +1683,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--card-edit-form--footer"
             >
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
                 data-testid="card-edit-form-open-editor-button"
                 disabled={false}
@@ -1788,7 +1772,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--card-editor--header"
         >
           <button
-            aria-pressed={null}
             className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Button"
             disabled={false}
@@ -1925,7 +1908,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={false}
               role="tabpanel"
               selected={true}
-              tabIndex={0}
             >
               <div
                 className="iot--card-edit-form--input"
@@ -2194,7 +2176,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     value="munich_image"
                   />
                   <button
-                    aria-pressed={null}
                     className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image-clear-button bx--btn bx--btn--field bx--btn--ghost"
                     disabled={false}
                     onClick={[Function]}
@@ -2221,7 +2202,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </button>
                 </label>
                 <button
-                  aria-pressed={null}
                   className="iot--card-edit-form--form-section-image-btn bx--btn bx--btn--sm bx--btn--primary"
                   disabled={false}
                   onClick={[Function]}
@@ -2255,7 +2235,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={true}
               role="tabpanel"
               selected={false}
-              tabIndex={0}
             >
               <div
                 className="iot--card-edit-form iot--card-edit-form--form-section-image"
@@ -2274,7 +2253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="bx--form-item"
                     >
-                      <fieldset
+                      <div
                         className="bx--radio-button-group bx--radio-button-group--vertical bx--radio-button-group--label-right"
                       >
                         <div
@@ -2358,7 +2337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </span>
                           </label>
                         </div>
-                      </fieldset>
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -2556,7 +2535,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--card-edit-form--footer"
             >
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
                 data-testid="card-edit-form-open-editor-button"
                 disabled={false}
@@ -2646,7 +2624,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--card-editor--header"
         >
           <button
-            aria-pressed={null}
             className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Button"
             disabled={false}
@@ -2783,7 +2760,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={false}
               role="tabpanel"
               selected={true}
-              tabIndex={0}
             >
               <div
                 className="iot--card-edit-form--input"
@@ -3047,7 +3023,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   onKeyDown={[Function]}
                 >
                   <div
+                    aria-expanded={false}
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-2-label"
+                    aria-owns={null}
                     className="bx--list-box__wrapper"
+                    role="combobox"
                   >
                     <label
                       className="bx--label"
@@ -3057,20 +3038,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Data item
                     </label>
                     <div
+                      aria-label="Choose an item"
                       className="bx--combo-box iot--combobox-input bx--list-box bx--list-box--light"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                     >
                       <div
+                        aria-haspopup={true}
+                        aria-label="open menu"
                         className="bx--list-box__field"
+                        data-toggle={true}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        role="button"
+                        tabIndex={-1}
+                        type="button"
                       >
                         <input
                           aria-activedescendant={null}
                           aria-autocomplete="list"
                           aria-controls={null}
-                          aria-expanded={false}
-                          aria-haspopup="listbox"
-                          aria-labelledby={null}
+                          aria-labelledby="downshift-2-label"
                           autoComplete="off"
                           className="bx--text-input bx--text-input--empty"
                           data-testid="editor--data-series--combobox"
@@ -3078,37 +3068,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           id="timeseries_dataSourceIds-combobox"
                           onBlur={[Function]}
                           onChange={[Function]}
-                          onClick={[Function]}
                           onKeyDown={[Function]}
                           placeholder="Filter"
-                          role="combobox"
                           tabIndex="0"
                           type="text"
                           value=""
                         />
                         
-                        <button
-                          aria-haspopup={true}
-                          aria-label="Open"
+                        <div
                           className="bx--list-box__menu-icon"
-                          data-toggle={true}
-                          disabled={false}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          onKeyUp={[Function]}
-                          onMouseUp={[Function]}
-                          role="button"
-                          tabIndex="-1"
-                          title="Open"
-                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
+                            aria-label="Open menu"
                             fill="currentColor"
                             focusable="false"
                             height={16}
+                            name="chevron--down"
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 16 16"
                             width={16}
                             xmlns="http://www.w3.org/2000/svg"
@@ -3116,16 +3093,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <path
                               d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                             />
+                            <title>
+                              Open menu
+                            </title>
                           </svg>
-                        </button>
+                        </div>
                       </div>
-                      <div
-                        aria-label="Choose an item"
-                        aria-labelledby={null}
-                        className="bx--list-box__menu"
-                        id="downshift-2-menu"
-                        role="listbox"
-                      />
                     </div>
                   </div>
                 </div>
@@ -3357,7 +3330,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               hidden={true}
               role="tabpanel"
               selected={false}
-              tabIndex={0}
             >
               <div
                 className="iot--card-edit-form--input"
@@ -3597,7 +3569,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--card-edit-form--footer"
             >
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
                 data-testid="card-edit-form-open-editor-button"
                 disabled={false}
@@ -3704,7 +3675,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor--header"
           >
             <button
-              aria-pressed={null}
               className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
               data-testid="Button"
               disabled={false}
@@ -3841,7 +3811,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 hidden={false}
                 role="tabpanel"
                 selected={true}
-                tabIndex={0}
               >
                 <div
                   className="iot--card-edit-form--input"
@@ -4053,7 +4022,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 hidden={true}
                 role="tabpanel"
                 selected={false}
-                tabIndex={0}
               >
                 <div
                   className="iot--card-edit-form--input"
@@ -4090,39 +4058,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="bx--number__controls"
                         >
                           <button
-                            aria-label="Decrement number"
-                            className="bx--number__control-btn down-icon"
-                            disabled={false}
-                            onClick={[Function]}
-                            tabIndex="-1"
-                            title="Decrement number"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              className="down-icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 15H24V17H8z"
-                              />
-                            </svg>
-                          </button>
-                          <div
-                            className="bx--number__rule-divider"
-                          />
-                          <button
+                            aria-atomic="true"
                             aria-label="Increment number"
+                            aria-live="polite"
                             className="bx--number__control-btn up-icon"
                             disabled={false}
                             onClick={[Function]}
-                            tabIndex="-1"
                             title="Increment number"
                             type="button"
                           >
@@ -4131,20 +4072,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="up-icon"
                               fill="currentColor"
                               focusable="false"
-                              height={16}
+                              height={4}
                               preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 32 32"
-                              width={16}
+                              viewBox="0 0 8 4"
+                              width={8}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                                d="M0 4L4 0 8 4z"
                               />
                             </svg>
                           </button>
-                          <div
-                            className="bx--number__rule-divider"
-                          />
+                          <button
+                            aria-atomic="true"
+                            aria-label="Decrement number"
+                            aria-live="polite"
+                            className="bx--number__control-btn down-icon"
+                            disabled={false}
+                            onClick={[Function]}
+                            title="Decrement number"
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              className="down-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={4}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 8 4"
+                              width={8}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 0L4 4 0 0z"
+                              />
+                            </svg>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -4249,7 +4213,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="iot--card-edit-form--footer"
               >
                 <button
-                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
                   data-testid="card-edit-form-open-editor-button"
                   disabled={false}
@@ -5212,6 +5175,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
           </span>
         </div>
+        <div
+          className="bx--toast-notification__caption"
+        />
       </div>
     </div>
   </div>

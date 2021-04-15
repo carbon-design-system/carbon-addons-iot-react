@@ -144,24 +144,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
             <div
               aria-label="Structured list section"
               className="bx--structured-list"
-              role="table"
             >
               <div
                 className="bx--structured-list-thead"
-                role="rowgroup"
               >
                 <div
                   className="bx--structured-list-row bx--structured-list-row--header-row"
                 >
                   <div
                     className="bx--structured-list-th"
-                    role="columnheader"
                   >
                     carbon-components-react exports
                   </div>
                   <div
                     className="bx--structured-list-th"
-                    role="columnheader"
                   >
                     carbon-addons-iot-react exports
                   </div>
@@ -170,20 +166,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
               <div
                 className="bx--structured-list-tbody"
                 onKeyDown={[Function]}
-                role="rowgroup"
               >
                 <div
                   className="bx--structured-list-row"
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Accordion
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Accordion
                   </div>
@@ -193,13 +186,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     AccordionItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     AccordionItem
                   </div>
@@ -209,13 +200,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     AspectRatio
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     AspectRatio
                   </div>
@@ -225,13 +214,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Breadcrumb
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Breadcrumb
                   </div>
@@ -241,13 +228,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     BreadcrumbItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     BreadcrumbItem
                   </div>
@@ -257,13 +242,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Button
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Button
                   </div>
@@ -273,13 +256,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ButtonSet
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ButtonSet
                   </div>
@@ -289,13 +270,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Checkbox
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Checkbox
                   </div>
@@ -305,13 +284,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CodeSnippet
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CodeSnippet
                   </div>
@@ -321,13 +298,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ComboBox
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ComboBox
                   </div>
@@ -337,13 +312,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ComposedModal
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ComposedModal
                   </div>
@@ -353,13 +326,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ModalHeader
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ModalHeader
                   </div>
@@ -369,13 +340,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ModalBody
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ModalBody
                   </div>
@@ -385,13 +354,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ModalFooter
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ModalFooter
                   </div>
@@ -401,13 +368,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ContentSwitcher
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ContentSwitcher
                   </div>
@@ -417,13 +382,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Copy
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Copy
                   </div>
@@ -433,13 +396,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CopyButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CopyButton
                   </div>
@@ -449,13 +410,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DangerButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DangerButton
                   </div>
@@ -465,13 +424,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DataTable
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DataTable
                   </div>
@@ -481,13 +438,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Table
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Table
                   </div>
@@ -497,13 +452,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableActionList
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -511,13 +464,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableBatchAction
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -525,13 +476,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableBatchActions
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -539,13 +488,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableBody
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableBody
                   </div>
@@ -555,13 +502,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableCell
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -569,13 +514,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableContainer
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -583,13 +526,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableExpandHeader
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -597,13 +538,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableExpandRow
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -611,13 +550,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableExpandedRow
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -625,13 +562,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableHead
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableHead
                   </div>
@@ -641,13 +576,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableHeader
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -655,13 +588,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableRow
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -669,13 +600,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableSelectAll
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -683,13 +612,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableSelectRow
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -697,13 +624,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableToolbar
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableToolbar
                   </div>
@@ -713,13 +638,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableToolbarAction
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -727,13 +650,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableToolbarContent
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -741,13 +662,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableToolbarSearch
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -755,13 +674,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableToolbarMenu
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -769,13 +686,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DatePicker
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DatePicker
                   </div>
@@ -785,13 +700,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DatePickerInput
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DatePickerInput
                   </div>
@@ -801,13 +714,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Dropdown
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Dropdown
                   </div>
@@ -817,13 +728,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ErrorBoundary
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ErrorBoundary
                   </div>
@@ -833,13 +742,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ErrorBoundaryContext
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ErrorBoundaryContext
                   </div>
@@ -849,13 +756,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileUploader
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileUploader
                   </div>
@@ -865,13 +770,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Filename
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Filename
                   </div>
@@ -881,13 +784,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileUploaderButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileUploaderButton
                   </div>
@@ -897,13 +798,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileUploaderDropContainer
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileUploaderDropContainer
                   </div>
@@ -913,13 +812,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileUploaderItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileUploaderItem
                   </div>
@@ -929,13 +826,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Form
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Form
                   </div>
@@ -945,13 +840,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FluidForm
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FluidForm
                   </div>
@@ -961,13 +854,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FormGroup
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FormGroup
                   </div>
@@ -977,13 +868,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FormItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FormItem
                   </div>
@@ -993,13 +882,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FormLabel
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FormLabel
                   </div>
@@ -1009,13 +896,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Grid
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Grid
                   </div>
@@ -1025,13 +910,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Row
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Row
                   </div>
@@ -1041,13 +924,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Column
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Column
                   </div>
@@ -1057,13 +938,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Icon
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Icon
                   </div>
@@ -1073,13 +952,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     InlineLoading
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     InlineLoading
                   </div>
@@ -1089,13 +966,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Link
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Link
                   </div>
@@ -1105,13 +980,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ListItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ListItem
                   </div>
@@ -1121,13 +994,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Loading
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Loading
                   </div>
@@ -1137,13 +1008,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Modal
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Modal
                   </div>
@@ -1153,13 +1022,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ModalWrapper
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ModalWrapper
                   </div>
@@ -1169,13 +1036,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     MultiSelect
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     MultiSelect
                   </div>
@@ -1185,13 +1050,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToastNotification
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToastNotification
                   </div>
@@ -1201,13 +1064,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     InlineNotification
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     InlineNotification
                   </div>
@@ -1217,13 +1078,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NotificationActionButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NotificationActionButton
                   </div>
@@ -1233,13 +1092,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NotificationButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NotificationButton
                   </div>
@@ -1249,13 +1106,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NotificationTextDetails
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NotificationTextDetails
                   </div>
@@ -1265,13 +1120,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NumberInput
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NumberInput
                   </div>
@@ -1281,13 +1134,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     OrderedList
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     OrderedList
                   </div>
@@ -1297,13 +1148,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     OverflowMenu
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     OverflowMenu
                   </div>
@@ -1313,13 +1162,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     OverflowMenuItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     OverflowMenuItem
                   </div>
@@ -1329,13 +1176,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Pagination
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Pagination
                   </div>
@@ -1345,13 +1190,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PaginationNav
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PaginationNav
                   </div>
@@ -1361,13 +1204,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PrimaryButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PrimaryButton
                   </div>
@@ -1377,13 +1218,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ProgressIndicator
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ProgressIndicator
                   </div>
@@ -1393,13 +1232,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ProgressStep
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ProgressStep
                   </div>
@@ -1409,13 +1246,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     RadioButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     RadioButton
                   </div>
@@ -1425,13 +1260,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     RadioButtonGroup
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     RadioButtonGroup
                   </div>
@@ -1441,13 +1274,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Search
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Search
                   </div>
@@ -1457,13 +1288,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SearchFilterButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SearchFilterButton
                   </div>
@@ -1473,13 +1302,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SearchLayoutButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SearchLayoutButton
                   </div>
@@ -1489,13 +1316,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SecondaryButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SecondaryButton
                   </div>
@@ -1505,13 +1330,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Select
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Select
                   </div>
@@ -1521,13 +1344,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SelectItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SelectItem
                   </div>
@@ -1537,13 +1358,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SelectItemGroup
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SelectItemGroup
                   </div>
@@ -1553,13 +1372,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Switch
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Switch
                   </div>
@@ -1569,13 +1386,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Slider
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Slider
                   </div>
@@ -1585,13 +1400,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListWrapper
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListWrapper
                   </div>
@@ -1601,13 +1414,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListHead
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListHead
                   </div>
@@ -1617,13 +1428,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListBody
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListBody
                   </div>
@@ -1633,13 +1442,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListRow
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListRow
                   </div>
@@ -1649,13 +1456,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListInput
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListInput
                   </div>
@@ -1665,13 +1470,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListCell
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListCell
                   </div>
@@ -1681,13 +1484,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Tab
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Tab
                   </div>
@@ -1697,13 +1498,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TabContent
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TabContent
                   </div>
@@ -1713,13 +1512,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Tabs
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Tabs
                   </div>
@@ -1729,13 +1526,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Tag
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Tag
                   </div>
@@ -1745,13 +1540,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TextArea
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TextArea
                   </div>
@@ -1761,13 +1554,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TextInput
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TextInput
                   </div>
@@ -1777,13 +1568,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Tile
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Tile
                   </div>
@@ -1793,13 +1582,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ClickableTile
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ClickableTile
                   </div>
@@ -1809,13 +1596,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SelectableTile
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SelectableTile
                   </div>
@@ -1825,13 +1610,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ExpandableTile
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ExpandableTile
                   </div>
@@ -1841,13 +1624,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileAboveTheFoldContent
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileAboveTheFoldContent
                   </div>
@@ -1857,13 +1638,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileBelowTheFoldContent
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileBelowTheFoldContent
                   </div>
@@ -1873,13 +1652,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     RadioTile
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     RadioTile
                   </div>
@@ -1889,13 +1666,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileGroup
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileGroup
                   </div>
@@ -1905,13 +1680,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TimePicker
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TimePicker
                   </div>
@@ -1921,13 +1694,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TimePickerSelect
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TimePickerSelect
                   </div>
@@ -1937,13 +1708,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Toggle
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Toggle
                   </div>
@@ -1953,13 +1722,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToggleSmall
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToggleSmall
                   </div>
@@ -1969,13 +1736,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Toolbar
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Toolbar
                   </div>
@@ -1985,13 +1750,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToolbarItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToolbarItem
                   </div>
@@ -2001,13 +1764,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToolbarTitle
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToolbarTitle
                   </div>
@@ -2017,13 +1778,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToolbarOption
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToolbarOption
                   </div>
@@ -2033,13 +1792,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToolbarDivider
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToolbarDivider
                   </div>
@@ -2049,13 +1806,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToolbarSearch
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToolbarSearch
                   </div>
@@ -2065,13 +1820,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Tooltip
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Tooltip
                   </div>
@@ -2081,13 +1834,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TooltipDefinition
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TooltipDefinition
                   </div>
@@ -2097,13 +1848,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TooltipIcon
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TooltipIcon
                   </div>
@@ -2113,13 +1862,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     UnorderedList
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     UnorderedList
                   </div>
@@ -2129,13 +1876,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SkeletonText
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SkeletonText
                   </div>
@@ -2145,13 +1890,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SkeletonPlaceholder
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SkeletonPlaceholder
                   </div>
@@ -2161,13 +1904,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DataTableSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DataTableSkeleton
                   </div>
@@ -2177,13 +1918,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     AccordionSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     AccordionSkeleton
                   </div>
@@ -2193,13 +1932,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     BreadcrumbSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     BreadcrumbSkeleton
                   </div>
@@ -2209,13 +1946,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ButtonSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ButtonSkeleton
                   </div>
@@ -2225,13 +1960,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CheckboxSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CheckboxSkeleton
                   </div>
@@ -2241,13 +1974,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CodeSnippetSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CodeSnippetSkeleton
                   </div>
@@ -2257,13 +1988,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DropdownSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DropdownSkeleton
                   </div>
@@ -2273,13 +2002,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileUploaderSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileUploaderSkeleton
                   </div>
@@ -2289,13 +2016,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NumberInputSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NumberInputSkeleton
                   </div>
@@ -2305,13 +2030,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PaginationSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PaginationSkeleton
                   </div>
@@ -2321,13 +2044,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ProgressIndicatorSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ProgressIndicatorSkeleton
                   </div>
@@ -2337,13 +2058,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     RadioButtonSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     RadioButtonSkeleton
                   </div>
@@ -2353,13 +2072,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SearchSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SearchSkeleton
                   </div>
@@ -2369,13 +2086,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SelectSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SelectSkeleton
                   </div>
@@ -2385,13 +2100,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SliderSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SliderSkeleton
                   </div>
@@ -2401,13 +2114,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StructuredListSkeleton
                   </div>
@@ -2417,13 +2128,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TabsSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TabsSkeleton
                   </div>
@@ -2433,13 +2142,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TagSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TagSkeleton
                   </div>
@@ -2449,13 +2156,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TextAreaSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TextAreaSkeleton
                   </div>
@@ -2465,13 +2170,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TextInputSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TextInputSkeleton
                   </div>
@@ -2481,13 +2184,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToggleSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToggleSkeleton
                   </div>
@@ -2497,13 +2198,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToggleSmallSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ToggleSmallSkeleton
                   </div>
@@ -2513,13 +2212,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     IconSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     IconSkeleton
                   </div>
@@ -2529,13 +2226,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DatePickerSkeleton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DatePickerSkeleton
                   </div>
@@ -2545,13 +2240,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Content
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Content
                   </div>
@@ -2561,13 +2254,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Header
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Header
                   </div>
@@ -2577,13 +2268,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderContainer
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderContainer
                   </div>
@@ -2593,13 +2282,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderGlobalAction
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderGlobalAction
                   </div>
@@ -2609,13 +2296,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderGlobalBar
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderGlobalBar
                   </div>
@@ -2625,13 +2310,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderMenu
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderMenu
                   </div>
@@ -2641,13 +2324,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderMenuButton
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderMenuButton
                   </div>
@@ -2657,13 +2338,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderMenuItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderMenuItem
                   </div>
@@ -2673,13 +2352,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderName
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderName
                   </div>
@@ -2689,13 +2366,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderNavigation
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderNavigation
                   </div>
@@ -2705,13 +2380,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderPanel
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderPanel
                   </div>
@@ -2721,13 +2394,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderSideNavItems
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HeaderSideNavItems
                   </div>
@@ -2737,13 +2408,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Switcher
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Switcher
                   </div>
@@ -2753,13 +2422,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SwitcherItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SwitcherItem
                   </div>
@@ -2769,13 +2436,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SwitcherDivider
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SwitcherDivider
                   </div>
@@ -2785,13 +2450,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SkipToContent
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SkipToContent
                   </div>
@@ -2801,13 +2464,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNav
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNav
                   </div>
@@ -2817,13 +2478,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavDetails
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavDetails
                   </div>
@@ -2833,13 +2492,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavDivider
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                 </div>
                 <div
@@ -2847,13 +2504,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavFooter
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavFooter
                   </div>
@@ -2863,13 +2518,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavHeader
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavHeader
                   </div>
@@ -2879,13 +2532,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavIcon
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavIcon
                   </div>
@@ -2895,13 +2546,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavItem
                   </div>
@@ -2911,13 +2560,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavItems
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavItems
                   </div>
@@ -2927,13 +2574,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavLink
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavLink
                   </div>
@@ -2943,13 +2588,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavLinkText
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavLinkText
                   </div>
@@ -2959,13 +2602,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavMenu
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavMenu
                   </div>
@@ -2975,13 +2616,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavMenuItem
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavMenuItem
                   </div>
@@ -2991,13 +2630,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavSwitcher
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SideNavSwitcher
                   </div>
@@ -3007,13 +2644,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     unstable_PageSelector
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     unstable_PageSelector
                   </div>
@@ -3023,13 +2658,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     unstable_Pagination
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     unstable_Pagination
                   </div>
@@ -3039,13 +2672,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     unstable_TreeView
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     unstable_TreeView
                   </div>
@@ -3055,13 +2686,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     unstable_TreeNode
                   </div>
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     unstable_TreeNode
                   </div>
@@ -3071,137 +2700,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    unstable_ContextMenu
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  />
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    unstable_ContextMenuDivider
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  />
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    unstable_ContextMenuGroup
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  />
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    unstable_ContextMenuItem
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  />
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    unstable_ContextMenuRadioGroup
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  />
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    unstable_ContextMenuSelectableItem
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  />
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    unstable_useContextMenu
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  />
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    unstable_Heading
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  />
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    unstable_Section
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  />
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     AddCard
                   </div>
@@ -3211,11 +2712,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     EmptyTable
                   </div>
@@ -3225,11 +2724,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableSaveViewModal
                   </div>
@@ -3239,11 +2736,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableManageViewsModal
                   </div>
@@ -3253,11 +2748,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableSkeletonWithHeaders
                   </div>
@@ -3267,11 +2760,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     WizardModal
                   </div>
@@ -3281,11 +2772,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     WizardInline
                   </div>
@@ -3295,11 +2784,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StatefulWizardInline
                   </div>
@@ -3309,11 +2796,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StatefulTable
                   </div>
@@ -3323,11 +2808,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileCatalog
                   </div>
@@ -3337,11 +2820,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StatefulTileCatalog
                   </div>
@@ -3351,11 +2832,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CatalogContent
                   </div>
@@ -3365,11 +2844,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SimplePagination
                   </div>
@@ -3379,11 +2856,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ComposedStructuredList
                   </div>
@@ -3393,11 +2868,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ResourceList
                   </div>
@@ -3407,11 +2880,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FileDrop
                   </div>
@@ -3421,11 +2892,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PageTitleBar
                   </div>
@@ -3435,11 +2904,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HierarchyList
                   </div>
@@ -3449,11 +2916,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     BarChartCard
                   </div>
@@ -3463,11 +2928,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileCatalogNew
                   </div>
@@ -3477,11 +2940,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TimePickerSpinner
                   </div>
@@ -3491,11 +2952,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DateTimePicker
                   </div>
@@ -3505,11 +2964,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableViewDropdown
                   </div>
@@ -3519,11 +2976,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     IconDropdown
                   </div>
@@ -3533,11 +2988,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     EmptyState
                   </div>
@@ -3547,11 +3000,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ImageGalleryModal
                   </div>
@@ -3561,11 +3012,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     baseTableReducer
                   </div>
@@ -3575,11 +3024,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     tableReducer
                   </div>
@@ -3589,11 +3036,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     tileCatalogReducer
                   </div>
@@ -3603,11 +3048,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PageHero
                   </div>
@@ -3617,11 +3060,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PageWorkArea
                   </div>
@@ -3631,11 +3072,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     EditPage
                   </div>
@@ -3645,11 +3084,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     NavigationBar
                   </div>
@@ -3659,11 +3096,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SuiteHeader
                   </div>
@@ -3673,11 +3108,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SuiteHeaderProfile
                   </div>
@@ -3687,11 +3120,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SuiteHeaderAppSwitcher
                   </div>
@@ -3701,11 +3132,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SuiteHeaderLogoutModal
                   </div>
@@ -3715,11 +3144,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SuiteHeaderI18N
                   </div>
@@ -3729,11 +3156,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     useSuiteHeaderData
                   </div>
@@ -3743,11 +3168,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     suiteHeaderData
                   </div>
@@ -3757,11 +3180,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Dashboard
                   </div>
@@ -3771,11 +3192,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DashboardHeader
                   </div>
@@ -3785,11 +3204,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DashboardGrid
                   </div>
@@ -3799,11 +3216,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DashboardEditor
                   </div>
@@ -3813,11 +3228,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CardEditor
                   </div>
@@ -3827,11 +3240,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Card
                   </div>
@@ -3841,11 +3252,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PieChartCard
                   </div>
@@ -3855,11 +3264,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ValueCard
                   </div>
@@ -3869,11 +3276,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TimeSeriesCard
                   </div>
@@ -3883,11 +3288,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ImageCard
                   </div>
@@ -3897,11 +3300,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TableCard
                   </div>
@@ -3911,11 +3312,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     GaugeCard
                   </div>
@@ -3925,11 +3324,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CARD_TYPES
                   </div>
@@ -3939,11 +3336,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CARD_SIZES
                   </div>
@@ -3953,11 +3348,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CARD_ACTIONS
                   </div>
@@ -3967,11 +3360,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DASHBOARD_BREAKPOINTS
                   </div>
@@ -3981,11 +3372,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DASHBOARD_SIZES
                   </div>
@@ -3995,11 +3384,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TIME_SERIES_TYPES
                   </div>
@@ -4009,11 +3396,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     BAR_CHART_TYPES
                   </div>
@@ -4023,11 +3408,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DASHBOARD_EDITOR_CARD_TYPES
                   </div>
@@ -4037,11 +3420,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DragAndDrop
                   </div>
@@ -4051,11 +3432,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ListCard
                   </div>
@@ -4065,11 +3444,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PageWizard
                   </div>
@@ -4079,11 +3456,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PageWizardStep
                   </div>
@@ -4093,11 +3468,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PageWizardStepContent
                   </div>
@@ -4107,11 +3480,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PageWizardStepDescription
                   </div>
@@ -4121,11 +3492,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PageWizardStepExtraContent
                   </div>
@@ -4135,11 +3504,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     PageWizardStepTitle
                   </div>
@@ -4149,11 +3516,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StatefulPageWizard
                   </div>
@@ -4163,11 +3528,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileGallery
                   </div>
@@ -4177,11 +3540,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileGallerySection
                   </div>
@@ -4191,11 +3552,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileGalleryItem
                   </div>
@@ -4205,11 +3564,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileGalleryViewSwitcher
                   </div>
@@ -4219,11 +3576,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     TileGallerySearch
                   </div>
@@ -4233,11 +3588,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     StatefulTileGallery
                   </div>
@@ -4247,11 +3600,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     List
                   </div>
@@ -4261,11 +3612,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SimpleList
                   </div>
@@ -4275,11 +3624,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     IconSwitch
                   </div>
@@ -4289,11 +3636,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ICON_SWITCH_SIZES
                   </div>
@@ -4303,11 +3648,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     AccordionItemDefer
                   </div>
@@ -4317,11 +3660,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FlyoutMenu
                   </div>
@@ -4331,11 +3672,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     FilterTags
                   </div>
@@ -4345,11 +3684,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ColorDropdown
                   </div>
@@ -4359,11 +3696,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HotspotEditorTooltipTab
                   </div>
@@ -4373,11 +3708,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     HotspotTextStyleTab
                   </div>
@@ -4387,11 +3720,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DynamicHotspotSourcePicker
                   </div>
@@ -4401,11 +3732,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ComboChartCard
                   </div>
@@ -4415,11 +3744,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     useDNDProviderElement
                   </div>
@@ -4429,11 +3756,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     determineCardRange
                   </div>
@@ -4443,11 +3768,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     compareGrains
                   </div>
@@ -4457,11 +3780,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     formatNumberWithPrecision
                   </div>
@@ -4471,11 +3792,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     getVariables
                   </div>
@@ -4485,11 +3804,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     getCardVariables
                   </div>
@@ -4499,11 +3816,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     replaceVariables
                   </div>
@@ -4513,11 +3828,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     findMatchingThresholds
                   </div>
@@ -4527,11 +3840,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     determineMaxValueCardAttributeCount
                   </div>
@@ -4541,11 +3852,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     csvDownloadHandler
                   </div>
@@ -4555,11 +3864,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     tableActions
                   </div>
@@ -4569,11 +3876,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     AlertTableIcon
                   </div>
@@ -4583,11 +3888,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     BarGroupedGraphIcon
                   </div>
@@ -4597,11 +3900,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     BarStackGraphIcon
                   </div>
@@ -4611,11 +3912,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ComputerChipIcon
                   </div>
@@ -4625,11 +3924,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     CustomCardIcon
                   </div>
@@ -4639,11 +3936,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DashboardIcon
                   </div>
@@ -4653,11 +3948,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DataScientistIcon
                   </div>
@@ -4667,11 +3960,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     DataTableIcon
                   </div>
@@ -4681,11 +3972,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     Emptystate404Icon
                   </div>
@@ -4695,11 +3984,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     EmptystateDefaultIcon
                   </div>
@@ -4709,11 +3996,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     EmptystateErrorIcon
                   </div>
@@ -4723,11 +4008,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     EmptystateNoresultsIcon
                   </div>
@@ -4737,11 +4020,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     EmptystateNotauthorizedIcon
                   </div>
@@ -4751,11 +4032,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     EmptystateSuccessIcon
                   </div>
@@ -4765,11 +4044,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ImageIcon
                   </div>
@@ -4779,11 +4056,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     LineGraphIcon
                   </div>
@@ -4793,11 +4068,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ListIcon
                   </div>
@@ -4807,11 +4080,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     SimpleBarGraphIcon
                   </div>
@@ -4821,11 +4092,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                 >
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   />
                   <div
                     className="bx--structured-list-td"
-                    role="cell"
                   >
                     ValueKpiIcon
                   </div>

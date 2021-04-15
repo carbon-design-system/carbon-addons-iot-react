@@ -878,7 +878,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
     }
   >
     <button
-      aria-pressed={null}
       className="iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}
@@ -895,7 +894,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
       Hide
     </button>
     <button
-      aria-pressed={null}
       className="iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}
@@ -970,6 +968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
               "visibility": "hidden",
             }
           }
+          tooltipId="uncontrolled"
         >
           <span
             className="bx--tooltip__caret"

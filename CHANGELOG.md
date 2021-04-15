@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.42...v2.145.0-next.43) (2021-04-15)
+
+
+### Features
+
+* **card:** add card implementation for Angular ([cd4667c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cd4667c844c07dd1e6e4102181df5dd9c4684be3))
+
+
+
+
+
+# [2.145.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.41...v2.145.0-next.42) (2021-04-15)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.145.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.40...v2.145.0-next.41) (2021-04-15)
 
 

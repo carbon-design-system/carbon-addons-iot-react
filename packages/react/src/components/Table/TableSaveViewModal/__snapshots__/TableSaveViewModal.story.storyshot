@@ -258,7 +258,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="TableSaveViewModal-modal-secondary-button"
             disabled={false}
@@ -269,7 +268,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             Cancel
           </button>
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
             data-testid="TableSaveViewModal-modal-primary-button"
             disabled={true}
@@ -426,7 +424,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="TableSaveViewModal-modal-secondary-button"
             disabled={false}
@@ -437,7 +434,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             Cancel
           </button>
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="TableSaveViewModal-modal-primary-button"
             disabled={false}
@@ -659,7 +655,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="TableSaveViewModal-modal-secondary-button"
             disabled={false}
@@ -670,7 +665,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             Cancel
           </button>
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
             data-testid="TableSaveViewModal-modal-primary-button"
             disabled={true}
@@ -890,7 +884,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="TableSaveViewModal-modal-secondary-button"
             disabled={false}
@@ -901,7 +894,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             Cancel
           </button>
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="TableSaveViewModal-modal-primary-button"
             disabled={false}
