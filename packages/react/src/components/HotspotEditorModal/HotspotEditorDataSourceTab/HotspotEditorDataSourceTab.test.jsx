@@ -166,7 +166,7 @@ describe('HotspotEditorDataSourceTab', () => {
     );
 
     // edit button
-    userEvent.click(screen.getAllByRole('button')[2]);
+    userEvent.click(screen.getAllByRole('button')[1]);
     // add threshold
     userEvent.click(screen.getAllByRole('button')[2]);
     // save
@@ -201,7 +201,7 @@ describe('HotspotEditorDataSourceTab', () => {
       />
     );
     // edit button
-    userEvent.click(screen.getAllByRole('button')[2]);
+    userEvent.click(screen.getAllByRole('button')[1]);
     // add threshold
     userEvent.click(screen.getAllByRole('button')[2]);
     // increment value of threshold

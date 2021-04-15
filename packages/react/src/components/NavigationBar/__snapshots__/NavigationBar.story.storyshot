@@ -169,6 +169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -185,6 +186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -201,6 +203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
       >
         <button
+          aria-pressed={null}
           className="bx--btn bx--btn--primary"
           disabled={false}
           onClick={[Function]}
@@ -402,6 +405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -418,6 +422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -622,6 +627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -638,6 +644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -842,6 +849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -858,6 +866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -874,6 +883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
       >
         <button
+          aria-pressed={null}
           className="bx--btn bx--btn--primary"
           disabled={false}
           onClick={[Function]}
@@ -883,6 +893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           New Entity Type
         </button>
         <button
+          aria-pressed={null}
           className="bx--btn bx--btn--secondary"
           disabled={false}
           onClick={[Function]}

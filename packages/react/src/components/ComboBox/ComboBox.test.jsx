@@ -27,7 +27,7 @@ describe('ComboBox', () => {
   // Helper function to open the list and return it
   const getListBox = async () => {
     // open the list by clicking the open menu icon
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     const list = await screen.findByRole('listbox');
     return list;
   };
@@ -102,7 +102,7 @@ describe('ComboBox', () => {
     render(<ComboBox {...defaultProps} />);
     const tags = screen.getByTestId('combo-tags');
 
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     userEvent.click(screen.getByTitle('Option 1'));
 
     expect(tags.childElementCount).toEqual(1);
@@ -118,9 +118,9 @@ describe('ComboBox', () => {
   it('does not add duplicate tag when user selects same value from list', async () => {
     render(<ComboBox {...defaultProps} />);
 
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
 
     userEvent.click(screen.getByTitle('Clear selected item'));

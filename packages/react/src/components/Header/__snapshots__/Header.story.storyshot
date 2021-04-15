@@ -70,11 +70,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
         >
           <button
             aria-label="alerts"
-            className="bx--header-action-btn bx--header__action"
+            aria-pressed={null}
+            className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
             data-testid="menu-item-alerts-global"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
             type="button"
           >
+            <span
+              className="bx--assistive-text"
+            >
+              alerts
+            </span>
             <svg
               aria-hidden={true}
               description="Icon"
@@ -101,11 +109,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="help"
-              className="bx--header-action-btn action-btn__trigger bx--header__action"
+              aria-pressed={null}
+              className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+              disabled={false}
               onClick={[Function]}
+              tabIndex={0}
               title="help"
               type="button"
             >
+              <span
+                className="bx--assistive-text"
+              >
+                help
+              </span>
               <svg
                 aria-hidden={true}
                 className="bx--header__menu-item bx--header__menu-title"
@@ -295,11 +311,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="AppSwitcher"
-              className="bx--header-action-btn action-btn__trigger bx--header__action"
+              aria-pressed={null}
+              className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+              disabled={false}
               onClick={[Function]}
+              tabIndex={0}
               title="AppSwitcher"
               type="button"
             >
+              <span
+                className="bx--assistive-text"
+              >
+                AppSwitcher
+              </span>
               <svg
                 aria-hidden={true}
                 className="bx--header__menu-item bx--header__menu-title"
@@ -437,11 +461,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
       >
         <button
           aria-label="user"
-          className="bx--header-action-btn bx--header__action"
+          aria-pressed={null}
+          className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
           data-testid="menu-item-user-global"
+          disabled={false}
           onClick={[Function]}
+          tabIndex={0}
           type="button"
         >
+          <span
+            className="bx--assistive-text"
+          >
+            user
+          </span>
           <svg
             aria-hidden={true}
             description="Icon"

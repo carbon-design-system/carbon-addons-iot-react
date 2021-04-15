@@ -164,7 +164,7 @@ describe('DataSeriesFormItem', () => {
         />
       );
       const dataItemDropDown = screen.getByRole('button', {
-        name: 'open menu',
+        name: 'Open',
       });
       expect(dataItemDropDown).toBeInTheDocument();
       fireEvent.click(dataItemDropDown);
@@ -458,7 +458,7 @@ describe('DataSeriesFormItem', () => {
         />
       );
       const dataItemsDropdown = screen.getByRole('button', {
-        name: 'open menu',
+        name: 'Open',
       });
       expect(dataItemsDropdown).toBeInTheDocument();
       fireEvent.click(dataItemsDropdown);
