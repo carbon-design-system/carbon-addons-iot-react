@@ -1,6 +1,6 @@
 {
   "name": "@ai-apps/styles",
-  "version": "2.145.0-next.35",
+  "version": "2.145.0-next.43",
   "description": "Styles for the AI Applications PAL",
   "main": "index.js",
   "scripts": {
