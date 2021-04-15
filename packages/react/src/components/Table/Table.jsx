@@ -585,6 +585,7 @@ const Table = (props) => {
   return (
     <TableContainer
       style={style}
+      data-testid={`${id}-table-container`}
       className={classnames(className, `${iotPrefix}--table-container`)}
     >
       {
@@ -683,6 +684,7 @@ const Table = (props) => {
               ),
             }}
             data={data}
+            testID={`${id}-table-toolbar`}
           />
         ) : null
       }
@@ -712,6 +714,7 @@ const Table = (props) => {
       ) : null}
       <div className="addons-iot-table-container">
         <CarbonTable
+          data-testid={id}
           className={classnames({
             [`${iotPrefix}--data-table--resize`]: options.hasResize,
             [`${iotPrefix}--data-table--fixed`]:
@@ -769,12 +772,14 @@ const Table = (props) => {
               selection: { isSelectAllSelected, isSelectAllIndeterminate },
             }}
             hasFastFilter={options?.hasFilter === 'onKeyPress'}
+            testID={`${id}-table-head`}
           />
           {view.table.loadingState.isLoading ? (
             <TableSkeletonWithHeaders
               columns={visibleColumns}
               {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
               rowCount={view.table.loadingState.rowCount}
+              testID={`${id}-table-skeleton`}
             />
           ) : visibleData && visibleData.length ? (
             <TableBody
@@ -821,6 +826,7 @@ const Table = (props) => {
                 'onRowExpanded',
                 'onRowClicked'
               )}
+              testID={`${id}-table-body`}
             />
           ) : (
             <EmptyTable
@@ -845,6 +851,7 @@ const Table = (props) => {
                   ? actions.table.onEmptyStateAction
                   : undefined // if not filtered then show normal empty state
               }
+              testID={`${id}-table-empty`}
             />
           )}
           {hasAggregations ? (
@@ -885,6 +892,7 @@ const Table = (props) => {
           pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
+          testID={`${id}-table-pagination`}
         />
       ) : null}
     </TableContainer>
