@@ -1,4 +1,4 @@
-import 'core-js/es';
+import 'core-js/es7';
 
 import 'zone.js/dist/zone';
 

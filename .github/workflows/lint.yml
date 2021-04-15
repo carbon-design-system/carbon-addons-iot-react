@@ -16,8 +16,19 @@ jobs:
         with:
           node-version: '14.x'
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: |
+          yarn --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
 
       - name: Run linters
         run: yarn lint
