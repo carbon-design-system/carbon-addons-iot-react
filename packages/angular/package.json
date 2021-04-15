@@ -26,7 +26,8 @@
     "url": "git@github.com:IBM/carbon-components-angular.git"
   },
   "publishConfig": {
-    "directory": "dist"
+    "directory": "dist",
+    "access": "public"
   },
   "license": "Apache-2.0",
   "author": "IBM",
@@ -55,13 +56,13 @@
     "@angular/platform-browser-dynamic": "11.1.1",
     "@angular/router": "11.1.1",
     "@babel/core": "7.4.3",
-    "@storybook/addon-actions": "6.1.17",
-    "@storybook/addon-knobs": "6.1.17",
-    "@storybook/addon-links": "6.1.17",
-    "@storybook/addon-storysource": "6.1.16",
-    "@storybook/addons": "6.1.17",
-    "@storybook/angular": "6.1.17",
-    "@storybook/theming": "6.1.17",
+    "@storybook/addon-actions": "6.2.3",
+    "@storybook/addon-knobs": "6.2.3",
+    "@storybook/addon-links": "6.2.3",
+    "@storybook/addon-storysource": "6.2.3",
+    "@storybook/addons": "6.2.3",
+    "@storybook/angular": "6.2.3",
+    "@storybook/theming": "6.2.3",
     "@types/jasmine": "2.8.2",
     "@types/node": "11.13.0",
     "ai-apps-monorepo-utils": "^2.145.0-next.35",
