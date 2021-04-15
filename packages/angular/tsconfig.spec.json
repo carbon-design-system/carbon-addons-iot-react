@@ -28,10 +28,10 @@
 			"@ai-apps/angular/*": [
 				"./src/*/index"
 			],
-      "@angular/*": [
-        "./node_modules/@angular/*",
-        "../../node_modules/@angular/*"
-      ]
+      		"@angular/*": [
+       			"./node_modules/@angular/*",
+        		"../../node_modules/@angular/*"
+    		]
 		},
 	},
 	"files": [
