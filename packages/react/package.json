@@ -39,7 +39,7 @@
     "start": "yarn test:engines && yarn storybook",
     "storybook": "yarn test:engines && start-storybook -p 3000 -s public/development",
     "svg-convert": "svgr --ext jsx -d src/icons/components src/icons/svg && prettier --write src/icons/components/index.jsx ",
-    "test": "yarn test:engines && yarn test:a11y&& yarn test:base",
+    "test": "yarn test:engines && yarn test:a11y && yarn test:base",
     "test:base": "yarn test:engines && cross-env TZ=America/Chicago jest --no-watchman --testPathPattern='.*\\.test\\.js(x)?' --coverage --colors",
     "test:debug": "yarn test:engines && cross-env TZ=America/Chicago node --inspect node_modules/.bin/jest --no-watchman --testPathPattern='.*\\.test\\.js(x)?' --watch --coverage --colors --runInBand",
     "test:a11y": "yarn test:engines && cross-env TZ=America/Chicago jest --no-watchman --forceExit --testPathPattern='.*\\.a11y\\.js(x)?' --colors",
@@ -275,5 +275,5 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.145.0-next.39"
+  "version": "2.145.0-next.40"
 }
