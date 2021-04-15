@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.40...v2.145.0-next.41) (2021-04-15)
+
+
+### Bug Fixes
+
+* **value-card:** use auto positioning tooltip ([73691c1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/73691c1758f8a20fa466591a869a8f37186b42e4))
+
+
+
+
+
 # [2.145.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.39...v2.145.0-next.40) (2021-04-15)
 
 **Note:** Version bump only for package ibm-ai-applications
