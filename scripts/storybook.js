@@ -36,8 +36,18 @@ if (!storyPackages.includes(packageToRun)) {
   packageToRun = 'react';
 }
 
+const runYarn = (command, packageToRun) => {
+  const childProcess = spawn('yarn', [command], {
+    stdio: 'inherit',
+    cwd: resolve('packages', packageToRun),
+  });
+  childProcess.on('exit', () => {
+    process.exit(0);
+  });
+};
+
 if (args['--build']) {
-  spawn('yarn', ['build:storybook'], { stdio: 'inherit', cwd: resolve('packages', packageToRun) });
+  runYarn('build:storybook', packageToRun);
 } else {
-  spawn('yarn', ['storybook'], { stdio: 'inherit', cwd: resolve('packages', packageToRun) });
+  runYarn('storybook', packageToRun);
 }
