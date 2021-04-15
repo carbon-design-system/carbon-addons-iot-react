@@ -795,14 +795,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <div
                       className="iot--table-container bx--data-table-container"
+                      data-testid="edit-table-table-container"
                     >
                       <section
                         aria-label="data table toolbar"
                         className="bx--table-toolbar"
+                        data-testid="edit-table-table-toolbar"
                       >
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
+                          data-testID="edit-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -836,6 +839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </label>
                         <div
                           className="bx--toolbar-content iot--table-toolbar-content"
+                          data-testid="edit-table-table-toolbar-content"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -875,6 +879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               <input
                                 autoComplete="off"
                                 className="bx--search-input"
+                                data-testid="edit-table-table-toolbar-search"
                                 id="edit-table-toolbar-search"
                                 onChange={[Function]}
                                 onKeyDown={[Function]}
@@ -944,9 +949,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <table
                             className="bx--data-table bx--data-table--no-border"
+                            data-testid="edit-table"
                             title={null}
                           >
                             <thead
+                              data-testid="edit-table-table-head"
                               onMouseMove={null}
                               onMouseUp={null}
                             >
@@ -956,6 +963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="name"
                                   data-floating-menu-container={true}
+                                  data-testid="edit-table-table-head-column-name"
                                   id="column-name"
                                   scope="col"
                                   style={
@@ -980,6 +988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="type"
                                   data-floating-menu-container={true}
+                                  data-testid="edit-table-table-head-column-type"
                                   id="column-type"
                                   scope="col"
                                   style={
@@ -1003,6 +1012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </thead>
                             <tbody
                               aria-live="polite"
+                              data-testid="edit-table-table-empty"
                               id="edit-table"
                             >
                               <tr
@@ -1041,14 +1051,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                     <div
                       className="iot--table-container bx--data-table-container"
+                      data-testid="read-table-table-container"
                     >
                       <section
                         aria-label="data table toolbar"
                         className="bx--table-toolbar"
+                        data-testid="read-table-table-toolbar"
                       >
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
+                          data-testID="read-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -1082,6 +1095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </label>
                         <div
                           className="bx--toolbar-content iot--table-toolbar-content"
+                          data-testid="read-table-table-toolbar-content"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -1121,6 +1135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               <input
                                 autoComplete="off"
                                 className="bx--search-input"
+                                data-testid="read-table-table-toolbar-search"
                                 id="read-table-toolbar-search"
                                 onChange={[Function]}
                                 onKeyDown={[Function]}
@@ -1190,9 +1205,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <table
                             className="bx--data-table bx--data-table--no-border"
+                            data-testid="read-table"
                             title={null}
                           >
                             <thead
+                              data-testid="read-table-table-head"
                               onMouseMove={null}
                               onMouseUp={null}
                             >
@@ -1202,6 +1219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="name"
                                   data-floating-menu-container={true}
+                                  data-testid="read-table-table-head-column-name"
                                   id="column-name"
                                   scope="col"
                                   style={
@@ -1226,6 +1244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="type"
                                   data-floating-menu-container={true}
+                                  data-testid="read-table-table-head-column-type"
                                   id="column-type"
                                   scope="col"
                                   style={
@@ -1249,6 +1268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </thead>
                             <tbody
                               aria-live="polite"
+                              data-testid="read-table-table-empty"
                               id="read-table"
                             >
                               <tr
@@ -4663,14 +4683,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <div
                       className="iot--table-container bx--data-table-container"
+                      data-testid="edit-table-table-container"
                     >
                       <section
                         aria-label="data table toolbar"
                         className="bx--table-toolbar"
+                        data-testid="edit-table-table-toolbar"
                       >
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
+                          data-testID="edit-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -4704,6 +4727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </label>
                         <div
                           className="bx--toolbar-content iot--table-toolbar-content"
+                          data-testid="edit-table-table-toolbar-content"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -4743,6 +4767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               <input
                                 autoComplete="off"
                                 className="bx--search-input"
+                                data-testid="edit-table-table-toolbar-search"
                                 id="edit-table-toolbar-search"
                                 onChange={[Function]}
                                 onKeyDown={[Function]}
@@ -4812,9 +4837,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <table
                             className="bx--data-table bx--data-table--no-border"
+                            data-testid="edit-table"
                             title={null}
                           >
                             <thead
+                              data-testid="edit-table-table-head"
                               onMouseMove={null}
                               onMouseUp={null}
                             >
@@ -4824,6 +4851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="name"
                                   data-floating-menu-container={true}
+                                  data-testid="edit-table-table-head-column-name"
                                   id="column-name"
                                   scope="col"
                                   style={
@@ -4848,6 +4876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="type"
                                   data-floating-menu-container={true}
+                                  data-testid="edit-table-table-head-column-type"
                                   id="column-type"
                                   scope="col"
                                   style={
@@ -4871,6 +4900,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </thead>
                             <tbody
                               aria-live="polite"
+                              data-testID="edit-table-table-body"
                             >
                               <tr
                                 className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
@@ -4922,14 +4952,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                     <div
                       className="iot--table-container bx--data-table-container"
+                      data-testid="read-table-table-container"
                     >
                       <section
                         aria-label="data table toolbar"
                         className="bx--table-toolbar"
+                        data-testid="read-table-table-toolbar"
                       >
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
+                          data-testID="read-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -4963,6 +4996,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </label>
                         <div
                           className="bx--toolbar-content iot--table-toolbar-content"
+                          data-testid="read-table-table-toolbar-content"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -5002,6 +5036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               <input
                                 autoComplete="off"
                                 className="bx--search-input"
+                                data-testid="read-table-table-toolbar-search"
                                 id="read-table-toolbar-search"
                                 onChange={[Function]}
                                 onKeyDown={[Function]}
@@ -5071,9 +5106,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <table
                             className="bx--data-table bx--data-table--no-border"
+                            data-testid="read-table"
                             title={null}
                           >
                             <thead
+                              data-testid="read-table-table-head"
                               onMouseMove={null}
                               onMouseUp={null}
                             >
@@ -5083,6 +5120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="name"
                                   data-floating-menu-container={true}
+                                  data-testid="read-table-table-head-column-name"
                                   id="column-name"
                                   scope="col"
                                   style={
@@ -5107,6 +5145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="type"
                                   data-floating-menu-container={true}
+                                  data-testid="read-table-table-head-column-type"
                                   id="column-type"
                                   scope="col"
                                   style={
@@ -5130,6 +5169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </thead>
                             <tbody
                               aria-live="polite"
+                              data-testID="read-table-table-body"
                             >
                               <tr
                                 className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"

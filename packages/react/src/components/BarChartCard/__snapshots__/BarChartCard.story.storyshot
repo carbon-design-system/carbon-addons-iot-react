@@ -1640,14 +1640,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               />
               <div
                 className="iot--bar-chart-card--stateful-table iot--table-container bx--data-table-container"
+                data-testid="BarChartCard-table-table-container"
               >
                 <section
                   aria-label="data table toolbar"
                   className="bx--table-toolbar"
+                  data-testid="BarChartCard-table-table-toolbar"
                 >
                   <div
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
+                    data-testID="BarChartCard-table-table-toolbar-batch-actions"
                   >
                     <div
                       className="bx--batch-summary"
@@ -1676,6 +1679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                   </div>
                   <div
                     className="bx--toolbar-content iot--table-toolbar-content"
+                    data-testid="BarChartCard-table-table-toolbar-content"
                   >
                     <div
                       className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -1715,6 +1719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         <input
                           autoComplete="off"
                           className="bx--search-input"
+                          data-testid="BarChartCard-table-table-toolbar-search"
                           id="BarChartCard-table-toolbar-search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
@@ -1811,9 +1816,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                   >
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      data-testid="BarChartCard-table"
                       title={null}
                     >
                       <thead
+                        data-testid="BarChartCard-table-table-head"
                         onMouseMove={null}
                         onMouseUp={null}
                       >
@@ -1821,6 +1828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <th
                             aria-sort="descending"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-timestamp"
                             scope="col"
                             style={
                               Object {
@@ -1888,6 +1896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-Amsterdam"
                             scope="col"
                             style={
                               Object {
@@ -1955,6 +1964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-New York"
                             scope="col"
                             style={
                               Object {
@@ -2022,6 +2032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-Bangkok"
                             scope="col"
                             style={
                               Object {
@@ -2089,6 +2100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-San Francisco"
                             scope="col"
                             style={
                               Object {
@@ -2157,6 +2169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                       </thead>
                       <tbody
                         aria-live="polite"
+                        data-testID="BarChartCard-table-table-body"
                       >
                         <tr
                           className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
@@ -2516,6 +2529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 </div>
                 <div
                   className="bx--pagination iot--pagination"
+                  data-testid="BarChartCard-table-table-pagination"
                   style={
                     Object {
                       "--pagination-text-display": "flex",
