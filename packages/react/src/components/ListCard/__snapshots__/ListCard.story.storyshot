@@ -68,16 +68,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
             <div
               aria-label="Structured list section"
               className="bx--structured-list"
+              role="table"
             >
               <div
                 className="bx--structured-list-tbody"
                 onKeyDown={[Function]}
+                role="rowgroup"
               >
                 <div
                   className="bx--structured-list-row"
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -103,6 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -128,6 +132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -141,6 +146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -183,6 +189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -196,6 +203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -209,6 +217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -222,6 +231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -425,16 +435,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
             <div
               aria-label="Structured list section"
               className="bx--structured-list"
+              role="table"
             >
               <div
                 className="bx--structured-list-tbody"
                 onKeyDown={[Function]}
+                role="rowgroup"
               >
                 <div
                   className="bx--structured-list-row"
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -467,6 +480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -499,6 +513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -627,16 +642,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
             <div
               aria-label="Structured list section"
               className="bx--structured-list"
+              role="table"
             >
               <div
                 className="bx--structured-list-tbody"
                 onKeyDown={[Function]}
+                role="rowgroup"
               >
                 <div
                   className="bx--structured-list-row"
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -669,6 +687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"
@@ -701,6 +720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
                 >
                   <div
                     className="list-card--item bx--structured-list-td"
+                    role="cell"
                   >
                     <div
                       className="list-card--item--value"

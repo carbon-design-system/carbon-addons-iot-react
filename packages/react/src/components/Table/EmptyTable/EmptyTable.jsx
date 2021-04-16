@@ -17,11 +17,13 @@ const propTypes = {
   totalColumns: PropTypes.number.isRequired,
   isFiltered: PropTypes.bool.isRequired,
   onEmptyStateAction: PropTypes.func,
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
   id: 'EmptyTable',
   onEmptyStateAction: null,
+  testID: '',
 };
 
 const EmptyTable = ({
@@ -31,8 +33,9 @@ const EmptyTable = ({
   emptyState,
   onEmptyStateAction,
   emptyState: { messageWithFilters, message, buttonLabel, buttonLabelWithFilters },
+  testID,
 }) => (
-  <TableBody id={id}>
+  <TableBody id={id} data-testid={testID}>
     <TableRow className={`${iotPrefix}--empty-table--table-row`}>
       <TableCell colSpan={totalColumns}>
         {React.isValidElement(emptyState) ? (
