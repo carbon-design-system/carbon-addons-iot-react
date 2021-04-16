@@ -10,6 +10,9 @@
   "scripts": {
     "postinstall": "carbon-telemetry collect --install"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "Apache-2.0",
   "author": "IBM",
   "peerDependencies": {
