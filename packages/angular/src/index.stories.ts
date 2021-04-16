@@ -384,5 +384,5 @@ export default {
       declarations: [WelcomeStory],
     }),
   ],
-  title: 'Components/Welcome',
+  title: 'Overview/Welcome',
 };

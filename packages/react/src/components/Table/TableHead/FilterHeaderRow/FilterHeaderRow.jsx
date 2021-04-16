@@ -73,6 +73,8 @@ class FilterHeaderRow extends Component {
     lightweight: PropTypes.bool,
     /** should we filter as the user types or after they press enter */
     hasFastFilter: PropTypes.bool,
+
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -88,6 +90,7 @@ class FilterHeaderRow extends Component {
     closeMenuText: 'Close menu',
     lightweight: false,
     hasFastFilter: true,
+    testID: '',
   };
 
   state = {
@@ -176,10 +179,11 @@ class FilterHeaderRow extends Component {
       lightweight,
       isDisabled,
       hasFastFilter,
+      testID,
     } = this.props;
     const { filterValues } = this.state;
     return isVisible ? (
-      <TableRow>
+      <TableRow data-testid={testID}>
         {hasRowSelection === 'multi' ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}

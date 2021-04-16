@@ -1100,14 +1100,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+                data-testid="table-for-card-tableCard-table-container"
               >
                 <section
                   aria-label="data table toolbar"
                   className="bx--table-toolbar"
+                  data-testid="table-for-card-tableCard-table-toolbar"
                 >
                   <div
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
+                    data-testID="table-for-card-tableCard-table-toolbar-batch-actions"
                   >
                     <div
                       className="bx--batch-summary"
@@ -1142,6 +1145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </label>
                   <div
                     className="bx--toolbar-content iot--table-toolbar-content"
+                    data-testid="table-for-card-tableCard-table-toolbar-content"
                   >
                     <div
                       className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -1181,6 +1185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         <input
                           autoComplete="off"
                           className="bx--search-input"
+                          data-testid="table-for-card-tableCard-table-toolbar-search"
                           id="table-for-card-tableCard-toolbar-search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
@@ -1357,9 +1362,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   >
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      data-testid="table-for-card-tableCard"
                       title={null}
                     >
                       <thead
+                        data-testid="table-for-card-tableCard-table-head"
                         onMouseMove={null}
                         onMouseUp={null}
                       >
@@ -1367,6 +1374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="table-for-card-tableCard-table-head-column-alert"
                             scope="col"
                             style={
                               Object {
@@ -1436,6 +1444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="table-for-card-tableCard-table-head-column-hour"
                             scope="col"
                             style={
                               Object {
@@ -1505,6 +1514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="table-for-card-tableCard-table-head-column-pressure"
                             scope="col"
                             style={
                               Object {
@@ -1575,6 +1585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </thead>
                       <tbody
                         aria-live="polite"
+                        data-testID="table-for-card-tableCard-table-body"
                       >
                         <tr
                           className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
@@ -2232,6 +2243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="bx--pagination iot--pagination iot--pagination--hide-page"
+                  data-testid="table-for-card-tableCard-table-pagination"
                   style={
                     Object {
                       "--pagination-text-display": "flex",

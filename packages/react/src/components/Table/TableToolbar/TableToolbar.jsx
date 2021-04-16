@@ -140,6 +140,8 @@ const propTypes = {
   }).isRequired,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
+
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -148,6 +150,7 @@ const defaultProps = {
   },
   secondaryTitle: null,
   tooltip: null,
+  testID: '',
 };
 
 const TableToolbar = ({
@@ -201,9 +204,14 @@ const TableToolbar = ({
     ordering,
   },
   data,
+  testID,
 }) => (
-  <CarbonTableToolbar className={classnames(`${iotPrefix}--table-toolbar`, className)}>
+  <CarbonTableToolbar
+    data-testid={testID}
+    className={classnames(`${iotPrefix}--table-toolbar`, className)}
+  >
     <TableBatchActions
+      data-testID={`${testID}-batch-actions`}
       className={`${iotPrefix}--table-batch-actions`}
       onCancel={onCancelBatchAction}
       shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
@@ -243,7 +251,10 @@ const TableToolbar = ({
     {activeBar === 'rowEdit' ? (
       <div className={`${iotPrefix}--table-row-edit-actions`}>{rowEditBarButtons}</div>
     ) : (
-      <TableToolbarContent className={`${iotPrefix}--table-toolbar-content`}>
+      <TableToolbarContent
+        data-testid={`${testID}-content`}
+        className={`${iotPrefix}--table-toolbar-content`}
+      >
         {hasSearch ? (
           <TableToolbarSearch
             {...search}
@@ -265,6 +276,7 @@ const TableToolbar = ({
               onApplySearch(event?.target?.value || defaultValue);
             }}
             disabled={isDisabled}
+            data-testid={`${testID}-search`}
           />
         ) : null}
         {totalFilters > 0 ? (
