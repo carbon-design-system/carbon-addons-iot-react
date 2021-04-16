@@ -1,6 +1,5 @@
 import React from 'react';
 import { ZoomIn32, ZoomOut32 } from '@carbon/icons-react';
-import { useLangDirection } from 'use-lang-direction';
 
 import Button from '../Button';
 import { settings } from '../../constants/Settings';
@@ -14,15 +13,9 @@ const Zoom = ({
     zoomOut: 'Zoom out',
   },
   testId,
+  tooltipPosition,
 }) => {
-  const langDir = useLangDirection();
-  const tooltipPosition = React.useMemo(() => {
-    if (langDir === 'ltr') {
-      return 'left';
-    } else {
-      return 'right';
-    }
-  },[langDir])
+
   return (
     <div className={`${iotPrefix}--map-zoom`} data-testid={testId}>
       <Button

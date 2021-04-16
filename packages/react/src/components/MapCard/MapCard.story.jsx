@@ -50,42 +50,7 @@ const options = [
   },
 ];
 
-const mapControls = [
-  {
-    group: [
-      {
-        icon: Events32,
-        iconDescription: 'Map control 1A',
-        onClick: () => action('Map Control 1A')
-      },
-      {
-        icon: Events32,
-        iconDescription: 'Map control 2A',
-        onClick: () => action('Map Control 2A')
-      },
-      {
-        icon: Events32,
-        iconDescription: 'Map control 3A',
-        onClick: () => action('Map Control 3A')
-      }
-    ]
-  },
-  {
-    icon: Events32,
-    iconDescription: 'Map control 1',
-    onClick: () => action('Map Control 1')
-  },
-  {
-    icon: Events32,
-    iconDescription: 'Map control 2',
-    onClick: () => action('Map Control 2')
-  },
-  {
-    icon: Events32,
-    iconDescription: 'Map control 3',
-    onClick: () => action('Map Control 3')
-  }
-]
+
 
 export const Experimental = () => <StoryNotice componentName="MapCard" experimental />;
 Experimental.story = {
@@ -104,7 +69,60 @@ export const MapCard = () => {
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
   const [activeSideBar, setActiveSideBar] = useState(1);
+  const mapControls = [
+    {
+      group: [
+        {
+          icon: Events32,
+          iconDescription: 'GDP',
+          onClick: () => changeState(1)
+        },
+        {
+          icon: Events32,
+          iconDescription: 'Population',
+          onClick: () => changeState(0)
+        },
+        {
+          icon: Events32,
+          iconDescription: 'Map control 3A',
+          onClick: () => changeState(1)
+        }
+      ]
+    },
+    {
+      icon: Events32,
+      iconDescription: 'Map control 1',
+      onClick: () => changeState(0)
+    },
+    {
+      icon: Events32,
+      iconDescription: 'Map control 2',
+      onClick: () => changeState(1)
+    },
+    {
+      icon: Events32,
+      iconDescription: 'Map control 3',
+      onClick: () => changeState(0)
+    }
+  ]
 
+  const layeredControls = [
+    {
+      icon: Events32,
+      iconDescription: 'Map control 1',
+      onClick: () => changeState(0)
+    },
+    {
+      icon: Events32,
+      iconDescription: 'Map control 2',
+      onClick: () => changeState(1)
+    },
+    {
+      icon: Events32,
+      iconDescription: 'Map control 3',
+      onClick: () => changeState(0)
+    }
+  ]
   // Initialize map when component mounts
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -126,14 +144,6 @@ export const MapCard = () => {
         { 'font-scale': 1.2 },
         '\n',
         {},
-        // ['get', 'name'],
-        // {
-        //   'font-scale': 0.8,
-        //   'text-font': [
-        //     'literal',
-        //     ['DIN Offc Pro Italic', 'Arial Unicode MS Regular']
-        //   ]
-        // }
       ]);
 
       map.addLayer(
@@ -191,7 +201,7 @@ export const MapCard = () => {
   ];
 
   const onCardAction = (id, actionType) => {
-    action('card action clickety clacked', id, actionType);
+    action('card action clickety clacked', {id, actionType});
   };
 
   const sideBarContent = () => (
@@ -215,7 +225,7 @@ export const MapCard = () => {
       mapContainerRef={mapContainerRef}
       isLegendFullWidth={boolean('isFullWidth', false)}
       options={options}
-      layers={active.property}
+      layeredControls={layeredControls}
       stops={active.stops}
       onZoomIn={onZoomIn}
       onZoomOut={onZoomOut}

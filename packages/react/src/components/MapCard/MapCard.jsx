@@ -2,6 +2,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 import classnames from 'classnames';
 import { Maximize16, Close16 } from '@carbon/icons-react';
+import { useLangDirection } from 'use-lang-direction';
 
 import { Button } from '../../index';
 import Legend from './Legend';
@@ -28,7 +29,9 @@ const defaultStrings = {
   zoomIn: 'Zoom In',
   zoomOut: 'Zoom out',
   configurationTitle: 'Map configuration',
-  closeSideBarIconText: 'Close'
+  closeSideBarIconText: 'Close',
+  expandLabel: 'Expand',
+  layerTriggerIconDescription: 'Layered controls'
 };
 
 const MapBoxCard = ({
@@ -46,7 +49,7 @@ const MapBoxCard = ({
   onZoomOut,
   stops,
   options,
-  layers,
+  layeredControls,
   onCardAction,
   sideBarContent: SideBarContent,
   ...others
@@ -54,6 +57,7 @@ const MapBoxCard = ({
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [action, setAction] = useState(null);
   const mergedI18n = useMemo(() => ({ ...defaultStrings, ...i18n }), [i18n]);
+  const langDir = useLangDirection();
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
   const layout = determineLayout(newSize);
@@ -63,16 +67,24 @@ const MapBoxCard = ({
     () => {
       console.log('Settings have changed, ', settingsOpen, action)
       onCardAction(action?.id, action?.action);
-    }, [settingsOpen]
+    }, [action]
   );
 
   const handleOnCardAction = (id, action) => {
+    setAction({id,action});
     if (action === 'ON_SETTINGS_CLICK') {
       setSettingsOpen((oldSettingsOpen) => !oldSettingsOpen);
-      setAction({id,action});
     }
   };
-  const controls = mapControls ? <MapControls controls={mapControls} /> : null;
+
+  const tooltipPosition = React.useMemo(() => {
+    if (langDir === 'ltr') {
+      return 'left';
+    } else {
+      return 'right';
+    }
+  },[langDir])
+  const controls = mapControls || layeredControls ? <MapControls controls={mapControls} layeredControls={layeredControls} tooltipPosition={tooltipPosition} layerTriggerIconDescription={mergedI18n.layerTriggerIconDescription} /> : null;
   return (
     <Card
       title={mergedI18n.cardTitle}
@@ -93,13 +105,16 @@ const MapBoxCard = ({
       {...others}
     >
       <div ref={mapContainerRef} className={`${BASE_CLASS_NAME}-container`}>
-        <ZoomControl
-          i18n={{ zoomIn: mergedI18n.zoomIn, zoomOut: mergedI18n.zoomOut }}
-          onZoomIn={onZoomIn}
-          onZoomOut={onZoomOut}
-        />
+        <div className={`${BASE_CLASS_NAME}-controls`}>
+          { controls }
+          <ZoomControl
+            i18n={{ zoomIn: mergedI18n.zoomIn, zoomOut: mergedI18n.zoomOut }}
+            onZoomIn={onZoomIn}
+            onZoomOut={onZoomOut}
+            tooltipPosition={tooltipPosition}
+          />
+        </div>
         <Legend title={mergedI18n.legendTitle} stops={stops} isFullWidth={isLegendFullWidth} />
-        { controls }
       </div>
       <div className={`${BASE_CLASS_NAME}-settings`}>
         <div className={`${BASE_CLASS_NAME}-settings-header`}>

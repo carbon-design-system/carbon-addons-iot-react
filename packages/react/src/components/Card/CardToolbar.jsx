@@ -60,6 +60,7 @@ const propTypes = {
     deleteCardLabel: PropTypes.string,
     closeLabel: PropTypes.string,
     expandLabel: PropTypes.string,
+    settingsLabel: PropTypes.string,
   }),
 };
 
@@ -84,6 +85,7 @@ const defaultProps = {
     deleteCardLabel: 'Delete card',
     closeLabel: 'Close',
     expandLabel: 'Expand',
+    settingsLabel: 'Settings',
   },
 };
 

@@ -63,10 +63,6 @@
     }
   }
 
-  &__has-fullwidth-legend .#{$iot-prefix}--map-zoom {
-    bottom: 4rem;
-  }
-
   .mapboxgl-canvas-container {
     height: 100%;
   }
@@ -136,12 +132,33 @@
     }
   }
 
-  &-controls-container {
-    position: absolute;
+  // Controls
+  &-controls {
+    bottom: 1rem;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    justify-content: space-between;
     right: 1rem;
     top: 1rem;
+
+    [dir='rtl'] & {
+      left: 1rem;
+      right: unset;
+    }
+  }
+
+  &__has-fullwidth-legend .#{$iot-prefix}--map-controls {
+    bottom: 4rem;
+  }
+
+  &-controls-container {
+    display: flex;
+    flex-direction: column;
+
+    &__has-layers {
+      padding-top: 3.5rem;
+    }
   }
 
   &-controls-btn-group {
@@ -156,6 +173,23 @@
 
   &-controls-btn:not(:last-child) {
     border-bottom: 1px solid $ui-03;
+  }
+
+  &-controls-layers {
+    position: absolute;
+    top: 0;
+    display: flex;
+  }
+
+  // Layered controls
+  &-controls-layers-trigger {
+    background-color: white;
+    margin-bottom: 1rem;
+    z-index: 2;
+  }
+
+  &-controls-layers-btn {
+    background-color: white;
   }
 }
 
