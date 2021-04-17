@@ -57,35 +57,10 @@ export const pageTitleBarBreadcrumb = [
   <span>Instance</span>,
 ];
 const breadcrumbKnobOptions = {
-  none: false,
+  none: undefined,
   breadcrumb: pageTitleBarBreadcrumb,
 };
 const breadcrumbDefaultValue = pageTitleBarBreadcrumb;
-
-export const upperActionButtons = (
-  <div style={{ display: 'flex' }}>
-    <Button
-      renderIcon={Add24}
-      onClick={action('click')}
-      size="field"
-      hasIconOnly
-      iconDescription="Add"
-      kind="ghost"
-      tooltipPosition="bottom"
-      tooltipAlignment="center"
-    />
-    <Button
-      renderIcon={TrashCan24}
-      onClick={action('click')}
-      size="field"
-      hasIconOnly
-      iconDescription="Remove"
-      kind="ghost"
-      tooltipPosition="bottom"
-      tooltipAlignment="center"
-    />
-  </div>
-);
 
 export default {
   title: 'Watson IoT/PageTitleBar',
@@ -123,7 +98,9 @@ export const WithDescription = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       title={text('title', commonPageTitleBarProps.title)}
-      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, false, { display: 'select' })}
+      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, undefined, {
+        display: 'select',
+      })}
       description={commonPageTitleBarProps.description}
       collapsed={boolean('collapse description', false)}
     />
@@ -173,7 +150,9 @@ export const WithEditableTitleBar = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       title={text('title', commonPageTitleBarProps.title)}
-      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, false, { display: 'select' })}
+      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, undefined, {
+        display: 'select',
+      })}
       description={text('description', commonPageTitleBarProps.description)}
       collapsed={boolean('collapse description', false)}
       editable={boolean('editable', true)}
@@ -433,7 +412,9 @@ export const WithJustATitleAndDynamicScrolling = () => (
   <div style={{ marginTop: '10rem', height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 100)}
-      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, false, { display: 'select' })}
+      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, undefined, {
+        display: 'select',
+      })}
       title="testTitle"
       headerMode="DYNAMIC"
     />

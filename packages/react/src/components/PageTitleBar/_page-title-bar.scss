@@ -37,7 +37,7 @@
     grid-row-gap: 0;
     grid-column-gap: 0;
     grid-template:
-      'breadcrumb           actions-condensed   actions-upper' minmax($spacing-03, $spacing-08)
+      'breadcrumb           actions-condensed   actions-upper' minmax($spacing-03, auto)
       'title                actions             actions' $spacing-08
       'description          description         description' auto
       'content              content             content' max-content /
@@ -84,6 +84,10 @@
     .#{$prefix}--btn ~ :not(.#{$prefix}--btn) {
       margin-left: $spacing-05;
       margin-right: $spacing-05;
+    }
+
+    .#{$prefix}--btn + .#{$prefix}--btn--secondary {
+      margin-left: $spacing-05;
     }
 
     transition: opacity $duration--moderate-02;

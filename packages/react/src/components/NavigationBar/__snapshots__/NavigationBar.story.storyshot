@@ -22,35 +22,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     >
       <div
         className="page-title-bar"
+        style={
+          Object {
+            "--header-offset": "0px",
+            "--scroll-transition-progress": 1,
+          }
+        }
       >
         <div
           className="page-title-bar-header"
-          style={
-            Object {
-              "--header-offset": "48px",
-            }
-          }
         >
           <div
-            className="page-title-bar-header-left"
+            className="page-title-bar-breadcrumb-bg"
+          />
+          <div
+            className="page-title-bar-title"
           >
             <div
-              className="page-title-bar-title"
+              className="page-title-bar-title--text"
             >
-              <div
-                className="page-title-bar-title--text"
+              <h2
+                title="Your Devices"
               >
-                <h2>
-                  Your Devices
-                </h2>
-              </div>
+                Your Devices
+              </h2>
             </div>
-            <p
-              className="page-title-bar-description"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
           </div>
+          <p
+            className="page-title-bar-description"
+          >
+            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+          </p>
           <div
             className="page-title-bar-header-right"
           >
@@ -255,35 +257,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     >
       <div
         className="page-title-bar"
+        style={
+          Object {
+            "--header-offset": "0px",
+            "--scroll-transition-progress": 1,
+          }
+        }
       >
         <div
           className="page-title-bar-header"
-          style={
-            Object {
-              "--header-offset": "48px",
-            }
-          }
         >
           <div
-            className="page-title-bar-header-left"
+            className="page-title-bar-breadcrumb-bg"
+          />
+          <div
+            className="page-title-bar-title"
           >
             <div
-              className="page-title-bar-title"
+              className="page-title-bar-title--text"
             >
-              <div
-                className="page-title-bar-title--text"
+              <h2
+                title="Your Devices"
               >
-                <h2>
-                  Your Devices
-                </h2>
-              </div>
+                Your Devices
+              </h2>
             </div>
-            <p
-              className="page-title-bar-description"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
           </div>
+          <p
+            className="page-title-bar-description"
+          >
+            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+          </p>
           <div
             className="page-title-bar-header-right"
           >
@@ -475,35 +479,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     >
       <div
         className="page-title-bar"
+        style={
+          Object {
+            "--header-offset": "0px",
+            "--scroll-transition-progress": 1,
+          }
+        }
       >
         <div
           className="page-title-bar-header"
-          style={
-            Object {
-              "--header-offset": "48px",
-            }
-          }
         >
           <div
-            className="page-title-bar-header-left"
+            className="page-title-bar-breadcrumb-bg"
+          />
+          <div
+            className="page-title-bar-title"
           >
             <div
-              className="page-title-bar-title"
+              className="page-title-bar-title--text"
             >
-              <div
-                className="page-title-bar-title--text"
+              <h2
+                title="Your Devices"
               >
-                <h2>
-                  Your Devices
-                </h2>
-              </div>
+                Your Devices
+              </h2>
             </div>
-            <p
-              className="page-title-bar-description"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
           </div>
+          <p
+            className="page-title-bar-description"
+          >
+            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+          </p>
           <div
             className="page-title-bar-header-right"
           >
@@ -695,35 +701,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     >
       <div
         className="page-title-bar"
+        style={
+          Object {
+            "--header-offset": "0px",
+            "--scroll-transition-progress": 1,
+          }
+        }
       >
         <div
           className="page-title-bar-header"
-          style={
-            Object {
-              "--header-offset": "48px",
-            }
-          }
         >
           <div
-            className="page-title-bar-header-left"
+            className="page-title-bar-breadcrumb-bg"
+          />
+          <div
+            className="page-title-bar-title"
           >
             <div
-              className="page-title-bar-title"
+              className="page-title-bar-title--text"
             >
-              <div
-                className="page-title-bar-title--text"
+              <h2
+                title="Your Devices"
               >
-                <h2>
-                  Your Devices
-                </h2>
-              </div>
+                Your Devices
+              </h2>
             </div>
-            <p
-              className="page-title-bar-description"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
           </div>
+          <p
+            className="page-title-bar-description"
+          >
+            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+          </p>
           <div
             className="page-title-bar-header-right"
           >

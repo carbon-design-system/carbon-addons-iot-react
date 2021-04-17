@@ -4537,7 +4537,6 @@ Map {
       "collapsed": false,
       "content": undefined,
       "description": null,
-      "dynamicTransitionOffset": 48,
       "editable": false,
       "extraContent": undefined,
       "headerMode": "STATIC",
@@ -4548,8 +4547,9 @@ Map {
       "isLoading": false,
       "onEdit": null,
       "rightContent": undefined,
-      "stickyHeaderOffset": 48,
+      "stickyHeaderOffset": 0,
       "tabs": undefined,
+      "upperActions": undefined,
     },
     "propTypes": Object {
       "breadcrumb": Object {
@@ -4581,9 +4581,6 @@ Map {
           ],
         ],
         "type": "oneOfType",
-      },
-      "dynamicTransitionOffset": Object {
-        "type": "number",
       },
       "editable": Object {
         "type": "bool",
@@ -4625,6 +4622,9 @@ Map {
       "tabs": [Function],
       "title": Object {
         "isRequired": true,
+        "type": "node",
+      },
+      "upperActions": Object {
         "type": "node",
       },
     },
