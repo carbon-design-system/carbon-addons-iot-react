@@ -257,6 +257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                       data-testid="Button"
                       disabled={false}
@@ -267,6 +268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cancel
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                       data-testid="Button"
                       disabled={false}
@@ -431,6 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             role="tablist"
                           >
                             <button
+                              aria-pressed={null}
                               className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                               disabled={false}
                               onClick={[Function]}
@@ -462,6 +465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               </svg>
                             </button>
                             <button
+                              aria-pressed={null}
                               className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                               disabled={false}
                               onClick={[Function]}
@@ -507,6 +511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                     >
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--secondary"
                         data-testid="ComposedModal-modal-secondary-button"
                         disabled={false}
@@ -517,6 +522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Cancel
                       </button>
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                         data-testid="ComposedModal-modal-primary-button"
                         disabled={true}
@@ -617,6 +623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 className="bx--action-list"
                               >
                                 <button
+                                  aria-pressed={null}
                                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                                   disabled={false}
                                   onClick={[Function]}
@@ -637,6 +644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               data-testid="table-for-card-Table-table-toolbar-content"
                             >
                               <button
+                                aria-pressed={null}
                                 className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
                                 data-testid="download-button"
                                 disabled={true}
@@ -664,6 +672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 </svg>
                               </button>
                               <button
+                                aria-pressed={null}
                                 className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
                                 data-testid="filter-button"
                                 disabled={true}
@@ -3099,6 +3108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </svg>
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -3109,6 +3119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Cancel
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
@@ -3273,6 +3284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -3304,6 +3316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -3349,6 +3362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--secondary"
                       data-testid="ComposedModal-modal-secondary-button"
                       disabled={false}
@@ -3359,6 +3373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cancel
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                       data-testid="ComposedModal-modal-primary-button"
                       disabled={true}
@@ -4648,6 +4663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             role="tablist"
                           >
                             <button
+                              aria-pressed={null}
                               className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                               disabled={false}
                               onClick={[Function]}
@@ -4679,6 +4695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               </svg>
                             </button>
                             <button
+                              aria-pressed={null}
                               className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                               disabled={false}
                               onClick={[Function]}
@@ -4724,6 +4741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                     >
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--secondary"
                         data-testid="ComposedModal-modal-secondary-button"
                         disabled={false}
@@ -4734,6 +4752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Cancel
                       </button>
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                         data-testid="ComposedModal-modal-primary-button"
                         disabled={true}
@@ -5843,6 +5862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </svg>
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -5853,6 +5873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Cancel
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
@@ -6017,6 +6038,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -6048,6 +6070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -6943,6 +6966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--secondary"
                       data-testid="ComposedModal-modal-secondary-button"
                       disabled={false}
@@ -6953,6 +6977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cancel
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                       data-testid="ComposedModal-modal-primary-button"
                       disabled={true}
@@ -7944,6 +7969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     role="tablist"
                   >
                     <button
+                      aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                       disabled={false}
                       onClick={[Function]}
@@ -7975,6 +8001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                       disabled={false}
                       onClick={[Function]}
@@ -8006,6 +8033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                       disabled={false}
                       onClick={[Function]}
@@ -8041,6 +8069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                       disabled={false}
                       onClick={[Function]}
@@ -8203,6 +8232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </svg>
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -8213,6 +8243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     headerCancelButton
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
@@ -8377,6 +8408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -8408,6 +8440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -9303,6 +9336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--secondary"
                       data-testid="ComposedModal-modal-secondary-button"
                       disabled={false}
@@ -9313,6 +9347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       imageGalleryModalSecondaryButtonLabelText
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                       data-testid="ComposedModal-modal-primary-button"
                       disabled={true}
@@ -10287,6 +10322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       role="tablist"
                     >
                       <button
+                        aria-pressed={null}
                         className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
                         onClick={[Function]}
@@ -10318,6 +10354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </svg>
                       </button>
                       <button
+                        aria-pressed={null}
                         className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
                         onClick={[Function]}
@@ -10349,6 +10386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </svg>
                       </button>
                       <button
+                        aria-pressed={null}
                         className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
                         onClick={[Function]}
@@ -10384,6 +10422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </svg>
                       </button>
                       <button
+                        aria-pressed={null}
                         className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
                         onClick={[Function]}
@@ -10546,6 +10585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                       data-testid="Button"
                       disabled={false}
@@ -10556,6 +10596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cancel
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                       data-testid="Button"
                       disabled={false}
@@ -10720,6 +10761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             role="tablist"
                           >
                             <button
+                              aria-pressed={null}
                               className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                               disabled={false}
                               onClick={[Function]}
@@ -10751,6 +10793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               </svg>
                             </button>
                             <button
+                              aria-pressed={null}
                               className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                               disabled={false}
                               onClick={[Function]}
@@ -10796,6 +10839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                     >
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--secondary"
                         data-testid="ComposedModal-modal-secondary-button"
                         disabled={false}
@@ -10806,6 +10850,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Cancel
                       </button>
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                         data-testid="ComposedModal-modal-primary-button"
                         disabled={true}
@@ -11773,6 +11818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </svg>
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -11783,6 +11829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Cancel
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
@@ -11947,6 +11994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -11978,6 +12026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -12023,6 +12072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--secondary"
                       data-testid="ComposedModal-modal-secondary-button"
                       disabled={false}
@@ -12033,6 +12083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cancel
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                       data-testid="ComposedModal-modal-primary-button"
                       disabled={true}
@@ -13118,6 +13169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </svg>
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -13128,6 +13180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Cancel
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
@@ -13292,6 +13345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -13323,6 +13377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -13368,6 +13423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--secondary"
                       data-testid="ComposedModal-modal-secondary-button"
                       disabled={false}
@@ -13378,6 +13434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cancel
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                       data-testid="ComposedModal-modal-primary-button"
                       disabled={true}
@@ -13478,6 +13535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="bx--action-list"
                             >
                               <button
+                                aria-pressed={null}
                                 className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                                 disabled={false}
                                 onClick={[Function]}
@@ -13498,6 +13556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             data-testid="table-for-card-Table-table-toolbar-content"
                           >
                             <button
+                              aria-pressed={null}
                               className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
                               data-testid="download-button"
                               disabled={true}
@@ -13525,6 +13584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               </svg>
                             </button>
                             <button
+                              aria-pressed={null}
                               className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
                               data-testid="filter-button"
                               disabled={true}
@@ -16005,6 +16065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </svg>
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
@@ -16015,6 +16076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Cancel
                   </button>
                   <button
+                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
@@ -16392,6 +16454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -16423,6 +16486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
+                            aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
@@ -16468,6 +16532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--secondary"
                       data-testid="ComposedModal-modal-secondary-button"
                       disabled={false}
@@ -16478,6 +16543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cancel
                     </button>
                     <button
+                      aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                       data-testid="ComposedModal-modal-primary-button"
                       disabled={true}
@@ -17325,9 +17391,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
           </span>
         </div>
-        <div
-          className="bx--toast-notification__caption"
-        />
       </div>
     </div>
   </div>

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.44...v2.145.0-next.45) (2021-04-16)
+
+
+### Bug Fixes
+
+* **combobox:** fix lint issue ([d055a23](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d055a23afc40d505a2ab32cbcfb9b957a626bdac))
+
+
+
+
+
 # [2.145.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.41...v2.145.0-next.42) (2021-04-15)
 
 **Note:** Version bump only for package carbon-addons-iot-react

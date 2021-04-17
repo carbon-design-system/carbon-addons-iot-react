@@ -11,7 +11,11 @@ import { settings } from '../../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  hotspot: PropTypes.shape({}),
+  hotspot: PropTypes.shape({
+    content: PropTypes.shape({
+      attributes: PropTypes.arrayOf(PropTypes.object),
+    }),
+  }),
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
@@ -92,9 +96,9 @@ const defaultProps = {
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
-  dataItems?.map(({ dataSourceId, dataItemId }) => ({
-    id: dataItemId,
-    text: dataSourceId,
+  dataItems?.map(({ dataSourceId, label }) => ({
+    id: dataSourceId,
+    text: label,
   }));
 
 const HotspotEditorDataSourceTab = ({

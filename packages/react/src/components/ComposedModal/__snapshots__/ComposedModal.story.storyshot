@@ -83,6 +83,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -93,6 +94,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
@@ -307,6 +309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -317,6 +320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             My Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
@@ -635,6 +639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -645,6 +650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
@@ -847,6 +853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -857,6 +864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
@@ -981,6 +989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -991,6 +1000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             My Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
@@ -1225,6 +1235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -1349,6 +1360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -1359,6 +1371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
             data-testid="ComposedModal-modal-primary-button"
             disabled={true}
@@ -1521,6 +1534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
@@ -1531,6 +1545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--danger"
             data-testid="ComposedModal-modal-danger-button"
             disabled={false}

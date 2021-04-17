@@ -83,7 +83,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"
@@ -285,7 +284,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"
@@ -497,7 +495,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"
@@ -753,7 +750,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"

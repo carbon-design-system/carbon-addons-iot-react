@@ -28,12 +28,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
         onKeyDown={[Function]}
       >
         <div
-          aria-expanded={false}
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          aria-owns={null}
           className="bx--list-box__wrapper"
-          role="combobox"
         >
           <label
             className="bx--label"
@@ -43,29 +38,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
             Combobox title
           </label>
           <div
-            aria-label="Choose an item"
             className="bx--combo-box iot--combobox-input bx--list-box"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
             <div
-              aria-haspopup={true}
-              aria-label="open menu"
               className="bx--list-box__field"
-              data-toggle={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              role="button"
-              tabIndex={-1}
-              type="button"
             >
               <input
                 aria-activedescendant={null}
                 aria-autocomplete="list"
                 aria-controls={null}
-                aria-labelledby="downshift-0-label"
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby={null}
                 autoComplete="off"
                 className="bx--text-input"
                 data-testid="combo-box"
@@ -73,20 +59,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                 id="carbon-combobox-example"
                 onBlur={[Function]}
                 onChange={[Function]}
+                onClick={[Function]}
                 onKeyDown={[Function]}
                 placeholder="Filter..."
+                role="combobox"
                 tabIndex="0"
                 type="text"
                 value="Option 1"
               />
-              <div
+              <button
                 aria-label="Clear selected item"
                 className="bx--list-box__selection"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="button"
                 tabIndex={0}
                 title="Clear selected item"
+                type="button"
               >
                 <svg
                   aria-hidden={true}
@@ -102,18 +90,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                     d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                   />
                 </svg>
-              </div>
-              <div
+              </button>
+              <button
+                aria-haspopup={true}
+                aria-label="Open"
                 className="bx--list-box__menu-icon"
+                data-toggle={true}
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseUp={[Function]}
+                role="button"
+                tabIndex="-1"
+                title="Open"
+                type="button"
               >
                 <svg
-                  aria-label="Open menu"
+                  aria-hidden={true}
                   fill="currentColor"
                   focusable="false"
                   height={16}
-                  name="chevron--down"
                   preserveAspectRatio="xMidYMid meet"
-                  role="img"
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -121,12 +120,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                   <path
                     d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                   />
-                  <title>
-                    Open menu
-                  </title>
                 </svg>
-              </div>
+              </button>
             </div>
+            <div
+              aria-label="Choose an item"
+              aria-labelledby={null}
+              className="bx--list-box__menu"
+              id="downshift-0-menu"
+              role="listbox"
+            />
           </div>
           <div
             className="bx--form__helper-text"
@@ -137,6 +140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
         </div>
       </div>
       <button
+        aria-pressed={null}
         className="iot--btn bx--btn bx--btn--primary"
         data-testid="Button"
         disabled={false}
@@ -207,12 +211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
         onKeyDown={[Function]}
       >
         <div
-          aria-expanded={false}
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          aria-owns={null}
           className="bx--list-box__wrapper"
-          role="combobox"
         >
           <label
             className="bx--label"
@@ -222,29 +221,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
             Combobox title
           </label>
           <div
-            aria-label="Choose an item"
             className="bx--combo-box iot--combobox-input bx--list-box"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
             <div
-              aria-haspopup={true}
-              aria-label="open menu"
               className="bx--list-box__field"
-              data-toggle={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              role="button"
-              tabIndex={-1}
-              type="button"
             >
               <input
                 aria-activedescendant={null}
                 aria-autocomplete="list"
                 aria-controls={null}
-                aria-labelledby="downshift-0-label"
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby={null}
                 autoComplete="off"
                 className="bx--text-input bx--text-input--empty"
                 data-testid="combo-box"
@@ -252,24 +242,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                 id="carbon-combobox-example"
                 onBlur={[Function]}
                 onChange={[Function]}
+                onClick={[Function]}
                 onKeyDown={[Function]}
                 placeholder="Filter..."
+                role="combobox"
                 tabIndex="0"
                 type="text"
                 value=""
               />
               
-              <div
+              <button
+                aria-haspopup={true}
+                aria-label="Open"
                 className="bx--list-box__menu-icon"
+                data-toggle={true}
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseUp={[Function]}
+                role="button"
+                tabIndex="-1"
+                title="Open"
+                type="button"
               >
                 <svg
-                  aria-label="Open menu"
+                  aria-hidden={true}
                   fill="currentColor"
                   focusable="false"
                   height={16}
-                  name="chevron--down"
                   preserveAspectRatio="xMidYMid meet"
-                  role="img"
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -277,12 +280,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                   <path
                     d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                   />
-                  <title>
-                    Open menu
-                  </title>
                 </svg>
-              </div>
+              </button>
             </div>
+            <div
+              aria-label="Choose an item"
+              aria-labelledby={null}
+              className="bx--list-box__menu"
+              id="downshift-0-menu"
+              role="listbox"
+            />
           </div>
           <div
             className="bx--form__helper-text"
@@ -348,12 +355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
         onKeyDown={[Function]}
       >
         <div
-          aria-expanded={false}
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          aria-owns={null}
           className="bx--list-box__wrapper"
-          role="combobox"
         >
           <label
             className="bx--label"
@@ -363,29 +365,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
             Combobox title
           </label>
           <div
-            aria-label="Choose an item"
             className="bx--combo-box iot--combobox-input bx--list-box"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
             <div
-              aria-haspopup={true}
-              aria-label="open menu"
               className="bx--list-box__field"
-              data-toggle={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              role="button"
-              tabIndex={-1}
-              type="button"
             >
               <input
                 aria-activedescendant={null}
                 aria-autocomplete="list"
                 aria-controls={null}
-                aria-labelledby="downshift-0-label"
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby={null}
                 autoComplete="off"
                 className="bx--text-input bx--text-input--empty"
                 data-testid="combo-box"
@@ -393,24 +386,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                 id="carbon-combobox-example"
                 onBlur={[Function]}
                 onChange={[Function]}
+                onClick={[Function]}
                 onKeyDown={[Function]}
                 placeholder="Filter..."
+                role="combobox"
                 tabIndex="0"
                 type="text"
                 value=""
               />
               
-              <div
+              <button
+                aria-haspopup={true}
+                aria-label="Open"
                 className="bx--list-box__menu-icon"
+                data-toggle={true}
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseUp={[Function]}
+                role="button"
+                tabIndex="-1"
+                title="Open"
+                type="button"
               >
                 <svg
-                  aria-label="Open menu"
+                  aria-hidden={true}
                   fill="currentColor"
                   focusable="false"
                   height={16}
-                  name="chevron--down"
                   preserveAspectRatio="xMidYMid meet"
-                  role="img"
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -418,12 +424,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                   <path
                     d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                   />
-                  <title>
-                    Open menu
-                  </title>
                 </svg>
-              </div>
+              </button>
             </div>
+            <div
+              aria-label="Choose an item"
+              aria-labelledby={null}
+              className="bx--list-box__menu"
+              id="downshift-0-menu"
+              role="listbox"
+            />
           </div>
           <div
             className="bx--form__helper-text"
@@ -489,12 +499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
         onKeyDown={[Function]}
       >
         <div
-          aria-expanded={false}
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          aria-owns={null}
           className="bx--list-box__wrapper"
-          role="combobox"
         >
           <label
             className="bx--label"
@@ -504,29 +509,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
             Combobox title
           </label>
           <div
-            aria-label="Choose an item"
             className="bx--combo-box iot--combobox-input bx--list-box"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
             <div
-              aria-haspopup={true}
-              aria-label="open menu"
               className="bx--list-box__field"
-              data-toggle={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              role="button"
-              tabIndex={-1}
-              type="button"
             >
               <input
                 aria-activedescendant={null}
                 aria-autocomplete="list"
                 aria-controls={null}
-                aria-labelledby="downshift-0-label"
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby={null}
                 autoComplete="off"
                 className="bx--text-input bx--text-input--empty"
                 data-testid="combo-box"
@@ -534,24 +530,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                 id="carbon-combobox-example"
                 onBlur={[Function]}
                 onChange={[Function]}
+                onClick={[Function]}
                 onKeyDown={[Function]}
                 placeholder="Filter..."
+                role="combobox"
                 tabIndex="0"
                 type="text"
                 value=""
               />
               
-              <div
+              <button
+                aria-haspopup={true}
+                aria-label="Open"
                 className="bx--list-box__menu-icon"
+                data-toggle={true}
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseUp={[Function]}
+                role="button"
+                tabIndex="-1"
+                title="Open"
+                type="button"
               >
                 <svg
-                  aria-label="Open menu"
+                  aria-hidden={true}
                   fill="currentColor"
                   focusable="false"
                   height={16}
-                  name="chevron--down"
                   preserveAspectRatio="xMidYMid meet"
-                  role="img"
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -559,12 +568,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                   <path
                     d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                   />
-                  <title>
-                    Open menu
-                  </title>
                 </svg>
-              </div>
+              </button>
             </div>
+            <div
+              aria-label="Choose an item"
+              aria-labelledby={null}
+              className="bx--list-box__menu"
+              id="downshift-0-menu"
+              role="listbox"
+            />
           </div>
           <div
             className="bx--form__helper-text"
@@ -622,12 +635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
       onKeyDown={[Function]}
     >
       <div
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-labelledby="downshift-0-label"
-        aria-owns={null}
         className="bx--list-box__wrapper"
-        role="combobox"
       >
         <label
           className="bx--label"
@@ -637,29 +645,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
           Combobox title
         </label>
         <div
-          aria-label="Choose an item"
           className="bx--combo-box iot--combobox-input bx--list-box"
           onClick={[Function]}
           onKeyDown={[Function]}
         >
           <div
-            aria-haspopup={true}
-            aria-label="open menu"
             className="bx--list-box__field"
-            data-toggle={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            role="button"
-            tabIndex={-1}
-            type="button"
           >
             <input
               aria-activedescendant={null}
               aria-autocomplete="list"
               aria-controls={null}
-              aria-labelledby="downshift-0-label"
+              aria-expanded={false}
+              aria-haspopup="listbox"
+              aria-labelledby={null}
               autoComplete="off"
               className="bx--text-input"
               data-testid="combo-box"
@@ -667,20 +666,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
               id="carbon-combobox-example"
               onBlur={[Function]}
               onChange={[Function]}
+              onClick={[Function]}
               onKeyDown={[Function]}
               placeholder="Filter..."
+              role="combobox"
               tabIndex="0"
               type="text"
               value="Option 1"
             />
-            <div
+            <button
               aria-label="Clear selected item"
               className="bx--list-box__selection"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
               title="Clear selected item"
+              type="button"
             >
               <svg
                 aria-hidden={true}
@@ -696,18 +697,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                   d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                 />
               </svg>
-            </div>
-            <div
+            </button>
+            <button
+              aria-haspopup={true}
+              aria-label="Open"
               className="bx--list-box__menu-icon"
+              data-toggle={true}
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseUp={[Function]}
+              role="button"
+              tabIndex="-1"
+              title="Open"
+              type="button"
             >
               <svg
-                aria-label="Open menu"
+                aria-hidden={true}
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                name="chevron--down"
                 preserveAspectRatio="xMidYMid meet"
-                role="img"
                 viewBox="0 0 16 16"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
@@ -715,12 +727,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                 <path
                   d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                 />
-                <title>
-                  Open menu
-                </title>
               </svg>
-            </div>
+            </button>
           </div>
+          <div
+            aria-label="Choose an item"
+            aria-labelledby={null}
+            className="bx--list-box__menu"
+            id="downshift-0-menu"
+            role="listbox"
+          />
         </div>
         <div
           className="bx--form__helper-text"
@@ -731,6 +747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
       </div>
     </div>
     <button
+      aria-pressed={null}
       className="iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}
@@ -800,12 +817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
         onKeyDown={[Function]}
       >
         <div
-          aria-expanded={false}
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          aria-owns={null}
           className="bx--list-box__wrapper"
-          role="combobox"
         >
           <label
             className="bx--label"
@@ -815,29 +827,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
             Combobox title
           </label>
           <div
-            aria-label="Choose an item"
             className="bx--combo-box iot--combobox-input bx--list-box"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
             <div
-              aria-haspopup={true}
-              aria-label="open menu"
               className="bx--list-box__field"
-              data-toggle={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              role="button"
-              tabIndex={-1}
-              type="button"
             >
               <input
                 aria-activedescendant={null}
                 aria-autocomplete="list"
                 aria-controls={null}
-                aria-labelledby="downshift-0-label"
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby={null}
                 autoComplete="off"
                 className="bx--text-input bx--text-input--empty"
                 data-testid="combo-box"
@@ -845,24 +848,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                 id="carbon-combobox-example"
                 onBlur={[Function]}
                 onChange={[Function]}
+                onClick={[Function]}
                 onKeyDown={[Function]}
                 placeholder="Filter..."
+                role="combobox"
                 tabIndex="0"
                 type="text"
                 value=""
               />
               
-              <div
+              <button
+                aria-haspopup={true}
+                aria-label="Open"
                 className="bx--list-box__menu-icon"
+                data-toggle={true}
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseUp={[Function]}
+                role="button"
+                tabIndex="-1"
+                title="Open"
+                type="button"
               >
                 <svg
-                  aria-label="Open menu"
+                  aria-hidden={true}
                   fill="currentColor"
                   focusable="false"
                   height={16}
-                  name="chevron--down"
                   preserveAspectRatio="xMidYMid meet"
-                  role="img"
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -870,12 +886,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Combo
                   <path
                     d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                   />
-                  <title>
-                    Open menu
-                  </title>
                 </svg>
-              </div>
+              </button>
             </div>
+            <div
+              aria-label="Choose an item"
+              aria-labelledby={null}
+              className="bx--list-box__menu"
+              id="downshift-0-menu"
+              role="listbox"
+            />
           </div>
           <div
             className="bx--form__helper-text"

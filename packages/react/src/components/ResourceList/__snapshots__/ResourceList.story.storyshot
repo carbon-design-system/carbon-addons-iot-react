@@ -232,6 +232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
             role="presentation"
           >
             <button
+              aria-pressed={null}
               className="bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -280,6 +281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
             role="presentation"
           >
             <button
+              aria-pressed={null}
               className="bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -328,6 +330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
             role="presentation"
           >
             <button
+              aria-pressed={null}
               className="bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
