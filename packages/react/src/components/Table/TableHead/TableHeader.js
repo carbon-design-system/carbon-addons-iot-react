@@ -63,6 +63,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     translateWithId: t,
     thStyle,
     initialWidth,
+    testID,
     ...rest
   },
   ref
@@ -72,6 +73,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       // eslint-disable-next-line react/jsx-filename-extension
       <th
         {...rest}
+        data-testid={testID}
         width={initialWidth}
         className={headerClassName}
         scope={scope}
@@ -98,6 +100,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       aria-sort={ariaSort}
       ref={ref}
       style={thStyle}
+      data-testid={testID}
     >
       <button className={className} onClick={onClick} {...rest}>
         <span className={`${prefix}--table-header-label`}>{children}</span>
@@ -179,6 +182,8 @@ TableHeader.propTypes = {
 
   // eslint-disable-next-line react/forbid-prop-types
   thStyle: PropTypes.object,
+
+  testID: PropTypes.string,
 };
 
 /* instanbul ignore next: ignoring the default onCLick */
@@ -193,6 +198,7 @@ TableHeader.defaultProps = {
   translateWithId,
   thStyle: {},
   initialWidth: undefined,
+  testID: '',
 };
 
 TableHeader.translationKeys = Object.values(translationKeys);

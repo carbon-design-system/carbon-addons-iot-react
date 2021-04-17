@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { ContentSwitcher, Switch } from 'carbon-components-react';
 import styled from 'styled-components';
 
-// import { COLORS, PADDING } from '../../styles/styles';
-
 const StyledContentSwitcher = styled(ContentSwitcher)`
   && {
     height: auto;

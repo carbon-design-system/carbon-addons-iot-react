@@ -1,30 +1,18 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import styled from 'styled-components';
 import { text } from '@storybook/addon-knobs';
 import NotificationOn from '@carbon/icons-react/lib/notification/16';
 import HeaderHelp from '@carbon/icons-react/lib/help/16';
 import Avatar from '@carbon/icons-react/lib/user--avatar/16';
 
+import { settings } from '../../constants/Settings';
 import { Tag } from '../Tag';
 
 import Header from './Header';
 
+const { iotPrefix } = settings;
+
 React.Fragment = ({ children }) => children;
-
-const StyledHeader = styled(Header)`
-   {
-    .bx--text-truncate--end span {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-    }
-
-    .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
-      z-index: 6001;
-    }
-  }
-`;
 
 const HeaderProps = {
   user: 'JohnDoe@ibm.com',
@@ -171,8 +159,9 @@ export default {
 
 export const HeaderActionButtonsWithDropdowns = () => (
   <div style={{ width: '100%', height: '100vh' }}>
-    <StyledHeader
+    <Header
       {...HeaderProps}
+      className={`${iotPrefix}--header--story-test-class`}
       headerPanel={headerPanel}
       appSwitcherLabel={text('AppSwitcher label', 'AppSwitcher')}
     />
@@ -186,7 +175,7 @@ HeaderActionButtonsWithDropdowns.story = {
 
 export const HeaderSubmenu = () => (
   <div style={{ width: '100%', height: '100vh' }}>
-    <StyledHeader {...HeaderMenuProps} />
+    <Header {...HeaderMenuProps} className={`${iotPrefix}--header--story-test-class`} />
   </div>
 );
 
@@ -195,8 +184,9 @@ HeaderSubmenu.story = {
 };
 
 export const HeaderNoSubmenu = () => (
-  <StyledHeader
+  <Header
     {...HeaderProps}
+    className={`${iotPrefix}--header--story-test-class`}
     actionItems={[
       {
         label: 'user',
@@ -213,7 +203,7 @@ HeaderNoSubmenu.story = {
 
 export const HeaderSubtitle = () => (
   <div style={{ width: '100%', height: '100vh' }}>
-    <StyledHeader {...HeaderMenuProps} subtitle="Monitor" />
+    <Header {...HeaderMenuProps} subtitle="Monitor" />
   </div>
 );
 
@@ -223,8 +213,9 @@ HeaderSubtitle.story = {
 
 export const HeaderComponentSubtitle = () => (
   <div style={{ width: '100%', height: '100vh' }}>
-    <StyledHeader
+    <Header
       {...HeaderMenuProps}
+      className={`${iotPrefix}--header--story-test-class`}
       subtitle={
         <div>
           {'Monitor'}

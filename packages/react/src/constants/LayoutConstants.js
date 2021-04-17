@@ -172,7 +172,7 @@ export const CARD_DIMENSIONS = {
     xl: { w: 16, h: 1 },
     lg: { w: 16, h: 1 },
     md: { w: 8, h: 1 },
-    sm: { w: 4, h: 2 },
+    sm: { w: 8, h: 2 },
     xs: { w: 4, h: 1 },
   },
   MEDIUMTHIN: {
