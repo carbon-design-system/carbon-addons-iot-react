@@ -66,7 +66,6 @@ describe('PageTitleBar', () => {
         title={commonPageTitleBarProps.title}
         description={commonPageTitleBarProps.description}
         breadcrumb={pageTitleBarBreadcrumb}
-        collapsed
         content={
           <div>
             <h3>Some content for the page</h3>

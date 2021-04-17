@@ -694,13 +694,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               >
                 A cool PageWizard!
               </h2>
+              <div
+                className="bx--tooltip__label"
+                id="tooltip"
+              >
+                
+                <div
+                  aria-describedby={null}
+                  aria-label="More information"
+                  className="bx--tooltip__trigger"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <svg
+                    aria-hidden={true}
+                    description={null}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    role={null}
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
+                    />
+                    <path
+                      d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p
-            className="page-title-bar-description"
-          >
-            The description from the PageTitleBar
-          </p>
           <div
             className="page-title-bar-header-right"
           />
@@ -1082,13 +1117,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               >
                 A cool PageWizard!
               </h2>
+              <div
+                className="bx--tooltip__label"
+                id="tooltip"
+              >
+                
+                <div
+                  aria-describedby={null}
+                  aria-label="More information"
+                  className="bx--tooltip__trigger"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <svg
+                    aria-hidden={true}
+                    description={null}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    role={null}
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
+                    />
+                    <path
+                      d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p
-            className="page-title-bar-description"
-          >
-            The description from the PageTitleBar
-          </p>
           <div
             className="page-title-bar-header-right"
           />
@@ -1520,13 +1590,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               >
                 A cool PageWizard!
               </h2>
+              <div
+                className="bx--tooltip__label"
+                id="tooltip"
+              >
+                
+                <div
+                  aria-describedby={null}
+                  aria-label="More information"
+                  className="bx--tooltip__trigger"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <svg
+                    aria-hidden={true}
+                    description={null}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    role={null}
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
+                    />
+                    <path
+                      d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p
-            className="page-title-bar-description"
-          >
-            The description from the PageTitleBar
-          </p>
           <div
             className="page-title-bar-header-right"
           />
@@ -2337,13 +2442,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               >
                 A cool PageWizard!
               </h2>
+              <div
+                className="bx--tooltip__label"
+                id="tooltip"
+              >
+                
+                <div
+                  aria-describedby={null}
+                  aria-label="More information"
+                  className="bx--tooltip__trigger"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <svg
+                    aria-hidden={true}
+                    description={null}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    role={null}
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
+                    />
+                    <path
+                      d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p
-            className="page-title-bar-description"
-          >
-            The description from the PageTitleBar
-          </p>
           <div
             className="page-title-bar-header-right"
           />
@@ -3335,13 +3475,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               >
                 A cool PageWizard!
               </h2>
+              <div
+                className="bx--tooltip__label"
+                id="tooltip"
+              >
+                
+                <div
+                  aria-describedby={null}
+                  aria-label="More information"
+                  className="bx--tooltip__trigger"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <svg
+                    aria-hidden={true}
+                    description={null}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    role={null}
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
+                    />
+                    <path
+                      d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p
-            className="page-title-bar-description"
-          >
-            The description from the PageTitleBar
-          </p>
           <div
             className="page-title-bar-header-right"
           />

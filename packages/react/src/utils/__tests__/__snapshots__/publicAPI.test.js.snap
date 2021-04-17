@@ -4534,7 +4534,7 @@ Map {
     "defaultProps": Object {
       "breadcrumb": null,
       "className": null,
-      "collapsed": false,
+      "collapsed": undefined,
       "content": undefined,
       "description": null,
       "editable": false,

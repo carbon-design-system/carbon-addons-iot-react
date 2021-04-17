@@ -67,7 +67,7 @@ const defaultProps = {
   extraContent: undefined,
   upperActions: undefined,
   breadcrumb: null,
-  collapsed: false,
+  collapsed: undefined,
   editable: false,
   onEdit: null,
   i18n: {
@@ -159,7 +159,7 @@ const PageTitleBar = ({
   const titleActions = useMemo(
     () => (
       <>
-        {description && collapsed ? (
+        {description && (collapsed || titleBarContent)? (
           <Tooltip
             tabIndex={0}
             triggerText=""
@@ -186,7 +186,7 @@ const PageTitleBar = ({
         ) : null}
       </>
     ),
-    [collapsed, description, editIconDescription, editable, onEdit, tooltipIconDescription]
+    [collapsed, description, titleBarContent, editIconDescription, editable, onEdit, tooltipIconDescription]
   );
 
   /* We needs the tabs to render outside the header so the tab stickiness will push away the header stickiness naturally with the scroll */
@@ -251,7 +251,7 @@ const PageTitleBar = ({
                 {titleActions}
               </div>
             </div>
-            {description && !collapsed ? (
+            {description && !collapsed && !titleBarContent? (
               <p className="page-title-bar-description">{description}</p>
             ) : null}
             <div className="page-title-bar-header-right">{extraContent || rightContent}</div>
