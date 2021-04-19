@@ -2,6 +2,7 @@ import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from '
 import PropTypes from 'prop-types';
 import { unstable_ContextMenu as ContextMenu } from 'carbon-components-react';
 import { ChevronDown16, ChevronUp16 } from '@carbon/icons-react';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 
@@ -156,7 +157,11 @@ const MenuButton = ({
   const ButtonComponent =
     typeof onPrimaryActionClick === 'function' && label ? SplitMenuButton : SingleMenuButton;
   return (
-    <div className={`${iotPrefix}--menu-button`}>
+    <div
+      className={classnames(`${iotPrefix}--menu-button`, {
+        [`${iotPrefix}--menu-button--open`]: isMenuOpen,
+      })}
+    >
       <ButtonComponent
         ref={buttonRef}
         onPrimaryActionClick={handlePrimaryClick}

@@ -1,8 +1,17 @@
 @import '~carbon-components/scss/components/context-menu/context-menu';
 @import '../../globals/vars';
 
-.#{$iot-prefix}--menu-button__primary + .#{$iot-prefix}--menu-button__secondary {
-  border-left: 1px solid $ui-01;
+.#{$iot-prefix}--menu-button {
+  .#{$iot-prefix}--menu-button__primary + .#{$iot-prefix}--menu-button__secondary {
+    border-left: 1px solid $ui-01;
+  }
+
+  &--open {
+    .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only {
+      background-color: $ui-01;
+      @include box-shadow;
+    }
+  }
 }
 
 html[dir='rtl'] .#{$iot-prefix}--menu-button {
