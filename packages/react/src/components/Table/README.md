@@ -13,6 +13,7 @@
 - [Filtering](#filtering)
   - [Simple Filtering](#simple-filtering)
   - [☢️ Advanced Filtering Experimental](#%EF%B8%8F-advanced-filtering-experimental)
+- [Pagination](#pagination)
 - [Batch actions](#batch-actions)
 - [Props](#props)
   - [Column Prop](#column-prop)
@@ -625,6 +626,33 @@ Advanced filtering is experimental and may be subject to change, so it's usage i
         advancedFilterFlyoutOpen: true
       }
     }}
+/>
+```
+
+## Pagination
+
+Pagination is controlled through the `options.hasPagingation` prop combined with the `view.pagination` prop. Pagination has one callback event for onChangePage that is fired when the page or the number of items per page changes.
+
+```jsx
+<Table
+  actions={{
+    pagination: {
+      onChangePage: ({ page, pageSize }) => {},
+    },
+  }}
+  options={{
+    hasPagination: true,
+  }}
+  view={{
+    pagination: {
+      isItemPerPageHidden: false,
+      maxPages: 100,
+      page: 1,
+      pageSize: 10,
+      pageSizes: [10, 20, 30],
+      totalItems: undefined,
+    },
+  }}
 />
 ```
 
