@@ -38,6 +38,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-header--btn-container"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 data-testid="Button"
                 disabled={false}
@@ -869,6 +870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
             className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="ComposedModal-modal-secondary-button"
               disabled={false}
@@ -879,6 +881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               Cancel
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="ComposedModal-modal-primary-button"
               disabled={false}

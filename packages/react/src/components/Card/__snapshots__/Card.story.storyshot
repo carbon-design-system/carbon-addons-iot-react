@@ -96,6 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -255,6 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -547,14 +549,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       >
         <div
           className="iot--table-container bx--data-table-container"
+          data-testid="my table-table-container"
         >
           <section
             aria-label="data table toolbar"
             className="bx--table-toolbar"
+            data-testid="my table-table-toolbar"
           >
             <div
               aria-hidden={true}
               className="bx--batch-actions iot--table-batch-actions"
+              data-testID="my table-table-toolbar-batch-actions"
             >
               <div
                 className="bx--batch-summary"
@@ -571,6 +576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 className="bx--action-list"
               >
                 <button
+                  aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
                   onClick={[Function]}
@@ -588,6 +594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             </label>
             <div
               className="bx--toolbar-content iot--table-toolbar-content"
+              data-testid="my table-table-toolbar-content"
             >
               <div
                 className="iot--card--toolbar"
@@ -637,6 +644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   </button>
                 </div>
                 <button
+                  aria-pressed={null}
                   className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
                   disabled={false}
                   onClick={[Function]}
@@ -676,9 +684,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
+                data-testid="my table"
                 title={null}
               >
                 <thead
+                  data-testid="my table-table-head"
                   onMouseMove={null}
                   onMouseUp={null}
                 >
@@ -688,6 +698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                       className="table-header-label-start iot--table-head--table-header"
                       data-column="value1"
                       data-floating-menu-container={true}
+                      data-testid="my table-table-head-column-value1"
                       id="column-value1"
                       scope="col"
                       style={
@@ -712,6 +723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                       className="table-header-label-start iot--table-head--table-header"
                       data-column="timestamp"
                       data-floating-menu-container={true}
+                      data-testid="my table-table-head-column-timestamp"
                       id="column-timestamp"
                       scope="col"
                       style={
@@ -735,6 +747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 </thead>
                 <tbody
                   aria-live="polite"
+                  data-testID="my table-table-body"
                 >
                   <tr
                     className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
@@ -993,6 +1006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -1108,6 +1122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -2372,6 +2387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}

@@ -841,7 +841,7 @@ describe('ImageHotspots', () => {
             height: 20,
             type: 'text',
             content: {
-              title: '',
+              title: 'Test Title',
             },
           },
         ]}
@@ -854,14 +854,15 @@ describe('ImageHotspots', () => {
         isEditable
       />
     );
+
     const hotspot = screen.getByTestId('hotspot-10-20');
-    const editableHotspotTitle = screen.getByTestId('hotspot-content-10-20-title-test');
     expect(hotspot).toBeVisible();
     userEvent.click(hotspot);
     const hotspotTitle = within(hotspot).getByTitle('Click to edit label');
     expect(hotspotTitle).toBeVisible();
     fireEvent.focus(hotspotTitle);
     userEvent.click(hotspotTitle);
+    const editableHotspotTitle = within(hotspot).getByText('Test Title');
     expect(editableHotspotTitle).toBeVisible();
   });
 });

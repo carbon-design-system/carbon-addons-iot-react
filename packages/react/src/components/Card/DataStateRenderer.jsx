@@ -1,8 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
-import { Tooltip } from 'carbon-components-react';
 import { ErrorFilled24, WarningFilled24 } from '@carbon/icons-react';
 
+import { Tooltip } from '../Tooltip';
 import { settings } from '../../constants/Settings';
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, CARD_CONTENT_PADDING, CARD_DATA_STATE } from '../../constants/LayoutConstants';
@@ -35,6 +35,7 @@ const DataStateRenderer = ({ dataState, size, id }) => {
     return (
       <Tooltip
         showIcon={false}
+        useAutoPositioning
         triggerText={element}
         triggerId={triggerId}
         tooltipId={`${triggerId}-tooltip`}
