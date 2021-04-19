@@ -30,7 +30,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             My applications
           </p>
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--tertiary"
             data-testid="suite-header-app-switcher--all-applications"
             disabled={false}
@@ -151,7 +150,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             My applications
           </p>
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--tertiary"
             data-testid="suite-header-app-switcher--all-applications"
             disabled={false}
@@ -274,7 +272,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             My applications
           </p>
           <button
-            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--tertiary"
             data-testid="suite-header-app-switcher--all-applications"
             disabled={false}

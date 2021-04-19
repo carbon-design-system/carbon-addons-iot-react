@@ -54,7 +54,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="page-title-bar-header-right"
             >
               <button
-                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -386,7 +385,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -397,7 +395,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Cancel
               </button>
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -488,7 +485,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="page-title-bar-header-right"
             >
               <button
-                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -795,7 +791,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -806,7 +801,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Back
               </button>
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -897,7 +891,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="page-title-bar-header-right"
             >
               <button
-                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -1203,7 +1196,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -1214,7 +1206,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Back
               </button>
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -1305,7 +1296,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="page-title-bar-header-right"
             >
               <button
-                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -1628,7 +1618,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -1639,7 +1628,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Cancel
               </button>
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -1730,7 +1718,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="page-title-bar-header-right"
             >
               <button
-                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -2037,7 +2024,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -2048,7 +2034,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Back
               </button>
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -2139,7 +2124,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="page-title-bar-header-right"
             >
               <button
-                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -2521,7 +2505,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -2532,7 +2515,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Cancel
               </button>
               <button
-                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}

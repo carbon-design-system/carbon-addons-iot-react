@@ -244,7 +244,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   </svg>
                 </button>
                 <button
-                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--primary"
                   data-testid="Button"
                   disabled={false}
@@ -385,7 +384,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             hidden={false}
             role="tabpanel"
             selected={true}
-            tabIndex={0}
           >
             <div
               style={
@@ -402,7 +400,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             hidden={true}
             role="tabpanel"
             selected={false}
-            tabIndex={0}
           >
             <div>
               Content for second tab.
@@ -413,7 +410,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             hidden={true}
             role="tabpanel"
             selected={false}
-            tabIndex={0}
           >
             <div>
               Content for third tab.
@@ -953,7 +949,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             hidden={false}
             role="tabpanel"
             selected={true}
-            tabIndex={0}
           >
             <div
               style={
@@ -970,7 +965,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             hidden={true}
             role="tabpanel"
             selected={false}
-            tabIndex={0}
           >
             <div>
               Content for second tab.
@@ -981,7 +975,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             hidden={true}
             role="tabpanel"
             selected={false}
-            tabIndex={0}
           >
             <div>
               Content for third tab.
@@ -1452,7 +1445,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   </svg>
                 </button>
                 <button
-                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                   data-testid="Button"
                   disabled={false}
@@ -1593,7 +1585,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             hidden={false}
             role="tabpanel"
             selected={true}
-            tabIndex={0}
           >
             <div>
               Content for first tab.
@@ -1604,7 +1595,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             hidden={true}
             role="tabpanel"
             selected={false}
-            tabIndex={0}
           >
             <div>
               Content for second tab.
@@ -1615,7 +1605,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             hidden={true}
             role="tabpanel"
             selected={false}
-            tabIndex={0}
           >
             <div>
               Content for third tab.
@@ -1760,7 +1749,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                  yesterday
               </span>
               <button
-                aria-pressed={null}
                 className="some-right-content iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
