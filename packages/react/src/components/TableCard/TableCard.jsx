@@ -361,6 +361,13 @@ const TableCard = ({
 
   const newColumns = thresholds ? columnsUpdated : columnsWithFormattedLinks;
 
+  const filteredTimestampColumns = useMemo(
+    () =>
+      columns
+        .map((column) => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
+        .filter((i) => !isNil(i)),
+    [columns]
+  );
   const columnsToRender = useMemo(
     () =>
       newColumns
@@ -373,11 +380,24 @@ const TableCard = ({
           filter: i.filter
             ? i.filter
             : { placeholderText: mergedI18n.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
+          renderDataFunction: i.renderDataFunction // use the default render function of the column
+            ? i.renderDataFunction
+            : (
+                { value } // default render function is to handle timestamp
+              ) =>
+                // if it's a timestamp column type make sure to format it
+                filteredTimestampColumns.includes(i.dataSourceId) && !isEditable
+                  ? moment(value).format('L HH:mm')
+                  : isNil(value)
+                  ? ''
+                  : value.toString(),
         }))
         .concat(hasActionColumn ? actionColumn : []),
     [
       actionColumn,
+      filteredTimestampColumns,
       hasActionColumn,
+      isEditable,
       mergedI18n.defaultFilterStringPlaceholdText,
       newColumns,
       newSize,
@@ -395,14 +415,6 @@ const TableCard = ({
         return { columnId, isHidden };
       }),
     [columnsToRender, newSize]
-  );
-
-  const filteredTimestampColumns = useMemo(
-    () =>
-      columns
-        .map((column) => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
-        .filter((i) => !isNil(i)),
-    [columns]
   );
 
   const filteredPrecisionColumns = useMemo(
@@ -429,25 +441,11 @@ const TableCard = ({
     () =>
       isEditable
         ? generateTableSampleValues(id, columns)
-        : hasActionColumn ||
-          filteredTimestampColumns.length ||
-          filteredPrecisionColumns.length ||
-          thresholds
+        : hasActionColumn || filteredPrecisionColumns.length || thresholds
         ? tableData.map((i) => {
             // if has custom action
             const action = hasActionColumn
               ? { actionColumn: JSON.stringify(i.actions || []) }
-              : null;
-
-            // if has column with timestamp
-            const timestampUpdated = filteredTimestampColumns.length
-              ? Object.keys(i.values)
-                  .map((value) =>
-                    filteredTimestampColumns.includes(value)
-                      ? { [value]: moment(i.values[value]).format('L HH:mm') }
-                      : null
-                  )
-                  .filter((v) => !isNil(v))[0]
               : null;
 
             const matchingThresholds = thresholds
@@ -490,7 +488,6 @@ const TableCard = ({
                 ...action,
                 ...i.values,
                 ...action,
-                ...timestampUpdated,
                 ...precisionUpdated,
               },
               isSelectable: false,
@@ -502,7 +499,6 @@ const TableCard = ({
       id,
       columns,
       hasActionColumn,
-      filteredTimestampColumns,
       filteredPrecisionColumns,
       thresholds,
       tableData,
