@@ -1588,7 +1588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         data-testID="table-for-card-tableCard-table-body"
                       >
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                           onClick={[Function]}
                         >
                           <td
@@ -1653,7 +1653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                           onClick={[Function]}
                         >
                           <td
@@ -1718,7 +1718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                           onClick={[Function]}
                         >
                           <td
@@ -1783,7 +1783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                           onClick={[Function]}
                         >
                           <td
@@ -1848,7 +1848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                           onClick={[Function]}
                         >
                           <td
@@ -1913,7 +1913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                           onClick={[Function]}
                         >
                           <td
@@ -1978,7 +1978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                           onClick={[Function]}
                         >
                           <td
@@ -2043,7 +2043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                           onClick={[Function]}
                         >
                           <td
@@ -2108,7 +2108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                           onClick={[Function]}
                         >
                           <td
@@ -2173,7 +2173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                           onClick={[Function]}
                         >
                           <td
