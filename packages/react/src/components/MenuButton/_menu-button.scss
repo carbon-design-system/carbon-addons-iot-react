@@ -4,3 +4,16 @@
 .#{$iot-prefix}--menu-button__primary + .#{$iot-prefix}--menu-button__secondary {
   border-left: 1px solid $ui-01;
 }
+
+html[dir='rtl'] .#{$iot-prefix}--menu-button {
+  .#{$prefix}--context-menu-option__icon {
+    margin-right: 0;
+    margin-left: $spacing-03;
+  }
+
+  .#{$prefix}--context-menu-option__info {
+    margin-left: 0;
+    margin-right: $spacing-05;
+    transform: rotate(180deg);
+  }
+}

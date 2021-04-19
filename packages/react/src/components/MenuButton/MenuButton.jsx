@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 import { unstable_ContextMenu as ContextMenu } from 'carbon-components-react';
 import { ChevronDown16, ChevronUp16 } from '@carbon/icons-react';
 
+import { settings } from '../../constants/Settings';
+
 import { SplitMenuButton } from './SplitMenuButton';
 import { SingleMenuButton } from './SingleMenuButton';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   testID: PropTypes.string,
@@ -84,16 +88,24 @@ const MenuButton = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const buttonRef = useRef(null);
-  useLayoutEffect(() => {
-    /* istanbul ignore else */
+  const handleResize = useCallback(() => {
     if (buttonRef.current) {
-      const { x, y, height } = buttonRef.current.getBoundingClientRect();
+      const { x, y, height, width } = buttonRef.current.getBoundingClientRect();
       setPosition({
-        x,
+        x: document.dir === 'rtl' ? x + width - 1 : x,
         y: y + height,
       });
     }
   }, []);
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [handleResize]);
+
+  useLayoutEffect(() => {
+    handleResize();
+  }, [handleResize]);
 
   const handlePrimaryClick = useCallback(
     (e) => {
@@ -144,7 +156,7 @@ const MenuButton = ({
   const ButtonComponent =
     typeof onPrimaryActionClick === 'function' && label ? SplitMenuButton : SingleMenuButton;
   return (
-    <>
+    <div className={`${iotPrefix}--menu-button`}>
       <ButtonComponent
         ref={buttonRef}
         onPrimaryActionClick={handlePrimaryClick}
@@ -157,7 +169,7 @@ const MenuButton = ({
       <ContextMenu open={isMenuOpen} {...position}>
         {contextMenuItems}
       </ContextMenu>
-    </>
+    </div>
   );
 };
 
