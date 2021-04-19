@@ -205,7 +205,8 @@ const PageTitleBar = ({
 
      We also want sticky mode to render outside so we can sticky the entire header element
   */
-  const hasTabs = titleBarContent && titleBarContent.type.name === 'Tabs';
+
+  const hasTabs = titleBarContent && titleBarContent.type === Tabs;
   const renderContentOutside =
     (hasTabs && headerMode === HEADER_MODES.DYNAMIC) || headerMode === HEADER_MODES.STICKY;
 
