@@ -189,10 +189,8 @@ describe('SideNav', () => {
       links: links2,
       'aria-label': 'Side navigation',
     };
-    const wrapper = mount(<SideNav {...mockProps} />);
-    expect(render(wrapper.find('ul').first().childAt(2)).children().first()[0].name).not.toEqual(
-      'button'
-    );
+    testLibraryRender(<SideNav {...mockProps} />);
+    expect(screen.queryByRole('button')).toBeNull();
   });
 
   it('disabled item should not render', () => {

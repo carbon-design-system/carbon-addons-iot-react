@@ -229,6 +229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--hotspot-editor-tooltip-tab__delete-button-container"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
             data-testid="Button"
             disabled={false}
@@ -640,6 +641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--hotspot-editor-tooltip-tab__delete-button-container"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
             data-testid="Button"
             disabled={false}

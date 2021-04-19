@@ -100,7 +100,10 @@ export const usePopoverPositioning = ({
   const getAdjustedOffset = React.useCallback(
     (tooltipElement, flyoutDirection, buttonElement) => {
       const tooltipRect = tooltipElement.getBoundingClientRect();
-      const buttonRect = buttonElement.parentNode.getBoundingClientRect();
+      const buttonRect = flyoutAlignment
+        ? buttonElement.parentNode.getBoundingClientRect()
+        : buttonElement.getBoundingClientRect();
+      const windowWidth = window.innerWidth || document.documentElement.clientWidth;
       const directionChange = `${previousDirection.current}->${adjustedDirection}`;
 
       if (previousDirection.current !== adjustedDirection && flyoutAlignment) {
@@ -109,6 +112,27 @@ export const usePopoverPositioning = ({
             return {
               top: tooltipRect.y - buttonRect.y,
               left: tooltipRect.x - buttonRect.x,
+            };
+        }
+      }
+
+      if (previousDirection.current !== adjustedDirection) {
+        switch (directionChange) {
+          case 'bottom->left':
+            return {
+              top: tooltipRect.right >= windowWidth ? 9 : 0,
+              left: tooltipRect.right >= windowWidth ? tooltipRect.right - buttonRect.left + 3 : 0,
+            };
+          case 'top->left': {
+            return {
+              top: tooltipRect.right >= windowWidth ? 9 : 0,
+              left: tooltipRect.right >= windowWidth ? tooltipRect.right - buttonRect.right + 3 : 0,
+            };
+          }
+          default:
+            return {
+              top: 0,
+              left: 0,
             };
         }
       }

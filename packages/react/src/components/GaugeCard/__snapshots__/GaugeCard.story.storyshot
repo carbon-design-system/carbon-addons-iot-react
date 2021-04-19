@@ -278,6 +278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Gauge
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}

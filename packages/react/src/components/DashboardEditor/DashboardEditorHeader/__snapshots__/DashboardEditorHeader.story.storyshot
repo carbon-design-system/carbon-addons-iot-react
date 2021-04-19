@@ -218,6 +218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                 </button>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                   data-testid="Button"
                   disabled={false}
@@ -228,6 +229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Cancel
                 </button>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                   data-testid="Button"
                   disabled={false}
@@ -393,6 +395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="iot--dashboard-editor-header--bottom"
               >
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                   data-testid="Button"
                   disabled={false}
@@ -403,6 +406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Cancel
                 </button>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                   data-testid="Button"
                   disabled={false}

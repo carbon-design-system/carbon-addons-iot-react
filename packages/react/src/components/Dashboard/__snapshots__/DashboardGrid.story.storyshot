@@ -1100,14 +1100,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+                data-testid="table-for-card-tableCard-table-container"
               >
                 <section
                   aria-label="data table toolbar"
                   className="bx--table-toolbar"
+                  data-testid="table-for-card-tableCard-table-toolbar"
                 >
                   <div
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
+                    data-testID="table-for-card-tableCard-table-toolbar-batch-actions"
                   >
                     <div
                       className="bx--batch-summary"
@@ -1124,6 +1127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="bx--action-list"
                     >
                       <button
+                        aria-pressed={null}
                         className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                         disabled={false}
                         onClick={[Function]}
@@ -1141,6 +1145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </label>
                   <div
                     className="bx--toolbar-content iot--table-toolbar-content"
+                    data-testid="table-for-card-tableCard-table-toolbar-content"
                   >
                     <div
                       className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -1180,6 +1185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         <input
                           autoComplete="off"
                           className="bx--search-input"
+                          data-testid="table-for-card-tableCard-table-toolbar-search"
                           id="table-for-card-tableCard-toolbar-search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
@@ -1213,6 +1219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <button
+                      aria-pressed={null}
                       className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                       data-testid="download-button"
                       disabled={false}
@@ -1240,6 +1247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </svg>
                     </button>
                     <button
+                      aria-pressed={null}
                       className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                       data-testid="filter-button"
                       disabled={false}
@@ -1314,6 +1322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </button>
                       </div>
                       <button
+                        aria-pressed={null}
                         className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
@@ -1353,9 +1362,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   >
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      data-testid="table-for-card-tableCard"
                       title={null}
                     >
                       <thead
+                        data-testid="table-for-card-tableCard-table-head"
                         onMouseMove={null}
                         onMouseUp={null}
                       >
@@ -1363,6 +1374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="table-for-card-tableCard-table-head-column-alert"
                             scope="col"
                             style={
                               Object {
@@ -1432,6 +1444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="table-for-card-tableCard-table-head-column-hour"
                             scope="col"
                             style={
                               Object {
@@ -1501,6 +1514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="table-for-card-tableCard-table-head-column-pressure"
                             scope="col"
                             style={
                               Object {
@@ -1571,6 +1585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </thead>
                       <tbody
                         aria-live="polite"
+                        data-testID="table-for-card-tableCard-table-body"
                       >
                         <tr
                           className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
@@ -2228,6 +2243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="bx--pagination iot--pagination iot--pagination--hide-page"
+                  data-testid="table-for-card-tableCard-table-pagination"
                   style={
                     Object {
                       "--pagination-text-display": "flex",
@@ -2503,6 +2519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 className="iot--card--toolbar"
               >
                 <button
+                  aria-pressed={null}
                   className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
                   disabled={false}
                   onClick={[Function]}
@@ -2833,16 +2850,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 <div
                   aria-label="Structured list section"
                   className="bx--structured-list"
+                  role="table"
                 >
                   <div
                     className="bx--structured-list-tbody"
                     onKeyDown={[Function]}
+                    role="rowgroup"
                   >
                     <div
                       className="bx--structured-list-row"
                     >
                       <div
                         className="list-card--item bx--structured-list-td"
+                        role="cell"
                       >
                         <div
                           className="list-card--item--value"
@@ -2868,6 +2888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <div
                         className="list-card--item bx--structured-list-td"
+                        role="cell"
                       >
                         <div
                           className="list-card--item--value"
@@ -2893,6 +2914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <div
                         className="list-card--item bx--structured-list-td"
+                        role="cell"
                       >
                         <div
                           className="list-card--item--value"
@@ -2906,6 +2928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <div
                         className="list-card--item bx--structured-list-td"
+                        role="cell"
                       >
                         <div
                           className="list-card--item--value"
@@ -2948,6 +2971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <div
                         className="list-card--item bx--structured-list-td"
+                        role="cell"
                       >
                         <div
                           className="list-card--item--value"
@@ -2961,6 +2985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <div
                         className="list-card--item bx--structured-list-td"
+                        role="cell"
                       >
                         <div
                           className="list-card--item--value"
@@ -2974,6 +2999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <div
                         className="list-card--item bx--structured-list-td"
+                        role="cell"
                       >
                         <div
                           className="list-card--item--value"
@@ -2987,6 +3013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <div
                         className="list-card--item bx--structured-list-td"
+                        role="cell"
                       >
                         <div
                           className="list-card--item--value"
