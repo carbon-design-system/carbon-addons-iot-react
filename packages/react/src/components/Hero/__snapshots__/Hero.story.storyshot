@@ -631,6 +631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Here is a long message relating some status... 
               </div>
               <button
+                aria-pressed={null}
                 className="bx--btn bx--btn--secondary"
                 disabled={false}
                 tabIndex={0}
@@ -639,6 +640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Cancel
               </button>
               <button
+                aria-pressed={null}
                 className="bx--btn bx--btn--primary"
                 disabled={false}
                 tabIndex={0}

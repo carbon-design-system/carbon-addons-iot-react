@@ -54,6 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
               className="iot--card--toolbar"
             >
               <button
+                aria-pressed={null}
                 className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
                 disabled={false}
                 onClick={[Function]}
@@ -124,6 +125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                       className="bx--action-list"
                     >
                       <button
+                        aria-pressed={null}
                         className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                         disabled={false}
                         onClick={[Function]}
@@ -139,6 +141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                     data-testid="basicCardStory-table-table-toolbar-content"
                   >
                     <button
+                      aria-pressed={null}
                       className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                       data-testid="download-button"
                       disabled={false}
@@ -600,6 +603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -723,6 +727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -846,6 +851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -969,6 +975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -1092,6 +1099,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -1218,6 +1226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
