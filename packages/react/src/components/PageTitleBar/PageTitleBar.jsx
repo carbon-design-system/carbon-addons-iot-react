@@ -112,11 +112,12 @@ const PageTitleBar = ({
   const stickyHeaderOffset = `${stickyHeaderOffsetProp}px`; // convert to px for styling
 
   useEffect(() => {
-    // if we have scrolled passed the offset, we should be in condensed state
     const handleScroll = throttle(() => {
       let isCondensed;
       let percentComplete;
 
+      // Detect when sticky overlap begins to start fading out/fading in
+      // content based on scroll position
       if (breadcrumbRef.current && titleRef.current) {
         const breadcrumbDims = breadcrumbRef.current.getBoundingClientRect();
         const titleDims = titleRef.current.getBoundingClientRect();
@@ -142,6 +143,8 @@ const PageTitleBar = ({
         setTransitionProgress(percentComplete);
       }
 
+      // Detect when content area rises above sticky header offset, to set background
+      // on tabs, which replaces existing sticky header
       setContentActive(
         contentRef.current &&
           contentRef.current.getBoundingClientRect().top <= stickyHeaderOffsetProp
@@ -197,9 +200,12 @@ const PageTitleBar = ({
     ]
   );
 
-  /* We needs the tabs to render outside the header so the tab stickiness will push away the header stickiness naturally with the scroll */
-  // We also want sticky mode to render outside so we can sticky the entire header element
-  const hasTabs = content && content.type.name === 'Tabs';
+  /* We need the tabs to render outside the header so the tab stickiness will push away
+     the header stickiness naturally with the scroll.
+
+     We also want sticky mode to render outside so we can sticky the entire header element
+  */
+  const hasTabs = titleBarContent && titleBarContent.type.name === 'Tabs';
   const renderContentOutside =
     (hasTabs && headerMode === HEADER_MODES.DYNAMIC) || headerMode === HEADER_MODES.STICKY;
 
