@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.45...v2.145.0-next.46) (2021-04-19)
+
+
+### Bug Fixes
+
+* **tablecard:** do not preformat the timestamp columns only do it on render ([fa6575d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fa6575de1a2f6cea88a2c4711c6addbf4dce913f))
+* **TableCard:** format non-timestamp columns correctly ([0fbb73d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0fbb73d9785de7e767dca1af91b3432f90c4144d))
+
+
+
+
+
 # [2.145.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.44...v2.145.0-next.45) (2021-04-16)
 
 
