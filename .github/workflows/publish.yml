@@ -1,7 +1,5 @@
 name: Publish
 
-# We should search around on semantic release github issues to see if there's any known issues with github actions running our publish command
-
 on:
   push:
     branches:
@@ -24,8 +22,19 @@ jobs:
         with:
           node-version: '14.x'
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: |
+          yarn --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
 
       - name: Validate formatting
         run: yarn format:check

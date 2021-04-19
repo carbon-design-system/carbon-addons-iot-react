@@ -3,6 +3,75 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.45...v2.145.0-next.46) (2021-04-19)
+
+
+### Bug Fixes
+
+* **tablecard:** do not preformat the timestamp columns only do it on render ([fa6575d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fa6575de1a2f6cea88a2c4711c6addbf4dce913f))
+* **TableCard:** format non-timestamp columns correctly ([0fbb73d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0fbb73d9785de7e767dca1af91b3432f90c4144d))
+
+
+
+
+
+# [2.145.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.44...v2.145.0-next.45) (2021-04-16)
+
+
+### Bug Fixes
+
+* **combobox:** fix lint issue ([d055a23](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d055a23afc40d505a2ab32cbcfb9b957a626bdac))
+
+
+
+
+
+# [2.145.0-next.44](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.43...v2.145.0-next.44) (2021-04-16)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.145.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.42...v2.145.0-next.43) (2021-04-15)
+
+
+### Features
+
+* **card:** add card implementation for Angular ([cd4667c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cd4667c844c07dd1e6e4102181df5dd9c4684be3))
+
+
+
+
+
+# [2.145.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.41...v2.145.0-next.42) (2021-04-15)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.145.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.40...v2.145.0-next.41) (2021-04-15)
+
+
+### Bug Fixes
+
+* **value-card:** use auto positioning tooltip ([73691c1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/73691c1758f8a20fa466591a869a8f37186b42e4))
+
+
+
+
+
+# [2.145.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.39...v2.145.0-next.40) (2021-04-15)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.145.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.38...v2.145.0-next.39) (2021-04-13)
 
 

@@ -1217,14 +1217,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             </div>
             <div
               className="iot--time-series-card--stateful-table iot--table-container bx--data-table-container"
+              data-testid="TimeSeries-table-table-container"
             >
               <section
                 aria-label="data table toolbar"
                 className="bx--table-toolbar"
+                data-testid="TimeSeries-table-table-toolbar"
               >
                 <div
                   aria-hidden={true}
                   className="bx--batch-actions iot--table-batch-actions"
+                  data-testID="TimeSeries-table-table-toolbar-batch-actions"
                 >
                   <div
                     className="bx--batch-summary"
@@ -1254,6 +1257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 </div>
                 <div
                   className="bx--toolbar-content iot--table-toolbar-content"
+                  data-testid="TimeSeries-table-table-toolbar-content"
                 >
                   <div
                     className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -1293,6 +1297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       <input
                         autoComplete="off"
                         className="bx--search-input"
+                        data-testid="TimeSeries-table-table-toolbar-search"
                         id="TimeSeries-table-toolbar-search"
                         onChange={[Function]}
                         onKeyDown={[Function]}
@@ -1391,9 +1396,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 >
                   <table
                     className="bx--data-table bx--data-table--no-border"
+                    data-testid="TimeSeries-table"
                     title={null}
                   >
                     <thead
+                      data-testid="TimeSeries-table-table-head"
                       onMouseMove={null}
                       onMouseUp={null}
                     >
@@ -1401,6 +1408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         <th
                           aria-sort="descending"
                           className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          data-testid="TimeSeries-table-table-head-column-timestamp"
                           scope="col"
                           style={
                             Object {
@@ -1468,6 +1476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         <th
                           aria-sort="none"
                           className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          data-testid="TimeSeries-table-table-head-column-ENTITY_ID"
                           scope="col"
                           style={
                             Object {
@@ -1535,6 +1544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         <th
                           aria-sort="none"
                           className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          data-testid="TimeSeries-table-table-head-column-temperature"
                           scope="col"
                           style={
                             Object {
@@ -1602,6 +1612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         <th
                           aria-sort="none"
                           className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          data-testid="TimeSeries-table-table-head-column-humidity"
                           scope="col"
                           style={
                             Object {
@@ -1669,6 +1680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         <th
                           aria-sort="none"
                           className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          data-testid="TimeSeries-table-table-head-column-ecount"
                           scope="col"
                           style={
                             Object {
@@ -1736,6 +1748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         <th
                           aria-sort="none"
                           className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          data-testid="TimeSeries-table-table-head-column-devname"
                           scope="col"
                           style={
                             Object {
@@ -1803,6 +1816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         <th
                           aria-sort="none"
                           className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          data-testid="TimeSeries-table-table-head-column-pressure"
                           scope="col"
                           style={
                             Object {
@@ -1870,6 +1884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         <th
                           aria-sort="none"
                           className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          data-testid="TimeSeries-table-table-head-column-status"
                           scope="col"
                           style={
                             Object {
@@ -1938,6 +1953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     </thead>
                     <tbody
                       aria-live="polite"
+                      data-testID="TimeSeries-table-table-body"
                     >
                       <tr
                         className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
@@ -2869,6 +2885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               </div>
               <div
                 className="bx--pagination iot--pagination"
+                data-testid="TimeSeries-table-table-pagination"
                 style={
                   Object {
                     "--pagination-text-display": "flex",

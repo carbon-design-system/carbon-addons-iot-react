@@ -98,14 +98,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
               />
               <div
                 className="iot--pie-chart-card--stateful-table iot--table-container bx--data-table-container"
+                data-testid="basicCardStory-table-table-container"
               >
                 <section
                   aria-label="data table toolbar"
                   className="bx--table-toolbar"
+                  data-testid="basicCardStory-table-table-toolbar"
                 >
                   <div
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
+                    data-testID="basicCardStory-table-table-toolbar-batch-actions"
                   >
                     <div
                       className="bx--batch-summary"
@@ -135,6 +138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                   </div>
                   <div
                     className="bx--toolbar-content iot--table-toolbar-content"
+                    data-testid="basicCardStory-table-table-toolbar-content"
                   >
                     <button
                       aria-pressed={null}
@@ -234,6 +238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                       title={null}
                     >
                       <thead
+                        data-testid="basicCardStory-table-table-head"
                         onMouseMove={null}
                         onMouseUp={null}
                       >
@@ -243,6 +248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="2V2N 9KYPM"
                             data-floating-menu-container={true}
+                            data-testid="basicCardStory-table-table-head-column-2V2N 9KYPM"
                             id="column-2V2N 9KYPM"
                             scope="col"
                             style={
@@ -267,6 +273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="L22I P66EP L22I P66EP"
                             data-floating-menu-container={true}
+                            data-testid="basicCardStory-table-table-head-column-L22I P66EP L22I P66EP"
                             id="column-L22I P66EP L22I P66EP"
                             scope="col"
                             style={
@@ -291,6 +298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="JQAI 2M4L1"
                             data-floating-menu-container={true}
+                            data-testid="basicCardStory-table-table-head-column-JQAI 2M4L1"
                             id="column-JQAI 2M4L1"
                             scope="col"
                             style={
@@ -315,6 +323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="J9DZ F37AP"
                             data-floating-menu-container={true}
+                            data-testid="basicCardStory-table-table-head-column-J9DZ F37AP"
                             id="column-J9DZ F37AP"
                             scope="col"
                             style={
@@ -339,6 +348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="YEL48 Q6XK YEL48"
                             data-floating-menu-container={true}
+                            data-testid="basicCardStory-table-table-head-column-YEL48 Q6XK YEL48"
                             id="column-YEL48 Q6XK YEL48"
                             scope="col"
                             style={
@@ -363,6 +373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="Misc"
                             data-floating-menu-container={true}
+                            data-testid="basicCardStory-table-table-head-column-Misc"
                             id="column-Misc"
                             scope="col"
                             style={
@@ -386,6 +397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                       </thead>
                       <tbody
                         aria-live="polite"
+                        data-testID="basicCardStory-table-table-body"
                       >
                         <tr
                           className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"

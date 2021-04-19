@@ -13,6 +13,7 @@ const propTypes = {
   hasRowActions: PropTypes.bool,
   rowCount: PropTypes.number,
   columns: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string.isRequired })),
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -21,6 +22,7 @@ const defaultProps = {
   hasRowActions: false,
   rowCount: 10,
   columns: [],
+  testID: '',
 };
 
 /** This component is exactly like the DataTableSkeleton component from carbon, but it shows your headers while it loads */
@@ -30,8 +32,9 @@ const TableSkeletonWithHeaders = ({
   hasRowActions,
   columns,
   rowCount,
+  testID,
 }) => (
-  <TableBody>
+  <TableBody data-testid={testID}>
     <TableRow className={`${iotPrefix}--table-skeleton-with-headers--table-row`}>
       {hasRowSelection === 'multi' ? <TableCell /> : null}
       {hasRowExpansion ? <TableCell /> : null}
