@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   StructuredListWrapper,
   StructuredListHead,
@@ -7,58 +7,14 @@ import {
   StructuredListCell,
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { Bee32 } from '@carbon/icons-react';
-import { spacing05 } from '@carbon/layout';
-import { gray, white } from '@carbon/colors';
 import warning from 'warning';
+import classnames from 'classnames';
 
+import { settings } from '../../constants/Settings';
 import { COLORS } from '../../styles/styles';
 
-const StructuredListWrapperStyled = styled(({ isFixedWidth, ...others }) => (
-  <StructuredListWrapper {...others} />
-))`
-  && {
-    width: ${(props) => (props.isFixedWidth ? 'inherit;' : '')};
-  }
-`;
-
-const EmptyContent = styled.div`
-   {
-    background-color: ${white};
-    text-align: center;
-    color: ${gray[10]};
-    font-size: 14px;
-    padding-top: 90px;
-    padding-bottom: 115px;
-    font-weight: regular;
-    caption-side: bottom;
-    display: table-caption;
-  }
-`;
-
-const LoadingDiv = styled.div`
-   {
-    padding-top: ${spacing05};
-  }
-`;
-
-const StyledStructuredListCell = styled(StructuredListCell)`
-  &&& {
-    ${(props) => {
-      const { width } = props;
-      return width !== undefined
-        ? `
-        min-width: ${width};
-        max-width: ${width};
-        white-space: nowrap;
-        overflow-x: hidden;
-        text-overflow: ellipsis;
-      `
-        : '';
-    }}
-  }
-`;
+const { iotPrefix } = settings;
 
 /**
  * Carbon Structured List simple with custom design and onClick
@@ -80,18 +36,27 @@ const StructuredList = ({
     );
   }
   return (
-    <Fragment>
-      <StructuredListWrapperStyled
+    <>
+      <StructuredListWrapper
         {...StructuredListWrapperProps}
+        className={classnames({
+          [`${iotPrefix}--composed-structured-list__wrapper`]: isFixedWidth,
+        })}
         selection
-        isFixedWidth={isFixedWidth}
       >
         <StructuredListHead className={StructuredListHeadClassName}>
           <StructuredListRow head>
             {columns.map(({ id, title, width = undefined }) => (
-              <StyledStructuredListCell key={`${id}-column`} title={title} width={width} head>
+              <StructuredListCell
+                className={classnames({
+                  [`${iotPrefix}--composed-structured-list__list-cell`]: width !== undefined,
+                })}
+                key={`${id}-column`}
+                title={title}
+                head
+              >
                 {title}
-              </StyledStructuredListCell>
+              </StructuredListCell>
             ))}
           </StructuredListRow>
         </StructuredListHead>
@@ -99,7 +64,10 @@ const StructuredList = ({
           {data.map((item) => (
             <StructuredListRow key={`${item.id}-row`} onClick={() => onRowClick(item.id)}>
               {columns.map((col) => (
-                <StyledStructuredListCell
+                <StructuredListCell
+                  className={classnames({
+                    [`${iotPrefix}--composed-structured-list__list-cell`]: col.width !== undefined,
+                  })}
                   key={`${col.id}-item`}
                   noWrap
                   title={
@@ -108,8 +76,11 @@ const StructuredList = ({
                       ? item.values[col.id]
                       : null
                   }
-                  width={col.width}
-                  style={design === 'normal' ? { lineHeight: '16px' } : {}}
+                  style={
+                    design === 'normal'
+                      ? { '--width': col.width, lineHeight: '16px' }
+                      : { '--width': col.width }
+                  }
                 >
                   {col.renderDataFunction
                     ? col.renderDataFunction({
@@ -120,19 +91,21 @@ const StructuredList = ({
                         row: item.values,
                       })
                     : item.values[col.id]}
-                </StyledStructuredListCell>
+                </StructuredListCell>
               ))}
             </StructuredListRow>
           ))}
         </StructuredListBody>
         {!data.length ? (
-          <EmptyContent>
+          <div className={`${iotPrefix}--composed-structured-list__empty-content`}>
             <Bee32 width={100} height={100} fill={COLORS.gray} />
-            <LoadingDiv>{loadingDataLabel}</LoadingDiv>
-          </EmptyContent>
+            <div className={`${iotPrefix}--composed-structured-list__loading`}>
+              {loadingDataLabel}
+            </div>
+          </div>
         ) : undefined}
-      </StructuredListWrapperStyled>
-    </Fragment>
+      </StructuredListWrapper>
+    </>
   );
 };
 

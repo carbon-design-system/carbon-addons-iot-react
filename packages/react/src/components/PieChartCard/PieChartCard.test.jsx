@@ -78,7 +78,7 @@ describe('utility functions', () => {
   });
 });
 
-/* 
+/*
   FYI: the underlying Carbon Charts controls have been mocked.
   Check __mocks__/@carbon/charts-react/ for details
 */

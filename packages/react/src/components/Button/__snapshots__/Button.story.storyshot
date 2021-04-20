@@ -22,6 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
       }
     >
       <button
+        aria-pressed={null}
         className="some-class iot--btn bx--btn bx--btn--primary"
         data-testid="Button"
         disabled={false}
@@ -45,6 +46,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
       </a>
        
       <p
+        aria-pressed={null}
         className="some-class iot--btn bx--btn bx--btn--primary"
         data-testid="Button"
         disabled={false}
@@ -58,6 +60,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
       </p>
        
       <a
+        aria-pressed={null}
         className="some-class iot--btn bx--btn bx--btn--primary"
         data-testid="Button"
         disabled={false}
@@ -181,6 +184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
     }
   >
     <button
+      aria-pressed={null}
       className="some-class iot--btn bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
       data-testid="Button"
       disabled={false}
@@ -255,6 +259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
       className="bx--btn-set"
     >
       <button
+        aria-pressed={null}
         className="some-class iot--btn bx--btn bx--btn--secondary"
         data-testid="Button"
         disabled={false}
@@ -266,6 +271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
         Secondary button
       </button>
       <button
+        aria-pressed={null}
         className="some-class iot--btn bx--btn bx--btn--primary"
         data-testid="Button"
         disabled={false}
@@ -317,6 +323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
     }
   >
     <button
+      aria-pressed={null}
       className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
       data-testid="Button"
       disabled={true}
@@ -399,6 +406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
     }
   >
     <button
+      aria-pressed={null}
       className="iot--btn bx--btn bx--btn--secondary bx--btn--disabled"
       data-testid="Button"
       disabled={true}
@@ -481,6 +489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
     }
   >
     <button
+      aria-pressed={null}
       className="iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}

@@ -96,6 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--rule-builder-header__buttons"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             data-testid="rule-builder-header-add-rule-button"
             disabled={false}
@@ -121,6 +122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             data-testid="rule-builder-header-add-group-button"
             disabled={false}
@@ -2287,6 +2289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--rule-builder-header__buttons"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             data-testid="rule-builder-header-add-rule-button"
             disabled={false}
@@ -2312,6 +2315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             data-testid="rule-builder-header-add-group-button"
             disabled={false}
@@ -2717,6 +2721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--rule-builder-header__buttons"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             data-testid="rule-builder-header-add-rule-button"
             disabled={false}
@@ -2742,6 +2747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </svg>
           </button>
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             data-testid="rule-builder-header-add-group-button"
             disabled={false}

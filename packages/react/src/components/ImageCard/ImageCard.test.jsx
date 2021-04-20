@@ -3,9 +3,12 @@ import { act, createEvent, fireEvent, render, screen } from '@testing-library/re
 import userEvent from '@testing-library/user-event';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { settings } from '../../constants/Settings';
 
 import ImageCard from './ImageCard';
 import landscape from './landscape.jpg';
+
+const { iotPrefix } = settings;
 
 function stringToArrayBuffer(str) {
   const buf = new ArrayBuffer(str.length * 2); // 2 bytes for each char
@@ -49,7 +52,7 @@ describe('ImageCard', () => {
     );
 
     expect(screen.getByTitle(/Expand to fullscreen/i)).toBeVisible();
-    expect(container.querySelector('[class*="ImageCard__EmptyDiv"]')).toBeVisible();
+    expect(container.querySelector(`[class*="${iotPrefix}--image-card__empty"]`)).toBeVisible();
   });
 
   it('should be null when no errors, not editable, and src is null', () => {

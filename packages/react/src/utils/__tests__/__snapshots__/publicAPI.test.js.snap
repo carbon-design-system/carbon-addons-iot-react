@@ -275,6 +275,7 @@ Map {
     "defaultProps": Object {
       "id": "EmptyTable",
       "onEmptyStateAction": null,
+      "testID": "",
     },
     "propTypes": Object {
       "emptyState": Object {
@@ -317,6 +318,9 @@ Map {
       },
       "onEmptyStateAction": Object {
         "type": "func",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "totalColumns": Object {
         "isRequired": true,
@@ -1565,6 +1569,7 @@ Map {
       "openMenuText": "Open menu",
       "options": Object {},
       "selectAllText": "Select all",
+      "testID": "",
     },
     "propTypes": Object {
       "actions": Object {
@@ -2032,6 +2037,9 @@ Map {
         "isRequired": true,
         "type": "shape",
       },
+      "testID": Object {
+        "type": "string",
+      },
     },
   },
   "TableBody" => Object {
@@ -2056,6 +2064,7 @@ Map {
       "shouldExpandOnRowClick": false,
       "shouldLazyRender": false,
       "singleRowEditButtons": null,
+      "testID": "",
       "totalColumns": 0,
     },
     "propTypes": Object {
@@ -2517,6 +2526,9 @@ Map {
       },
       "tableId": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "testID": Object {
         "type": "string",
       },
       "totalColumns": Object {
@@ -3044,6 +3056,7 @@ Map {
       "hasRowExpansion": false,
       "hasRowSelection": false,
       "rowCount": 10,
+      "testID": "",
     },
     "propTypes": Object {
       "columns": Object {
@@ -3080,6 +3093,9 @@ Map {
       },
       "rowCount": Object {
         "type": "number",
+      },
+      "testID": Object {
+        "type": "string",
       },
     },
   },
@@ -3131,6 +3147,7 @@ Map {
         "simpleFiltersTabLabel": "Simple filters",
       },
       "secondaryTitle": null,
+      "testID": "",
       "tooltip": null,
     },
     "propTypes": Object {
@@ -3524,6 +3541,9 @@ Map {
         ],
         "isRequired": true,
         "type": "shape",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "tooltip": Object {
         "type": "node",
@@ -9662,7 +9682,7 @@ Map {
         "type": "arrayOf",
       },
       "title": Object {
-        "type": "string",
+        "type": "node",
       },
     },
   },
@@ -10112,7 +10132,7 @@ Map {
           },
           "sm": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "xl": Object {
             "h": 1,
@@ -21680,15 +21700,15 @@ Map {
                   "sk",
                   "sl",
                   "sq",
-                  "sr-cyr",
                   "sr",
                   "sv",
                   "th",
                   "tr",
                   "uk",
                   "uz",
+                  "uz_latn",
                   "vn",
-                  "zh-tw",
+                  "zh_tw",
                   "zh",
                 ],
               ],
@@ -23108,6 +23128,8 @@ Map {
       },
     },
     "defaultProps": Object {
+      "clearSelectionDescription": "Total items selected: ",
+      "clearSelectionText": "To clear selection, press Delete or Backspace,",
       "compareItems": [Function],
       "direction": "bottom",
       "disabled": false,
@@ -23123,6 +23145,12 @@ Map {
     },
     "displayName": "MultiSelect",
     "propTypes": Object {
+      "clearSelectionDescription": Object {
+        "type": "string",
+      },
+      "clearSelectionText": Object {
+        "type": "string",
+      },
       "compareItems": Object {
         "isRequired": true,
         "type": "func",
@@ -23267,7 +23295,6 @@ Map {
   },
   "ToastNotification" => Object {
     "defaultProps": Object {
-      "caption": "provide a caption",
       "hideCloseButton": false,
       "iconDescription": "closes notification",
       "kind": "error",
@@ -23464,7 +23491,6 @@ Map {
   },
   "NotificationTextDetails" => Object {
     "defaultProps": Object {
-      "caption": "caption",
       "notificationType": "toast",
       "title": "title",
     },
@@ -23830,6 +23856,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "legendText": Object {
+        "type": "node",
+      },
       "name": Object {
         "isRequired": true,
         "type": "string",
@@ -24050,6 +24079,12 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "warn": Object {
+        "type": "bool",
+      },
+      "warnText": Object {
+        "type": "node",
       },
     },
     "render": [Function],
@@ -25719,7 +25754,6 @@ Map {
     "defaultProps": Object {
       "columnCount": 5,
       "compact": false,
-      "headers": Array [],
       "rowCount": 5,
       "showHeader": true,
       "showToolbar": true,
@@ -25946,6 +25980,16 @@ Map {
       "className": Object {
         "type": "string",
       },
+      "type": Object {
+        "args": Array [
+          Array [
+            "",
+            "default",
+            "container",
+          ],
+        ],
+        "type": "oneOf",
+      },
     },
   },
   "TagSkeleton" => Object {
@@ -26090,6 +26134,16 @@ Map {
       },
       "onClick": Object {
         "type": "func",
+      },
+      "tooltipAlignment": Object {
+        "args": Array [
+          Array [
+            "start",
+            "center",
+            "end",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
     "render": [Function],

@@ -23,7 +23,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** Dashboard title */
-  title: PropTypes.string,
+  title: PropTypes.node,
   /** initial dashboard data to edit */
   initialValue: PropTypes.shape({
     cards: PropTypes.array,
