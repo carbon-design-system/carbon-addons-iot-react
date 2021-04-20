@@ -1,5 +1,5 @@
 import React from 'react';
-import { boolean, number, select, text } from '@storybook/addon-knobs';
+import { boolean, number, object, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import {
   SettingsAdjust16 as SettingsAdjust,
@@ -49,6 +49,9 @@ export const DefaultExample = () => (
       buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
       renderIcon={ShareKnowledge}
       disabled={boolean('Disabled', false)}
+      buttonProps={object('buttonProps', {
+        tooltipPosition: 'top',
+      })}
       hideTooltip={boolean('Hide tooltip', true)}
       iconDescription={text('iconDescription', 'Helpful description')}
       passive={boolean('Passive Flyout', false)}
@@ -73,6 +76,9 @@ export const LargeFlyoutExample = () => (
       buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
       renderIcon={ShareKnowledge}
       disabled={boolean('Disabled', false)}
+      buttonProps={object('buttonProps', {
+        tooltipPosition: 'top',
+      })}
       hideTooltip={boolean('Hide tooltip', true)}
       iconDescription={text('iconDescription', 'Helpful description')}
       passive={boolean('Passive Flyout', false)}
@@ -101,6 +107,9 @@ export const CustomFooterExample = () => (
       buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
       renderIcon={SettingsAdjust}
       disabled={boolean('Disabled', false)}
+      buttonProps={object('buttonProps', {
+        tooltipPosition: 'top',
+      })}
       hideTooltip={boolean('Hide tooltip', true)}
       iconDescription={text('iconDescription', 'Helpful description')}
       passive={false}
@@ -147,6 +156,9 @@ export const AutoPositioningExample = () => {
             buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
             renderIcon={ShareKnowledge}
             disabled={boolean('Disabled', false)}
+            buttonProps={object('buttonProps', {
+              tooltipPosition: 'top',
+            })}
             hideTooltip={boolean('Hide tooltip', true)}
             iconDescription={text('iconDescription', 'Helpful description')}
             passive={boolean('Passive Flyout', false)}
@@ -184,6 +196,9 @@ export const AutoPositioningExample = () => {
             buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
             renderIcon={ShareKnowledge}
             disabled={boolean('Disabled', false)}
+            buttonProps={object('buttonProps', {
+              tooltipPosition: 'top',
+            })}
             hideTooltip={boolean('Hide tooltip', true)}
             iconDescription={text('iconDescription', 'Helpful description')}
             passive={boolean('Passive Flyout', false)}
@@ -213,6 +228,9 @@ export const AutoPositioningExample = () => {
             buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
             renderIcon={ShareKnowledge}
             disabled={boolean('Disabled', false)}
+            buttonProps={object('buttonProps', {
+              tooltipPosition: 'top',
+            })}
             hideTooltip={boolean('Hide tooltip', true)}
             iconDescription={text('iconDescription', 'Helpful description')}
             passive={boolean('Passive Flyout', false)}
@@ -244,6 +262,9 @@ export const AutoPositioningExample = () => {
             buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
             renderIcon={ShareKnowledge}
             disabled={boolean('Disabled', false)}
+            buttonProps={object('buttonProps', {
+              tooltipPosition: 'top',
+            })}
             hideTooltip={boolean('Hide tooltip', true)}
             iconDescription={text('iconDescription', 'Helpful description')}
             passive={boolean('Passive Flyout', false)}
@@ -273,6 +294,9 @@ export const AutoPositioningExample = () => {
             buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
             renderIcon={ShareKnowledge}
             disabled={boolean('Disabled', false)}
+            buttonProps={object('buttonProps', {
+              tooltipPosition: 'top',
+            })}
             hideTooltip={boolean('Hide tooltip', true)}
             iconDescription={text('iconDescription', 'Helpful description')}
             passive={boolean('Passive Flyout', false)}
@@ -302,6 +326,9 @@ export const AutoPositioningExample = () => {
             buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
             renderIcon={ShareKnowledge}
             disabled={boolean('Disabled', false)}
+            buttonProps={object('buttonProps', {
+              tooltipPosition: 'top',
+            })}
             hideTooltip={boolean('Hide tooltip', true)}
             iconDescription={text('iconDescription', 'Helpful description')}
             passive={boolean('Passive Flyout', false)}
@@ -333,6 +360,9 @@ export const AutoPositioningExample = () => {
             buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
             renderIcon={ShareKnowledge}
             disabled={boolean('Disabled', false)}
+            buttonProps={object('buttonProps', {
+              tooltipPosition: 'top',
+            })}
             hideTooltip={boolean('Hide tooltip', true)}
             iconDescription={text('iconDescription', 'Helpful description')}
             passive={boolean('Passive Flyout', false)}
@@ -362,6 +392,9 @@ export const AutoPositioningExample = () => {
             buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
             renderIcon={ShareKnowledge}
             disabled={boolean('Disabled', false)}
+            buttonProps={object('buttonProps', {
+              tooltipPosition: 'top',
+            })}
             hideTooltip={boolean('Hide tooltip', true)}
             iconDescription={text('iconDescription', 'Helpful description')}
             passive={boolean('Passive Flyout', false)}
@@ -391,6 +424,9 @@ export const AutoPositioningExample = () => {
             buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
             renderIcon={ShareKnowledge}
             disabled={boolean('Disabled', false)}
+            buttonProps={object('buttonProps', {
+              tooltipPosition: 'top',
+            })}
             hideTooltip={boolean('Hide tooltip', true)}
             iconDescription={text('iconDescription', 'Helpful description')}
             passive={boolean('Passive Flyout', false)}
