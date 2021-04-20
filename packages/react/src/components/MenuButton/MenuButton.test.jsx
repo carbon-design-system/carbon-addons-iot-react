@@ -11,6 +11,7 @@ import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../constants/Settings';
 
+import * as MenuButtonUtils from './utils';
 import MenuButton from './MenuButton';
 
 const { prefix } = settings;
@@ -216,5 +217,201 @@ describe('MenuButton', () => {
         `Failed prop type: The prop \`iconDescription\` is marked as required in \`ForwardRef\`, but its value is \`null\`.`
       )
     );
+  });
+
+  describe('getMenuPosition', () => {
+    beforeEach(() => {
+      jest.spyOn(MenuButtonUtils, 'getMenuPosition');
+      Object.defineProperty(document.body, 'clientWidth', {
+        writable: true,
+        value: 1024,
+      });
+      Object.defineProperty(document.body, 'clientHeight', {
+        writable: true,
+        value: 768,
+      });
+    });
+
+    afterEach(() => {
+      jest.restoreAllMocks();
+      Object.defineProperty(document.body, 'clientWidth', {
+        writable: true,
+        value: 0,
+      });
+      Object.defineProperty(document.body, 'clientHeight', {
+        writable: true,
+        value: 0,
+      });
+    });
+
+    it('should position a single button in the bottom right corner', () => {
+      const button = document.createElement('button');
+      button.getBoundingClientRect = jest.fn(() => {
+        return {
+          bottom: 747,
+          height: 48,
+          left: 930,
+          right: 978,
+          top: 699,
+          width: 48,
+          x: 930,
+          y: 699,
+        };
+      });
+      const menu = document.createElement('ul');
+      menu.getBoundingClientRect = jest.fn(() => {
+        return {
+          bottom: 236,
+          height: 236,
+          left: 0,
+          right: 208,
+          top: 0,
+          width: 208,
+          x: 0,
+          y: 0,
+        };
+      });
+      Object.defineProperty(button, 'nextSibling', {
+        get() {
+          return menu;
+        },
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: null,
+        })
+      ).toEqual({ x: 978, y: 463 });
+    });
+
+    it('should position a split button on the bottom correctly', () => {
+      const button = document.createElement('button');
+      button.getBoundingClientRect = jest.fn(() => {
+        return {
+          bottom: 747,
+          height: 48,
+          left: 489,
+          right: 537,
+          top: 699,
+          width: 48,
+          x: 489,
+          y: 699,
+        };
+      });
+      const menu = document.createElement('ul');
+      menu.getBoundingClientRect = jest.fn(() => {
+        return {
+          bottom: 236,
+          height: 236,
+          left: 0,
+          right: 208,
+          top: 0,
+          width: 208,
+          x: 0,
+          y: 0,
+        };
+      });
+      Object.defineProperty(button, 'nextSibling', {
+        get() {
+          return menu;
+        },
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 489, y: 463 });
+    });
+
+    it('should position an icon only button on the right correctly', () => {
+      const button = document.createElement('button');
+      button.getBoundingClientRect = jest.fn(() => {
+        return {
+          bottom: 96,
+          height: 48,
+          left: 930,
+          right: 978,
+          top: 48,
+          width: 48,
+          x: 930,
+          y: 48,
+        };
+      });
+      const menu = document.createElement('ul');
+      menu.getBoundingClientRect = jest.fn(() => {
+        return {
+          bottom: 236,
+          height: 236,
+          left: 0,
+          right: 208,
+          top: 0,
+          width: 208,
+          x: 0,
+          y: 0,
+        };
+      });
+      Object.defineProperty(button, 'nextSibling', {
+        get() {
+          return menu;
+        },
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: '',
+          buttonRef: { current: button },
+          onPrimaryActionClick: null,
+        })
+      ).toEqual({ x: 978, y: 96 });
+    });
+
+    it('should position a split button on the bottom correctly in RTL', () => {
+      const button = document.createElement('button');
+      document.dir = 'rtl';
+      button.getBoundingClientRect = jest.fn(() => {
+        return {
+          bottom: 747,
+          height: 48,
+          left: 489,
+          right: 537,
+          top: 699,
+          width: 48,
+          x: 489,
+          y: 699,
+        };
+      });
+      const menu = document.createElement('ul');
+      menu.getBoundingClientRect = jest.fn(() => {
+        return {
+          bottom: 236,
+          height: 236,
+          left: 0,
+          right: 208,
+          top: 0,
+          width: 208,
+          x: 0,
+          y: 0,
+        };
+      });
+      Object.defineProperty(button, 'nextSibling', {
+        get() {
+          return menu;
+        },
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 489, y: 463 });
+      document.dir = 'ltr';
+    });
   });
 });

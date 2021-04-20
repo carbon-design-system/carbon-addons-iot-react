@@ -47,7 +47,6 @@ export const SplitMenuButton = React.forwardRef(
     return (
       <>
         <Button
-          ref={ref}
           className={classnames(`${iotPrefix}--menu-button__primary`)}
           onClick={onPrimaryActionClick}
           testID={`${testID}-primary`}
@@ -55,6 +54,7 @@ export const SplitMenuButton = React.forwardRef(
           {label}
         </Button>
         <Button
+          ref={ref}
           className={classnames(classnames(`${iotPrefix}--menu-button__secondary`))}
           hasIconOnly
           iconDescription={iconDescription}

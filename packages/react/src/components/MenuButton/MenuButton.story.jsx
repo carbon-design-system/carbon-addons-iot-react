@@ -97,6 +97,118 @@ IconOnlyMenuButton.story = {
   name: 'icon only menu button',
 };
 
+export const AutoPositioningExample = () => (
+  <div
+    style={{
+      display: 'flex',
+      flex: '1',
+      flexDirection: 'column',
+      height: 'calc(100vh)',
+    }}
+  >
+    <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'flex-start',
+          flex: 1,
+        }}
+      >
+        <IconOnlyMenuButton />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flex: 1,
+          alignItems: 'flex-start',
+          justifyContent: 'center',
+        }}
+      >
+        <IconOnlyMenuButton />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flex: 1,
+          alignItems: 'flex-start',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <IconOnlyMenuButton />
+      </div>
+    </div>
+    <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          flex: 1,
+        }}
+      >
+        <IconOnlyMenuButton />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <IconOnlyMenuButton />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <IconOnlyMenuButton />
+      </div>
+    </div>
+    <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'flex-start',
+          flex: 1,
+        }}
+      >
+        <IconOnlyMenuButton />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flex: 1,
+          alignItems: 'flex-end',
+          justifyContent: 'center',
+        }}
+      >
+        <IconOnlyMenuButton />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flex: 1,
+          alignItems: 'flex-end',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <IconOnlyMenuButton />
+      </div>
+    </div>
+  </div>
+);
+
+AutoPositioningExample.story = {
+  name: 'icon only with auto positioning',
+};
+
 export default {
   title: 'Watson IoT Experimental/☢️ MenuButton',
 

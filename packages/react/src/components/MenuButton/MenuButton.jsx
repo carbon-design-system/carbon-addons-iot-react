@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { unstable_ContextMenu as ContextMenu } from 'carbon-components-react';
 import { ChevronDown16, ChevronUp16 } from '@carbon/icons-react';
@@ -8,6 +8,7 @@ import { settings } from '../../constants/Settings';
 
 import { SplitMenuButton } from './SplitMenuButton';
 import { SingleMenuButton } from './SingleMenuButton';
+import { getMenuPosition } from './utils';
 
 const { iotPrefix } = settings;
 
@@ -90,18 +91,25 @@ const MenuButton = ({
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const buttonRef = useRef(null);
   const handleResize = useCallback(() => {
+    /* istanbul ignore else */
     if (buttonRef.current) {
-      const { x, y, height, width } = buttonRef.current.getBoundingClientRect();
+      const { x, y } = getMenuPosition({ label, buttonRef, onPrimaryActionClick });
+
       setPosition({
-        x: document.dir === 'rtl' ? x + width - 1 : x,
-        y: y + height,
+        x,
+        y,
       });
     }
-  }, []);
+  }, [label, onPrimaryActionClick]);
 
   useLayoutEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, [handleResize]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleResize);
+    return () => window.removeEventListener('scroll', handleResize);
   }, [handleResize]);
 
   useLayoutEffect(() => {
@@ -120,18 +128,24 @@ const MenuButton = ({
   );
 
   const handleSecondaryClick = useCallback(() => {
-    setIsMenuOpen((prev) => !prev);
-  }, []);
+    setIsMenuOpen((prev) => {
+      handleResize();
+      return !prev;
+    });
+  }, [handleResize]);
 
   const handleChildClick = useCallback(
     (onClick) => (e) => {
       /* istanbul ignore else */
       if (typeof onClick === 'function') {
-        setIsMenuOpen((prev) => !prev);
+        setIsMenuOpen((prev) => {
+          handleResize();
+          return !prev;
+        });
         onClick(e);
       }
     },
-    []
+    [handleResize]
   );
 
   /**
