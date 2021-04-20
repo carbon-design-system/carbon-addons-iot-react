@@ -114,9 +114,9 @@ const ProgressStep = ({
 
   const StepLabel = () => {
     return (
-      <p className={`${iotPrefix}--progress-text-label`} value={description}>
+      <span className={`${iotPrefix}--progress-text-label`} value={description} title={label}>
         {label}
-      </p>
+      </span>
     );
   };
 
