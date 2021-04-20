@@ -5461,15 +5461,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="iot--list-item"
                           >
                             <div
+                              aria-label="Close"
                               className="iot--list-item--expand-icon"
                               data-testid="expand-icon"
                               onClick={[Function]}
                               onKeyPress={[Function]}
                               role="button"
                               tabIndex={0}
+                              title="Close"
                             >
                               <svg
-                                aria-label="Close"
+                                aria-label="Close-icon"
                                 fill="currentColor"
                                 focusable="false"
                                 height={16}
@@ -6087,15 +6089,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="iot--list-item"
                           >
                             <div
+                              aria-label="Close"
                               className="iot--list-item--expand-icon"
                               data-testid="expand-icon"
                               onClick={[Function]}
                               onKeyPress={[Function]}
                               role="button"
                               tabIndex={0}
+                              title="Close"
                             >
                               <svg
-                                aria-label="Close"
+                                aria-label="Close-icon"
                                 fill="currentColor"
                                 focusable="false"
                                 height={16}
