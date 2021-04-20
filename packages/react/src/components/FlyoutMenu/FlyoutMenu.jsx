@@ -207,8 +207,12 @@ const FlyoutMenu = ({
   ) : (
     <DefaultFooter setIsOpen={setIsOpen} onCancel={onCancel} onApply={onApply} i18n={i18n} />
   );
+
   return (
     <div
+      style={{
+        '--tooltip-visibility': iconDescription ? 'visible' : 'hidden',
+      }}
       ref={buttonRef}
       className={classnames(
         [`${iotPrefix}--flyout-menu`],
@@ -220,6 +224,7 @@ const FlyoutMenu = ({
       )}
     >
       <Button
+        {...buttonProps}
         aria-label={iconDescription}
         iconDescription={iconDescription}
         className={classnames(`${iotPrefix}--flyout-menu--trigger-button`, buttonProps?.className)}
