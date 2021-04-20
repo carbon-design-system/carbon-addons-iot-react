@@ -1,7 +1,7 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import '../../globals/vars';
 
-.#{$iot-prefix}-simple-pagination-container {
+.#{$iot-prefix}--simple-pagination-container {
   display: flex;
   height: $spacing-09;
   //justify-content: space-between;
@@ -11,24 +11,24 @@
   align-items: center;
 }
 
-.#{$iot-prefix}-simple-pagination-page-bar {
+.#{$iot-prefix}--simple-pagination-page-bar {
   display: flex;
   margin-left: auto;
 }
 
-.#{$iot-prefix}-simple-pagination-page-label {
+.#{$iot-prefix}--simple-pagination-page-label {
   padding-right: $spacing-05;
   padding-left: $spacing-05;
   font-size: 0.875rem;
 }
 
-.#{$iot-prefix}-addons-simple-pagination-button {
+.#{$iot-prefix}--simple-pagination__button {
   &:focus {
     outline: none;
   }
 }
 
-.#{$iot-prefix}-addons-simple-pagination-button-disabled {
+.#{$iot-prefix}--simple-pagination__button--disabled {
   &:focus {
     outline: none;
   }
@@ -38,10 +38,10 @@
   cursor: not-allowed;
 }
 
-.#{$iot-prefix}-simple-pagination-caret {
+.#{$iot-prefix}--simple-pagination-caret {
   fill: $icon-01;
 }
 
-.#{$iot-prefix}-simple-pagination-caret-disabled {
+.#{$iot-prefix}--simple-pagination-caret-disabled {
   fill: $disabled-02;
 }
