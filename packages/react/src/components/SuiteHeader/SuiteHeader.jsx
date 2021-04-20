@@ -346,14 +346,8 @@ const SuiteHeader = ({
                         let href = routes.admin;
                         let routeType = ROUTE_TYPES.ADMIN;
                         if (isAdminView) {
-                          // Only use referrer URL if it is not the login screen.
-                          // if (document.referrer !== '' && document.referrer.indexOf('auth') < 0) {
-                          //   href = document.referrer;
-                          //   routeType = ROUTE_TYPES.REFERRER;
-                          // } else {
                           href = navigatorRoute;
                           routeType = ROUTE_TYPES.NAVIGATOR;
-                          // }
                         }
                         const result = await onRouteChange(routeType, href);
                         if (result) {
