@@ -18779,6 +18779,7 @@ Map {
       "defaultOpen": false,
       "direction": "bottom-start",
       "disabled": false,
+      "hideTooltip": true,
       "i18n": Object {
         "applyButtonText": "Apply",
         "cancelButtonText": "Cancel",
@@ -18843,6 +18844,9 @@ Map {
         "type": "oneOf",
       },
       "disabled": Object {
+        "type": "bool",
+      },
+      "hideTooltip": Object {
         "type": "bool",
       },
       "i18n": Object {
