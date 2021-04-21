@@ -321,6 +321,7 @@ const defaultProps = {
     openJSONButton: 'Open JSON editor',
     noDataLabel: 'No data source is defined',
     defaultCardTitle: 'Untitled',
+    selectAGroupBy: 'Select a group by',
     layoutInfoLg: 'Edit dashboard at large layout (1057 - 1312px)',
     layoutInfoMd: 'Edit dashboard at medium layout (673 - 1056px)',
     layoutInfoSm: 'Edit dashboard at small layout (481 - 672px)',

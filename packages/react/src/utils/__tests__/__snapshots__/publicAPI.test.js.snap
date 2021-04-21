@@ -9046,6 +9046,7 @@ Map {
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
         "searchPlaceHolderText": "Enter a value",
+        "selectAGroupBy": "Select a group by",
       },
       "initialValue": Object {
         "cards": Array [],
