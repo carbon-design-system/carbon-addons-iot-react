@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.47...v2.145.0-next.48) (2021-04-21)
+
+
+### Bug Fixes
+
+* **table:** include search.defaultValue in filtering logic ([00ee0c7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/00ee0c7d0f5c5dab3a9765d1173ef23251306f4d))
+
+
+
+
+
+# [2.145.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.46...v2.145.0-next.47) (2021-04-21)
+
+
+### Bug Fixes
+
+* **suiteheader:** fixing redirect statement in SuiteHeaderAppSwitcher as well. ([4d45f40](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4d45f40e7a1cf2710185cb5baef98af1070cce60))
+* **suiteheader:** fixing the redirect statements in SuiteHeader component so that they always open new tabs properly. ([9be68e6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9be68e6aaf9b0204e92d26a470452b0a7cb9f951))
+* **suiteheader:** Removing the `document.referrer` logic from SuiteHeader as apps using the component may have the referrer policy set to `strict-origin-when-cross-origin`, which could cause the redirect to point to the wrong URL. ([9fa8e21](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9fa8e214001e814639a51f45c4d21b33c5768162))
+* **suiteheader:** Updating snapshots ([cf91065](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cf91065b657ec7efa8984b2bb46015b3427e38e9))
+
+
+
+
+
 # [2.145.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.45...v2.145.0-next.46) (2021-04-19)
 
 
