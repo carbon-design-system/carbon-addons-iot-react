@@ -221,7 +221,7 @@ const SuiteHeader = ({
                 onClick={async () => {
                   const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
                   if (result) {
-                    window.open(surveyData.surveyLink, 'blank');
+                    window.open(surveyData.surveyLink, '_blank', 'noopener noreferrer');
                   }
                 }}
               >
@@ -233,7 +233,7 @@ const SuiteHeader = ({
                   onClick={async () => {
                     const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
                     if (result) {
-                      window.open(surveyData.privacyLink, 'blank');
+                      window.open(surveyData.privacyLink, '_blank', 'noopener noreferrer');
                     }
                   }}
                 >
@@ -346,14 +346,8 @@ const SuiteHeader = ({
                         let href = routes.admin;
                         let routeType = ROUTE_TYPES.ADMIN;
                         if (isAdminView) {
-                          // Only use referrer URL if it is not the login screen.
-                          if (document.referrer !== '' && document.referrer.indexOf('auth') < 0) {
-                            href = document.referrer;
-                            routeType = ROUTE_TYPES.REFERRER;
-                          } else {
-                            href = navigatorRoute;
-                            routeType = ROUTE_TYPES.NAVIGATOR;
-                          }
+                          href = navigatorRoute;
+                          routeType = ROUTE_TYPES.NAVIGATOR;
                         }
                         const result = await onRouteChange(routeType, href);
                         if (result) {
@@ -391,7 +385,7 @@ const SuiteHeader = ({
                                 routes[item]
                               );
                               if (result) {
-                                window.open(routes[item], 'blank');
+                                window.open(routes[item], '_blank', 'noopener noreferrer');
                               }
                             },
                           },
