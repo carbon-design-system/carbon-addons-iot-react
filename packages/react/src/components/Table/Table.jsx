@@ -4,7 +4,6 @@ import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { Table as CarbonTable, TableContainer, Tag } from 'carbon-components-react';
-import isNil from 'lodash/isNil';
 import uniqueId from 'lodash/uniqueId';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
@@ -562,10 +561,8 @@ const Table = (props) => {
   const isFiltered =
     view.filters.length > 0 ||
     view.selectedAdvancedFilterIds.length ||
-    (!isNil(view.toolbar) &&
-      !isNil(view.toolbar.search) &&
-      !isNil(view.toolbar.search.value) &&
-      view.toolbar.search.value !== '');
+    (view?.toolbar?.search?.value ?? '') !== '' ||
+    (view?.toolbar?.search?.defaultValue ?? '') !== '';
 
   const rowEditMode = view.toolbar.activeBar === 'rowEdit';
   const singleRowEditMode = !!view.table.rowActions.find((action) => action.isEditMode);
