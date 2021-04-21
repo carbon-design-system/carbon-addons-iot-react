@@ -105,7 +105,7 @@ const SuiteHeaderAppSwitcher = ({
                 });
                 if (result) {
                   if (isExternal) {
-                    window.open(href, 'blank');
+                    window.open(href, '_blank', 'noopener noreferrer');
                   } else {
                     window.location.href = href;
                   }
