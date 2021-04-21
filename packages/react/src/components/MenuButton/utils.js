@@ -1,11 +1,11 @@
-export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick }) => {
+export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDir }) => {
   const isSplitButton = label && typeof onPrimaryActionClick === 'function';
   const buttonRect = buttonRef.current.getBoundingClientRect();
   const primaryButtonRect = isSplitButton
     ? buttonRef?.current?.previousSibling?.getBoundingClientRect()
     : null;
   const menuRect = buttonRef.current.nextSibling?.getBoundingClientRect();
-  const isRtl = document.dir === 'rtl';
+  const isRtl = langDir === 'rtl';
   const { x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight } = buttonRect;
   const { clientWidth: bodyWidth, clientHeight: bodyHeight } = document.body;
   const { width: primaryButtonWidth } = primaryButtonRect ?? {

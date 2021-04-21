@@ -372,7 +372,6 @@ describe('MenuButton', () => {
 
     it('should position a split button on the bottom correctly in RTL', () => {
       const button = document.createElement('button');
-      document.dir = 'rtl';
       button.getBoundingClientRect = jest.fn(() => {
         return {
           bottom: 747,
@@ -409,9 +408,9 @@ describe('MenuButton', () => {
           label: 'Actions',
           buttonRef: { current: button },
           onPrimaryActionClick: jest.fn(),
+          langDir: 'rtl',
         })
       ).toEqual({ x: 489, y: 463 });
-      document.dir = 'ltr';
     });
   });
 });

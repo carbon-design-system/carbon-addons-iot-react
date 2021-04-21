@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { unstable_ContextMenu as ContextMenu } from 'carbon-components-react';
 import { ChevronDown16, ChevronUp16 } from '@carbon/icons-react';
 import classnames from 'classnames';
+import { useLangDirection } from 'use-lang-direction';
 
 import { settings } from '../../constants/Settings';
 
@@ -90,17 +91,18 @@ const MenuButton = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const buttonRef = useRef(null);
+  const langDir = useLangDirection();
   const handleResize = useCallback(() => {
     /* istanbul ignore else */
     if (buttonRef.current) {
-      const { x, y } = getMenuPosition({ label, buttonRef, onPrimaryActionClick });
+      const { x, y } = getMenuPosition({ label, buttonRef, onPrimaryActionClick, langDir });
 
       setPosition({
         x,
         y,
       });
     }
-  }, [label, onPrimaryActionClick]);
+  }, [label, langDir, onPrimaryActionClick]);
 
   useLayoutEffect(() => {
     window.addEventListener('resize', handleResize);
