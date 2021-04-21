@@ -149,14 +149,14 @@ const ListItem = ({
         className={`${iotPrefix}--list-item--expand-icon`}
         onClick={handleExpansionClick}
         data-testid="expand-icon"
-        aria-label={expanded ? i18n.expand : i18n.close}
-        title={expanded ? i18n.expand : i18n.close}
+        aria-label={expanded ? i18n.close : i18n.expand}
+        title={expanded ? i18n.close : i18n.expand}
         onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
       >
         {expanded ? (
-          <ChevronUp16 aria-label={`${i18n.expand}-icon`} />
+          <ChevronUp16 aria-label={`${i18n.close}-icon`} />
         ) : (
-          <ChevronDown16 aria-label={`${i18n.close}-icon`} />
+          <ChevronDown16 aria-label={`${i18n.expand}-icon`} />
         )}
       </div>
     ) : null;
