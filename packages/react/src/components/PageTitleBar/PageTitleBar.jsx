@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState, useMemo, useRef } from 'react';
 import classnames from 'classnames';
-import { Information20, Edit20 } from '@carbon/icons-react';
+import { Information16, Edit16 } from '@carbon/icons-react';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
 import throttle from 'lodash/throttle';
 
@@ -168,7 +168,7 @@ const PageTitleBar = ({
             triggerText=""
             triggerId="tooltip"
             tooltipId="tooltip"
-            renderIcon={Information20}
+            renderIcon={Information16}
             iconDescription={tooltipIconDescription}
           >
             {typeof description === 'string' ? <p>{description}</p> : description}
@@ -180,7 +180,7 @@ const PageTitleBar = ({
             kind="ghost"
             size="field"
             hasIconOnly
-            renderIcon={Edit20}
+            renderIcon={Edit16}
             iconDescription={editIconDescription}
             tooltipAlignment="center"
             tooltipPosition="bottom"

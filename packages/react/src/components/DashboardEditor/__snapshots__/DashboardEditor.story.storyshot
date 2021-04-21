@@ -104,11 +104,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
-                      height={20}
+                      height={16}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
                       viewBox="0 0 32 32"
-                      width={20}
+                      width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -2955,11 +2955,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--btn__icon"
                     fill="currentColor"
                     focusable="false"
-                    height={20}
+                    height={16}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
                     viewBox="0 0 32 32"
-                    width={20}
+                    width={16}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -5709,11 +5709,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--btn__icon"
                     fill="currentColor"
                     focusable="false"
-                    height={20}
+                    height={16}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
                     viewBox="0 0 32 32"
-                    width={20}
+                    width={16}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -7937,11 +7937,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--btn__icon"
                     fill="currentColor"
                     focusable="false"
-                    height={20}
+                    height={16}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
                     viewBox="0 0 32 32"
-                    width={20}
+                    width={16}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -10290,11 +10290,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
-                      height={20}
+                      height={16}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
                       viewBox="0 0 32 32"
-                      width={20}
+                      width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -11665,11 +11665,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--btn__icon"
                     fill="currentColor"
                     focusable="false"
-                    height={20}
+                    height={16}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
                     viewBox="0 0 32 32"
-                    width={20}
+                    width={16}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -13016,11 +13016,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--btn__icon"
                     fill="currentColor"
                     focusable="false"
-                    height={20}
+                    height={16}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
                     viewBox="0 0 32 32"
-                    width={20}
+                    width={16}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -15912,11 +15912,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--btn__icon"
                     fill="currentColor"
                     focusable="false"
-                    height={20}
+                    height={16}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
                     viewBox="0 0 32 32"
-                    width={20}
+                    width={16}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
