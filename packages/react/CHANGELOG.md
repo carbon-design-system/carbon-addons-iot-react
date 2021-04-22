@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.50...v2.145.0-next.51) (2021-04-22)
+
+
+### Bug Fixes
+
+* **timeseries:** support 0 values in the line chart ([8ff8e72](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8ff8e72b7c9bbe53bc0136d89eb42508ccedf493))
+* **wizard-modal:** do no pass onBack to ComposedModal ([274d524](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/274d52443f7ee03aaabddce90ec34f1adafacac8))
+
+
+
+
+
+# [2.145.0-next.50](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.49...v2.145.0-next.50) (2021-04-21)
+
+
+### Bug Fixes
+
+* **build:** change the index source in package.json ([123e4c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/123e4c56f249aebddc01461f59e932294b6d084e))
+
+
+
+
+
+# [2.145.0-next.49](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.48...v2.145.0-next.49) (2021-04-21)
+
+
+### Bug Fixes
+
+* **file-uploader:** fix broken example story ([888bd1f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/888bd1fddc7c8a83994f557b0033e344d216f5d6))
+
+
+
+
+
 # [2.145.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.47...v2.145.0-next.48) (2021-04-21)
 
 
