@@ -2978,6 +2978,15 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
+            "testID": Object {
+              "type": "string",
+            },
+            "totalItems": Object {
+              "type": "number",
+            },
+            "totalItemsText": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -4152,6 +4161,9 @@ Map {
       "pageOfPagesText": [Function],
       "pageText": null,
       "prevPageText": "Prev page",
+      "testID": "iot-simple-pagination",
+      "totalItems": undefined,
+      "totalItemsText": "Items",
     },
     "propTypes": Object {
       "maxPage": Object {
@@ -4176,6 +4188,15 @@ Map {
         "type": "string",
       },
       "prevPageText": Object {
+        "type": "string",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "totalItems": Object {
+        "type": "number",
+      },
+      "totalItemsText": Object {
         "type": "string",
       },
     },
@@ -5964,6 +5985,7 @@ Map {
         },
       ],
       "renderPresetTooltipText": null,
+      "showCustomRangeLink": true,
       "showRelativeOption": true,
       "testId": "date-time-picker",
     },
@@ -6264,6 +6286,9 @@ Map {
       },
       "renderPresetTooltipText": Object {
         "type": "func",
+      },
+      "showCustomRangeLink": Object {
+        "type": "bool",
       },
       "showRelativeOption": Object {
         "type": "bool",
@@ -18301,6 +18326,15 @@ Map {
               "type": "string",
             },
             "prevPageText": Object {
+              "type": "string",
+            },
+            "testID": Object {
+              "type": "string",
+            },
+            "totalItems": Object {
+              "type": "number",
+            },
+            "totalItemsText": Object {
               "type": "string",
             },
           },

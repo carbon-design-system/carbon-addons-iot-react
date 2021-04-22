@@ -132,6 +132,8 @@ const propTypes = {
   disabled: PropTypes.bool,
   /** show the relative custom range picker */
   showRelativeOption: PropTypes.bool,
+  /** show the custom range link */
+  showCustomRangeLink: PropTypes.bool,
   /** show time input fields */
   hasTimeInput: PropTypes.bool,
   /**
@@ -220,6 +222,7 @@ const defaultProps = {
   expanded: false,
   disabled: false,
   showRelativeOption: true,
+  showCustomRangeLink: true,
   hasTimeInput: true,
   renderPresetTooltipText: null,
   onCancel: null,
@@ -270,6 +273,7 @@ const DateTimePicker = ({
   expanded,
   disabled,
   showRelativeOption,
+  showCustomRangeLink,
   hasTimeInput,
   renderPresetTooltipText,
   onCancel,
@@ -749,12 +753,14 @@ const DateTimePicker = ({
                     {tooltipValue}
                   </ListItem>
                 ) : null}
-                <ListItem
-                  onClick={toggleIsCustomRange}
-                  className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--custom`}
-                >
-                  {strings.customRangeLinkLabel}
-                </ListItem>
+                {showCustomRangeLink ? (
+                  <ListItem
+                    onClick={toggleIsCustomRange}
+                    className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--custom`}
+                  >
+                    {strings.customRangeLinkLabel}
+                  </ListItem>
+                ) : null}
                 {presets.map((preset, i) => {
                   return (
                     <ListItem
