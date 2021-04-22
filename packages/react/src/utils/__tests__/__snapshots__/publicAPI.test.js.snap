@@ -2992,6 +2992,15 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
+            "testID": Object {
+              "type": "string",
+            },
+            "totalItems": Object {
+              "type": "number",
+            },
+            "totalItemsText": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -4166,6 +4175,9 @@ Map {
       "pageOfPagesText": [Function],
       "pageText": null,
       "prevPageText": "Prev page",
+      "testID": "iot-simple-pagination",
+      "totalItems": undefined,
+      "totalItemsText": "Items",
     },
     "propTypes": Object {
       "maxPage": Object {
@@ -4190,6 +4202,15 @@ Map {
         "type": "string",
       },
       "prevPageText": Object {
+        "type": "string",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "totalItems": Object {
+        "type": "number",
+      },
+      "totalItemsText": Object {
         "type": "string",
       },
     },
@@ -4854,6 +4875,7 @@ Map {
     "defaultProps": Object {
       "content": Object {
         "layout": "VERTICAL",
+        "legendPosition": "bottom",
         "series": Array [],
         "truncation": Object {
           "numCharacter": 20,
@@ -5978,6 +6000,7 @@ Map {
         },
       ],
       "renderPresetTooltipText": null,
+      "showCustomRangeLink": true,
       "showRelativeOption": true,
       "testId": "date-time-picker",
     },
@@ -6278,6 +6301,9 @@ Map {
       },
       "renderPresetTooltipText": Object {
         "type": "func",
+      },
+      "showCustomRangeLink": Object {
+        "type": "bool",
       },
       "showRelativeOption": Object {
         "type": "bool",
@@ -12920,6 +12946,7 @@ Map {
       "content": Object {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
+        "legendPosition": "bottom",
         "series": Array [],
         "showLegend": true,
         "timeDataSourceId": "timestamp",
@@ -13438,6 +13465,9 @@ Map {
             },
             "includeZeroOnYaxis": Object {
               "type": "bool",
+            },
+            "legendPosition": Object {
+              "type": "string",
             },
             "series": Object {
               "args": Array [
@@ -18317,6 +18347,15 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
+            "testID": Object {
+              "type": "string",
+            },
+            "totalItems": Object {
+              "type": "number",
+            },
+            "totalItemsText": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -18795,6 +18834,7 @@ Map {
       "defaultOpen": false,
       "direction": "bottom-start",
       "disabled": false,
+      "hideTooltip": true,
       "i18n": Object {
         "applyButtonText": "Apply",
         "cancelButtonText": "Cancel",
@@ -18859,6 +18899,9 @@ Map {
         "type": "oneOf",
       },
       "disabled": Object {
+        "type": "bool",
+      },
+      "hideTooltip": Object {
         "type": "bool",
       },
       "i18n": Object {
