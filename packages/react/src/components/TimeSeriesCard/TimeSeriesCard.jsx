@@ -466,7 +466,6 @@ const TimeSeriesCard = ({
     ]
   );
 
-  console.log({ ticks: options.axes.bottom.ticks });
   return (
     <Card
       title={title}
