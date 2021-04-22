@@ -89,6 +89,8 @@ const TimeSeriesCardPropTypes = {
      * if not explicitly stated, the card will show based on the length of the series
      */
     showLegend: PropTypes.bool,
+    /** Where to place the chart legend */
+    legendPosition: PropTypes.string,
     /** carbon charts legend truncation options */
     truncation: TruncationPropTypes,
   }).isRequired,
@@ -142,6 +144,7 @@ const defaultProps = {
     includeZeroOnXaxis: false,
     includeZeroOnYaxis: false,
     showLegend: true,
+    legendPosition: 'bottom',
     truncation: {
       type: 'end_line',
       threshold: 20,
@@ -194,6 +197,7 @@ const TimeSeriesCard = ({
       chartType,
       zoomBar,
       showLegend,
+      legendPosition,
       addSpaceOnEdges,
       truncation,
     },
@@ -393,7 +397,7 @@ const TimeSeriesCard = ({
         },
       },
       legend: {
-        position: 'bottom',
+        position: legendPosition,
         clickable: !isEditable,
         enabled: showLegend ?? series.length > 1,
         truncation,
@@ -443,6 +447,7 @@ const TimeSeriesCard = ({
       chartType,
       series.length,
       includeZeroOnYaxis,
+      legendPosition,
       isEditable,
       showLegend,
       truncation,
