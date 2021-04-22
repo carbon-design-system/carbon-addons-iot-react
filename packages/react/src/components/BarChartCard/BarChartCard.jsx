@@ -48,6 +48,7 @@ const defaultProps = {
   content: {
     type: BAR_CHART_TYPES.SIMPLE,
     layout: BAR_CHART_LAYOUTS.VERTICAL,
+    legendPosition: 'bottom',
     truncation: {
       type: 'end_line',
       threshold: 20,
@@ -100,6 +101,7 @@ const BarChartCard = ({
       yLabel,
       unit,
       type,
+      legendPosition,
       zoomBar,
       decimalPrecision,
       truncation,
@@ -288,7 +290,7 @@ const BarChartCard = ({
         },
       },
       legend: {
-        position: 'bottom',
+        position: legendPosition,
         enabled: chartData.length > 1,
         clickable: !isEditable,
         truncation,
@@ -343,6 +345,7 @@ const BarChartCard = ({
       xLabel,
       yLabel,
       zoomBar,
+      legendPosition,
     ]
   );
 

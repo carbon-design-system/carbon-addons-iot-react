@@ -170,6 +170,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                     </button>
                     <div
                       className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
+                      style={
+                        Object {
+                          "--tooltip-visibility": "hidden",
+                        }
+                      }
                     >
                       <button
                         aria-label=""
