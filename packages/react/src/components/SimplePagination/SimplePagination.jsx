@@ -37,7 +37,7 @@ const SimplePaginationDefaultProps = {
   prevPageText: 'Prev page',
   totalItemsText: 'Items',
   totalItems: undefined,
-  testID: `${iotPrefix}--simple-pagination`,
+  testID: `${iotPrefix}-simple-pagination`,
 };
 
 /** This is a lighter weight pagination component than the default Carbon one */
@@ -60,14 +60,14 @@ const SimplePagination = ({
   const handlePrev = () => onPage(page - 1);
 
   return (
-    <div className={`${iotPrefix}--simple-pagination-container`} data-testid={testID}>
+    <div className={`${iotPrefix}-simple-pagination-container`} data-testid={testID}>
       {totalItems ? (
-        <span className={`${iotPrefix}--simple-pagination-page-label`} maxpage={maxPage}>
+        <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
           {`${totalItems} ${totalItemsText}`}
         </span>
       ) : null}
-      <div className={`${iotPrefix}--simple-pagination-page-bar`}>
-        <span className={`${iotPrefix}--simple-pagination-page-label`} maxpage={maxPage}>
+      <div className={`${iotPrefix}-simple-pagination-page-bar`}>
+        <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
           {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
         </span>
         {maxPage > 1 ? (
@@ -75,8 +75,8 @@ const SimplePagination = ({
             <div
               className={
                 hasPrev
-                  ? `bx--pagination__button bx--pagination__button--backward ${iotPrefix}-addons-simple-pagination__button`
-                  : `bx--pagination__button bx--pagination__button--backward ${iotPrefix}-addons-simple-pagination__button--disabled`
+                  ? `${prefix}--pagination__button ${prefix}--pagination__button--backward ${iotPrefix}-addons-simple-pagination-button`
+                  : `${prefix}--pagination__button ${prefix}--pagination__button--backward ${iotPrefix}-addons-simple-pagination-button-disabled`
               }
               role="button"
               tabIndex={hasPrev ? 0 : -1}
@@ -88,16 +88,16 @@ const SimplePagination = ({
                 description={prevPageText}
                 className={
                   hasPrev
-                    ? `${iotPrefix}--simple-pagination-caret`
-                    : `${iotPrefix}--simple-pagination-caret-disabled`
+                    ? `${iotPrefix}-simple-pagination-caret`
+                    : `${iotPrefix}-simple-pagination-caret-disabled`
                 }
               />
             </div>
             <div
               className={
                 hasNext
-                  ? `${prefix}--pagination__button ${prefix}--pagination__button--forward ${iotPrefix}--simple-pagination__button`
-                  : `${prefix}--pagination__button ${prefix}--pagination__button--forward ${iotPrefix}--simple-pagination__button--disabled`
+                  ? `${prefix}--pagination__button ${prefix}--pagination__button--forward ${iotPrefix}-addons-simple-pagination-button`
+                  : `${prefix}--pagination__button ${prefix}--pagination__button--forward ${iotPrefix}-addons-simple-pagination-button-disabled`
               }
               role="button"
               tabIndex={hasNext ? 0 : -1}
@@ -109,8 +109,8 @@ const SimplePagination = ({
                 description={nextPageText}
                 className={
                   hasNext
-                    ? `${iotPrefix}--simple-pagination-caret`
-                    : `${iotPrefix}--simple-pagination-caret-disabled`
+                    ? `${iotPrefix}-simple-pagination-caret`
+                    : `${iotPrefix}-simple-pagination-caret-disabled`
                 }
               />
             </div>

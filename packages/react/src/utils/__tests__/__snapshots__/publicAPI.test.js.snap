@@ -4159,7 +4159,7 @@ Map {
       "pageOfPagesText": [Function],
       "pageText": null,
       "prevPageText": "Prev page",
-      "testID": "iot--simple-pagination",
+      "testID": "iot-simple-pagination",
       "totalItems": undefined,
       "totalItemsText": "Items",
     },

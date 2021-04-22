@@ -399,26 +399,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
           className="iot--list--page"
         >
           <div
-            className="iot--simple-pagination-container"
-            data-testid="iot--simple-pagination"
+            className="iot-simple-pagination-container"
+            data-testid="iot-simple-pagination"
           >
             <div
-              className="iot--simple-pagination-page-bar"
+              className="iot-simple-pagination-page-bar"
             >
               <span
-                className="iot--simple-pagination-page-label"
+                className="iot-simple-pagination-page-label"
                 maxpage={2}
               >
                 Page 1
               </span>
               <div
-                className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination__button--disabled"
+                className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
                 role="button"
                 tabIndex={-1}
               >
                 <svg
                   aria-hidden={true}
-                  className="iot--simple-pagination-caret-disabled"
+                  className="iot-simple-pagination-caret-disabled"
                   description="Prev page"
                   dir="ltr"
                   fill="currentColor"
@@ -435,7 +435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                 </svg>
               </div>
               <div
-                className="bx--pagination__button bx--pagination__button--forward iot--simple-pagination__button"
+                className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="button"
@@ -443,7 +443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               >
                 <svg
                   aria-hidden={true}
-                  className="iot--simple-pagination-caret"
+                  className="iot-simple-pagination-caret"
                   description="Next page"
                   dir="ltr"
                   fill="currentColor"
@@ -2008,14 +2008,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
           className="iot--list--page"
         >
           <div
-            className="iot--simple-pagination-container"
-            data-testid="iot--simple-pagination"
+            className="iot-simple-pagination-container"
+            data-testid="iot-simple-pagination"
           >
             <div
-              className="iot--simple-pagination-page-bar"
+              className="iot-simple-pagination-page-bar"
             >
               <span
-                className="iot--simple-pagination-page-label"
+                className="iot-simple-pagination-page-label"
                 maxpage={1}
               >
                 Page 1
@@ -2469,14 +2469,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
           className="iot--list--page"
         >
           <div
-            className="iot--simple-pagination-container"
-            data-testid="iot--simple-pagination"
+            className="iot-simple-pagination-container"
+            data-testid="iot-simple-pagination"
           >
             <div
-              className="iot--simple-pagination-page-bar"
+              className="iot-simple-pagination-page-bar"
             >
               <span
-                className="iot--simple-pagination-page-label"
+                className="iot-simple-pagination-page-label"
                 maxpage={1}
               >
                 Page 1
@@ -3690,14 +3690,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
           className="iot--list--page"
         >
           <div
-            className="iot--simple-pagination-container"
-            data-testid="iot--simple-pagination"
+            className="iot-simple-pagination-container"
+            data-testid="iot-simple-pagination"
           >
             <div
-              className="iot--simple-pagination-page-bar"
+              className="iot-simple-pagination-page-bar"
             >
               <span
-                className="iot--simple-pagination-page-label"
+                className="iot-simple-pagination-page-label"
                 maxpage={1}
               >
                 Page 1
@@ -4511,14 +4511,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
           className="iot--list--page"
         >
           <div
-            className="iot--simple-pagination-container"
-            data-testid="iot--simple-pagination"
+            className="iot-simple-pagination-container"
+            data-testid="iot-simple-pagination"
           >
             <div
-              className="iot--simple-pagination-page-bar"
+              className="iot-simple-pagination-page-bar"
             >
               <span
-                className="iot--simple-pagination-page-label"
+                className="iot-simple-pagination-page-label"
                 maxpage={1}
               >
                 Page 1
@@ -4859,14 +4859,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
           className="iot--list--page"
         >
           <div
-            className="iot--simple-pagination-container"
-            data-testid="iot--simple-pagination"
+            className="iot-simple-pagination-container"
+            data-testid="iot-simple-pagination"
           >
             <div
-              className="iot--simple-pagination-page-bar"
+              className="iot-simple-pagination-page-bar"
             >
               <span
-                className="iot--simple-pagination-page-label"
+                className="iot-simple-pagination-page-label"
                 maxpage={1}
               >
                 Page 1
