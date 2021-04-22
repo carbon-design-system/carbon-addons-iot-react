@@ -1,13 +1,27 @@
-import { BehaviorSubject, Subscription } from "rxjs";
+import { Subject } from 'rxjs';
 
 export class TabController {
-  selectionSubject = new BehaviorSubject(null);
-
-  selectTab(key: string) {
-    this.selectionSubject.next(key);
+  public selection = new Subject();
+  constructor(private tabList = []) {
   }
 
-  onSelection(handler) {
-    return this.selectionSubject.subscribe(handler);
+  setTabs(tabList) {
+    this.tabList = tabList;
+  }
+
+  addTab(tab) {
+    this.tabList.push(tab);
+  }
+
+  getTabs() {
+    return this.tabList;
+  }
+
+  selectPane(key) {
+    this.selection.next(key);
+  }
+
+  handlePaneSelection(listener) {
+    return this.selection.subscribe(listener);
   }
 }
