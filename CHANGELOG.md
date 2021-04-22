@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.53](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.52...v2.145.0-next.53) (2021-04-22)
+
+
+### Bug Fixes
+
+* **charts:** expose legend position prop ([abf99d6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/abf99d64b865ee2476880188af465b6cd08c9369))
+* **flyout-menu:** add position knob ([98867d8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/98867d8d07510fcc77b514194773538cffa31344))
+* **flyout-menu:** add story knobs ([a34416f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a34416f1ac9e128cc0c1dd44b2d47f40ac581e90))
+* **flyout-menu:** show tooltips when needed ([6d8e119](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6d8e119577947fc40f652d62a2040f14a93d6a4e))
+
+
+
+
+
 # [2.145.0-next.52](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.51...v2.145.0-next.52) (2021-04-22)
 
 
