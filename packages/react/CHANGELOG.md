@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.50...v2.145.0-next.51) (2021-04-22)
+
+
+### Bug Fixes
+
+* **timeseries:** support 0 values in the line chart ([8ff8e72](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8ff8e72b7c9bbe53bc0136d89eb42508ccedf493))
+* **wizard-modal:** do no pass onBack to ComposedModal ([274d524](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/274d52443f7ee03aaabddce90ec34f1adafacac8))
+
+
+
+
+
+# [2.145.0-next.50](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.49...v2.145.0-next.50) (2021-04-21)
+
+
+### Bug Fixes
+
+* **build:** change the index source in package.json ([123e4c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/123e4c56f249aebddc01461f59e932294b6d084e))
+
+
+
+
+
+# [2.145.0-next.49](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.48...v2.145.0-next.49) (2021-04-21)
+
+
+### Bug Fixes
+
+* **file-uploader:** fix broken example story ([888bd1f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/888bd1fddc7c8a83994f557b0033e344d216f5d6))
+
+
+
+
+
+# [2.145.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.47...v2.145.0-next.48) (2021-04-21)
+
+
+### Bug Fixes
+
+* **table:** include search.defaultValue in filtering logic ([00ee0c7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/00ee0c7d0f5c5dab3a9765d1173ef23251306f4d))
+
+
+
+
+
+# [2.145.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.46...v2.145.0-next.47) (2021-04-21)
+
+
+### Bug Fixes
+
+* **suiteheader:** fixing redirect statement in SuiteHeaderAppSwitcher as well. ([4d45f40](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4d45f40e7a1cf2710185cb5baef98af1070cce60))
+* **suiteheader:** fixing the redirect statements in SuiteHeader component so that they always open new tabs properly. ([9be68e6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9be68e6aaf9b0204e92d26a470452b0a7cb9f951))
+* **suiteheader:** Removing the `document.referrer` logic from SuiteHeader as apps using the component may have the referrer policy set to `strict-origin-when-cross-origin`, which could cause the redirect to point to the wrong URL. ([9fa8e21](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9fa8e214001e814639a51f45c4d21b33c5768162))
+* **suiteheader:** Updating snapshots ([cf91065](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cf91065b657ec7efa8984b2bb46015b3427e38e9))
+
+
+
+
+
 # [2.145.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.45...v2.145.0-next.46) (2021-04-19)
 
 

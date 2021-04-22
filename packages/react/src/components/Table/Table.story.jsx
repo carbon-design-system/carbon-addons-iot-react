@@ -836,7 +836,7 @@ export const StatefulExampleWithCreateSaveViews = withReadme(README, () => {
         },
         toolbar: {
           activeBar: 'column',
-          search: { defaultValue: 'pinoc' },
+          search: { defaultValue: text('defaultSearchValue', 'pinoc') },
         },
       },
       columns: defaultState.columns,
