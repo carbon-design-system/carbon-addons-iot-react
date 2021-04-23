@@ -167,6 +167,34 @@ WithoutARelativeOption.story = {
   name: 'Without a relative option',
 };
 
+export const WithoutACustomRangeLink = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <DateTimePicker
+        id="datetimepicker"
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[3],
+        }}
+        hasTimeInput={boolean('hasTimeInput', true)}
+        showCustomRangeLink={false}
+        onApply={action('onApply')}
+        onCancel={action('onCancel')}
+      />
+    </div>
+  );
+};
+
+WithoutACustomRangeLink.story = {
+  name: 'Without a custom range link',
+};
+
 export const LightVersion = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
   return (
