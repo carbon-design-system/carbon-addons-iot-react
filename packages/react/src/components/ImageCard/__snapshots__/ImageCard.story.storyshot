@@ -49,6 +49,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -88,7 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+            className="iot--image-card__wrapper"
           >
             <div
               onBlur={[Function]}
@@ -374,6 +375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -413,7 +415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+            className="iot--image-card__wrapper"
           >
             <div
               onBlur={[Function]}
@@ -788,6 +790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -915,6 +918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -1042,6 +1046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -1081,7 +1086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+            className="iot--image-card__wrapper"
           >
             <div
               onBlur={[Function]}
@@ -1305,7 +1310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+            className="iot--image-card__wrapper"
           >
             <div
               className="iot--image-uploader"
@@ -1376,6 +1381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
                 </p>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--tertiary"
                   data-testid="Button"
                   disabled={false}
@@ -1386,6 +1392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   Add from gallery
                 </button>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--tertiary"
                   data-testid="Button"
                   disabled={false}
@@ -1486,7 +1493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+            className="iot--image-card__wrapper"
           >
             <div
               className="iot--image-uploader"
@@ -1557,6 +1564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
                 </p>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--tertiary"
                   data-testid="Button"
                   disabled={false}
@@ -1567,6 +1575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   Add from gallery
                 </button>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--tertiary"
                   data-testid="Button"
                   disabled={false}

@@ -4,8 +4,15 @@
     "node": "12.x || 14.x"
   },
   "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": ["carbon-components-angular"]
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "carbon-components-angular",
+      "**carbon-components-react",
+      "**@storybook/*",
+      "**storybook*"
+    ]
   },
   "main": "lib/src/index.js",
   "module": "es/src/index.js",
@@ -21,7 +28,7 @@
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
-    "build:storybook": "lerna run --stream build:storybook",
+    "build:storybook": "node ./scripts/storybook.js --build",
     "build": "lerna run --stream build",
     "lint": "lerna run --stream lint",
     "test": "lerna run --stream test",
@@ -64,8 +71,18 @@
     "lerna": "^3.22.1",
     "lint-staged": "^8.1.0",
     "prettier": "^2.1.2",
-    "prettier-config-carbon": "^0.4.0"
+    "prettier-config-carbon": "^0.4.0",
+    "arg": "5.0.0"
   },
   "sideEffects": false,
-  "version": "0.0.0-development"
+  "version": "0.0.0-development",
+  "resolutions": {
+    "carbon-addons-iot-react/@emotion/core": "10.0.27",
+    "carbon-addons-iot-react/@storybook/theming": "5.3.17",
+    "carbon-addons-iot-react/chokidar": "3.3.1",
+    "carbon-addons-iot-react/react-grid-layout": "1.2.2",
+    "react-test-renderer": "16.14.0",
+    "react-dom": "16.14.0",
+    "react": "16.14.0"
+  }
 }

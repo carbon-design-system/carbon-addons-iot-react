@@ -82,6 +82,10 @@ module.exports = {
       ],
     });
 
+    // add the package local node_modules as the first place to look when resolving modules
+    // more info here: https://webpack.js.org/configuration/resolve/#resolvemodules
+    config.resolve.modules = [path.resolve(__dirname, '../node_modules'), 'node_modules'];
+
     // Return the altered config
     return config;
   },

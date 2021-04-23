@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import cloneDeep from 'lodash/cloneDeep';
 import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
 import isEqual from 'lodash/isEqual';
@@ -133,18 +132,17 @@ const defaultProps = {
  */
 export const searchForNestedItemValues = (items, value) => {
   const filteredItems = [];
-  cloneDeep(items).forEach((item) => {
+  items.forEach((item) => {
     // if the item has children, recurse and search children
     if (item.children) {
       // if the parent matches the search then add the parent and all children
       if (caseInsensitiveSearch([item.content.value], value)) {
         filteredItems.push(item);
       } else {
-        // eslint-disable-next-line no-param-reassign
-        item.children = searchForNestedItemValues(item.children, value);
+        const matchingChildren = searchForNestedItemValues(item.children, value);
         // if it's children did, we still need the item
-        if (item.children.length > 0) {
-          filteredItems.push(item);
+        if (matchingChildren.length > 0) {
+          filteredItems.push({ ...item, children: matchingChildren });
         }
       }
     } // if the item matches, add it to the filterItems array
@@ -172,14 +170,13 @@ export const searchForNestedItemValues = (items, value) => {
  */
 export const searchForNestedItemIds = (items, value) => {
   const filteredItems = [];
-  cloneDeep(items).forEach((item) => {
+  items.forEach((item) => {
     // if the item has children, recurse and search children
     if (item.children) {
-      // eslint-disable-next-line no-param-reassign
-      item.children = searchForNestedItemIds(item.children, value);
+      const matchingChildren = searchForNestedItemIds(item.children, value);
       // if it's children did, we still need the item
-      if (item.children.length > 0) {
-        filteredItems.push(item);
+      if (matchingChildren.length > 0) {
+        filteredItems.push({ ...item, children: matchingChildren });
       }
     } // if the item matches, add it to the filterItems array
     else if (item.id === value) {

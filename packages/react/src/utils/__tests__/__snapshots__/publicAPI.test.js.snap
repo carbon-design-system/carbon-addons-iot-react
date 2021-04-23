@@ -275,6 +275,7 @@ Map {
     "defaultProps": Object {
       "id": "EmptyTable",
       "onEmptyStateAction": null,
+      "testID": "",
     },
     "propTypes": Object {
       "emptyState": Object {
@@ -317,6 +318,9 @@ Map {
       },
       "onEmptyStateAction": Object {
         "type": "func",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "totalColumns": Object {
         "isRequired": true,
@@ -1555,6 +1559,7 @@ Map {
       "openMenuText": "Open menu",
       "options": Object {},
       "selectAllText": "Select all",
+      "testID": "",
     },
     "propTypes": Object {
       "actions": Object {
@@ -2012,6 +2017,9 @@ Map {
         "isRequired": true,
         "type": "shape",
       },
+      "testID": Object {
+        "type": "string",
+      },
     },
   },
   "TableBody" => Object {
@@ -2036,6 +2044,7 @@ Map {
       "shouldExpandOnRowClick": false,
       "shouldLazyRender": false,
       "singleRowEditButtons": null,
+      "testID": "",
       "totalColumns": 0,
     },
     "propTypes": Object {
@@ -2487,6 +2496,9 @@ Map {
       },
       "tableId": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "testID": Object {
         "type": "string",
       },
       "totalColumns": Object {
@@ -2964,6 +2976,15 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
+            "testID": Object {
+              "type": "string",
+            },
+            "totalItems": Object {
+              "type": "number",
+            },
+            "totalItemsText": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -3014,6 +3035,7 @@ Map {
       "hasRowExpansion": false,
       "hasRowSelection": false,
       "rowCount": 10,
+      "testID": "",
     },
     "propTypes": Object {
       "columns": Object {
@@ -3050,6 +3072,9 @@ Map {
       },
       "rowCount": Object {
         "type": "number",
+      },
+      "testID": Object {
+        "type": "string",
       },
     },
   },
@@ -3101,6 +3126,7 @@ Map {
         "simpleFiltersTabLabel": "Simple filters",
       },
       "secondaryTitle": null,
+      "testID": "",
       "tooltip": null,
     },
     "propTypes": Object {
@@ -3494,6 +3520,9 @@ Map {
         ],
         "isRequired": true,
         "type": "shape",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "tooltip": Object {
         "type": "node",
@@ -4130,6 +4159,9 @@ Map {
       "pageOfPagesText": [Function],
       "pageText": null,
       "prevPageText": "Prev page",
+      "testID": "iot-simple-pagination",
+      "totalItems": undefined,
+      "totalItemsText": "Items",
     },
     "propTypes": Object {
       "maxPage": Object {
@@ -4154,6 +4186,15 @@ Map {
         "type": "string",
       },
       "prevPageText": Object {
+        "type": "string",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "totalItems": Object {
+        "type": "number",
+      },
+      "totalItemsText": Object {
         "type": "string",
       },
     },
@@ -4818,7 +4859,10 @@ Map {
     "defaultProps": Object {
       "content": Object {
         "layout": "VERTICAL",
+        "legendPosition": "bottom",
+        "series": Array [],
         "truncation": Object {
+          "numCharacter": 20,
           "threshold": 20,
           "type": "end_line",
         },
@@ -4826,6 +4870,7 @@ Map {
       },
       "domainRange": null,
       "i18n": Object {
+        "defaultFilterStringPlaceholdText": "Filter",
         "noDataLabel": "No data",
         "tooltipGroupLabel": "Group",
         "tooltipTotalLabel": "Total",
@@ -5358,6 +5403,9 @@ Map {
             "truncation": Object {
               "args": Array [
                 Object {
+                  "numCharacter": Object {
+                    "type": "number",
+                  },
                   "threshold": Object {
                     "type": "number",
                   },
@@ -5499,6 +5547,9 @@ Map {
         "args": Array [
           Object {
             "alertDetected": Object {
+              "type": "string",
+            },
+            "defaultFilterStringPlaceholdText": Object {
               "type": "string",
             },
             "tooltipGroupLabel": Object {
@@ -5933,6 +5984,7 @@ Map {
         },
       ],
       "renderPresetTooltipText": null,
+      "showCustomRangeLink": true,
       "showRelativeOption": true,
       "testId": "date-time-picker",
     },
@@ -6233,6 +6285,9 @@ Map {
       },
       "renderPresetTooltipText": Object {
         "type": "func",
+      },
+      "showCustomRangeLink": Object {
+        "type": "bool",
       },
       "showRelativeOption": Object {
         "type": "bool",
@@ -9027,6 +9082,7 @@ Map {
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
       "isSummaryDashboard": false,
+      "locale": "en",
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -9563,6 +9619,9 @@ Map {
       "isSummaryDashboard": Object {
         "type": "bool",
       },
+      "locale": Object {
+        "type": "string",
+      },
       "notification": Object {
         "type": "node",
       },
@@ -9623,7 +9682,7 @@ Map {
         "type": "arrayOf",
       },
       "title": Object {
-        "type": "string",
+        "type": "node",
       },
     },
   },
@@ -10073,7 +10132,7 @@ Map {
           },
           "sm": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "xl": Object {
             "h": 1,
@@ -11044,6 +11103,7 @@ Map {
         "groupDataSourceId": "group",
         "legendPosition": "bottom",
         "truncation": Object {
+          "numCharacter": 20,
           "threshold": 20,
           "type": "end_line",
         },
@@ -11537,6 +11597,9 @@ Map {
             "truncation": Object {
               "args": Array [
                 Object {
+                  "numCharacter": Object {
+                    "type": "number",
+                  },
                   "threshold": Object {
                     "type": "number",
                   },
@@ -12871,8 +12934,12 @@ Map {
       "content": Object {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
+        "legendPosition": "bottom",
+        "series": Array [],
         "showLegend": true,
+        "timeDataSourceId": "timestamp",
         "truncation": Object {
+          "numCharacter": 20,
           "threshold": 20,
           "type": "end_line",
         },
@@ -12880,6 +12947,7 @@ Map {
       "domainRange": null,
       "i18n": Object {
         "alertDetected": "Alert detected:",
+        "defaultFilterStringPlaceholdText": "Filter",
         "noDataLabel": "No data is available for this time range.",
         "tooltipGroupLabel": "Group",
       },
@@ -13386,6 +13454,9 @@ Map {
             "includeZeroOnYaxis": Object {
               "type": "bool",
             },
+            "legendPosition": Object {
+              "type": "string",
+            },
             "series": Object {
               "args": Array [
                 Array [
@@ -13460,6 +13531,9 @@ Map {
             "truncation": Object {
               "args": Array [
                 Object {
+                  "numCharacter": Object {
+                    "type": "number",
+                  },
                   "threshold": Object {
                     "type": "number",
                   },
@@ -13600,6 +13674,9 @@ Map {
         "args": Array [
           Object {
             "alertDetected": Object {
+              "type": "string",
+            },
+            "defaultFilterStringPlaceholdText": Object {
               "type": "string",
             },
             "noData": Object {
@@ -18258,6 +18335,15 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
+            "testID": Object {
+              "type": "string",
+            },
+            "totalItems": Object {
+              "type": "number",
+            },
+            "totalItemsText": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -18736,6 +18822,7 @@ Map {
       "defaultOpen": false,
       "direction": "bottom-start",
       "disabled": false,
+      "hideTooltip": true,
       "i18n": Object {
         "applyButtonText": "Apply",
         "cancelButtonText": "Cancel",
@@ -18800,6 +18887,9 @@ Map {
         "type": "oneOf",
       },
       "disabled": Object {
+        "type": "bool",
+      },
+      "hideTooltip": Object {
         "type": "bool",
       },
       "i18n": Object {
@@ -21627,15 +21717,15 @@ Map {
                   "sk",
                   "sl",
                   "sq",
-                  "sr-cyr",
                   "sr",
                   "sv",
                   "th",
                   "tr",
                   "uk",
                   "uz",
+                  "uz_latn",
                   "vn",
-                  "zh-tw",
+                  "zh_tw",
                   "zh",
                 ],
               ],
@@ -23055,6 +23145,8 @@ Map {
       },
     },
     "defaultProps": Object {
+      "clearSelectionDescription": "Total items selected: ",
+      "clearSelectionText": "To clear selection, press Delete or Backspace,",
       "compareItems": [Function],
       "direction": "bottom",
       "disabled": false,
@@ -23070,6 +23162,12 @@ Map {
     },
     "displayName": "MultiSelect",
     "propTypes": Object {
+      "clearSelectionDescription": Object {
+        "type": "string",
+      },
+      "clearSelectionText": Object {
+        "type": "string",
+      },
       "compareItems": Object {
         "isRequired": true,
         "type": "func",
@@ -23214,7 +23312,6 @@ Map {
   },
   "ToastNotification" => Object {
     "defaultProps": Object {
-      "caption": "provide a caption",
       "hideCloseButton": false,
       "iconDescription": "closes notification",
       "kind": "error",
@@ -23411,7 +23508,6 @@ Map {
   },
   "NotificationTextDetails" => Object {
     "defaultProps": Object {
-      "caption": "caption",
       "notificationType": "toast",
       "title": "title",
     },
@@ -23777,6 +23873,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "legendText": Object {
+        "type": "node",
+      },
       "name": Object {
         "isRequired": true,
         "type": "string",
@@ -23997,6 +24096,12 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "warn": Object {
+        "type": "bool",
+      },
+      "warnText": Object {
+        "type": "node",
       },
     },
     "render": [Function],
@@ -25666,7 +25771,6 @@ Map {
     "defaultProps": Object {
       "columnCount": 5,
       "compact": false,
-      "headers": Array [],
       "rowCount": 5,
       "showHeader": true,
       "showToolbar": true,
@@ -25893,6 +25997,16 @@ Map {
       "className": Object {
         "type": "string",
       },
+      "type": Object {
+        "args": Array [
+          Array [
+            "",
+            "default",
+            "container",
+          ],
+        ],
+        "type": "oneOf",
+      },
     },
   },
   "TagSkeleton" => Object {
@@ -26037,6 +26151,16 @@ Map {
       },
       "onClick": Object {
         "type": "func",
+      },
+      "tooltipAlignment": Object {
+        "args": Array [
+          Array [
+            "start",
+            "center",
+            "end",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
     "render": [Function],

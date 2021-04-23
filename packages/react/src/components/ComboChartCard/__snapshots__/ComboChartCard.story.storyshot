@@ -98,6 +98,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
               </div>
               <button
+                aria-pressed={null}
                 className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
                 disabled={false}
                 onClick={[Function]}
@@ -141,14 +142,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               />
               <div
                 className="iot--bar-chart-card--stateful-table iot--table-container bx--data-table-container"
+                data-testid="BarChartCard-table-table-container"
               >
                 <section
                   aria-label="data table toolbar"
                   className="bx--table-toolbar"
+                  data-testid="BarChartCard-table-table-toolbar"
                 >
                   <div
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
+                    data-testID="BarChartCard-table-table-toolbar-batch-actions"
                   >
                     <div
                       className="bx--batch-summary"
@@ -165,6 +169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--action-list"
                     >
                       <button
+                        aria-pressed={null}
                         className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                         disabled={false}
                         onClick={[Function]}
@@ -177,6 +182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                   <div
                     className="bx--toolbar-content iot--table-toolbar-content"
+                    data-testid="BarChartCard-table-table-toolbar-content"
                   >
                     <div
                       className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -216,6 +222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <input
                           autoComplete="off"
                           className="bx--search-input"
+                          data-testid="BarChartCard-table-table-toolbar-search"
                           id="BarChartCard-table-toolbar-search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
@@ -249,6 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </div>
                     </div>
                     <button
+                      aria-pressed={null}
                       className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                       data-testid="download-button"
                       disabled={false}
@@ -276,6 +284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
+                      aria-pressed={null}
                       className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                       data-testid="filter-button"
                       disabled={false}
@@ -312,9 +321,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      data-testid="BarChartCard-table"
                       title={null}
                     >
                       <thead
+                        data-testid="BarChartCard-table-table-head"
                         onMouseMove={null}
                         onMouseUp={null}
                       >
@@ -322,6 +333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <th
                             aria-sort="descending"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-date"
                             scope="col"
                             style={
                               Object {
@@ -389,6 +401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-health"
                             scope="col"
                             style={
                               Object {
@@ -456,6 +469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-age"
                             scope="col"
                             style={
                               Object {
@@ -523,6 +537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-condition"
                             scope="col"
                             style={
                               Object {
@@ -590,6 +605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-rul"
                             scope="col"
                             style={
                               Object {
@@ -658,6 +674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </thead>
                       <tbody
                         aria-live="polite"
+                        data-testID="BarChartCard-table-table-body"
                       >
                         <tr
                           className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
@@ -1665,6 +1682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </div>
                 <div
                   className="bx--pagination iot--pagination"
+                  data-testid="BarChartCard-table-table-pagination"
                   style={
                     Object {
                       "--pagination-text-display": "flex",
@@ -2018,6 +2036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -2224,6 +2243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -2500,9 +2520,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
           </span>
         </div>
-        <div
-          className="bx--toast-notification__caption"
-        />
       </div>
     </div>
   </div>

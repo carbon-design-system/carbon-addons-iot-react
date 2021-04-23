@@ -49,7 +49,7 @@ describe('CardEditor', () => {
       title: `${defaultCard.title}z`,
     });
     actions.onChange.mockReset();
-    userEvent.click(screen.getByRole('button', { name: `Size Small (4x1)` }));
+    userEvent.click(screen.getByRole('button', { name: 'Size Small (4x1) Open menu' }));
     userEvent.click(screen.getByText('Medium wide (16x2)'));
     expect(actions.onChange).toHaveBeenCalledWith({
       ...defaultCard,

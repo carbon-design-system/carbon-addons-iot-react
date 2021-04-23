@@ -16,7 +16,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -263,6 +262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
@@ -273,6 +273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               Cancel
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
@@ -336,7 +337,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -590,6 +590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
@@ -600,6 +601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               I18N Cancel
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
@@ -663,7 +665,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -900,6 +901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
@@ -910,6 +912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               Previous
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
               data-testid="Button"
               disabled={true}

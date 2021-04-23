@@ -20,6 +20,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Filte
       }
     >
       <button
+        aria-pressed={null}
         className="iot--btn bx--btn bx--btn--primary"
         data-testid="Button"
         disabled={false}
