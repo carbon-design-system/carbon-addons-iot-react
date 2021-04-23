@@ -49,12 +49,16 @@ import { I18n } from 'carbon-components-angular/i18n';
 			<ng-template *ngIf="customTrigger; else defaultIcon" [ngTemplateOutlet]="customTrigger"></ng-template>
 		</button>
 		<ng-template #templateRef>
-			<div class="pane-content" #paneRef>
+			<div class="pane-content" #paneContentRef>
         <div class="title">
           {{title}}
           <a ibmLink (click)="clearFilterClicked($event)" class="clear-filter" href="#">{{clearFilterText}}</a>
         </div>
         <ng-content></ng-content>
+      </div>
+      <div class="filter-actions">
+        <ng-content select="[cancelButton]"></ng-content>
+        <ng-content select="[applyButton]"></ng-content>
       </div>
 		</ng-template>
 		<ng-template #defaultIcon>
@@ -105,7 +109,7 @@ export class FilterMenu {
   @Input() title = 'Filter';
   @Input() clearFilterText = 'Clear filter';
 
-  @ViewChild('paneRef', { static: false }) paneRef: ElementRef;
+  @ViewChild('paneContentRef', { static: false }) paneContentRef: ElementRef;
 
   // @ts-ignore
   @ContentChild(OverflowMenuDirective, { static: false }) overflowMenuDirective: OverflowMenuDirective;
@@ -115,7 +119,7 @@ export class FilterMenu {
   constructor(protected elementRef: ElementRef, protected i18n: I18n) { }
 
   shouldClose = (meta: CloseMeta) => {
-    return !this.paneRef.nativeElement.contains(meta.target);
+    return !this.paneContentRef.nativeElement.contains(meta.target);
   }
 
   handleOpenChange(event: boolean) {

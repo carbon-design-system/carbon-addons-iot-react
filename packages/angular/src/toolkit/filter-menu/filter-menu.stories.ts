@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { boolean, withKnobs } from '@storybook/addon-knobs';
 import { moduleMetadata, storiesOf } from '@storybook/angular';
-import { DialogModule, IconModule, IconService, PlaceholderModule } from 'carbon-components-angular';
+import { ButtonModule, DialogModule, IconModule, IconService, PlaceholderModule } from 'carbon-components-angular';
 import { Filter16 } from '@carbon/icons';
 
 import { FilterMenuModule } from './filter-menu.module';
@@ -12,6 +12,8 @@ import { FilterMenuModule } from './filter-menu.module';
     <div>
       <ai-filter-menu [flip]="flip">
         Columns
+        <button ibmButton="secondary" cancelButton>Cancel</button>
+        <button ibmButton applyButton>Apply</button>
       </ai-filter-menu>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque vulputate iaculis eleifend.
@@ -48,6 +50,7 @@ storiesOf('Components/Filter menu', module)
     moduleMetadata({
       declarations: [StoryCustomComponent],
       imports: [
+        ButtonModule,
         DialogModule,
 				PlaceholderModule,
         FilterMenuModule,
