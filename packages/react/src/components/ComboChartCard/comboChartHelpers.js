@@ -5,7 +5,6 @@ import merge from 'lodash/merge';
 import omit from 'lodash/omit';
 import filter from 'lodash/filter';
 import capitalize from 'lodash/capitalize';
-import moment from 'moment';
 
 import {
   chartValueFormatter,
@@ -19,6 +18,7 @@ import {
   TIME_SERIES_TYPES,
   ZOOM_BAR_ENABLED_CARD_SIZES,
 } from '../../constants/LayoutConstants';
+import dayjs from '../../utils/dayjs';
 
 /**
  * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
@@ -262,7 +262,7 @@ const extractDataAndColumnNames = (values, chartOptions) => {
       id: `dataindex-${index}`,
       values: {
         ...omit(value, timeDataSourceId), // skip the timestamp so we can format it locally
-        [timeDataSourceId]: moment(value[timeDataSourceId]).format('L HH:mm'),
+        [timeDataSourceId]: dayjs(value[timeDataSourceId]).format('L HH:mm'),
       },
       isSelectable: false,
     };

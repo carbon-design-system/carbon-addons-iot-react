@@ -364,7 +364,7 @@ export const BarChartCardPropTypes = {
   domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
   /** Show timestamp in browser local time or GMT */
   showTimeInGMT: PropTypes.bool,
-  /** tooltip format pattern that follows the moment formatting patterns */
+  /** tooltip format pattern that follows the dayjs formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
 };
 

@@ -15,13 +15,13 @@ import {
   OrderedList,
   ListItem,
 } from 'carbon-components-react';
-import moment from 'moment';
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
+import dayjs from '../../utils/dayjs';
 
 const { iotPrefix } = settings;
 
@@ -103,7 +103,7 @@ const propTypes = {
       }).isRequired,
     }).isRequired,
   ]),
-  /** the moment.js format for the human readable interval value */
+  /** the dayjs.js format for the human readable interval value */
   dateTimeMask: PropTypes.string,
   /** a list of options to for the default presets */
   presets: PropTypes.arrayOf(
@@ -359,15 +359,15 @@ const DateTimePicker = ({
     const returnValue = { ...value };
     switch (value.kind) {
       case PICKER_KINDS.RELATIVE: {
-        let endDate = moment();
+        let endDate = dayjs();
         if (value.relative.relativeToWhen !== '') {
           endDate =
             value.relative.relativeToWhen === RELATIVE_VALUES.YESTERDAY
-              ? moment().add(-1, INTERVAL_VALUES.DAYS)
-              : moment();
+              ? dayjs().add(-1, INTERVAL_VALUES.DAYS)
+              : dayjs();
           if (value.relative.relativeToTime) {
-            endDate.hours(value.relative.relativeToTime.split(':')[0]);
-            endDate.minutes(value.relative.relativeToTime.split(':')[1]);
+            endDate = endDate.hours(value.relative.relativeToTime.split(':')[0]);
+            endDate = endDate.minutes(value.relative.relativeToTime.split(':')[1]);
           }
         }
         const startDate = endDate
@@ -378,30 +378,30 @@ const DateTimePicker = ({
           );
         returnValue.relative.start = new Date(startDate.valueOf());
         returnValue.relative.end = new Date(endDate.valueOf());
-        readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
+        readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
           endDate
         ).format(dateTimeMask)}`;
         break;
       }
       case PICKER_KINDS.ABSOLUTE: {
-        const startDate = moment(value.absolute.start);
+        let startDate = dayjs(value.absolute.start);
         if (value.absolute.startTime) {
-          startDate.hours(value.absolute.startTime.split(':')[0]);
-          startDate.minutes(value.absolute.startTime.split(':')[1]);
+          startDate = startDate.hours(value.absolute.startTime.split(':')[0]);
+          startDate = startDate.minutes(value.absolute.startTime.split(':')[1]);
         }
         returnValue.absolute.start = new Date(startDate.valueOf());
         if (value.absolute.end) {
-          const endDate = moment(value.absolute.end);
+          let endDate = dayjs(value.absolute.end);
           if (value.absolute.endTime) {
-            endDate.hours(value.absolute.endTime.split(':')[0]);
-            endDate.minutes(value.absolute.endTime.split(':')[1]);
+            endDate = endDate.hours(value.absolute.endTime.split(':')[0]);
+            endDate = endDate.minutes(value.absolute.endTime.split(':')[1]);
           }
           returnValue.absolute.end = new Date(endDate.valueOf());
-          readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
+          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
             endDate
           ).format(dateTimeMask)}`;
         } else {
-          readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
+          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
             startDate
           ).format(dateTimeMask)}`;
         }
@@ -490,13 +490,13 @@ const DateTimePicker = ({
     if (range[1]) {
       setFocusOnFirstField(!focusOnFirstField);
       newAbsolute.start = range[0]; // eslint-disable-line prefer-destructuring
-      newAbsolute.startDate = moment(newAbsolute.start).format('MM/DD/YYYY');
+      newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
       newAbsolute.end = range[1]; // eslint-disable-line prefer-destructuring
-      newAbsolute.endDate = moment(newAbsolute.end).format('MM/DD/YYYY');
+      newAbsolute.endDate = dayjs(newAbsolute.end).format('MM/DD/YYYY');
     }
 
     newAbsolute.start = range[0]; // eslint-disable-line prefer-destructuring
-    newAbsolute.startDate = moment(newAbsolute.start).format('MM/DD/YYYY');
+    newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
 
     setAbsoluteValue(newAbsolute);
   };
@@ -562,13 +562,13 @@ const DateTimePicker = ({
         setIsCustomRange(true);
         setCustomRangeKind(PICKER_KINDS.ABSOLUTE);
         if (!absolute.hasOwnProperty('start')) {
-          absolute.start = moment(absolute.startDate).valueOf();
+          absolute.start = dayjs(absolute.startDate).valueOf();
         }
         if (!absolute.hasOwnProperty('end')) {
-          absolute.end = moment(absolute.endDate).valueOf();
+          absolute.end = dayjs(absolute.endDate).valueOf();
         }
-        absolute.startDate = moment(absolute.start).format('MM/DD/YYYY');
-        absolute.endDate = moment(absolute.end).format('MM/DD/YYYY');
+        absolute.startDate = dayjs(absolute.start).format('MM/DD/YYYY');
+        absolute.endDate = dayjs(absolute.end).format('MM/DD/YYYY');
         setAbsoluteValue(absolute);
       }
     } else {
@@ -649,7 +649,7 @@ const DateTimePicker = ({
   const getIntervalValue = () => {
     if (currentValue) {
       if (currentValue.kind === PICKER_KINDS.PRESET) {
-        return `${moment().subtract(currentValue.preset.offset, 'minutes').format(dateTimeMask)} ${
+        return `${dayjs().subtract(currentValue.preset.offset, 'minutes').format(dateTimeMask)} ${
           strings.toNowLabel
         }`;
       }
@@ -881,7 +881,7 @@ const DateTimePicker = ({
                     </FormGroup>
                   </div>
                 ) : (
-                  <div data-testId={`${testId}-datepicker`}>
+                  <div data-testid={`${testId}-datepicker`}>
                     <div className={`${iotPrefix}--date-time-picker__datepicker`}>
                       <DatePicker
                         datePickerType="range"
