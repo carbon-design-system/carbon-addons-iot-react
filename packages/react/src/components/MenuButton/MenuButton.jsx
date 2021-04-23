@@ -123,10 +123,13 @@ const MenuButton = ({
       if (typeof onPrimaryActionClick === 'function') {
         onPrimaryActionClick(e);
       } else {
-        setIsMenuOpen((prev) => !prev);
+        setIsMenuOpen((prev) => {
+          handleResize();
+          return !prev;
+        });
       }
     },
-    [onPrimaryActionClick]
+    [handleResize, onPrimaryActionClick]
   );
 
   const handleSecondaryClick = useCallback(() => {
