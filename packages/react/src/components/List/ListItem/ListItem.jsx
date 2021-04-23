@@ -121,7 +121,12 @@ const ListItem = ({
   itemWillMove,
   dragPreviewText,
 }) => {
-  const handleExpansionClick = () => isExpandable && onExpand(id);
+  const handleExpansionClick = (event) => {
+    event.stopPropagation();
+    if (isExpandable) {
+      onExpand(id);
+    }
+  };
 
   if (__DEV__ && Array.isArray(rowActions)) {
     warning(
@@ -149,7 +154,7 @@ const ListItem = ({
         className={`${iotPrefix}--list-item--expand-icon`}
         onClick={handleExpansionClick}
         data-testid="expand-icon"
-        onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
+        onKeyPress={(event) => event.key === 'Enter' && handleExpansionClick(event)}
       >
         {expanded ? (
           <ChevronUp16 aria-label={i18n.expand} />
