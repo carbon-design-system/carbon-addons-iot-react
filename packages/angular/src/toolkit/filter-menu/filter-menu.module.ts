@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 // imports
 import {
+  ButtonModule,
   PlaceholderModule,
   DialogService,
   DialogModule,
@@ -13,7 +14,6 @@ import {
 } from 'carbon-components-angular';
 
 import { FilterMenu } from './filter-menu.component';
-import { ButtonModule } from 'src/button';
 
 @NgModule({
   declarations: [
