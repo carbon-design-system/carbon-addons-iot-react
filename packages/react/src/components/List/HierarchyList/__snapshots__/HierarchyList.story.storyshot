@@ -5348,13 +5348,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
         >
           <div
             className="iot-simple-pagination-container"
+            data-testid="iot-simple-pagination"
           >
-            <span
-              className="iot-simple-pagination-page-label"
-              maxpage={1}
+            <div
+              className="iot-simple-pagination-page-bar"
             >
-              Page 1
-            </span>
+              <span
+                className="iot-simple-pagination-page-label"
+                maxpage={1}
+              >
+                Page 1
+              </span>
+            </div>
           </div>
         </div>
       </div>
