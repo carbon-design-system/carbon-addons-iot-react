@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.54](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.53...v2.145.0-next.54) (2021-04-22)
+
+
+### Bug Fixes
+
+* **time-series-card:** remove console.log ([012a6e7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/012a6e74e17e8cc0fd4f672c206197485cae698b))
+* **time-series-card:** use number instead of min/max for ticks ([3dc1413](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3dc1413a65e95eafbc41e65110e8dc401c69c1c4))
+
+
+
+
+
+# [2.145.0-next.53](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.52...v2.145.0-next.53) (2021-04-22)
+
+
+### Bug Fixes
+
+* **charts:** expose legend position prop ([abf99d6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/abf99d64b865ee2476880188af465b6cd08c9369))
+* **flyout-menu:** add position knob ([98867d8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/98867d8d07510fcc77b514194773538cffa31344))
+* **flyout-menu:** add story knobs ([a34416f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a34416f1ac9e128cc0c1dd44b2d47f40ac581e90))
+* **flyout-menu:** show tooltips when needed ([6d8e119](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6d8e119577947fc40f652d62a2040f14a93d6a4e))
+
+
+
+
+
+# [2.145.0-next.52](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.51...v2.145.0-next.52) (2021-04-22)
+
+
+### Bug Fixes
+
+* **list:** return the parent id ([a29f2c7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a29f2c740b0e06dbd1c1faa6a69f888d0d6fac28))
+* **simplepagination:** revert the style xpath changes ([2888c85](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2888c8591706787401af2e8d1ca336396b01d58f))
+
+
+
+
+
 # [2.145.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.50...v2.145.0-next.51) (2021-04-22)
 
 
