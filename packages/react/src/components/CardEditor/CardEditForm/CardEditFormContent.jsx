@@ -140,9 +140,7 @@ const CardEditFormContent = ({
   const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 
   const handleTranslation = useCallback(
-    (idToTranslate) => {
-      handleTranslationCallback(idToTranslate, mergedI18n);
-    },
+    (idToTranslate) => handleTranslationCallback(idToTranslate, mergedI18n),
     [mergedI18n]
   );
 

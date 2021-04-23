@@ -9082,6 +9082,7 @@ Map {
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
       "isSummaryDashboard": false,
+      "locale": "en",
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -9617,6 +9618,9 @@ Map {
       },
       "isSummaryDashboard": Object {
         "type": "bool",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "notification": Object {
         "type": "node",
