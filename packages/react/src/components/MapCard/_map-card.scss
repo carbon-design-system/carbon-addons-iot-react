@@ -141,6 +141,7 @@
     justify-content: space-between;
     right: 1rem;
     top: 1rem;
+    z-index: 2;
 
     [dir='rtl'] & {
       left: 1rem;
