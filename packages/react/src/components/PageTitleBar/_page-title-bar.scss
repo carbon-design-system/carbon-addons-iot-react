@@ -277,6 +277,24 @@
       & #tooltip {
         fill: $icon-01;
       }
+
+      .#{$prefix}--tooltip__label {
+        height: 100%;
+        width: $spacing-08;
+      }
+
+      .#{$prefix}--tooltip__trigger {
+        margin-left: 0;
+        padding-left: $spacing-04;
+        padding-right: $spacing-04;
+        height: calc(100% - 2px); // make room for outline
+        width: calc(#{$spacing-08} - 1px);
+
+        svg {
+          width: $spacing-05;
+          height: $spacing-05;
+        }
+      }
     }
 
     &--edit {
