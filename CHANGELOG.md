@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.56...v2.145.0-next.57) (2021-04-26)
+
+
+### Bug Fixes
+
+* **dashboard-editor:** always use dataSourceId in selectedData array ([ff261f2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ff261f213296539a1ac57d3afb48d015cddc5c84))
+
+
+
+
+
 # [2.145.0-next.56](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.55...v2.145.0-next.56) (2021-04-26)
 
 
