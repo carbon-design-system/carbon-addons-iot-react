@@ -3,7 +3,12 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import { TabsModule } from './tabs.module';
 import { TabController } from './tab-controller.class';
-import { ButtonModule, DropdownModule, IconModule, TabsModule as CTabsModule } from 'carbon-components-angular';
+import {
+  ButtonModule,
+  DropdownModule,
+  IconModule,
+  TabsModule as CTabsModule,
+} from 'carbon-components-angular';
 
 storiesOf('Components/Tabs', module)
   .addDecorator(
@@ -34,25 +39,25 @@ storiesOf('Components/Tabs', module)
         {
           key: 'one',
           title: 'One',
-          demoContent: 'Tab content 1'
+          demoContent: 'Tab content 1',
         },
         {
           key: 'two',
           title: 'Second tab',
-          demoContent: 'Tab content 2'
+          demoContent: 'Tab content 2',
         },
         {
           key: 'three',
           title: 'Three',
-          demoContent: 'Tab content 3'
-        }
+          demoContent: 'Tab content 3',
+        },
       ]),
       addTab: function () {
         this.controller.addTab({
           key: Math.random(),
           title: 'Another tab',
-          demoContent: 'Another tab content'
+          demoContent: 'Another tab content',
         });
-      }
-    }
+      },
+    },
   }));

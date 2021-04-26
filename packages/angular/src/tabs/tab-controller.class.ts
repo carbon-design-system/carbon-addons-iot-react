@@ -9,14 +9,16 @@ export class TabController {
   public tabList: Observable<Tab[]>;
   private tabSource = new BehaviorSubject<Tab[]>([]);
   constructor(tabList = []) {
-    this.tabListWithSelection = combineLatest([this.selection, this.tabSource]).pipe(map(([selection, tabs]) => {
-      return tabs.map(tab => {
-        return {
-          ...tab,
-          selected: selection === tab.key,
-        };
-      });
-    }));
+    this.tabListWithSelection = combineLatest([this.selection, this.tabSource]).pipe(
+      map(([selection, tabs]) => {
+        return tabs.map((tab) => {
+          return {
+            ...tab,
+            selected: selection === tab.key,
+          };
+        });
+      })
+    );
     this.tabSource.next(tabList);
     this.tabList = this.tabSource.asObservable();
   }
@@ -38,7 +40,7 @@ export class TabController {
   }
 
   removeTab(tabToRemove: Tab) {
-    const filteredTabs = this.tabSource.getValue().filter(tab => tab !== tabToRemove);
+    const filteredTabs = this.tabSource.getValue().filter((tab) => tab !== tabToRemove);
     this.setTabs(filteredTabs);
   }
 

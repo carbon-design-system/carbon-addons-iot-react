@@ -14,7 +14,7 @@ import { TabController } from './tab-controller.class';
       <ibm-dropdown-list [items]="displayItems" (select)="onSelect($event)"></ibm-dropdown-list>
     </div>
   `,
-  providers: [DropdownService]
+  providers: [DropdownService],
 })
 export class TabDropdownComponent implements OnInit, OnDestroy {
   @Input() controller: TabController;
@@ -24,7 +24,11 @@ export class TabDropdownComponent implements OnInit, OnDestroy {
   isOpen = false;
   displayItems: Observable<any>;
 
-  constructor(protected dropdownService: DropdownService, protected elementRef: ElementRef, protected documentService: DocumentService) { }
+  constructor(
+    protected dropdownService: DropdownService,
+    protected elementRef: ElementRef,
+    protected documentService: DocumentService
+  ) {}
 
   ngOnInit() {
     // TODO: update dropdown service to handle menus fixed to the right side of the trigger
@@ -33,10 +37,10 @@ export class TabDropdownComponent implements OnInit, OnDestroy {
        * 105 = 210 / 2 the dropdown service will center the menu and
        * then align it to the left edge of the trigger element
        */
-      left: 105
+      left: 105,
     };
 
-    this.documentService.handleClick(event => {
+    this.documentService.handleClick((event) => {
       const hostElement = this.elementRef.nativeElement as HTMLElement;
       const menuElement = this.dropdownMenu.nativeElement as HTMLElement;
       const target = event.target as Node;
@@ -45,13 +49,15 @@ export class TabDropdownComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.displayItems = this.controller.tabListWithSelection.pipe(map(list => {
-      return list.map(item => ({
-        content: item.title,
-        key: item.key,
-        selected: item.selected
-      }));
-    }));
+    this.displayItems = this.controller.tabListWithSelection.pipe(
+      map((list) => {
+        return list.map((item) => ({
+          content: item.title,
+          key: item.key,
+          selected: item.selected,
+        }));
+      })
+    );
   }
 
   onSelect(event) {
@@ -74,7 +80,8 @@ export class TabDropdownComponent implements OnInit, OnDestroy {
     const wrapper: HTMLElement = this.dropdownService.appendToBody(
       this.dropdownButton.nativeElement,
       this.dropdownMenu.nativeElement,
-      '');
+      ''
+    );
     wrapper.style.width = '250px';
     this.dropdownList.initFocus();
   }

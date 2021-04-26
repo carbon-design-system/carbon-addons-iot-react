@@ -7,18 +7,19 @@ import { TabController } from './tab-controller.class';
   selector: 'ai-tab',
   template: `
     <div
-			[attr.tabindex]="tabIndex"
-			role="tabpanel"
-			*ngIf="shouldRender()"
-			class="bx--tab-content"
-			[ngStyle]="{
-        'display': active ? null : 'none'
+      [attr.tabindex]="tabIndex"
+      role="tabpanel"
+      *ngIf="shouldRender()"
+      class="bx--tab-content"
+      [ngStyle]="{
+        display: active ? null : 'none'
       }"
-			[attr.aria-labelledby]="id + '-header'"
-			aria-live="polite">
-			<ng-content></ng-content>
-		</div>
-  `
+      [attr.aria-labelledby]="id + '-header'"
+      aria-live="polite"
+    >
+      <ng-content></ng-content>
+    </div>
+  `,
 })
 export class TabComponent extends Tab implements OnInit, OnDestroy {
   @Input() key: string;
@@ -29,7 +30,7 @@ export class TabComponent extends Tab implements OnInit, OnDestroy {
   ngOnInit() {
     // use a subscription to set this.active since that affects a number of other
     // tab internals
-    this.selectionSubscription = this.controller.selection.subscribe(key => {
+    this.selectionSubscription = this.controller.selection.subscribe((key) => {
       this.active = key === this.key;
     });
   }
