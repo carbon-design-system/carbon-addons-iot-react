@@ -16,7 +16,7 @@ import { Table } from 'carbon-components-angular';
   template: `
     <table
       ibmTable
-      sortable="true"
+      [sortable]="true"
       [size]="size"
       [striped]="striped"
       [skeleton]="skeleton"
@@ -83,4 +83,4 @@ import { Table } from 'carbon-components-angular';
   styleUrls: ['./sterling-table.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class SCTableComponent extends Table {}
+export class SCTableComponent extends Table { }
