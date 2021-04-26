@@ -1,7 +1,5 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, ElementRef, Input } from '@angular/core';
 import { TabController } from './tab-controller.class';
-import { TabService } from './tab.service';
 
 @Component({
   selector: 'ai-tabs',
@@ -13,37 +11,33 @@ import { TabService } from './tab.service';
         *ngFor="let tab of controller.getTabs()"
         [active]="(controller.selection | async) === tab.key"
         (selected)="onSelected(tab.key)">
-        {{tab.title}}
+        <div class="iot--tab__title-container">
+          <span>{{tab.title}}</span>
+        </div>
       </ibm-tab-header>
     </ibm-tab-header-group>
     <ng-content select="ai-tab-actions"></ng-content>
   `,
-  providers: [TabService],
   styles: [`
     :host {
       display: flex;
     }
   `]
 })
-export class TabsComponent implements OnInit, OnDestroy {
+export class TabsComponent {
   @Input() controller: TabController;
 
   constructor(protected elementRef: ElementRef) { }
 
-  ngOnInit() {
-
-  }
-
-  ngOnDestroy() {
-
-  }
-
   onSelected(key) {
-    this.controller.selectPane(key);
+    this.controller.selectTab(key);
   }
 
   getMaxWidth() {
     const actions = this.elementRef.nativeElement.querySelector('ai-tab-actions');
+    if (!actions) {
+      return null;
+    }
     return `calc(100% - ${getComputedStyle(actions).width})`;
   }
 }

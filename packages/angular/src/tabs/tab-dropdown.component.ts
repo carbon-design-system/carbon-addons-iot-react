@@ -1,5 +1,7 @@
-import { Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, Query, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { DocumentService, DropdownList, DropdownService } from 'carbon-components-angular';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { TabController } from './tab-controller.class';
 
 @Component({
@@ -8,75 +10,66 @@ import { TabController } from './tab-controller.class';
     <button aiTabAction #dropdownButton (click)="toggleMenu()">
       <svg class="bx--btn__icon" ibmIcon="chevron--down" size="16"></svg>
     </button>
-    <div style="display: none;" class="dropdown-menu" #dropdownMenu>
+    <div style="display: none;" class="dropdown-menu bx--list-box--expanded" #dropdownMenu>
       <ibm-dropdown-list [items]="displayItems" (select)="onSelect($event)"></ibm-dropdown-list>
     </div>
   `,
-  styles: [`
-    .dropdown-menu {
-      left: -105px;
-      position: relative;
-    }
-  `]
+  providers: [DropdownService]
 })
-export class TabDropdownComponent implements OnChanges, OnInit, OnDestroy {
+export class TabDropdownComponent implements OnInit, OnDestroy {
   @Input() controller: TabController;
   @ViewChild('dropdownMenu', { static: true }) dropdownMenu: ElementRef;
   @ViewChild('dropdownButton', { static: true }) dropdownButton: ElementRef;
   @ViewChild(DropdownList) dropdownList: DropdownList;
   isOpen = false;
-  displayItems = [];
+  displayItems: Observable<any>;
 
   constructor(protected dropdownService: DropdownService, protected elementRef: ElementRef, protected documentService: DocumentService) { }
 
   ngOnInit() {
+    // TODO: update dropdown service to handle menus fixed to the right side of the trigger
+    this.dropdownService.offset = {
+      /**
+       * 105 = 210 / 2 the dropdown service will center the menu and
+       * then align it to the left edge of the trigger element
+       */
+      left: 105
+    };
+
     this.documentService.handleClick(event => {
       const hostElement = this.elementRef.nativeElement as HTMLElement;
       const menuElement = this.dropdownMenu.nativeElement as HTMLElement;
       const target = event.target as Node;
       if (this.isOpen && !hostElement.contains(target) && !menuElement.contains(target)) {
-        this.close();
+        this.closeMenu();
       }
     });
-    this.updateItems();
 
-    this.controller.handlePaneSelection(key => {
-      this.updateItems(key);
-    });
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes.items) {
-
-    }
-  }
-
-  updateItems(selectedKey = null) {
-    this.displayItems = this.controller.getTabs().map(item => {
-      return {
+    this.displayItems = this.controller.tabListWithSelection.pipe(map(list => {
+      return list.map(item => ({
         content: item.title,
         key: item.key,
-        selected: selectedKey === item.key
-      };
-    });
+        selected: item.selected
+      }));
+    }));
   }
 
   onSelect(event) {
-    console.log(event);
     if (!event.isUpdate) {
-      this.controller.selectPane(event.item.key);
+      this.controller.selectTab(event.item.key);
+      this.closeMenu();
     }
   }
 
   toggleMenu() {
     if (!this.isOpen) {
-      this.open();
+      this.openMenu();
     } else {
-      this.close();
+      this.closeMenu();
     }
   }
 
-  open() {
+  openMenu() {
     this.isOpen = true;
     const wrapper: HTMLElement = this.dropdownService.appendToBody(
       this.dropdownButton.nativeElement,
@@ -86,12 +79,12 @@ export class TabDropdownComponent implements OnChanges, OnInit, OnDestroy {
     this.dropdownList.initFocus();
   }
 
-  close() {
+  closeMenu() {
     this.isOpen = false;
     this.dropdownService.appendToDropdown(this.elementRef.nativeElement);
   }
 
   ngOnDestroy() {
-    this.close();
+    this.closeMenu();
   }
 }

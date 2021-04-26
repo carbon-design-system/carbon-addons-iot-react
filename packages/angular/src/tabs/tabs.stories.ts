@@ -22,56 +22,36 @@ storiesOf('Components/Tabs', module)
           <ai-tab-dropdown [controller]="controller"></ai-tab-dropdown>
         </ai-tab-actions>
       </ai-tabs>
-      <ai-tab key="one" [controller]="controller">
-        Tab Content 1
+      <ai-tab
+        *ngFor="let tab of controller.tabList | async"
+        [key]="tab.key"
+        [controller]="controller">
+        {{tab.demoContent}}
       </ai-tab>
-      <ai-tab key="two" [controller]="controller">
-        Tab Content 2
-      </ai-tab>
-      <ai-tab key="three" [controller]="controller">
-        Tab Content 3
-      </ai-tab>
-
-      <ibm-tab-header-group [contentAfter]="controls">
-        <ibm-tab-header [paneReference]="content1">One</ibm-tab-header>
-        <ibm-tab-header [paneReference]="content2">Two</ibm-tab-header>
-        <ibm-tab-header [paneReference]="content3">Three</ibm-tab-header>
-      </ibm-tab-header-group>
-      <ng-template #controls>
-        <button aiTabAction>
-          <svg class="bx--btn__icon" ibmIcon="add" size="16"></svg>
-        </button>
-        <ai-tab-dropdown [controller]="controller"></ai-tab-dropdown>
-      </ng-template>
-      <ibm-tab #content1>
-        Tab Content 1
-      </ibm-tab>
-      <ibm-tab #content2>
-        Tab Content 2
-      </ibm-tab>
-      <ibm-tab #content3>
-        Tab Content 3
-      </ibm-tab>
     `,
     props: {
       controller: new TabController([
         {
           key: 'one',
-          title: 'One'
+          title: 'One',
+          demoContent: 'Tab content 1'
         },
         {
           key: 'two',
-          title: 'Second tab'
+          title: 'Second tab',
+          demoContent: 'Tab content 2'
         },
         {
           key: 'three',
-          title: 'Three'
+          title: 'Three',
+          demoContent: 'Tab content 3'
         }
       ]),
       addTab: function () {
         this.controller.addTab({
           key: Math.random(),
-          title: 'Another tab'
+          title: 'Another tab',
+          demoContent: 'Another tab content'
         });
       }
     }
