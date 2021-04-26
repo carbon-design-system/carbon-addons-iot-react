@@ -383,6 +383,8 @@ const DataSeriesFormItem = ({
                 size="small"
                 onClick={() => handleEditButton(dataItem, i)}
                 iconDescription={mergedI18n.edit}
+                tooltipPosition="left"
+                tooltipAlignment="center"
               />,
               <Button
                 key={`data-item-${dataItem.dataSourceId}_remove`}
@@ -451,6 +453,7 @@ const DataSeriesFormItem = ({
             itemToString={(item) => item?.text}
             titleText={mergedI18n.dataItemEditorDataItemTitle}
             addToList={false}
+            translateWithId={translateWithId}
             shouldFilterItem={({ item, inputValue }) => {
               return (
                 isEmpty(inputValue) ||

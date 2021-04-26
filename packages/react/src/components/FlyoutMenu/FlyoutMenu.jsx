@@ -90,6 +90,7 @@ const FlyoutMenu = ({
   tabIndex,
   tooltipClassName,
   passive,
+  hideTooltip,
   customFooter: CustomFooter,
   onApply,
   onCancel,
@@ -207,8 +208,12 @@ const FlyoutMenu = ({
   ) : (
     <DefaultFooter setIsOpen={setIsOpen} onCancel={onCancel} onApply={onApply} i18n={i18n} />
   );
+
   return (
     <div
+      style={{
+        '--tooltip-visibility': hideTooltip ? 'hidden' : 'visible',
+      }}
       ref={buttonRef}
       className={classnames(
         [`${iotPrefix}--flyout-menu`],
@@ -220,6 +225,7 @@ const FlyoutMenu = ({
       )}
     >
       <Button
+        {...buttonProps}
         aria-label={iconDescription}
         iconDescription={iconDescription}
         className={classnames(`${iotPrefix}--flyout-menu--trigger-button`, buttonProps?.className)}
@@ -347,6 +353,11 @@ const propTypes = {
   passive: PropTypes.bool,
 
   /**
+   * Whether to show the iconDescription tooltip on the trigger button
+   */
+  hideTooltip: PropTypes.bool,
+
+  /**
    * Content to be rendered in place of the normal footer (ie. MyComponent).
    */
   customFooter: PropTypes.elementType,
@@ -403,6 +414,7 @@ const defaultProps = {
   children: undefined,
   tooltipClassName: '',
   passive: false,
+  hideTooltip: true,
   customFooter: null,
   tabIndex: 0,
   testId: 'flyout-menu',

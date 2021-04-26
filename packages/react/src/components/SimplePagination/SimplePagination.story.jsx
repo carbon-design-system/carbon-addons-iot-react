@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { number } from '@storybook/addon-knobs';
+import { number, text } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
 import SimplePagination from './SimplePagination';
@@ -25,6 +25,8 @@ export const Default = () => (
       page={number('page', 1)}
       maxPage={number('maxPage', 4)}
       onPage={action('onPage')}
+      totalItems={number('totalItems', 10)}
+      totalItemsText={text('total items display text (totalItemsText)', 'Assets')}
     />
   </StyledSimplePagination>
 );
