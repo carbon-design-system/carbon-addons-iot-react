@@ -10,21 +10,16 @@ import {
   DialogModule,
   LinkModule,
   IconModule,
-  I18nModule
+  I18nModule,
 } from 'carbon-components-angular';
 
 import { FilterMenu } from './filter-menu.component';
 
 @NgModule({
-  declarations: [
-    FilterMenu
-  ],
-  exports: [
-    FilterMenu
-  ],
+  declarations: [FilterMenu],
+  exports: [FilterMenu],
   providers: [DialogService],
-  entryComponents: [
-  ],
+  entryComponents: [],
   imports: [
     ButtonModule,
     CommonModule,
@@ -32,7 +27,7 @@ import { FilterMenu } from './filter-menu.component';
     PlaceholderModule,
     DialogModule,
     IconModule,
-    LinkModule
-  ]
+    LinkModule,
+  ],
 })
-export class FilterMenuModule { }
+export class FilterMenuModule {}

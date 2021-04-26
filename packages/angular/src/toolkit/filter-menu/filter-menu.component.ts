@@ -7,7 +7,7 @@ import {
   Output,
   TemplateRef,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import { CloseMeta, OverflowMenuDirective } from 'carbon-components-angular';
 import { I18n } from 'carbon-components-angular/i18n';
@@ -30,29 +30,35 @@ import { I18n } from 'carbon-components-angular/i18n';
 @Component({
   selector: 'ai-filter-menu',
   template: `
-		<button
-			[ibmOverflowMenu]="templateRef"
-			[ngClass]="{'bx--overflow-menu--open': open}"
-			class="bx--overflow-menu {{triggerClass}}"
-			[attr.aria-label]="buttonLabel"
-			[flip]="flip"
+    <button
+      [ibmOverflowMenu]="templateRef"
+      [ngClass]="{ 'bx--overflow-menu--open': open }"
+      class="bx--overflow-menu {{ triggerClass }}"
+      [attr.aria-label]="buttonLabel"
+      [flip]="flip"
       [customPane]="true"
-			[isOpen]="open"
-			(isOpenChange)="handleOpenChange($event)"
-			[offset]="offset"
-			[wrapperClass]="wrapperClass"
-			aria-haspopup="true"
-			class="bx--overflow-menu"
-			type="button"
+      [isOpen]="open"
+      (isOpenChange)="handleOpenChange($event)"
+      [offset]="offset"
+      [wrapperClass]="wrapperClass"
+      aria-haspopup="true"
+      class="bx--overflow-menu"
+      type="button"
       [shouldClose]="shouldClose"
-			[placement]="placement">
-			<ng-template *ngIf="customTrigger; else defaultIcon" [ngTemplateOutlet]="customTrigger"></ng-template>
-		</button>
-		<ng-template #templateRef>
-			<div class="pane-content" #paneContentRef>
+      [placement]="placement"
+    >
+      <ng-template
+        *ngIf="customTrigger; else defaultIcon"
+        [ngTemplateOutlet]="customTrigger"
+      ></ng-template>
+    </button>
+    <ng-template #templateRef>
+      <div class="pane-content" #paneContentRef>
         <div class="title">
-          {{title}}
-          <a ibmLink (click)="clearFilterClicked($event)" class="clear-filter" href="#">{{clearFilterText}}</a>
+          {{ title }}
+          <a ibmLink (click)="clearFilterClicked($event)" class="clear-filter" href="#">{{
+            clearFilterText
+          }}</a>
         </div>
         <ng-content></ng-content>
       </div>
@@ -60,23 +66,22 @@ import { I18n } from 'carbon-components-angular/i18n';
         <ng-content select="[cancelButton]"></ng-content>
         <ng-content select="[applyButton]"></ng-content>
       </div>
-		</ng-template>
-		<ng-template #defaultIcon>
-			<svg ibmIcon="filter" size="16" class="bx--overflow-menu__icon"></svg>
-		</ng-template>
-	`,
+    </ng-template>
+    <ng-template #defaultIcon>
+      <svg ibmIcon="filter" size="16" class="bx--overflow-menu__icon"></svg>
+    </ng-template>
+  `,
   styleUrls: ['./filter-menu.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class FilterMenu {
-
   /**
    * This specifies any vertical and horizontal offset for the position of the dialog
    */
-  @Input() set offset(os: { x: number, y: number }) {
+  @Input() set offset(os: { x: number; y: number }) {
     this._offset = os;
   }
-  get offset(): { x: number, y: number } {
+  get offset(): { x: number; y: number } {
     if (!this._offset) {
       return { x: (this.flip ? -1 : 1) * 4, y: 0 };
     }
@@ -112,15 +117,16 @@ export class FilterMenu {
   @ViewChild('paneContentRef', { static: false }) paneContentRef: ElementRef;
 
   // @ts-ignore
-  @ContentChild(OverflowMenuDirective, { static: false }) overflowMenuDirective: OverflowMenuDirective;
+  @ContentChild(OverflowMenuDirective, { static: false })
+  overflowMenuDirective: OverflowMenuDirective;
 
   private _offset;
 
-  constructor(protected elementRef: ElementRef, protected i18n: I18n) { }
+  constructor(protected elementRef: ElementRef, protected i18n: I18n) {}
 
   shouldClose = (meta: CloseMeta) => {
     return !this.paneContentRef.nativeElement.contains(meta.target);
-  }
+  };
 
   handleOpenChange(event: boolean) {
     this.open = event;
