@@ -210,6 +210,7 @@ export const tableColumnsWithAlignment = [
 
 export const tableColumnsFixedWidth = tableColumns.map((i) => ({
   ...i,
+  name: `${i.name} long text should get truncated`,
   width:
     i.id === 'string'
       ? '50px'
@@ -638,6 +639,37 @@ SimpleStatefulExample.story = {
     info: {
       text:
         'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+      propTables: [Table],
+      propTablesExclude: [StatefulTable],
+    },
+  },
+};
+
+export const StatefulExampleWithColumnTooltip = () => (
+  <FullWidthWrapper>
+    <StatefulTable
+      id="table"
+      {...initialState}
+      columns={tableColumns.map((column) => ({
+        ...column,
+        tooltip: column.id === 'select' ? 'Select an option' : undefined,
+      }))}
+      actions={actions}
+      lightweight={boolean('lightweight', false)}
+      options={{
+        hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+        hasRowExpansion: boolean('hasRowExpansion', false),
+        hasRowNesting: boolean('hasRowNesting', false),
+        wrapCellText: 'alwaysTruncate',
+      }}
+      view={{ table: { selectedIds: array('selectedIds', []) } }}
+    />
+  </FullWidthWrapper>
+);
+
+StatefulExampleWithColumnTooltip.story = {
+  parameters: {
+    info: {
       propTables: [Table],
       propTablesExclude: [StatefulTable],
     },

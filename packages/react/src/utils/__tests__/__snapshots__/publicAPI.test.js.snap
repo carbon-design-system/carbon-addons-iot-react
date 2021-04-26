@@ -711,6 +711,9 @@ Map {
                 "sortFunction": Object {
                   "type": "func",
                 },
+                "tooltip": Object {
+                  "type": "string",
+                },
                 "width": Object {
                   "type": "string",
                 },
@@ -1730,6 +1733,9 @@ Map {
                 "sortFunction": Object {
                   "type": "func",
                 },
+                "tooltip": Object {
+                  "type": "string",
+                },
                 "width": Object {
                   "type": "string",
                 },
@@ -2206,6 +2212,9 @@ Map {
                 },
                 "sortFunction": Object {
                   "type": "func",
+                },
+                "tooltip": Object {
+                  "type": "string",
                 },
                 "width": Object {
                   "type": "string",

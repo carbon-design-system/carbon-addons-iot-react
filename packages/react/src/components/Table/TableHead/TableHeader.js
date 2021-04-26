@@ -59,6 +59,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     // eslint-disable-next-line react/prop-types
     onClick,
     scope,
+    hasTooltip,
     sortDirection,
     translateWithId: t,
     thStyle,
@@ -80,7 +81,11 @@ const TableHeader = React.forwardRef(function TableHeader(
         ref={ref}
         style={thStyle}
       >
-        <span className={`${prefix}--table-header-label`}>{children}</span>
+        {!hasTooltip ? (
+          <span className={`${prefix}--table-header-label`}>{children}</span>
+        ) : (
+          children
+        )}
       </th>
     );
   }
@@ -103,7 +108,11 @@ const TableHeader = React.forwardRef(function TableHeader(
       data-testid={testID}
     >
       <button className={className} onClick={onClick} {...rest}>
-        <span className={`${prefix}--table-header-label`}>{children}</span>
+        {!hasTooltip ? (
+          <span className={`${prefix}--table-header-label`}>{children}</span>
+        ) : (
+          children
+        )}
         <Arrow
           className={`${prefix}--table-sort__icon`}
           aria-label={t('carbon.table.header.icon.description', {
@@ -138,6 +147,8 @@ TableHeader.propTypes = {
    */
   children: PropTypes.node,
 
+  /** does the header have a tooltip, if so do not truncate */
+  hasTooltip: PropTypes.bool,
   /**
    * The initial width of the column when resize is active and the fixed with
    * if resize is inactive. E.g. '200px'
@@ -191,6 +202,7 @@ TableHeader.defaultProps = {
   className: '',
   children: '',
   isSortHeader: false,
+  hasTooltip: false,
   isSortable: false,
   sortDirection: 'NONE',
   onClick: (onClick) => `${onClick}`,
