@@ -834,7 +834,7 @@ export const StatefulExampleWithCreateSaveViews = () => {
         },
         toolbar: {
           activeBar: 'column',
-          search: { defaultValue: 'pinoc' },
+          search: { defaultValue: text('defaultSearchValue', 'pinoc') },
         },
       },
       columns: defaultState.columns,
