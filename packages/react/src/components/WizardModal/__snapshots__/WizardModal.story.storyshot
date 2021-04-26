@@ -16,7 +16,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -338,7 +337,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -667,7 +665,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}

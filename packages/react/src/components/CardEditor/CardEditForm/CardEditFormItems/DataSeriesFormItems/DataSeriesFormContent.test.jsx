@@ -163,8 +163,8 @@ describe('DataSeriesFormItem', () => {
           translateWithId={jest.fn()}
         />
       );
-      const dataItemDropDown = screen.getByRole('button', {
-        name: 'Open',
+      const dataItemDropDown = screen.getByRole('combobox', {
+        name: 'Data item',
       });
       expect(dataItemDropDown).toBeInTheDocument();
       fireEvent.click(dataItemDropDown);

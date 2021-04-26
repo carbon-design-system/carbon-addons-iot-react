@@ -760,12 +760,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--list-box__menu-icon"
                       >
                         <svg
-                          aria-hidden={true}
+                          aria-label="Open menu"
                           fill="currentColor"
                           focusable="false"
                           height={16}
                           name="chevron--down"
                           preserveAspectRatio="xMidYMid meet"
+                          role="img"
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
@@ -773,7 +774,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <path
                             d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                           />
-                          <title />
+                          <title>
+                            Open menu
+                          </title>
                         </svg>
                       </div>
                     </button>
@@ -831,12 +834,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--list-box__menu-icon"
                       >
                         <svg
-                          aria-hidden={true}
+                          aria-label="Open menu"
                           fill="currentColor"
                           focusable="false"
                           height={16}
                           name="chevron--down"
                           preserveAspectRatio="xMidYMid meet"
+                          role="img"
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
@@ -844,7 +848,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <path
                             d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                           />
-                          <title />
+                          <title>
+                            Open menu
+                          </title>
                         </svg>
                       </div>
                     </button>
@@ -1395,12 +1401,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--list-box__menu-icon"
                       >
                         <svg
-                          aria-hidden={true}
+                          aria-label="Open menu"
                           fill="currentColor"
                           focusable="false"
                           height={16}
                           name="chevron--down"
                           preserveAspectRatio="xMidYMid meet"
+                          role="img"
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
@@ -1408,7 +1415,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <path
                             d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                           />
-                          <title />
+                          <title>
+                            Open menu
+                          </title>
                         </svg>
                       </div>
                     </button>
@@ -1466,12 +1475,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--list-box__menu-icon"
                       >
                         <svg
-                          aria-hidden={true}
+                          aria-label="Open menu"
                           fill="currentColor"
                           focusable="false"
                           height={16}
                           name="chevron--down"
                           preserveAspectRatio="xMidYMid meet"
+                          role="img"
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
@@ -1479,7 +1489,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <path
                             d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                           />
-                          <title />
+                          <title>
+                            Open menu
+                          </title>
                         </svg>
                       </div>
                     </button>
@@ -2030,12 +2042,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--list-box__menu-icon"
                       >
                         <svg
-                          aria-hidden={true}
+                          aria-label="Open menu"
                           fill="currentColor"
                           focusable="false"
                           height={16}
                           name="chevron--down"
                           preserveAspectRatio="xMidYMid meet"
+                          role="img"
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
@@ -2043,7 +2056,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <path
                             d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                           />
-                          <title />
+                          <title>
+                            Open menu
+                          </title>
                         </svg>
                       </div>
                     </button>
@@ -2101,12 +2116,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--list-box__menu-icon"
                       >
                         <svg
-                          aria-hidden={true}
+                          aria-label="Open menu"
                           fill="currentColor"
                           focusable="false"
                           height={16}
                           name="chevron--down"
                           preserveAspectRatio="xMidYMid meet"
+                          role="img"
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
@@ -2114,7 +2130,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <path
                             d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                           />
-                          <title />
+                          <title>
+                            Open menu
+                          </title>
                         </svg>
                       </div>
                     </button>
@@ -2888,12 +2906,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--list-box__menu-icon"
                       >
                         <svg
-                          aria-hidden={true}
+                          aria-label="Open menu"
                           fill="currentColor"
                           focusable="false"
                           height={16}
                           name="chevron--down"
                           preserveAspectRatio="xMidYMid meet"
+                          role="img"
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
@@ -2901,7 +2920,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <path
                             d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                           />
-                          <title />
+                          <title>
+                            Open menu
+                          </title>
                         </svg>
                       </div>
                     </button>
@@ -2959,12 +2980,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--list-box__menu-icon"
                       >
                         <svg
-                          aria-hidden={true}
+                          aria-label="Open menu"
                           fill="currentColor"
                           focusable="false"
                           height={16}
                           name="chevron--down"
                           preserveAspectRatio="xMidYMid meet"
+                          role="img"
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
@@ -2972,7 +2994,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <path
                             d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                           />
-                          <title />
+                          <title>
+                            Open menu
+                          </title>
                         </svg>
                       </div>
                     </button>
@@ -3089,7 +3113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         
                         <button
                           aria-haspopup={true}
-                          aria-label="Open"
+                          aria-label="Open menu"
                           className="bx--list-box__menu-icon"
                           data-toggle={true}
                           disabled={false}
@@ -3100,7 +3124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           onMouseUp={[Function]}
                           role="button"
                           tabIndex="-1"
-                          title="Open"
+                          title="Open menu"
                           type="button"
                         >
                           <svg
@@ -3177,7 +3201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="iot--list-item--content--row-actions"
                             >
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
@@ -3282,7 +3306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="iot--list-item--content--row-actions"
                             >
                               <button
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
                                 onClick={[Function]}
@@ -3946,12 +3970,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="bx--list-box__menu-icon"
                         >
                           <svg
-                            aria-hidden={true}
+                            aria-label="Open menu"
                             fill="currentColor"
                             focusable="false"
                             height={16}
                             name="chevron--down"
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 16 16"
                             width={16}
                             xmlns="http://www.w3.org/2000/svg"
@@ -3959,7 +3984,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <path
                               d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                             />
-                            <title />
+                            <title>
+                              Open menu
+                            </title>
                           </svg>
                         </div>
                       </button>
@@ -4017,12 +4044,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="bx--list-box__menu-icon"
                         >
                           <svg
-                            aria-hidden={true}
+                            aria-label="Open menu"
                             fill="currentColor"
                             focusable="false"
                             height={16}
                             name="chevron--down"
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 16 16"
                             width={16}
                             xmlns="http://www.w3.org/2000/svg"
@@ -4030,7 +4058,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <path
                               d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                             />
-                            <title />
+                            <title>
+                              Open menu
+                            </title>
                           </svg>
                         </div>
                       </button>
