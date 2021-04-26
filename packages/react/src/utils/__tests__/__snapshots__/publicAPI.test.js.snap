@@ -2,6 +2,22 @@
 
 exports[`Public API should only change with a semver change 1`] = `
 Map {
+  "settings" => Object {
+    "iotPrefix": "iot",
+    "prefix": "bx",
+    "selectorFocusable": "
+    a[href], area[href], input:not([disabled]),
+    button:not([disabled]),select:not([disabled]),
+    textarea:not([disabled]),
+    iframe, object, embed, *[tabindex], *[contenteditable=true]
+  ",
+    "selectorTabbable": "
+    a[href], area[href], input:not([disabled]):not([tabindex='-1']),
+    button:not([disabled]):not([tabindex='-1']),select:not([disabled]):not([tabindex='-1']),
+    textarea:not([disabled]):not([tabindex='-1']),
+    iframe, object, embed, *[tabindex]:not([tabindex='-1']), *[contenteditable=true]
+  ",
+  },
   "AddCard" => Object {
     "propTypes": Object {
       "onClick": Object {
@@ -9084,6 +9100,7 @@ Map {
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
       "isSummaryDashboard": false,
+      "locale": "en",
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -9619,6 +9636,9 @@ Map {
       },
       "isSummaryDashboard": Object {
         "type": "bool",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "notification": Object {
         "type": "node",
