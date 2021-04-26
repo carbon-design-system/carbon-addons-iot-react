@@ -238,6 +238,7 @@ const TimeSeriesCard = ({
         return 4;
       case CARD_SIZES.MEDIUMWIDE:
       case CARD_SIZES.LARGE:
+      case CARD_SIZES.LARGETHIN:
         return 6;
       case CARD_SIZES.LARGEWIDE:
         return 14;
@@ -375,7 +376,7 @@ const TimeSeriesCard = ({
           mapsTo: 'date',
           scaleType: 'time',
           ticks: {
-            max: maxTicksPerSize,
+            number: maxTicksPerSize,
             formatter: formatTick,
           },
           includeZero: includeZeroOnXaxis,

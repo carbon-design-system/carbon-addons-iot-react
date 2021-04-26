@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.55](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.54...v2.145.0-next.55) (2021-04-23)
+
+
+### Bug Fixes
+
+* **dashboard-editor:** pass translations and locale through ([c509fbc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c509fbcd0757da22e954a9dbc8f5a555c30fa9e6))
+* **list-item:** send even through keypress expansion ([846f43f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/846f43f10f9eec774e104d4fdcd2b28833f3ef58))
+
+
+
+
+
+# [2.145.0-next.54](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.53...v2.145.0-next.54) (2021-04-22)
+
+
+### Bug Fixes
+
+* **time-series-card:** remove console.log ([012a6e7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/012a6e74e17e8cc0fd4f672c206197485cae698b))
+* **time-series-card:** use number instead of min/max for ticks ([3dc1413](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3dc1413a65e95eafbc41e65110e8dc401c69c1c4))
+
+
+
+
+
 # [2.145.0-next.53](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.52...v2.145.0-next.53) (2021-04-22)
 
 
