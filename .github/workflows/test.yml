@@ -14,9 +14,9 @@ jobs:
       - uses: dorny/paths-filter@v2
         id: changes
         with:
-        filters: |
-          react:
-            - 'packages/react/**'
+          filters: |
+            react:
+              - 'packages/react/**'
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -65,9 +65,9 @@ jobs:
       - uses: dorny/paths-filter@v2
         id: changes
         with:
-        filters: |
-          angular:
-            - 'packages/angular/**'
+          filters: |
+            angular:
+              - 'packages/angular/**'
 
       - name: Use Node.js
         uses: actions/setup-node@v1
