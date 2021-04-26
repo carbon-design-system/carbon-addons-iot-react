@@ -64,7 +64,8 @@ describe('SuiteHeaderAppSwitcher', () => {
     await userEvent.click(screen.getByTestId('suite-header-app-switcher--health'));
     expect(window.open).toHaveBeenCalledWith(
       commonProps.applications.find((app) => app.id === 'health').href,
-      'blank'
+      '_blank',
+      'noopener noreferrer'
     );
   });
   it('clicks an application link (but no redirect)', async () => {
