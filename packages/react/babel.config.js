@@ -13,7 +13,7 @@ module.exports = function generateConfig(api) {
           useBuiltIns: 'usage',
           modules: BABEL_ENV === 'production' ? false : 'auto',
           corejs: 3,
-          loose: false
+          loose: false,
         },
       ],
       '@babel/preset-react',
@@ -32,8 +32,8 @@ module.exports = function generateConfig(api) {
       [
         '@babel/plugin-proposal-class-properties',
         {
-          loose: false
-        }
+          loose: false,
+        },
       ],
       '@babel/plugin-proposal-json-strings',
       [

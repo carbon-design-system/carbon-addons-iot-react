@@ -15,7 +15,7 @@ module.exports = {
     // ensure all plugins are using loose: false (the default)
     // this avoids an error where plugins from different locations have
     // different loose modes
-    options.plugins.forEach(plugin => {
+    options.plugins.forEach((plugin) => {
       if (Array.isArray(plugin) && plugin[1].loose) {
         plugin[1].loose = false;
       }
@@ -95,10 +95,7 @@ module.exports = {
 
     // add the package local node_modules as the first place to look when resolving modules
     // more info here: https://webpack.js.org/configuration/resolve/#resolvemodules
-    config.resolve.modules = [
-      path.resolve(__dirname, '../node_modules'),
-      'node_modules'
-    ];
+    config.resolve.modules = [path.resolve(__dirname, '../node_modules'), 'node_modules'];
 
     // Return the altered config
     return config;
