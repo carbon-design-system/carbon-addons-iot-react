@@ -170,7 +170,9 @@ export const useChartData = (values, { series = [], timeDataSourceId, showTimeIn
                   date:
                     dataItem[timeDataSourceId] instanceof Date
                       ? dataItem[timeDataSourceId]
-                      : (showTimeInGMT ? dayjs.utc(dataItem[timeDataSourceId]) : dayjs(dataItem[timeDataSourceId])),
+                      : showTimeInGMT
+                      ? dayjs.utc(dataItem[timeDataSourceId])
+                      : dayjs(dataItem[timeDataSourceId]),
                   value: dataItem[dataSourceId],
                   group: label,
                 });
@@ -262,7 +264,10 @@ const extractDataAndColumnNames = (values, chartOptions) => {
       id: `dataindex-${index}`,
       values: {
         ...omit(value, timeDataSourceId), // skip the timestamp so we can format it locally
-        [timeDataSourceId]: (showTimeInGMT ? dayjs.utc(value[timeDataSourceId]) : dayjs(value[timeDataSourceId])).format('L HH:mm'),
+        [timeDataSourceId]: (showTimeInGMT
+          ? dayjs.utc(value[timeDataSourceId])
+          : dayjs(value[timeDataSourceId])
+        ).format('L HH:mm'),
       },
       isSelectable: false,
     };

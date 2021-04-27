@@ -54,7 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                 id="definition-tooltip-2"
                 role="tooltip"
               >
-                2018-10-28 07:34 to Now
+                2018-10-28 07:04 to Now
               </div>
             </div>
             <svg
@@ -87,7 +87,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                 <li
                   className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
                 >
-                  2018-10-28 07:34 to Now
+                  2018-10-28 07:04 to Now
                 </li>
                 <li
                   className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
@@ -236,7 +236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                 id="definition-tooltip-10"
                 role="tooltip"
               >
-                2018-10-28 07:34 to Now
+                2018-10-28 07:04 to Now
               </div>
             </div>
             <svg
@@ -269,7 +269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                 <li
                   className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
                 >
-                  2018-10-28 07:34 to Now
+                  2018-10-28 07:04 to Now
                 </li>
                 <li
                   className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
@@ -401,9 +401,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
             tabIndex={0}
           >
             <span
-              title="2018-10-28 07:34 to 2018-10-28 07:34"
+              title="2020-04-01 12:34 to 2020-04-06 10:49"
             >
-              2018-10-28 07:34 to 2018-10-28 07:34
+              2020-04-01 12:34 to 2020-04-06 10:49
             </span>
             <svg
               aria-label="Calendar"
@@ -912,7 +912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                 id="definition-tooltip-4"
                 role="tooltip"
               >
-                2018-10-28 07:34 to Now
+                2018-10-27 19:34 to Now
               </div>
             </div>
             <svg
@@ -945,7 +945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                 <li
                   className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
                 >
-                  2018-10-28 07:34 to Now
+                  2018-10-27 19:34 to Now
                 </li>
                 <li
                   className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
@@ -1077,9 +1077,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
             tabIndex={0}
           >
             <span
-              title="2018-10-28 07:34 to 2018-10-28 07:34"
+              title="2018-10-28 13:10 to 2018-10-28 13:30"
             >
-              2018-10-28 07:34 to 2018-10-28 07:34
+              2018-10-28 13:10 to 2018-10-28 13:30
             </span>
             <svg
               aria-label="Calendar"
@@ -1816,7 +1816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                 id="definition-tooltip-6"
                 role="tooltip"
               >
-                2018-10-28 07:34 to Now
+                2018-10-27 19:34 to Now
               </div>
             </div>
             <svg
@@ -1849,7 +1849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/DateT
                 <li
                   className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
                 >
-                  2018-10-28 07:34 to Now
+                  2018-10-27 19:34 to Now
                 </li>
                 <li
                   className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
