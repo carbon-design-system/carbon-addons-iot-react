@@ -1765,6 +1765,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             "--card-content-height": "256px",
                           }
                         }
+                      >
+                        <span
+                          className="react-resizable-handle react-resizable-handle-se"
+                          onMouseDown={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchStart={[Function]}
+                          style={
+                            Object {
+                              "touchAction": "none",
+                            }
+                          }
+                        />
+                      </div>
+                      <span
+                        className="react-resizable-handle react-resizable-handle-se"
+                        onMouseDown={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        style={
+                          Object {
+                            "touchAction": "none",
+                          }
+                        }
                       />
                     </div>
                     <div
@@ -3518,7 +3543,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           35
                         </h3>
                       </div>
+                      <span
+                        className="react-resizable-handle react-resizable-handle-se"
+                        onMouseDown={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        style={
+                          Object {
+                            "touchAction": "none",
+                          }
+                        }
+                      />
                     </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
                   </div>
                   <div
                     className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
@@ -14663,6 +14712,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-content-height": "256px",
+                        }
+                      }
+                    >
+                      <span
+                        className="react-resizable-handle react-resizable-handle-se"
+                        onMouseDown={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        style={
+                          Object {
+                            "touchAction": "none",
+                          }
+                        }
+                      />
+                    </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
                         }
                       }
                     />

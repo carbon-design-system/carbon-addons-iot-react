@@ -287,6 +287,6 @@ $shadow: 0.4rem;
   // What are we doing with these tool tips for buttons. We will want to be consistent across all button types.
   .#{$prefix}--assistive-text,
   &.#{$prefix}--tooltip--a11y::before {
-    visibility: hidden;
+    visibility: var(--tooltip-visibility);
   }
 }
