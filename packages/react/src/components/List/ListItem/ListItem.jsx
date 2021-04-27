@@ -121,7 +121,12 @@ const ListItem = ({
   itemWillMove,
   dragPreviewText,
 }) => {
-  const handleExpansionClick = () => isExpandable && onExpand(id);
+  const handleExpansionClick = (event) => {
+    event.stopPropagation();
+    if (isExpandable) {
+      onExpand(id);
+    }
+  };
 
   if (__DEV__ && Array.isArray(rowActions)) {
     warning(
@@ -151,7 +156,7 @@ const ListItem = ({
         data-testid="expand-icon"
         aria-label={expanded ? i18n.close : i18n.expand}
         title={expanded ? i18n.close : i18n.expand}
-        onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
+        onKeyPress={(event) => event.key === 'Enter' && handleExpansionClick(event)}
       >
         {expanded ? (
           <ChevronUp16 aria-label={`${i18n.close}-icon`} />
