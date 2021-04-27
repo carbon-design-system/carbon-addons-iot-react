@@ -850,6 +850,11 @@ export const CustomCardPreviewRenderer = () => (
             property on the card will be rendered here:
             <h3>{cardConfig.value}</h3>
           </div>
+
+          {
+            // if you want the resizable handles you need to render the children
+            cardProps.children
+          }
         </Card>
       ) : undefined;
     }}
