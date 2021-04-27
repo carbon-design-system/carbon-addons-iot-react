@@ -142,13 +142,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="First step"
                   value="First step"
                 >
                   First step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -204,13 +204,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Device Information"
                   value="Device Information"
                 >
                   Device Information
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -266,13 +266,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Long step"
                   value="Long step"
                 >
                   Long step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -325,13 +325,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Final step"
                   value="Final step"
                 >
                   Final step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -570,13 +570,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="First step"
                   value="First step"
                 >
                   First step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -637,13 +637,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Device Information"
                   value="Device Information"
                 >
                   Device Information
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -699,13 +699,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Long step"
                   value="Long step"
                 >
                   Long step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -758,13 +758,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Final step"
                   value="Final step"
                 >
                   Final step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -983,13 +983,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="First step"
                   value="First step"
                 >
                   First step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -1040,13 +1040,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Device Information"
                   value="Device Information"
                 >
                   Device Information
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -1097,13 +1097,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Long step"
                   value="Long step"
                 >
                   Long step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -1161,13 +1161,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Final step"
                   value="Final step"
                 >
                   Final step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -1405,13 +1405,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="First step"
                   value="First step"
                 >
                   First step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -1467,13 +1467,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Device Information"
                   value="Device Information"
                 >
                   Device Information
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -1529,13 +1529,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Long step"
                   value="Long step"
                 >
                   Long step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -1588,13 +1588,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Final step"
                   value="Final step"
                 >
                   Final step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -1824,13 +1824,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="First step"
                   value="First step"
                 >
                   First step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -1891,13 +1891,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Device Information"
                   value="Device Information"
                 >
                   Device Information
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -1953,13 +1953,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Long step"
                   value="Long step"
                 >
                   Long step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -2012,13 +2012,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Final step"
                   value="Final step"
                 >
                   Final step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -2247,13 +2247,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="First step"
                   value="First step"
                 >
                   First step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -2309,13 +2309,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Device Information"
                   value="Device Information"
                 >
                   Device Information
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -2371,13 +2371,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Long step"
                   value="Long step"
                 >
                   Long step
-                </span>
+                </p>
               </div>
             </button>
           </li>
@@ -2430,13 +2430,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               <div
                 className="iot--progress-text"
               >
-                <span
+                <p
                   className="iot--progress-text-label"
                   title="Final step"
                   value="Final step"
                 >
                   Final step
-                </span>
+                </p>
               </div>
             </button>
           </li>
