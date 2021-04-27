@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.56...v2.145.0-next.57) (2021-04-26)
+
+
+### Bug Fixes
+
+* **dashboard-editor:** always use dataSourceId in selectedData array ([ff261f2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ff261f213296539a1ac57d3afb48d015cddc5c84))
+
+
+
+
+
+# [2.145.0-next.56](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.55...v2.145.0-next.56) (2021-04-26)
+
+
+### Features
+
+* **dashboard-editor:** add decimal precision to ImageCards ([2b018b0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2b018b093a7b2a39fb0417846405bd83b8ed936c))
+* **repo:** export settings to consumers ([a1b08fd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a1b08fd6c35f1fc177f0bde378226abe632efd64))
+
+
+
+
+
+# [2.145.0-next.55](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.54...v2.145.0-next.55) (2021-04-23)
+
+
+### Bug Fixes
+
+* **dashboard-editor:** pass translations and locale through ([c509fbc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c509fbcd0757da22e954a9dbc8f5a555c30fa9e6))
+* **list-item:** send even through keypress expansion ([846f43f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/846f43f10f9eec774e104d4fdcd2b28833f3ef58))
+
+
+
+
+
 # [2.145.0-next.54](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.53...v2.145.0-next.54) (2021-04-22)
 
 
