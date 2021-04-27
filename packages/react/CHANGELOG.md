@@ -3,6 +3,59 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.60](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.59...v2.145.0-next.60) (2021-04-27)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.145.0-next.59](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.58...v2.145.0-next.59) (2021-04-27)
+
+
+### Bug Fixes
+
+* **cardrenderer:** custom and default cards should be resizable ([6fcc347](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6fcc34788d3da88262053a6eefb5dd2ba3f2180c))
+
+
+
+
+
+# [2.145.0-next.58](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.57...v2.145.0-next.58) (2021-04-27)
+
+
+### Bug Fixes
+
+* **bar-chart-card:** prop error on grouped BarChartCard ([71a8c0b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/71a8c0b065c485c132d0dbbd61ff2fc1ca05b10f))
+
+
+
+
+
+# [2.145.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.56...v2.145.0-next.57) (2021-04-26)
+
+
+### Bug Fixes
+
+* **dashboard-editor:** always use dataSourceId in selectedData array ([ff261f2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ff261f213296539a1ac57d3afb48d015cddc5c84))
+
+
+
+
+
+# [2.145.0-next.56](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.55...v2.145.0-next.56) (2021-04-26)
+
+
+### Features
+
+* **dashboard-editor:** add decimal precision to ImageCards ([2b018b0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2b018b093a7b2a39fb0417846405bd83b8ed936c))
+* **repo:** export settings to consumers ([a1b08fd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a1b08fd6c35f1fc177f0bde378226abe632efd64))
+
+
+
+
+
 # [2.145.0-next.55](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.54...v2.145.0-next.55) (2021-04-23)
 
 
