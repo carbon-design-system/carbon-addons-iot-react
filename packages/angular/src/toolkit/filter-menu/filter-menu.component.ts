@@ -126,7 +126,7 @@ export class FilterMenu {
 
   shouldClose = (meta: CloseMeta) => {
     return !this.paneContentRef.nativeElement.contains(meta.target);
-  }
+  };
 
   handleOpenChange(event: boolean) {
     this.open = event;
