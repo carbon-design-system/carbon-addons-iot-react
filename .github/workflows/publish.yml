@@ -1,7 +1,5 @@
 name: Publish
 
-# We should search around on semantic release github issues to see if there's any known issues with github actions running our publish command
-
 on:
   push:
     branches:
@@ -17,15 +15,26 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          token: ${{ secrets.ADMIN_TOKEN }}
+          token: ${{ secrets.CARBON_BOT_TOKEN }}
 
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: |
+          yarn --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
 
       - name: Validate formatting
         run: yarn format:check
@@ -34,8 +43,7 @@ jobs:
         run: yarn lint
 
       - name: Test, collect coverage
-        # we need the "-- --" to pass the options through yarn and lerna and back to yarn
-        run: yarn test -- -- --maxWorkers=2 --ci --logHeapUsage --coverage
+        run: yarn test:ci
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
@@ -49,6 +57,6 @@ jobs:
 
       - name: Publish
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.CARBON_BOT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn publish-npm

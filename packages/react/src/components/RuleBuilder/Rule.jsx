@@ -19,6 +19,7 @@ const defaultProps = {
   i18n: {
     all: 'ALL',
     any: 'ANY',
+    contains: 'Contains',
     lessThan: 'Less than',
     lessThanOrEqual: 'Less than or equal to',
     notEqual: 'Not equal',
@@ -70,6 +71,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     all: PropTypes.string,
     any: PropTypes.string,
+    contains: PropTypes.string,
     lessThan: PropTypes.string,
     lessThanOrEqual: PropTypes.string,
     notEqual: PropTypes.string,
@@ -118,13 +120,17 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
         id: 'GT',
         name: mergedI18n.greaterThan,
       },
+      {
+        id: 'CONTAINS',
+        name: mergedI18n.contains,
+      },
     ],
     [mergedI18n]
   );
 
   const getColumnById = React.useMemo(
     () => (id) => {
-      return columns.find(({ id: colId }) => id === colId);
+      return columns?.find(({ id: colId }) => id === colId);
     },
     [columns]
   );
@@ -236,6 +242,7 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
     <div data-testid={`${ruleId}-rule`} className={`${iotPrefix}--rule-builder-rule`}>
       <Dropdown
         id={`${ruleId}-column-dropdown`}
+        light
         items={columns}
         label={(selectedColumn && selectedColumn.name) || mergedI18n.selectAColumn}
         itemToString={(item) => item.name}
@@ -246,6 +253,7 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
       />
       <Dropdown
         id={`${ruleId}-operand-dropdown`}
+        light
         items={columnOperands}
         itemToString={(item) => item.name}
         label={(selectedOperand && selectedOperand.name) || mergedI18n.selectAnOperand}

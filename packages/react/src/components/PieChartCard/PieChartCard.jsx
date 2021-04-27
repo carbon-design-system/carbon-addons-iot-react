@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { PieChart } from '@carbon/charts-react';
 import classNames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
-import assign from 'lodash/assign';
+import defaultsDeep from 'lodash/defaultsDeep';
 
 import { PieCardPropTypes, CardPropTypes, CHART_COLORS } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -96,6 +96,11 @@ const defaultProps = {
     colors: undefined,
     groupDataSourceId: 'group',
     legendPosition: 'bottom',
+    truncation: {
+      type: 'end_line',
+      threshold: 20,
+      numCharacter: 20,
+    },
   },
   overrides: undefined,
 };
@@ -103,7 +108,6 @@ const defaultProps = {
 const PieChartCard = ({
   children,
   content,
-  i18n: { noDataLabel },
   i18n,
   id,
   isExpanded,
@@ -117,7 +121,12 @@ const PieChartCard = ({
   testID,
   ...others
 }) => {
-  const contentWithDefaults = assign({}, PieChartCard.defaultProps.content, content);
+  // need to deep merge the nested content default props as default props only uses a shallow merge natively
+  const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
+    content,
+  ]);
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+
   const {
     title,
     content: {
@@ -126,6 +135,7 @@ const PieChartCard = ({
       groupDataSourceId,
       labelsFormatter,
       legendPosition,
+      truncation,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, contentWithDefaults, initialValuesProp, others);
@@ -162,6 +172,7 @@ const PieChartCard = ({
         position: legendPosition,
         enabled: values.length > 1,
         clickable: !isEditable,
+        truncation,
       },
       pie: {
         labels: {
@@ -193,11 +204,11 @@ const PieChartCard = ({
     view: {
       table: {
         emptyState: {
-          message: noDataLabel,
+          message: mergedI18n.noDataLabel,
         },
       },
     },
-    i18n,
+    i18n: mergedI18n,
   };
 
   const size = increaseSmallCardSize(sizeProp, 'PieChartCard');
@@ -211,7 +222,7 @@ const PieChartCard = ({
       title={title}
       className={`${iotPrefix}--pie-chart-card`}
       size={size}
-      i18n={i18n}
+      i18n={mergedI18n}
       id={id}
       isExpanded={isExpanded}
       // The Card has its own isEmpty rendering, but if the data is being loaded we want to use

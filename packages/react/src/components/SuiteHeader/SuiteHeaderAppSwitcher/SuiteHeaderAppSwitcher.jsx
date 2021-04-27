@@ -63,7 +63,7 @@ const SuiteHeaderAppSwitcher = ({
         ) : (
           <Button
             kind="tertiary"
-            data-testid="suite-header-app-switcher--all-applications"
+            testID="suite-header-app-switcher--all-applications"
             onClick={async () => {
               const result = await onRouteChange(
                 SuiteHeader.ROUTE_TYPES.NAVIGATOR,
@@ -105,7 +105,7 @@ const SuiteHeaderAppSwitcher = ({
                 });
                 if (result) {
                   if (isExternal) {
-                    window.open(href, 'blank');
+                    window.open(href, '_blank', 'noopener noreferrer');
                   } else {
                     window.location.href = href;
                   }

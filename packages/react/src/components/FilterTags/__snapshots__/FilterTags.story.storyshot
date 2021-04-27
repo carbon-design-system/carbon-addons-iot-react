@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/FilterTags Default Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FilterTags Default Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -20,7 +20,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       }
     >
       <button
+        aria-pressed={null}
         className="iot--btn bx--btn bx--btn--primary"
+        data-testid="Button"
         disabled={false}
         onClick={[Function]}
         tabIndex={0}
@@ -31,7 +33,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       <div
         className="iot--filtertags-container iot--filtertags-container__wrap"
         data-testid="filter-tag-container"
+        i18n={Object {}}
         id="filter-tag-container"
+        onChange={null}
       >
         <div
           aria-label="Clear Filter Hello World"
@@ -218,7 +222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/FilterTags With hasOverflow set to false 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FilterTags With hasOverflow set to false 1`] = `
 <div
   className="storybook-container"
 >
@@ -233,7 +237,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     <div
       className="iot--filtertags-container"
       data-testid="filter-tag-container"
+      i18n={Object {}}
       id="filter-tag-container"
+      onChange={null}
     >
       <div
         aria-label="Clear Filter Hello World"
@@ -419,7 +425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/FilterTags With tagContainer prop 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FilterTags With tagContainer prop 1`] = `
 <div
   className="storybook-container"
 >
@@ -434,7 +440,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     <div
       className="iot--filtertags-container"
       data-testid="filter-tag-container"
+      i18n={Object {}}
       id="filter-tag-container"
+      onChange={null}
       style={
         Object {
           "border": "1px solid red",

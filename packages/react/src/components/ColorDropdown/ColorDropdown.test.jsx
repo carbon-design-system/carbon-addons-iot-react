@@ -110,4 +110,21 @@ describe('ColorDropdown', () => {
       color: { carbonColor: getHexColor('red'), name: 'red' },
     });
   });
+
+  it('displays a warning about being experimental in dev', () => {
+    const originalDev = global.__DEV__;
+    const originalError = console.error;
+    const error = jest.fn();
+    console.error = error;
+    global.__DEV__ = true;
+    const onChange = jest.fn();
+    render(<ColorDropdown colors={getColors()} id="myColorDropdown" onChange={onChange} />);
+
+    expect(error).toHaveBeenCalledWith(
+      'Warning: The `ColorDropdown` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
+    );
+
+    console.error = originalError;
+    global.__DEV__ = originalDev;
+  });
 });

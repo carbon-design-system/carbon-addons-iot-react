@@ -88,13 +88,16 @@ export const SuiteHeaderI18NPropTypes = {
 const defaultProps = {
   className: null,
   appName: null,
+  extraContent: null,
   userDisplayName: null,
   username: null,
   isAdminView: false,
+  hasSideNav: false,
   routes: null,
   applications: null,
   sideNavProps: null,
   surveyData: null,
+  onSideNavToggled: async () => Promise.resolve(true),
   onRouteChange: async () => Promise.resolve(true),
   i18n: SuiteHeaderI18N.en,
   customActionItems: [],
@@ -110,12 +113,16 @@ const propTypes = {
   suiteName: PropTypes.string.isRequired,
   /** Application name in suite (maps to subtitle in Header) */
   appName: PropTypes.string,
+  /** Extra content (a Tag, for example) */
+  extraContent: PropTypes.element,
   /** Display name of current user */
   userDisplayName: PropTypes.string,
   /** Username of current user */
   username: PropTypes.string,
   /** If true, renders the admin button in Header as selected */
   isAdminView: PropTypes.bool,
+  /** If true, will render the hamburger icon even if no sideNavProps are provided */
+  hasSideNav: PropTypes.bool,
   /** URLs for various routes on Header buttons and submenus */
   routes: PropTypes.shape(SuiteHeaderRoutePropTypes),
   /** Applications to render in AppSwitcher */
@@ -124,6 +131,8 @@ const propTypes = {
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** If surveyData is present, show a ToastNotification */
   surveyData: PropTypes.shape(SuiteHeaderSurveyDataPropTypes),
+  /** Function called when side nav button is toggled */
+  onSideNavToggled: PropTypes.func,
   /** Function called before any route change. Returns a Promise<Boolean>. False means the redirect will not happen. This function should never throw an error. */
   onRouteChange: PropTypes.func,
   /** I18N strings */
@@ -142,13 +151,16 @@ const SuiteHeader = ({
   className,
   suiteName,
   appName,
+  extraContent,
   userDisplayName,
   username,
+  hasSideNav,
   isAdminView,
   routes,
   applications,
   sideNavProps,
   surveyData,
+  onSideNavToggled,
   onRouteChange,
   i18n,
   customActionItems,
@@ -209,7 +221,7 @@ const SuiteHeader = ({
                 onClick={async () => {
                   const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
                   if (result) {
-                    window.open(surveyData.surveyLink, 'blank');
+                    window.open(surveyData.surveyLink, '_blank', 'noopener noreferrer');
                   }
                 }}
               >
@@ -221,7 +233,7 @@ const SuiteHeader = ({
                   onClick={async () => {
                     const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
                     if (result) {
-                      window.open(surveyData.privacyLink, 'blank');
+                      window.open(surveyData.privacyLink, '_blank', 'noopener noreferrer');
                     }
                   }}
                 >
@@ -278,8 +290,11 @@ const SuiteHeader = ({
                 .filter((i) => i)
                 .join(' ')}
               url={navigatorRoute}
-              hasSideNav={sideNavProps !== null}
-              onClickSideNavExpand={onClickSideNavExpand}
+              hasSideNav={hasSideNav || sideNavProps !== null}
+              onClickSideNavExpand={(evt) => {
+                onSideNavToggled(evt);
+                onClickSideNavExpand(evt);
+              }}
               headerPanel={{
                 content: React.forwardRef(() => (
                   <SuiteHeaderAppSwitcher
@@ -298,7 +313,18 @@ const SuiteHeader = ({
                 )),
               }}
               appName={suiteName}
-              subtitle={appName}
+              subtitle={
+                extraContent ? (
+                  <div>
+                    {appName}
+                    <span className={`${settings.iotPrefix}--suite-header-subtitle`}>
+                      {extraContent}
+                    </span>
+                  </div>
+                ) : (
+                  appName
+                )
+              }
               actionItems={[
                 ...customActionItems,
                 routes?.admin
@@ -320,14 +346,8 @@ const SuiteHeader = ({
                         let href = routes.admin;
                         let routeType = ROUTE_TYPES.ADMIN;
                         if (isAdminView) {
-                          // Only use referrer URL if it is not the login screen.
-                          if (document.referrer !== '' && document.referrer.indexOf('auth') < 0) {
-                            href = document.referrer;
-                            routeType = ROUTE_TYPES.REFERRER;
-                          } else {
-                            href = navigatorRoute;
-                            routeType = ROUTE_TYPES.NAVIGATOR;
-                          }
+                          href = navigatorRoute;
+                          routeType = ROUTE_TYPES.NAVIGATOR;
                         }
                         const result = await onRouteChange(routeType, href);
                         if (result) {
@@ -365,7 +385,7 @@ const SuiteHeader = ({
                                 routes[item]
                               );
                               if (result) {
-                                window.open(routes[item], 'blank');
+                                window.open(routes[item], '_blank', 'noopener noreferrer');
                               }
                             },
                           },

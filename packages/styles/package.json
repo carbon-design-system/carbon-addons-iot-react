@@ -1,0 +1,40 @@
+{
+  "name": "@ai-apps/styles",
+  "version": "2.145.0-next.43",
+  "description": "Styles for the AI Applications PAL",
+  "main": "index.js",
+  "scripts": {
+    "build:storybook": "echo 'script not defined' && exit 0",
+    "build": "cp -R src/ scss && sass src/styles.scss css/ai-apps-pal.css",
+    "lint": "echo 'script not defined' && exit 0",
+    "test": "echo 'script not defined' && exit 0",
+    "test:ci": "yarn test",
+    "start": "echo 'script not defined' && exit 0",
+    "clean": "rimraf scss css",
+    "format": "echo 'script not defined' && exit 0",
+    "format:check": "echo 'script not defined' && exit 0",
+    "postinstall": "node scripts/vendor.js && yarn build",
+    "prepublishOnly": "node scripts/clean-package-json.js",
+    "sync": "node scripts/copy-styles-from-react.js"
+  },
+  "files": [
+    "scss/**/*",
+    "css/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@carbon/charts": "0.41.31",
+    "@carbon/motion": "10.12.0",
+    "@carbon/themes": "10.26.0",
+    "ai-apps-monorepo-utils": "^2.145.0-next.35",
+    "carbon-components": "10.20.0",
+    "react-grid-layout": "1.2.0",
+    "react-resizable": "1.11.0",
+    "rimraf": "3.0.2",
+    "sass": "1.32.7"
+  },
+  "author": "IBM",
+  "license": "Apache-2.0"
+}

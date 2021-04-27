@@ -1,12 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Add32, Edit16 } from '@carbon/icons-react';
 
 import { settings } from '../../../../constants/Settings';
 
 import RowActionsCell from './RowActionsCell';
+import RowActionsError from './RowActionsError';
 
 const { iotPrefix } = settings;
 const mockApplyRowAction = jest.fn();
@@ -153,5 +154,59 @@ describe('RowActionsCell', () => {
     expect(
       menuItems.at(2).hasClass(`${iotPrefix}--action-overflow-item--initialFocus`)
     ).toBeTruthy();
+  });
+  describe('RowActionsError', () => {
+    it('should show errors and be dismissable when onClearError is given', () => {
+      const tableRow = document.createElement('tr');
+      const actions = [{ id: 'addAction', renderIcon: Add32, iconDescription: 'See more' }];
+      const onClearError = jest.fn();
+      render(
+        <RowActionsCell
+          id="test"
+          tableId="test-table"
+          actionFailedText="action-failed"
+          learnMoreText="learn-more"
+          dismissText="dismiss"
+          rowActionsError={{
+            title: 'an-error',
+            message: 'it-did-occur',
+            learnMoreURL: 'https://example.com',
+          }}
+          onApplyRowAction={jest.fn()}
+          onClearError={onClearError}
+          actions={actions}
+        />,
+        {
+          container: document.body.appendChild(tableRow),
+        }
+      );
+
+      expect(screen.getByText('action-failed')).toBeVisible();
+      userEvent.click(
+        within(screen.getByTestId('row-action-container-background')).getByRole('button')
+      );
+      const clearButton = screen.getByText('dismiss');
+      expect(clearButton).toBeVisible();
+      userEvent.click(clearButton);
+      expect(onClearError).toHaveBeenCalledTimes(1);
+    });
+
+    it('should return null if no errors given', () => {
+      const tableRow = document.createElement('tr');
+      render(
+        <RowActionsError
+          actionFailedText="action-failed"
+          learnMoreText="learn-more"
+          dismissText="dismiss"
+          rowActionsError={null}
+        />,
+        {
+          container: document.body.appendChild(tableRow),
+        }
+      );
+
+      expect(screen.queryByText('action-failed')).toBeNull();
+      expect(screen.queryByTestId('row-action-container-background')).toBeNull();
+    });
   });
 });

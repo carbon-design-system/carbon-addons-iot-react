@@ -12,7 +12,7 @@ import React from 'react';
 import { settings } from 'carbon-components';
 import { ArrowUp20 as Arrow, ArrowsVertical20 as Arrows } from '@carbon/icons-react';
 
-const sortStates = {
+export const sortStates = {
   NONE: 'NONE',
   DESC: 'DESC',
   ASC: 'ASC',
@@ -20,11 +20,11 @@ const sortStates = {
 
 const { prefix } = settings;
 
-const translationKeys = {
+export const translationKeys = {
   iconDescription: 'carbon.table.header.icon.description',
 };
 
-const translateWithId = (key, { sortDirection, isSortHeader }) => {
+export const translateWithId = (key, { sortDirection, isSortHeader }) => {
   if (key === translationKeys.iconDescription) {
     if (isSortHeader) {
       // When transitioning, we know that the sequence of states is as follows:
@@ -63,6 +63,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     translateWithId: t,
     thStyle,
     initialWidth,
+    testID,
     ...rest
   },
   ref
@@ -72,6 +73,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       // eslint-disable-next-line react/jsx-filename-extension
       <th
         {...rest}
+        data-testid={testID}
         width={initialWidth}
         className={headerClassName}
         scope={scope}
@@ -98,6 +100,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       aria-sort={ariaSort}
       ref={ref}
       style={thStyle}
+      data-testid={testID}
     >
       <button className={className} onClick={onClick} {...rest}>
         <span className={`${prefix}--table-header-label`}>{children}</span>
@@ -179,8 +182,11 @@ TableHeader.propTypes = {
 
   // eslint-disable-next-line react/forbid-prop-types
   thStyle: PropTypes.object,
+
+  testID: PropTypes.string,
 };
 
+/* instanbul ignore next: ignoring the default onCLick */
 TableHeader.defaultProps = {
   className: '',
   children: '',
@@ -192,6 +198,7 @@ TableHeader.defaultProps = {
   translateWithId,
   thStyle: {},
   initialWidth: undefined,
+  testID: '',
 };
 
 TableHeader.translationKeys = Object.values(translationKeys);

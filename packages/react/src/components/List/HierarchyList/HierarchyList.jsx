@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import cloneDeep from 'lodash/cloneDeep';
 import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
 import isEqual from 'lodash/isEqual';
@@ -38,6 +37,9 @@ const propTypes = {
   hasPagination: PropTypes.bool,
   /** Determines if multi-select is enabled */
   hasMultiSelect: PropTypes.bool,
+  /** Determines if items can be deselected, meaning once an item is selected,
+   * it can only be deselected by selecting another item */
+  hasDeselection: PropTypes.bool,
   /** Buttons to be presented in List header */
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** ListItems to be displayed */
@@ -87,6 +89,7 @@ const defaultProps = {
   hasSearch: false,
   hasPagination: true,
   hasMultiSelect: false,
+  hasDeselection: true,
   buttons: null,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
@@ -129,18 +132,17 @@ const defaultProps = {
  */
 export const searchForNestedItemValues = (items, value) => {
   const filteredItems = [];
-  cloneDeep(items).forEach((item) => {
+  items.forEach((item) => {
     // if the item has children, recurse and search children
     if (item.children) {
       // if the parent matches the search then add the parent and all children
       if (caseInsensitiveSearch([item.content.value], value)) {
         filteredItems.push(item);
       } else {
-        // eslint-disable-next-line no-param-reassign
-        item.children = searchForNestedItemValues(item.children, value);
+        const matchingChildren = searchForNestedItemValues(item.children, value);
         // if it's children did, we still need the item
-        if (item.children.length > 0) {
-          filteredItems.push(item);
+        if (matchingChildren.length > 0) {
+          filteredItems.push({ ...item, children: matchingChildren });
         }
       }
     } // if the item matches, add it to the filterItems array
@@ -168,14 +170,13 @@ export const searchForNestedItemValues = (items, value) => {
  */
 export const searchForNestedItemIds = (items, value) => {
   const filteredItems = [];
-  cloneDeep(items).forEach((item) => {
+  items.forEach((item) => {
     // if the item has children, recurse and search children
     if (item.children) {
-      // eslint-disable-next-line no-param-reassign
-      item.children = searchForNestedItemIds(item.children, value);
+      const matchingChildren = searchForNestedItemIds(item.children, value);
       // if it's children did, we still need the item
-      if (item.children.length > 0) {
-        filteredItems.push(item);
+      if (matchingChildren.length > 0) {
+        filteredItems.push({ ...item, children: matchingChildren });
       }
     } // if the item matches, add it to the filterItems array
     else if (item.id === value) {
@@ -191,6 +192,7 @@ const HierarchyList = ({
   hasSearch,
   hasPagination,
   hasMultiSelect,
+  hasDeselection,
   buttons,
   items,
   i18n,
@@ -207,6 +209,8 @@ const HierarchyList = ({
   sendingData,
   className,
 }) => {
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+
   const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
@@ -232,8 +236,9 @@ const HierarchyList = ({
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
       setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
-    } else if (selectedIds.includes(id)) {
+    } else if (selectedIds.includes(id) && hasDeselection) {
       setSelectedIds(selectedIds.filter((item) => item !== id));
+      // else, no-op because the item can't be deselected
     } else if (hasMultiSelect) {
       setSelectedIds([...selectedIds, id]);
     } else {
@@ -244,7 +249,8 @@ const HierarchyList = ({
   const handleSelect = (id, parentId = null) => {
     setSelected(id, parentId);
 
-    if (onSelect) {
+    // only select if the item is not already selected
+    if (onSelect && (!selectedIds.includes(id) || hasDeselection)) {
       onSelect(id);
     }
   };
@@ -369,7 +375,7 @@ const HierarchyList = ({
           open={showModal}
           items={items}
           selectedIds={editModeSelectedIds}
-          i18n={i18n}
+          i18n={mergedI18n}
           onClose={() => {
             setShowModal(false);
           }}
@@ -415,7 +421,7 @@ const HierarchyList = ({
                 ? BulkActionHeader
                 : null,
             props: {
-              i18n,
+              mergedI18n,
               editModeSelectedIds,
               cancelMoveClicked: handleBulkModalCancel,
               setShowModal,
@@ -423,7 +429,7 @@ const HierarchyList = ({
             },
           },
         }}
-        i18n={i18n}
+        i18n={mergedI18n}
         pagination={hasPagination ? pagination : null}
         isFullHeight={isFullHeight}
         isLoading={isLoading}

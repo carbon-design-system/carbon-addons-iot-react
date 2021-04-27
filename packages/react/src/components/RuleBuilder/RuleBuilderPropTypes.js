@@ -43,3 +43,39 @@ export const RuleGroupPropType = PropTypes.shape({
 });
 
 RuleGroupPropType.rules = PropTypes.arrayOf(PropTypes.oneOf([RulesPropType, RuleGroupPropType]));
+
+export const RuleBuilderFilterPropType = PropTypes.shape({
+  /** Unique id for particular filter */
+  filterId: PropTypes.string,
+  /** Text for main tilte of page */
+  filterTitleText: PropTypes.string,
+  /** Text for metadata for the filter */
+  filterMetaText: PropTypes.string,
+  /** tags associated with particular filter */
+  filterTags: PropTypes.array,
+  /** users that have access to particular filter */
+  filterAccess: PropTypes.arrayOf(
+    PropTypes.shape({
+      userName: PropTypes.string,
+      email: PropTypes.string,
+      name: PropTypes.string,
+      /** access types */
+      access: PropTypes.oneOf(['edit', 'read']),
+    })
+  ),
+  /** All possible users that can be granted access */
+  filterUsers: PropTypes.arrayOf(
+    PropTypes.shape({
+      userName: PropTypes.string,
+      email: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
+  /**
+   * the rules passed into the component. The RuleBuilder is a controlled component, so
+   * this works the same as passing defaultValue to a controlled input component.
+   */
+  filterRules: RuleGroupPropType,
+
+  filterColumns: RuleBuilderColumnsPropType.isRequired,
+});

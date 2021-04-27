@@ -1,16 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { act, createEvent, fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import FileDrop from './FileDrop';
 
-const commonProps = {
-  title: 'Upload Files',
-  description: 'Any file can be uploaded.  Feel free to upload more than one!',
-  buttonLabel: 'Try it out!',
-  kind: 'browse',
-  onData: jest.fn(),
-  onError: jest.fn(),
-};
+const originalFileReader = window.FileReader;
 
 const dragAndDropProps = {
   title: 'Upload Files',
@@ -20,29 +15,36 @@ const dragAndDropProps = {
   onData: jest.fn(),
   onError: jest.fn(),
 };
-const mockFiles = [{ name: 'fakeFileLoad', uploadState: 'uploading', contents: null }];
-
-const mockHoverEvent = {
-  preventDefault: jest.fn(),
-  pageX: 10,
-  pageY: 10,
-  type: 'mouseover',
-  currentTarget: {
-    getBoundingClientRect: () => ({ left: 0, right: 300, top: 0, bottom: 300 }),
-  },
-  stopPropagation: jest.fn(),
-  target: { files: mockFiles },
+const commonProps = {
+  title: 'Upload Files',
+  description: 'Any file can be uploaded.  Feel free to upload more than one!',
+  buttonLabel: 'Try it out!',
+  kind: 'browse',
+  onData: jest.fn(),
+  onError: jest.fn(),
 };
 
-const mockFileReader = {
-  readAsBinaryString: jest.fn(),
-  readAsText: jest.fn(),
-};
-
-const originalFileReader = window.FileReader;
-
-let wrapper;
 describe('File Drop', () => {
+  const mockFiles = [{ name: 'fakeFileLoad', uploadState: 'uploading', contents: null }];
+
+  const mockHoverEvent = {
+    preventDefault: jest.fn(),
+    pageX: 10,
+    pageY: 10,
+    type: 'mouseover',
+    currentTarget: {
+      getBoundingClientRect: () => ({ left: 0, right: 300, top: 0, bottom: 300 }),
+    },
+    stopPropagation: jest.fn(),
+    target: { files: mockFiles },
+  };
+
+  const mockFileReader = {
+    readAsBinaryString: jest.fn(),
+    readAsText: jest.fn(),
+  };
+
+  let wrapper;
   beforeEach(() => {
     window.FileReader = jest.fn(() => mockFileReader);
     wrapper = mount(<FileDrop {...commonProps} />);
@@ -91,14 +93,14 @@ describe('File Drop', () => {
   // Example of how to click on an element
   it('fileDrop', () => {
     const dragAndDropWrapper = mount(<FileDrop {...dragAndDropProps} />);
-    // console.log(`drag and drop version: ${dragAndDropWrapper.debug()}`)
+
     const instance = dragAndDropWrapper.instance();
 
     instance.fileDragHover = jest.fn().mockImplementationOnce();
     instance.addNewFiles = jest.fn().mockImplementationOnce();
 
     const fileDropElement = dragAndDropWrapper.find('div[onDragOver]');
-    // console.log(`file drop element: ${fileDropElement.debug()}`)
+
     fileDropElement.simulate('drop', mockHoverEvent);
     expect(instance.addNewFiles).toHaveBeenCalled();
   });
@@ -144,5 +146,199 @@ describe('File Drop', () => {
     const filesInState = wrapper.state('files');
     expect(filesInState).toHaveLength(1);
     expect(filesInState[0]).toEqual(expect.objectContaining({ name: 'fakeFileLoad' }));
+  });
+});
+
+describe('FileDrop', () => {
+  beforeEach(() => {
+    function FileReaderMock() {
+      this.result = 'a';
+
+      this.readAsText = jest.fn();
+
+      this.readAsBinaryString = jest.fn();
+
+      this.onerror = jest.fn();
+
+      this.onload = jest.fn();
+    }
+
+    const mockFileReader = new FileReaderMock();
+    jest.spyOn(window, 'FileReader').mockImplementation(() => mockFileReader);
+  });
+  afterEach(() => {
+    window.FileReader = originalFileReader;
+    jest.clearAllMocks();
+  });
+  it('should handle a file being dropped into the dropzone', () => {
+    const file = new File(['a-test-image'], 'a-test-image.png', {
+      type: 'image/png',
+    });
+    render(<FileDrop {...dragAndDropProps} />);
+    expect(screen.queryByText('a-test-image.png')).toBeNull();
+    const dropZone = screen.getByText('Drag and drop your file here or');
+    act(() => {
+      fireEvent.drop(dropZone, { dataTransfer: { files: [file] } });
+    });
+    expect(screen.queryByText('a-test-image.png')).toBeInTheDocument();
+  });
+
+  it('should call the onError callback when the FileReader fails.', () => {
+    const file = new File(['a-test-image'], 'a-test-image.png', {
+      type: 'image/png',
+    });
+    render(<FileDrop {...dragAndDropProps} />);
+    expect(screen.queryByText('a-test-image.png')).toBeNull();
+    const dropZone = screen.getByText('Drag and drop your file here or');
+    act(() => {
+      fireEvent.drop(dropZone, { dataTransfer: { files: [file] } });
+    });
+    const theError = new Error('file failed');
+
+    act(() => {
+      window.FileReader.mock.results[0].value.onerror(theError);
+    });
+
+    expect(dragAndDropProps.onError).toBeCalledWith(theError);
+  });
+
+  it('should handle clicks to upload even with drag and drop uploader', () => {
+    const files = [
+      new File(['a-test-image'], 'a-test-image.png', {
+        type: 'image/png',
+      }),
+      new File(['another-test-image'], 'another-test-image.png', {
+        type: 'image/png',
+      }),
+    ];
+    const { container, rerender } = render(<FileDrop {...dragAndDropProps} />);
+    expect(screen.queryByText('a-test-image.png')).toBeNull();
+    userEvent.click(screen.getByText('Try it out!'));
+    const fileInput = container.querySelector('input[type="file"]');
+    const inputFiles = {
+      length: 1,
+      item: (index) => files[index],
+      ...files,
+      [Symbol.iterator]() {
+        let i = 0;
+        let done = false;
+        return {
+          next: () => {
+            done = i >= files.length;
+            const returnVal = {
+              done,
+              value: files[i],
+              key: i,
+            };
+            i += 1;
+            return returnVal;
+          },
+        };
+      },
+    };
+
+    fireEvent(
+      fileInput,
+      createEvent('input', fileInput, {
+        target: { files: inputFiles },
+        bubbles: true,
+        cancelable: false,
+        composed: true,
+      })
+    );
+
+    fireEvent.change(fileInput, {
+      target: {
+        files: inputFiles,
+      },
+    });
+
+    expect(screen.queryByText('a-test-image.png')).toBeInTheDocument();
+
+    // if multiple files were uploaded, but multiple is now false and
+    // the user clicks on the upload button it should clear the file list.
+    rerender(<FileDrop {...dragAndDropProps} multiple={false} />);
+    userEvent.click(screen.getByText('Try it out!'));
+
+    expect(screen.queryByText('a-test-image.png')).not.toBeInTheDocument();
+  });
+
+  it('should handle clicks and keypresses to remove files after being uploaded', () => {
+    const files = [
+      new File(['a-test-image'], 'a-test-image.png', {
+        type: 'image/png',
+      }),
+      new File(['another-test-image'], 'another-test-image.png', {
+        type: 'image/png',
+      }),
+      new File(['yet-another-test-image'], 'yet-another-test-image.png', {
+        type: 'image/png',
+      }),
+    ];
+    render(<FileDrop {...dragAndDropProps} />);
+    expect(screen.queryByText('a-test-image.png')).toBeNull();
+    const dropZone = screen.getByText('Drag and drop your file here or');
+
+    act(() => {
+      fireEvent.drop(dropZone, { dataTransfer: { files } });
+    });
+
+    act(() => {
+      files.forEach((file, index) => {
+        window.FileReader.mock.results[index].value.onload();
+      });
+    });
+
+    expect(screen.queryByText('a-test-image.png')).toBeInTheDocument();
+    expect(screen.queryByText('another-test-image.png')).toBeInTheDocument();
+    expect(screen.queryByText('yet-another-test-image.png')).toBeInTheDocument();
+    Element.prototype.innerText = 'a-test-image.png';
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Uploading file' }), {
+      key: 'Enter',
+    });
+    Element.prototype.innerText = 'another-test-image.png';
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Uploading file' }), {
+      key: 'a',
+    });
+    expect(screen.queryByText('another-test-image.png')).toBeInTheDocument();
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Uploading file' }), {
+      key: 'Space',
+    });
+    Element.prototype.innerText = 'yet-another-test-image.png';
+    userEvent.click(screen.getByRole('button', { name: 'Uploading file' }));
+    expect(screen.queryByText('a-test-image.png')).not.toBeInTheDocument();
+    expect(screen.queryByText('another-test-image.png')).not.toBeInTheDocument();
+    expect(screen.queryByText('yet-another-test-image.png')).not.toBeInTheDocument();
+    Element.prototype.innerText = undefined;
+  });
+
+  it('should change the border on dragHover and not show files', () => {
+    const file = new File(['a-test-image'], 'a-test-image.png', {
+      type: 'image/png',
+    });
+    render(<FileDrop {...dragAndDropProps} title={null} description={null} showFiles={false} />);
+    expect(screen.queryByText('a-test-image.png')).toBeNull();
+    const dropZone = screen.getByText('Drag and drop your file here or');
+    act(() => {
+      fireEvent.dragOver(dropZone, { dataTransfer: { files: [file] } });
+    });
+    expect(dropZone.parentNode).toHaveStyle('border: 1px solid #3D70B2');
+    expect(screen.queryByText('Upload Files')).not.toBeInTheDocument();
+    expect(
+      screen.queryByText('Any file can be uploaded.  Feel free to upload more than one!')
+    ).not.toBeInTheDocument();
+    act(() => {
+      fireEvent.drop(dropZone, { dataTransfer: { files: [file] } });
+    });
+    expect(screen.queryByText('a-test-image.png')).not.toBeInTheDocument();
+  });
+
+  it('should not show title or description if not given', () => {
+    render(<FileDrop {...commonProps} title={null} description={null} showFiles={false} />);
+
+    expect(screen.queryByText('Upload Files')).not.toBeInTheDocument();
+    expect(
+      screen.queryByText('Any file can be uploaded.  Feel free to upload more than one!')
+    ).not.toBeInTheDocument();
   });
 });

@@ -30,7 +30,7 @@ const getTiles = (num) => {
 };
 
 export default {
-  title: 'Watson IoT Experimental/TileCatalogNew',
+  title: 'Watson IoT/TileCatalogNew',
 
   parameters: {
     component: TileCatalogNew,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal/HotspotEditorDataSourceTab Example with no hotspots 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab Example with no hotspots 1`] = `
 <div
   className="storybook-container"
 >
@@ -129,7 +129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal/HotspotEditorDataSourceTab With preset values 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab With preset values 1`] = `
 <div
   className="storybook-container"
 >
@@ -157,6 +157,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               id="downshift-0-label"
             >
               Data items
+              <span
+                className="bx--visually-hidden"
+              >
+                Total items selected: 
+                 
+                4
+                ,
+                To clear selection, press Delete or Backspace,
+              </span>
             </label>
             <div
               className="bx--multi-select bx--multi-select--selected bx--list-box bx--list-box--light"
@@ -177,28 +186,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 type="button"
               >
                 <div
-                  aria-label="Clear Selection"
-                  className="bx--list-box__selection bx--tag--filter bx--list-box__selection--multi"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
+                  className="bx--tag bx--tag--filter bx--tag--high-contrast"
                 >
-                  4
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    className="bx--tag__label"
+                    title={4}
                   >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
+                    4
+                  </span>
+                  <div
+                    aria-hidden={true}
+                    className="bx--tag__close-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                      />
+                    </svg>
+                  </div>
                 </div>
                 <span
                   className="bx--list-box__label"
@@ -276,7 +295,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content--row-actions"
                       >
                         <button
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="Button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
@@ -337,7 +357,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content--row-actions"
                       >
                         <button
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="Button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
@@ -398,7 +419,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content--row-actions"
                       >
                         <button
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="Button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
@@ -459,7 +481,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content--row-actions"
                       >
                         <button
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="Button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}

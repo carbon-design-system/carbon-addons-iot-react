@@ -23,6 +23,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         className="bx--tooltip__trigger"
         onBlur={[Function]}
         onClick={[Function]}
+        onContextMenu={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseOut={[Function]}
@@ -62,7 +63,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         Focus sentinel
       </span>
       <div
-        className="bx--tooltip bx--tooltip--shown"
+        className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
         data-floating-menu-direction="right"
         id="tooltip"
         onBlur={[Function]}
@@ -82,7 +83,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"
@@ -91,7 +91,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
           aria-labelledby="tooltipTrigger"
           className="bx--tooltip__content"
           role="dialog"
-          tabIndex="-1"
         >
           <div
             className="iot--hotspot-content"
@@ -225,6 +224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         className="bx--tooltip__trigger"
         onBlur={[Function]}
         onClick={[Function]}
+        onContextMenu={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseOut={[Function]}
@@ -264,7 +264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         Focus sentinel
       </span>
       <div
-        className="bx--tooltip bx--tooltip--shown"
+        className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
         data-floating-menu-direction="right"
         id="tooltip"
         onBlur={[Function]}
@@ -284,7 +284,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"
@@ -293,7 +292,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
           aria-labelledby="tooltipTrigger"
           className="bx--tooltip__content"
           role="dialog"
-          tabIndex="-1"
         >
           <div
             className="iot--hotspot-content"
@@ -437,6 +435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         className="bx--tooltip__trigger"
         onBlur={[Function]}
         onClick={[Function]}
+        onContextMenu={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseOut={[Function]}
@@ -476,7 +475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         Focus sentinel
       </span>
       <div
-        className="bx--tooltip bx--tooltip--shown"
+        className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
         data-floating-menu-direction="right"
         id="tooltip"
         onBlur={[Function]}
@@ -496,7 +495,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"
@@ -505,7 +503,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
           aria-labelledby="tooltipTrigger"
           className="bx--tooltip__content"
           role="dialog"
-          tabIndex="-1"
         >
           <div
             className="iot--hotspot-content"
@@ -693,6 +690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         className="bx--tooltip__trigger"
         onBlur={[Function]}
         onClick={[Function]}
+        onContextMenu={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseOut={[Function]}
@@ -732,7 +730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         Focus sentinel
       </span>
       <div
-        className="bx--tooltip bx--tooltip--shown"
+        className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
         data-floating-menu-direction="right"
         id="tooltip"
         onBlur={[Function]}
@@ -752,7 +750,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"
@@ -761,7 +758,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
           aria-labelledby="tooltipTrigger"
           className="bx--tooltip__content"
           role="dialog"
-          tabIndex="-1"
         >
           <div
             className="iot--hotspot-content"

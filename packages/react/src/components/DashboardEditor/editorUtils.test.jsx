@@ -1,4 +1,5 @@
 import omit from 'lodash/omit';
+import { render, screen } from '@testing-library/react';
 
 import { CARD_TYPES, BAR_CHART_TYPES } from '../..';
 
@@ -11,6 +12,7 @@ import {
   formatAttributes,
   handleDataSeriesChange,
   handleDataItemEdit,
+  renderDefaultIconByName,
 } from './editorUtils';
 
 describe('editorUtils', () => {
@@ -94,6 +96,17 @@ describe('editorUtils', () => {
     size: 'MEDIUM',
     content: {},
   };
+
+  describe('renderDefaultIconByName', () => {
+    it('verify hotspot icon is found', () => {
+      render(renderDefaultIconByName('User'));
+      expect(screen.queryByTitle('User')).toBeDefined();
+    });
+    it('verify threshold icon is found', () => {
+      render(renderDefaultIconByName('Error filled'));
+      expect(screen.queryByTitle('Error filled')).toBeDefined();
+    });
+  });
 
   describe('getDuplicateCard', () => {
     it('should return same card JSON with unique id', () => {
@@ -483,7 +496,14 @@ describe('editorUtils', () => {
       });
     });
     it('handleDataSeriesChange should correctly format the columns for new table card dimensions', () => {
-      const selectedItems = [{ id: 'manufacturer', text: 'Manufacturer', type: 'DIMENSION' }];
+      const selectedItems = [
+        {
+          dataItemId: 'manufacturer',
+          dataSourceId: 'manufacturer',
+          label: 'Manufacturer',
+          type: 'DIMENSION',
+        },
+      ];
       const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {}, null, true);
       expect(newCard).toEqual({
         ...mockTableCard,
@@ -497,6 +517,7 @@ describe('editorUtils', () => {
               sort: 'DESC',
             },
             {
+              dataItemId: 'manufacturer',
               dataSourceId: 'manufacturer',
               label: 'Manufacturer',
               type: 'DIMENSION',
@@ -524,6 +545,11 @@ describe('editorUtils', () => {
               {
                 dataSourceId: 'manufacturer',
                 label: 'Manufacturer',
+                type: 'DIMENSION',
+              },
+              {
+                dataSourceId: 'deviceid',
+                label: 'Device',
                 type: 'DIMENSION',
               },
               {

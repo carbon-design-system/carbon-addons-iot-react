@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TableCell, TableRow } from 'carbon-components-react';
+import classnames from 'classnames';
 
 import { settings } from '../../../constants/Settings';
 
@@ -21,6 +22,10 @@ const propTypes = {
           id: PropTypes.string.isRequired,
           /** the value to be displayed */
           value: PropTypes.string,
+          /** allow aligning the results the same as the column */
+          align: PropTypes.oneOf(['start', 'center', 'end']),
+          /** allows the aggregation to align with sortable columns extra padding */
+          isSortable: PropTypes.bool,
         })
       ),
     }),
@@ -69,7 +74,14 @@ const TableFoot = ({
             </TableCell>
           ) : aggregated ? (
             <TableCell
-              className={`${iotPrefix}-table-foot--value`}
+              className={classnames({
+                [`${iotPrefix}-table-foot--value`]: true,
+                'data-table-end': aggregated.align === 'end',
+                'data-table-start': !aggregated.align || aggregated.align === 'start',
+                'data-table-center': aggregated.align === 'center',
+                [`${iotPrefix}-table-foot--value__sortable`]: aggregated.isSortable,
+              })}
+              align={aggregated.align ? aggregated.align : undefined}
               data-testid={cellTestId}
               key={cellKey}
             >

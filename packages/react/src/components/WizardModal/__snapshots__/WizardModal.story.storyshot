@@ -15,7 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     <div
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
-      onBack={[Function]}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -32,22 +32,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         Focus sentinel
       </span>
       <div
+        aria-label="Basic Wizard"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Basic Wizard
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Gimme 3 Steps
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -254,13 +256,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <div
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -269,7 +273,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               Cancel
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -330,7 +336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     <div
       className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI iot--composed-modal"
       data-floating-menu-container={true}
-      onBack={[Function]}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -347,22 +353,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         Focus sentinel
       </span>
       <div
+        aria-label="Wizard With Custom Footer "
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Wizard With Custom Footer 
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Gimme 3 Steps
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -569,7 +577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <div
             className="WizardInline-custom-footer-content"
@@ -582,7 +590,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -591,7 +601,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               I18N Cancel
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -652,7 +664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     <div
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
-      onBack={[Function]}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -669,22 +681,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         Focus sentinel
       </span>
       <div
+        aria-label="Basic Wizard"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Basic Wizard
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Gimme 3 Steps
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -881,13 +895,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <div
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -896,7 +912,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               Previous
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+              data-testid="Button"
               disabled={true}
               onClick={[Function]}
               tabIndex={0}
@@ -916,22 +934,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 </label>
                 <svg
                   className="bx--loading__svg"
-                  viewBox="-75 -75 150 150"
+                  viewBox="0 0 100 100"
                 >
                   <title>
                     Active loading indicator
                   </title>
                   <circle
                     className="bx--loading__background"
-                    cx="0"
-                    cy="0"
-                    r="26.8125"
+                    cx="50%"
+                    cy="50%"
+                    r="42"
                   />
                   <circle
                     className="bx--loading__stroke"
-                    cx="0"
-                    cy="0"
-                    r="26.8125"
+                    cx="50%"
+                    cy="50%"
+                    r="42"
                   />
                 </svg>
               </div>

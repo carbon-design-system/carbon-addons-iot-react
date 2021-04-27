@@ -1,12 +1,31 @@
+/* stylelint-disable declaration-property-unit-blacklist */
 @import '~carbon-components/scss/globals/scss/vars';
 @import '~carbon-components/scss/globals/scss/typography';
 
 .page-title-bar {
   &-title {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-
+    &-dynamic {
+      position: var(--bar-title-position);
+      margin: -$spacing-05 0 $spacing-06 $spacing-07;
+    }
+    &--condensed {
+      &-static {
+        margin-left: $spacing-03;
+      }
+      &-before {
+        margin-top: $spacing-07;
+        margin-left: $spacing-03;
+        transition: all $duration--moderate-02;
+      }
+      &-after {
+        margin-top: 0;
+        margin-left: $spacing-03;
+        transition: all $duration--moderate-02;
+        display: flex;
+        align-items: center;
+      }
+    }
     &--text {
       align-items: center;
       display: flex;
@@ -38,11 +57,36 @@
     height: 100px;
     padding: $spacing-05 $spacing-07 $spacing-06 $spacing-07;
 
+    &-sticky {
+      position: sticky;
+      top: var(--header-offset);
+      width: 100%;
+      border-bottom: 1px solid $ui-03;
+      background-color: $ui-01;
+      z-index: 1000;
+    }
+    &-condensed {
+      position: sticky;
+      top: var(--header-offset);
+      border-bottom: 1px solid $ui-03;
+      height: unset;
+      padding: 0 $spacing-07;
+      transition: background-color $duration--moderate-02;
+      background-color: $ui-01;
+      z-index: 1000;
+    }
     &-left {
-      margin-right: $spacing-05;
+      float: left;
     }
     &-right {
-      margin-left: $spacing-05;
+      float: right;
+      &-dynamic {
+        margin: -$spacing-03 $spacing-07 $spacing-06 0;
+        margin-left: $spacing-05;
+        position: sticky;
+        top: var(--header-offset);
+        z-index: 2000;
+      }
     }
   }
 
@@ -53,8 +97,27 @@
   }
 
   &-breadcrumb {
-    display: flex;
-    justify-content: space-between;
+    &-dynamic {
+      height: $spacing-09;
+      overflow: hidden;
+      display: flex;
+      padding: $spacing-05 0 $spacing-05 $spacing-07;
+      transition: all $duration--moderate-02;
+      position: sticky;
+      top: var(--header-offset);
+    }
+    &-condensed-static {
+      display: flex;
+      align-items: center;
+    }
+    &-condensed {
+      position: sticky;
+      top: var(--header-offset);
+      transition: all $duration--moderate-02;
+      background: $ui-01;
+      z-index: 1000;
+      border-bottom: 1px solid $ui-03;
+    }
   }
 
   &-loading {

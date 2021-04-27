@@ -19,6 +19,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
 
+import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import {
   Tooltip,
   TextInput,
@@ -31,6 +32,7 @@ import {
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
+import StoryNotice from '../../internal/StoryNotice';
 
 import Table from './Table';
 import StatefulTable from './StatefulTable';
@@ -263,6 +265,7 @@ export const tableColumnsWithOverflowMenu = [
     name: 'Number',
     filter: { placeholderText: 'enter a number' },
     overflowMenuItems: selectData,
+    align: 'end',
   },
   {
     id: 'boolean',
@@ -402,6 +405,13 @@ const actions = {
     onCancelBatchAction: action('onCancelBatchAction'),
     onApplyBatchAction: action('onApplyBatchAction'),
     onApplySearch: action('onApplySearch'),
+    /** advanced filter actions */
+    onCancelAdvancedFilter: action('onCancelAdvancedFilter'),
+    onRemoveAdvancedFilter: action('onRemoveAdvancedFilter'),
+    onCreateAdvancedFilter: action('onCreateAdvancedFilter'),
+    onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
+    onApplyAdvancedFilter: action('onApplyAdvancedFilter'),
+    onToggleAdvancedFilter: action('onToggleAdvancedFilter'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
@@ -589,7 +599,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
 };
 
 export default {
-  title: 'Watson IoT/Table',
+  title: __DEV__ ? 'Watson IoT/⚠️ Table' : 'Watson IoT/Table',
 
   parameters: {
     component: Table,
@@ -824,7 +834,7 @@ export const StatefulExampleWithCreateSaveViews = () => {
         },
         toolbar: {
           activeBar: 'column',
-          search: { defaultValue: 'pinoc' },
+          search: { defaultValue: text('defaultSearchValue', 'pinoc') },
         },
       },
       columns: defaultState.columns,
@@ -2621,6 +2631,7 @@ export const WithSorting = () => (
     columns={tableColumns.map((i, idx) => ({
       ...i,
       isSortable: idx !== 1,
+      align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
     }))}
     data={getSortedData(tableData, 'string', 'ASC')}
     actions={actions}
@@ -2628,9 +2639,20 @@ export const WithSorting = () => (
       hasFilter: false,
       hasPagination: true,
       hasRowSelection: 'multi',
+      hasAggregations: true,
     }}
     view={{
       filters: [],
+      aggregations: {
+        label: 'Total',
+        columns: [
+          {
+            id: 'number',
+            align: 'end',
+            isSortable: true,
+          },
+        ],
+      },
       table: {
         ordering: defaultOrdering,
         sort: {
@@ -2753,6 +2775,513 @@ export const WithFilters = () => {
 
 WithFilters.story = {
   name: 'with filters',
+};
+
+export const WithAdvancedFilters = () => {
+  const operands = {
+    IN: (a, b) => a.includes(b),
+    NEQ: (a, b) => a !== b,
+    LT: (a, b) => a < b,
+    LTOET: (a, b) => a <= b,
+    EQ: (a, b) => a === b,
+    GTOET: (a, b) => a >= b,
+    GT: (a, b) => a > b,
+  };
+
+  const advancedFilters = [
+    {
+      filterId: 'story-filter',
+      /** Text for main tilte of page */
+      filterTitleText: 'Story Filter',
+      /** Text for metadata for the filter */
+      filterMetaText: `last updated: 2021-03-11 15:34:01`,
+      /** tags associated with particular filter */
+      filterTags: ['fav', 'other-tag'],
+      /** users that have access to particular filter */
+      filterAccess: [
+        {
+          username: 'Example-User',
+          email: 'example@pal.com',
+          name: 'Example User',
+          access: 'edit',
+        },
+        {
+          username: 'Other-User',
+          email: 'other@pal.com',
+          name: 'Other User',
+          access: 'read',
+        },
+      ],
+      /** All possible users that can be granted access */
+      filterUsers: [
+        {
+          id: 'teams',
+          name: 'Teams',
+          groups: [
+            {
+              id: 'team-a',
+              name: 'Team A',
+              users: [
+                {
+                  username: '@tpeck',
+                  email: 'tpeck@pal.com',
+                  name: 'Templeton Peck',
+                },
+                {
+                  username: '@jsmith',
+                  email: 'jsmith@pal.com',
+                  name: 'John Smith',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          username: 'Example-User',
+          email: 'example@pal.com',
+          name: 'Example User',
+        },
+        {
+          username: 'Test-User',
+          email: 'test@pal.com',
+          name: 'Test User',
+        },
+        {
+          username: 'Other-User',
+          email: 'other@pal.com',
+          name: 'Other User',
+        },
+      ],
+      /**
+       * the rules passed into the component. The RuleBuilder is a controlled component, so
+       * this works the same as passing defaultValue to a controlled input component.
+       */
+      filterRules: {
+        id: '14p5ho3pcu',
+        groupLogic: 'ALL',
+        rules: [
+          {
+            id: 'rsiru4rjba',
+            columnId: 'date',
+            operand: 'IN',
+            value: '19',
+          },
+          {
+            id: '34bvyub9jq',
+            columnId: 'boolean',
+            operand: 'EQ',
+            value: 'true',
+          },
+        ],
+      },
+      filterColumns: tableColumns,
+    },
+    {
+      filterId: 'next-filter',
+      /** Text for main tilte of page */
+      filterTitleText: 'Next Filter',
+      /** Text for metadata for the filter */
+      filterMetaText: `last updated: 2021-03-11 15:34:01`,
+      /** tags associated with particular filter */
+      filterTags: ['fav', 'other-tag'],
+      /** users that have access to particular filter */
+      filterAccess: [
+        {
+          username: 'Example-User',
+          email: 'example@pal.com',
+          name: 'Example User',
+          access: 'edit',
+        },
+        {
+          username: 'Other-User',
+          email: 'other@pal.com',
+          name: 'Other User',
+          access: 'read',
+        },
+      ],
+      /** All possible users that can be granted access */
+      filterUsers: [
+        {
+          id: 'teams',
+          name: 'Teams',
+          groups: [
+            {
+              id: 'team-a',
+              name: 'Team A',
+              users: [
+                {
+                  username: '@tpeck',
+                  email: 'tpeck@pal.com',
+                  name: 'Templeton Peck',
+                },
+                {
+                  username: '@jsmith',
+                  email: 'jsmith@pal.com',
+                  name: 'John Smith',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          username: 'Example-User',
+          email: 'example@pal.com',
+          name: 'Example User',
+        },
+        {
+          username: 'Test-User',
+          email: 'test@pal.com',
+          name: 'Test User',
+        },
+        {
+          username: 'Other-User',
+          email: 'other@pal.com',
+          name: 'Other User',
+        },
+      ],
+      /**
+       * the rules passed into the component. The RuleBuilder is a controlled component, so
+       * this works the same as passing defaultValue to a controlled input component.
+       */
+      filterRules: {
+        id: '14p5ho3pcu',
+        groupLogic: 'ALL',
+        rules: [
+          {
+            id: 'rsiru4rjba',
+            columnId: 'select',
+            operand: 'EQ',
+            value: 'option-C',
+          },
+          {
+            id: '34bvyub9jq',
+            columnId: 'boolean',
+            operand: 'EQ',
+            value: 'false',
+          },
+        ],
+      },
+      filterColumns: tableColumns,
+    },
+  ];
+
+  const filteredData = tableData.filter(({ values }) => {
+    // return false if a value doesn't match a valid filter
+    return advancedFilters[0].filterRules.rules.reduce(
+      (acc, { columnId, operand, value: filterValue }) => {
+        const columnValue = values[columnId].toString();
+        const comparitor = operands[operand];
+        if (advancedFilters[0].filterRules.groupLogic === 'ALL') {
+          return acc && comparitor(columnValue, filterValue);
+        }
+
+        return comparitor(columnValue, filterValue);
+      },
+      true
+    );
+  });
+  return (
+    <>
+      <StoryNotice experimental componentName="Table with advancedFilters" />
+      <Table
+        id="table"
+        columns={tableColumns}
+        data={filteredData}
+        actions={actions}
+        options={{
+          hasPagination: true,
+          hasRowSelection: 'multi',
+          hasAdvancedFilter: true,
+        }}
+        view={{
+          filters: [
+            {
+              columnId: 'string',
+              value: 'whiteboard',
+            },
+            {
+              columnId: 'select',
+              value: 'option-B',
+            },
+          ],
+          advancedFilters,
+          selectedAdvancedFilterIds: ['story-filter'],
+          pagination: {
+            totalItems: filteredData.length,
+          },
+          table: {
+            ordering: defaultOrdering,
+          },
+          toolbar: {
+            advancedFilterFlyoutOpen: true,
+          },
+        }}
+      />
+    </>
+  );
+};
+
+WithAdvancedFilters.story = {
+  name: '☢️ with advanced filters',
+};
+
+export const StatefulTableWithAdvancedFilters = () => {
+  const [showBuilder, setShowBuilder] = useState(false);
+
+  const [advancedFilters, setAdvancedFilters] = useState([
+    {
+      filterId: 'story-filter',
+      /** Text for main tilte of page */
+      filterTitleText: 'Story Filter',
+      /** Text for metadata for the filter */
+      filterMetaText: `last updated: 2021-03-11 15:34:01`,
+      /** tags associated with particular filter */
+      filterTags: ['fav', 'other-tag'],
+      /** users that have access to particular filter */
+      filterAccess: [
+        {
+          username: 'Example-User',
+          email: 'example@pal.com',
+          name: 'Example User',
+          access: 'edit',
+        },
+        {
+          username: 'Other-User',
+          email: 'other@pal.com',
+          name: 'Other User',
+          access: 'read',
+        },
+      ],
+      /** All possible users that can be granted access */
+      filterUsers: [
+        {
+          id: 'teams',
+          name: 'Teams',
+          groups: [
+            {
+              id: 'team-a',
+              name: 'Team A',
+              users: [
+                {
+                  username: '@tpeck',
+                  email: 'tpeck@pal.com',
+                  name: 'Templeton Peck',
+                },
+                {
+                  username: '@jsmith',
+                  email: 'jsmith@pal.com',
+                  name: 'John Smith',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          username: 'Example-User',
+          email: 'example@pal.com',
+          name: 'Example User',
+        },
+        {
+          username: 'Test-User',
+          email: 'test@pal.com',
+          name: 'Test User',
+        },
+        {
+          username: 'Other-User',
+          email: 'other@pal.com',
+          name: 'Other User',
+        },
+      ],
+      /**
+       * the rules passed into the component. The RuleBuilder is a controlled component, so
+       * this works the same as passing defaultValue to a controlled input component.
+       */
+      filterRules: {
+        id: '14p5ho3pcu',
+        groupLogic: 'ALL',
+        rules: [
+          {
+            id: 'rsiru4rjba',
+            columnId: 'date',
+            operand: 'CONTAINS',
+            value: '19',
+          },
+          {
+            id: '34bvyub9jq',
+            columnId: 'boolean',
+            operand: 'EQ',
+            value: 'true',
+          },
+        ],
+      },
+      filterColumns: tableColumns,
+    },
+    {
+      filterId: 'next-filter',
+      /** Text for main tilte of page */
+      filterTitleText: 'Next Filter',
+      /** Text for metadata for the filter */
+      filterMetaText: `last updated: 2021-03-11 15:34:01`,
+      /** tags associated with particular filter */
+      filterTags: ['fav', 'other-tag'],
+      /** users that have access to particular filter */
+      filterAccess: [
+        {
+          username: 'Example-User',
+          email: 'example@pal.com',
+          name: 'Example User',
+          access: 'edit',
+        },
+        {
+          username: 'Other-User',
+          email: 'other@pal.com',
+          name: 'Other User',
+          access: 'read',
+        },
+      ],
+      /** All possible users that can be granted access */
+      filterUsers: [
+        {
+          id: 'teams',
+          name: 'Teams',
+          groups: [
+            {
+              id: 'team-a',
+              name: 'Team A',
+              users: [
+                {
+                  username: '@tpeck',
+                  email: 'tpeck@pal.com',
+                  name: 'Templeton Peck',
+                },
+                {
+                  username: '@jsmith',
+                  email: 'jsmith@pal.com',
+                  name: 'John Smith',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          username: 'Example-User',
+          email: 'example@pal.com',
+          name: 'Example User',
+        },
+        {
+          username: 'Test-User',
+          email: 'test@pal.com',
+          name: 'Test User',
+        },
+        {
+          username: 'Other-User',
+          email: 'other@pal.com',
+          name: 'Other User',
+        },
+      ],
+      /**
+       * the rules passed into the component. The RuleBuilder is a controlled component, so
+       * this works the same as passing defaultValue to a controlled input component.
+       */
+      filterRules: {
+        id: '14p5ho3pcu',
+        groupLogic: 'ALL',
+        rules: [
+          {
+            id: 'rsiru4rjba',
+            columnId: 'select',
+            operand: 'EQ',
+            value: 'option-C',
+          },
+          {
+            id: '34bvyub9jq',
+            columnId: 'boolean',
+            operand: 'EQ',
+            value: 'false',
+          },
+        ],
+      },
+      filterColumns: tableColumns,
+    },
+  ]);
+
+  return (
+    <>
+      <StoryNotice experimental componentName="StatefulTable with advancedFilters" />
+
+      <div style={{ position: 'relative' }}>
+        <StatefulTable
+          id="table"
+          columns={tableColumns}
+          data={tableData}
+          actions={{
+            ...actions,
+            toolbar: {
+              ...actions.toolbar,
+              onCreateAdvancedFilter: () => {
+                setShowBuilder(true);
+              },
+            },
+          }}
+          options={{
+            hasPagination: true,
+            hasRowSelection: 'multi',
+            hasAdvancedFilter: true,
+          }}
+          view={{
+            filters: [
+              {
+                columnId: 'string',
+                value: 'whiteboard',
+              },
+              {
+                columnId: 'select',
+                value: 'option-B',
+              },
+            ],
+            advancedFilters,
+            selectedAdvancedFilterIds: ['story-filter'],
+            table: {
+              ordering: defaultOrdering,
+            },
+          }}
+        />
+        {showBuilder && (
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              zIndex: 10,
+            }}
+          >
+            <RuleBuilder
+              onSave={(newFilter) => {
+                setAdvancedFilters((prev) => [
+                  ...prev,
+                  {
+                    filterId: 'a-new-filter-id',
+                    ...newFilter,
+                  },
+                ]);
+                setShowBuilder(false);
+              }}
+              onCancel={() => {
+                setShowBuilder(false);
+              }}
+              filter={{
+                filterColumns: tableColumns.map(({ id, name }) => ({ id, name })),
+              }}
+            />
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
+
+StatefulTableWithAdvancedFilters.story = {
+  name: '☢️ StatefulTable with advanced filters',
+  decorators: [createElement],
 };
 
 export const WithColumnSelection = () => (
@@ -3707,6 +4236,7 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => (
           columns: [
             {
               id: 'number',
+              align: 'end',
             },
           ],
         },

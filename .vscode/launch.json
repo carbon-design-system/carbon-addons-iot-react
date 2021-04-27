@@ -7,9 +7,9 @@
     {
       "type": "pwa-chrome",
       "request": "launch",
-      "name": "Debug Story Book",
+      "name": "Debug React Story Book",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}/lib/index.js"
+      "webRoot": "${workspaceFolder}/packages/react"
     },
     {
       "type": "node",
@@ -48,7 +48,6 @@
         "NODE_ICU_DATA": "node_modules/full-icu",
         "TZ": "America/Chicago"
       },
-      "cwd": "${workspaceFolder}/packages/react",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
       "windows": {

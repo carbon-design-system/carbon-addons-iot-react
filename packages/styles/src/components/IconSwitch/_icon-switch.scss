@@ -1,0 +1,106 @@
+@import '../../globals/vars';
+
+$icon-switch-size-small: $spacing-07;
+$icon-switch-size-default: $spacing-08;
+$icon-switch-size-large: $spacing-09;
+
+.#{$iot-prefix}--icon-switch {
+  border: 0;
+  &--small {
+    min-height: $icon-switch-size-small;
+    height: $icon-switch-size-small;
+    min-width: $icon-switch-size-small;
+    width: $icon-switch-size-small;
+    padding: 0 0 0 $icon-switch-size-small / 4;
+
+    .#{$prefix}--btn__icon {
+      height: $icon-switch-size-small / 2;
+      width: $icon-switch-size-small / 2;
+    }
+  }
+
+  &--default {
+    min-height: $icon-switch-size-default;
+    height: $icon-switch-size-default;
+    min-width: $icon-switch-size-default;
+    width: $icon-switch-size-default;
+    padding: 0 0 0 $icon-switch-size-default / 4;
+
+    .#{$prefix}--btn__icon {
+      height: $icon-switch-size-default / 2;
+      width: $icon-switch-size-default / 2;
+    }
+  }
+
+  &--large {
+    min-height: $icon-switch-size-large;
+    height: $icon-switch-size-large;
+    min-width: $icon-switch-size-large;
+    width: $icon-switch-size-large;
+    padding: 0 0 0 $icon-switch-size-large / 4;
+
+    .#{$prefix}--btn__icon {
+      height: $icon-switch-size-large / 2;
+      width: $icon-switch-size-large / 2;
+    }
+  }
+
+  &--unselected {
+    background-color: $text-04;
+    color: $interactive-02;
+
+    &.#{$prefix}--btn {
+      &:focus {
+        &:hover {
+          svg {
+            fill: $text-04;
+          }
+        }
+        &:not(:active) {
+          svg {
+            fill: $text-02;
+          }
+          &:hover {
+            svg {
+              fill: $text-04;
+            }
+          }
+        }
+      }
+    }
+  }
+  &--unselected--light {
+    background-color: $ui-02;
+  }
+  &.#{$prefix}--btn {
+    &:not(:focus) {
+      &:hover {
+        &.#{$prefix}--tooltip__trigger {
+          .#{$prefix}--assistive-text {
+            z-index: (z('floating') * 2);
+          }
+        }
+      }
+    }
+  }
+}
+
+// bx--content-switcher has justify-content: spread-evently which does not look right when
+// using icon switchers. Use this class to override this behaviour
+.#{$iot-prefix}--content-switcher--icon {
+  justify-content: center;
+}
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--icon-switch {
+    &--small {
+      padding: 0 $icon-switch-size-small/4 0 0;
+    }
+    &--default {
+      padding: 0 $icon-switch-size-default/4 0 0;
+    }
+    &--large {
+      padding: 0 $icon-switch-size-large/4 0 0;
+    }
+  }
+}

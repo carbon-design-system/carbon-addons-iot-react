@@ -1,38 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Filename, FileUploaderButton } from 'carbon-components-react';
-import { spacing05 } from '@carbon/layout';
-import styled from 'styled-components';
 
-import { COLORS } from '../../styles/styles';
+import { settings } from '../../constants/Settings';
 
-const Span = styled.span`
-   {
-    background-color: rgba(85, 150, 230, 0.1);
-  }
-`;
-
-const LinkButton = styled.button`
-   {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    outline: none;
-    color: ${COLORS.blue60};
-    cursor: pointer;
-    margin-left: 0.25rem;
-    text-decoration: underline;
-  }
-`;
-
-const Text = styled.div`
-   {
-    padding: ${spacing05};
-    line-height: 30px;
-  }
-`;
+const { iotPrefix } = settings;
 
 export const FILE_TYPES = {
   TEXT: 'TEXT',
@@ -126,6 +98,7 @@ class FileDrop extends React.Component {
    */
   readFileContent = (files) => {
     const { fileType } = this.props;
+
     Array.prototype.forEach.call(files, (file) => {
       this.readers[file.name] = new FileReader();
       this.readers[file.name].onload = () => this.handleFileLoad(file);
@@ -153,31 +126,35 @@ class FileDrop extends React.Component {
    * Finally it clears the reader
    */
   handleFileLoad = (file) => {
-    this.setState((state) => {
-      const newState = {
-        files: state.files.map((i) =>
-          i.name === file.name // only change the new reader result, preserve the rest
-            ? {
-                name: i.name,
-                uploadState: 'edit',
-                contents: this.readers[file.name].result,
-              }
-            : i
-        ),
-      };
+    this.setState(
+      (state) => {
+        const newState = {
+          files: state.files.map((i) =>
+            i.name === file.name // only change the new reader result, preserve the rest
+              ? {
+                  name: i.name,
+                  uploadState: 'edit',
+                  contents: this.readers[file.name].result,
+                }
+              : i
+          ),
+        };
 
-      if (newState.files.filter((i) => i.contents === null).length === 0) {
-        // all data is loaded, trigger callback
-        this.props.onData(
-          newState.files.map((i) => ({
-            name: i.name,
-            contents: i.contents,
-          }))
-        );
+        if (newState.files.filter((i) => i.contents === null).length === 0) {
+          // all data is loaded, trigger callback
+          this.props.onData(
+            newState.files.map((i) => ({
+              name: i.name,
+              contents: i.contents,
+            }))
+          );
+        }
+        return newState;
+      },
+      () => {
+        delete this.readers[file.name];
       }
-      return newState;
-    });
-    delete this.readers[file.name];
+    );
   };
 
   addNewFiles = (files) => {
@@ -258,7 +235,9 @@ class FileDrop extends React.Component {
           }}
           role="presentation"
         >
-          <LinkButton>{buttonLabel}</LinkButton>
+          <button type="button" className={`${iotPrefix}--file-drop__link-button`}>
+            {buttonLabel}
+          </button>
         </span>
         <div>{description}</div>
       </div>
@@ -269,17 +248,19 @@ class FileDrop extends React.Component {
         {this.state.files.length === 0
           ? null
           : this.state.files.map(({ name, uploadState }, index) => (
-              <Span
+              <span
                 key={`${name}-${index}`}
-                className="bx--file__selected-file"
-                ref={(node) => (this.nodes[index] = node)} // eslint-disable-line no-return-assign
+                className={`bx--file__selected-file ${iotPrefix}--file-drop__selected-file`}
+                ref={(node) => {
+                  this.nodes[index] = node;
+                }}
               >
                 <p className="bx--file-filename">{name}</p>
                 <span className="bx--file__state-container">
                   <Filename
                     status={uploadState}
                     onKeyDown={(evt) => {
-                      if (evt.which === 13 || evt.which === 32) {
+                      if (evt.key === 'Enter' || evt.key === 'Space') {
                         this.handleClick(evt, index);
                       }
                     }}
@@ -290,7 +271,7 @@ class FileDrop extends React.Component {
                     }}
                   />
                 </span>
-              </Span>
+              </span>
             ))}
       </div>
     );
@@ -306,14 +287,15 @@ class FileDrop extends React.Component {
           multiple={multiple}
           onChange={this.handleChange}
         />
-        <Text
+        <div
+          className={`${iotPrefix}--file-drop__text`}
           style={hover ? { border: '1px solid #3D70B2' } : { border: '1px dashed #8C8C8C' }}
           onDragOver={this.fileDragHover}
           onDragLeave={this.fileDragHover}
           onDrop={this.fileDrop}
         >
           {linkElement}
-        </Text>
+        </div>
         {showFiles ? fileNameElements : null}
       </div>
     ) : (

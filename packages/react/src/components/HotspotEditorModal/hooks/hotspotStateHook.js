@@ -105,6 +105,7 @@ function hotspotEditorReducer(state, { type, payload }) {
                 unit: payload.unit,
                 dataFilter: payload.dataFilter,
                 thresholds: payload.thresholds,
+                precision: payload.precision,
               },
             },
           },

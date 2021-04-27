@@ -12,17 +12,23 @@ import tankmodal from '../ImageGalleryModal/images/tankmodal.png';
 import turbines from '../ImageGalleryModal/images/turbines.png';
 import large from '../ImageGalleryModal/images/large.png';
 import large_portrait from '../ImageGalleryModal/images/large_portrait.png'; // eslint-disable-line camelcase
+import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import DashboardEditor from './DashboardEditor';
+
+export const Experimental = () => <StoryNotice componentName="DashboardEditor" experimental />;
+Experimental.story = {
+  name: experimentalStoryTitle,
+};
 
 const images = [
   {
     id: 'assemblyline',
     src: assemblyline,
     alt: 'assemblyline',
-    title: `custom title assemblyline that is very long a and must be managed. 
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+    title: `custom title assemblyline that is very long a and must be managed.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
       ad minim veniam.`,
   },
   { id: 'floow_plan', src: floow_plan, alt: 'floow plan' },
@@ -118,10 +124,30 @@ const mockDataItems = [
       { id: 'min', text: 'Min' },
     ],
   },
+  {
+    dataItemId: 'firmware',
+    type: 'DIMENSION',
+    dataSourceId: 'firmware',
+    label: 'firmware',
+    aggregationMethods: [
+      { id: 'none', text: 'None' },
+      { id: 'last', text: 'Last' },
+    ],
+  },
+  {
+    dataItemId: 'manufacturer',
+    type: 'DIMENSION',
+    dataSourceId: 'manufacturer',
+    label: 'manufacturer',
+    aggregationMethods: [
+      { id: 'none', text: 'None' },
+      { id: 'last', text: 'Last' },
+    ],
+  },
 ];
 
 export default {
-  title: 'Watson IoT Experimental/DashboardEditor',
+  title: 'Watson IoT Experimental/☢️ DashboardEditor',
   decorators: [withKnobs],
 
   parameters: {
@@ -161,6 +187,7 @@ export const Default = () => (
       'VALUE',
       'IMAGE',
       'TABLE',
+      'ALERT',
       'CUSTOM',
     ])}
     headerBreadcrumbs={[
@@ -382,9 +409,12 @@ export const SummaryDashboardWithInitialValue = () => (
       dataItems={mockDataItems.map((item) => ({ ...item, grain: 'Weekly' }))}
       availableDimensions={{
         firmware: ['1.2', '1.3'],
+        axes: [1, 2, 3],
+        deviceid: ['73004', '73000', '73001'],
+        manufacturer: ['Rentech', 'Manu Inc'],
       }}
+      isSummaryDashboard
       initialValue={{
-        isSummaryDashboard: true,
         cards: [
           {
             id: 'Table',
@@ -820,6 +850,11 @@ export const CustomCardPreviewRenderer = () => (
             property on the card will be rendered here:
             <h3>{cardConfig.value}</h3>
           </div>
+
+          {
+            // if you want the resizable handles you need to render the children
+            cardProps.children
+          }
         </Card>
       ) : undefined;
     }}

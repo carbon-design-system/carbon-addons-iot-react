@@ -163,7 +163,7 @@ const TableManageViewsModal = ({
     <>
       <MyMainModal
         className={`${iotPrefix}--manage-views-modal`}
-        data-testid={testID}
+        testID={testID}
         error={error}
         header={{
           title: modalTitle,
@@ -185,7 +185,7 @@ const TableManageViewsModal = ({
             name="searchValue"
             labelText={searchIconLabelText}
             onChange={(evt) => onSearchChange(evt?.target?.value)}
-            placeHolderText={searchPlaceholderText}
+            placeholder={searchPlaceholderText}
             size="lg"
             type="text"
             {...overrides?.search?.props}

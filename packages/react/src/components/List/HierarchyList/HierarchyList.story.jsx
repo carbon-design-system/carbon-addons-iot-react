@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
@@ -72,6 +72,10 @@ export const StatefulListWithNestedSearching = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
+      hasDeselection={boolean('hasDeselection', true)}
+      i18n={object('i18n', {
+        searchPlaceHolderText: 'Search',
+      })}
     />
   </div>
 );
@@ -120,6 +124,7 @@ export const WithDefaultSelectedId = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
+      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
@@ -189,6 +194,7 @@ export const WithOverflowMenu = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
+      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
@@ -254,6 +260,7 @@ export const WithNestedReorder = () => {
           }}
           hasSearch={boolean('hasSearch', true)}
           onSelect={action('onSelect')}
+          hasDeselection={boolean('hasDeselection', true)}
         />
       </div>
     );
@@ -302,6 +309,7 @@ export const WithDefaultExpandedIds = () => (
       isLargeRow={boolean('isLargeRow', false)}
       defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
       onSelect={action('onSelect')}
+      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
@@ -386,10 +394,61 @@ export const WithMixedHierarchies = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
+      hasDeselection={boolean('hasDeselection', true)}
     />
   </div>
 );
 
 WithMixedHierarchies.story = {
   name: 'with mixed hierarchies',
+};
+
+export const WithSelectableCategories = () => (
+  <div style={{ width: 400, height: 400 }}>
+    <HierarchyList
+      title={text('Title', 'MLB Expanded List')}
+      defaultSelectedId={text('Default Selected Id', 'Chicago White Sox_Jose Abreu')}
+      items={[
+        ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
+          id: team,
+          isCategory: true,
+          isSelectable: true,
+          content: {
+            value: team,
+          },
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+            id: `${team}_${player}`,
+            content: {
+              value: player,
+            },
+            isSelectable: true,
+          })),
+        })),
+        ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
+          id: team,
+          isCategory: true,
+          content: {
+            value: team,
+          },
+          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+            id: `${team}_${player}`,
+            content: {
+              value: player,
+            },
+            isSelectable: true,
+          })),
+        })),
+      ]}
+      hasSearch={boolean('hasSearch', true)}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
+      isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
+      onSelect={action('onSelect')}
+      hasDeselection={boolean('hasDeselection', true)}
+    />
+  </div>
+);
+
+WithSelectableCategories.story = {
+  name: 'With selectable categories',
 };
