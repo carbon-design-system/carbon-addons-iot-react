@@ -1,0 +1,26 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--list-builder__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  // /* Hide the unused nested modal reordering dialog that throws off the scrolling */
+  // .#{$iot-prefix}--hierarchy-list-bulk-modal {
+  //   display: none;
+  // }
+}
+
+.#{$iot-prefix}--list-builder__all {
+  width: 100%;
+  height: 100%;
+  align-self: stretch;
+  padding: $spacing-02;
+}
+
+.#{$iot-prefix}--list-builder__selected {
+  width: 100%;
+  height: 100%;
+  align-self: stretch;
+  padding: $spacing-02;
+}
