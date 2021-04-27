@@ -4,9 +4,9 @@ import { ArrowRight16, ArrowLeft16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
 
 import ComposedModal from '../ComposedModal/ComposedModal';
-import HierarchyList from '../List/HierarchyList';
 import { Button } from '../..';
 import { settings } from '../../constants/Settings';
+import ListBuilder from '../ListBuilder/ListBuilder';
 
 const { iotPrefix } = settings;
 
@@ -244,30 +244,17 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
           canSaveRef.current = false;
         }}
       >
-        <div className={`${iotPrefix}--select-users-modal-content`}>
-          <div
-            className={`${iotPrefix}--select-users-modal-content__all-users`}
-            data-testid="select-users__all"
-          >
-            <HierarchyList
-              title={`Users (${userCount} Available)`}
-              items={usersList}
-              hasSearch
-              hasPagination={false}
-            />
-          </div>
-          <div
-            className={`${iotPrefix}--select-users-modal-content__selected-users`}
-            data-testid="select-users__selected"
-          >
-            <HierarchyList
-              title={`${selectedUsers.length > 0 ? `${selectedUsers.length} ` : ''}Selected`}
-              items={selectedList}
-              hasSearch
-              hasPagination={false}
-            />
-          </div>
-        </div>
+        <ListBuilder
+          items={usersList}
+          itemCount={userCount}
+          testID="select-users"
+          selectedItems={selectedList}
+          i18n={{
+            allListTitle: (count) => {
+              return `Users (${count} available)`;
+            },
+          }}
+        />
       </ComposedModal>
     </div>
   );

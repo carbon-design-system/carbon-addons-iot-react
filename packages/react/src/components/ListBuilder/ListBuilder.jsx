@@ -14,13 +14,15 @@ const propTypes = {
 
   items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
 
+  itemCount: PropTypes.number,
+
   selectedItems: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
 
   /** (event, id) => void */
-  onAdd: PropTypes.func.isRequired,
+  onAdd: PropTypes.func,
 
   /** (event, id) => void */
-  onRemove: PropTypes.func.isRequired,
+  onRemove: PropTypes.func,
 
   i18n: PropTypes.shape({
     /** (count) => `Items (${count} available)` */
@@ -42,7 +44,13 @@ const defaultProps = {
 
   items: [],
 
+  itemCount: null,
+
   selectedItems: [],
+
+  onAdd: null,
+
+  onRemove: null,
 
   i18n: {
     allListTitle: (count) => {
@@ -59,7 +67,7 @@ const defaultProps = {
   },
 };
 
-const ListBuilder = ({ testID, items, selectedItems, i18n, onAdd, onRemove }) => {
+const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onRemove }) => {
   const mergedI18n = {
     ...defaultProps.i18n,
     ...i18n,
@@ -84,24 +92,29 @@ const ListBuilder = ({ testID, items, selectedItems, i18n, onAdd, onRemove }) =>
   const allListItems = useMemo(
     () =>
       items?.map((item) => {
+        const rowActions =
+          item.content.rowActions !== undefined
+            ? item.content.rowActions
+            : () => [
+                <Button
+                  key={`${item.id}-list-item-button`}
+                  testID={`${testID}-add-button-${item.id}`}
+                  role="button"
+                  aria-label={mergedI18n.addLabel}
+                  renderIcon={ArrowRight16}
+                  hasIconOnly
+                  kind="ghost"
+                  size="small"
+                  onClick={handleAdd(item.id)}
+                  iconDescription={mergedI18n.addLabel}
+                />,
+              ];
+
         return {
           ...item,
           content: {
             ...item.content,
-            rowActions: () => [
-              <Button
-                key={`${item.id}-list-item-button`}
-                testID={`${testID}-add-button-${item.id}`}
-                role="button"
-                aria-label={mergedI18n.addLabel}
-                renderIcon={ArrowRight16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={handleAdd(item.id)}
-                iconDescription={mergedI18n.addLabel}
-              />,
-            ],
+            rowActions,
           },
         };
       }) ?? [],
@@ -111,24 +124,28 @@ const ListBuilder = ({ testID, items, selectedItems, i18n, onAdd, onRemove }) =>
   const selectedListItems = useMemo(
     () =>
       selectedItems?.map((selectedItem) => {
+        const rowActions =
+          selectedItem.content.rowActions !== undefined
+            ? selectedItem.content.rowActions
+            : () => [
+                <Button
+                  key={`${selectedItem.id}-list-item-button`}
+                  testID={`${testID}-add-button-${selectedItem.id}`}
+                  role="button"
+                  aria-label={mergedI18n.removeLabel}
+                  renderIcon={ArrowLeft16}
+                  hasIconOnly
+                  kind="ghost"
+                  size="small"
+                  onClick={handleRemove(selectedItem.id)}
+                  iconDescription={mergedI18n.removeLabel}
+                />,
+              ];
         return {
           ...selectedItem,
           content: {
             ...selectedItem.content,
-            rowActions: () => [
-              <Button
-                key={`${selectedItem.id}-list-item-button`}
-                testID={`${testID}-add-button-${selectedItem.id}`}
-                role="button"
-                aria-label={mergedI18n.removeLabel}
-                renderIcon={ArrowLeft16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={handleRemove(selectedItem.id)}
-                iconDescription={mergedI18n.removeLabel}
-              />,
-            ],
+            rowActions,
           },
         };
       }) ?? [],
@@ -139,7 +156,7 @@ const ListBuilder = ({ testID, items, selectedItems, i18n, onAdd, onRemove }) =>
     <div className={`${iotPrefix}--list-builder__container`}>
       <div className={`${iotPrefix}--list-builder__all`} data-testid={`${testID}__all`}>
         <HierarchyList
-          title={allListTitle(allListItems.length)}
+          title={allListTitle(itemCount ?? allListItems.length)}
           items={allListItems}
           hasSearch
           hasPagination={false}

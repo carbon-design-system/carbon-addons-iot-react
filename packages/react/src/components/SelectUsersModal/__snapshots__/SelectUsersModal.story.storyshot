@@ -81,10 +81,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             className="bx--modal-content"
           >
             <div
-              className="iot--select-users-modal-content"
+              className="iot--list-builder__container"
             >
               <div
-                className="iot--select-users-modal-content__all-users"
+                className="iot--list-builder__all"
                 data-testid="select-users__all"
               >
                 <div
@@ -99,7 +99,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Users (230 Available)
+                        Users (230 available)
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -330,7 +330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 </div>
               </div>
               <div
-                className="iot--select-users-modal-content__selected-users"
+                className="iot--list-builder__selected"
                 data-testid="select-users__selected"
               >
                 <div
@@ -345,7 +345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Selected
+                        0 Selected
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -589,10 +589,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             className="bx--modal-content"
           >
             <div
-              className="iot--select-users-modal-content"
+              className="iot--list-builder__container"
             >
               <div
-                className="iot--select-users-modal-content__all-users"
+                className="iot--list-builder__all"
                 data-testid="select-users__all"
               >
                 <div
@@ -607,7 +607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Users (10 Available)
+                        Users (10 available)
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -1435,7 +1435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 </div>
               </div>
               <div
-                className="iot--select-users-modal-content__selected-users"
+                className="iot--list-builder__selected"
                 data-testid="select-users__selected"
               >
                 <div
@@ -1450,7 +1450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Selected
+                        0 Selected
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -1694,10 +1694,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             className="bx--modal-content"
           >
             <div
-              className="iot--select-users-modal-content"
+              className="iot--list-builder__container"
             >
               <div
-                className="iot--select-users-modal-content__all-users"
+                className="iot--list-builder__all"
                 data-testid="select-users__all"
               >
                 <div
@@ -1712,7 +1712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Users (7 Available)
+                        Users (7 available)
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -1975,7 +1975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 </div>
               </div>
               <div
-                className="iot--select-users-modal-content__selected-users"
+                className="iot--list-builder__selected"
                 data-testid="select-users__selected"
               >
                 <div
@@ -2287,10 +2287,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             className="bx--modal-content"
           >
             <div
-              className="iot--select-users-modal-content"
+              className="iot--list-builder__container"
             >
               <div
-                className="iot--select-users-modal-content__all-users"
+                className="iot--list-builder__all"
                 data-testid="select-users__all"
               >
                 <div
@@ -2305,7 +2305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Users (230 Available)
+                        Users (230 available)
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -2536,7 +2536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 </div>
               </div>
               <div
-                className="iot--select-users-modal-content__selected-users"
+                className="iot--list-builder__selected"
                 data-testid="select-users__selected"
               >
                 <div
