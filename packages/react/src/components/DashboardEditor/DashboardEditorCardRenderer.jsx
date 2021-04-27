@@ -29,6 +29,7 @@ import { timeRangeToJSON, isCardJsonValid, handleKeyDown, handleOnClick } from '
 const renderDefaultCard = (props) => (
   <Card isEditable {...props}>
     <div style={{ padding: '1rem' }}>{JSON.stringify(props.id, null, 4)}</div>
+    {props.children}
   </Card>
 );
 
@@ -122,6 +123,7 @@ const renderCustomCard = (props) => {
       {...omit(props, 'content')}
     >
       {props.content}
+      {props.children}
     </Card>
   );
 };
