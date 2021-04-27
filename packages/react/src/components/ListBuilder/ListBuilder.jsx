@@ -4,19 +4,45 @@ import { ArrowLeft16, ArrowRight16 } from '@carbon/icons-react';
 
 import HierarchyList from '../List/HierarchyList';
 import { settings } from '../../constants/Settings';
-import { ListItemPropTypes } from '../List/List';
 import Button from '../Button/Button';
 
 const { iotPrefix } = settings;
 
+export const ListBuilderItemPropTypes = {
+  /** the id of this item */
+  id: PropTypes.string,
+  content: PropTypes.shape({
+    /** the value of this item */
+    value: PropTypes.string,
+
+    /**
+     * a function that returns an array of elements to trigger actions if the list builder has complex structure or logic
+     * otherwise, this will be populated by the ListBuilder as a simple add or remove button.
+     */
+    rowActions: PropTypes.func,
+  }),
+
+  /** is this item disabled */
+  disabled: PropTypes.bool,
+
+  /** allows for groups or categories, see SelectUsersModal for a complex example */
+  isCategory: PropTypes.bool,
+
+  /** allows for groups or categories, see SelectUsersModal for a complex example */
+  children: PropTypes.arrayOf(PropTypes.object),
+};
+
 const propTypes = {
   testID: PropTypes.string,
 
-  items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
+  /** the list of all items available to select in the ListBuilder */
+  items: PropTypes.arrayOf(PropTypes.shape(ListBuilderItemPropTypes)),
 
+  /** if the items contain children or groups, a proper count can be passed here. */
   itemCount: PropTypes.number,
 
-  selectedItems: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
+  /** an array of all selected items */
+  selectedItems: PropTypes.arrayOf(PropTypes.shape(ListBuilderItemPropTypes)),
 
   /** (event, id) => void */
   onAdd: PropTypes.func,
@@ -141,6 +167,7 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
                   iconDescription={mergedI18n.removeLabel}
                 />,
               ];
+
         return {
           ...selectedItem,
           content: {
