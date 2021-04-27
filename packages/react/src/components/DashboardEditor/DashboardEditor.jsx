@@ -252,6 +252,8 @@ const propTypes = {
     abbreviateNumbers: PropTypes.string,
     abbreviateNumbersTooltip: PropTypes.string,
   }),
+  /** locale data */
+  locale: PropTypes.string,
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
     simpleBar: PropTypes.string,
@@ -326,6 +328,7 @@ const defaultProps = {
     layoutInfoSm: 'Edit dashboard at small layout (481 - 672px)',
     searchPlaceHolderText: 'Enter a value',
   },
+  locale: 'en',
   dataSeriesItemLinks: null,
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
 };
@@ -371,6 +374,7 @@ const DashboardEditor = ({
   isSummaryDashboard,
   isLoading,
   i18n,
+  locale,
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
@@ -653,6 +657,7 @@ const DashboardEditor = ({
                     return (
                       <DashboardEditorCardRenderer
                         {...cardConfig}
+                        locale={locale}
                         key={cardConfig.id}
                         isResizable={isCardResizable}
                         i18n={mergedI18n}
