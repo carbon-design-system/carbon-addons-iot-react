@@ -142,7 +142,7 @@ const configureAxes = (content) => {
  * @returns {object} with a labels array and a datasets array
  */
 
-export const useChartData = (values, { series = [], timeDataSourceId }) => {
+export const useChartData = (values, { series = [], timeDataSourceId, showTimeInGMT }) => {
   // Carbon charts is incredibly slow with large datasets sometimes, so let's shave off a little time where we can
   return useMemo(() => {
     // Generate a set of unique timestamps for the values
@@ -170,7 +170,7 @@ export const useChartData = (values, { series = [], timeDataSourceId }) => {
                   date:
                     dataItem[timeDataSourceId] instanceof Date
                       ? dataItem[timeDataSourceId]
-                      : new Date(dataItem[timeDataSourceId]),
+                      : (showTimeInGMT ? dayjs.utc(dataItem[timeDataSourceId]) : dayjs(dataItem[timeDataSourceId])),
                   value: dataItem[dataSourceId],
                   group: label,
                 });
@@ -181,7 +181,7 @@ export const useChartData = (values, { series = [], timeDataSourceId }) => {
     });
 
     return data;
-  }, [values, series, timeDataSourceId]);
+  }, [values, series, timeDataSourceId, showTimeInGMT]);
 };
 
 export const useChartOptions = (content) => {
@@ -251,7 +251,7 @@ export const useChartOptions = (content) => {
 };
 
 const extractDataAndColumnNames = (values, chartOptions) => {
-  const { timeDataSourceId } = chartOptions;
+  const { timeDataSourceId, showTimeInGMT } = chartOptions;
   let maxColumnNames = [];
 
   const tableValues = values.map((value, index) => {
@@ -262,7 +262,7 @@ const extractDataAndColumnNames = (values, chartOptions) => {
       id: `dataindex-${index}`,
       values: {
         ...omit(value, timeDataSourceId), // skip the timestamp so we can format it locally
-        [timeDataSourceId]: dayjs(value[timeDataSourceId]).format('L HH:mm'),
+        [timeDataSourceId]: (showTimeInGMT ? dayjs.utc(value[timeDataSourceId]) : dayjs(value[timeDataSourceId])).format('L HH:mm'),
       },
       isSelectable: false,
     };
