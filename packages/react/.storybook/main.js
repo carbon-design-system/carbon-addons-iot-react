@@ -11,6 +11,17 @@ module.exports = {
     'storybook-addon-rtl',
     'storybook-readme',
   ],
+  babel: async (options) => {
+    // ensure all plugins are using loose: false (the default)
+    // this avoids an error where plugins from different locations have
+    // different loose modes
+    options.plugins.forEach((plugin) => {
+      if (Array.isArray(plugin) && plugin[1].loose) {
+        plugin[1].loose = false;
+      }
+    });
+    return options;
+  },
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.

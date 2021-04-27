@@ -43,8 +43,8 @@ export default [
         name: 'CarbonAddonsIoTReact',
         format: 'cjs',
         preserveModulesRoot: 'src',
-        exports: 'auto'
-      }
+        exports: 'auto',
+      },
     ],
     external,
     plugins: [
@@ -52,7 +52,7 @@ export default [
       commonjs({ include: /node_modules/ }),
       babel({
         exclude: /node_modules/,
-        babelHelpers: 'runtime'
+        babelHelpers: 'runtime',
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify(env),
@@ -73,7 +73,7 @@ export default [
         namedExports: true, // Default: true
       }),
       ...prodSettings,
-    ]
+    ],
   },
   // Compile styles
   {
@@ -136,7 +136,7 @@ export default [
       }),
       babel({
         exclude: /node_modules/,
-        babelHelpers: 'runtime'
+        babelHelpers: 'runtime',
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify(env),
