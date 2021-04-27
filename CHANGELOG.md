@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.58](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.57...v2.145.0-next.58) (2021-04-27)
+
+
+### Bug Fixes
+
+* **bar-chart-card:** prop error on grouped BarChartCard ([71a8c0b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/71a8c0b065c485c132d0dbbd61ff2fc1ca05b10f))
+
+
+
+
+
 # [2.145.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.56...v2.145.0-next.57) (2021-04-26)
 
 
