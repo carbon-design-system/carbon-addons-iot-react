@@ -11,6 +11,14 @@ module.exports = {
     'storybook-addon-rtl',
     'storybook-readme',
   ],
+  babel: async (options) => {
+    options.plugins.forEach(plugin => {
+      if (Array.isArray(plugin) && plugin[1].loose) {
+        plugin[1].loose = false;
+      }
+    });
+    return options;
+  },
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
@@ -77,6 +85,7 @@ module.exports = {
           loader: 'fast-sass-loader',
           options: {
             includePaths: [path.resolve(__dirname, '..', 'node_modules')],
+            silent: true,
           },
         },
       ],
@@ -84,7 +93,10 @@ module.exports = {
 
     // add the package local node_modules as the first place to look when resolving modules
     // more info here: https://webpack.js.org/configuration/resolve/#resolvemodules
-    config.resolve.modules = [path.resolve(__dirname, '../node_modules'), 'node_modules'];
+    config.resolve.modules = [
+      path.resolve(__dirname, '../node_modules'),
+      'node_modules'
+    ];
 
     // Return the altered config
     return config;

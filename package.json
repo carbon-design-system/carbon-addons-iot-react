@@ -8,10 +8,7 @@
       "packages/*"
     ],
     "nohoist": [
-      "carbon-components-angular",
-      "**carbon-components-react",
-      "**@storybook/*",
-      "**storybook*"
+      "**carbon-components-react"
     ]
   },
   "main": "lib/src/index.js",
