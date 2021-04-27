@@ -12,6 +12,9 @@ module.exports = {
     'storybook-readme',
   ],
   babel: async (options) => {
+    // ensure all plugins are using loose: false (the default)
+    // this avoids an error where plugins from different locations have
+    // different loose modes
     options.plugins.forEach(plugin => {
       if (Array.isArray(plugin) && plugin[1].loose) {
         plugin[1].loose = false;
@@ -85,7 +88,6 @@ module.exports = {
           loader: 'fast-sass-loader',
           options: {
             includePaths: [path.resolve(__dirname, '..', 'node_modules')],
-            silent: true,
           },
         },
       ],
