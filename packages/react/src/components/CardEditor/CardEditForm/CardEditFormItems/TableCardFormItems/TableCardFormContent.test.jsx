@@ -18,6 +18,13 @@ const commonProps = {
   dataItems: [
     { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
     { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
+    {
+      dataItemId: 'deviceid',
+      dataSourceId: 'deviceid',
+      label: 'deviceid',
+      destination: 'groupBy',
+      type: 'DIMENSION',
+    },
   ],
   availableDimensions: {
     manufacturer: ['Rentech', 'GHI'],
@@ -25,7 +32,14 @@ const commonProps = {
   },
   onChange: mockOnChange,
   setSelectedDataItems: jest.fn(),
-  translateWithId: jest.fn(),
+  translateWithId: jest.fn((id) => {
+    switch (id) {
+      default:
+        return '';
+      case 'clear.all':
+        return 'Clear selection';
+    }
+  }),
 };
 
 describe('TableCardFormContent', () => {
@@ -42,9 +56,45 @@ describe('TableCardFormContent', () => {
     // check for the dimensions to be shown
     fireEvent.click(screen.getByLabelText(/Select dim/));
     expect(screen.queryByText('manufacturer')).toBeDefined();
-    expect(screen.queryByText('deviceid')).toBeDefined();
+    expect(screen.queryAllByText('deviceid')).toBeDefined();
   });
-  it('fires onChange when dataItem is selected', () => {
+  it('puts special data items in groupBy section', () => {
+    render(<TableCardFormContent {...commonProps} />);
+    // check for the temperature and pressure to be shown under data items
+    const dataItemComboBox = screen.getByTestId('combo-box');
+    expect(dataItemComboBox).toBeInTheDocument();
+    fireEvent.click(dataItemComboBox);
+    expect(screen.queryAllByText('deviceid')).toBeDefined();
+    expect(screen.queryByText('pressure')).toBeDefined();
+
+    fireEvent.click(screen.queryAllByText('deviceid')[0]);
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            sort: 'DESC',
+            dataItemId: 'timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'deviceid',
+            destination: 'groupBy',
+            // dataSourceId is generated with a uuid to stay unique
+            dataSourceId: 'deviceid',
+            dataItemId: 'deviceid',
+            type: 'DIMENSION',
+          },
+        ],
+      },
+      dataSource: {
+        groupBy: ['deviceid'],
+      },
+    });
+  });
+  it('fires onChange when dataItem deviceId is selected', () => {
     render(<TableCardFormContent {...commonProps} />);
     // check for the temperature and pressure to be shown under data items
     const dataItemComboBox = screen.getByTestId('combo-box');
@@ -103,7 +153,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('manufacturer')).toBeDefined();
     fireEvent.click(screen.queryByText('manufacturer'));
     // the selection state of the box should be updated
-    expect(document.querySelector('[aria-label="Clear Selection"]')).toBeTruthy();
+    expect(screen.getByLabelText('Clear selection')).toBeTruthy();
     // the callback for onChange should be called
     expect(mockOnChange).toHaveBeenCalledWith({
       ...commonCardConfig,
@@ -118,12 +168,15 @@ describe('TableCardFormContent', () => {
             sort: 'DESC',
           },
           {
+            dataItemId: 'manufacturer',
             dataSourceId: 'manufacturer',
+            destination: 'groupBy',
             label: 'manufacturer',
             type: 'DIMENSION',
           },
         ],
       },
+      dataSource: { groupBy: ['manufacturer'] },
     });
   });
   it('edit mode with dataitems and dimension columns show work correctly', () => {
@@ -203,6 +256,176 @@ describe('TableCardFormContent', () => {
       },
     });
   });
+  it('remove button should remove items from the groupBy list', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                dataItemId: 'manufacturer',
+                type: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+          },
+          dataSource: {
+            groupBy: ['manufacturer'],
+          },
+        }}
+      />
+    );
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Manufacturer')).toBeDefined();
+
+    const removeManufacturerButton = screen.getAllByRole('button', { name: 'Remove' })[1];
+    expect(removeManufacturerButton).toBeInTheDocument();
+
+    fireEvent.click(removeManufacturerButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+      },
+    });
+  });
+  it('remove button should remove items from the groupBy list but leave the dataSource alone', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                dataItemId: 'manufacturer',
+                type: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+          },
+          dataSource: {
+            groupBy: ['manufacturer'],
+            timeGrain: 'hour',
+          },
+        }}
+      />
+    );
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Manufacturer')).toBeDefined();
+
+    const removeManufacturerButton = screen.getAllByRole('button', { name: 'Remove' })[1];
+    expect(removeManufacturerButton).toBeInTheDocument();
+
+    fireEvent.click(removeManufacturerButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+      },
+      dataSource: {
+        timeGrain: 'hour',
+      },
+    });
+  });
+  it('remove button should remove items from the columns but leave groupby alone', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                dataItemId: 'manufacturer',
+                type: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+          },
+          dataSource: {
+            groupBy: ['manufacturer'],
+            timeGrain: 'hour',
+          },
+        }}
+      />
+    );
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Manufacturer')).toBeDefined();
+
+    const removeTemperatureButton = screen.getAllByRole('button', { name: 'Remove' })[2];
+    expect(removeTemperatureButton).toBeInTheDocument();
+
+    fireEvent.click(removeTemperatureButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Manufacturer',
+            dataSourceId: 'manufacturer',
+            dataItemId: 'manufacturer',
+            type: 'DIMENSION',
+          },
+        ],
+      },
+      dataSource: {
+        groupBy: ['manufacturer'],
+        timeGrain: 'hour',
+      },
+    });
+  });
   it('edit mode with dataitems adds threshold correctly', () => {
     const mockOnChange = jest.fn();
     const mockCardConfig = {
@@ -249,6 +472,45 @@ describe('TableCardFormContent', () => {
             value: 0,
           },
         ],
+      },
+    });
+  });
+  it('edit mode with dataitems leaves threshold blank correctly', () => {
+    const mockOnChange = jest.fn();
+    const mockCardConfig = {
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Manufacturer',
+            dataSourceId: 'manufacturer',
+            type: 'DIMENSION',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+      },
+    };
+    render(
+      <TableCardFormContent {...commonProps} onChange={mockOnChange} cardConfig={mockCardConfig} />
+    );
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Manufacturer')).toBeDefined();
+
+    // Popup the Data Item Editor
+    fireEvent.click(screen.queryAllByText('Edit')[1]);
+    expect(screen.queryByText('Customize data series')).toBeDefined();
+    fireEvent.click(screen.queryByText('Save'));
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...mockCardConfig,
+      content: {
+        ...mockCardConfig.content,
       },
     });
   });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal Empty 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal Empty 1`] = `
 <div
   className="storybook-container"
 >
@@ -15,6 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     <div
       className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -31,22 +32,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         Focus sentinel
       </span>
       <div
+        aria-label="landscape.jpg"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             landscape.jpg
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit image
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -289,26 +292,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
             </div>
             <div
-              className="bx--tabs"
-              role="navigation"
+              className="bx--tabs--scrollable"
+              onScroll={[Function]}
               selected={0}
             >
-              <div
-                aria-label="listbox"
-                className="bx--tabs-trigger"
+              <button
+                aria-hidden="true"
+                aria-label="Scroll left"
+                className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
-                onKeyPress={[Function]}
-                role="listbox"
-                tabIndex={0}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
               >
-                <a
-                  className="bx--tabs-trigger-text"
-                  href="#"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                >
-                  Tooltip
-                </a>
                 <svg
                   aria-hidden={true}
                   fill="currentColor"
@@ -320,59 +317,86 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                   />
-                  <title>
-                    show menu options
-                  </title>
                 </svg>
-              </div>
+              </button>
               <ul
-                className="bx--tabs__nav bx--tabs__nav--hidden"
+                className="bx--tabs--scrollable__nav"
                 role="tablist"
+                tabIndex={-1}
               >
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={true}
-                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-11__panel"
+                    aria-selected={true}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-11"
+                    role="tab"
                     tabIndex={0}
+                    type="button"
                   >
                     Tooltip
-                  </a>
+                  </button>
                 </li>
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
+                  className="bx--tabs--scrollable__nav-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-12__panel"
+                    aria-selected={false}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-12"
+                    role="tab"
                     tabIndex={-1}
+                    type="button"
                   >
                     Data source
-                  </a>
+                  </button>
                 </li>
               </ul>
+              <button
+                aria-hidden="true"
+                aria-label="Scroll right"
+                className="bx--tab--overflow-nav-button--hidden"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
-              aria-hidden={false}
               className="bx--tab-content"
               hidden={false}
               role="tabpanel"
               selected={true}
+              tabIndex={0}
             >
               <div
                 className="iot--hotspot-editor-tooltip-tab"
@@ -391,12 +415,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                      d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                      fill="none"
                     />
                     <path
-                      d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-                      data-icon-path="inner-path"
-                      fill="none"
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
                     />
                   </svg>
                   <p>
@@ -406,19 +429,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
               className="bx--tab-content"
               hidden={true}
               role="tabpanel"
               selected={false}
+              tabIndex={0}
             />
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -427,7 +452,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -472,7 +499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal Empty with getValidDataItems callback 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal Empty with getValidDataItems callback 1`] = `
 <div
   className="storybook-container"
 >
@@ -487,6 +514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     <div
       className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -503,22 +531,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         Focus sentinel
       </span>
       <div
+        aria-label="landscape.jpg"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             landscape.jpg
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit image
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -761,26 +791,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
             </div>
             <div
-              className="bx--tabs"
-              role="navigation"
+              className="bx--tabs--scrollable"
+              onScroll={[Function]}
               selected={0}
             >
-              <div
-                aria-label="listbox"
-                className="bx--tabs-trigger"
+              <button
+                aria-hidden="true"
+                aria-label="Scroll left"
+                className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
-                onKeyPress={[Function]}
-                role="listbox"
-                tabIndex={0}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
               >
-                <a
-                  className="bx--tabs-trigger-text"
-                  href="#"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                >
-                  Tooltip
-                </a>
                 <svg
                   aria-hidden={true}
                   fill="currentColor"
@@ -792,59 +816,86 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                   />
-                  <title>
-                    show menu options
-                  </title>
                 </svg>
-              </div>
+              </button>
               <ul
-                className="bx--tabs__nav bx--tabs__nav--hidden"
+                className="bx--tabs--scrollable__nav"
                 role="tablist"
+                tabIndex={-1}
               >
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={true}
-                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-13__panel"
+                    aria-selected={true}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-13"
+                    role="tab"
                     tabIndex={0}
+                    type="button"
                   >
                     Tooltip
-                  </a>
+                  </button>
                 </li>
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
+                  className="bx--tabs--scrollable__nav-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-14__panel"
+                    aria-selected={false}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-14"
+                    role="tab"
                     tabIndex={-1}
+                    type="button"
                   >
                     Data source
-                  </a>
+                  </button>
                 </li>
               </ul>
+              <button
+                aria-hidden="true"
+                aria-label="Scroll right"
+                className="bx--tab--overflow-nav-button--hidden"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
-              aria-hidden={false}
               className="bx--tab-content"
               hidden={false}
               role="tabpanel"
               selected={true}
+              tabIndex={0}
             >
               <div
                 className="iot--hotspot-editor-tooltip-tab"
@@ -863,12 +914,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                      d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                      fill="none"
                     />
                     <path
-                      d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-                      data-icon-path="inner-path"
-                      fill="none"
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
                     />
                   </svg>
                   <p>
@@ -878,19 +928,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
               className="bx--tab-content"
               hidden={true}
               role="tabpanel"
               selected={false}
+              tabIndex={0}
             />
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -899,7 +951,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -944,7 +998,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal Width Existing Dynamic Hotspots 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal Width Existing Dynamic Hotspots 1`] = `
 <div
   className="storybook-container"
 >
@@ -959,6 +1013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     <div
       className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -975,22 +1030,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         Focus sentinel
       </span>
       <div
+        aria-label="landscape.jpg"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             landscape.jpg
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit image
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1252,12 +1309,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                    d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                    fill="none"
                   />
                   <path
-                    d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-                    data-icon-path="inner-path"
-                    fill="none"
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
                   />
                   <title>
                     info icon
@@ -1322,22 +1378,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </label>
                   <svg
                     className="bx--loading__svg"
-                    viewBox="-75 -75 150 150"
+                    viewBox="0 0 100 100"
                   >
                     <title>
                       Active loading indicator
                     </title>
                     <circle
                       className="bx--loading__background"
-                      cx="0"
-                      cy="0"
-                      r="26.8125"
+                      cx="50%"
+                      cy="50%"
+                      r="42"
                     />
                     <circle
                       className="bx--loading__stroke"
-                      cx="0"
-                      cy="0"
-                      r="26.8125"
+                      cx="50%"
+                      cy="50%"
+                      r="42"
                     />
                   </svg>
                 </div>
@@ -1351,10 +1407,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1363,7 +1421,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={true}
             onClick={[Function]}
             tabIndex={0}
@@ -1408,7 +1468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal Width Existing Hotspots 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal Width Existing Hotspots 1`] = `
 <div
   className="storybook-container"
 >
@@ -1423,6 +1483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     <div
       className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1439,22 +1500,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         Focus sentinel
       </span>
       <div
+        aria-label="landscape.jpg"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             landscape.jpg
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit image
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1697,26 +1760,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
             </div>
             <div
-              className="bx--tabs"
-              role="navigation"
+              className="bx--tabs--scrollable"
+              onScroll={[Function]}
               selected={0}
             >
-              <div
-                aria-label="listbox"
-                className="bx--tabs-trigger"
+              <button
+                aria-hidden="true"
+                aria-label="Scroll left"
+                className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
-                onKeyPress={[Function]}
-                role="listbox"
-                tabIndex={0}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
               >
-                <a
-                  className="bx--tabs-trigger-text"
-                  href="#"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                >
-                  Tooltip
-                </a>
                 <svg
                   aria-hidden={true}
                   fill="currentColor"
@@ -1728,59 +1785,86 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                   />
-                  <title>
-                    show menu options
-                  </title>
                 </svg>
-              </div>
+              </button>
               <ul
-                className="bx--tabs__nav bx--tabs__nav--hidden"
+                className="bx--tabs--scrollable__nav"
                 role="tablist"
+                tabIndex={-1}
               >
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={true}
-                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-15__panel"
+                    aria-selected={true}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-15"
+                    role="tab"
                     tabIndex={0}
+                    type="button"
                   >
                     Tooltip
-                  </a>
+                  </button>
                 </li>
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
+                  className="bx--tabs--scrollable__nav-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-16__panel"
+                    aria-selected={false}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-16"
+                    role="tab"
                     tabIndex={-1}
+                    type="button"
                   >
                     Data source
-                  </a>
+                  </button>
                 </li>
               </ul>
+              <button
+                aria-hidden="true"
+                aria-label="Scroll right"
+                className="bx--tab--overflow-nav-button--hidden"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
-              aria-hidden={false}
               className="bx--tab-content"
               hidden={false}
               role="tabpanel"
               selected={true}
+              tabIndex={0}
             >
               <div
                 className="iot--hotspot-editor-tooltip-tab"
@@ -1799,12 +1883,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                      d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                      fill="none"
                     />
                     <path
-                      d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-                      data-icon-path="inner-path"
-                      fill="none"
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
                     />
                   </svg>
                   <p>
@@ -1814,19 +1897,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
               className="bx--tab-content"
               hidden={true}
               role="tabpanel"
               selected={false}
+              tabIndex={0}
             />
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1835,7 +1920,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1852,6 +1939,104 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         Focus sentinel
       </span>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal ️⚠️ Experimental Notice  1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--toast-notification bx--toast-notification--warning-alt"
+      kind="warning-alt"
+      role="alert"
+      style={
+        Object {
+          "marginBottom": "0.5rem",
+          "minWidth": "30rem",
+        }
+      }
+    >
+      <svg
+        aria-hidden={true}
+        className="bx--toast-notification__icon"
+        fill="currentColor"
+        focusable="false"
+        height={20}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+          fill="none"
+        />
+        <path
+          d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        />
+        <title>
+          warning-alt icon
+        </title>
+      </svg>
+      <div
+        className="bx--toast-notification__details"
+      >
+        <h3
+          className="bx--toast-notification__title"
+        >
+          Experimental Component Notice
+        </h3>
+        <div
+          className="bx--toast-notification__subtitle"
+        >
+          <span>
+            ColorDropdown
+             is an
+             
+            <a
+              href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
+            >
+              experimental component
+            </a>
+             
+            and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <button

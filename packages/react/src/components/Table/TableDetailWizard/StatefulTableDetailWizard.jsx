@@ -19,6 +19,7 @@ const StatefulTableDetailWizard = ({
   const handleNext = (id) => {
     // Find the last one
     setCurrentItemId(id);
+    /* istanbul ignore else */
     if (onNext) {
       onNext(id);
     }
@@ -27,6 +28,7 @@ const StatefulTableDetailWizard = ({
   const handleBack = (id) => {
     // Find the first one
     setCurrentItemId(id);
+    /* istanbul ignore else */
     if (onBack) {
       onBack(id);
     }
@@ -41,6 +43,7 @@ const StatefulTableDetailWizard = ({
       currentItemId={currentItemId}
       setItem={(id) => {
         setCurrentItemId(id);
+        /* istanbul ignore else */
         if (setItem) {
           setItem(id);
         }

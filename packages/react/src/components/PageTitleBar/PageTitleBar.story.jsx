@@ -1,5 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import { select } from '@storybook/addon-knobs';
 import { Add24, TrashCan24 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 import { Tabs, Tab } from 'carbon-components-react';
@@ -99,24 +100,26 @@ WithTooltipDescriptionWithNode.story = {
 };
 
 export const WithContent = () => (
-  <PageTitleBar
-    title={commonPageTitleBarProps.title}
-    description={commonPageTitleBarProps.description}
-    breadcrumb={pageTitleBarBreadcrumb}
-    content={
-      <Tabs>
-        <Tab label="Tab 1">
-          <div>Content for first tab.</div>
-        </Tab>
-        <Tab label="Tab 2">
-          <div>Content for second tab.</div>
-        </Tab>
-        <Tab label="Tab 3">
-          <div>Content for third tab.</div>
-        </Tab>
-      </Tabs>
-    }
-  />
+  <>
+    <PageTitleBar
+      title={commonPageTitleBarProps.title}
+      description={commonPageTitleBarProps.description}
+      breadcrumb={pageTitleBarBreadcrumb}
+      content={
+        <Tabs>
+          <Tab label="Tab 1">
+            <div style={{ height: '100rem' }}>Content for first tab.</div>
+          </Tab>
+          <Tab label="Tab 2">
+            <div>Content for second tab.</div>
+          </Tab>
+          <Tab label="Tab 3">
+            <div>Content for third tab.</div>
+          </Tab>
+        </Tabs>
+      }
+    />
+  </>
 );
 
 WithContent.story = {
@@ -206,6 +209,76 @@ export const WithEverything = () => (
 
 WithEverything.story = {
   name: 'with everything',
+};
+
+export const WithDynamicScrolling = () => (
+  <PageTitleBar
+    stickyHeaderOffset={0}
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+    breadcrumb={pageTitleBarBreadcrumb}
+    headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'])}
+    extraContent={
+      <div>
+        <div
+          className="top"
+          style={{
+            display: 'flex',
+            flexDirection: 'row-reverse',
+          }}
+        />
+        <div style={{ display: 'flex' }} className="bottom">
+          <Button
+            renderIcon={Add24}
+            onClick={action('click')}
+            size="field"
+            hasIconOnly
+            iconDescription="Add"
+            kind="ghost"
+            tooltipPosition="bottom"
+            tooltipAlignment="center"
+          />
+          <Button
+            renderIcon={TrashCan24}
+            onClick={action('click')}
+            size="field"
+            hasIconOnly
+            iconDescription="Remove"
+            kind="ghost"
+            tooltipPosition="bottom"
+            tooltipAlignment="center"
+          />
+          <Button onClick={action('click')}>Take an action</Button>
+        </div>
+      </div>
+    }
+    editable
+    content={
+      <Tabs>
+        <Tab label="Tab 1">
+          <div style={{ height: '100rem' }}>Scroll me.</div>
+        </Tab>
+        <Tab label="Tab 2">
+          <div>Content for second tab.</div>
+        </Tab>
+        <Tab label="Tab 3">
+          <div>Content for third tab.</div>
+        </Tab>
+      </Tabs>
+    }
+    onEdit={action('edit')}
+  />
+);
+
+WithDynamicScrolling.story = {
+  name: 'With dynamic scrolling',
+};
+
+WithDynamicScrolling.parameters = {
+  info: {
+    text: `Note: We need to set the sticky offset here to 0 (from the default 3rem) because storybook sets everything relative to their container with 3rem padding.
+      The dynamicTransitionOffset isn't needed here, because the default 3rem is relative to the overall window scrollY and handles the storybook padding`,
+  },
 };
 
 export const IsLoading = () => <PageTitleBar title={commonPageTitleBarProps.title} isLoading />;

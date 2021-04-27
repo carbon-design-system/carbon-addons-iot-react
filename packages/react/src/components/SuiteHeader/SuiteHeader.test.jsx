@@ -77,6 +77,13 @@ describe('SuiteHeader', () => {
     );
     expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
   });
+  it('renders with left sidenav toggle button (custom side nav support)', () => {
+    const mockOnSideNavToggled = jest.fn();
+    render(<SuiteHeader {...commonProps} hasSideNav onSideNavToggled={mockOnSideNavToggled} />);
+    expect(screen.getByTitle('Open menu')).toBeInTheDocument();
+    userEvent.click(screen.getByTitle('Open menu'));
+    expect(mockOnSideNavToggled).toHaveBeenCalled();
+  });
   it('opens and closes logout modal', () => {
     render(<SuiteHeader {...commonProps} />);
     expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
@@ -118,7 +125,11 @@ describe('SuiteHeader', () => {
   it('clicks a documentation link', async () => {
     render(<SuiteHeader {...commonProps} />);
     await userEvent.click(screen.getByTestId('suite-header-help--whatsNew'));
-    expect(window.open).toHaveBeenCalledWith(commonProps.routes.whatsNew, 'blank');
+    expect(window.open).toHaveBeenCalledWith(
+      commonProps.routes.whatsNew,
+      '_blank',
+      'noopener noreferrer'
+    );
   });
   it('clicks a documentation link (but no redirect)', async () => {
     render(<SuiteHeader {...commonProps} onRouteChange={async () => false} />);
@@ -168,7 +179,7 @@ describe('SuiteHeader', () => {
     render(<SuiteHeader {...commonProps} appName={undefined} surveyData={surveyData} />);
     expect(screen.getByRole('alert')).toBeInTheDocument();
     await userEvent.click(screen.getByText(SuiteHeader.defaultProps.i18n.surveyText));
-    expect(window.open).toHaveBeenCalledWith(surveyLink, 'blank');
+    expect(window.open).toHaveBeenCalledWith(surveyLink, '_blank', 'noopener noreferrer');
   });
   it('user clicks survey link (but no redirect)', async () => {
     const surveyLink = 'https://www.ibm.com/';
@@ -193,7 +204,7 @@ describe('SuiteHeader', () => {
     render(<SuiteHeader {...commonProps} appName={undefined} surveyData={surveyData} />);
     expect(screen.getByRole('alert')).toBeInTheDocument();
     await userEvent.click(screen.getByText(SuiteHeader.defaultProps.i18n.surveyPrivacyPolicy));
-    expect(window.open).toHaveBeenCalledWith(privacyLink, 'blank');
+    expect(window.open).toHaveBeenCalledWith(privacyLink, '_blank', 'noopener noreferrer');
   });
   it('user clicks privacy policy link (but no redirect)', async () => {
     const surveyLink = 'https://www.ibm.com/';

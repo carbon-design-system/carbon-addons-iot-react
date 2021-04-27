@@ -38,7 +38,7 @@ const propTypes = {
     trend: PropTypes.oneOf(['up', 'down']),
     value: PropTypes.any,
   }),
-  value: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   fontSize: PropTypes.number.isRequired,
   /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool.isRequired,
@@ -48,6 +48,7 @@ const propTypes = {
 
 const defaultProps = {
   layout: null,
+  value: null,
   renderIconByName: null,
   secondaryValue: null,
   locale: 'en',
@@ -117,7 +118,21 @@ const Attribute = ({
           '--value-card-attribute-width': `${attributeWidthPercentage}%`,
         }}
       >
-        <div className={`${BEM_BASE}-label`}>{label}</div>
+        <div className={`${BEM_BASE}-label`}>
+          {matchingThreshold?.icon ? (
+            <CardIcon
+              fill={matchingThreshold.color}
+              color={matchingThreshold.color}
+              width={16}
+              height={16}
+              title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
+              renderIconByName={renderIconByName}
+              icon={matchingThreshold.icon}
+            />
+          ) : null}
+          <span>{label}</span>
+        </div>
+
         <div className={`${BEM_BASE}`}>
           <ValueRenderer
             value={value}
@@ -144,19 +159,6 @@ const Attribute = ({
               <CaretDown16 className={`${BEM_BASE}_trend-icon`} aria-label="trending down" />
             ) : null}
             {secondaryValue.value}
-          </div>
-        ) : null}
-        {matchingThreshold?.icon ? (
-          <div>
-            <CardIcon
-              fill={matchingThreshold.color}
-              color={matchingThreshold.color}
-              width={16}
-              height={16}
-              title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
-              renderIconByName={renderIconByName}
-              icon={matchingThreshold.icon}
-            />
           </div>
         ) : null}
       </div>

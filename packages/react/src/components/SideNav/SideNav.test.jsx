@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, render } from 'enzyme';
 import { Switcher24, Chip24, Group24 } from '@carbon/icons-react';
+import { render as testLibraryRender, screen } from '@testing-library/react';
 
 import SideNav from './SideNav';
 
@@ -188,17 +189,17 @@ describe('SideNav', () => {
       links: links2,
       'aria-label': 'Side navigation',
     };
-    const wrapper = mount(<SideNav {...mockProps} />);
-    expect(render(wrapper.find('ul').first().childAt(2)).children().first()[0].name).not.toEqual(
-      'button'
-    );
+    testLibraryRender(<SideNav {...mockProps} />);
+    expect(screen.queryByRole('button')).toBeNull();
   });
 
-  it('disabled item', () => {
+  it('disabled item should not render', () => {
     mockProps = {
       links: linksDisabled,
     };
-    const wrapper = mount(<SideNav {...mockProps} />);
-    expect(wrapper.find('SideNavLink')).toHaveLength(2);
+    testLibraryRender(<SideNav {...mockProps} />);
+    expect(screen.queryByText('Boards')).toBeNull();
+    expect(screen.queryByText('Devices')).toBeDefined();
+    expect(screen.queryByText('Members')).toBeDefined();
   });
 });

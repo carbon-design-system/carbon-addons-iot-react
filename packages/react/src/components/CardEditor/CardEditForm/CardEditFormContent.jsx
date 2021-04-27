@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
@@ -135,14 +135,12 @@ const CardEditFormContent = ({
   onFetchDynamicDemoHotspots,
 }) => {
   const { type, timeRange } = cardConfig;
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const [selectedDataItems, setSelectedDataItems] = useState([]);
   const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 
   const handleTranslation = useCallback(
-    (idToTranslate) => {
-      handleTranslationCallback(idToTranslate, mergedI18n);
-    },
+    (idToTranslate) => handleTranslationCallback(idToTranslate, mergedI18n),
     [mergedI18n]
   );
 

@@ -3,6 +3,7 @@ import { SimpleBarChart, StackedBarChart, GroupedBarChart } from '@carbon/charts
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import isNil from 'lodash/isNil';
+import defaultsDeep from 'lodash/defaultsDeep';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import {
@@ -35,6 +36,32 @@ import {
 
 const { iotPrefix } = settings;
 
+const defaultProps = {
+  size: CARD_SIZES.MEDIUMWIDE,
+  i18n: {
+    noDataLabel: 'No data',
+    tooltipGroupLabel: 'Group',
+    tooltipTotalLabel: 'Total',
+    defaultFilterStringPlaceholdText: 'Filter',
+  },
+  domainRange: null,
+  content: {
+    type: BAR_CHART_TYPES.SIMPLE,
+    layout: BAR_CHART_LAYOUTS.VERTICAL,
+    legendPosition: 'bottom',
+    truncation: {
+      type: 'end_line',
+      threshold: 20,
+      numCharacter: 20,
+    },
+    series: [],
+  },
+  locale: 'en',
+  showTimeInGMT: false,
+  tooltipDateFormatPattern: 'L HH:mm:ss',
+  values: null,
+};
+
 const BarChartCard = ({
   title: titleProp,
   content,
@@ -54,31 +81,40 @@ const BarChartCard = ({
   className,
   domainRange,
   timeRange,
+  showTimeInGMT,
+  tooltipDateFormatPattern,
   ...others
 }) => {
-  const { noDataLabel } = i18n;
+  // need to deep merge the nested content default props as default props only uses a shallow merge natively
+  const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
+    content,
+  ]);
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const {
     title,
     content: {
       series,
       timeDataSourceId,
       categoryDataSourceId,
-      layout = BAR_CHART_LAYOUTS.VERTICAL,
+      layout,
       xLabel,
       yLabel,
       unit,
-      type = BAR_CHART_TYPES.SIMPLE,
+      type,
+      legendPosition,
       zoomBar,
-      showTimeInGMT,
       decimalPrecision,
-      tooltipDateFormatPattern,
+      truncation,
     },
     values: valuesProp,
-  } = handleCardVariables(titleProp, content, initialValues, others);
+  } = handleCardVariables(titleProp, contentWithDefaults, initialValues, others);
 
-  const size = increaseSmallCardSize(sizeProp, 'BarChartCard');
+  const size = useMemo(() => increaseSmallCardSize(sizeProp, 'BarChartCard'), [sizeProp]);
 
-  const resizeHandles = isResizable ? getResizeHandles(children) : [];
+  const resizeHandles = useMemo(() => (isResizable ? getResizeHandles(children) : []), [
+    children,
+    isResizable,
+  ]);
 
   const memoizedGenerateSampleValues = useMemo(
     () =>
@@ -114,22 +150,37 @@ const BarChartCard = ({
 
   // If editable, show sample presentation data
   // If there is no series defined, there is no datasets to make sample data from
-  const values = isDashboardPreview
-    ? memoizedGenerateSampleValuesForEditor
-    : isEditable && !isEmpty(series)
-    ? memoizedGenerateSampleValues
-    : valuesProp;
-
-  const chartData = formatChartData(
-    series,
-    values,
-    categoryDataSourceId,
-    timeDataSourceId,
-    type,
-    isDashboardPreview
+  const values = useMemo(
+    () =>
+      isDashboardPreview
+        ? memoizedGenerateSampleValuesForEditor
+        : isEditable && !isEmpty(series)
+        ? memoizedGenerateSampleValues
+        : valuesProp,
+    [
+      isDashboardPreview,
+      isEditable,
+      memoizedGenerateSampleValues,
+      memoizedGenerateSampleValuesForEditor,
+      series,
+      valuesProp,
+    ]
   );
 
-  const isAllValuesEmpty = isEmpty(chartData);
+  const chartData = useMemo(
+    () =>
+      formatChartData(
+        series,
+        values,
+        categoryDataSourceId,
+        timeDataSourceId,
+        type,
+        isDashboardPreview
+      ),
+    [categoryDataSourceId, isDashboardPreview, series, timeDataSourceId, type, values]
+  );
+
+  const isAllValuesEmpty = useMemo(() => isEmpty(chartData), [chartData]);
 
   let ChartComponent = SimpleBarChart;
   if (type === BAR_CHART_TYPES.GROUPED) {
@@ -138,17 +189,24 @@ const BarChartCard = ({
     ChartComponent = StackedBarChart;
   }
 
-  const scaleType = timeDataSourceId ? 'time' : 'labels';
+  const scaleType = useMemo(() => (timeDataSourceId ? 'time' : 'labels'), [timeDataSourceId]);
 
-  const axes = mapValuesToAxes(layout, categoryDataSourceId, timeDataSourceId, type);
+  const axes = useMemo(
+    () => mapValuesToAxes(layout, categoryDataSourceId, timeDataSourceId, type),
+    [categoryDataSourceId, layout, timeDataSourceId, type]
+  );
 
   // Set the colors for each dataset
-  const uniqueDatasets = !isAllValuesEmpty
-    ? [...new Set(chartData.map((dataset) => dataset.group))]
-    : [];
-  const colors = !isAllValuesEmpty
-    ? formatColors(series, uniqueDatasets, isDashboardPreview, type)
-    : null;
+  const uniqueDatasets = useMemo(
+    () => (!isAllValuesEmpty ? [...new Set(chartData.map((dataset) => dataset.group))] : []),
+    [chartData, isAllValuesEmpty]
+  );
+
+  const colors = useMemo(
+    () =>
+      !isAllValuesEmpty ? formatColors(series, uniqueDatasets, isDashboardPreview, type) : null,
+    [isAllValuesEmpty, isDashboardPreview, series, type, uniqueDatasets]
+  );
 
   const tableColumns = useMemo(() => {
     return isAllValuesEmpty
@@ -158,7 +216,7 @@ const BarChartCard = ({
           categoryDataSourceId,
           type,
           uniqueDatasets,
-          i18n.defaultFilterStringPlaceholdText
+          mergedI18n.defaultFilterStringPlaceholdText
         ).map((column) => ({
           ...column,
           renderDataFunction: ({ value }) => {
@@ -171,7 +229,7 @@ const BarChartCard = ({
   }, [
     categoryDataSourceId,
     decimalPrecision,
-    i18n.defaultFilterStringPlaceholdText,
+    mergedI18n.defaultFilterStringPlaceholdText,
     isAllValuesEmpty,
     locale,
     size,
@@ -186,12 +244,117 @@ const BarChartCard = ({
     [categoryDataSourceId, chartData, timeDataSourceId, type, values]
   );
 
+  const options = useMemo(
+    () => ({
+      animations: false,
+      accessibility: true,
+      axes: {
+        bottom: {
+          title: `${xLabel || ''} ${
+            layout === BAR_CHART_LAYOUTS.HORIZONTAL ? (unit ? `(${unit})` : '') : ''
+          }`,
+          scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
+          stacked:
+            type === BAR_CHART_TYPES.STACKED &&
+            layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
+            timeDataSourceId,
+          mapsTo: axes.bottomAxesMapsTo,
+          ...(domainRange && layout === BAR_CHART_LAYOUTS.VERTICAL ? { domain: domainRange } : {}),
+          ...(layout === BAR_CHART_LAYOUTS.HORIZONTAL && !isNil(decimalPrecision)
+            ? {
+                ticks: {
+                  formatter: (axisValue) =>
+                    chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
+                },
+              }
+            : {}),
+        },
+        left: {
+          title: `${yLabel || ''} ${
+            layout === BAR_CHART_LAYOUTS.VERTICAL ? (unit ? `(${unit})` : '') : ''
+          }`,
+          ...(layout === BAR_CHART_LAYOUTS.VERTICAL && !isNil(decimalPrecision)
+            ? {
+                ticks: {
+                  formatter: (axisValue) =>
+                    chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
+                },
+              }
+            : {}),
+          scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
+          stacked: type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
+          mapsTo: axes.leftAxesMapsTo,
+          ...(domainRange && layout === BAR_CHART_LAYOUTS.HORIZONTAL && timeDataSourceId
+            ? { domain: domainRange }
+            : {}),
+        },
+      },
+      legend: {
+        position: legendPosition,
+        enabled: chartData.length > 1,
+        clickable: !isEditable,
+        truncation,
+      },
+      containerResizable: true,
+      color: colors,
+      tooltip: {
+        valueFormatter: (tooltipValue) =>
+          chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
+        customHTML: (...args) =>
+          handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
+        groupLabel: mergedI18n.tooltipGroupLabel,
+        totalLabel: mergedI18n.tooltipTotalLabel,
+      },
+      // zoomBar should only be enabled for time-based charts
+      ...(zoomBar?.enabled &&
+      timeDataSourceId &&
+      (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
+        ? {
+            zoomBar: {
+              // [zoomBar.axes]: {    TODO: the top axes is the only one supported at the moment so default to top
+              top: {
+                enabled: zoomBar.enabled,
+                initialZoomDomain: zoomBar.initialZoomDomain,
+                type: zoomBar.view || 'slider_view', // default to slider view
+              },
+            },
+          }
+        : {}),
+    }),
+    [
+      axes.bottomAxesMapsTo,
+      axes.leftAxesMapsTo,
+      chartData.length,
+      colors,
+      decimalPrecision,
+      domainRange,
+      mergedI18n.tooltipGroupLabel,
+      mergedI18n.tooltipTotalLabel,
+      isEditable,
+      isExpanded,
+      layout,
+      locale,
+      scaleType,
+      showTimeInGMT,
+      size,
+      timeDataSourceId,
+      tooltipDateFormatPattern,
+      truncation,
+      type,
+      unit,
+      xLabel,
+      yLabel,
+      zoomBar,
+      legendPosition,
+    ]
+  );
+
   return (
     <Card
       title={title}
       className={classnames(className, `${iotPrefix}--bar-chart-card`)}
       size={size}
-      i18n={i18n}
+      i18n={mergedI18n}
       isExpanded={isExpanded}
       isEmpty={isAllValuesEmpty}
       isLazyLoading={isLazyLoading}
@@ -218,84 +381,7 @@ const BarChartCard = ({
                 : 'bar-chart'
             }
             data={chartData}
-            options={{
-              animations: false,
-              accessibility: true,
-              axes: {
-                bottom: {
-                  title: `${xLabel || ''} ${
-                    layout === BAR_CHART_LAYOUTS.HORIZONTAL ? (unit ? `(${unit})` : '') : ''
-                  }`,
-                  scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
-                  stacked:
-                    type === BAR_CHART_TYPES.STACKED &&
-                    layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
-                    timeDataSourceId,
-                  mapsTo: axes.bottomAxesMapsTo,
-                  ...(domainRange && layout === BAR_CHART_LAYOUTS.VERTICAL
-                    ? { domain: domainRange }
-                    : {}),
-                  ...(layout === BAR_CHART_LAYOUTS.HORIZONTAL && !isNil(decimalPrecision)
-                    ? {
-                        ticks: {
-                          formatter: (axisValue) =>
-                            chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
-                        },
-                      }
-                    : {}),
-                },
-                left: {
-                  title: `${yLabel || ''} ${
-                    layout === BAR_CHART_LAYOUTS.VERTICAL ? (unit ? `(${unit})` : '') : ''
-                  }`,
-                  ...(layout === BAR_CHART_LAYOUTS.VERTICAL && !isNil(decimalPrecision)
-                    ? {
-                        ticks: {
-                          formatter: (axisValue) =>
-                            chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
-                        },
-                      }
-                    : {}),
-                  scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
-                  stacked:
-                    type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
-                  mapsTo: axes.leftAxesMapsTo,
-                  ...(domainRange && layout === BAR_CHART_LAYOUTS.HORIZONTAL && timeDataSourceId
-                    ? { domain: domainRange }
-                    : {}),
-                },
-              },
-              legend: {
-                position: 'bottom',
-                enabled: chartData.length > 1,
-                clickable: !isEditable,
-              },
-              containerResizable: true,
-              color: colors,
-              tooltip: {
-                valueFormatter: (tooltipValue) =>
-                  chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
-                customHTML: (...args) =>
-                  handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
-                groupLabel: i18n.tooltipGroupLabel,
-                totalLabel: i18n.tooltipTotalLabel,
-              },
-              // zoomBar should only be enabled for time-based charts
-              ...(zoomBar?.enabled &&
-              timeDataSourceId &&
-              (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
-                ? {
-                    zoomBar: {
-                      // [zoomBar.axes]: {    TODO: the top axes is the only one supported at the moment so default to top
-                      top: {
-                        enabled: zoomBar.enabled,
-                        initialZoomDomain: zoomBar.initialZoomDomain,
-                        type: zoomBar.view || 'slider_view', // default to slider view
-                      },
-                    },
-                  }
-                : {}),
-            }}
+            options={options}
             width="100%"
             height="100%"
           />
@@ -330,11 +416,11 @@ const BarChartCard = ({
                     direction: 'DESC',
                   },
                   emptyState: {
-                    message: noDataLabel,
+                    message: mergedI18n.noDataLabel,
                   },
                 },
               }}
-              i18n={i18n}
+              i18n={mergedI18n}
             />
           ) : null}
         </div>
@@ -344,23 +430,5 @@ const BarChartCard = ({
 };
 
 BarChartCard.propTypes = { ...CardPropTypes, ...BarChartCardPropTypes };
-
-BarChartCard.defaultProps = {
-  size: CARD_SIZES.MEDIUMWIDE,
-  i18n: {
-    noDataLabel: 'No data',
-    tooltipGroupLabel: 'Group',
-    tooltipTotalLabel: 'Total',
-  },
-  domainRange: null,
-  content: {
-    type: BAR_CHART_TYPES.SIMPLE,
-    layout: BAR_CHART_LAYOUTS.VERTICAL,
-  },
-  locale: 'en',
-  showTimeInGMT: false,
-  tooltipDateFormatPattern: 'L HH:mm:ss',
-  values: null,
-};
-
+BarChartCard.defaultProps = defaultProps;
 export default BarChartCard;

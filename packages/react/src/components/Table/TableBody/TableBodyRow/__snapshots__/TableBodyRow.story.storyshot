@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow is not selectable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow is not selectable 1`] = `
 <div
   className="storybook-container"
 >
@@ -156,7 +156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow is selectable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow is selectable 1`] = `
 <div
   className="storybook-container"
 >
@@ -312,7 +312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow normal 1`] = `
 <div
   className="storybook-container"
 >
@@ -391,7 +391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow row actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow row actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -546,7 +546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow row actions with overflow 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow row actions with overflow 1`] = `
 <div
   className="storybook-container"
 >
@@ -677,7 +677,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       type="button"
                     >
                       <svg
@@ -749,7 +748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow rowActions error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow rowActions error 1`] = `
 <div
   className="storybook-container"
 >
@@ -848,6 +847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}
+                        onContextMenu={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseOut={[Function]}
@@ -914,7 +914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow rowActions running 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow rowActions running 1`] = `
 <div
   className="storybook-container"
 >
@@ -1017,22 +1017,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </label>
                       <svg
                         className="bx--loading__svg"
-                        viewBox="-75 -75 150 150"
+                        viewBox="0 0 100 100"
                       >
                         <title>
                           Active loading indicator
                         </title>
                         <circle
                           className="bx--loading__background"
-                          cx="0"
-                          cy="0"
-                          r="26.8125"
+                          cx="50%"
+                          cy="50%"
+                          r="42"
                         />
                         <circle
                           className="bx--loading__stroke"
-                          cx="0"
-                          cy="0"
-                          r="26.8125"
+                          cx="50%"
+                          cy="50%"
+                          r="42"
                         />
                       </svg>
                     </div>

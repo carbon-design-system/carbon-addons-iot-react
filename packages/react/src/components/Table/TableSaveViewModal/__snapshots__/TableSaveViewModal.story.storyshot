@@ -32,17 +32,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         Focus sentinel
       </span>
       <div
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Save new view
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -94,7 +95,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <div
                   className="bx--text-input__field-wrapper"
                   data-invalid={null}
-                  data-warn={null}
                 >
                   <input
                     className="bx--text-input bx--text__input"
@@ -118,7 +118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 onAnimationEnd={[Function]}
               >
                 <button
-                  aria-controls="accordion-item-4"
+                  aria-controls="accordion-item-115"
                   aria-expanded={false}
                   className="bx--accordion__heading"
                   onClick={[Function]}
@@ -148,7 +148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
                 <div
                   className="bx--accordion__content"
-                  id="accordion-item-4"
+                  id="accordion-item-115"
                 >
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -160,7 +160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 onAnimationEnd={[Function]}
               >
                 <button
-                  aria-controls="accordion-item-5"
+                  aria-controls="accordion-item-116"
                   aria-expanded={false}
                   className="bx--accordion__heading"
                   onClick={[Function]}
@@ -190,7 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
                 <div
                   className="bx--accordion__content"
-                  id="accordion-item-5"
+                  id="accordion-item-116"
                 >
                   <p>
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -255,10 +255,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="TableSaveViewModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -267,7 +269,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+            data-testid="TableSaveViewModal-modal-primary-button"
             disabled={true}
             onClick={[Function]}
             tabIndex={0}
@@ -344,17 +348,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         Focus sentinel
       </span>
       <div
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Save new view
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -410,7 +415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   id="myTextArea"
                   onChange={[Function]}
                   onClick={[Function]}
-                  placeholder=""
+                  placeholder={null}
                   rows={4}
                 />
               </div>
@@ -418,10 +423,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="TableSaveViewModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -430,7 +437,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="TableSaveViewModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -507,17 +516,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         Focus sentinel
       </span>
       <div
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Save new view
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -569,7 +579,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <div
                   className="bx--text-input__field-wrapper"
                   data-invalid={null}
-                  data-warn={null}
                 >
                   <input
                     className="bx--text-input bx--text__input"
@@ -647,10 +656,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="TableSaveViewModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -659,7 +670,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+            data-testid="TableSaveViewModal-modal-primary-button"
             disabled={true}
             onClick={[Function]}
             tabIndex={0}
@@ -736,17 +749,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         Focus sentinel
       </span>
       <div
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Save new view
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -798,7 +812,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <div
                   className="bx--text-input__field-wrapper"
                   data-invalid={null}
-                  data-warn={null}
                 >
                   <input
                     className="bx--text-input bx--text__input"
@@ -874,10 +887,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="TableSaveViewModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -886,7 +901,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="TableSaveViewModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}

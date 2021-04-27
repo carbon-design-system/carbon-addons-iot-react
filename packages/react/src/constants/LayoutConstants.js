@@ -11,6 +11,7 @@ export const COLORS = {
 export const CARD_SIZES = {
   SMALL: 'SMALL',
   SMALLWIDE: 'SMALLWIDE',
+  SMALLFULL: 'SMALLFULL',
   MEDIUMTHIN: 'MEDIUMTHIN',
   MEDIUM: 'MEDIUM',
   MEDIUMWIDE: 'MEDIUMWIDE',
@@ -166,6 +167,14 @@ export const CARD_DIMENSIONS = {
     sm: { w: 4, h: 2 },
     xs: { w: 4, h: 1 },
   },
+  SMALLFULL: {
+    max: { w: 16, h: 1 },
+    xl: { w: 16, h: 1 },
+    lg: { w: 16, h: 1 },
+    md: { w: 8, h: 1 },
+    sm: { w: 8, h: 2 },
+    xs: { w: 4, h: 1 },
+  },
   MEDIUMTHIN: {
     max: { w: 4, h: 2 },
     xl: { w: 4, h: 2 },
@@ -263,6 +272,7 @@ export const ALLOWED_CARD_SIZES_PER_TYPE = {
   VALUE: [
     CARD_SIZES.SMALL,
     CARD_SIZES.SMALLWIDE,
+    CARD_SIZES.SMALLFULL,
     CARD_SIZES.MEDIUMTHIN,
     CARD_SIZES.MEDIUM,
     CARD_SIZES.MEDIUMWIDE,
@@ -284,6 +294,16 @@ export const ALLOWED_CARD_SIZES_PER_TYPE = {
     CARD_SIZES.MEDIUMTHIN,
     CARD_SIZES.MEDIUM,
     CARD_SIZES.MEDIUMWIDE,
+    CARD_SIZES.LARGE,
+    CARD_SIZES.LARGEWIDE,
+  ],
+  ALERT: [
+    CARD_SIZES.SMALLFULL,
+    CARD_SIZES.SMALLWIDE,
+    CARD_SIZES.MEDIUMTHIN,
+    CARD_SIZES.MEDIUM,
+    CARD_SIZES.MEDIUMWIDE,
+    CARD_SIZES.LARGETHIN,
     CARD_SIZES.LARGE,
     CARD_SIZES.LARGEWIDE,
   ],

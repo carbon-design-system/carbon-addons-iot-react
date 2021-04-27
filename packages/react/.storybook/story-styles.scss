@@ -1,3 +1,6 @@
+@import '../src/globals/vars';
+
+/* stylelint-disable */
 .storybook-container {
   padding: 3rem;
   height: 100vh;
@@ -5,4 +8,19 @@
 
 .storybook-container .info__overlay p {
   margin: 12px 0;
+}
+/* stylelint-enable */
+
+// header-specific
+.#{$iot-prefix}--header--story-test-class {
+  .#{$prefix}--text-truncate--end span {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .#{$prefix}--header__menu-title[role='menuitem'][aria-expanded='true']
+    + .#{$prefix}--header__menu {
+    z-index: 6001;
+  }
 }

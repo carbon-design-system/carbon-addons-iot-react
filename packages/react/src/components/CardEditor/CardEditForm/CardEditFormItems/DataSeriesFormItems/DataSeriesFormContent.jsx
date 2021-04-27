@@ -11,7 +11,7 @@ import {
   handleDataSeriesChange,
   DataItemsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
-import { Button, List, MultiSelect, ComboBox, Dropdown } from '../../../../../index';
+import { Button, List, ComboBox, Dropdown } from '../../../../../index';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import { CARD_TYPES, BAR_CHART_TYPES } from '../../../../../constants/LayoutConstants';
 import ContentFormItemTitle from '../ContentFormItemTitle';
@@ -66,7 +66,7 @@ const propTypes = {
   /** list of dataItem names that have been selected to display on the card */
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   setSelectedDataItems: PropTypes.func.isRequired,
-  selectedTimeRange: PropTypes.string.isRequired,
+  selectedTimeRange: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
@@ -107,6 +107,7 @@ const propTypes = {
 
 const defaultProps = {
   cardConfig: {},
+  selectedTimeRange: '',
   i18n: {
     dataItemEditorTitle: 'Edit data series',
     dataItemEditorDataItemTitle: 'Data item',
@@ -146,9 +147,9 @@ const defaultProps = {
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
-  dataItems?.map(({ dataSourceId, dataItemId }) => ({
+  dataItems?.map(({ dataItemId, label }) => ({
     id: dataItemId,
-    text: dataSourceId,
+    text: label,
   })) || [];
 
 /**
@@ -244,14 +245,12 @@ const DataSeriesFormItem = ({
   dataSeriesItemLinks,
   translateWithId,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});
   const [editDataSeries, setEditDataSeries] = useState(cardConfig.content?.series || []);
   const [removedDataItems, setRemovedDataItems] = useState([]);
-
-  const isComplexDataSeries = cardConfig.content?.type === BAR_CHART_TYPES.GROUPED;
 
   const canMultiSelectDataItems = cardConfig.content?.type !== BAR_CHART_TYPES.SIMPLE;
 
@@ -272,33 +271,40 @@ const DataSeriesFormItem = ({
     mergedI18n
   );
 
-  const handleSimpleDataSeriesChange = (selectedItem) => {
-    // ignore the extra value added by the "enter" keypress
-    if (selectedItem && !selectedItem.id.includes('iot-input')) {
-      const itemWithMetaData = validDataItems?.find(
-        ({ dataItemId }) => dataItemId === selectedItem.id
-      );
+  const handleSimpleDataSeriesChange = useCallback(
+    (selectedItem) => {
+      // ignore the extra value added by the "enter" keypress
+      if (selectedItem && !selectedItem.id.includes('iot-input')) {
+        const itemWithMetaData = validDataItems?.find(
+          ({ dataItemId }) => dataItemId === selectedItem.id
+        );
 
-      const selectedItems = [
-        ...dataSection,
-        {
-          ...(itemWithMetaData && { ...itemWithMetaData }),
-          // create a unique dataSourceId
-          dataSourceId: `${selectedItem.id}_${uuid.v4()}`,
-        },
-      ];
-      // need to remove the category if the card is a stacked timeseries bar
-      const card =
-        cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
-        cardConfig.content.timeDataSourceId &&
-        selectedItems.length > 1
-          ? omit(cardConfig, 'content.categoryDataSourceId')
-          : cardConfig;
-      const newCard = handleDataSeriesChange(selectedItems, card, setEditDataSeries);
-      setSelectedDataItems(selectedItems.map(({ text }) => text));
-      onChange(newCard);
-    }
-  };
+        const selectedItems = [
+          ...dataSection,
+          {
+            ...(itemWithMetaData && { ...itemWithMetaData }),
+            // create a unique dataSourceId if it's going into attributes
+            // if it's going into the groupBy section then just use the dataItem ID
+            dataSourceId:
+              itemWithMetaData?.destination === 'groupBy'
+                ? selectedItem.id
+                : `${selectedItem.id}_${uuid.v4()}`,
+          },
+        ];
+        // need to remove the category if the card is a stacked timeseries bar
+        const card =
+          cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
+          cardConfig.content.timeDataSourceId &&
+          selectedItems.length > 1
+            ? omit(cardConfig, 'content.categoryDataSourceId')
+            : cardConfig;
+        const newCard = handleDataSeriesChange(selectedItems, card, setEditDataSeries);
+        setSelectedDataItems(selectedItems.map(({ dataSourceId }) => dataSourceId));
+        onChange(newCard);
+      }
+    },
+    [cardConfig, dataSection, onChange, setSelectedDataItems, validDataItems]
+  );
 
   const handleEditButton = useCallback(
     (dataItem, i) => {
@@ -369,17 +375,17 @@ const DataSeriesFormItem = ({
                 />
               ) : null,
             rowActions: () => [
-              !isComplexDataSeries && [
-                <Button
-                  key={`data-item-${dataItem.dataSourceId}_edit`}
-                  renderIcon={Edit16}
-                  hasIconOnly
-                  kind="ghost"
-                  size="small"
-                  onClick={() => handleEditButton(dataItem, i)}
-                  iconDescription={mergedI18n.edit}
-                />,
-              ],
+              <Button
+                key={`data-item-${dataItem.dataSourceId}_edit`}
+                renderIcon={Edit16}
+                hasIconOnly
+                kind="ghost"
+                size="small"
+                onClick={() => handleEditButton(dataItem, i)}
+                iconDescription={mergedI18n.edit}
+                tooltipPosition="left"
+                tooltipAlignment="center"
+              />,
               <Button
                 key={`data-item-${dataItem.dataSourceId}_remove`}
                 renderIcon={Subtract16}
@@ -388,6 +394,8 @@ const DataSeriesFormItem = ({
                 size="small"
                 onClick={() => handleRemoveButton(dataItem)}
                 iconDescription={mergedI18n.remove}
+                tooltipPosition="left"
+                tooltipAlignment="center"
               />,
             ],
           },
@@ -398,7 +406,6 @@ const DataSeriesFormItem = ({
       dataSection,
       handleEditButton,
       handleRemoveButton,
-      isComplexDataSeries,
       mergedI18n.edit,
       mergedI18n.remove,
     ]
@@ -426,7 +433,7 @@ const DataSeriesFormItem = ({
         // Specific to each card type
         tooltip={{ ...cardSpecificTooltip }}
       />
-      {cardConfig.type === CARD_TYPES.BAR ? (
+      {cardConfig.type === CARD_TYPES.BAR && (
         <BarChartDataSeriesContent
           cardConfig={cardConfig}
           onChange={onChange}
@@ -434,60 +441,32 @@ const DataSeriesFormItem = ({
           i18n={mergedI18n}
           translateWithId={translateWithId}
         />
-      ) : null}
+      )}
       {canMultiSelectDataItems ? (
-        isComplexDataSeries ? (
-          <div className={`${baseClassName}--input`}>
-            <MultiSelect
-              // need to re-gen if selected card changes or if a dataItem is removed from the list
-              key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
-              id={`${cardConfig.id}_dataSourceIds-select`}
-              label={mergedI18n.selectDataItems}
-              direction="bottom"
-              itemToString={(item) => item.text}
-              initialSelectedItems={dataSection.map(({ dataItemId }) => ({
-                id: dataItemId,
-                text: dataItemId,
-              }))}
-              items={formatDataItemsForDropdown(validDataItems)}
-              light
-              onChange={({ selectedItems }) => {
-                const selectedItemsWithMetaData = selectedItems.map(
-                  (selectedItem) =>
-                    validDataItems?.find(
-                      (validDataItem) => validDataItem.dataItemId === selectedItem.id
-                    ) || selectedItem
-                );
-                const newCard = handleDataSeriesChange(
-                  selectedItemsWithMetaData,
-                  cardConfig,
-                  setEditDataSeries
-                );
-                setSelectedDataItems(selectedItems.map(({ id }) => id));
-                onChange(newCard);
-              }}
-              titleText={mergedI18n.dataItem}
-              translateWithId={translateWithId}
-            />
-          </div>
-        ) : (
-          <div className={`${baseClassName}--input`}>
-            <ComboBox
-              // need to re-gen if selected card changes or if a dataItem is removed from the list
-              key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
-              id={`${cardConfig.id}_dataSourceIds-combobox`}
-              items={formatDataItemsForDropdown(validDataItems)}
-              itemToString={(item) => item.text}
-              titleText={mergedI18n.dataItemEditorDataItemTitle}
-              addToList={false}
-              placeholder={mergedI18n.filter}
-              // clears out the input field after each selection
-              selectedItem={{ id: '', text: '' }}
-              onChange={handleSimpleDataSeriesChange}
-              light
-            />
-          </div>
-        )
+        <div className={`${baseClassName}--input`}>
+          <ComboBox
+            // need to re-gen if selected card changes or if a dataItem is removed from the list
+            key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
+            data-testid="editor--data-series--combobox"
+            id={`${cardConfig.id}_dataSourceIds-combobox`}
+            items={formatDataItemsForDropdown(validDataItems)}
+            itemToString={(item) => item?.text}
+            titleText={mergedI18n.dataItemEditorDataItemTitle}
+            addToList={false}
+            translateWithId={translateWithId}
+            shouldFilterItem={({ item, inputValue }) => {
+              return (
+                isEmpty(inputValue) ||
+                item?.text?.toLowerCase()?.includes(inputValue?.toLowerCase())
+              );
+            }}
+            placeholder={mergedI18n.filter}
+            // clears out the input field after each selection
+            selectedItem={{ id: '', text: '' }}
+            onChange={handleSimpleDataSeriesChange}
+            light
+          />
+        </div>
       ) : (
         // Can't select more than one dataItem
         <div className={`${baseClassName}--input`}>
@@ -497,6 +476,7 @@ const DataSeriesFormItem = ({
             label={mergedI18n.selectDataItem}
             light
             translateWithId={translateWithId}
+            title={mergedI18n.selectDataItem}
             titleText={mergedI18n.dataItem}
             items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
             selectedItem={
@@ -511,6 +491,7 @@ const DataSeriesFormItem = ({
                   {
                     id: selectedItem,
                     ...(itemWithMetaData && { ...itemWithMetaData }),
+                    dataSourceId: `${selectedItem}_${uuid.v4()}`,
                   },
                 ],
                 cardConfig,
@@ -530,19 +511,6 @@ const DataSeriesFormItem = ({
         title=""
         items={dataItemListItems}
       />
-      {isComplexDataSeries && dataSection.length ? (
-        <Button
-          renderIcon={Edit16}
-          kind="ghost"
-          size="small"
-          onClick={() => {
-            setShowEditor(true);
-          }}
-          iconDescription={mergedI18n.customize}
-        >
-          {mergedI18n.customize}
-        </Button>
-      ) : null}
     </>
   ) : null;
 };

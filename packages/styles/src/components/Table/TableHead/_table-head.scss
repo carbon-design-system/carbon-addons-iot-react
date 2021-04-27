@@ -1,0 +1,132 @@
+@import '../../../globals/vars';
+@import '../../../vendor/carbon-components/scss/globals/scss/layout';
+@import 'column-resize';
+@import 'ColumnHeaderRow/column-header-row';
+@import 'FilterHeaderRow/filter-header-row';
+
+.#{$prefix}--data-table {
+  th {
+    height: 3rem;
+    border-top: none;
+    border-bottom: none;
+    position: relative;
+  }
+
+  th:last-of-type {
+    position: relative;
+  }
+
+  .#{$prefix}--table-header-label {
+    display: flex;
+    user-select: none;
+    overflow: hidden;
+    // allow the multiselect filter to expand to full height and the table to scroll
+    .#{$prefix}--multi-select .#{$prefix}--list-box__menu {
+      max-height: unset;
+    }
+
+    & > span {
+      margin: auto 0;
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .column-header__btn {
+    margin: 0 $spacing-05 $spacing-05 0;
+    max-height: $spacing-07;
+  }
+
+  .column-header__select {
+    opacity: 1;
+  }
+
+  .column-header__select--hidden {
+    opacity: 0.5;
+  }
+
+  .column-header__select--isOver {
+    border-color: $focus;
+    box-shadow: inset 0 0 0 1px $gray-10;
+  }
+
+  .lightweight {
+    tr:last-of-type {
+      th {
+        border-bottom: solid 2px $interactive-02;
+      }
+    }
+    th {
+      background-color: $ui-01;
+      .#{$prefix}--table-sort {
+        background-color: $ui-01;
+        &:hover {
+          background-color: $ui-03;
+        }
+      }
+    }
+  }
+
+  .#{$iot-prefix}--table-expand-resize {
+    width: 40px;
+  }
+
+  .#{$iot-prefix}--table-header-checkbox {
+    vertical-align: middle;
+  }
+
+  .#{$iot-prefix}--table-header-checkbox-resize {
+    width: 54px;
+  }
+
+  .#{$iot-prefix}--table-header-resize {
+    word-break: break-all;
+  }
+
+  .#{$iot-prefix}--table-header-row-action-column {
+    min-width: 40px;
+  }
+
+  .#{$iot-prefix}--tableheader-filter > .#{$prefix}--table-header-label {
+    overflow: visible;
+  }
+
+  th:last-of-type.#{$iot-prefix}--table-header-row-action-column--extra-wide {
+    min-width: 250px;
+    width: 250px; // Needed for fixed/resizable columns that don't respect min-width
+  }
+
+  .#{$iot-prefix}--clear-filters-button--disabled {
+    @include disabled-icon-button();
+  }
+}
+
+.#{$iot-prefix}--table-head {
+  &--overflow {
+    margin: auto 0;
+    flex-shrink: 0;
+  }
+
+  &--table-header {
+    position: relative;
+    vertical-align: middle;
+
+    .#{$prefix}--table-header-label {
+      height: 100%;
+      min-width: var(--table-header-width);
+      max-width: var(--table-header-width);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      line-height: 1rem;
+    }
+
+    &--with-overflow {
+      .#{$prefix}--table-header-label {
+        padding-right: 0;
+      }
+    }
+  }
+}

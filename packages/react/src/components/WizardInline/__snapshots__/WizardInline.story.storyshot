@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Stateful example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Stateful example 1`] = `
 <div
   className="storybook-container"
 >
@@ -20,10 +20,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -49,7 +54,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -75,7 +82,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -329,8 +336,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
-            width={200}
+            className="iot--wizard-inline__sidebar"
+            style={
+              Object {
+                "--min-width": "200px",
+              }
+            }
           >
             <div>
               sidebar
@@ -375,7 +386,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -384,7 +397,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 Cancel
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -424,7 +439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static 1`] = `
 <div
   className="storybook-container"
 >
@@ -444,10 +459,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -468,7 +488,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -494,7 +516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -773,7 +795,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -782,7 +806,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 Back
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -822,7 +848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static with Footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static with Footer 1`] = `
 <div
   className="storybook-container"
 >
@@ -842,10 +868,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -866,7 +897,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -892,7 +925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -1170,7 +1203,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1179,7 +1214,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 Back
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1219,7 +1256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static with Sidebar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static with Sidebar 1`] = `
 <div
   className="storybook-container"
 >
@@ -1239,10 +1276,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -1263,7 +1305,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -1289,7 +1333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -1543,8 +1587,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
-            width={200}
+            className="iot--wizard-inline__sidebar"
+            style={
+              Object {
+                "--min-width": "200px",
+              }
+            }
           >
             <div>
               sidebar
@@ -1580,7 +1628,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1589,7 +1639,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 Cancel
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1629,7 +1681,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) with breadcrumbs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline with breadcrumbs 1`] = `
 <div
   className="storybook-container"
 >
@@ -1649,10 +1701,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -1673,7 +1730,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -1699,7 +1758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -1978,7 +2037,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1987,7 +2048,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 Back
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2027,7 +2090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) with error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline with error 1`] = `
 <div
   className="storybook-container"
 >
@@ -2047,10 +2110,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
         >
           <div
             className="page-title-bar-header"
+            style={
+              Object {
+                "--header-offset": "48px",
+              }
+            }
           >
             <div
               className="page-title-bar-header-left"
@@ -2071,7 +2139,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 title="Close"
@@ -2097,7 +2167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -2451,7 +2521,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2460,7 +2532,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 Cancel
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2500,7 +2574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >
