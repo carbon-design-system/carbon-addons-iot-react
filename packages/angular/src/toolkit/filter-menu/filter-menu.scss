@@ -1,3 +1,4 @@
+@import '../../../../styles/src/globals/vars';
 @import '../../../../styles/src/vendor/carbon-components/scss/globals/scss/typography';
 
 .pane-content {
@@ -24,11 +25,11 @@
   }
 }
 
-.bx--overflow-menu--open {
+.#{$prefix}--overflow-menu--open {
   opacity: 1;
 }
 
-.bx--overflow-menu-options {
+.#{$prefix}--overflow-menu-options {
   box-shadow: none;
   z-index: auto;
 
@@ -44,11 +45,11 @@
   }
 }
 
-.bx--overflow-menu-options--open {
+.#{$prefix}--overflow-menu-options--open {
   width: 320px;
 }
 
-.bx--overflow-menu.bx--overflow-menu--open {
+.#{$prefix}--overflow-menu.#{$prefix}--overflow-menu--open {
   box-shadow: none;
 
   &:before {
