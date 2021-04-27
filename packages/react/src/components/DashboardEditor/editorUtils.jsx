@@ -159,6 +159,7 @@ export const getDefaultCard = (type, i18n) => {
           type: BAR_CHART_TYPES.GROUPED,
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
+          categoryDataSourceId: i18n.selectAGroupBy,
         },
       };
     case DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR:

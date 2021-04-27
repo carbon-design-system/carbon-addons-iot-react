@@ -299,7 +299,7 @@ const DataSeriesFormItem = ({
             ? omit(cardConfig, 'content.categoryDataSourceId')
             : cardConfig;
         const newCard = handleDataSeriesChange(selectedItems, card, setEditDataSeries);
-        setSelectedDataItems(selectedItems.map(({ text }) => text));
+        setSelectedDataItems(selectedItems.map(({ dataSourceId }) => dataSourceId));
         onChange(newCard);
       }
     },
