@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.61](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.60...v2.145.0-next.61) (2021-04-27)
+
+
+### Bug Fixes
+
+* **list-item:** add aria-label and title to expand button ([135a075](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/135a075b089236a2cdb6632370ef2dd5a3edc7e4))
+* **list-item:** use proper aria-labels to indicate action ([a197a5a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a197a5a12a08760cfde665c707e25f72773303dd))
+
+
+
+
+
+# [2.145.0-next.60](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.59...v2.145.0-next.60) (2021-04-27)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.145.0-next.59](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.58...v2.145.0-next.59) (2021-04-27)
+
+
+### Bug Fixes
+
+* **cardrenderer:** custom and default cards should be resizable ([6fcc347](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6fcc34788d3da88262053a6eefb5dd2ba3f2180c))
+
+
+
+
+
 # [2.145.0-next.58](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.57...v2.145.0-next.58) (2021-04-27)
 
 
