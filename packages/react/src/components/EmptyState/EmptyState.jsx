@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { ButtonKinds } from 'carbon-components-react/es/prop-types/types';
 
 import Button from '../Button';
 import { Link } from '../Link';
@@ -39,6 +40,8 @@ const props = {
   action: PropTypes.shape({
     label: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
+    /** primary, secondary, etc from carbon */
+    kind: PropTypes.oneOf([...ButtonKinds, 'icon-selection']),
   }),
   /** Optional secondary action for container */
   secondaryAction: PropTypes.shape({
@@ -80,7 +83,9 @@ const EmptyState = ({ title, icon, body, action, secondaryAction, className, tes
       </p>
       {action && (
         <div className={`${iotPrefix}--empty-state--action`} data-testid={`${testID}-action`}>
-          <Button onClick={action.onClick}>{action.label}</Button>
+          <Button kind={action.kind} onClick={action.onClick}>
+            {action.label}
+          </Button>
         </div>
       )}
       {secondaryAction && (

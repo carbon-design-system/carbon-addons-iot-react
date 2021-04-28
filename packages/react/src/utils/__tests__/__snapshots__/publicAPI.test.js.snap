@@ -391,7 +391,9 @@ Map {
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyMessage": "There is no data",
+        "emptyMessageBody": "",
         "emptyMessageWithFilters": "No results match the current filters",
+        "emptyMessageWithFiltersBody": "Try another search or use column filter criteria",
         "filterAria": "Filter",
         "filterAscending": "Sort rows by this header in ascending order",
         "filterButtonAria": "Filters",
@@ -6676,6 +6678,22 @@ Map {
       "action": Object {
         "args": Array [
           Object {
+            "kind": Object {
+              "args": Array [
+                Array [
+                  "primary",
+                  "secondary",
+                  "danger",
+                  "ghost",
+                  "danger--primary",
+                  "danger--ghost",
+                  "danger--tertiary",
+                  "tertiary",
+                  "icon-selection",
+                ],
+              ],
+              "type": "oneOf",
+            },
             "label": Object {
               "isRequired": true,
               "type": "string",
