@@ -14715,6 +14715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                       }
                     >
+                      custom content function
                       <span
                         className="react-resizable-handle react-resizable-handle-se"
                         onMouseDown={[Function]}
