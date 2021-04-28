@@ -105,7 +105,8 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
      *    row: PropTypes.object like this {col: value, col2: value}
      * }, you should return the node that should render within that cell */
     renderDataFunction: PropTypes.func,
-
+    /** tooltip to show with the column, for instance to provide more information */
+    tooltip: PropTypes.string,
     /**
      * If omitted, no filter input will be shown for this column
      */
