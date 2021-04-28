@@ -47,6 +47,14 @@ const PageTitleBarPropTypes = {
   onEdit: PropTypes.func,
   i18n: PropTypes.shape({ editIconDescription: PropTypes.string }),
   className: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.string),
+
+  /* Force the content element to be outside the page title component element
+     Normally this is automatically detected, i.e. if the header is dynamic and if tabs are present
+     the content must render outside in order for sticky positioning to work correctly on the tabs
+  */
+  forceContentOutside: PropTypes.bool,
+
   /** Tabs should be a Tabs component */
   tabs: deprecate(
     PropTypes.oneOfType([
@@ -56,6 +64,7 @@ const PageTitleBarPropTypes = {
     ]),
     '\nThe prop `tabs` for PageTitleBar has been deprecated in favor of `content`'
   ),
+
   /** Content rendered beneath title bar */
   content: PropTypes.node,
 };
@@ -69,16 +78,18 @@ const defaultProps = {
   breadcrumb: null,
   collapsed: undefined,
   editable: false,
+  forceContentOutside: false,
   onEdit: null,
   i18n: {
     editIconDescription: 'Edit page title',
     tooltipIconDescription: 'More information',
   },
+  style: null,
   isLoading: false,
   tabs: undefined,
   content: undefined,
   headerMode: HEADER_MODES.STATIC,
-  stickyHeaderOffset: 0, // default to 3rem to stick to the bottom of the suite header
+  stickyHeaderOffset: 48, // default to 3rem to stick to the bottom of the suite header
 };
 
 const PageTitleBar = ({
@@ -90,6 +101,7 @@ const PageTitleBar = ({
   upperActions,
   breadcrumb,
   collapsed,
+  forceContentOutside,
   headerMode,
   stickyHeaderOffset: stickyHeaderOffsetProp,
   editable,
@@ -97,6 +109,7 @@ const PageTitleBar = ({
   i18n: { editIconDescription, tooltipIconDescription },
   onEdit,
   tabs,
+  style,
   content,
 }) => {
   const titleBarContent = content || tabs;
@@ -205,10 +218,15 @@ const PageTitleBar = ({
 
      We also want sticky mode to render outside so we can sticky the entire header element
   */
-
-  const hasTabs = titleBarContent && titleBarContent.type === Tabs;
+  const hasTabs =
+    (titleBarContent && titleBarContent.type === Tabs) ||
+    (titleBarContent &&
+      [].concat(titleBarContent.props.children).filter((e) => e?.type && e.type === Tabs).length >
+        0);
   const renderContentOutside =
-    (hasTabs && headerMode === HEADER_MODES.DYNAMIC) || headerMode === HEADER_MODES.STICKY;
+    (hasTabs && headerMode === HEADER_MODES.DYNAMIC) ||
+    headerMode === HEADER_MODES.STICKY ||
+    forceContentOutside;
 
   return (
     <div
@@ -230,6 +248,7 @@ const PageTitleBar = ({
         '--header-offset': stickyHeaderOffset,
         '--scroll-transition-progress':
           headerMode !== HEADER_MODES.DYNAMIC ? 1 : transitionProgress,
+        ...style,
       }}
     >
       {isLoading ? (

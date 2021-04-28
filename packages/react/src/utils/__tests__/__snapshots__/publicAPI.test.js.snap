@@ -4576,6 +4576,7 @@ Map {
       "description": null,
       "editable": false,
       "extraContent": undefined,
+      "forceContentOutside": false,
       "headerMode": "STATIC",
       "i18n": Object {
         "editIconDescription": "Edit page title",
@@ -4584,7 +4585,8 @@ Map {
       "isLoading": false,
       "onEdit": null,
       "rightContent": undefined,
-      "stickyHeaderOffset": 0,
+      "stickyHeaderOffset": 48,
+      "style": null,
       "tabs": undefined,
       "upperActions": undefined,
     },
@@ -4625,6 +4627,9 @@ Map {
       "extraContent": Object {
         "type": "node",
       },
+      "forceContentOutside": Object {
+        "type": "bool",
+      },
       "headerMode": Object {
         "args": Array [
           Array [
@@ -4655,6 +4660,14 @@ Map {
       "rightContent": [Function],
       "stickyHeaderOffset": Object {
         "type": "number",
+      },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
       },
       "tabs": [Function],
       "title": Object {

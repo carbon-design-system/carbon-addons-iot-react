@@ -23,7 +23,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
         className="page-title-bar"
         style={
           Object {
-            "--header-offset": "0px",
+            "--header-offset": "48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -103,7 +103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
         className="page-title-bar"
         style={
           Object {
-            "--header-offset": "0px",
+            "--header-offset": "48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -175,7 +175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
           className="page-title-bar"
           style={
             Object {
-              "--header-offset": "0px",
+              "--header-offset": "48px",
               "--scroll-transition-progress": 1,
             }
           }
@@ -577,6 +577,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 className="bx--tabs--scrollable"
                 onScroll={[Function]}
                 selected={0}
+                style={
+                  Object {
+                    "marginLeft": "-16px",
+                    "marginRight": "-16px",
+                  }
+                }
               >
                 <button
                   aria-hidden="true"
@@ -937,6 +943,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 style={
                   Object {
                     "height": "100rem",
+                    "marginLeft": "-16px",
+                    "marginRight": "-16px",
+                    "marginTop": "-16px",
                   }
                 }
               >
@@ -1084,7 +1093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
           className="page-title-bar"
           style={
             Object {
-              "--header-offset": "0px",
+              "--header-offset": "48px",
               "--scroll-transition-progress": 1,
             }
           }
@@ -1518,6 +1527,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 style={
                   Object {
                     "height": "100rem",
+                    "marginLeft": "-16px",
+                    "marginRight": "-16px",
+                    "marginTop": "-16px",
                   }
                 }
               >
@@ -1900,671 +1912,683 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             className="page-title-bar-content page-title-bar-content--active"
           >
             <div
-              className="bx--tabs--scrollable"
-              onScroll={[Function]}
-              selected={0}
-            >
-              <button
-                aria-hidden="true"
-                aria-label="Scroll left"
-                className="bx--tab--overflow-nav-button--hidden"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="-1"
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
-                  />
-                </svg>
-              </button>
-              <ul
-                className="bx--tabs--scrollable__nav"
-                role="tablist"
-                tabIndex={-1}
-              >
-                <li
-                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="presentation"
-                >
-                  <button
-                    aria-controls="tab-33__panel"
-                    aria-selected={true}
-                    className="bx--tabs--scrollable__nav-link"
-                    href="#"
-                    id="tab-33"
-                    role="tab"
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Tab 1
-                  </button>
-                </li>
-                <li
-                  className="bx--tabs--scrollable__nav-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="presentation"
-                >
-                  <button
-                    aria-controls="tab-34__panel"
-                    aria-selected={false}
-                    className="bx--tabs--scrollable__nav-link"
-                    href="#"
-                    id="tab-34"
-                    role="tab"
-                    tabIndex={-1}
-                    type="button"
-                  >
-                    Tab 2
-                  </button>
-                </li>
-                <li
-                  className="bx--tabs--scrollable__nav-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="presentation"
-                >
-                  <button
-                    aria-controls="tab-35__panel"
-                    aria-selected={false}
-                    className="bx--tabs--scrollable__nav-link"
-                    href="#"
-                    id="tab-35"
-                    role="tab"
-                    tabIndex={-1}
-                    type="button"
-                  >
-                    Tab 3
-                  </button>
-                </li>
-              </ul>
-              <button
-                aria-hidden="true"
-                aria-label="Scroll right"
-                className="bx--tab--overflow-nav-button--hidden"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="-1"
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="bx--tab-content"
-              hidden={false}
-              role="tabpanel"
-              selected={true}
-              tabIndex={0}
+              style={
+                Object {
+                  "marginLeft": "-16px",
+                  "marginRight": "-16px",
+                }
+              }
             >
               <div
-                style={
-                  Object {
-                    "height": "100rem",
-                  }
-                }
+                className="bx--tabs--scrollable"
+                onScroll={[Function]}
+                selected={0}
               >
-                <div>
-                  <div
-                    className="iot--tile-catalog--canvas-container"
+                <button
+                  aria-hidden="true"
+                  aria-label="Scroll left"
+                  className="bx--tab--overflow-nav-button--hidden"
+                  onClick={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  tabIndex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <div
-                      className="iot--tile-catalog--tile-canvas"
+                    <path
+                      d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  className="bx--tabs--scrollable__nav"
+                  role="tablist"
+                  tabIndex={-1}
+                >
+                  <li
+                    className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="presentation"
+                  >
+                    <button
+                      aria-controls="tab-33__panel"
+                      aria-selected={true}
+                      className="bx--tabs--scrollable__nav-link"
+                      href="#"
+                      id="tab-33"
+                      role="tab"
+                      tabIndex={0}
+                      type="button"
                     >
-                      <div
-                        className="iot--tile-catalog--tile-canvas--header"
-                      >
-                        <div
-                          className="iot--tile-catalog--tile-canvas--header--select"
-                        />
-                      </div>
-                      <div
-                        className="iot--tile-catalog--tile-canvas--content"
-                      >
-                        <div
-                          className="iot--tile-catalog--grid-container"
-                          style={
-                            Object {
-                              "--columns": "repeat(2, 1fr)",
-                            }
-                          }
-                        >
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
-                              <div
-                                className="sample-tile--title"
-                              >
-                                1
-                              </div>
-                              <div
-                                className="sample-tile--content"
-                              >
-                                This is a sample product tile
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
-                              <div
-                                className="sample-tile--title"
-                              >
-                                2
-                              </div>
-                              <div
-                                className="sample-tile--content"
-                              >
-                                This is a sample product tile
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
-                              <div
-                                className="sample-tile--title"
-                              >
-                                3
-                              </div>
-                              <div
-                                className="sample-tile--content"
-                              >
-                                This is a sample product tile
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="iot--tile-catalog--tile-canvas--bottom"
-                      />
-                    </div>
-                  </div>
-                </div>
+                      Tab 1
+                    </button>
+                  </li>
+                  <li
+                    className="bx--tabs--scrollable__nav-item"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="presentation"
+                  >
+                    <button
+                      aria-controls="tab-34__panel"
+                      aria-selected={false}
+                      className="bx--tabs--scrollable__nav-link"
+                      href="#"
+                      id="tab-34"
+                      role="tab"
+                      tabIndex={-1}
+                      type="button"
+                    >
+                      Tab 2
+                    </button>
+                  </li>
+                  <li
+                    className="bx--tabs--scrollable__nav-item"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="presentation"
+                  >
+                    <button
+                      aria-controls="tab-35__panel"
+                      aria-selected={false}
+                      className="bx--tabs--scrollable__nav-link"
+                      href="#"
+                      id="tab-35"
+                      role="tab"
+                      tabIndex={-1}
+                      type="button"
+                    >
+                      Tab 3
+                    </button>
+                  </li>
+                </ul>
+                <button
+                  aria-hidden="true"
+                  aria-label="Scroll right"
+                  className="bx--tab--overflow-nav-button--hidden"
+                  onClick={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  tabIndex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
               </div>
-            </div>
-            <div
-              className="bx--tab-content"
-              hidden={true}
-              role="tabpanel"
-              selected={false}
-              tabIndex={0}
-            >
               <div
-                style={
-                  Object {
-                    "height": "100rem",
-                  }
-                }
+                className="bx--tab-content"
+                hidden={false}
+                role="tabpanel"
+                selected={true}
+                tabIndex={0}
               >
-                <div>
-                  <div
-                    className="iot--tile-catalog--canvas-container"
-                  >
+                <div
+                  style={
+                    Object {
+                      "height": "100rem",
+                      "marginTop": "-16px",
+                    }
+                  }
+                >
+                  <div>
                     <div
-                      className="iot--tile-catalog--tile-canvas"
+                      className="iot--tile-catalog--canvas-container"
                     >
                       <div
-                        className="iot--tile-catalog--tile-canvas--header"
+                        className="iot--tile-catalog--tile-canvas"
                       >
                         <div
-                          className="iot--tile-catalog--tile-canvas--header--select"
-                        />
-                      </div>
-                      <div
-                        className="iot--tile-catalog--tile-canvas--content"
-                      >
-                        <div
-                          className="iot--tile-catalog--grid-container"
-                          style={
-                            Object {
-                              "--columns": "repeat(2, 1fr)",
-                            }
-                          }
+                          className="iot--tile-catalog--tile-canvas--header"
                         >
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
+                          <div
+                            className="iot--tile-catalog--tile-canvas--header--select"
+                          />
+                        </div>
+                        <div
+                          className="iot--tile-catalog--tile-canvas--content"
+                        >
+                          <div
+                            className="iot--tile-catalog--grid-container"
+                            style={
+                              Object {
+                                "--columns": "repeat(2, 1fr)",
+                              }
+                            }
+                          >
+                            <div>
                               <div
-                                className="sample-tile--title"
+                                className="sample-tile"
                               >
-                                1
-                              </div>
-                              <div
-                                className="sample-tile--content"
-                              >
-                                This is a sample product tile
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
-                              <div
-                                className="sample-tile--title"
-                              >
-                                2
-                              </div>
-                              <div
-                                className="sample-tile--content"
-                              >
-                                This is a sample product tile
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
-                              <div
-                                className="sample-tile--title"
-                              >
-                                3
-                              </div>
-                              <div
-                                className="sample-tile--content"
-                              >
-                                This is a sample product tile
+                                <div
+                                  className="sample-tile--title"
+                                >
+                                  1
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
+                            <div>
                               <div
-                                className="sample-tile--title"
+                                className="sample-tile"
                               >
-                                4
+                                <div
+                                  className="sample-tile--title"
+                                >
+                                  2
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
                               </div>
+                            </div>
+                            <div>
                               <div
-                                className="sample-tile--content"
+                                className="sample-tile"
                               >
-                                This is a sample product tile
+                                <div
+                                  className="sample-tile--title"
+                                >
+                                  3
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        className="iot--tile-catalog--tile-canvas--bottom"
-                      >
-                        <nav
-                          aria-label="pagination"
-                          className="bx--pagination-nav"
-                        >
-                          <ul
-                            className="bx--pagination-nav__list"
-                          >
-                            <li
-                              className="bx--pagination-nav__list-item"
-                            >
-                              <button
-                                aria-disabled="true"
-                                className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <span
-                                  className="bx--pagination-nav__accessibility-label"
-                                >
-                                  Previous page
-                                </span>
-                                <svg
-                                  aria-hidden="true"
-                                  className="bx--pagination-nav__icon"
-                                  focusable="false"
-                                  height="8"
-                                  preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
-                                  viewBox="0 0 5 8"
-                                  width="5"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M5 8L0 4 5 0z"
-                                  />
-                                </svg>
-                              </button>
-                            </li>
-                            <li
-                              className="bx--pagination-nav__list-item"
-                            >
-                              <button
-                                aria-current="page"
-                                aria-disabled={true}
-                                className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <span
-                                  className="bx--pagination-nav__accessibility-label"
-                                >
-                                  page
-                                </span>
-                                1
-                              </button>
-                            </li>
-                            <li
-                              className="bx--pagination-nav__list-item"
-                            >
-                              <button
-                                aria-current="page"
-                                aria-disabled={false}
-                                className="bx--pagination-nav__page"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <span
-                                  className="bx--pagination-nav__accessibility-label"
-                                >
-                                  page
-                                </span>
-                                2
-                              </button>
-                            </li>
-                            <li
-                              className="bx--pagination-nav__list-item"
-                            >
-                              <button
-                                className="bx--pagination-nav__page bx--pagination-nav__page--direction"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <span
-                                  className="bx--pagination-nav__accessibility-label"
-                                >
-                                  Next page
-                                </span>
-                                <svg
-                                  aria-hidden="true"
-                                  className="bx--pagination-nav__icon"
-                                  focusable="false"
-                                  height="8"
-                                  preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
-                                  viewBox="0 0 5 8"
-                                  width="5"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M0 0L5 4 0 8z"
-                                  />
-                                </svg>
-                              </button>
-                            </li>
-                          </ul>
-                        </nav>
+                        <div
+                          className="iot--tile-catalog--tile-canvas--bottom"
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              className="bx--tab-content"
-              hidden={true}
-              role="tabpanel"
-              selected={false}
-              tabIndex={0}
-            >
               <div
-                style={
-                  Object {
-                    "height": "100rem",
-                  }
-                }
+                className="bx--tab-content"
+                hidden={true}
+                role="tabpanel"
+                selected={false}
+                tabIndex={0}
               >
-                <div>
-                  <div
-                    className="iot--tile-catalog--canvas-container"
-                  >
+                <div
+                  style={
+                    Object {
+                      "height": "100rem",
+                      "marginTop": "-16px",
+                    }
+                  }
+                >
+                  <div>
                     <div
-                      className="iot--tile-catalog--tile-canvas"
+                      className="iot--tile-catalog--canvas-container"
                     >
                       <div
-                        className="iot--tile-catalog--tile-canvas--header"
+                        className="iot--tile-catalog--tile-canvas"
                       >
                         <div
-                          className="iot--tile-catalog--tile-canvas--header--select"
-                        />
-                      </div>
-                      <div
-                        className="iot--tile-catalog--tile-canvas--content"
-                      >
-                        <div
-                          className="iot--tile-catalog--grid-container"
-                          style={
-                            Object {
-                              "--columns": "repeat(2, 1fr)",
-                            }
-                          }
+                          className="iot--tile-catalog--tile-canvas--header"
                         >
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
+                          <div
+                            className="iot--tile-catalog--tile-canvas--header--select"
+                          />
+                        </div>
+                        <div
+                          className="iot--tile-catalog--tile-canvas--content"
+                        >
+                          <div
+                            className="iot--tile-catalog--grid-container"
+                            style={
+                              Object {
+                                "--columns": "repeat(2, 1fr)",
+                              }
+                            }
+                          >
+                            <div>
                               <div
-                                className="sample-tile--title"
+                                className="sample-tile"
                               >
-                                1
-                              </div>
-                              <div
-                                className="sample-tile--content"
-                              >
-                                This is a sample product tile
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
-                              <div
-                                className="sample-tile--title"
-                              >
-                                2
-                              </div>
-                              <div
-                                className="sample-tile--content"
-                              >
-                                This is a sample product tile
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
-                              <div
-                                className="sample-tile--title"
-                              >
-                                3
-                              </div>
-                              <div
-                                className="sample-tile--content"
-                              >
-                                This is a sample product tile
+                                <div
+                                  className="sample-tile--title"
+                                >
+                                  1
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div>
-                            <div
-                              className="sample-tile"
-                            >
+                            <div>
                               <div
-                                className="sample-tile--title"
+                                className="sample-tile"
                               >
-                                4
+                                <div
+                                  className="sample-tile--title"
+                                >
+                                  2
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
                               </div>
+                            </div>
+                            <div>
                               <div
-                                className="sample-tile--content"
+                                className="sample-tile"
                               >
-                                This is a sample product tile
+                                <div
+                                  className="sample-tile--title"
+                                >
+                                  3
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                className="sample-tile"
+                              >
+                                <div
+                                  className="sample-tile--title"
+                                >
+                                  4
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        className="iot--tile-catalog--tile-canvas--bottom"
-                      >
-                        <nav
-                          aria-label="pagination"
-                          className="bx--pagination-nav"
+                        <div
+                          className="iot--tile-catalog--tile-canvas--bottom"
                         >
-                          <ul
-                            className="bx--pagination-nav__list"
+                          <nav
+                            aria-label="pagination"
+                            className="bx--pagination-nav"
                           >
-                            <li
-                              className="bx--pagination-nav__list-item"
+                            <ul
+                              className="bx--pagination-nav__list"
                             >
-                              <button
-                                aria-disabled="true"
-                                className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
-                                onClick={[Function]}
-                                type="button"
+                              <li
+                                className="bx--pagination-nav__list-item"
                               >
-                                <span
-                                  className="bx--pagination-nav__accessibility-label"
+                                <button
+                                  aria-disabled="true"
+                                  className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
+                                  onClick={[Function]}
+                                  type="button"
                                 >
-                                  Previous page
-                                </span>
-                                <svg
-                                  aria-hidden="true"
-                                  className="bx--pagination-nav__icon"
-                                  focusable="false"
-                                  height="8"
-                                  preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
+                                  <span
+                                    className="bx--pagination-nav__accessibility-label"
+                                  >
+                                    Previous page
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    className="bx--pagination-nav__icon"
+                                    focusable="false"
+                                    height="8"
+                                    preserveAspectRatio="xMidYMid meet"
+                                    style={
+                                      Object {
+                                        "willChange": "transform",
+                                      }
                                     }
-                                  }
-                                  viewBox="0 0 5 8"
-                                  width="5"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M5 8L0 4 5 0z"
-                                  />
-                                </svg>
-                              </button>
-                            </li>
-                            <li
-                              className="bx--pagination-nav__list-item"
-                            >
-                              <button
-                                aria-current="page"
-                                aria-disabled={true}
-                                className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
-                                onClick={[Function]}
-                                type="button"
+                                    viewBox="0 0 5 8"
+                                    width="5"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M5 8L0 4 5 0z"
+                                    />
+                                  </svg>
+                                </button>
+                              </li>
+                              <li
+                                className="bx--pagination-nav__list-item"
                               >
-                                <span
-                                  className="bx--pagination-nav__accessibility-label"
+                                <button
+                                  aria-current="page"
+                                  aria-disabled={true}
+                                  className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
+                                  onClick={[Function]}
+                                  type="button"
                                 >
-                                  page
-                                </span>
-                                1
-                              </button>
-                            </li>
-                            <li
-                              className="bx--pagination-nav__list-item"
-                            >
-                              <button
-                                aria-current="page"
-                                aria-disabled={false}
-                                className="bx--pagination-nav__page"
-                                onClick={[Function]}
-                                type="button"
+                                  <span
+                                    className="bx--pagination-nav__accessibility-label"
+                                  >
+                                    page
+                                  </span>
+                                  1
+                                </button>
+                              </li>
+                              <li
+                                className="bx--pagination-nav__list-item"
                               >
-                                <span
-                                  className="bx--pagination-nav__accessibility-label"
+                                <button
+                                  aria-current="page"
+                                  aria-disabled={false}
+                                  className="bx--pagination-nav__page"
+                                  onClick={[Function]}
+                                  type="button"
                                 >
-                                  page
-                                </span>
-                                2
-                              </button>
-                            </li>
-                            <li
-                              className="bx--pagination-nav__list-item"
-                            >
-                              <button
-                                className="bx--pagination-nav__page bx--pagination-nav__page--direction"
-                                onClick={[Function]}
-                                type="button"
+                                  <span
+                                    className="bx--pagination-nav__accessibility-label"
+                                  >
+                                    page
+                                  </span>
+                                  2
+                                </button>
+                              </li>
+                              <li
+                                className="bx--pagination-nav__list-item"
                               >
-                                <span
-                                  className="bx--pagination-nav__accessibility-label"
+                                <button
+                                  className="bx--pagination-nav__page bx--pagination-nav__page--direction"
+                                  onClick={[Function]}
+                                  type="button"
                                 >
-                                  Next page
-                                </span>
-                                <svg
-                                  aria-hidden="true"
-                                  className="bx--pagination-nav__icon"
-                                  focusable="false"
-                                  height="8"
-                                  preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
+                                  <span
+                                    className="bx--pagination-nav__accessibility-label"
+                                  >
+                                    Next page
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    className="bx--pagination-nav__icon"
+                                    focusable="false"
+                                    height="8"
+                                    preserveAspectRatio="xMidYMid meet"
+                                    style={
+                                      Object {
+                                        "willChange": "transform",
+                                      }
                                     }
-                                  }
-                                  viewBox="0 0 5 8"
-                                  width="5"
-                                  xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 5 8"
+                                    width="5"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M0 0L5 4 0 8z"
+                                    />
+                                  </svg>
+                                </button>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="bx--tab-content"
+                hidden={true}
+                role="tabpanel"
+                selected={false}
+                tabIndex={0}
+              >
+                <div
+                  style={
+                    Object {
+                      "height": "100rem",
+                      "marginTop": "-16px",
+                    }
+                  }
+                >
+                  <div>
+                    <div
+                      className="iot--tile-catalog--canvas-container"
+                    >
+                      <div
+                        className="iot--tile-catalog--tile-canvas"
+                      >
+                        <div
+                          className="iot--tile-catalog--tile-canvas--header"
+                        >
+                          <div
+                            className="iot--tile-catalog--tile-canvas--header--select"
+                          />
+                        </div>
+                        <div
+                          className="iot--tile-catalog--tile-canvas--content"
+                        >
+                          <div
+                            className="iot--tile-catalog--grid-container"
+                            style={
+                              Object {
+                                "--columns": "repeat(2, 1fr)",
+                              }
+                            }
+                          >
+                            <div>
+                              <div
+                                className="sample-tile"
+                              >
+                                <div
+                                  className="sample-tile--title"
                                 >
-                                  <path
-                                    d="M0 0L5 4 0 8z"
-                                  />
-                                </svg>
-                              </button>
-                            </li>
-                          </ul>
-                        </nav>
+                                  1
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                className="sample-tile"
+                              >
+                                <div
+                                  className="sample-tile--title"
+                                >
+                                  2
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                className="sample-tile"
+                              >
+                                <div
+                                  className="sample-tile--title"
+                                >
+                                  3
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                className="sample-tile"
+                              >
+                                <div
+                                  className="sample-tile--title"
+                                >
+                                  4
+                                </div>
+                                <div
+                                  className="sample-tile--content"
+                                >
+                                  This is a sample product tile
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--tile-catalog--tile-canvas--bottom"
+                        >
+                          <nav
+                            aria-label="pagination"
+                            className="bx--pagination-nav"
+                          >
+                            <ul
+                              className="bx--pagination-nav__list"
+                            >
+                              <li
+                                className="bx--pagination-nav__list-item"
+                              >
+                                <button
+                                  aria-disabled="true"
+                                  className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--pagination-nav__accessibility-label"
+                                  >
+                                    Previous page
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    className="bx--pagination-nav__icon"
+                                    focusable="false"
+                                    height="8"
+                                    preserveAspectRatio="xMidYMid meet"
+                                    style={
+                                      Object {
+                                        "willChange": "transform",
+                                      }
+                                    }
+                                    viewBox="0 0 5 8"
+                                    width="5"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M5 8L0 4 5 0z"
+                                    />
+                                  </svg>
+                                </button>
+                              </li>
+                              <li
+                                className="bx--pagination-nav__list-item"
+                              >
+                                <button
+                                  aria-current="page"
+                                  aria-disabled={true}
+                                  className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--pagination-nav__accessibility-label"
+                                  >
+                                    page
+                                  </span>
+                                  1
+                                </button>
+                              </li>
+                              <li
+                                className="bx--pagination-nav__list-item"
+                              >
+                                <button
+                                  aria-current="page"
+                                  aria-disabled={false}
+                                  className="bx--pagination-nav__page"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--pagination-nav__accessibility-label"
+                                  >
+                                    page
+                                  </span>
+                                  2
+                                </button>
+                              </li>
+                              <li
+                                className="bx--pagination-nav__list-item"
+                              >
+                                <button
+                                  className="bx--pagination-nav__page bx--pagination-nav__page--direction"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--pagination-nav__accessibility-label"
+                                  >
+                                    Next page
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    className="bx--pagination-nav__icon"
+                                    focusable="false"
+                                    height="8"
+                                    preserveAspectRatio="xMidYMid meet"
+                                    style={
+                                      Object {
+                                        "willChange": "transform",
+                                      }
+                                    }
+                                    viewBox="0 0 5 8"
+                                    width="5"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M0 0L5 4 0 8z"
+                                    />
+                                  </svg>
+                                </button>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2976,7 +3000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
           className="page-title-bar"
           style={
             Object {
-              "--header-offset": "0px",
+              "--header-offset": "48px",
               "--scroll-transition-progress": 1,
             }
           }
@@ -3093,7 +3117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
         className="page-title-bar"
         style={
           Object {
-            "--header-offset": "0px",
+            "--header-offset": "48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -3111,9 +3135,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
               className="page-title-bar-title--text"
             >
               <h2
-                title="Page title"
+                title="A page title could be really long, you never know"
               >
-                Page title
+                A page title could be really long, you never know
               </h2>
               <div
                 className="bx--tooltip__label"
@@ -3207,6 +3231,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 </svg>
               </button>
             </div>
+          </div>
+          <div
+            className="page-title-bar-content"
+          >
+            <span>
+              Just some plain text that should align nicely
+            </span>
           </div>
         </div>
       </div>
@@ -3590,6 +3621,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 className="bx--tabs--scrollable"
                 onScroll={[Function]}
                 selected={0}
+                style={
+                  Object {
+                    "marginLeft": "-16px",
+                    "marginRight": "-16px",
+                  }
+                }
               >
                 <button
                   aria-hidden="true"
@@ -4121,7 +4158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
           className="page-title-bar"
           style={
             Object {
-              "--header-offset": "0px",
+              "--header-offset": "48px",
               "--scroll-transition-progress": 1,
             }
           }
@@ -4288,7 +4325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
           className="page-title-bar"
           style={
             Object {
-              "--header-offset": "0px",
+              "--header-offset": "48px",
               "--scroll-transition-progress": 1,
             }
           }

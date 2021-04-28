@@ -165,7 +165,28 @@ WithEditableTitleBar.story = {
   name: 'with editable title bar and subtitle',
 };
 
-export const WithRichContent = () => <PageTitleBar {...commonPageTitleBarProps} collapsed />;
+export const WithRichContent = () => (
+  <PageTitleBar
+    title={text('title', 'A page title could be really long, you never know')}
+    description={text('description', commonPageTitleBarProps.description)}
+    extraContent={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ marginRight: spacing05 }}>
+          <b>Last updated:</b> yesterday
+        </span>
+        <Button
+          className="some-right-content"
+          size="field"
+          renderIcon={Add24}
+          onClick={action('click')}
+        >
+          Take an action
+        </Button>
+      </div>
+    }
+    content={<span>Just some plain text that should align nicely</span>}
+  />
+);
 
 WithRichContent.story = {
   name: 'with rich content',
@@ -174,6 +195,7 @@ WithRichContent.story = {
 export const WithSelect = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
+      stickyHeaderOffset={number('sticky header offset', 0)}
       title={text('title', 'A page title could be really long, you never know')}
       description={text('description', commonPageTitleBarProps.description)}
       breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, breadcrumbDefaultValue, {
@@ -290,7 +312,7 @@ export const WithSearch = () => (
         </div>
       }
       content={
-        <Tabs>
+        <Tabs style={{ marginLeft: '-16px', marginRight: '-16px' }}>
           <Tab label="Tab 1">
             <div>Content for first tab.</div>
           </Tab>
@@ -351,7 +373,7 @@ export const WithEverything = () => (
         </div>
       }
       content={
-        <Tabs>
+        <Tabs style={{ marginLeft: '-16px', marginRight: '-16px' }}>
           <Tab label="Tab 1">
             <div>Content for first tab.</div>
           </Tab>
@@ -395,7 +417,14 @@ export const WithCondensedHeader = () => (
         </div>
       }
       content={
-        <div style={{ height: '100rem' }}>
+        <div
+          style={{
+            height: '100rem',
+            marginLeft: '-16px',
+            marginRight: '-16px',
+            marginTop: '-16px',
+          }}
+        >
           <TileCatalogNew tiles={getTiles(3)} numColumns={2} numRows={2} />
         </div>
       }
@@ -480,7 +509,14 @@ export const WithDynamicScrolling = () => (
         </div>
       }
       content={
-        <div style={{ height: '100rem' }}>
+        <div
+          style={{
+            height: '100rem',
+            marginLeft: '-16px',
+            marginRight: '-16px',
+            marginTop: '-16px',
+          }}
+        >
           <TileCatalogNew tiles={getTiles(3)} numColumns={2} numRows={2} />
         </div>
       }
@@ -499,7 +535,7 @@ WithDynamicScrolling.story = {
 export const WithDynamicScrollingAndTabs = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
-      stickyHeaderOffset={number('sticky header offset')}
+      stickyHeaderOffset={number('sticky header offset', 0)}
       headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'DYNAMIC')}
       title={text('title', commonPageTitleBarProps.title)}
       breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, breadcrumbDefaultValue, {
@@ -536,23 +572,25 @@ export const WithDynamicScrollingAndTabs = () => (
         </div>
       }
       content={
-        <Tabs>
-          <Tab label="Tab 1">
-            <div style={{ height: '100rem' }}>
-              <TileCatalogNew tiles={getTiles(3)} numColumns={2} numRows={2} />
-            </div>
-          </Tab>
-          <Tab label="Tab 2">
-            <div style={{ height: '100rem' }}>
-              <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
-            </div>
-          </Tab>
-          <Tab label="Tab 3">
-            <div style={{ height: '100rem' }}>
-              <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
-            </div>
-          </Tab>
-        </Tabs>
+        <div style={{ marginLeft: '-16px', marginRight: '-16px' }}>
+          <Tabs>
+            <Tab label="Tab 1">
+              <div style={{ height: '100rem', marginTop: '-16px' }}>
+                <TileCatalogNew tiles={getTiles(3)} numColumns={2} numRows={2} />
+              </div>
+            </Tab>
+            <Tab label="Tab 2">
+              <div style={{ height: '100rem', marginTop: '-16px' }}>
+                <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
+              </div>
+            </Tab>
+            <Tab label="Tab 3">
+              <div style={{ height: '100rem', marginTop: '-16px' }}>
+                <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
+              </div>
+            </Tab>
+          </Tabs>
+        </div>
       }
       onEdit={action('edit')}
     />
@@ -573,7 +611,7 @@ WithDynamicScrollingAndTabs.parameters = {
 export const WithDynamicScrollingAndUpperActions = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
-      stickyHeaderOffset={number('sticky header offset')}
+      stickyHeaderOffset={number('sticky header offset', 0)}
       headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'DYNAMIC')}
       title={text('title', commonPageTitleBarProps.title)}
       breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, breadcrumbDefaultValue, {
