@@ -3,6 +3,9 @@ import sizeMe from 'react-sizeme';
 
 sizeMe.noPlaceholders = true;
 
+// Settings
+export { settings } from './constants/Settings';
+
 // Components
 export AddCard from './components/AddCard';
 export Button from './components/Button';
