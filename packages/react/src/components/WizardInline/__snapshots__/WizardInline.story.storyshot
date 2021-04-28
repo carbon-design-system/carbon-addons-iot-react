@@ -144,6 +144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -205,6 +206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -266,6 +268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -324,6 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -568,6 +572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -634,6 +639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -695,6 +701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -753,6 +760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -977,6 +985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -1033,6 +1042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -1089,6 +1099,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -1152,6 +1163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -1395,6 +1407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -1456,6 +1469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -1517,6 +1531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -1575,6 +1590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -1810,6 +1826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -1876,6 +1893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -1937,6 +1955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -1995,6 +2014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -2229,6 +2249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -2290,6 +2311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -2351,6 +2373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -2409,6 +2432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step

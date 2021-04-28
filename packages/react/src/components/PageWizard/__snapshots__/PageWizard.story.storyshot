@@ -76,6 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="First Step"
                     value="This is displayed when step icon is hovered"
                   >
                     First Step
@@ -136,6 +137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Second Step"
                     value="Second Step"
                   >
                     Second Step
@@ -183,6 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 1"
                     value="Sub Step 1"
                   >
                     Sub Step 1
@@ -230,6 +233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 2"
                     value="Sub Step 2"
                   >
                     Sub Step 2
@@ -285,6 +289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 3"
                     value="Sub Step 3"
                   >
                     Sub Step 3
@@ -335,6 +340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 4"
                     value="Sub Step 4"
                   >
                     Sub Step 4
@@ -390,6 +396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Third Step"
                     value="Third Step"
                   >
                     Third Step
@@ -445,6 +452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Fourth Step"
                     value="Fourth Step"
                   >
                     Fourth Step
@@ -497,6 +505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Final Step"
                     value="Final Step"
                   >
                     Final Step
@@ -801,6 +810,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="First Step"
                         value="First Step"
                       >
                         First Step
@@ -858,6 +868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Second Step"
                         value="Second Step"
                       >
                         Second Step
@@ -1219,6 +1230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="First Step"
                         value="First Step"
                       >
                         First Step
@@ -1276,6 +1288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Second Step"
                         value="Second Step"
                       >
                         Second Step
@@ -1809,6 +1822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="First Step"
                     value="This is displayed when step icon is hovered"
                   >
                     First Step
@@ -1869,6 +1883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Second Step"
                     value="Second Step"
                   >
                     Second Step
@@ -1916,6 +1931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 1"
                     value="Sub Step 1"
                   >
                     Sub Step 1
@@ -1963,6 +1979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 2"
                     value="Sub Step 2"
                   >
                     Sub Step 2
@@ -2018,6 +2035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 3"
                     value="Sub Step 3"
                   >
                     Sub Step 3
@@ -2068,6 +2086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 4"
                     value="Sub Step 4"
                   >
                     Sub Step 4
@@ -2123,6 +2142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Third Step"
                     value="Third Step"
                   >
                     Third Step
@@ -2178,6 +2198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Fourth Step"
                     value="Fourth Step"
                   >
                     Fourth Step
@@ -2230,6 +2251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Final Step"
                     value="Final Step"
                   >
                     Final Step
@@ -2534,6 +2556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="First Step"
                         value="First Step"
                       >
                         First Step
@@ -2591,6 +2614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Second Step"
                         value="Second Step"
                       >
                         Second Step
@@ -2837,6 +2861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="First Step"
                     value="This is displayed when step icon is hovered"
                   >
                     First Step
@@ -2897,6 +2922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Second Step"
                     value="Second Step"
                   >
                     Second Step
@@ -2944,6 +2970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 1"
                     value="Sub Step 1"
                   >
                     Sub Step 1
@@ -2991,6 +3018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 2"
                     value="Sub Step 2"
                   >
                     Sub Step 2
@@ -3046,6 +3074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 3"
                     value="Sub Step 3"
                   >
                     Sub Step 3
@@ -3096,6 +3125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Sub Step 4"
                     value="Sub Step 4"
                   >
                     Sub Step 4
@@ -3151,6 +3181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Third Step"
                     value="Third Step"
                   >
                     Third Step
@@ -3206,6 +3237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Fourth Step"
                     value="Fourth Step"
                   >
                     Fourth Step
@@ -3258,6 +3290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="Final Step"
                     value="Final Step"
                   >
                     Final Step
@@ -3562,6 +3595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="First Step"
                         value="This is displayed when step icon is hovered"
                       >
                         First Step
@@ -3622,6 +3656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Second Step"
                         value="Second Step"
                       >
                         Second Step
@@ -3669,6 +3704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Sub Step 1"
                         value="Sub Step 1"
                       >
                         Sub Step 1
@@ -3716,6 +3752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Sub Step 2"
                         value="Sub Step 2"
                       >
                         Sub Step 2
@@ -3771,6 +3808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Sub Step 3"
                         value="Sub Step 3"
                       >
                         Sub Step 3
@@ -3821,6 +3859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Sub Step 4"
                         value="Sub Step 4"
                       >
                         Sub Step 4
@@ -3876,6 +3915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Third Step"
                         value="Third Step"
                       >
                         Third Step
@@ -3931,6 +3971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Fourth Step"
                         value="Fourth Step"
                       >
                         Fourth Step
@@ -3983,6 +4024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <p
                         className="iot--progress-text-label"
+                        title="Final Step"
                         value="Final Step"
                       >
                         Final Step
