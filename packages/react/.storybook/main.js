@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  stories: ['./Welcome.story.jsx', '../**/*.story.jsx'],
+  stories: ['./Welcome.story.jsx', '../src/**/*.story.jsx'],
   addons: [
     '@storybook/addon-knobs',
     '@storybook/addon-actions',

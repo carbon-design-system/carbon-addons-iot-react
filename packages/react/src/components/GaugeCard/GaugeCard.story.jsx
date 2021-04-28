@@ -51,7 +51,7 @@ const content = {
 };
 
 export default {
-  title: 'Watson IoT/GaugeCard',
+  title: '1 - Watson IoT/GaugeCard',
 
   parameters: {
     component: GaugeCard,

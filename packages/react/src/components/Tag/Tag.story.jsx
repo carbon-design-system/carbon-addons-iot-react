@@ -65,7 +65,7 @@ const props = {
 };
 
 export default {
-  title: 'Tag',
+  title: '3 - Carbon/Tag',
   decorators: [withKnobs],
 
   parameters: {

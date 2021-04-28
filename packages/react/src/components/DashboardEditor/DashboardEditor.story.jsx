@@ -147,7 +147,7 @@ const mockDataItems = [
 ];
 
 export default {
-  title: 'Watson IoT Experimental/☢️ DashboardEditor',
+  title: '2 - Watson IoT Experimental/☢️ DashboardEditor',
   decorators: [withKnobs],
 
   parameters: {

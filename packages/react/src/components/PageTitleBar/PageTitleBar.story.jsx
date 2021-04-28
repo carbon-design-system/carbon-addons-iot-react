@@ -51,7 +51,7 @@ export const PageTitleBarNodeTooltip = () => (
 );
 
 export default {
-  title: 'Watson IoT/PageTitleBar',
+  title: '1 - Watson IoT/PageTitleBar',
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 
   parameters: {

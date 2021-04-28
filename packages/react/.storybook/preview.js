@@ -23,8 +23,8 @@ addParameters({
       a[1].kind.replace(/☢️-|🚫-|⚠️-/i, '') === b[1].kind.replace(/☢️-|🚫-|⚠️-/i, '')
         ? 0
         : a[1].id
-            .replace(/☢️-|🚫-|⚠️-/i, '')
-            .localeCompare(b[1].id.replace(/☢️-|🚫-|⚠️-/i, ''), undefined, { numeric: true }),
+          .replace(/☢️-|🚫-|⚠️-/i, '')
+          .localeCompare(b[1].id.replace(/☢️-|🚫-|⚠️-/i, ''), undefined, { numeric: true }),
   },
 });
 
