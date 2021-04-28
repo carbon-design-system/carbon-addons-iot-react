@@ -3,21 +3,30 @@ name: Test
 on: [push, pull_request]
 
 jobs:
-  test:
-    name: '`yarn test`'
+  test-react:
+    name: Test React
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
       - name: Use Node.js
         uses: actions/setup-node@v1
+        if: steps.changes.outputs.react == 'true'
         with:
           node-version: '14.x'
 
       - name: Cache dependencies
         uses: actions/cache@v2
+        if: steps.changes.outputs.react == 'true'
         with:
           path: |
             node_modules
@@ -25,17 +34,65 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install dependencies
+        if: steps.changes.outputs.react == 'true'
         run: |
           yarn --frozen-lockfile
           yarn lerna run --stream postinstall
           yarn lerna link
 
       - name: Run tests, collect coverage
-        run: yarn test:ci
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd packages/react
+          yarn test:ci
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
+        if: steps.changes.outputs.react == 'true'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: "./packages/react/coverage/lcov.info"
-          base-path: "packages/react"
+          path-to-lcov: './packages/react/coverage/lcov.info'
+          base-path: 'packages/react'
+
+  test-angular:
+    name: Test Angular
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            angular:
+              - 'packages/angular/**'
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        if: steps.changes.outputs.angular == 'true'
+        with:
+          node-version: '14.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        if: steps.changes.outputs.angular == 'true'
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        if: steps.changes.outputs.angular == 'true'
+        run: |
+          yarn --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
+
+      - name: Run tests, collect coverage
+        if: steps.changes.outputs.angular == 'true'
+        run: |
+          cd packages/angular
+          yarn test:ci
