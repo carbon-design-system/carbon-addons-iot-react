@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.64](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.63...v2.145.0-next.64) (2021-04-28)
+
+
+### Bug Fixes
+
+* **emptytable:** update the empty table state for filter usecase ([8ea6420](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8ea64206926a8eff2648cd68fed3d299e5cf5cdb))
+
+
+
+
+
 # [2.145.0-next.63](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.62...v2.145.0-next.63) (2021-04-28)
 
 
