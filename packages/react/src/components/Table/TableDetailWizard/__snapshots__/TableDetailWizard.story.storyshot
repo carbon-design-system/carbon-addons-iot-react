@@ -128,6 +128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Identity"
                       value="Identity"
                     >
                       Identity
@@ -189,6 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="State Model"
                       value="State Model"
                     >
                       State Model
@@ -250,6 +252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Notifications"
                       value="Notifications"
                     >
                       Notifications
@@ -308,6 +311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Final step"
                       value="Final step"
                     >
                       Final step
@@ -516,6 +520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Identity"
                       value="Identity"
                     >
                       Identity
@@ -582,6 +587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="State Model"
                       value="State Model"
                     >
                       State Model
@@ -643,6 +649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Notifications"
                       value="Notifications"
                     >
                       Notifications
@@ -701,6 +708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Final step"
                       value="Final step"
                     >
                       Final step
@@ -920,6 +928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Identity"
                       value="Identity"
                     >
                       Identity
@@ -981,6 +990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="State Model"
                       value="State Model"
                     >
                       State Model
@@ -1042,6 +1052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Notifications"
                       value="Notifications"
                     >
                       Notifications
@@ -1100,6 +1111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Final step"
                       value="Final step"
                     >
                       Final step
