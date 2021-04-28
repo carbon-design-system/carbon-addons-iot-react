@@ -169,6 +169,10 @@
     }
     &--item-end {
       width: 100%;
+
+      .#{$prefix}--number input[type='number'] {
+        padding-right: 0;
+      }
     }
     &--item-dropdown {
       margin-right: $spacing-05;
