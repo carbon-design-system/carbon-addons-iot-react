@@ -391,7 +391,9 @@ Map {
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyMessage": "There is no data",
+        "emptyMessageBody": "",
         "emptyMessageWithFilters": "No results match the current filters",
+        "emptyMessageWithFiltersBody": "Try another search or use column filter criteria",
         "filterAria": "Filter",
         "filterAscending": "Sort rows by this header in ascending order",
         "filterButtonAria": "Filters",
@@ -4580,12 +4582,12 @@ Map {
     "defaultProps": Object {
       "breadcrumb": null,
       "className": null,
-      "collapsed": false,
+      "collapsed": undefined,
       "content": undefined,
       "description": null,
-      "dynamicTransitionOffset": 48,
       "editable": false,
       "extraContent": undefined,
+      "forceContentOutside": false,
       "headerMode": "STATIC",
       "i18n": Object {
         "editIconDescription": "Edit page title",
@@ -4595,7 +4597,9 @@ Map {
       "onEdit": null,
       "rightContent": undefined,
       "stickyHeaderOffset": 48,
+      "style": null,
       "tabs": undefined,
+      "upperActions": undefined,
     },
     "propTypes": Object {
       "breadcrumb": Object {
@@ -4628,14 +4632,14 @@ Map {
         ],
         "type": "oneOfType",
       },
-      "dynamicTransitionOffset": Object {
-        "type": "number",
-      },
       "editable": Object {
         "type": "bool",
       },
       "extraContent": Object {
         "type": "node",
+      },
+      "forceContentOutside": Object {
+        "type": "bool",
       },
       "headerMode": Object {
         "args": Array [
@@ -4668,9 +4672,20 @@ Map {
       "stickyHeaderOffset": Object {
         "type": "number",
       },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
+      },
       "tabs": [Function],
       "title": Object {
         "isRequired": true,
+        "type": "node",
+      },
+      "upperActions": Object {
         "type": "node",
       },
     },
@@ -6676,6 +6691,22 @@ Map {
       "action": Object {
         "args": Array [
           Object {
+            "kind": Object {
+              "args": Array [
+                Array [
+                  "primary",
+                  "secondary",
+                  "danger",
+                  "ghost",
+                  "danger--primary",
+                  "danger--ghost",
+                  "danger--tertiary",
+                  "tertiary",
+                  "icon-selection",
+                ],
+              ],
+              "type": "oneOf",
+            },
             "label": Object {
               "isRequired": true,
               "type": "string",

@@ -2351,6 +2351,9 @@ export const WithPreFilledSearch = withReadme(README, () => {
             },
           },
         }}
+        i18n={{
+          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+        }}
       />
     </>
   );
