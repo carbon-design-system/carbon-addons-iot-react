@@ -1,9 +1,16 @@
 import dayjs from 'dayjs';
-import localizedFormat from 'dayjs/plugin/localizedFormat';
-import utc from 'dayjs/plugin/utc';
-import pluralGetSet from 'dayjs/plugin/pluralGetSet';
-import timezone from 'dayjs/plugin/timezone';
-import localeData from 'dayjs/plugin/localeData';
+
+const localizedFormat = require('dayjs/plugin/localizedFormat');
+const utc = require('dayjs/plugin/utc');
+const pluralGetSet = require('dayjs/plugin/pluralGetSet');
+const timezone = require('dayjs/plugin/timezone');
+const localeData = require('dayjs/plugin/localeData');
+
+dayjs.extend(localizedFormat); // gives the 'L' formatting ability for .format
+dayjs.extend(utc); // gives .utc() and .local()
+dayjs.extend(pluralGetSet); // gives .hour .minute get/set ability
+dayjs.extend(timezone); // timezone support
+dayjs.extend(localeData); // gives local specific data
 
 // dayjs doesn't load locale data automatically, specify locales to include in bundle here
 [
@@ -148,11 +155,5 @@ import localeData from 'dayjs/plugin/localeData';
   // eslint-disable-next-line global-require, import/no-dynamic-require
   require(`dayjs/locale/${locale}`);
 });
-
-dayjs.extend(localizedFormat); // gives the 'L' formatting ability for .format
-dayjs.extend(utc); // gives .utc() and .local()
-dayjs.extend(pluralGetSet); // gives .hour .minute get/set ability
-dayjs.extend(timezone); // timezone support
-dayjs.extend(localeData); // gives local specific data
 
 export default dayjs;
