@@ -52,6 +52,10 @@
     outline: none;
   }
 
+  .#{$iot-prefix}--header__overflow-menu-container {
+    position: relative;
+  }
+
   .#{$prefix}--overflow-menu {
     &:hover {
       background-color: $gray-90;
@@ -71,7 +75,6 @@
       &__btn {
         color: $shell-header-text-02;
         background-color: $gray-90;
-        padding: 0;
         text-decoration: none;
       }
     }

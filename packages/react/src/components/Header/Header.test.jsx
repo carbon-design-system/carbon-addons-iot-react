@@ -331,18 +331,6 @@ describe('Header', () => {
     expect(overflowMenuButton).toBeVisible();
     // Then update the prototype again to return the dimensions of the overflow button
     // and the menu when it's open
-    overflowMenuButton.getBoundingClientRect = () => {
-      return {
-        bottom: 48,
-        height: 48,
-        left: 327,
-        right: 375,
-        top: 0,
-        width: 48,
-        x: 327,
-        y: 0,
-      };
-    };
     Element.prototype.getBoundingClientRect = () => {
       return {
         bottom: 328,
@@ -355,17 +343,41 @@ describe('Header', () => {
         y: 48,
       };
     };
+    overflowMenuButton.getBoundingClientRect = () => {
+      return {
+        bottom: 48,
+        height: 48,
+        left: 327,
+        right: 375,
+        top: 0,
+        width: 48,
+        x: 327,
+        y: 0,
+      };
+    };
+    overflowMenuButton.closest('[data-floating-menu-container]').getBoundingClientRect = () => {
+      return {
+        bottom: 48,
+        height: 48,
+        left: 327,
+        right: 375,
+        top: 0,
+        width: 48,
+        x: 327,
+        y: 0,
+      };
+    };
     userEvent.click(overflowMenuButton);
     expect(screen.getByText('Watson')).toBeVisible();
-    expect(screen.getByLabelText('Custom icon 1')).toBeVisible();
+    expect(screen.getByText('Custom icon 1')).toBeVisible();
     userEvent.click(screen.getByRole('button', { name: 'help' }));
     expect(screen.getByText('This is a link')).toBeVisible();
     userEvent.click(screen.getByRole('button', { name: 'help' }));
-    expect(screen.queryByLabelText('Custom icon 1')).toBeNull();
+    expect(screen.queryByText('Custom icon 1')).toBeNull();
     userEvent.click(screen.getByLabelText('open and close list of options'));
-    expect(screen.getByLabelText('Custom icon 1')).toBeVisible();
+    expect(screen.getByText('Custom icon 1')).toBeVisible();
     userEvent.click(screen.getAllByLabelText('open and close list of options')[0]);
-    expect(screen.queryByLabelText('Custom icon 1')).toBeNull();
+    expect(screen.queryByText('Custom icon 1')).toBeNull();
     HTMLElement.prototype.getBoundingClientRect = originalBounding;
   });
 });

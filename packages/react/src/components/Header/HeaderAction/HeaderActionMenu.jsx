@@ -46,15 +46,12 @@ class HeaderActionMenu extends React.Component {
     label: PropTypes.string.isRequired,
     /** MenuItem's to be rendered as children */
     childContent: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)).isRequired,
-    /** is this item being rendered in the overflow menu */
-    inOverflow: PropTypes.bool,
   };
 
   static defaultProps = {
     renderMenuContent: defaultRenderMenuContent,
     isExpanded: false,
     tabIndex: null,
-    inOverflow: false,
   };
 
   render() {
@@ -70,7 +67,6 @@ class HeaderActionMenu extends React.Component {
       label,
       focusRef,
       isExpanded,
-      inOverflow,
     } = this.props;
 
     const accessibilityLabel = {
@@ -83,7 +79,7 @@ class HeaderActionMenu extends React.Component {
     // Prevents the a element from navigating to it's href target
     const handleDefaultClick = (event) => {
       event.preventDefault();
-      onToggleExpansion(event);
+      onToggleExpansion();
     };
 
     // Notes on eslint comments and based on the examples in:
@@ -110,7 +106,7 @@ class HeaderActionMenu extends React.Component {
           aria-label={ariaLabel}
           role="menuitem"
         >
-          {inOverflow ? label : <MenuContent ariaLabel={ariaLabel} />}
+          <MenuContent ariaLabel={ariaLabel} />
         </a>
         <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">
           {childContent.map((childItem, index) => (
