@@ -27,93 +27,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="page-title-bar"
+            style={
+              Object {
+                "--header-offset": "48px",
+                "--scroll-transition-progress": 1,
+              }
+            }
           >
             <div
               className="page-title-bar-header"
-              style={
-                Object {
-                  "--header-offset": "48px",
-                }
-              }
             >
               <div
-                className="page-title-bar-header-left"
+                className="page-title-bar-breadcrumb-bg"
+              />
+              <div
+                className="page-title-bar-breadcrumb breadcrumb--container"
+              >
+                <nav
+                  aria-label="Breadcrumb"
+                >
+                  <ol
+                    className="bx--breadcrumb"
+                  >
+                    <li
+                      className="bx--breadcrumb-item"
+                    >
+                      <a
+                        className="bx--link bx--link"
+                        href="www.ibm.com"
+                        rel={null}
+                      >
+                        Dashboard library
+                      </a>
+                    </li>
+                    <li
+                      className="bx--breadcrumb-item"
+                    >
+                      <a
+                        className="bx--link bx--link"
+                        href="www.ibm.com"
+                        rel={null}
+                      >
+                        Favorites
+                      </a>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+              <div
+                className="page-title-bar-title"
               >
                 <div
-                  className="page-title-bar-breadcrumb"
+                  className="page-title-bar-title--text"
                 >
-                  <nav
-                    aria-label="Breadcrumb"
+                  <h2
+                    title="Custom dashboard"
                   >
-                    <ol
-                      className="bx--breadcrumb"
-                    >
-                      <li
-                        className="bx--breadcrumb-item"
-                      >
-                        <a
-                          className="bx--link bx--link"
-                          href="www.ibm.com"
-                          rel={null}
-                        >
-                          Dashboard library
-                        </a>
-                      </li>
-                      <li
-                        className="bx--breadcrumb-item"
-                      >
-                        <a
-                          className="bx--link bx--link"
-                          href="www.ibm.com"
-                          rel={null}
-                        >
-                          Favorites
-                        </a>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
-                <div
-                  className="page-title-bar-title"
-                >
-                  <div
-                    className="page-title-bar-title--text"
+                    Custom dashboard
+                  </h2>
+                  <button
+                    className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                    data-testid="Button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
                   >
-                    <h2>
-                      Custom dashboard
-                    </h2>
-                    <button
-                      className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                      data-testid="Button"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <span
+                      className="bx--assistive-text"
                     >
-                      <span
-                        className="bx--assistive-text"
-                      >
-                        Edit title
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Edit title"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={20}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
+                      Edit title
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Edit title"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
               <div
@@ -2901,93 +2903,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <div
           className="page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-breadcrumb breadcrumb--container"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Dashboard library
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Favorites
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-breadcrumb"
+                className="page-title-bar-title--text"
               >
-                <nav
-                  aria-label="Breadcrumb"
+                <h2
+                  title="Custom dashboard"
                 >
-                  <ol
-                    className="bx--breadcrumb"
-                  >
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Dashboard library
-                      </a>
-                    </li>
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Favorites
-                      </a>
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
+                  Custom dashboard
+                </h2>
+                <button
+                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
                 >
-                  <h2>
-                    Custom dashboard
-                  </h2>
-                  <button
-                    className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                    data-testid="Button"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
+                  <span
+                    className="bx--assistive-text"
                   >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Edit title
-                    </span>
-                    <svg
-                      aria-hidden="true"
-                      aria-label="Edit title"
-                      className="bx--btn__icon"
-                      fill="currentColor"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                    Edit title
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Edit title"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
             <div
@@ -5677,93 +5681,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <div
           className="page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-breadcrumb breadcrumb--container"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Dashboard library
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Favorites
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-breadcrumb"
+                className="page-title-bar-title--text"
               >
-                <nav
-                  aria-label="Breadcrumb"
+                <h2
+                  title="My dashboard"
                 >
-                  <ol
-                    className="bx--breadcrumb"
-                  >
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Dashboard library
-                      </a>
-                    </li>
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Favorites
-                      </a>
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
+                  My dashboard
+                </h2>
+                <button
+                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
                 >
-                  <h2>
-                    My dashboard
-                  </h2>
-                  <button
-                    className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                    data-testid="Button"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
+                  <span
+                    className="bx--assistive-text"
                   >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Edit title updated
-                    </span>
-                    <svg
-                      aria-hidden="true"
-                      aria-label="Edit title updated"
-                      className="bx--btn__icon"
-                      fill="currentColor"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                    Edit title updated
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Edit title updated"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
             <div
@@ -7903,93 +7909,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <div
           className="page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-breadcrumb breadcrumb--container"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Dashboard library
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Favorites
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-breadcrumb"
+                className="page-title-bar-title--text"
               >
-                <nav
-                  aria-label="Breadcrumb"
+                <h2
+                  title="My dashboard"
                 >
-                  <ol
-                    className="bx--breadcrumb"
-                  >
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Dashboard library
-                      </a>
-                    </li>
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Favorites
-                      </a>
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
+                  My dashboard
+                </h2>
+                <button
+                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
                 >
-                  <h2>
-                    My dashboard
-                  </h2>
-                  <button
-                    className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                    data-testid="Button"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
+                  <span
+                    className="bx--assistive-text"
                   >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      headerEditTitleButton
-                    </span>
-                    <svg
-                      aria-hidden="true"
-                      aria-label="headerEditTitleButton"
-                      className="bx--btn__icon"
-                      fill="currentColor"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                    headerEditTitleButton
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="headerEditTitleButton"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
             <div
@@ -10254,93 +10262,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="page-title-bar"
+            style={
+              Object {
+                "--header-offset": "48px",
+                "--scroll-transition-progress": 1,
+              }
+            }
           >
             <div
               className="page-title-bar-header"
-              style={
-                Object {
-                  "--header-offset": "48px",
-                }
-              }
             >
               <div
-                className="page-title-bar-header-left"
+                className="page-title-bar-breadcrumb-bg"
+              />
+              <div
+                className="page-title-bar-breadcrumb breadcrumb--container"
+              >
+                <nav
+                  aria-label="Breadcrumb"
+                >
+                  <ol
+                    className="bx--breadcrumb"
+                  >
+                    <li
+                      className="bx--breadcrumb-item"
+                    >
+                      <a
+                        className="bx--link bx--link"
+                        href="www.ibm.com"
+                        rel={null}
+                      >
+                        Dashboard library
+                      </a>
+                    </li>
+                    <li
+                      className="bx--breadcrumb-item"
+                    >
+                      <a
+                        className="bx--link bx--link"
+                        href="www.ibm.com"
+                        rel={null}
+                      >
+                        Favorites
+                      </a>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+              <div
+                className="page-title-bar-title"
               >
                 <div
-                  className="page-title-bar-breadcrumb"
+                  className="page-title-bar-title--text"
                 >
-                  <nav
-                    aria-label="Breadcrumb"
+                  <h2
+                    title="My dashboard"
                   >
-                    <ol
-                      className="bx--breadcrumb"
-                    >
-                      <li
-                        className="bx--breadcrumb-item"
-                      >
-                        <a
-                          className="bx--link bx--link"
-                          href="www.ibm.com"
-                          rel={null}
-                        >
-                          Dashboard library
-                        </a>
-                      </li>
-                      <li
-                        className="bx--breadcrumb-item"
-                      >
-                        <a
-                          className="bx--link bx--link"
-                          href="www.ibm.com"
-                          rel={null}
-                        >
-                          Favorites
-                        </a>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
-                <div
-                  className="page-title-bar-title"
-                >
-                  <div
-                    className="page-title-bar-title--text"
+                    My dashboard
+                  </h2>
+                  <button
+                    className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                    data-testid="Button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
                   >
-                    <h2>
-                      My dashboard
-                    </h2>
-                    <button
-                      className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                      data-testid="Button"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <span
+                      className="bx--assistive-text"
                     >
-                      <span
-                        className="bx--assistive-text"
-                      >
-                        Edit title
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Edit title"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={20}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
+                      Edit title
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Edit title"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
               <div
@@ -11627,93 +11637,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <div
           className="page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-breadcrumb breadcrumb--container"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Dashboard library
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Favorites
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-breadcrumb"
+                className="page-title-bar-title--text"
               >
-                <nav
-                  aria-label="Breadcrumb"
+                <h2
+                  title="Custom dashboard"
                 >
-                  <ol
-                    className="bx--breadcrumb"
-                  >
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Dashboard library
-                      </a>
-                    </li>
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Favorites
-                      </a>
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
+                  Custom dashboard
+                </h2>
+                <button
+                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
                 >
-                  <h2>
-                    Custom dashboard
-                  </h2>
-                  <button
-                    className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                    data-testid="Button"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
+                  <span
+                    className="bx--assistive-text"
                   >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Edit title
-                    </span>
-                    <svg
-                      aria-hidden="true"
-                      aria-label="Edit title"
-                      className="bx--btn__icon"
-                      fill="currentColor"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                    Edit title
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Edit title"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
             <div
@@ -12976,93 +12988,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <div
           className="page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-breadcrumb breadcrumb--container"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Dashboard library
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Favorites
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-breadcrumb"
+                className="page-title-bar-title--text"
               >
-                <nav
-                  aria-label="Breadcrumb"
+                <h2
+                  title="Custom dashboard"
                 >
-                  <ol
-                    className="bx--breadcrumb"
-                  >
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Dashboard library
-                      </a>
-                    </li>
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Favorites
-                      </a>
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
+                  Custom dashboard
+                </h2>
+                <button
+                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
                 >
-                  <h2>
-                    Custom dashboard
-                  </h2>
-                  <button
-                    className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                    data-testid="Button"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
+                  <span
+                    className="bx--assistive-text"
                   >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Edit title
-                    </span>
-                    <svg
-                      aria-hidden="true"
-                      aria-label="Edit title"
-                      className="bx--btn__icon"
-                      fill="currentColor"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                    Edit title
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Edit title"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
             <div
@@ -15896,93 +15910,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <div
           className="page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-breadcrumb breadcrumb--container"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Dashboard library
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      href="www.ibm.com"
+                      rel={null}
+                    >
+                      Favorites
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-breadcrumb"
+                className="page-title-bar-title--text"
               >
-                <nav
-                  aria-label="Breadcrumb"
+                <h2
+                  title="My dashboard"
                 >
-                  <ol
-                    className="bx--breadcrumb"
-                  >
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Dashboard library
-                      </a>
-                    </li>
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link bx--link"
-                        href="www.ibm.com"
-                        rel={null}
-                      >
-                        Favorites
-                      </a>
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
+                  My dashboard
+                </h2>
+                <button
+                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
                 >
-                  <h2>
-                    My dashboard
-                  </h2>
-                  <button
-                    className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-                    data-testid="Button"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
+                  <span
+                    className="bx--assistive-text"
                   >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Edit title
-                    </span>
-                    <svg
-                      aria-hidden="true"
-                      aria-label="Edit title"
-                      className="bx--btn__icon"
-                      fill="currentColor"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                    Edit title
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Edit title"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
             <div

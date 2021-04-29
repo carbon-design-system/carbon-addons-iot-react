@@ -4582,12 +4582,12 @@ Map {
     "defaultProps": Object {
       "breadcrumb": null,
       "className": null,
-      "collapsed": false,
+      "collapsed": undefined,
       "content": undefined,
       "description": null,
-      "dynamicTransitionOffset": 48,
       "editable": false,
       "extraContent": undefined,
+      "forceContentOutside": false,
       "headerMode": "STATIC",
       "i18n": Object {
         "editIconDescription": "Edit page title",
@@ -4597,7 +4597,9 @@ Map {
       "onEdit": null,
       "rightContent": undefined,
       "stickyHeaderOffset": 48,
+      "style": null,
       "tabs": undefined,
+      "upperActions": undefined,
     },
     "propTypes": Object {
       "breadcrumb": Object {
@@ -4630,14 +4632,14 @@ Map {
         ],
         "type": "oneOfType",
       },
-      "dynamicTransitionOffset": Object {
-        "type": "number",
-      },
       "editable": Object {
         "type": "bool",
       },
       "extraContent": Object {
         "type": "node",
+      },
+      "forceContentOutside": Object {
+        "type": "bool",
       },
       "headerMode": Object {
         "args": Array [
@@ -4670,9 +4672,20 @@ Map {
       "stickyHeaderOffset": Object {
         "type": "number",
       },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
+      },
       "tabs": [Function],
       "title": Object {
         "isRequired": true,
+        "type": "node",
+      },
+      "upperActions": Object {
         "type": "node",
       },
     },
