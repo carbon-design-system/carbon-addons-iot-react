@@ -7314,6 +7314,9 @@ Map {
       "prefix": Object {
         "type": "string",
       },
+      "shortAppName": Object {
+        "type": "string",
+      },
       "skipto": Object {
         "type": "string",
       },

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
 import classnames from 'classnames';
 import { HeaderGlobalAction, HeaderPanel } from 'carbon-components-react/es/components/UIShell';
+import { Close16 } from '@carbon/icons-react';
 
 import { APP_SWITCHER } from '../Header';
 
@@ -33,7 +34,14 @@ const defaultProps = {
  * It has no local state.
  * It calls the onToggleExpansion when it should be opened or closed
  */
-const HeaderActionPanel = ({ item, index, onToggleExpansion, isExpanded, focusRef }) => {
+const HeaderActionPanel = ({
+  item,
+  index,
+  onToggleExpansion,
+  isExpanded,
+  focusRef,
+  inOverflow,
+}) => {
   return (
     <>
       <HeaderGlobalAction
@@ -46,7 +54,13 @@ const HeaderActionPanel = ({ item, index, onToggleExpansion, isExpanded, focusRe
         onClick={() => onToggleExpansion()}
         ref={focusRef}
       >
-        {item.btnContent}
+        {inOverflow ? (
+          item.label
+        ) : isExpanded ? (
+          <Close16 fill="white" description="close-icon" />
+        ) : (
+          item.btnContent
+        )}
       </HeaderGlobalAction>
       <HeaderPanel
         data-testid="action-btn__panel"

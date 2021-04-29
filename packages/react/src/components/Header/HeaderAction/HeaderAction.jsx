@@ -3,6 +3,7 @@ import { settings } from 'carbon-components';
 import { HeaderGlobalAction } from 'carbon-components-react/es/components/UIShell';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { Close16 } from '@carbon/icons-react';
 
 import { keyCodes } from '../../../constants/KeyCodeConstants';
 import { HeaderActionItemPropTypes } from '../Header';
@@ -19,10 +20,22 @@ export const HeaderActionPropTypes = {
   index: PropTypes.number.isRequired,
   /** Id that can be used for testing */
   testID: PropTypes.string,
+
+  /** is this action item rendered in the overflow menu */
+  inOverflow: PropTypes.bool,
+
+  /** should this action item be expanded by default */
+  defaultExpanded: PropTypes.bool,
+
+  /** a callback to trigger when the item is closed. used to managing icons for the overflow menu */
+  onClose: PropTypes.func,
 };
 
 const defaultProps = {
   testID: 'header-action',
+  inOverflow: false,
+  defaultExpanded: false,
+  onClose: null,
 };
 
 /**
@@ -34,14 +47,19 @@ const defaultProps = {
  * Consists of nav buttons that can be clicked to perform actions, open header panels (side panels),
  * or dropdown menus
  */
-const HeaderAction = ({ item, index, testID }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const HeaderAction = ({ item, index, testID, inOverflow, defaultExpanded, onClose }) => {
+  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const parentContainerRef = useRef(null);
   const menuButtonRef = useRef(null);
 
   // expanded state for HeaderAction dropdowns
   const toggleExpandedState = () => {
-    setIsExpanded((state) => !state);
+    setIsExpanded((state) => {
+      if (state && typeof onClose === 'function') {
+        onClose();
+      }
+      return !state;
+    });
   };
 
   /**
@@ -94,6 +112,7 @@ const HeaderAction = ({ item, index, testID }) => {
             isExpanded={isExpanded}
             ref={menuButtonRef}
             index={index}
+            inOverflow={inOverflow}
           />
         ) : (
           // otherwise render a submenu type dropdown
@@ -101,7 +120,9 @@ const HeaderAction = ({ item, index, testID }) => {
             className={`${carbonPrefix}--header-action-btn`}
             key={`menu-item-${item.label}`}
             aria-label={item.label}
-            renderMenuContent={() => item.btnContent}
+            renderMenuContent={() =>
+              isExpanded ? <Close16 fill="white" description="close-icon" /> : item.btnContent
+            }
             menuLinkName={item.menuLinkName ? item.menuLinkName : ''}
             isExpanded={isExpanded}
             ref={menuButtonRef}
@@ -109,6 +130,7 @@ const HeaderAction = ({ item, index, testID }) => {
             label={item.label}
             data-testid={testID}
             title={item.label}
+            inOverflow={inOverflow}
             childContent={item.childContent}
           />
         )}
@@ -125,7 +147,7 @@ const HeaderAction = ({ item, index, testID }) => {
       aria-label={item.label}
       onClick={item.onClick || (() => {})}
     >
-      {item.btnContent}
+      {inOverflow ? item.label : item.btnContent}
     </HeaderGlobalAction>
   );
 };

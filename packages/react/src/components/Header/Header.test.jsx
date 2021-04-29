@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { User20, Help20 } from '@carbon/icons-react';
+import { User20, Help20, Checkbox16 } from '@carbon/icons-react';
+import userEvent from '@testing-library/user-event';
 
 import { keyCodes } from '../../constants/KeyCodeConstants';
 
@@ -284,5 +285,87 @@ describe('Header', () => {
     const menuItem = screen.getByLabelText('user');
     fireEvent.click(menuItem);
     expect(screen.getByLabelText('user')).toBeTruthy();
+  });
+
+  it('should move icons into overflow menu when area too small', () => {
+    Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 375 });
+    const originalBounding = Element.prototype.getBoundingClientRect;
+    // first we make sure right is higher than window width on the prototype
+    // this ensure the checks in the header trigger the overflow menu to be present.
+    Element.prototype.getBoundingClientRect = () => {
+      return {
+        right: 400,
+      };
+    };
+    render(
+      <Header
+        {...HeaderProps}
+        actionItems={[
+          {
+            label: 'Announcements',
+            onClick: jest.fn(),
+            btnContent: <Checkbox16 fill="white" description="Announcements" />,
+          },
+          {
+            label: 'Custom icon 1',
+            onClick: jest.fn(),
+            btnContent: <Checkbox16 fill="white" description="icon" />,
+          },
+          {
+            label: 'Custom icon 2',
+            onClick: jest.fn(),
+            btnContent: <Checkbox16 fill="white" description="icon" />,
+          },
+          {
+            label: 'Custom icon 3',
+            onClick: jest.fn(),
+            btnContent: <Checkbox16 fill="white" description="icon" />,
+          },
+          ...HeaderProps.actionItems,
+        ]}
+        shortAppName="Watson"
+        subtitle="Manage"
+      />
+    );
+    const overflowMenuButton = screen.getByLabelText('open and close list of options');
+    expect(overflowMenuButton).toBeVisible();
+    // Then update the prototype again to return the dimensions of the overflow button
+    // and the menu when it's open
+    overflowMenuButton.getBoundingClientRect = () => {
+      return {
+        bottom: 48,
+        height: 48,
+        left: 327,
+        right: 375,
+        top: 0,
+        width: 48,
+        x: 327,
+        y: 0,
+      };
+    };
+    Element.prototype.getBoundingClientRect = () => {
+      return {
+        bottom: 328,
+        height: 280,
+        left: 215,
+        right: 375,
+        top: 48,
+        width: 160,
+        x: 215,
+        y: 48,
+      };
+    };
+    userEvent.click(overflowMenuButton);
+    expect(screen.getByText('Watson')).toBeVisible();
+    expect(screen.getByLabelText('Custom icon 1')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'help' }));
+    expect(screen.getByText('This is a link')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'help' }));
+    expect(screen.queryByLabelText('Custom icon 1')).toBeNull();
+    userEvent.click(screen.getByLabelText('open and close list of options'));
+    expect(screen.getByLabelText('Custom icon 1')).toBeVisible();
+    userEvent.click(screen.getAllByLabelText('open and close list of options')[0]);
+    expect(screen.queryByLabelText('Custom icon 1')).toBeNull();
+    HTMLElement.prototype.getBoundingClientRect = originalBounding;
   });
 });
