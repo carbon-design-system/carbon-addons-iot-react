@@ -199,7 +199,7 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
           })
           .forEach((dataItem) => {
             // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
-            if (dataItem[dataSourceId]) {
+            if (!isNil(dataItem[dataSourceId])) {
               data.push({
                 date:
                   dataItem[timeDataSourceId] instanceof Date

@@ -3,6 +3,9 @@ import sizeMe from 'react-sizeme';
 
 sizeMe.noPlaceholders = true;
 
+// Settings
+export { settings } from './constants/Settings';
+
 // Components
 export AddCard from './components/AddCard';
 export Button from './components/Button';
@@ -112,6 +115,7 @@ export HotspotEditorTooltipTab from './components/HotspotEditorModal/HotspotEdit
 export HotspotTextStyleTab from './components/HotspotEditorModal/HotspotTextStyleTab/HotspotTextStyleTab';
 export DynamicHotspotSourcePicker from './components/HotspotEditorModal/DynamicHotspotSourcePicker/DynamicHotspotSourcePicker';
 export ComboChartCard from './components/ComboChartCard/ComboChartCard';
+export MenuButton from './components/MenuButton/MenuButton';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';

@@ -233,6 +233,7 @@ export const WithInitialValue = () => (
           title: 'Custom rendered card',
           type: 'CUSTOM',
           size: 'MEDIUM',
+          content: () => 'custom content function',
           value: 35,
         },
         {
@@ -850,6 +851,11 @@ export const CustomCardPreviewRenderer = () => (
             property on the card will be rendered here:
             <h3>{cardConfig.value}</h3>
           </div>
+
+          {
+            // if you want the resizable handles you need to render the children
+            cardProps.children
+          }
         </Card>
       ) : undefined;
     }}

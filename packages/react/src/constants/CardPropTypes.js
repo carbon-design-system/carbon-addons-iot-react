@@ -328,7 +328,7 @@ export const BarChartCardPropTypes = {
       } // all charts must have oneOf[categoryDataSourceId, timeDataSourceId]
       else if (!props[propName] && !props.timeDataSourceId) {
         error = new Error(
-          `\`${componentName}\` must have \`${props[propName]}\` OR \`timeDataSourceId\`.`
+          `\`${componentName}\` must have \`${propName}\` OR \`timeDataSourceId\`.`
         );
       }
       return error;

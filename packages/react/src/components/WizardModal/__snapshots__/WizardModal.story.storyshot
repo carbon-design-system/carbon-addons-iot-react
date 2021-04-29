@@ -16,7 +16,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -135,6 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step1"
                     value="step1"
                   >
                     step1
@@ -190,6 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step2"
                     value="step2"
                   >
                     step2
@@ -242,6 +243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step3"
                     value="step3"
                   >
                     step3
@@ -338,7 +340,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -457,6 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step1"
                     value="step1"
                   >
                     step1
@@ -512,6 +514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step2"
                     value="step2"
                   >
                     step2
@@ -564,6 +567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step3"
                     value="step3"
                   >
                     step3
@@ -667,7 +671,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -776,6 +779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step1"
                     value="step1"
                   >
                     step1
@@ -826,6 +830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step2"
                     value="step2"
                   >
                     step2
@@ -883,6 +888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step3"
                     value="step3"
                   >
                     step3

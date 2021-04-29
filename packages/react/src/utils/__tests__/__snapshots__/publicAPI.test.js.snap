@@ -2,6 +2,22 @@
 
 exports[`Public API should only change with a semver change 1`] = `
 Map {
+  "settings" => Object {
+    "iotPrefix": "iot",
+    "prefix": "bx",
+    "selectorFocusable": "
+    a[href], area[href], input:not([disabled]),
+    button:not([disabled]),select:not([disabled]),
+    textarea:not([disabled]),
+    iframe, object, embed, *[tabindex], *[contenteditable=true]
+  ",
+    "selectorTabbable": "
+    a[href], area[href], input:not([disabled]):not([tabindex='-1']),
+    button:not([disabled]):not([tabindex='-1']),select:not([disabled]):not([tabindex='-1']),
+    textarea:not([disabled]):not([tabindex='-1']),
+    iframe, object, embed, *[tabindex]:not([tabindex='-1']), *[contenteditable=true]
+  ",
+  },
   "AddCard" => Object {
     "propTypes": Object {
       "onClick": Object {
@@ -15,6 +31,7 @@ Map {
     },
   },
   "Button" => Object {
+    "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
       "children": null,
       "className": null,
@@ -71,6 +88,7 @@ Map {
         "type": "string",
       },
     },
+    "render": [Function],
   },
   "Breadcrumb" => Object {
     "defaultProps": Object {
@@ -375,7 +393,9 @@ Map {
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyMessage": "There is no data",
+        "emptyMessageBody": "",
         "emptyMessageWithFilters": "No results match the current filters",
+        "emptyMessageWithFiltersBody": "Try another search or use column filter criteria",
         "filterAria": "Filter",
         "filterAscending": "Sort rows by this header in ascending order",
         "filterButtonAria": "Filters",
@@ -694,6 +714,9 @@ Map {
                 },
                 "sortFunction": Object {
                   "type": "func",
+                },
+                "tooltip": Object {
+                  "type": "string",
                 },
                 "width": Object {
                   "type": "string",
@@ -1714,6 +1737,9 @@ Map {
                 "sortFunction": Object {
                   "type": "func",
                 },
+                "tooltip": Object {
+                  "type": "string",
+                },
                 "width": Object {
                   "type": "string",
                 },
@@ -2190,6 +2216,9 @@ Map {
                 },
                 "sortFunction": Object {
                   "type": "func",
+                },
+                "tooltip": Object {
+                  "type": "string",
                 },
                 "width": Object {
                   "type": "string",
@@ -2974,6 +3003,15 @@ Map {
               "type": "string",
             },
             "prevPageText": Object {
+              "type": "string",
+            },
+            "testID": Object {
+              "type": "string",
+            },
+            "totalItems": Object {
+              "type": "number",
+            },
+            "totalItemsText": Object {
               "type": "string",
             },
           },
@@ -4150,6 +4188,9 @@ Map {
       "pageOfPagesText": [Function],
       "pageText": null,
       "prevPageText": "Prev page",
+      "testID": "iot-simple-pagination",
+      "totalItems": undefined,
+      "totalItemsText": "Items",
     },
     "propTypes": Object {
       "maxPage": Object {
@@ -4174,6 +4215,15 @@ Map {
         "type": "string",
       },
       "prevPageText": Object {
+        "type": "string",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "totalItems": Object {
+        "type": "number",
+      },
+      "totalItemsText": Object {
         "type": "string",
       },
     },
@@ -4534,12 +4584,12 @@ Map {
     "defaultProps": Object {
       "breadcrumb": null,
       "className": null,
-      "collapsed": false,
+      "collapsed": undefined,
       "content": undefined,
       "description": null,
-      "dynamicTransitionOffset": 48,
       "editable": false,
       "extraContent": undefined,
+      "forceContentOutside": false,
       "headerMode": "STATIC",
       "i18n": Object {
         "editIconDescription": "Edit page title",
@@ -4549,7 +4599,9 @@ Map {
       "onEdit": null,
       "rightContent": undefined,
       "stickyHeaderOffset": 48,
+      "style": null,
       "tabs": undefined,
+      "upperActions": undefined,
     },
     "propTypes": Object {
       "breadcrumb": Object {
@@ -4582,14 +4634,14 @@ Map {
         ],
         "type": "oneOfType",
       },
-      "dynamicTransitionOffset": Object {
-        "type": "number",
-      },
       "editable": Object {
         "type": "bool",
       },
       "extraContent": Object {
         "type": "node",
+      },
+      "forceContentOutside": Object {
+        "type": "bool",
       },
       "headerMode": Object {
         "args": Array [
@@ -4622,9 +4674,20 @@ Map {
       "stickyHeaderOffset": Object {
         "type": "number",
       },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
+      },
       "tabs": [Function],
       "title": Object {
         "isRequired": true,
+        "type": "node",
+      },
+      "upperActions": Object {
         "type": "node",
       },
     },
@@ -4838,6 +4901,7 @@ Map {
     "defaultProps": Object {
       "content": Object {
         "layout": "VERTICAL",
+        "legendPosition": "bottom",
         "series": Array [],
         "truncation": Object {
           "numCharacter": 20,
@@ -5962,6 +6026,7 @@ Map {
         },
       ],
       "renderPresetTooltipText": null,
+      "showCustomRangeLink": true,
       "showRelativeOption": true,
       "testId": "date-time-picker",
     },
@@ -6262,6 +6327,9 @@ Map {
       },
       "renderPresetTooltipText": Object {
         "type": "func",
+      },
+      "showCustomRangeLink": Object {
+        "type": "bool",
       },
       "showRelativeOption": Object {
         "type": "bool",
@@ -6625,6 +6693,22 @@ Map {
       "action": Object {
         "args": Array [
           Object {
+            "kind": Object {
+              "args": Array [
+                Array [
+                  "primary",
+                  "secondary",
+                  "danger",
+                  "ghost",
+                  "danger--primary",
+                  "danger--ghost",
+                  "danger--tertiary",
+                  "tertiary",
+                  "icon-selection",
+                ],
+              ],
+              "type": "oneOf",
+            },
             "label": Object {
               "isRequired": true,
               "type": "string",
@@ -9046,6 +9130,7 @@ Map {
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
         "searchPlaceHolderText": "Enter a value",
+        "selectAGroupBy": "Select a group by",
       },
       "initialValue": Object {
         "cards": Array [],
@@ -9056,6 +9141,7 @@ Map {
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
       "isSummaryDashboard": false,
+      "locale": "en",
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -9591,6 +9677,9 @@ Map {
       },
       "isSummaryDashboard": Object {
         "type": "bool",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "notification": Object {
         "type": "node",
@@ -12904,6 +12993,7 @@ Map {
       "content": Object {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
+        "legendPosition": "bottom",
         "series": Array [],
         "showLegend": true,
         "timeDataSourceId": "timestamp",
@@ -13422,6 +13512,9 @@ Map {
             },
             "includeZeroOnYaxis": Object {
               "type": "bool",
+            },
+            "legendPosition": Object {
+              "type": "string",
             },
             "series": Object {
               "args": Array [
@@ -18301,6 +18394,15 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
+            "testID": Object {
+              "type": "string",
+            },
+            "totalItems": Object {
+              "type": "number",
+            },
+            "totalItemsText": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -18779,6 +18881,7 @@ Map {
       "defaultOpen": false,
       "direction": "bottom-start",
       "disabled": false,
+      "hideTooltip": true,
       "i18n": Object {
         "applyButtonText": "Apply",
         "cancelButtonText": "Cancel",
@@ -18843,6 +18946,9 @@ Map {
         "type": "oneOf",
       },
       "disabled": Object {
+        "type": "bool",
+      },
+      "hideTooltip": Object {
         "type": "bool",
       },
       "i18n": Object {
@@ -20515,6 +20621,81 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+    },
+  },
+  "MenuButton" => Object {
+    "defaultProps": Object {
+      "closeIconDescription": "close menu button",
+      "label": null,
+      "onPrimaryActionClick": null,
+      "openIconDescription": "open menu button",
+      "renderCloseIcon": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "renderOpenIcon": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "testID": "menu-button",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "isRequired": true,
+        "type": "oneOfType",
+      },
+      "closeIconDescription": [Function],
+      "label": Object {
+        "type": "string",
+      },
+      "onPrimaryActionClick": Object {
+        "type": "func",
+      },
+      "openIconDescription": [Function],
+      "renderCloseIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "renderOpenIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "testID": Object {
+        "type": "string",
       },
     },
   },
