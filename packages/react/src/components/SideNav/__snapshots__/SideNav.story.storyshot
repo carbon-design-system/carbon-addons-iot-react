@@ -430,35 +430,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
       >
         <div
           className="page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-title"
+                className="page-title-bar-title--text"
               >
-                <div
-                  className="page-title-bar-title--text"
+                <h2
+                  title="Title"
                 >
-                  <h2>
-                    Title
-                  </h2>
-                </div>
+                  Title
+                </h2>
               </div>
-              <p
-                className="page-title-bar-description"
-              >
-                Description
-              </p>
             </div>
+            <p
+              className="page-title-bar-description"
+            >
+              Description
+            </p>
+            <div
+              className="page-title-bar-header-right"
+            />
           </div>
         </div>
       </div>
