@@ -50,12 +50,13 @@ describe('EmptyTable', () => {
         isFiltered
         emptyState={{
           message: 'I am empty',
+          messageWithFilters: 'I am filter',
           buttonLabelWithFilters: 'clickmyfilters',
         }}
         onEmptyStateAction={mockEmptyStateAction}
       />
     );
-    expect(screen.queryAllByText('I am empty')).toHaveLength(1);
+    expect(screen.queryAllByText('I am filter')).toHaveLength(1);
     expect(screen.queryAllByText('clickmyfilters')).toHaveLength(1);
     fireEvent.click(screen.getByText('clickmyfilters'));
     expect(mockEmptyStateAction).toHaveBeenCalled();
