@@ -37,18 +37,15 @@ const mockItems = [
 
 test('simulate onClick on isClickable', () => {
   render(<ProgressIndicator items={mockItems} isClickable />);
-  const beforeClick = screen.getByTitle('First Step').children[0];
-  // screen.debug(beforeClick);
+  const beforeClick = screen.getAllByTitle('First Step')[0].children[0];
   screen.getByTestId('iot--progress-step-button-main-second-step').click();
-  // const afterClick = screen.getByTitle('First Step').children[0];
-  // screen.debug(afterClick);
-  expect(screen.getByTitle('First Step').children[0]).not.toContain(beforeClick);
+  expect(screen.getAllByTitle('First Step')[0].children[0]).not.toContain(beforeClick);
 });
 
 test('check last number of step', () => {
   render(<ProgressIndicator items={mockItems} />);
   // Check if last step is number 5
-  expect(screen.getByTitle('Fifth Step').children[0].textContent).toEqual('5');
+  expect(screen.getAllByTitle('Fifth Step')[0].children[0].textContent).toEqual('5');
 });
 
 test('handleChange', () => {
