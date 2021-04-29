@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip autopositioning example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip autopositioning example 1`] = `
 <div
   className="storybook-container"
 >
@@ -521,7 +521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip default (bottom) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip default (bottom) 1`] = `
 <div
   className="storybook-container"
 >
@@ -611,7 +611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip no icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip no icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -678,7 +678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip only custom icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip only custom icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -776,7 +776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip render custom icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip render custom icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -865,7 +865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip uncontrolled tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip uncontrolled tooltip 1`] = `
 <div
   className="storybook-container"
 >

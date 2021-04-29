@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew Base with col / row specified 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Base with col / row specified 1`] = `
 <div
   className="storybook-container"
 >
@@ -375,7 +375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew Dynamic resize with tile width specification 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Dynamic resize with tile width specification 1`] = `
 <div
   className="storybook-container"
 >
@@ -645,7 +645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew Error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Error 1`] = `
 <div
   className="storybook-container"
 >
@@ -849,7 +849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew Get Tiles 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Get Tiles 1`] = `
 <div
   className="storybook-container"
 >
@@ -902,7 +902,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew Loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Loading 1`] = `
 <div
   className="storybook-container"
 >
@@ -1130,7 +1130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew StatefulTileCatalog 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew StatefulTileCatalog 1`] = `
 <div
   className="storybook-container"
 >
@@ -1612,7 +1612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew With OverflowMenu in Pagination 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew With OverflowMenu in Pagination 1`] = `
 <div
   className="storybook-container"
 >
@@ -2215,7 +2215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew With Search 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew With Search 1`] = `
 <div
   className="storybook-container"
 >
@@ -2631,7 +2631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew With Sort 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew With Sort 1`] = `
 <div
   className="storybook-container"
 >

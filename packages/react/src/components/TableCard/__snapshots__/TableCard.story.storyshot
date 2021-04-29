@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard With dynamic variables 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard With dynamic variables 1`] = `
 <div
   className="storybook-container"
 >
@@ -2514,7 +2514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard With links 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard With links 1`] = `
 <div
   className="storybook-container"
 >
@@ -3753,7 +3753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard With row specific link variables 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard With row specific link variables 1`] = `
 <div
   className="storybook-container"
 >
@@ -6537,7 +6537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard editable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard editable 1`] = `
 <div
   className="storybook-container"
 >
@@ -7981,7 +7981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard editable with expanded rows 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard editable with expanded rows 1`] = `
 <div
   className="storybook-container"
 >
@@ -9760,7 +9760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard empty table 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard empty table 1`] = `
 <div
   className="storybook-container"
 >
@@ -10645,7 +10645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard i18n 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard i18n 1`] = `
 <div
   className="storybook-container"
 >
@@ -13349,7 +13349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard no row actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard no row actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -14828,7 +14828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with custom column sort 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with custom column sort 1`] = `
 <div
   className="storybook-container"
 >
@@ -16547,7 +16547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with fixed column size 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with fixed column size 1`] = `
 <div
   className="storybook-container"
 >
@@ -18026,7 +18026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with isLoading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with isLoading 1`] = `
 <div
   className="storybook-container"
 >
@@ -18708,7 +18708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with matching thresholds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with matching thresholds 1`] = `
 <div
   className="storybook-container"
 >
@@ -21173,7 +21173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with multiple actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with multiple actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -23238,7 +23238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with row expansion 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with row expansion 1`] = `
 <div
   className="storybook-container"
 >
@@ -25052,7 +25052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with row expansion and link variables 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with row expansion and link variables 1`] = `
 <div
   className="storybook-container"
 >
@@ -26866,7 +26866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with row expansion and row specific link variables 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with row expansion and row specific link variables 1`] = `
 <div
   className="storybook-container"
 >
@@ -28680,7 +28680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with row expansion and timestamp 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with row expansion and timestamp 1`] = `
 <div
   className="storybook-container"
 >
@@ -30494,7 +30494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with single actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with single actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -32349,7 +32349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with thresholds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with thresholds 1`] = `
 <div
   className="storybook-container"
 >
@@ -35053,7 +35053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with thresholds only with icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with thresholds only with icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -37217,7 +37217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with thresholds, precision and expanded rows 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with thresholds, precision and expanded rows 1`] = `
 <div
   className="storybook-container"
 >

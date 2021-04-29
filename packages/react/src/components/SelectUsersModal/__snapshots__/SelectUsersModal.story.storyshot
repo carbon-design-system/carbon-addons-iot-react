@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SelectUsersModal default modal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SelectUsersModal default modal 1`] = `
 <div
   className="storybook-container"
 >
@@ -514,7 +514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SelectUsersModal flat list of users 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SelectUsersModal flat list of users 1`] = `
 <div
   className="storybook-container"
 >
@@ -1619,7 +1619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SelectUsersModal group list 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SelectUsersModal group list 1`] = `
 <div
   className="storybook-container"
 >
@@ -2216,7 +2216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SelectUsersModal initial selected modal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SelectUsersModal initial selected modal 1`] = `
 <div
   className="storybook-container"
 >
