@@ -49,7 +49,7 @@
     "test:story": "yarn test:engines && cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js --no-watchman --colors",
     "test:clear": "yarn test:engines && cross-env TZ=America/Chicago jest --no-watchman --clearCache --colors",
     "test:engines": "check-node-version --node $(cat ../../.nvmrc) --yarn 1.x",
-    "test:ci": "yarn test --maxWorkers=2 --ci --logHeapUsage --coverage"
+    "test:ci": "yarn test --ci --logHeapUsage --coverage"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
