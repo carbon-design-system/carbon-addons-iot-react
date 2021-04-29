@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.66](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.65...v2.145.0-next.66) (2021-04-29)
+
+
+### Bug Fixes
+
+* **customcard:** rendering of custom card was incorrect ([8ff8a9d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8ff8a9d51669d409f40736e2d01e718effd25757))
+* **react-draggable:** new version has dependency on fbjs but it is not tracked in the package.json ([ffd9452](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ffd94522987f3c30bffe429c1a78234a86b21041))
+
+
+
+
+
 # [2.145.0-next.65](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.64...v2.145.0-next.65) (2021-04-29)
 
 
