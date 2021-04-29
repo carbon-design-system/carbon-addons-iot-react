@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import classnames from 'classnames';
-import { Information20, Edit20 } from '@carbon/icons-react';
+import { Information16, Edit16 } from '@carbon/icons-react';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
 import throttle from 'lodash/throttle';
 
@@ -24,8 +24,7 @@ const PageTitleBarPropTypes = {
   headerMode: PropTypes.oneOf(Object.values(HEADER_MODES)),
   /** offset for the 'top' attribute on the sticky header. Number will be converted to px */
   stickyHeaderOffset: PropTypes.number,
-  /** offset for the dynamic transition from 'STATIC' size to 'CONDENSED' size. Number will be converted to px */
-  dynamicTransitionOffset: PropTypes.number,
+
   /** Optional node to render in the right side of the PageTitleBar
    *  NOTE: Deprecated in favor of extraContent
    */
@@ -35,6 +34,8 @@ const PageTitleBarPropTypes = {
   ),
   /** Optional node to render to the side of the PageTitleBar */
   extraContent: PropTypes.node,
+  /** Optional node to render actions/text above the main actions area */
+  upperActions: PropTypes.node,
   /** Breadcrumbs to show */
   breadcrumb: PropTypes.arrayOf(PropTypes.node),
   /** Should page description be collapsed into tooltip. Should be `true` when using in conjunction with tabs. */
@@ -46,6 +47,14 @@ const PageTitleBarPropTypes = {
   onEdit: PropTypes.func,
   i18n: PropTypes.shape({ editIconDescription: PropTypes.string }),
   className: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.string),
+
+  /* Force the content element to be outside the page title component element
+     Normally this is automatically detected, i.e. if the header is dynamic and if tabs are present
+     the content must render outside in order for sticky positioning to work correctly on the tabs
+  */
+  forceContentOutside: PropTypes.bool,
+
   /** Tabs should be a Tabs component */
   tabs: deprecate(
     PropTypes.oneOfType([
@@ -55,6 +64,7 @@ const PageTitleBarPropTypes = {
     ]),
     '\nThe prop `tabs` for PageTitleBar has been deprecated in favor of `content`'
   ),
+
   /** Content rendered beneath title bar */
   content: PropTypes.node,
 };
@@ -64,20 +74,22 @@ const defaultProps = {
   className: null,
   rightContent: undefined,
   extraContent: undefined,
+  upperActions: undefined,
   breadcrumb: null,
-  collapsed: false,
+  collapsed: undefined,
   editable: false,
+  forceContentOutside: false,
   onEdit: null,
   i18n: {
     editIconDescription: 'Edit page title',
     tooltipIconDescription: 'More information',
   },
+  style: null,
   isLoading: false,
   tabs: undefined,
   content: undefined,
   headerMode: HEADER_MODES.STATIC,
   stickyHeaderOffset: 48, // default to 3rem to stick to the bottom of the suite header
-  dynamicTransitionOffset: 48, // default to 3rem to stick to the bottom of the suite header
 };
 
 const PageTitleBar = ({
@@ -86,39 +98,79 @@ const PageTitleBar = ({
   className,
   rightContent,
   extraContent,
+  upperActions,
   breadcrumb,
   collapsed,
+  forceContentOutside,
   headerMode,
   stickyHeaderOffset: stickyHeaderOffsetProp,
-  dynamicTransitionOffset,
   editable,
   isLoading,
   i18n: { editIconDescription, tooltipIconDescription },
   onEdit,
   tabs,
+  style,
   content,
 }) => {
   const titleBarContent = content || tabs;
+
   const [condensed, setCondensed] = useState(headerMode === HEADER_MODES.CONDENSED);
+  const [transitionProgress, setTransitionProgress] = useState(0);
+  const [contentActive, setContentActive] = useState(false);
+
+  const breadcrumbRef = useRef(null);
+  const contentRef = useRef(null);
+  const titleRef = useRef(null);
 
   const stickyHeaderOffset = `${stickyHeaderOffsetProp}px`; // convert to px for styling
 
   useEffect(() => {
-    // if we have scrolled passed the offset, we should be in condensed state
     const handleScroll = throttle(() => {
-      if (Math.round(window.scrollY) > 5 + dynamicTransitionOffset) {
-        setCondensed(true);
-      } else {
-        setCondensed(false);
+      let isCondensed;
+      let percentComplete;
+
+      // Detect when sticky overlap begins to start fading out/fading in
+      // content based on scroll position
+      if (breadcrumbRef.current && titleRef.current) {
+        const breadcrumbDims = breadcrumbRef.current.getBoundingClientRect();
+        const titleDims = titleRef.current.getBoundingClientRect();
+
+        if (titleDims.top < breadcrumbDims.bottom) {
+          isCondensed = true;
+          const distanceLeftToGo = breadcrumbDims.top - titleDims.top;
+          const total = breadcrumbDims.height;
+          percentComplete = (total - Math.abs(distanceLeftToGo)) / total;
+
+          if (percentComplete < 0.05) {
+            percentComplete = 0;
+          }
+
+          if (titleDims.top <= breadcrumbDims.top) {
+            percentComplete = 1;
+          }
+        } else {
+          isCondensed = false;
+          percentComplete = 0;
+        }
+        setCondensed(isCondensed);
+        setTransitionProgress(percentComplete);
       }
-    }, 120);
+
+      // Detect when content area rises above sticky header offset, to set background
+      // on tabs, which replaces existing sticky header
+      setContentActive(
+        contentRef.current &&
+          contentRef.current.getBoundingClientRect().top <= stickyHeaderOffsetProp
+      );
+    }, 50);
 
     if (headerMode === HEADER_MODES.DYNAMIC) {
       window.addEventListener('scroll', handleScroll);
+      handleScroll();
     }
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [dynamicTransitionOffset, headerMode]);
+  }, [headerMode, stickyHeaderOffsetProp]);
 
   const titleActions = useMemo(
     () => (
@@ -129,7 +181,7 @@ const PageTitleBar = ({
             triggerText=""
             triggerId="tooltip"
             tooltipId="tooltip"
-            renderIcon={Information20}
+            renderIcon={Information16}
             iconDescription={tooltipIconDescription}
           >
             {typeof description === 'string' ? <p>{description}</p> : description}
@@ -141,7 +193,7 @@ const PageTitleBar = ({
             kind="ghost"
             size="field"
             hasIconOnly
-            renderIcon={Edit20}
+            renderIcon={Edit16}
             iconDescription={editIconDescription}
             tooltipAlignment="center"
             tooltipPosition="bottom"
@@ -153,139 +205,107 @@ const PageTitleBar = ({
     [
       collapsed,
       description,
+      titleBarContent,
       editIconDescription,
       editable,
       onEdit,
-      titleBarContent,
       tooltipIconDescription,
     ]
   );
 
-  return headerMode !== HEADER_MODES.DYNAMIC ? (
-    <div className={classnames(className, 'page-title-bar')}>
+  /* We need the tabs to render outside the header so the tab stickiness will push away
+     the header stickiness naturally with the scroll.
+
+     We also want sticky mode to render outside so we can sticky the entire header element
+  */
+  const hasTabs =
+    (titleBarContent && titleBarContent.type === Tabs) ||
+    (titleBarContent &&
+      [].concat(titleBarContent.props.children).filter((e) => e?.type && e.type === Tabs).length >
+        0);
+  const renderContentOutside =
+    (hasTabs && headerMode === HEADER_MODES.DYNAMIC) ||
+    headerMode === HEADER_MODES.STICKY ||
+    forceContentOutside;
+
+  return (
+    <div
+      className={classnames(className, 'page-title-bar', {
+        'page-title-bar--sticky': headerMode === HEADER_MODES.STICKY,
+        'page-title-bar--condensed-static': headerMode === HEADER_MODES.CONDENSED,
+        'page-title-bar--dynamic--before': headerMode === HEADER_MODES.DYNAMIC && !condensed,
+        'page-title-bar--dynamic--during':
+          headerMode === HEADER_MODES.DYNAMIC &&
+          condensed &&
+          transitionProgress < 1 &&
+          transitionProgress > 0,
+        'page-title-bar--dynamic--after':
+          headerMode === HEADER_MODES.DYNAMIC && condensed && transitionProgress === 1,
+        'page-title-bar--dynamic': headerMode === HEADER_MODES.DYNAMIC,
+        'page-title-bar--with-actions': upperActions && headerMode === HEADER_MODES.DYNAMIC,
+      })}
+      style={{
+        '--header-offset': stickyHeaderOffset,
+        '--scroll-transition-progress':
+          headerMode !== HEADER_MODES.DYNAMIC ? 1 : transitionProgress,
+        ...style,
+      }}
+    >
       {isLoading ? (
         <SkeletonText className="page-title-bar-loading" heading width="30%" />
       ) : (
         <>
-          <div
-            style={{ '--header-offset': stickyHeaderOffset }}
-            className={classnames('page-title-bar-header', {
-              'page-title-bar-header-sticky': headerMode === HEADER_MODES.STICKY,
-              'page-title-bar-header-condensed': headerMode === HEADER_MODES.CONDENSED,
-            })}
-          >
-            <div className="page-title-bar-header-left">
-              {breadcrumb ? (
-                <div
-                  className={classnames('page-title-bar-breadcrumb', {
-                    'page-title-bar-breadcrumb-condensed-static':
-                      headerMode === HEADER_MODES.CONDENSED,
-                  })}
-                >
-                  <Breadcrumb>
-                    {breadcrumb.map((crumb, index) => (
-                      <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
-                    ))}
-                  </Breadcrumb>
-                  {headerMode === HEADER_MODES.CONDENSED ? (
-                    <div
-                      className={classnames('page-title-bar-title', {
-                        'page-title-bar-title--condensed-static':
-                          headerMode === HEADER_MODES.CONDENSED,
-                      })}
-                    >
-                      <div className="page-title-bar-title--text">
-                        <span>{title}</span>
-                        {titleActions}
-                      </div>
-                    </div>
+          <div className="page-title-bar-header">
+            <div className="page-title-bar-breadcrumb-bg" />
+            {breadcrumb ||
+            upperActions ||
+            headerMode === HEADER_MODES.DYNAMIC ||
+            headerMode === HEADER_MODES.CONDENSED ? (
+              <div className="page-title-bar-breadcrumb breadcrumb--container" ref={breadcrumbRef}>
+                <Breadcrumb>
+                  {breadcrumb
+                    ? breadcrumb.map((crumb, index) => (
+                        <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
+                      ))
+                    : null}
+                  {headerMode === HEADER_MODES.DYNAMIC || headerMode === HEADER_MODES.CONDENSED ? (
+                    <span className="page-title-bar-breadcrumb-current" title={title}>
+                      {title}
+                    </span>
                   ) : null}
-                </div>
-              ) : null}
-              {headerMode !== HEADER_MODES.CONDENSED && (
-                <div className="page-title-bar-title">
-                  <div className="page-title-bar-title--text">
-                    <h2>{title}</h2>
-                    {titleActions}
-                  </div>
-                </div>
-              )}
-              {description && !collapsed && !titleBarContent ? (
-                <p className="page-title-bar-description">{description}</p>
-              ) : null}
-            </div>
-            {extraContent || rightContent ? (
-              <div className="page-title-bar-header-right">{extraContent || rightContent}</div>
+                </Breadcrumb>
+              </div>
             ) : null}
-          </div>
-          {titleBarContent ? <div className="page-title-bar-content">{titleBarContent}</div> : null}
-        </>
-      )}
-    </div>
-  ) : (
-    <div className="page-title-bar">
-      {isLoading ? (
-        <SkeletonText className="page-title-bar-loading" heading width="30%" />
-      ) : (
-        <>
-          {breadcrumb ? (
-            <div
-              style={{
-                '--header-offset': stickyHeaderOffset,
-              }}
-              className={classnames(
-                'page-title-bar-breadcrumb',
-                'page-title-bar-breadcrumb-dynamic',
-                {
-                  'page-title-bar-breadcrumb-condensed': condensed,
-                }
-              )}
-            >
-              <Breadcrumb>
-                {breadcrumb.map((crumb, index) => (
-                  <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
-                ))}
-              </Breadcrumb>
-              <div
-                className={classnames('page-title-bar-title--condensed', {
-                  'page-title-bar-title--condensed-before': !condensed,
-                  'page-title-bar-title--condensed-after': condensed,
-                })}
-              >
-                <span>{title}</span>
+            {upperActions ? (
+              <div className="page-title-bar-actions-upper">{upperActions}</div>
+            ) : null}
+            <div className="page-title-bar-title" ref={titleRef}>
+              <div className="page-title-bar-title--text">
+                <h2 title={title}>{title}</h2>
                 {titleActions}
               </div>
             </div>
-          ) : null}
-          <div
-            className={classnames('page-title-bar-title', 'page-title-bar-title-dynamic')}
-            style={{
-              '--bar-title-position': extraContent || rightContent ? 'absolute' : 'static',
-              '--header-offset': stickyHeaderOffset,
-            }}
-          >
-            <div className="page-title-bar-title--text">
-              <h2>{title}</h2>
-              {titleActions}
-            </div>
+            {description && !collapsed && !titleBarContent ? (
+              <p className="page-title-bar-description">{description}</p>
+            ) : null}
+            <div className="page-title-bar-header-right">{extraContent || rightContent}</div>
+            {titleBarContent && !renderContentOutside ? (
+              <div className="page-title-bar-content" ref={contentRef}>
+                {titleBarContent}
+              </div>
+            ) : null}
           </div>
-          {description && !collapsed && !titleBarContent ? (
-            <p className="page-title-bar-description">{description}</p>
-          ) : null}
-          {extraContent || rightContent ? (
+
+          {titleBarContent && renderContentOutside ? (
             <div
-              style={{
-                '--header-offset': stickyHeaderOffset,
-              }}
-              className={classnames(
-                'page-title-bar-header-right',
-                'page-title-bar-header-right-dynamic'
-              )}
+              className={classnames('page-title-bar-content', {
+                'page-title-bar-content--active': contentActive,
+              })}
+              ref={contentRef}
             >
-              {extraContent || rightContent}
+              {titleBarContent}
             </div>
           ) : null}
-          {titleBarContent ? <div className="page-title-bar-content">{titleBarContent}</div> : null}
         </>
       )}
     </div>
