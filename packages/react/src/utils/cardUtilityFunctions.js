@@ -449,7 +449,7 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
 
 /** compare the current datapoint to a list of alert ranges */
 export const findMatchingAlertRange = (alertRanges, data) => {
-  const currentDataPoint = Array.isArray(data) ? data[0]?.date : data.date;
+  const currentDataPoint = Array.isArray(data) ? data[0]?.date : data?.date;
 
   if (!currentDataPoint) {
     return false;
@@ -484,7 +484,7 @@ export const handleTooltip = (
   showTimeInGMT,
   tooltipDateFormatPattern = 'L HH:mm:ss'
 ) => {
-  const data = dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+  const data = dataOrHoveredElement?.__data__
     ? dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
     : dataOrHoveredElement;
   const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
