@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, object, array } from '@storybook/addon-knobs';
 
-import { Card, Link, InlineNotification } from '../../index';
+import { DataScientistIcon } from '../../icons/components';
+import {
+  NumberInput,
+  TextInput,
+  Card,
+  Link,
+  InlineNotification,
+  OverflowMenu,
+  OverflowMenuItem,
+} from '../../index';
 import assemblyline from '../ImageGalleryModal/images/assemblyline.jpg';
 import floow_plan from '../ImageGalleryModal/images/floow_plan.png'; // eslint-disable-line camelcase
 import manufacturing_plant from '../ImageGalleryModal/images/Manufacturing_plant.png'; // eslint-disable-line camelcase
@@ -13,6 +22,8 @@ import turbines from '../ImageGalleryModal/images/turbines.png';
 import large from '../ImageGalleryModal/images/large.png';
 import large_portrait from '../ImageGalleryModal/images/large_portrait.png'; // eslint-disable-line camelcase
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
+import { CARD_TYPES } from '../../constants/LayoutConstants';
+import SimpleList from '../List/SimpleList/SimpleList';
 
 import DashboardEditor from './DashboardEditor';
 
@@ -187,7 +198,6 @@ export const Default = () => (
       'VALUE',
       'IMAGE',
       'TABLE',
-      'ALERT',
       'CUSTOM',
     ])}
     headerBreadcrumbs={[
@@ -958,7 +968,6 @@ export const I18N = () => (
       VALUE: 'VALUE',
       IMAGE: 'IMAGE',
       TABLE: 'TABLE',
-      ALERT: 'ALERT',
       LIST: 'LIST',
 
       // card form
@@ -1169,4 +1178,158 @@ export const I18N = () => (
 
 I18N.story = {
   name: 'i18n',
+};
+
+export const WithCustomCard = () => {
+  const DashboardWithCustomCard = () => {
+    const [cards, setCards] = useState([]);
+
+    // Render the elements to show in the content editor side panel
+    const renderContentEditor = (onChange, cardConfig) => (
+      <div style={{ marginLeft: '-1rem', marginRight: '-1rem', marginTop: '-1rem' }}>
+        <SimpleList
+          hasPagination={false}
+          editingStyle="single"
+          onListUpdated={(list) => onChange({ ...cardConfig, listOrder: list.map(({ id }) => id) })}
+          items={(cardConfig.listOrder || ['1', '2', '3', '4', '5']).map((i) => ({
+            id: i,
+            content: {
+              value: `Item ${i}`,
+              rowActions: () => [
+                <OverflowMenu flipped>
+                  <OverflowMenuItem
+                    onClick={() =>
+                      !cardConfig[`menu${i}Clicked`] &&
+                      onChange({ ...cardConfig, [`menu${i}Clicked`]: `Menu ${i} clicked` })
+                    }
+                    itemText="Option"
+                  />
+                </OverflowMenu>,
+              ],
+            },
+            isSelectable: true,
+          }))}
+        />
+      </div>
+    );
+
+    // Render the elements to show in the settings editor tab
+    const renderSettingsEditor = (onChange, cardConfig) => (
+      <div>
+        <NumberInput
+          light
+          label="Number Input"
+          onChange={(event) => {
+            const numberValue = Number(event.imaginaryTarget.value);
+            onChange({ ...cardConfig, numberValue });
+          }}
+        />
+        <TextInput
+          light
+          value={cardConfig.textValue}
+          labelText="Text Input"
+          onChange={(event) => onChange({ ...cardConfig, textValue: event.target.value })}
+        />
+      </div>
+    );
+
+    // Render the elements to show on the actual card
+    const renderCustomCard = (cardConfig) => (
+      <div style={{ padding: '1rem', display: 'flex', flexDirection: 'row' }}>
+        <div style={{ marginRight: '3rem' }}>
+          <h5>listOrder</h5>
+          {cardConfig.listOrder?.map((item) => <p>{item}</p>) || '--'}
+        </div>
+        <div>
+          <h5>numberValue</h5>
+          <span>{cardConfig.numberValue || '--'}</span>
+          <h5>textValue</h5>
+          <span>{cardConfig.textValue || '--'}</span>
+        </div>
+      </div>
+    );
+
+    // Format the card payload for the dashboardJson
+    const formatCustomCard = (card) => ({
+      ...card,
+      content: renderCustomCard(card),
+      renderEditContent: (onChange, cardConfig) => [
+        {
+          header: { title: 'Columns', tooltip: { tooltipText: 'Custom tooltip' } },
+          content: renderContentEditor(onChange, cardConfig),
+        },
+        {
+          header: { title: 'Second section', tooltip: { tooltipText: 'Second tooltip' } },
+          content: <span>Second section editor content here</span>,
+        },
+      ],
+      renderEditSettings: (onChange, cardConfig) => {
+        return renderSettingsEditor(onChange, cardConfig);
+      },
+    });
+
+    return (
+      <DashboardEditor
+        initialValue={{ layouts: {}, cards }}
+        title={text('title', 'My dashboard')}
+        getValidDataItems={() => mockDataItems}
+        dataItems={mockDataItems}
+        availableImages={images}
+        i18n={{
+          headerEditTitleButton: 'Edit title updated',
+          CUSTOM: 'My custom type',
+        }}
+        icons={{ CUSTOM: <DataScientistIcon /> }}
+        onAddImage={action('onAddImage')}
+        onEditTitle={action('onEditTitle')}
+        onImport={action('onImport')}
+        onExport={action('onExport')}
+        onDelete={action('onDelete')}
+        onCancel={action('onCancel')}
+        onSubmit={action('onSubmit')}
+        onImageDelete={action('onImageDelete')}
+        onCardChange={(cardConfig, dashboard) => {
+          // Format the custom cards
+          const formattedCard =
+            cardConfig.type === CARD_TYPES.CUSTOM ? formatCustomCard(cardConfig) : cardConfig;
+
+          // if the card exists, update it
+          if (dashboard.cards.find((card) => card.id === cardConfig.id)) {
+            setCards(cards.map((card) => (card.id === cardConfig.id ? formattedCard : card)));
+          } else {
+            setCards([...dashboard.cards, formattedCard]);
+          }
+
+          return cardConfig;
+        }}
+        onLayoutChange={action('onLayoutChange')}
+        isSubmitDisabled={boolean('isSubmitDisabled', false)}
+        isSubmitLoading={boolean('isSubmitLoading', false)}
+        availableDimensions={{
+          deviceid: ['73000', '73001', '73002'],
+          manufacturer: ['rentech', 'GHI Industries'],
+        }}
+        supportedCardTypes={array('supportedCardTypes', [
+          'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
+          'VALUE',
+          'IMAGE',
+          'TABLE',
+          'CUSTOM',
+        ])}
+        headerBreadcrumbs={[
+          <Link href="www.ibm.com">Dashboard library</Link>,
+          <Link href="www.ibm.com">Favorites</Link>,
+        ]}
+        isLoading={boolean('isLoading', false)}
+      />
+    );
+  };
+  return <DashboardWithCustomCard />;
+};
+
+WithCustomCard.story = {
+  name: 'With custom card',
 };

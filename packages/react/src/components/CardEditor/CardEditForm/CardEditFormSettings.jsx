@@ -67,7 +67,7 @@ const defaultProps = {
 
 const CardEditFormSettings = ({ cardConfig, onChange, i18n, availableDimensions }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const { type } = cardConfig;
+  const { type, renderEditSettings } = cardConfig;
   const handleTranslation = useCallback(
     (idToTranslate) => {
       const { openMenuText, closeMenuText } = mergedI18n;
@@ -120,6 +120,8 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n, availableDimensions 
           translateWithId={handleTranslation}
         />
       );
+    case CARD_TYPES.CUSTOM:
+      return renderEditSettings ? renderEditSettings(onChange, cardConfig) : null;
     default:
       return null;
   }

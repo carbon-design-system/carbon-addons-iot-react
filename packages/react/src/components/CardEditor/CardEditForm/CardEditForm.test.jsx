@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { CARD_DIMENSIONS, CARD_SIZES } from '../../../constants/LayoutConstants';
+import { CARD_DIMENSIONS, CARD_SIZES, CARD_TYPES } from '../../../constants/LayoutConstants';
 
 import CardEditForm, {
   getCardSizeText,
@@ -48,6 +48,41 @@ describe('CardEditForm', () => {
       fireEvent.click(openJsonBtn);
 
       expect(mockOnCardJsonPreview).toHaveBeenCalledWith(cardConfig);
+    });
+    it('should NOT render the settings tab if it is a custom card with no renderSettings function', () => {
+      render(
+        <CardEditForm
+          cardConfig={{
+            title: 'Custom card',
+            size: 'MEDIUM',
+            type: CARD_TYPES.CUSTOM,
+            content: <h5>Custom content</h5>,
+          }}
+          onChange={mockOnChange}
+          onCardJsonPreview={mockOnCardJsonPreview}
+        />
+      );
+      const settingsTab = screen.queryByText('Settings');
+
+      expect(settingsTab).not.toBeInTheDocument();
+    });
+    it('should render the settings tab if it is a custom card with no renderSettings function', () => {
+      render(
+        <CardEditForm
+          cardConfig={{
+            title: 'Custom card',
+            size: 'MEDIUM',
+            type: CARD_TYPES.CUSTOM,
+            content: <h5>Custom content</h5>,
+            renderEditSettings: () => <input type="text" />,
+          }}
+          onChange={mockOnChange}
+          onCardJsonPreview={mockOnCardJsonPreview}
+        />
+      );
+      const settingsTab = screen.getByText('Settings');
+
+      expect(settingsTab).toBeInTheDocument();
     });
   });
   describe('getCardSizeText', () => {
@@ -253,6 +288,17 @@ describe('CardEditForm', () => {
             },
           ],
         },
+      });
+    });
+    it('should hide the content for a custom card', () => {
+      const sanitizedCard = hideCardPropertiesForEditor({
+        type: 'CUSTOM',
+        title: 'myCustomCard',
+        content: 'Custom card content',
+      });
+      expect(sanitizedCard).toEqual({
+        type: 'CUSTOM',
+        title: 'myCustomCard',
       });
     });
   });
