@@ -243,6 +243,7 @@ export const WithInitialValue = () => (
           title: 'Custom rendered card',
           type: 'CUSTOM',
           size: 'MEDIUM',
+          content: () => 'custom content function',
           value: 35,
         },
         {
