@@ -239,9 +239,9 @@ export const SmallBreakpoint = () => (
         },
         ...HeaderProps.actionItems,
       ]}
-      appName="Maximo Application Suite"
-      shortAppName="Maximo"
-      subtitle="Manage"
+      appName={text('appName', 'Maximo Application Suite')}
+      shortAppName={text('shortAppName', 'Maximo')}
+      subtitle={text('subtitle', 'Manage')}
     />
   </div>
 );
