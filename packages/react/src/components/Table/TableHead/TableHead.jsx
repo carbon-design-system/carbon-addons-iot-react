@@ -365,6 +365,7 @@ const TableHead = ({
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable && !isDisabled}
               isSortHeader={hasSort}
+              hasTooltip={!!matchingColumnMeta.tooltip}
               ref={columnRef[matchingColumnMeta.id]}
               thStyle={{
                 width:
@@ -397,6 +398,7 @@ const TableHead = ({
                 wrapText={wrapCellText}
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
+                tooltip={matchingColumnMeta.tooltip}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>
