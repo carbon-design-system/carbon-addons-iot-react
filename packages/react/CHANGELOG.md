@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.67](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.66...v2.145.0-next.67) (2021-04-29)
+
+
+### Bug Fixes
+
+* **menu-button:** auto-positioning fixes ([a54f51b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a54f51b6ec877fd2e995015ff1c49efd493bc0b3))
+* **menu-button:** handle RTL ([d7adc7d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d7adc7d1ae6db44c2a5b7fbf9e4ea40827394afc))
+* **menu-button:** match background color when only icon and menu open ([147046d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/147046d4a3702795aa4fd6ac41f8eb5ea33ceb9c))
+* **menu-button:** remove empty index file ([8e94198](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e94198afb54e5f3e51948afe71353ee6543ad78))
+* **menu-button:** use hook to fix RTL positioning ([737bd17](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/737bd178de169c0587c31370a17ef416ee38e8bc))
+
+
+### Features
+
+* **menu-button:** auto-positioning when overflows screen ([a5873f0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a5873f07ae0f2a9a625329d64d3dea30fb331edf))
+* **menu-button:** initial addition of new MenuButton component ([d57401b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d57401b71094540d3437015691356fe029f39101))
+
+
+
+
+
+# [2.145.0-next.66](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.65...v2.145.0-next.66) (2021-04-29)
+
+
+### Bug Fixes
+
+* **customcard:** rendering of custom card was incorrect ([8ff8a9d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8ff8a9d51669d409f40736e2d01e718effd25757))
+* **react-draggable:** new version has dependency on fbjs but it is not tracked in the package.json ([ffd9452](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ffd94522987f3c30bffe429c1a78234a86b21041))
+
+
+
+
+
 # [2.145.0-next.65](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.64...v2.145.0-next.65) (2021-04-29)
 
 
