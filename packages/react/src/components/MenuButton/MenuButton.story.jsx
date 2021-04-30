@@ -7,12 +7,14 @@ import {
 } from 'carbon-components-react';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import { withReadme } from 'storybook-readme';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
+import README from './README.md';
 import MenuButton from './MenuButton';
 
-const menuItems = [
+export const menuItems = [
   <ContextMenuSelectableItem
     key="publish"
     label="Publish"
@@ -65,7 +67,9 @@ Experimental.story = {
 /**
  * If no primary action is given, but has a label we assume it's a single menu button.
  */
-export const SingleMenuButton = () => <MenuButton label="Actions">{menuItems}</MenuButton>;
+export const SingleMenuButton = withReadme(README, () => (
+  <MenuButton label="Actions">{menuItems}</MenuButton>
+));
 
 SingleMenuButton.story = {
   name: 'menu button',
@@ -74,11 +78,11 @@ SingleMenuButton.story = {
 /**
  * if a primary action and label are given, then we assume it's a split button.
  */
-export const SplitMenuButton = () => (
+export const SplitMenuButton = withReadme(README, () => (
   <MenuButton onPrimaryActionClick={action('onPrimaryActionClick')} label="Create">
     {menuItems}
   </MenuButton>
-);
+));
 
 SplitMenuButton.story = {
   name: 'split menu button',
@@ -87,11 +91,13 @@ SplitMenuButton.story = {
 /**
  * if no label is given then it assumes it's an icon only menu.
  */
-export const IconOnlyMenuButton = () => (
+const IconOnlyButton = () => (
   <MenuButton renderOpenIcon={OverflowMenuVertical16} renderCloseIcon={OverflowMenuVertical16}>
     {menuItems}
   </MenuButton>
 );
+
+export const IconOnlyMenuButton = withReadme(README, () => <IconOnlyButton />);
 
 IconOnlyMenuButton.story = {
   name: 'icon only menu button',
@@ -115,7 +121,7 @@ export const AutoPositioningExample = () => (
           flex: 1,
         }}
       >
-        <IconOnlyMenuButton />
+        <IconOnlyButton />
       </div>
       <div
         style={{
@@ -125,7 +131,7 @@ export const AutoPositioningExample = () => (
           justifyContent: 'center',
         }}
       >
-        <IconOnlyMenuButton />
+        <IconOnlyButton />
       </div>
       <div
         style={{
@@ -135,7 +141,7 @@ export const AutoPositioningExample = () => (
           justifyContent: 'flex-end',
         }}
       >
-        <IconOnlyMenuButton />
+        <IconOnlyButton />
       </div>
     </div>
     <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
@@ -147,7 +153,7 @@ export const AutoPositioningExample = () => (
           flex: 1,
         }}
       >
-        <IconOnlyMenuButton />
+        <IconOnlyButton />
       </div>
       <div
         style={{
@@ -157,7 +163,7 @@ export const AutoPositioningExample = () => (
           justifyContent: 'center',
         }}
       >
-        <IconOnlyMenuButton />
+        <IconOnlyButton />
       </div>
       <div
         style={{
@@ -167,7 +173,7 @@ export const AutoPositioningExample = () => (
           justifyContent: 'flex-end',
         }}
       >
-        <IconOnlyMenuButton />
+        <IconOnlyButton />
       </div>
     </div>
     <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
@@ -179,7 +185,7 @@ export const AutoPositioningExample = () => (
           flex: 1,
         }}
       >
-        <IconOnlyMenuButton />
+        <IconOnlyButton />
       </div>
       <div
         style={{
@@ -189,7 +195,7 @@ export const AutoPositioningExample = () => (
           justifyContent: 'center',
         }}
       >
-        <IconOnlyMenuButton />
+        <IconOnlyButton />
       </div>
       <div
         style={{
@@ -199,7 +205,7 @@ export const AutoPositioningExample = () => (
           justifyContent: 'flex-end',
         }}
       >
-        <IconOnlyMenuButton />
+        <IconOnlyButton />
       </div>
     </div>
   </div>
@@ -216,4 +222,5 @@ export default {
   parameters: {
     component: MenuButton,
   },
+  excludeStories: ['menuItems'],
 };
