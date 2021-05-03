@@ -16,8 +16,6 @@ const propTypes = {
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
   }),
-  /** optional skeleton to be rendered while loading data */
-  isLoading: PropTypes.bool.isRequired,
 };
 
 const defaultProps = {
