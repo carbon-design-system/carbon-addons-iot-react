@@ -4,11 +4,6 @@
   width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
-
-  // /* Hide the unused nested modal reordering dialog that throws off the scrolling */
-  // .#{$iot-prefix}--hierarchy-list-bulk-modal {
-  //   display: none;
-  // }
 }
 
 .#{$iot-prefix}--list-builder__all {
