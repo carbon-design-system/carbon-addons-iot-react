@@ -7,7 +7,7 @@
   width: 100%;
   border: rem(1px) solid $ui-03;
   background-color: $ui-01;
-  align-items: center;
+  //align-items: center;
 }
 
 .#{$iot-prefix}-simple-pagination-page-bar {
@@ -19,6 +19,7 @@
   padding-right: $spacing-05;
   padding-left: $spacing-05;
   font-size: 0.875rem;
+  align-self: center;
 }
 
 .#{$iot-prefix}-addons-simple-pagination-button {
