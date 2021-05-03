@@ -85,7 +85,7 @@ const SimplePagination = ({
             >
               <CaretLeft16
                 dir="ltr"
-                description={prevPageText}
+                aria-label={prevPageText}
                 className={
                   hasPrev
                     ? `${iotPrefix}-simple-pagination-caret`
@@ -106,7 +106,7 @@ const SimplePagination = ({
             >
               <CaretRight16
                 dir="ltr"
-                description={nextPageText}
+                aria-label={nextPageText}
                 className={
                   hasNext
                     ? `${iotPrefix}-simple-pagination-caret`
