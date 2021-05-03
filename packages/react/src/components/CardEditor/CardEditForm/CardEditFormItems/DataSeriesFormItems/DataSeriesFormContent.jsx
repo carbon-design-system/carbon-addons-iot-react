@@ -315,10 +315,11 @@ const DataSeriesFormItem = ({
   );
 
   const handleEditButton = useCallback(
-    (dataItem) => {
+    (dataItem, i) => {
       const dataItemWithMetaData = validDataItems?.find(
         ({ dataItemId }) => dataItemId === dataItem.dataItemId
       );
+      const colorIndex = (removedItemsCountRef.current + i) % DATAITEM_COLORS_OPTIONS.length;
       // need to reset the card to include the latest dataSection
       onChange({
         ...cardConfig,
@@ -334,11 +335,7 @@ const DataSeriesFormItem = ({
         ...dataItem,
         ...(cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR
           ? {
-              color:
-                dataItem.color ||
-                DATAITEM_COLORS_OPTIONS[
-                  removedItemsCountRef.current % DATAITEM_COLORS_OPTIONS.length
-                ],
+              color: dataItem.color || DATAITEM_COLORS_OPTIONS[colorIndex],
             }
           : {}),
       });
