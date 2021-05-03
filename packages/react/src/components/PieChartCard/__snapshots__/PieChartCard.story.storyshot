@@ -108,7 +108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                   <div
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
-                    data-testID="basicCardStory-table-table-toolbar-batch-actions"
+                    data-testid="basicCardStory-table-table-toolbar-batch-actions"
                   >
                     <div
                       className="bx--batch-summary"

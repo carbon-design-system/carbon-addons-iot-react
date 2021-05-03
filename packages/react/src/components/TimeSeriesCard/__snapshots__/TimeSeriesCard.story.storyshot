@@ -1227,7 +1227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 <div
                   aria-hidden={true}
                   className="bx--batch-actions iot--table-batch-actions"
-                  data-testID="TimeSeries-table-table-toolbar-batch-actions"
+                  data-testid="TimeSeries-table-table-toolbar-batch-actions"
                 >
                   <div
                     className="bx--batch-summary"

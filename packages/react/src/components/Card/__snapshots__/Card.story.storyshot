@@ -559,7 +559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             <div
               aria-hidden={true}
               className="bx--batch-actions iot--table-batch-actions"
-              data-testID="my table-table-toolbar-batch-actions"
+              data-testid="my table-table-toolbar-batch-actions"
             >
               <div
                 className="bx--batch-summary"

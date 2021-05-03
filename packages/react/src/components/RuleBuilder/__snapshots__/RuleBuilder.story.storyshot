@@ -813,7 +813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
-                          data-testID="edit-table-table-toolbar-batch-actions"
+                          data-testid="edit-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -1320,7 +1320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
-                          data-testID="read-table-table-toolbar-batch-actions"
+                          data-testid="read-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -5218,7 +5218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
-                          data-testID="edit-table-table-toolbar-batch-actions"
+                          data-testid="edit-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -5489,7 +5489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
-                          data-testID="read-table-table-toolbar-batch-actions"
+                          data-testid="read-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"

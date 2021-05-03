@@ -211,7 +211,7 @@ const TableToolbar = ({
     className={classnames(`${iotPrefix}--table-toolbar`, className)}
   >
     <TableBatchActions
-      data-testID={`${testID}-batch-actions`}
+      data-testid={`${testID}-batch-actions`}
       className={`${iotPrefix}--table-batch-actions`}
       onCancel={onCancelBatchAction}
       shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
@@ -219,7 +219,12 @@ const TableToolbar = ({
       translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
     >
       {batchActions.map(({ id, labelText, ...others }) => (
-        <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
+        <TableBatchAction
+          key={id}
+          onClick={() => onApplyBatchAction(id)}
+          tabIndex={hasRowSelection === 'multi' && totalSelected > 0 ? 0 : -1}
+          {...others}
+        >
           {labelText}
         </TableBatchAction>
       ))}
