@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import omit from 'lodash/omit';
@@ -260,6 +260,8 @@ const DataSeriesFormItem = ({
       ? cardConfig?.content?.series
       : cardConfig?.content?.attributes;
 
+  const removedItemsCountRef = useRef(0);
+
   const validDataItems = useMemo(
     () => (getValidDataItems ? getValidDataItems(cardConfig, selectedTimeRange) : dataItems),
     [cardConfig, dataItems, getValidDataItems, selectedTimeRange]
@@ -298,7 +300,13 @@ const DataSeriesFormItem = ({
           selectedItems.length > 1
             ? omit(cardConfig, 'content.categoryDataSourceId')
             : cardConfig;
-        const newCard = handleDataSeriesChange(selectedItems, card, setEditDataSeries);
+        const newCard = handleDataSeriesChange(
+          selectedItems,
+          card,
+          setEditDataSeries,
+          undefined,
+          removedItemsCountRef
+        );
         setSelectedDataItems(selectedItems.map(({ dataSourceId }) => dataSourceId));
         onChange(newCard);
       }
@@ -307,7 +315,7 @@ const DataSeriesFormItem = ({
   );
 
   const handleEditButton = useCallback(
-    (dataItem, i) => {
+    (dataItem) => {
       const dataItemWithMetaData = validDataItems?.find(
         ({ dataItemId }) => dataItemId === dataItem.dataItemId
       );
@@ -326,7 +334,11 @@ const DataSeriesFormItem = ({
         ...dataItem,
         ...(cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR
           ? {
-              color: dataItem.color || DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
+              color:
+                dataItem.color ||
+                DATAITEM_COLORS_OPTIONS[
+                  removedItemsCountRef.current % DATAITEM_COLORS_OPTIONS.length
+                ],
             }
           : {}),
       });
@@ -340,6 +352,7 @@ const DataSeriesFormItem = ({
       const filteredItems = dataSection.filter(
         (item) => item.dataSourceId !== dataItem.dataSourceId
       );
+      removedItemsCountRef.current += 1;
       setSelectedDataItems(filteredItems.map((item) => item.dataSourceId));
       setRemovedDataItems([...removedDataItems, dataItem]);
       setEditDataSeries(filteredItems);
@@ -359,8 +372,8 @@ const DataSeriesFormItem = ({
   const dataItemListItems = useMemo(
     () =>
       dataSection?.map((dataItem, i) => {
-        const iconColorOption =
-          dataItem.color || DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+        const colorIndex = (i + removedItemsCountRef.current) % DATAITEM_COLORS_OPTIONS.length;
+        const iconColorOption = dataItem.color || DATAITEM_COLORS_OPTIONS[colorIndex];
         return {
           id: dataItem.dataSourceId,
           content: {
