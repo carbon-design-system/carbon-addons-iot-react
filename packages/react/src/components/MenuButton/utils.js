@@ -15,7 +15,7 @@ export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDi
   const hasScrollY = document.body.scrollHeight > bodyHeight;
   const scrollXOffset = hasScrollY ? 14 : 0;
   let y = buttonY + buttonHeight;
-  let x = buttonX;
+  let x = isSplitButton ? buttonX + primaryButtonWidth : buttonX;
 
   const windowWidth = window.innerWidth || document.documentElement.clientWidth;
   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -36,50 +36,62 @@ export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDi
   if (menuRect) {
     switch (overflow) {
       case 'top-right-bottom':
-        y = buttonY;
         x = isSplitButton ? buttonX : buttonX;
+        y = buttonY;
         break;
       case 'top-bottom-left':
         x = isSplitButton ? buttonX + buttonWidth + primaryButtonWidth : buttonX + buttonWidth;
         y = buttonY;
         break;
       case 'top-bottom':
-        y -= buttonHeight;
         x = isSplitButton ? buttonX + buttonWidth + primaryButtonWidth : buttonX + buttonWidth;
+        y -= buttonHeight;
         break;
       case 'top-left':
+        x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
         y = buttonY + buttonHeight;
-        x = buttonX;
         break;
       case 'top-right':
-        x = isSplitButton ? buttonX + primaryButtonWidth + buttonWidth : buttonX + buttonWidth;
+        x = isSplitButton
+          ? isRtl
+            ? buttonX + buttonWidth + primaryButtonWidth
+            : buttonX - primaryButtonWidth - buttonWidth
+          : buttonX + buttonWidth;
         y = buttonY + buttonHeight;
         break;
       case 'right-bottom':
-        x = isSplitButton ? buttonX + primaryButtonWidth + buttonWidth : buttonX + buttonWidth;
+        x = isSplitButton
+          ? isRtl
+            ? buttonX + buttonWidth + primaryButtonWidth
+            : buttonX + buttonWidth
+          : buttonX + buttonWidth;
         y = buttonY - menuHeight;
         break;
       case 'bottom-left':
-        x = buttonX;
+        x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
         y = buttonY - menuHeight;
         break;
       case 'top':
         y = buttonY + buttonHeight;
-        x = buttonX;
+        x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
         break;
       case 'left':
-        x = buttonX;
+        x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
         y = buttonY + buttonHeight;
         break;
       case 'bottom':
-        x = isSplitButton ? buttonX : x;
+        x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : x;
         y = buttonY - menuHeight;
         break;
       case 'right':
-        x = isSplitButton ? buttonX + primaryButtonWidth + buttonWidth : buttonX + buttonWidth;
+        x = isSplitButton
+          ? isRtl
+            ? buttonX + buttonWidth + primaryButtonWidth
+            : buttonX + buttonWidth
+          : buttonX + buttonWidth;
         break;
       default:
-        x = buttonX;
+        x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
         y = buttonY + buttonHeight;
     }
 
