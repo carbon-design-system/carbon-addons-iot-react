@@ -9,7 +9,7 @@ import Optionsfield from './Optionsfield';
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
 
-const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction}) => {
+const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableActions, ...other}) => {
   const mapContainerRef = useRef(null);
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
@@ -159,6 +159,7 @@ const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction}) => {
   return (
     <MapCard
       id="map-card"
+      availableActions={availableActions}
       mapControls={mapControls}
       mapContainerRef={mapContainerRef}
       isLegendFullWidth={isLegendFullWidth}
@@ -171,6 +172,7 @@ const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction}) => {
       onCardAction={onCardAction}
       i18n={{ cardTitle: active.name }}
       sideBarContent={sideBarContent}
+      {...other}
     />
   );
 };

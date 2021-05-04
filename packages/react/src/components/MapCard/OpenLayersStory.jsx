@@ -133,7 +133,7 @@ mapboxgl.accessToken =
     },
   });
 
-const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction}) => {
+const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction, availableActions}) => {
   const mapContainerRef = useRef(null);
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
@@ -264,6 +264,7 @@ const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction}) => {
     <MapCard
       id="map-card"
       mapControls={mapControls}
+      availableActions={availableActions}
       mapContainerRef={mapContainerRef}
       isLegendFullWidth={isLegendFullWidth}
       options={options}

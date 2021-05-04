@@ -59,6 +59,7 @@ const MapControls = ({layeredControls, controls, tooltipPosition, layerTriggerIc
       kind="ghost"
       size="field"
       hasIconOnly
+      tabIndex={layersOpen ? 0 : -1}
       tooltipPosition={tooltipPosition}
       renderIcon={layer.icon}
       iconDescription={layer.iconDescription}
@@ -81,7 +82,9 @@ const MapControls = ({layeredControls, controls, tooltipPosition, layerTriggerIc
             iconDescription={layerTriggerIconDescription}
             onClick={handleLayerClick}
           />
-          {layeredControls.map(renderLayers)}
+          <div className={`${BASE_CLASS_NAME}-layers-wrapper`}>
+            {layeredControls.map(renderLayers)}
+          </div>
         </div>)
       }
       {controls.map(renderControl)}

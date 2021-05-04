@@ -89,7 +89,7 @@ const MapBoxCard = ({
     <Card
       title={mergedI18n.cardTitle}
       size={newSize}
-      availableActions={{ expand: true, settings: true }}
+      availableActions={availableActions}
       isResizable={isResizable}
       resizeHandles={resizeHandles}
       i18n={mergedI18n}
