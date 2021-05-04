@@ -1,10 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import moment from 'moment';
 import { render, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import '@testing-library/jest-dom/extend-expect';
+import dayjs from '../../utils/dayjs';
+
 import DateTimePicker, {
   INTERVAL_VALUES,
   RELATIVE_VALUES,
@@ -177,7 +178,7 @@ describe('DateTimePicker', () => {
       .at(1)
       .simulate('change', { target: { value: RELATIVE_VALUES.YESTERDAY } });
 
-    const today = moment();
+    const today = dayjs();
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
       `${today.format('YYYY-MM-DD')} 13:10 to ${today.format('YYYY-MM-DD')} 13:30`
@@ -294,13 +295,11 @@ describe('DateTimePicker', () => {
       />
     );
     wrapper.find('.iot--date-time-picker__listitem--custom').first().simulate('click');
-    const today = moment();
+    const today = dayjs().subtract(1, 'days');
     wrapper.find('.bx--number__control-btn.up-icon').first().simulate('click');
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
-      `${today.subtract(1, 'days').format('YYYY-MM-DD')} 08:56 to ${today.format(
-        'YYYY-MM-DD'
-      )} 08:57`
+      `${today.format('YYYY-MM-DD')} 08:56 to ${today.format('YYYY-MM-DD')} 08:57`
     );
   });
 
