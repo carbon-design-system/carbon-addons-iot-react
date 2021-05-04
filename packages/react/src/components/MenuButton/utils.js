@@ -34,20 +34,12 @@ export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDi
 
   /* istanbul ignore else */
   if (menuRect) {
-    console.log({ overflow });
     switch (overflow) {
       case 'top-right-bottom':
         x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
         y = buttonY;
         break;
       case 'top-bottom-left':
-        x = isSplitButton
-          ? isRtl
-            ? buttonX + buttonWidth + primaryButtonWidth
-            : buttonX + buttonWidth
-          : buttonX + buttonWidth;
-        y = buttonY;
-        break;
       case 'top-bottom':
         x = isSplitButton
           ? isRtl
@@ -77,20 +69,14 @@ export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDi
         y = buttonY - menuHeight;
         break;
       case 'bottom-left':
+      case 'bottom':
         x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
         y = buttonY - menuHeight;
         break;
       case 'top':
-        y = buttonY + buttonHeight;
-        x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
-        break;
       case 'left':
         x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
         y = buttonY + buttonHeight;
-        break;
-      case 'bottom':
-        x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : x;
-        y = buttonY - menuHeight;
         break;
       case 'right':
         x = isSplitButton
@@ -98,6 +84,7 @@ export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDi
             ? buttonX + buttonWidth + primaryButtonWidth
             : buttonX + buttonWidth
           : buttonX + buttonWidth;
+        y = buttonY + buttonHeight;
         break;
       default:
         x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
