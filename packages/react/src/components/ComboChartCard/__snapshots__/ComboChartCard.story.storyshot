@@ -685,106 +685,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="date"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-date"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="10/28/2018 12:34"
-                              >
-                                10/28/2018 12:34
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="health"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-health"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="85"
-                              >
-                                85
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="age"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-age"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="78"
-                              >
-                                78
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="condition"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-condition"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="97"
-                              >
-                                97
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="rul"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-rul"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="93"
-                              >
-                                93
-                              </span>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                          onClick={[Function]}
-                        >
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="date"
-                            data-offset={0}
                             id="cell-BarChartCard-table-dataindex-1-date"
                             offset={0}
                           >
@@ -793,9 +693,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="10/28/2018 12:34"
+                                title="12/15/2018 00:00"
                               >
-                                10/28/2018 12:34
+                                12/15/2018 00:00
                               </span>
                             </span>
                           </td>
@@ -885,7 +785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="date"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-2-date"
+                            id="cell-BarChartCard-table-dataindex-0-date"
                             offset={0}
                           >
                             <span
@@ -893,9 +793,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="10/28/2018 12:34"
+                                title="12/01/2018 00:00"
                               >
-                                10/28/2018 12:34
+                                12/01/2018 00:00
                               </span>
                             </span>
                           </td>
@@ -904,7 +804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="health"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-2-health"
+                            id="cell-BarChartCard-table-dataindex-0-health"
                             offset={0}
                           >
                             <span
@@ -912,9 +812,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="83"
+                                title="85"
                               >
-                                83
+                                85
                               </span>
                             </span>
                           </td>
@@ -923,7 +823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="age"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-2-age"
+                            id="cell-BarChartCard-table-dataindex-0-age"
                             offset={0}
                           >
                             <span
@@ -931,9 +831,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="77"
+                                title="78"
                               >
-                                77
+                                78
                               </span>
                             </span>
                           </td>
@@ -942,7 +842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="condition"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-2-condition"
+                            id="cell-BarChartCard-table-dataindex-0-condition"
                             offset={0}
                           >
                             <span
@@ -950,9 +850,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="94"
+                                title="97"
                               >
-                                94
+                                97
                               </span>
                             </span>
                           </td>
@@ -961,88 +861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="rul"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-2-rul"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="92"
-                              >
-                                92
-                              </span>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                          onClick={[Function]}
-                        >
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="date"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-3-date"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="10/28/2018 12:34"
-                              >
-                                10/28/2018 12:34
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="health"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-3-health"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="81"
-                              >
-                                81
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="age"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-3-age"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="75"
-                              >
-                                75
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="condition"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-3-condition"
+                            id="cell-BarChartCard-table-dataindex-0-rul"
                             offset={0}
                           >
                             <span
@@ -1056,25 +875,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               </span>
                             </span>
                           </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="rul"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-3-rul"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="92"
-                              >
-                                92
-                              </span>
-                            </span>
-                          </td>
                         </tr>
                         <tr
                           className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
@@ -1085,7 +885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="date"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-4-date"
+                            id="cell-BarChartCard-table-dataindex-24-date"
                             offset={0}
                           >
                             <span
@@ -1093,9 +893,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="10/28/2018 12:34"
+                                title="10/15/2019 00:00"
                               >
-                                10/28/2018 12:34
+                                10/15/2019 00:00
                               </span>
                             </span>
                           </td>
@@ -1104,107 +904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="health"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-4-health"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="80"
-                              >
-                                80
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="age"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-4-age"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="74"
-                              >
-                                74
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="condition"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-4-condition"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="92"
-                              >
-                                92
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="rul"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-4-rul"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="90"
-                              >
-                                90
-                              </span>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                          onClick={[Function]}
-                        >
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="date"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-5-date"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="10/28/2018 12:34"
-                              >
-                                10/28/2018 12:34
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="health"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-5-health"
+                            id="cell-BarChartCard-table-dataindex-24-health"
                             offset={0}
                           >
                             <span
@@ -1223,7 +923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="age"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-5-age"
+                            id="cell-BarChartCard-table-dataindex-24-age"
                             offset={0}
                           >
                             <span
@@ -1231,9 +931,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="74"
+                                title="68"
                               >
-                                74
+                                68
                               </span>
                             </span>
                           </td>
@@ -1242,7 +942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="condition"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-5-condition"
+                            id="cell-BarChartCard-table-dataindex-24-condition"
                             offset={0}
                           >
                             <span
@@ -1250,9 +950,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="82"
+                                title="76"
                               >
-                                82
+                                76
                               </span>
                             </span>
                           </td>
@@ -1261,7 +961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="rul"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-5-rul"
+                            id="cell-BarChartCard-table-dataindex-24-rul"
                             offset={0}
                           >
                             <span
@@ -1269,9 +969,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="90"
+                                title="50"
                               >
-                                90
+                                50
                               </span>
                             </span>
                           </td>
@@ -1285,7 +985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="date"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-6-date"
+                            id="cell-BarChartCard-table-dataindex-25-date"
                             offset={0}
                           >
                             <span
@@ -1293,9 +993,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="10/28/2018 12:34"
+                                title="10/15/2019 00:00"
                               >
-                                10/28/2018 12:34
+                                10/15/2019 00:00
                               </span>
                             </span>
                           </td>
@@ -1304,7 +1004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="health"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-6-health"
+                            id="cell-BarChartCard-table-dataindex-25-health"
                             offset={0}
                           >
                             <span
@@ -1323,7 +1023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="age"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-6-age"
+                            id="cell-BarChartCard-table-dataindex-25-age"
                             offset={0}
                           >
                             <span
@@ -1331,9 +1031,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="74"
+                                title="68"
                               >
-                                74
+                                68
                               </span>
                             </span>
                           </td>
@@ -1342,7 +1042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="condition"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-6-condition"
+                            id="cell-BarChartCard-table-dataindex-25-condition"
                             offset={0}
                           >
                             <span
@@ -1350,9 +1050,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="82"
+                                title="76"
                               >
-                                82
+                                76
                               </span>
                             </span>
                           </td>
@@ -1361,7 +1061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="rul"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-6-rul"
+                            id="cell-BarChartCard-table-dataindex-25-rul"
                             offset={0}
                           >
                             <span
@@ -1369,9 +1069,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="90"
+                                title="50"
                               >
-                                90
+                                50
                               </span>
                             </span>
                           </td>
@@ -1385,7 +1085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="date"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-7-date"
+                            id="cell-BarChartCard-table-dataindex-23-date"
                             offset={0}
                           >
                             <span
@@ -1393,9 +1093,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="10/28/2018 12:34"
+                                title="10/01/2019 00:00"
                               >
-                                10/28/2018 12:34
+                                10/01/2019 00:00
                               </span>
                             </span>
                           </td>
@@ -1404,7 +1104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="health"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-7-health"
+                            id="cell-BarChartCard-table-dataindex-23-health"
                             offset={0}
                           >
                             <span
@@ -1412,9 +1112,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="80"
+                                title="30"
                               >
-                                80
+                                30
                               </span>
                             </span>
                           </td>
@@ -1423,7 +1123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="age"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-7-age"
+                            id="cell-BarChartCard-table-dataindex-23-age"
                             offset={0}
                           >
                             <span
@@ -1431,9 +1131,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="74"
+                                title="57"
                               >
-                                74
+                                57
                               </span>
                             </span>
                           </td>
@@ -1442,7 +1142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="condition"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-7-condition"
+                            id="cell-BarChartCard-table-dataindex-23-condition"
                             offset={0}
                           >
                             <span
@@ -1450,9 +1150,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="92"
+                                title="25"
                               >
-                                92
+                                25
                               </span>
                             </span>
                           </td>
@@ -1461,7 +1161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="rul"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-7-rul"
+                            id="cell-BarChartCard-table-dataindex-23-rul"
                             offset={0}
                           >
                             <span
@@ -1469,9 +1169,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="88"
+                                title="40"
                               >
-                                88
+                                40
                               </span>
                             </span>
                           </td>
@@ -1485,7 +1185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="date"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-8-date"
+                            id="cell-BarChartCard-table-dataindex-22-date"
                             offset={0}
                           >
                             <span
@@ -1493,9 +1193,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="10/28/2018 12:34"
+                                title="09/16/2019 00:00"
                               >
-                                10/28/2018 12:34
+                                09/16/2019 00:00
                               </span>
                             </span>
                           </td>
@@ -1504,7 +1204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="health"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-8-health"
+                            id="cell-BarChartCard-table-dataindex-22-health"
                             offset={0}
                           >
                             <span
@@ -1512,9 +1212,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="77"
+                                title="60"
                               >
-                                77
+                                60
                               </span>
                             </span>
                           </td>
@@ -1523,7 +1223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="age"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-8-age"
+                            id="cell-BarChartCard-table-dataindex-22-age"
                             offset={0}
                           >
                             <span
@@ -1531,9 +1231,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="74"
+                                title="60"
                               >
-                                74
+                                60
                               </span>
                             </span>
                           </td>
@@ -1542,7 +1242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="condition"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-8-condition"
+                            id="cell-BarChartCard-table-dataindex-22-condition"
                             offset={0}
                           >
                             <span
@@ -1550,9 +1250,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="92"
+                                title="68"
                               >
-                                92
+                                68
                               </span>
                             </span>
                           </td>
@@ -1561,7 +1261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="rul"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-8-rul"
+                            id="cell-BarChartCard-table-dataindex-22-rul"
                             offset={0}
                           >
                             <span
@@ -1569,9 +1269,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="83"
+                                title="45"
                               >
-                                83
+                                45
                               </span>
                             </span>
                           </td>
@@ -1585,7 +1285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="date"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-9-date"
+                            id="cell-BarChartCard-table-dataindex-21-date"
                             offset={0}
                           >
                             <span
@@ -1593,9 +1293,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="10/28/2018 12:34"
+                                title="09/01/2019 00:00"
                               >
-                                10/28/2018 12:34
+                                09/01/2019 00:00
                               </span>
                             </span>
                           </td>
@@ -1604,7 +1304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="health"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-9-health"
+                            id="cell-BarChartCard-table-dataindex-21-health"
                             offset={0}
                           >
                             <span
@@ -1612,9 +1312,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="77"
+                                title="70"
                               >
-                                77
+                                70
                               </span>
                             </span>
                           </td>
@@ -1623,7 +1323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="age"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-9-age"
+                            id="cell-BarChartCard-table-dataindex-21-age"
                             offset={0}
                           >
                             <span
@@ -1631,9 +1331,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="74"
+                                title="68"
                               >
-                                74
+                                68
                               </span>
                             </span>
                           </td>
@@ -1642,7 +1342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="condition"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-9-condition"
+                            id="cell-BarChartCard-table-dataindex-21-condition"
                             offset={0}
                           >
                             <span
@@ -1650,9 +1350,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="92"
+                                title="76"
                               >
-                                92
+                                76
                               </span>
                             </span>
                           </td>
@@ -1661,7 +1361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="data-table-start iot--table__cell--sortable"
                             data-column="rul"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-9-rul"
+                            id="cell-BarChartCard-table-dataindex-21-rul"
                             offset={0}
                           >
                             <span
@@ -1669,9 +1369,309 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <span
                                 className=""
-                                title="83"
+                                title="50"
                               >
-                                83
+                                50
+                              </span>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          onClick={[Function]}
+                        >
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="date"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-20-date"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="08/15/2019 00:00"
+                              >
+                                08/15/2019 00:00
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="health"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-20-health"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="62"
+                              >
+                                62
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="age"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-20-age"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="68"
+                              >
+                                68
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="condition"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-20-condition"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="87"
+                              >
+                                87
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="rul"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-20-rul"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="55"
+                              >
+                                55
+                              </span>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          onClick={[Function]}
+                        >
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="date"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-19-date"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="08/01/2019 00:00"
+                              >
+                                08/01/2019 00:00
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="health"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-19-health"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="62"
+                              >
+                                62
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="age"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-19-age"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="68"
+                              >
+                                68
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="condition"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-19-condition"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="87"
+                              >
+                                87
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="rul"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-19-rul"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="55"
+                              >
+                                55
+                              </span>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          onClick={[Function]}
+                        >
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="date"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-17-date"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="07/15/2019 00:00"
+                              >
+                                07/15/2019 00:00
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="health"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-17-health"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="62"
+                              >
+                                62
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="age"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-17-age"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="68"
+                              >
+                                68
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="condition"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-17-condition"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="87"
+                              >
+                                87
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="rul"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-17-rul"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="55"
+                              >
+                                55
                               </span>
                             </span>
                           </td>
