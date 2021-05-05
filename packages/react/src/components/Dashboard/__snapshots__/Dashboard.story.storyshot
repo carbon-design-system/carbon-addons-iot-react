@@ -1750,6 +1750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -4556,6 +4557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -7391,6 +7393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -9452,6 +9455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-expandedcard"
+                          id="table-for-card-expandedcard"
                           title={null}
                         >
                           <thead
@@ -12901,6 +12905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -29327,6 +29332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
