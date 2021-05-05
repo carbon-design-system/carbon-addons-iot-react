@@ -343,7 +343,7 @@ const DashboardEditorCardRenderer = React.memo(
         return renderListCard(cardProps);
       default:
         // if the user passes an element for a custom card type, render it
-        return React.isValidElement(cardProps.content)
+        return React.isValidElement(cardProps.content) || typeof cardProps.content === 'function'
           ? renderCustomCard(cardProps)
           : renderDefaultCard(cardProps);
     }
