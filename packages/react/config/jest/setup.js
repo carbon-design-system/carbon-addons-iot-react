@@ -1,6 +1,8 @@
 'use strict';
+
 import React from 'react';
 import addons, { mockChannel } from '@storybook/addons';
+import MockDate from 'mockdate';
 
 addons.setChannel(mockChannel());
 
@@ -44,16 +46,12 @@ if (typeof window !== 'undefined') {
 
 // Needed so that any component that uses sizeme can be jest tested
 import sizeMe from 'react-sizeme';
+import dayjs from '../../src/utils/dayjs';
 
 sizeMe.noPlaceholders = true;
 
 // Force the timezone to be the same everywhere
-const moment = require.requireActual('moment-timezone');
-moment.fn.local = moment.fn.utc; // mock the local function to return utc
-jest.doMock('moment', () => {
-  moment.tz.setDefault('America/Chicago');
-  return moment;
-});
+dayjs.tz.setDefault('America/Chicago');
 Date.prototype.getTimezoneOffset = () => 300; // mock date offset
-Date.now = jest.fn(() => 1537538254000); // mock internal date
+MockDate.set(1537538254000);
 Date.prototype.getLocaleString = () => 'Mock Date!';

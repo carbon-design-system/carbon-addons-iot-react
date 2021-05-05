@@ -1,5 +1,6 @@
 import React from 'react';
-import moment from 'moment';
+
+import dayjs from './dayjs';
 
 export const chartData = {
   events: [
@@ -2463,7 +2464,7 @@ export const getIntervalChartData = (
 ) =>
   generateData(quantity, intInterval, decimals).map((i, idx) => ({
     ...i,
-    timestamp: moment(startingPoint).subtract(idx, `${interval}s`).unix() * 1000,
+    timestamp: dayjs(startingPoint).subtract(idx, `${interval}s`).unix() * 1000,
   }));
 
 /**
@@ -2474,12 +2475,12 @@ export const getIntervalChartData = (
  * @param {number} decimals multiple of ten to create decimals from
  */
 export const getPeriodChartData = (interval = 'day', period = 'week', intInterval, decimals) => {
-  const endTime = moment();
-  const startTime = moment().startOf(period);
+  const endTime = dayjs();
+  const startTime = dayjs().startOf(period);
   const quantity = endTime.diff(startTime, `${interval}s`) + 1;
   return generateData(quantity, intInterval, decimals).map((i, idx) => ({
     ...i,
-    timestamp: moment().subtract(idx, `${interval}s`).unix() * 1000,
+    timestamp: dayjs().subtract(idx, `${interval}s`).unix() * 1000,
   }));
 };
 

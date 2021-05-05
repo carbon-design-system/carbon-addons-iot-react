@@ -2,10 +2,10 @@ import React, { useMemo, useState } from 'react';
 import warning from 'warning';
 import isNil from 'lodash/isNil';
 import mapValues from 'lodash/mapValues';
-import moment from 'moment';
 
 import { CARD_SIZES } from '../constants/LayoutConstants';
 
+import dayjs from './dayjs';
 import { convertStringsToDOMElement } from './componentUtilityFunctions';
 
 /**
@@ -491,8 +491,8 @@ export const handleTooltip = (
   const dateLabel = timeStamp
     ? `<li class='datapoint-tooltip'>
         <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
-          ? moment.utc(timeStamp)
-          : moment(timeStamp)
+          ? dayjs.utc(timeStamp)
+          : dayjs(timeStamp)
         ).format(tooltipDateFormatPattern)}</p>
       </li>`
     : '';

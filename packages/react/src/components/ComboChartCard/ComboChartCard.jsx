@@ -64,6 +64,7 @@ const ComboChartCard = ({
   isResizable,
   interval,
   domainRange,
+  showTimeInGMT,
   timeRange,
   tooltipDateFormatPattern,
   ...others
@@ -87,6 +88,7 @@ const ComboChartCard = ({
     isEditable,
     interval,
     isLoading,
+    showTimeInGMT,
     tooltipDateFormatPattern,
     chartTitle: content.title,
     values,
