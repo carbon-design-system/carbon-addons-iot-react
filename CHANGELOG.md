@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.68](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.67...v2.145.0-next.68) (2021-05-04)
+
+
+### Bug Fixes
+
+* **combochart:** make sure showTimeInGMT is honored and passed through like it should ([118e19e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/118e19e6f14b399078158d6719d8c41ea3bc3f91))
+* **dayjs:** include all locales with dayjs until Intl plugin is ready ([9c6e059](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9c6e0599dac0d745816e6fc5d6c275bf12b54fc0))
+* **dayjs:** use require for plugins to avoid build errors ([a5b18a9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a5b18a92a67372b19ec302bc8983f41631c283ee))
+* **mockdate:** use MockDate instead of custom implementation so that new Date(timestamp) still works like it should ([86cd8e8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/86cd8e8a8c151270b83c1bf6e3cbe2307b3b7b4c))
+
+
+
+
+
 # [2.145.0-next.67](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.66...v2.145.0-next.67) (2021-04-29)
 
 
