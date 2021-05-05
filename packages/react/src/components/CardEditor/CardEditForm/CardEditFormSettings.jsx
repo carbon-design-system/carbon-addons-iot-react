@@ -120,10 +120,8 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n, availableDimensions 
           translateWithId={handleTranslation}
         />
       );
-    case CARD_TYPES.CUSTOM:
-      return renderEditSettings ? renderEditSettings(onChange, cardConfig) : null;
     default:
-      return null;
+      return renderEditSettings ? renderEditSettings(onChange, cardConfig) : null;
   }
 };
 

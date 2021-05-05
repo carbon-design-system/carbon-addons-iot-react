@@ -188,14 +188,10 @@ const CardEditFormContent = ({
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
         />
-      ) : type === CARD_TYPES.CUSTOM && Array.isArray(editContentSections) ? (
-        editContentSections.map(({ header: { title, tooltip }, content }) => (
-          <>
-            <ContentFormItemTitle title={title} tooltip={tooltip} />
-            {content}
-          </>
-        ))
-      ) : (
+      ) : type === CARD_TYPES.BAR ||
+        type === CARD_TYPES.TIMESERIES ||
+        type === CARD_TYPES.VALUE ||
+        type === CARD_TYPES.LIST ? (
         <DataSeriesFormContent
           cardConfig={cardConfig}
           isSummaryDashboard={isSummaryDashboard}
@@ -211,7 +207,14 @@ const CardEditFormContent = ({
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
         />
-      )}
+      ) : Array.isArray(editContentSections) ? (
+        editContentSections.map(({ header: { title, tooltip }, content }) => (
+          <>
+            <ContentFormItemTitle title={title} tooltip={tooltip} />
+            {content}
+          </>
+        ))
+      ) : null}
     </>
   );
 };

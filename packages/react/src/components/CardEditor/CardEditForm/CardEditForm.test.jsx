@@ -18,6 +18,7 @@ const mockOnValidateCardJson = jest.fn().mockImplementation(() => []);
 const cardConfig = {
   title: 'timeSeries',
   size: 'MEDIUM',
+  type: 'TIMESERIES',
   content: {
     series: [
       {
@@ -162,6 +163,7 @@ describe('CardEditForm', () => {
   describe('hideCardPropertiesForEditor', () => {
     it('should hide properties in the attributes section of a card', () => {
       const sanitizedCard = hideCardPropertiesForEditor({
+        type: 'VALUE',
         content: {
           attributes: [
             {
@@ -175,6 +177,7 @@ describe('CardEditForm', () => {
         },
       });
       expect(sanitizedCard).toEqual({
+        type: 'VALUE',
         content: {
           attributes: [
             {
@@ -188,6 +191,7 @@ describe('CardEditForm', () => {
     });
     it('should hide properties in the series section of a card', () => {
       const sanitizedCard = hideCardPropertiesForEditor({
+        type: 'TIMESERIES',
         content: {
           series: [
             {
@@ -201,6 +205,7 @@ describe('CardEditForm', () => {
         },
       });
       expect(sanitizedCard).toEqual({
+        type: 'TIMESERIES',
         content: {
           series: [
             {
@@ -214,6 +219,7 @@ describe('CardEditForm', () => {
     });
     it('should hide properties in the columns section of a card', () => {
       const sanitizedCard = hideCardPropertiesForEditor({
+        type: 'TABLE',
         content: {
           columns: [
             {
@@ -227,6 +233,7 @@ describe('CardEditForm', () => {
         },
       });
       expect(sanitizedCard).toEqual({
+        type: 'TABLE',
         content: {
           columns: [
             {
@@ -240,6 +247,7 @@ describe('CardEditForm', () => {
     });
     it('should hide properties in the hotspots section of a card', () => {
       const sanitizedCard = hideCardPropertiesForEditor({
+        type: 'IMAGE',
         values: {
           hotspots: [
             {
@@ -266,6 +274,7 @@ describe('CardEditForm', () => {
         },
       });
       expect(sanitizedCard).toEqual({
+        type: 'IMAGE',
         values: {
           hotspots: [
             {
@@ -292,12 +301,12 @@ describe('CardEditForm', () => {
     });
     it('should hide the content for a custom card', () => {
       const sanitizedCard = hideCardPropertiesForEditor({
-        type: 'CUSTOM',
+        type: 'MY_CUSTOM_TYPE',
         title: 'myCustomCard',
         content: 'Custom card content',
       });
       expect(sanitizedCard).toEqual({
-        type: 'CUSTOM',
+        type: 'MY_CUSTOM_TYPE',
         title: 'myCustomCard',
       });
     });
