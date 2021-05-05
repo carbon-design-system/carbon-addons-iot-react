@@ -1965,776 +1965,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           className="data-table-start iot--table__cell--sortable"
                           data-column="timestamp"
                           data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-0-timestamp"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="10/28/2018 07:34"
-                            >
-                              10/28/2018 07:34
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="ENTITY_ID"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-0-ENTITY_ID"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="Sensor2-1"
-                            >
-                              Sensor2-1
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="temperature"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-0-temperature"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="20.00"
-                            >
-                              20.00
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="humidity"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-0-humidity"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="5.51"
-                            >
-                              5.51
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="ecount"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-0-ecount"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="6.00"
-                            >
-                              6.00
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="devname"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-0-devname"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="6ctgim0Qcq"
-                            >
-                              6ctgim0Qcq
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="pressure"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-0-pressure"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="7.40"
-                            >
-                              7.40
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="status"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-0-status"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                            />
-                          </span>
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                        onClick={[Function]}
-                      >
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="timestamp"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-1-timestamp"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="10/28/2018 07:34"
-                            >
-                              10/28/2018 07:34
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="ENTITY_ID"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-1-ENTITY_ID"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="Sensor2-1"
-                            >
-                              Sensor2-1
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="temperature"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-1-temperature"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="19.00"
-                            >
-                              19.00
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="humidity"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-1-humidity"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="7.36"
-                            >
-                              7.36
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="ecount"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-1-ecount"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="58.00"
-                            >
-                              58.00
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="devname"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-1-devname"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="6ctgim0Qcq"
-                            >
-                              6ctgim0Qcq
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="pressure"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-1-pressure"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="9.21"
-                            >
-                              9.21
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="status"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-1-status"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                            />
-                          </span>
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                        onClick={[Function]}
-                      >
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="timestamp"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-2-timestamp"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="10/28/2018 07:34"
-                            >
-                              10/28/2018 07:34
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="ENTITY_ID"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-2-ENTITY_ID"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="Sensor2-1"
-                            >
-                              Sensor2-1
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="temperature"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-2-temperature"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="29.00"
-                            >
-                              29.00
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="humidity"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-2-humidity"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="3.32"
-                            >
-                              3.32
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="ecount"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-2-ecount"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="32.00"
-                            >
-                              32.00
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="devname"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-2-devname"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="6ctgim0Qcq"
-                            >
-                              6ctgim0Qcq
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="pressure"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-2-pressure"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="9.58"
-                            >
-                              9.58
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="status"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-2-status"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                            />
-                          </span>
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                        onClick={[Function]}
-                      >
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="timestamp"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-3-timestamp"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="10/28/2018 07:34"
-                            >
-                              10/28/2018 07:34
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="ENTITY_ID"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-3-ENTITY_ID"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="Sensor2-1"
-                            >
-                              Sensor2-1
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="temperature"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-3-temperature"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="86.00"
-                            >
-                              86.00
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="humidity"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-3-humidity"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="2.98"
-                            >
-                              2.98
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="ecount"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-3-ecount"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="45.00"
-                            >
-                              45.00
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="devname"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-3-devname"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="6ctgim0Qcq"
-                            >
-                              6ctgim0Qcq
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="pressure"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-3-pressure"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="8.72"
-                            >
-                              8.72
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="status"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-3-status"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                            />
-                          </span>
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                        onClick={[Function]}
-                      >
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="timestamp"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-4-timestamp"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="10/28/2018 07:34"
-                            >
-                              10/28/2018 07:34
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="ENTITY_ID"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-4-ENTITY_ID"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="Sensor2-1"
-                            >
-                              Sensor2-1
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="temperature"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-4-temperature"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="11.00"
-                            >
-                              11.00
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="humidity"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-4-humidity"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="9.25"
-                            >
-                              9.25
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="ecount"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-4-ecount"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="38.00"
-                            >
-                              38.00
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="devname"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-4-devname"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="6ctgim0Qcq"
-                            >
-                              6ctgim0Qcq
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="pressure"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-4-pressure"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title="9.57"
-                            >
-                              9.57
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="status"
-                          data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-4-status"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                            />
-                          </span>
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                        onClick={[Function]}
-                      >
-                        <td
-                          align="start"
-                          className="data-table-start iot--table__cell--sortable"
-                          data-column="timestamp"
-                          data-offset={0}
                           id="cell-TimeSeries-table-dataindex-5-timestamp"
                           offset={0}
                         >
@@ -2743,9 +1973,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title="10/28/2018 07:34"
+                              title="10/01/2019 10:54"
                             >
-                              10/28/2018 07:34
+                              10/01/2019 10:54
                             </span>
                           </span>
                         </td>
@@ -2781,9 +2011,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title="35.00"
+                              title="20.00"
                             >
-                              35.00
+                              20.00
                             </span>
                           </span>
                         </td>
@@ -2800,9 +2030,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title="8.15"
+                              title="5.51"
                             >
-                              8.15
+                              5.51
                             </span>
                           </span>
                         </td>
@@ -2819,9 +2049,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title="18.00"
+                              title="6.00"
                             >
-                              18.00
+                              6.00
                             </span>
                           </span>
                         </td>
@@ -2857,6 +2087,776 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
+                              title="7.40"
+                            >
+                              7.40
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="status"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-5-status"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                            />
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
+                      >
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="timestamp"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-timestamp"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="09/01/2019 10:54"
+                            >
+                              09/01/2019 10:54
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="ENTITY_ID"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-ENTITY_ID"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="Sensor2-1"
+                            >
+                              Sensor2-1
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="temperature"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-temperature"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="19.00"
+                            >
+                              19.00
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="humidity"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-humidity"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="7.36"
+                            >
+                              7.36
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="ecount"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-ecount"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="58.00"
+                            >
+                              58.00
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="devname"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-devname"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="6ctgim0Qcq"
+                            >
+                              6ctgim0Qcq
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-pressure"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="9.21"
+                            >
+                              9.21
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="status"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-status"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                            />
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
+                      >
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="timestamp"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-timestamp"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="08/01/2019 10:54"
+                            >
+                              08/01/2019 10:54
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="ENTITY_ID"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-ENTITY_ID"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="Sensor2-1"
+                            >
+                              Sensor2-1
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="temperature"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-temperature"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="29.00"
+                            >
+                              29.00
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="humidity"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-humidity"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="3.32"
+                            >
+                              3.32
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="ecount"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-ecount"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="32.00"
+                            >
+                              32.00
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="devname"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-devname"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="6ctgim0Qcq"
+                            >
+                              6ctgim0Qcq
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-pressure"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="9.58"
+                            >
+                              9.58
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="status"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-status"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                            />
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
+                      >
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="timestamp"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-timestamp"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="07/01/2019 10:54"
+                            >
+                              07/01/2019 10:54
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="ENTITY_ID"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-ENTITY_ID"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="Sensor2-1"
+                            >
+                              Sensor2-1
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="temperature"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-temperature"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="86.00"
+                            >
+                              86.00
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="humidity"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-humidity"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="2.98"
+                            >
+                              2.98
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="ecount"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-ecount"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="45.00"
+                            >
+                              45.00
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="devname"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-devname"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="6ctgim0Qcq"
+                            >
+                              6ctgim0Qcq
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-pressure"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="8.72"
+                            >
+                              8.72
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="status"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-status"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                            />
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
+                      >
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="timestamp"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-timestamp"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="06/01/2019 10:54"
+                            >
+                              06/01/2019 10:54
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="ENTITY_ID"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-ENTITY_ID"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="Sensor2-1"
+                            >
+                              Sensor2-1
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="temperature"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-temperature"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="11.00"
+                            >
+                              11.00
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="humidity"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-humidity"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="9.25"
+                            >
+                              9.25
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="ecount"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-ecount"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="38.00"
+                            >
+                              38.00
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="devname"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-devname"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="6ctgim0Qcq"
+                            >
+                              6ctgim0Qcq
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-pressure"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="9.57"
+                            >
+                              9.57
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="status"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-status"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                            />
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
+                      >
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="timestamp"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-timestamp"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="05/01/2019 10:54"
+                            >
+                              05/01/2019 10:54
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="ENTITY_ID"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-ENTITY_ID"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="Sensor2-1"
+                            >
+                              Sensor2-1
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="temperature"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-temperature"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="35.00"
+                            >
+                              35.00
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="humidity"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-humidity"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="8.15"
+                            >
+                              8.15
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="ecount"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-ecount"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="18.00"
+                            >
+                              18.00
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="devname"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-devname"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
+                              title="6ctgim0Qcq"
+                            >
+                              6ctgim0Qcq
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-pressure"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          >
+                            <span
+                              className=""
                               title="8.30"
                             >
                               8.30
@@ -2868,7 +2868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           className="data-table-start iot--table__cell--sortable"
                           data-column="status"
                           data-offset={0}
-                          id="cell-TimeSeries-table-dataindex-5-status"
+                          id="cell-TimeSeries-table-dataindex-0-status"
                           offset={0}
                         >
                           <span
