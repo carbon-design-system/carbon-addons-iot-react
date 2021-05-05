@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo, useState, useEffect } from 'react';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
@@ -470,19 +469,50 @@ const ImageHotspots = ({
   const container = { height, width, ratio, orientation };
 
   // Once the component mounts set up the container info
-  useDeepCompareEffect(() => {
-    zoom(
-      image.scale,
+  useEffect(
+    () => {
+      zoom(
+        image.scale,
+        zoomMax,
+        container,
+        image,
+        setImage,
+        minimap,
+        setMinimap,
+        options,
+        setOptions
+      );
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+      container.height,
+      container.width,
+      container.ratio,
+      container.orientation,
       zoomMax,
-      container,
-      image,
-      setImage,
-      minimap,
-      setMinimap,
-      options,
-      setOptions
-    );
-  }, [container, zoomMax, image, minimap, options]);
+      image.initialHeight,
+      image.initialWidth,
+      image.scale,
+      image.orientation,
+      image.ratio,
+      image.offsetY,
+      image.offsetX,
+      image.width,
+      image.height,
+      minimap.initialSize,
+      minimap.height,
+      minimap.width,
+      minimap.guideHeight,
+      minimap.guideWidth,
+      minimap.offsetX,
+      minimap.offsetY,
+      options.hideZoomControls,
+      options.hideHotspots,
+      options.hideMinimap,
+      options.resizable,
+      options.draggable,
+    ]
+  );
 
   const { dragging, dragPrepared } = cursor;
   const { hideZoomControls, hideHotspots, hideMinimap, draggable } = options;
