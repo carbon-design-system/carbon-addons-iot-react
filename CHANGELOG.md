@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.69](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.68...v2.145.0-next.69) (2021-05-05)
+
+
+### Bug Fixes
+
+* **listheader:** should not change header when isloading ([2271bc9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2271bc9c0a6189a2f2c648d2eeb00bf557a894d0))
+* **listheader:** update proptypes ([4b7c835](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4b7c835081f72379bc97524c73eeb6332b198ba4))
+
+
+
+
+
 # [2.145.0-next.68](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.67...v2.145.0-next.68) (2021-05-04)
 
 
