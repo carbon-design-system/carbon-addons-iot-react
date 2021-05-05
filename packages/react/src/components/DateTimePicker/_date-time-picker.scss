@@ -42,6 +42,7 @@
     .#{$prefix}--number__input-wrapper {
       input {
         min-width: 8.5rem;
+        padding-right: $spacing-03;
       }
     }
   }

@@ -1,5 +1,4 @@
 import delay from 'lodash/delay';
-import moment from 'moment';
 import { sortStates } from 'carbon-components-react/es/components/DataTable/state/sorting';
 import fileDownload from 'js-file-download';
 import isNil from 'lodash/isNil';
@@ -18,6 +17,8 @@ import {
   svgAttributes,
   eventHandlers,
 } from '../constants/HTMLAttributes';
+
+import dayjs from './dayjs';
 
 /**
  * Helper function to generate a CSV from an array of table cell data
@@ -129,8 +130,8 @@ export const getSortedData = (inputData, columnId, direction, isTimestampColumn)
     }
     if (isTimestampColumn) {
       // support the sort if we have column with timestamp
-      const dateA = moment(a.values[columnId]);
-      const dateB = moment(b.values[columnId]);
+      const dateA = dayjs(a.values[columnId]);
+      const dateB = dayjs(b.values[columnId]);
 
       if (dateA < dateB) {
         return val;
