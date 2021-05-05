@@ -2194,7 +2194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             className="data-table-start iot--table__cell--sortable"
                             data-column="timestamp"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-timestamp"
+                            id="cell-BarChartCard-table-dataindex-3-timestamp"
                             offset={0}
                           >
                             <span
@@ -2202,9 +2202,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                                title="10/28/2018 07:34"
+                                title="02/12/2020 10:23"
                               >
-                                10/28/2018 07:34
+                                02/12/2020 10:23
                               </span>
                             </span>
                           </td>
@@ -2213,7 +2213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             className="data-table-start iot--table__cell--sortable"
                             data-column="Amsterdam"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-Amsterdam"
+                            id="cell-BarChartCard-table-dataindex-3-Amsterdam"
                             offset={0}
                           >
                             <span
@@ -2221,103 +2221,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="New York"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-New York"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="Bangkok"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-Bangkok"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="San Francisco"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-San Francisco"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                        </tr>
-                        <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                          onClick={[Function]}
-                        >
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="timestamp"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-1-timestamp"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="10/28/2018 07:34"
                               >
-                                10/28/2018 07:34
+                                565
                               </span>
                             </span>
                           </td>
                           <td
                             align="start"
                             className="data-table-start iot--table__cell--sortable"
-                            data-column="Amsterdam"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-1-Amsterdam"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
                             data-column="New York"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-1-New York"
+                            id="cell-BarChartCard-table-dataindex-3-New York"
                             offset={0}
                           >
                             <span
@@ -2325,7 +2239,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                453
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2333,7 +2249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             className="data-table-start iot--table__cell--sortable"
                             data-column="Bangkok"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-1-Bangkok"
+                            id="cell-BarChartCard-table-dataindex-3-Bangkok"
                             offset={0}
                           >
                             <span
@@ -2341,7 +2257,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                412
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2349,7 +2267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             className="data-table-start iot--table__cell--sortable"
                             data-column="San Francisco"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-1-San Francisco"
+                            id="cell-BarChartCard-table-dataindex-3-San Francisco"
                             offset={0}
                           >
                             <span
@@ -2357,7 +2275,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                489
+                              </span>
                             </span>
                           </td>
                         </tr>
@@ -2378,9 +2298,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                                title="10/28/2018 07:34"
+                                title="02/11/2020 10:23"
                               >
-                                10/28/2018 07:34
+                                02/11/2020 10:23
                               </span>
                             </span>
                           </td>
@@ -2397,7 +2317,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                512
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2413,7 +2335,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                442
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2429,7 +2353,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                397
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2445,7 +2371,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                270
+                              </span>
                             </span>
                           </td>
                         </tr>
@@ -2458,7 +2386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             className="data-table-start iot--table__cell--sortable"
                             data-column="timestamp"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-3-timestamp"
+                            id="cell-BarChartCard-table-dataindex-1-timestamp"
                             offset={0}
                           >
                             <span
@@ -2466,9 +2394,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                                title="10/28/2018 07:34"
+                                title="02/10/2020 10:23"
                               >
-                                10/28/2018 07:34
+                                02/10/2020 10:23
                               </span>
                             </span>
                           </td>
@@ -2477,7 +2405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             className="data-table-start iot--table__cell--sortable"
                             data-column="Amsterdam"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-3-Amsterdam"
+                            id="cell-BarChartCard-table-dataindex-1-Amsterdam"
                             offset={0}
                           >
                             <span
@@ -2485,7 +2413,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                450
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2493,7 +2423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             className="data-table-start iot--table__cell--sortable"
                             data-column="New York"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-3-New York"
+                            id="cell-BarChartCard-table-dataindex-1-New York"
                             offset={0}
                           >
                             <span
@@ -2501,7 +2431,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                365
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2509,7 +2441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             className="data-table-start iot--table__cell--sortable"
                             data-column="Bangkok"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-3-Bangkok"
+                            id="cell-BarChartCard-table-dataindex-1-Bangkok"
                             offset={0}
                           >
                             <span
@@ -2517,7 +2449,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                410
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2525,7 +2459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             className="data-table-start iot--table__cell--sortable"
                             data-column="San Francisco"
                             data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-3-San Francisco"
+                            id="cell-BarChartCard-table-dataindex-1-San Francisco"
                             offset={0}
                           >
                             <span
@@ -2533,7 +2467,105 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                341
+                              </span>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          onClick={[Function]}
+                        >
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="timestamp"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-timestamp"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="02/09/2020 10:23"
+                              >
+                                02/09/2020 10:23
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="Amsterdam"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-Amsterdam"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                447
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="New York"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-New York"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                528
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="Bangkok"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-Bangkok"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                435
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="San Francisco"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-San Francisco"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                388
+                              </span>
                             </span>
                           </td>
                         </tr>
