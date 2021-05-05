@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.70](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.69...v2.145.0-next.70) (2021-05-05)
+
+
+### Features
+
+* **table:** add id to table element ([4ed3656](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4ed36564ed11f394b88ad025a66e53aef314487b))
+
+
+
+
+
 # [2.145.0-next.69](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.68...v2.145.0-next.69) (2021-05-05)
 
 
