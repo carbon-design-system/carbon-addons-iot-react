@@ -270,7 +270,8 @@ const CardEditForm = ({
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   const isCustomCardWithNoSettings =
-    cardConfig.type === CARD_TYPES.CUSTOM && !cardConfig.renderEditSettings;
+    (cardConfig.type === CARD_TYPES.CUSTOM || !CARD_TYPES.hasOwnProperty(cardConfig.type)) &&
+    !cardConfig.renderEditSettings;
 
   return (
     <>
