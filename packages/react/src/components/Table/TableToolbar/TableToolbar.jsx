@@ -223,6 +223,7 @@ const TableToolbar = ({
           key={id}
           onClick={() => onApplyBatchAction(id)}
           tabIndex={hasRowSelection === 'multi' && totalSelected > 0 ? 0 : -1}
+          disabled={!(hasRowSelection === 'multi' && totalSelected > 0)}
           {...others}
         >
           {labelText}
