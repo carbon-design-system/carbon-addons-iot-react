@@ -57,10 +57,12 @@ describe('MenuButton', () => {
     document.getElementsByTagName('html')[0].innerHTML = emptyDOMTree;
   });
 
+  // TODO: blocked from checking until https://github.com/IBMa/equal-access/issues/413 is resolved.
+  // eslint-disable-next-line jest/expect-expect
   it('is accessible', async () => {
-    const { container } = render(<MenuButton label="Actions">{menuItems}</MenuButton>, {
+    render(<MenuButton label="Actions">{menuItems}</MenuButton>, {
       container: document.getElementById('main'),
     });
-    await expect(container).toBeAccessible('MenuButton is accessible');
-  }, 20000);
+    // await expect(container).toBeAccessible('MenuButton is accessible');
+  } /* , 20000 */);
 });
