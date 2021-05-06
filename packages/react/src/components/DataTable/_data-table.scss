@@ -11,11 +11,18 @@
     .#{$prefix}--table-header-label {
       text-align: center;
     }
+    .#{$prefix}--table-sort {
+      justify-content: center;
+    }
   }
 
   &-end {
     .#{$prefix}--table-header-label {
       text-align: end;
+    }
+    .#{$prefix}--table-sort {
+      justify-content: flex-end;
+      padding-right: 0 !important;
     }
   }
 }
