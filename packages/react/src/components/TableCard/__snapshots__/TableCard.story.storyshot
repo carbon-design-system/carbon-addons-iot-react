@@ -16869,6 +16869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-undefined"
+                  id="table-for-card-undefined"
                   title={null}
                 >
                   <thead
