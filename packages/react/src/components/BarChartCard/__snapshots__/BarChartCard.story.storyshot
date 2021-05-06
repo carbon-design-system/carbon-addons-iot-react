@@ -1831,6 +1831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                     <table
                       className="bx--data-table bx--data-table--no-border"
                       data-testid="BarChartCard-table"
+                      id="BarChartCard-table"
                       title={null}
                     >
                       <thead
