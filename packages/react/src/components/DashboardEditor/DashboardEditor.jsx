@@ -404,6 +404,8 @@ const DashboardEditor = ({
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   // Need to keep track of whether the image gallery is open or not
   const [isImageGalleryModalOpen, setIsImageGalleryModalOpen] = useState(false);
+  // Keep track of whether we need to scroll for new card or not
+  const [needsScroll, setNeedsScroll] = useState(false);
 
   // show the card gallery if no card is being edited
   const [dashboardJson, setDashboardJson] = useState(initialValue);
@@ -434,8 +436,9 @@ const DashboardEditor = ({
   // when a new card is added, scroll to the bottom of the page. Instead of trying to attach the ref to the card itself,
   // check if the scrollHeight has changed in the scroll container, meaning a new card has been added
   useEffect(() => {
-    if (scrollContainerRef.current) {
+    if (scrollContainerRef.current && needsScroll) {
       scrollContainerRef.current.scrollTo(0, scrollContainerRef.current.scrollHeight);
+      setNeedsScroll(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollContainerRef.current?.scrollHeight]);
@@ -457,6 +460,7 @@ const DashboardEditor = ({
         cards: [...dashboardJson.cards, cardConfig],
       }));
       setSelectedCardId(cardConfig.id);
+      setNeedsScroll(true);
     },
     [dashboardJson, mergedI18n, onCardChange]
   );
@@ -476,6 +480,7 @@ const DashboardEditor = ({
       };
     });
     setSelectedCardId(id);
+    setNeedsScroll(true);
   }, []);
 
   /**
