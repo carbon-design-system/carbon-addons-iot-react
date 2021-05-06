@@ -317,6 +317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -809,9 +810,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -937,9 +938,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -1110,9 +1111,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -1238,9 +1239,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -1411,9 +1412,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -1584,9 +1585,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -1757,9 +1758,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -1885,9 +1886,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -2013,9 +2014,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -2141,9 +2142,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -2831,6 +2832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -4070,6 +4072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -4632,9 +4635,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -4712,7 +4715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           >
                             <a
                               className="bx--link"
-                              href="https://ibm.com/73003?time=10%2F28%2F2018%2007%3A34"
+                              href="https://ibm.com/73003?time=07%2F23%2F2019%2004%3A26"
                               rel="noopener"
                               target="_blank"
                             >
@@ -4780,9 +4783,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -4905,7 +4908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           >
                             <a
                               className="bx--link"
-                              href="https://ibm.com/73005?time=10%2F28%2F2018%2007%3A34"
+                              href="https://ibm.com/73005?time=07%2F23%2F2019%2005%3A26"
                               rel="noopener"
                               target="_blank"
                             >
@@ -4973,9 +4976,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -5053,7 +5056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           >
                             <a
                               className="bx--link"
-                              href="https://ibm.com/73000?time=10%2F28%2F2018%2007%3A34"
+                              href="https://ibm.com/73000?time=07%2F23%2F2019%2005%3A26"
                               rel="noopener"
                               target="_blank"
                             >
@@ -5121,9 +5124,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -5246,7 +5249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           >
                             <a
                               className="bx--link"
-                              href="https://ibm.com/73000?time=10%2F28%2F2018%2007%3A34"
+                              href="https://ibm.com/73000?time=07%2F23%2F2019%2004%3A26"
                               rel="noopener"
                               target="_blank"
                             >
@@ -5314,9 +5317,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -5439,7 +5442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           >
                             <a
                               className="bx--link"
-                              href="https://ibm.com/73004?time=10%2F28%2F2018%2007%3A34"
+                              href="https://ibm.com/73004?time=07%2F23%2F2019%2004%3A30"
                               rel="noopener"
                               target="_blank"
                             >
@@ -5507,9 +5510,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -5632,7 +5635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           >
                             <a
                               className="bx--link"
-                              href="https://ibm.com/73001?time=10%2F28%2F2018%2007%3A34"
+                              href="https://ibm.com/73001?time=08%2F02%2F2019%2009%3A42"
                               rel="noopener"
                               target="_blank"
                             >
@@ -5700,9 +5703,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -5780,7 +5783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           >
                             <a
                               className="bx--link"
-                              href="https://ibm.com/73000?time=10%2F28%2F2018%2007%3A34"
+                              href="https://ibm.com/73000?time=07%2F23%2F2019%2005%3A26"
                               rel="noopener"
                               target="_blank"
                             >
@@ -5848,9 +5851,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -5928,7 +5931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           >
                             <a
                               className="bx--link"
-                              href="https://ibm.com/73003?time=10%2F28%2F2018%2007%3A34"
+                              href="https://ibm.com/73003?time=07%2F23%2F2019%2003%3A30"
                               rel="noopener"
                               target="_blank"
                             >
@@ -5996,9 +5999,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -6076,7 +6079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           >
                             <a
                               className="bx--link"
-                              href="https://ibm.com/73005?time=10%2F28%2F2018%2007%3A34"
+                              href="https://ibm.com/73005?time=07%2F23%2F2019%2004%3A26"
                               rel="noopener"
                               target="_blank"
                             >
@@ -6144,9 +6147,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -6269,7 +6272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           >
                             <a
                               className="bx--link"
-                              href="https://ibm.com/73002?time=10%2F28%2F2018%2007%3A34"
+                              href="https://ibm.com/73002?time=07%2F23%2F2019%2004%3A30"
                               rel="noopener"
                               target="_blank"
                             >
@@ -6785,6 +6788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -8229,6 +8233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -10107,6 +10112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -10962,6 +10968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -11518,9 +11525,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="28/10/2018 07:34"
+                            title="23/07/2019 04:26"
                           >
-                            28/10/2018 07:34
+                            23/07/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -11637,9 +11644,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="28/10/2018 07:34"
+                            title="23/07/2019 05:26"
                           >
-                            28/10/2018 07:34
+                            23/07/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -11803,9 +11810,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="28/10/2018 07:34"
+                            title="23/07/2019 05:26"
                           >
-                            28/10/2018 07:34
+                            23/07/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -11969,9 +11976,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="28/10/2018 07:34"
+                            title="23/07/2019 04:26"
                           >
-                            28/10/2018 07:34
+                            23/07/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -12133,9 +12140,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="28/10/2018 07:34"
+                            title="23/07/2019 04:30"
                           >
-                            28/10/2018 07:34
+                            23/07/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -12344,9 +12351,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="28/10/2018 07:34"
+                            title="02/08/2019 09:42"
                           >
-                            28/10/2018 07:34
+                            02/08/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -12508,9 +12515,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="28/10/2018 07:34"
+                            title="23/07/2019 05:26"
                           >
-                            28/10/2018 07:34
+                            23/07/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -12672,9 +12679,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="28/10/2018 07:34"
+                            title="23/07/2019 03:30"
                           >
-                            28/10/2018 07:34
+                            23/07/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -12838,9 +12845,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="28/10/2018 07:34"
+                            title="23/07/2019 04:26"
                           >
-                            28/10/2018 07:34
+                            23/07/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -13002,9 +13009,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="28/10/2018 07:34"
+                            title="23/07/2019 04:30"
                           >
-                            28/10/2018 07:34
+                            23/07/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -13696,6 +13703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -13958,9 +13966,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -14023,9 +14031,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -14088,9 +14096,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -14153,9 +14161,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -14218,9 +14226,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -14283,9 +14291,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -14348,9 +14356,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -14413,9 +14421,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -14478,9 +14486,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -14543,9 +14551,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -15145,6 +15153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -15497,9 +15506,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -15582,9 +15591,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -15667,9 +15676,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -15752,9 +15761,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -15837,9 +15846,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -15922,9 +15931,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -16007,9 +16016,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -16092,9 +16101,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -16177,9 +16186,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -16262,9 +16271,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -16894,6 +16903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -17156,9 +17166,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -17221,9 +17231,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -17286,9 +17296,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -17351,9 +17361,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -17416,9 +17426,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -17481,9 +17491,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -17546,9 +17556,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -17611,9 +17621,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -17676,9 +17686,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -17741,9 +17751,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -18373,6 +18383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -19055,6 +19066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -19489,9 +19501,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -19649,9 +19661,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -19811,9 +19823,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -19973,9 +19985,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -20133,9 +20145,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -20293,9 +20305,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -20453,9 +20465,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -20613,9 +20625,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -20728,9 +20740,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -20888,9 +20900,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -21520,6 +21532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -21808,9 +21821,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -21929,9 +21942,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -22050,9 +22063,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -22171,9 +22184,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -22292,9 +22305,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -22413,9 +22426,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -22534,9 +22547,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -22655,9 +22668,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -22776,9 +22789,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -22897,9 +22910,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -23585,6 +23598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -23885,9 +23899,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -23983,9 +23997,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -24081,9 +24095,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -24179,9 +24193,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -24277,9 +24291,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -24375,9 +24389,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -24473,9 +24487,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -24571,9 +24585,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -24669,9 +24683,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -24767,9 +24781,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -25399,6 +25413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -25699,9 +25714,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -25797,9 +25812,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -25895,9 +25910,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -25993,9 +26008,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -26091,9 +26106,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -26189,9 +26204,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -26287,9 +26302,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -26385,9 +26400,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -26483,9 +26498,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -26581,9 +26596,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -27213,6 +27228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -27513,9 +27529,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -27611,9 +27627,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -27709,9 +27725,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -27807,9 +27823,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -27905,9 +27921,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -28003,9 +28019,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -28101,9 +28117,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -28199,9 +28215,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -28297,9 +28313,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -28395,9 +28411,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -29027,6 +29043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -29327,9 +29344,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -29425,9 +29442,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -29523,9 +29540,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -29621,9 +29638,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -29719,9 +29736,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -29817,9 +29834,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -29915,9 +29932,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -30013,9 +30030,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -30111,9 +30128,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -30209,9 +30226,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -30841,6 +30858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -31129,9 +31147,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -31229,9 +31247,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -31329,9 +31347,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -31429,9 +31447,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -31529,9 +31547,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -31629,9 +31647,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -31729,9 +31747,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -31829,9 +31847,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -31929,9 +31947,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -32029,9 +32047,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -32666,6 +32684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -33222,9 +33241,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -33341,9 +33360,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -33507,9 +33526,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -33673,9 +33692,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -33837,9 +33856,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -34048,9 +34067,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -34212,9 +34231,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -34376,9 +34395,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -34542,9 +34561,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -34706,9 +34725,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -35370,6 +35389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -35702,9 +35722,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -35828,9 +35848,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -35907,9 +35927,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -36033,9 +36053,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -36159,9 +36179,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -36328,9 +36348,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -36499,9 +36519,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -36578,9 +36598,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -36702,9 +36722,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -36828,9 +36848,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -37534,6 +37554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <table
                   className="bx--data-table bx--data-table--no-border"
                   data-testid="table-for-card-table-list"
+                  id="table-for-card-table-list"
                   title={null}
                 >
                   <thead
@@ -38081,9 +38102,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -38233,9 +38254,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -38385,9 +38406,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -38537,9 +38558,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -38734,9 +38755,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
@@ -38916,9 +38937,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="08/02/2019 09:42"
                           >
-                            10/28/2018 07:34
+                            08/02/2019 09:42
                           </span>
                         </span>
                       </td>
@@ -39098,9 +39119,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 05:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 05:26
                           </span>
                         </span>
                       </td>
@@ -39295,9 +39316,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 03:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 03:30
                           </span>
                         </span>
                       </td>
@@ -39447,9 +39468,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:26"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:26
                           </span>
                         </span>
                       </td>
@@ -39644,9 +39665,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <span
                             className=""
-                            title="10/28/2018 07:34"
+                            title="07/23/2019 04:30"
                           >
-                            10/28/2018 07:34
+                            07/23/2019 04:30
                           </span>
                         </span>
                       </td>
