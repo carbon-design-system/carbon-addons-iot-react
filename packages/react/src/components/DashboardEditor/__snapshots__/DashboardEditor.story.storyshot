@@ -17590,7 +17590,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                   <div
                     className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
-                    content={[Function]}
                     data-testid="Card"
                     id="Custom"
                     onKeyDown={[Function]}
@@ -17687,15 +17686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                       }
                     >
-                      <div
-                        style={
-                          Object {
-                            "padding": "1rem",
-                          }
-                        }
-                      >
-                        "Custom"
-                      </div>
+                      custom content function
                       <span
                         className="react-resizable-handle react-resizable-handle-se"
                         onMouseDown={[Function]}
