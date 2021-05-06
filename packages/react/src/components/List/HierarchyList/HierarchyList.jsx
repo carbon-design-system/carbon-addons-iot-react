@@ -81,6 +81,8 @@ const propTypes = {
   sendingData: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   /** optional classname to be passed to the dom element */
   className: PropTypes.string,
+  /** an optional id string passed to the list search field */
+  searchId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -119,6 +121,7 @@ const defaultProps = {
   },
   className: null,
   items: [],
+  searchId: null,
 };
 
 /**
@@ -208,6 +211,7 @@ const HierarchyList = ({
   cancelMoveClicked,
   sendingData,
   className,
+  searchId,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -396,6 +400,7 @@ const HierarchyList = ({
         search={
           hasSearch
             ? {
+                id: searchId,
                 value: searchValue,
                 onChange: (evt) => {
                   setSearchValue(evt.target.value);

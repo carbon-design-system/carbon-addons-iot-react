@@ -4725,6 +4725,7 @@ Map {
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
+      "searchId": null,
       "sendingData": null,
       "title": null,
     },
@@ -4877,6 +4878,9 @@ Map {
         "type": "func",
       },
       "pageSize": Object {
+        "type": "string",
+      },
+      "searchId": Object {
         "type": "string",
       },
       "sendingData": Object {

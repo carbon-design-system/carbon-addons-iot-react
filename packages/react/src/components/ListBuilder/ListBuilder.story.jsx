@@ -1,17 +1,19 @@
 import React, { createElement, useState } from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { withReadme } from 'storybook-readme';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import ListBuilder from './ListBuilder';
+import README from './README.md';
 
 export const Experimental = () => <StoryNotice componentName="ListBuilder" experimental />;
 Experimental.story = {
   name: experimentalStoryTitle,
 };
 
-export const NoItemsSelected = () => (
+export const NoItemsSelected = withReadme(README, () => (
   <ListBuilder
     onAdd={action('onAdd')}
     onRemove={action('onRemove')}
@@ -25,13 +27,13 @@ export const NoItemsSelected = () => (
       { id: '2', content: { value: 'item two' } },
     ]}
   />
-);
+));
 
 NoItemsSelected.story = {
   name: 'with no items selected',
 };
 
-export const ItemsSelected = () => (
+export const ItemsSelected = withReadme(README, () => (
   <ListBuilder
     onAdd={action('onAdd')}
     onRemove={action('onRemove')}
@@ -45,13 +47,13 @@ export const ItemsSelected = () => (
     ]}
     selectedItems={[{ id: '2', content: { value: 'item two' } }]}
   />
-);
+));
 
 ItemsSelected.story = {
   name: 'with items selected',
 };
 
-export const StatefulExample = () => {
+export const StatefulExample = withReadme(README, () => {
   const [selected, setSelected] = useState([]);
   const [items, setItems] = useState([
     {
@@ -101,7 +103,7 @@ export const StatefulExample = () => {
   return (
     <ListBuilder onAdd={handleAdd} onRemove={handleRemove} items={items} selectedItems={selected} />
   );
-};
+});
 
 StatefulExample.story = {
   name: 'stateful example',

@@ -62,6 +62,12 @@ const propTypes = {
 
     /** add aria label on unselected items */
     addLabel: PropTypes.string,
+
+    /** placeholder text for the search box for all items */
+    allListSearchPlaceholderText: PropTypes.string,
+
+    /** placeholder text for the search box for selected items */
+    selectedListSearchPlaceholderText: PropTypes.string,
   }),
 };
 
@@ -82,14 +88,13 @@ const defaultProps = {
     allListTitle: (count) => {
       return `Items (${count} available)`;
     },
-
     selectedListTitle: (count) => {
       return `${count} Selected`;
     },
-
     removeLabel: 'Remove item from list',
-
     addLabel: 'Add item to list',
+    allListSearchPlaceholderText: 'Enter a value to search all items',
+    selectedListSearchPlaceholderText: 'Enter a value to search selected items',
   },
 };
 
@@ -187,6 +192,10 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
           items={allListItems}
           hasSearch
           hasPagination={false}
+          searchId={`${iotPrefix}--list-builder__all--search`}
+          i18n={{
+            searchPlaceHolderText: mergedI18n.allListSearchPlaceholderText,
+          }}
         />
       </div>
       <div className={`${iotPrefix}--list-builder__selected`} data-testid={`${testID}__selected`}>
@@ -195,6 +204,10 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
           items={selectedListItems}
           hasSearch
           hasPagination={false}
+          searchId={`${iotPrefix}--list-builder__selected--search`}
+          i18n={{
+            searchPlaceHolderText: mergedI18n.selectedListSearchPlaceholderText,
+          }}
         />
       </div>
     </div>

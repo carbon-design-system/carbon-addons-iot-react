@@ -1956,7 +1956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__all--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -1977,18 +1977,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__all--search"
+                              id="iot--list-builder__all--search-search"
                             >
-                              Enter a value
+                              Enter a value to search all items
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search all items"
                               role="searchbox"
                               type="text"
                               value=""
@@ -2070,7 +2070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__selected--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -2091,18 +2091,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__selected--search"
+                              id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value
+                              Enter a value to search selected items
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search selected items"
                               role="searchbox"
                               type="text"
                               value=""
@@ -2292,7 +2292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__all--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -2313,18 +2313,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__all--search"
+                              id="iot--list-builder__all--search-search"
                             >
-                              Enter a value
+                              Enter a value to search all items
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search all items"
                               role="searchbox"
                               type="text"
                               value=""
@@ -2406,7 +2406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__selected--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -2427,18 +2427,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__selected--search"
+                              id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value
+                              Enter a value to search selected items
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search selected items"
                               role="searchbox"
                               type="text"
                               value=""
@@ -5891,7 +5891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__all--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -5912,18 +5912,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__all--search"
+                              id="iot--list-builder__all--search-search"
                             >
-                              Enter a value
+                              Enter a value to search all items
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search all items"
                               role="searchbox"
                               type="text"
                               value=""
@@ -6244,7 +6244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__selected--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -6265,18 +6265,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__selected--search"
+                              id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value
+                              Enter a value to search selected items
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search selected items"
                               role="searchbox"
                               type="text"
                               value=""
@@ -6519,7 +6519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__all--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -6540,18 +6540,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__all--search"
+                              id="iot--list-builder__all--search-search"
                             >
-                              Enter a value
+                              Enter a value to search all items
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search all items"
                               role="searchbox"
                               type="text"
                               value=""
@@ -6872,7 +6872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__selected--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -6893,18 +6893,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__selected--search"
+                              id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value
+                              Enter a value to search selected items
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search selected items"
                               role="searchbox"
                               type="text"
                               value=""
