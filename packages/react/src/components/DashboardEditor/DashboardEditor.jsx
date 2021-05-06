@@ -441,7 +441,7 @@ const DashboardEditor = ({
       setNeedsScroll(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scrollContainerRef.current?.scrollHeight]);
+  }, [scrollContainerRef.current?.scrollHeight, needsScroll]);
 
   /**
    * Adds a default, empty card to the preview
