@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.71](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.70...v2.145.0-next.71) (2021-05-06)
+
+
+### Bug Fixes
+
+* **card-edit-form:** fix conditional ([69cfe3b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/69cfe3bac94e3470400dcc49534f501302230e09))
+* **dashboard-editor:** allow multiple custom types ([071640a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/071640a2b4ad49a6f63ec9c38a8931b587319a53))
+* **dashboard-editor:** fix condition for card renderer ([baa2760](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/baa2760d121c00b4704be998e7a6032fe013f601))
+
+
+### Features
+
+* **dashboard-editor:** implement custom cards ([0dddd55](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0dddd5552cd4ad2b06409ec32be86348c4d74af1))
+
+
+
+
+
+# [2.145.0-next.70](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.69...v2.145.0-next.70) (2021-05-05)
+
+
+### Features
+
+* **table:** add id to table element ([4ed3656](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4ed36564ed11f394b88ad025a66e53aef314487b))
+
+
+
+
+
+# [2.145.0-next.69](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.68...v2.145.0-next.69) (2021-05-05)
+
+
+### Bug Fixes
+
+* **listheader:** should not change header when isloading ([2271bc9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2271bc9c0a6189a2f2c648d2eeb00bf557a894d0))
+* **listheader:** update proptypes ([4b7c835](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4b7c835081f72379bc97524c73eeb6332b198ba4))
+
+
+
+
+
 # [2.145.0-next.68](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.67...v2.145.0-next.68) (2021-05-04)
 
 

@@ -1397,6 +1397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                   <table
                     className="bx--data-table bx--data-table--no-border"
                     data-testid="TimeSeries-table"
+                    id="TimeSeries-table"
                     title={null}
                   >
                     <thead

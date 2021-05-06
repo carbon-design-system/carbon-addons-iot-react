@@ -713,6 +713,7 @@ const Table = (props) => {
       ) : null}
       <div className="addons-iot-table-container">
         <CarbonTable
+          id={id}
           data-testid={id}
           className={classnames({
             [`${iotPrefix}--data-table--resize`]: options.hasResize,

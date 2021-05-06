@@ -32,6 +32,17 @@ const propTypes = {
   isSummaryDashboard: PropTypes.bool,
   /** supported card types */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Dictionary of icons that corresponds to both `supportedCardTypes` and `i18n`
+   * ex:
+   * {
+   *  TIMESERIES: <EscalatorDown />,
+   *  ALERT: <Code24 />,
+   *  CUSTOM: <Basketball32 />,
+   *  ANOTHER_CUSTOM: <Automobile32 />,
+   * }
+   */
+  icons: PropTypes.objectOf(PropTypes.node),
   /** if enabled, renders a ContentSwitcher with IconSwitches that allow for manually changing the breakpoint,
    * regardless of the screen width
    */
@@ -279,6 +290,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   breakpointSwitcher: null,
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
+  icons: null,
   renderHeader: null,
   renderIconByName: renderDefaultIconByName,
   renderCardPreview: () => null,
@@ -377,6 +389,7 @@ const DashboardEditor = ({
   i18n,
   locale,
   dataSeriesItemLinks,
+  icons,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
 }) => {
@@ -708,6 +721,7 @@ const DashboardEditor = ({
             onValidateCardJson={onValidateCardJson}
             onCardJsonPreview={onCardJsonPreview}
             supportedCardTypes={supportedCardTypes}
+            icons={icons}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}

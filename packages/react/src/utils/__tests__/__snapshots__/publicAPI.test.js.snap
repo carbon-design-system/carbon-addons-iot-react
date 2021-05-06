@@ -9132,6 +9132,7 @@ Map {
         "searchPlaceHolderText": "Enter a value",
         "selectAGroupBy": "Select a group by",
       },
+      "icons": null,
       "initialValue": Object {
         "cards": Array [],
         "layouts": Object {},
@@ -9649,6 +9650,14 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "icons": Object {
+        "args": Array [
+          Object {
+            "type": "node",
+          },
+        ],
+        "type": "objectOf",
       },
       "initialValue": Object {
         "args": Array [
