@@ -1,5 +1,4 @@
-import moment from 'moment';
-
+import dayjs from '../../../utils/dayjs';
 import SuiteHeaderI18N from '../i18n';
 
 // eslint-disable-next-line import/extensions
@@ -61,15 +60,15 @@ export const calcSurveyStatus = async (userId, surveyConfig, apiFct) => {
     // so, we check if another survey prompt is due.
     if (
       surveyData.lastPromptTimestamp &&
-      moment(surveyData.lastPromptTimestamp).isAfter(surveyData.initialInteractionTimestamp)
+      dayjs(surveyData.lastPromptTimestamp).isAfter(surveyData.initialInteractionTimestamp)
     ) {
-      if (moment().diff(surveyData.lastPromptTimestamp, 'days') > surveyData.frequencyDays) {
+      if (dayjs().diff(surveyData.lastPromptTimestamp, 'days') > surveyData.frequencyDays) {
         return true;
       }
     }
     // No survey has been prompted yet, so we check if it is time for the first one.
     else if (
-      moment().diff(surveyData.initialInteractionTimestamp, 'days') > surveyData.delayIntervalDays
+      dayjs().diff(surveyData.initialInteractionTimestamp, 'days') > surveyData.delayIntervalDays
     ) {
       return true;
     }
@@ -94,7 +93,7 @@ export const calcSurveyStatus = async (userId, surveyConfig, apiFct) => {
     if (showSurvey) {
       // Update lastPromptTimestamp to the current timestamp so that we need to wait another 'frequencyDays' days until the next survey
       await apiFct('PUT', `/users/${userId}/surveys/${surveyConfig.id}`, {
-        lastPromptTimestamp: moment.utc().format(),
+        lastPromptTimestamp: dayjs.utc().format(),
       });
     }
   } else {
@@ -104,7 +103,7 @@ export const calcSurveyStatus = async (userId, surveyConfig, apiFct) => {
       delayIntervalDays: surveyConfig.delayIntervalDays ?? 30,
       frequencyDays: surveyConfig.frequencyDays ?? 90,
       enabled: surveyConfig.enabled ?? true,
-      initialInteractionTimestamp: moment.utc().format(),
+      initialInteractionTimestamp: dayjs.utc().format(),
     });
   }
   return showSurvey;
