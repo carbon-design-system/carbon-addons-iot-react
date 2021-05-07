@@ -188,6 +188,7 @@ export const getDefaultCard = (type, i18n) => {
           hideMinimap: true,
           hideHotspots: false,
           hideZoomControls: false,
+          displayOption: 'contain',
         },
       };
 
