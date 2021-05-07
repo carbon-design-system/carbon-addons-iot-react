@@ -12,14 +12,10 @@ const simpleModel = new AITableModel();
 simpleModel.header = [
   [
     new AITableHeaderItem({
-      data:
-        'Name Name Name Name Name Name Name Name Name Name \
-	Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name \
-	Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name \
-	Name Name Name Name Name Name Name Name Name Name \
-	Name',
+      data: 'Hello',
       rowSpan: 2,
-      alignment: 'center'
+      alignment: 'center',
+      style: { width: '300px' }
     }),
     new AITableHeaderItem({ data: 'hwer', colSpan: 2, sortable: false, alignment: 'center' }),
     null,

@@ -43,7 +43,7 @@ import { TableHead } from 'carbon-components-angular';
             [attr.rowspan]="column.rowSpan"
             [filterTitle]="getFilterTitle()"
             (sort)="sort.emit(i)"
-            [class]="column.className"
+            [class]="column.className + ' iot--table-head--table-header'"
             [skeleton]="skeleton"
             [ngStyle]="column.style"
             [ngClass]="{
