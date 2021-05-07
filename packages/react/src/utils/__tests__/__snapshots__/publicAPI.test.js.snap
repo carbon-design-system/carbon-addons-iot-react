@@ -1582,6 +1582,7 @@ Map {
       "openMenuText": "Open menu",
       "options": Object {},
       "selectAllText": "Select all",
+      "showExpanderColumn": false,
       "testID": "",
     },
     "propTypes": Object {
@@ -1910,6 +1911,9 @@ Map {
               "isRequired": true,
               "type": "bool",
             },
+            "useAutoTableLayoutForResize": Object {
+              "type": "bool",
+            },
             "wrapCellText": Object {
               "args": Array [
                 Array [
@@ -1928,6 +1932,9 @@ Map {
       },
       "selectAllText": Object {
         "type": "string",
+      },
+      "showExpanderColumn": Object {
+        "type": "bool",
       },
       "tableId": Object {
         "isRequired": true,
@@ -2069,6 +2076,7 @@ Map {
       "selectedIds": Array [],
       "shouldExpandOnRowClick": false,
       "shouldLazyRender": false,
+      "showExpanderColumn": false,
       "singleRowEditButtons": null,
       "testID": "",
       "totalColumns": 0,
@@ -2518,6 +2526,9 @@ Map {
         "type": "bool",
       },
       "shouldLazyRender": Object {
+        "type": "bool",
+      },
+      "showExpanderColumn": Object {
         "type": "bool",
       },
       "singleRowEditButtons": Object {
@@ -3064,6 +3075,7 @@ Map {
       "hasRowExpansion": false,
       "hasRowSelection": false,
       "rowCount": 10,
+      "showExpanderColumn": false,
       "testID": "",
     },
     "propTypes": Object {
@@ -3101,6 +3113,9 @@ Map {
       },
       "rowCount": Object {
         "type": "number",
+      },
+      "showExpanderColumn": Object {
+        "type": "bool",
       },
       "testID": Object {
         "type": "string",

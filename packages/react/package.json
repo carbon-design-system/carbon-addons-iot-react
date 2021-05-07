@@ -200,6 +200,7 @@
     "@testing-library/dom": "^7.22.2",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/react": "^10.4.8",
+    "@testing-library/react-hooks": "^5.1.2",
     "@testing-library/user-event": "^12.1.1",
     "accessibility-checker": "^3.0.6",
     "autoprefixer": "^9.4.4",

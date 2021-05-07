@@ -110,6 +110,8 @@ const propTypes = {
    * direction of document
    */
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
+  /** shows an additional column that can expand/shrink as the table is resized  */
+  showExpanderColumn: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -398,6 +400,7 @@ const TableBodyRow = ({
   rowEditMode,
   singleRowEditMode,
   singleRowEditButtons,
+  showExpanderColumn,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -488,6 +491,8 @@ const TableBodyRow = ({
           </TableCell>
         ) : null;
       })}
+      {showExpanderColumn ? <TableCell key={`${tableId}-${id}-row-expander-cell`} /> : null}
+
       {hasRowActions && rowActions ? (
         <RowActionsCell
           id={id}

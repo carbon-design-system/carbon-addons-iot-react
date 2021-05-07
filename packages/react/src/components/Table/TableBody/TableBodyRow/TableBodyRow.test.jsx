@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import TableBodyRow from './TableBodyRow';
 
@@ -138,5 +139,12 @@ describe('TableBodyRow', () => {
     tableBodyRow.simulate('click');
     expect(mockActions.onRowSelected).toHaveBeenCalled();
     expect(mockActions.onRowClicked).toHaveBeenCalled();
+  });
+
+  it('adds an extra cell for the expander column when showExpanderColumn is true', () => {
+    const { container } = render(
+      <TableBodyRow showExpanderColumn tableActions={mockActions} {...tableRowProps} />
+    );
+    expect(container.querySelectorAll('td').length).toEqual(2);
   });
 });
