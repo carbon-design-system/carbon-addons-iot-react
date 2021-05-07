@@ -149,7 +149,6 @@ const ComboBox = ({
       setListItems((currentList) => [newItem, ...currentList]);
     }
 
-    console.log({ newItem });
     setInputValue(null);
   };
 
