@@ -11,10 +11,6 @@ th:not(:last-of-type) {
 }
 
 .sc-table {
-  .bx--table-sort,
-  &.bx--data-table--sort th:first-of-type .bx--table-sort {
-    padding-left: 0;
-  }
   &.bx--data-table th:last-of-type {
     position: inherit;
   }
