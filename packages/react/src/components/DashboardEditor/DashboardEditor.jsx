@@ -437,7 +437,11 @@ const DashboardEditor = ({
   // check if the scrollHeight has changed in the scroll container, meaning a new card has been added
   useEffect(() => {
     if (scrollContainerRef.current && needsScroll) {
-      scrollContainerRef.current.scrollTo(0, scrollContainerRef.current.scrollHeight);
+      scrollContainerRef.current.scrollTo({
+        left: 0,
+        top: scrollContainerRef.current.scrollHeight,
+        behavior: 'smooth',
+      });
       setNeedsScroll(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
