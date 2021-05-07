@@ -1034,7 +1034,6 @@ export const WithCustomFilters = () => {
         filters={[{ columnId: 'alert', value: 'failure' }]}
         size={CARD_SIZES.LARGE}
       />
-      );
     </div>
   );
 };
