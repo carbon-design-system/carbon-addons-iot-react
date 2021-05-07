@@ -12,7 +12,6 @@ import {
   ValueKpiIcon,
   ImageIcon,
   DataTableIcon,
-  AlertTableIcon,
   ListIcon,
   CustomCardIcon,
 } from '../../../icons/components';
@@ -33,7 +32,6 @@ const propTypes = {
     VALUE: PropTypes.string,
     IMAGE: PropTypes.string,
     TABLE: PropTypes.string,
-    ALERT: PropTypes.string,
     LIST: PropTypes.string,
     CUSTOM: PropTypes.string,
   }),
@@ -51,7 +49,6 @@ const defaultProps = {
     VALUE: 'Value / KPI',
     IMAGE: 'Image',
     TABLE: 'Data table',
-    ALERT: 'Alert table',
     LIST: 'List',
     CUSTOM: 'Custom',
     // additional card type names can be provided using the convention of `TYPE` in supportedCardTypes
@@ -64,7 +61,6 @@ const defaultProps = {
     VALUE: <ValueKpiIcon />,
     IMAGE: <ImageIcon />,
     TABLE: <DataTableIcon />,
-    ALERT: <AlertTableIcon />,
     LIST: <ListIcon />,
     CUSTOM: <CustomCardIcon />,
   },
