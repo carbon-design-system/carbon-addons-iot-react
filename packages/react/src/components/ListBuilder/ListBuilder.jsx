@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { ArrowLeft16, ArrowRight16 } from '@carbon/icons-react';
+import { ArrowRight16, Subtract16 } from '@carbon/icons-react';
 
 import HierarchyList from '../List/HierarchyList';
 import { settings } from '../../constants/Settings';
@@ -68,6 +68,12 @@ const propTypes = {
 
     /** placeholder text for the search box for selected items */
     selectedListSearchPlaceholderText: PropTypes.string,
+
+    /** expand aria label when using nested groups */
+    expand: PropTypes.string,
+
+    /** close aria label when using nested groups */
+    close: PropTypes.string,
   }),
 };
 
@@ -95,6 +101,8 @@ const defaultProps = {
     addLabel: 'Add item to list',
     allListSearchPlaceholderText: 'Enter a value to search all items',
     selectedListSearchPlaceholderText: 'Enter a value to search selected items',
+    expand: 'Expand',
+    close: 'Close',
   },
 };
 
@@ -164,7 +172,7 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
                   testID={`${testID}-add-button-${selectedItem.id}`}
                   role="button"
                   aria-label={mergedI18n.removeLabel}
-                  renderIcon={ArrowLeft16}
+                  renderIcon={Subtract16}
                   hasIconOnly
                   kind="ghost"
                   size="small"
@@ -207,6 +215,8 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
           searchId={`${iotPrefix}--list-builder__selected--search`}
           i18n={{
             searchPlaceHolderText: mergedI18n.selectedListSearchPlaceholderText,
+            expand: mergedI18n.expand,
+            close: mergedI18n.close,
           }}
         />
       </div>
