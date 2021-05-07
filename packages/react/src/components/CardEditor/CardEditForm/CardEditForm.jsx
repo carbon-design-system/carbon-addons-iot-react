@@ -185,6 +185,10 @@ export const hideCardPropertiesForEditor = (card) => {
   if (card.content?.columns) {
     columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
   }
+  // Need to exclued content for custom cards because the card's JSX element lives on it in this case
+  if (!CARD_TYPES.hasOwnProperty(card.type) || card.type === CARD_TYPES.CUSTOM) {
+    return omit(card, 'content');
+  }
   return omit(
     attributes // VALUE CARD
       ? { ...card, content: { ...card.content, attributes } }
@@ -265,6 +269,10 @@ const CardEditForm = ({
   const { id } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
+  const isCustomCardWithNoSettings =
+    (cardConfig.type === CARD_TYPES.CUSTOM || !CARD_TYPES.hasOwnProperty(cardConfig.type)) &&
+    !cardConfig.renderEditSettings;
+
   return (
     <>
       {showEditor ? (
@@ -306,7 +314,7 @@ const CardEditForm = ({
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             />
           </Tab>
-          {cardConfig.type !== CARD_TYPES.CUSTOM ? ( // we don't yet support settings for custom cards
+          {!isCustomCardWithNoSettings ? (
             <Tab label={mergedI18n.settingsTabLabel}>
               <CardEditFormSettings
                 availableDimensions={availableDimensions}

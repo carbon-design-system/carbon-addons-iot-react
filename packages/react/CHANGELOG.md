@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.71](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.70...v2.145.0-next.71) (2021-05-06)
+
+
+### Bug Fixes
+
+* **card-edit-form:** fix conditional ([69cfe3b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/69cfe3bac94e3470400dcc49534f501302230e09))
+* **dashboard-editor:** allow multiple custom types ([071640a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/071640a2b4ad49a6f63ec9c38a8931b587319a53))
+* **dashboard-editor:** fix condition for card renderer ([baa2760](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/baa2760d121c00b4704be998e7a6032fe013f601))
+
+
+### Features
+
+* **dashboard-editor:** implement custom cards ([0dddd55](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0dddd5552cd4ad2b06409ec32be86348c4d74af1))
+
+
+
+
+
 # [2.145.0-next.70](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.69...v2.145.0-next.70) (2021-05-05)
 
 
