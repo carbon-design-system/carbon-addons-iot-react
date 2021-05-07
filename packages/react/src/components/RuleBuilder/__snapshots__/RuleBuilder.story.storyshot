@@ -1980,7 +1980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               htmlFor="iot--list-builder__all--search"
                               id="iot--list-builder__all--search-search"
                             >
-                              Enter a value to search all items
+                              Enter a value to search all users
                             </label>
                             <input
                               autoComplete="off"
@@ -1988,7 +1988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value to search all items"
+                              placeholder="Enter a value to search all users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -2094,7 +2094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               htmlFor="iot--list-builder__selected--search"
                               id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value to search selected items
+                              Enter a value to search selected users
                             </label>
                             <input
                               autoComplete="off"
@@ -2102,7 +2102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value to search selected items"
+                              placeholder="Enter a value to search selected users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -2316,7 +2316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               htmlFor="iot--list-builder__all--search"
                               id="iot--list-builder__all--search-search"
                             >
-                              Enter a value to search all items
+                              Enter a value to search all users
                             </label>
                             <input
                               autoComplete="off"
@@ -2324,7 +2324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value to search all items"
+                              placeholder="Enter a value to search all users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -2430,7 +2430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               htmlFor="iot--list-builder__selected--search"
                               id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value to search selected items
+                              Enter a value to search selected users
                             </label>
                             <input
                               autoComplete="off"
@@ -2438,7 +2438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value to search selected items"
+                              placeholder="Enter a value to search selected users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -5915,7 +5915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               htmlFor="iot--list-builder__all--search"
                               id="iot--list-builder__all--search-search"
                             >
-                              Enter a value to search all items
+                              Enter a value to search all users
                             </label>
                             <input
                               autoComplete="off"
@@ -5923,7 +5923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value to search all items"
+                              placeholder="Enter a value to search all users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -6268,7 +6268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               htmlFor="iot--list-builder__selected--search"
                               id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value to search selected items
+                              Enter a value to search selected users
                             </label>
                             <input
                               autoComplete="off"
@@ -6276,7 +6276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value to search selected items"
+                              placeholder="Enter a value to search selected users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -6367,12 +6367,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                         height={16}
                                         preserveAspectRatio="xMidYMid meet"
                                         role="img"
-                                        viewBox="0 0 16 16"
+                                        viewBox="0 0 32 32"
                                         width={16}
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
-                                          d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                                          d="M8 15H24V17H8z"
                                         />
                                       </svg>
                                     </button>
@@ -6543,7 +6543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               htmlFor="iot--list-builder__all--search"
                               id="iot--list-builder__all--search-search"
                             >
-                              Enter a value to search all items
+                              Enter a value to search all users
                             </label>
                             <input
                               autoComplete="off"
@@ -6551,7 +6551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value to search all items"
+                              placeholder="Enter a value to search all users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -6896,7 +6896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               htmlFor="iot--list-builder__selected--search"
                               id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value to search selected items
+                              Enter a value to search selected users
                             </label>
                             <input
                               autoComplete="off"
@@ -6904,7 +6904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value to search selected items"
+                              placeholder="Enter a value to search selected users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -6995,12 +6995,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                         height={16}
                                         preserveAspectRatio="xMidYMid meet"
                                         role="img"
-                                        viewBox="0 0 16 16"
+                                        viewBox="0 0 32 32"
                                         width={16}
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
-                                          d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                                          d="M8 15H24V17H8z"
                                         />
                                       </svg>
                                     </button>

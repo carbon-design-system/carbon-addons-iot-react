@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { ArrowRight16, ArrowLeft16 } from '@carbon/icons-react';
+import { ArrowRight16, Subtract16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
 
 import ComposedModal from '../ComposedModal/ComposedModal';
@@ -28,12 +28,20 @@ export const propTypes = {
   i18n: PropTypes.shape({
     modalHeaderTitle: PropTypes.string,
     modalHeaderLabel: PropTypes.string,
-    users: PropTypes.string,
-    available: PropTypes.string,
-    selected: PropTypes.string,
     addUser: PropTypes.string,
     removeUser: PropTypes.string,
     recent: PropTypes.string,
+    allListSearchPlaceholderText: PropTypes.string,
+    selectedListSearchPlaceholderText: PropTypes.string,
+    expand: PropTypes.string,
+    close: PropTypes.string,
+    primaryButtonLabel: PropTypes.string,
+    secondaryButtonLabel: PropTypes.string,
+    /** (count) => `Items (${count} available)` */
+    allListTitle: PropTypes.func,
+
+    /** (count) => `${count} items selected` */
+    selectedListTitle: PropTypes.func,
   }),
   users: PropTypes.arrayOf(GroupShape).isRequired,
   initialSelectedUsers: PropTypes.arrayOf(GroupShape).isRequired,
@@ -50,13 +58,17 @@ const defaultProps = {
   i18n: {
     modalHeaderTitle: 'Select users',
     modalHeaderLabel: 'Selected users will have edit access',
-    users: 'users',
-    available: 'available ',
-    selected: 'selected ',
     addUser: 'Add',
     removeUser: 'Remove',
     recent: 'Recent',
+    allListSearchPlaceholderText: 'Enter a value to search all users',
+    selectedListSearchPlaceholderText: 'Enter a value to search selected users',
+    expand: 'Expand',
+    close: 'Close',
+    allListTitle: (count) => `Users (${count} available)`,
+    selectedListTitle: (count) => `${count} Selected`,
     primaryButtonLabel: 'OK',
+    secondaryButtonLabel: 'Cancel',
   },
   isOpen: false,
   onSubmit: null,
@@ -202,7 +214,7 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
               key={`${username}-list-item-button-${depth}`}
               style={{ color: 'black' }}
               aria-label={mergedI18n.removeUser}
-              renderIcon={ArrowLeft16}
+              renderIcon={Subtract16}
               hasIconOnly
               kind="ghost"
               size="small"
@@ -227,7 +239,8 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
         isLarge
         footer={{
           isPrimaryButtonDisabled: !canSaveRef.current,
-          primaryButtonLabel: i18n.primaryButtonLabel,
+          primaryButtonLabel: mergedI18n.primaryButtonLabel,
+          secondaryButtonLabel: mergedI18n.secondaryButtonLabel,
         }}
         header={{
           label: mergedI18n.modalHeaderLabel,
@@ -250,9 +263,9 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
           testID="select-users"
           selectedItems={selectedList}
           i18n={{
-            allListTitle: (count) => {
-              return `Users (${count} available)`;
-            },
+            ...mergedI18n,
+            addLabel: mergedI18n.addUser,
+            removeLabel: mergedI18n.removeUser,
           }}
         />
       </ComposedModal>

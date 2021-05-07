@@ -61,6 +61,8 @@ describe('ListBuilder', () => {
           selectedListTitle: (count) => `${count}-selected`,
           addLabel: 'add-item-to-list',
           removeLabel: 'remove-item-from-list',
+          allListSearchPlaceholderText: 'search-all-list',
+          selectedListSearchPlaceholderText: 'search-selected-list',
         }}
       />
     );
@@ -69,6 +71,8 @@ describe('ListBuilder', () => {
     expect(screen.getByText('1-selected')).toBeVisible();
     expect(screen.queryAllByText('add-item-to-list')).not.toBeNull();
     expect(screen.queryAllByText('remove-item-from-list')).not.toBeNull();
+    expect(screen.queryAllByText('search-all-list')).not.toBeNull();
+    expect(screen.queryAllByText('search-selected-list')).not.toBeNull();
   });
 
   it('should show zero when no items are given or selected', () => {
