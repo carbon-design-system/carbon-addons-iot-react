@@ -15,12 +15,10 @@ import { TableRowComponent } from 'carbon-components-angular';
         [skeleton]="skeleton"
         [ariaLabel]="getExpandButtonAriaLabel()"
         [headers]="model.getHeaderId('expand')"
-        (expandRow)="expandRow.emit()">
-      </td>
+        (expandRow)="expandRow.emit()"
+      ></td>
       <ng-container *ngIf="!skeleton && showSelectionColumn && !enableSingleSelect">
-        <td
-          *ngIf="!showSelectionColumnCheckbox; else tableCheckboxTemplate">
-        </td>
+        <td *ngIf="!showSelectionColumnCheckbox; else tableCheckboxTemplate"></td>
         <ng-template #tableCheckboxTemplate>
           <td
             ibmTableCheckbox
@@ -31,8 +29,8 @@ import { TableRowComponent } from 'carbon-components-angular';
             [row]="row"
             [skeleton]="skeleton"
             [headers]="model.getHeaderId('select')"
-            (change)="onSelectionChange()">
-          </td>
+            (change)="onSelectionChange()"
+          ></td>
         </ng-template>
       </ng-container>
       <td
@@ -43,8 +41,8 @@ import { TableRowComponent } from 'carbon-components-angular';
         [row]="row"
         [skeleton]="skeleton"
         [headers]="model.getHeaderId('select')"
-        (change)="onSelectionChange()">
-      </td>
+        (change)="onSelectionChange()"
+      ></td>
       <ng-container *ngFor="let item of row; let j = index">
         <td
           *ngIf="item && model.getHeader(j) && model.getHeader(j).visible"
@@ -64,8 +62,8 @@ import { TableRowComponent } from 'carbon-components-angular';
           [attr.colspan]="item.colSpan"
           [attr.rowspan]="item.rowSpan"
           (click)="onRowClick()"
-          (keydown.enter)="onRowClick()">
-        </td>
+          (keydown.enter)="onRowClick()"
+        ></td>
         <td
           *ngIf="item && model.getHeader(j) == null"
           ibmTableData
@@ -76,11 +74,11 @@ import { TableRowComponent } from 'carbon-components-angular';
           [attr.colspan]="item.colSpan"
           [attr.rowspan]="item.rowSpan"
           (click)="onRowClick()"
-          (keydown.enter)="onRowClick()">
-        </td>
+          (keydown.enter)="onRowClick()"
+        ></td>
       </ng-container>
     </ng-container>
     <ng-content></ng-content>
-  `
+  `,
 })
-export class AITableRow extends TableRowComponent { }
+export class AITableRow extends TableRowComponent {}

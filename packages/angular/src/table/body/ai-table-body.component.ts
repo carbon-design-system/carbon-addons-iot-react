@@ -25,14 +25,14 @@ import { TableBody } from 'carbon-components-angular';
           (expandRow)="model.expandRow(i, !model.isRowExpanded(i))"
           (rowClick)="onRowClick(i)"
           *ngIf="!model.isRowFiltered(i)"
-          [class]="(model.rowsClass[i] ? model.rowsClass[i] : null)"
+          [class]="model.rowsClass[i] ? model.rowsClass[i] : null"
           [ngClass]="{
             'tbody_row--success': !model.isRowSelected(i) && model.getRowContext(i) === 'success',
             'tbody_row--warning': !model.isRowSelected(i) && model.getRowContext(i) === 'warning',
             'tbody_row--info': !model.isRowSelected(i) && model.getRowContext(i) === 'info',
             'tbody_row--error': !model.isRowSelected(i) && model.getRowContext(i) === 'error'
-          }">
-        </tr>
+          }"
+        ></tr>
         <ng-container *ngIf="model.isRowExpanded(i) && !model.isRowFiltered(i)">
           <tr
             *ngIf="!shouldExpandAsTable(row); else expandAsTableTemplate"
@@ -40,8 +40,8 @@ import { TableBody } from 'carbon-components-angular';
             ibmExpandedRowHover
             [row]="row"
             [expanded]="model.isRowExpanded(i)"
-            [skeleton]="skeleton">
-          </tr>
+            [skeleton]="skeleton"
+          ></tr>
           <ng-template #expandAsTableTemplate>
             <tr
               *ngFor="let expandedDataRow of firstExpandedDataInRow(row)"
@@ -51,13 +51,13 @@ import { TableBody } from 'carbon-components-angular';
               [showSelectionColumn]="showSelectionColumn"
               [row]="expandedDataRow"
               [size]="size"
-              [skeleton]="skeleton">
-            </tr>
+              [skeleton]="skeleton"
+            ></tr>
           </ng-template>
         </ng-container>
       </ng-container>
     </ng-container>
     <ng-content></ng-content>
-  `
+  `,
 })
-export class AITableBody extends TableBody { }
+export class AITableBody extends TableBody {}

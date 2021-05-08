@@ -15,7 +15,7 @@ simpleModel.header = [
       data: 'Hello',
       rowSpan: 2,
       alignment: 'center',
-      style: { width: '300px' }
+      style: { width: '300px' },
     }),
     new AITableHeaderItem({ data: 'hwer', colSpan: 2, sortable: false, alignment: 'center' }),
     null,
@@ -23,8 +23,8 @@ simpleModel.header = [
   [
     null,
     new AITableHeaderItem({ data: 'hwer1', alignment: 'start' }),
-    new AITableHeaderItem({ data: 'hwer2', alignment: 'end', style: { width: '300px' } })
-  ]
+    new AITableHeaderItem({ data: 'hwer2', alignment: 'end', style: { width: '300px' } }),
+  ],
 ];
 
 simpleModel.data = [

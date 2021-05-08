@@ -10,20 +10,8 @@ import { AITableBody } from './body/ai-table-body.component';
 import { AITableRow } from './body/ai-table-row.component';
 
 @NgModule({
-  declarations: [
-    AITableBody,
-    AITableComponent,
-    AITableHeadComponent,
-    AITableHeadCell,
-    AITableRow
-  ],
+  declarations: [AITableBody, AITableComponent, AITableHeadComponent, AITableHeadCell, AITableRow],
   imports: [DialogModule, ButtonModule, CommonModule, TableModule],
-  exports: [
-    AITableBody,
-    AITableComponent,
-    AITableHeadComponent,
-    AITableHeadCell,
-    AITableRow
-  ]
+  exports: [AITableBody, AITableComponent, AITableHeadComponent, AITableHeadCell, AITableRow],
 })
 export class AITableModule {}
