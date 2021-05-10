@@ -1,7 +1,6 @@
 import React, { useMemo, useCallback } from 'react';
 import { OverflowMenu, OverflowMenuItem, Link } from 'carbon-components-react';
 import styled from 'styled-components';
-import moment from 'moment';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
@@ -9,6 +8,7 @@ import capitalize from 'lodash/capitalize';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 import { spacing01, spacing05 } from '@carbon/layout';
 
+import dayjs from '../../utils/dayjs';
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -120,6 +120,7 @@ const defaultProps = {
   size: CARD_SIZES.LARGE,
   locale: 'en',
   values: [],
+  filters: [],
   i18n: {
     criticalLabel: 'Critical',
     moderateLabel: 'Moderate',
@@ -161,6 +162,7 @@ const TableCard = ({
   size,
   onCardAction,
   values: valuesProp,
+  filters,
   isEditable,
   isResizable,
   i18n,
@@ -175,7 +177,7 @@ const TableCard = ({
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   // Set the locale
-  moment.locale(locale);
+  dayjs.locale(locale);
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
   const {
     title,
@@ -387,7 +389,7 @@ const TableCard = ({
               ) =>
                 // if it's a timestamp column type make sure to format it
                 filteredTimestampColumns.includes(i.dataSourceId) && !isEditable
-                  ? moment(value).format('L HH:mm')
+                  ? dayjs(value).format('L HH:mm')
                   : isNil(value)
                   ? ''
                   : value.toString(),
@@ -558,7 +560,7 @@ const TableCard = ({
                             <span key={`${item.id}-value`}>
                               {item
                                 ? item.type === 'TIMESTAMP'
-                                  ? moment(dataItem.values[item.id]).format('L HH:mm')
+                                  ? dayjs(dataItem.values[item.id]).format('L HH:mm')
                                   : dataItem.values[item.id]
                                 : null}
                             </span>
@@ -681,7 +683,7 @@ const TableCard = ({
                 isDisabled: isEditable,
                 customToolbarContent: cardToolbar,
               },
-              filters: [],
+              filters,
               table: {
                 ...(columnStartSort
                   ? {

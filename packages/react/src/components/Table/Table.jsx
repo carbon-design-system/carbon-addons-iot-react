@@ -382,7 +382,9 @@ export const defaultProps = (baseProps) => ({
     toggleAggregations: 'Toggle Aggregations',
     /** empty state */
     emptyMessage: 'There is no data',
+    emptyMessageBody: '',
     emptyMessageWithFilters: 'No results match the current filters',
+    emptyMessageWithFiltersBody: 'Try another search or use column filter criteria',
     emptyButtonLabel: 'Create some data',
     downloadIconDescription: 'Download table content',
     filterNone: 'Unsort rows by this header',
@@ -711,6 +713,7 @@ const Table = (props) => {
       ) : null}
       <div className="addons-iot-table-container">
         <CarbonTable
+          id={id}
           data-testid={id}
           className={classnames({
             [`${iotPrefix}--data-table--resize`]: options.hasResize,
@@ -836,7 +839,9 @@ const Table = (props) => {
                   ? view.table.emptyState
                   : {
                       message: i18n.emptyMessage,
+                      messageBody: i18n.emptyMessageBody,
                       messageWithFilters: i18n.emptyMessageWithFilters,
+                      messageWithFiltersBody: i18n.emptyMessageWithFiltersBody,
                       buttonLabel: i18n.emptyButtonLabel,
                       buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
                     }

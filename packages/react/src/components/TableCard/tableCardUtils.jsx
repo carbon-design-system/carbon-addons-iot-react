@@ -1,9 +1,9 @@
 import React from 'react';
 import isNil from 'lodash/isNil';
 import { Link } from 'carbon-components-react';
-import moment from 'moment';
 
 import { formatNumberWithPrecision, getVariables } from '../../utils/cardUtilityFunctions';
+import dayjs from '../../utils/dayjs';
 
 export const determinePrecisionAndValue = (precision = 0, value, locale) => {
   const precisionDefined = Number.isInteger(value) ? 0 : precision;
@@ -48,7 +48,7 @@ export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
               const variableValue =
                 // format the TIMESTAMP type columns
                 matchingColumn?.type === 'TIMESTAMP'
-                  ? moment(row[variable]).format('L HH:mm')
+                  ? dayjs(row[variable]).format('L HH:mm')
                   : row[variable];
               // encode value so the URL can be valid
               const encodedValue =

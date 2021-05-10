@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Button } from 'carbon-components-react';
-import { Bee32 } from '@carbon/icons-react';
+import { DataTable } from 'carbon-components-react';
 
+import EmptyState from '../../EmptyState';
 import { settings } from '../../../constants/Settings';
 import { EmptyStatePropTypes } from '../TablePropTypes';
 
@@ -32,7 +32,14 @@ const EmptyTable = ({
   isFiltered,
   emptyState,
   onEmptyStateAction,
-  emptyState: { messageWithFilters, message, buttonLabel, buttonLabelWithFilters },
+  emptyState: {
+    messageWithFilters,
+    message,
+    buttonLabel,
+    buttonLabelWithFilters,
+    messageBody,
+    messageWithFiltersBody,
+  },
   testID,
 }) => (
   <TableBody id={id} data-testid={testID}>
@@ -42,13 +49,36 @@ const EmptyTable = ({
           emptyState
         ) : (
           <div className="empty-table-cell--default">
-            <Bee32 />
-            <p>{isFiltered && messageWithFilters ? messageWithFilters : message}</p>
-            {onEmptyStateAction ? (
-              <Button onClick={onEmptyStateAction}>
-                {isFiltered ? buttonLabelWithFilters : buttonLabel}
-              </Button>
-            ) : null}
+            {isFiltered ? (
+              <EmptyState
+                icon="no-result"
+                title={messageWithFilters}
+                body={messageWithFiltersBody || ''}
+                action={
+                  onEmptyStateAction
+                    ? {
+                        label: buttonLabelWithFilters,
+                        onClick: onEmptyStateAction,
+                        kind: 'secondary',
+                      }
+                    : null
+                }
+              />
+            ) : (
+              <EmptyState
+                icon="empty"
+                title={message}
+                body={messageBody || ''}
+                action={
+                  onEmptyStateAction
+                    ? {
+                        label: buttonLabel,
+                        onClick: onEmptyStateAction,
+                      }
+                    : null
+                }
+              />
+            )}
           </div>
         )}
       </TableCell>

@@ -204,4 +204,12 @@ describe('ComboBox', () => {
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
     expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Option 1');
   });
+
+  it('handles number ids', async () => {
+    render(<ComboBox {...defaultProps} />);
+
+    userEvent.click(screen.getByRole('button', { name: 'Open' }));
+    userEvent.click(screen.getByText('Option 1'));
+    expect(defaultProps.onChange).toHaveBeenCalledWith([{ id: 0, text: 'Option 1' }]);
+  });
 });

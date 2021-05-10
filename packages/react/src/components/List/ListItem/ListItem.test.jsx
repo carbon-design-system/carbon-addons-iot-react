@@ -109,14 +109,14 @@ describe('ListItem', () => {
     const { rerender } = render(
       <UnconnectedListItem i18n={i18nTest} id="1" value="" isExpandable index={0} />
     );
-    expect(screen.getByLabelText(i18nTest.close)).toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefaults.close)).not.toBeInTheDocument();
+    expect(screen.getByLabelText(i18nTest.expand)).toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefaults.expand)).not.toBeInTheDocument();
 
     rerender(
       <UnconnectedListItem i18n={i18nTest} id="1" value="" isExpandable expanded index={0} />
     );
-    expect(screen.getByLabelText(i18nTest.expand)).toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefaults.expand)).not.toBeInTheDocument();
+    expect(screen.getByLabelText(i18nTest.close)).toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefaults.close)).not.toBeInTheDocument();
   });
 
   it('shows Tags when available', () => {
