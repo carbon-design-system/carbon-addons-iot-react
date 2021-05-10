@@ -860,7 +860,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
                 className="bx--tooltip__content"
                 role="dialog"
               >
-                <div>
+                <div
+                  className="iot--flyout-menu--content"
+                >
                   <div>
                     <h2>
                       This is a header
@@ -875,32 +877,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
                       Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
                     </p>
                   </div>
+                </div>
+                <div
+                  className="iot--flyout-menu__bottom-container"
+                >
                   <div
-                    className="iot--flyout-menu__bottom-container"
-                  >
-                    <div
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "display": "flex",
-                          "height": 64,
-                          "justifyContent": "space-between",
-                        }
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": 64,
+                        "justifyContent": "space-between",
                       }
+                    }
+                  >
+                    I'm a custom footer!  
+                    <button
+                      aria-pressed={null}
+                      className="iot--btn bx--btn bx--btn--primary"
+                      data-testid="Button"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
                     >
-                      I'm a custom footer!  
-                      <button
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--primary"
-                        data-testid="Button"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Confirm
-                      </button>
-                    </div>
+                      Confirm
+                    </button>
                   </div>
                 </div>
               </div>
