@@ -28,7 +28,7 @@ export class CardContentComponent implements OnInit, AfterViewInit {
   @Input() emptyText: any;
   @Input() isEmpty = false;
 
-  constructor(protected cardService: CardService, protected elementRef: ElementRef) { }
+  constructor(protected cardService: CardService, protected elementRef: ElementRef) {}
 
   ngOnInit() {
     this.cardService.onExpand((value) => {

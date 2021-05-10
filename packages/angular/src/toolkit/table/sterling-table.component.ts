@@ -83,4 +83,4 @@ import { Table } from 'carbon-components-angular';
   styleUrls: ['./sterling-table.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class SCTableComponent extends Table { }
+export class SCTableComponent extends Table {}
