@@ -335,7 +335,7 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
     date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
     select: selectData[idx % 3].id,
     secretField: getString(idx, 10) + suffix,
-    number: idx * idx,
+    number: idx % 3 === 0 ? null : idx * idx,
     status: getStatus(idx),
     boolean: getBoolean(idx),
     node: <Add20 />,
