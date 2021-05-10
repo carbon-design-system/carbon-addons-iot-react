@@ -1164,14 +1164,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 tabIndex={-1}
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Prev page"
                   className="iot-simple-pagination-caret-disabled"
-                  description="Prev page"
                   dir="ltr"
                   fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   viewBox="0 0 32 32"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -1189,14 +1189,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 tabIndex={0}
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Next page"
                   className="iot-simple-pagination-caret"
-                  description="Next page"
                   dir="ltr"
                   fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   viewBox="0 0 32 32"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -3687,14 +3687,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 tabIndex={-1}
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Prev page"
                   className="iot-simple-pagination-caret-disabled"
-                  description="Prev page"
                   dir="ltr"
                   fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   viewBox="0 0 32 32"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -3712,14 +3712,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 tabIndex={0}
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Next page"
                   className="iot-simple-pagination-caret"
-                  description="Next page"
                   dir="ltr"
                   fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   viewBox="0 0 32 32"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -6227,14 +6227,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 tabIndex={-1}
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Prev page"
                   className="iot-simple-pagination-caret-disabled"
-                  description="Prev page"
                   dir="ltr"
                   fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   viewBox="0 0 32 32"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -6252,14 +6252,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
                 tabIndex={0}
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Next page"
                   className="iot-simple-pagination-caret"
-                  description="Next page"
                   dir="ltr"
                   fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   viewBox="0 0 32 32"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
