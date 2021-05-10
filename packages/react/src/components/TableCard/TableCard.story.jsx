@@ -1015,6 +1015,33 @@ EditableWithExpandedRows.story = {
   name: 'editable with expanded rows',
 };
 
+export const WithCustomFilters = () => {
+  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing05 + 4,
+      }}
+    >
+      <TableCard
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        filters={[{ columnId: 'alert', value: 'failure' }]}
+        size={CARD_SIZES.LARGE}
+      />
+    </div>
+  );
+};
+
+WithCustomFilters.story = {
+  name: 'with custom filters',
+};
+
 export const WithIsLoading = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 

@@ -120,6 +120,7 @@ const defaultProps = {
   size: CARD_SIZES.LARGE,
   locale: 'en',
   values: [],
+  filters: [],
   i18n: {
     criticalLabel: 'Critical',
     moderateLabel: 'Moderate',
@@ -161,6 +162,7 @@ const TableCard = ({
   size,
   onCardAction,
   values: valuesProp,
+  filters,
   isEditable,
   isResizable,
   i18n,
@@ -681,7 +683,7 @@ const TableCard = ({
                 isDisabled: isEditable,
                 customToolbarContent: cardToolbar,
               },
-              filters: [],
+              filters,
               table: {
                 ...(columnStartSort
                   ? {
