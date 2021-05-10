@@ -120,41 +120,41 @@ const FlyoutMenu = ({
 
       switch (flyoutDirection) {
         case FlyoutMenuDirection.LeftStart:
-          topOffset = tooltipHeight / 2 + caretHeight - borderWidth;
+          topOffset = tooltipHeight / 2 - 2 * borderWidth - borderWidth;
           rtlOffset = 0;
           break;
 
         // off
         case FlyoutMenuDirection.LeftEnd:
           topOffset =
-            -tooltipHeight / 2 + caretHeight + caretWidth - borderWidth - (48 - buttonWidth);
+            -tooltipHeight / 2 + 2 * caretHeight + caretWidth - (48 - buttonWidth) + borderWidth;
           rtlOffset = 0;
           break;
         case FlyoutMenuDirection.RightStart:
-          topOffset = tooltipHeight / 2 + borderWidth;
+          topOffset = tooltipHeight / 2 - caretHeight - borderWidth;
           rtlOffset = -rtlOffset;
           break;
 
         // off
         case FlyoutMenuDirection.RightEnd:
-          topOffset = caretWidth - tooltipHeight / 2 + borderWidth - (48 - buttonWidth);
+          topOffset = -tooltipHeight / 2 + 2 * caretWidth + borderWidth;
           rtlOffset = -rtlOffset;
           break;
         case FlyoutMenuDirection.TopStart:
-          leftOffset = caretWidth + tooltipWidth / 2;
+          leftOffset = tooltipWidth / 2;
           topOffset = caretHeight;
           break;
         case FlyoutMenuDirection.TopEnd:
-          leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
+          leftOffset = -tooltipWidth / 2 + buttonWidth;
           topOffset = caretHeight;
           break;
         case FlyoutMenuDirection.BottomEnd:
           topOffset = -caretHeight;
-          leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
+          leftOffset = -tooltipWidth / 2 + buttonWidth;
           break;
         default:
           // Bottom Start
-          leftOffset = caretWidth + tooltipWidth / 2;
+          leftOffset = tooltipWidth / 2;
           topOffset = -caretHeight;
       }
 
@@ -270,13 +270,10 @@ const FlyoutMenu = ({
             useAutoPositioning={false}
             onChange={onChange}
           >
-            <div>
-              {children}
-
-              {!passive && (
-                <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
-              )}
-            </div>
+            <div className={`${iotPrefix}--flyout-menu--content`}>{children}</div>
+            {!passive && (
+              <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
+            )}
           </Tooltip>
         </div>
       }
