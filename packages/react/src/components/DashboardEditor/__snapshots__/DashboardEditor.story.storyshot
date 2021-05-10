@@ -91,6 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
+                    title="Edit title"
                     type="button"
                   >
                     <span
@@ -2977,6 +2978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="Edit title updated"
                   type="button"
                 >
                   <span
@@ -6054,6 +6056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="Edit title"
                   type="button"
                 >
                   <span
@@ -8787,6 +8790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="Edit title updated"
                   type="button"
                 >
                   <span
@@ -10931,6 +10935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="headerEditTitleButton"
                   type="button"
                 >
                   <span
@@ -13284,6 +13289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
+                    title="Edit title"
                     type="button"
                   >
                     <span
@@ -14659,6 +14665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="Edit title"
                   type="button"
                 >
                   <span
@@ -16010,6 +16017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="Edit title"
                   type="button"
                 >
                   <span
@@ -16185,6 +16193,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     type="button"
                   >
                     Cancel
+                  </button>
+                  <button
+                    aria-pressed={null}
+                    className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
+                    data-testid="Button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Back
                   </button>
                   <button
                     aria-pressed={null}
@@ -18933,6 +18952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="Edit title"
                   type="button"
                 >
                   <span

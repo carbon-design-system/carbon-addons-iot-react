@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import {
   TrashCan16,
@@ -9,7 +9,13 @@ import {
   Laptop16,
   Screen16,
 } from '@carbon/icons-react';
-import { FileUploaderButton, TooltipIcon, ContentSwitcher } from 'carbon-components-react';
+import {
+  FileUploaderButton,
+  TooltipIcon,
+  ContentSwitcher,
+  TextInput,
+} from 'carbon-components-react';
+import isEmpty from 'lodash/isEmpty';
 
 import { settings } from '../../../constants/Settings';
 import { Button, PageTitleBar } from '../../../index';
@@ -36,6 +42,8 @@ const propTypes = {
   onDelete: PropTypes.func,
   /** If provided, renders cancel button linked to this callback */
   onCancel: PropTypes.func,
+  /** If provided, renders back button linked to this callback */
+  onBack: PropTypes.func,
   /** If provided, renders submit button linked to this callback
    * onSubmit(dashboardData)
    */
@@ -51,11 +59,15 @@ const propTypes = {
     headerExportButton: PropTypes.string,
     headerDeleteButton: PropTypes.string,
     headerCancelButton: PropTypes.string,
+    headerBackButton: PropTypes.string,
     headerSubmitButton: PropTypes.string,
     headerFitToScreenButton: PropTypes.string,
     headerXlargeButton: PropTypes.string,
     headerLargeButton: PropTypes.string,
     headerMediumButton: PropTypes.string,
+    dashboardTitleLabel: PropTypes.string,
+    requiredMessage: PropTypes.string,
+    saveTitleButton: PropTypes.string,
   }),
   /** The current dashboard's JSON */
   dashboardJson: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
@@ -80,6 +92,7 @@ const defaultProps = {
   onExport: null,
   onDelete: null,
   onCancel: null,
+  onBack: null,
   onSubmit: null,
   isSubmitDisabled: false,
   isSubmitLoading: false,
@@ -89,11 +102,15 @@ const defaultProps = {
     headerExportButton: 'Export',
     headerDeleteButton: 'Delete',
     headerCancelButton: 'Cancel',
+    headerBackButton: 'Back',
     headerSubmitButton: 'Save and close',
     headerFitToScreenButton: 'Fit to screen',
     headerLargeButton: 'Large view',
     headerMediumButton: 'Medium view',
     headerSmallButton: 'Small view',
+    dashboardTitleLabel: 'Dashboard title',
+    requiredMessage: 'Required',
+    saveTitleButton: 'Save title',
   },
   selectedBreakpointIndex: null,
   setSelectedBreakpointIndex: null,
@@ -108,6 +125,7 @@ const DashboardEditorHeader = ({
   onExport,
   onDelete,
   onCancel,
+  onBack,
   onSubmit,
   isSubmitDisabled,
   isSubmitLoading,
@@ -117,6 +135,8 @@ const DashboardEditorHeader = ({
   setSelectedBreakpointIndex,
   breakpointSwitcher,
 }) => {
+  const [isTitleEditMode, setIsTitleEditMode] = useState(false);
+  const [updatedTitle, setUpdatedTitle] = useState(title);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
@@ -206,6 +226,11 @@ const DashboardEditorHeader = ({
             {mergedI18n.headerCancelButton}
           </Button>
         )}
+        {onBack && (
+          <Button kind="secondary" size="field" onClick={onBack}>
+            {mergedI18n.headerBackButton}
+          </Button>
+        )}
         {onSubmit && (
           <Button
             size="field"
@@ -220,13 +245,61 @@ const DashboardEditorHeader = ({
     </div>
   );
 
+  // handle the edit title button
+  const handleEditClick = useCallback(() => {
+    setIsTitleEditMode(true);
+  }, []);
+
+  const editWidgets = useMemo(
+    () => (
+      <>
+        <TextInput
+          size="sm"
+          labelText={mergedI18n.dashboardTitleLabel}
+          hideLabel
+          id="dashboardTitle"
+          name="dashboardTitle"
+          value={updatedTitle}
+          onChange={(e) => {
+            setUpdatedTitle(e.target.value);
+          }}
+          invalidText={isEmpty(updatedTitle) ?? mergedI18n.requiredMessage}
+          invalid={isEmpty(updatedTitle)}
+        />
+        <Button
+          kind="ghost"
+          size="field"
+          title={mergedI18n.headerCancelButton}
+          onClick={() => {
+            setIsTitleEditMode(false);
+            // revert the title back to the original
+            setUpdatedTitle(title);
+          }}
+        >
+          {mergedI18n.headerCancelButton}
+        </Button>
+        <Button
+          size="field"
+          onClick={() => {
+            onEditTitle(updatedTitle);
+            setIsTitleEditMode(false);
+          }}
+        >
+          {mergedI18n.saveTitleButton}
+        </Button>
+      </>
+    ),
+    [onEditTitle, title, updatedTitle, mergedI18n]
+  );
+
   return (
     <PageTitleBar
       breadcrumb={breadcrumbs}
       extraContent={extraContent}
       title={title}
-      editable={!!onEditTitle}
-      onEdit={onEditTitle}
+      editable={!!onEditTitle && !isTitleEditMode}
+      renderTitleFunction={isTitleEditMode ? () => editWidgets : null}
+      onEdit={handleEditClick}
       i18n={{ editIconDescription: mergedI18n.headerEditTitleButton }}
     />
   );

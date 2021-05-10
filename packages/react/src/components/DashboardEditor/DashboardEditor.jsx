@@ -111,6 +111,8 @@ const propTypes = {
   onDelete: PropTypes.func,
   /** If provided, renders cancel button linked to this callback */
   onCancel: PropTypes.func,
+  /** If provided, renders back button linked to this callback */
+  onBack: PropTypes.func,
   /** If provided, renders submit button linked to this callback
    * onSubmit(dashboardData)
    */
@@ -141,6 +143,7 @@ const propTypes = {
     headerImportButton: PropTypes.string,
     headerExportButton: PropTypes.string,
     headerCancelButton: PropTypes.string,
+    headerBackButton: PropTypes.string,
     headerSubmitButton: PropTypes.string,
     headerDeleteButton: PropTypes.string,
     headerFitToScreenButton: PropTypes.string,
@@ -150,6 +153,9 @@ const propTypes = {
     layoutInfoXl: PropTypes.string,
     layoutInfoLg: PropTypes.string,
     layoutInfoMd: PropTypes.string,
+    dashboardTitleLabel: PropTypes.string,
+    requiredMessage: PropTypes.string,
+    saveTitleButton: PropTypes.string,
 
     // card stirngs
     noDataLabel: PropTypes.string,
@@ -311,6 +317,7 @@ const defaultProps = {
   onImport: null,
   onExport: null,
   onCancel: null,
+  onBack: null,
   onSubmit: null,
   isSubmitDisabled: false,
   isSubmitLoading: false,
@@ -324,6 +331,7 @@ const defaultProps = {
     headerExportButton: 'Export',
     headerDeleteButton: 'Delete',
     headerCancelButton: 'Cancel',
+    headerBackButton: 'Back',
     headerSubmitButton: 'Save and close',
     headerFitToScreenButton: 'Fit to screen',
     headerLargeButton: 'Large view',
@@ -340,6 +348,9 @@ const defaultProps = {
     layoutInfoMd: 'Edit dashboard at medium layout (673 - 1056px)',
     layoutInfoSm: 'Edit dashboard at small layout (481 - 672px)',
     searchPlaceHolderText: 'Enter a value',
+    dashboardTitleLabel: 'Dashboard title',
+    requiredMessage: 'Required',
+    saveTitleButton: 'Save title',
   },
   locale: 'en',
   dataSeriesItemLinks: null,
@@ -378,6 +389,7 @@ const DashboardEditor = ({
   onExport,
   onDelete,
   onCancel,
+  onBack,
   onSubmit,
   isSubmitDisabled,
   isSubmitLoading,
@@ -583,6 +595,7 @@ const DashboardEditor = ({
             onExport={() => onExport(dashboardJson, imagesToUpload)}
             onDelete={onDelete}
             onCancel={onCancel}
+            onBack={onBack}
             onSubmit={(params) => onSubmit(params, imagesToUpload)}
             isSubmitDisabled={isSubmitDisabled}
             isSubmitLoading={isSubmitLoading}

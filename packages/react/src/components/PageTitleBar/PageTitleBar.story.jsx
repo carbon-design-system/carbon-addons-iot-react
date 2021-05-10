@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { select, text, boolean, number, withKnobs, optionsKnob } from '@storybook/addon-knobs';
-import { Add24, TrashCan24, SettingsAdjust24 } from '@carbon/icons-react';
+import { Add24, TrashCan24, SettingsAdjust24, Warning24 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 import { Tabs, Tab, Search, Select, SelectItem, InlineLoading } from 'carbon-components-react';
 
@@ -89,6 +89,10 @@ export const WithBreadcrumb = () => (
     />
   </div>
 );
+
+WithBreadcrumb.story = {
+  name: 'with breadcrumb',
+};
 
 WithBreadcrumb.story = {
   name: 'with breadcrumb',
@@ -436,6 +440,23 @@ export const WithCondensedHeader = () => (
 WithCondensedHeader.story = {
   name: 'with condensed with primary + secondary buttons',
 };
+
+export const CustomRenderFunction = () => (
+  <div style={{ height: '150vh' }}>
+    <PageTitleBar
+      title={commonPageTitleBarProps.title}
+      renderTitleFunction={(title) => (
+        <h2>
+          {title} <Warning24 color="red" />
+        </h2>
+      )}
+      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, breadcrumbDefaultValue, {
+        display: 'select',
+      })}
+      extraContent={commonPageTitleBarProps.extraContent}
+    />
+  </div>
+);
 
 export const WithJustATitleAndDynamicScrolling = () => (
   <div style={{ marginTop: '10rem', height: '150vh' }}>

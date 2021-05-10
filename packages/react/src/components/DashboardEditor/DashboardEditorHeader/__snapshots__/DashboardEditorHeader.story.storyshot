@@ -359,6 +359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
+                title="Edit title"
                 type="button"
               >
                 <span
