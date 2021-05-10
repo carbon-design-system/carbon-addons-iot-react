@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.75](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.74...v2.145.0-next.75) (2021-05-10)
+
+
+### Bug Fixes
+
+* **combo-box:** allow item ids to be numbers ([b613f25](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b613f25a59e5794a126b343b4c63f77e3570cc41))
+* **combo-box:** remove console.log ([e4991db](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e4991db9d65db24c618497a49ac79b39661137b0))
+
+
+
+
+
 # [2.145.0-next.74](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.73...v2.145.0-next.74) (2021-05-10)
 
 
