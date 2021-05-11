@@ -133,7 +133,7 @@ mapboxgl.accessToken =
     },
   });
 
-const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction, availableActions}) => {
+const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction, isSettingPanelOpen, availableActions}) => {
   const mapContainerRef = useRef(null);
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
@@ -276,6 +276,7 @@ const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction, availa
       onCardAction={onCardAction}
       i18n={{ cardTitle: active.name }}
       sideBarContent={sideBarContent}
+      isSettingPanelOpen={isSettingPanelOpen}
     />
   );
 

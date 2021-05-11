@@ -111,22 +111,21 @@
     }
   }
 
-  &__settings-open {
-    .#{$iot-prefix}--map-container {
-      width: calc(100% - 256px);
-    }
-    .#{$iot-prefix}--map-settings {
-      opacity: 1;
-      transform: translateX(-100%);
-    }
-
+  // settings open
+  &-container__open {
+    width: calc(100% - 256px);
     &-legend.#{$iot-prefix}--map-legend__fullwidth {
       width: calc(100% - 256px);
     }
   }
 
-  [dir='rtl'] &__settings-open {
-    .#{$iot-prefix}--map-settings {
+  &-settings__open {
+    opacity: 1;
+    transform: translateX(-100%);
+
+    // RTL for settings open
+
+    [dir='rtl'] & {
       transform: translateX(100%);
     }
   }

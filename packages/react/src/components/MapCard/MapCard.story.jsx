@@ -7,8 +7,8 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 import data from './data.json';
 import options from './storyFiles/mapOptions';
 
-import MapBoxStory from './MapBoxStory';
-import OpenLayersStory from './OpenLayersStory';
+import MapBoxStory from './MapBoxExample';
+import OpenLayersStory from './OpenLayersExample';
 
 
 export const Experimental = () => <StoryNotice componentName="MapCard" experimental />;
@@ -18,24 +18,29 @@ Experimental.story = {
 
 export default {
   title: 'Watson IoT Experimental/☢️ MapCard',
-  decorators: [withKnobs],
+  decorators: [withKnobs, React.createElement],
   parameters: {
-    component: MapBoxCard,
+    component: MapBoxExample,
   },
 };
 
-export const MapBoxCard = () => (
-  <MapBoxStory data={data} options={options} isLegendFullWidth={boolean('isLegendFullWidth', false)} onCardAction={() => action('card action clickety clacked')} availableActions={{ expand: true, settings: true }}/>
-);
+export const MapBoxExample = () => {
+  const [settingsOpen, setSettingsOpen] = React.useState(false)
+  return (
+  <MapBoxStory data={data} options={options} isLegendFullWidth={boolean('isLegendFullWidth', false)} onCardAction={() => setSettingsOpen(last => !last)} availableActions={{ expand: true, settings: true }} isSettingPanelOpen={settingsOpen}/>
+  )
+};
 
-export const OpenlayersExample = () => (
-  <OpenLayersStory data={data} options={options} isLegendFullWidth={boolean('isLegendFullWidth', false)} onCardAction={() => action('card action clickety clacked')} availableActions={{ expand: true, settings: true }}/>
-);
+export const OpenlayersExample = () => {
+  const [settingsOpen, setSettingsOpen] = React.useState(false)
+  return (
+  <OpenLayersStory data={data} options={options} isLegendFullWidth={boolean('isLegendFullWidth', false)} onCardAction={() => setSettingsOpen(last => !last)}availableActions={{ expand: true, settings: true }} isSettingPanelOpen={settingsOpen}/>
+  )
+};
 
 
-MapBoxCard.story = {
+MapBoxExample.story = {
   name: 'MapBox example',
-  decorators: [React.createElement],
 };
 
 

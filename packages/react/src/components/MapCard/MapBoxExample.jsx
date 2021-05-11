@@ -9,7 +9,7 @@ import Optionsfield from './Optionsfield';
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
 
-const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableActions, ...other}) => {
+const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableActions, isSettingPanelOpen, ...other}) => {
   const mapContainerRef = useRef(null);
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
@@ -140,8 +140,6 @@ const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableA
   };
 
 
-
-
   const sideBarContent = () => (
     <Accordion className="settings-accordion" style={{paddingTop: 0}}>
       <AccordionItem title="GDP vs Population" onClick={() => setActiveSideBar(1)} open={activeSideBar === 1}>
@@ -172,6 +170,7 @@ const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableA
       onCardAction={onCardAction}
       i18n={{ cardTitle: active.name }}
       sideBarContent={sideBarContent}
+      isSettingPanelOpen={isSettingPanelOpen}
       {...other}
     />
   );

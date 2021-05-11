@@ -14,8 +14,20 @@ import ImageCard from '../ImageCard/ImageCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
 import ListCard from '../ListCard/ListCard';
+import MapBoxCard from '../MapCard/MapBoxExample';
 
 import DashboardGrid from './DashboardGrid';
+
+import data from '../MapCard/data.json';
+import options from '../MapCard/storyFiles/mapOptions';
+
+const MapBoxExample = ({...props}) => {
+  const [settingsOpen, setSettingsOpen] = React.useState(false)
+
+  return (
+  <MapBoxCard data={data} options={options} isLegendFullWidth={boolean('isLegendFullWidth', false)} onCardAction={() => setSettingsOpen(last => !last)} availableActions={{ expand: true, settings: true }} isSettingPanelOpen={settingsOpen} {...props}/>
+  )
+};
 
 const Cards = [
   <Card
@@ -582,6 +594,7 @@ export const DashboardAllCardsAsResizable = () => {
     valueCard: CARD_SIZES.SMALLWIDE,
     gaugeCard: CARD_SIZES.MEDIUMTHIN,
     pieChartCard: CARD_SIZES.MEDIUM,
+    mapCard: CARD_SIZES.LARGEWIDE,
     tableCard: CARD_SIZES.LARGE,
     imageCard: CARD_SIZES.LARGE,
     timeSeriesCard: CARD_SIZES.LARGETHIN,
@@ -650,6 +663,7 @@ export const DashboardAllCardsAsResizable = () => {
       isResizable={isResizable}
       values={pieChartCardValues}
     />,
+    <MapBoxExample id="mapCard" key="mapCard" title={`MapCard - ${currentSizes.mapCard}`} size={currentSizes.mapCard}/>,
     <TableCard
       title={`TableCard - ${currentSizes.tableCard}`}
       id="tableCard"
@@ -729,6 +743,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
     ],
     xl: [
@@ -740,6 +755,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
     ],
     lg: [
@@ -751,6 +767,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
     ],
     md: [
@@ -762,6 +779,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 8, h: 4 },
     ],
     sm: [
@@ -773,6 +791,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'listCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 0, w: 4, h: 4 },
+      { i: 'mapCard', x: 4, y: 0, w: 4, h: 4 },
       { i: 'barChartCard', x: 8, y: 0, w: 4, h: 4 },
     ],
     xs: [
@@ -784,6 +803,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'listCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 0, w: 4, h: 4 },
+      { i: 'mapCard', x: 4, y: 0, w: 4, h: 4 },
       { i: 'barChartCard', x: 8, y: 0, w: 4, h: 4 },
     ],
   };
@@ -803,6 +823,10 @@ export const DashboardAllCardsAsResizable = () => {
           cardLayoutCopy.minH = CARD_DIMENSIONS.MEDIUMTHIN.max.h;
           break;
         case 'tableCard':
+          cardLayoutCopy.minW = CARD_DIMENSIONS.LARGE.max.w;
+          cardLayoutCopy.minH = CARD_DIMENSIONS.LARGE.max.h;
+          break;
+        case 'mapCard':
           cardLayoutCopy.minW = CARD_DIMENSIONS.LARGE.max.w;
           cardLayoutCopy.minH = CARD_DIMENSIONS.LARGE.max.h;
           break;

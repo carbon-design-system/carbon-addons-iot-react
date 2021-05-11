@@ -1,5 +1,4 @@
 import React, { useMemo, useState, useEffect } from 'react';
-import mapboxgl from 'mapbox-gl';
 import classnames from 'classnames';
 import { Maximize16, Close16 } from '@carbon/icons-react';
 import { useLangDirection } from 'use-lang-direction';
@@ -21,8 +20,7 @@ import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
 
-mapboxgl.accessToken =
-  'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
+
 
 const defaultStrings = {
   cardTitle: 'Card Title',
@@ -34,7 +32,7 @@ const defaultStrings = {
   layerTriggerIconDescription: 'Layered controls'
 };
 
-const MapBoxCard = ({
+const MapCard = ({
   mapContainerRef,
   availableActions,
   size = CARD_SIZES.LARGEWIDE,
@@ -51,11 +49,10 @@ const MapBoxCard = ({
   options,
   layeredControls,
   onCardAction,
+  isSettingPanelOpen,
   sideBarContent: SideBarContent,
   ...others
 }) => {
-  const [settingsOpen, setSettingsOpen] = useState(false);
-  const [action, setAction] = useState(null);
   const mergedI18n = useMemo(() => ({ ...defaultStrings, ...i18n }), [i18n]);
   const langDir = useLangDirection();
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
@@ -63,19 +60,6 @@ const MapBoxCard = ({
   const layout = determineLayout(newSize);
   const BASE_CLASS_NAME = `${iotPrefix}--map`;
 
-  useEffect(
-    () => {
-      console.log('Settings have changed, ', settingsOpen, action)
-      onCardAction(action?.id, action?.action);
-    }, [action]
-  );
-
-  const handleOnCardAction = (id, action) => {
-    setAction({id,action});
-    if (action === 'ON_SETTINGS_CLICK') {
-      setSettingsOpen((oldSettingsOpen) => !oldSettingsOpen);
-    }
-  };
 
   const tooltipPosition = React.useMemo(() => {
     if (langDir === 'ltr') {
@@ -94,17 +78,20 @@ const MapBoxCard = ({
       resizeHandles={resizeHandles}
       i18n={mergedI18n}
       id={id}
-      onCardAction={handleOnCardAction}
       renderExpandIcon={Maximize16}
+      onCardAction={onCardAction}
       className={classnames(`${BASE_CLASS_NAME}`, {
         // allows attribute overflow scrolling
-        [`${BASE_CLASS_NAME}__settings-open`]: settingsOpen,
+        [`${BASE_CLASS_NAME}__settings-open`]: isSettingPanelOpen,
         [`${BASE_CLASS_NAME}__has-fullwidth-legend`]: isLegendFullWidth,
         [`${BASE_CLASS_NAME}__vertical`]: layout === CARD_LAYOUTS.VERTICAL,
       })}
       {...others}
     >
-      <div ref={mapContainerRef} className={`${BASE_CLASS_NAME}-container`}>
+      <div ref={mapContainerRef} className={classnames(
+        `${BASE_CLASS_NAME}-container`,
+        {[`${BASE_CLASS_NAME}-container__open`]: isSettingPanelOpen,})
+      }>
         <div className={`${BASE_CLASS_NAME}-controls`}>
           { controls }
           <ZoomControl
@@ -116,7 +103,9 @@ const MapBoxCard = ({
         </div>
         <Legend title={mergedI18n.legendTitle} stops={stops} isFullWidth={isLegendFullWidth} />
       </div>
-      <div className={`${BASE_CLASS_NAME}-settings`}>
+      <div className={classnames(
+        `${BASE_CLASS_NAME}-settings`,
+        {[`${BASE_CLASS_NAME}-settings__open`]: isSettingPanelOpen,})}>
         <div className={`${BASE_CLASS_NAME}-settings-header`}>
           <h3 className={`${BASE_CLASS_NAME}-settings-header-title`}>{mergedI18n.configurationTitle}</h3>
           <Button
@@ -135,4 +124,4 @@ const MapBoxCard = ({
   );
 };
 
-export default MapBoxCard;
+export default MapCard;

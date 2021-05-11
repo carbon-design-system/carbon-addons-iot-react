@@ -179,6 +179,7 @@ export const defaultProps = {
     delete: false,
     range: false,
     expand: false,
+    settings: false,
   },
   renderExpandIcon: undefined,
   rowHeight: ROW_HEIGHT,
