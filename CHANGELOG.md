@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.77](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.76...v2.145.0-next.77) (2021-05-11)
+
+
+### Bug Fixes
+
+* **table-body-row:** only show cursor on checkbox element ([5b6d980](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5b6d980ebf4e31caec9fc88ccecff2e10502de0f))
+* **table-body-row:** update snapshots ([a87a1f1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a87a1f10bc1658f314a290a1a365ad8f52c5ff6e))
+
+
+
+
+
 # [2.145.0-next.76](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.75...v2.145.0-next.76) (2021-05-10)
 
 
