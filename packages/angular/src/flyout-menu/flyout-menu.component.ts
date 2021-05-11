@@ -1,8 +1,4 @@
-import {
-  Component,
-  Input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 /**
  * The Filter menu component encapsulates the OverFlowMenu directive, and the flyout iconography
