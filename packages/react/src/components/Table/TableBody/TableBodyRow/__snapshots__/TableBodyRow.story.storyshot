@@ -25,7 +25,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             aria-live="polite"
           >
             <tr
-              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
               onClick={[Function]}
             >
               <td
@@ -181,7 +181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             aria-live="polite"
           >
             <tr
-              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
               onClick={[Function]}
             >
               <td
@@ -337,7 +337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             aria-live="polite"
           >
             <tr
-              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
               onClick={[Function]}
             >
               <td

@@ -2187,7 +2187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
                         data-testID="BarChartCard-table-table-body"
                       >
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -2283,7 +2283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -2379,7 +2379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -2475,7 +2475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
