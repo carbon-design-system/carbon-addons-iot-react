@@ -14733,6 +14733,7 @@ Map {
   },
   "TableCard" => Object {
     "defaultProps": Object {
+      "filters": Array [],
       "i18n": Object {
         "cloneCardLabel": "Clone card",
         "closeLabel": "Close",
