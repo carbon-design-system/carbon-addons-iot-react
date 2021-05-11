@@ -91,7 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -2606,7 +2606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -3846,7 +3846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -6631,7 +6631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -8076,7 +8076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -9856,7 +9856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -10609,7 +10609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 className="iot--empty-state--text"
                                 data-testid="EmptyState-body"
                               >
-
+                                
                               </p>
                             </div>
                           </div>
@@ -10742,7 +10742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -13447,7 +13447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -14927,7 +14927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -16556,7 +16556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with custom filters 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with custom filters 1`] = `
 <div
   className="storybook-container"
 >
@@ -17409,7 +17409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with fixed column size 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with fixed column size 1`] = `
 <div
   className="storybook-container"
 >
@@ -17500,7 +17500,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -18980,7 +18980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -19663,7 +19663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -22129,7 +22129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -22626,7 +22626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className=""
                             title=""
                           >
-
+                            
                           </span>
                         </span>
                       </th>
@@ -24195,7 +24195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -26010,7 +26010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -27825,7 +27825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -29640,7 +29640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -31455,7 +31455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -31952,7 +31952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className=""
                             title=""
                           >
-
+                            
                           </span>
                         </span>
                       </th>
@@ -33311,7 +33311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -36016,7 +36016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
@@ -38181,7 +38181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__label"
                   id="card-tooltip-trigger-table-for-card-table-list"
                 >
-
+                  
                   <div
                     aria-describedby={null}
                     className="bx--tooltip__trigger"
