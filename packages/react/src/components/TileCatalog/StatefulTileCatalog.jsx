@@ -63,7 +63,7 @@ const StatefulTileCatalog = ({
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [tilesWithoutRenderContent]
+    [tilesWithoutRenderContent, previousTiles]
   );
 
   useEffect(() => {

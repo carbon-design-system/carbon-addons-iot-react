@@ -229,7 +229,10 @@ const HierarchyList = ({
   const [selectedIds, setSelectedIds] = useState([]);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const itemsWithIdAndChildren = useMemo(() => reduceItems(items), [items]);
+  // these are used in filtering, and since items may contain nodes or react elements
+  // we don't want to do equality checks against those, so we strip the items down to
+  // the basics need for filtering checks and memoize them for use in the useEffect below
+  const itemsStrippedOfNodeElements = useMemo(() => reduceItems(items), [items]);
   const previousItems = usePrevious(items);
   useEffect(() => {
     if (!isEqual(items, previousItems)) {
@@ -247,21 +250,18 @@ const HierarchyList = ({
     }
   }, []);
 
-  const setSelected = useCallback(
-    (id, parentId = null) => {
-      if (editingStyle) {
-        setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
-      } else if (selectedIds.includes(id) && hasDeselection) {
-        setSelectedIds(selectedIds.filter((item) => item !== id));
-        // else, no-op because the item can't be deselected
-      } else if (hasMultiSelect) {
-        setSelectedIds([...selectedIds, id]);
-      } else {
-        setSelectedIds([id]);
-      }
-    },
-    [editModeSelectedIds, editingStyle, hasDeselection, hasMultiSelect, items, selectedIds]
-  );
+  const setSelected = (id, parentId = null) => {
+    if (editingStyle) {
+      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
+    } else if (selectedIds.includes(id) && hasDeselection) {
+      setSelectedIds(selectedIds.filter((item) => item !== id));
+      // else, no-op because the item can't be deselected
+    } else if (hasMultiSelect) {
+      setSelectedIds([...selectedIds, id]);
+    } else {
+      setSelectedIds([id]);
+    }
+  };
 
   const handleSelect = (id, parentId = null) => {
     setSelected(id, parentId);
@@ -278,11 +278,13 @@ const HierarchyList = ({
   };
 
   useEffect(
-    // have to use deep compare to accurately compare items
     () => {
       // Expand the parent elements of the defaultSelectedId
       if (defaultSelectedId) {
-        const tempFilteredItems = searchForNestedItemIds(itemsWithIdAndChildren, defaultSelectedId);
+        const tempFilteredItems = searchForNestedItemIds(
+          itemsStrippedOfNodeElements,
+          defaultSelectedId
+        );
         const tempExpandedIds = [...expandedIds];
         // Expand the categories that have found results
         tempFilteredItems.forEach((categoryItem) => {
@@ -297,7 +299,7 @@ const HierarchyList = ({
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultSelectedId, itemsWithIdAndChildren]
+    [defaultSelectedId, itemsStrippedOfNodeElements]
   );
 
   const numberOfItems = filteredItems.length;

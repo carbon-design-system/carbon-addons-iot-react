@@ -483,6 +483,9 @@ const ImageHotspots = ({
         setOptions
       );
     },
+    // to prevent needing useDeepCompareEffect, since it's an anti-pattern
+    // we split out all the various parts needed by the zoom function and check them
+    // individually.
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [
       container.height,
