@@ -26,6 +26,11 @@
     &--detail {
       flex: 1;
       padding-left: $spacing-05;
+      overflow: hidden;
+      div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 
