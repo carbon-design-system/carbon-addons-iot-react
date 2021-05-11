@@ -34,11 +34,15 @@ const HeaderActionGroup = ({ actionItems }) => {
   const checkForOverflow = useCallback(() => {
     /* istanbul ignore else */
     if (overFlowContainerRef.current) {
-      const rect = overFlowContainerRef.current?.lastChild?.lastChild?.getBoundingClientRect();
+      // the first button in the action group
+      const actionRect = overFlowContainerRef.current?.lastChild?.firstChild?.getBoundingClientRect();
+      // the whole div containing the name and subtitle
+      const nameRect = overFlowContainerRef.current?.previousSibling?.getBoundingClientRect();
       /* istanbul ignore else */
-      if (rect) {
+      if (actionRect && nameRect) {
         const windowWidth = window.innerWidth || document.documentElement.clientWidth;
-        const tooBig = Math.ceil(rect.right) > windowWidth;
+        // check that it's also greater than zero to prevent collapsing in jest where all the values are 0.
+        const tooBig = nameRect.right > 0 && nameRect.right >= actionRect.left;
         const previousBreakpoint = breakpoint.current;
 
         if (tooBig && actionItems.length > 0 && overflowItems.length === 0) {

@@ -295,6 +295,7 @@ describe('Header', () => {
     Element.prototype.getBoundingClientRect = () => {
       return {
         right: 400,
+        left: 390,
       };
     };
     render(
