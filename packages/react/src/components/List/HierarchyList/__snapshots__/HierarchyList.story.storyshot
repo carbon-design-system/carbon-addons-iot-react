@@ -147,15 +147,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -198,15 +200,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -249,15 +253,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -300,15 +306,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -351,15 +359,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -417,14 +427,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                 tabIndex={-1}
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Prev page"
                   className="iot-simple-pagination-caret-disabled"
-                  description="Prev page"
                   dir="ltr"
                   fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   viewBox="0 0 32 32"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -442,14 +452,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                 tabIndex={0}
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Next page"
                   className="iot-simple-pagination-caret"
-                  description="Next page"
                   dir="ltr"
                   fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   viewBox="0 0 32 32"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -614,7 +624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id14"
+                    id="id15"
                     name="Chicago White Sox"
                     onChange={[Function]}
                     tabIndex={0}
@@ -623,7 +633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id14"
+                    htmlFor="id15"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -658,7 +668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id15"
+                    id="id16"
                     name="New York Yankees"
                     onChange={[Function]}
                     tabIndex={0}
@@ -667,7 +677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id15"
+                    htmlFor="id16"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -702,7 +712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id16"
+                    id="id17"
                     name="Houston Astros"
                     onChange={[Function]}
                     tabIndex={0}
@@ -711,7 +721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id16"
+                    htmlFor="id17"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -746,7 +756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id17"
+                    id="id18"
                     name="Atlanta Braves"
                     onChange={[Function]}
                     tabIndex={0}
@@ -755,7 +765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id17"
+                    htmlFor="id18"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -790,7 +800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id18"
+                    id="id19"
                     name="New York Mets"
                     onChange={[Function]}
                     tabIndex={0}
@@ -799,7 +809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id18"
+                    htmlFor="id19"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -834,7 +844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id19"
+                    id="id20"
                     name="Washington Nationals"
                     onChange={[Function]}
                     tabIndex={0}
@@ -843,7 +853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id19"
+                    htmlFor="id20"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1025,15 +1035,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                 </svg>
                 <div
+                  aria-label="Expand"
                   className="iot--list-item--expand-icon"
                   data-testid="expand-icon"
                   onClick={[Function]}
                   onKeyPress={[Function]}
                   role="button"
                   tabIndex={0}
+                  title="Expand"
                 >
                   <svg
-                    aria-label="Close"
+                    aria-label="Expand-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -1102,15 +1114,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                 </svg>
                 <div
+                  aria-label="Expand"
                   className="iot--list-item--expand-icon"
                   data-testid="expand-icon"
                   onClick={[Function]}
                   onKeyPress={[Function]}
                   role="button"
                   tabIndex={0}
+                  title="Expand"
                 >
                   <svg
-                    aria-label="Close"
+                    aria-label="Expand-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -1179,15 +1193,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                 </svg>
                 <div
+                  aria-label="Expand"
                   className="iot--list-item--expand-icon"
                   data-testid="expand-icon"
                   onClick={[Function]}
                   onKeyPress={[Function]}
                   role="button"
                   tabIndex={0}
+                  title="Expand"
                 >
                   <svg
-                    aria-label="Close"
+                    aria-label="Expand-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -1256,15 +1272,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                 </svg>
                 <div
+                  aria-label="Expand"
                   className="iot--list-item--expand-icon"
                   data-testid="expand-icon"
                   onClick={[Function]}
                   onKeyPress={[Function]}
                   role="button"
                   tabIndex={0}
+                  title="Expand"
                 >
                   <svg
-                    aria-label="Close"
+                    aria-label="Expand-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -1333,15 +1351,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                 </svg>
                 <div
+                  aria-label="Close"
                   className="iot--list-item--expand-icon"
                   data-testid="expand-icon"
                   onClick={[Function]}
                   onKeyPress={[Function]}
                   role="button"
                   tabIndex={0}
+                  title="Close"
                 >
                   <svg
-                    aria-label="Expand"
+                    aria-label="Close-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -1959,15 +1979,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                   />
                 </svg>
                 <div
+                  aria-label="Expand"
                   className="iot--list-item--expand-icon"
                   data-testid="expand-icon"
                   onClick={[Function]}
                   onKeyPress={[Function]}
                   role="button"
                   tabIndex={0}
+                  title="Expand"
                 >
                   <svg
-                    aria-label="Close"
+                    aria-label="Expand-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -2166,15 +2188,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2217,15 +2241,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2268,15 +2294,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2319,15 +2347,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2370,15 +2400,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2421,15 +2453,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2627,15 +2661,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3038,15 +3074,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3489,15 +3527,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3540,15 +3580,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3591,15 +3633,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3642,15 +3686,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3848,15 +3894,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3899,15 +3947,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3950,15 +4000,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -4001,15 +4053,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -4052,15 +4106,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -4463,15 +4519,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -4674,15 +4732,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               tabIndex={0}
             >
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -5090,15 +5150,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -5146,15 +5208,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -5197,15 +5261,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -5248,15 +5314,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -5299,15 +5367,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -5504,15 +5574,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -5647,15 +5719,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}

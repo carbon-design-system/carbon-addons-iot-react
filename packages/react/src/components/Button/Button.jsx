@@ -42,7 +42,7 @@ const defaultProps = {
   testID: 'Button',
 };
 
-const Button = (props) => {
+const Button = React.forwardRef((props, ref) => {
   const {
     children,
     loading,
@@ -60,6 +60,7 @@ const Button = (props) => {
   return (
     <CarbonButton
       {...other}
+      ref={ref}
       data-testid={testID}
       kind={kind === 'icon-selection' ? 'ghost' : kind}
       hasIconOnly={kind === 'icon-selection' ? true : hasIconOnly}
@@ -80,7 +81,7 @@ const Button = (props) => {
       {children}
     </CarbonButton>
   );
-};
+});
 
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;

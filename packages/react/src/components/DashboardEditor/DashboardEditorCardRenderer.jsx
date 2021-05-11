@@ -29,6 +29,7 @@ import { timeRangeToJSON, isCardJsonValid, handleKeyDown, handleOnClick } from '
 const renderDefaultCard = (props) => (
   <Card isEditable {...props}>
     <div style={{ padding: '1rem' }}>{JSON.stringify(props.id, null, 4)}</div>
+    {props.children}
   </Card>
 );
 
@@ -122,6 +123,7 @@ const renderCustomCard = (props) => {
       {...omit(props, 'content')}
     >
       {props.content}
+      {props.children}
     </Card>
   );
 };
@@ -339,10 +341,11 @@ const DashboardEditorCardRenderer = React.memo(
         });
       case CARD_TYPES.LIST:
         return renderListCard(cardProps);
-      case CARD_TYPES.CUSTOM:
-        return renderCustomCard(cardProps);
       default:
-        return renderDefaultCard(cardProps);
+        // if the user passes an element for a custom card type, render it
+        return React.isValidElement(cardProps.content) || typeof cardProps.content === 'function'
+          ? renderCustomCard(cardProps)
+          : renderDefaultCard(cardProps);
     }
   },
   shouldComponentSkipUpdate

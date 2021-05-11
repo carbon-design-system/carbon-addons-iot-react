@@ -218,24 +218,24 @@ describe('WizardModal', () => {
     );
 
     // analogue to ProgressIndicator test we check if clicking step will show related content
-    const [beforeClick1] = screen.getByTitle('step1').children;
+    const [beforeClick1] = screen.getAllByTitle('step1')[0].children;
 
     screen.getByTestId('iot--progress-step-button-main-step2').click();
 
     // content should be page2
-    expect(screen.getByTitle('step1').children[0]).not.toContain(beforeClick1);
+    expect(screen.getAllByTitle('step1')[0].children[0]).not.toContain(beforeClick1);
     expect(screen.getByText('page 2')).toBeDefined();
 
     // clicking on step3 should not progress the modal
-    const [beforeClick2] = screen.getByTitle('step2').children;
+    const [beforeClick2] = screen.getAllByTitle('step2')[0].children;
     screen.getByTestId('iot--progress-step-button-main-step3').click();
 
-    expect(screen.getByTitle('step2').children[0]).toEqual(beforeClick2);
+    expect(screen.getAllByTitle('step2')[0].children[0]).toEqual(beforeClick2);
     expect(screen.getByText('page 2')).toBeDefined();
 
     // clicking on page 1 should go back to step 1
     screen.getByTestId('iot--progress-step-button-main-step1').click();
-    expect(screen.getByTitle('step1').children[0]).toEqual(beforeClick1);
+    expect(screen.getAllByTitle('step1')[0].children[0]).toEqual(beforeClick1);
     expect(screen.getByText('page 1')).toBeDefined();
   });
 });

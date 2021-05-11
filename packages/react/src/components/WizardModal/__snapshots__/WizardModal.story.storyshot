@@ -134,6 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step1"
                     value="step1"
                   >
                     step1
@@ -189,6 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step2"
                     value="step2"
                   >
                     step2
@@ -241,6 +243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step3"
                     value="step3"
                   >
                     step3
@@ -455,6 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step1"
                     value="step1"
                   >
                     step1
@@ -510,6 +514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step2"
                     value="step2"
                   >
                     step2
@@ -562,6 +567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step3"
                     value="step3"
                   >
                     step3
@@ -773,6 +779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step1"
                     value="step1"
                   >
                     step1
@@ -823,6 +830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step2"
                     value="step2"
                   >
                     step2
@@ -880,6 +888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step3"
                     value="step3"
                   >
                     step3

@@ -1,16 +1,9 @@
 import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
 import ReactDOM from 'react-dom';
+import MockDate from 'mockdate';
 
 const realFindDOMNode = ReactDOM.findDOMNode;
-const RealDate = Date;
-function mockDate(isoDate) {
-  global.Date = class extends RealDate {
-    constructor() {
-      super();
-      return new RealDate(isoDate);
-    }
-  };
-}
+
 const realScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
 const realScrollTo = window.HTMLElement.prototype.scrollTo;
 
@@ -88,7 +81,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
   });
 
   beforeEach(() => {
-    mockDate('2018-10-28T12:34:56z');
+    MockDate.set('2018-10-28T12:34:56Z');
     jest.setTimeout(15000);
     // Mock the scroll function as its not implemented in jsdom
     // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
@@ -147,6 +140,18 @@ describe(`Storybook Snapshot tests and console checks`, () => {
           };
         }
 
+        if (
+          element.props?.className?.includes('bx--context-menu-option') ||
+          element.props?.className?.includes('bx--context-menu-divider')
+        ) {
+          const parentNode = document.createElement('div');
+          parentNode.classList.add('bx--context-menu');
+          return {
+            ...element,
+            parentNode,
+          };
+        }
+
         return document.createElement('div');
       },
     })),
@@ -157,7 +162,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     ReactDOM.findDOMNode = realFindDOMNode;
   });
   afterEach(() => {
-    global.Date = RealDate;
+    MockDate.reset();
     window.HTMLElement.prototype.scrollIntoView = realScrollIntoView;
     window.HTMLElement.prototype.scrollTo = realScrollTo;
   });

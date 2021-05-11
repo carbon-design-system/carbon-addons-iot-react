@@ -828,15 +828,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -879,15 +881,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1340,15 +1344,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1391,15 +1397,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1811,15 +1819,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1862,15 +1872,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2022,15 +2034,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2106,15 +2120,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2190,15 +2206,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2274,15 +2292,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2358,15 +2378,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2442,15 +2464,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2759,15 +2783,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2818,15 +2844,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2917,15 +2945,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3025,15 +3055,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3723,15 +3755,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3831,15 +3865,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3930,15 +3966,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -4038,15 +4076,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -4146,15 +4186,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
