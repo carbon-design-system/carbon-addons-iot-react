@@ -153,7 +153,7 @@ dayjs.extend(localeData); // gives local specific data
   'zh',
 ].forEach((locale) => {
   // eslint-disable-next-line global-require, import/no-dynamic-require
-  require(`dayjs/locale/${locale}`);
+  require(`dayjs/locale/${locale}.js`);
 });
 
 export default dayjs;
