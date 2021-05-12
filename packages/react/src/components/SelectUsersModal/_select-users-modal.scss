@@ -9,6 +9,11 @@
     background-color: $ui-01;
     height: 100%;
   }
+
+  .#{$iot-prefix}--list-item {
+    overflow: hidden;
+  }
+
   .#{$prefix}--search-input {
     background-color: $ui-background;
   }

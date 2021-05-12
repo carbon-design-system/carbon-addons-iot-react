@@ -16,7 +16,7 @@ import ComboBox from './ComboBox';
 
 export const items = [
   {
-    id: 'option-0',
+    id: 0,
     text: 'Option 1',
   },
   {

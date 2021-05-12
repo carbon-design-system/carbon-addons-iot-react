@@ -8,6 +8,7 @@ import CommonCardEditFormFields from './CommonCardEditFormFields';
 import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
 import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';
 import TableCardFormContent from './CardEditFormItems/TableCardFormItems/TableCardFormContent';
+import ContentFormItemTitle from './CardEditFormItems/ContentFormItemTitle';
 
 const propTypes = {
   /** card data value */
@@ -134,7 +135,7 @@ const CardEditFormContent = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
 }) => {
-  const { type, timeRange } = cardConfig;
+  const { type, timeRange, renderEditContent } = cardConfig;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const [selectedDataItems, setSelectedDataItems] = useState([]);
   const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
@@ -143,6 +144,8 @@ const CardEditFormContent = ({
     (idToTranslate) => handleTranslationCallback(idToTranslate, mergedI18n),
     [mergedI18n]
   );
+
+  const editContentSections = renderEditContent && renderEditContent(onChange, cardConfig);
 
   return (
     <>
@@ -185,7 +188,10 @@ const CardEditFormContent = ({
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
         />
-      ) : (
+      ) : type === CARD_TYPES.BAR ||
+        type === CARD_TYPES.TIMESERIES ||
+        type === CARD_TYPES.VALUE ||
+        type === CARD_TYPES.LIST ? (
         <DataSeriesFormContent
           cardConfig={cardConfig}
           isSummaryDashboard={isSummaryDashboard}
@@ -201,7 +207,14 @@ const CardEditFormContent = ({
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
         />
-      )}
+      ) : Array.isArray(editContentSections) ? (
+        editContentSections.map(({ header: { title, tooltip }, content }) => (
+          <>
+            <ContentFormItemTitle title={title} tooltip={tooltip} />
+            {content}
+          </>
+        ))
+      ) : null}
     </>
   );
 };
