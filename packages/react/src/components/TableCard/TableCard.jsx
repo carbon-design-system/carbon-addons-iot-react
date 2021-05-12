@@ -1,7 +1,6 @@
 import React, { useMemo, useCallback } from 'react';
 import { OverflowMenu, OverflowMenuItem, Link } from 'carbon-components-react';
 import styled from 'styled-components';
-import moment from 'moment';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
@@ -9,6 +8,7 @@ import capitalize from 'lodash/capitalize';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 import { spacing01, spacing05 } from '@carbon/layout';
 
+import dayjs from '../../utils/dayjs';
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -120,6 +120,7 @@ const defaultProps = {
   size: CARD_SIZES.LARGE,
   locale: 'en',
   values: [],
+  filters: [],
   i18n: {
     criticalLabel: 'Critical',
     moderateLabel: 'Moderate',
@@ -161,6 +162,7 @@ const TableCard = ({
   size,
   onCardAction,
   values: valuesProp,
+  filters,
   isEditable,
   isResizable,
   i18n,
@@ -175,7 +177,7 @@ const TableCard = ({
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   // Set the locale
-  moment.locale(locale);
+  dayjs.locale(locale);
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
   const {
     title,
@@ -299,6 +301,8 @@ const TableCard = ({
    */
   const generateThresholdColumn = (columnId) => {
     // Need to find the index of the dataSource regardless of uniqueThresholds ordering
+    // Find the matching column to get the correct label to put on the column
+    const matchingColumn = columnsUpdated.find((column) => column.dataSourceId === columnId);
     const uniqueThresholdIndex = uniqueThresholds.findIndex(
       (threshold) => threshold.dataSourceId === columnId
     );
@@ -306,7 +310,7 @@ const TableCard = ({
       id: `iconColumn-${columnId}`,
       label: uniqueThresholds[uniqueThresholdIndex].label
         ? uniqueThresholds[uniqueThresholdIndex].label
-        : `${capitalize(columnId)} ${mergedI18n.severityLabel}`,
+        : `${matchingColumn?.label || capitalize(columnId)} ${mergedI18n.severityLabel}`,
       width: uniqueThresholds[uniqueThresholdIndex].width,
       isSortable: true,
       renderDataFunction: renderThresholdIcon,
@@ -332,36 +336,40 @@ const TableCard = ({
     };
   };
 
-  // Don't add the icon column in sample mode
-  if (!isEditable) {
-    // Add the new threshold columns to the existing columns
-    uniqueThresholds.forEach((threshold) => {
-      const columnIndex = columnsUpdated.findIndex(
-        (column) => column.dataSourceId === threshold.dataSourceId
-      );
-      // If columnIndex is not -1, there was a match so add the column. Otherwise, skip the column as it will be added
-      // in the next call
-      if (columnIndex !== -1) {
-        columnsUpdated.splice(columnIndex, 0, generateThresholdColumn(threshold.dataSourceId));
-      }
-    });
-
-    // Check for any threshold columns that weren't matched (if the column was hidden) and add to the end of the array
-    const missingThresholdColumns = uniqueThresholds.filter((threshold) => {
-      return !columnsUpdated.find((column) => threshold.dataSourceId === column.dataSourceId);
-    });
-
-    if (missingThresholdColumns.length > 0) {
-      columnsUpdated.splice(
-        columnsUpdated.length,
-        0,
-        ...missingThresholdColumns.map(({ dataSourceId }) => generateThresholdColumn(dataSourceId))
-      );
+  // Add the new threshold columns to the existing columns
+  uniqueThresholds.forEach((threshold) => {
+    const columnIndex = columnsUpdated.findIndex(
+      (column) => column.dataSourceId === threshold.dataSourceId
+    );
+    // If columnIndex is not -1, there was a match so add the column. Otherwise, skip the column as it will be added
+    // in the next call
+    if (columnIndex !== -1) {
+      columnsUpdated.splice(columnIndex, 0, generateThresholdColumn(threshold.dataSourceId));
     }
+  });
+
+  // Check for any threshold columns that weren't matched (if the column was hidden) and add to the end of the array
+  const missingThresholdColumns = uniqueThresholds.filter((threshold) => {
+    return !columnsUpdated.find((column) => threshold.dataSourceId === column.dataSourceId);
+  });
+
+  if (missingThresholdColumns.length > 0) {
+    columnsUpdated.splice(
+      columnsUpdated.length,
+      0,
+      ...missingThresholdColumns.map(({ dataSourceId }) => generateThresholdColumn(dataSourceId))
+    );
   }
 
   const newColumns = thresholds ? columnsUpdated : columnsWithFormattedLinks;
 
+  const filteredTimestampColumns = useMemo(
+    () =>
+      columns
+        .map((column) => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
+        .filter((i) => !isNil(i)),
+    [columns]
+  );
   const columnsToRender = useMemo(
     () =>
       newColumns
@@ -374,11 +382,24 @@ const TableCard = ({
           filter: i.filter
             ? i.filter
             : { placeholderText: mergedI18n.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
+          renderDataFunction: i.renderDataFunction // use the default render function of the column
+            ? i.renderDataFunction
+            : (
+                { value } // default render function is to handle timestamp
+              ) =>
+                // if it's a timestamp column type make sure to format it
+                filteredTimestampColumns.includes(i.dataSourceId) && !isEditable
+                  ? dayjs(value).format('L HH:mm')
+                  : isNil(value)
+                  ? ''
+                  : value.toString(),
         }))
         .concat(hasActionColumn ? actionColumn : []),
     [
       actionColumn,
+      filteredTimestampColumns,
       hasActionColumn,
+      isEditable,
       mergedI18n.defaultFilterStringPlaceholdText,
       newColumns,
       newSize,
@@ -396,14 +417,6 @@ const TableCard = ({
         return { columnId, isHidden };
       }),
     [columnsToRender, newSize]
-  );
-
-  const filteredTimestampColumns = useMemo(
-    () =>
-      columns
-        .map((column) => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
-        .filter((i) => !isNil(i)),
-    [columns]
   );
 
   const filteredPrecisionColumns = useMemo(
@@ -430,25 +443,11 @@ const TableCard = ({
     () =>
       isEditable
         ? generateTableSampleValues(id, columns)
-        : hasActionColumn ||
-          filteredTimestampColumns.length ||
-          filteredPrecisionColumns.length ||
-          thresholds
+        : hasActionColumn || filteredPrecisionColumns.length || thresholds
         ? tableData.map((i) => {
             // if has custom action
             const action = hasActionColumn
               ? { actionColumn: JSON.stringify(i.actions || []) }
-              : null;
-
-            // if has column with timestamp
-            const timestampUpdated = filteredTimestampColumns.length
-              ? Object.keys(i.values)
-                  .map((value) =>
-                    filteredTimestampColumns.includes(value)
-                      ? { [value]: moment(i.values[value]).format('L HH:mm') }
-                      : null
-                  )
-                  .filter((v) => !isNil(v))[0]
               : null;
 
             const matchingThresholds = thresholds
@@ -491,7 +490,6 @@ const TableCard = ({
                 ...action,
                 ...i.values,
                 ...action,
-                ...timestampUpdated,
                 ...precisionUpdated,
               },
               isSelectable: false,
@@ -503,7 +501,6 @@ const TableCard = ({
       id,
       columns,
       hasActionColumn,
-      filteredTimestampColumns,
       filteredPrecisionColumns,
       thresholds,
       tableData,
@@ -563,7 +560,7 @@ const TableCard = ({
                             <span key={`${item.id}-value`}>
                               {item
                                 ? item.type === 'TIMESTAMP'
-                                  ? moment(dataItem.values[item.id]).format('L HH:mm')
+                                  ? dayjs(dataItem.values[item.id]).format('L HH:mm')
                                   : dataItem.values[item.id]
                                 : null}
                             </span>
@@ -641,12 +638,16 @@ const TableCard = ({
       {...others}
     >
       {({ height }) => {
-        const numberOfRowsPerPage = !isNil(height) ? Math.floor((height - 48 * 3) / 48) : 10;
+        const numberOfRowsPerPage = Math.max(
+          !isNil(height) && height !== 0 ? Math.floor((height - 48) / 48) : 10,
+          1 // at least pass 1 row per page
+        );
         return (
           <StyledStatefulTable
             columns={columnsToRender}
             data={tableDataWithTimestamp}
             id={`table-for-card-${id}`}
+            key={`table-for-card-${numberOfRowsPerPage}-${columnsToRender?.length}`}
             isExpanded={isExpanded}
             secondaryTitle={title}
             tooltip={tooltip}
@@ -682,7 +683,7 @@ const TableCard = ({
                 isDisabled: isEditable,
                 customToolbarContent: cardToolbar,
               },
-              filters: [],
+              filters,
               table: {
                 ...(columnStartSort
                   ? {

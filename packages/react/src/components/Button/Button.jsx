@@ -25,6 +25,9 @@ const propTypes = {
   hasIconOnly: PropTypes.bool,
   /** Toggle selected styling for buttons of kind=icon-selection */
   selected: PropTypes.bool,
+
+  /** Id that can be used for testing */
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -36,9 +39,10 @@ const defaultProps = {
   recommended: false,
   hasIconOnly: false,
   selected: false,
+  testID: 'Button',
 };
 
-const Button = (props) => {
+const Button = React.forwardRef((props, ref) => {
   const {
     children,
     loading,
@@ -49,12 +53,15 @@ const Button = (props) => {
     recommended,
     hasIconOnly,
     selected,
+    testID,
     ...other
   } = props;
 
   return (
     <CarbonButton
       {...other}
+      ref={ref}
+      data-testid={testID}
       kind={kind === 'icon-selection' ? 'ghost' : kind}
       hasIconOnly={kind === 'icon-selection' ? true : hasIconOnly}
       onClick={onClick}
@@ -74,7 +81,7 @@ const Button = (props) => {
       {children}
     </CarbonButton>
   );
-};
+});
 
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;

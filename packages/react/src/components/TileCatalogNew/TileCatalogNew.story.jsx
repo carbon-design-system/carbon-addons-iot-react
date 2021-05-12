@@ -12,7 +12,7 @@ const sortOptions = [
 ];
 const selectedSortOption = 'Choose from options';
 
-const getTiles = (num) => {
+export const getTiles = (num) => {
   const tiles = [];
   Array(num)
     .fill(0)
@@ -30,7 +30,7 @@ const getTiles = (num) => {
 };
 
 export default {
-  title: 'Watson IoT Experimental/TileCatalogNew',
+  title: 'Watson IoT/TileCatalogNew',
 
   parameters: {
     component: TileCatalogNew,

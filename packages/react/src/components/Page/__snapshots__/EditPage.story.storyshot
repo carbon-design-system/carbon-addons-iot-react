@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditPage (Deprecated) isLoading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 EditPage isLoading 1`] = `
 <div
   className="storybook-container"
 >
@@ -75,7 +75,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditPage (Deprecated) normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 EditPage normal 1`] = `
 <div
   className="storybook-container"
 >
@@ -144,7 +144,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
           className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -153,7 +155,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -191,7 +195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditPage (Deprecated) with blurb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 EditPage with blurb 1`] = `
 <div
   className="storybook-container"
 >
@@ -265,7 +269,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
           className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -274,7 +280,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -312,7 +320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditPage (Deprecated) with breadcrumb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 EditPage with breadcrumb 1`] = `
 <div
   className="storybook-container"
 >
@@ -426,7 +434,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
           className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -435,7 +445,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -473,7 +485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditPage (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 EditPage ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >
@@ -486,7 +498,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
     }
   >
     <div
-      style={Object {}}
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
     >
       <div
         className="bx--toast-notification bx--toast-notification--warning"

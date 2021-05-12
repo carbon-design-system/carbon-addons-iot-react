@@ -15,6 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
     <div
       className="bx--modal is-visible iot--editor iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -31,22 +32,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
         Focus sentinel
       </span>
       <div
+        aria-label="JSON Editor"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             JSON Editor
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit the JSONs
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -75,7 +78,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           className="bx--modal-content"
         >
           <button
-            className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+            className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -191,10 +194,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -203,7 +208,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -263,6 +270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
     <div
       className="bx--modal is-visible iot--editor iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -279,22 +287,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
         Focus sentinel
       </span>
       <div
+        aria-label="JSON Editor"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             JSON Editor
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Edit the JSONs
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -323,7 +333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           className="bx--modal-content"
         >
           <button
-            className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+            className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -439,10 +449,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -451,7 +463,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/CardC
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}

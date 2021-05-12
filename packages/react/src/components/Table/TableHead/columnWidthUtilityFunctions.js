@@ -64,8 +64,7 @@ function getAverageVisibleColumnWidth(visibleColumns) {
 function shrinkColumns(shrinkableColumns, widthOfColumnToShow) {
   const availableWidth = getTotalWidth(shrinkableColumns);
   const shrunkenColumns = shrinkableColumns.map((col) => {
-    const preferredShrinkWidth = (col.width / availableWidth) * widthOfColumnToShow;
-    const preferredNewWidth = col.width - preferredShrinkWidth;
+    const preferredNewWidth = (availableWidth - widthOfColumnToShow) / shrinkableColumns.length;
     const newWidth = preferredNewWidth >= MIN_COLUMN_WIDTH ? preferredNewWidth : MIN_COLUMN_WIDTH;
     return { id: col.id, width: Math.round(newWidth) };
   });
@@ -86,7 +85,7 @@ export const checkColumnWidthFormat = (columns) => {
       ) {
         warning(
           !__DEV__,
-          `Column width should be a string containing the width and the pixel unit 
+          `Column width should be a string containing the width and the pixel unit
           e.g. '100px' or have the value undefined.`
         );
       }
@@ -146,10 +145,11 @@ export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs
     return [...accumulator, { id: colToShowId, width: Math.round(widthOfColumnToShow) }];
   }, []);
   const totalWidthNeeded = newColumnsToShow.reduce((acc, col) => acc + col.width, 0);
-  const shrinkableColumns = visibleColumns.filter((col) => col.width > MIN_COLUMN_WIDTH);
+  const shrinkableColumns = [...newColumnsToShow, ...visibleColumns].filter(
+    (col) => col.width > MIN_COLUMN_WIDTH
+  );
 
   const adjustedCols = shrinkColumns(shrinkableColumns, totalWidthNeeded);
-  adjustedCols.push(...newColumnsToShow);
 
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 };
@@ -163,7 +163,12 @@ export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs
 export const calculateWidthOnHide = (currentColumnWidths, ordering, colToHideIDs) => {
   const columnsToHide = colToHideIDs.map((hideId) => {
     const col = currentColumnWidths[hideId];
-    return Number.isNaN(parseInt(col.width, 10)) ? { width: 0, id: hideId } : col;
+    return Number.isNaN(parseInt(col.width, 10))
+      ? {
+          width: 0,
+          id: hideId,
+        }
+      : col;
   });
 
   const widthToDistribute = getTotalWidth(columnsToHide);

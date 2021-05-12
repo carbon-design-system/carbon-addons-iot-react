@@ -1,9 +1,9 @@
-import moment from 'moment';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import capitalize from 'lodash/capitalize';
 import omit from 'lodash/omit';
 
+import dayjs from '../../utils/dayjs';
 import { BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { convertStringsToDOMElement } from '../../utils/componentUtilityFunctions';
@@ -52,8 +52,8 @@ export const generateSampleValues = (
     return series.reduce((sampleData, { dataSourceId }) => {
       const now =
         timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
-          ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
-          : moment().subtract(count, timeGrain);
+          ? dayjs().startOf(timeRangeInterval).subtract(1, timeGrain)
+          : dayjs().subtract(count, timeGrain);
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < count; i++) {
         const nextTimeStamp = now.add(1, timeGrain).valueOf();
@@ -150,8 +150,8 @@ export const generateSampleValuesForEditor = (
     series.forEach(({ dataSourceId }) => {
       const now =
         timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
-          ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
-          : moment().subtract(count, timeGrain);
+          ? dayjs().startOf(timeRangeInterval).subtract(1, timeGrain)
+          : dayjs().subtract(count, timeGrain);
       // create 4 random dataSets
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < count; i++) {
@@ -220,7 +220,7 @@ export const formatChartData = (
     series = series.map((item) => omit(item, 'label'));
   }
 
-  let data = values;
+  let data = values ?? [];
   if (!isNil(values) && !isEmpty(series)) {
     data = [];
     // grouped or stacked
@@ -440,8 +440,8 @@ export const handleTooltip = (
       ? `<li class='datapoint-tooltip'>
             <p class='label'>
               ${(showTimeInGMT // show timestamp in gmt or local time
-                ? moment.utc(timestamp)
-                : moment(timestamp)
+                ? dayjs.utc(timestamp)
+                : dayjs(timestamp)
               ).format(tooltipDateFormatPattern)}</p>
           </li>`
       : '';
@@ -544,7 +544,7 @@ export const formatTableData = (
           values: {
             ...barTimeValue,
             // format the date locally
-            [timeDataSourceId]: moment(timestamp).format('L HH:mm'),
+            [timeDataSourceId]: dayjs(timestamp).format('L HH:mm'),
           },
           isSelectable: false,
         });

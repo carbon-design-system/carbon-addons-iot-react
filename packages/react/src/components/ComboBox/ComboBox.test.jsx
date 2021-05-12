@@ -2,6 +2,8 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { keyCodes } from '../../constants/KeyCodeConstants';
+
 import ComboBox from './ComboBox';
 import { items } from './ComboBox.story';
 
@@ -25,7 +27,7 @@ describe('ComboBox', () => {
   // Helper function to open the list and return it
   const getListBox = async () => {
     // open the list by clicking the open menu icon
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     const list = await screen.findByRole('listbox');
     return list;
   };
@@ -100,7 +102,7 @@ describe('ComboBox', () => {
     render(<ComboBox {...defaultProps} />);
     const tags = screen.getByTestId('combo-tags');
 
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     userEvent.click(screen.getByTitle('Option 1'));
 
     expect(tags.childElementCount).toEqual(1);
@@ -116,9 +118,9 @@ describe('ComboBox', () => {
   it('does not add duplicate tag when user selects same value from list', async () => {
     render(<ComboBox {...defaultProps} />);
 
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
-    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByTitle('Open'));
     userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
 
     userEvent.click(screen.getByTitle('Clear selected item'));
@@ -189,21 +191,25 @@ describe('ComboBox', () => {
   it('adds tag via keyboard interaction only', async () => {
     render(<ComboBox {...defaultProps} />);
     const tags = screen.getByTestId('combo-tags');
+    expect(tags.childElementCount).toEqual(0);
 
-    await userEvent.click(screen.getByPlaceholderText('Filter...'));
+    const control = screen.getByPlaceholderText('Filter...');
 
-    fireEvent.keyDown(screen.getByPlaceholderText('Filter...'), {
-      key: 'ArrowDown',
-      code: 'ArrowDown',
-      keyCode: 'ArrowDown',
-      which: 40,
-      charCode: 40,
-    });
-    await userEvent.type(screen.getByPlaceholderText('Filter...'), '{enter}');
+    await userEvent.click(control);
+    fireEvent.keyDown(control, { keyCode: keyCodes.DOWN });
+    fireEvent.keyDown(control, { keyCode: keyCodes.ENTER });
 
     expect(tags.childElementCount).toEqual(1);
 
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
     expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Option 1');
+  });
+
+  it('handles number ids', async () => {
+    render(<ComboBox {...defaultProps} />);
+
+    userEvent.click(screen.getByRole('button', { name: 'Open' }));
+    userEvent.click(screen.getByText('Option 1'));
+    expect(defaultProps.onChange).toHaveBeenCalledWith([{ id: 0, text: 'Option 1' }]);
   });
 });

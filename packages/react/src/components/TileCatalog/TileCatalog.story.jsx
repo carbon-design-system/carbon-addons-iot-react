@@ -60,7 +60,7 @@ export const commonTileCatalogProps = {
 };
 
 export default {
-  title: 'Watson IoT/TileCatalog',
+  title: __DEV__ ? 'Watson IoT/⚠️ TileCatalog' : 'Watson IoT/TileCatalog',
   excludeStories: ['commonTileCatalogProps'],
 };
 
@@ -84,7 +84,7 @@ export const WithSearch = () => (
   <StatefulTileCatalog
     {...commonTileCatalogProps}
     search={{
-      placeHolderText: 'Search catalog',
+      placeholder: 'Search catalog',
       onSearch: action('search'),
     }}
     pagination={{ pageSize: 6, onPage: action('onPage') }}

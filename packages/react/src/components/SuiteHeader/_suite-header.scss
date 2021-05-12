@@ -26,6 +26,11 @@
     &--detail {
       flex: 1;
       padding-left: $spacing-05;
+      overflow: hidden;
+      div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 
@@ -197,6 +202,9 @@
 .#{$iot-prefix}--suite-header {
   &-data {
     display: none;
+  }
+  &-subtitle {
+    margin-left: $spacing-05;
   }
   button.admin-icon {
     .#{$prefix}--tooltip__trigger svg {

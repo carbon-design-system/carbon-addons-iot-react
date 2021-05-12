@@ -36,7 +36,7 @@ export const defaultAbsoluteValue = {
 };
 
 export default {
-  title: 'Watson IoT Experimental/DateTime Picker',
+  title: 'Watson IoT/DateTime Picker',
   excludeStories: ['defaultRelativeValue', 'defaultAbsoluteValue'],
 };
 
@@ -50,6 +50,7 @@ export const Default = () => {
       }}
     >
       <DateTimePicker
+        id="datetimepicker"
         dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
         relatives={[
           {
@@ -73,6 +74,7 @@ export const SelectedPreset = () => {
       }}
     >
       <DateTimePicker
+        id="datetimepicker"
         defaultValue={{
           timeRangeKind: PICKER_KINDS.PRESET,
           timeRangeValue: PRESET_VALUES[3],
@@ -99,6 +101,7 @@ export const SelectedRelative = () => {
       }}
     >
       <DateTimePicker
+        id="datetimepicker"
         defaultValue={defaultRelativeValue}
         hasTimeInput={boolean('hasTimeInput', true)}
         onApply={action('onApply')}
@@ -122,6 +125,7 @@ export const SelectedAbsolute = () => {
       }}
     >
       <DateTimePicker
+        id="datetimepicker"
         defaultValue={defaultAbsoluteValue}
         hasTimeInput={boolean('hasTimeInput', true)}
         onApply={action('onApply')}
@@ -145,6 +149,7 @@ export const WithoutARelativeOption = () => {
       }}
     >
       <DateTimePicker
+        id="datetimepicker"
         defaultValue={{
           timeRangeKind: PICKER_KINDS.PRESET,
           timeRangeValue: PRESET_VALUES[3],
@@ -162,6 +167,34 @@ WithoutARelativeOption.story = {
   name: 'Without a relative option',
 };
 
+export const WithoutACustomRangeLink = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <DateTimePicker
+        id="datetimepicker"
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[3],
+        }}
+        hasTimeInput={boolean('hasTimeInput', true)}
+        showCustomRangeLink={false}
+        onApply={action('onApply')}
+        onCancel={action('onCancel')}
+      />
+    </div>
+  );
+};
+
+WithoutACustomRangeLink.story = {
+  name: 'Without a custom range link',
+};
+
 export const LightVersion = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
   return (
@@ -172,6 +205,7 @@ export const LightVersion = () => {
       }}
     >
       <DateTimePicker
+        id="datetimepicker"
         dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
         relatives={[
           {

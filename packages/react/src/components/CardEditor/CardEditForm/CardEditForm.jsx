@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
@@ -27,6 +27,7 @@ const propTypes = {
     settingsTabLabel: PropTypes.string,
     cardSize_SMALL: PropTypes.string,
     cardSize_SMALLWIDE: PropTypes.string,
+    cardSize_SMALLFULL: PropTypes.string,
     cardSize_MEDIUM: PropTypes.string,
     cardSize_MEDIUMTHIN: PropTypes.string,
     cardSize_MEDIUMWIDE: PropTypes.string,
@@ -98,6 +99,7 @@ const defaultProps = {
     settingsTabLabel: 'Settings',
     cardSize_SMALL: 'Small',
     cardSize_SMALLWIDE: 'Small wide',
+    cardSize_SMALLFULL: 'Small full',
     cardSize_MEDIUM: 'Medium',
     cardSize_MEDIUMTHIN: 'Medium thin',
     cardSize_MEDIUMWIDE: 'Medium wide',
@@ -183,6 +185,10 @@ export const hideCardPropertiesForEditor = (card) => {
   if (card.content?.columns) {
     columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
   }
+  // Need to exclued content for custom cards because the card's JSX element lives on it in this case
+  if (!CARD_TYPES.hasOwnProperty(card.type) || card.type === CARD_TYPES.CUSTOM) {
+    return omit(card, 'content');
+  }
   return omit(
     attributes // VALUE CARD
       ? { ...card, content: { ...card.content, attributes } }
@@ -256,12 +262,16 @@ const CardEditForm = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
   const { id } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
+
+  const isCustomCardWithNoSettings =
+    (cardConfig.type === CARD_TYPES.CUSTOM || !CARD_TYPES.hasOwnProperty(cardConfig.type)) &&
+    !cardConfig.renderEditSettings;
 
   return (
     <>
@@ -288,7 +298,7 @@ const CardEditForm = ({
         />
       ) : null}
       <div className={baseClassName}>
-        <Tabs>
+        <Tabs scrollIntoView={false}>
           <Tab label={mergedI18n.contentTabLabel}>
             <CardEditFormContent
               cardConfig={cardConfig}
@@ -304,7 +314,7 @@ const CardEditForm = ({
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             />
           </Tab>
-          {cardConfig.type !== CARD_TYPES.CUSTOM ? ( // we don't yet support settings for custom cards
+          {!isCustomCardWithNoSettings ? (
             <Tab label={mergedI18n.settingsTabLabel}>
               <CardEditFormSettings
                 availableDimensions={availableDimensions}
@@ -318,7 +328,7 @@ const CardEditForm = ({
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
-            data-testid={`${testID}-open-editor-button`}
+            testID={`${testID}-open-editor-button`}
             kind="tertiary"
             size="small"
             renderIcon={Code16}

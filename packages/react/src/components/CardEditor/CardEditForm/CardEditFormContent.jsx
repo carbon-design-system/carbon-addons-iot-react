@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
@@ -8,6 +8,7 @@ import CommonCardEditFormFields from './CommonCardEditFormFields';
 import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
 import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';
 import TableCardFormContent from './CardEditFormItems/TableCardFormItems/TableCardFormContent';
+import ContentFormItemTitle from './CardEditFormItems/ContentFormItemTitle';
 
 const propTypes = {
   /** card data value */
@@ -38,6 +39,8 @@ const propTypes = {
         src: PropTypes.string,
         zoomMax: PropTypes.number,
       }),
+      // custom card content is a function
+      PropTypes.func,
     ]),
   }),
   /** Callback function when form data changes */
@@ -132,17 +135,17 @@ const CardEditFormContent = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
 }) => {
-  const { type, timeRange } = cardConfig;
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const { type, timeRange, renderEditContent } = cardConfig;
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const [selectedDataItems, setSelectedDataItems] = useState([]);
   const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 
   const handleTranslation = useCallback(
-    (idToTranslate) => {
-      handleTranslationCallback(idToTranslate, mergedI18n);
-    },
+    (idToTranslate) => handleTranslationCallback(idToTranslate, mergedI18n),
     [mergedI18n]
   );
+
+  const editContentSections = renderEditContent && renderEditContent(onChange, cardConfig);
 
   return (
     <>
@@ -185,7 +188,10 @@ const CardEditFormContent = ({
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
         />
-      ) : (
+      ) : type === CARD_TYPES.BAR ||
+        type === CARD_TYPES.TIMESERIES ||
+        type === CARD_TYPES.VALUE ||
+        type === CARD_TYPES.LIST ? (
         <DataSeriesFormContent
           cardConfig={cardConfig}
           isSummaryDashboard={isSummaryDashboard}
@@ -201,7 +207,14 @@ const CardEditFormContent = ({
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
         />
-      )}
+      ) : Array.isArray(editContentSections) ? (
+        editContentSections.map(({ header: { title, tooltip }, content }) => (
+          <>
+            <ContentFormItemTitle title={title} tooltip={tooltip} />
+            {content}
+          </>
+        ))
+      ) : null}
     </>
   );
 };

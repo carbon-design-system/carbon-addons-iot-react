@@ -15,7 +15,7 @@ const acceptableSizes = Object.keys(CARD_SIZES).filter(
 );
 
 export default {
-  title: 'Watson IoT/BarChartCard',
+  title: __DEV__ ? 'Watson IoT/⚠️ BarChartCard' : 'Watson IoT/BarChartCard',
   parameters: {
     component: BarChartCard,
   },
@@ -116,7 +116,7 @@ export const SimpleBarTimeSeriesCustomDomainRange = () => {
             {
               dataSourceId: 'particles',
               // colors: COLORS,
-              label: 'Particles',
+              label: 'Particles really long label to check trunc',
             },
           ],
           timeDataSourceId: 'timestamp',

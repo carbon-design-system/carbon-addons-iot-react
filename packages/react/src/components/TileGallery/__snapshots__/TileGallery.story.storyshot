@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/TileGallery Stateful TileGallery 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileGallery Stateful TileGallery 1`] = `
 <div
   className="storybook-container"
 >
@@ -21,23 +21,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="page-title-bar"
+        style={
+          Object {
+            "--header-offset": "48px",
+            "--scroll-transition-progress": 1,
+          }
+        }
       >
         <div
           className="page-title-bar-header"
         >
           <div
-            className="page-title-bar-header-left"
+            className="page-title-bar-breadcrumb-bg"
+          />
+          <div
+            className="page-title-bar-title"
           >
             <div
-              className="page-title-bar-title"
+              className="page-title-bar-title--text"
             >
-              <div
-                className="page-title-bar-title--text"
+              <h2
+                title="Dashboard"
               >
-                <h2>
-                  Dashboard
-                </h2>
-              </div>
+                Dashboard
+              </h2>
             </div>
           </div>
           <div
@@ -79,6 +86,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--search-input"
                     id="gallery-search"
                     onChange={[Function]}
+                    onKeyDown={[Function]}
                     placeholder="Search for something"
                     role="searchbox"
                     style={
@@ -150,7 +158,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
               </div>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -159,872 +169,872 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
             </div>
           </div>
-        </div>
-        <div
-          className="page-title-bar-content"
-        >
           <div
-            className="tile-gallery"
+            className="page-title-bar-content"
           >
             <div
-              className="tile-gallery--section"
+              className="tile-gallery"
             >
-              <ul
-                className="bx--accordion bx--accordion--end"
+              <div
+                className="tile-gallery--section"
               >
-                <li
-                  className="bx--accordion__item bx--accordion__item--active"
-                  onAnimationEnd={[Function]}
+                <ul
+                  className="bx--accordion bx--accordion--end"
                 >
-                  <button
-                    aria-controls="accordion-item-6"
-                    aria-expanded={true}
-                    className="bx--accordion__heading"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
+                  <li
+                    className="bx--accordion__item bx--accordion__item--active"
+                    onAnimationEnd={[Function]}
                   >
-                    <svg
-                      aria-hidden={true}
-                      className="bx--accordion__arrow"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
+                    <button
+                      aria-controls="accordion-item-117"
+                      aria-expanded={true}
+                      className="bx--accordion__heading"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <path
-                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--accordion__arrow"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                        />
+                      </svg>
+                      <div
+                        className="bx--accordion__title"
+                      >
+                        Favorites
+                      </div>
+                    </button>
                     <div
-                      className="bx--accordion__title"
+                      className="bx--accordion__content"
+                      id="accordion-item-117"
                     >
-                      Favorites
+                      <div
+                        className="tile-gallery--section--items"
+                      >
+                        <a
+                          className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          rel={null}
+                        >
+                          <div>
+                            <div
+                              className="top-section"
+                            >
+                              <div
+                                className="thumbnail"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={32}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={32}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12,29a1,1,0,0,1-.92-.62L6.33,17H2V15H7a1,1,0,0,1,.92.62L12,25.28,20.06,3.65A1,1,0,0,1,21,3a1,1,0,0,1,.93.68L25.72,15H30v2H25a1,1,0,0,1-.95-.68L21,7,12.94,28.35A1,1,0,0,1,12,29Z"
+                                  />
+                                </svg>
+                              </div>
+                              <div
+                                className="description-card"
+                              >
+                                <span>
+                                  More about your dashboard
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="content-container"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
+                                />
+                              </svg>
+                              <span
+                                className="title-card"
+                              >
+                                Dashboard title
+                              </span>
+                              <div
+                                className="overflow-menu"
+                                onClick={[Function]}
+                                role="presentation"
+                              >
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup={true}
+                                  aria-label="open and close list of options"
+                                  className="bx--overflow-menu"
+                                  onClick={[Function]}
+                                  onClose={[Function]}
+                                  onKeyDown={[Function]}
+                                  open={false}
+                                  style={
+                                    Object {
+                                      "height": "2rem",
+                                    }
+                                  }
+                                  type="button"
+                                >
+                                  <svg
+                                    aria-label="open and close list of options"
+                                    className="bx--overflow-menu__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <circle
+                                      cx="16"
+                                      cy="8"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="16"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="24"
+                                      r="2"
+                                    />
+                                    <title>
+                                      open and close list of options
+                                    </title>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          rel={null}
+                        >
+                          <div>
+                            <div
+                              className="top-section"
+                            >
+                              <div
+                                className="thumbnail"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={32}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={32}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M15 2H17V7H15z"
+                                  />
+                                  <path
+                                    d="M21.668 6.854H26.625999999999998V8.854H21.668z"
+                                    transform="rotate(-45 24.147 7.853)"
+                                  />
+                                  <path
+                                    d="M25 15H30V17H25z"
+                                  />
+                                  <path
+                                    d="M23.147 21.668H25.147V26.625999999999998H23.147z"
+                                    transform="rotate(-45 24.147 24.146)"
+                                  />
+                                  <path
+                                    d="M15 25H17V30H15z"
+                                  />
+                                  <path
+                                    d="M5.375 23.147H10.333V25.147H5.375z"
+                                    transform="rotate(-45 7.853 24.146)"
+                                  />
+                                  <path
+                                    d="M2 15H7V17H2z"
+                                  />
+                                  <path
+                                    d="M6.854 5.375H8.854V10.333H6.854z"
+                                    transform="rotate(-45 7.854 7.853)"
+                                  />
+                                  <path
+                                    d="M16,12a4,4,0,1,1-4,4,4.0045,4.0045,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z"
+                                  />
+                                </svg>
+                              </div>
+                              <div
+                                className="description-card"
+                              >
+                                <span>
+                                  More about your dashboard
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="content-container"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
+                                />
+                              </svg>
+                              <span
+                                className="title-card"
+                              >
+                                Health
+                              </span>
+                              <div
+                                className="overflow-menu"
+                                onClick={[Function]}
+                                role="presentation"
+                              >
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup={true}
+                                  aria-label="open and close list of options"
+                                  className="bx--overflow-menu"
+                                  onClick={[Function]}
+                                  onClose={[Function]}
+                                  onKeyDown={[Function]}
+                                  open={false}
+                                  style={
+                                    Object {
+                                      "height": "2rem",
+                                    }
+                                  }
+                                  type="button"
+                                >
+                                  <svg
+                                    aria-label="open and close list of options"
+                                    className="bx--overflow-menu__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <circle
+                                      cx="16"
+                                      cy="8"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="16"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="24"
+                                      r="2"
+                                    />
+                                    <title>
+                                      open and close list of options
+                                    </title>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          rel={null}
+                        >
+                          <div>
+                            <div
+                              className="top-section"
+                            >
+                              <div
+                                className="thumbnail"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={32}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={32}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12,29a1,1,0,0,1-.92-.62L6.33,17H2V15H7a1,1,0,0,1,.92.62L12,25.28,20.06,3.65A1,1,0,0,1,21,3a1,1,0,0,1,.93.68L25.72,15H30v2H25a1,1,0,0,1-.95-.68L21,7,12.94,28.35A1,1,0,0,1,12,29Z"
+                                  />
+                                </svg>
+                              </div>
+                              <div
+                                className="description-card"
+                              >
+                                <span>
+                                  More about your dashboard
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="content-container"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
+                                />
+                              </svg>
+                              <span
+                                className="title-card"
+                              >
+                                Activity
+                              </span>
+                              <div
+                                className="overflow-menu"
+                                onClick={[Function]}
+                                role="presentation"
+                              >
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup={true}
+                                  aria-label="open and close list of options"
+                                  className="bx--overflow-menu"
+                                  onClick={[Function]}
+                                  onClose={[Function]}
+                                  onKeyDown={[Function]}
+                                  open={false}
+                                  style={
+                                    Object {
+                                      "height": "2rem",
+                                    }
+                                  }
+                                  type="button"
+                                >
+                                  <svg
+                                    aria-label="open and close list of options"
+                                    className="bx--overflow-menu__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <circle
+                                      cx="16"
+                                      cy="8"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="16"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="24"
+                                      r="2"
+                                    />
+                                    <title>
+                                      open and close list of options
+                                    </title>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                  </button>
-                  <div
-                    className="bx--accordion__content"
-                    id="accordion-item-6"
-                  >
-                    <div
-                      className="tile-gallery--section--items"
-                    >
-                      <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                      >
-                        <div>
-                          <div
-                            className="top-section"
-                          >
-                            <div
-                              className="thumbnail"
-                            >
-                              <svg
-                                aria-hidden={true}
-                                fill="currentColor"
-                                focusable="false"
-                                height={32}
-                                preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={32}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M12,29a1,1,0,0,1-.92-.62L6.33,17H2V15H7a1,1,0,0,1,.92.62L12,25.28,20.06,3.65A1,1,0,0,1,21,3a1,1,0,0,1,.93.68L25.72,15H30v2H25a1,1,0,0,1-.95-.68L21,7,12.94,28.35A1,1,0,0,1,12,29Z"
-                                />
-                              </svg>
-                            </div>
-                            <div
-                              className="description-card"
-                            >
-                              <span>
-                                More about your dashboard
-                              </span>
-                            </div>
-                          </div>
-                          <div
-                            className="content-container"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
-                              />
-                            </svg>
-                            <span
-                              className="title-card"
-                            >
-                              Dashboard title
-                            </span>
-                            <div
-                              className="overflow-menu"
-                              onClick={[Function]}
-                              role="presentation"
-                            >
-                              <button
-                                aria-expanded={false}
-                                aria-haspopup={true}
-                                aria-label="Menu"
-                                className="bx--overflow-menu"
-                                onClick={[Function]}
-                                onClose={[Function]}
-                                onKeyDown={[Function]}
-                                open={false}
-                                style={
-                                  Object {
-                                    "height": "2rem",
-                                  }
-                                }
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <svg
-                                  aria-label="open and close list of options"
-                                  className="bx--overflow-menu__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <circle
-                                    cx="16"
-                                    cy="8"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="16"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="24"
-                                    r="2"
-                                  />
-                                  <title>
-                                    open and close list of options
-                                  </title>
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                      <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                      >
-                        <div>
-                          <div
-                            className="top-section"
-                          >
-                            <div
-                              className="thumbnail"
-                            >
-                              <svg
-                                aria-hidden={true}
-                                fill="currentColor"
-                                focusable="false"
-                                height={32}
-                                preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={32}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M15 2H17V7H15z"
-                                />
-                                <path
-                                  d="M21.668 6.854H26.625999999999998V8.854H21.668z"
-                                  transform="rotate(-45 24.147 7.853)"
-                                />
-                                <path
-                                  d="M25 15H30V17H25z"
-                                />
-                                <path
-                                  d="M23.147 21.668H25.147V26.625999999999998H23.147z"
-                                  transform="rotate(-45 24.147 24.146)"
-                                />
-                                <path
-                                  d="M15 25H17V30H15z"
-                                />
-                                <path
-                                  d="M5.375 23.147H10.333V25.147H5.375z"
-                                  transform="rotate(-45 7.853 24.146)"
-                                />
-                                <path
-                                  d="M2 15H7V17H2z"
-                                />
-                                <path
-                                  d="M6.854 5.375H8.854V10.333H6.854z"
-                                  transform="rotate(-45 7.854 7.853)"
-                                />
-                                <path
-                                  d="M16,12a4,4,0,1,1-4,4,4.0045,4.0045,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z"
-                                />
-                              </svg>
-                            </div>
-                            <div
-                              className="description-card"
-                            >
-                              <span>
-                                More about your dashboard
-                              </span>
-                            </div>
-                          </div>
-                          <div
-                            className="content-container"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
-                              />
-                            </svg>
-                            <span
-                              className="title-card"
-                            >
-                              Health
-                            </span>
-                            <div
-                              className="overflow-menu"
-                              onClick={[Function]}
-                              role="presentation"
-                            >
-                              <button
-                                aria-expanded={false}
-                                aria-haspopup={true}
-                                aria-label="Menu"
-                                className="bx--overflow-menu"
-                                onClick={[Function]}
-                                onClose={[Function]}
-                                onKeyDown={[Function]}
-                                open={false}
-                                style={
-                                  Object {
-                                    "height": "2rem",
-                                  }
-                                }
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <svg
-                                  aria-label="open and close list of options"
-                                  className="bx--overflow-menu__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <circle
-                                    cx="16"
-                                    cy="8"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="16"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="24"
-                                    r="2"
-                                  />
-                                  <title>
-                                    open and close list of options
-                                  </title>
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                      <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                      >
-                        <div>
-                          <div
-                            className="top-section"
-                          >
-                            <div
-                              className="thumbnail"
-                            >
-                              <svg
-                                aria-hidden={true}
-                                fill="currentColor"
-                                focusable="false"
-                                height={32}
-                                preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={32}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M12,29a1,1,0,0,1-.92-.62L6.33,17H2V15H7a1,1,0,0,1,.92.62L12,25.28,20.06,3.65A1,1,0,0,1,21,3a1,1,0,0,1,.93.68L25.72,15H30v2H25a1,1,0,0,1-.95-.68L21,7,12.94,28.35A1,1,0,0,1,12,29Z"
-                                />
-                              </svg>
-                            </div>
-                            <div
-                              className="description-card"
-                            >
-                              <span>
-                                More about your dashboard
-                              </span>
-                            </div>
-                          </div>
-                          <div
-                            className="content-container"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
-                              />
-                            </svg>
-                            <span
-                              className="title-card"
-                            >
-                              Activity
-                            </span>
-                            <div
-                              className="overflow-menu"
-                              onClick={[Function]}
-                              role="presentation"
-                            >
-                              <button
-                                aria-expanded={false}
-                                aria-haspopup={true}
-                                aria-label="Menu"
-                                className="bx--overflow-menu"
-                                onClick={[Function]}
-                                onClose={[Function]}
-                                onKeyDown={[Function]}
-                                open={false}
-                                style={
-                                  Object {
-                                    "height": "2rem",
-                                  }
-                                }
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <svg
-                                  aria-label="open and close list of options"
-                                  className="bx--overflow-menu__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <circle
-                                    cx="16"
-                                    cy="8"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="16"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="24"
-                                    r="2"
-                                  />
-                                  <title>
-                                    open and close list of options
-                                  </title>
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              className="tile-gallery--section"
-            >
-              <ul
-                className="bx--accordion bx--accordion--end"
+                  </li>
+                </ul>
+              </div>
+              <div
+                className="tile-gallery--section"
               >
-                <li
-                  className="bx--accordion__item bx--accordion__item--active"
-                  onAnimationEnd={[Function]}
+                <ul
+                  className="bx--accordion bx--accordion--end"
                 >
-                  <button
-                    aria-controls="accordion-item-7"
-                    aria-expanded={true}
-                    className="bx--accordion__heading"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
+                  <li
+                    className="bx--accordion__item bx--accordion__item--active"
+                    onAnimationEnd={[Function]}
                   >
-                    <svg
-                      aria-hidden={true}
-                      className="bx--accordion__arrow"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
+                    <button
+                      aria-controls="accordion-item-118"
+                      aria-expanded={true}
+                      className="bx--accordion__heading"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <path
-                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--accordion__arrow"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                        />
+                      </svg>
+                      <div
+                        className="bx--accordion__title"
+                      >
+                        Dashboard Category A
+                      </div>
+                    </button>
                     <div
-                      className="bx--accordion__title"
+                      className="bx--accordion__content"
+                      id="accordion-item-118"
                     >
-                      Dashboard Category A
+                      <div
+                        className="tile-gallery--section--items"
+                      >
+                        <a
+                          className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          rel={null}
+                        >
+                          <div>
+                            <div
+                              className="top-section"
+                            >
+                              <div
+                                className="thumbnail"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={32}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={32}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12,29a1,1,0,0,1-.92-.62L6.33,17H2V15H7a1,1,0,0,1,.92.62L12,25.28,20.06,3.65A1,1,0,0,1,21,3a1,1,0,0,1,.93.68L25.72,15H30v2H25a1,1,0,0,1-.95-.68L21,7,12.94,28.35A1,1,0,0,1,12,29Z"
+                                  />
+                                </svg>
+                              </div>
+                              <div
+                                className="description-card"
+                              >
+                                <span>
+                                  More about your dashboard
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="content-container"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
+                                />
+                              </svg>
+                              <span
+                                className="title-card"
+                              >
+                                Dashboard title
+                              </span>
+                              <div
+                                className="overflow-menu"
+                                onClick={[Function]}
+                                role="presentation"
+                              >
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup={true}
+                                  aria-label="open and close list of options"
+                                  className="bx--overflow-menu"
+                                  onClick={[Function]}
+                                  onClose={[Function]}
+                                  onKeyDown={[Function]}
+                                  open={false}
+                                  style={
+                                    Object {
+                                      "height": "2rem",
+                                    }
+                                  }
+                                  type="button"
+                                >
+                                  <svg
+                                    aria-label="open and close list of options"
+                                    className="bx--overflow-menu__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <circle
+                                      cx="16"
+                                      cy="8"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="16"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="24"
+                                      r="2"
+                                    />
+                                    <title>
+                                      open and close list of options
+                                    </title>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          rel={null}
+                        >
+                          <div>
+                            <div
+                              className="top-section"
+                            >
+                              <div
+                                className="thumbnail"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={32}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={32}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M15 2H17V7H15z"
+                                  />
+                                  <path
+                                    d="M21.668 6.854H26.625999999999998V8.854H21.668z"
+                                    transform="rotate(-45 24.147 7.853)"
+                                  />
+                                  <path
+                                    d="M25 15H30V17H25z"
+                                  />
+                                  <path
+                                    d="M23.147 21.668H25.147V26.625999999999998H23.147z"
+                                    transform="rotate(-45 24.147 24.146)"
+                                  />
+                                  <path
+                                    d="M15 25H17V30H15z"
+                                  />
+                                  <path
+                                    d="M5.375 23.147H10.333V25.147H5.375z"
+                                    transform="rotate(-45 7.853 24.146)"
+                                  />
+                                  <path
+                                    d="M2 15H7V17H2z"
+                                  />
+                                  <path
+                                    d="M6.854 5.375H8.854V10.333H6.854z"
+                                    transform="rotate(-45 7.854 7.853)"
+                                  />
+                                  <path
+                                    d="M16,12a4,4,0,1,1-4,4,4.0045,4.0045,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z"
+                                  />
+                                </svg>
+                              </div>
+                              <div
+                                className="description-card"
+                              >
+                                <span>
+                                  More about your dashboard
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="content-container"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
+                                />
+                              </svg>
+                              <span
+                                className="title-card"
+                              >
+                                Dashboard title
+                              </span>
+                              <div
+                                className="overflow-menu"
+                                onClick={[Function]}
+                                role="presentation"
+                              >
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup={true}
+                                  aria-label="open and close list of options"
+                                  className="bx--overflow-menu"
+                                  onClick={[Function]}
+                                  onClose={[Function]}
+                                  onKeyDown={[Function]}
+                                  open={false}
+                                  style={
+                                    Object {
+                                      "height": "2rem",
+                                    }
+                                  }
+                                  type="button"
+                                >
+                                  <svg
+                                    aria-label="open and close list of options"
+                                    className="bx--overflow-menu__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <circle
+                                      cx="16"
+                                      cy="8"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="16"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="24"
+                                      r="2"
+                                    />
+                                    <title>
+                                      open and close list of options
+                                    </title>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          rel={null}
+                        >
+                          <div>
+                            <div
+                              className="top-section"
+                            >
+                              <div
+                                className="thumbnail"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={32}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={32}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12,29a1,1,0,0,1-.92-.62L6.33,17H2V15H7a1,1,0,0,1,.92.62L12,25.28,20.06,3.65A1,1,0,0,1,21,3a1,1,0,0,1,.93.68L25.72,15H30v2H25a1,1,0,0,1-.95-.68L21,7,12.94,28.35A1,1,0,0,1,12,29Z"
+                                  />
+                                </svg>
+                              </div>
+                              <div
+                                className="description-card"
+                              >
+                                <span>
+                                  More about your dashboard
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="content-container"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
+                                />
+                              </svg>
+                              <span
+                                className="title-card"
+                              >
+                                Dashboard title
+                              </span>
+                              <div
+                                className="overflow-menu"
+                                onClick={[Function]}
+                                role="presentation"
+                              >
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup={true}
+                                  aria-label="open and close list of options"
+                                  className="bx--overflow-menu"
+                                  onClick={[Function]}
+                                  onClose={[Function]}
+                                  onKeyDown={[Function]}
+                                  open={false}
+                                  style={
+                                    Object {
+                                      "height": "2rem",
+                                    }
+                                  }
+                                  type="button"
+                                >
+                                  <svg
+                                    aria-label="open and close list of options"
+                                    className="bx--overflow-menu__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <circle
+                                      cx="16"
+                                      cy="8"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="16"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="24"
+                                      r="2"
+                                    />
+                                    <title>
+                                      open and close list of options
+                                    </title>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                  </button>
-                  <div
-                    className="bx--accordion__content"
-                    id="accordion-item-7"
-                  >
-                    <div
-                      className="tile-gallery--section--items"
-                    >
-                      <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                      >
-                        <div>
-                          <div
-                            className="top-section"
-                          >
-                            <div
-                              className="thumbnail"
-                            >
-                              <svg
-                                aria-hidden={true}
-                                fill="currentColor"
-                                focusable="false"
-                                height={32}
-                                preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={32}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M12,29a1,1,0,0,1-.92-.62L6.33,17H2V15H7a1,1,0,0,1,.92.62L12,25.28,20.06,3.65A1,1,0,0,1,21,3a1,1,0,0,1,.93.68L25.72,15H30v2H25a1,1,0,0,1-.95-.68L21,7,12.94,28.35A1,1,0,0,1,12,29Z"
-                                />
-                              </svg>
-                            </div>
-                            <div
-                              className="description-card"
-                            >
-                              <span>
-                                More about your dashboard
-                              </span>
-                            </div>
-                          </div>
-                          <div
-                            className="content-container"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
-                              />
-                            </svg>
-                            <span
-                              className="title-card"
-                            >
-                              Dashboard title
-                            </span>
-                            <div
-                              className="overflow-menu"
-                              onClick={[Function]}
-                              role="presentation"
-                            >
-                              <button
-                                aria-expanded={false}
-                                aria-haspopup={true}
-                                aria-label="Menu"
-                                className="bx--overflow-menu"
-                                onClick={[Function]}
-                                onClose={[Function]}
-                                onKeyDown={[Function]}
-                                open={false}
-                                style={
-                                  Object {
-                                    "height": "2rem",
-                                  }
-                                }
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <svg
-                                  aria-label="open and close list of options"
-                                  className="bx--overflow-menu__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <circle
-                                    cx="16"
-                                    cy="8"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="16"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="24"
-                                    r="2"
-                                  />
-                                  <title>
-                                    open and close list of options
-                                  </title>
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                      <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                      >
-                        <div>
-                          <div
-                            className="top-section"
-                          >
-                            <div
-                              className="thumbnail"
-                            >
-                              <svg
-                                aria-hidden={true}
-                                fill="currentColor"
-                                focusable="false"
-                                height={32}
-                                preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={32}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M15 2H17V7H15z"
-                                />
-                                <path
-                                  d="M21.668 6.854H26.625999999999998V8.854H21.668z"
-                                  transform="rotate(-45 24.147 7.853)"
-                                />
-                                <path
-                                  d="M25 15H30V17H25z"
-                                />
-                                <path
-                                  d="M23.147 21.668H25.147V26.625999999999998H23.147z"
-                                  transform="rotate(-45 24.147 24.146)"
-                                />
-                                <path
-                                  d="M15 25H17V30H15z"
-                                />
-                                <path
-                                  d="M5.375 23.147H10.333V25.147H5.375z"
-                                  transform="rotate(-45 7.853 24.146)"
-                                />
-                                <path
-                                  d="M2 15H7V17H2z"
-                                />
-                                <path
-                                  d="M6.854 5.375H8.854V10.333H6.854z"
-                                  transform="rotate(-45 7.854 7.853)"
-                                />
-                                <path
-                                  d="M16,12a4,4,0,1,1-4,4,4.0045,4.0045,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z"
-                                />
-                              </svg>
-                            </div>
-                            <div
-                              className="description-card"
-                            >
-                              <span>
-                                More about your dashboard
-                              </span>
-                            </div>
-                          </div>
-                          <div
-                            className="content-container"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
-                              />
-                            </svg>
-                            <span
-                              className="title-card"
-                            >
-                              Dashboard title
-                            </span>
-                            <div
-                              className="overflow-menu"
-                              onClick={[Function]}
-                              role="presentation"
-                            >
-                              <button
-                                aria-expanded={false}
-                                aria-haspopup={true}
-                                aria-label="Menu"
-                                className="bx--overflow-menu"
-                                onClick={[Function]}
-                                onClose={[Function]}
-                                onKeyDown={[Function]}
-                                open={false}
-                                style={
-                                  Object {
-                                    "height": "2rem",
-                                  }
-                                }
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <svg
-                                  aria-label="open and close list of options"
-                                  className="bx--overflow-menu__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <circle
-                                    cx="16"
-                                    cy="8"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="16"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="24"
-                                    r="2"
-                                  />
-                                  <title>
-                                    open and close list of options
-                                  </title>
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                      <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                      >
-                        <div>
-                          <div
-                            className="top-section"
-                          >
-                            <div
-                              className="thumbnail"
-                            >
-                              <svg
-                                aria-hidden={true}
-                                fill="currentColor"
-                                focusable="false"
-                                height={32}
-                                preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={32}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M12,29a1,1,0,0,1-.92-.62L6.33,17H2V15H7a1,1,0,0,1,.92.62L12,25.28,20.06,3.65A1,1,0,0,1,21,3a1,1,0,0,1,.93.68L25.72,15H30v2H25a1,1,0,0,1-.95-.68L21,7,12.94,28.35A1,1,0,0,1,12,29Z"
-                                />
-                              </svg>
-                            </div>
-                            <div
-                              className="description-card"
-                            >
-                              <span>
-                                More about your dashboard
-                              </span>
-                            </div>
-                          </div>
-                          <div
-                            className="content-container"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
-                              />
-                            </svg>
-                            <span
-                              className="title-card"
-                            >
-                              Dashboard title
-                            </span>
-                            <div
-                              className="overflow-menu"
-                              onClick={[Function]}
-                              role="presentation"
-                            >
-                              <button
-                                aria-expanded={false}
-                                aria-haspopup={true}
-                                aria-label="Menu"
-                                className="bx--overflow-menu"
-                                onClick={[Function]}
-                                onClose={[Function]}
-                                onKeyDown={[Function]}
-                                open={false}
-                                style={
-                                  Object {
-                                    "height": "2rem",
-                                  }
-                                }
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <svg
-                                  aria-label="open and close list of options"
-                                  className="bx--overflow-menu__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <circle
-                                    cx="16"
-                                    cy="8"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="16"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="24"
-                                    r="2"
-                                  />
-                                  <title>
-                                    open and close list of options
-                                  </title>
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -1057,7 +1067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/TileGallery TileGalleryItem - Grid 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileGallery TileGalleryItem - Grid 1`] = `
 <div
   className="storybook-container"
 >
@@ -1077,9 +1087,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       }
     >
       <a
-        className="bx--tile bx--tile--clickable not-active tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+        className="bx--link bx--tile bx--tile--clickable not-active tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
         onClick={[Function]}
         onKeyDown={[Function]}
+        rel={null}
       >
         <div>
           <div
@@ -1152,7 +1163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
@@ -1163,7 +1174,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "height": "2rem",
                   }
                 }
-                tabIndex={0}
                 type="button"
               >
                 <svg
@@ -1232,7 +1242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/TileGallery TileGalleryItem - List 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileGallery TileGalleryItem - List 1`] = `
 <div
   className="storybook-container"
 >
@@ -1252,9 +1262,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       }
     >
       <a
-        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-list-title"
+        className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-list-title"
         onClick={[Function]}
         onKeyDown={[Function]}
+        rel={null}
       >
         <div>
           <div
@@ -1288,7 +1299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
-                aria-label="Menu"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
@@ -1299,7 +1310,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "height": "2rem",
                   }
                 }
-                tabIndex={0}
                 type="button"
               >
                 <svg
@@ -1381,7 +1391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/TileGallery TileGallerySection with TileGalleryItem - i18n 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileGallery TileGallerySection with TileGalleryItem - i18n 1`] = `
 <div
   className="storybook-container"
 >
@@ -1402,23 +1412,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="page-title-bar"
+        style={
+          Object {
+            "--header-offset": "48px",
+            "--scroll-transition-progress": 1,
+          }
+        }
       >
         <div
           className="page-title-bar-header"
         >
           <div
-            className="page-title-bar-header-left"
+            className="page-title-bar-breadcrumb-bg"
+          />
+          <div
+            className="page-title-bar-title"
           >
             <div
-              className="page-title-bar-title"
+              className="page-title-bar-title--text"
             >
-              <div
-                className="page-title-bar-title--text"
+              <h2
+                title="__Dashboard__"
               >
-                <h2>
-                  __Dashboard__
-                </h2>
-              </div>
+                __Dashboard__
+              </h2>
             </div>
           </div>
           <div
@@ -1460,6 +1477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--search-input"
                     id="gallery-search"
                     onChange={[Function]}
+                    onKeyDown={[Function]}
                     placeholder="__Search Placeholder__"
                     role="searchbox"
                     style={
@@ -1531,7 +1549,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
               </div>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 tabIndex={0}
                 type="button"
@@ -1540,180 +1560,180 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
             </div>
           </div>
-        </div>
-        <div
-          className="page-title-bar-content"
-        >
           <div
-            className="tile-gallery"
+            className="page-title-bar-content"
           >
             <div
-              className="tile-gallery--section"
+              className="tile-gallery"
             >
-              <ul
-                className="bx--accordion bx--accordion--end"
+              <div
+                className="tile-gallery--section"
               >
-                <li
-                  className="bx--accordion__item bx--accordion__item--active"
-                  onAnimationEnd={[Function]}
+                <ul
+                  className="bx--accordion bx--accordion--end"
                 >
-                  <button
-                    aria-controls="accordion-item-12"
-                    aria-expanded={true}
-                    className="bx--accordion__heading"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
+                  <li
+                    className="bx--accordion__item bx--accordion__item--active"
+                    onAnimationEnd={[Function]}
                   >
-                    <svg
-                      aria-hidden={true}
-                      className="bx--accordion__arrow"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
+                    <button
+                      aria-controls="accordion-item-123"
+                      aria-expanded={true}
+                      className="bx--accordion__heading"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <path
-                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                      />
-                    </svg>
-                    <div
-                      className="bx--accordion__title"
-                    >
-                      __Favorites__
-                    </div>
-                  </button>
-                  <div
-                    className="bx--accordion__content"
-                    id="accordion-item-12"
-                  >
-                    <div
-                      className="tile-gallery--section--items"
-                    >
-                      <a
-                        className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
+                      <svg
+                        aria-hidden={true}
+                        className="bx--accordion__arrow"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <div>
-                          <div
-                            className="top-section"
-                          >
+                        <path
+                          d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                        />
+                      </svg>
+                      <div
+                        className="bx--accordion__title"
+                      >
+                        __Favorites__
+                      </div>
+                    </button>
+                    <div
+                      className="bx--accordion__content"
+                      id="accordion-item-123"
+                    >
+                      <div
+                        className="tile-gallery--section--items"
+                      >
+                        <a
+                          className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          rel={null}
+                        >
+                          <div>
                             <div
-                              className="thumbnail"
+                              className="top-section"
+                            >
+                              <div
+                                className="thumbnail"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={32}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={32}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12,29a1,1,0,0,1-.92-.62L6.33,17H2V15H7a1,1,0,0,1,.92.62L12,25.28,20.06,3.65A1,1,0,0,1,21,3a1,1,0,0,1,.93.68L25.72,15H30v2H25a1,1,0,0,1-.95-.68L21,7,12.94,28.35A1,1,0,0,1,12,29Z"
+                                  />
+                                </svg>
+                              </div>
+                              <div
+                                className="description-card"
+                              >
+                                <span>
+                                  __More about your dashboard__
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="content-container"
                             >
                               <svg
                                 aria-hidden={true}
                                 fill="currentColor"
                                 focusable="false"
-                                height={32}
+                                height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={32}
+                                viewBox="0 0 16 16"
+                                width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12,29a1,1,0,0,1-.92-.62L6.33,17H2V15H7a1,1,0,0,1,.92.62L12,25.28,20.06,3.65A1,1,0,0,1,21,3a1,1,0,0,1,.93.68L25.72,15H30v2H25a1,1,0,0,1-.95-.68L21,7,12.94,28.35A1,1,0,0,1,12,29Z"
+                                  d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
                                 />
                               </svg>
-                            </div>
-                            <div
-                              className="description-card"
-                            >
-                              <span>
-                                __More about your dashboard__
-                              </span>
-                            </div>
-                          </div>
-                          <div
-                            className="content-container"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7L8,1z"
-                              />
-                            </svg>
-                            <span
-                              className="title-card"
-                            >
-                              __Dashboard title__
-                            </span>
-                            <div
-                              className="overflow-menu"
-                              onClick={[Function]}
-                              role="presentation"
-                            >
-                              <button
-                                aria-expanded={false}
-                                aria-haspopup={true}
-                                aria-label="Menu"
-                                className="bx--overflow-menu"
-                                onClick={[Function]}
-                                onClose={[Function]}
-                                onKeyDown={[Function]}
-                                open={false}
-                                style={
-                                  Object {
-                                    "height": "2rem",
-                                  }
-                                }
-                                tabIndex={0}
-                                type="button"
+                              <span
+                                className="title-card"
                               >
-                                <svg
-                                  aria-label="__icon description__"
-                                  className="bx--overflow-menu__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
+                                __Dashboard title__
+                              </span>
+                              <div
+                                className="overflow-menu"
+                                onClick={[Function]}
+                                role="presentation"
+                              >
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup={true}
+                                  aria-label="open and close list of options"
+                                  className="bx--overflow-menu"
                                   onClick={[Function]}
+                                  onClose={[Function]}
                                   onKeyDown={[Function]}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
+                                  open={false}
+                                  style={
+                                    Object {
+                                      "height": "2rem",
+                                    }
+                                  }
+                                  type="button"
                                 >
-                                  <circle
-                                    cx="16"
-                                    cy="8"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="16"
-                                    r="2"
-                                  />
-                                  <circle
-                                    cx="16"
-                                    cy="24"
-                                    r="2"
-                                  />
-                                  <title>
-                                    __icon description__
-                                  </title>
-                                </svg>
-                              </button>
+                                  <svg
+                                    aria-label="__icon description__"
+                                    className="bx--overflow-menu__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <circle
+                                      cx="16"
+                                      cy="8"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="16"
+                                      r="2"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="24"
+                                      r="2"
+                                    />
+                                    <title>
+                                      __icon description__
+                                    </title>
+                                  </svg>
+                                </button>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </a>
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -1746,7 +1766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/TileGallery TileGallerySection with TileGalleryItem Grid 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileGallery TileGallerySection with TileGalleryItem Grid 1`] = `
 <div
   className="storybook-container"
 >
@@ -1783,7 +1803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-10"
+                aria-controls="accordion-item-121"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -1813,15 +1833,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-10"
+                id="accordion-item-121"
               >
                 <div
                   className="tile-gallery--section--items"
                 >
                   <a
-                    className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    rel={null}
                   >
                     <div>
                       <div
@@ -1894,7 +1915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -1905,7 +1926,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 "height": "2rem",
                               }
                             }
-                            tabIndex={0}
                             type="button"
                           >
                             <svg
@@ -1947,9 +1967,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </a>
                   <a
-                    className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    rel={null}
                   >
                     <div>
                       <div
@@ -2018,7 +2039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -2029,7 +2050,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 "height": "2rem",
                               }
                             }
-                            tabIndex={0}
                             type="button"
                           >
                             <svg
@@ -2071,9 +2091,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </a>
                   <a
-                    className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    rel={null}
                   >
                     <div>
                       <div
@@ -2170,7 +2191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -2181,7 +2202,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 "height": "2rem",
                               }
                             }
-                            tabIndex={0}
                             type="button"
                           >
                             <svg
@@ -2238,7 +2258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-11"
+                aria-controls="accordion-item-122"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2268,15 +2288,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-11"
+                id="accordion-item-122"
               >
                 <div
                   className="tile-gallery--section--items"
                 >
                   <a
-                    className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    rel={null}
                   >
                     <div>
                       <div
@@ -2373,7 +2394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
-                            aria-label="Menu"
+                            aria-label="open and close list of options"
                             className="bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -2384,7 +2405,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 "height": "2rem",
                               }
                             }
-                            tabIndex={0}
                             type="button"
                           >
                             <svg
@@ -2459,7 +2479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/TileGallery TileGalleryViewSwitcher 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileGallery TileGalleryViewSwitcher 1`] = `
 <div
   className="storybook-container"
 >
@@ -2542,7 +2562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/TileGallery basic example  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileGallery basic example  1`] = `
 <div
   className="storybook-container"
 >
@@ -2582,7 +2602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onAnimationEnd={[Function]}
               >
                 <button
-                  aria-controls="accordion-item-8"
+                  aria-controls="accordion-item-119"
                   aria-expanded={true}
                   className="bx--accordion__heading"
                   onClick={[Function]}
@@ -2612,15 +2632,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <div
                   className="bx--accordion__content"
-                  id="accordion-item-8"
+                  id="accordion-item-119"
                 >
                   <div
                     className="tile-gallery--section--items"
                   >
                     <a
-                      className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                      className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      rel={null}
                     >
                       <div>
                         <div
@@ -2693,7 +2714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <button
                               aria-expanded={false}
                               aria-haspopup={true}
-                              aria-label="Menu"
+                              aria-label="open and close list of options"
                               className="bx--overflow-menu"
                               onClick={[Function]}
                               onClose={[Function]}
@@ -2704,7 +2725,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   "height": "2rem",
                                 }
                               }
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -2746,9 +2766,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </div>
                     </a>
                     <a
-                      className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                      className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      rel={null}
                     >
                       <div>
                         <div
@@ -2817,7 +2838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <button
                               aria-expanded={false}
                               aria-haspopup={true}
-                              aria-label="Menu"
+                              aria-label="open and close list of options"
                               className="bx--overflow-menu"
                               onClick={[Function]}
                               onClose={[Function]}
@@ -2828,7 +2849,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   "height": "2rem",
                                 }
                               }
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -2870,9 +2890,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </div>
                     </a>
                     <a
-                      className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                      className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      rel={null}
                     >
                       <div>
                         <div
@@ -2969,7 +2990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <button
                               aria-expanded={false}
                               aria-haspopup={true}
-                              aria-label="Menu"
+                              aria-label="open and close list of options"
                               className="bx--overflow-menu"
                               onClick={[Function]}
                               onClose={[Function]}
@@ -2980,7 +3001,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   "height": "2rem",
                                 }
                               }
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -3037,7 +3057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onAnimationEnd={[Function]}
               >
                 <button
-                  aria-controls="accordion-item-9"
+                  aria-controls="accordion-item-120"
                   aria-expanded={true}
                   className="bx--accordion__heading"
                   onClick={[Function]}
@@ -3067,15 +3087,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </button>
                 <div
                   className="bx--accordion__content"
-                  id="accordion-item-9"
+                  id="accordion-item-120"
                 >
                   <div
                     className="tile-gallery--section--items"
                   >
                     <a
-                      className="bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                      className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      rel={null}
                     >
                       <div>
                         <div
@@ -3172,7 +3193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             <button
                               aria-expanded={false}
                               aria-haspopup={true}
-                              aria-label="Menu"
+                              aria-label="open and close list of options"
                               className="bx--overflow-menu"
                               onClick={[Function]}
                               onClose={[Function]}
@@ -3183,7 +3204,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   "height": "2rem",
                                 }
                               }
-                              tabIndex={0}
                               type="button"
                             >
                               <svg

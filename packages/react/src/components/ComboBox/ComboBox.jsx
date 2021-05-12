@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { ComboBox as CarbonComboBox, Tag } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
-import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -23,15 +22,9 @@ const propTypes = {
   // Allow custom onBlur function to be passed to the combobox textinput
   onBlur: PropTypes.func,
   // Bit that will allow mult value and tag feature
-  hasMultiValue: deprecate(
-    PropTypes.bool,
-    '\nThe prop `hasMultiValue` for ComboBox is experimental. The functionality that is enabled by this prop is subject to change until ComboBox moves out of experimental.'
-  ),
+  hasMultiValue: PropTypes.bool,
   // On submit/enter, new items should be added to the listbox
-  addToList: deprecate(
-    PropTypes.bool,
-    '\nThe prop `addToList` for ComboBox is experimental. The functionality that is enabled by this prop is subject to change until ComboBox moves out of experimental.'
-  ),
+  addToList: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -120,13 +113,13 @@ const ComboBox = ({
   const handleOnChange = ({ selectedItem: downShiftSelectedItem }) => {
     const newItem =
       downShiftSelectedItem &&
-      Object.keys(downShiftSelectedItem).reduce(
-        (acc, currentId) => ({
+      Object.keys(downShiftSelectedItem).reduce((acc, currentId) => {
+        const value = downShiftSelectedItem[currentId];
+        return {
           ...acc,
-          [currentId]: downShiftSelectedItem[currentId].trim(),
-        }),
-        {}
-      );
+          [currentId]: typeof value === 'string' ? value.trim() : value,
+        };
+      }, {});
 
     const currentValue = itemToString(newItem);
     // Check that there is no existing tag
@@ -148,6 +141,7 @@ const ComboBox = ({
 
     if (
       (addToList || hasMultiValue) &&
+      typeof newItem?.id === 'string' &&
       newItem?.id.startsWith(`${iotPrefix}-input-`) &&
       !isInList
     ) {

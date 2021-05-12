@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HotSpotEditorModal/HotspotTextStyleTab default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab default 1`] = `
 <div
   className="storybook-container"
 >
@@ -30,7 +30,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--hotspot-text-style-tab__text-style"
           >
             <button
-              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+              aria-pressed={null}
+              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="hotspot-bold"
               disabled={false}
               onClick={[Function]}
@@ -62,7 +63,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
-              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+              aria-pressed={null}
+              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="hotspot-italic"
               disabled={false}
               onClick={[Function]}
@@ -94,7 +96,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
-              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+              aria-pressed={null}
+              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="hotspot-underline"
               disabled={false}
               onClick={[Function]}
@@ -131,6 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
+              title="Select a color"
             >
               <label
                 className="bx--label"
@@ -227,38 +231,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--number__controls"
                   >
                     <button
-                      aria-atomic="true"
-                      aria-label="Increment number"
-                      aria-live="polite"
-                      className="bx--number__control-btn up-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      title="Increment number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="up-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={4}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 8 4"
-                        width={8}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 4L4 0 8 4z"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      aria-atomic="true"
                       aria-label="Decrement number"
-                      aria-live="polite"
                       className="bx--number__control-btn down-icon"
                       disabled={false}
                       onClick={[Function]}
+                      tabIndex="-1"
                       title="Decrement number"
                       type="button"
                     >
@@ -267,17 +244,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="down-icon"
                         fill="currentColor"
                         focusable="false"
-                        height={4}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 8 4"
-                        width={8}
+                        viewBox="0 0 32 32"
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M8 0L4 4 0 0z"
+                          d="M8 15H24V17H8z"
                         />
                       </svg>
                     </button>
+                    <div
+                      className="bx--number__rule-divider"
+                    />
+                    <button
+                      aria-label="Increment number"
+                      className="bx--number__control-btn up-icon"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex="-1"
+                      title="Increment number"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="up-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      className="bx--number__rule-divider"
+                    />
                   </div>
                 </div>
               </div>
@@ -288,6 +296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
+              title="Select a color"
             >
               <label
                 className="bx--label"
@@ -384,38 +393,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--number__controls"
                   >
                     <button
-                      aria-atomic="true"
-                      aria-label="Increment number"
-                      aria-live="polite"
-                      className="bx--number__control-btn up-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      title="Increment number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="up-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={4}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 8 4"
-                        width={8}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 4L4 0 8 4z"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      aria-atomic="true"
                       aria-label="Decrement number"
-                      aria-live="polite"
                       className="bx--number__control-btn down-icon"
                       disabled={false}
                       onClick={[Function]}
+                      tabIndex="-1"
                       title="Decrement number"
                       type="button"
                     >
@@ -424,17 +406,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="down-icon"
                         fill="currentColor"
                         focusable="false"
-                        height={4}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 8 4"
-                        width={8}
+                        viewBox="0 0 32 32"
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M8 0L4 4 0 0z"
+                          d="M8 15H24V17H8z"
                         />
                       </svg>
                     </button>
+                    <div
+                      className="bx--number__rule-divider"
+                    />
+                    <button
+                      aria-label="Increment number"
+                      className="bx--number__control-btn up-icon"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex="-1"
+                      title="Increment number"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="up-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      className="bx--number__rule-divider"
+                    />
                   </div>
                 </div>
               </div>
@@ -445,6 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
+              title="Select a color"
             >
               <label
                 className="bx--label"
@@ -541,38 +555,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="bx--number__controls"
                   >
                     <button
-                      aria-atomic="true"
-                      aria-label="Increment number"
-                      aria-live="polite"
-                      className="bx--number__control-btn up-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      title="Increment number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="up-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={4}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 8 4"
-                        width={8}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 4L4 0 8 4z"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      aria-atomic="true"
                       aria-label="Decrement number"
-                      aria-live="polite"
                       className="bx--number__control-btn down-icon"
                       disabled={false}
                       onClick={[Function]}
+                      tabIndex="-1"
                       title="Decrement number"
                       type="button"
                     >
@@ -581,17 +568,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="down-icon"
                         fill="currentColor"
                         focusable="false"
-                        height={4}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 8 4"
-                        width={8}
+                        viewBox="0 0 32 32"
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M8 0L4 4 0 0z"
+                          d="M8 15H24V17H8z"
                         />
                       </svg>
                     </button>
+                    <div
+                      className="bx--number__rule-divider"
+                    />
+                    <button
+                      aria-label="Increment number"
+                      className="bx--number__control-btn up-icon"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex="-1"
+                      title="Increment number"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="up-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      className="bx--number__rule-divider"
+                    />
                   </div>
                 </div>
               </div>
@@ -602,7 +620,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--hotspot-text-style-tab__delete-button-container"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}

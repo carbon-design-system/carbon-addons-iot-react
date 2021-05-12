@@ -15,6 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -31,22 +32,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Big Modal"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Big Modal
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Needs a lot of space to contain all the info
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -77,10 +80,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           Lots of really wide content here...
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -89,7 +94,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -149,6 +156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -165,22 +173,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Translated bottom buttons"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Translated bottom buttons
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Dialog with bottom buttons and close button flyover translated
-          </p>
+          </h3>
           <button
             aria-label="My Close Button"
             className="bx--modal-close"
@@ -211,13 +221,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           <button
             aria-expanded={false}
             aria-haspopup={true}
-            aria-label="Menu"
+            aria-label="open and close list of options"
             className="bx--overflow-menu"
             onClick={[Function]}
             onClose={[Function]}
             onKeyDown={[Function]}
             open={false}
-            tabIndex={0}
             title="Test Overflow"
             type="button"
           >
@@ -266,6 +275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -296,10 +306,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -308,7 +320,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             My Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -368,6 +382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -384,22 +399,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Custom footer"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Custom footer
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Custom footer element
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -425,10 +442,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <div
-            className="ComposedModalstory__CustomFooter-sc-1ctuyyf-0 cxIHUM"
+            style={
+              Object {
+                "padding": "2rem",
+              }
+            }
           >
             custom footer element
           </div>
@@ -484,6 +505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -500,22 +522,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="DataError"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             DataError
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Cannot communicate with server
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -612,10 +636,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -624,7 +650,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -698,16 +726,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         </label>
         <svg
           className="bx--loading__svg"
-          viewBox="-75 -75 150 150"
+          viewBox="0 0 100 100"
         >
           <title>
             Active loading indicator
           </title>
           <circle
             className="bx--loading__stroke"
-            cx="0"
-            cy="0"
-            r="37.5"
+            cx="50%"
+            cy="50%"
+            r="44"
           />
         </svg>
       </div>
@@ -754,6 +782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -770,26 +799,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label={
+          <strong>
+            Custom node label
+          </strong>
+        }
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             <strong>
               Custom node label
             </strong>
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             <strong>
               Custom node title
             </strong>
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -815,10 +850,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -827,7 +864,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -887,6 +926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -903,22 +943,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Translated bottom buttons"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Translated bottom buttons
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Dialog with bottom buttons and close button flyover translated
-          </p>
+          </h3>
           <button
             aria-label="My Close Button"
             className="bx--modal-close"
@@ -944,10 +986,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -956,7 +1000,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             My Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1016,6 +1062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1032,22 +1079,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="No footer"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             No footer
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Dialog without footer
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1123,6 +1172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1139,22 +1189,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Custom footer"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Custom footer
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Custom footer element
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1180,10 +1232,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1243,6 +1297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1259,22 +1314,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Sending data"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Sending data
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             We are submitting data to the backend
-          </p>
+          </h3>
           <button
             aria-label="Close"
             className="bx--modal-close"
@@ -1300,10 +1357,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1312,7 +1371,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+            data-testid="ComposedModal-modal-primary-button"
             disabled={true}
             onClick={[Function]}
             tabIndex={0}
@@ -1332,22 +1393,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
               </label>
               <svg
                 className="bx--loading__svg"
-                viewBox="-75 -75 150 150"
+                viewBox="0 0 100 100"
               >
                 <title>
                   Active loading indicator
                 </title>
                 <circle
                   className="bx--loading__background"
-                  cx="0"
-                  cy="0"
-                  r="26.8125"
+                  cx="50%"
+                  cy="50%"
+                  r="42"
                 />
                 <circle
                   className="bx--loading__stroke"
-                  cx="0"
-                  cy="0"
-                  r="26.8125"
+                  cx="50%"
+                  cy="50%"
+                  r="42"
                 />
               </svg>
             </div>
@@ -1405,6 +1466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     <div
       className="bx--modal is-visible iot--composed-modal"
       data-floating-menu-container={true}
+      data-testid="ComposedModal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1421,22 +1483,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         Focus sentinel
       </span>
       <div
+        aria-label="Scary Operation"
+        aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
         <div
           className="bx--modal-header"
         >
-          <p
+          <h2
             className="bx--modal-header__label bx--type-delta"
           >
             Scary Operation
-          </p>
-          <p
+          </h2>
+          <h3
             className="bx--modal-header__heading bx--type-beta"
           >
             Delete Stuff
-          </p>
+          </h3>
           <p
             className="bx--modal-content__text"
           >
@@ -1467,10 +1531,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1479,7 +1545,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--danger"
+            data-testid="ComposedModal-modal-danger-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}

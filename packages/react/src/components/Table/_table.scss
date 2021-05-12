@@ -22,6 +22,10 @@ table.#{$prefix}--side-nav--data-table {
   max-width: 0;
 }
 
+td.#{$iot-prefix}--table__cell--sortable {
+  padding-right: $spacing-09;
+}
+
 .#{$iot-prefix}--data-table--resize td {
   word-break: break-all;
 }
@@ -42,6 +46,10 @@ html[dir='rtl'] {
   }
   .#{$iot-prefix}--expanded-tablerow > td * {
     text-align: right;
+  }
+
+  td.#{$iot-prefix}--table__cell--sortable {
+    padding-left: $spacing-08;
   }
 }
 
@@ -68,5 +76,26 @@ html[dir='rtl'] {
 
   td {
     border-bottom: unset;
+  }
+}
+
+.#{$iot-prefix}--table__advanced-filters-container {
+  background-color: $ui-01;
+  padding: $spacing-02 $spacing-04;
+  border-top: 1px solid $ui-03;
+
+  .#{$prefix}--tag {
+    color: $interactive-01;
+    background-color: $carbon--blue-20;
+  }
+}
+
+// needed specificity to override .iot--tooltip-svg-wrapper and allow flyout to align
+// properly with button
+button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghost.#{$iot-prefix}--table-toolbar__advanced-filters-button {
+  border: 1px solid transparent;
+
+  &.#{$iot-prefix}--table-toolbar-button-active {
+    @include box-shadow;
   }
 }

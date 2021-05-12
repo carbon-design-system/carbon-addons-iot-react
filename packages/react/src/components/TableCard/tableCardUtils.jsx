@@ -3,6 +3,7 @@ import isNil from 'lodash/isNil';
 import { Link } from 'carbon-components-react';
 
 import { formatNumberWithPrecision, getVariables } from '../../utils/cardUtilityFunctions';
+import dayjs from '../../utils/dayjs';
 
 export const determinePrecisionAndValue = (precision = 0, value, locale) => {
   const precisionDefined = Number.isInteger(value) ? 0 : precision;
@@ -41,9 +42,19 @@ export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
           if (variables && variables.length) {
             variableLink = linkTemplate.href;
             variables.forEach((variable) => {
-              const variableValue = row[variable];
+              const matchingColumn = columns.find(
+                (variableColumn) => variableColumn.dataSourceId === variable
+              );
+              const variableValue =
+                // format the TIMESTAMP type columns
+                matchingColumn?.type === 'TIMESTAMP'
+                  ? dayjs(row[variable]).format('L HH:mm')
+                  : row[variable];
               // encode value so the URL can be valid
-              const encodedValue = encodeURIComponent(variableValue);
+              const encodedValue =
+                typeof variableValue === 'string' && variableValue?.includes('https')
+                  ? variableValue
+                  : encodeURIComponent(variableValue);
 
               variableLink = variableLink.replace(`{${variable}}`, encodedValue);
             });

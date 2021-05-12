@@ -15,6 +15,8 @@ import {
   OverflowMenuItem,
 } from 'carbon-components-react';
 import classnames from 'classnames';
+import isNil from 'lodash/isNil';
+import pick from 'lodash/pick';
 
 import deprecate from '../../../internal/deprecate';
 import {
@@ -25,7 +27,9 @@ import {
 } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
+import { RuleGroupPropType } from '../../RuleBuilder/RuleBuilderPropTypes';
 
+import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout';
 import TableToolbarSVGButton from './TableToolbarSVGButton';
 
 const { iotPrefix } = settings;
@@ -45,6 +49,7 @@ const propTypes = {
   tooltip: PropTypes.node,
   /** global table options */
   options: PropTypes.shape({
+    hasAdvancedFilter: PropTypes.bool,
     hasAggregations: PropTypes.bool,
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
@@ -86,6 +91,10 @@ const propTypes = {
     onToggleAggregations: PropTypes.func,
     onToggleColumnSelection: PropTypes.func,
     onToggleFilter: PropTypes.func,
+    onToggleAdvancedFilter: PropTypes.func,
+    onCreateAdvancedFilter: PropTypes.func,
+    onChangeAdvancedFilter: PropTypes.func,
+    onCancelAdvancedFilter: PropTypes.func,
     onShowRowEdit: PropTypes.func,
   }).isRequired,
   /**
@@ -115,9 +124,24 @@ const propTypes = {
     search: TableSearchPropTypes,
     /** buttons to be shown with when activeBar is 'rowEdit' */
     rowEditBarButtons: PropTypes.node,
+
+    /** a stripped down version of the RuleBuilderFilterPropType */
+    advancedFilters: PropTypes.arrayOf(
+      PropTypes.shape({
+        /** Unique id for particular filter */
+        filterId: PropTypes.string.isRequired,
+        /** Text for main tilte of page */
+        filterTitleText: PropTypes.string.isRequired,
+        filterRules: RuleGroupPropType.isRequired,
+      })
+    ),
+    /** currently selected advanced filters */
+    selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
+
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -126,6 +150,7 @@ const defaultProps = {
   },
   secondaryTitle: null,
   tooltip: null,
+  testID: '',
 };
 
 const TableToolbar = ({
@@ -135,6 +160,7 @@ const TableToolbar = ({
   secondaryTitle,
   tooltip,
   options: {
+    hasAdvancedFilter,
     hasAggregations,
     hasColumnSelection,
     hasFilter,
@@ -154,8 +180,15 @@ const TableToolbar = ({
     onShowRowEdit,
     onApplySearch,
     onDownloadCSV,
+    onApplyAdvancedFilter,
+    onCancelAdvancedFilter,
+    onCreateAdvancedFilter,
+    onChangeAdvancedFilter,
+    onToggleAdvancedFilter,
   },
   tableState: {
+    advancedFilterFlyoutOpen,
+    advancedFilters,
     totalSelected,
     totalFilters,
     batchActions,
@@ -165,11 +198,20 @@ const TableToolbar = ({
     isDisabled,
     totalItemsCount,
     rowEditBarButtons,
+    filters,
+    selectedAdvancedFilterIds,
+    columns,
+    ordering,
   },
   data,
+  testID,
 }) => (
-  <CarbonTableToolbar className={classnames(`${iotPrefix}--table-toolbar`, className)}>
+  <CarbonTableToolbar
+    data-testid={testID}
+    className={classnames(`${iotPrefix}--table-toolbar`, className)}
+  >
     <TableBatchActions
+      data-testID={`${testID}-batch-actions`}
       className={`${iotPrefix}--table-batch-actions`}
       onCancel={onCancelBatchAction}
       shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
@@ -209,7 +251,10 @@ const TableToolbar = ({
     {activeBar === 'rowEdit' ? (
       <div className={`${iotPrefix}--table-row-edit-actions`}>{rowEditBarButtons}</div>
     ) : (
-      <TableToolbarContent className={`${iotPrefix}--table-toolbar-content`}>
+      <TableToolbarContent
+        data-testid={`${testID}-content`}
+        className={`${iotPrefix}--table-toolbar-content`}
+      >
         {hasSearch ? (
           <TableToolbarSearch
             {...search}
@@ -231,6 +276,7 @@ const TableToolbar = ({
               onApplySearch(event?.target?.value || defaultValue);
             }}
             disabled={isDisabled}
+            data-testid={`${testID}-search`}
           />
         ) : null}
         {totalFilters > 0 ? (
@@ -268,6 +314,49 @@ const TableToolbar = ({
             testId="filter-button"
             renderIcon={Filter20}
             disabled={isDisabled}
+          />
+        ) : null}
+        {hasAdvancedFilter ? (
+          <TableToolbarAdvancedFilterFlyout
+            actions={{
+              onApplyAdvancedFilter,
+              onCancelAdvancedFilter,
+              onCreateAdvancedFilter,
+              onChangeAdvancedFilter,
+              onToggleAdvancedFilter,
+            }}
+            columns={columns.map((column) => ({
+              ...column.filter,
+              id: column.id,
+              name: column.name,
+              isFilterable: !isNil(column.filter),
+              isMultiselect: column.filter?.isMultiselect,
+            }))}
+            tableState={{
+              filters,
+              advancedFilters,
+              selectedAdvancedFilterIds,
+              advancedFilterFlyoutOpen,
+              ordering,
+              hasFastFilter: hasAdvancedFilter === 'onKeyPress',
+            }}
+            i18n={{
+              ...pick(
+                i18n,
+                'filterText',
+                'clearFilterText',
+                'clearSelectionText',
+                'openMenuText',
+                'closeMenuText',
+                'applyButtonText',
+                'cancelButtonText',
+                'advancedFilterLabelText',
+                'createNewAdvancedFilterText',
+                'advancedFilterPlaceholderText',
+                'simpleFiltersTabLabel',
+                'advancedFiltersTabLabel'
+              ),
+            }}
           />
         ) : null}
         {hasRowEdit ? (

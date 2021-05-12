@@ -57,10 +57,16 @@ exports[`Header should render 1`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="help"
-          class="bx--header-action-btn action-btn__trigger bx--header__action"
+          class="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+          tabindex="0"
           title="help"
           type="button"
         >
+          <span
+            class="bx--assistive-text"
+          >
+            help
+          </span>
           <svg
             aria-hidden="true"
             class="bx--header__menu-item bx--header__menu-title"

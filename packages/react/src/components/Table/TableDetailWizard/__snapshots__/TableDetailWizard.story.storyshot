@@ -27,6 +27,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           className="iot--table-detail-wizard-header--button"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             disabled={false}
             onClick={[Function]}
@@ -57,8 +58,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           className="iot--table-detail-wizard-sidebar--header"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
-            width={250}
+            className="iot--wizard-inline__sidebar"
+            style={
+              Object {
+                "--min-width": "250px",
+              }
+            }
           >
             <ul
               className="iot--progress-indicator iot--progress-indicator--vertical"
@@ -123,6 +128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Identity"
                       value="Identity"
                     >
                       Identity
@@ -184,6 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="State Model"
                       value="State Model"
                     >
                       State Model
@@ -245,6 +252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Notifications"
                       value="Notifications"
                     >
                       Notifications
@@ -303,6 +311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Final step"
                       value="Final step"
                     >
                       Final step
@@ -341,7 +350,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -350,7 +361,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               Cancel
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -416,6 +429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           className="iot--table-detail-wizard-header--button"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             disabled={false}
             onClick={[Function]}
@@ -446,8 +460,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           className="iot--table-detail-wizard-sidebar--header"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
-            width={250}
+            className="iot--wizard-inline__sidebar"
+            style={
+              Object {
+                "--min-width": "250px",
+              }
+            }
           >
             <ul
               className="iot--progress-indicator iot--progress-indicator--vertical"
@@ -502,6 +520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Identity"
                       value="Identity"
                     >
                       Identity
@@ -568,6 +587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="State Model"
                       value="State Model"
                     >
                       State Model
@@ -629,6 +649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Notifications"
                       value="Notifications"
                     >
                       Notifications
@@ -687,6 +708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Final step"
                       value="Final step"
                     >
                       Final step
@@ -726,7 +748,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -735,7 +759,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               Back
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -801,6 +827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           className="iot--table-detail-wizard-header--button"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             disabled={false}
             onClick={[Function]}
@@ -831,8 +858,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           className="iot--table-detail-wizard-sidebar--header"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
-            width={250}
+            className="iot--wizard-inline__sidebar"
+            style={
+              Object {
+                "--min-width": "250px",
+              }
+            }
           >
             <ul
               className="iot--progress-indicator iot--progress-indicator--vertical"
@@ -897,6 +928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Identity"
                       value="Identity"
                     >
                       Identity
@@ -958,6 +990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="State Model"
                       value="State Model"
                     >
                       State Model
@@ -1019,6 +1052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Notifications"
                       value="Notifications"
                     >
                       Notifications
@@ -1077,6 +1111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <p
                       className="iot--progress-text-label"
+                      title="Final step"
                       value="Final step"
                     >
                       Final step
@@ -1186,7 +1221,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -1195,7 +1232,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               Cancel
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}

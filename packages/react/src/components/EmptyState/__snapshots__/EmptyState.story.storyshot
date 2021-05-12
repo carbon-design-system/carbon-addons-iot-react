@@ -176,7 +176,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -495,7 +497,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -798,7 +802,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1117,7 +1123,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1830,7 +1838,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -2149,7 +2159,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -2468,7 +2480,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -2484,6 +2498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           <a
             className="bx--link"
             onClick={[Function]}
+            rel={null}
           >
             Secondary action
           </a>
@@ -2811,7 +2826,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -2886,7 +2903,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}

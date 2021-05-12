@@ -3,6 +3,9 @@ import sizeMe from 'react-sizeme';
 
 sizeMe.noPlaceholders = true;
 
+// Settings
+export { settings } from './constants/Settings';
+
 // Components
 export AddCard from './components/AddCard';
 export Button from './components/Button';
@@ -111,6 +114,8 @@ export ColorDropdown from './components/ColorDropdown/ColorDropdown';
 export HotspotEditorTooltipTab from './components/HotspotEditorModal/HotspotEditorTooltipTab/HotspotEditorTooltipTab';
 export HotspotTextStyleTab from './components/HotspotEditorModal/HotspotTextStyleTab/HotspotTextStyleTab';
 export DynamicHotspotSourcePicker from './components/HotspotEditorModal/DynamicHotspotSourcePicker/DynamicHotspotSourcePicker';
+export ComboChartCard from './components/ComboChartCard/ComboChartCard';
+export MenuButton from './components/MenuButton/MenuButton';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';
@@ -119,8 +124,16 @@ export { useDNDProviderElement } from './hooks/useDNDProviderElement';
 export {
   Accordion,
   AccordionItem,
+  AspectRatio,
+  // TODO: unify breadcrumb
+  // Breadcrumb,
+  // BreadcrumbItem
+  // TODO: unify button
+  // Button,
+  ButtonSet,
   Checkbox,
   CodeSnippet,
+  // TODO: unify combobox
   // ComboBox,
   ModalHeader,
   ModalBody,
@@ -187,11 +200,8 @@ export {
   OrderedList,
   OverflowMenu,
   OverflowMenuItem,
-  PageSelector,
-  Unstable_Pagination, // eslint-disable-line camelcase
   Pagination,
   PaginationNav,
-  PaginationSkeleton,
   PrimaryButton,
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,
@@ -245,12 +255,15 @@ export {
   SkeletonPlaceholder,
   DataTableSkeleton,
   AccordionSkeleton,
+  // TODO unify breadcrumb skeleton
+  // BreadcrumbSkeleton,
   ButtonSkeleton,
   CheckboxSkeleton,
   CodeSnippetSkeleton,
   DropdownSkeleton,
   FileUploaderSkeleton,
   NumberInputSkeleton,
+  PaginationSkeleton,
   ProgressIndicatorSkeleton,
   RadioButtonSkeleton,
   SearchSkeleton,
@@ -298,6 +311,16 @@ export {
   SideNavMenu,
   SideNavMenuItem,
   SideNavSwitcher,
+  // Experimental components from Carbon
+
+  // eslint-disable-next-line camelcase
+  unstable_Pagination,
+  // eslint-disable-next-line camelcase
+  unstable_PageSelector,
+  // eslint-disable-next-line camelcase
+  unstable_TreeNode,
+  // eslint-disable-next-line camelcase
+  unstable_TreeView,
 } from 'carbon-components-react';
 
 export {

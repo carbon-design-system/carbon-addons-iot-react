@@ -239,6 +239,8 @@ const ThresholdsFormItem = ({
                   setThresholds(filteredThresholds);
                 }}
                 iconDescription={mergedI18n.dataItemEditorDataItemRemove}
+                tooltipPosition="left"
+                tooltipAlignment="center"
               />
             </div>
           </div>
