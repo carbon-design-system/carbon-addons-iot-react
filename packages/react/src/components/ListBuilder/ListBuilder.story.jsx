@@ -1,77 +1,117 @@
-import React, { useState, useMemo, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { ArrowRight16, Subtract16 } from '@carbon/icons-react';
+import React, { createElement, useMemo, useState } from 'react';
+import { withKnobs } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { withReadme } from 'storybook-readme';
 import isEmpty from 'lodash/isEmpty';
+import { ArrowRight16, Subtract16 } from '@carbon/icons-react';
 
-import ComposedModal from '../ComposedModal/ComposedModal';
-import { Button } from '../..';
-import { settings } from '../../constants/Settings';
-import ListBuilder from '../ListBuilder/ListBuilder';
+import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
+import Button from '../Button/Button';
+import { generateUserList } from '../SelectUsersModal/SelectUsersModal.story';
 
-const { iotPrefix } = settings;
+import ListBuilder from './ListBuilder';
+import README from './README.md';
 
-export const UserShape = PropTypes.shape({
-  id: PropTypes.string,
-  name: PropTypes.string,
-  email: PropTypes.string,
-  username: PropTypes.string,
-});
-
-export const GroupShape = PropTypes.shape({
-  id: PropTypes.string,
-  name: PropTypes.string,
-  groups: PropTypes.arrayOf(PropTypes.any),
-  users: PropTypes.arrayOf(UserShape),
-});
-
-export const propTypes = {
-  i18n: PropTypes.shape({
-    modalHeaderTitle: PropTypes.string,
-    modalHeaderLabel: PropTypes.string,
-    addUser: PropTypes.string,
-    removeUser: PropTypes.string,
-    recent: PropTypes.string,
-    allListSearchPlaceholderText: PropTypes.string,
-    selectedListSearchPlaceholderText: PropTypes.string,
-    expand: PropTypes.string,
-    close: PropTypes.string,
-    primaryButtonLabel: PropTypes.string,
-    secondaryButtonLabel: PropTypes.string,
-    /** (count) => `Items (${count} available)` */
-    allListTitle: PropTypes.func,
-
-    /** (count) => `${count} items selected` */
-    selectedListTitle: PropTypes.func,
-  }),
-  users: PropTypes.arrayOf(GroupShape).isRequired,
-  initialSelectedUsers: PropTypes.arrayOf(GroupShape).isRequired,
-
-  /** Should the dialog be open or not */
-  isOpen: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
-  /** Close the dialog */
-  onClose: PropTypes.func.isRequired,
-  /** Callback to submit the dialog/form */
-  onSubmit: PropTypes.func,
+export const Experimental = () => <StoryNotice componentName="ListBuilder" experimental />;
+Experimental.story = {
+  name: experimentalStoryTitle,
 };
 
-const defaultProps = {
-  i18n: {
-    modalHeaderTitle: 'Select users',
-    modalHeaderLabel: 'Selected users will have edit access',
-    addUser: 'Add',
-    removeUser: 'Remove',
-    recent: 'Recent',
-    allListSearchPlaceholderText: 'Enter a value to search all users',
-    selectedListSearchPlaceholderText: 'Enter a value to search selected users',
-    expand: 'Expand',
-    close: 'Close',
-    allListTitle: (count) => `Users (${count} available)`,
-    selectedListTitle: (count) => `${count} Selected`,
-    primaryButtonLabel: 'OK',
-    secondaryButtonLabel: 'Cancel',
-  },
-  isOpen: false,
-  onSubmit: null,
+export const NoItemsSelected = withReadme(README, () => (
+  <ListBuilder
+    onAdd={action('onAdd')}
+    onRemove={action('onRemove')}
+    items={[
+      {
+        id: '1',
+        content: {
+          value: 'item one',
+        },
+      },
+      { id: '2', content: { value: 'item two' } },
+    ]}
+  />
+));
+
+NoItemsSelected.story = {
+  name: 'with no items selected',
+};
+
+export const ItemsSelected = withReadme(README, () => (
+  <ListBuilder
+    onAdd={action('onAdd')}
+    onRemove={action('onRemove')}
+    items={[
+      {
+        id: '1',
+        content: {
+          value: 'item one',
+        },
+      },
+    ]}
+    selectedItems={[{ id: '2', content: { value: 'item two' } }]}
+  />
+));
+
+ItemsSelected.story = {
+  name: 'with items selected',
+};
+
+export const StatefulExample = withReadme(README, () => {
+  const [selected, setSelected] = useState([]);
+  const [items, setItems] = useState([
+    {
+      id: '1',
+      content: {
+        value: 'item one',
+      },
+    },
+    {
+      id: '2',
+      content: {
+        value: 'item two',
+      },
+    },
+    {
+      id: '3',
+      content: {
+        value: 'item three',
+      },
+    },
+  ]);
+
+  const handleAdd = (event, id) => {
+    setSelected((prev) => {
+      const newItem = items.find((item) => item.id === id);
+      return [...prev, newItem];
+    });
+    setItems((prev) => {
+      return prev.filter((pItem) => pItem.id !== id);
+    });
+
+    // just to show the actions in storybook
+    action('onAdd')(event, id);
+  };
+
+  const handleRemove = (event, id) => {
+    setItems((prev) => {
+      const removedItem = selected.find((item) => item.id === id);
+      return [...prev, removedItem];
+    });
+    setSelected((prev) => prev.filter((pItem) => pItem.id !== id));
+
+    // just to show the actions in storybook
+    action('onRemove')(event, id);
+  };
+
+  return (
+    <ListBuilder onAdd={handleAdd} onRemove={handleRemove} items={items} selectedItems={selected} />
+  );
+});
+
+StatefulExample.story = {
+  name: 'stateful example',
+  decorators: [createElement],
 };
 
 const itemsAreEqual = (item1, item2) => {
@@ -144,20 +184,15 @@ const flattenUsers = (results, user) => {
     : results.concat(user);
 };
 
-const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUsers, i18n }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
-
-  const [selectedUsers, setSelectedUsers] = useState(initialSelectedUsers);
-
-  const canSaveRef = useRef(false);
+export const ComplexNestedExample = withReadme(README, () => {
+  const [selectedUsers, setSelectedUsers] = useState([]);
+  const users = generateUserList();
 
   const handleRemove = (row) => {
-    canSaveRef.current = true;
     setSelectedUsers(selectedUsers.filter((s) => s !== row));
   };
 
   const handleAdd = (row) => {
-    canSaveRef.current = true;
     setSelectedUsers([row].concat(...selectedUsers));
   };
 
@@ -189,13 +224,13 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
             key={`${username}-list-item-button-${depth}`}
             style={{ color: 'black' }}
             role="button"
-            aria-label={mergedI18n.addUser}
+            aria-label="Add user"
             renderIcon={ArrowRight16}
             hasIconOnly
             kind="ghost"
             size="small"
             onClick={() => handleAdd(user)}
-            iconDescription={mergedI18n.addUser}
+            iconDescription="Add user"
           />,
         ];
       },
@@ -213,13 +248,13 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
             <Button
               key={`${username}-list-item-button-${depth}`}
               style={{ color: 'black' }}
-              aria-label={mergedI18n.removeUser}
+              aria-label="Remove user"
               renderIcon={Subtract16}
               hasIconOnly
               kind="ghost"
               size="small"
               onClick={() => handleRemove(user)}
-              iconDescription={mergedI18n.removeUser}
+              iconDescription="Remove user"
             />,
           ];
         }
@@ -234,46 +269,29 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
   const selectedList = displaySelectedUsersList(selectedUsers);
 
   return (
-    <div className={`${iotPrefix}--select-users-modal`}>
-      <ComposedModal
-        isLarge
-        footer={{
-          isPrimaryButtonDisabled: !canSaveRef.current,
-          primaryButtonLabel: mergedI18n.primaryButtonLabel,
-          secondaryButtonLabel: mergedI18n.secondaryButtonLabel,
-        }}
-        header={{
-          label: mergedI18n.modalHeaderLabel,
-          title: mergedI18n.modalHeaderTitle,
-        }}
-        open={isOpen}
-        onSubmit={() => {
-          onSubmit(selectedUsers);
-          canSaveRef.current = false;
-        }}
-        onClose={(e) => {
-          setSelectedUsers(initialSelectedUsers);
-          onClose(e);
-          canSaveRef.current = false;
-        }}
-      >
-        <ListBuilder
-          items={usersList}
-          itemCount={userCount}
-          testID="select-users"
-          selectedItems={selectedList}
-          i18n={{
-            ...mergedI18n,
-            addLabel: mergedI18n.addUser,
-            removeLabel: mergedI18n.removeUser,
-          }}
-        />
-      </ComposedModal>
-    </div>
+    <ListBuilder
+      items={usersList}
+      itemCount={userCount}
+      testID="select-users"
+      selectedItems={selectedList}
+      i18n={{
+        allListTitle: (count) => {
+          return `Users (${count} available)`;
+        },
+      }}
+    />
   );
+});
+
+ComplexNestedExample.story = {
+  name: 'complex nested example',
+  decorators: [createElement],
 };
 
-SelectUsersModal.propTypes = propTypes;
-SelectUsersModal.defaultProps = defaultProps;
-
-export default SelectUsersModal;
+export default {
+  title: 'Watson IoT Experimental/☢️ ListBuilder',
+  decorators: [withKnobs],
+  parameters: {
+    component: ListBuilder,
+  },
+};
