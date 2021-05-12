@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
 import find from 'lodash/find';
 import isEqual from 'lodash/isEqual';
 import isNil from 'lodash/isNil';
 import update from 'immutability-helper';
 
+import { usePrevious } from '../../hooks/usePrevious';
 import { CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import {
   Card,
@@ -140,13 +140,13 @@ const CachedEditorCardRenderer = ({ style, children, getValidDataItems, dataItem
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [dataItems]
   );
+  const previousStyle = usePrevious(style);
 
-  useDeepCompareEffect(
-    () => {
+  useEffect(() => {
+    if (!isEqual(style, previousStyle)) {
       setCachedStyle(style);
-    },
-    [style] // need to do a deep compare on style
-  );
+    }
+  }, [previousStyle, style]);
 
   useEffect(
     () => {
