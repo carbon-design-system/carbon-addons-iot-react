@@ -152,6 +152,7 @@ dayjs.extend(localeData); // gives local specific data
   'zh-tw',
   'zh',
 ].forEach((locale) => {
+  // .js needed because of webpack dynamic import behavior https://github.com/iamkun/dayjs/issues/792
   // eslint-disable-next-line global-require, import/no-dynamic-require
   require(`dayjs/locale/${locale}.js`);
 });
