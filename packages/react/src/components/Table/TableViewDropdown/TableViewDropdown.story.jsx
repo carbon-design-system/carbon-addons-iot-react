@@ -5,7 +5,7 @@ import { boolean, select } from '@storybook/addon-knobs';
 import TableViewDropdown from './TableViewDropdown';
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ Table/TableViewDropdown' : 'Watson IoT/Table/TableViewDropdown',
+  title: 'Watson IoT/Table/TableViewDropdown',
 
   parameters: {
     component: TableViewDropdown,
