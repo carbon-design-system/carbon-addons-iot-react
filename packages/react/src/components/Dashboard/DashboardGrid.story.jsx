@@ -25,7 +25,7 @@ const MapBoxExample = ({...props}) => {
   const [settingsOpen, setSettingsOpen] = React.useState(false)
 
   return (
-  <MapBoxCard data={data} options={options} isLegendFullWidth={boolean('isLegendFullWidth', false)} onCardAction={() => setSettingsOpen(last => !last)} availableActions={{ expand: true, settings: true }} isSettingPanelOpen={settingsOpen} {...props}/>
+  <MapBoxCard data={data} options={options} isResizable={true} isLegendFullWidth={boolean('isLegendFullWidth', false)} onCardAction={() => setSettingsOpen(last => !last)} availableActions={{ expand: true, settings: true }} isSettingPanelOpen={settingsOpen} {...props}/>
   )
 };
 
@@ -663,7 +663,7 @@ export const DashboardAllCardsAsResizable = () => {
       isResizable={isResizable}
       values={pieChartCardValues}
     />,
-    <MapBoxExample id="mapCard" key="mapCard" title={`MapCard - ${currentSizes.mapCard}`} size={currentSizes.mapCard}/>,
+    <MapBoxExample isResizable={isResizable} id="mapCard" key="mapCard" title={`MapCard - ${currentSizes.mapCard}`} size={currentSizes.mapCard}/>,
     <TableCard
       title={`TableCard - ${currentSizes.tableCard}`}
       id="tableCard"

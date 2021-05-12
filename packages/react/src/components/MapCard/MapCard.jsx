@@ -12,7 +12,6 @@ import Card from '../Card/Card';
 import {
   getResizeHandles,
   getUpdatedCardSize,
-  handleCardVariables,
 } from '../../utils/cardUtilityFunctions';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { determineLayout } from '../ValueCard/valueCardUtils';
@@ -33,12 +32,13 @@ const defaultStrings = {
 };
 
 const MapCard = ({
+  children,
   mapContainerRef,
   availableActions,
   size = CARD_SIZES.LARGEWIDE,
   mapControls,
   isResizable,
-  resizeHandles,
+  isExpanded,
   i18n,
   id,
   isLegendFullWidth,
@@ -59,6 +59,10 @@ const MapCard = ({
   const newSize = getUpdatedCardSize(size);
   const layout = determineLayout(newSize);
   const BASE_CLASS_NAME = `${iotPrefix}--map`;
+  const resizeHandles = useMemo(() => (isResizable ? getResizeHandles(children) : []), [
+    children,
+    isResizable,
+  ]);
 
 
   const tooltipPosition = React.useMemo(() => {
@@ -75,6 +79,7 @@ const MapCard = ({
       size={newSize}
       availableActions={availableActions}
       isResizable={isResizable}
+      isExpanded={isExpanded}
       resizeHandles={resizeHandles}
       i18n={mergedI18n}
       id={id}
@@ -88,6 +93,7 @@ const MapCard = ({
       })}
       {...others}
     >
+      <>
       <div ref={mapContainerRef} className={classnames(
         `${BASE_CLASS_NAME}-container`,
         {[`${BASE_CLASS_NAME}-container__open`]: isSettingPanelOpen,})
@@ -120,6 +126,7 @@ const MapCard = ({
         </div>
         <SideBarContent/>
       </div>
+      </>
     </Card>
   );
 };

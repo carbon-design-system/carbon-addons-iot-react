@@ -9,7 +9,7 @@ import Optionsfield from './Optionsfield';
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
 
-const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableActions, isSettingPanelOpen, ...other}) => {
+const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableActions, isSettingPanelOpen, isResizable, ...other}) => {
   const mapContainerRef = useRef(null);
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
@@ -157,6 +157,7 @@ const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableA
   return (
     <MapCard
       id="map-card"
+      isResizable={isResizable}
       availableActions={availableActions}
       mapControls={mapControls}
       mapContainerRef={mapContainerRef}
