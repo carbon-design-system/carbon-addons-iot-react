@@ -81,10 +81,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             className="bx--modal-content"
           >
             <div
-              className="iot--select-users-modal-content"
+              className="iot--list-builder__container"
             >
               <div
-                className="iot--select-users-modal-content__all-users"
+                className="iot--list-builder__all"
                 data-testid="select-users__all"
               >
                 <div
@@ -99,7 +99,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Users (230 Available)
+                        Users (230 available)
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -109,7 +109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       className="iot--list-header--search"
                     >
                       <div
-                        aria-labelledby="iot--list-header--search-search"
+                        aria-labelledby="iot--list-builder__all--search-search"
                         className="bx--search bx--search--sm"
                         role="search"
                       >
@@ -130,18 +130,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         </svg>
                         <label
                           className="bx--label"
-                          htmlFor="iot--list-header--search"
-                          id="iot--list-header--search-search"
+                          htmlFor="iot--list-builder__all--search"
+                          id="iot--list-builder__all--search-search"
                         >
-                          Enter a value
+                          Enter a value to search all users
                         </label>
                         <input
                           autoComplete="off"
                           className="bx--search-input"
-                          id="iot--list-header--search"
+                          id="iot--list-builder__all--search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
-                          placeholder="Enter a value"
+                          placeholder="Enter a value to search all users"
                           role="searchbox"
                           type="text"
                           value=""
@@ -336,7 +336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 </div>
               </div>
               <div
-                className="iot--select-users-modal-content__selected-users"
+                className="iot--list-builder__selected"
                 data-testid="select-users__selected"
               >
                 <div
@@ -351,7 +351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Selected
+                        0 Selected
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -361,7 +361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       className="iot--list-header--search"
                     >
                       <div
-                        aria-labelledby="iot--list-header--search-search"
+                        aria-labelledby="iot--list-builder__selected--search-search"
                         className="bx--search bx--search--sm"
                         role="search"
                       >
@@ -382,18 +382,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         </svg>
                         <label
                           className="bx--label"
-                          htmlFor="iot--list-header--search"
-                          id="iot--list-header--search-search"
+                          htmlFor="iot--list-builder__selected--search"
+                          id="iot--list-builder__selected--search-search"
                         >
-                          Enter a value
+                          Enter a value to search selected users
                         </label>
                         <input
                           autoComplete="off"
                           className="bx--search-input"
-                          id="iot--list-header--search"
+                          id="iot--list-builder__selected--search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
-                          placeholder="Enter a value"
+                          placeholder="Enter a value to search selected users"
                           role="searchbox"
                           type="text"
                           value=""
@@ -595,10 +595,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             className="bx--modal-content"
           >
             <div
-              className="iot--select-users-modal-content"
+              className="iot--list-builder__container"
             >
               <div
-                className="iot--select-users-modal-content__all-users"
+                className="iot--list-builder__all"
                 data-testid="select-users__all"
               >
                 <div
@@ -613,7 +613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Users (10 Available)
+                        Users (10 available)
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -623,7 +623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       className="iot--list-header--search"
                     >
                       <div
-                        aria-labelledby="iot--list-header--search-search"
+                        aria-labelledby="iot--list-builder__all--search-search"
                         className="bx--search bx--search--sm"
                         role="search"
                       >
@@ -644,18 +644,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         </svg>
                         <label
                           className="bx--label"
-                          htmlFor="iot--list-header--search"
-                          id="iot--list-header--search-search"
+                          htmlFor="iot--list-builder__all--search"
+                          id="iot--list-builder__all--search-search"
                         >
-                          Enter a value
+                          Enter a value to search all users
                         </label>
                         <input
                           autoComplete="off"
                           className="bx--search-input"
-                          id="iot--list-header--search"
+                          id="iot--list-builder__all--search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
-                          placeholder="Enter a value"
+                          placeholder="Enter a value to search all users"
                           role="searchbox"
                           type="text"
                           value=""
@@ -1441,7 +1441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 </div>
               </div>
               <div
-                className="iot--select-users-modal-content__selected-users"
+                className="iot--list-builder__selected"
                 data-testid="select-users__selected"
               >
                 <div
@@ -1456,7 +1456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Selected
+                        0 Selected
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -1466,7 +1466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       className="iot--list-header--search"
                     >
                       <div
-                        aria-labelledby="iot--list-header--search-search"
+                        aria-labelledby="iot--list-builder__selected--search-search"
                         className="bx--search bx--search--sm"
                         role="search"
                       >
@@ -1487,18 +1487,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         </svg>
                         <label
                           className="bx--label"
-                          htmlFor="iot--list-header--search"
-                          id="iot--list-header--search-search"
+                          htmlFor="iot--list-builder__selected--search"
+                          id="iot--list-builder__selected--search-search"
                         >
-                          Enter a value
+                          Enter a value to search selected users
                         </label>
                         <input
                           autoComplete="off"
                           className="bx--search-input"
-                          id="iot--list-header--search"
+                          id="iot--list-builder__selected--search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
-                          placeholder="Enter a value"
+                          placeholder="Enter a value to search selected users"
                           role="searchbox"
                           type="text"
                           value=""
@@ -1700,10 +1700,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             className="bx--modal-content"
           >
             <div
-              className="iot--select-users-modal-content"
+              className="iot--list-builder__container"
             >
               <div
-                className="iot--select-users-modal-content__all-users"
+                className="iot--list-builder__all"
                 data-testid="select-users__all"
               >
                 <div
@@ -1718,7 +1718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Users (7 Available)
+                        Users (7 available)
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -1728,7 +1728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       className="iot--list-header--search"
                     >
                       <div
-                        aria-labelledby="iot--list-header--search-search"
+                        aria-labelledby="iot--list-builder__all--search-search"
                         className="bx--search bx--search--sm"
                         role="search"
                       >
@@ -1749,18 +1749,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         </svg>
                         <label
                           className="bx--label"
-                          htmlFor="iot--list-header--search"
-                          id="iot--list-header--search-search"
+                          htmlFor="iot--list-builder__all--search"
+                          id="iot--list-builder__all--search-search"
                         >
-                          Enter a value
+                          Enter a value to search all users
                         </label>
                         <input
                           autoComplete="off"
                           className="bx--search-input"
-                          id="iot--list-header--search"
+                          id="iot--list-builder__all--search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
-                          placeholder="Enter a value"
+                          placeholder="Enter a value to search all users"
                           role="searchbox"
                           type="text"
                           value=""
@@ -1985,7 +1985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 </div>
               </div>
               <div
-                className="iot--select-users-modal-content__selected-users"
+                className="iot--list-builder__selected"
                 data-testid="select-users__selected"
               >
                 <div
@@ -2010,7 +2010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       className="iot--list-header--search"
                     >
                       <div
-                        aria-labelledby="iot--list-header--search-search"
+                        aria-labelledby="iot--list-builder__selected--search-search"
                         className="bx--search bx--search--sm"
                         role="search"
                       >
@@ -2031,18 +2031,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         </svg>
                         <label
                           className="bx--label"
-                          htmlFor="iot--list-header--search"
-                          id="iot--list-header--search-search"
+                          htmlFor="iot--list-builder__selected--search"
+                          id="iot--list-builder__selected--search-search"
                         >
-                          Enter a value
+                          Enter a value to search selected users
                         </label>
                         <input
                           autoComplete="off"
                           className="bx--search-input"
-                          id="iot--list-header--search"
+                          id="iot--list-builder__selected--search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
-                          placeholder="Enter a value"
+                          placeholder="Enter a value to search selected users"
                           role="searchbox"
                           type="text"
                           value=""
@@ -2133,12 +2133,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                     height={16}
                                     preserveAspectRatio="xMidYMid meet"
                                     role="img"
-                                    viewBox="0 0 16 16"
+                                    viewBox="0 0 32 32"
                                     width={16}
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                                      d="M8 15H24V17H8z"
                                     />
                                   </svg>
                                 </button>
@@ -2297,10 +2297,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             className="bx--modal-content"
           >
             <div
-              className="iot--select-users-modal-content"
+              className="iot--list-builder__container"
             >
               <div
-                className="iot--select-users-modal-content__all-users"
+                className="iot--list-builder__all"
                 data-testid="select-users__all"
               >
                 <div
@@ -2315,7 +2315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Users (230 Available)
+                        Users (230 available)
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -2325,7 +2325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       className="iot--list-header--search"
                     >
                       <div
-                        aria-labelledby="iot--list-header--search-search"
+                        aria-labelledby="iot--list-builder__all--search-search"
                         className="bx--search bx--search--sm"
                         role="search"
                       >
@@ -2346,18 +2346,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         </svg>
                         <label
                           className="bx--label"
-                          htmlFor="iot--list-header--search"
-                          id="iot--list-header--search-search"
+                          htmlFor="iot--list-builder__all--search"
+                          id="iot--list-builder__all--search-search"
                         >
-                          Enter a value
+                          Enter a value to search all users
                         </label>
                         <input
                           autoComplete="off"
                           className="bx--search-input"
-                          id="iot--list-header--search"
+                          id="iot--list-builder__all--search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
-                          placeholder="Enter a value"
+                          placeholder="Enter a value to search all users"
                           role="searchbox"
                           type="text"
                           value=""
@@ -2552,7 +2552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 </div>
               </div>
               <div
-                className="iot--select-users-modal-content__selected-users"
+                className="iot--list-builder__selected"
                 data-testid="select-users__selected"
               >
                 <div
@@ -2577,7 +2577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       className="iot--list-header--search"
                     >
                       <div
-                        aria-labelledby="iot--list-header--search-search"
+                        aria-labelledby="iot--list-builder__selected--search-search"
                         className="bx--search bx--search--sm"
                         role="search"
                       >
@@ -2598,18 +2598,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         </svg>
                         <label
                           className="bx--label"
-                          htmlFor="iot--list-header--search"
-                          id="iot--list-header--search-search"
+                          htmlFor="iot--list-builder__selected--search"
+                          id="iot--list-builder__selected--search-search"
                         >
-                          Enter a value
+                          Enter a value to search selected users
                         </label>
                         <input
                           autoComplete="off"
                           className="bx--search-input"
-                          id="iot--list-header--search"
+                          id="iot--list-builder__selected--search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
-                          placeholder="Enter a value"
+                          placeholder="Enter a value to search selected users"
                           role="searchbox"
                           type="text"
                           value=""
@@ -2700,12 +2700,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                     height={16}
                                     preserveAspectRatio="xMidYMid meet"
                                     role="img"
-                                    viewBox="0 0 16 16"
+                                    viewBox="0 0 32 32"
                                     width={16}
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                                      d="M8 15H24V17H8z"
                                     />
                                   </svg>
                                 </button>
@@ -2774,12 +2774,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                                     height={16}
                                     preserveAspectRatio="xMidYMid meet"
                                     role="img"
-                                    viewBox="0 0 16 16"
+                                    viewBox="0 0 32 32"
                                     width={16}
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                                      d="M8 15H24V17H8z"
                                     />
                                   </svg>
                                 </button>
