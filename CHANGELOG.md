@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.82](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.81...v2.145.0-next.82) (2021-05-12)
+
+
+### Bug Fixes
+
+* **menu-button:** clean up getMenuPosition cases ([f7c2a26](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f7c2a2643dbdfd17850f5219c178c2447bb5a4a4))
+* **menu-button:** clean up positioning ([f3ff8dc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f3ff8dc6bf05591a19f77b810ac477d85172fabd))
+* **menu-button:** comment out a11y test ([c4b25d9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c4b25d9b42a5a9bc630a14ced83e3e586263695e))
+* **menu-button:** comment out a11y test until false-positive is fixed ([6f7a490](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6f7a4909b159b3629061cbee897c424bace4f5d6))
+* **menu-button:** force tests to pass until a11y bug is fixed ([cc204fb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cc204fbab08150f5805bb4c1d4cda8be34bd0f7a))
+
+
+
+
+
 # [2.145.0-next.81](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.80...v2.145.0-next.81) (2021-05-12)
 
 
