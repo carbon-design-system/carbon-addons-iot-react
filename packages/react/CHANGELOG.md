@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.145.0-next.81](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.80...v2.145.0-next.81) (2021-05-12)
+
+
+### Bug Fixes
+
+* **list-builder:** complex story, updated i18n on SelectUserModal ([6684339](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6684339949d2423984e4e3e99a618abf6862d60e))
+* **list-builder:** incorrect list-item overflow ([f72d7f7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f72d7f7213ab482ae0fb924fbe4a08878b53a2c5))
+* **list-builder:** use ListBuilder in SelectUsersModal ([7c1dc0b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7c1dc0b7ec3c7a04c0d92c81cb22da59e73cb7e1))
+* **list-builder:** use minus icon, and add expand/close i18n ([5b21f28](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5b21f2880b920522acb624cdfb47527cdaa015e3))
+
+
+### Features
+
+* **list-builder:** add export to index and update snaps ([bc34856](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bc34856d879cde942e3978f8136df4d033add7f3))
+* **list-builder:** adjust prop-types and docs ([0234c7f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0234c7fff30a250c21c44967fcf6eec3662e582f))
+* **list-builder:** initial addition of ListBuilder component ([8204a80](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8204a80618f0f20205c2864c38d98c0f3b3a9be5))
+
+
+
+
+
 # [2.145.0-next.80](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.79...v2.145.0-next.80) (2021-05-12)
 
 
