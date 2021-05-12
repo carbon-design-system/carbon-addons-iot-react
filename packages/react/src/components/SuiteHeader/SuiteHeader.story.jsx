@@ -590,6 +590,7 @@ export const HeaderWithDataFetchingScript = () => {
       userDisplayName: null,
       routes: null,
       applications: null,
+      i18n: null,
       surveyData: null,
     });
     useEffect(() => {
