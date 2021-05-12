@@ -32,6 +32,17 @@ const propTypes = {
   isSummaryDashboard: PropTypes.bool,
   /** supported card types */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Dictionary of icons that corresponds to both `supportedCardTypes` and `i18n`
+   * ex:
+   * {
+   *  TIMESERIES: <EscalatorDown />,
+   *  ALERT: <Code24 />,
+   *  CUSTOM: <Basketball32 />,
+   *  ANOTHER_CUSTOM: <Automobile32 />,
+   * }
+   */
+  icons: PropTypes.objectOf(PropTypes.node),
   /** if enabled, renders a ContentSwitcher with IconSwitches that allow for manually changing the breakpoint,
    * regardless of the screen width
    */
@@ -279,6 +290,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   breakpointSwitcher: null,
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
+  icons: null,
   renderHeader: null,
   renderIconByName: renderDefaultIconByName,
   renderCardPreview: () => null,
@@ -377,6 +389,7 @@ const DashboardEditor = ({
   i18n,
   locale,
   dataSeriesItemLinks,
+  icons,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
 }) => {
@@ -391,6 +404,8 @@ const DashboardEditor = ({
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   // Need to keep track of whether the image gallery is open or not
   const [isImageGalleryModalOpen, setIsImageGalleryModalOpen] = useState(false);
+  // Keep track of whether we need to scroll for new card or not
+  const [needsScroll, setNeedsScroll] = useState(false);
 
   // show the card gallery if no card is being edited
   const [dashboardJson, setDashboardJson] = useState(initialValue);
@@ -421,11 +436,16 @@ const DashboardEditor = ({
   // when a new card is added, scroll to the bottom of the page. Instead of trying to attach the ref to the card itself,
   // check if the scrollHeight has changed in the scroll container, meaning a new card has been added
   useEffect(() => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollTo(0, scrollContainerRef.current.scrollHeight);
+    if (scrollContainerRef.current && needsScroll) {
+      scrollContainerRef.current.scrollTo({
+        left: 0,
+        top: scrollContainerRef.current.scrollHeight,
+        behavior: 'smooth',
+      });
+      setNeedsScroll(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scrollContainerRef.current?.scrollHeight]);
+  }, [scrollContainerRef.current?.scrollHeight, needsScroll]);
 
   /**
    * Adds a default, empty card to the preview
@@ -444,6 +464,7 @@ const DashboardEditor = ({
         cards: [...dashboardJson.cards, cardConfig],
       }));
       setSelectedCardId(cardConfig.id);
+      setNeedsScroll(true);
     },
     [dashboardJson, mergedI18n, onCardChange]
   );
@@ -463,6 +484,7 @@ const DashboardEditor = ({
       };
     });
     setSelectedCardId(id);
+    setNeedsScroll(true);
   }, []);
 
   /**
@@ -708,6 +730,7 @@ const DashboardEditor = ({
             onValidateCardJson={onValidateCardJson}
             onCardJsonPreview={onCardJsonPreview}
             supportedCardTypes={supportedCardTypes}
+            icons={icons}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
