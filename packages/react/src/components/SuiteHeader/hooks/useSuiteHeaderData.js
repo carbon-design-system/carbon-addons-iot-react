@@ -1,3 +1,5 @@
+// This custom hook is deprecated, use useUiResources instead
+
 import { useState, useEffect, useCallback } from 'react';
 
 // eslint-disable-next-line import/extensions

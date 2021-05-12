@@ -523,6 +523,10 @@ export const HeaderWithSurveyNotification = () => {
   );
 };
 
+HeaderWithSurveyNotification.story = {
+  name: 'Header with survey notification',
+};
+
 export const LoadingState = () => {
   return <SuiteHeader suiteName="Application Suite" appName="Application Name" />;
 };
@@ -538,10 +542,10 @@ export const HeaderWithDataFetching = () => {
     const [data, setData] = useState({
       username: null,
       userDisplayName: null,
-      email: null,
       routes: null,
       applications: null,
-      showSurvey: false,
+      i18n: null,
+      surveyData: null,
     });
     useEffect(() => {
       fetch('http://localhost:3001/internal/uiresources?id=masthead&lang=en&surveyId=test', {
@@ -579,8 +583,69 @@ HeaderWithDataFetching.story = {
   name: 'Header with data fetching',
 };
 
-*/
+export const HeaderWithDataFetchingScript = () => {
+  const StatefulExample = () => {
+    const [data, setData] = useState({
+      username: null,
+      userDisplayName: null,
+      routes: null,
+      applications: null,
+      surveyData: null,
+    });
+    useEffect(() => {
+      getUiResourcesData({
+        baseApiUrl: 'http://localhost:3001/internal',
+        surveyId: 'test',
+        isTest: false,
+      }).then(setData);
+    }, []);
 
-HeaderWithSurveyNotification.story = {
-  name: 'Header with survey notification',
+    return (
+      <SuiteHeader
+        suiteName="Application Suite"
+        appName="Application Name"
+        userDisplayName={data.userDisplayName}
+        username={data.username}
+        routes={data.routes}
+        applications={data.applications}
+        i18n={data.i18n}
+        surveyData={data.surveyData}
+      />
+    );
+  };
+  return <StatefulExample />;
 };
+
+HeaderWithDataFetchingScript.story = {
+  name: 'Header with data fetching script',
+};
+
+export const HeaderWithDataFetchingHook = () => {
+  const StatefulExample = () => {
+    const [data] = useUiResources({
+      baseApiUrl: 'http://localhost:3001/internal',
+      surveyId: 'test',
+      isTest: false,
+    });
+
+    return (
+      <SuiteHeader
+        suiteName="Application Suite"
+        appName="Application Name"
+        userDisplayName={data.userDisplayName}
+        username={data.username}
+        routes={data.routes}
+        applications={data.applications}
+        i18n={data.i18n}
+        surveyData={data.surveyData}
+      />
+    );
+  };
+  return <StatefulExample />;
+};
+
+HeaderWithDataFetchingHook.story = {
+  name: 'Header with data fetching hook',
+};
+
+*/
