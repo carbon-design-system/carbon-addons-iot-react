@@ -14,7 +14,7 @@ const packageJson = require('./package.json');
 const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
 
-const extensions = ['.mjs', '.js', '.jsx', '.json'];
+const extensions = ['.mjs', '.js', '.jsx', '.json', '.ts'];
 
 const external = (id) => {
   return (
@@ -22,7 +22,6 @@ const external = (id) => {
     Object.keys(packageJson.dependencies).some((element) => id === element) ||
     id.includes('lodash/') ||
     id.includes('core-js/') ||
-    id.includes('moment/') ||
     id.includes('@babel/runtime')
   );
 };

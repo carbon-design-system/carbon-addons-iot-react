@@ -108,7 +108,7 @@ const users = [
   'Sharita Ascencio',
 ];
 
-const generateUserList = () => {
+export const generateUserList = () => {
   const userList = users.map((user) => {
     const space = user.indexOf(' ');
     const username = `@${user[0]}${user.substr(space + 1)}`;
@@ -208,6 +208,7 @@ export default {
   parameters: {
     component: SelectUsersModal,
   },
+  excludeStories: ['generateUserList'],
 };
 
 export const DefaultModal = () => {

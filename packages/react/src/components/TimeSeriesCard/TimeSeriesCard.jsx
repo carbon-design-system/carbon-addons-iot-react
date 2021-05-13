@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useCallback } from 'react';
+import React, { useRef, useMemo, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { LineChart, StackedBarChart } from '@carbon/charts-react';
@@ -7,7 +7,7 @@ import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import capitalize from 'lodash/capitalize';
 import defaultsDeep from 'lodash/defaultsDeep';
-import useDeepCompareEffect from 'use-deep-compare-effect';
+import isEqual from 'lodash/isEqual';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import {
@@ -32,6 +32,7 @@ import {
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 import dayjs from '../../utils/dayjs';
+import { usePrevious } from '../../hooks/usePrevious';
 
 import {
   generateSampleValues,
@@ -272,20 +273,21 @@ const TimeSeriesCard = ({
   // Set the colors for each dataset
   const colors = useMemo(() => formatColors(series), [series]);
 
-  /** This is needed to update the chart when the lines and values change */
-  useDeepCompareEffect(() => {
-    if (chartRef && chartRef.chart) {
-      const chartData = formatChartData(timeDataSourceId, series, valueSort);
-      chartRef.chart.model.setData(chartData);
-    }
-  }, [valueSort, series, timeDataSourceId]);
-
   /** This caches the chart value */
   const chartData = useMemo(() => formatChartData(timeDataSourceId, series, valueSort), [
     timeDataSourceId,
     series,
     valueSort,
   ]);
+
+  const previousChartData = usePrevious(chartData);
+
+  /** This is needed to update the chart when the lines and values change */
+  useEffect(() => {
+    if (chartRef && chartRef.chart && !isEqual(chartData, previousChartData)) {
+      chartRef.chart.model.setData(chartData);
+    }
+  }, [chartData, previousChartData]);
 
   const isChartDataEmpty = isEmpty(chartData);
 
