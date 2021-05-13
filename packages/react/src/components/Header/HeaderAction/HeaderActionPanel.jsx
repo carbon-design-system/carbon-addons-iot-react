@@ -23,17 +23,17 @@ const propTypes = {
       current: typeof Element === 'undefined' ? PropTypes.any : PropTypes.instanceOf(Element),
     }),
   ]).isRequired,
-  i18n: PropTypes.shape({
-    closeMenu: PropTypes.string,
-  }),
 };
 
 const defaultProps = {
-  // eslint-disable-next-line react/default-props-match-prop-types
+  // disabled b/c these are pulled in via the HeaderActionPropTypes above.
+  /* eslint-disable react/default-props-match-prop-types */
   isExpanded: false,
+  renderLabel: false,
   i18n: {
     closeMenu: 'close menu',
   },
+  /* eslint-enable react/default-props-match-prop-types */
 };
 
 /**

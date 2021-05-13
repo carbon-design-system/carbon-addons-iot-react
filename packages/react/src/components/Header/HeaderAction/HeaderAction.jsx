@@ -32,7 +32,7 @@ export const HeaderActionPropTypes = {
   onClose: PropTypes.func,
 
   i18n: PropTypes.shape({
-    closeMenuLabel: PropTypes.string,
+    closeMenu: PropTypes.string,
   }),
 };
 
