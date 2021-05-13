@@ -34,6 +34,7 @@ const useUiResources = ({
       setData(uiResourcesData);
     } catch (err) {
       setError(err);
+    } finally {
       setIsLoading(false);
     }
   }, [baseApiUrl, lang, surveyId, isTest, setIsLoading]); // eslint-disable-line react-hooks/exhaustive-deps
