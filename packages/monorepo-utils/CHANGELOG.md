@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.145.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0...v2.145.1-next.0) (2021-05-13)
+
+**Note:** Version bump only for package ai-apps-monorepo-utils
+
+
+
+
+
 # [2.145.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.82...v2.145.0) (2021-05-13)
 
 **Note:** Version bump only for package ai-apps-monorepo-utils
