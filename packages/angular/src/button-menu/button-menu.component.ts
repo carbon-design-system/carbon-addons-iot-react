@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output } from "@angular/core";
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from "@angular/core";
 import { DocumentService } from "carbon-components-angular";
 
 @Component({
@@ -9,7 +9,7 @@ import { DocumentService } from "carbon-components-angular";
         'iot--menu-button--open': open
       }"
       class="iot--menu-button">
-      <ng-container *ngIf="!split">
+      <ng-container *ngIf="!split && !iconOnly">
         <button
           ibmButton="primary"
           class="iot--menu-button__primary"
@@ -19,7 +19,7 @@ import { DocumentService } from "carbon-components-angular";
           <svg *ngIf="open" class="bx--btn__icon" [ibmIcon]="closeIcon" size="16"></svg>
         </button>
       </ng-container>
-      <ng-container *ngIf="split">
+      <ng-container *ngIf="split && !iconOnly">
         <button
           *ngIf="!iconOnly"
           ibmButton="primary"
@@ -28,14 +28,25 @@ import { DocumentService } from "carbon-components-angular";
           {{label}}
         </button>
         <button
-          [ibmButton]="iconOnly ? 'ghost' : 'primary'"
+          ibmButton="primary"
           [iconOnly]="true"
           [hasAssistiveText]="iconOnly && label"
           class="iot--menu-button__secondary"
           (click)="toggleMenu()">
           <svg *ngIf="!open" class="bx--btn__icon" [ibmIcon]="openIcon" size="16"></svg>
           <svg *ngIf="open" class="bx--btn__icon" [ibmIcon]="closeIcon" size="16"></svg>
-          <span *ngIf="iconOnly && label" class="bx--assistive-text">{{label}}</span>
+        </button>
+      </ng-container>
+      <ng-container *ngIf="iconOnly && !split">
+        <button
+          ibmButton="ghost"
+          [iconOnly]="true"
+          [hasAssistiveText]="iconOnly && label"
+          class="iot--menu-button__secondary"
+          (click)="toggleMenu()">
+          <svg *ngIf="!open" class="bx--btn__icon" [ibmIcon]="openIcon" size="16"></svg>
+          <svg *ngIf="open" class="bx--btn__icon" [ibmIcon]="closeIcon" size="16"></svg>
+          <span *ngIf="label" class="bx--assistive-text">{{label}}</span>
         </button>
       </ng-container>
       <ibm-context-menu [open]="open" [position]="position">
@@ -106,5 +117,23 @@ export class ButtonMenuComponent {
   toggleMenu() {
     this.open = !this.open;
     this.openChange.emit(this.open);
+  }
+
+  @HostListener('keyup', ['$event'])
+  handleKeys(event: KeyboardEvent) {
+    if (event.key === 'Escape' && this.open) {
+      this.toggleMenu();
+      const element = this.elementRef.nativeElement as HTMLElement;
+      let button: HTMLElement = element.querySelector('.iot--menu-button__primary');
+      if (this.split || this.iconOnly) {
+        button = element.querySelector('.iot--menu-button__secondary');
+      }
+      button.focus();
+    }
+  }
+
+  @HostListener('click')
+  handleClick() {
+    console.log('click');
   }
 }
