@@ -1,5 +1,13 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from "@angular/core";
-import { DocumentService } from "carbon-components-angular";
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output,
+} from '@angular/core';
+import { DocumentService } from 'carbon-components-angular';
 
 @Component({
   selector: 'ai-button-menu',
@@ -8,13 +16,11 @@ import { DocumentService } from "carbon-components-angular";
       [ngClass]="{
         'iot--menu-button--open': open
       }"
-      class="iot--menu-button">
+      class="iot--menu-button"
+    >
       <ng-container *ngIf="!split && !iconOnly">
-        <button
-          ibmButton="primary"
-          class="iot--menu-button__primary"
-          (click)="toggleMenu()">
-          {{label}}
+        <button ibmButton="primary" class="iot--menu-button__primary" (click)="toggleMenu()">
+          {{ label }}
           <svg *ngIf="!open" class="bx--btn__icon" [ibmIcon]="openIcon" size="16"></svg>
           <svg *ngIf="open" class="bx--btn__icon" [ibmIcon]="closeIcon" size="16"></svg>
         </button>
@@ -24,15 +30,17 @@ import { DocumentService } from "carbon-components-angular";
           *ngIf="!iconOnly"
           ibmButton="primary"
           class="iot--menu-button__primary"
-          (click)="primaryClick.emit($event)">
-          {{label}}
+          (click)="primaryClick.emit($event)"
+        >
+          {{ label }}
         </button>
         <button
           ibmButton="primary"
           [iconOnly]="true"
           [hasAssistiveText]="iconOnly && label"
           class="iot--menu-button__secondary"
-          (click)="toggleMenu()">
+          (click)="toggleMenu()"
+        >
           <svg *ngIf="!open" class="bx--btn__icon" [ibmIcon]="openIcon" size="16"></svg>
           <svg *ngIf="open" class="bx--btn__icon" [ibmIcon]="closeIcon" size="16"></svg>
         </button>
@@ -43,10 +51,11 @@ import { DocumentService } from "carbon-components-angular";
           [iconOnly]="true"
           [hasAssistiveText]="iconOnly && label"
           class="iot--menu-button__secondary"
-          (click)="toggleMenu()">
+          (click)="toggleMenu()"
+        >
           <svg *ngIf="!open" class="bx--btn__icon" [ibmIcon]="openIcon" size="16"></svg>
           <svg *ngIf="open" class="bx--btn__icon" [ibmIcon]="closeIcon" size="16"></svg>
-          <span *ngIf="label" class="bx--assistive-text">{{label}}</span>
+          <span *ngIf="label" class="bx--assistive-text">{{ label }}</span>
         </button>
       </ng-container>
       <ibm-context-menu [open]="open" [position]="position">
@@ -54,38 +63,40 @@ import { DocumentService } from "carbon-components-angular";
       </ibm-context-menu>
     </div>
   `,
-  styles: [`
-    :host {
-      display: inline-block;
-    }
+  styles: [
+    `
+      :host {
+        display: inline-block;
+      }
 
-    .iot--menu-button {
-      display: inline-block;
-    }
+      .iot--menu-button {
+        display: inline-block;
+      }
 
-    .bx--btn__icon {
-      pointer-events: none;
-    }
-  `]
+      .bx--btn__icon {
+        pointer-events: none;
+      }
+    `,
+  ],
 })
-export class ButtonMenuComponent {
-  @Input() label = "";
+export class ButtonMenuComponent implements AfterViewInit {
+  @Input() label = '';
   @Input() open = false;
-  @Input() openIcon = "chevron--down";
-  @Input() closeIcon = "chevron--up";
+  @Input() openIcon = 'chevron--down';
+  @Input() closeIcon = 'chevron--up';
   @Input() iconOnly = false;
   @Input() split = false;
-  @Input() alignMenu: "left" | "right" = "left";
-  @Input() placeMenu: "top" | "bottom" = "bottom";
+  @Input() alignMenu: 'left' | 'right' = 'left';
+  @Input() placeMenu: 'top' | 'bottom' = 'bottom';
   @Output() openChange = new EventEmitter<boolean>();
   @Output() primaryClick = new EventEmitter<MouseEvent>();
 
   public position = {
     top: 0,
-    left: 0
+    left: 0,
   };
 
-  constructor(protected elementRef: ElementRef, protected documentService: DocumentService) { }
+  constructor(protected elementRef: ElementRef, protected documentService: DocumentService) {}
 
   ngAfterViewInit() {
     const { nativeElement }: { nativeElement: HTMLElement } = this.elementRef;
@@ -96,17 +107,17 @@ export class ButtonMenuComponent {
     let left = dimensions.left;
     let top = dimensions.top + dimensions.height;
 
-    if (this.alignMenu === "right") {
-      left = dimensions.right - menuDimensions.width
+    if (this.alignMenu === 'right') {
+      left = dimensions.right - menuDimensions.width;
     }
 
-    if (this.placeMenu === "top") {
+    if (this.placeMenu === 'top') {
       top = dimensions.top - menuDimensions.height;
     }
 
     this.position = { top, left };
 
-    this.documentService.handleClick(event => {
+    this.documentService.handleClick((event) => {
       const { nativeElement }: { nativeElement: HTMLElement } = this.elementRef;
       if (this.open && !nativeElement.contains(event.target as HTMLElement)) {
         this.toggleMenu();
