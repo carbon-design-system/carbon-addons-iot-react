@@ -1,6 +1,6 @@
 {
   "name": "@ai-apps/angular",
-  "version": "2.145.0-next.44",
+  "version": "2.145.0",
   "description": "AI Applications PAL in Angular",
   "main": "index.js",
   "scripts": {
@@ -66,7 +66,7 @@
     "@storybook/theming": "6.2.3",
     "@types/jasmine": "2.8.2",
     "@types/node": "11.13.0",
-    "ai-apps-monorepo-utils": "^2.145.0-next.35",
+    "ai-apps-monorepo-utils": "^2.145.0",
     "babel-loader": "8.0.5",
     "carbon-components-angular": "4.40.1",
     "codelyzer": "5.0.0",
@@ -98,7 +98,7 @@
     "zone.js": "0.11.3"
   },
   "dependencies": {
-    "@ai-apps/styles": "^2.145.0-next.43",
+    "@ai-apps/styles": "^2.145.0",
     "@carbon/icons": "10.20.0",
     "@carbon/telemetry": "0.0.0-alpha.6",
     "flatpickr": "4.6.1"
