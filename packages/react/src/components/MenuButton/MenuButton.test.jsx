@@ -70,6 +70,32 @@ const menuItems = [
   />,
 ];
 
+const generateMenuButton = (buttonRect) => {
+  const button = document.createElement('button');
+  button.getBoundingClientRect = jest.fn(() => {
+    return buttonRect;
+  });
+  const menu = document.createElement('ul');
+  menu.getBoundingClientRect = jest.fn(() => {
+    return {
+      bottom: 236,
+      height: 236,
+      left: 0,
+      right: 208,
+      top: 0,
+      width: 208,
+      x: 0,
+      y: 0,
+    };
+  });
+  Object.defineProperty(button, 'nextSibling', {
+    get() {
+      return menu;
+    },
+  });
+
+  return button;
+};
 describe('MenuButton', () => {
   beforeEach(() => {
     jest.resetAllMocks();
@@ -245,36 +271,15 @@ describe('MenuButton', () => {
     });
 
     it('should position a single button in the bottom right corner', () => {
-      const button = document.createElement('button');
-      button.getBoundingClientRect = jest.fn(() => {
-        return {
-          bottom: 747,
-          height: 48,
-          left: 930,
-          right: 978,
-          top: 699,
-          width: 48,
-          x: 930,
-          y: 699,
-        };
-      });
-      const menu = document.createElement('ul');
-      menu.getBoundingClientRect = jest.fn(() => {
-        return {
-          bottom: 236,
-          height: 236,
-          left: 0,
-          right: 208,
-          top: 0,
-          width: 208,
-          x: 0,
-          y: 0,
-        };
-      });
-      Object.defineProperty(button, 'nextSibling', {
-        get() {
-          return menu;
-        },
+      const button = generateMenuButton({
+        bottom: 747,
+        height: 48,
+        left: 930,
+        right: 978,
+        top: 699,
+        width: 48,
+        x: 930,
+        y: 699,
       });
 
       expect(
@@ -286,37 +291,16 @@ describe('MenuButton', () => {
       ).toEqual({ x: 978, y: 463 });
     });
 
-    it('should position a split button on the bottom correctly', () => {
-      const button = document.createElement('button');
-      button.getBoundingClientRect = jest.fn(() => {
-        return {
-          bottom: 747,
-          height: 48,
-          left: 489,
-          right: 537,
-          top: 699,
-          width: 48,
-          x: 489,
-          y: 699,
-        };
-      });
-      const menu = document.createElement('ul');
-      menu.getBoundingClientRect = jest.fn(() => {
-        return {
-          bottom: 236,
-          height: 236,
-          left: 0,
-          right: 208,
-          top: 0,
-          width: 208,
-          x: 0,
-          y: 0,
-        };
-      });
-      Object.defineProperty(button, 'nextSibling', {
-        get() {
-          return menu;
-        },
+    it('should position a split button in the top-left correctly', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 170.4375,
+        right: 218.4375,
+        top: 48,
+        width: 48,
+        x: 170.4375,
+        y: 48,
       });
 
       expect(
@@ -325,82 +309,40 @@ describe('MenuButton', () => {
           buttonRef: { current: button },
           onPrimaryActionClick: jest.fn(),
         })
-      ).toEqual({ x: 489, y: 463 });
+      ).toEqual({ x: 170.4375, y: 96 });
     });
 
-    it('should position an icon only button on the right correctly', () => {
-      const button = document.createElement('button');
-      button.getBoundingClientRect = jest.fn(() => {
-        return {
-          bottom: 96,
-          height: 48,
-          left: 930,
-          right: 978,
-          top: 48,
-          width: 48,
-          x: 930,
-          y: 48,
-        };
-      });
-      const menu = document.createElement('ul');
-      menu.getBoundingClientRect = jest.fn(() => {
-        return {
-          bottom: 236,
-          height: 236,
-          left: 0,
-          right: 208,
-          top: 0,
-          width: 208,
-          x: 0,
-          y: 0,
-        };
-      });
-      Object.defineProperty(button, 'nextSibling', {
-        get() {
-          return menu;
-        },
+    it('should position a split button in the top correctly', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 541.703125,
+        right: 589.703125,
+        top: 48,
+        width: 48,
+        x: 541.703125,
+        y: 48,
       });
 
       expect(
         MenuButtonUtils.getMenuPosition({
-          label: '',
+          label: 'Actions',
           buttonRef: { current: button },
-          onPrimaryActionClick: null,
+          onPrimaryActionClick: jest.fn(),
         })
-      ).toEqual({ x: 978, y: 96 });
+      ).toEqual({ x: 541.703125, y: 96 });
     });
 
-    it('should position a split button on the bottom correctly in RTL', () => {
-      const button = document.createElement('button');
-      button.getBoundingClientRect = jest.fn(() => {
-        return {
-          bottom: 747,
-          height: 48,
-          left: 489,
-          right: 537,
-          top: 699,
-          width: 48,
-          x: 489,
-          y: 699,
-        };
-      });
-      const menu = document.createElement('ul');
-      menu.getBoundingClientRect = jest.fn(() => {
-        return {
-          bottom: 236,
-          height: 236,
-          left: 0,
-          right: 208,
-          top: 0,
-          width: 208,
-          x: 0,
-          y: 0,
-        };
-      });
-      Object.defineProperty(button, 'nextSibling', {
-        get() {
-          return menu;
-        },
+    it('should position a split button in the top in RTL correctly', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 541.703125,
+        right: 589.703125,
+        top: 48,
+        width: 48,
+        x: 541.703125,
+        y: 48,
       });
 
       expect(
@@ -410,7 +352,462 @@ describe('MenuButton', () => {
           onPrimaryActionClick: jest.fn(),
           langDir: 'rtl',
         })
+      ).toEqual({ x: 541.703125, y: 96 });
+    });
+
+    it('should position a split button in the top-right correctly', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 48,
+        width: 48,
+        x: 912.984375,
+        y: 48,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 864.984375, y: 96 });
+    });
+
+    it('should position a split button in the top-right in RTL correctly', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 48,
+        width: 48,
+        x: 912.984375,
+        y: 48,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+          langDir: 'rtl',
+        })
+      ).toEqual({ x: 960.984375, y: 96 });
+    });
+
+    it('should position a split button in the bottom-right in RTL correctly', () => {
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 768,
+        width: 48,
+        x: 912.984375,
+        y: 768,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+          langDir: 'rtl',
+        })
+      ).toEqual({ x: 960.984375, y: 532 });
+    });
+
+    it('should position a split button in the left correctly', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 170.4375,
+        right: 218.4375,
+        top: 408,
+        width: 48,
+        x: 170.4375,
+        y: 408,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 170.4375, y: 456 });
+    });
+
+    it('should position a split button in the left in RTL correctly', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 170.4375,
+        right: 218.4375,
+        top: 408,
+        width: 48,
+        x: 170.4375,
+        y: 408,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+          langDir: 'rtl',
+        })
+      ).toEqual({ x: 170.4375, y: 456 });
+    });
+
+    it('should position a split button in the right correctly', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 408,
+        width: 48,
+        x: 912.984375,
+        y: 408,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 960.984375, y: 456 });
+    });
+
+    it('should position a split button in the right in RTL correctly', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 408,
+        width: 48,
+        x: 912.984375,
+        y: 408,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+          langDir: 'rtl',
+        })
+      ).toEqual({ x: 960.984375, y: 456 });
+    });
+
+    it('should position a split button in the bottom-left correctly', () => {
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 170.4375,
+        right: 218.4375,
+        top: 768,
+        width: 48,
+        x: 170.4375,
+        y: 768,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 170.4375, y: 532 });
+    });
+
+    it('should position a split button in the bottom-left in RTL correctly', () => {
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 170.4375,
+        right: 218.4375,
+        top: 768,
+        width: 48,
+        x: 170.4375,
+        y: 768,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+          langDir: 'rtl',
+        })
+      ).toEqual({ x: 170.4375, y: 532 });
+    });
+
+    it('should position a split button on the bottom correctly', () => {
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 541.703125,
+        right: 589.703125,
+        top: 768,
+        width: 48,
+        x: 541.703125,
+        y: 768,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 541.703125, y: 532 });
+    });
+
+    it('should position a split button in the bottom-right correctly', () => {
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 768,
+        width: 48,
+        x: 912.984375,
+        y: 768,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 960.984375, y: 532 });
+    });
+
+    it('should position a split button that overflows top-bottom correctly', () => {
+      Object.defineProperty(document.body, 'clientWidth', {
+        writable: true,
+        value: 1024,
+      });
+      Object.defineProperty(document.body, 'clientHeight', {
+        writable: true,
+        value: 384,
+      });
+
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 768,
+        width: 48,
+        x: 912.984375,
+        y: 768,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 960.984375, y: 532 });
+    });
+
+    it('should position an icon only button on the right correctly', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 408,
+        width: 48,
+        x: 912.984375,
+        y: 408,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: '',
+          buttonRef: { current: button },
+          onPrimaryActionClick: null,
+        })
+      ).toEqual({ x: 960.984375, y: 456 });
+    });
+
+    it('should position an icon only button on the top-right correctly', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 48,
+        width: 48,
+        x: 912.984375,
+        y: 48,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: '',
+          buttonRef: { current: button },
+          onPrimaryActionClick: null,
+        })
+      ).toEqual({ x: 960.984375, y: 96 });
+    });
+
+    it('should position an icon only button on the top correctly', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 480.484375,
+        right: 528.484375,
+        top: 48,
+        width: 48,
+        x: 480.484375,
+        y: 48,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: '',
+          buttonRef: { current: button },
+          onPrimaryActionClick: null,
+        })
+      ).toEqual({ x: 480.484375, y: 96 });
+    });
+
+    it('should position an icon only button in the center correctly', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 480.484375,
+        right: 528.484375,
+        top: 408,
+        width: 48,
+        x: 480.484375,
+        y: 408,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: '',
+          buttonRef: { current: button },
+          onPrimaryActionClick: null,
+        })
+      ).toEqual({ x: 480.484375, y: 456 });
+    });
+
+    it('should position an icon only button in the left correctly', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 48,
+        right: 96,
+        top: 408,
+        width: 48,
+        x: 48,
+        y: 408,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: '',
+          buttonRef: { current: button },
+          onPrimaryActionClick: null,
+        })
+      ).toEqual({ x: 48, y: 456 });
+    });
+
+    it('should position an icon only button in the top-left correctly', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 48,
+        right: 96,
+        top: 48,
+        width: 48,
+        x: 48,
+        y: 48,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: '',
+          buttonRef: { current: button },
+          onPrimaryActionClick: null,
+        })
+      ).toEqual({ x: 48, y: 96 });
+    });
+
+    it('should position an icon only button in the bottom-left correctly', () => {
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 48,
+        right: 96,
+        top: 768,
+        width: 48,
+        x: 48,
+        y: 768,
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: '',
+          buttonRef: { current: button },
+          onPrimaryActionClick: null,
+        })
+      ).toEqual({ x: 48, y: 532 });
+    });
+
+    it('should position a split button on the bottom correctly in RTL', () => {
+      const button = generateMenuButton({
+        bottom: 747,
+        height: 48,
+        left: 489,
+        right: 537,
+        top: 699,
+        width: 48,
+        x: 489,
+        y: 699,
+      });
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+          langDir: 'rtl',
+        })
       ).toEqual({ x: 489, y: 463 });
+    });
+
+    it('should position a split button in the center correctly in RTL', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 480.484375,
+        right: 528.484375,
+        top: 408,
+        width: 48,
+        x: 480.484375,
+        y: 408,
+      });
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Actions',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+          langDir: 'rtl',
+        })
+      ).toEqual({ x: 480.484375, y: 456 });
     });
   });
 });
