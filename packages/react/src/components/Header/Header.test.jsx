@@ -288,6 +288,7 @@ describe('Header', () => {
   });
 
   it('should move icons into overflow menu when area too small', () => {
+    const originalWidth = window.innerWidth;
     Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 375 });
     const originalBounding = Element.prototype.getBoundingClientRect;
     // first we make sure right is higher than window width on the prototype
@@ -380,5 +381,6 @@ describe('Header', () => {
     userEvent.click(screen.getAllByLabelText('open and close list of options')[0]);
     expect(screen.queryByText('Custom icon 1')).toBeNull();
     HTMLElement.prototype.getBoundingClientRect = originalBounding;
+    window.innerWidth = originalWidth;
   });
 });

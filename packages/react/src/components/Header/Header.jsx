@@ -75,6 +75,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     mainHeader: PropTypes.string,
     openMenu: PropTypes.string,
+    closeMenu: PropTypes.string,
   }),
 };
 
@@ -93,6 +94,7 @@ const defaultProps = {
   i18n: {
     mainHeader: 'main header',
     openMenu: 'Open menu',
+    closeMenu: 'Close menu',
   },
 };
 
@@ -154,7 +156,7 @@ const Header = ({
         ) : null}
         {subtitle ? <div className={`${iotPrefix}--header__subtitle`}>{subtitle}</div> : null}
       </HeaderName>
-      <HeaderActionGroup actionItems={actionItems} />
+      <HeaderActionGroup actionItems={actionItems} i18n={mergedI18n} />
     </CarbonHeader>
   );
 };

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
 import classnames from 'classnames';
 import { HeaderGlobalAction, HeaderPanel } from 'carbon-components-react/es/components/UIShell';
 import { Close16 } from '@carbon/icons-react';
+import { white } from '@carbon/colors';
 
 import { APP_SWITCHER } from '../Header';
 
@@ -22,11 +23,17 @@ const propTypes = {
       current: typeof Element === 'undefined' ? PropTypes.any : PropTypes.instanceOf(Element),
     }),
   ]).isRequired,
+  i18n: PropTypes.shape({
+    closeMenu: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
   // eslint-disable-next-line react/default-props-match-prop-types
   isExpanded: false,
+  i18n: {
+    closeMenu: 'close menu',
+  },
 };
 
 /**
@@ -40,8 +47,16 @@ const HeaderActionPanel = ({
   onToggleExpansion,
   isExpanded,
   focusRef,
-  inOverflow,
+  renderLabel,
+  i18n,
 }) => {
+  const mergedI18n = useMemo(
+    () => ({
+      ...defaultProps.i18n,
+      ...i18n,
+    }),
+    [i18n]
+  );
   return (
     <>
       <HeaderGlobalAction
@@ -54,10 +69,10 @@ const HeaderActionPanel = ({
         onClick={() => onToggleExpansion()}
         ref={focusRef}
       >
-        {inOverflow ? (
+        {renderLabel ? (
           item.label
         ) : isExpanded ? (
-          <Close16 fill="white" description="close-icon" />
+          <Close16 fill={white} description={mergedI18n.closeMenu} />
         ) : (
           item.btnContent
         )}

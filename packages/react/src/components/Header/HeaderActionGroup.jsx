@@ -1,8 +1,9 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { HeaderGlobalBar } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import { Close16, OverflowMenuVertical16 } from '@carbon/icons-react';
 import ReactDOM from 'react-dom';
+import { white } from '@carbon/colors';
 
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
@@ -15,34 +16,51 @@ const { iotPrefix, prefix } = settings;
 
 const propTypes = {
   actionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes)).isRequired,
+
+  i18n: PropTypes.shape({
+    closeMenu: PropTypes.string,
+    openMenu: PropTypes.string,
+  }),
 };
 
+const defaultProps = {
+  i18n: {
+    closeMenu: 'Close menu',
+    openMenu: 'Open menu',
+  },
+};
 /**
  * Keeps track of the state of which header menu item is currently expanded
  *
  * Renders all the actions that can be clicked to navigate, open header panels (side panels),
  * or dropdown menus, passing an onToggleExpansion to each action
  */
-const HeaderActionGroup = ({ actionItems }) => {
+const HeaderActionGroup = ({ actionItems, i18n }) => {
   const overFlowContainerRef = useRef(null);
   const [overflowItems, setOverflowItems] = useState([]);
   const breakpoint = useRef(null);
   const [overflowOpen, setOverflowOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [menu, setMenu] = useState(null);
+  const mergedI18n = useMemo(
+    () => ({
+      ...defaultProps.i18n,
+      ...i18n,
+    }),
+    [i18n]
+  );
 
   const checkForOverflow = useCallback(() => {
     /* istanbul ignore else */
     if (overFlowContainerRef.current) {
-      // the first button in the action group
-      const actionRect = overFlowContainerRef.current?.lastChild?.firstChild?.getBoundingClientRect();
-      // the whole div containing the name and subtitle
-      const nameRect = overFlowContainerRef.current?.previousSibling?.getBoundingClientRect();
+      const firstButtonInGroupRef = overFlowContainerRef.current?.lastChild?.firstChild?.getBoundingClientRect();
+      const nameDivRef = overFlowContainerRef.current?.previousSibling?.getBoundingClientRect();
+
       /* istanbul ignore else */
-      if (actionRect && nameRect) {
+      if (firstButtonInGroupRef && nameDivRef) {
         const windowWidth = window.innerWidth || document.documentElement.clientWidth;
         // check that it's also greater than zero to prevent collapsing in jest where all the values are 0.
-        const tooBig = nameRect.right > 0 && nameRect.right >= actionRect.left;
+        const tooBig = nameDivRef.right > 0 && nameDivRef.right >= firstButtonInGroupRef.left;
         const previousBreakpoint = breakpoint.current;
 
         if (tooBig && actionItems.length > 0 && overflowItems.length === 0) {
@@ -80,7 +98,11 @@ const HeaderActionGroup = ({ actionItems }) => {
                 onClose={() => setOverflowOpen(false)}
                 renderIcon={() =>
                   // show a close icon when open per design specs
-                  overflowOpen ? <Close16 fill="white" /> : <OverflowMenuVertical16 fill="white" />
+                  overflowOpen ? (
+                    <Close16 fill={white} description={mergedI18n.closeMenu} />
+                  ) : (
+                    <OverflowMenuVertical16 fill={white} description={mergedI18n.openMenu} />
+                  )
                 }
               >
                 {overflowItems.map((child, i) => {
@@ -96,7 +118,8 @@ const HeaderActionGroup = ({ actionItems }) => {
                           key={`header-action-item-${child.label}-${i}`}
                           testID={`header-action-item-${child.label}`}
                           // used to render only the label in the overflow menu instead of the icon
-                          inOverflow
+                          renderLabel
+                          i18n={mergedI18n}
                         />,
                       ],
                       overFlowContainerRef.current.parentNode
@@ -107,7 +130,6 @@ const HeaderActionGroup = ({ actionItems }) => {
                     <OverflowMenuItem
                       title={child.label}
                       key={`${child.label}-${i}`}
-                      className=""
                       onClick={(event) => {
                         // because these items are passed an href="#" we want to prevent the default action
                         event.preventDefault();
@@ -168,5 +190,6 @@ const HeaderActionGroup = ({ actionItems }) => {
 };
 
 HeaderActionGroup.propTypes = propTypes;
+HeaderActionGroup.defaultProps = defaultProps;
 
 export default HeaderActionGroup;
