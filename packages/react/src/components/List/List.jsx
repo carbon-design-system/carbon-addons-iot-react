@@ -242,7 +242,6 @@ const List = forwardRef((props, ref) => {
           buttons={buttons}
           search={search}
           i18n={mergedI18n}
-          isLoading={isLoading}
           {...overrides?.header?.props}
         />
 

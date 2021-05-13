@@ -113,13 +113,13 @@ const ComboBox = ({
   const handleOnChange = ({ selectedItem: downShiftSelectedItem }) => {
     const newItem =
       downShiftSelectedItem &&
-      Object.keys(downShiftSelectedItem).reduce(
-        (acc, currentId) => ({
+      Object.keys(downShiftSelectedItem).reduce((acc, currentId) => {
+        const value = downShiftSelectedItem[currentId];
+        return {
           ...acc,
-          [currentId]: downShiftSelectedItem[currentId].trim(),
-        }),
-        {}
-      );
+          [currentId]: typeof value === 'string' ? value.trim() : value,
+        };
+      }, {});
 
     const currentValue = itemToString(newItem);
     // Check that there is no existing tag
@@ -141,6 +141,7 @@ const ComboBox = ({
 
     if (
       (addToList || hasMultiValue) &&
+      typeof newItem?.id === 'string' &&
       newItem?.id.startsWith(`${iotPrefix}-input-`) &&
       !isInList
     ) {

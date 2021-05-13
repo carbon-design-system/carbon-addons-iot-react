@@ -1750,6 +1750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -4556,6 +4557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -7391,6 +7393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -9452,6 +9455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-expandedcard"
+                          id="table-for-card-expandedcard"
                           title={null}
                         >
                           <thead
@@ -9817,7 +9821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                             data-testID="table-for-card-expandedcard-table-body"
                           >
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -9834,9 +9838,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                                 >
                                   <span
                                     className=""
-                                    title="10/28/2018 07:34"
+                                    title="09/30/2019 00:00"
                                   >
-                                    10/28/2018 07:34
+                                    09/30/2019 00:00
                                   </span>
                                 </span>
                               </td>
@@ -9922,7 +9926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -9939,9 +9943,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                                 >
                                   <span
                                     className=""
-                                    title="10/28/2018 07:34"
+                                    title="09/30/2019 00:00"
                                   >
-                                    10/28/2018 07:34
+                                    09/30/2019 00:00
                                   </span>
                                 </span>
                               </td>
@@ -10027,7 +10031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10044,9 +10048,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                                 >
                                   <span
                                     className=""
-                                    title="10/28/2018 07:34"
+                                    title="09/30/2019 00:00"
                                   >
-                                    10/28/2018 07:34
+                                    09/30/2019 00:00
                                   </span>
                                 </span>
                               </td>
@@ -10132,7 +10136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10149,9 +10153,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                                 >
                                   <span
                                     className=""
-                                    title="10/28/2018 07:34"
+                                    title="09/30/2019 00:00"
                                   >
-                                    10/28/2018 07:34
+                                    09/30/2019 00:00
                                   </span>
                                 </span>
                               </td>
@@ -10237,7 +10241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10254,9 +10258,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                                 >
                                   <span
                                     className=""
-                                    title="10/28/2018 07:34"
+                                    title="09/30/2019 00:00"
                                   >
-                                    10/28/2018 07:34
+                                    09/30/2019 00:00
                                   </span>
                                 </span>
                               </td>
@@ -10342,7 +10346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10359,9 +10363,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                                 >
                                   <span
                                     className=""
-                                    title="10/28/2018 07:34"
+                                    title="09/30/2019 00:00"
                                   >
-                                    10/28/2018 07:34
+                                    09/30/2019 00:00
                                   </span>
                                 </span>
                               </td>
@@ -10447,7 +10451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10464,9 +10468,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                                 >
                                   <span
                                     className=""
-                                    title="10/28/2018 07:34"
+                                    title="09/30/2019 00:00"
                                   >
-                                    10/28/2018 07:34
+                                    09/30/2019 00:00
                                   </span>
                                 </span>
                               </td>
@@ -10552,7 +10556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10569,9 +10573,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                                 >
                                   <span
                                     className=""
-                                    title="10/28/2018 07:34"
+                                    title="09/30/2019 00:00"
                                   >
-                                    10/28/2018 07:34
+                                    09/30/2019 00:00
                                   </span>
                                 </span>
                               </td>
@@ -10657,7 +10661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10674,9 +10678,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                                 >
                                   <span
                                     className=""
-                                    title="10/28/2018 07:34"
+                                    title="09/30/2019 00:00"
                                   >
-                                    10/28/2018 07:34
+                                    09/30/2019 00:00
                                   </span>
                                 </span>
                               </td>
@@ -10762,7 +10766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10779,9 +10783,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                                 >
                                   <span
                                     className=""
-                                    title="10/28/2018 07:34"
+                                    title="09/30/2019 00:00"
                                   >
-                                    10/28/2018 07:34
+                                    09/30/2019 00:00
                                   </span>
                                 </span>
                               </td>
@@ -12901,6 +12905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -29327,6 +29332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
