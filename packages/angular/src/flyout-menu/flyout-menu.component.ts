@@ -1,4 +1,6 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { IconService } from 'carbon-components-angular';
+import { Filter16 } from '@carbon/icons';
 
 /**
  * The Filter menu component encapsulates the OverFlowMenu directive, and the flyout iconography
@@ -59,7 +61,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   `,
   encapsulation: ViewEncapsulation.None,
 })
-export class FlyoutMenu {
+export class FlyoutMenu implements OnInit {
   /**
    * This specifies any vertical and horizontal offset for the position of the dialog
    */
@@ -78,4 +80,10 @@ export class FlyoutMenu {
   @Input() placement: 'bottom' | 'top' | 'left' | 'right' = 'bottom';
 
   private _offset;
+
+  constructor(protected iconService: IconService) {}
+
+  ngOnInit() {
+    this.iconService.register(Filter16);
+  }
 }
