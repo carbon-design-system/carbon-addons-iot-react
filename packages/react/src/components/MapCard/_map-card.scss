@@ -142,14 +142,14 @@
     top: 1rem;
     z-index: 2;
 
+    &__has-fullwidth-legend {
+      bottom: 4rem;
+    }
+
     [dir='rtl'] & {
       left: 1rem;
       right: unset;
     }
-  }
-
-  &__has-fullwidth-legend .#{$iot-prefix}--map-controls {
-    bottom: 4rem;
   }
 
   &-controls-container {

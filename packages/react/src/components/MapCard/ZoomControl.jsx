@@ -14,10 +14,11 @@ const Zoom = ({
   },
   testId,
   tooltipPosition,
+  className,
 }) => {
 
   return (
-    <div className={`${iotPrefix}--map-zoom`} data-testid={testId}>
+    <div className={`${iotPrefix}--map-zoom ${className}`} data-testid={testId}>
       <Button
         renderIcon={ZoomIn32}
         hasIconOnly

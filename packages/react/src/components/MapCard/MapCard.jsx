@@ -98,7 +98,7 @@ const MapCard = ({
         `${BASE_CLASS_NAME}-container`,
         {[`${BASE_CLASS_NAME}-container__open`]: isSettingPanelOpen,})
       }>
-        <div className={`${BASE_CLASS_NAME}-controls`}>
+        <div className={classnames(`${BASE_CLASS_NAME}-controls`,{ [`${BASE_CLASS_NAME}-controls__has-fullwidth-legend`]: isLegendFullWidth,})}>
           { controls }
           <ZoomControl
             i18n={{ zoomIn: mergedI18n.zoomIn, zoomOut: mergedI18n.zoomOut }}
