@@ -20,7 +20,7 @@ git fetch --all
 
 # if we're on the master branch, check if we're up to date, otherwise kill the build
 if [[ $GITHUB_REF =~ "master" ]]; then
-  currentRef=$(git rev-parse next) # sha of the local branch
+  currentRef=$(git rev-parse master) # sha of the local branch
   headRef=$(git rev-parse origin/master) # sha of the remote branch
   if [[ $currentRef == $headRef ]]; then
     echo "up to date"
