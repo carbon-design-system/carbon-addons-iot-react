@@ -203,7 +203,7 @@ export const generateUserList = () => {
 };
 
 export default {
-  title: 'Watson IoT/SelectUsersModal',
+  title: '1 - Watson IoT/SelectUsersModal',
 
   parameters: {
     component: SelectUsersModal,

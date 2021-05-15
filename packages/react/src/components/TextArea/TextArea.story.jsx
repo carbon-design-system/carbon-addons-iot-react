@@ -29,7 +29,7 @@ const TextAreaProps = () => ({
 });
 
 export default {
-  title: 'TextArea',
+  title: '3 - Carbon/TextArea',
   decorators: [withKnobs],
 
   parameters: {
