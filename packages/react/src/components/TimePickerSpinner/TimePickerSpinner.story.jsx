@@ -5,7 +5,7 @@ import { spacing05 } from '@carbon/layout';
 import TimePickerSpinner, { TIMEGROUPS } from './TimePickerSpinner';
 
 export default {
-  title: 'Watson IoT/TimePickerSpinner',
+  title: '1 - Watson IoT/TimePickerSpinner',
 
   parameters: {
     component: TimePickerSpinner,
