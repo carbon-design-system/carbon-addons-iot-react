@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconSwitch example - used in ContentSwitcher 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch example - used in ContentSwitcher 1`] = `
 <div
   className="storybook-container"
 >
@@ -113,7 +113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconSwitch example - used in ContentSwitcher light version  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch example - used in ContentSwitcher light version  1`] = `
 <div
   className="storybook-container"
 >
@@ -226,7 +226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconSwitch selected 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch selected 1`] = `
 <div
   className="storybook-container"
 >
@@ -297,7 +297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconSwitch unselected 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch unselected 1`] = `
 <div
   className="storybook-container"
 >

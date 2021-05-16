@@ -13,7 +13,7 @@ Experimental.story = {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ RuleBuilder',
+  title: '2 - Watson IoT Experimental/☢️ RuleBuilder',
   parameters: {
     component: RuleBuilder,
   },

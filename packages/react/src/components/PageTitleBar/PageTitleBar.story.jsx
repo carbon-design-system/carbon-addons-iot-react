@@ -63,8 +63,9 @@ const breadcrumbKnobOptions = {
 const breadcrumbDefaultValue = pageTitleBarBreadcrumb;
 
 export default {
-  title: 'Watson IoT/PageTitleBar',
+  title: '1 - Watson IoT/PageTitleBar',
   decorators: [withKnobs, (storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
+
   parameters: {
     component: PageTitleBar,
   },

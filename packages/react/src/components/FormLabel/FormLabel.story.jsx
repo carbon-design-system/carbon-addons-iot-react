@@ -9,7 +9,7 @@ import React from 'react';
 import { FormLabel, Tooltip } from 'carbon-components-react';
 
 export default {
-  title: 'FormLabel',
+  title: '3 - Carbon/FormLabel',
 
   parameters: {
     component: FormLabel,

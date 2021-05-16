@@ -143,7 +143,7 @@ export const galleryData = [
 ];
 
 export default {
-  title: 'Watson IoT/TileGallery',
+  title: '1 - Watson IoT/TileGallery',
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 
   parameters: {

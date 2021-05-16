@@ -9,7 +9,7 @@ import React from 'react';
 import { FormItem, NumberInput } from 'carbon-components-react';
 
 export default {
-  title: 'FormItem',
+  title: '3 - Carbon/FormItem',
 
   parameters: {
     component: FormItem,
