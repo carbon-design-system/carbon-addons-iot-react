@@ -11,7 +11,7 @@ import { handleDataSeriesChange, handleDataItemEdit } from '../../DashboardEdito
 import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab';
 
 export default {
-  title: 'Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab',
+  title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab',
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorDataSourceTab,

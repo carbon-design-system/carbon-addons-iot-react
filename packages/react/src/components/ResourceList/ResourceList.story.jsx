@@ -51,7 +51,7 @@ class ResourceListSimple extends Component {
 }
 
 export default {
-  title: 'Watson IoT/ResourceList',
+  title: '1 - Watson IoT/ResourceList',
 
   parameters: {
     component: ResourceList,

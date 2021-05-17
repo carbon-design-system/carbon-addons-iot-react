@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList custom cell renderer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 ComposedStructuredList custom cell renderer 1`] = `
 <div
   className="storybook-container"
 >
@@ -276,7 +276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList default  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 ComposedStructuredList default  1`] = `
 <div
   className="storybook-container"
 >
@@ -480,7 +480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList with empty state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 ComposedStructuredList with empty state 1`] = `
 <div
   className="storybook-container"
 >
@@ -583,7 +583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList with empty state with fixed column width 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 ComposedStructuredList with empty state with fixed column width 1`] = `
 <div
   className="storybook-container"
 >
@@ -686,7 +686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList with fixed column widths 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 ComposedStructuredList with fixed column widths 1`] = `
 <div
   className="storybook-container"
 >
@@ -890,7 +890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 ComposedStructuredList ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 ComposedStructuredList ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >

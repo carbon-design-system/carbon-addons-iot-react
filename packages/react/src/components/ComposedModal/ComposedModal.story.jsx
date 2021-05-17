@@ -6,7 +6,7 @@ import { OverflowMenu, OverflowMenuItem, Tooltip } from 'carbon-components-react
 import ComposedModal from './ComposedModal';
 
 export default {
-  title: 'Watson IoT/ComposedModal',
+  title: '1 - Watson IoT/ComposedModal',
 
   parameters: {
     component: ComposedModal,

@@ -314,7 +314,7 @@ export const StepValidationWizard = ({ ...props }) => {
 };
 
 export default {
-  title: 'Watson IoT/PageWizard',
+  title: '1 - Watson IoT/PageWizard',
 
   parameters: {
     component: PageWizard,
