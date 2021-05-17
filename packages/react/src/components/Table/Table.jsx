@@ -199,6 +199,7 @@ const propTypes = {
         isLoading: PropTypes.bool,
         rowCount: PropTypes.number,
       }),
+      /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
     }),
   }),
@@ -249,9 +250,13 @@ const propTypes = {
       onColumnSelectionConfig: PropTypes.func,
       onColumnResize: PropTypes.func,
       onOverflowItemClicked: PropTypes.func,
+      /* (multiSortedColumns) => {} */
       onSaveMultiSortColumns: PropTypes.func,
+      /* () => {} */
       onCancelMultiSortColumns: PropTypes.func,
+      /* (index) => {} */
       onAddMultiSortColumn: PropTypes.func,
+      /* (index) => {} */
       onRemoveMultiSortColumn: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
