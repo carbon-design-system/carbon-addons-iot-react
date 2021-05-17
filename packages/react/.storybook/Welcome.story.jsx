@@ -17,7 +17,7 @@ const carbonExports = Object.keys(require('carbon-components-react'));
 const iotAddonsExports = Object.keys(require('../src/index'));
 
 export default {
-  title: '0/Getting Started',
+  title: '0 - Overview/Getting Started',
 };
 
 export const AboutStorybook = () => (

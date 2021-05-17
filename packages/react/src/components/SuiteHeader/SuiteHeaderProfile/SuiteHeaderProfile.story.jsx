@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import SuiteHeaderProfile from './SuiteHeaderProfile';
 
 export default {
-  title: 'Watson IoT/SuiteHeader/SuiteHeaderProfile',
+  title: '1 - Watson IoT/SuiteHeader/SuiteHeaderProfile',
 
   parameters: {
     component: SuiteHeaderProfile,

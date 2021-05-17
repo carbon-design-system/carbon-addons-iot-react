@@ -82,7 +82,7 @@ const props = {
 TextInput.displayName = 'TextInput';
 
 export default {
-  title: 'TextInput',
+  title: '3 - Carbon/TextInput',
   decorators: [withKnobs],
 
   parameters: {

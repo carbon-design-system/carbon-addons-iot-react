@@ -100,7 +100,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'MultiSelect',
+  title: '3 - Carbon/MultiSelect',
   decorators: [withKnobs],
 
   parameters: {
