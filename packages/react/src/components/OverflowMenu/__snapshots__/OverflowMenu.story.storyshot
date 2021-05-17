@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/OverflowMenu Basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu Basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -83,7 +83,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/OverflowMenu Custom Trigger 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu Custom Trigger 1`] = `
 <div
   className="storybook-container"
 >
@@ -149,7 +149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/OverflowMenu With Links 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu With Links 1`] = `
 <div
   className="storybook-container"
 >
@@ -232,7 +232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Overf
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/OverflowMenu auto positioning 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu auto positioning 1`] = `
 <div
   className="storybook-container"
 >

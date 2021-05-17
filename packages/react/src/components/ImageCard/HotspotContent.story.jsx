@@ -9,7 +9,7 @@ import HotspotContent from './HotspotContent';
 const mockValues = object('values', { temperature: 35.35, humidity: 99 });
 
 export default {
-  title: 'Watson IoT/HotspotContent',
+  title: '1 - Watson IoT/HotspotContent',
 
   parameters: {
     component: HotspotContent,

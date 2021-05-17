@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyout Menu Auto Positioning Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Flyout Menu Auto Positioning Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -737,7 +737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyout Menu Custom Footer Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Flyout Menu Custom Footer Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -943,7 +943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyout Menu Default Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Flyout Menu Default Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -1055,7 +1055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyout Menu Large Flyout Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Flyout Menu Large Flyout Example 1`] = `
 <div
   className="storybook-container"
 >

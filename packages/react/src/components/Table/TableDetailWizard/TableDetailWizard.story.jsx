@@ -138,7 +138,7 @@ export const itemsAndComponents = items.map((item, i) => ({
 }));
 
 export default {
-  title: 'Watson IoT/TableDetailWizard',
+  title: '1 - Watson IoT/TableDetailWizard',
 
   parameters: {
     component: TableDetailWizard,

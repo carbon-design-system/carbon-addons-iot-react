@@ -13,7 +13,7 @@ Experimental.story = {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ SimpleIconDropdown',
+  title: '2 - Watson IoT Experimental/☢️ SimpleIconDropdown',
   decorators: [withKnobs],
   parameters: {
     component: SimpleIconDropdown,

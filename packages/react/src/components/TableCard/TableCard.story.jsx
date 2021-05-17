@@ -11,7 +11,7 @@ import { tableColumns, tableData, actions1, actions2 } from '../../utils/sample'
 import TableCard from './TableCard';
 
 export default {
-  title: 'Watson IoT/TableCard',
+  title: '1 - Watson IoT/TableCard',
 
   parameters: {
     component: TableCard,

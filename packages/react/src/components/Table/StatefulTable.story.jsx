@@ -94,7 +94,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
 };
 
 export default {
-  title: 'Watson IoT/Table/StatefulTable',
+  title: '1 - Watson IoT/Table/StatefulTable',
 
   parameters: {
     component: StatefulTable,

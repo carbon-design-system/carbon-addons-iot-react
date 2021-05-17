@@ -8,7 +8,7 @@ import { TextArea } from '../../TextArea';
 import TableSaveViewModal from './TableSaveViewModal';
 
 export default {
-  title: 'Watson IoT/Table/TableSaveViewModal',
+  title: '1 - Watson IoT/Table/TableSaveViewModal',
 
   parameters: {
     component: TableSaveViewModal,

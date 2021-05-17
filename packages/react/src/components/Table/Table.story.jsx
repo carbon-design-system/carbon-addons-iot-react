@@ -543,7 +543,7 @@ export const initialState = {
 };
 
 export default {
-  title: 'Watson IoT/Table/Table',
+  title: '1 - Watson IoT/Table/Table',
 
   parameters: {
     component: Table,

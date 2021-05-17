@@ -20,7 +20,7 @@ import {
 import HotspotTextStyleTab from './HotspotTextStyleTab';
 
 export default {
-  title: 'Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab',
+  title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab',
   decorators: [withKnobs],
 
   parameters: {

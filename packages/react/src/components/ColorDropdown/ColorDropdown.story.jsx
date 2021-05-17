@@ -13,7 +13,7 @@ Experimental.story = {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ ColorDropdown',
+  title: '2 - Watson IoT Experimental/☢️ ColorDropdown',
   decorators: [withKnobs],
   parameters: {
     component: ColorDropdown,

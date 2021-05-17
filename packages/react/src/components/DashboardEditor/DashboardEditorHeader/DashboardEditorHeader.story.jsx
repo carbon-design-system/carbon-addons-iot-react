@@ -7,7 +7,7 @@ import { Link } from '../../../index';
 import DashboardEditorHeader from './DashboardEditorHeader';
 
 export default {
-  title: 'Watson IoT Experimental/☢️ DashboardEditor/DashboardEditorHeader',
+  title: '2 - Watson IoT Experimental/☢️ DashboardEditor/DashboardEditorHeader',
   decorators: [withKnobs],
 
   parameters: {
