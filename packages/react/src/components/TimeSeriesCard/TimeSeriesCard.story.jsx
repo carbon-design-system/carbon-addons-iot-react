@@ -15,7 +15,7 @@ const commonProps = {
 };
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ TimeSeriesCard' : 'Watson IoT/TimeSeriesCard',
+  title: __DEV__ ? '1 - Watson IoT/⚠️ TimeSeriesCard' : '1 - Watson IoT/TimeSeriesCard',
   parameters: {
     component: TimeSeriesCard,
   },

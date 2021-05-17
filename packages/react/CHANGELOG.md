@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.145.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.1-next.1...v2.145.1-next.2) (2021-05-17)
+
+
+### Bug Fixes
+
+* **time-series-card:** handle undefined element in tooltip ([1f97e47](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1f97e47ad61b199ece9ccba86e5cb372347b879c))
+
+
+
+
+
+## [2.145.1-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.1-next.0...v2.145.1-next.1) (2021-05-15)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
 ## [2.145.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0...v2.145.1-next.0) (2021-05-13)
 
 **Note:** Version bump only for package carbon-addons-iot-react

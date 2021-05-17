@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor With No Card Defined Gallery View And Custom Cards 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ CardEditor With No Card Defined Gallery View And Custom Cards 1`] = `
 <div
   className="storybook-container"
 >
@@ -489,7 +489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor With Tooltip Link 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ CardEditor With Tooltip Link 1`] = `
 <div
   className="storybook-container"
 >
@@ -1130,7 +1130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ CardEditor default 1`] = `
 <div
   className="storybook-container"
 >
@@ -1771,7 +1771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor for Image 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ CardEditor for Image 1`] = `
 <div
   className="storybook-container"
 >
@@ -2635,7 +2635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor for TimeSeries 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ CardEditor for TimeSeries 1`] = `
 <div
   className="storybook-container"
 >
@@ -3682,7 +3682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor interactive 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ CardEditor interactive 1`] = `
 <div
   className="storybook-container"
 >
@@ -4341,7 +4341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor with no card defined (gallery view) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ CardEditor with no card defined (gallery view) 1`] = `
 <div
   className="storybook-container"
 >
@@ -5128,7 +5128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor ️⚠️ Experimental Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ CardEditor ️⚠️ Experimental Notice  1`] = `
 <div
   className="storybook-container"
 >

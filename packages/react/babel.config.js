@@ -13,6 +13,7 @@ module.exports = function generateConfig(api) {
           useBuiltIns: 'usage',
           modules: BABEL_ENV === 'production' ? false : 'auto',
           corejs: 3,
+          loose: false,
         },
       ],
       '@babel/preset-react',
@@ -28,7 +29,12 @@ module.exports = function generateConfig(api) {
       'babel-plugin-react-docgen',
       '@babel/plugin-syntax-dynamic-import',
       '@babel/plugin-syntax-import-meta',
-      '@babel/plugin-proposal-class-properties',
+      [
+        '@babel/plugin-proposal-class-properties',
+        {
+          loose: false,
+        },
+      ],
       '@babel/plugin-proposal-json-strings',
       [
         '@babel/plugin-proposal-decorators',

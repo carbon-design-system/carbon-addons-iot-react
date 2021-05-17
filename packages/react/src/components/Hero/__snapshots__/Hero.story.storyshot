@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Hero isLoading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Hero isLoading 1`] = `
 <div
   className="storybook-container"
 >
@@ -59,7 +59,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Hero normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Hero normal 1`] = `
 <div
   className="storybook-container"
 >
@@ -119,7 +119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Hero with breadcrumb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Hero with breadcrumb 1`] = `
 <div
   className="storybook-container"
 >
@@ -242,7 +242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Hero with breadcrumb with right content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Hero with breadcrumb with right content 1`] = `
 <div
   className="storybook-container"
 >
@@ -375,7 +375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Hero with close button 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Hero with close button 1`] = `
 <div
   className="storybook-container"
 >
@@ -521,7 +521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Hero with description 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Hero with description 1`] = `
 <div
   className="storybook-container"
 >
@@ -586,7 +586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Hero with right content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Hero with right content 1`] = `
 <div
   className="storybook-container"
 >
@@ -685,7 +685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Hero with tooltip (no link) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Hero with tooltip (no link) 1`] = `
 <div
   className="storybook-container"
 >
@@ -845,7 +845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Hero with tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Hero with tooltip 1`] = `
 <div
   className="storybook-container"
 >
@@ -1005,7 +1005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Hero ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Hero ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >
