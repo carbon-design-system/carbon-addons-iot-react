@@ -1,0 +1,18 @@
+.#{$iot-prefix}--table-multi-sort-modal {
+  .#{$prefix}--modal-container,
+  .#{$prefix}--modal-content {
+    overflow: visible;
+  }
+
+  &__content {
+    display: grid;
+    gap: $spacing-05;
+    grid-template-columns: 1fr 1fr 40px 40px;
+
+    button.#{$prefix}--btn--icon-only {
+      height: 40px;
+      width: 48px;
+      margin-top: 24px;
+    }
+  }
+}

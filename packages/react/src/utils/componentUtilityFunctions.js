@@ -3,6 +3,7 @@ import { sortStates } from 'carbon-components-react/es/components/DataTable/stat
 import fileDownload from 'js-file-download';
 import isNil from 'lodash/isNil';
 import warning from 'warning';
+import { firstBy } from 'thenby';
 
 import {
   GUTTER,
@@ -116,43 +117,45 @@ export const handleEnterKeyDown = (evt, callback) => {
 
 export const defaultFunction = (name) => () => console.info(`${name} not implemented`); // eslint-disable-line no-console
 
+export const sortTableData = (columnId, isTimestampColumn) => (a, b) => {
+  if (isNil(a.values[columnId])) {
+    return 1;
+  }
+  if (isNil(b.values[columnId])) {
+    return -1;
+  }
+  if (isTimestampColumn) {
+    // support the sort if we have column with timestamp
+    const dateA = dayjs(a.values[columnId]);
+    const dateB = dayjs(b.values[columnId]);
+
+    if (dateA < dateB) {
+      return -1;
+    }
+    if (dateA > dateB) {
+      return 1;
+    }
+  }
+  if (typeof a.values[columnId] === 'string' && !Number(a.values[columnId])) {
+    return a.values[columnId].localeCompare(b.values[columnId]);
+  }
+  if (Number(a.values[columnId]) < Number(b.values[columnId])) {
+    return -1;
+  }
+  if (Number(a.values[columnId]) > Number(b.values[columnId])) {
+    return 1;
+  }
+
+  return 0;
+};
+
 export const getSortedData = (inputData, columnId, direction, isTimestampColumn) => {
   // clone inputData because sort mutates the array
   const sortedData = inputData.map((i) => i);
 
-  return sortedData.sort((a, b) => {
-    const val = direction === 'ASC' ? -1 : 1;
-    if (isNil(a.values[columnId])) {
-      return 1;
-    }
-    if (isNil(b.values[columnId])) {
-      return -1;
-    }
-    if (isTimestampColumn) {
-      // support the sort if we have column with timestamp
-      const dateA = dayjs(a.values[columnId]);
-      const dateB = dayjs(b.values[columnId]);
-
-      if (dateA < dateB) {
-        return val;
-      }
-      if (dateA > dateB) {
-        return -val;
-      }
-    }
-    if (typeof a.values[columnId] === 'string' && !Number(a.values[columnId])) {
-      const compare = a.values[columnId].localeCompare(b.values[columnId]);
-      return direction === 'ASC' ? compare : -compare;
-    }
-    if (Number(a.values[columnId]) < Number(b.values[columnId])) {
-      return val;
-    }
-    if (Number(a.values[columnId]) > Number(b.values[columnId])) {
-      return -val;
-    }
-
-    return 0;
-  });
+  return sortedData.sort(
+    firstBy(sortTableData(columnId, isTimestampColumn), direction === 'ASC' ? 'asc' : 'desc')
+  );
 };
 
 /**

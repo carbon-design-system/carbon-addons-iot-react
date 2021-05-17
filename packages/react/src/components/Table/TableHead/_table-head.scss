@@ -33,6 +33,14 @@
     }
   }
 
+  .#{$iot-prefix}--table-header-label__sort-order {
+    position: absolute;
+    bottom: $spacing-04;
+    right: $spacing-04;
+    font-size: 0.667rem;
+    font-weight: bold;
+  }
+
   .column-header__btn {
     margin: 0 $spacing-05 $spacing-05 0;
     max-height: $spacing-07;

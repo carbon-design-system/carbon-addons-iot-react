@@ -1617,3 +1617,54 @@ WithResizeHasColumnSelectionAndInitialColumnWidths.story = {
     },
   },
 };
+
+export const WithMultiSorting = withReadme(README, () => {
+  return (
+    <StatefulTable
+      columns={tableColumns.map((i, idx) => ({
+        ...i,
+        isSortable: idx !== 1,
+        align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
+      }))}
+      data={tableData}
+      actions={tableActions}
+      options={{
+        hasFilter: false,
+        hasPagination: true,
+        hasRowSelection: 'multi',
+        hasAggregations: true,
+        hasMultiSort: true,
+      }}
+      view={{
+        filters: [],
+        aggregations: {
+          label: 'Total',
+          columns: [
+            {
+              id: 'number',
+              align: 'end',
+              isSortable: true,
+            },
+          ],
+        },
+        table: {
+          ordering: defaultOrdering,
+          sort: [
+            {
+              columnId: 'select',
+              direction: 'ASC',
+            },
+            {
+              columnId: 'string',
+              direction: 'ASC',
+            },
+          ],
+        },
+      }}
+    />
+  );
+});
+
+WithMultiSorting.story = {
+  name: 'with multi-sorting',
+};

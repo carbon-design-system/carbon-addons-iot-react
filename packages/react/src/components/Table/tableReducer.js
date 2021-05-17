@@ -3,8 +3,13 @@ import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
 import find from 'lodash/find';
+import { firstBy } from 'thenby';
 
-import { getSortedData, caseInsensitiveSearch } from '../../utils/componentUtilityFunctions';
+import {
+  getSortedData,
+  caseInsensitiveSearch,
+  sortTableData,
+} from '../../utils/componentUtilityFunctions';
 
 import {
   TABLE_PAGE_CHANGE,
@@ -31,6 +36,11 @@ import {
   TABLE_ADVANCED_FILTER_TOGGLE,
   TABLE_ADVANCED_FILTER_CANCEL,
   TABLE_ADVANCED_FILTER_APPLY,
+  TABLE_MULTI_SORT,
+  TABLE_MULTI_SORT_SAVE,
+  TABLE_MULTI_SORT_CANCEL,
+  TABLE_MULTI_SORT_ADD_COLUMN,
+  TABLE_MULTI_SORT_REMOVE_COLUMN,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -212,21 +222,36 @@ export const filterSearchAndSort = (
   columns,
   advancedFilters = []
 ) => {
-  const { columnId, direction } = sort;
-
   const { value: searchValue } = search;
   const filteredData = filterData(data, filters, columns, advancedFilters);
   const searchedData =
     searchValue && searchValue !== '' ? searchData(filteredData, searchValue) : filteredData;
-  return !isEmpty(sort)
-    ? getCustomColumnSort(columns, columnId)
-      ? getCustomColumnSort(columns, columnId)({ data: searchedData, columnId, direction })
-      : getSortedData(searchedData, columnId, direction)
-    : searchedData;
+
+  if (isEmpty(sort)) {
+    return searchedData;
+  }
+
+  if (Array.isArray(sort)) {
+    let sortStack = firstBy(() => 0);
+    sort.forEach(({ columnId, direction }) => {
+      sortStack = sortStack.thenBy(sortTableData(columnId), {
+        cmp: getCustomColumnSort(columns, columnId),
+        direction: direction === 'ASC' ? 'asc' : 'desc',
+      });
+    });
+
+    return searchedData.sort(sortStack);
+  }
+
+  const { columnId, direction } = sort;
+  return getCustomColumnSort(columns, columnId)
+    ? getCustomColumnSort(columns, columnId)({ data: searchedData, columnId, direction })
+    : getSortedData(searchedData, columnId, direction);
 };
 
 /** This reducer handles sort, filter and search that needs data otherwise it proxies for the baseTableReducer */
 export const tableReducer = (state = {}, action) => {
+  console.log({ action });
   switch (action.type) {
     // Filter Actions
     case TABLE_FILTER_APPLY: {
@@ -334,6 +359,7 @@ export const tableReducer = (state = {}, action) => {
     }
     // Column operations
     case TABLE_COLUMN_SORT: {
+      console.log({ action });
       // TODO should check that columnId actually is valid
       const columnId = action.payload;
       const sorts = ['NONE', 'ASC', 'DESC'];
@@ -559,6 +585,68 @@ export const tableReducer = (state = {}, action) => {
         }),
         action
       );
+    }
+
+    case TABLE_MULTI_SORT: {
+      console.log({ action });
+      return update(state, {
+        view: {
+          table: {
+            showMultiSortModal: {
+              $set: !state.view.table.showMultiSortModal,
+            },
+          },
+        },
+      });
+    }
+
+    case TABLE_MULTI_SORT_SAVE: {
+      console.log({ action });
+      return update(state, {
+        view: {
+          table: {
+            sort: {
+              $set: action.payload,
+            },
+            filteredData: {
+              $set: filterSearchAndSort(
+                state.data,
+                action.payload,
+                get(state, 'view.toolbar.search'),
+                get(state, 'view.filters'),
+                get(state, 'columns'),
+                get(state, 'view.advancedFilters')
+              ),
+            },
+            showMultiSortModal: {
+              $set: false,
+            },
+          },
+        },
+      });
+    }
+
+    case TABLE_MULTI_SORT_CANCEL: {
+      console.log({ action });
+      return update(state, {
+        view: {
+          table: {
+            showMultiSortModal: {
+              $set: false,
+            },
+          },
+        },
+      });
+    }
+
+    case TABLE_MULTI_SORT_ADD_COLUMN: {
+      console.log({ action });
+      return state;
+    }
+
+    case TABLE_MULTI_SORT_REMOVE_COLUMN: {
+      console.log({ action });
+      return state;
     }
 
     // Actions that are handled by the base reducer

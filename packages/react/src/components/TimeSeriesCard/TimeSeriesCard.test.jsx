@@ -195,7 +195,7 @@ describe('TimeSeriesCard', () => {
     const { container } = render(<TimeSeriesCard {...props} />);
 
     expect(screen.getByText('Temperature')).toBeInTheDocument();
-    expect(screen.getByText('Timestamp')).toBeInTheDocument();
+    expect(screen.queryAllByText('Timestamp')[0]).toBeInTheDocument();
     expect(container.querySelector('#mock-line-chart')).toBeInTheDocument();
     userEvent.click(screen.getByLabelText('Download table content'));
     expect(fileDownload).toHaveBeenCalledWith(

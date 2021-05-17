@@ -18,6 +18,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
 import { withReadme } from 'storybook-readme';
+import { firstBy } from 'thenby';
 
 import {
   Tooltip,
@@ -425,6 +426,10 @@ export const tableActions = {
     onChangeSort: action('onChangeSort'),
     onColumnResize: action('onColumnResize'),
     onOverflowItemClicked: action('onOverflowItemClicked'),
+    onSaveMultiSortColumns: action('onSaveMultiSortColumns'),
+    onCancelMultiSortColumns: action('onCancelMultiSortColumns'),
+    onAddMultiSortColumn: action('onAddMultiSortColumn'),
+    onRemoveMultiSortColumn: action('onRemoveMultiSortColumn'),
   },
 };
 
@@ -1649,6 +1654,64 @@ export const WithSorting = withReadme(README, () => (
 
 WithSorting.story = {
   name: 'with sorting',
+};
+
+export const WithMultiSorting = withReadme(README, () => {
+  const sortedData = tableData.slice(0, 10).sort(
+    firstBy((a) => a.values.select).thenBy((a) => {
+      return a.values.string;
+    })
+  );
+
+  return (
+    <Table
+      columns={tableColumns.map((i, idx) => ({
+        ...i,
+        isSortable: idx !== 1,
+        align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
+      }))}
+      data={sortedData}
+      actions={tableActions}
+      options={{
+        hasFilter: false,
+        hasPagination: true,
+        hasRowSelection: 'multi',
+        hasAggregations: true,
+        hasMultiSort: true,
+      }}
+      view={{
+        filters: [],
+        aggregations: {
+          label: 'Total',
+          columns: [
+            {
+              id: 'number',
+              align: 'end',
+              isSortable: true,
+            },
+          ],
+        },
+        table: {
+          ordering: defaultOrdering,
+          showMultiSortModal: true,
+          sort: [
+            {
+              columnId: 'select',
+              direction: 'ASC',
+            },
+            {
+              columnId: 'string',
+              direction: 'ASC',
+            },
+          ],
+        },
+      }}
+    />
+  );
+});
+
+WithMultiSorting.story = {
+  name: 'with multi-sorting',
 };
 
 export const WithCustomCellRenderer = withReadme(README, () => {

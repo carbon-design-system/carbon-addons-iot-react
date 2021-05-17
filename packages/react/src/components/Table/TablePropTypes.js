@@ -187,6 +187,18 @@ export const I18NPropTypes = PropTypes.shape({
   filterAscending: PropTypes.string,
   filterDescending: PropTypes.string,
   rowCountInHeader: PropTypes.func,
+  multiSortModalTitle: PropTypes.string,
+  multiSortModalPrimaryLabel: PropTypes.string,
+  multiSortModalSecondaryLabel: PropTypes.string,
+  multiSortSelectColumnLabel: PropTypes.string,
+  multiSortSelectColumnSortByTitle: PropTypes.string,
+  multiSortSelectColumnThenByTitle: PropTypes.string,
+  multiSortDirectionLabel: PropTypes.string,
+  multiSortDirectionTitle: PropTypes.string,
+  multiSortAddColumn: PropTypes.string,
+  multiSortRemoveColumn: PropTypes.string,
+  multiSortAscending: PropTypes.string,
+  multiSortDescending: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {
@@ -237,6 +249,18 @@ export const defaultI18NPropTypes = {
   filterAscending: 'Sort rows by this header in ascending order',
   filterDescending: 'Sort rows by this header in descending order',
   rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
+  multiSortModalTitle: 'Select columns to sort',
+  multiSortModalPrimaryLabel: 'Sort',
+  multiSortModalSecondaryLabel: 'Cancel',
+  multiSortSelectColumnLabel: 'Select a column',
+  multiSortSelectColumnSortByTitle: 'Sort by',
+  multiSortSelectColumnThenByTitle: 'Then by',
+  multiSortDirectionLabel: 'Select a direction',
+  multiSortDirectionTitle: 'Sort order',
+  multiSortAddColumn: 'Add column',
+  multiSortRemoveColumn: 'Remove column',
+  multiSortAscending: 'Ascending',
+  multiSortDescending: 'Descending',
 };
 
 export const TableSearchPropTypes = PropTypes.shape({
@@ -252,3 +276,8 @@ export const TableSearchPropTypes = PropTypes.shape({
 
 /** Which toolbar is currently active */
 export const ActiveTableToolbarPropType = PropTypes.oneOf(['column', 'filter', 'rowEdit']);
+
+export const TableSortPropType = PropTypes.shape({
+  columnId: PropTypes.string,
+  direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
+});

@@ -22,6 +22,7 @@ import {
   I18NPropTypes,
   RowActionsStatePropTypes,
   ActiveTableToolbarPropType,
+  TableSortPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -30,6 +31,7 @@ import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWi
 import TableBody from './TableBody/TableBody';
 import Pagination from './Pagination';
 import TableFoot from './TableFoot/TableFoot';
+import TableMultiSortModal from './TableMultiSortModal/TableMultiSortModal';
 
 const { iotPrefix } = settings;
 
@@ -63,6 +65,7 @@ const propTypes = {
         hasSingleNestedHierarchy: PropTypes.bool,
       }),
     ]),
+    hasMultiSort: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.oneOfType([
       PropTypes.bool,
@@ -178,10 +181,7 @@ const propTypes = {
       isSelectAllSelected: PropTypes.bool,
       isSelectAllIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string),
-      sort: PropTypes.shape({
-        columnId: PropTypes.string,
-        direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
-      }),
+      sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]),
       /** Specify column ordering and visibility */
       ordering: PropTypes.arrayOf(
         PropTypes.shape({
@@ -199,6 +199,7 @@ const propTypes = {
         isLoading: PropTypes.bool,
         rowCount: PropTypes.number,
       }),
+      showMultiSortModal: PropTypes.bool,
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
@@ -248,6 +249,10 @@ const propTypes = {
       onColumnSelectionConfig: PropTypes.func,
       onColumnResize: PropTypes.func,
       onOverflowItemClicked: PropTypes.func,
+      onSaveMultiSortColumns: PropTypes.func,
+      onCancelMultiSortColumns: PropTypes.func,
+      onAddMultiSortColumn: PropTypes.func,
+      onRemoveMultiSortColumn: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -342,6 +347,10 @@ export const defaultProps = (baseProps) => ({
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
       onOverflowItemClicked: defaultFunction('actions.table.onOverflowItemClicked'),
+      onSaveMultiSortColumns: defaultFunction('actions.table.onSaveMultiSortColumns'),
+      onCancelMultiSortColumns: defaultFunction('actions.table.onCancelMultiSortColumns'),
+      onAddMultiSortColumn: defaultFunction('actions.table.onAddMultiSortColumn'),
+      onRemoveMultiSortColumn: defaultFunction('actions.table.onRemoveMultiSortColumn'),
     },
     onUserViewModified: null,
   },
@@ -390,6 +399,18 @@ export const defaultProps = (baseProps) => ({
     filterNone: 'Unsort rows by this header',
     filterAscending: 'Sort rows by this header in ascending order',
     filterDescending: 'Sort rows by this header in descending order',
+    multiSortModalTitle: 'Select columns to sort',
+    multiSortModalPrimaryLabel: 'Sort',
+    multiSortModalSecondaryLabel: 'Cancel',
+    multiSortSelectColumnLabel: 'Select a column',
+    multiSortSelectColumnSortByTitle: 'Sort by',
+    multiSortSelectColumnThenByTitle: 'Then by',
+    multiSortDirectionLabel: 'Select a direction',
+    multiSortDirectionTitle: 'Sort order',
+    multiSortAddColumn: 'Add column',
+    multiSortRemoveColumn: 'Remove column',
+    multiSortAscending: 'Ascending',
+    multiSortDescending: 'Descending',
   },
 });
 
@@ -738,7 +759,8 @@ const Table = (props) => {
                 'hasRowNesting',
                 'hasSingleRowEdit',
                 'hasRowSelection',
-                'useAutoTableLayoutForResize'
+                'useAutoTableLayoutForResize',
+                'hasMultiSort'
               ),
               wrapCellText: options.wrapCellText,
               truncateCellText: useCellTextTruncate,
@@ -897,6 +919,23 @@ const Table = (props) => {
           testID={`${id}-table-pagination`}
         />
       ) : null}
+      {options.hasMultiSort && (
+        <TableMultiSortModal
+          columns={columns}
+          sort={Array.isArray(view.table.sort) ? view.table.sort : [view.table.sort]}
+          actions={{
+            ...pick(
+              actions.table,
+              'onSaveMultiSortColumns',
+              'onCancelMultiSortColumns',
+              'onAddMultiSortColumn',
+              'onRemoveMultiSortColumn'
+            ),
+          }}
+          showMultiSortModal={view.table.showMultiSortModal}
+          i18n={i18n}
+        />
+      )}
     </TableContainer>
   );
 };
