@@ -5,7 +5,7 @@ import { ListItem } from '../ListItem';
 import { OrderedList } from '.';
 
 export default {
-  title: 'OrderedList',
+  title: '3 - Carbon/OrderedList',
 
   parameters: {
     component: OrderedList,

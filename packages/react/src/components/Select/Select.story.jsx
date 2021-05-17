@@ -44,7 +44,7 @@ const props = {
 };
 
 export default {
-  title: 'Select',
+  title: '3 - Carbon/Select',
   decorators: [withKnobs],
 
   parameters: {

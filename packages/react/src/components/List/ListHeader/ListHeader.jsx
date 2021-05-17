@@ -42,7 +42,7 @@ const ListHeader = ({ title, buttons, search, i18n }) => {
       {search ? (
         <div className={`${iotPrefix}--list-header--search`}>
           <Search
-            id={`${iotPrefix}--list-header--search`}
+            id={search.id || `${iotPrefix}--list-header--search`}
             placeholder={i18n.searchPlaceHolderText}
             onChange={search.onChange}
             size="sm"

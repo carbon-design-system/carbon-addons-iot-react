@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with application-controlled side nav 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with application-controlled side nav 1`] = `
 <div
   className="storybook-container"
 >
@@ -674,7 +674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with custom action items 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with custom action items 1`] = `
 <div
   className="storybook-container"
 >
@@ -1718,7 +1718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with extra content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with extra content 1`] = `
 <div
   className="storybook-container"
 >
@@ -2391,7 +2391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with side nav 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with side nav 1`] = `
 <div
   className="storybook-container"
 >
@@ -3355,7 +3355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with survey notification 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with survey notification 1`] = `
 <div
   className="storybook-container"
 >
@@ -4093,7 +4093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Loading state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Loading state 1`] = `
 <div
   className="storybook-container"
 >
@@ -4626,7 +4626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader default 1`] = `
 <div
   className="storybook-container"
 >

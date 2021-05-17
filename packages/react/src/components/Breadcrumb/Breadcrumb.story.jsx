@@ -34,7 +34,7 @@ const PolyfillWarning = () => (
 );
 
 export default {
-  title: 'Watson IoT/Breadcrumb',
+  title: '1 - Watson IoT/Breadcrumb',
   decorators: [withKnobs],
 
   parameters: {

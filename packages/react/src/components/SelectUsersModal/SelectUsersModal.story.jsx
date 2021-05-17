@@ -108,7 +108,7 @@ const users = [
   'Sharita Ascencio',
 ];
 
-const generateUserList = () => {
+export const generateUserList = () => {
   const userList = users.map((user) => {
     const space = user.indexOf(' ');
     const username = `@${user[0]}${user.substr(space + 1)}`;
@@ -203,11 +203,12 @@ const generateUserList = () => {
 };
 
 export default {
-  title: 'Watson IoT/SelectUsersModal',
+  title: '1 - Watson IoT/SelectUsersModal',
 
   parameters: {
     component: SelectUsersModal,
   },
+  excludeStories: ['generateUserList'],
 };
 
 export const DefaultModal = () => {

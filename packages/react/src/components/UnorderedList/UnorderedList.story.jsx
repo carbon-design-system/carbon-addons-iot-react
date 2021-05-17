@@ -12,7 +12,7 @@ import { ListItem } from '../ListItem';
 import { UnorderedList } from '.';
 
 export default {
-  title: 'UnorderedList',
+  title: '3 - Carbon/UnorderedList',
 
   parameters: {
     component: UnorderedList,

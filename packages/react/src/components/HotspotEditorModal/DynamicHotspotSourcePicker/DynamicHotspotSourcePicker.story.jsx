@@ -16,7 +16,7 @@ const dataItems = [
 ];
 
 export default {
-  title: 'Watson IoT Experimental/☢️ HotSpotEditorModal/DynamicHotspotSourcePicker',
+  title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/DynamicHotspotSourcePicker',
   decorators: [withKnobs],
   parameters: {
     component: DynamicHotspotSourcePicker,
