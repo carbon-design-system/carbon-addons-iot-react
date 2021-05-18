@@ -606,7 +606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             <div
                               aria-hidden={true}
                               className="bx--batch-actions iot--table-batch-actions"
-                              data-testID="table-for-card-Table-table-toolbar-batch-actions"
+                              data-testid="table-for-card-Table-table-toolbar-batch-actions"
                             >
                               <div
                                 className="bx--batch-summary"
@@ -16525,7 +16525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <div
                             aria-hidden={true}
                             className="bx--batch-actions iot--table-batch-actions"
-                            data-testID="table-for-card-Table-table-toolbar-batch-actions"
+                            data-testid="table-for-card-Table-table-toolbar-batch-actions"
                           >
                             <div
                               className="bx--batch-summary"
