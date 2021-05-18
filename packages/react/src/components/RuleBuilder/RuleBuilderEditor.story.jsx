@@ -187,7 +187,7 @@ RuleBuilderCustomOperandsAndFieldRenderer.story = {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ RuleBuilder/RuleBuilderEditor',
+  title: '2 - Watson IoT Experimental/☢️ RuleBuilder/RuleBuilderEditor',
   decorators: [withKnobs],
 
   parameters: {

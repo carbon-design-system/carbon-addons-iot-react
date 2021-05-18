@@ -7,7 +7,7 @@ import { DashboardIcon } from '../../icons/components';
 import EmptyState from './EmptyState';
 
 export default {
-  title: 'Watson IoT/EmptyState',
+  title: '1 - Watson IoT/EmptyState',
 
   parameters: {
     component: EmptyState,
@@ -17,8 +17,8 @@ export default {
 
     **Actions**
 
-    \`EmptyState\` can have two optional actions: \`action\` and \`secondaryAction\`. 
-    
+    \`EmptyState\` can have two optional actions: \`action\` and \`secondaryAction\`.
+
     \`action\` can be either a button or a custom component and should be used to let the user have an option to "overcome" the empty state.
 
     \`secondaryAction\` usually is a link that could for example reference documentation for further reading as to why the empty state occured. However, it is also possible to pass a custom compent as well.

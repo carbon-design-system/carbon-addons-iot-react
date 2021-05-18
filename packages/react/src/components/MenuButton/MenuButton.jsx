@@ -177,6 +177,7 @@ const MenuButton = ({
     typeof onPrimaryActionClick === 'function' && label ? SplitMenuButton : SingleMenuButton;
   return (
     <div
+      data-testid={`${testID}-wrapper`}
       className={classnames(`${iotPrefix}--menu-button`, {
         [`${iotPrefix}--menu-button--open`]: isMenuOpen,
       })}
