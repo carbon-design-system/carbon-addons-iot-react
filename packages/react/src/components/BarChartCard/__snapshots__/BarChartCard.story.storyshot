@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Grouped bar - Horizontal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Grouped bar - Horizontal 1`] = `
 <div
   className="storybook-container"
 >
@@ -124,7 +124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Grouped bar - Vertical 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Grouped bar - Vertical 1`] = `
 <div
   className="storybook-container"
 >
@@ -248,7 +248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard No data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard No data 1`] = `
 <div
   className="storybook-container"
 >
@@ -419,7 +419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Simple bar - Horizontal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Simple bar - Horizontal 1`] = `
 <div
   className="storybook-container"
 >
@@ -543,7 +543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Simple bar - Time series - custom domainRange 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Simple bar - Time series - custom domainRange 1`] = `
 <div
   className="storybook-container"
 >
@@ -711,7 +711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Simple bar - Vertical 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Simple bar - Vertical 1`] = `
 <div
   className="storybook-container"
 >
@@ -835,7 +835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Stacked bar - Horizontal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Stacked bar - Horizontal 1`] = `
 <div
   className="storybook-container"
 >
@@ -959,7 +959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Stacked bar - Time series 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Stacked bar - Time series 1`] = `
 <div
   className="storybook-container"
 >
@@ -1127,7 +1127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Stacked bar - Time series with categories 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Stacked bar - Time series with categories 1`] = `
 <div
   className="storybook-container"
 >
@@ -1295,7 +1295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Stacked bar - Vertical 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Stacked bar - Vertical 1`] = `
 <div
   className="storybook-container"
 >
@@ -1419,7 +1419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard isEditable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard isEditable 1`] = `
 <div
   className="storybook-container"
 >
@@ -1509,7 +1509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard isExpanded 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard isExpanded 1`] = `
 <div
   className="storybook-container"
 >
@@ -1661,7 +1661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                   <div
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
-                    data-testID="BarChartCard-table-table-toolbar-batch-actions"
+                    data-testid="BarChartCard-table-table-toolbar-batch-actions"
                   >
                     <div
                       className="bx--batch-summary"
@@ -2187,7 +2187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         data-testID="BarChartCard-table-table-body"
                       >
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -2283,7 +2283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -2379,7 +2379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -2475,7 +2475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -2822,7 +2822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard with zoomBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard with zoomBar 1`] = `
 <div
   className="storybook-container"
 >

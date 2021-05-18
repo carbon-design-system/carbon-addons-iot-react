@@ -150,7 +150,7 @@ const headerPanel = {
 };
 
 export default {
-  title: 'Watson IoT/Header',
+  title: '1 - Watson IoT/Header',
 
   parameters: {
     component: Header,

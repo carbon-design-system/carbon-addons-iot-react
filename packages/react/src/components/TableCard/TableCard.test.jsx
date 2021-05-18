@@ -564,6 +564,23 @@ describe('TableCard', () => {
     expect(screen.queryAllByText('Pressure')).toHaveLength(1);
   });
 
+  it('can accept filter options', () => {
+    const wrapper = mount(
+      <TableCard
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        filters={[{ columnId: 'alert', value: 'failure' }]}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+
+    const totalRows = tableData.filter((item) => item.values.alert.match(/failure/));
+    expect(wrapper.find('tr').length).toBe(totalRows.length + 1); // +1 for action column
+  });
+
   it('hides low priority columns for LARGE and LARGETHIN sizes', () => {
     const { rerender } = render(
       <TableCard

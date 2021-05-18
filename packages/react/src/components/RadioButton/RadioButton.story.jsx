@@ -27,7 +27,7 @@ const radioProps = () => ({
 });
 
 export default {
-  title: 'RadioButton',
+  title: '3 - Carbon/RadioButton',
   decorators: [withKnobs],
   component: RadioButton,
   subcomponents: {

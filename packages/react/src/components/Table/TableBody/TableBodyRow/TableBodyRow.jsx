@@ -133,7 +133,9 @@ const StyledTableRow = styled(({ isSelectable, isEditMode, ...others }) => (
   <TableRow {...others} />
 ))`
   &&& {
-    ${(props) => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
+    .${prefix}--checkbox {
+      ${(props) => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
+    }
     :hover {
       td {
         ${(props) =>
