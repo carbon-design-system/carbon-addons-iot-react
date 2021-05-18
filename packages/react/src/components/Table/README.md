@@ -348,7 +348,7 @@ The `Table` component supports row selection when using the options.hasRowSelect
   actions={{
     table: {
       onRowClicked: (rowId: string) => {},
-      onRowSelected: (rowId: string, selected: boolean) => {},
+      onRowSelected: (rowId: string, selected: boolean, selectedIds: array) => {},
     },
   }}
   options={{
@@ -678,7 +678,7 @@ the following props:
       /** rowId is a string */
       onRowClicked: (rowId) => {},
       /** rowId is a string, selected is a boolean */
-      onRowSelected: (rowId, selected) => {},
+      onRowSelected: (rowId, selected, selectedIds: array) => {},
       /** allSelected is a boolean. true is all are selected, false otherwise */
       onSelectAll: (allSelected) => {},
     }
