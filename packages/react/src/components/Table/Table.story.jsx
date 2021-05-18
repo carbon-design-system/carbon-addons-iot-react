@@ -7,7 +7,7 @@ import React, {
   createElement,
 } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text, number, select, array } from '@storybook/addon-knobs';
+import { boolean, text, number, select, array, object } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
@@ -563,6 +563,66 @@ export default {
     'tableColumns',
     'defaultOrdering',
   ],
+};
+
+export const BasicDumbTable = withReadme(README, () => (
+  <Table
+    id="table"
+    useZebraStyles={boolean('useZebraStyles', false)}
+    lightweight={boolean('lightweight', false)}
+    columns={tableColumns}
+    data={tableData}
+    actions={tableActions}
+    options={{
+      hasSearch: boolean('hasSearch', false),
+      hasFilter: boolean('hasFilter', false),
+      hasPagination: boolean('hasPagination', false),
+      hasRowEdit: boolean('hasRowEdit', false),
+    }}
+  />
+));
+
+BasicDumbTable.story = {
+  name: 'basic `dumb` table',
+
+  parameters: {
+    info: {
+      text: `
+
+      For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
+
+      <br />
+
+      To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
+
+      <br />
+
+      Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
+
+      <br />
+
+      ~~~js
+      import { tableReducer, tableActions } from 'carbon-addons-iot-react';
+
+      const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
+
+      const actions = {
+        table: {
+          onChangeSort: column => {
+            dispatch(tableActions.tableColumnSort(column));
+          },
+        }
+      }
+
+      <Table
+        {...state}
+        ...
+      ~~~
+
+      <br />
+      `,
+    },
+  },
 };
 
 export const TableExampleWithCreateSaveViews = withReadme(README, () => {
@@ -1262,68 +1322,14 @@ BasicTableWithFullRowEditExample.story = {
   },
 };
 
-export const BasicDumbTable = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData}
-    actions={tableActions}
-    options={{
-      hasSearch: boolean('hasSearch', false),
-      hasFilter: boolean('hasFilter', false),
-      hasPagination: boolean('hasPagination', false),
-      hasRowEdit: boolean('hasRowEdit', false),
-    }}
-  />
-));
-
-BasicDumbTable.story = {
-  name: 'basic `dumb` table',
-
-  parameters: {
-    info: {
-      text: `
-
-      For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
-
-      <br />
-
-      To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
-
-      <br />
-
-      Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
-
-      <br />
-
-      ~~~js
-      import { tableReducer, tableActions } from 'carbon-addons-iot-react';
-
-      const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
-
-      const actions = {
-        table: {
-          onChangeSort: column => {
-            dispatch(tableActions.tableColumnSort(column));
-          },
-        }
-      }
-
-      <Table
-        {...state}
-        ...
-      ~~~
-
-      <br />
-      `,
-    },
-  },
-};
-
-export const WithMultiSelectAndBatchActions = withReadme(README, () => {
+export const RowSelectionAndBatchActions = withReadme(README, () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-
+  const hasRowSelection = select('hasRowSelection', ['single', 'multi'], 'multi');
+  const selectedIds =
+    hasRowSelection === 'multi'
+      ? array('selectedIds', ['row-3', 'row-4', 'row-6', 'row-7'])
+      : array('selectedIds', ['row-3']);
   return (
     <MyTable
       id="table"
@@ -1334,7 +1340,7 @@ export const WithMultiSelectAndBatchActions = withReadme(README, () => {
       options={{
         hasFilter: true,
         hasPagination: true,
-        hasRowSelection: 'multi',
+        hasRowSelection,
       }}
       view={{
         filters: [],
@@ -1356,30 +1362,15 @@ export const WithMultiSelectAndBatchActions = withReadme(README, () => {
             [undefined, true, false],
             undefined
           ),
-          selectedIds: array('selectedIds', ['row-3', 'row-4', 'row-6', 'row-7']),
+          selectedIds,
         },
       }}
     />
   );
 });
 
-WithMultiSelectAndBatchActions.story = {
-  name: 'with multi select and batch actions',
-};
-
-export const WithSingleSelect = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData}
-    actions={tableActions}
-    options={{ hasRowSelection: 'single' }}
-    view={{ table: { selectedIds: ['row-3'] } }}
-  />
-));
-
-WithSingleSelect.story = {
-  name: 'with single select',
+RowSelectionAndBatchActions.story = {
+  name: 'row selection: single or multi-select w/ batch actions',
 };
 
 export const WithSingleSelectAndNestedTableRows = withReadme(README, () => (
@@ -1408,7 +1399,7 @@ export const WithSingleSelectAndNestedTableRows = withReadme(README, () => (
     }))}
     options={{
       hasPagination: true,
-      hasRowSelection: 'multi',
+      hasRowSelection: 'single',
       hasRowExpansion: true,
       hasRowNesting: true,
     }}
@@ -1423,7 +1414,7 @@ export const WithSingleSelectAndNestedTableRows = withReadme(README, () => (
 ));
 
 WithSingleSelectAndNestedTableRows.story = {
-  name: 'with single select and nested table rows ',
+  name: 'row selection: single with nested table rows',
 };
 
 export const WithRowExpansionAndOnRowClickExpands = withReadme(README, () => (
@@ -1456,7 +1447,7 @@ export const WithRowExpansionAndOnRowClickExpands = withReadme(README, () => (
 ));
 
 WithRowExpansionAndOnRowClickExpands.story = {
-  name: 'with row expansion and on row click expands',
+  name: 'row expansion: on row click expands',
 };
 
 export const WithRowExpansionAndActions = withReadme(README, () => (
@@ -1531,7 +1522,7 @@ export const WithRowExpansionAndActions = withReadme(README, () => (
 ));
 
 WithRowExpansionAndActions.story = {
-  name: 'with row expansion and actions',
+  name: 'row expansion: with actions',
 
   parameters: {
     info: {
@@ -1653,7 +1644,7 @@ export const WithSorting = withReadme(README, () => (
 ));
 
 WithSorting.story = {
-  name: 'with sorting',
+  name: 'sorting: single column',
 };
 
 export const WithMultiSorting = withReadme(README, () => {
@@ -1711,77 +1702,31 @@ export const WithMultiSorting = withReadme(README, () => {
 });
 
 WithMultiSorting.story = {
-  name: 'with multi-sorting',
-};
-
-export const WithCustomCellRenderer = withReadme(README, () => {
-  const renderDataFunction = ({ value }) => <div style={{ color: 'red' }}>{value}</div>;
-  return (
-    <Table
-      id="table"
-      columns={tableColumns.map((i) => ({
-        ...i,
-        renderDataFunction,
-      }))}
-      data={tableData}
-      actions={tableActions}
-      options={{
-        hasFilter: true,
-        hasPagination: true,
-        hasRowSelection: 'multi',
-      }}
-      view={{
-        filters: [],
-        table: {
-          ordering: defaultOrdering,
-          sort: {
-            columnId: 'string',
-            direction: 'ASC',
-          },
-        },
-      }}
-    />
-  );
-});
-
-WithCustomCellRenderer.story = {
-  name: 'with custom cell renderer',
-
-  parameters: {
-    info: {
-      text: `To render a custom widget in a table cell, pass a renderDataFunction prop along with your column metadata.
-
-      <br />
-
-      ~~~js
-          The renderDataFunction is called with this payload
-         {
-            value: PropTypes.any (current cell value),
-            columnId: PropTypes.string,
-            rowId: PropTypes.string,
-            row: the full data for this rowPropTypes.object like this {col: value, col2: value}
-         }
-      ~~~
-
-      <br />
-        `,
-    },
-  },
+  name: 'sorting: multiple columns',
 };
 
 export const WithFilters = withReadme(README, () => {
+  text(
+    'instructions',
+    "By changing the value in a filter to a value that doesn't it exist will show the no results screen"
+  );
+  const filters = object('filters', [
+    {
+      columnId: 'string',
+      value: 'whiteboard',
+    },
+    {
+      columnId: 'select',
+      value: 'option-B',
+    },
+  ]);
+
   const filteredData = tableData.filter(({ values }) =>
     // return false if a value doesn't match a valid filter
-    [
-      {
-        columnId: 'string',
-        value: 'whiteboard',
-      },
-      {
-        columnId: 'select',
-        value: 'option-B',
-      },
-    ].reduce((acc, { columnId, value }) => acc && values[columnId].toString().includes(value), true)
+    filters.reduce(
+      (acc, { columnId, value }) => acc && values[columnId].toString().includes(value),
+      true
+    )
   );
   return (
     <Table
@@ -1795,16 +1740,7 @@ export const WithFilters = withReadme(README, () => {
         hasRowSelection: 'multi',
       }}
       view={{
-        filters: [
-          {
-            columnId: 'string',
-            value: 'whiteboard',
-          },
-          {
-            columnId: 'select',
-            value: 'option-B',
-          },
-        ],
+        filters,
         pagination: {
           totalItems: filteredData.length,
         },
@@ -1820,7 +1756,7 @@ export const WithFilters = withReadme(README, () => {
 });
 
 WithFilters.story = {
-  name: 'with filters',
+  name: 'filtering: simple filters',
 };
 
 export const WithAdvancedFilters = withReadme(README, () => {
@@ -2068,206 +2004,42 @@ export const WithAdvancedFilters = withReadme(README, () => {
 });
 
 WithAdvancedFilters.story = {
-  name: '☢️ with advanced filters',
+  name: 'filtering: ☢️ advanced filters',
 };
 
-export const WithColumnSelection = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData}
-    actions={tableActions}
-    options={{
-      hasPagination: true,
-      hasRowSelection: 'multi',
-      hasColumnSelection: true,
-      hasColumnSelectionConfig: boolean('hasColumnSelectionConfig', true),
-    }}
-    view={{
-      toolbar: {
-        activeBar: 'column',
-      },
-      table: {
-        ordering: defaultOrdering,
-      },
-    }}
-    i18n={{
-      columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__'),
-    }}
-  />
-));
+export const WithNoData = withReadme(README, () => {
+  const emptyState = (
+    <div key="empty-state">
+      <h1 key="empty-state-heading">Custom empty state</h1>
+      <p key="empty-state-message">Hey, no data!</p>
+    </div>
+  );
 
-WithColumnSelection.story = {
-  name: 'with column selection',
-};
+  const loadingState = object('loadingState', {
+    isLoading: false,
+    rowCount: 7,
+  });
 
-export const WithNoResults = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={[]}
-    actions={tableActions}
-    view={{
-      filters: [
-        {
-          columnId: 'string',
-          value: 'something not matching',
+  return (
+    <Table
+      id="table"
+      columns={tableColumns}
+      data={[]}
+      actions={tableActions}
+      view={{
+        table: {
+          ordering: defaultOrdering,
+          emptyState: boolean('Show Custom Empty State', false) ? emptyState : undefined,
+          loadingState,
         },
-      ],
-      toolbar: {
-        activeBar: 'filter',
-      },
-      table: {
-        ordering: defaultOrdering,
-      },
-    }}
-    options={{ hasFilter: true, hasPagination: true }}
-  />
-));
-
-WithNoResults.story = {
-  name: 'with no results',
-};
-
-export const WithNoData = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={[]}
-    actions={tableActions}
-    view={{
-      table: {
-        ordering: defaultOrdering,
-      },
-    }}
-    options={{ hasPagination: true }}
-  />
-));
+      }}
+      options={{ hasPagination: true }}
+    />
+  );
+});
 
 WithNoData.story = {
-  name: 'with no data',
-};
-
-export const WithNestedTableRows = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData.map((i, idx) => ({
-      ...i,
-      children:
-        idx === 3
-          ? [getNewRow(idx, 'A'), getNewRow(idx, 'B')]
-          : idx === 7
-          ? [
-              getNewRow(idx, 'A'),
-              {
-                ...getNewRow(idx, 'B'),
-                children: [getNewRow(idx, 'B-1'), getNewRow(idx, 'B-2')],
-              },
-              getNewRow(idx, 'C'),
-              {
-                ...getNewRow(idx, 'D'),
-                children: [getNewRow(idx, 'D-1'), getNewRow(idx, 'D-2'), getNewRow(idx, 'D-3')],
-              },
-            ]
-          : undefined,
-    }))}
-    options={{
-      hasPagination: true,
-      hasRowSelection: 'multi',
-      hasRowExpansion: true,
-      hasRowNesting: true,
-    }}
-    actions={tableActions}
-    view={{
-      table: {
-        expandedIds: ['row-3', 'row-7', 'row-7_B'],
-      },
-    }}
-  />
-));
-
-WithNestedTableRows.story = {
-  name: 'with nested table rows',
-};
-
-export const WithNoDataAndCustomEmptyState = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={[]}
-    actions={tableActions}
-    view={{
-      table: {
-        ordering: defaultOrdering,
-        emptyState: (
-          <div key="empty-state">
-            <h1 key="empty-state-heading">Custom empty state</h1>
-            <p key="empty-state-message">Hey, no data!</p>
-          </div>
-        ),
-      },
-    }}
-    options={{ hasPagination: true }}
-  />
-));
-
-WithNoDataAndCustomEmptyState.story = {
-  name: 'with no data and custom empty state',
-};
-
-export const WithLoadingState = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData}
-    actions={tableActions}
-    view={{
-      table: {
-        ordering: defaultOrdering,
-        loadingState: {
-          isLoading: true,
-          rowCount: 7,
-        },
-      },
-    }}
-  />
-));
-
-WithLoadingState.story = {
-  name: 'with loading state',
-};
-
-export const WithCustomTooltip = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData}
-    secondaryTitle="My title"
-    tooltip={<div>Table tooltip content</div>}
-    actions={tableActions}
-    view={{
-      table: {
-        ordering: defaultOrdering,
-        loadingState: {
-          isLoading: false,
-          rowCount: 7,
-        },
-      },
-    }}
-  />
-));
-
-WithCustomTooltip.story = {
-  name: 'with custom tooltip',
-};
-
-export const WithZebraStriping = withReadme(README, () => (
-  <Table id="table" useZebraStyles columns={tableColumns} data={tableData} actions={tableActions} />
-));
-
-WithZebraStriping.story = {
-  name: 'with zebra striping',
+  name: 'states: no data, custom empty and loading states',
 };
 
 export const WithResizeAndInitialColumnWidthsAndHiddenColumn = withReadme(README, () => (
@@ -2294,7 +2066,7 @@ export const WithResizeAndInitialColumnWidthsAndHiddenColumn = withReadme(README
 ));
 
 WithResizeAndInitialColumnWidthsAndHiddenColumn.story = {
-  name: 'with resize and initial column widths and hidden column',
+  name: 'resize: initial column widths and hidden column',
 
   parameters: {
     info: {
@@ -2443,7 +2215,7 @@ export const WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManage
 );
 
 WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.story = {
-  name: 'with resize, onColumnResize callback, no initial column width and column management',
+  name: 'resize: onColumnResize callback, no initial column width and column management',
   decorators: [createElement],
   parameters: {
     info: {
@@ -2481,7 +2253,7 @@ export const WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths = with
 );
 
 WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths.story = {
-  name: 'with resize and no initial column width and auto adjusted column widths',
+  name: 'resize: and no initial column width and auto adjusted column widths',
 
   parameters: {
     info: {
@@ -2489,6 +2261,35 @@ WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths.story = {
       propTables: false,
     },
   },
+};
+export const WithResizeAndNoInitialColumns = withReadme(README, () => {
+  // Initial render is an empty columns array, which is updated after the first render
+  const [columns, setColumns] = useState([]);
+  useLayoutEffect(() => {
+    setColumns(
+      tableColumns.map((i, idx) => ({
+        width: idx % 2 === 0 ? '100px' : '100px',
+        ...i,
+      }))
+    );
+  }, []);
+  return (
+    <Table
+      id="table"
+      options={{
+        hasResize: true,
+        wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+      }}
+      columns={columns}
+      data={tableData}
+      actions={tableActions}
+    />
+  );
+});
+
+WithResizeAndNoInitialColumns.story = {
+  name: 'resize: and no initial columns',
+  decorators: [createElement],
 };
 
 export const WithFixedColumnWidthAndNoResize = withReadme(README, () => (
@@ -2522,36 +2323,6 @@ WithFixedColumnWidthAndNoResize.story = {
   },
 };
 
-export const WithResizeAndNoInitialColumns = withReadme(README, () => {
-  // Initial render is an empty columns array, which is updated after the first render
-  const [columns, setColumns] = useState([]);
-  useLayoutEffect(() => {
-    setColumns(
-      tableColumns.map((i, idx) => ({
-        width: idx % 2 === 0 ? '100px' : '100px',
-        ...i,
-      }))
-    );
-  }, []);
-  return (
-    <Table
-      id="table"
-      options={{
-        hasResize: true,
-        wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-      }}
-      columns={columns}
-      data={tableData}
-      actions={tableActions}
-    />
-  );
-});
-
-WithResizeAndNoInitialColumns.story = {
-  name: 'with resize and no initial columns',
-  decorators: [createElement],
-};
-
 export const WithCustomRowHeight = withReadme(README, () => (
   // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
   <FullWidthWrapper>
@@ -2575,21 +2346,6 @@ WithCustomRowHeight.story = {
       propTables: false,
     },
   },
-};
-
-export const WithLightweightDesign = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData}
-    options={{ hasPagination: true }}
-    actions={tableActions}
-    lightweight={boolean('lightweight', true)}
-  />
-));
-
-WithLightweightDesign.story = {
-  name: 'with lightweight design',
 };
 
 export const WithHasOnlyPageData = withReadme(README, () => {
@@ -2737,6 +2493,115 @@ export const CustomToolbarContent = withReadme(README, () => (
 
 CustomToolbarContent.story = {
   name: 'Custom toolbar content',
+};
+
+export const WithColumnSelection = withReadme(README, () => (
+  <Table
+    id="table"
+    columns={tableColumns}
+    data={tableData}
+    actions={tableActions}
+    options={{
+      hasPagination: true,
+      hasRowSelection: 'multi',
+      hasColumnSelection: true,
+      hasColumnSelectionConfig: boolean('hasColumnSelectionConfig', true),
+    }}
+    view={{
+      toolbar: {
+        activeBar: 'column',
+      },
+      table: {
+        ordering: defaultOrdering,
+      },
+    }}
+    i18n={{
+      columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__'),
+    }}
+  />
+));
+
+WithColumnSelection.story = {
+  name: 'with column selection',
+};
+
+export const WithCustomTooltip = withReadme(README, () => (
+  <Table
+    id="table"
+    columns={tableColumns}
+    data={tableData}
+    secondaryTitle="My title"
+    tooltip={<div>Table tooltip content</div>}
+    actions={tableActions}
+    view={{
+      table: {
+        ordering: defaultOrdering,
+        loadingState: {
+          isLoading: false,
+          rowCount: 7,
+        },
+      },
+    }}
+  />
+));
+
+WithCustomTooltip.story = {
+  name: 'with custom tooltip',
+};
+
+export const WithCustomCellRenderer = withReadme(README, () => {
+  const renderDataFunction = ({ value }) => <div style={{ color: 'red' }}>{value}</div>;
+  return (
+    <Table
+      id="table"
+      columns={tableColumns.map((i) => ({
+        ...i,
+        renderDataFunction,
+      }))}
+      data={tableData}
+      actions={tableActions}
+      options={{
+        hasFilter: true,
+        hasPagination: true,
+        hasRowSelection: 'multi',
+      }}
+      view={{
+        filters: [],
+        table: {
+          ordering: defaultOrdering,
+          sort: {
+            columnId: 'string',
+            direction: 'ASC',
+          },
+        },
+      }}
+    />
+  );
+});
+
+WithCustomCellRenderer.story = {
+  name: 'with custom cell renderer',
+
+  parameters: {
+    info: {
+      text: `To render a custom widget in a table cell, pass a renderDataFunction prop along with your column metadata.
+
+      <br />
+
+      ~~~js
+          The renderDataFunction is called with this payload
+         {
+            value: PropTypes.any (current cell value),
+            columnId: PropTypes.string,
+            rowId: PropTypes.string,
+            row: the full data for this rowPropTypes.object like this {col: value, col2: value}
+         }
+      ~~~
+
+      <br />
+        `,
+    },
+  },
 };
 
 export const WithStickyHeaderExperimentalAndCellTooltipCalculation = withReadme(README, () => {
