@@ -1495,7 +1495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-alert-table1-table-toolbar-batch-actions"
+                        data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -4302,7 +4302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-alert-table1-table-toolbar-batch-actions"
+                        data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -7138,7 +7138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-alert-table1-table-toolbar-batch-actions"
+                        data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -9232,7 +9232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-expandedcard-table-toolbar-batch-actions"
+                        data-testid="table-for-card-expandedcard-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -12650,7 +12650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-alert-table1-table-toolbar-batch-actions"
+                        data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -29077,7 +29077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-alert-table1-table-toolbar-batch-actions"
+                        data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
