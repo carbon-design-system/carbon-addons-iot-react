@@ -438,7 +438,7 @@ const TableHead = ({
                     ))}
                   {hasMultiSort && (
                     <OverflowMenuItem
-                      itemText="Multi-sort"
+                      itemText={i18n.multiSortOverflowItem}
                       key={`${columnIndex}--overflow-item-multi-sort`}
                       onClick={(e) => handleOverflowItemClick(e, { id: 'multi-sort' })}
                     />
