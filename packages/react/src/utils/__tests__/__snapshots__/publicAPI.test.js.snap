@@ -13516,6 +13516,30 @@ Map {
             "addSpaceOnEdges": Object {
               "type": "number",
             },
+            "alertRanges": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "type": "string",
+                      },
+                      "details": Object {
+                        "type": "string",
+                      },
+                      "endTimestamp": Object {
+                        "type": "number",
+                      },
+                      "startTimestamp": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "chartType": [Function],
             "decimalPrecision": Object {
               "type": "number",
@@ -13596,6 +13620,34 @@ Map {
             },
             "showLegend": Object {
               "type": "bool",
+            },
+            "thresholds": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "axis": Object {
+                        "args": Array [
+                          "x",
+                          "y",
+                        ],
+                        "type": "oneOf",
+                      },
+                      "fillColor": Object {
+                        "type": "string",
+                      },
+                      "label": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
             },
             "timeDataSourceId": Object {
               "type": "string",
