@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.145.1-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.1-next.3...v2.145.1-next.4) (2021-05-18)
+
+
+### Bug Fixes
+
+* **table:** set tabindex to -1 on batch actions when hidden ([f50a9c1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f50a9c1cb06a76c45e94e584f5e61763d8d313e6))
+* **table-toolbar:** also set disabled on batch buttons when hidden ([47be990](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/47be990d8bbc8d1f5071eccc798260bfb64e98b9))
+* **table-toolbar:** turn shouldShowBatchActions in variable ([329ce23](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/329ce23a9cbaf7b70a2ef70904bdc56ab9ad23f8))
+
+
+
+
+
+## [2.145.1-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.1-next.2...v2.145.1-next.3) (2021-05-17)
+
+
+### Bug Fixes
+
+* **dashboard-editor:** include removedItemsCountRef in handleEditButton ([d07c338](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d07c3384a6a0606a14672c6bdc79ec09bc1bc0b7))
+* **dashboard-editor:** prevent color collisions on TimeSeriesCards ([a2b190c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a2b190ce101ababa524835443781e1bc9783e5d0))
+
+
+
+
+
+## [2.145.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.1-next.1...v2.145.1-next.2) (2021-05-17)
+
+
+### Bug Fixes
+
+* **time-series-card:** handle undefined element in tooltip ([1f97e47](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1f97e47ad61b199ece9ccba86e5cb372347b879c))
+
+
+
+
+
+## [2.145.1-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.1-next.0...v2.145.1-next.1) (2021-05-15)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 ## [2.145.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0...v2.145.1-next.0) (2021-05-13)
 
 **Note:** Version bump only for package ibm-ai-applications

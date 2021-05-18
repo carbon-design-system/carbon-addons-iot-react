@@ -22,7 +22,7 @@ const listIcons = {
 };
 
 export default {
-  title: 'Watson IoT/IconSwitch',
+  title: '1 - Watson IoT/IconSwitch',
   decorators: [withKnobs],
 
   parameters: {
