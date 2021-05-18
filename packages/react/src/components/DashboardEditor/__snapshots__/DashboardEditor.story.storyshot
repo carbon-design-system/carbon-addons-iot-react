@@ -16196,17 +16196,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </button>
                   <button
                     aria-pressed={null}
-                    className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
-                    data-testid="Button"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Back
-                  </button>
-                  <button
-                    aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
