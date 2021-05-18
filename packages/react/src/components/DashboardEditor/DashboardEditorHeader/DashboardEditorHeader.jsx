@@ -42,8 +42,6 @@ const propTypes = {
   onDelete: PropTypes.func,
   /** If provided, renders cancel button linked to this callback */
   onCancel: PropTypes.func,
-  /** If provided, renders back button linked to this callback */
-  onBack: PropTypes.func,
   /** If provided, renders submit button linked to this callback
    * onSubmit(dashboardData)
    */
@@ -59,7 +57,6 @@ const propTypes = {
     headerExportButton: PropTypes.string,
     headerDeleteButton: PropTypes.string,
     headerCancelButton: PropTypes.string,
-    headerBackButton: PropTypes.string,
     headerSubmitButton: PropTypes.string,
     headerFitToScreenButton: PropTypes.string,
     headerXlargeButton: PropTypes.string,
@@ -92,7 +89,6 @@ const defaultProps = {
   onExport: null,
   onDelete: null,
   onCancel: null,
-  onBack: null,
   onSubmit: null,
   isSubmitDisabled: false,
   isSubmitLoading: false,
@@ -102,7 +98,6 @@ const defaultProps = {
     headerExportButton: 'Export',
     headerDeleteButton: 'Delete',
     headerCancelButton: 'Cancel',
-    headerBackButton: 'Back',
     headerSubmitButton: 'Save and close',
     headerFitToScreenButton: 'Fit to screen',
     headerLargeButton: 'Large view',
@@ -125,7 +120,6 @@ const DashboardEditorHeader = ({
   onExport,
   onDelete,
   onCancel,
-  onBack,
   onSubmit,
   isSubmitDisabled,
   isSubmitLoading,
@@ -224,11 +218,6 @@ const DashboardEditorHeader = ({
         {onCancel && (
           <Button kind="secondary" size="field" onClick={onCancel}>
             {mergedI18n.headerCancelButton}
-          </Button>
-        )}
-        {onBack && (
-          <Button kind="secondary" size="field" onClick={onBack}>
-            {mergedI18n.headerBackButton}
           </Button>
         )}
         {onSubmit && (

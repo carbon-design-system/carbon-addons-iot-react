@@ -117,19 +117,4 @@
     min-height: 100%;
     width: 16rem;
   }
-
-  .page-title-bar {
-    &-title {
-      padding-left: $spacing-05;
-    }
-    &-header-right {
-      padding-right: $spacing-05;
-      .#{$prefix}--btn + .#{$prefix}--btn {
-        margin-left: $spacing-05;
-      }
-    }
-    &-breadcrumb {
-      padding-left: $spacing-05;
-    }
-  }
 }

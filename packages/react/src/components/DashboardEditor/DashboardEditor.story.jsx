@@ -385,7 +385,6 @@ export const WithInitialValue = () => (
     onExport={action('onExport')}
     onDelete={action('onDelete')}
     onCancel={action('onCancel')}
-    onBack={action('onBack')}
     onSubmit={action('onSubmit')}
     onLayoutChange={action('onLayoutChange')}
     supportedCardTypes={[

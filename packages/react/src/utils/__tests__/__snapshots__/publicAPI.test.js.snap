@@ -9116,7 +9116,6 @@ Map {
         "dashboardTitleLabel": "Dashboard title",
         "defaultCardTitle": "Untitled",
         "galleryHeader": "Gallery",
-        "headerBackButton": "Back",
         "headerCancelButton": "Cancel",
         "headerDeleteButton": "Delete",
         "headerEditTitleButton": "Edit title",
@@ -9150,7 +9149,6 @@ Map {
       "isSummaryDashboard": false,
       "locale": "en",
       "notification": null,
-      "onBack": null,
       "onCancel": null,
       "onCardChange": null,
       "onCardJsonPreview": null,
@@ -9477,9 +9475,6 @@ Map {
             "galleryHeader": Object {
               "type": "string",
             },
-            "headerBackButton": Object {
-              "type": "string",
-            },
             "headerCancelButton": Object {
               "type": "string",
             },
@@ -9711,9 +9706,6 @@ Map {
       },
       "notification": Object {
         "type": "node",
-      },
-      "onBack": Object {
-        "type": "func",
       },
       "onCancel": Object {
         "type": "func",
