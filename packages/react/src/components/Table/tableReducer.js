@@ -251,7 +251,6 @@ export const filterSearchAndSort = (
 
 /** This reducer handles sort, filter and search that needs data otherwise it proxies for the baseTableReducer */
 export const tableReducer = (state = {}, action) => {
-  console.log({ action });
   switch (action.type) {
     // Filter Actions
     case TABLE_FILTER_APPLY: {
@@ -359,7 +358,6 @@ export const tableReducer = (state = {}, action) => {
     }
     // Column operations
     case TABLE_COLUMN_SORT: {
-      console.log({ action });
       // TODO should check that columnId actually is valid
       const columnId = action.payload;
       const sorts = ['NONE', 'ASC', 'DESC'];
@@ -588,7 +586,6 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_MULTI_SORT: {
-      console.log({ action });
       return update(state, {
         view: {
           table: {
@@ -601,7 +598,6 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_MULTI_SORT_SAVE: {
-      console.log({ action });
       return update(state, {
         view: {
           table: {
@@ -627,7 +623,6 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_MULTI_SORT_CANCEL: {
-      console.log({ action });
       return update(state, {
         view: {
           table: {
@@ -640,12 +635,10 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_MULTI_SORT_ADD_COLUMN: {
-      console.log({ action });
       return state;
     }
 
     case TABLE_MULTI_SORT_REMOVE_COLUMN: {
-      console.log({ action });
       return state;
     }
 

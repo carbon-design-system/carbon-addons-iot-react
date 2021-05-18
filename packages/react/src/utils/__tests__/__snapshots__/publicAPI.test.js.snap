@@ -418,6 +418,7 @@ Map {
         "multiSortModalPrimaryLabel": "Sort",
         "multiSortModalSecondaryLabel": "Cancel",
         "multiSortModalTitle": "Select columns to sort",
+        "multiSortOverflowItem": "Multi-sort",
         "multiSortRemoveColumn": "Remove column",
         "multiSortSelectColumnLabel": "Select a column",
         "multiSortSelectColumnSortByTitle": "Sort by",

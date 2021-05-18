@@ -416,6 +416,7 @@ export const defaultProps = (baseProps) => ({
     multiSortRemoveColumn: 'Remove column',
     multiSortAscending: 'Ascending',
     multiSortDescending: 'Descending',
+    multiSortOverflowItem: 'Multi-sort',
   },
 });
 
