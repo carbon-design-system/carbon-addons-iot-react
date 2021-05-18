@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab Example with externaly managed state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab Example with externaly managed state 1`] = `
 <div
   className="storybook-container"
 >
@@ -229,6 +229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--hotspot-editor-tooltip-tab__delete-button-container"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
             data-testid="Button"
             disabled={false}
@@ -288,7 +289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab With Info Message 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab With Info Message 1`] = `
 <div
   className="storybook-container"
 >
@@ -358,7 +359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab With Preset Values And Custom Colors 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab With Preset Values And Custom Colors 1`] = `
 <div
   className="storybook-container"
 >
@@ -640,6 +641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--hotspot-editor-tooltip-tab__delete-button-container"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
             data-testid="Button"
             disabled={false}

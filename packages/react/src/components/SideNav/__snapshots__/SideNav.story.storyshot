@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideNav SideNav component 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SideNav SideNav component 1`] = `
 <div
   className="storybook-container"
 >
@@ -74,11 +74,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
         >
           <button
             aria-label="user"
-            className="bx--header-action-btn bx--header__action"
+            aria-pressed={null}
+            className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
             data-testid="menu-item-user-global"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
             type="button"
           >
+            <span
+              className="bx--assistive-text"
+            >
+              user
+            </span>
             <svg
               aria-hidden={true}
               className="bx--header__menu-item bx--header__menu-title"
@@ -102,12 +110,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
         className="bx--side-nav__overlay"
       />
       <nav
+        aria-hidden={true}
         aria-label="Side navigation"
         className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
         onBlur={[Function]}
+        onClickSideNavExpand={[Function]}
         onFocus={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
+        switcherProps={
+          Object {
+            "className": "class",
+            "labelText": "ExampleOne",
+            "onChange": [Function],
+            "options": Array [
+              "ExampleOne",
+              "ExampleTwo",
+            ],
+            "switcherTitle": "Applications",
+          }
+        }
+        translateById={[Function]}
       >
         <ul
           className="bx--side-nav__items"
@@ -396,35 +419,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
       >
         <div
           className="page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-title"
+                className="page-title-bar-title--text"
               >
-                <div
-                  className="page-title-bar-title--text"
+                <h2
+                  title="Title"
                 >
-                  <h2>
-                    Title
-                  </h2>
-                </div>
+                  Title
+                </h2>
               </div>
-              <p
-                className="page-title-bar-description"
-              >
-                Description
-              </p>
             </div>
+            <p
+              className="page-title-bar-description"
+            >
+              Description
+            </p>
+            <div
+              className="page-title-bar-header-right"
+            />
           </div>
         </div>
       </div>

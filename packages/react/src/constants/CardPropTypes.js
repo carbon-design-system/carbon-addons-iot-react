@@ -215,6 +215,16 @@ export const TableCardPropTypes = {
   ),
 };
 
+/** carbon charts legend truncation options */
+export const TruncationPropTypes = PropTypes.shape({
+  /** truncation type */
+  type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
+  /** number of characters needed to enable truncation */
+  threshold: PropTypes.number,
+  /** number of characters needed to enable truncation */
+  numCharacter: PropTypes.number,
+});
+
 /** Optionally addes a zoom bar to the chart */
 export const ZoomBarPropTypes = PropTypes.shape({
   /** Determines which axis to put the zoomBar */
@@ -318,7 +328,7 @@ export const BarChartCardPropTypes = {
       } // all charts must have oneOf[categoryDataSourceId, timeDataSourceId]
       else if (!props[propName] && !props.timeDataSourceId) {
         error = new Error(
-          `\`${componentName}\` must have \`${props[propName]}\` OR \`timeDataSourceId\`.`
+          `\`${componentName}\` must have \`${propName}\` OR \`timeDataSourceId\`.`
         );
       }
       return error;
@@ -338,12 +348,7 @@ export const BarChartCardPropTypes = {
     /** Optionally addes a zoom bar to the chart */
     zoomBar: ZoomBarPropTypes,
     /** carbon charts legend truncation options */
-    truncation: PropTypes.shape({
-      /** truncation type */
-      type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
-      /** number of characters needed to enable truncation */
-      threshold: PropTypes.number,
-    }),
+    truncation: TruncationPropTypes,
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
@@ -352,13 +357,14 @@ export const BarChartCardPropTypes = {
     alertDetected: PropTypes.string,
     tooltipGroupLabel: PropTypes.string,
     tooltipTotalLabel: PropTypes.string,
+    defaultFilterStringPlaceholdText: PropTypes.string,
   }),
   /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
    * can be date instance or timestamp */
   domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
   /** Show timestamp in browser local time or GMT */
   showTimeInGMT: PropTypes.bool,
-  /** tooltip format pattern that follows the moment formatting patterns */
+  /** tooltip format pattern that follows the dayjs formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
 };
 
@@ -379,12 +385,7 @@ export const PieCardPropTypes = {
     /** The position of the legend in relation to the chart, can be 'bottom' or 'top'. */
     legendPosition: PropTypes.oneOf(['top', 'bottom']),
     /** carbon charts legend truncation options */
-    truncation: PropTypes.shape({
-      /** truncation type */
-      type: PropTypes.oneOf(['end_line', 'mid_line', 'front_line', 'none']),
-      /** number of characters needed to enable truncation */
-      threshold: PropTypes.number,
-    }),
+    truncation: TruncationPropTypes,
   }),
   /** Used to overide the internal components and props for advanced customisation */
   overrides: PropTypes.shape({

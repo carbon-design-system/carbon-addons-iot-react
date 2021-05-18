@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher Loading state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher Loading state 1`] = `
 <div
   className="storybook-container"
 >
@@ -30,6 +30,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             My applications
           </p>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--tertiary"
             data-testid="suite-header-app-switcher--all-applications"
             disabled={false}
@@ -120,7 +121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher No applications 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher No applications 1`] = `
 <div
   className="storybook-container"
 >
@@ -150,6 +151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             My applications
           </p>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--tertiary"
             data-testid="suite-header-app-switcher--all-applications"
             disabled={false}
@@ -242,7 +244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher default 1`] = `
 <div
   className="storybook-container"
 >
@@ -272,6 +274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             My applications
           </p>
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--tertiary"
             data-testid="suite-header-app-switcher--all-applications"
             disabled={false}

@@ -4,7 +4,7 @@ import merge from 'lodash/merge';
 import isEmpty from 'lodash/isEmpty';
 import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';
-import useDeepCompareEffect from 'use-deep-compare-effect';
+import isEqual from 'lodash/isEqual';
 import warning from 'warning';
 
 import ValueCard from '../ValueCard/ValueCard';
@@ -17,6 +17,7 @@ import GaugeCard from '../GaugeCard/GaugeCard';
 import Card from '../Card/Card';
 import { CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
+import { usePrevious } from '../../hooks/usePrevious';
 
 /**
  *
@@ -24,13 +25,14 @@ import { determineCardRange, compareGrains } from '../../utils/cardUtilityFuncti
  */
 const CachedCardRenderer = ({ style, ...others }) => {
   const [cachedStyle, setCachedStyle] = useState(style);
+  const previousStyle = usePrevious(style);
 
-  useDeepCompareEffect(
-    () => {
+  useEffect(() => {
+    if (!isEqual(style, previousStyle)) {
       setCachedStyle(style);
-    },
-    [style] // need to do a deep compare on style
-  );
+    }
+  }, [previousStyle, style]);
+
   return <CardRenderer {...others} style={cachedStyle} />;
 };
 
@@ -185,6 +187,7 @@ const CardRenderer = React.memo(
 
     const commonCardProps = {
       ...card, // pass all the card props, including the card data to the card
+      ...(card.type === 'CUSTOM' && cardProp.content ? { content: cardProp.content } : {}), // the card content function cannot be cached for custom cards
       style: cardProp.style, // these come from grid layout and not state
       className: cardProp.className, // these come from grid layout and not state
       key: cardProp.id,

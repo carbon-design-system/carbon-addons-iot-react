@@ -2,10 +2,10 @@ import React, { useMemo, useState } from 'react';
 import warning from 'warning';
 import isNil from 'lodash/isNil';
 import mapValues from 'lodash/mapValues';
-import moment from 'moment';
 
 import { CARD_SIZES } from '../constants/LayoutConstants';
 
+import dayjs from './dayjs';
 import { convertStringsToDOMElement } from './componentUtilityFunctions';
 
 /**
@@ -449,7 +449,7 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
 
 /** compare the current datapoint to a list of alert ranges */
 export const findMatchingAlertRange = (alertRanges, data) => {
-  const currentDataPoint = Array.isArray(data) ? data[0]?.date : data.date;
+  const currentDataPoint = Array.isArray(data) ? data[0]?.date : data?.date;
 
   if (!currentDataPoint) {
     return false;
@@ -484,15 +484,15 @@ export const handleTooltip = (
   showTimeInGMT,
   tooltipDateFormatPattern = 'L HH:mm:ss'
 ) => {
-  const data = dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+  const data = dataOrHoveredElement?.__data__
     ? dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
     : dataOrHoveredElement;
   const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
   const dateLabel = timeStamp
     ? `<li class='datapoint-tooltip'>
         <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
-          ? moment.utc(timeStamp)
-          : moment(timeStamp)
+          ? dayjs.utc(timeStamp)
+          : dayjs(timeStamp)
         ).format(tooltipDateFormatPattern)}</p>
       </li>`
     : '';

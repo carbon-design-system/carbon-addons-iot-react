@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Grid20, List20 } from '@carbon/icons-react';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
+import isEqual from 'lodash/isEqual';
 import { Modal } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
@@ -12,6 +12,7 @@ import IconSwitch from '../IconSwitch/IconSwitch';
 import { Search } from '../Search';
 import { ContentSwitcher } from '../ContentSwitcher';
 import { ComposedModalPropTypes } from '../ComposedModal/ComposedModal';
+import { usePrevious } from '../../hooks/usePrevious';
 
 import ImageTile from './ImageTile';
 
@@ -123,9 +124,13 @@ const ImageGalleryModal = ({
   const [selectedImage, setSelectedImage] = useState();
   const [isDeleteWarningModalOpen, setIsDeleteWarningModalOpen] = useState(false);
   const [filteredContent, setFilteredContent] = useState(content);
-
+  const previousContent = usePrevious(content);
   // Need to support lazy loaded content
-  useDeepCompareEffect(() => setFilteredContent(content), [content]);
+  useEffect(() => {
+    if (!isEqual(content, previousContent)) {
+      setFilteredContent(content);
+    }
+  }, [content, previousContent]);
 
   const toggleImageSelection = (imageProps) => {
     setSelectedImage((currentSelected) => {

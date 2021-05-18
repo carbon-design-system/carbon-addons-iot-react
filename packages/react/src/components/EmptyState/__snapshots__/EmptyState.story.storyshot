@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState 404 error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState 404 error 1`] = `
 <div
   className="storybook-container"
 >
@@ -176,6 +176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
@@ -215,7 +216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState Data Missing 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState Data Missing 1`] = `
 <div
   className="storybook-container"
 >
@@ -496,6 +497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
@@ -535,7 +537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState Error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState Error 1`] = `
 <div
   className="storybook-container"
 >
@@ -800,6 +802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
@@ -839,7 +842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState First-time use 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState First-time use 1`] = `
 <div
   className="storybook-container"
 >
@@ -1120,6 +1123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
@@ -1159,7 +1163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState No Search Results Found 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState No Search Results Found 1`] = `
 <div
   className="storybook-container"
 >
@@ -1533,7 +1537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState Not Authorized 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState Not Authorized 1`] = `
 <div
   className="storybook-container"
 >
@@ -1834,6 +1838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
@@ -1873,7 +1878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState Not Configured 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState Not Configured 1`] = `
 <div
   className="storybook-container"
 >
@@ -2154,6 +2159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
@@ -2193,7 +2199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState Playground 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState Playground 1`] = `
 <div
   className="storybook-container"
 >
@@ -2474,6 +2480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
@@ -2525,7 +2532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState Success 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState Success 1`] = `
 <div
   className="storybook-container"
 >
@@ -2705,7 +2712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState With Custom Icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState With Custom Icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -2819,6 +2826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
@@ -2858,7 +2866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EmptyState Without Icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/EmptyState Without Icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -2895,6 +2903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
           data-testid="EmptyState-action"
         >
           <button
+            aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}

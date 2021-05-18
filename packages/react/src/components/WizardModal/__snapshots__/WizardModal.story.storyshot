@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardModal basic wizard modal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/WizardModal basic wizard modal 1`] = `
 <div
   className="storybook-container"
 >
@@ -16,7 +16,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -135,6 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step1"
                     value="step1"
                   >
                     step1
@@ -190,6 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step2"
                     value="step2"
                   >
                     step2
@@ -242,6 +243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step3"
                     value="step3"
                   >
                     step3
@@ -263,6 +265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
@@ -273,6 +276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               Cancel
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
@@ -320,7 +324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardModal custom footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/WizardModal custom footer 1`] = `
 <div
   className="storybook-container"
 >
@@ -336,7 +340,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -455,6 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step1"
                     value="step1"
                   >
                     step1
@@ -510,6 +514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step2"
                     value="step2"
                   >
                     step2
@@ -562,6 +567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step3"
                     value="step3"
                   >
                     step3
@@ -590,6 +596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
@@ -600,6 +607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               I18N Cancel
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
@@ -647,7 +655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardModal sending data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/WizardModal sending data 1`] = `
 <div
   className="storybook-container"
 >
@@ -663,7 +671,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
-      onBack={[Function]}
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -772,6 +779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step1"
                     value="step1"
                   >
                     step1
@@ -822,6 +830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step2"
                     value="step2"
                   >
                     step2
@@ -879,6 +888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 >
                   <p
                     className="iot--progress-text-label"
+                    title="step3"
                     value="step3"
                   >
                     step3
@@ -900,6 +910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
@@ -910,6 +921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               Previous
             </button>
             <button
+              aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
               data-testid="Button"
               disabled={true}

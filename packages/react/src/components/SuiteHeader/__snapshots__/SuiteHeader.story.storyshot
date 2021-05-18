@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with application-controlled side nav 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with application-controlled side nav 1`] = `
 <div
   className="storybook-container"
 >
@@ -79,6 +79,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="bx--modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--secondary"
             disabled={false}
             onClick={[Function]}
@@ -88,6 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--primary"
             disabled={false}
             onClick={[Function]}
@@ -169,11 +171,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
       >
         <button
           aria-label="Administration"
-          className="bx--header-action-btn admin-icon bx--header__action"
+          aria-pressed={null}
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
+          disabled={false}
           onClick={[Function]}
+          tabIndex={0}
           type="button"
         >
+          <span
+            className="bx--assistive-text"
+          >
+            Administration
+          </span>
           <span
             id="suite-header-action-item-admin"
           >
@@ -470,6 +480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
                             disabled={false}
@@ -520,11 +531,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             aria-expanded={false}
             aria-haspopup="menu"
             aria-label="AppSwitcher"
-            className="bx--header-action-btn action-btn__trigger bx--header__action"
+            aria-pressed={null}
+            className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
             title="AppSwitcher"
             type="button"
           >
+            <span
+              className="bx--assistive-text"
+            >
+              AppSwitcher
+            </span>
             <svg
               aria-hidden={true}
               className="bx--header__menu-item bx--header__menu-title"
@@ -567,6 +586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         My applications
                       </p>
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         disabled={false}
@@ -654,7 +674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with custom action items 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with custom action items 1`] = `
 <div
   className="storybook-container"
 >
@@ -733,6 +753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="bx--modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--secondary"
             disabled={false}
             onClick={[Function]}
@@ -742,6 +763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--primary"
             disabled={false}
             onClick={[Function]}
@@ -801,11 +823,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
       >
         <button
           aria-label="bell"
-          className="bx--header-action-btn bx--header__action"
+          aria-pressed={null}
+          className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
           data-testid="menu-item-bell-global"
+          disabled={false}
           onClick={[Function]}
+          tabIndex={0}
           type="button"
         >
+          <span
+            className="bx--assistive-text"
+          >
+            bell
+          </span>
           <span
             id="bell-icon"
           >
@@ -837,11 +867,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             aria-expanded={false}
             aria-haspopup="menu"
             aria-label="bee"
-            className="bx--header-action-btn action-btn__trigger bx--header__action"
+            aria-pressed={null}
+            className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
             title="bee"
             type="button"
           >
+            <span
+              className="bx--assistive-text"
+            >
+              bee
+            </span>
             <span
               id="bee-icon"
             >
@@ -1027,11 +1065,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         </div>
         <button
           aria-label="Administration"
-          className="bx--header-action-btn admin-icon bx--header__action"
+          aria-pressed={null}
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
+          disabled={false}
           onClick={[Function]}
+          tabIndex={0}
           type="button"
         >
+          <span
+            className="bx--assistive-text"
+          >
+            Administration
+          </span>
           <span
             id="suite-header-action-item-admin"
           >
@@ -1398,6 +1444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
                             disabled={false}
@@ -1504,11 +1551,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             aria-expanded={false}
             aria-haspopup="menu"
             aria-label="AppSwitcher"
-            className="bx--header-action-btn action-btn__trigger bx--header__action"
+            aria-pressed={null}
+            className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
             title="AppSwitcher"
             type="button"
           >
+            <span
+              className="bx--assistive-text"
+            >
+              AppSwitcher
+            </span>
             <svg
               aria-hidden={true}
               className="bx--header__menu-item bx--header__menu-title"
@@ -1551,6 +1606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         My applications
                       </p>
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         disabled={false}
@@ -1662,7 +1718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with extra content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with extra content 1`] = `
 <div
   className="storybook-container"
 >
@@ -1741,6 +1797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="bx--modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--secondary"
             disabled={false}
             onClick={[Function]}
@@ -1750,6 +1807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--primary"
             disabled={false}
             onClick={[Function]}
@@ -1830,11 +1888,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
       >
         <button
           aria-label="Administration"
-          className="bx--header-action-btn admin-icon bx--header__action"
+          aria-pressed={null}
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
+          disabled={false}
           onClick={[Function]}
+          tabIndex={0}
           type="button"
         >
+          <span
+            className="bx--assistive-text"
+          >
+            Administration
+          </span>
           <span
             id="suite-header-action-item-admin"
           >
@@ -2131,6 +2197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
                             disabled={false}
@@ -2181,11 +2248,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             aria-expanded={false}
             aria-haspopup="menu"
             aria-label="AppSwitcher"
-            className="bx--header-action-btn action-btn__trigger bx--header__action"
+            aria-pressed={null}
+            className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
             title="AppSwitcher"
             type="button"
           >
+            <span
+              className="bx--assistive-text"
+            >
+              AppSwitcher
+            </span>
             <svg
               aria-hidden={true}
               className="bx--header__menu-item bx--header__menu-title"
@@ -2228,6 +2303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         My applications
                       </p>
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         disabled={false}
@@ -2315,7 +2391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with side nav 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with side nav 1`] = `
 <div
   className="storybook-container"
 >
@@ -2394,6 +2470,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="bx--modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--secondary"
             disabled={false}
             onClick={[Function]}
@@ -2403,6 +2480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--primary"
             disabled={false}
             onClick={[Function]}
@@ -2484,11 +2562,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
       >
         <button
           aria-label="Administration"
-          className="bx--header-action-btn admin-icon bx--header__action"
+          aria-pressed={null}
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
+          disabled={false}
           onClick={[Function]}
+          tabIndex={0}
           type="button"
         >
+          <span
+            className="bx--assistive-text"
+          >
+            Administration
+          </span>
           <span
             id="suite-header-action-item-admin"
           >
@@ -2785,6 +2871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
                             disabled={false}
@@ -2835,11 +2922,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             aria-expanded={false}
             aria-haspopup="menu"
             aria-label="AppSwitcher"
-            className="bx--header-action-btn action-btn__trigger bx--header__action"
+            aria-pressed={null}
+            className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
             title="AppSwitcher"
             type="button"
           >
+            <span
+              className="bx--assistive-text"
+            >
+              AppSwitcher
+            </span>
             <svg
               aria-hidden={true}
               className="bx--header__menu-item bx--header__menu-title"
@@ -2882,6 +2977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         My applications
                       </p>
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         disabled={false}
@@ -2946,12 +3042,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
       className="bx--side-nav__overlay"
     />
     <nav
+      aria-hidden={true}
       aria-label="Side navigation"
       className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
       onBlur={[Function]}
       onFocus={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
+      translateById={[Function]}
     >
       <ul
         className="bx--side-nav__items"
@@ -3257,7 +3355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with survey notification 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with survey notification 1`] = `
 <div
   className="storybook-container"
 >
@@ -3328,11 +3426,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             </a>
           </div>
         </div>
-        <div
-          className="bx--toast-notification__caption"
-        >
-          
-        </div>
+        
       </div>
       <button
         aria-label="closes notification"
@@ -3426,6 +3520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="bx--modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--secondary"
             disabled={false}
             onClick={[Function]}
@@ -3435,6 +3530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--primary"
             disabled={false}
             onClick={[Function]}
@@ -3494,11 +3590,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
       >
         <button
           aria-label="Administration"
-          className="bx--header-action-btn admin-icon bx--header__action"
+          aria-pressed={null}
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
+          disabled={false}
           onClick={[Function]}
+          tabIndex={0}
           type="button"
         >
+          <span
+            className="bx--assistive-text"
+          >
+            Administration
+          </span>
           <span
             id="suite-header-action-item-admin"
           >
@@ -3795,6 +3899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
                             disabled={false}
@@ -3845,11 +3950,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             aria-expanded={false}
             aria-haspopup="menu"
             aria-label="AppSwitcher"
-            className="bx--header-action-btn action-btn__trigger bx--header__action"
+            aria-pressed={null}
+            className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
             title="AppSwitcher"
             type="button"
           >
+            <span
+              className="bx--assistive-text"
+            >
+              AppSwitcher
+            </span>
             <svg
               aria-hidden={true}
               className="bx--header__menu-item bx--header__menu-title"
@@ -3892,6 +4005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         My applications
                       </p>
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         disabled={false}
@@ -3979,7 +4093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Loading state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Loading state 1`] = `
 <div
   className="storybook-container"
 >
@@ -4058,6 +4172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="bx--modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--secondary"
             disabled={false}
             onClick={[Function]}
@@ -4067,6 +4182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--primary"
             disabled={false}
             onClick={[Function]}
@@ -4377,11 +4493,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             aria-expanded={false}
             aria-haspopup="menu"
             aria-label="AppSwitcher"
-            className="bx--header-action-btn action-btn__trigger bx--header__action"
+            aria-pressed={null}
+            className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
             title="AppSwitcher"
             type="button"
           >
+            <span
+              className="bx--assistive-text"
+            >
+              AppSwitcher
+            </span>
             <svg
               aria-hidden={true}
               className="bx--header__menu-item bx--header__menu-title"
@@ -4502,7 +4626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader default 1`] = `
 <div
   className="storybook-container"
 >
@@ -4581,6 +4705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="bx--modal-footer bx--btn-set"
         >
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--secondary"
             disabled={false}
             onClick={[Function]}
@@ -4590,6 +4715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="bx--btn bx--btn--primary"
             disabled={false}
             onClick={[Function]}
@@ -4653,11 +4779,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
       >
         <button
           aria-label="Administration"
-          className="bx--header-action-btn admin-icon bx--header__action"
+          aria-pressed={null}
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
+          disabled={false}
           onClick={[Function]}
+          tabIndex={0}
           type="button"
         >
+          <span
+            className="bx--assistive-text"
+          >
+            Administration
+          </span>
           <span
             id="suite-header-action-item-admin"
           >
@@ -4954,6 +5088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
                           <button
+                            aria-pressed={null}
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
                             disabled={false}
@@ -5004,11 +5139,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             aria-expanded={false}
             aria-haspopup="menu"
             aria-label="AppSwitcher"
-            className="bx--header-action-btn action-btn__trigger bx--header__action"
+            aria-pressed={null}
+            className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+            disabled={false}
             onClick={[Function]}
+            tabIndex={0}
             title="AppSwitcher"
             type="button"
           >
+            <span
+              className="bx--assistive-text"
+            >
+              AppSwitcher
+            </span>
             <svg
               aria-hidden={true}
               className="bx--header__menu-item bx--header__menu-title"
@@ -5051,6 +5194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         My applications
                       </p>
                       <button
+                        aria-pressed={null}
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         disabled={false}

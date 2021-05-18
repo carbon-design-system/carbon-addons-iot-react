@@ -159,6 +159,7 @@ export const getDefaultCard = (type, i18n) => {
           type: BAR_CHART_TYPES.GROUPED,
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
+          categoryDataSourceId: i18n.selectAGroupBy,
         },
       };
     case DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR:
@@ -397,14 +398,15 @@ export const renderBreakpointInfo = (breakpoint, i18n) => {
  * returns a new series array with a generated color if needed, and in the format expected by the JSON payload
  * @param {array} selectedItems
  * @param {object} cardConfig
+ * @param {ref} removedItemsCountRef ref to keep track of the number of items removed to keep the colors different and prevent collisions
  */
-export const formatSeries = (selectedItems, cardConfig) => {
+export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = { current: 0 }) => {
   const cardSeries = cardConfig?.content?.series;
   const series = selectedItems.map(
     ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod }, i) => {
+      const colorIndex = (removedItemsCountRef.current + i) % DATAITEM_COLORS_OPTIONS.length;
       const currentItem = cardSeries?.find((dataItem) => dataItem.dataSourceId === dataSourceId);
-      const color =
-        currentItem?.color ?? DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+      const color = currentItem?.color ?? DATAITEM_COLORS_OPTIONS[colorIndex];
       const label = currentItem?.label || unEditedLabel || dataSourceId;
 
       return {
@@ -451,12 +453,16 @@ export const formatAttributes = (selectedItems, cardConfig) => {
  * determines how to format the dataSection based on card type
  * @param {array} selectedItems
  * @param {object} cardConfig
+ * @param {function} setEditDataSeries
+ * @param {number} hotspotIndex
+ * @param {ref} removedItemsCountRef ref to keep track of the number of items removed from the card to keep track of colors and prevent collisions
  */
 export const handleDataSeriesChange = (
   selectedItems,
   cardConfig,
   setEditDataSeries,
-  hotspotIndex
+  hotspotIndex,
+  removedItemsCountRef = { current: 0 }
 ) => {
   const { type, content } = cardConfig;
   let series;
@@ -471,7 +477,7 @@ export const handleDataSeriesChange = (
       };
     case CARD_TYPES.TIMESERIES:
     case CARD_TYPES.BAR:
-      series = formatSeries(selectedItems, cardConfig);
+      series = formatSeries(selectedItems, cardConfig, removedItemsCountRef);
       setEditDataSeries(series);
       return {
         ...cardConfig,

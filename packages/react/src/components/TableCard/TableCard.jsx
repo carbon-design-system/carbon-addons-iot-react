@@ -1,7 +1,6 @@
 import React, { useMemo, useCallback } from 'react';
 import { OverflowMenu, OverflowMenuItem, Link } from 'carbon-components-react';
 import styled from 'styled-components';
-import moment from 'moment';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
@@ -9,6 +8,7 @@ import capitalize from 'lodash/capitalize';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 import { spacing01, spacing05 } from '@carbon/layout';
 
+import dayjs from '../../utils/dayjs';
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -120,6 +120,7 @@ const defaultProps = {
   size: CARD_SIZES.LARGE,
   locale: 'en',
   values: [],
+  filters: [],
   i18n: {
     criticalLabel: 'Critical',
     moderateLabel: 'Moderate',
@@ -161,6 +162,7 @@ const TableCard = ({
   size,
   onCardAction,
   values: valuesProp,
+  filters,
   isEditable,
   isResizable,
   i18n,
@@ -175,7 +177,7 @@ const TableCard = ({
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   // Set the locale
-  moment.locale(locale);
+  dayjs.locale(locale);
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
   const {
     title,
@@ -361,6 +363,13 @@ const TableCard = ({
 
   const newColumns = thresholds ? columnsUpdated : columnsWithFormattedLinks;
 
+  const filteredTimestampColumns = useMemo(
+    () =>
+      columns
+        .map((column) => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
+        .filter((i) => !isNil(i)),
+    [columns]
+  );
   const columnsToRender = useMemo(
     () =>
       newColumns
@@ -373,11 +382,24 @@ const TableCard = ({
           filter: i.filter
             ? i.filter
             : { placeholderText: mergedI18n.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
+          renderDataFunction: i.renderDataFunction // use the default render function of the column
+            ? i.renderDataFunction
+            : (
+                { value } // default render function is to handle timestamp
+              ) =>
+                // if it's a timestamp column type make sure to format it
+                filteredTimestampColumns.includes(i.dataSourceId) && !isEditable
+                  ? dayjs(value).format('L HH:mm')
+                  : isNil(value)
+                  ? ''
+                  : value.toString(),
         }))
         .concat(hasActionColumn ? actionColumn : []),
     [
       actionColumn,
+      filteredTimestampColumns,
       hasActionColumn,
+      isEditable,
       mergedI18n.defaultFilterStringPlaceholdText,
       newColumns,
       newSize,
@@ -395,14 +417,6 @@ const TableCard = ({
         return { columnId, isHidden };
       }),
     [columnsToRender, newSize]
-  );
-
-  const filteredTimestampColumns = useMemo(
-    () =>
-      columns
-        .map((column) => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
-        .filter((i) => !isNil(i)),
-    [columns]
   );
 
   const filteredPrecisionColumns = useMemo(
@@ -429,25 +443,11 @@ const TableCard = ({
     () =>
       isEditable
         ? generateTableSampleValues(id, columns)
-        : hasActionColumn ||
-          filteredTimestampColumns.length ||
-          filteredPrecisionColumns.length ||
-          thresholds
+        : hasActionColumn || filteredPrecisionColumns.length || thresholds
         ? tableData.map((i) => {
             // if has custom action
             const action = hasActionColumn
               ? { actionColumn: JSON.stringify(i.actions || []) }
-              : null;
-
-            // if has column with timestamp
-            const timestampUpdated = filteredTimestampColumns.length
-              ? Object.keys(i.values)
-                  .map((value) =>
-                    filteredTimestampColumns.includes(value)
-                      ? { [value]: moment(i.values[value]).format('L HH:mm') }
-                      : null
-                  )
-                  .filter((v) => !isNil(v))[0]
               : null;
 
             const matchingThresholds = thresholds
@@ -490,7 +490,6 @@ const TableCard = ({
                 ...action,
                 ...i.values,
                 ...action,
-                ...timestampUpdated,
                 ...precisionUpdated,
               },
               isSelectable: false,
@@ -502,7 +501,6 @@ const TableCard = ({
       id,
       columns,
       hasActionColumn,
-      filteredTimestampColumns,
       filteredPrecisionColumns,
       thresholds,
       tableData,
@@ -562,7 +560,7 @@ const TableCard = ({
                             <span key={`${item.id}-value`}>
                               {item
                                 ? item.type === 'TIMESTAMP'
-                                  ? moment(dataItem.values[item.id]).format('L HH:mm')
+                                  ? dayjs(dataItem.values[item.id]).format('L HH:mm')
                                   : dataItem.values[item.id]
                                 : null}
                             </span>
@@ -685,7 +683,7 @@ const TableCard = ({
                 isDisabled: isEditable,
                 customToolbarContent: cardToolbar,
               },
-              filters: [],
+              filters,
               table: {
                 ...(columnStartSort
                   ? {

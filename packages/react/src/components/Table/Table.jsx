@@ -4,7 +4,6 @@ import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { Table as CarbonTable, TableContainer, Tag } from 'carbon-components-react';
-import isNil from 'lodash/isNil';
 import uniqueId from 'lodash/uniqueId';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
@@ -383,7 +382,9 @@ export const defaultProps = (baseProps) => ({
     toggleAggregations: 'Toggle Aggregations',
     /** empty state */
     emptyMessage: 'There is no data',
+    emptyMessageBody: '',
     emptyMessageWithFilters: 'No results match the current filters',
+    emptyMessageWithFiltersBody: 'Try another search or use column filter criteria',
     emptyButtonLabel: 'Create some data',
     downloadIconDescription: 'Download table content',
     filterNone: 'Unsort rows by this header',
@@ -562,10 +563,8 @@ const Table = (props) => {
   const isFiltered =
     view.filters.length > 0 ||
     view.selectedAdvancedFilterIds.length ||
-    (!isNil(view.toolbar) &&
-      !isNil(view.toolbar.search) &&
-      !isNil(view.toolbar.search.value) &&
-      view.toolbar.search.value !== '');
+    (view?.toolbar?.search?.value ?? '') !== '' ||
+    (view?.toolbar?.search?.defaultValue ?? '') !== '';
 
   const rowEditMode = view.toolbar.activeBar === 'rowEdit';
   const singleRowEditMode = !!view.table.rowActions.find((action) => action.isEditMode);
@@ -585,6 +584,7 @@ const Table = (props) => {
   return (
     <TableContainer
       style={style}
+      data-testid={`${id}-table-container`}
       className={classnames(className, `${iotPrefix}--table-container`)}
     >
       {
@@ -683,6 +683,7 @@ const Table = (props) => {
               ),
             }}
             data={data}
+            testID={`${id}-table-toolbar`}
           />
         ) : null
       }
@@ -712,6 +713,8 @@ const Table = (props) => {
       ) : null}
       <div className="addons-iot-table-container">
         <CarbonTable
+          id={id}
+          data-testid={id}
           className={classnames({
             [`${iotPrefix}--data-table--resize`]: options.hasResize,
             [`${iotPrefix}--data-table--fixed`]:
@@ -769,12 +772,14 @@ const Table = (props) => {
               selection: { isSelectAllSelected, isSelectAllIndeterminate },
             }}
             hasFastFilter={options?.hasFilter === 'onKeyPress'}
+            testID={`${id}-table-head`}
           />
           {view.table.loadingState.isLoading ? (
             <TableSkeletonWithHeaders
               columns={visibleColumns}
               {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
               rowCount={view.table.loadingState.rowCount}
+              testID={`${id}-table-skeleton`}
             />
           ) : visibleData && visibleData.length ? (
             <TableBody
@@ -821,6 +826,7 @@ const Table = (props) => {
                 'onRowExpanded',
                 'onRowClicked'
               )}
+              testID={`${id}-table-body`}
             />
           ) : (
             <EmptyTable
@@ -833,7 +839,9 @@ const Table = (props) => {
                   ? view.table.emptyState
                   : {
                       message: i18n.emptyMessage,
+                      messageBody: i18n.emptyMessageBody,
                       messageWithFilters: i18n.emptyMessageWithFilters,
+                      messageWithFiltersBody: i18n.emptyMessageWithFiltersBody,
                       buttonLabel: i18n.emptyButtonLabel,
                       buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
                     }
@@ -845,6 +853,7 @@ const Table = (props) => {
                   ? actions.table.onEmptyStateAction
                   : undefined // if not filtered then show normal empty state
               }
+              testID={`${id}-table-empty`}
             />
           )}
           {hasAggregations ? (
@@ -885,6 +894,7 @@ const Table = (props) => {
           pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
+          testID={`${id}-table-pagination`}
         />
       ) : null}
     </TableContainer>

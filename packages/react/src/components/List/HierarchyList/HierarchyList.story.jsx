@@ -22,7 +22,7 @@ const addButton = (
 );
 
 export default {
-  title: 'Watson IoT/HierarchyList',
+  title: '1 - Watson IoT/HierarchyList',
 
   parameters: {
     component: HierarchyList,
@@ -401,4 +401,54 @@ export const WithMixedHierarchies = () => (
 
 WithMixedHierarchies.story = {
   name: 'with mixed hierarchies',
+};
+
+export const WithSelectableCategories = () => (
+  <div style={{ width: 400, height: 400 }}>
+    <HierarchyList
+      title={text('Title', 'MLB Expanded List')}
+      defaultSelectedId={text('Default Selected Id', 'Chicago White Sox_Jose Abreu')}
+      items={[
+        ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
+          id: team,
+          isCategory: true,
+          isSelectable: true,
+          content: {
+            value: team,
+          },
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+            id: `${team}_${player}`,
+            content: {
+              value: player,
+            },
+            isSelectable: true,
+          })),
+        })),
+        ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
+          id: team,
+          isCategory: true,
+          content: {
+            value: team,
+          },
+          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+            id: `${team}_${player}`,
+            content: {
+              value: player,
+            },
+            isSelectable: true,
+          })),
+        })),
+      ]}
+      hasSearch={boolean('hasSearch', true)}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
+      isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
+      onSelect={action('onSelect')}
+      hasDeselection={boolean('hasDeselection', true)}
+    />
+  </div>
+);
+
+WithSelectableCategories.story = {
+  name: 'With selectable categories',
 };

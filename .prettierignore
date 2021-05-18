@@ -8,4 +8,5 @@ storybook-static/
 results/
 css/
 vendor/
+dist/
 CHANGELOG.md

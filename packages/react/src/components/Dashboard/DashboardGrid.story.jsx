@@ -82,7 +82,7 @@ const commonGridProps = {
 };
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ Dashboard Grid' : 'Watson IoT/Dashboard Grid',
+  title: __DEV__ ? '1 - Watson IoT/⚠️ Dashboard Grid' : '1 - Watson IoT/Dashboard Grid',
 };
 
 export const DashboardDefaultLayouts = () => {

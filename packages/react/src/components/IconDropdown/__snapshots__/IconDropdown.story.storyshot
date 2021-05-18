@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ IconDropdown default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ IconDropdown default 1`] = `
 <div
   className="storybook-container"
 >
@@ -132,7 +132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ IconDropdown ️⚠️ Experimental Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ IconDropdown ️⚠️ Experimental Notice  1`] = `
 <div
   className="storybook-container"
 >
@@ -201,9 +201,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
           </span>
         </div>
-        <div
-          className="bx--toast-notification__caption"
-        />
       </div>
     </div>
   </div>

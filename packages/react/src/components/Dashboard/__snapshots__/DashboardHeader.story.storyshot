@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard Header basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard Header basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -75,7 +75,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard Header with custom actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard Header with custom actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -121,6 +121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
             className="dashboard--header-actions"
           >
             <button
+              aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--edit"
@@ -148,6 +149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               </svg>
             </button>
             <button
+              aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--delete"
@@ -208,7 +210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard Header with custom actions component 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard Header with custom actions component 1`] = `
 <div
   className="storybook-container"
 >
@@ -279,7 +281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard Header with filter 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard Header with filter 1`] = `
 <div
   className="storybook-container"
 >
@@ -407,7 +409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard Header with filter and custom actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard Header with filter and custom actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -506,6 +508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
             className="dashboard--header-actions"
           >
             <button
+              aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--edit"
@@ -533,6 +536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               </svg>
             </button>
             <button
+              aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--delete"
@@ -563,6 +567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               </svg>
             </button>
             <button
+              aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--pin"
@@ -620,7 +625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard Header ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard Header ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >
@@ -679,9 +684,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         >
           DashboardHeader has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
         </div>
-        <div
-          className="bx--toast-notification__caption"
-        />
       </div>
     </div>
   </div>

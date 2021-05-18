@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ RuleBuilder new filter 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ RuleBuilder new filter 1`] = `
 <div
   className="storybook-container"
 >
@@ -38,6 +38,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--rule-builder-wrap--header-actions"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               data-testid="favorite"
               disabled={false}
@@ -65,6 +66,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               data-testid="share"
               disabled={false}
@@ -92,6 +94,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               data-testid="delete"
               disabled={false}
@@ -122,6 +125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
+              aria-pressed={null}
               className="iot--rule-builder-wrap--header-actions-save iot--btn bx--btn bx--btn--sm bx--btn--primary"
               data-testid="Button"
               disabled={false}
@@ -241,6 +245,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             hidden={false}
             role="tabpanel"
             selected={true}
+            tabIndex={0}
           >
             <div
               data-testid="rule-builder-editor"
@@ -326,6 +331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--rule-builder-header__buttons"
                 >
                   <button
+                    aria-pressed={null}
                     className="bx--btn bx--btn--ghost"
                     data-testid="rule-builder-header-add-rule-button"
                     disabled={false}
@@ -351,6 +357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </svg>
                   </button>
                   <button
+                    aria-pressed={null}
                     className="bx--btn bx--btn--ghost"
                     data-testid="rule-builder-header-add-group-button"
                     disabled={false}
@@ -639,6 +646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             hidden={true}
             role="tabpanel"
             selected={false}
+            tabIndex={0}
           >
             <ul
               className="bx--accordion bx--accordion--end"
@@ -795,14 +803,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <div
                       className="iot--table-container bx--data-table-container"
+                      data-testid="edit-table-table-container"
                     >
                       <section
                         aria-label="data table toolbar"
                         className="bx--table-toolbar"
+                        data-testid="edit-table-table-toolbar"
                       >
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
+                          data-testid="edit-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -819,6 +830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--action-list"
                           >
                             <button
+                              aria-pressed={null}
                               className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                               disabled={false}
                               onClick={[Function]}
@@ -836,6 +848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </label>
                         <div
                           className="bx--toolbar-content iot--table-toolbar-content"
+                          data-testid="edit-table-table-toolbar-content"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -875,6 +888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               <input
                                 autoComplete="off"
                                 className="bx--search-input"
+                                data-testid="edit-table-table-toolbar-search"
                                 id="edit-table-toolbar-search"
                                 onChange={[Function]}
                                 onKeyDown={[Function]}
@@ -909,6 +923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </div>
                           <button
                             aria-labelledby="add-editors-label"
+                            aria-pressed={null}
                             className="iot--btn bx--btn bx--btn--ghost"
                             data-testid="rule-builder-add-edit-users"
                             disabled={false}
@@ -944,9 +959,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <table
                             className="bx--data-table bx--data-table--no-border"
+                            data-testid="edit-table"
+                            id="edit-table"
                             title={null}
                           >
                             <thead
+                              data-testid="edit-table-table-head"
                               onMouseMove={null}
                               onMouseUp={null}
                             >
@@ -956,6 +974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="name"
                                   data-floating-menu-container={true}
+                                  data-testid="edit-table-table-head-column-name"
                                   id="column-name"
                                   scope="col"
                                   style={
@@ -980,6 +999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="type"
                                   data-floating-menu-container={true}
+                                  data-testid="edit-table-table-head-column-type"
                                   id="column-type"
                                   scope="col"
                                   style={
@@ -1003,6 +1023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </thead>
                             <tbody
                               aria-live="polite"
+                              data-testid="edit-table-table-empty"
                               id="edit-table"
                             >
                               <tr
@@ -1014,23 +1035,272 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <div
                                     className="empty-table-cell--default"
                                   >
-                                    <svg
-                                      aria-hidden={true}
-                                      fill="currentColor"
-                                      focusable="false"
-                                      height={32}
-                                      preserveAspectRatio="xMidYMid meet"
-                                      viewBox="0 0 32 32"
-                                      width={32}
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      className="iot--empty-state"
+                                      data-testid="EmptyState"
                                     >
-                                      <path
-                                        d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
-                                      />
-                                    </svg>
-                                    <p>
-                                      There is no data
-                                    </p>
+                                      <div
+                                        className="iot--empty-state--content"
+                                      >
+                                        <svg
+                                          alt=""
+                                          className="iot--empty-state--icon"
+                                          data-testid="EmptyState-icon"
+                                          height={80}
+                                          width={80}
+                                        >
+                                          <defs>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__a"
+                                              x1="37.502%"
+                                              x2="55.959%"
+                                              y1="34.928%"
+                                              y2="57.808%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopOpacity={0.04}
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopOpacity={0.04}
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__b"
+                                              x1="-63.062%"
+                                              x2="101.194%"
+                                              y1="77.587%"
+                                              y2="37.496%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#767676"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#929292"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__c"
+                                              x1="73.167%"
+                                              x2="44.204%"
+                                              y1="89.948%"
+                                              y2="39.998%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#969696"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#E8E8E8"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__d"
+                                              x1="-23.114%"
+                                              x2="57.391%"
+                                              y1="-11.496%"
+                                              y2="56.197%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#393939"
+                                              />
+                                              <stop
+                                                offset="99%"
+                                                stopColor="#525252"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__e"
+                                              x1="5.255%"
+                                              x2="56.521%"
+                                              y1="115.2%"
+                                              y2="40.489%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#9C9C9C"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#C5C5C5"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__f"
+                                              x1="45.625%"
+                                              x2="61.212%"
+                                              y1="38.922%"
+                                              y2="78.234%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#8A8A8A"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#B5B5B5"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__g"
+                                              x1="57.243%"
+                                              x2="41.531%"
+                                              y1="31.727%"
+                                              y2="71.327%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#A4A4A4"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#BEBEBE"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__h"
+                                              x1="27.599%"
+                                              x2="45.796%"
+                                              y1="69.394%"
+                                              y2="53.639%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#C2C2C2"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#E8E8E8"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__i"
+                                              x1="62.356%"
+                                              x2="31.337%"
+                                              y1="64.634%"
+                                              y2="27.889%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#C6C6C6"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#E8E8E8"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__j"
+                                              x1="62.354%"
+                                              x2="43.81%"
+                                              y1="114.244%"
+                                              y2="17.782%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#B7B7B7"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#EEE"
+                                              />
+                                            </linearGradient>
+                                          </defs>
+                                          <g
+                                            fill="none"
+                                            fillRule="nonzero"
+                                          >
+                                            <path
+                                              d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
+                                              fill="#A8A8A8"
+                                            />
+                                            <path
+                                              d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
+                                              fill="url(#emptystate-Default-icon_svg__a)"
+                                              transform="translate(11.724 43)"
+                                            />
+                                            <path
+                                              d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
+                                              fill="url(#emptystate-Default-icon_svg__b)"
+                                              transform="translate(12.414 7.138)"
+                                            />
+                                            <path
+                                              d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
+                                              fill="url(#emptystate-Default-icon_svg__c)"
+                                              transform="translate(0 4.38)"
+                                            />
+                                            <path
+                                              d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
+                                              fill="url(#emptystate-Default-icon_svg__d)"
+                                              transform="translate(12.414 31.276)"
+                                            />
+                                            <path
+                                              d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
+                                              fill="url(#emptystate-Default-icon_svg__e)"
+                                              transform="translate(40 7.138)"
+                                            />
+                                            <path
+                                              d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
+                                              fill="url(#emptystate-Default-icon_svg__f)"
+                                              transform="translate(40 23)"
+                                            />
+                                            <path
+                                              d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
+                                              fill="url(#emptystate-Default-icon_svg__g)"
+                                              transform="translate(12.414 23)"
+                                            />
+                                            <path
+                                              d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
+                                              fill="url(#emptystate-Default-icon_svg__h)"
+                                              transform="translate(40 3)"
+                                            />
+                                            <path
+                                              d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
+                                              fill="url(#emptystate-Default-icon_svg__i)"
+                                              transform="translate(40 23)"
+                                            />
+                                            <path
+                                              d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
+                                              fill="url(#emptystate-Default-icon_svg__j)"
+                                              transform="translate(2.069 23)"
+                                            />
+                                            <path
+                                              d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
+                                              fill="#FFF"
+                                            />
+                                            <path
+                                              d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
+                                              fill="#FFF"
+                                            />
+                                            <path
+                                              d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
+                                              fill="#999"
+                                            />
+                                            <path
+                                              d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
+                                              fill="#FFF"
+                                            />
+                                          </g>
+                                        </svg>
+                                        <h3
+                                          className="iot--empty-state--title"
+                                          data-testid="EmptyState-title"
+                                        >
+                                          There is no data
+                                        </h3>
+                                        <p
+                                          className="iot--empty-state--text"
+                                          data-testid="EmptyState-body"
+                                        >
+                                          
+                                        </p>
+                                      </div>
+                                    </div>
                                   </div>
                                 </td>
                               </tr>
@@ -1041,14 +1311,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                     <div
                       className="iot--table-container bx--data-table-container"
+                      data-testid="read-table-table-container"
                     >
                       <section
                         aria-label="data table toolbar"
                         className="bx--table-toolbar"
+                        data-testid="read-table-table-toolbar"
                       >
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
+                          data-testid="read-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -1065,6 +1338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--action-list"
                           >
                             <button
+                              aria-pressed={null}
                               className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                               disabled={false}
                               onClick={[Function]}
@@ -1082,6 +1356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </label>
                         <div
                           className="bx--toolbar-content iot--table-toolbar-content"
+                          data-testid="read-table-table-toolbar-content"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -1121,6 +1396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               <input
                                 autoComplete="off"
                                 className="bx--search-input"
+                                data-testid="read-table-table-toolbar-search"
                                 id="read-table-toolbar-search"
                                 onChange={[Function]}
                                 onKeyDown={[Function]}
@@ -1155,6 +1431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </div>
                           <button
                             aria-labelledby="read-only-access-label"
+                            aria-pressed={null}
                             className="iot--btn bx--btn bx--btn--ghost"
                             data-testid="rule-builder-add-read-users"
                             disabled={false}
@@ -1190,9 +1467,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <table
                             className="bx--data-table bx--data-table--no-border"
+                            data-testid="read-table"
+                            id="read-table"
                             title={null}
                           >
                             <thead
+                              data-testid="read-table-table-head"
                               onMouseMove={null}
                               onMouseUp={null}
                             >
@@ -1202,6 +1482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="name"
                                   data-floating-menu-container={true}
+                                  data-testid="read-table-table-head-column-name"
                                   id="column-name"
                                   scope="col"
                                   style={
@@ -1226,6 +1507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="type"
                                   data-floating-menu-container={true}
+                                  data-testid="read-table-table-head-column-type"
                                   id="column-type"
                                   scope="col"
                                   style={
@@ -1249,6 +1531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </thead>
                             <tbody
                               aria-live="polite"
+                              data-testid="read-table-table-empty"
                               id="read-table"
                             >
                               <tr
@@ -1260,23 +1543,272 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <div
                                     className="empty-table-cell--default"
                                   >
-                                    <svg
-                                      aria-hidden={true}
-                                      fill="currentColor"
-                                      focusable="false"
-                                      height={32}
-                                      preserveAspectRatio="xMidYMid meet"
-                                      viewBox="0 0 32 32"
-                                      width={32}
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      className="iot--empty-state"
+                                      data-testid="EmptyState"
                                     >
-                                      <path
-                                        d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
-                                      />
-                                    </svg>
-                                    <p>
-                                      There is no data
-                                    </p>
+                                      <div
+                                        className="iot--empty-state--content"
+                                      >
+                                        <svg
+                                          alt=""
+                                          className="iot--empty-state--icon"
+                                          data-testid="EmptyState-icon"
+                                          height={80}
+                                          width={80}
+                                        >
+                                          <defs>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__a"
+                                              x1="37.502%"
+                                              x2="55.959%"
+                                              y1="34.928%"
+                                              y2="57.808%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopOpacity={0.04}
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopOpacity={0.04}
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__b"
+                                              x1="-63.062%"
+                                              x2="101.194%"
+                                              y1="77.587%"
+                                              y2="37.496%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#767676"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#929292"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__c"
+                                              x1="73.167%"
+                                              x2="44.204%"
+                                              y1="89.948%"
+                                              y2="39.998%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#969696"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#E8E8E8"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__d"
+                                              x1="-23.114%"
+                                              x2="57.391%"
+                                              y1="-11.496%"
+                                              y2="56.197%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#393939"
+                                              />
+                                              <stop
+                                                offset="99%"
+                                                stopColor="#525252"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__e"
+                                              x1="5.255%"
+                                              x2="56.521%"
+                                              y1="115.2%"
+                                              y2="40.489%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#9C9C9C"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#C5C5C5"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__f"
+                                              x1="45.625%"
+                                              x2="61.212%"
+                                              y1="38.922%"
+                                              y2="78.234%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#8A8A8A"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#B5B5B5"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__g"
+                                              x1="57.243%"
+                                              x2="41.531%"
+                                              y1="31.727%"
+                                              y2="71.327%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#A4A4A4"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#BEBEBE"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__h"
+                                              x1="27.599%"
+                                              x2="45.796%"
+                                              y1="69.394%"
+                                              y2="53.639%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#C2C2C2"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#E8E8E8"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__i"
+                                              x1="62.356%"
+                                              x2="31.337%"
+                                              y1="64.634%"
+                                              y2="27.889%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#C6C6C6"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#E8E8E8"
+                                              />
+                                            </linearGradient>
+                                            <linearGradient
+                                              id="emptystate-Default-icon_svg__j"
+                                              x1="62.354%"
+                                              x2="43.81%"
+                                              y1="114.244%"
+                                              y2="17.782%"
+                                            >
+                                              <stop
+                                                offset="0%"
+                                                stopColor="#B7B7B7"
+                                              />
+                                              <stop
+                                                offset="100%"
+                                                stopColor="#EEE"
+                                              />
+                                            </linearGradient>
+                                          </defs>
+                                          <g
+                                            fill="none"
+                                            fillRule="nonzero"
+                                          >
+                                            <path
+                                              d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
+                                              fill="#A8A8A8"
+                                            />
+                                            <path
+                                              d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
+                                              fill="url(#emptystate-Default-icon_svg__a)"
+                                              transform="translate(11.724 43)"
+                                            />
+                                            <path
+                                              d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
+                                              fill="url(#emptystate-Default-icon_svg__b)"
+                                              transform="translate(12.414 7.138)"
+                                            />
+                                            <path
+                                              d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
+                                              fill="url(#emptystate-Default-icon_svg__c)"
+                                              transform="translate(0 4.38)"
+                                            />
+                                            <path
+                                              d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
+                                              fill="url(#emptystate-Default-icon_svg__d)"
+                                              transform="translate(12.414 31.276)"
+                                            />
+                                            <path
+                                              d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
+                                              fill="url(#emptystate-Default-icon_svg__e)"
+                                              transform="translate(40 7.138)"
+                                            />
+                                            <path
+                                              d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
+                                              fill="url(#emptystate-Default-icon_svg__f)"
+                                              transform="translate(40 23)"
+                                            />
+                                            <path
+                                              d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
+                                              fill="url(#emptystate-Default-icon_svg__g)"
+                                              transform="translate(12.414 23)"
+                                            />
+                                            <path
+                                              d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
+                                              fill="url(#emptystate-Default-icon_svg__h)"
+                                              transform="translate(40 3)"
+                                            />
+                                            <path
+                                              d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
+                                              fill="url(#emptystate-Default-icon_svg__i)"
+                                              transform="translate(40 23)"
+                                            />
+                                            <path
+                                              d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
+                                              fill="url(#emptystate-Default-icon_svg__j)"
+                                              transform="translate(2.069 23)"
+                                            />
+                                            <path
+                                              d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
+                                              fill="#FFF"
+                                            />
+                                            <path
+                                              d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
+                                              fill="#FFF"
+                                            />
+                                            <path
+                                              d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
+                                              fill="#999"
+                                            />
+                                            <path
+                                              d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
+                                              fill="#FFF"
+                                            />
+                                          </g>
+                                        </svg>
+                                        <h3
+                                          className="iot--empty-state--title"
+                                          data-testid="EmptyState-title"
+                                        >
+                                          There is no data
+                                        </h3>
+                                        <p
+                                          className="iot--empty-state--text"
+                                          data-testid="EmptyState-body"
+                                        >
+                                          
+                                        </p>
+                                      </div>
+                                    </div>
                                   </div>
                                 </td>
                               </tr>
@@ -1295,6 +1827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--rule-builder-wrap--footer"
         >
           <button
+            aria-pressed={null}
             className="iot--rule-builder-wrap--footer-actions-cancel iot--btn bx--btn bx--btn--secondary"
             data-testid="rule-builder-cancel"
             disabled={false}
@@ -1305,6 +1838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--rule-builder-wrap--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
             data-testid="Button"
             disabled={false}
@@ -1315,6 +1849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Preview results
           </button>
           <button
+            aria-pressed={null}
             className="iot--rule-builder-wrap--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
             data-testid="Button"
             disabled={false}
@@ -1393,10 +1928,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--modal-content"
               >
                 <div
-                  className="iot--select-users-modal-content"
+                  className="iot--list-builder__container"
                 >
                   <div
-                    className="iot--select-users-modal-content__all-users"
+                    className="iot--list-builder__all"
                     data-testid="select-users__all"
                   >
                     <div
@@ -1411,7 +1946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <div
                             className="iot--list-header--title"
                           >
-                            Users (0 Available)
+                            Users (0 available)
                           </div>
                           <div
                             className="iot--list-header--btn-container"
@@ -1421,7 +1956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__all--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -1442,18 +1977,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__all--search"
+                              id="iot--list-builder__all--search-search"
                             >
-                              Enter a value
+                              Enter a value to search all users
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search all users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -1510,7 +2045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="iot--select-users-modal-content__selected-users"
+                    className="iot--list-builder__selected"
                     data-testid="select-users__selected"
                   >
                     <div
@@ -1525,7 +2060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <div
                             className="iot--list-header--title"
                           >
-                            Selected
+                            0 Selected
                           </div>
                           <div
                             className="iot--list-header--btn-container"
@@ -1535,7 +2070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__selected--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -1556,18 +2091,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__selected--search"
+                              id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value
+                              Enter a value to search selected users
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search selected users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -1629,6 +2164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
               >
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--secondary"
                   data-testid="ComposedModal-modal-secondary-button"
                   disabled={false}
@@ -1639,6 +2175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Cancel
                 </button>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                   data-testid="ComposedModal-modal-primary-button"
                   disabled={true}
@@ -1727,10 +2264,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--modal-content"
               >
                 <div
-                  className="iot--select-users-modal-content"
+                  className="iot--list-builder__container"
                 >
                   <div
-                    className="iot--select-users-modal-content__all-users"
+                    className="iot--list-builder__all"
                     data-testid="select-users__all"
                   >
                     <div
@@ -1745,7 +2282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <div
                             className="iot--list-header--title"
                           >
-                            Users (0 Available)
+                            Users (0 available)
                           </div>
                           <div
                             className="iot--list-header--btn-container"
@@ -1755,7 +2292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__all--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -1776,18 +2313,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__all--search"
+                              id="iot--list-builder__all--search-search"
                             >
-                              Enter a value
+                              Enter a value to search all users
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search all users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -1844,7 +2381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="iot--select-users-modal-content__selected-users"
+                    className="iot--list-builder__selected"
                     data-testid="select-users__selected"
                   >
                     <div
@@ -1859,7 +2396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <div
                             className="iot--list-header--title"
                           >
-                            Selected
+                            0 Selected
                           </div>
                           <div
                             className="iot--list-header--btn-container"
@@ -1869,7 +2406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__selected--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -1890,18 +2427,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__selected--search"
+                              id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value
+                              Enter a value to search selected users
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search selected users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -1963,6 +2500,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
               >
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--secondary"
                   data-testid="ComposedModal-modal-secondary-button"
                   disabled={false}
@@ -1973,6 +2511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Cancel
                 </button>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                   data-testid="ComposedModal-modal-primary-button"
                   disabled={true}
@@ -2022,7 +2561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ RuleBuilder with existing filter rules 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ RuleBuilder with existing filter rules 1`] = `
 <div
   className="storybook-container"
 >
@@ -2065,6 +2604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--rule-builder-wrap--header-actions"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               data-testid="favorite"
               disabled={false}
@@ -2092,6 +2632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               data-testid="share"
               disabled={false}
@@ -2119,6 +2660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               data-testid="delete"
               disabled={false}
@@ -2149,6 +2691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </svg>
             </button>
             <button
+              aria-pressed={null}
               className="iot--rule-builder-wrap--header-actions-save iot--btn bx--btn bx--btn--sm bx--btn--primary"
               data-testid="Button"
               disabled={false}
@@ -2268,6 +2811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             hidden={false}
             role="tabpanel"
             selected={true}
+            tabIndex={0}
           >
             <div
               data-testid="rule-builder-editor"
@@ -2353,6 +2897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--rule-builder-header__buttons"
                 >
                   <button
+                    aria-pressed={null}
                     className="bx--btn bx--btn--ghost"
                     data-testid="rule-builder-header-add-rule-button"
                     disabled={false}
@@ -2378,6 +2923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </svg>
                   </button>
                   <button
+                    aria-pressed={null}
                     className="bx--btn bx--btn--ghost"
                     data-testid="rule-builder-header-add-group-button"
                     disabled={false}
@@ -4427,6 +4973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             hidden={true}
             role="tabpanel"
             selected={false}
+            tabIndex={0}
           >
             <ul
               className="bx--accordion bx--accordion--end"
@@ -4663,14 +5210,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <div
                       className="iot--table-container bx--data-table-container"
+                      data-testid="edit-table-table-container"
                     >
                       <section
                         aria-label="data table toolbar"
                         className="bx--table-toolbar"
+                        data-testid="edit-table-table-toolbar"
                       >
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
+                          data-testid="edit-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -4687,6 +5237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--action-list"
                           >
                             <button
+                              aria-pressed={null}
                               className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                               disabled={false}
                               onClick={[Function]}
@@ -4704,6 +5255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </label>
                         <div
                           className="bx--toolbar-content iot--table-toolbar-content"
+                          data-testid="edit-table-table-toolbar-content"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -4743,6 +5295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               <input
                                 autoComplete="off"
                                 className="bx--search-input"
+                                data-testid="edit-table-table-toolbar-search"
                                 id="edit-table-toolbar-search"
                                 onChange={[Function]}
                                 onKeyDown={[Function]}
@@ -4777,6 +5330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </div>
                           <button
                             aria-labelledby="add-editors-label"
+                            aria-pressed={null}
                             className="iot--btn bx--btn bx--btn--ghost"
                             data-testid="rule-builder-add-edit-users"
                             disabled={false}
@@ -4812,9 +5366,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <table
                             className="bx--data-table bx--data-table--no-border"
+                            data-testid="edit-table"
+                            id="edit-table"
                             title={null}
                           >
                             <thead
+                              data-testid="edit-table-table-head"
                               onMouseMove={null}
                               onMouseUp={null}
                             >
@@ -4824,6 +5381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="name"
                                   data-floating-menu-container={true}
+                                  data-testid="edit-table-table-head-column-name"
                                   id="column-name"
                                   scope="col"
                                   style={
@@ -4848,6 +5406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="type"
                                   data-floating-menu-container={true}
+                                  data-testid="edit-table-table-head-column-type"
                                   id="column-type"
                                   scope="col"
                                   style={
@@ -4871,9 +5430,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </thead>
                             <tbody
                               aria-live="polite"
+                              data-testID="edit-table-table-body"
                             >
                               <tr
-                                className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                                 onClick={[Function]}
                               >
                                 <td
@@ -4922,14 +5482,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                     <div
                       className="iot--table-container bx--data-table-container"
+                      data-testid="read-table-table-container"
                     >
                       <section
                         aria-label="data table toolbar"
                         className="bx--table-toolbar"
+                        data-testid="read-table-table-toolbar"
                       >
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
+                          data-testid="read-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -4946,6 +5509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--action-list"
                           >
                             <button
+                              aria-pressed={null}
                               className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                               disabled={false}
                               onClick={[Function]}
@@ -4963,6 +5527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </label>
                         <div
                           className="bx--toolbar-content iot--table-toolbar-content"
+                          data-testid="read-table-table-toolbar-content"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -5002,6 +5567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               <input
                                 autoComplete="off"
                                 className="bx--search-input"
+                                data-testid="read-table-table-toolbar-search"
                                 id="read-table-toolbar-search"
                                 onChange={[Function]}
                                 onKeyDown={[Function]}
@@ -5036,6 +5602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </div>
                           <button
                             aria-labelledby="read-only-access-label"
+                            aria-pressed={null}
                             className="iot--btn bx--btn bx--btn--ghost"
                             data-testid="rule-builder-add-read-users"
                             disabled={false}
@@ -5071,9 +5638,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <table
                             className="bx--data-table bx--data-table--no-border"
+                            data-testid="read-table"
+                            id="read-table"
                             title={null}
                           >
                             <thead
+                              data-testid="read-table-table-head"
                               onMouseMove={null}
                               onMouseUp={null}
                             >
@@ -5083,6 +5653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="name"
                                   data-floating-menu-container={true}
+                                  data-testid="read-table-table-head-column-name"
                                   id="column-name"
                                   scope="col"
                                   style={
@@ -5107,6 +5678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   className="table-header-label-start iot--table-head--table-header"
                                   data-column="type"
                                   data-floating-menu-container={true}
+                                  data-testid="read-table-table-head-column-type"
                                   id="column-type"
                                   scope="col"
                                   style={
@@ -5130,9 +5702,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </thead>
                             <tbody
                               aria-live="polite"
+                              data-testID="read-table-table-body"
                             >
                               <tr
-                                className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                                 onClick={[Function]}
                               >
                                 <td
@@ -5189,6 +5762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--rule-builder-wrap--footer"
         >
           <button
+            aria-pressed={null}
             className="iot--rule-builder-wrap--footer-actions-cancel iot--btn bx--btn bx--btn--secondary"
             data-testid="rule-builder-cancel"
             disabled={false}
@@ -5199,6 +5773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Cancel
           </button>
           <button
+            aria-pressed={null}
             className="iot--rule-builder-wrap--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
             data-testid="Button"
             disabled={false}
@@ -5209,6 +5784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             Preview results
           </button>
           <button
+            aria-pressed={null}
             className="iot--rule-builder-wrap--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
             data-testid="Button"
             disabled={false}
@@ -5287,10 +5863,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--modal-content"
               >
                 <div
-                  className="iot--select-users-modal-content"
+                  className="iot--list-builder__container"
                 >
                   <div
-                    className="iot--select-users-modal-content__all-users"
+                    className="iot--list-builder__all"
                     data-testid="select-users__all"
                   >
                     <div
@@ -5305,7 +5881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <div
                             className="iot--list-header--title"
                           >
-                            Users (5 Available)
+                            Users (5 available)
                           </div>
                           <div
                             className="iot--list-header--btn-container"
@@ -5315,7 +5891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__all--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -5336,18 +5912,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__all--search"
+                              id="iot--list-builder__all--search-search"
                             >
-                              Enter a value
+                              Enter a value to search all users
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search all users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -5387,15 +5963,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="iot--list-item"
                           >
                             <div
+                              aria-label="Expand"
                               className="iot--list-item--expand-icon"
                               data-testid="expand-icon"
                               onClick={[Function]}
                               onKeyPress={[Function]}
                               role="button"
                               tabIndex={0}
+                              title="Expand"
                             >
                               <svg
-                                aria-label="Close"
+                                aria-label="Expand-icon"
                                 fill="currentColor"
                                 focusable="false"
                                 height={16}
@@ -5641,7 +6219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="iot--select-users-modal-content__selected-users"
+                    className="iot--list-builder__selected"
                     data-testid="select-users__selected"
                   >
                     <div
@@ -5666,7 +6244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__selected--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -5687,18 +6265,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__selected--search"
+                              id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value
+                              Enter a value to search selected users
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search selected users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -5789,12 +6367,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                         height={16}
                                         preserveAspectRatio="xMidYMid meet"
                                         role="img"
-                                        viewBox="0 0 16 16"
+                                        viewBox="0 0 32 32"
                                         width={16}
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
-                                          d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                                          d="M8 15H24V17H8z"
                                         />
                                       </svg>
                                     </button>
@@ -5813,6 +6391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
               >
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--secondary"
                   data-testid="ComposedModal-modal-secondary-button"
                   disabled={false}
@@ -5823,6 +6402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Cancel
                 </button>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                   data-testid="ComposedModal-modal-primary-button"
                   disabled={true}
@@ -5911,10 +6491,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--modal-content"
               >
                 <div
-                  className="iot--select-users-modal-content"
+                  className="iot--list-builder__container"
                 >
                   <div
-                    className="iot--select-users-modal-content__all-users"
+                    className="iot--list-builder__all"
                     data-testid="select-users__all"
                   >
                     <div
@@ -5929,7 +6509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           <div
                             className="iot--list-header--title"
                           >
-                            Users (5 Available)
+                            Users (5 available)
                           </div>
                           <div
                             className="iot--list-header--btn-container"
@@ -5939,7 +6519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__all--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -5960,18 +6540,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__all--search"
+                              id="iot--list-builder__all--search-search"
                             >
-                              Enter a value
+                              Enter a value to search all users
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__all--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search all users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -6011,15 +6591,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="iot--list-item"
                           >
                             <div
+                              aria-label="Expand"
                               className="iot--list-item--expand-icon"
                               data-testid="expand-icon"
                               onClick={[Function]}
                               onKeyPress={[Function]}
                               role="button"
                               tabIndex={0}
+                              title="Expand"
                             >
                               <svg
-                                aria-label="Close"
+                                aria-label="Expand-icon"
                                 fill="currentColor"
                                 focusable="false"
                                 height={16}
@@ -6265,7 +6847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="iot--select-users-modal-content__selected-users"
+                    className="iot--list-builder__selected"
                     data-testid="select-users__selected"
                   >
                     <div
@@ -6290,7 +6872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-header--search"
                         >
                           <div
-                            aria-labelledby="iot--list-header--search-search"
+                            aria-labelledby="iot--list-builder__selected--search-search"
                             className="bx--search bx--search--sm"
                             role="search"
                           >
@@ -6311,18 +6893,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                             <label
                               className="bx--label"
-                              htmlFor="iot--list-header--search"
-                              id="iot--list-header--search-search"
+                              htmlFor="iot--list-builder__selected--search"
+                              id="iot--list-builder__selected--search-search"
                             >
-                              Enter a value
+                              Enter a value to search selected users
                             </label>
                             <input
                               autoComplete="off"
                               className="bx--search-input"
-                              id="iot--list-header--search"
+                              id="iot--list-builder__selected--search"
                               onChange={[Function]}
                               onKeyDown={[Function]}
-                              placeholder="Enter a value"
+                              placeholder="Enter a value to search selected users"
                               role="searchbox"
                               type="text"
                               value=""
@@ -6413,12 +6995,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                         height={16}
                                         preserveAspectRatio="xMidYMid meet"
                                         role="img"
-                                        viewBox="0 0 16 16"
+                                        viewBox="0 0 32 32"
                                         width={16}
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
-                                          d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                                          d="M8 15H24V17H8z"
                                         />
                                       </svg>
                                     </button>
@@ -6437,6 +7019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
               >
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--secondary"
                   data-testid="ComposedModal-modal-secondary-button"
                   disabled={false}
@@ -6447,6 +7030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   Cancel
                 </button>
                 <button
+                  aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                   data-testid="ComposedModal-modal-primary-button"
                   disabled={true}
@@ -6496,7 +7080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ RuleBuilder ️⚠️ Experimental Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ RuleBuilder ️⚠️ Experimental Notice  1`] = `
 <div
   className="storybook-container"
 >
@@ -6565,9 +7149,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
           </span>
         </div>
-        <div
-          className="bx--toast-notification__caption"
-        />
       </div>
     </div>
   </div>

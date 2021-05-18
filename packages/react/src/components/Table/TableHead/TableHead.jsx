@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
-import React, { useState, useLayoutEffect, createRef, useCallback } from 'react';
+import React, { useState, useLayoutEffect, createRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
 import classnames from 'classnames';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import {
   TableColumnsPropTypes,
@@ -114,6 +113,7 @@ const propTypes = {
   i18n: I18NPropTypes,
   /** should we filter on each keypress */
   hasFastFilter: PropTypes.bool,
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -129,6 +129,7 @@ const defaultProps = {
     ...defaultI18NPropTypes,
   },
   hasFastFilter: true,
+  testID: '',
 };
 
 const generateOrderedColumnRefs = (ordering) =>
@@ -139,6 +140,7 @@ const PADDING_WITH_OVERFLOW = 24;
 const PADDING_WITH_OVERFLOW_AND_SORT = 58;
 
 const TableHead = ({
+  testID,
   tableId,
   options,
   options: {
@@ -263,7 +265,7 @@ const TableHead = ({
     }
   }, [hasResize, columns, ordering, currentColumnWidths, measureColumnWidths]);
 
-  useDeepCompareEffect(
+  useEffect(
     () => {
       // We need to update the currentColumnWidths (state) after the initial render
       // only if the widths of the column prop is updated or columns are added/removed .
@@ -305,10 +307,12 @@ const TableHead = ({
       className={classnames({ lightweight })}
       onMouseMove={hasResize ? forwardMouseEvent : null}
       onMouseUp={hasResize ? forwardMouseEvent : null}
+      data-testid={testID}
     >
       <TableRow>
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
+            testID={`${testID}-row-expansion-column`}
             className={classnames({
               [`${iotPrefix}--table-expand-resize`]: hasResize,
             })}
@@ -317,6 +321,7 @@ const TableHead = ({
 
         {hasRowSelection === 'multi' ? (
           <TableHeader
+            testID={`${testID}-row-selection-column`}
             className={classnames(`${iotPrefix}--table-header-checkbox`, {
               [`${iotPrefix}--table-header-checkbox-resize`]: hasResize,
             })}
@@ -351,6 +356,7 @@ const TableHead = ({
 
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
+              testID={`${testID}-column-${matchingColumnMeta.id}`}
               width={initialColumnWidths[matchingColumnMeta.id]}
               initialWidth={initialColumnWidths[matchingColumnMeta.id]}
               id={`column-${matchingColumnMeta.id}`}
@@ -358,6 +364,7 @@ const TableHead = ({
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable && !isDisabled}
               isSortHeader={hasSort}
+              hasTooltip={!!matchingColumnMeta.tooltip}
               ref={columnRef[matchingColumnMeta.id]}
               thStyle={{
                 width:
@@ -390,6 +397,7 @@ const TableHead = ({
                 wrapText={wrapCellText}
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
+                tooltip={matchingColumnMeta.tooltip}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>
@@ -426,6 +434,7 @@ const TableHead = ({
         })}
         {options.hasRowActions ? (
           <TableHeader
+            testID={`${testID}-row-actions-column`}
             className={classnames(`${iotPrefix}--table-header-row-action-column`, {
               [`${iotPrefix}--table-header-row-action-column--extra-wide`]: hasSingleRowEdit,
             })}
@@ -434,6 +443,7 @@ const TableHead = ({
       </TableRow>
       {filterBarActive && (
         <FilterHeaderRow
+          testID={`${testID}-filter-header-row`}
           key={!hasFastFilter && JSON.stringify(filters)}
           columns={columns.map((column) => ({
             ...column.filter,
@@ -458,6 +468,7 @@ const TableHead = ({
       )}
       {activeBar === 'column' && (
         <ColumnHeaderRow
+          testID={`${testID}-column-header-row`}
           columns={columns.map((column) => ({
             id: column.id,
             name: column.name,

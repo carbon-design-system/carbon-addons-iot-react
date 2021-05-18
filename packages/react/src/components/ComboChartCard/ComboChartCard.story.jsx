@@ -19,7 +19,7 @@ Experimental.story = {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ ComboChartCard',
+  title: '2 - Watson IoT Experimental/☢️ ComboChartCard',
   decorators: [withKnobs],
 
   parameters: {
@@ -28,11 +28,11 @@ export default {
   excludeStories: [],
 };
 
-/* Configuration details: 
+/* Configuration details:
   comboChartTypes.correspondingDatasets should be an array containing the values of series.label
-  This connects a dataset with a comboChartType. 
+  This connects a dataset with a comboChartType.
 
-  For instance: 
+  For instance:
    series: [{
       dataSourceId: 'health',
       label: 'Health',
@@ -56,7 +56,7 @@ export default {
     },
   ]
 
-  The above configuration snippet creates an area chart containing the data 
+  The above configuration snippet creates an area chart containing the data
   from the 'health' dataset, and line chart from the 'age' and 'condition datasets
 */
 

@@ -1,20 +1,20 @@
-import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import replace from 'rollup-plugin-replace';
+import babel from '@rollup/plugin-babel';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import replace from '@rollup/plugin-replace';
 import { uglify } from 'rollup-plugin-uglify';
 import filesize from 'rollup-plugin-filesize';
 import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
-import json from 'rollup-plugin-json';
+import json from '@rollup/plugin-json';
 
 const packageJson = require('./package.json');
 
 const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
 
-const extensions = ['.mjs', '.js', '.jsx', '.json'];
+const extensions = ['.mjs', '.js', '.jsx', '.json', '.ts'];
 
 const external = (id) => {
   return (
@@ -22,7 +22,6 @@ const external = (id) => {
     Object.keys(packageJson.dependencies).some((element) => id === element) ||
     id.includes('lodash/') ||
     id.includes('core-js/') ||
-    id.includes('moment/') ||
     id.includes('@babel/runtime')
   );
 };
@@ -34,38 +33,25 @@ export default [
     preserveModules: true,
     output: [
       {
+        dir: 'es',
+        format: 'esm',
+        preserveModulesRoot: 'src',
+      },
+      {
         dir: 'lib',
         name: 'CarbonAddonsIoTReact',
         format: 'cjs',
-      },
-      {
-        dir: 'es',
-        format: 'esm',
+        preserveModulesRoot: 'src',
+        exports: 'auto',
       },
     ],
     external,
     plugins: [
-      resolve({ mainFields: ['module', 'main'], extensions }),
-      commonjs({
-        namedExports: {
-          'react/index.js': [
-            'Children',
-            'Component',
-            'PureComponent',
-            'Fragment',
-            'PropTypes',
-            'createElement',
-          ],
-          'react-dom/index.js': ['render'],
-          'react-is/index.js': ['isForwardRef'],
-          'core-js': 'CoreJs',
-        },
-
-        include: '/node_modules/',
-      }),
+      resolve({ extensions }),
+      commonjs({ include: /node_modules/ }),
       babel({
-        exclude: 'node_modules/**',
-        runtimeHelpers: true,
+        exclude: /node_modules/,
+        babelHelpers: 'runtime',
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify(env),
@@ -145,33 +131,11 @@ export default [
         extensions,
       }),
       commonjs({
-        namedExports: {
-          'react-js': ['isValidElementType'],
-          'node_modules/carbon-components-react/lib/components/UIShell/index.js': [
-            'Header',
-            'HeaderName',
-            'HeaderMenu',
-            'HeaderMenuButton',
-            'HeaderGlobalBar',
-            'HeaderGlobalAction',
-            'SkipToContent',
-            'HeaderMenuItem',
-            'HeaderNavigation',
-            'HeaderPanel',
-            'SideNav',
-            'SideNavItems',
-            'SideNavLink',
-            'SideNavMenu',
-            'SideNavMenuItem',
-            'SideNavFooter',
-          ],
-        },
-
         include: /node_modules/,
       }),
       babel({
         exclude: /node_modules/,
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify(env),

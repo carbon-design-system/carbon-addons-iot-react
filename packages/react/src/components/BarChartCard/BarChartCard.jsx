@@ -3,6 +3,7 @@ import { SimpleBarChart, StackedBarChart, GroupedBarChart } from '@carbon/charts
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import isNil from 'lodash/isNil';
+import defaultsDeep from 'lodash/defaultsDeep';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import {
@@ -35,6 +36,32 @@ import {
 
 const { iotPrefix } = settings;
 
+const defaultProps = {
+  size: CARD_SIZES.MEDIUMWIDE,
+  i18n: {
+    noDataLabel: 'No data',
+    tooltipGroupLabel: 'Group',
+    tooltipTotalLabel: 'Total',
+    defaultFilterStringPlaceholdText: 'Filter',
+  },
+  domainRange: null,
+  content: {
+    type: BAR_CHART_TYPES.SIMPLE,
+    layout: BAR_CHART_LAYOUTS.VERTICAL,
+    legendPosition: 'bottom',
+    truncation: {
+      type: 'end_line',
+      threshold: 20,
+      numCharacter: 20,
+    },
+    series: [],
+  },
+  locale: 'en',
+  showTimeInGMT: false,
+  tooltipDateFormatPattern: 'L HH:mm:ss',
+  values: null,
+};
+
 const BarChartCard = ({
   title: titleProp,
   content,
@@ -54,28 +81,33 @@ const BarChartCard = ({
   className,
   domainRange,
   timeRange,
+  showTimeInGMT,
+  tooltipDateFormatPattern,
   ...others
 }) => {
-  const { noDataLabel } = i18n;
+  // need to deep merge the nested content default props as default props only uses a shallow merge natively
+  const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
+    content,
+  ]);
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const {
     title,
     content: {
       series,
       timeDataSourceId,
       categoryDataSourceId,
-      layout = BAR_CHART_LAYOUTS.VERTICAL,
+      layout,
       xLabel,
       yLabel,
       unit,
-      type = BAR_CHART_TYPES.SIMPLE,
+      type,
+      legendPosition,
       zoomBar,
-      showTimeInGMT,
       decimalPrecision,
-      tooltipDateFormatPattern,
       truncation,
     },
     values: valuesProp,
-  } = handleCardVariables(titleProp, content, initialValues, others);
+  } = handleCardVariables(titleProp, contentWithDefaults, initialValues, others);
 
   const size = useMemo(() => increaseSmallCardSize(sizeProp, 'BarChartCard'), [sizeProp]);
 
@@ -184,7 +216,7 @@ const BarChartCard = ({
           categoryDataSourceId,
           type,
           uniqueDatasets,
-          i18n.defaultFilterStringPlaceholdText
+          mergedI18n.defaultFilterStringPlaceholdText
         ).map((column) => ({
           ...column,
           renderDataFunction: ({ value }) => {
@@ -197,7 +229,7 @@ const BarChartCard = ({
   }, [
     categoryDataSourceId,
     decimalPrecision,
-    i18n.defaultFilterStringPlaceholdText,
+    mergedI18n.defaultFilterStringPlaceholdText,
     isAllValuesEmpty,
     locale,
     size,
@@ -258,7 +290,7 @@ const BarChartCard = ({
         },
       },
       legend: {
-        position: 'bottom',
+        position: legendPosition,
         enabled: chartData.length > 1,
         clickable: !isEditable,
         truncation,
@@ -270,8 +302,8 @@ const BarChartCard = ({
           chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
         customHTML: (...args) =>
           handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
-        groupLabel: i18n.tooltipGroupLabel,
-        totalLabel: i18n.tooltipTotalLabel,
+        groupLabel: mergedI18n.tooltipGroupLabel,
+        totalLabel: mergedI18n.tooltipTotalLabel,
       },
       // zoomBar should only be enabled for time-based charts
       ...(zoomBar?.enabled &&
@@ -296,8 +328,8 @@ const BarChartCard = ({
       colors,
       decimalPrecision,
       domainRange,
-      i18n.tooltipGroupLabel,
-      i18n.tooltipTotalLabel,
+      mergedI18n.tooltipGroupLabel,
+      mergedI18n.tooltipTotalLabel,
       isEditable,
       isExpanded,
       layout,
@@ -313,6 +345,7 @@ const BarChartCard = ({
       xLabel,
       yLabel,
       zoomBar,
+      legendPosition,
     ]
   );
 
@@ -321,7 +354,7 @@ const BarChartCard = ({
       title={title}
       className={classnames(className, `${iotPrefix}--bar-chart-card`)}
       size={size}
-      i18n={i18n}
+      i18n={mergedI18n}
       isExpanded={isExpanded}
       isEmpty={isAllValuesEmpty}
       isLazyLoading={isLazyLoading}
@@ -383,11 +416,11 @@ const BarChartCard = ({
                     direction: 'DESC',
                   },
                   emptyState: {
-                    message: noDataLabel,
+                    message: mergedI18n.noDataLabel,
                   },
                 },
               }}
-              i18n={i18n}
+              i18n={mergedI18n}
             />
           ) : null}
         </div>
@@ -397,27 +430,5 @@ const BarChartCard = ({
 };
 
 BarChartCard.propTypes = { ...CardPropTypes, ...BarChartCardPropTypes };
-
-BarChartCard.defaultProps = {
-  size: CARD_SIZES.MEDIUMWIDE,
-  i18n: {
-    noDataLabel: 'No data',
-    tooltipGroupLabel: 'Group',
-    tooltipTotalLabel: 'Total',
-  },
-  domainRange: null,
-  content: {
-    type: BAR_CHART_TYPES.SIMPLE,
-    layout: BAR_CHART_LAYOUTS.VERTICAL,
-    truncation: {
-      type: 'end_line',
-      threshold: 20,
-    },
-  },
-  locale: 'en',
-  showTimeInGMT: false,
-  tooltipDateFormatPattern: 'L HH:mm:ss',
-  values: null,
-};
-
+BarChartCard.defaultProps = defaultProps;
 export default BarChartCard;

@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
 import find from 'lodash/find';
 import isEqual from 'lodash/isEqual';
 import isNil from 'lodash/isNil';
 import update from 'immutability-helper';
 
+import { usePrevious } from '../../hooks/usePrevious';
 import { CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import {
   Card,
@@ -29,6 +29,7 @@ import { timeRangeToJSON, isCardJsonValid, handleKeyDown, handleOnClick } from '
 const renderDefaultCard = (props) => (
   <Card isEditable {...props}>
     <div style={{ padding: '1rem' }}>{JSON.stringify(props.id, null, 4)}</div>
+    {props.children}
   </Card>
 );
 
@@ -122,6 +123,7 @@ const renderCustomCard = (props) => {
       {...omit(props, 'content')}
     >
       {props.content}
+      {props.children}
     </Card>
   );
 };
@@ -138,13 +140,13 @@ const CachedEditorCardRenderer = ({ style, children, getValidDataItems, dataItem
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [dataItems]
   );
+  const previousStyle = usePrevious(style);
 
-  useDeepCompareEffect(
-    () => {
+  useEffect(() => {
+    if (!isEqual(style, previousStyle)) {
       setCachedStyle(style);
-    },
-    [style] // need to do a deep compare on style
-  );
+    }
+  }, [previousStyle, style]);
 
   useEffect(
     () => {
@@ -339,10 +341,11 @@ const DashboardEditorCardRenderer = React.memo(
         });
       case CARD_TYPES.LIST:
         return renderListCard(cardProps);
-      case CARD_TYPES.CUSTOM:
-        return renderCustomCard(cardProps);
       default:
-        return renderDefaultCard(cardProps);
+        // if the user passes an element for a custom card type, render it
+        return React.isValidElement(cardProps.content) || typeof cardProps.content === 'function'
+          ? renderCustomCard(cardProps)
+          : renderDefaultCard(cardProps);
     }
   },
   shouldComponentSkipUpdate

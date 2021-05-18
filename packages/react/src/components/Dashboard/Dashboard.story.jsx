@@ -466,7 +466,7 @@ const commonDashboardProps = {
 };
 
 export default {
-  title: 'Watson IoT/🚫 Dashboard',
+  title: '1 - Watson IoT/🚫 Dashboard',
   excludeStories: ['originalCards'],
 };
 
@@ -672,7 +672,7 @@ export const FullScreenTableCard = () => {
             type: CARD_TYPES.TABLE,
             content: {
               columns: [
-                { dataSourceId: 'timestamp', label: 'Timestamp' },
+                { dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP' },
                 { dataSourceId: 'Campus_EGL', label: 'Campus' },
                 {
                   dataSourceId: 'peopleCount_EnterpriseBuilding_mean',

@@ -1,7 +1,9 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
+import isEqual from 'lodash/isEqual';
+
+import { usePrevious } from '../../hooks/usePrevious';
 
 import { tileCatalogReducer, determineInitialState, TILE_ACTIONS } from './tileCatalogReducer';
 import TileCatalog, { propTypes } from './TileCatalog';
@@ -32,24 +34,37 @@ const StatefulTileCatalog = ({
 
   const [state, dispatch] = useReducer(tileCatalogReducer, initialState);
 
-  useDeepCompareEffect(() => {
-    // If we get passed a new set of tiles reset!
-    dispatch({
-      type: TILE_ACTIONS.RESET,
-      payload: {
-        ...props,
-        selectedTileId: selectedTileIdProp,
-        isSelectedByDefault,
-        tiles: tilesProp,
-        search,
-        pagination,
-      },
-    });
-    // If we totally change the tiles data, we should generate a selection event for the initial default selection
-    if (isSelectedByDefault && onSelection && tilesProp.length > 0 && !selectedTileIdProp) {
-      onSelection(tilesProp[0].id);
-    }
-  }, [tilesProp.map((tile) => omit(tile, 'renderContent'))]);
+  const tilesWithoutRenderContent = useMemo(
+    () => tilesProp.map((tile) => omit(tile, 'renderContent')),
+    [tilesProp]
+  );
+
+  const previousTiles = usePrevious(tilesWithoutRenderContent);
+
+  useEffect(
+    () => {
+      if (!isEqual(tilesWithoutRenderContent, previousTiles)) {
+        // If we get passed a new set of tiles reset!
+        dispatch({
+          type: TILE_ACTIONS.RESET,
+          payload: {
+            ...props,
+            selectedTileId: selectedTileIdProp,
+            isSelectedByDefault,
+            tiles: tilesProp,
+            search,
+            pagination,
+          },
+        });
+        // If we totally change the tiles data, we should generate a selection event for the initial default selection
+        if (isSelectedByDefault && onSelection && tilesProp.length > 0 && !selectedTileIdProp) {
+          onSelection(tilesProp[0].id);
+        }
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [tilesWithoutRenderContent, previousTiles]
+  );
 
   useEffect(() => {
     if (selectedTileIdProp) {

@@ -421,8 +421,17 @@ const Card = (props) => {
                     <EmptyMessageWrapper>
                       {isSM ? strings.noDataShortLabel : strings.noDataLabel}
                     </EmptyMessageWrapper>
-                  ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
-                    children(getChildSize(cardSize, title), {
+                  ) : Array.isArray(children) && typeof children?.[0] === 'function' ? ( // pass the measured size down to the children if it's an render function
+                    [
+                      // first option is a function
+                      children?.[0](getChildSize(cardSize, title), {
+                        cardToolbar,
+                        ...props,
+                      }), // second and third options are the resizable handles
+                      children?.slice(1),
+                    ]
+                  ) : typeof children === 'function' ? (
+                    children?.(getChildSize(cardSize, title), {
                       cardToolbar,
                       ...props,
                     })

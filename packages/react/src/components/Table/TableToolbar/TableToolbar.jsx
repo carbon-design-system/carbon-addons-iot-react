@@ -140,6 +140,8 @@ const propTypes = {
   }).isRequired,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
+
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -148,6 +150,7 @@ const defaultProps = {
   },
   secondaryTitle: null,
   tooltip: null,
+  testID: '',
 };
 
 const TableToolbar = ({
@@ -201,187 +204,205 @@ const TableToolbar = ({
     ordering,
   },
   data,
-}) => (
-  <CarbonTableToolbar className={classnames(`${iotPrefix}--table-toolbar`, className)}>
-    <TableBatchActions
-      className={`${iotPrefix}--table-batch-actions`}
-      onCancel={onCancelBatchAction}
-      shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
-      totalSelected={totalSelected}
-      translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+  testID,
+}) => {
+  const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
+  return (
+    <CarbonTableToolbar
+      data-testid={testID}
+      className={classnames(`${iotPrefix}--table-toolbar`, className)}
     >
-      {batchActions.map(({ id, labelText, ...others }) => (
-        <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
-          {labelText}
-        </TableBatchAction>
-      ))}
-    </TableBatchActions>
-    {secondaryTitle ? (
-      // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
-      <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
-    ) : null}
-    {
-      // Deprecated in favor of secondaryTitle for a more general use-case
-      hasRowCountInHeader ? (
-        // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
-        <label className={`${iotPrefix}--table-toolbar-secondary-title`}>
-          {i18n.rowCountInHeader(totalItemsCount)}
-        </label>
-      ) : null
-    }
-    {tooltip && (
-      <div className={`${iotPrefix}--table-tooltip-container`}>
-        <Tooltip
-          triggerId={`card-tooltip-trigger-${tableId}`}
-          tooltipId={`card-tooltip-${tableId}`}
-          triggerText=""
-        >
-          {tooltip}
-        </Tooltip>
-      </div>
-    )}
-    {activeBar === 'rowEdit' ? (
-      <div className={`${iotPrefix}--table-row-edit-actions`}>{rowEditBarButtons}</div>
-    ) : (
-      <TableToolbarContent className={`${iotPrefix}--table-toolbar-content`}>
-        {hasSearch ? (
-          <TableToolbarSearch
-            {...search}
-            key={
-              // If hasUserViewManagement is active the whole table is regenerated when a new
-              // view is loaded so we probably don't need this key-gen fix to preset a search text.
-              // The userViewManagement also needs to be able to set the search.defaultValue
-              // while typing without loosing input focus.
-              hasUserViewManagement
-                ? 'table-toolbar-search'
-                : `table-toolbar-search${search.defaultValue}${search.value}`
-            }
-            defaultValue={search.defaultValue || search.value}
-            className="table-toolbar-search"
-            translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-            id={`${tableId}-toolbar-search`}
-            onChange={(event, defaultValue) => {
-              // https://github.com/carbon-design-system/carbon/issues/6157
-              onApplySearch(event?.target?.value || defaultValue);
-            }}
-            disabled={isDisabled}
-          />
-        ) : null}
-        {totalFilters > 0 ? (
-          <Button kind="secondary" onClick={onClearAllFilters} disabled={isDisabled}>
-            {i18n.clearAllFilters}
-          </Button>
-        ) : null}
-        {onDownloadCSV ? (
-          <TableToolbarSVGButton
-            onClick={() => {
-              // hand back the filtered data
-              onDownloadCSV(data);
-            }}
-            description={i18n.downloadIconDescription}
-            testId="download-button"
-            renderIcon={Download20}
-            disabled={isDisabled}
-          />
-        ) : null}
-        {hasColumnSelection ? (
-          <TableToolbarSVGButton
-            isActive={activeBar === 'column'}
-            onClick={onToggleColumnSelection}
-            description={i18n.columnSelectionButtonAria}
-            testId="column-selection-button"
-            renderIcon={Column20}
-            disabled={isDisabled}
-          />
-        ) : null}
-        {hasFilter ? (
-          <TableToolbarSVGButton
-            isActive={activeBar === 'filter'}
-            onClick={onToggleFilter}
-            description={i18n.filterButtonAria}
-            testId="filter-button"
-            renderIcon={Filter20}
-            disabled={isDisabled}
-          />
-        ) : null}
-        {hasAdvancedFilter ? (
-          <TableToolbarAdvancedFilterFlyout
-            actions={{
-              onApplyAdvancedFilter,
-              onCancelAdvancedFilter,
-              onCreateAdvancedFilter,
-              onChangeAdvancedFilter,
-              onToggleAdvancedFilter,
-            }}
-            columns={columns.map((column) => ({
-              ...column.filter,
-              id: column.id,
-              name: column.name,
-              isFilterable: !isNil(column.filter),
-              isMultiselect: column.filter?.isMultiselect,
-            }))}
-            tableState={{
-              filters,
-              advancedFilters,
-              selectedAdvancedFilterIds,
-              advancedFilterFlyoutOpen,
-              ordering,
-              hasFastFilter: hasAdvancedFilter === 'onKeyPress',
-            }}
-            i18n={{
-              ...pick(
-                i18n,
-                'filterText',
-                'clearFilterText',
-                'clearSelectionText',
-                'openMenuText',
-                'closeMenuText',
-                'applyButtonText',
-                'cancelButtonText',
-                'advancedFilterLabelText',
-                'createNewAdvancedFilterText',
-                'advancedFilterPlaceholderText',
-                'simpleFiltersTabLabel',
-                'advancedFiltersTabLabel'
-              ),
-            }}
-          />
-        ) : null}
-        {hasRowEdit ? (
-          <TableToolbarSVGButton
-            isActive={activeBar === 'rowEdit'}
-            description={i18n.editButtonAria}
-            onClick={onShowRowEdit}
-            testId="row-edit-button"
-            renderIcon={Edit20}
-            disabled={isDisabled}
-          />
-        ) : null}
-        {hasAggregations ? (
-          <OverflowMenu
-            className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
-            direction="bottom"
-            flipped
-            data-testid="table-head--overflow"
-            onClick={(e) => e.stopPropagation()}
-            renderIcon={OverflowMenuVertical20}
-            iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
+      <TableBatchActions
+        data-testid={`${testID}-batch-actions`}
+        className={`${iotPrefix}--table-batch-actions`}
+        onCancel={onCancelBatchAction}
+        shouldShowBatchActions={shouldShowBatchActions}
+        totalSelected={totalSelected}
+        translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+      >
+        {batchActions.map(({ id, labelText, ...others }) => (
+          <TableBatchAction
+            key={id}
+            onClick={() => onApplyBatchAction(id)}
+            tabIndex={shouldShowBatchActions ? 0 : -1}
+            disabled={!shouldShowBatchActions}
+            {...others}
           >
-            <OverflowMenuItem
-              itemText={i18n.toggleAggregations}
-              key="table-aggregations-overflow-item"
-              onClick={onToggleAggregations}
+            {labelText}
+          </TableBatchAction>
+        ))}
+      </TableBatchActions>
+      {secondaryTitle ? (
+        // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
+        <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
+      ) : null}
+      {
+        // Deprecated in favor of secondaryTitle for a more general use-case
+        hasRowCountInHeader ? (
+          // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
+          <label className={`${iotPrefix}--table-toolbar-secondary-title`}>
+            {i18n.rowCountInHeader(totalItemsCount)}
+          </label>
+        ) : null
+      }
+      {tooltip && (
+        <div className={`${iotPrefix}--table-tooltip-container`}>
+          <Tooltip
+            triggerId={`card-tooltip-trigger-${tableId}`}
+            tooltipId={`card-tooltip-${tableId}`}
+            triggerText=""
+          >
+            {tooltip}
+          </Tooltip>
+        </div>
+      )}
+      {activeBar === 'rowEdit' ? (
+        <div className={`${iotPrefix}--table-row-edit-actions`}>{rowEditBarButtons}</div>
+      ) : (
+        <TableToolbarContent
+          data-testid={`${testID}-content`}
+          className={`${iotPrefix}--table-toolbar-content`}
+        >
+          {hasSearch ? (
+            <TableToolbarSearch
+              {...search}
+              key={
+                // If hasUserViewManagement is active the whole table is regenerated when a new
+                // view is loaded so we probably don't need this key-gen fix to preset a search text.
+                // The userViewManagement also needs to be able to set the search.defaultValue
+                // while typing without loosing input focus.
+                hasUserViewManagement
+                  ? 'table-toolbar-search'
+                  : `table-toolbar-search${search.defaultValue}${search.value}`
+              }
+              defaultValue={search.defaultValue || search.value}
+              className="table-toolbar-search"
+              translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+              id={`${tableId}-toolbar-search`}
+              onChange={(event, defaultValue) => {
+                // https://github.com/carbon-design-system/carbon/issues/6157
+                onApplySearch(event?.target?.value || defaultValue);
+              }}
+              disabled={isDisabled}
+              data-testid={`${testID}-search`}
             />
-          </OverflowMenu>
-        ) : null}
-        {
-          // Default card header actions should be to the right of the table-specific actions
-          customToolbarContent || null
-        }
-      </TableToolbarContent>
-    )}
-  </CarbonTableToolbar>
-);
+          ) : null}
+          {totalFilters > 0 ? (
+            <Button kind="secondary" onClick={onClearAllFilters} disabled={isDisabled}>
+              {i18n.clearAllFilters}
+            </Button>
+          ) : null}
+          {onDownloadCSV ? (
+            <TableToolbarSVGButton
+              onClick={() => {
+                // hand back the filtered data
+                onDownloadCSV(data);
+              }}
+              description={i18n.downloadIconDescription}
+              testId="download-button"
+              renderIcon={Download20}
+              disabled={isDisabled}
+            />
+          ) : null}
+          {hasColumnSelection ? (
+            <TableToolbarSVGButton
+              isActive={activeBar === 'column'}
+              onClick={onToggleColumnSelection}
+              description={i18n.columnSelectionButtonAria}
+              testId="column-selection-button"
+              renderIcon={Column20}
+              disabled={isDisabled}
+            />
+          ) : null}
+          {hasFilter ? (
+            <TableToolbarSVGButton
+              isActive={activeBar === 'filter'}
+              onClick={onToggleFilter}
+              description={i18n.filterButtonAria}
+              testId="filter-button"
+              renderIcon={Filter20}
+              disabled={isDisabled}
+            />
+          ) : null}
+          {hasAdvancedFilter ? (
+            <TableToolbarAdvancedFilterFlyout
+              actions={{
+                onApplyAdvancedFilter,
+                onCancelAdvancedFilter,
+                onCreateAdvancedFilter,
+                onChangeAdvancedFilter,
+                onToggleAdvancedFilter,
+              }}
+              columns={columns.map((column) => ({
+                ...column.filter,
+                id: column.id,
+                name: column.name,
+                isFilterable: !isNil(column.filter),
+                isMultiselect: column.filter?.isMultiselect,
+              }))}
+              tableState={{
+                filters,
+                advancedFilters,
+                selectedAdvancedFilterIds,
+                advancedFilterFlyoutOpen,
+                ordering,
+                hasFastFilter: hasAdvancedFilter === 'onKeyPress',
+              }}
+              i18n={{
+                ...pick(
+                  i18n,
+                  'filterText',
+                  'clearFilterText',
+                  'clearSelectionText',
+                  'openMenuText',
+                  'closeMenuText',
+                  'applyButtonText',
+                  'cancelButtonText',
+                  'advancedFilterLabelText',
+                  'createNewAdvancedFilterText',
+                  'advancedFilterPlaceholderText',
+                  'simpleFiltersTabLabel',
+                  'advancedFiltersTabLabel'
+                ),
+              }}
+            />
+          ) : null}
+          {hasRowEdit ? (
+            <TableToolbarSVGButton
+              isActive={activeBar === 'rowEdit'}
+              description={i18n.editButtonAria}
+              onClick={onShowRowEdit}
+              testId="row-edit-button"
+              renderIcon={Edit20}
+              disabled={isDisabled}
+            />
+          ) : null}
+          {hasAggregations ? (
+            <OverflowMenu
+              className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
+              direction="bottom"
+              flipped
+              data-testid="table-head--overflow"
+              onClick={(e) => e.stopPropagation()}
+              renderIcon={OverflowMenuVertical20}
+              iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
+            >
+              <OverflowMenuItem
+                itemText={i18n.toggleAggregations}
+                key="table-aggregations-overflow-item"
+                onClick={onToggleAggregations}
+              />
+            </OverflowMenu>
+          ) : null}
+          {
+            // Default card header actions should be to the right of the table-specific actions
+            customToolbarContent || null
+          }
+        </TableToolbarContent>
+      )}
+    </CarbonTableToolbar>
+  );
+};
 
 TableToolbar.propTypes = propTypes;
 TableToolbar.defaultProps = defaultProps;

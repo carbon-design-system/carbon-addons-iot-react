@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List basic (single column) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List basic (single column) 1`] = `
 <div
   className="storybook-container"
 >
@@ -341,7 +341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List basic (single column) with search 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List basic (single column) with search 1`] = `
 <div
   className="storybook-container"
 >
@@ -745,7 +745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with categories, fixed height 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with categories, fixed height 1`] = `
 <div
   className="storybook-container"
 >
@@ -783,6 +783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-header--btn-container"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 data-testid="Button"
                 disabled={false}
@@ -827,15 +828,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -878,15 +881,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1339,15 +1344,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1390,15 +1397,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1810,15 +1819,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1861,15 +1872,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-item"
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1934,7 +1947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with checkbox multi-selection 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with checkbox multi-selection 1`] = `
 <div
   className="storybook-container"
 >
@@ -1971,6 +1984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-header--btn-container"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 data-testid="Button"
                 disabled={false}
@@ -2020,15 +2034,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2104,15 +2120,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2188,15 +2206,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2272,15 +2292,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2356,15 +2378,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2440,15 +2464,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               tabIndex={0}
             >
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2541,7 +2567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with empty state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with empty state 1`] = `
 <div
   className="storybook-container"
 >
@@ -2579,6 +2605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-header--btn-container"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 data-testid="Button"
                 disabled={false}
@@ -2666,7 +2693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with hierarchy 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with hierarchy 1`] = `
 <div
   className="storybook-container"
 >
@@ -2703,6 +2730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
               className="iot--list-header--btn-container"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 data-testid="Button"
                 disabled={false}
@@ -2755,15 +2783,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2814,15 +2844,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2913,15 +2945,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3021,15 +3055,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3719,15 +3755,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3827,15 +3865,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Close"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Close"
               >
                 <svg
-                  aria-label="Expand"
+                  aria-label="Close-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -3926,15 +3966,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -4034,15 +4076,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -4142,15 +4186,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
                 }
               />
               <div
+                aria-label="Expand"
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
                 tabIndex={0}
+                title="Expand"
               >
                 <svg
-                  aria-label="Close"
+                  aria-label="Expand-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -4264,7 +4310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with isLargeRow and icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with isLargeRow and icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -4845,7 +4891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with isLoading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with isLoading 1`] = `
 <div
   className="storybook-container"
 >
@@ -4924,7 +4970,417 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with row actions (multiple) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with pagination 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": 300,
+          "overflow": "auto",
+          "width": 400,
+        }
+      }
+    >
+      <div
+        className="iot--list iot--list__full-height"
+      >
+        <div
+          className="iot--list-header-container"
+        >
+          <div
+            className="iot--list-header"
+          >
+            <div
+              className="iot--list-header--title"
+            >
+              NY Yankees
+            </div>
+            <div
+              className="iot--list-header--btn-container"
+            />
+          </div>
+        </div>
+        <div
+          className="iot--list--content__full-height iot--list--content"
+        >
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="DJ LeMahieu"
+                    >
+                      DJ LeMahieu
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Luke Voit"
+                    >
+                      Luke Voit
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gary Sanchez"
+                    >
+                      Gary Sanchez
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Kendrys Morales"
+                    >
+                      Kendrys Morales
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gleyber Torres"
+                    >
+                      Gleyber Torres
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Clint Frazier"
+                    >
+                      Clint Frazier
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Brett Gardner"
+                    >
+                      Brett Gardner
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gio Urshela"
+                    >
+                      Gio Urshela
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Cameron Maybin"
+                    >
+                      Cameron Maybin
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Robinson Cano"
+                    >
+                      Robinson Cano
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list--page"
+        >
+          <div
+            className="iot-simple-pagination-container"
+            data-testid="iot-simple-pagination"
+          >
+            <div
+              className="iot-simple-pagination-page-bar"
+            >
+              <span
+                className="iot-simple-pagination-page-label"
+                maxpage={10}
+              >
+                Page 1
+              </span>
+              <div
+                className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
+                role="button"
+                tabIndex={-1}
+              >
+                <svg
+                  aria-label="Prev page"
+                  className="iot-simple-pagination-caret-disabled"
+                  dir="ltr"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 24L10 16 20 8z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="Next page"
+                  className="iot-simple-pagination-caret"
+                  dir="ltr"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 8L22 16 12 24z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with row actions (multiple) 1`] = `
 <div
   className="storybook-container"
 >
@@ -5815,7 +6271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with row actions (single) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with row actions (single) 1`] = `
 <div
   className="storybook-container"
 >
@@ -6616,7 +7072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with secondaryValue 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with secondaryValue 1`] = `
 <div
   className="storybook-container"
 >
@@ -7017,7 +7473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with selectable items 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with selectable items 1`] = `
 <div
   className="storybook-container"
 >
@@ -7408,7 +7864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/List with tags 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with tags 1`] = `
 <div
   className="storybook-container"
 >

@@ -16,8 +16,6 @@ const propTypes = {
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
   }),
-  /** optional skeleton to be rendered while loading data */
-  isLoading: PropTypes.bool.isRequired,
 };
 
 const defaultProps = {
@@ -32,21 +30,19 @@ const defaultProps = {
   title: null,
 };
 
-const ListHeader = ({ title, buttons, search, i18n, isLoading }) => {
+const ListHeader = ({ title, buttons, search, i18n }) => {
   return (
     <div className={`${iotPrefix}--list-header-container`}>
       {title || (buttons && buttons.length > 0) ? (
         <div className={`${iotPrefix}--list-header`}>
           <div className={`${iotPrefix}--list-header--title`}>{title}</div>
-          <div className={`${iotPrefix}--list-header--btn-container`}>
-            {!isLoading ? buttons : null}
-          </div>
+          <div className={`${iotPrefix}--list-header--btn-container`}>{buttons}</div>
         </div>
       ) : null}
-      {search && !isLoading ? (
+      {search ? (
         <div className={`${iotPrefix}--list-header--search`}>
           <Search
-            id={`${iotPrefix}--list-header--search`}
+            id={search.id || `${iotPrefix}--list-header--search`}
             placeholder={i18n.searchPlaceHolderText}
             onChange={search.onChange}
             size="sm"

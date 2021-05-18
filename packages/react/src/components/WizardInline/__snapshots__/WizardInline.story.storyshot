@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Stateful example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 WizardInline Stateful example 1`] = `
 <div
   className="storybook-container"
 >
@@ -20,40 +20,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-title"
+                className="page-title-bar-title--text"
               >
-                <div
-                  className="page-title-bar-title--text"
+                <h2
+                  title="I am a title"
                 >
-                  <h2>
-                    I am a title
-                  </h2>
-                </div>
+                  I am a title
+                </h2>
               </div>
-              <p
-                className="page-title-bar-description"
-              >
-                My long description to explain what is going on
-              </p>
             </div>
+            <p
+              className="page-title-bar-description"
+            >
+              My long description to explain what is going on
+            </p>
             <div
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -81,7 +84,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -143,6 +146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -204,6 +208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -265,6 +270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -323,6 +329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -335,8 +342,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
-            width={200}
+            className="iot--wizard-inline__sidebar"
+            style={
+              Object {
+                "--min-width": "200px",
+              }
+            }
           >
             <div>
               sidebar
@@ -381,6 +392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -391,6 +403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Cancel
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -432,7 +445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 WizardInline Static 1`] = `
 <div
   className="storybook-container"
 >
@@ -452,35 +465,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-title"
+                className="page-title-bar-title--text"
               >
-                <div
-                  className="page-title-bar-title--text"
+                <h2
+                  title="Static Wizard"
                 >
-                  <h2>
-                    Static Wizard
-                  </h2>
-                </div>
+                  Static Wizard
+                </h2>
               </div>
             </div>
             <div
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -508,7 +524,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -560,6 +576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -626,6 +643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -687,6 +705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -745,6 +764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -787,6 +807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -797,6 +818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Back
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -838,7 +860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static with Footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 WizardInline Static with Footer 1`] = `
 <div
   className="storybook-container"
 >
@@ -858,35 +880,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-title"
+                className="page-title-bar-title--text"
               >
-                <div
-                  className="page-title-bar-title--text"
+                <h2
+                  title="Static Wizard"
                 >
-                  <h2>
-                    Static Wizard
-                  </h2>
-                </div>
+                  Static Wizard
+                </h2>
               </div>
             </div>
             <div
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -914,7 +939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -966,6 +991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -1022,6 +1048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -1078,6 +1105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -1141,6 +1169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -1192,6 +1221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -1202,6 +1232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Back
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -1243,7 +1274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline Static with Sidebar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 WizardInline Static with Sidebar 1`] = `
 <div
   className="storybook-container"
 >
@@ -1263,35 +1294,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-title"
+                className="page-title-bar-title--text"
               >
-                <div
-                  className="page-title-bar-title--text"
+                <h2
+                  title="Static Wizard"
                 >
-                  <h2>
-                    Static Wizard
-                  </h2>
-                </div>
+                  Static Wizard
+                </h2>
               </div>
             </div>
             <div
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -1319,7 +1353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -1381,6 +1415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -1442,6 +1477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -1503,6 +1539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -1561,6 +1598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -1573,8 +1611,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
-            width={200}
+            className="iot--wizard-inline__sidebar"
+            style={
+              Object {
+                "--min-width": "200px",
+              }
+            }
           >
             <div>
               sidebar
@@ -1610,6 +1652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -1620,6 +1663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Cancel
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -1661,7 +1705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline with breadcrumbs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 WizardInline with breadcrumbs 1`] = `
 <div
   className="storybook-container"
 >
@@ -1681,35 +1725,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-title"
+                className="page-title-bar-title--text"
               >
-                <div
-                  className="page-title-bar-title--text"
+                <h2
+                  title="Static Wizard"
                 >
-                  <h2>
-                    Static Wizard
-                  </h2>
-                </div>
+                  Static Wizard
+                </h2>
               </div>
             </div>
             <div
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -1737,7 +1784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -1789,6 +1836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -1855,6 +1903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -1916,6 +1965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -1974,6 +2024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -2016,6 +2067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -2026,6 +2078,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Back
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -2067,7 +2120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline with error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 WizardInline with error 1`] = `
 <div
   className="storybook-container"
 >
@@ -2087,35 +2140,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
         data-id="WizardInlineContainer"
       >
         <div
-          className="wizard-inline-header page-title-bar"
+          className="iot--wizard-inline__header page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
         >
           <div
             className="page-title-bar-header"
-            style={
-              Object {
-                "--header-offset": "48px",
-              }
-            }
           >
             <div
-              className="page-title-bar-header-left"
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-title"
             >
               <div
-                className="page-title-bar-title"
+                className="page-title-bar-title--text"
               >
-                <div
-                  className="page-title-bar-title--text"
+                <h2
+                  title="Static Wizard"
                 >
-                  <h2>
-                    Static Wizard
-                  </h2>
-                </div>
+                  Static Wizard
+                </h2>
               </div>
             </div>
             <div
               className="page-title-bar-header-right"
             >
               <button
+                aria-pressed={null}
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -2143,7 +2199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
           </div>
         </div>
         <ul
-          className="iot--progress-indicator wizard-inline-progress-indicator"
+          className="iot--progress-indicator iot--wizard-inline__progress-indicator"
           data-testid="iot--progress-indicator-testid"
         >
           <li
@@ -2205,6 +2261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="First step"
                   value="First step"
                 >
                   First step
@@ -2266,6 +2323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Device Information"
                   value="Device Information"
                 >
                   Device Information
@@ -2327,6 +2385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Long step"
                   value="Long step"
                 >
                   Long step
@@ -2385,6 +2444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               >
                 <p
                   className="iot--progress-text-label"
+                  title="Final step"
                   value="Final step"
                 >
                   Final step
@@ -2497,6 +2557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="Button"
                 disabled={false}
@@ -2507,6 +2568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                 Cancel
               </button>
               <button
+                aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
                 data-testid="Button"
                 disabled={false}
@@ -2548,7 +2610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 WizardInline ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 WizardInline ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >

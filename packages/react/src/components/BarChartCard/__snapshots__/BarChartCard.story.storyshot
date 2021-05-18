@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Grouped bar - Horizontal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Grouped bar - Horizontal 1`] = `
 <div
   className="storybook-container"
 >
@@ -48,6 +48,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -123,7 +124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Grouped bar - Vertical 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Grouped bar - Vertical 1`] = `
 <div
   className="storybook-container"
 >
@@ -171,6 +172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -246,7 +248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard No data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard No data 1`] = `
 <div
   className="storybook-container"
 >
@@ -338,6 +340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -416,7 +419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Simple bar - Horizontal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Simple bar - Horizontal 1`] = `
 <div
   className="storybook-container"
 >
@@ -464,6 +467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -539,7 +543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Simple bar - Time series - custom domainRange 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Simple bar - Time series - custom domainRange 1`] = `
 <div
   className="storybook-container"
 >
@@ -631,6 +635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -706,7 +711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Simple bar - Vertical 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Simple bar - Vertical 1`] = `
 <div
   className="storybook-container"
 >
@@ -754,6 +759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -829,7 +835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Stacked bar - Horizontal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Stacked bar - Horizontal 1`] = `
 <div
   className="storybook-container"
 >
@@ -877,6 +883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -952,7 +959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Stacked bar - Time series 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Stacked bar - Time series 1`] = `
 <div
   className="storybook-container"
 >
@@ -1044,6 +1051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -1119,7 +1127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Stacked bar - Time series with categories 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Stacked bar - Time series with categories 1`] = `
 <div
   className="storybook-container"
 >
@@ -1211,6 +1219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -1286,7 +1295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Stacked bar - Vertical 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard Stacked bar - Vertical 1`] = `
 <div
   className="storybook-container"
 >
@@ -1334,6 +1343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--card--toolbar"
           >
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
@@ -1409,7 +1419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard isEditable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard isEditable 1`] = `
 <div
   className="storybook-container"
 >
@@ -1499,7 +1509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard isExpanded 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard isExpanded 1`] = `
 <div
   className="storybook-container"
 >
@@ -1597,6 +1607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 </button>
               </div>
               <button
+                aria-pressed={null}
                 className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
                 disabled={false}
                 onClick={[Function]}
@@ -1640,14 +1651,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               />
               <div
                 className="iot--bar-chart-card--stateful-table iot--table-container bx--data-table-container"
+                data-testid="BarChartCard-table-table-container"
               >
                 <section
                   aria-label="data table toolbar"
                   className="bx--table-toolbar"
+                  data-testid="BarChartCard-table-table-toolbar"
                 >
                   <div
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
+                    data-testid="BarChartCard-table-table-toolbar-batch-actions"
                   >
                     <div
                       className="bx--batch-summary"
@@ -1664,6 +1678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                       className="bx--action-list"
                     >
                       <button
+                        aria-pressed={null}
                         className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                         disabled={false}
                         onClick={[Function]}
@@ -1676,6 +1691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                   </div>
                   <div
                     className="bx--toolbar-content iot--table-toolbar-content"
+                    data-testid="BarChartCard-table-table-toolbar-content"
                   >
                     <div
                       className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -1715,6 +1731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         <input
                           autoComplete="off"
                           className="bx--search-input"
+                          data-testid="BarChartCard-table-table-toolbar-search"
                           id="BarChartCard-table-toolbar-search"
                           onChange={[Function]}
                           onKeyDown={[Function]}
@@ -1748,6 +1765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                       </div>
                     </div>
                     <button
+                      aria-pressed={null}
                       className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                       data-testid="download-button"
                       disabled={false}
@@ -1775,6 +1793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                       </svg>
                     </button>
                     <button
+                      aria-pressed={null}
                       className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                       data-testid="filter-button"
                       disabled={false}
@@ -1811,9 +1830,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                   >
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      data-testid="BarChartCard-table"
+                      id="BarChartCard-table"
                       title={null}
                     >
                       <thead
+                        data-testid="BarChartCard-table-table-head"
                         onMouseMove={null}
                         onMouseUp={null}
                       >
@@ -1821,6 +1843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <th
                             aria-sort="descending"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-timestamp"
                             scope="col"
                             style={
                               Object {
@@ -1888,6 +1911,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-Amsterdam"
                             scope="col"
                             style={
                               Object {
@@ -1955,6 +1979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-New York"
                             scope="col"
                             style={
                               Object {
@@ -2022,6 +2047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-Bangkok"
                             scope="col"
                             style={
                               Object {
@@ -2089,6 +2115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <th
                             aria-sort="none"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="BarChartCard-table-table-head-column-San Francisco"
                             scope="col"
                             style={
                               Object {
@@ -2157,273 +2184,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                       </thead>
                       <tbody
                         aria-live="polite"
+                        data-testID="BarChartCard-table-table-body"
                       >
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                          onClick={[Function]}
-                        >
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="timestamp"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-timestamp"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="10/28/2018 07:34"
-                              >
-                                10/28/2018 07:34
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="Amsterdam"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-Amsterdam"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="New York"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-New York"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="Bangkok"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-Bangkok"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="San Francisco"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-0-San Francisco"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                        </tr>
-                        <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                          onClick={[Function]}
-                        >
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="timestamp"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-1-timestamp"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="10/28/2018 07:34"
-                              >
-                                10/28/2018 07:34
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="Amsterdam"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-1-Amsterdam"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="New York"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-1-New York"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="Bangkok"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-1-Bangkok"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="San Francisco"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-1-San Francisco"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                        </tr>
-                        <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                          onClick={[Function]}
-                        >
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="timestamp"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-2-timestamp"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                                title="10/28/2018 07:34"
-                              >
-                                10/28/2018 07:34
-                              </span>
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="Amsterdam"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-2-Amsterdam"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="New York"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-2-New York"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="Bangkok"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-2-Bangkok"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                          <td
-                            align="start"
-                            className="data-table-start iot--table__cell--sortable"
-                            data-column="San Francisco"
-                            data-offset={0}
-                            id="cell-BarChartCard-table-dataindex-2-San Francisco"
-                            offset={0}
-                          >
-                            <span
-                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            >
-                              <span
-                                className=""
-                              />
-                            </span>
-                          </td>
-                        </tr>
-                        <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -2439,9 +2203,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                                title="10/28/2018 07:34"
+                                title="02/12/2020 10:23"
                               >
-                                10/28/2018 07:34
+                                02/12/2020 10:23
                               </span>
                             </span>
                           </td>
@@ -2458,7 +2222,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                565
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2474,7 +2240,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                453
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2490,7 +2258,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                412
+                              </span>
                             </span>
                           </td>
                           <td
@@ -2506,7 +2276,297 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                              />
+                              >
+                                489
+                              </span>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
+                          onClick={[Function]}
+                        >
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="timestamp"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-2-timestamp"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="02/11/2020 10:23"
+                              >
+                                02/11/2020 10:23
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="Amsterdam"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-2-Amsterdam"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                512
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="New York"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-2-New York"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                442
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="Bangkok"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-2-Bangkok"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                397
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="San Francisco"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-2-San Francisco"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                270
+                              </span>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
+                          onClick={[Function]}
+                        >
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="timestamp"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-1-timestamp"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="02/10/2020 10:23"
+                              >
+                                02/10/2020 10:23
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="Amsterdam"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-1-Amsterdam"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                450
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="New York"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-1-New York"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                365
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="Bangkok"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-1-Bangkok"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                410
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="San Francisco"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-1-San Francisco"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                341
+                              </span>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
+                          onClick={[Function]}
+                        >
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="timestamp"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-timestamp"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="02/09/2020 10:23"
+                              >
+                                02/09/2020 10:23
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="Amsterdam"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-Amsterdam"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                447
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="New York"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-New York"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                528
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="Bangkok"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-Bangkok"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                435
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start iot--table__cell--sortable"
+                            data-column="San Francisco"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-San Francisco"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                              >
+                                388
+                              </span>
                             </span>
                           </td>
                         </tr>
@@ -2516,6 +2576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 </div>
                 <div
                   className="bx--pagination iot--pagination"
+                  data-testid="BarChartCard-table-table-pagination"
                   style={
                     Object {
                       "--pagination-text-display": "flex",
@@ -2761,7 +2822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard with zoomBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard with zoomBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -2853,6 +2914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               </button>
             </div>
             <button
+              aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               onClick={[Function]}

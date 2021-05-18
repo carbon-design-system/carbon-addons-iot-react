@@ -1,5 +1,3 @@
-import moment from 'moment';
-import 'moment/min/locales';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import filter from 'lodash/filter';
@@ -7,6 +5,7 @@ import find from 'lodash/find';
 
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { findMatchingAlertRange } from '../../utils/cardUtilityFunctions';
+import dayjs from '../../utils/dayjs';
 
 /** Generate fake values for my line chart */
 export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day', timeRange) => {
@@ -46,20 +45,22 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
   return seriesArray.reduce((sampleData, { dataSourceId, dataFilter }) => {
     const now =
       timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
-        ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
-        : moment().subtract(count, timeGrain);
+        ? dayjs().startOf(timeRangeInterval).subtract(1, timeGrain)
+        : dayjs().subtract(count, timeGrain);
+
+    let nextTimeStamp = now;
     sampleValues.forEach(() => {
-      const nextTimeStamp = now.add(1, timeGrain).valueOf();
+      nextTimeStamp = nextTimeStamp.add(1, timeGrain);
       if (!isEmpty(dataFilter)) {
         // if we have a data filter, then we need a specific row for every filter
         sampleData.push({
-          [timeDataSourceId]: nextTimeStamp,
+          [timeDataSourceId]: nextTimeStamp.valueOf(),
           [dataSourceId]: Math.random() * 100,
           ...dataFilter,
         });
       } else {
         const existingData = find(sampleData, {
-          [timeDataSourceId]: nextTimeStamp,
+          [timeDataSourceId]: nextTimeStamp.valueOf(),
         });
         if (existingData) {
           // add the additional dataSource to the existing datapoint
@@ -67,7 +68,7 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
         } else {
           // otherwise we need explicit row
           sampleData.push({
-            [timeDataSourceId]: nextTimeStamp,
+            [timeDataSourceId]: nextTimeStamp.valueOf(),
             [dataSourceId]: Math.random() * 100,
           });
         }
@@ -109,12 +110,12 @@ export const formatGraphTick = (
   previousTickTimestamp,
   shouldDisplayGMT
 ) => {
-  moment.locale(locale);
-  const currentTimestamp = shouldDisplayGMT ? moment.utc(timestamp) : moment(timestamp);
+  dayjs.locale(locale);
+  const currentTimestamp = shouldDisplayGMT ? dayjs.utc(timestamp) : dayjs(timestamp);
 
-  const sameDay = moment(previousTickTimestamp).isSame(currentTimestamp, 'day');
-  const sameMonth = moment(previousTickTimestamp).isSame(currentTimestamp, 'month');
-  const sameYear = moment(previousTickTimestamp).isSame(currentTimestamp, 'year');
+  const sameDay = dayjs(previousTickTimestamp).isSame(currentTimestamp, 'day');
+  const sameMonth = dayjs(previousTickTimestamp).isSame(currentTimestamp, 'month');
+  const sameYear = dayjs(previousTickTimestamp).isSame(currentTimestamp, 'year');
 
   // This works around a bug in moment where some Chinese languages are missing the day indicator
   // https://github.com/moment/moment/issues/5350
@@ -198,7 +199,7 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
           })
           .forEach((dataItem) => {
             // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
-            if (dataItem[dataSourceId]) {
+            if (!isNil(dataItem[dataSourceId])) {
               data.push({
                 date:
                   dataItem[timeDataSourceId] instanceof Date

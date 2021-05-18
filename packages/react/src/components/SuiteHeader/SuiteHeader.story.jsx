@@ -1,5 +1,5 @@
 /* eslint-disable no-script-url */
-/* eslint-disable-next-line no-alert */
+/* eslint-disable no-alert */
 
 import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
@@ -253,7 +253,7 @@ const customApplications = [
 ];
 
 export default {
-  title: 'Watson IoT/SuiteHeader',
+  title: '1 - Watson IoT/SuiteHeader',
 
   parameters: {
     component: SuiteHeader,

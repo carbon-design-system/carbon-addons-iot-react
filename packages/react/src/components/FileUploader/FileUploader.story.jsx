@@ -9,7 +9,7 @@
 
 /* eslint-disable no-console */
 
-import React from 'react';
+import React, { createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, array, boolean, number, select, text } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';
@@ -122,7 +122,7 @@ const props = {
 };
 
 export default {
-  title: 'FileUploader',
+  title: '3 - Carbon/FileUploader',
   decorators: [withKnobs],
 
   parameters: {
@@ -183,13 +183,14 @@ _FileUploaderDropContainer.parameters = {
 export const DragAndDropUploadContainerExampleApplication = () =>
   require('./stories/drop-container').default(props.fileUploaderDropContainer());
 
-DragAndDropUploadContainerExampleApplication.storyName =
-  'Drag and drop upload container example application';
-
-DragAndDropUploadContainerExampleApplication.parameters = {
-  info: {
-    text: 'Example application with drag and drop file uploader',
+DragAndDropUploadContainerExampleApplication.story = {
+  name: 'Drag and drop upload container example application',
+  parameters: {
+    info: {
+      text: 'Example application with drag and drop file uploader',
+    },
   },
+  decorators: [createElement],
 };
 
 export const Skeleton = () => (

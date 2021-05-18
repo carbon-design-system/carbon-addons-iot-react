@@ -1,20 +1,12 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, object, text } from '@storybook/addon-knobs';
-import { spacing05 } from '@carbon/layout';
-import styled from 'styled-components';
 import { OverflowMenu, OverflowMenuItem, Tooltip } from 'carbon-components-react';
 
 import ComposedModal from './ComposedModal';
 
-const CustomFooter = styled.div`
-   {
-    padding: ${spacing05};
-  }
-`;
-
 export default {
-  title: 'Watson IoT/ComposedModal',
+  title: '1 - Watson IoT/ComposedModal',
 
   parameters: {
     component: ComposedModal,
@@ -133,7 +125,15 @@ export const _CustomFooter = () => (
       label: 'Custom footer',
       title: 'Custom footer element',
     }}
-    footer={<CustomFooter>custom footer element</CustomFooter>}
+    footer={
+      <div
+        style={{
+          padding: '2rem',
+        }}
+      >
+        custom footer element
+      </div>
+    }
     onClose={action('close')}
   />
 );

@@ -184,7 +184,7 @@ const List = forwardRef((props, ref) => {
           editingStyle={editingStyle}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
-          onSelect={editingStyle ? () => {} : () => handleSelect(item.id)}
+          onSelect={editingStyle ? () => {} : () => handleSelect(item.id, parentId)}
           onExpand={toggleExpansion}
           onItemMoved={onItemMoved}
           itemWillMove={itemWillMove}
@@ -242,7 +242,6 @@ const List = forwardRef((props, ref) => {
           buttons={buttons}
           search={search}
           i18n={mergedI18n}
-          isLoading={isLoading}
           {...overrides?.header?.props}
         />
 

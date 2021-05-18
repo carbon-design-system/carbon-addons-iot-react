@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar example with workArea 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/NavigationBar example with workArea 1`] = `
 <div
   className="storybook-container"
 >
@@ -22,35 +22,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     >
       <div
         className="page-title-bar"
+        style={
+          Object {
+            "--header-offset": "48px",
+            "--scroll-transition-progress": 1,
+          }
+        }
       >
         <div
           className="page-title-bar-header"
-          style={
-            Object {
-              "--header-offset": "48px",
-            }
-          }
         >
           <div
-            className="page-title-bar-header-left"
+            className="page-title-bar-breadcrumb-bg"
+          />
+          <div
+            className="page-title-bar-title"
           >
             <div
-              className="page-title-bar-title"
+              className="page-title-bar-title--text"
             >
-              <div
-                className="page-title-bar-title--text"
+              <h2
+                title="Your Devices"
               >
-                <h2>
-                  Your Devices
-                </h2>
-              </div>
+                Your Devices
+              </h2>
             </div>
-            <p
-              className="page-title-bar-description"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
           </div>
+          <p
+            className="page-title-bar-description"
+          >
+            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+          </p>
           <div
             className="page-title-bar-header-right"
           >
@@ -169,6 +171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -185,6 +188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -201,6 +205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
       >
         <button
+          aria-pressed={null}
           className="bx--btn bx--btn--primary"
           disabled={false}
           onClick={[Function]}
@@ -238,7 +243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/NavigationBar normal 1`] = `
 <div
   className="storybook-container"
 >
@@ -255,35 +260,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     >
       <div
         className="page-title-bar"
+        style={
+          Object {
+            "--header-offset": "48px",
+            "--scroll-transition-progress": 1,
+          }
+        }
       >
         <div
           className="page-title-bar-header"
-          style={
-            Object {
-              "--header-offset": "48px",
-            }
-          }
         >
           <div
-            className="page-title-bar-header-left"
+            className="page-title-bar-breadcrumb-bg"
+          />
+          <div
+            className="page-title-bar-title"
           >
             <div
-              className="page-title-bar-title"
+              className="page-title-bar-title--text"
             >
-              <div
-                className="page-title-bar-title--text"
+              <h2
+                title="Your Devices"
               >
-                <h2>
-                  Your Devices
-                </h2>
-              </div>
+                Your Devices
+              </h2>
             </div>
-            <p
-              className="page-title-bar-description"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
           </div>
+          <p
+            className="page-title-bar-description"
+          >
+            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+          </p>
           <div
             className="page-title-bar-header-right"
           >
@@ -402,6 +409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -418,6 +426,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -458,7 +467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar start with tab 2 selected 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/NavigationBar start with tab 2 selected 1`] = `
 <div
   className="storybook-container"
 >
@@ -475,35 +484,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     >
       <div
         className="page-title-bar"
+        style={
+          Object {
+            "--header-offset": "48px",
+            "--scroll-transition-progress": 1,
+          }
+        }
       >
         <div
           className="page-title-bar-header"
-          style={
-            Object {
-              "--header-offset": "48px",
-            }
-          }
         >
           <div
-            className="page-title-bar-header-left"
+            className="page-title-bar-breadcrumb-bg"
+          />
+          <div
+            className="page-title-bar-title"
           >
             <div
-              className="page-title-bar-title"
+              className="page-title-bar-title--text"
             >
-              <div
-                className="page-title-bar-title--text"
+              <h2
+                title="Your Devices"
               >
-                <h2>
-                  Your Devices
-                </h2>
-              </div>
+                Your Devices
+              </h2>
             </div>
-            <p
-              className="page-title-bar-description"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
           </div>
+          <p
+            className="page-title-bar-description"
+          >
+            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+          </p>
           <div
             className="page-title-bar-header-right"
           >
@@ -622,6 +633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -638,6 +650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -678,7 +691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar with actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/NavigationBar with actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -695,35 +708,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     >
       <div
         className="page-title-bar"
+        style={
+          Object {
+            "--header-offset": "48px",
+            "--scroll-transition-progress": 1,
+          }
+        }
       >
         <div
           className="page-title-bar-header"
-          style={
-            Object {
-              "--header-offset": "48px",
-            }
-          }
         >
           <div
-            className="page-title-bar-header-left"
+            className="page-title-bar-breadcrumb-bg"
+          />
+          <div
+            className="page-title-bar-title"
           >
             <div
-              className="page-title-bar-title"
+              className="page-title-bar-title--text"
             >
-              <div
-                className="page-title-bar-title--text"
+              <h2
+                title="Your Devices"
               >
-                <h2>
-                  Your Devices
-                </h2>
-              </div>
+                Your Devices
+              </h2>
             </div>
-            <p
-              className="page-title-bar-description"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
           </div>
+          <p
+            className="page-title-bar-description"
+          >
+            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+          </p>
           <div
             className="page-title-bar-header-right"
           >
@@ -842,6 +857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={false}
           role="tabpanel"
           selected={true}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -858,6 +874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           hidden={true}
           role="tabpanel"
           selected={false}
+          tabIndex={0}
         >
           <div
             className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
@@ -874,6 +891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
       >
         <button
+          aria-pressed={null}
           className="bx--btn bx--btn--primary"
           disabled={false}
           onClick={[Function]}
@@ -883,6 +901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           New Entity Type
         </button>
         <button
+          aria-pressed={null}
           className="bx--btn bx--btn--secondary"
           disabled={false}
           onClick={[Function]}
