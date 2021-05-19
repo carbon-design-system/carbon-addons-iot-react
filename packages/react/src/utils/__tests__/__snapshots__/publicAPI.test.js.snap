@@ -20869,6 +20869,75 @@ Map {
       },
     },
   },
+  "TearSheetWrapper" => Object {
+    "defaultProps": Object {
+      "children": undefined,
+      "className": undefined,
+      "description": "Description",
+      "headerExtraContent": null,
+      "i18n": Object {
+        "close": "Close",
+      },
+      "idx": undefined,
+      "onClose": undefined,
+      "title": "Title",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "func",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "closeAllTearSheets": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "description": Object {
+        "type": "string",
+      },
+      "goToPreviousSheet": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "headerExtraContent": Object {
+        "type": "node",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "idx": Object {
+        "type": "number",
+      },
+      "onClose": Object {
+        "type": "func",
+      },
+      "openNextSheet": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "title": Object {
+        "type": "string",
+      },
+    },
+  },
   "useDNDProviderElement" => Object {},
   "Accordion" => Object {
     "defaultProps": Object {
