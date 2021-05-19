@@ -23,8 +23,8 @@ const demoViews = Array(100)
 
 export default {
   title: __DEV__
-    ? 'Watson IoT/⚠️ Table/TableManageViewsModal'
-    : 'Watson IoT/Table/TableManageViewsModal',
+    ? '1 - Watson IoT/⚠️ Table/TableManageViewsModal'
+    : '1 - Watson IoT/Table/TableManageViewsModal',
 
   parameters: {
     component: TableManageViewsModal,

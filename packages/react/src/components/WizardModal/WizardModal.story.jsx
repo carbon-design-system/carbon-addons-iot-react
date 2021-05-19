@@ -18,7 +18,7 @@ const commonWizardProps = {
 };
 
 export default {
-  title: 'Watson IoT/WizardModal',
+  title: '1 - Watson IoT/WizardModal',
 
   parameters: {
     component: WizardModal,

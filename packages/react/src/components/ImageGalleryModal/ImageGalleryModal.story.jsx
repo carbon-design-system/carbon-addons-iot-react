@@ -18,9 +18,9 @@ const content = [
     id: 'assemblyline',
     src: assemblyline,
     alt: 'assemblyline',
-    title: `custom title assemblyline that is very long a and must be managed. 
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+    title: `custom title assemblyline that is very long a and must be managed.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
       ad minim veniam.`,
   },
   { id: 'floow_plan', src: floow_plan, alt: 'floow plan' },
@@ -38,7 +38,7 @@ const content = [
 ];
 
 export default {
-  title: 'Watson IoT/ImageGalleryModal',
+  title: '1 - Watson IoT/ImageGalleryModal',
 
   parameters: {
     component: ImageGalleryModal,
