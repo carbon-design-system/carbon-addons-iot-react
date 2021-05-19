@@ -442,4 +442,89 @@ describe('filter, search and sort', () => {
     ).toHaveLength(3);
     expect(mockSortFunction).toHaveBeenCalled();
   });
+
+  it('filterSearchAndSort with multisort and custom sort function', () => {
+    const mockData = [
+      { values: { number: 10, node: <Add20 />, severity: 'High', null: null } },
+      { values: { number: 10, node: <Add20 />, severity: 'Low', null: null } },
+      {
+        values: { number: 10, node: <Add20 />, severity: 'Medium', null: null },
+      },
+    ];
+
+    const mockSortFunction = jest.fn(({ data, columnId, direction }) => {
+      const sortedData = data.slice();
+
+      sortedData.sort((a, b) => {
+        const aSev = a.values[columnId];
+        const bSev = b.values[columnId];
+        let compare = -1;
+        switch (`${aSev}-${bSev}`) {
+          case 'Low-Medium':
+          case 'Low-High':
+          case 'Medium-High':
+            compare = -1;
+            break;
+          case 'Medium-Low':
+          case 'High-Low':
+          case 'High-Medium':
+            compare = 1;
+            break;
+          default:
+            compare = 0;
+            break;
+        }
+
+        return direction === 'ASC' ? compare : -compare;
+      });
+
+      return sortedData;
+    });
+
+    const sortedResult = filterSearchAndSort(
+      mockData.slice(),
+      [
+        { columnId: 'number', direction: 'ASC' },
+        { columnId: 'severity', direction: 'ASC' },
+      ],
+      {},
+      [],
+      [
+        { id: 'severity', sortFunction: mockSortFunction, isSortable: true },
+        { id: 'number', isSortable: true },
+      ]
+    );
+    expect(sortedResult).toHaveLength(3);
+    expect(mockSortFunction).toHaveBeenCalled();
+
+    // low
+    expect(sortedResult[0]).toEqual(mockData[1]);
+    // medium
+    expect(sortedResult[1]).toEqual(mockData[2]);
+    // high
+    expect(sortedResult[2]).toEqual(mockData[0]);
+
+    // flip the direction now
+    const sortedResultDesc = filterSearchAndSort(
+      mockData.slice(),
+      [
+        { columnId: 'number', direction: 'ASC' },
+        { columnId: 'severity', direction: 'DESC' },
+      ],
+      {},
+      [],
+      [
+        { id: 'severity', sortFunction: mockSortFunction, isSortable: true },
+        { id: 'number', isSortable: true },
+      ]
+    );
+    expect(sortedResultDesc).toHaveLength(3);
+    expect(mockSortFunction).toHaveBeenCalled();
+    // high
+    expect(sortedResultDesc[0]).toEqual(mockData[0]);
+    // medium
+    expect(sortedResultDesc[1]).toEqual(mockData[2]);
+    // low
+    expect(sortedResultDesc[2]).toEqual(mockData[1]);
+  });
 });

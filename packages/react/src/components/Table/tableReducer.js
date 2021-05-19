@@ -234,10 +234,25 @@ export const filterSearchAndSort = (
   if (Array.isArray(sort)) {
     let sortStack = firstBy(() => 0);
     sort.forEach(({ columnId, direction }) => {
-      sortStack = sortStack.thenBy(sortTableData(columnId), {
-        cmp: getCustomColumnSort(columns, columnId),
-        direction: direction === 'ASC' ? 'asc' : 'desc',
-      });
+      const customSortFn = getCustomColumnSort(columns, columnId);
+      if (customSortFn) {
+        const sortedValues = customSortFn({ data: searchedData, columnId, direction }).map(
+          ({ values }) => values
+        );
+        sortStack = sortStack.thenBy((row) => row.values[columnId], {
+          cmp: (a, b) => {
+            return (
+              sortedValues.findIndex((row) => row[columnId] === a) -
+              sortedValues.findIndex((row) => row[columnId] === b)
+            );
+          },
+        });
+      } else {
+        sortStack = sortStack.thenBy((row) => row.values[columnId], {
+          cmp: sortTableData(columnId),
+          direction: direction === 'ASC' ? 'asc' : 'desc',
+        });
+      }
     });
 
     return searchedData.sort(sortStack);

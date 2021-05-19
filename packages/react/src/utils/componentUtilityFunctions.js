@@ -118,16 +118,16 @@ export const handleEnterKeyDown = (evt, callback) => {
 export const defaultFunction = (name) => () => console.info(`${name} not implemented`); // eslint-disable-line no-console
 
 export const sortTableData = (columnId, isTimestampColumn) => (a, b) => {
-  if (isNil(a.values[columnId])) {
+  if (isNil(a)) {
     return 1;
   }
-  if (isNil(b.values[columnId])) {
+  if (isNil(b)) {
     return -1;
   }
   if (isTimestampColumn) {
     // support the sort if we have column with timestamp
-    const dateA = dayjs(a.values[columnId]);
-    const dateB = dayjs(b.values[columnId]);
+    const dateA = dayjs(a);
+    const dateB = dayjs(b);
 
     if (dateA < dateB) {
       return -1;
@@ -136,13 +136,13 @@ export const sortTableData = (columnId, isTimestampColumn) => (a, b) => {
       return 1;
     }
   }
-  if (typeof a.values[columnId] === 'string' && !Number(a.values[columnId])) {
-    return a.values[columnId].localeCompare(b.values[columnId]);
+  if (typeof a === 'string' && !Number(a)) {
+    return a.localeCompare(b);
   }
-  if (Number(a.values[columnId]) < Number(b.values[columnId])) {
+  if (Number(a) < Number(b)) {
     return -1;
   }
-  if (Number(a.values[columnId]) > Number(b.values[columnId])) {
+  if (Number(a) > Number(b)) {
     return 1;
   }
 
@@ -154,7 +154,10 @@ export const getSortedData = (inputData, columnId, direction, isTimestampColumn)
   const sortedData = inputData.map((i) => i);
 
   return sortedData.sort(
-    firstBy(sortTableData(columnId, isTimestampColumn), direction === 'ASC' ? 'asc' : 'desc')
+    firstBy((row) => row.values[columnId], {
+      cmp: sortTableData(columnId, isTimestampColumn),
+      direction: direction === 'ASC' ? 'asc' : 'desc',
+    })
   );
 };
 

@@ -1649,8 +1649,8 @@ WithSorting.story = {
 
 export const WithMultiSorting = withReadme(README, () => {
   const sortedData = tableData.slice(0, 10).sort(
-    firstBy((a) => a.values.select).thenBy((a) => {
-      return a.values.string;
+    firstBy((row) => row.values.select).thenBy((row) => {
+      return row.values.string;
     })
   );
 
