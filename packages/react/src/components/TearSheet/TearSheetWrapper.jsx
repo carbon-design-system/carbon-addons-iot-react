@@ -13,6 +13,12 @@ const propTypes = {
   children: PropTypes.node,
 };
 
+const tearSheetConstants = {
+  DISTANCE_FROM_TOP: 88,
+  WIDTH_DECREASE: 24,
+  BOTTOM_POSITION_WHEN_HIDDEN: 12,
+};
+
 const defaultProps = {
   isOpen: false,
   className: undefined,
@@ -76,10 +82,10 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
     setContainersStyles(
       containers.reduce((acc, c, idx) => {
         const currentWidth = isWindowWidthSmallerThanContainer
-          ? windowSize.width - (activeTearSheetIdx - idx) * 24
+          ? windowSize.width - (activeTearSheetIdx - idx) * tearSheetConstants.WIDTH_DECREASE
           : activeTearSheetIdx === null || activeTearSheetIdx <= idx
           ? initialContainersWidth
-          : initialContainersWidth - (activeTearSheetIdx - idx) * 24;
+          : initialContainersWidth - (activeTearSheetIdx - idx) * tearSheetConstants.WIDTH_DECREASE;
 
         const currentBottom =
           activeTearSheetIdx !== null
@@ -87,7 +93,7 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
               ? 0 - windowSize.height
               : activeTearSheetIdx === idx
               ? 0
-              : (activeTearSheetIdx - idx) * 12
+              : (activeTearSheetIdx - idx) * tearSheetConstants.BOTTOM_POSITION_WHEN_HIDDEN
             : 0 - windowSize.height;
 
         return {
@@ -95,7 +101,9 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
           [`container${idx}`]: {
             bottom: `${currentBottom}px`,
             width: `${currentWidth}px`,
-            '--content-max-height': `${windowSize?.height - greaterHeaderTopPosition - 88}px`,
+            '--content-max-height': `${
+              windowSize?.height - greaterHeaderTopPosition - tearSheetConstants.DISTANCE_FROM_TOP
+            }px`,
           },
         };
       }, {})
