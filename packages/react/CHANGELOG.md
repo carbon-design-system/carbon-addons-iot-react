@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.0...v2.146.0-next.1) (2021-05-19)
+
+
+### Bug Fixes
+
+* **overflow-menu:** getMenuOffset import fix ([176f8f6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/176f8f6fb30652bbfa27ac1d3591cf4af69914a1))
+
+
+
+
+
 # [2.146.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.1-next.4...v2.146.0-next.0) (2021-05-19)
 
 
