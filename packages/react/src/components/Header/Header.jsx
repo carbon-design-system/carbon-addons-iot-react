@@ -50,6 +50,11 @@ const propTypes = {
   prefix: PropTypes.string,
   /** Name to follow the IBM prefix up top, left */
   appName: PropTypes.string.isRequired,
+
+  /** Short name to follow the IBM prefix at top, left on smaller breakpoints */
+  // eslint-disable-next-line react/require-default-props, uses appName is none provided
+  shortAppName: PropTypes.string,
+
   /** Optional prop that provides additional app information */
   subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /** Add a class name to Header */
@@ -70,6 +75,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     mainHeader: PropTypes.string,
     openMenu: PropTypes.string,
+    closeMenu: PropTypes.string,
   }),
 };
 
@@ -88,6 +94,7 @@ const defaultProps = {
   i18n: {
     mainHeader: 'main header',
     openMenu: 'Open menu',
+    closeMenu: 'Close menu',
   },
 };
 
@@ -96,6 +103,7 @@ const defaultProps = {
  */
 const Header = ({
   appName,
+  shortAppName,
   subtitle,
   className,
   actionItems: actionItemsProp,
@@ -109,7 +117,7 @@ const Header = ({
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-
+  const theShortAppName = shortAppName || appName;
   const actionItems = !headerPanel
     ? actionItemsProp
     : [
@@ -142,10 +150,13 @@ const Header = ({
         <HeaderMenuButton aria-label={mergedI18n.openMenu} onClick={onClickSideNavExpand} />
       )}
       <HeaderName href={url} prefix={prefix}>
-        {appName}
+        <span>{appName}</span>
+        {theShortAppName ? (
+          <span className={`${iotPrefix}--header__short-name`}>{theShortAppName}</span>
+        ) : null}
         {subtitle ? <div className={`${iotPrefix}--header__subtitle`}>{subtitle}</div> : null}
       </HeaderName>
-      <HeaderActionGroup actionItems={actionItems} />
+      <HeaderActionGroup actionItems={actionItems} i18n={mergedI18n} />
     </CarbonHeader>
   );
 };
