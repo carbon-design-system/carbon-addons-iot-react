@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, object, boolean } from '@storybook/addon-knobs';
+import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { spacing03 } from '@carbon/layout';
 
 import ImageHotspots from './ImageHotspots';
@@ -54,7 +54,7 @@ const componentDescription =
   '/ panned, in which it will follow the overlaying panned position.';
 
 export default {
-  title: __DEV__ ? '1 - Watson IoT/⚠️ ImageHotspots' : '1 - Watson IoT/ImageHotspots',
+  title: '1 - Watson IoT/ImageHotspots',
 
   parameters: {
     component: ImageHotspots,
@@ -74,6 +74,7 @@ export const LandscapeImageLandscapeContainer = () => {
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
       />
     </div>
   );
@@ -95,6 +96,7 @@ export const LandscapeImagePortraitContainer = () => {
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
       />
     </div>
   );
@@ -116,6 +118,7 @@ export const PortraitImageLandscapeContainer = () => {
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
       />
     </div>
   );
@@ -137,6 +140,7 @@ export const PortraitImagePortraitContainer = () => {
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
       />
     </div>
   );
@@ -158,6 +162,7 @@ export const ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden = () => {
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
       />
     </div>
   );
@@ -266,6 +271,7 @@ export const EditableWithTextHotspot = () => {
           hotspots={myHotspots}
           hideHotspots={boolean('Hide hotspots', false)}
           hideMinimap={boolean('Hide Minimap', false)}
+          minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
           selectedHotspots={selectedHotspotPositions}
         />
       </div>

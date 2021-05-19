@@ -505,7 +505,7 @@ describe('ImageHotspots', () => {
       expect(img).toHaveStyle({ width: '512px' });
     });
 
-    it('should allow dragging the image around', () => {
+    it('should always show minimap if minimapBehavior=show', () => {
       render(
         <ImageHotspots
           height={683}
@@ -513,6 +513,45 @@ describe('ImageHotspots', () => {
           src={portrait}
           alt="portrait-test-image"
           hideHotspots
+          minimapBehavior="show"
+        />
+      );
+
+      const img = screen.getByAltText('portrait-test-image');
+      fireEvent.load(img);
+      expect(screen.getByAltText('Minimap')).toBeVisible();
+      userEvent.click(screen.getByTitle('Zoom in'));
+      expect(screen.getByAltText('Minimap')).toBeVisible();
+    });
+
+    it('should always hide minimap if minimapBehavior=hide', () => {
+      render(
+        <ImageHotspots
+          height={683}
+          width={512}
+          src={portrait}
+          alt="portrait-test-image"
+          hideHotspots
+          minimapBehavior="hide"
+        />
+      );
+
+      const img = screen.getByAltText('portrait-test-image');
+      fireEvent.load(img);
+      expect(screen.queryByAltText('Minimap')).toBeNull();
+      userEvent.click(screen.getByTitle('Zoom in'));
+      expect(screen.queryByAltText('Minimap')).toBeNull();
+    });
+
+    it('should allow dragging the image around and show minimap', () => {
+      render(
+        <ImageHotspots
+          height={683}
+          width={512}
+          src={portrait}
+          alt="portrait-test-image"
+          hideHotspots
+          minimapBehavior="onPan"
         />
       );
 
@@ -542,6 +581,8 @@ describe('ImageHotspots', () => {
         });
         distance -= 10;
       }
+      expect(screen.getByAltText('Minimap')).toBeVisible();
+
       fireEvent.mouseUp(img, {
         clientX,
         clientY,
@@ -550,6 +591,7 @@ describe('ImageHotspots', () => {
         top: '-441.3333333333333px',
         left: '-356px',
       });
+      expect(screen.queryByAltText('Minimap')).toBeNull();
     });
 
     it('should stop dragging if we leave the container', () => {
@@ -794,6 +836,7 @@ describe('ImageHotspots', () => {
         width={512}
         src={portrait}
         alt="portrait-test-image"
+        hideMinimap={false}
         hotspots={[
           {
             x: 10,
@@ -819,6 +862,32 @@ describe('ImageHotspots', () => {
     expect(hotspot).toHaveAttribute('icon', 'invalid_icon_name');
     expect(console.error).toHaveBeenCalledWith(
       `Warning: An array of available icons was provided to the ImageHotspots but a hotspot was trying to use an icon with name 'invalid_icon_name' that was not found in that array.`
+    );
+    console.error = originalError;
+    global.__DEV__ = originalDEV;
+  });
+
+  it('should show a deprecated warning for hideMinimap prop', () => {
+    const originalDEV = global.__DEV__;
+    const originalError = console.error;
+
+    global.__DEV__ = true;
+    console.error = jest.fn();
+
+    render(
+      <ImageHotspots
+        height={683}
+        width={512}
+        src={portrait}
+        alt="portrait-test-image"
+        hideMinimap
+        hotspots={getHotspots()}
+      />
+    );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        `Warning: Failed prop type: ImageHotspots: 'hideMinimap' prop is deprecated`
+      )
     );
     console.error = originalError;
     global.__DEV__ = originalDEV;
