@@ -308,6 +308,7 @@ const renderCustomEditContent = (onChange, cardConfig) => {
       header: { title: 'customTitle', tooltip: { tooltipText: 'Custom Tooltip' } },
       content: (
         <TextInput
+          id="custom-content-textinput"
           value={cardConfig.title}
           labelText="Title"
           onChange={(event) => onChange({ ...cardConfig, title: event.currentTarget.value })}

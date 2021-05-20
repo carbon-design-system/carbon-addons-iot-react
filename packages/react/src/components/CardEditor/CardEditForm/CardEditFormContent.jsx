@@ -210,10 +210,10 @@ const CardEditFormContent = ({
       ) : null}
       {Array.isArray(editContentSections) // render the content sections for all types of card if set
         ? editContentSections.map(({ header: { title, tooltip }, content }) => (
-            <>
+            <React.Fragment key="custom-content-section">
               <ContentFormItemTitle title={title} tooltip={tooltip} />
               {content}
-            </>
+            </React.Fragment>
           ))
         : null}
     </>
