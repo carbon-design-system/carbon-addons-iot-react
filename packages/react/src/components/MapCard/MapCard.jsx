@@ -9,17 +9,12 @@ import ZoomControl from './ZoomControl';
 import MapControls from './MapControls';
 import data from './data.json';
 import Card from '../Card/Card';
-import {
-  getResizeHandles,
-  getUpdatedCardSize,
-} from '../../utils/cardUtilityFunctions';
+import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { determineLayout } from '../ValueCard/valueCardUtils';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
-
-
 
 const defaultStrings = {
   cardTitle: 'Card Title',
@@ -28,7 +23,10 @@ const defaultStrings = {
   configurationTitle: 'Map configuration',
   closeSideBarIconText: 'Close',
   expandLabel: 'Expand',
-  layerTriggerIconDescription: 'Layered controls'
+  layerTriggerIconDescription: 'Layered controls',
+  legendTitle: 'Legend',
+  hideLegend: 'Hide legend',
+  showLegend: 'Show legend',
 };
 
 const MapCard = ({
@@ -63,7 +61,7 @@ const MapCard = ({
     children,
     isResizable,
   ]);
-
+  const [isLegendCollapsed, setIsLegendCollapsed] = useState(false);
 
   const tooltipPosition = React.useMemo(() => {
     if (langDir === 'ltr') {
@@ -71,8 +69,16 @@ const MapCard = ({
     } else {
       return 'right';
     }
-  },[langDir])
-  const controls = mapControls || layeredControls ? <MapControls controls={mapControls} layeredControls={layeredControls} tooltipPosition={tooltipPosition} layerTriggerIconDescription={mergedI18n.layerTriggerIconDescription} /> : null;
+  }, [langDir]);
+  const controls =
+    mapControls || layeredControls ? (
+      <MapControls
+        controls={mapControls}
+        layeredControls={layeredControls}
+        tooltipPosition={tooltipPosition}
+        layerTriggerIconDescription={mergedI18n.layerTriggerIconDescription}
+      />
+    ) : null;
   return (
     <Card
       title={mergedI18n.cardTitle}
@@ -88,44 +94,65 @@ const MapCard = ({
       className={classnames(`${BASE_CLASS_NAME}`, {
         // allows attribute overflow scrolling
         [`${BASE_CLASS_NAME}__settings-open`]: isSettingPanelOpen,
-        [`${BASE_CLASS_NAME}__has-fullwidth-legend`]: isLegendFullWidth,
+        // [`${BASE_CLASS_NAME}__has-fullwidth-legend`]: isLegendFullWidth && !isLegendCollapsed,
         [`${BASE_CLASS_NAME}__vertical`]: layout === CARD_LAYOUTS.VERTICAL,
       })}
       {...others}
     >
       <>
-      <div ref={mapContainerRef} className={classnames(
-        `${BASE_CLASS_NAME}-container`,
-        {[`${BASE_CLASS_NAME}-container__open`]: isSettingPanelOpen,})
-      }>
-        <div className={classnames(`${BASE_CLASS_NAME}-controls`,{ [`${BASE_CLASS_NAME}-controls__has-fullwidth-legend`]: isLegendFullWidth,})}>
-          { controls }
-          <ZoomControl
-            i18n={{ zoomIn: mergedI18n.zoomIn, zoomOut: mergedI18n.zoomOut }}
-            onZoomIn={onZoomIn}
-            onZoomOut={onZoomOut}
-            tooltipPosition={tooltipPosition}
+        <div
+          ref={mapContainerRef}
+          className={classnames(`${BASE_CLASS_NAME}-container`, {
+            [`${BASE_CLASS_NAME}-container__open`]: isSettingPanelOpen,
+          })}
+        >
+          <div
+            className={classnames(`${BASE_CLASS_NAME}-controls`, {
+              [`${BASE_CLASS_NAME}-controls__has-fullwidth-legend`]:
+                isLegendFullWidth && !isLegendCollapsed,
+            })}
+          >
+            {controls}
+            <ZoomControl
+              i18n={{ zoomIn: mergedI18n.zoomIn, zoomOut: mergedI18n.zoomOut }}
+              onZoomIn={onZoomIn}
+              onZoomOut={onZoomOut}
+              tooltipPosition={tooltipPosition}
+            />
+          </div>
+          <Legend
+            hideLegendText={mergedI18n.hideLegend}
+            showLegendText={mergedI18n.showLegend}
+            titleText={mergedI18n.legendTitle}
+            stops={stops}
+            isFullWidth={isLegendFullWidth}
+            isCollapsed={isLegendCollapsed}
+            onCollapsToggle={() => {
+              setIsLegendCollapsed(!isLegendCollapsed);
+            }}
           />
         </div>
-        <Legend title={mergedI18n.legendTitle} stops={stops} isFullWidth={isLegendFullWidth} />
-      </div>
-      <div className={classnames(
-        `${BASE_CLASS_NAME}-settings`,
-        {[`${BASE_CLASS_NAME}-settings__open`]: isSettingPanelOpen,})}>
-        <div className={`${BASE_CLASS_NAME}-settings-header`}>
-          <h3 className={`${BASE_CLASS_NAME}-settings-header-title`}>{mergedI18n.configurationTitle}</h3>
-          <Button
-            className={`${BASE_CLASS_NAME}-settings-close-btn`}
-            kind="ghost"
-            size="small"
-            hasIconOnly
-            renderIcon={Close16}
-            iconDescription={mergedI18n.closeSideBarIconText}
-            onClick={() => setSettingsOpen((oldSettingsOpen) => !oldSettingsOpen)}
-          />
+        <div
+          className={classnames(`${BASE_CLASS_NAME}-settings`, {
+            [`${BASE_CLASS_NAME}-settings__open`]: isSettingPanelOpen,
+          })}
+        >
+          <div className={`${BASE_CLASS_NAME}-settings-header`}>
+            <h3 className={`${BASE_CLASS_NAME}-settings-header-title`}>
+              {mergedI18n.configurationTitle}
+            </h3>
+            <Button
+              className={`${BASE_CLASS_NAME}-settings-close-btn`}
+              kind="ghost"
+              size="small"
+              hasIconOnly
+              renderIcon={Close16}
+              iconDescription={mergedI18n.closeSideBarIconText}
+              onClick={() => setSettingsOpen((oldSettingsOpen) => !oldSettingsOpen)}
+            />
+          </div>
+          <SideBarContent />
         </div>
-        <SideBarContent/>
-      </div>
       </>
     </Card>
   );

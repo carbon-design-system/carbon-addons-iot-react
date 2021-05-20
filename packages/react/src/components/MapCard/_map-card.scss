@@ -1,4 +1,6 @@
 @import '~carbon-components/scss/globals/scss/vars';
+@import 'legend';
+@import 'zoom-control';
 
 .#{$iot-prefix}--map {
   // container and map canvas
@@ -9,57 +11,6 @@
 
     canvas {
       min-height: 100%;
-    }
-  }
-
-  // legend
-  &-legend {
-    background: #fff;
-    bottom: 1rem;
-    left: 1rem;
-    padding: 1rem;
-    position: absolute;
-    z-index: 2;
-
-    [dir='rtl'] & {
-      left: unset;
-      right: 1rem;
-    }
-  }
-
-  &-legend.#{$iot-prefix}--map-legend__fullwidth {
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    left: 0;
-    overflow-x: auto;
-    right: 0;
-    width: 100%;
-
-    & > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
-      margin-right: 0.5rem;
-    }
-  }
-
-  [dir='rtl']
-    &-legend.#{$iot-prefix}--map-legend__fullwidth
-    > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
-    margin-left: 0.5rem;
-    margin-right: unset;
-  }
-
-  &-legend-keys {
-    display: flex;
-  }
-
-  &-legend-keys-color {
-    height: 1rem;
-    margin-right: 0.5rem;
-    width: 1rem;
-
-    [dir='rtl'] & {
-      margin-left: 0.5rem;
-      margin-right: unset;
     }
   }
 
@@ -133,6 +84,8 @@
 
   // Controls
   &-controls {
+    transition: bottom 0.09s;
+    transition-timing-function: cubic-bezier(0.2, 0, 0.38, 0.9);
     bottom: 1rem;
     display: flex;
     flex-direction: column;
@@ -143,7 +96,9 @@
     z-index: 2;
 
     &__has-fullwidth-legend {
-      bottom: 4rem;
+      bottom: 5.5rem;
+      transition: bottom 0.09s;
+      transition-timing-function: cubic-bezier(0.2, 0, 0.38, 0.9);
     }
 
     [dir='rtl'] & {
@@ -169,6 +124,7 @@
 
   &-controls-btn {
     background: #fff;
+    @include box-shadow();
   }
 
   &-controls-btn:not(:last-child) {
@@ -183,6 +139,7 @@
   // Layered controls
   &-controls-layers-trigger {
     background-color: white;
+    @include box-shadow();
     margin-bottom: 1rem;
     position: absolute;
     right: 0;
@@ -196,6 +153,7 @@
   }
 
   &-controls-layers-wrapper {
+    @include box-shadow();
     flex-direction: row-reverse;
     position: absolute;
     top: 0;
@@ -235,17 +193,18 @@
     }
   }
 
-  &-zoom {
-    position: relative;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
+  // &-zoom {
+  //   position: relative;
+  //   background: #fff;
+  //   display: flex;
+  //   flex-direction: column;
+  //   z-index: 2;
+  //   @include box-shadow();
 
-    & > *:first-child {
-      border-bottom: 1px solid $ui-03; // should be updated to $button-separator once available
-    }
-  }
+  //   & > *:first-child {
+  //     border-bottom: 1px solid $ui-03; // should be updated to $button-separator once available
+  //   }
+  // }
 }
 
 // .mapboxgl-control-container {

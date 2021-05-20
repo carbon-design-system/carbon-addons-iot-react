@@ -22,7 +22,7 @@ import data from '../MapCard/data.json';
 import options from '../MapCard/storyFiles/mapOptions';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 
-const MapBoxExample = ({...props}) => {
+const MapBoxExample = ({ ...props }) => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -32,12 +32,21 @@ const MapBoxExample = ({...props}) => {
     } else if (actionType === CARD_ACTIONS.OPEN_EXPANDED_CARD) {
       setIsExpanded(true);
     } else if (actionType === CARD_ACTIONS.ON_SETTINGS_CLICK) {
-      setSettingsOpen((oldSettingsState) => !oldSettingsState)
+      setSettingsOpen((oldSettingsState) => !oldSettingsState);
     }
-  }
+  };
   return (
-  <MapBoxCard data={data} options={options} isLegendFullWidth={boolean('isLegendFullWidth', false)} onCardAction={handleOnCardAction} availableActions={{ expand: true, settings: true }} isSettingPanelOpen={settingsOpen} isExpanded={isExpanded} {...props} />
-  )
+    <MapBoxCard
+      data={data}
+      options={options}
+      isLegendFullWidth={boolean('isLegendFullWidth', false)}
+      onCardAction={handleOnCardAction}
+      availableActions={{ expand: true, settings: true }}
+      isSettingPanelOpen={settingsOpen}
+      isExpanded={isExpanded}
+      {...props}
+    />
+  );
 };
 
 const Cards = [
@@ -674,7 +683,13 @@ export const DashboardAllCardsAsResizable = () => {
       isResizable={isResizable}
       values={pieChartCardValues}
     />,
-    <MapBoxExample isResizable={isResizable} id="mapCard" key="mapCard" title={`MapCard - ${currentSizes.mapCard}`} size={currentSizes.mapCard}/>,
+    <MapBoxExample
+      isResizable={isResizable}
+      id="mapCard"
+      key="mapCard"
+      title={`MapCard - ${currentSizes.mapCard}`}
+      size={currentSizes.mapCard}
+    />,
     <TableCard
       title={`TableCard - ${currentSizes.tableCard}`}
       id="tableCard"
@@ -838,8 +853,8 @@ export const DashboardAllCardsAsResizable = () => {
           cardLayoutCopy.minH = CARD_DIMENSIONS.LARGE.max.h;
           break;
         case 'mapCard':
-          cardLayoutCopy.minW = CARD_DIMENSIONS.LARGE.max.w;
-          cardLayoutCopy.minH = CARD_DIMENSIONS.LARGE.max.h;
+          cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUM.max.w;
+          cardLayoutCopy.minH = CARD_DIMENSIONS.MEDIUM.max.h;
           break;
         case 'imageCard':
           cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUMTHIN.max.w;

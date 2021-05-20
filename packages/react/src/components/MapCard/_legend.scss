@@ -1,0 +1,116 @@
+@import '~carbon-components/scss/globals/scss/vars';
+
+$bottom-spacing: $spacing-03;
+$transition-time: 0.09s;
+
+.#{$iot-prefix}--map {
+  &-legend {
+    max-width: 50%;
+    background: $ui-02;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 1rem;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.8;
+    @include box-shadow();
+
+    [dir='rtl'] & {
+      left: unset;
+      right: 1rem;
+    }
+  }
+
+  &-legend__fullwidth {
+    height: $spacing-11; // We want the same height independent if scrollbars are present
+    transition: width $transition-time;
+    transition-timing-function: cubic-bezier(0.2, 0, 0.38, 0.9);
+    max-width: unset;
+    bottom: 0;
+    display: flex;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: $spacing-03;
+    padding-left: $spacing-03;
+    padding-right: $spacing-03;
+    padding-bottom: $spacing-02; // Needed for horizontal scrollbar
+
+    .#{$iot-prefix}--map-legend-keys-container {
+      overflow-x: auto;
+      .#{$iot-prefix}--map-legend-keys {
+        margin-bottom: 0;
+      }
+
+      & > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &-legend__fullwidth--collapsed {
+    width: $spacing-09;
+  }
+
+  [dir='rtl']
+    &-legend.#{$iot-prefix}--map-legend__fullwidth
+    .#{$iot-prefix}--map-legend-keys-container
+    > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
+    margin-left: 0.5rem;
+    margin-right: unset;
+  }
+
+  [dir='rtl'] &-legend__collapse-btn {
+    margin-left: $spacing-02;
+    margin-right: 0;
+  }
+
+  &-legend__collapse-btn {
+    margin-right: $spacing-02;
+    margin-bottom: $bottom-spacing;
+  }
+
+  &-legend__label {
+    @include type-style('productive-heading-01');
+    padding-bottom: $spacing-03;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-legend-content {
+    display: grid;
+  }
+
+  &-legend__fullwidth--collapsed .#{$iot-prefix}--map-legend-keys-container {
+    overflow-x: hidden;
+  }
+
+  &-legend-keys-container {
+    display: flex;
+    padding-bottom: $bottom-spacing;
+  }
+
+  &-legend-keys {
+    display: flex;
+    margin-bottom: $spacing-04;
+  }
+
+  &-legend-keys-color {
+    height: 1rem;
+    margin-right: 0.5rem;
+    width: 1rem;
+    flex-shrink: 0;
+
+    [dir='rtl'] & {
+      margin-left: 0.5rem;
+      margin-right: unset;
+    }
+  }
+
+  &-legend-keys-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
