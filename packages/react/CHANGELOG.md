@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.1...v2.146.0-next.2) (2021-05-20)
+
+
+### Bug Fixes
+
+* **dayjs:** need to rename the dayjs variable or we lose the extends ([5ab1dc5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5ab1dc5cec8d53568395f83b650ebd70198baa6a))
+* **overflow-menu:** use es import from carbon ([5e143fa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5e143fac5554d3ae4268bfed0dae7374cb4ed66d))
+* **repo:** use es imports in drop-container and suiteheader test ([7591513](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7591513bf01d4b3b4008bb141a955f5b8793b059))
+
+
+
+
+
 # [2.146.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.0...v2.146.0-next.1) (2021-05-19)
 
 
