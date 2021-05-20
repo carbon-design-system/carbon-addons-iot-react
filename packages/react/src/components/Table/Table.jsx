@@ -196,6 +196,7 @@ const propTypes = {
       singleRowEditButtons: PropTypes.element,
       expandedIds: PropTypes.arrayOf(PropTypes.string),
       emptyState: EmptyStatePropTypes,
+      /** use custom error state or use error message directly */
       errorState: PropTypes.element,
       loadingState: PropTypes.shape({
         isLoading: PropTypes.bool,
@@ -258,7 +259,8 @@ const propTypes = {
   /** what locale should we use to format table values if left empty no locale formatting happens */
   locale: PropTypes.string,
   i18n: I18NPropTypes,
-  /** Form Error Details */
+  /** Specify the error message that need to be displayed by default.
+   * Incase we use view.table.errorState property then the error state will be displayed instead of error message */
   error: PropTypes.string,
 };
 

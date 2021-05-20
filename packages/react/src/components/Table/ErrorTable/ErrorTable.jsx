@@ -35,10 +35,10 @@ const ErrorTable = ({ id, testID, i18n, totalColumns, error, errorState, onError
   <TableBody id={id} data-testid={testID}>
     <TableRow className={`${iotPrefix}--empty-table--table-row`}>
       <TableCell colSpan={totalColumns}>
-        {React.isValidElement(errorState) ? (
-          errorState
-        ) : (
-          <div className="empty-table-cell--default">
+        <div className="empty-table-cell--default">
+          {React.isValidElement(errorState) ? (
+            errorState
+          ) : (
             <EmptyState
               icon="error"
               title={i18n.tableErrorStateTitle}
@@ -53,8 +53,8 @@ const ErrorTable = ({ id, testID, i18n, totalColumns, error, errorState, onError
                   : null
               }
             />
-          </div>
-        )}
+          )}
+        </div>
       </TableCell>
     </TableRow>
   </TableBody>
