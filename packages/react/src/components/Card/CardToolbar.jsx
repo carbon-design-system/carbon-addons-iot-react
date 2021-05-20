@@ -176,6 +176,14 @@ const CardToolbar = ({
           cardWidth={width}
         />
       ) : null}
+      {availableActions.settings ? (
+        <ToolbarSVGWrapper
+          title={mergedI18n.settingsLabel}
+          onClick={() => onCardAction(CARD_ACTIONS.ON_SETTINGS_CLICK)}
+          iconDescription={mergedI18n.settingsLabel}
+          renderIcon={Settings16}
+        />
+      ) : null}
       {availableActions.expand ? (
         <>
           {isExpanded ? (
@@ -196,14 +204,6 @@ const CardToolbar = ({
             />
           )}
         </>
-      ) : null}
-      {availableActions.settings ? (
-        <ToolbarSVGWrapper
-          title={mergedI18n.settingsLabel}
-          onClick={() => onCardAction(CARD_ACTIONS.ON_SETTINGS_CLICK)}
-          iconDescription={mergedI18n.settingsLabel}
-          renderIcon={Settings16}
-        />
       ) : null}
     </div>
   );
