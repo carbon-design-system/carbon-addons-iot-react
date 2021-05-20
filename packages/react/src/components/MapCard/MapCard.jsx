@@ -79,11 +79,17 @@ const MapCard = ({
         layerTriggerIconDescription={mergedI18n.layerTriggerIconDescription}
       />
     ) : null;
+
+  const myAvailableActions = {
+    ...availableActions,
+    settings: isExpanded && availableActions.settings,
+  };
+
   return (
     <Card
       title={mergedI18n.cardTitle}
       size={newSize}
-      availableActions={availableActions}
+      availableActions={myAvailableActions}
       isResizable={isResizable}
       isExpanded={isExpanded}
       resizeHandles={resizeHandles}
@@ -94,7 +100,6 @@ const MapCard = ({
       className={classnames(`${BASE_CLASS_NAME}`, {
         // allows attribute overflow scrolling
         [`${BASE_CLASS_NAME}__settings-open`]: isSettingPanelOpen,
-        // [`${BASE_CLASS_NAME}__has-fullwidth-legend`]: isLegendFullWidth && !isLegendCollapsed,
         [`${BASE_CLASS_NAME}__vertical`]: layout === CARD_LAYOUTS.VERTICAL,
       })}
       {...others}
