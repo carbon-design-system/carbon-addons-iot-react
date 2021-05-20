@@ -79,7 +79,9 @@ $transition-time: 0.09s;
   }
 
   &-legend-content {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - #{$spacing-09});
   }
 
   &-legend__fullwidth--collapsed .#{$iot-prefix}--map-legend-keys-container {
