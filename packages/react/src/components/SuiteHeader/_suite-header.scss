@@ -160,7 +160,7 @@
   }
 
   &--app-link {
-    a {
+    button {
       @include type-style('productive-heading-01');
       text-decoration: none;
       color: $text-02;
