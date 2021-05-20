@@ -159,6 +159,7 @@ const actions = {
     onChangeSort: () => {},
     onColumnResize: () => {},
     onOverflowItemClicked: () => {},
+    onTableErrorStateAction: () => {},
   },
 };
 ```
@@ -731,7 +732,8 @@ the following props:
 | view           | object |         | Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example (see [view prop](#view-prop)) |
 | actions        | object |         | Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props (see [actions prop](#actions-prop))                                                        |
 | locale         | string |         | what locale should we use to format table values if left empty no locale formatting happens                                                                                                            |
-| i18n           | object |         | (see [i18n prop](#i18n-prop))                                                                                                                                                                          |
+| i18n           | object |         | (see [i18n prop](#i18n-prop)                                                                                                                                                                           |
+| error          | string |         | error message to be rendered within TableErrorState                                                                                                                                                    |
 
 ### Column Prop
 
@@ -849,6 +851,7 @@ the following props:
 | toolbar.isDisabled                      | bool                             |         | Disable the toolbar                                                                                                                                 |
 | toolbar.rowEditBarButtons               | node                             |         | buttons to be shown with when activeBar is 'rowEdit'                                                                                                |
 | table                                   | object                           |         |                                                                                                                                                     |
+| table.errorState                        | element                          |         | custom error state element such as EmptyState                                                                                                       |
 | table.isSelectAllSelected               | bool                             |         | If true, the select all option is checked                                                                                                           |
 | table.isSelectAllIndeterminate          | bool                             |         |                                                                                                                                                     |
 | table.selectedIds                       | string[]                         |         | An array of row ids that are currently selected                                                                                                     |
@@ -912,6 +915,7 @@ the following props:
 | table.onColumnSelectionConfig   | func   |         |                                                                                                                                                                                                                 |
 | table.onColumnResize            | func   |         |                                                                                                                                                                                                                 |
 | table.onOverflowItemClicked     | func   |         |                                                                                                                                                                                                                 |
+| table.onTableErrorStateAction   | func   |         | callback for table error state within the TableErrorState such as refreshPage()                                                                                                                                 |
 | onUserViewModified              | func   |         | callback for actions relevant for view management                                                                                                                                                               |
 
 ### i18n Prop
