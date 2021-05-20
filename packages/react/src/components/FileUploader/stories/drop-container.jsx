@@ -10,7 +10,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import classnames from 'classnames';
 import { settings } from 'carbon-components';
-import uid from 'carbon-components-react/lib/tools/uniqueId';
+import uid from 'carbon-components-react/es/tools/uniqueId';
 
 import { FileUploaderItem, FileUploaderDropContainer } from '..';
 
