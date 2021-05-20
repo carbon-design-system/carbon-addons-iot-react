@@ -1713,6 +1713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <label
                   className="bx--label"
+                  htmlFor="custom-content-textinput"
                 >
                   Title
                 </label>
@@ -1726,6 +1727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     <input
                       className="bx--text-input bx--text__input"
                       disabled={false}
+                      id="custom-content-textinput"
                       onChange={[Function]}
                       onClick={[Function]}
                       type="text"
