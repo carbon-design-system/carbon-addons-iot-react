@@ -7455,6 +7455,7 @@ Map {
       "hasSideNav": true,
       "headerPanel": null,
       "i18n": Object {
+        "closeMenu": "Close menu",
         "mainHeader": "main header",
         "openMenu": "Open menu",
       },
@@ -7549,6 +7550,9 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "closeMenu": Object {
+              "type": "string",
+            },
             "mainHeader": Object {
               "type": "string",
             },
@@ -7563,6 +7567,9 @@ Map {
         "type": "func",
       },
       "prefix": Object {
+        "type": "string",
+      },
+      "shortAppName": Object {
         "type": "string",
       },
       "skipto": Object {

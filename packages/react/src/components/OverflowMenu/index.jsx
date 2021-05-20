@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { OverflowMenu as CarbonOverflowMenu } from 'carbon-components-react';
 import PropTypes from 'prop-types';
-import { getMenuOffset } from 'carbon-components-react/lib/components/OverflowMenu/OverflowMenu';
+import { getMenuOffset } from 'carbon-components-react/es/components/OverflowMenu/OverflowMenu';
 
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
 
