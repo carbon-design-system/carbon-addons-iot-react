@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import useWindowSize from '../../hooks/useWindowSize';
 
 const propTypes = {
-  /** If isOpen is true, the TearSheetWrapper opens with the first TearSheet active */
+  /** If isOpen is true, TearSheetWrapper opens with the first TearSheet active */
   isOpen: PropTypes.bool,
   /** Additional classNames to be provided for TearSheetWrapper */
   className: PropTypes.string,
