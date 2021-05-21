@@ -74,7 +74,7 @@ export const LandscapeImageLandscapeContainer = () => {
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
-        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
       />
     </div>
   );
@@ -96,7 +96,7 @@ export const LandscapeImagePortraitContainer = () => {
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
-        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
       />
     </div>
   );
@@ -118,7 +118,7 @@ export const PortraitImageLandscapeContainer = () => {
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
-        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
       />
     </div>
   );
@@ -140,7 +140,7 @@ export const PortraitImagePortraitContainer = () => {
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
-        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
       />
     </div>
   );
@@ -162,7 +162,7 @@ export const ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden = () => {
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
-        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
       />
     </div>
   );
@@ -271,7 +271,7 @@ export const EditableWithTextHotspot = () => {
           hotspots={myHotspots}
           hideHotspots={boolean('Hide hotspots', false)}
           hideMinimap={boolean('Hide Minimap', false)}
-          minimapBehavior={select('minimapBehavior', ['hide', 'show', 'onPan'], 'onPan')}
+          minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
           selectedHotspots={selectedHotspotPositions}
         />
       </div>

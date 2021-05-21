@@ -44,8 +44,8 @@ const propTypes = {
       }
     }
   },
-  /* 'hide' always hides the minimap, 'show' always shows the minimap, 'onPan' only shows the minimap when panning an image */
-  minimapBehavior: PropTypes.oneOf(['hide', 'show', 'onPan']),
+  /* 'hide' always hides the minimap, 'show' always shows the minimap, 'showOnPan' only shows the minimap when panning an image */
+  minimapBehavior: PropTypes.oneOf(['hide', 'show', 'showOnPan']),
   /** when true activates mouse event based create & select hotspot fuctionality */
   isEditable: PropTypes.bool,
   isHotspotDataLoading: PropTypes.bool,
@@ -99,7 +99,7 @@ const defaultProps = {
   hideHotspots: false,
   /* @deprecated in favor of minimapBehavior */
   hideMinimap: undefined,
-  minimapBehavior: 'onPan',
+  minimapBehavior: 'showOnPan',
   isHotspotDataLoading: false,
   isEditable: false,
   onAddHotspotPosition: () => {},
@@ -771,7 +771,7 @@ const ImageHotspots = ({
           minimap={{ ...minimap, src }}
           draggable={draggable}
           dragging={dragging}
-          hideMinimap={minimapBehavior === 'onPan' ? !dragging || hideMinimapProp : hideMinimap}
+          hideMinimap={minimapBehavior === 'showOnPan' ? !dragging || hideMinimapProp : hideMinimap}
           onZoomToFit={() =>
             zoom(1, zoomMax, container, image, setImage, minimap, setMinimap, options, setOptions)
           }

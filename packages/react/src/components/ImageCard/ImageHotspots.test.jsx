@@ -551,7 +551,7 @@ describe('ImageHotspots', () => {
           src={portrait}
           alt="portrait-test-image"
           hideHotspots
-          minimapBehavior="onPan"
+          minimapBehavior="showOnPan"
         />
       );
 
