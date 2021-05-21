@@ -442,7 +442,7 @@ WithCondensedHeader.story = {
   name: 'with condensed with primary + secondary buttons',
 };
 
-export const CustomRenderFunction = () => (
+export const WithCustomRenderFunction = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       title={commonPageTitleBarProps.title}
