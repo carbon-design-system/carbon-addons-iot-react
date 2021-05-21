@@ -77,6 +77,7 @@ const MapCard = ({
         layeredControls={layeredControls}
         tooltipPosition={tooltipPosition}
         layerTriggerIconDescription={mergedI18n.layerTriggerIconDescription}
+        isExpandedMode={isExpanded}
       />
     ) : null;
 
@@ -101,6 +102,7 @@ const MapCard = ({
         // allows attribute overflow scrolling
         [`${BASE_CLASS_NAME}__settings-open`]: isSettingPanelOpen,
         [`${BASE_CLASS_NAME}__vertical`]: layout === CARD_LAYOUTS.VERTICAL,
+        [`${BASE_CLASS_NAME}--expanded`]: isExpanded,
       })}
       {...others}
     >
@@ -115,6 +117,7 @@ const MapCard = ({
             className={classnames(`${BASE_CLASS_NAME}-controls`, {
               [`${BASE_CLASS_NAME}-controls__has-fullwidth-legend`]:
                 isLegendFullWidth && !isLegendCollapsed,
+              [`${BASE_CLASS_NAME}-controls__has-increased-margins`]: isExpanded,
             })}
           >
             {controls}
@@ -123,6 +126,7 @@ const MapCard = ({
               onZoomIn={onZoomIn}
               onZoomOut={onZoomOut}
               tooltipPosition={tooltipPosition}
+              smallButtons={!isExpanded}
             />
           </div>
           <Legend
@@ -132,6 +136,7 @@ const MapCard = ({
             stops={stops}
             isFullWidth={isLegendFullWidth}
             isCollapsed={isLegendCollapsed}
+            increasedMargin={isExpanded}
             onCollapsToggle={() => {
               setIsLegendCollapsed(!isLegendCollapsed);
             }}

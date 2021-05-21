@@ -1,7 +1,6 @@
 @import '~carbon-components/scss/globals/scss/vars';
 
 $bottom-spacing: $spacing-03;
-$transition-time: 0.09s;
 
 .#{$iot-prefix}--map {
   &-legend {
@@ -21,19 +20,26 @@ $transition-time: 0.09s;
     }
   }
 
+  &-legend--increased-margin {
+    bottom: 2rem;
+    left: 2rem;
+
+    [dir='rtl'] & {
+      left: unset;
+      right: 2rem;
+    }
+  }
+
   &-legend__fullwidth {
     height: $spacing-11; // We want the same height independent if scrollbars are present
-    transition: width $transition-time;
-    transition-timing-function: cubic-bezier(0.2, 0, 0.38, 0.9);
+    transition: width $duration--fast-02 motion(entrance, productive);
     max-width: unset;
     bottom: 0;
     display: flex;
     left: 0;
     right: 0;
     width: 100%;
-    padding-top: $spacing-03;
-    padding-left: $spacing-03;
-    padding-right: $spacing-03;
+    padding: $spacing-03;
     padding-bottom: $spacing-02; // Needed for horizontal scrollbar
 
     .#{$iot-prefix}--map-legend-keys-container {
@@ -45,6 +51,10 @@ $transition-time: 0.09s;
       & > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
         margin-right: 0.5rem;
       }
+    }
+
+    [dir='rtl'] & {
+      right: 0;
     }
   }
 

@@ -12,6 +12,7 @@ const propTypes = {
   /** True if the legend should be full bleed  and occupy the full width of the map  */
   isFullWidth: PropTypes.bool.isRequired,
   isCollapsed: PropTypes.bool.isRequired,
+  increasedMargin: PropTypes.bool,
   titleText: PropTypes.string,
   hideLegendText: PropTypes.string,
   showLegendText: PropTypes.string,
@@ -22,9 +23,11 @@ const defaultProps = {
   titleText: 'Legend',
   hideLegendText: 'Hide legend',
   showLegendText: 'Show legend',
+  increasedMargin: false,
 };
 
 const Legend = ({
+  increasedMargin,
   isFullWidth,
   stops,
   titleText,
@@ -57,7 +60,11 @@ const Legend = ({
         className={`${iotPrefix}--map-legend__collapse-btn`}
         kind="ghost"
         size="small"
-        renderIcon={isCollapsed ? ChevronRight32 : ChevronLeft32}
+        renderIcon={
+          (document.dir === 'ltr' && isCollapsed) || (document.dir === 'rtl' && !isCollapsed)
+            ? ChevronRight32
+            : ChevronLeft32
+        }
         hasIconOnly
         iconDescription={isCollapsed ? showLegendText : hideLegendText}
         tooltipPosition={document.dir === 'rtl' ? 'left' : 'right'}
@@ -74,7 +81,13 @@ const Legend = ({
       </div>
     </div>
   ) : (
-    <div className={`${iotPrefix}--map-legend`}>{stops.map(renderLegendKeys)}</div>
+    <div
+      className={classnames(`${iotPrefix}--map-legend`, {
+        [`${iotPrefix}--map-legend--increased-margin`]: increasedMargin,
+      })}
+    >
+      {stops.map(renderLegendKeys)}
+    </div>
   );
 };
 

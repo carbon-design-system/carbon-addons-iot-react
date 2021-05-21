@@ -84,26 +84,37 @@
 
   // Controls
   &-controls {
-    transition: bottom 0.09s;
-    transition-timing-function: cubic-bezier(0.2, 0, 0.38, 0.9);
-    bottom: 1rem;
+    transition: bottom $duration--fast-02 motion(entrance, productive);
     display: flex;
     flex-direction: column;
     position: absolute;
     justify-content: space-between;
+    z-index: 2;
     right: 1rem;
     top: 1rem;
-    z-index: 2;
+    bottom: 1rem;
+
+    &__has-increased-margins {
+      right: 2rem;
+      top: 2rem;
+      bottom: 2rem;
+      &.#{$iot-prefix}--map-controls__has-fullwidth-legend {
+        bottom: 7rem;
+      }
+    }
 
     &__has-fullwidth-legend {
-      bottom: 5.5rem;
-      transition: bottom 0.09s;
-      transition-timing-function: cubic-bezier(0.2, 0, 0.38, 0.9);
+      bottom: 6rem;
+      transition: bottom $duration--fast-02 motion(entrance, productive);
     }
 
     [dir='rtl'] & {
       left: 1rem;
       right: unset;
+
+      &__has-increased-margins {
+        left: 2rem;
+      }
     }
   }
 
@@ -153,14 +164,14 @@
   }
 
   &-controls-layers-wrapper {
+    $size-small-offset: -2rem;
+    $size-field-offset: -2.5rem;
     @include box-shadow();
     flex-direction: row-reverse;
     position: absolute;
     top: 0;
     right: 0;
     display: flex;
-    height: 2.5rem;
-    max-width: 2.5rem;
     opacity: 0;
     overflow: hidden;
     transition: opacity $duration--fast-02 motion(entrance, productive),
@@ -170,7 +181,11 @@
       opacity: 1;
       overflow: visible;
       max-width: 100vw;
-      transform: translateX(-2.5rem);
+      transform: translateX(#{$size-small-offset});
+
+      .#{$iot-prefix}--map--expanded & {
+        transform: translateX(#{$size-field-offset});
+      }
     }
 
     [dir='rtl'] & {
@@ -179,7 +194,14 @@
     }
 
     [dir='rtl'] .#{$iot-prefix}--map-controls-layers__open & {
-      transform: translateX(2.5rem);
+      transform: translateX(calc(-1 * #{$size-small-offset}));
+      .#{$iot-prefix}--map--expanded & {
+        transform: translateX(calc(-1 * #{$size-field-offset}));
+      }
+    }
+
+    [dir='rtl'] .#{$iot-prefix}--map--expanded .#{$iot-prefix}--map-controls-layers__open & {
+      transform: translateX(calc(-1 * #{$size-field-offset}));
     }
   }
 

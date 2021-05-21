@@ -15,15 +15,16 @@ const Zoom = ({
   testId,
   tooltipPosition,
   className,
+  smallButtons,
 }) => {
-
+  const buttonSize = smallButtons ? 'small' : 'field';
   return (
     <div className={`${iotPrefix}--map-zoom ${className}`} data-testid={testId}>
       <Button
         renderIcon={ZoomIn32}
         hasIconOnly
         kind="ghost"
-        size="field"
+        size={buttonSize}
         onClick={onZoomIn}
         tooltipPosition={tooltipPosition}
         iconDescription={i18n.zoomIn}
@@ -33,7 +34,7 @@ const Zoom = ({
         renderIcon={ZoomOut32}
         hasIconOnly
         kind="ghost"
-        size="field"
+        size={buttonSize}
         onClick={onZoomOut}
         tooltipPosition={tooltipPosition}
         iconDescription={i18n.zoomOut}
