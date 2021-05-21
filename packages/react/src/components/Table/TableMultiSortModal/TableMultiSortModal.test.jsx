@@ -31,6 +31,20 @@ describe('TableMultiSortModal', () => {
             isSortable: true,
           },
         ]}
+        ordering={[
+          {
+            columnId: 'string',
+            isHidden: false,
+          },
+          {
+            columnId: 'select',
+            isHidden: false,
+          },
+          {
+            columnId: 'number',
+            isHidden: false,
+          },
+        ]}
         actions={callbacks}
         sort={[
           {
@@ -51,8 +65,6 @@ describe('TableMultiSortModal', () => {
     expect(callbacks.onRemoveMultiSortColumn).toHaveBeenCalledWith(1);
     userEvent.click(screen.getByText('Add column'));
     expect(callbacks.onAddMultiSortColumn).toHaveBeenCalledWith(0);
-    userEvent.click(screen.getByText('Select a column'));
-    userEvent.click(screen.getByText('Select'));
     userEvent.click(screen.getByRole('button', { name: 'Sort' }));
     expect(callbacks.onSaveMultiSortColumns).toHaveBeenCalledWith([
       {
@@ -81,6 +93,59 @@ describe('TableMultiSortModal', () => {
     ]);
   });
 
+  it('should only allow selecting isSortabled and visible columns', () => {
+    render(
+      <TableMultiSortModal
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+            isSortable: true,
+          },
+          {
+            id: 'select',
+            name: 'Select',
+            isSortable: true,
+          },
+          {
+            id: 'number',
+            name: 'Number',
+            isSortable: true,
+          },
+          {
+            id: 'not sortable',
+            name: 'Not sortable',
+          },
+        ]}
+        ordering={[
+          {
+            columnId: 'string',
+            isHidden: false,
+          },
+          {
+            columnId: 'select',
+            isHidden: false,
+          },
+          {
+            columnId: 'number',
+            isHidden: true,
+          },
+        ]}
+        actions={callbacks}
+        sort={[
+          {
+            columnId: 'string',
+            direction: 'ASC',
+          },
+        ]}
+        showMultiSortModal
+      />
+    );
+    userEvent.click(screen.getByText('String'));
+    expect(screen.queryByText('Number')).toBeNull();
+    expect(screen.queryByText('Not sortable')).toBeNull();
+  });
+
   it('should translate all i18n strings', () => {
     render(
       <TableMultiSortModal
@@ -88,17 +153,29 @@ describe('TableMultiSortModal', () => {
           {
             id: 'string',
             name: 'String',
+            isSortable: true,
           },
           {
             id: 'select',
             name: 'Select',
+            isSortable: true,
+          },
+        ]}
+        ordering={[
+          {
+            columnId: 'string',
+            isHidden: false,
+          },
+          {
+            columnId: 'select',
+            isHidden: false,
           },
         ]}
         actions={callbacks}
         sort={[
           {
-            columnId: '',
-            direction: '',
+            columnId: 'string',
+            direction: 'ASC',
           },
         ]}
         showMultiSortModal
@@ -115,6 +192,9 @@ describe('TableMultiSortModal', () => {
           multiSortRemoveColumn: '__Remove column__',
           multiSortAscending: '__Ascending__',
           multiSortDescending: '__Descending__',
+          multiSortCloseModal: '__Close__',
+          multiSortOpenMenu: '__Open menu__',
+          multiSortCloseMenu: '__Close menu__',
         }}
       />
     );
@@ -122,14 +202,15 @@ describe('TableMultiSortModal', () => {
     expect(screen.getByText('__Select columns to sort__')).toBeVisible();
     expect(screen.getByRole('button', { name: '__Sort__' })).toBeVisible();
     expect(screen.getByRole('button', { name: '__Cancel__' })).toBeVisible();
-    expect(screen.getByText('__Select a column__')).toBeVisible();
     expect(screen.getByText('__Sort by__')).toBeVisible();
-    expect(screen.getByText('__Select a direction__')).toBeVisible();
     expect(screen.getByText('__Sort order__')).toBeVisible();
     expect(screen.getByText('__Add column__')).toBeVisible();
     expect(screen.getByText('__Remove column__')).toBeVisible();
-    userEvent.click(screen.getByText('__Select a direction__'));
-    expect(screen.getByText('__Ascending__')).toBeVisible();
-    expect(screen.getByText('__Descending__')).toBeVisible();
+    expect(screen.getByLabelText('__Close__')).toBeInTheDocument();
+    expect(screen.queryAllByLabelText('__Open menu__')).not.toBeNull();
+    expect(screen.queryAllByLabelText('__Close menu__')).not.toBeNull();
+    userEvent.click(screen.getAllByText('__Ascending__')[0]);
+    expect(screen.queryAllByText('__Ascending__')).not.toBeNull();
+    expect(screen.queryAllByText('__Descending__')).not.toBeNull();
   });
 });

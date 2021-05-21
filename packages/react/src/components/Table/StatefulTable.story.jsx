@@ -122,7 +122,6 @@ export const SimpleStatefulExample = withReadme(README, () => (
         hasRowExpansion: boolean('hasRowExpansion', false),
         hasRowNesting: boolean('hasRowNesting', false),
         wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-        hasMultiSort: true,
       }}
       view={{ table: { selectedIds: array('selectedIds', []) } }}
     />
@@ -1634,6 +1633,8 @@ export const WithMultiSorting = withReadme(README, () => {
         hasRowSelection: 'multi',
         hasAggregations: true,
         hasMultiSort: true,
+        hasResize: true,
+        hasColumnSelection: true,
       }}
       view={{
         filters: [],

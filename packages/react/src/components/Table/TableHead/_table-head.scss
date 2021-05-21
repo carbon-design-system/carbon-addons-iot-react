@@ -39,6 +39,11 @@
     right: $spacing-04;
     font-size: 0.667rem;
     font-weight: bold;
+
+    html[dir='rtl'] & {
+      left: $spacing-03;
+      right: unset;
+    }
   }
 
   .column-header__btn {

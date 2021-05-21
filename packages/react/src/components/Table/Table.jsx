@@ -928,6 +928,7 @@ const Table = (props) => {
       {options.hasMultiSort && (
         <TableMultiSortModal
           columns={columns}
+          ordering={view.table.ordering}
           sort={Array.isArray(view.table.sort) ? view.table.sort : [view.table.sort]}
           actions={{
             ...pick(

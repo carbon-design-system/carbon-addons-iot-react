@@ -36,7 +36,7 @@ import {
   TABLE_ADVANCED_FILTER_TOGGLE,
   TABLE_ADVANCED_FILTER_CANCEL,
   TABLE_ADVANCED_FILTER_APPLY,
-  TABLE_MULTI_SORT,
+  TABLE_MULTI_SORT_TOGGLE_MODAL,
   TABLE_MULTI_SORT_SAVE,
   TABLE_MULTI_SORT_CANCEL,
   TABLE_MULTI_SORT_ADD_COLUMN,
@@ -213,6 +213,42 @@ export const getCustomColumnSort = (columns, columnId) => {
   return currentlySortedColumn && currentlySortedColumn.sortFunction; // see if there's a custom sort function passed
 };
 
+/**
+ * multi-sort helper for more readable code.
+ *
+ * @param {array} sort An array of sort objects [{columnId: string, direction: 'ASC' | 'DESC'}]
+ * @param {array} columns An array of table columns matching the table column prop
+ * @param {array} data An array of row data for the Table
+ *
+ * @returns the table data sorted by multiple dimensions
+ */
+const handleMultiSort = (sort, columns, data) => {
+  // setup the stack with a inert firstBy, so that we can jump straight into the
+  // thenBys below from the sort array
+  let sortStack = firstBy(() => 0);
+  sort.forEach(({ columnId, direction }) => {
+    const customSortFn = getCustomColumnSort(columns, columnId);
+    if (customSortFn) {
+      const sortedValues = customSortFn({ data, columnId, direction }).map(({ values }) => values);
+      sortStack = sortStack.thenBy((row) => row.values[columnId], {
+        cmp: (a, b) => {
+          return (
+            sortedValues.findIndex((row) => row[columnId] === a) -
+            sortedValues.findIndex((row) => row[columnId] === b)
+          );
+        },
+      });
+    } else {
+      sortStack = sortStack.thenBy((row) => row.values[columnId], {
+        cmp: sortTableData(columnId),
+        direction: direction === 'ASC' ? 'asc' : 'desc',
+      });
+    }
+  });
+
+  return data.sort(sortStack);
+};
+
 // little utility to both sort and filter
 export const filterSearchAndSort = (
   data,
@@ -232,30 +268,7 @@ export const filterSearchAndSort = (
   }
 
   if (Array.isArray(sort)) {
-    let sortStack = firstBy(() => 0);
-    sort.forEach(({ columnId, direction }) => {
-      const customSortFn = getCustomColumnSort(columns, columnId);
-      if (customSortFn) {
-        const sortedValues = customSortFn({ data: searchedData, columnId, direction }).map(
-          ({ values }) => values
-        );
-        sortStack = sortStack.thenBy((row) => row.values[columnId], {
-          cmp: (a, b) => {
-            return (
-              sortedValues.findIndex((row) => row[columnId] === a) -
-              sortedValues.findIndex((row) => row[columnId] === b)
-            );
-          },
-        });
-      } else {
-        sortStack = sortStack.thenBy((row) => row.values[columnId], {
-          cmp: sortTableData(columnId),
-          direction: direction === 'ASC' ? 'asc' : 'desc',
-        });
-      }
-    });
-
-    return searchedData.sort(sortStack);
+    return handleMultiSort(sort, columns, searchedData);
   }
 
   const { columnId, direction } = sort;
@@ -600,7 +613,7 @@ export const tableReducer = (state = {}, action) => {
       );
     }
 
-    case TABLE_MULTI_SORT: {
+    case TABLE_MULTI_SORT_TOGGLE_MODAL: {
       return update(state, {
         view: {
           table: {

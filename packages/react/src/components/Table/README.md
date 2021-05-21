@@ -302,7 +302,7 @@ you can pass an array of sort objects to the `view.table.sort`, and interact wit
     table: {
       onAddMultiSortColumn: (index) => {},
       onRemoveMultiSortColumn: (index) => {},
-      /* ([{columnId: 'select', direction: 'ASC'}, {columnId: 'string', direction: 'ASC'}]) => {} */
+      /* example onSaveMultiSortColumns param structure: ([{columnId: 'select', direction: 'ASC'}, {columnId: 'string', direction: 'ASC'}]) => {} */
       onSaveMultiSortColumns: (multiSortedColumns) => {},
       onCancelMultiSortColumns: () => {},
     },

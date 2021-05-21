@@ -991,6 +991,15 @@ Map {
             "multiSortAscending": Object {
               "type": "string",
             },
+            "multiSortClearAll": Object {
+              "type": "string",
+            },
+            "multiSortCloseMenu": Object {
+              "type": "string",
+            },
+            "multiSortCloseModal": Object {
+              "type": "string",
+            },
             "multiSortDescending": Object {
               "type": "string",
             },
@@ -1007,6 +1016,9 @@ Map {
               "type": "string",
             },
             "multiSortModalTitle": Object {
+              "type": "string",
+            },
+            "multiSortOpenMenu": Object {
               "type": "string",
             },
             "multiSortRemoveColumn": Object {
@@ -1670,12 +1682,15 @@ Map {
         "itemsSelected": "items selected",
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
+        "multiSortCloseMenu": "Close menu",
+        "multiSortCloseModal": "Close",
         "multiSortDescending": "Descending",
         "multiSortDirectionLabel": "Select a direction",
         "multiSortDirectionTitle": "Sort order",
         "multiSortModalPrimaryLabel": "Sort",
         "multiSortModalSecondaryLabel": "Cancel",
         "multiSortModalTitle": "Select columns to sort",
+        "multiSortOpenMenu": "Open menu",
         "multiSortRemoveColumn": "Remove column",
         "multiSortSelectColumnLabel": "Select a column",
         "multiSortSelectColumnSortByTitle": "Sort by",
@@ -1959,6 +1974,15 @@ Map {
             "multiSortAscending": Object {
               "type": "string",
             },
+            "multiSortClearAll": Object {
+              "type": "string",
+            },
+            "multiSortCloseMenu": Object {
+              "type": "string",
+            },
+            "multiSortCloseModal": Object {
+              "type": "string",
+            },
             "multiSortDescending": Object {
               "type": "string",
             },
@@ -1975,6 +1999,9 @@ Map {
               "type": "string",
             },
             "multiSortModalTitle": Object {
+              "type": "string",
+            },
+            "multiSortOpenMenu": Object {
               "type": "string",
             },
             "multiSortRemoveColumn": Object {
@@ -3336,12 +3363,15 @@ Map {
         "itemsSelected": "items selected",
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
+        "multiSortCloseMenu": "Close menu",
+        "multiSortCloseModal": "Close",
         "multiSortDescending": "Descending",
         "multiSortDirectionLabel": "Select a direction",
         "multiSortDirectionTitle": "Sort order",
         "multiSortModalPrimaryLabel": "Sort",
         "multiSortModalSecondaryLabel": "Cancel",
         "multiSortModalTitle": "Select columns to sort",
+        "multiSortOpenMenu": "Open menu",
         "multiSortRemoveColumn": "Remove column",
         "multiSortSelectColumnLabel": "Select a column",
         "multiSortSelectColumnSortByTitle": "Sort by",
@@ -27445,11 +27475,11 @@ Map {
     "TABLE_FILTER_CLEAR": "TABLE_FILTER_CLEAR",
     "TABLE_LOADING_SET": "TABLE_LOADING_SET",
     "TABLE_LOAD_VIEW": "TABLE_LOAD_VIEW",
-    "TABLE_MULTI_SORT": "TABLE_MULTI_SORT",
     "TABLE_MULTI_SORT_ADD_COLUMN": "TABLE_MULTI_SORT_ADD_COLUMN",
     "TABLE_MULTI_SORT_CANCEL": "TABLE_MULTI_SORT_CANCEL",
     "TABLE_MULTI_SORT_REMOVE_COLUMN": "TABLE_MULTI_SORT_REMOVE_COLUMN",
     "TABLE_MULTI_SORT_SAVE": "TABLE_MULTI_SORT_SAVE",
+    "TABLE_MULTI_SORT_TOGGLE_MODAL": "TABLE_MULTI_SORT_TOGGLE_MODAL",
     "TABLE_PAGE_CHANGE": "TABLE_PAGE_CHANGE",
     "TABLE_REGISTER": "TABLE_REGISTER",
     "TABLE_ROW_ACTION_COMPLETE": "TABLE_ROW_ACTION_COMPLETE",
@@ -27479,7 +27509,7 @@ Map {
     "tableFilterApply": Object {},
     "tableFilterClear": Object {},
     "tableLoadingSet": Object {},
-    "tableMultiSort": Object {},
+    "tableMultiSortToggleModal": Object {},
     "tablePageChange": Object {},
     "tableRegister": Object {},
     "tableRemoveMultiSortColumn": Object {},

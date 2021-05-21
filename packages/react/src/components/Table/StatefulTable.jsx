@@ -28,7 +28,7 @@ import {
   tableAdvancedFiltersApply,
   tableAdvancedFiltersCancel,
   tableAdvancedFiltersCreate,
-  tableMultiSort,
+  tableMultiSortToggleModal,
   tableSaveMultiSortColumns,
   tableCancelMultiSortColumns,
   tableAddMultiSortColumn,
@@ -302,7 +302,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       },
       onOverflowItemClicked: (id) => {
         if (id === 'multi-sort') {
-          dispatch(tableMultiSort());
+          dispatch(tableMultiSortToggleModal());
         }
         callbackParent(onOverflowItemClicked, id);
       },

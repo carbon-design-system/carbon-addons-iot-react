@@ -26,7 +26,7 @@ export const TABLE_ADVANCED_FILTER_REMOVE = 'TABLE_ADVANCED_FILTER_REMOVE';
 export const TABLE_ADVANCED_FILTER_CHANGE = 'TABLE_ADVANCED_FILTER_CHANGE';
 export const TABLE_ADVANCED_FILTER_TOGGLE = 'TABLE_ADVANCED_FILTER_TOGGLE';
 export const TABLE_ADVANCED_FILTER_APPLY = 'TABLE_ADVANCED_FILTER_APPLY';
-export const TABLE_MULTI_SORT = 'TABLE_MULTI_SORT';
+export const TABLE_MULTI_SORT_TOGGLE_MODAL = 'TABLE_MULTI_SORT_TOGGLE_MODAL';
 export const TABLE_MULTI_SORT_SAVE = 'TABLE_MULTI_SORT_SAVE';
 export const TABLE_MULTI_SORT_CANCEL = 'TABLE_MULTI_SORT_CANCEL';
 export const TABLE_MULTI_SORT_ADD_COLUMN = 'TABLE_MULTI_SORT_ADD_COLUMN';
@@ -201,8 +201,8 @@ export const tableAdvancedFiltersApply = (filterState) => ({
   payload: filterState,
 });
 
-export const tableMultiSort = () => ({
-  type: TABLE_MULTI_SORT,
+export const tableMultiSortToggleModal = () => ({
+  type: TABLE_MULTI_SORT_TOGGLE_MODAL,
 });
 
 export const tableSaveMultiSortColumns = (sortColumns) => ({

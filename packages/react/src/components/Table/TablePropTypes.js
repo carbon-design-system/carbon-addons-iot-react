@@ -199,6 +199,10 @@ export const I18NPropTypes = PropTypes.shape({
   multiSortRemoveColumn: PropTypes.string,
   multiSortAscending: PropTypes.string,
   multiSortDescending: PropTypes.string,
+  multiSortCloseModal: PropTypes.string,
+  multiSortClearAll: PropTypes.string,
+  multiSortOpenMenu: PropTypes.string,
+  multiSortCloseMenu: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {
@@ -261,6 +265,9 @@ export const defaultI18NPropTypes = {
   multiSortRemoveColumn: 'Remove column',
   multiSortAscending: 'Ascending',
   multiSortDescending: 'Descending',
+  multiSortCloseModal: 'Close',
+  multiSortOpenMenu: 'Open menu',
+  multiSortCloseMenu: 'Close menu',
 };
 
 export const TableSearchPropTypes = PropTypes.shape({
