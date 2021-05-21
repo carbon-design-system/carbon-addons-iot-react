@@ -383,7 +383,9 @@ export const handleMouseUp = ({ event, image, cursor, setCursor, isEditable, cal
       x: (relativePosition.x / image.width) * 100,
       y: (relativePosition.y / image.height) * 100,
     };
-    callback(percentagePosition);
+    if (callback) {
+      callback(percentagePosition);
+    }
   }
 };
 
@@ -586,7 +588,7 @@ const ImageHotspots = ({
   // Performance improvement
   const cachedHotspots = useMemo(
     () =>
-      hotspots.map((hotspot) => {
+      hotspots.map((hotspot, index) => {
         const { x, y } = hotspot;
         const hotspotIsSelected = !!selectedHotspots.find((pos) => x === pos.x && y === pos.y);
         // Determine whether the icon needs to be dynamically overridden by a threshold
@@ -631,7 +633,7 @@ const ImageHotspots = ({
                 ? matchingAttributeThresholds[0].color
                 : hotspot.color
             }
-            key={`${x}-${y}`}
+            key={`${x}-${y}-${index}`}
             style={hotspotsStyle}
             renderIconByName={getIconRenderFunction()}
             isSelected={hotspotIsSelected}

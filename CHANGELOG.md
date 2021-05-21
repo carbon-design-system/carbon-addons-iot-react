@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.2...v2.146.0-next.3) (2021-05-21)
+
+
+### Bug Fixes
+
+* **imagecard:** set of small fixes to imagecard and the dashboardeditor ([7c485d7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7c485d73339c45e3173295baff4bf3a8fb47b101))
+
+
+
+
+
 # [2.146.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.1...v2.146.0-next.2) (2021-05-20)
 
 
