@@ -9,7 +9,7 @@
 import React from 'react';
 import { withKnobs, select, text, boolean } from '@storybook/addon-knobs';
 import { Carbon16, Compass16, Tag16 } from '@carbon/icons-react';
-import { action } from '@storybook/addon-actions/dist/preview';
+import { action } from '@storybook/addon-actions';
 import { types as typesList } from 'carbon-components-react/lib/components/Tag';
 
 import { Tag, TagSkeleton } from '.';
@@ -65,7 +65,7 @@ const props = {
 };
 
 export default {
-  title: 'Tag',
+  title: '3 - Carbon/Tag',
   decorators: [withKnobs],
 
   parameters: {

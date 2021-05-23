@@ -116,6 +116,7 @@ export HotspotTextStyleTab from './components/HotspotEditorModal/HotspotTextStyl
 export DynamicHotspotSourcePicker from './components/HotspotEditorModal/DynamicHotspotSourcePicker/DynamicHotspotSourcePicker';
 export ComboChartCard from './components/ComboChartCard/ComboChartCard';
 export MenuButton from './components/MenuButton/MenuButton';
+export ListBuilder from './components/ListBuilder/ListBuilder';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';

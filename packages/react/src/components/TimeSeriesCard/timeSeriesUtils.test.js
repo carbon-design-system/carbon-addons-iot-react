@@ -165,6 +165,11 @@ describe('timeSeriesUtils', () => {
       const updatedTooltip = handleTooltip([], defaultTooltip, [], 'Detected alert:');
       expect(updatedTooltip).toEqual(defaultTooltip);
     });
+    it('should not throw error if dataOrHoveredElement is undefined', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      const updatedTooltip = handleTooltip(undefined, defaultTooltip, [], 'Detected alert:');
+      expect(updatedTooltip).toEqual(defaultTooltip);
+    });
     it('should add date', () => {
       const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
       // the date is from 2017

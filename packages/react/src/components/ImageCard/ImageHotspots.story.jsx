@@ -19,6 +19,32 @@ const hotspots = [
     height: 20,
   },
   {
+    x: 26,
+    y: 75,
+    type: 'text',
+    content: {
+      title: 'Facility rooms',
+      values: {
+        temperature: 35.35,
+        humidity: 99,
+      },
+      attributes: [
+        { dataSourceId: 'temperature', label: 'Temperature' },
+        { dataSourceId: 'humidity', label: 'Humidity' },
+      ],
+      locale: 'en',
+    },
+    bold: true,
+    italic: false,
+    underline: false,
+    fontColor: '#006666',
+    fontSize: 16,
+    backgroundColor: '#00FF00',
+    backgroundOpacity: 50,
+    borderColor: '#FFFF00',
+    borderWidth: 8,
+  },
+  {
     x: 50,
     y: 10,
     content: <span style={{ padding: spacing03 }}>Hotspot2</span>,
@@ -54,7 +80,7 @@ const componentDescription =
   '/ panned, in which it will follow the overlaying panned position.';
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ ImageHotspots' : 'Watson IoT/ImageHotspots',
+  title: __DEV__ ? '1 - Watson IoT/⚠️ ImageHotspots' : '1 - Watson IoT/ImageHotspots',
 
   parameters: {
     component: ImageHotspots,

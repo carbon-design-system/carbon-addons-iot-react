@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -326,7 +326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard custom renderIconByName 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard custom renderIconByName 1`] = `
 <div
   className="storybook-container"
 >
@@ -741,7 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard error 1`] = `
 <div
   className="storybook-container"
 >
@@ -869,7 +869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard error loading image 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard error loading image 1`] = `
 <div
   className="storybook-container"
 >
@@ -997,7 +997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard hotspots are loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard hotspots are loading 1`] = `
 <div
   className="storybook-container"
 >
@@ -1252,7 +1252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard image upload error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard image upload error 1`] = `
 <div
   className="storybook-container"
 >
@@ -1323,7 +1323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               >
                 <label
                   className="bx--file-browse-btn"
-                  htmlFor="id13"
+                  htmlFor="id14"
                   onKeyDown={[Function]}
                   size="field"
                   tabIndex={0}
@@ -1336,7 +1336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     <input
                       accept={Array []}
                       className="bx--file-input"
-                      id="id13"
+                      id="id14"
                       multiple={false}
                       onChange={[Function]}
                       onClick={[Function]}
@@ -1435,7 +1435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard isEditable (experimental) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard isEditable (experimental) 1`] = `
 <div
   className="storybook-container"
 >
@@ -1506,7 +1506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               >
                 <label
                   className="bx--file-browse-btn"
-                  htmlFor="id12"
+                  htmlFor="id13"
                   onKeyDown={[Function]}
                   size="field"
                   tabIndex={0}
@@ -1519,7 +1519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     <input
                       accept={Array []}
                       className="bx--file-input"
-                      id="id12"
+                      id="id13"
                       multiple={false}
                       onChange={[Function]}
                       onClick={[Function]}

@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import originalDayJS from 'dayjs';
 
 const localizedFormat = require('dayjs/plugin/localizedFormat');
 const utc = require('dayjs/plugin/utc');
@@ -6,6 +6,7 @@ const pluralGetSet = require('dayjs/plugin/pluralGetSet');
 const timezone = require('dayjs/plugin/timezone');
 const localeData = require('dayjs/plugin/localeData');
 
+const dayjs = originalDayJS;
 dayjs.extend(localizedFormat); // gives the 'L' formatting ability for .format
 dayjs.extend(utc); // gives .utc() and .local()
 dayjs.extend(pluralGetSet); // gives .hour .minute get/set ability
@@ -152,8 +153,9 @@ dayjs.extend(localeData); // gives local specific data
   'zh-tw',
   'zh',
 ].forEach((locale) => {
+  // .js needed because of webpack dynamic import behavior https://github.com/iamkun/dayjs/issues/792
   // eslint-disable-next-line global-require, import/no-dynamic-require
-  require(`dayjs/locale/${locale}`);
+  require(`dayjs/locale/${locale}.js`);
 });
 
 export default dayjs;

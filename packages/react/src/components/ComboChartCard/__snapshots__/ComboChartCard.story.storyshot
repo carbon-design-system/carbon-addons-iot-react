@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ ComboChartCard Area/Line with expanded health data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ ComboChartCard Area/Line with expanded health data 1`] = `
 <div
   className="storybook-container"
 >
@@ -152,7 +152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <div
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
-                    data-testID="BarChartCard-table-table-toolbar-batch-actions"
+                    data-testid="BarChartCard-table-table-toolbar-batch-actions"
                   >
                     <div
                       className="bx--batch-summary"
@@ -322,6 +322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <table
                       className="bx--data-table bx--data-table--no-border"
                       data-testid="BarChartCard-table"
+                      id="BarChartCard-table"
                       title={null}
                     >
                       <thead
@@ -677,7 +678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         data-testID="BarChartCard-table-table-body"
                       >
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -777,7 +778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -877,7 +878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -977,7 +978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -1077,7 +1078,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -1177,7 +1178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -1277,7 +1278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -1377,7 +1378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -1477,7 +1478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -1577,7 +1578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
                           onClick={[Function]}
                         >
                           <td
@@ -1944,7 +1945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ ComboChartCard Area/Line with health data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ ComboChartCard Area/Line with health data 1`] = `
 <div
   className="storybook-container"
 >
@@ -2112,7 +2113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ ComboChartCard empty 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ ComboChartCard empty 1`] = `
 <div
   className="storybook-container"
 >
@@ -2322,7 +2323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ ComboChartCard loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ ComboChartCard loading 1`] = `
 <div
   className="storybook-container"
 >
@@ -2451,7 +2452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ ComboChartCard ️⚠️ Experimental Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ ComboChartCard ️⚠️ Experimental Notice  1`] = `
 <div
   className="storybook-container"
 >

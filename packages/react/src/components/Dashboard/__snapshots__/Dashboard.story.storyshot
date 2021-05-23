@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard basic - without last updated header 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard basic - without last updated header 1`] = `
 <div
   className="storybook-container"
 >
@@ -1495,7 +1495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-alert-table1-table-toolbar-batch-actions"
+                        data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -1750,6 +1750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -2799,7 +2800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard basic dashboard 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard basic dashboard 1`] = `
 <div
   className="storybook-container"
 >
@@ -4301,7 +4302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-alert-table1-table-toolbar-batch-actions"
+                        data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -4556,6 +4557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -5605,7 +5607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard custom actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard custom actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -7136,7 +7138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-alert-table1-table-toolbar-batch-actions"
+                        data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -7391,6 +7393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -8440,7 +8443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard full screen bar chart card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard full screen bar chart card 1`] = `
 <div
   className="storybook-container"
 >
@@ -8630,7 +8633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard full screen image card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard full screen image card 1`] = `
 <div
   className="storybook-container"
 >
@@ -8918,7 +8921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard full screen line card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard full screen line card 1`] = `
 <div
   className="storybook-container"
 >
@@ -9108,7 +9111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard full screen table card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard full screen table card 1`] = `
 <div
   className="storybook-container"
 >
@@ -9229,7 +9232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-expandedcard-table-toolbar-batch-actions"
+                        data-testid="table-for-card-expandedcard-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -9452,6 +9455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-expandedcard"
+                          id="table-for-card-expandedcard"
                           title={null}
                         >
                           <thead
@@ -9817,7 +9821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                             data-testID="table-for-card-expandedcard-table-body"
                           >
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -9922,7 +9926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10027,7 +10031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10132,7 +10136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10237,7 +10241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10342,7 +10346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10447,7 +10451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10552,7 +10556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10657,7 +10661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -10762,7 +10766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                               </td>
                             </tr>
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
                               onClick={[Function]}
                             >
                               <td
@@ -11144,7 +11148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard i18n labels 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard i18n labels 1`] = `
 <div
   className="storybook-container"
 >
@@ -12646,7 +12650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-alert-table1-table-toolbar-batch-actions"
+                        data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -12901,6 +12905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -13950,7 +13955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard line card with no options 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard line card with no options 1`] = `
 <div
   className="storybook-container"
 >
@@ -14106,7 +14111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard only value cards 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard only value cards 1`] = `
 <div
   className="storybook-container"
 >
@@ -27545,7 +27550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard sidebar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard sidebar 1`] = `
 <div
   className="storybook-container"
 >
@@ -29072,7 +29077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                       <div
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
-                        data-testID="table-for-card-alert-table1-table-toolbar-batch-actions"
+                        data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
                       >
                         <div
                           className="bx--batch-summary"
@@ -29327,6 +29332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
                         <table
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1"
                           title={null}
                         >
                           <thead
@@ -30376,7 +30382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard with custom cards 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard with custom cards 1`] = `
 <div
   className="storybook-container"
 >
@@ -32349,7 +32355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 Dashboard ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >

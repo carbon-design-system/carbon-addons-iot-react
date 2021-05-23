@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo, useState, useEffect } from 'react';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
@@ -384,7 +383,9 @@ export const handleMouseUp = ({ event, image, cursor, setCursor, isEditable, cal
       x: (relativePosition.x / image.width) * 100,
       y: (relativePosition.y / image.height) * 100,
     };
-    callback(percentagePosition);
+    if (callback) {
+      callback(percentagePosition);
+    }
   }
 };
 
@@ -470,19 +471,53 @@ const ImageHotspots = ({
   const container = { height, width, ratio, orientation };
 
   // Once the component mounts set up the container info
-  useDeepCompareEffect(() => {
-    zoom(
-      image.scale,
+  useEffect(
+    () => {
+      zoom(
+        image.scale,
+        zoomMax,
+        container,
+        image,
+        setImage,
+        minimap,
+        setMinimap,
+        options,
+        setOptions
+      );
+    },
+    // to prevent needing useDeepCompareEffect, since it's an anti-pattern
+    // we split out all the various parts needed by the zoom function and check them
+    // individually.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+      container.height,
+      container.width,
+      container.ratio,
+      container.orientation,
       zoomMax,
-      container,
-      image,
-      setImage,
-      minimap,
-      setMinimap,
-      options,
-      setOptions
-    );
-  }, [container, zoomMax, image, minimap, options]);
+      image.initialHeight,
+      image.initialWidth,
+      image.scale,
+      image.orientation,
+      image.ratio,
+      image.offsetY,
+      image.offsetX,
+      image.width,
+      image.height,
+      minimap.initialSize,
+      minimap.height,
+      minimap.width,
+      minimap.guideHeight,
+      minimap.guideWidth,
+      minimap.offsetX,
+      minimap.offsetY,
+      options.hideZoomControls,
+      options.hideHotspots,
+      options.hideMinimap,
+      options.resizable,
+      options.draggable,
+    ]
+  );
 
   const { dragging, dragPrepared } = cursor;
   const { hideZoomControls, hideHotspots, hideMinimap, draggable } = options;
@@ -553,7 +588,7 @@ const ImageHotspots = ({
   // Performance improvement
   const cachedHotspots = useMemo(
     () =>
-      hotspots.map((hotspot) => {
+      hotspots.map((hotspot, index) => {
         const { x, y } = hotspot;
         const hotspotIsSelected = !!selectedHotspots.find((pos) => x === pos.x && y === pos.y);
         // Determine whether the icon needs to be dynamically overridden by a threshold
@@ -598,7 +633,7 @@ const ImageHotspots = ({
                 ? matchingAttributeThresholds[0].color
                 : hotspot.color
             }
-            key={`${x}-${y}`}
+            key={`${x}-${y}-${index}`}
             style={hotspotsStyle}
             renderIconByName={getIconRenderFunction()}
             isSelected={hotspotIsSelected}

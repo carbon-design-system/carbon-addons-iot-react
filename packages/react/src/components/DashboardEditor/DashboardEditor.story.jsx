@@ -2,7 +2,18 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, object, array } from '@storybook/addon-knobs';
 
-import { Card, Link, InlineNotification } from '../../index';
+import { DataScientistIcon, EmptystateDefaultIcon } from '../../icons/components';
+import {
+  NumberInput,
+  TextInput,
+  Card,
+  Link,
+  InlineNotification,
+  OverflowMenu,
+  OverflowMenuItem,
+  Toggle,
+  Dropdown,
+} from '../../index';
 import assemblyline from '../ImageGalleryModal/images/assemblyline.jpg';
 import floow_plan from '../ImageGalleryModal/images/floow_plan.png'; // eslint-disable-line camelcase
 import manufacturing_plant from '../ImageGalleryModal/images/Manufacturing_plant.png'; // eslint-disable-line camelcase
@@ -13,6 +24,7 @@ import turbines from '../ImageGalleryModal/images/turbines.png';
 import large from '../ImageGalleryModal/images/large.png';
 import large_portrait from '../ImageGalleryModal/images/large_portrait.png'; // eslint-disable-line camelcase
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
+import SimpleList from '../List/SimpleList/SimpleList';
 
 import DashboardEditor from './DashboardEditor';
 
@@ -147,7 +159,7 @@ const mockDataItems = [
 ];
 
 export default {
-  title: 'Watson IoT Experimental/☢️ DashboardEditor',
+  title: '2 - Watson IoT Experimental/☢️ DashboardEditor',
   decorators: [withKnobs],
 
   parameters: {
@@ -187,7 +199,6 @@ export const Default = () => (
       'VALUE',
       'IMAGE',
       'TABLE',
-      'ALERT',
       'CUSTOM',
     ])}
     headerBreadcrumbs={[
@@ -959,7 +970,6 @@ export const I18N = () => (
       VALUE: 'VALUE',
       IMAGE: 'IMAGE',
       TABLE: 'TABLE',
-      ALERT: 'ALERT',
       LIST: 'LIST',
 
       // card form
@@ -1170,4 +1180,217 @@ export const I18N = () => (
 
 I18N.story = {
   name: 'i18n',
+};
+
+export const WithCustomCards = () => {
+  // Render the elements to show in the content editor side panel
+  const renderContentEditor1 = (onChange, cardConfig) => (
+    <div style={{ marginLeft: '-1rem', marginRight: '-1rem', marginTop: '-1rem' }}>
+      <SimpleList
+        hasPagination={false}
+        editingStyle="single"
+        onListUpdated={(list) => onChange({ ...cardConfig, listOrder: list.map(({ id }) => id) })}
+        items={(cardConfig.listOrder || ['1', '2', '3', '4', '5']).map((i) => ({
+          id: i,
+          content: {
+            value: `Item ${i}`,
+            rowActions: () => [
+              <OverflowMenu flipped>
+                <OverflowMenuItem onClick={() => action(`Menu ${i} clicked`)} itemText="Option" />
+              </OverflowMenu>,
+            ],
+          },
+          isSelectable: true,
+        }))}
+      />
+    </div>
+  );
+
+  // Render the elements to show in the settings editor tab
+  const renderSettingsEditor1 = (onChange, cardConfig) => (
+    <div>
+      <NumberInput
+        light
+        label="Number Input"
+        onChange={(event) => {
+          const numberValue = Number(event.imaginaryTarget.value);
+          onChange({ ...cardConfig, numberValue });
+        }}
+      />
+      <TextInput
+        light
+        value={cardConfig.textValue}
+        labelText="Text Input"
+        onChange={(event) => onChange({ ...cardConfig, textValue: event.target.value })}
+      />
+    </div>
+  );
+
+  // Render the elements to show on the actual card
+  const renderCustom1Card = (cardConfig) => (
+    <div style={{ padding: '1rem', display: 'flex', flexDirection: 'row' }}>
+      <h3 style={{ marginRight: '3rem' }}>Custom2 Card: </h3>
+      <div style={{ marginRight: '3rem' }}>
+        <h5>listOrder</h5>
+        {cardConfig.listOrder?.map((item) => <p>{item}</p>) || '--'}
+      </div>
+      <div>
+        <h5>numberValue</h5>
+        <span>{cardConfig.numberValue || '--'}</span>
+        <h5>textValue</h5>
+        <span>{cardConfig.textValue || '--'}</span>
+      </div>
+    </div>
+  );
+
+  // Format the card payload for the dashboardJson
+  const formatCustom1Card = (card) => ({
+    ...card,
+    content: renderCustom1Card(card),
+    renderEditContent: (onChange, cardConfig) => [
+      {
+        header: { title: 'Columns', tooltip: { tooltipText: 'Custom tooltip' } },
+        content: renderContentEditor1(onChange, cardConfig),
+      },
+    ],
+    renderEditSettings: (onChange, cardConfig) => {
+      return renderSettingsEditor1(onChange, cardConfig);
+    },
+  });
+
+  // Render the elements to show in the content editor side panel
+  const renderContentEditor2 = (onChange, cardConfig) => (
+    <div style={{ marginBottom: '1rem' }}>
+      <Dropdown
+        titleText="Data item"
+        onChange={({ selectedItem }) => onChange({ ...cardConfig, dataItem: selectedItem })}
+        label="Select a data item"
+        items={['dataItem1', 'dataItem2', 'dataItem3']}
+        light
+      />
+    </div>
+  );
+
+  // Render the elements to show in the settings editor tab
+  const renderSettingsEditor2 = (onChange, cardConfig) => (
+    <div>
+      <Toggle
+        size="sm"
+        onToggle={(toggled) => onChange({ ...cardConfig, toggled })}
+        toggled={cardConfig.toggled}
+      />
+      <TextInput
+        light
+        value={cardConfig.textValue}
+        labelText="Text Input"
+        onChange={(event) => onChange({ ...cardConfig, textValue: event.target.value })}
+      />
+    </div>
+  );
+
+  // Render the elements to show on the actual card
+  const renderCustom2Card = (cardConfig) => (
+    <div style={{ padding: '1rem', display: 'flex', flexDirection: 'row' }}>
+      <h3 style={{ marginRight: '3rem' }}>Custom2 Card: </h3>
+      <div style={{ marginRight: '3rem' }}>
+        <h5>dataItem</h5>
+        <span>{cardConfig.dataItem || '--'}</span>
+        <h5>numberValue</h5>
+        <span>{cardConfig.numberValue || '--'}</span>
+      </div>
+      <div>
+        <h5>toggled</h5>
+        <span>{cardConfig.toggled ? 'true' : 'false'}</span>
+        <h5>textValue</h5>
+        <span>{cardConfig.textValue || '--'}</span>
+      </div>
+    </div>
+  );
+
+  // Format the card payload for the dashboardJson
+  const formatCustom2Card = (card) => ({
+    ...card,
+    content: renderCustom2Card(card),
+    renderEditContent: (onChange, cardConfig) => [
+      {
+        header: { title: 'Items', tooltip: { tooltipText: 'Custom tooltip' } },
+        content: renderContentEditor2(onChange, cardConfig),
+      },
+      {
+        header: { title: 'Second section', tooltip: { tooltipText: 'Second tooltip' } },
+        content: (
+          <NumberInput
+            light
+            label="Number Input"
+            onChange={(event) => {
+              const numberValue = Number(event.imaginaryTarget.value);
+              onChange({ ...cardConfig, numberValue });
+            }}
+          />
+        ),
+      },
+    ],
+    renderEditSettings: (onChange, cardConfig) => {
+      return renderSettingsEditor2(onChange, cardConfig);
+    },
+  });
+
+  return (
+    <DashboardEditor
+      initialValue={{ layouts: {}, cards: [] }}
+      title={text('title', 'My dashboard')}
+      getValidDataItems={() => mockDataItems}
+      dataItems={mockDataItems}
+      availableImages={images}
+      i18n={{
+        headerEditTitleButton: 'Edit title updated',
+        CUSTOM1: 'My custom1 type',
+        CUSTOM2: 'My custom2 type',
+      }}
+      icons={{ CUSTOM1: <DataScientistIcon />, CUSTOM2: <EmptystateDefaultIcon /> }}
+      onAddImage={action('onAddImage')}
+      onEditTitle={action('onEditTitle')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      onImageDelete={action('onImageDelete')}
+      onCardChange={(cardConfig) =>
+        // Format the custom cards
+        cardConfig.type === 'CUSTOM1'
+          ? formatCustom1Card(cardConfig)
+          : cardConfig.type === 'CUSTOM2'
+          ? formatCustom2Card(cardConfig)
+          : cardConfig
+      }
+      onLayoutChange={action('onLayoutChange')}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
+      availableDimensions={{
+        deviceid: ['73000', '73001', '73002'],
+        manufacturer: ['rentech', 'GHI Industries'],
+      }}
+      supportedCardTypes={array('supportedCardTypes', [
+        'TIMESERIES',
+        'SIMPLE_BAR',
+        'GROUPED_BAR',
+        'STACKED_BAR',
+        'VALUE',
+        'IMAGE',
+        'TABLE',
+        'CUSTOM1',
+        'CUSTOM2',
+      ])}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+      isLoading={boolean('isLoading', false)}
+    />
+  );
+};
+
+WithCustomCards.story = {
+  name: 'With custom cards',
 };
