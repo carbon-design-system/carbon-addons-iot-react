@@ -12,6 +12,8 @@ import React from 'react';
 import { settings } from 'carbon-components';
 import { ArrowUp20 as Arrow, ArrowsVertical20 as Arrows } from '@carbon/icons-react';
 
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+
 export const sortStates = {
   NONE: 'NONE',
   DESC: 'DESC',
@@ -107,7 +109,14 @@ const TableHeader = React.forwardRef(function TableHeader(
       style={thStyle}
       data-testid={testID}
     >
-      <button className={className} onClick={onClick} {...rest}>
+      <a
+        role="button"
+        tabIndex="0"
+        className={className}
+        onClick={onClick}
+        onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], onClick)}
+        {...rest}
+      >
         {!hasTooltip ? (
           <span className={`${prefix}--table-header-label`}>{children}</span>
         ) : (
@@ -131,7 +140,7 @@ const TableHeader = React.forwardRef(function TableHeader(
             sortStates,
           })}
         />
-      </button>
+      </a>
     </th>
   );
 });
@@ -197,7 +206,7 @@ TableHeader.propTypes = {
   testID: PropTypes.string,
 };
 
-/* instanbul ignore next: ignoring the default onCLick */
+/* istanbul ignore next: ignoring the default onClick */
 TableHeader.defaultProps = {
   className: '',
   children: '',

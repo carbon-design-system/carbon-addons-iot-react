@@ -119,6 +119,12 @@
   &--overflow {
     margin: auto 0;
     flex-shrink: 0;
+
+    .#{$prefix}--table-sort:focus &:hover {
+      margin-top: -2px;
+      margin-bottom: -2px;
+      background-color: $gray-40;
+    }
   }
 
   &--table-header {
@@ -139,6 +145,10 @@
     &--with-overflow {
       .#{$prefix}--table-header-label {
         padding-right: 0;
+      }
+
+      .#{$prefix}--overflow-menu-options:after {
+        width: 3rem;
       }
     }
   }
