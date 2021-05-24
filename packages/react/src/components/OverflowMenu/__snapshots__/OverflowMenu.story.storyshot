@@ -1,237 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu Basic 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <button
-      aria-expanded={false}
-      aria-haspopup={true}
-      aria-label="Menu"
-      className="bx--overflow-menu"
-      onClick={[Function]}
-      onClose={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      open={false}
-      type="button"
-    >
-      <svg
-        aria-hidden={true}
-        aria-label=""
-        className="bx--overflow-menu__icon"
-        fill="currentColor"
-        focusable="false"
-        height={16}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 32 32"
-        width={16}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="16"
-          cy="8"
-          r="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          r="2"
-        />
-        <circle
-          cx="16"
-          cy="24"
-          r="2"
-        />
-        
-      </svg>
-    </button>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu Custom Trigger 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <button
-      aria-expanded={false}
-      aria-haspopup={true}
-      aria-label={null}
-      className="bx--overflow-menu"
-      onClick={[Function]}
-      onClose={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      open={false}
-      style={
-        Object {
-          "width": "auto",
-        }
-      }
-      type="button"
-    >
-      <div
-        style={
-          Object {
-            "padding": "0 1rem",
-          }
-        }
-      >
-        Menu
-      </div>
-    </button>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu With Links 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <button
-      aria-expanded={false}
-      aria-haspopup={true}
-      aria-label="Menu"
-      className="bx--overflow-menu"
-      onClick={[Function]}
-      onClose={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      open={false}
-      type="button"
-    >
-      <svg
-        aria-hidden={true}
-        aria-label=""
-        className="bx--overflow-menu__icon"
-        fill="currentColor"
-        focusable="false"
-        height={16}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 32 32"
-        width={16}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="16"
-          cy="8"
-          r="2"
-        />
-        <circle
-          cx="16"
-          cy="16"
-          r="2"
-        />
-        <circle
-          cx="16"
-          cy="24"
-          r="2"
-        />
-        
-      </svg>
-    </button>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu auto positioning 1`] = `
 <div
   className="storybook-container"
@@ -780,6 +548,238 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
         </div>
       </div>
     </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu basic 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label="Menu"
+      className="bx--overflow-menu"
+      onClick={[Function]}
+      onClose={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      open={false}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        aria-label=""
+        className="bx--overflow-menu__icon"
+        fill="currentColor"
+        focusable="false"
+        height={16}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="16"
+          cy="8"
+          r="2"
+        />
+        <circle
+          cx="16"
+          cy="16"
+          r="2"
+        />
+        <circle
+          cx="16"
+          cy="24"
+          r="2"
+        />
+        
+      </svg>
+    </button>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu custom trigger 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label={null}
+      className="bx--overflow-menu"
+      onClick={[Function]}
+      onClose={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      open={false}
+      style={
+        Object {
+          "width": "auto",
+        }
+      }
+      type="button"
+    >
+      <div
+        style={
+          Object {
+            "padding": "0 1rem",
+          }
+        }
+      >
+        Menu
+      </div>
+    </button>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/OverflowMenu with links 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label="Menu"
+      className="bx--overflow-menu"
+      onClick={[Function]}
+      onClose={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      open={false}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        aria-label=""
+        className="bx--overflow-menu__icon"
+        fill="currentColor"
+        focusable="false"
+        height={16}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="16"
+          cy="8"
+          r="2"
+        />
+        <circle
+          cx="16"
+          cy="16"
+          r="2"
+        />
+        <circle
+          cx="16"
+          cy="24"
+          r="2"
+        />
+        
+      </svg>
+    </button>
   </div>
   <button
     className="info__show-button"
