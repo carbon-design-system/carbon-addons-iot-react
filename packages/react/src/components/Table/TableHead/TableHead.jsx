@@ -312,7 +312,7 @@ const TableHead = ({
       <TableRow>
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
-            testID={`${testID}-row-expansion-column`}
+            data-testid={`${testID}-row-expansion-column`}
             className={classnames({
               [`${iotPrefix}--table-expand-resize`]: hasResize,
             })}
