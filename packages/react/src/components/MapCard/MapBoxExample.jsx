@@ -9,7 +9,17 @@ import Optionsfield from './Optionsfield';
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
 
-const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableActions, isSettingPanelOpen, isExpanded, isResizable, ...other}) => {
+const MapBoxStory = ({
+  data,
+  options,
+  isLegendFullWidth,
+  onCardAction,
+  availableActions,
+  isSettingPanelOpen,
+  isExpanded,
+  isResizable,
+  ...other
+}) => {
   const mapContainerRef = useRef(null);
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
@@ -20,60 +30,60 @@ const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableA
         {
           icon: Events32,
           iconDescription: 'GDP',
-          onClick: () => changeState(1)
+          onClick: () => changeState(1),
         },
         {
           icon: Events32,
           iconDescription: 'Population',
-          onClick: () => changeState(0)
+          onClick: () => changeState(0),
         },
         {
           icon: Events32,
           iconDescription: 'Map control 3A',
-          onClick: () => changeState(1)
-        }
-      ]
+          onClick: () => changeState(1),
+        },
+      ],
     },
     {
       icon: Events32,
       iconDescription: 'Map control 1',
-      onClick: () => changeState(0)
+      onClick: () => changeState(0),
     },
     {
       icon: Events32,
       iconDescription: 'Map control 2',
-      onClick: () => changeState(1)
+      onClick: () => changeState(1),
     },
     {
       icon: Events32,
       iconDescription: 'Map control 3',
-      onClick: () => changeState(0)
-    }
-  ]
+      onClick: () => changeState(0),
+    },
+  ];
 
   const layeredControls = [
     {
       icon: Events32,
       iconDescription: 'Map control 1',
-      onClick: () => changeState(0)
+      onClick: () => changeState(0),
     },
     {
       icon: Events32,
       iconDescription: 'Map control 2',
-      onClick: () => changeState(1)
+      onClick: () => changeState(1),
     },
     {
       icon: Events32,
       iconDescription: 'Map control 3',
-      onClick: () => changeState(0)
-    }
-  ]
-
+      onClick: () => changeState(0),
+    },
+  ];
 
   // Initialize map when component mounts
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
+      // see https://www.carbondesignsystem.com/data-visualization/complex-charts/#mapbox
       style: 'mapbox://styles/carbondesignsystem/ck7c8ce1y05h61ipb2fixfe76',
       center: [5, 34],
       zoom: 1.5,
@@ -116,8 +126,6 @@ const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableA
     return () => map.remove();
   }, [isExpanded]);
 
-
-
   useEffect(() => {
     paint();
   }, [active]);
@@ -143,10 +151,13 @@ const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableA
     setActive(options[i]);
   };
 
-
   const sideBarContent = () => (
-    <Accordion className="settings-accordion" style={{paddingTop: 0}}>
-      <AccordionItem title="GDP vs Population" onClick={() => setActiveSideBar(1)} open={activeSideBar === 1}>
+    <Accordion className="settings-accordion" style={{ paddingTop: 0 }}>
+      <AccordionItem
+        title="GDP vs Population"
+        onClick={() => setActiveSideBar(1)}
+        open={activeSideBar === 1}
+      >
         <Optionsfield options={options} property={active.property} changeState={changeState} />
       </AccordionItem>
       <AccordionItem title="Panel B" onClick={() => setActiveSideBar(2)} open={activeSideBar === 2}>
@@ -156,7 +167,7 @@ const MapBoxStory = ({data, options, isLegendFullWidth, onCardAction, availableA
         Even more settings
       </AccordionItem>
     </Accordion>
-);
+  );
 
   return (
     <MapCard
