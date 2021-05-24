@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.2...v2.146.0-next.3) (2021-05-21)
+
+
+### Bug Fixes
+
+* **imagecard:** set of small fixes to imagecard and the dashboardeditor ([7c485d7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7c485d73339c45e3173295baff4bf3a8fb47b101))
+
+
+
+
+
+# [2.146.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.1...v2.146.0-next.2) (2021-05-20)
+
+
+### Bug Fixes
+
+* **dayjs:** need to rename the dayjs variable or we lose the extends ([5ab1dc5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5ab1dc5cec8d53568395f83b650ebd70198baa6a))
+* **overflow-menu:** use es import from carbon ([5e143fa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5e143fac5554d3ae4268bfed0dae7374cb4ed66d))
+* **repo:** use es imports in drop-container and suiteheader test ([7591513](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7591513bf01d4b3b4008bb141a955f5b8793b059))
+
+
+
+
+
+# [2.146.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.0...v2.146.0-next.1) (2021-05-19)
+
+
+### Bug Fixes
+
+* **overflow-menu:** getMenuOffset import fix ([176f8f6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/176f8f6fb30652bbfa27ac1d3591cf4af69914a1))
+
+
+
+
+
+# [2.146.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.1-next.4...v2.146.0-next.0) (2021-05-19)
+
+
+### Bug Fixes
+
+* **header:** address i18n, color, and other PR feedback ([ce31dc8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ce31dc80a28da2c127336a599067ef9f70dd70c4))
+* **header:** custom content should also trigger overflow ([8505df1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8505df125a5cdd058d2e2a65890a5ecf97c1d114))
+* **header:** fix nested button and a tags via a portal ([e4b6ec2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e4b6ec2e4e070ca548058fbef6d150e4a0a70e6b))
+* **header:** prop-type adjustments ([6296bda](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6296bda65a1b9bf7c4c68e0a8e456f7a3279b874))
+* **header:** truncate subtitle and appName when necessary ([661b90c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/661b90c04c700e1e499c30960a9eb33b0af2ae1d))
+* **overflow-menu:** change import structure for getMenuOffset ([e286133](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e286133aa754643408a7c855ddcd5052be8b1f97))
+* **overflow-menu:** import getMenuOffset from es instead of lib ([53c0f3e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/53c0f3e1186374bf649da89f7a5a7c99876dd576))
+
+
+### Features
+
+* **header:** automatic overflow handling for header actions ([0e32c63](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0e32c63a8319658d0f6ffd6f9f68e66c821acc32))
+
+
+
+
+
 ## [2.145.1-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.1-next.3...v2.145.1-next.4) (2021-05-18)
 
 
