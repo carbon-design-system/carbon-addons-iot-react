@@ -1293,3 +1293,57 @@ export const Locale = () => {
 Locale.story = {
   name: 'locale',
 };
+
+export const Thresholds = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+  const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
+  const values = getIntervalChartData(interval, 20, { min: 10, max: 100 }, 100);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing05 + 4,
+      }}
+    >
+      <TimeSeriesCard
+        {...commonProps}
+        title={text('title', 'Pressure')}
+        isLoading={boolean('isLoading', false)}
+        isExpanded={boolean('isExpanded', false)}
+        content={object('content-thresholds', {
+          series: [
+            {
+              label: 'Pressure',
+              dataSourceId: 'pressure',
+              color: text('color', COLORS.MAGENTA),
+            },
+          ],
+          unit: 'm/sec',
+          xLabel: 'Time',
+          yLabel: 'Pressure',
+          includeZeroOnXaxis: true,
+          includeZeroOnYaxis: true,
+          timeDataSourceId: 'timestamp',
+          addSpaceOnEdges: 1,
+          thresholds: [
+            { axis: 'y', value: values[0].pressure, fillColor: 'red', label: 'Alert 1' },
+            { axis: 'x', value: values[0].timestamp, fillColor: 'yellow', label: 'Alert 2' },
+          ],
+        })}
+        values={values}
+        interval="day"
+        breakpoint="lg"
+        showTimeInGMT={boolean('showTimeInGMT', false)}
+        size={size}
+        onCardAction={action('onCardAction')}
+        i18n={{
+          tooltipGroupLabel: 'Translated Group',
+        }}
+      />
+    </div>
+  );
+};
+
+Thresholds.story = {
+  name: 'thresholds',
+};
