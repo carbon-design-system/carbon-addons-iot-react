@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Close16 } from '@carbon/icons-react';
 
+import { settings } from '../../constants/Settings';
 import Button from '../Button';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   /** Index of the active tear sheet provided by TearSheetWrapper */
@@ -66,10 +69,13 @@ const TearSheet = ({
     }
   };
   return (
-    <div data-testid={`iot-tear-sheet-${idx}`} className={`iot-tear-sheet ${className || ''}`}>
+    <div
+      data-testid={`${iotPrefix}-tear-sheet-${idx}`}
+      className={`${iotPrefix}-tear-sheet ${className || ''}`}
+    >
       <div
-        className={`iot-tear-sheet--header ${
-          headerExtraContent ? 'iot-tear-sheet--header__extraContent' : ''
+        className={`${iotPrefix}-tear-sheet--header ${
+          headerExtraContent ? `${iotPrefix}-tear-sheet--header__extraContent` : ''
         } `}
       >
         <Button
@@ -83,11 +89,11 @@ const TearSheet = ({
           testID={`tearSheetCloseBtn${idx}`}
         />
         <h2>{title}</h2>
-        <span className="iot-tear-sheet--header--description">{description}</span>
+        <span className={`${iotPrefix}-tear-sheet--header--description`}>{description}</span>
         {headerExtraContent}
       </div>
 
-      <div className="iot-tear-sheet--content">
+      <div className={`${iotPrefix}-tear-sheet--content`}>
         {typeof children === 'function'
           ? children(idx, openNextSheet, goToPreviousSheet, closeAllTearSheets)
           : children}

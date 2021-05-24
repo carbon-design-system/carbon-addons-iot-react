@@ -1,7 +1,10 @@
 import React, { Children, cloneElement, useEffect, useState, createRef } from 'react';
 import PropTypes from 'prop-types';
 
+import { settings } from '../../constants/Settings';
 import useWindowSize from '../../hooks/useWindowSize';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   /** If isOpen is true, TearSheetWrapper opens with the first TearSheet active */
@@ -133,12 +136,12 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
   return (
     <div
       className={[
-        'iot-tear-sheet-wrapper',
+        `${iotPrefix}-tear-sheet-wrapper`,
         isOpen ? animationClasses?.overlay?.join(' ') : '',
         className || '',
       ].join(' ')}
       style={{ '--window-height': `${windowSize.height}px` }}
-      data-testid="iot-tear-sheet-wrapper"
+      data-testid={`${iotPrefix}-tear-sheet-wrapper`}
     >
       {childrenArray.map((tearSheet, idx, arr) => {
         const newTearSheet = cloneElement(tearSheet, {
@@ -154,7 +157,7 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
             key={`container-${idx}`}
             data-testid={`container-${idx}`}
             className={[
-              'iot-tear-sheet-wrapper--container',
+              `${iotPrefix}-tear-sheet-wrapper--container`,
               animationClasses[`container${idx}`].join(' '),
             ].join(' ')}
             ref={containers[idx]}
