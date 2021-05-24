@@ -3,6 +3,7 @@ import { settings } from '../../constants/Settings';
 import { Button } from '../../index';
 import { Layers16 } from '@carbon/icons-react';
 import classnames from 'classnames';
+import ScrollingControls from './ScrollingControls';
 const { iotPrefix } = settings;
 const BASE_CLASS_NAME = `${iotPrefix}--map-controls`;
 
@@ -22,11 +23,20 @@ const MapControls = ({
 
   const renderControl = (control, index) => {
     if (control.group) {
-      return (
-        <div
-          key={`${control.iconDescription}-container-${index}`}
-          className={`${BASE_CLASS_NAME}-btn-group`}
-        >
+      const groupClass = `${BASE_CLASS_NAME}-btn-group`;
+      const groupKey = `btn-group-${index}`;
+      return control.hasScroll ? (
+        isExpandedMode ? (
+          <ScrollingControls
+            key={groupKey}
+            controls={control.group}
+            classname={groupClass}
+            tooltipPosition={tooltipPosition}
+            visibleItemsCount={control.visibleItemsCount}
+          />
+        ) : null
+      ) : (
+        <div key={groupKey} className={groupClass}>
           {control.group.map((control, i) => {
             return (
               <Button

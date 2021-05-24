@@ -1,5 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Events32, SkillLevelAdvanced32 } from '@carbon/icons-react';
+import {
+  Events32,
+  Cloud32,
+  Cloudy32,
+  Fog32,
+  Hail32,
+  PartlyCloudy32,
+  Rain32,
+  Sun32,
+} from '@carbon/icons-react';
 import { Accordion, AccordionItem } from 'carbon-components-react';
 import mapboxgl from 'mapbox-gl';
 
@@ -25,6 +34,48 @@ const MapBoxStory = ({
   const [map, setMap] = useState(null);
   const [activeSideBar, setActiveSideBar] = useState(1);
   const mapControls = [
+    {
+      hasScroll: true,
+      visibleItemsCount: 4,
+      group: [
+        {
+          icon: Hail32,
+          iconDescription: 'Map scroll hail',
+          onClick: () => changeState(0),
+        },
+        {
+          icon: Rain32,
+          iconDescription: 'Map scroll rain',
+          onClick: () => changeState(0),
+        },
+        {
+          icon: Fog32,
+          iconDescription: 'Map scroll fog',
+          onClick: () => changeState(0),
+        },
+        {
+          icon: Cloudy32,
+          iconDescription: 'Map scroll cloudy',
+          onClick: () => changeState(1),
+        },
+        {
+          icon: Cloud32,
+          iconDescription: 'Map scroll cloud',
+          onClick: () => changeState(0),
+        },
+        {
+          icon: PartlyCloudy32,
+          iconDescription: 'Map scroll partly cloudy',
+          onClick: () => changeState(0),
+        },
+
+        {
+          icon: Sun32,
+          iconDescription: 'Map scroll sun',
+          onClick: () => changeState(0),
+        },
+      ],
+    },
     {
       group: [
         {
@@ -175,6 +226,7 @@ const MapBoxStory = ({
       isExpanded={isExpanded}
       isResizable={isResizable}
       availableActions={availableActions}
+      mapControls={mapControls}
       mapControls={mapControls}
       mapContainerRef={mapContainerRef}
       isLegendFullWidth={isLegendFullWidth}

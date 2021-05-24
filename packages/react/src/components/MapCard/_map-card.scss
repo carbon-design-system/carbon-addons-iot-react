@@ -2,6 +2,7 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import 'legend';
 @import 'zoom-control';
+@import 'scrolling-controls';
 
 .#{$iot-prefix}--map {
   // container and map canvas
