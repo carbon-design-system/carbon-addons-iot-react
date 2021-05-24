@@ -3093,7 +3093,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       onFocus={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
-      translateById={[Function]}
     >
       <ul
         className="bx--side-nav__items"
