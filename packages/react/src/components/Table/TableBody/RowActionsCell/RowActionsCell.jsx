@@ -156,7 +156,7 @@ class RowActionsCell extends React.Component {
                   .filter((action) => !action.isOverflow)
                   .map(({ id: actionId, labelText, iconDescription, ...others }) => (
                     <Button
-                      {...omit(others, ['isOverflow'])}
+                      {...omit(others, ['isOverflow', 'isDelete', 'isEdit', 'hasDivider'])}
                       iconDescription={labelText || iconDescription}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
