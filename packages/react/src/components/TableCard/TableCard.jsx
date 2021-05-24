@@ -291,7 +291,7 @@ const TableCard = ({
 
   // If a column has a linkTemplate, format the column to render a link,
   // we need a special case here because this is the only card where we examine the actual data to replace variables in each
-  const columnsWithFormattedLinks = createColumnsWithFormattedLinks(columns, others.cardVariables);
+  const columnsWithFormattedLinks = createColumnsWithFormattedLinks(columns);
 
   // filter to get the indexes for each one
   const columnsUpdated = cloneDeep(columnsWithFormattedLinks);
