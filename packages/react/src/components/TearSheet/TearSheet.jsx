@@ -66,10 +66,10 @@ const TearSheet = ({
     }
   };
   return (
-    <div data-testid={`tear-sheet-${idx}`} className={`tear-sheet ${className || ''}`}>
+    <div data-testid={`iot-tear-sheet-${idx}`} className={`iot-tear-sheet ${className || ''}`}>
       <div
-        className={`tear-sheet--header ${
-          headerExtraContent ? 'tear-sheet--header__extraContent' : ''
+        className={`iot-tear-sheet--header ${
+          headerExtraContent ? 'iot-tear-sheet--header__extraContent' : ''
         } `}
       >
         <Button
@@ -83,11 +83,11 @@ const TearSheet = ({
           testID={`tearSheetCloseBtn${idx}`}
         />
         <h2>{title}</h2>
-        <span className="tear-sheet--header--description">{description}</span>
+        <span className="iot-tear-sheet--header--description">{description}</span>
         {headerExtraContent}
       </div>
 
-      <div className="tear-sheet--content">
+      <div className="iot-tear-sheet--content">
         {typeof children === 'function'
           ? children(idx, openNextSheet, goToPreviousSheet, closeAllTearSheets)
           : children}

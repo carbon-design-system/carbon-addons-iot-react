@@ -1,4 +1,4 @@
-.tear-sheet {
+.#{$iot-prefix}-tear-sheet {
   height: 100%;
   background-color: $ui-01;
 
@@ -7,10 +7,7 @@
   }
 
   &--header {
-    padding-left: $spacing-07;
-    padding-right: $spacing-07;
-    padding-bottom: $spacing-06;
-    padding-top: $spacing-06;
+    padding: $spacing-06 $spacing-11 $spacing-06 $spacing-07;
     border-bottom: 1px solid $selected-ui;
     h1 {
       margin-bottom: $spacing-03;

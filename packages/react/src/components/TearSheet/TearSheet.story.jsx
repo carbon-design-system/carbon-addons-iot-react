@@ -49,7 +49,7 @@ const TearSheet1 = () => {
               <Button
                 kind="tertiary"
                 onClick={openNextSheet}
-                style={{ margin: '2rem 0 0 2rem', maxWidth: '13rem' }}
+                style={{ margin: '2rem 2rem 0 2rem', maxWidth: '13rem' }}
               >
                 Open 2nd sheet
               </Button>
@@ -61,7 +61,10 @@ const TearSheet1 = () => {
                 }}
               >
                 <Button
-                  onClick={() => goToPreviousSheet()}
+                  onClick={() => {
+                    setOpen(false);
+                    goToPreviousSheet();
+                  }}
                   style={{ height: '4rem', width: '17rem' }}
                   kind="secondary"
                 >

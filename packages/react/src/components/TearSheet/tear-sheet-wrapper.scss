@@ -1,4 +1,4 @@
-.tear-sheet-wrapper {
+.#{$iot-prefix}-tear-sheet-wrapper {
   top: 0;
   left: 0;
   height: 100%;
@@ -6,28 +6,26 @@
   opacity: 0;
   z-index: -1;
   position: fixed;
-  // stylelint-disable-next-line declaration-property-unit-blacklist
-  transition: linear 250ms all;
+  transition: all $duration--slow-01 motion(standard, expressive);
 
   &--container {
     position: fixed;
     left: 50%;
     transform: translate(-50%, 0);
     background: none;
-    // stylelint-disable-next-line declaration-property-unit-blacklist
-    transition: linear 250ms all;
+    transition: all $duration--slow-01 motion(standard, expressive);
     width: initial;
     max-height: calc(var(--window-height) - 88px);
+    max-width: var(--content-max-width);
     height: auto;
-    .tear-sheet {
+    .#{$iot-prefix}-tear-sheet {
       max-width: inherit;
       width: 100%;
     }
     &.is-hidden {
       filter: brightness(75%);
       & * {
-        // stylelint-disable-next-line declaration-property-unit-blacklist
-        transition: linear 250ms filter;
+        transition: filter duration--slow-01 motion(standard, expressive);
       }
     }
   }
@@ -35,8 +33,7 @@
   &.is-visible {
     background-color: $overlay-01;
     z-index: 5999;
-    // stylelint-disable-next-line declaration-property-unit-blacklist
-    transition: background-color 720ms;
+    transition: background-color $duration--slow-02 motion(standard, productive);
     opacity: 1;
   }
 }

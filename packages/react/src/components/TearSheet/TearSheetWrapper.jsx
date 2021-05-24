@@ -17,6 +17,7 @@ const tearSheetConstants = {
   DISTANCE_FROM_TOP: 88,
   WIDTH_DECREASE: 24,
   BOTTOM_POSITION_WHEN_HIDDEN: 12,
+  DISTANCE_FROM_EACH_SIDE: 64,
 };
 
 const defaultProps = {
@@ -78,11 +79,11 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
     });
 
     const isWindowWidthSmallerThanContainer = windowSize.width < initialContainersWidth;
-
+    const containerMaxWidth = windowSize?.width - tearSheetConstants.DISTANCE_FROM_EACH_SIDE * 2;
     setContainersStyles(
       containers.reduce((acc, c, idx) => {
         const currentWidth = isWindowWidthSmallerThanContainer
-          ? windowSize.width - (activeTearSheetIdx - idx) * tearSheetConstants.WIDTH_DECREASE
+          ? containerMaxWidth - (activeTearSheetIdx - idx) * tearSheetConstants.WIDTH_DECREASE
           : activeTearSheetIdx === null || activeTearSheetIdx <= idx
           ? initialContainersWidth
           : initialContainersWidth - (activeTearSheetIdx - idx) * tearSheetConstants.WIDTH_DECREASE;
@@ -104,6 +105,7 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
             '--content-max-height': `${
               windowSize?.height - greaterHeaderTopPosition - tearSheetConstants.DISTANCE_FROM_TOP
             }px`,
+            '--content-max-width': `${containerMaxWidth}px`,
           },
         };
       }, {})
@@ -131,12 +133,12 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
   return (
     <div
       className={[
-        'tear-sheet-wrapper',
+        'iot-tear-sheet-wrapper',
         isOpen ? animationClasses?.overlay?.join(' ') : '',
         className || '',
       ].join(' ')}
       style={{ '--window-height': `${windowSize.height}px` }}
-      data-testid="tear-sheet-wrapper"
+      data-testid="iot-tear-sheet-wrapper"
     >
       {childrenArray.map((tearSheet, idx, arr) => {
         const newTearSheet = cloneElement(tearSheet, {
@@ -152,7 +154,7 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
             key={`container-${idx}`}
             data-testid={`container-${idx}`}
             className={[
-              'tear-sheet-wrapper--container',
+              'iot-tear-sheet-wrapper--container',
               animationClasses[`container${idx}`].join(' '),
             ].join(' ')}
             ref={containers[idx]}

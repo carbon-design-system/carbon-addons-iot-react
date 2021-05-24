@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import debounce from 'lodash/debounce';
 
 const DEBOUNCE_TIMEOUT = 300;
 
@@ -7,16 +8,6 @@ const useWindowSize = (debounceDelay = DEBOUNCE_TIMEOUT) => {
     width: window?.innerWidth,
     height: window?.innerHeight,
   });
-  const timer = useRef(null);
-
-  const debounce = (fn, delay) => {
-    return (...args) => {
-      clearTimeout(timer.current);
-      timer.current = setTimeout(() => {
-        fn(...args);
-      }, delay);
-    };
-  };
 
   // Set new values according to the window object dimensions
   const handleResize = () => {
@@ -33,7 +24,6 @@ const useWindowSize = (debounceDelay = DEBOUNCE_TIMEOUT) => {
 
     // Cleanup function to remove the event listener
     return () => {
-      clearTimeout(timer.current);
       window.removeEventListener('resize', debouncedHandleResize);
     };
   }, [debounceDelay]);

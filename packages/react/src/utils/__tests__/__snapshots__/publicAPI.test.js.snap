@@ -20869,7 +20869,7 @@ Map {
       },
     },
   },
-  "TearSheetWrapper" => Object {
+  "TearSheet" => Object {
     "defaultProps": Object {
       "children": undefined,
       "className": undefined,
@@ -20935,6 +20935,28 @@ Map {
       },
       "title": Object {
         "type": "string",
+      },
+    },
+  },
+  "TearSheetWrapper" => Object {
+    "defaultProps": Object {
+      "children": undefined,
+      "className": undefined,
+      "isOpen": false,
+      "onCloseAllTearSheets": undefined,
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "isOpen": Object {
+        "type": "bool",
+      },
+      "onCloseAllTearSheets": Object {
+        "type": "func",
       },
     },
   },
