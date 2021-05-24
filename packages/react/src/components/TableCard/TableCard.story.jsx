@@ -54,73 +54,6 @@ WithMultipleActions.story = {
   name: 'with multiple actions',
 };
 
-export const WithLinks = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
-  const cardVariables = object('Dynamic link variable', {
-    assetId: '11112',
-    company: 'ibm',
-  });
-  const tableLinkColumns = [
-    {
-      dataSourceId: 'pressure',
-      label: 'Pressure',
-    },
-    {
-      dataSourceId: 'deviceId',
-      label: 'Link',
-      linkTemplate: {
-        href: text('href', 'https://{company}.com/{assetId}'),
-        target: select('target', ['_blank', null], '_blank'),
-      },
-    },
-  ];
-
-  const tableLinkData = tableData.slice(0);
-  // eslint-disable-next-line no-return-assign, no-param-reassign
-  tableLinkData.forEach((row) => (row.values.deviceId = 'Link'));
-
-  return (
-    <div
-      style={{
-        width: `${getCardMinSize('lg', size).x}px`,
-        margin: spacing05 + 4,
-      }}
-    >
-      <TableCard
-        title={text('title', 'Open Alerts {assetId}')}
-        id="table-list"
-        tooltip={text('Tooltip text', "Here's a Tooltip")}
-        content={{
-          columns: tableLinkColumns,
-        }}
-        values={tableLinkData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-        size={size}
-        isLoading={boolean('isLoading', false)}
-        cardVariables={cardVariables}
-      />
-    </div>
-  );
-};
-
-WithLinks.story = {
-  name: 'With links',
-
-  parameters: {
-    info: {
-      text: `<p>Links can added by providing a linkTemplate prop to the content.columns[i] property.
-                2 additional properties can be configured within the linkTemplate object: href and target</p>
-            <p>href is the url the link will use. This property is required.</p>
-            <p>target is whether you would like to open the link in a new window or not.
-                This property defaults to opening in the current window. Use '_blank' to open in a new window
-            </p>
-            <p> Note: if using row-specific variables in a TableCard href (ie a variable that has a different value per row),
-            do NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column</p>
-  `,
-    },
-  },
-};
-
 export const WithRowSpecificLinkVariables = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
@@ -182,7 +115,7 @@ export const WithRowSpecificLinkVariables = () => {
       }}
     >
       <TableCard
-        title={text('title', 'Asset Open Alerts')}
+        title={text('title', '{assetId} Open Alerts')}
         id="table-list"
         tooltip={text('Tooltip text', "Here's a Tooltip")}
         content={{
@@ -193,6 +126,9 @@ export const WithRowSpecificLinkVariables = () => {
         onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
         size={size}
         isLoading={boolean('isLoading', false)}
+        cardVariables={{
+          assetId: '11112',
+        }}
       />
     </div>
   );
@@ -203,10 +139,15 @@ WithRowSpecificLinkVariables.story = {
 
   parameters: {
     info: {
-      text: ` # Passing variables
-      To pass row-specific variables in a TableCard href (ie a variable that has a different value per row),
-            do NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column
-      `,
+      text: `<p>Links can added by providing a linkTemplate prop to the content.columns[i] property.
+                2 additional properties can be configured within the linkTemplate object: href and target</p>
+            <p>href is the url the link will use. This property is required.</p>
+            <p>target is whether you would like to open the link in a new window or not.
+                This property defaults to opening in the current window. Use '_blank' to open in a new window
+            </p>
+            <p> Note: if using row-specific variables in a TableCard href (ie a variable that has a different value per row),
+            be sure that your table has reference to the proper value in another column</p>
+  `,
     },
   },
 };

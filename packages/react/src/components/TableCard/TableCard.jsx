@@ -179,11 +179,12 @@ const TableCard = ({
   // Set the locale
   dayjs.locale(locale);
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
+  // Need to skip the linkTemplate variable for now because we will handle it at render time per row
   const {
     title,
     content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
     values: data,
-  } = handleCardVariables(titleProp, contentProp, valuesProp, others);
+  } = handleCardVariables(titleProp, contentProp, valuesProp, others, ['href']);
 
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
@@ -288,7 +289,8 @@ const TableCard = ({
 
   const hasActionColumn = data.filter((i) => i.actions).length > 0;
 
-  // If a column has a linkTemplate, format the column to render a link
+  // If a column has a linkTemplate, format the column to render a link,
+  // we need a special case here because this is the only card where we examine the actual data to replace variables in each
   const columnsWithFormattedLinks = createColumnsWithFormattedLinks(columns, others.cardVariables);
 
   // filter to get the indexes for each one
