@@ -33,7 +33,7 @@ describe('TearSheetWrapper', () => {
         <TearSheet {...commonProps} />
       </TearSheetWrapper>
     );
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).not.toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).not.toHaveClass('is-visible');
     expect(screen.getByText('First TearSheet')).toBeInTheDocument();
     expect(screen.getByText('First TearSheet description')).toBeInTheDocument();
   });
@@ -43,7 +43,7 @@ describe('TearSheetWrapper', () => {
         <TearSheet {...commonProps} />
       </TearSheetWrapper>
     );
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).toHaveClass('is-visible');
     expect(screen.getByTestId('container-0')).toHaveStyle('bottom: 0');
   });
   it('renders TearSheetWrapper with 2 TearSheets and closes the second one', () => {
@@ -53,7 +53,7 @@ describe('TearSheetWrapper', () => {
         <TearSheet {...secondTearSheetCommonProps} />
       </TearSheetWrapper>
     );
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).toHaveClass('is-visible');
     expect(screen.getByTestId('container-0')).toHaveStyle('bottom: 0');
     expect(screen.getByText('Second TearSheet')).toBeInTheDocument();
     expect(screen.getByText('Second TearSheet description')).toBeInTheDocument();
@@ -83,9 +83,9 @@ describe('TearSheetWrapper', () => {
         );
       })
     );
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).not.toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).not.toHaveClass('is-visible');
     await userEvent.click(screen.getByTestId('openTearSheetWrapper'));
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).toHaveClass('is-visible');
     expect(screen.getByTestId('container-0')).toHaveStyle('bottom: 0');
     await userEvent.click(screen.getByTestId('openNextSheet'));
     expect(screen.getByTestId('container-0')).toHaveClass('is-hidden');
@@ -117,13 +117,13 @@ describe('TearSheetWrapper', () => {
         </TearSheet>
       </TearSheetWrapper>
     );
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).toHaveClass('is-visible');
     expect(screen.getByTestId('container-0')).toHaveStyle('bottom: 0');
     await userEvent.click(screen.getByTestId('openNextSheet'));
     expect(screen.getByTestId('container-0')).toHaveClass('is-hidden');
     expect(screen.getByTestId('container-1')).toHaveStyle('bottom: 0');
     await userEvent.click(screen.getByTestId('closeAllTearSheets'));
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).not.toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).not.toHaveClass('is-visible');
   });
   it('renders TearSheet, opens second TearSheet and closes all TearSheets without providing the onCloseAllTearSheets funcion', async () => {
     render(
@@ -148,13 +148,13 @@ describe('TearSheetWrapper', () => {
         </TearSheet>
       </TearSheetWrapper>
     );
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).toHaveClass('is-visible');
     expect(screen.getByTestId('container-0')).toHaveStyle('bottom: 0');
     await userEvent.click(screen.getByTestId('openNextSheet'));
     expect(screen.getByTestId('container-0')).toHaveClass('is-hidden');
     expect(screen.getByTestId('container-1')).toHaveStyle('bottom: 0');
     await userEvent.click(screen.getByTestId('closeAllTearSheets'));
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).not.toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).not.toHaveClass('is-visible');
   });
   it('renders TearSheet, opens second TearSheet, goes back to first TearSheet and closes it', async () => {
     render(
@@ -183,7 +183,7 @@ describe('TearSheetWrapper', () => {
         </TearSheet>
       </TearSheetWrapper>
     );
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).toHaveClass('is-visible');
     expect(screen.getByTestId('container-0')).toHaveStyle('bottom: 0');
     await userEvent.click(screen.getByTestId('openNextSheet'));
     expect(screen.getByTestId('container-0')).toHaveClass('is-hidden');
@@ -192,6 +192,6 @@ describe('TearSheetWrapper', () => {
     expect(screen.getByTestId('container-0')).toHaveStyle('bottom: 0');
     expect(screen.getByTestId('container-1')).not.toHaveStyle('bottom: 0');
     await userEvent.click(screen.getByTestId('tearSheetCloseBtn0'));
-    expect(screen.getByTestId(`${iotPrefix}-tear-sheet-wrapper`)).not.toHaveClass('is-visible');
+    expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).not.toHaveClass('is-visible');
   });
 });

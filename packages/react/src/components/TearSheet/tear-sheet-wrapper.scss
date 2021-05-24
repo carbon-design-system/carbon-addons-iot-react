@@ -1,4 +1,4 @@
-.#{$iot-prefix}-tear-sheet-wrapper {
+.#{$iot-prefix}--tear-sheet-wrapper {
   top: 0;
   left: 0;
   height: 100%;
@@ -18,7 +18,7 @@
     max-height: calc(var(--window-height) - 88px);
     max-width: var(--content-max-width);
     height: auto;
-    .#{$iot-prefix}-tear-sheet {
+    .#{$iot-prefix}--tear-sheet {
       max-width: inherit;
       width: 100%;
     }

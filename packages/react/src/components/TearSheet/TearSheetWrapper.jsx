@@ -81,7 +81,8 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
       };
     });
 
-    const isWindowWidthSmallerThanContainer = windowSize.width < initialContainersWidth;
+    const isWindowWidthSmallerThanContainer =
+      windowSize.width < initialContainersWidth + tearSheetConstants.DISTANCE_FROM_EACH_SIDE * 2;
     const containerMaxWidth = windowSize?.width - tearSheetConstants.DISTANCE_FROM_EACH_SIDE * 2;
     setContainersStyles(
       containers.reduce((acc, c, idx) => {
@@ -136,12 +137,12 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
   return (
     <div
       className={[
-        `${iotPrefix}-tear-sheet-wrapper`,
+        `${iotPrefix}--tear-sheet-wrapper`,
         isOpen ? animationClasses?.overlay?.join(' ') : '',
         className || '',
       ].join(' ')}
       style={{ '--window-height': `${windowSize.height}px` }}
-      data-testid={`${iotPrefix}-tear-sheet-wrapper`}
+      data-testid={`${iotPrefix}--tear-sheet-wrapper`}
     >
       {childrenArray.map((tearSheet, idx, arr) => {
         const newTearSheet = cloneElement(tearSheet, {
@@ -157,7 +158,7 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
             key={`container-${idx}`}
             data-testid={`container-${idx}`}
             className={[
-              `${iotPrefix}-tear-sheet-wrapper--container`,
+              `${iotPrefix}--tear-sheet-wrapper--container`,
               animationClasses[`container${idx}`].join(' '),
             ].join(' ')}
             ref={containers[idx]}
