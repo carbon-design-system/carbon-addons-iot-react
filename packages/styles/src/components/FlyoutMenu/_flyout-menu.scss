@@ -248,14 +248,19 @@ $shadow: 0.4rem;
 }
 
 .#{$iot-prefix}--flyout-menu--content {
-  padding: 1rem 1rem 3rem 1rem;
+  padding: $spacing-05 $spacing-05 $spacing-09 $spacing-05;
 }
 
 .#{$iot-prefix}--flyout-menu--trigger-button {
   color: $icon-01;
 
+  &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger svg,
+  &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger:hover svg {
+    fill: $gray-70;
+  }
+
   .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light) & {
-    background-color: $ui-01;
+    background-color: transparent;
   }
 
   .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__open) &:hover {
