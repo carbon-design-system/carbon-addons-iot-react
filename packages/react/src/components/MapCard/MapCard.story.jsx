@@ -49,20 +49,36 @@ export const MapBoxExample = () => {
   );
 };
 
+MapBoxExample.story = {
+  name: 'MapBox example',
+};
+
 export const OpenlayersExample = () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
+  const handleOnCardAction = (id, actionType) => {
+    if (actionType === CARD_ACTIONS.CLOSE_EXPANDED_CARD) {
+      setIsExpanded(false);
+    } else if (actionType === CARD_ACTIONS.OPEN_EXPANDED_CARD) {
+      setIsExpanded(true);
+    } else if (actionType === CARD_ACTIONS.ON_SETTINGS_CLICK) {
+      setSettingsOpen((oldSettingsState) => !oldSettingsState);
+    }
+  };
   return (
     <OpenLayersStory
       data={data}
       options={options}
       isLegendFullWidth={boolean('isLegendFullWidth', false)}
-      onCardAction={() => setSettingsOpen((last) => !last)}
+      onCardAction={handleOnCardAction}
       availableActions={{ expand: true, settings: true }}
       isSettingPanelOpen={settingsOpen}
+      isExpanded={isExpanded}
     />
   );
 };
 
-MapBoxExample.story = {
-  name: 'MapBox example',
+OpenlayersExample.story = {
+  name: 'Open layers example',
 };

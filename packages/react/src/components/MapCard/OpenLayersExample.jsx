@@ -25,115 +25,124 @@ import Optionsfield from './Optionsfield';
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
 
-  const view = new View({
-    center: fromLonLat([5, 35]),
-    zoom: '2.5',
-  });
+const view = new View({
+  center: fromLonLat([5, 35]),
+  zoom: '2.5',
+});
 
-  const staticFeature = new Feature({
-    geometry: new Point([0, 0]),
-  });
-  const staticSource = new VectorSource({
-    features: [staticFeature],
-  });
-  const staticLayer = new VectorLayer({
-    source: staticSource,
-  });
-  const pointerMoveSnap = new Snap({
-    source: staticSource,
-    pixelTolerance: 200,
-  });
+const staticFeature = new Feature({
+  geometry: new Point([0, 0]),
+});
+const staticSource = new VectorSource({
+  features: [staticFeature],
+});
+const staticLayer = new VectorLayer({
+  source: staticSource,
+});
+const pointerMoveSnap = new Snap({
+  source: staticSource,
+  pixelTolerance: 200,
+});
 
-  const getColor = (feature, featureName = 'population') => {
-    const gdp = feature.get('gdp_md_est');
-    const pop = feature.get('pop_est');
-    [0, '#f8d5cc'],
-      [1000000, '#f4bfb6'],
-      [5000000, '#f1a8a5'],
-      [10000000, '#ee8f9a'],
-      [50000000, '#ec739b'],
-      [100000000, '#dd5ca8'],
-      [250000000, '#c44cc0'],
-      [500000000, '#9f43d7'],
-      [1000000000, '#6e40e6'];
-    if (featureName === 'population') {
-      switch (true) {
-        case pop > 1000000 && pop < 5000000:
-          return '#f4bfb6';
-        case pop > 5000000 && pop < 10000000:
-          return '#f1a8a5';
-        case pop > 10000000 && pop < 50000000:
-          return '#ee8f9a';
-        case pop > 50000000 && pop < 100000000:
-          return '#ec739b';
-        case pop > 100000000 && pop < 250000000:
-          return '#dd5ca8';
-        case pop > 250000000 && pop < 500000000:
-          return '#c44cc0';
-        case pop > 500000000 && pop < 1000000000:
-          return '#9f43d7';
-        case pop > 1000000000:
-          return '#6e40e6';
-        default:
-          return '#f8d5cc';
-      }
-    } else {
-      switch (true) {
-        case gdp > 5000 && gdp < 10000:
-          return '#f4bfb6';
-        case gdp > 10000 && gdp < 50000:
-          return '#ee8f9a';
-        case gdp > 50000 && gdp < 100000:
-          return '#ec739b';
-        case gdp > 100000 && gdp < 250000:
-          return '#dd5ca8';
-        case gdp > 250000 && gdp < 5000000:
-          return '#c44cc0';
-        case gdp > 5000000 && gdp < 10000000:
-          return '#9f43d7';
-        case gdp > 10000000:
-          return '#6e40e6';
-        default:
-          return '#f8d5cc';
-      }
+const getColor = (feature, featureName = 'population') => {
+  const gdp = feature.get('gdp_md_est');
+  const pop = feature.get('pop_est');
+  [0, '#f8d5cc'],
+    [1000000, '#f4bfb6'],
+    [5000000, '#f1a8a5'],
+    [10000000, '#ee8f9a'],
+    [50000000, '#ec739b'],
+    [100000000, '#dd5ca8'],
+    [250000000, '#c44cc0'],
+    [500000000, '#9f43d7'],
+    [1000000000, '#6e40e6'];
+  if (featureName === 'population') {
+    switch (true) {
+      case pop > 1000000 && pop < 5000000:
+        return '#f4bfb6';
+      case pop > 5000000 && pop < 10000000:
+        return '#f1a8a5';
+      case pop > 10000000 && pop < 50000000:
+        return '#ee8f9a';
+      case pop > 50000000 && pop < 100000000:
+        return '#ec739b';
+      case pop > 100000000 && pop < 250000000:
+        return '#dd5ca8';
+      case pop > 250000000 && pop < 500000000:
+        return '#c44cc0';
+      case pop > 500000000 && pop < 1000000000:
+        return '#9f43d7';
+      case pop > 1000000000:
+        return '#6e40e6';
+      default:
+        return '#f8d5cc';
     }
-  };
+  } else {
+    switch (true) {
+      case gdp > 5000 && gdp < 10000:
+        return '#f4bfb6';
+      case gdp > 10000 && gdp < 50000:
+        return '#ee8f9a';
+      case gdp > 50000 && gdp < 100000:
+        return '#ec739b';
+      case gdp > 100000 && gdp < 250000:
+        return '#dd5ca8';
+      case gdp > 250000 && gdp < 5000000:
+        return '#c44cc0';
+      case gdp > 5000000 && gdp < 10000000:
+        return '#9f43d7';
+      case gdp > 10000000:
+        return '#6e40e6';
+      default:
+        return '#f8d5cc';
+    }
+  }
+};
 
-  const gdp = new VectorImage({
-    source: new VectorSource({
-      url:
-        'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
-      format: new GeoJSON(),
-    }),
-    visible: true,
-    title: 'GDP',
-    style: (feature) => {
-      return new Style({
-        fill: new Fill({
-          color: getColor(feature, 'GDP'),
-        }),
-      });
-    },
-  });
+const gdp = new VectorImage({
+  source: new VectorSource({
+    url:
+      'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
+    format: new GeoJSON(),
+  }),
+  visible: true,
+  title: 'GDP',
+  style: (feature) => {
+    return new Style({
+      fill: new Fill({
+        color: getColor(feature, 'GDP'),
+      }),
+    });
+  },
+});
 
-  const population = new VectorImage({
-    source: new VectorSource({
-      url:
-        'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
-      format: new GeoJSON(),
-    }),
-    visible: false,
-    title: 'Population',
-    style: (feature) => {
-      return new Style({
-        fill: new Fill({
-          color: getColor(feature),
-        }),
-      });
-    },
-  });
+const population = new VectorImage({
+  source: new VectorSource({
+    url:
+      'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
+    format: new GeoJSON(),
+  }),
+  visible: false,
+  title: 'Population',
+  style: (feature) => {
+    return new Style({
+      fill: new Fill({
+        color: getColor(feature),
+      }),
+    });
+  },
+});
 
-const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction, isSettingPanelOpen, availableActions}) => {
+const OpenLayersStory = ({
+  data,
+  options,
+  isLegendFullWidth,
+  onCardAction,
+  isSettingPanelOpen,
+  availableActions,
+  isExpanded,
+  ...other
+}) => {
   const mapContainerRef = useRef(null);
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
@@ -163,62 +172,61 @@ const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction, isSett
     setMap(mapObject);
 
     return () => mapObject.setTarget(undefined);
-  }, []);
+  }, [isExpanded]);
   const mapControls = [
     {
       group: [
         {
           icon: Events32,
           iconDescription: 'GDP',
-          onClick: () => changeState(1)
+          onClick: () => changeState(1),
         },
         {
           icon: Events32,
           iconDescription: 'Population',
-          onClick: () => changeState(0)
+          onClick: () => changeState(0),
         },
         {
           icon: Events32,
           iconDescription: 'Map control 3A',
-          onClick: () => changeState(1)
-        }
-      ]
+          onClick: () => changeState(1),
+        },
+      ],
     },
     {
       icon: Events32,
       iconDescription: 'Map control 1',
-      onClick: () => changeState(0)
+      onClick: () => changeState(0),
     },
     {
       icon: Events32,
       iconDescription: 'Map control 2',
-      onClick: () => changeState(1)
+      onClick: () => changeState(1),
     },
     {
       icon: Events32,
       iconDescription: 'Map control 3',
-      onClick: () => changeState(0)
-    }
-  ]
+      onClick: () => changeState(0),
+    },
+  ];
 
   const layeredControls = [
     {
       icon: Events32,
       iconDescription: 'Map control 1',
-      onClick: () => changeState(0)
+      onClick: () => changeState(0),
     },
     {
       icon: Events32,
       iconDescription: 'Map control 2',
-      onClick: () => changeState(1)
+      onClick: () => changeState(1),
     },
     {
       icon: Events32,
       iconDescription: 'Map control 3',
-      onClick: () => changeState(0)
-    }
-  ]
-
+      onClick: () => changeState(0),
+    },
+  ];
 
   const onZoomIn = () => {
     map.getView().animate({
@@ -243,12 +251,13 @@ const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction, isSett
     });
   };
 
-
-
-
   const sideBarContent = () => (
-    <Accordion className="settings-accordion" style={{paddingTop: 0}}>
-      <AccordionItem title="GDP vs Population" onClick={() => setActiveSideBar(1)} open={activeSideBar === 1}>
+    <Accordion className="settings-accordion" style={{ paddingTop: 0 }}>
+      <AccordionItem
+        title="GDP vs Population"
+        onClick={() => setActiveSideBar(1)}
+        open={activeSideBar === 1}
+      >
         <Optionsfield options={options} property={active.property} changeState={changeState} />
       </AccordionItem>
       <AccordionItem title="Panel B" onClick={() => setActiveSideBar(2)} open={activeSideBar === 2}>
@@ -258,11 +267,12 @@ const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction, isSett
         Even more settings
       </AccordionItem>
     </Accordion>
-);
+  );
 
   return (
     <MapCard
       id="map-card"
+      isExpanded={isExpanded}
       mapControls={mapControls}
       availableActions={availableActions}
       mapContainerRef={mapContainerRef}
@@ -277,9 +287,9 @@ const OpenLayersStory = ({data, options, isLegendFullWidth, onCardAction, isSett
       i18n={{ cardTitle: active.name }}
       sideBarContent={sideBarContent}
       isSettingPanelOpen={isSettingPanelOpen}
+      {...other}
     />
   );
-
 };
 
 export default OpenLayersStory;

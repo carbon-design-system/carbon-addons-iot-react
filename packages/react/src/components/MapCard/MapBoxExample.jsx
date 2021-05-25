@@ -227,7 +227,6 @@ const MapBoxStory = ({
       isResizable={isResizable}
       availableActions={availableActions}
       mapControls={mapControls}
-      mapControls={mapControls}
       mapContainerRef={mapContainerRef}
       isLegendFullWidth={isLegendFullWidth}
       options={options}
