@@ -87,6 +87,10 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     window.HTMLElement.prototype.scrollTo = jest.fn();
+    window.getComputedStyle = () => ({
+      getPropertyValue: () => '25',
+    });
+    window.document = new Document();
   });
   initStoryshots({
     storyKindRegex: /Watson\sIoT.*$|.*Getting\sStarted/g,
