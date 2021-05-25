@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.6...v2.146.0-next.7) (2021-05-25)
+
+
+### Bug Fixes
+
+* **suiteheader:** Making the transition of “loading state” to “data ready state” in SuiteHeader seamless, without remounting the entire `Header` component nor its `actionItems` (which was causing any open header panel to close when data was passed to `SuiteHeader` asynchronously). ([0f248a4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0f248a485f84e88f24b0e9a39dc1ff0df22fd01b))
+
+
+
+
+
+# [2.146.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.5...v2.146.0-next.6) (2021-05-25)
+
+
+### Bug Fixes
+
+* **dashboardeditor:** remove back button and style changes ([ce9eb76](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ce9eb76c42056335708c53e9f16d0fbf185806c4))
+
+
+### Features
+
+* **dashboardeditorheader:** add edit widgets and edit mode ([87a3e0e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/87a3e0e89e245f02f3319f40a5be7178796e27bb))
+
+
+
+
+
 # [2.146.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.4...v2.146.0-next.5) (2021-05-24)
 
 
