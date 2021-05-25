@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Close16 } from '@carbon/icons-react';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
@@ -71,12 +72,12 @@ const TearSheet = ({
   return (
     <div
       data-testid={`${iotPrefix}--tear-sheet-${idx}`}
-      className={`${iotPrefix}--tear-sheet ${className || ''}`}
+      className={classnames(`${iotPrefix}--tear-sheet`, className)}
     >
       <div
-        className={`${iotPrefix}--tear-sheet--header ${
-          headerExtraContent ? `${iotPrefix}--tear-sheet--header__extraContent` : ''
-        } `}
+        className={classnames(`${iotPrefix}--tear-sheet--header`, {
+          [`${iotPrefix}--tear-sheet--header__extraContent`]: !!headerExtraContent,
+        })}
       >
         <Button
           hasIconOnly

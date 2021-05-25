@@ -1,5 +1,6 @@
 import React, { Children, cloneElement, useEffect, useState, createRef } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import useWindowSize from '../../hooks/useWindowSize';
@@ -136,11 +137,9 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
 
   return (
     <div
-      className={[
-        `${iotPrefix}--tear-sheet-wrapper`,
-        isOpen ? animationClasses?.overlay?.join(' ') : '',
-        className || '',
-      ].join(' ')}
+      className={classnames(`${iotPrefix}--tear-sheet-wrapper`, className, {
+        ...animationClasses?.overlay?.reduce((acc, curr) => ({ ...acc, [curr]: isOpen }), {}),
+      })}
       style={{ '--window-height': `${windowSize.height}px` }}
       data-testid={`${iotPrefix}--tear-sheet-wrapper`}
     >
@@ -157,10 +156,12 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
             id={`container-${idx}`}
             key={`container-${idx}`}
             data-testid={`container-${idx}`}
-            className={[
-              `${iotPrefix}--tear-sheet-wrapper--container`,
-              animationClasses[`container${idx}`].join(' '),
-            ].join(' ')}
+            className={classnames(`${iotPrefix}--tear-sheet-wrapper--container`, {
+              ...animationClasses?.[`container${idx}`]?.reduce(
+                (acc, curr) => ({ ...acc, [curr]: true }),
+                {}
+              ),
+            })}
             ref={containers[idx]}
             style={containersStyles?.[`container${idx}`]}
             onClick={(e) => e.stopPropagation()}
