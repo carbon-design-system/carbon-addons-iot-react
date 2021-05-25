@@ -20,6 +20,26 @@ const MapControls = ({
   };
 
   const buttonSize = isExpandedMode ? 'field' : 'small';
+  const renderButton = (
+    { kind = 'ghost', icon, iconDescription, onClick, selected },
+    { index, tabIndex = 0, className = `${BASE_CLASS_NAME}-btn` }
+  ) => {
+    return (
+      <Button
+        tabIndex={tabIndex}
+        key={`${iconDescription}-${index}`}
+        className={className}
+        kind={kind}
+        size={buttonSize}
+        selected={selected}
+        hasIconOnly
+        tooltipPosition={tooltipPosition}
+        renderIcon={icon}
+        iconDescription={iconDescription}
+        onClick={onClick}
+      />
+    );
+  };
 
   const renderControl = (control, index) => {
     if (control.group) {
@@ -37,53 +57,21 @@ const MapControls = ({
         ) : null
       ) : (
         <div key={groupKey} className={groupClass}>
-          {control.group.map((control, i) => {
-            return (
-              <Button
-                key={`${control.iconDescription}-${i}`}
-                className={`${BASE_CLASS_NAME}-btn`}
-                kind="ghost"
-                size={buttonSize}
-                hasIconOnly
-                tooltipPosition={tooltipPosition}
-                renderIcon={control.icon}
-                iconDescription={control.iconDescription}
-                onClick={control.onClick}
-              />
-            );
+          {control.group.map((control, myIndex) => {
+            return renderButton(control, { index: myIndex });
           })}
         </div>
       );
     }
-    return (
-      <Button
-        key={`${control.iconDescription}-${index}`}
-        className={`${BASE_CLASS_NAME}-btn`}
-        kind="ghost"
-        size={buttonSize}
-        hasIconOnly
-        renderIcon={control.icon}
-        tooltipPosition={tooltipPosition}
-        iconDescription={control.iconDescription}
-        onClick={control.onClick}
-      />
-    );
+    return renderButton(control, { index });
   };
 
-  const renderLayers = (layer, i) => (
-    <Button
-      key={`${layer.iconDescription}-${i}`}
-      className={`${BASE_CLASS_NAME}-layers-btn`}
-      kind="ghost"
-      size={buttonSize}
-      hasIconOnly
-      tabIndex={layersOpen ? 0 : -1}
-      tooltipPosition={tooltipPosition}
-      renderIcon={layer.icon}
-      iconDescription={layer.iconDescription}
-      onClick={layer.onClick}
-    />
-  );
+  const renderLayers = (control, index) =>
+    renderButton(control, {
+      index,
+      className: `${BASE_CLASS_NAME}-layers-btn`,
+      tabIndex: layersOpen ? 0 : -1,
+    });
 
   return (
     <div

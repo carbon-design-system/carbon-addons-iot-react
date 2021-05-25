@@ -143,7 +143,9 @@
   }
 
   &-controls-btn:not(:last-child) {
-    border-bottom: 1px solid $ui-03;
+    &:not(.iot--btn-icon-selection--selected) {
+      border-bottom: 1px solid $ui-03;
+    }
   }
 
   &-controls-layers {
@@ -222,11 +224,15 @@
 
   &-controls-layers-btn {
     background-color: white;
-    border-right: 1px solid $ui-03;
+    &:not(.iot--btn-icon-selection--selected) {
+      border-right: 1px solid $ui-03;
+    }
 
     [dir='rtl'] & {
-      border-left: 1px solid $ui-03;
-      border-right: none;
+      &:not(.iot--btn-icon-selection--selected) {
+        border-left: 1px solid $ui-03;
+        border-right: none;
+      }
     }
   }
 

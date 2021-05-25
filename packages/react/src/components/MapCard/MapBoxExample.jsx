@@ -29,11 +29,23 @@ const MapBoxStory = ({
   isResizable,
   ...other
 }) => {
+  const toggleMapContol = (id) => {
+    setMapControls((state) =>
+      state.map((c) => (c.id === id ? { ...c, selected: !c.selected } : c))
+    );
+  };
+
+  const toggleLayeredContol = (id) => {
+    setLayeredControls((state) =>
+      state.map((c) => (c.id === id ? { ...c, selected: !c.selected } : c))
+    );
+  };
+
   const mapContainerRef = useRef(null);
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
   const [activeSideBar, setActiveSideBar] = useState(1);
-  const mapControls = [
+  const [mapControls, setMapControls] = useState([
     {
       hasScroll: true,
       visibleItemsCount: 4,
@@ -96,39 +108,54 @@ const MapBoxStory = ({
       ],
     },
     {
+      id: 'toggle1',
+      kind: 'icon-selection',
+      selected: false,
       icon: Events32,
-      iconDescription: 'Map control 1',
-      onClick: () => changeState(0),
+      iconDescription: 'Toggle control 1',
+      onClick: () => toggleMapContol('toggle1'),
     },
     {
+      id: 'toggle2',
+      kind: 'icon-selection',
+      selected: false,
       icon: Events32,
-      iconDescription: 'Map control 2',
-      onClick: () => changeState(1),
+      iconDescription: 'Toggle control 2',
+      onClick: () => toggleMapContol('toggle2'),
     },
     {
+      id: 'toggle3',
+      kind: 'icon-selection',
+      selected: false,
       icon: Events32,
-      iconDescription: 'Map control 3',
-      onClick: () => changeState(0),
+      iconDescription: 'Toggle control 3',
+      onClick: () => toggleMapContol('toggle3'),
     },
-  ];
+  ]);
 
-  const layeredControls = [
+  const [layeredControls, setLayeredControls] = useState([
     {
+      kind: 'icon-selection',
+      selected: true,
+      id: 'layerControl1',
       icon: Events32,
-      iconDescription: 'Map control 1',
-      onClick: () => changeState(0),
+      iconDescription: 'Toggle Layer control 1',
+      onClick: () => {
+        changeState(0);
+        toggleLayeredContol('layerControl1');
+      },
     },
     {
       icon: Events32,
-      iconDescription: 'Map control 2',
+      iconDescription: 'Layer control 2',
       onClick: () => changeState(1),
     },
     {
       icon: Events32,
-      iconDescription: 'Map control 3',
+      iconDescription: 'Layer control 3',
       onClick: () => changeState(0),
     },
-  ];
+  ]);
 
   // Initialize map when component mounts
   useEffect(() => {
