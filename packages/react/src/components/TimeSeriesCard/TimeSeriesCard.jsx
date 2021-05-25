@@ -107,7 +107,7 @@ const TimeSeriesCardPropTypes = {
     /** set of thresholds these render dotted lines on the graph to indicate that the line values might be crossing logical thresholds */
     thresholds: PropTypes.arrayOf(
       PropTypes.shape({
-        axis: PropTypes.oneOf('x', 'y'),
+        axis: PropTypes.oneOf(['x', 'y']),
         value: PropTypes.number,
         label: PropTypes.string,
         fillColor: PropTypes.string,
@@ -401,7 +401,9 @@ const TimeSeriesCard = ({
             number: maxTicksPerSize,
             formatter: formatTick,
           },
-          thresholds: thresholds?.filter((threshold) => threshold.axis === 'x'),
+          ...(thresholds?.some((threshold) => threshold.axis === 'x')
+            ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'x') }
+            : {}),
           includeZero: includeZeroOnXaxis,
           ...(domainRange ? { domain: domainRange } : {}),
         },
@@ -412,7 +414,9 @@ const TimeSeriesCard = ({
             formatter: (axisValue) =>
               chartValueFormatter(axisValue, newSize, null, locale, decimalPrecision),
           },
-          thresholds: thresholds?.filter((threshold) => threshold.axis === 'y'),
+          ...(thresholds?.some((threshold) => threshold.axis === 'y')
+            ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'y') }
+            : {}),
           ...(chartType !== TIME_SERIES_TYPES.BAR
             ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
             : {}),
