@@ -228,9 +228,13 @@ const TimeSeriesCard = ({
   const previousTick = useRef();
   dayjs.locale(locale);
 
+  // Workaround since downstream consumers might keep regenerating the series object and useMemo does a direct in-memory comparison for the object
+  const objectAgnosticSeries = JSON.stringify(series);
+
   const sampleValues = useMemo(
     () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
-    [series, timeDataSourceId, interval, timeRange]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [objectAgnosticSeries, timeDataSourceId, interval, timeRange]
   );
 
   const values = useMemo(() => (isEditable ? sampleValues : valuesProp), [
