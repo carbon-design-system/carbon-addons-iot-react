@@ -4622,6 +4622,7 @@ Map {
       },
       "isLoading": false,
       "onEdit": null,
+      "renderTitleFunction": undefined,
       "rightContent": undefined,
       "stickyHeaderOffset": 48,
       "style": null,
@@ -4695,6 +4696,7 @@ Map {
       "onEdit": Object {
         "type": "func",
       },
+      "renderTitleFunction": undefined,
       "rightContent": [Function],
       "stickyHeaderOffset": Object {
         "type": "number",
@@ -9147,6 +9149,7 @@ Map {
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
+        "dashboardTitleLabel": "Dashboard title",
         "defaultCardTitle": "Untitled",
         "galleryHeader": "Gallery",
         "headerCancelButton": "Cancel",
@@ -9165,6 +9168,8 @@ Map {
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
+        "requiredMessage": "Required",
+        "saveTitleButton": "Save title",
         "searchPlaceHolderText": "Enter a value",
         "selectAGroupBy": "Select a group by",
       },
@@ -9446,6 +9451,9 @@ Map {
             "contentTabLabel": Object {
               "type": "string",
             },
+            "dashboardTitleLabel": Object {
+              "type": "string",
+            },
             "dataItem": Object {
               "type": "string",
             },
@@ -9627,6 +9635,12 @@ Map {
               "type": "string",
             },
             "primaryButtonLabelText": Object {
+              "type": "string",
+            },
+            "requiredMessage": Object {
+              "type": "string",
+            },
+            "saveTitleButton": Object {
               "type": "string",
             },
             "searchPlaceHolderText": Object {
@@ -13548,6 +13562,30 @@ Map {
             "addSpaceOnEdges": Object {
               "type": "number",
             },
+            "alertRanges": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "type": "string",
+                      },
+                      "details": Object {
+                        "type": "string",
+                      },
+                      "endTimestamp": Object {
+                        "type": "number",
+                      },
+                      "startTimestamp": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "chartType": [Function],
             "decimalPrecision": Object {
               "type": "number",
@@ -13628,6 +13666,34 @@ Map {
             },
             "showLegend": Object {
               "type": "bool",
+            },
+            "thresholds": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "axis": Object {
+                        "args": Array [
+                          "x",
+                          "y",
+                        ],
+                        "type": "oneOf",
+                      },
+                      "fillColor": Object {
+                        "type": "string",
+                      },
+                      "label": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
             },
             "timeDataSourceId": Object {
               "type": "string",
