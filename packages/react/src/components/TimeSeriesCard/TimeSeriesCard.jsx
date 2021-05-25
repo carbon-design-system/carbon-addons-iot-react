@@ -532,6 +532,7 @@ const TimeSeriesCard = ({
               options={options}
               width="100%"
               height="100%"
+              key={`thresholds-key${thresholds?.length}`} // have to regen the component if thresholds change
             />
           </div>
           {isExpanded ? (
