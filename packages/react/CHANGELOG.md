@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.7...v2.146.0-next.8) (2021-05-25)
+
+
+### Features
+
+* **cardeditor:** let all cards add custom sections to the card editor ([b583255](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b5832556d86620f6a6fff4d5f5edfead5832aa27))
+
+
+
+
+
 # [2.146.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.6...v2.146.0-next.7) (2021-05-25)
 
 
