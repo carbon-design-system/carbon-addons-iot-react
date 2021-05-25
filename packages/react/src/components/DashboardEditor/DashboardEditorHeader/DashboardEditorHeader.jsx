@@ -239,7 +239,7 @@ const DashboardEditorHeader = ({
     setIsTitleEditMode(true);
   }, []);
 
-  const editWidgets = useMemo(
+  const editComponents = useMemo(
     () => (
       <>
         <TextInput
@@ -287,7 +287,7 @@ const DashboardEditorHeader = ({
       extraContent={extraContent}
       title={title}
       editable={!!onEditTitle && !isTitleEditMode}
-      renderTitleFunction={isTitleEditMode ? () => editWidgets : null}
+      renderTitleFunction={isTitleEditMode ? () => editComponents : null}
       onEdit={handleEditClick}
       i18n={{ editIconDescription: mergedI18n.headerEditTitleButton }}
     />

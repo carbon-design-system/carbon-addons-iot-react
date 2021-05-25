@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar Custom Render Function 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar With Custom Render Function 1`] = `
 <div
   className="storybook-container"
 >
