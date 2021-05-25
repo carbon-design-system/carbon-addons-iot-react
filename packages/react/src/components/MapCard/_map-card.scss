@@ -165,6 +165,14 @@
     .#{$iot-prefix}--map-controls-layers__open &:not(:hover) .#{$prefix}--assistive-text {
       visibility: hidden;
     }
+
+    svg.#{$iot-prefix}--map-controls-layers-trigger__caret {
+      fill: $icon-01 !important;
+      transform: rotate(45deg);
+      bottom: -1px;
+      left: -1px;
+      position: absolute;
+    }
   }
 
   &-controls-layers-wrapper {

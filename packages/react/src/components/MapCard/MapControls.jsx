@@ -1,7 +1,7 @@
 import React from 'react';
 import { settings } from '../../constants/Settings';
 import { Button } from '../../index';
-import { Layers16 } from '@carbon/icons-react';
+import { Layers16, CaretSortDown16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import ScrollingControls from './ScrollingControls';
 const { iotPrefix } = settings;
@@ -106,7 +106,9 @@ const MapControls = ({
             renderIcon={Layers16}
             iconDescription={layerTriggerIconDescription}
             onClick={handleLayerClick}
-          />
+          >
+            <CaretSortDown16 className={`${BASE_CLASS_NAME}-layers-trigger__caret`} />
+          </Button>
           <div className={`${BASE_CLASS_NAME}-layers-wrapper`}>
             {layeredControls.map(renderLayers)}
           </div>
