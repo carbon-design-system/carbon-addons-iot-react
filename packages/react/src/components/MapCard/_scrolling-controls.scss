@@ -1,8 +1,7 @@
 .#{$iot-prefix}--map-scroll-controls {
-  @include box-shadow();
-
   &__container {
     margin-bottom: 1rem;
+    @include box-shadow();
   }
 
   &__scroll-area {
@@ -22,10 +21,12 @@
     &:disabled:hover {
       background: white;
       border-bottom: 1px solid $ui-03;
+      &:last-child {
+        border-bottom: inherit;
+      }
     }
-    &::after {
-      content: ' - Remember this';
-      z-index: 3;
+    &:last-child {
+      border-bottom: none;
     }
   }
 
