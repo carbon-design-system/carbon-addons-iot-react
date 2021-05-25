@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.6...v2.146.0-next.7) (2021-05-25)
+
+
+### Bug Fixes
+
+* **suiteheader:** Making the transition of “loading state” to “data ready state” in SuiteHeader seamless, without remounting the entire `Header` component nor its `actionItems` (which was causing any open header panel to close when data was passed to `SuiteHeader` asynchronously). ([0f248a4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0f248a485f84e88f24b0e9a39dc1ff0df22fd01b))
+
+
+
+
+
 # [2.146.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.5...v2.146.0-next.6) (2021-05-25)
 
 
