@@ -9,7 +9,7 @@ import ZoomControl from './ZoomControl';
 import MapControls from './MapControls';
 import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_ACTIONS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { determineLayout } from '../ValueCard/valueCardUtils';
 import { settings } from '../../constants/Settings';
 
@@ -153,7 +153,9 @@ const MapCard = ({
               hasIconOnly
               renderIcon={Close16}
               iconDescription={mergedI18n.closeSideBarIconText}
-              onClick={() => setSettingsOpen((oldSettingsOpen) => !oldSettingsOpen)}
+              onClick={() => {
+                onCardAction(id, CARD_ACTIONS.ON_SETTINGS_CLICK);
+              }}
             />
           </div>
           <SideBarContent />
