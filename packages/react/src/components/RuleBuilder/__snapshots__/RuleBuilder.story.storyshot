@@ -5430,7 +5430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </thead>
                             <tbody
                               aria-live="polite"
-                              data-testID="edit-table-table-body"
+                              data-testid="edit-table-table-body"
                             >
                               <tr
                                 className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
@@ -5702,7 +5702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </thead>
                             <tbody
                               aria-live="polite"
-                              data-testID="read-table-table-body"
+                              data-testid="read-table-table-body"
                             >
                               <tr
                                 className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"

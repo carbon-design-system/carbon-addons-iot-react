@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.4...v2.146.0-next.5) (2021-05-24)
+
+
+### Features
+
+* **timeseriescard:** expose the thresholds for x and y axis for bar chart ([e8c5190](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e8c519021a2b7690eccba88186856d3289480000))
+
+
+
+
+
+# [2.146.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.3...v2.146.0-next.4) (2021-05-24)
+
+
+### Bug Fixes
+
+* **row-actions-cell:** omit extra props from button to prevent warnings ([ab1026b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ab1026bbaa85c8185ac897c755da9c65bfe36e72))
+* **table:** adjust testid props ([caba047](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/caba047b1f0bb0cfb5458fbb4c8fd7afc189667e))
+
+
+
+
+
+# [2.146.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.2...v2.146.0-next.3) (2021-05-21)
+
+
+### Bug Fixes
+
+* **imagecard:** set of small fixes to imagecard and the dashboardeditor ([7c485d7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7c485d73339c45e3173295baff4bf3a8fb47b101))
+
+
+
+
+
 # [2.146.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.1...v2.146.0-next.2) (2021-05-20)
 
 
