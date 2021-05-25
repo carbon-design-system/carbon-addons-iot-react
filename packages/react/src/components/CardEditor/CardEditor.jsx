@@ -127,6 +127,7 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
+  onAddDataItems: PropTypes.func,
 };
 
 const defaultProps = {
@@ -151,6 +152,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   testID: 'card-editor',
   dataSeriesItemLinks: null,
+  onAddDataItems: () => {},
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -175,6 +177,7 @@ const CardEditor = ({
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
+  onAddDataItems,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -232,6 +235,7 @@ const CardEditor = ({
             currentBreakpoint={currentBreakpoint}
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+            onAddDataItems={onAddDataItems}
           />
         )}
       </div>

@@ -93,6 +93,8 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
+  /** Callback function when on add data item button pressed */
+  onAddDataItems: PropTypes.func,
 };
 
 const defaultProps = {
@@ -105,6 +107,7 @@ const defaultProps = {
   availableDimensions: {},
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
+  onAddDataItems: () => {},
 };
 
 export const handleTranslationCallback = (idToTranslate, mergedI18n) => {
@@ -134,6 +137,7 @@ const CardEditFormContent = ({
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
+  onAddDataItems,
 }) => {
   const { type, timeRange, renderEditContent } = cardConfig;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
@@ -206,6 +210,7 @@ const CardEditFormContent = ({
           i18n={mergedI18n}
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
+          onAddDataItems={onAddDataItems}
         />
       ) : Array.isArray(editContentSections) ? (
         editContentSections.map(({ header: { title, tooltip }, content }) => (

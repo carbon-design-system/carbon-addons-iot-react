@@ -1,0 +1,14 @@
+diff a/packages/react/src/components/Table/README.md b/packages/react/src/components/Table/README.md	(rejected hunks)
+@@ -735 +735 @@ the following props:
+-| error         | string |         | Specify the error message that need to be displayed by default.    Incase we use `view.table.errorState` property then the error state element will be rendered instead of error message                                                                                                            |
++| error          | string |         | Specify the error message that need to be displayed by default. Incase we use `view.table.errorState` property then the error state element will be rendered instead of error message                  |
+@@ -876,3 +876,3 @@ the following props:
+-| table.emptyState.buttonLabelWithFilters | node                             |         | Show a different button label if no content is in the table matching the filters
+-|table.errorState                         | element                          |         | Show the table errorState element when there is any error occure
+-|table.loadingState                      | object                           |                                                                                                                     |
++| table.emptyState.buttonLabelWithFilters | node                             |         | Show a different button label if no content is in the table matching the filters                                                                    |
++| table.errorState                        | element                          |         | Show the table errorState element when there is any error occure                                                                                    |
++| table.loadingState                      | object                           |         |
+@@ -917 +917 @@ the following props:
+-| table.onTableErrorStateAction     | func   |         | callback action relavent on error state. This can be used with `error` message. When `view.table.errorState` property is used then this callback function has no effect.                                                                                                                                                                                                                  |
++| table.onTableErrorStateAction   | func   |         | callback action relavent on error state. This can be used with `error` message. When `view.table.errorState` property is used then this callback function has no effect.                                        |
