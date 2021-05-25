@@ -4597,6 +4597,7 @@ Map {
       },
       "isLoading": false,
       "onEdit": null,
+      "renderTitleFunction": undefined,
       "rightContent": undefined,
       "stickyHeaderOffset": 48,
       "style": null,
@@ -4670,6 +4671,7 @@ Map {
       "onEdit": Object {
         "type": "func",
       },
+      "renderTitleFunction": undefined,
       "rightContent": [Function],
       "stickyHeaderOffset": Object {
         "type": "number",
@@ -9124,6 +9126,7 @@ Map {
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
+        "dashboardTitleLabel": "Dashboard title",
         "defaultCardTitle": "Untitled",
         "galleryHeader": "Gallery",
         "headerCancelButton": "Cancel",
@@ -9142,6 +9145,8 @@ Map {
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
+        "requiredMessage": "Required",
+        "saveTitleButton": "Save title",
         "searchPlaceHolderText": "Enter a value",
         "selectAGroupBy": "Select a group by",
       },
@@ -9423,6 +9428,9 @@ Map {
             "contentTabLabel": Object {
               "type": "string",
             },
+            "dashboardTitleLabel": Object {
+              "type": "string",
+            },
             "dataItem": Object {
               "type": "string",
             },
@@ -9604,6 +9612,12 @@ Map {
               "type": "string",
             },
             "primaryButtonLabelText": Object {
+              "type": "string",
+            },
+            "requiredMessage": Object {
+              "type": "string",
+            },
+            "saveTitleButton": Object {
               "type": "string",
             },
             "searchPlaceHolderText": Object {
