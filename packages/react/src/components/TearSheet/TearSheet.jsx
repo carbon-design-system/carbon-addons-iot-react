@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { cloneElement, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Close16 } from '@carbon/icons-react';
 import classnames from 'classnames';
@@ -22,23 +22,25 @@ const propTypes = {
   /** onClose optional function. When provided, it will run when the TearSheet is closed */
   onClose: PropTypes.func,
   /** closeAllTearSheets function is provided via TearSheetWrapper component. It should't be overridden */
-  closeAllTearSheets: PropTypes.func.isRequired,
+  closeAllTearSheets: PropTypes.func,
   /** openNextSheet function is provided by TearSheetWrapper component and it shouldn't be overriden. This function can be accessed via children prop to open the next sheet */
-  openNextSheet: PropTypes.func.isRequired,
+  openNextSheet: PropTypes.func,
   /** goToPreviousSheet function is provided by TearSheetWrapper component and it shouldn't be overriden. This function can be accessed via children prop to go back to the previous sheet or close the current one if its index is 0 */
-  goToPreviousSheet: PropTypes.func.isRequired,
+  goToPreviousSheet: PropTypes.func,
   /** i18n messages */
   i18n: PropTypes.shape({
     close: PropTypes.string,
   }),
-  /** children prop can be a node or a funcion. If it is a function, the following props are passed from TearSheetWrapper: idx, openNextSheet, goToPreviousSheet, closeAllTearSheets  */
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  children: PropTypes.node,
 };
 
 const defaultProps = {
   idx: undefined,
   title: 'Title',
   description: 'Description',
+  closeAllTearSheets: undefined,
+  openNextSheet: undefined,
+  goToPreviousSheet: undefined,
   headerExtraContent: null,
   className: undefined,
   onClose: undefined,
@@ -95,9 +97,16 @@ const TearSheet = ({
       </div>
 
       <div className={`${iotPrefix}--tear-sheet--content`}>
-        {typeof children === 'function'
-          ? children(idx, openNextSheet, goToPreviousSheet, closeAllTearSheets)
-          : children}
+        {useMemo(
+          () =>
+            cloneElement(children, {
+              idx,
+              openNextSheet,
+              goToPreviousSheet,
+              closeAllTearSheets,
+            }),
+          [children, closeAllTearSheets, goToPreviousSheet, idx, openNextSheet]
+        )}
       </div>
     </div>
   );

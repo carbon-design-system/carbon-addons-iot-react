@@ -59,6 +59,11 @@ describe('TearSheetWrapper', () => {
     expect(screen.getByText('Second TearSheet description')).toBeInTheDocument();
   });
   it('renders first TearSheet and opens second TearSheet', async () => {
+    const TearSheetChild = ({ openNextSheet }) => (
+      <button type="button" data-testid="openNextSheet" onClick={() => openNextSheet()}>
+        Open second sheet
+      </button>
+    );
     render(
       createElement(() => {
         const [isOpen, setOpen] = useState(false);
@@ -71,11 +76,7 @@ describe('TearSheetWrapper', () => {
             />
             <TearSheetWrapper isOpen={isOpen}>
               <TearSheet {...commonProps}>
-                {(idx, openNextSheet) => (
-                  <button type="button" data-testid="openNextSheet" onClick={() => openNextSheet()}>
-                    Open second sheet
-                  </button>
-                )}
+                <TearSheetChild />
               </TearSheet>
               <TearSheet {...secondTearSheetCommonProps} />
             </TearSheetWrapper>
@@ -95,25 +96,23 @@ describe('TearSheetWrapper', () => {
     expect(screen.getByTestId('container-1')).not.toHaveStyle('bottom: 0');
   });
   it('renders TearSheet, opens second TearSheet and closes all TearSheets', async () => {
+    const TearSheetChild = ({ openNextSheet }) => (
+      <button type="button" data-testid="openNextSheet" onClick={() => openNextSheet()}>
+        Open second sheet
+      </button>
+    );
+    const TearSheetChild2 = ({ closeAllTearSheets }) => (
+      <button type="button" data-testid="closeAllTearSheets" onClick={() => closeAllTearSheets()}>
+        Close all TearSheets
+      </button>
+    );
     render(
       <TearSheetWrapper isOpen onCloseAllTearSheets={() => console.log('All TearSheets closed')}>
         <TearSheet {...commonProps}>
-          {(idx, openNextSheet) => (
-            <button type="button" data-testid="openNextSheet" onClick={() => openNextSheet()}>
-              Open second sheet
-            </button>
-          )}
+          <TearSheetChild />
         </TearSheet>
         <TearSheet {...secondTearSheetCommonProps}>
-          {(idx, openNextSheet, goToPreviousSheet, closeAllTearSheets) => (
-            <button
-              type="button"
-              data-testid="closeAllTearSheets"
-              onClick={() => closeAllTearSheets()}
-            >
-              Close all TearSheets
-            </button>
-          )}
+          <TearSheetChild2 />
         </TearSheet>
       </TearSheetWrapper>
     );
@@ -126,25 +125,24 @@ describe('TearSheetWrapper', () => {
     expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).not.toHaveClass('is-visible');
   });
   it('renders TearSheet, opens second TearSheet and closes all TearSheets without providing the onCloseAllTearSheets funcion', async () => {
+    const TearSheetChild = ({ openNextSheet }) => (
+      <button type="button" data-testid="openNextSheet" onClick={() => openNextSheet()}>
+        Open second sheet
+      </button>
+    );
+    const TearSheetChild2 = ({ closeAllTearSheets }) => (
+      <button type="button" data-testid="closeAllTearSheets" onClick={() => closeAllTearSheets()}>
+        Close all TearSheets
+      </button>
+    );
+
     render(
       <TearSheetWrapper isOpen>
         <TearSheet {...commonProps}>
-          {(idx, openNextSheet) => (
-            <button type="button" data-testid="openNextSheet" onClick={() => openNextSheet()}>
-              Open second sheet
-            </button>
-          )}
+          <TearSheetChild />
         </TearSheet>
         <TearSheet {...secondTearSheetCommonProps}>
-          {(idx, openNextSheet, goToPreviousSheet, closeAllTearSheets) => (
-            <button
-              type="button"
-              data-testid="closeAllTearSheets"
-              onClick={() => closeAllTearSheets()}
-            >
-              Close all TearSheets
-            </button>
-          )}
+          <TearSheetChild2 />
         </TearSheet>
       </TearSheetWrapper>
     );
@@ -157,29 +155,24 @@ describe('TearSheetWrapper', () => {
     expect(screen.getByTestId(`${iotPrefix}--tear-sheet-wrapper`)).not.toHaveClass('is-visible');
   });
   it('renders TearSheet, opens second TearSheet, goes back to first TearSheet and closes it', async () => {
+    const TearSheetChild = ({ openNextSheet }) => (
+      <button type="button" data-testid="openNextSheet" onClick={() => openNextSheet()}>
+        Open second sheet
+      </button>
+    );
+    const TearSheetChild2 = ({ goToPreviousSheet }) => (
+      <button type="button" data-testid="goToPreviousSheet" onClick={() => goToPreviousSheet()}>
+        Go to previous sheet
+      </button>
+    );
     render(
       <TearSheetWrapper isOpen>
         <TearSheet {...commonProps} onClose={() => console.log('TearSheet closed')}>
           {/* eslint-disable-next-line no-unused-vars */}
-          {(idx, openNextSheet, goToPreviousSheet) => (
-            <>
-              <button type="button" data-testid="openNextSheet" onClick={() => openNextSheet()}>
-                Open second sheet
-              </button>
-            </>
-          )}
+          <TearSheetChild />
         </TearSheet>
         <TearSheet {...secondTearSheetCommonProps}>
-          {/* eslint-disable-next-line no-unused-vars */}
-          {(idx, openNextSheet, goToPreviousSheet, closeAllTearSheets) => (
-            <button
-              type="button"
-              data-testid="goToPreviousSheet"
-              onClick={() => goToPreviousSheet()}
-            >
-              Go to previous sheet
-            </button>
-          )}
+          <TearSheetChild2 />
         </TearSheet>
       </TearSheetWrapper>
     );

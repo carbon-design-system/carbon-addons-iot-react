@@ -20939,41 +20939,32 @@ Map {
     "defaultProps": Object {
       "children": undefined,
       "className": undefined,
+      "closeAllTearSheets": undefined,
       "description": "Description",
+      "goToPreviousSheet": undefined,
       "headerExtraContent": null,
       "i18n": Object {
         "close": "Close",
       },
       "idx": undefined,
       "onClose": undefined,
+      "openNextSheet": undefined,
       "title": "Title",
     },
     "propTypes": Object {
       "children": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "node",
-            },
-            Object {
-              "type": "func",
-            },
-          ],
-        ],
-        "type": "oneOfType",
+        "type": "node",
       },
       "className": Object {
         "type": "string",
       },
       "closeAllTearSheets": Object {
-        "isRequired": true,
         "type": "func",
       },
       "description": Object {
         "type": "string",
       },
       "goToPreviousSheet": Object {
-        "isRequired": true,
         "type": "func",
       },
       "headerExtraContent": Object {
@@ -20996,7 +20987,6 @@ Map {
         "type": "func",
       },
       "openNextSheet": Object {
-        "isRequired": true,
         "type": "func",
       },
       "title": Object {
