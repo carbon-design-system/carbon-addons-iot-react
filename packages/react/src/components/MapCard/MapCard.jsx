@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState } from 'react';
 import classnames from 'classnames';
 import { Maximize16, Close16 } from '@carbon/icons-react';
 import { useLangDirection } from 'use-lang-direction';
@@ -7,10 +7,9 @@ import { Button } from '../../index';
 import Legend from './Legend';
 import ZoomControl from './ZoomControl';
 import MapControls from './MapControls';
-import data from './data.json';
 import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
-import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { determineLayout } from '../ValueCard/valueCardUtils';
 import { settings } from '../../constants/Settings';
 
@@ -98,12 +97,8 @@ const MapCard = ({
       id={id}
       renderExpandIcon={Maximize16}
       onCardAction={onCardAction}
-      className={classnames(`${BASE_CLASS_NAME}`, {
-        // allows attribute overflow scrolling
-        [`${BASE_CLASS_NAME}__settings-open`]: isSettingPanelOpen,
-        [`${BASE_CLASS_NAME}__vertical`]: layout === CARD_LAYOUTS.VERTICAL,
-        [`${BASE_CLASS_NAME}--expanded`]: isExpanded,
-      })}
+      contentClassName={`${BASE_CLASS_NAME}-card-content`}
+      className={`${BASE_CLASS_NAME}`}
       {...others}
     >
       <>

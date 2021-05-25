@@ -5,11 +5,13 @@
 @import 'scrolling-controls';
 
 .#{$iot-prefix}--map {
+  &-card-content.#{$iot-prefix}--card--content--expanded {
+    overflow: hidden;
+  }
   // container and map canvas
   &-container {
     position: relative;
     height: 100%;
-    // height: calc(100% - 6rem);
 
     canvas {
       min-height: 100%;
@@ -230,19 +232,6 @@
   //   }
   // }
 }
-
-// .mapboxgl-control-container {
-//   display: none;
-// }
-
-// .iot-map {
-//   min-height: 500px;
-// }
-
-// .toggle-group {
-//   position: absolute;
-//   z-index: 2;
-// }
 
 // Open Layers
 #map {

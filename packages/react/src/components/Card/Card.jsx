@@ -88,12 +88,12 @@ export const CardTitle = (
 );
 
 const CardContent = (props) => {
-  const { children, dimensions, isExpanded } = props;
+  const { children, dimensions, isExpanded, className } = props;
   const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
   return (
     <div
       style={{ [`--card-content-height`]: height }}
-      className={classnames(`${iotPrefix}--card--content`, {
+      className={classnames(className, `${iotPrefix}--card--content`, {
         [`${iotPrefix}--card--content--expanded`]: isExpanded,
       })}
     >
@@ -149,6 +149,7 @@ CardWrapper.defaultProps = {
   tabIndex: undefined,
 };
 CardContent.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   isExpanded: CardPropTypes.isExpanded.isRequired,
@@ -257,6 +258,7 @@ const Card = (props) => {
     className,
     values,
     testID,
+    contentClassName,
     ...others
   } = props;
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
@@ -393,7 +395,11 @@ const Card = (props) => {
                     {cardToolbar}
                   </CardHeader>
                 )}
-                <CardContent dimensions={dimensions} isExpanded={isExpanded}>
+                <CardContent
+                  dimensions={dimensions}
+                  isExpanded={isExpanded}
+                  className={contentClassName}
+                >
                   {!isVisible && isLazyLoading ? ( // if not visible don't show anything
                     ''
                   ) : isLoading ? (

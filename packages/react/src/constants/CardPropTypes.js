@@ -670,6 +670,8 @@ export const CardPropTypes = {
   dashboardColumns: DashboardColumnsPropTypes,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
+  /** HTML classes that should be aplied to the content container */
+  contentClassName: PropTypes.string,
   /** optional function that should return an icon react element based on a icon name, it is called back with the icon name and then an object containing additional icon properties to add to the rendered icon */
   renderIconByName: PropTypes.func,
   /** Event handlers needed for Dashboard Grid - isEditable */
