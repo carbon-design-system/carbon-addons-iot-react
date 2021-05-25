@@ -117,6 +117,7 @@ export DynamicHotspotSourcePicker from './components/HotspotEditorModal/DynamicH
 export ComboChartCard from './components/ComboChartCard/ComboChartCard';
 export MenuButton from './components/MenuButton/MenuButton';
 export ListBuilder from './components/ListBuilder/ListBuilder';
+export MapCard from './components//MapCard/MapCard';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';
