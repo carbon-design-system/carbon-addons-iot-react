@@ -523,64 +523,14 @@ export const HeaderWithSurveyNotification = () => {
   );
 };
 
+HeaderWithSurveyNotification.story = {
+  name: 'Header with survey notification',
+};
+
 export const LoadingState = () => {
   return <SuiteHeader suiteName="Application Suite" appName="Application Name" />;
 };
 
 LoadingState.story = {
   name: 'Loading state',
-};
-
-/* Sample of SuiteHeader usage with data fetching
-
-export const HeaderWithDataFetching = () => {
-  const StatefulExample = () => {
-    const [data, setData] = useState({
-      username: null,
-      userDisplayName: null,
-      email: null,
-      routes: null,
-      applications: null,
-      showSurvey: false,
-    });
-    useEffect(() => {
-      fetch('http://localhost:3001/internal/uiresources?id=masthead&lang=en&surveyId=test', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((res) => res.json())
-        .then((resJson) => {
-          if (resJson.error || resJson.exception) {
-            return null;
-          }
-          return setData(resJson);
-        });
-    }, []);
-
-    return (
-      <SuiteHeader
-        suiteName="Application Suite"
-        appName="Application Name"
-        userDisplayName={data.userDisplayName}
-        username={data.username}
-        routes={data.routes}
-        applications={data.applications}
-        i18n={data.i18n}
-        surveyData={data.surveyData}
-      />
-    );
-  };
-  return <StatefulExample />;
-};
-
-HeaderWithDataFetching.story = {
-  name: 'Header with data fetching',
-};
-
-*/
-
-HeaderWithSurveyNotification.story = {
-  name: 'Header with survey notification',
 };
