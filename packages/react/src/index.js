@@ -117,6 +117,8 @@ export DynamicHotspotSourcePicker from './components/HotspotEditorModal/DynamicH
 export ComboChartCard from './components/ComboChartCard/ComboChartCard';
 export MenuButton from './components/MenuButton/MenuButton';
 export ListBuilder from './components/ListBuilder/ListBuilder';
+export TearSheet from './components/TearSheet/TearSheet';
+export TearSheetWrapper from './components/TearSheet/TearSheetWrapper';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';
