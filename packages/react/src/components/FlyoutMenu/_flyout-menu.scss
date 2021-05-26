@@ -52,6 +52,7 @@ $shadow: 0.4rem;
 
     .#{$prefix}--tooltip__content {
       position: relative;
+      max-width: 480px;
     }
 
     // Box shadow cover with all its various positons
