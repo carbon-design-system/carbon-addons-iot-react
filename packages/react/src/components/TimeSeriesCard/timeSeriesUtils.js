@@ -51,6 +51,7 @@ export const generateSampleValues = (
       break;
   }
 
+  // This is a bit of a workaround for carbon-design-system/carbon-charts#1034 as they don't adjust the graph axes to include thresholds
   const highestThresholdValue =
     orderBy(
       thresholds.filter((threshold) => threshold.axis === 'y'),
