@@ -20,6 +20,7 @@ const propTypes = {
   i18n: PropTypes.object,
   /** true if the map controls are in an expanded card */
   isExpandedMode: PropTypes.bool,
+  testId: PropTypes.string,
   /** position of the control buttons tooltip */
   tooltipPosition: PropTypes.oneOf(['left', 'top', 'bottom', 'right']),
 };
@@ -32,9 +33,17 @@ const defaultProps = {
     scrollDown: 'Scroll down',
   },
   isExpandedMode: false,
+  testId: 'map-controls',
 };
 
-const MapControls = ({ layeredControls, controls, tooltipPosition, isExpandedMode, i18n }) => {
+const MapControls = ({
+  layeredControls,
+  controls,
+  tooltipPosition,
+  isExpandedMode,
+  i18n,
+  testId,
+}) => {
   const { layerTriggerIconDescription, scrollUp, scrollDown } = i18n;
   const [layersOpen, setLayersOpen] = React.useState(false);
   const handleLayerClick = () => {
@@ -70,6 +79,7 @@ const MapControls = ({ layeredControls, controls, tooltipPosition, isExpandedMod
       return control.hasScroll ? (
         isExpandedMode ? (
           <ScrollingControls
+            testId={`${testId}-scroll-controls`}
             key={groupKey}
             controls={control.group}
             classname={groupClass}
@@ -99,6 +109,7 @@ const MapControls = ({ layeredControls, controls, tooltipPosition, isExpandedMod
 
   return (
     <div
+      data-testid={testId}
       className={classnames(`${BASE_CLASS_NAME}-container`, {
         [`${BASE_CLASS_NAME}-container__has-layers`]: layeredControls,
       })}

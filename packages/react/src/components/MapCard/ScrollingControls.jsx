@@ -23,7 +23,7 @@ const propTypes = {
 
 const defaultProps = {
   visibleItemsCount: 6,
-  tesId: 'map-scroll-controls',
+  testId: 'map-scroll-controls',
   tooltipPosition: 'left',
   scrollUpIconDescriptionText: 'Scroll up',
   scrollDownIconDescriptionText: 'Scroll down',
@@ -35,6 +35,7 @@ const ScrollingControls = ({
   tooltipPosition,
   scrollUpIconDescriptionText,
   scrollDownIconDescriptionText,
+  testId,
 }) => {
   const scrollContainerRef = useRef();
   const buttonHeightPx = 40;
@@ -56,8 +57,9 @@ const ScrollingControls = ({
   };
 
   return (
-    <div className={classnames(`${BASE_CLASS_NAME}__container`)}>
+    <div data-testid={testId} className={classnames(`${BASE_CLASS_NAME}__container`)}>
       <Button
+        data-testid={`${testId}-scroll-up`}
         className={classnames(`${BASE_CLASS_NAME}__btn`, `${BASE_CLASS_NAME}__scroll-btn`)}
         disabled={scrollUpDisabled}
         kind="ghost"
@@ -102,6 +104,7 @@ const ScrollingControls = ({
         ></div>
       )}
       <Button
+        data-testid={`${testId}-scroll-down`}
         className={classnames(`${BASE_CLASS_NAME}__btn`, `${BASE_CLASS_NAME}__scroll-btn`)}
         disabled={scrollDownDisabled}
         kind="ghost"
