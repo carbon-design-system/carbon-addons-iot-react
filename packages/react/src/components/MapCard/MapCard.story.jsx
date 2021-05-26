@@ -28,6 +28,7 @@ export const MapBoxExample = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   const handleOnCardAction = (id, actionType) => {
+    action('onCardAction')(actionType);
     if (actionType === CARD_ACTIONS.CLOSE_EXPANDED_CARD) {
       setIsExpanded(false);
     } else if (actionType === CARD_ACTIONS.OPEN_EXPANDED_CARD) {
@@ -58,6 +59,7 @@ export const OpenlayersExample = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   const handleOnCardAction = (id, actionType) => {
+    action('onCardAction')(actionType);
     if (actionType === CARD_ACTIONS.CLOSE_EXPANDED_CARD) {
       setIsExpanded(false);
     } else if (actionType === CARD_ACTIONS.OPEN_EXPANDED_CARD) {
