@@ -154,7 +154,7 @@ CardContent.propTypes = {
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   isExpanded: CardPropTypes.isExpanded.isRequired,
 };
-CardContent.defaultProps = { children: undefined };
+CardContent.defaultProps = { children: undefined, className: '' };
 EmptyMessageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };

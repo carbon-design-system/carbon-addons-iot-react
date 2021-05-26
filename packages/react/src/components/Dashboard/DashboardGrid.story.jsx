@@ -4,7 +4,12 @@ import { boolean } from '@storybook/addon-knobs';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Card from '../Card/Card';
-import { CARD_DIMENSIONS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import {
+  CARD_DIMENSIONS,
+  CARD_SIZES,
+  CARD_TYPES,
+  CARD_ACTIONS,
+} from '../../constants/LayoutConstants';
 import { chartData, tableColumns, tableData } from '../../utils/sample';
 import PieChartCard from '../PieChartCard/PieChartCard';
 import ValueCard from '../ValueCard/ValueCard';
@@ -15,12 +20,10 @@ import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
 import ListCard from '../ListCard/ListCard';
 import MapBoxCard from '../MapCard/MapBoxExample';
-
-import DashboardGrid from './DashboardGrid';
-
 import data from '../MapCard/data.json';
 import options from '../MapCard/storyFiles/mapOptions';
-import { CARD_ACTIONS } from '../../constants/LayoutConstants';
+
+import DashboardGrid from './DashboardGrid';
 
 const MapBoxExample = ({ ...props }) => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);

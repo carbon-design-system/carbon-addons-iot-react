@@ -133,7 +133,12 @@ const population = new VectorImage({
   },
 });
 
-const OpenLayersStory = ({
+/**
+ * Example implementation with MapCard using the Open Layers map. This code illustrates
+ * a simplified version of how MapCard can be used and should not be seen as a
+ * production ready component.
+ */
+const OpenLayersExample = ({
   data,
   options,
   isLegendFullWidth,
@@ -292,4 +297,4 @@ const OpenLayersStory = ({
   );
 };
 
-export default OpenLayersStory;
+export default OpenLayersExample;

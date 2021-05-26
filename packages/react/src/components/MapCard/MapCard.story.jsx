@@ -2,13 +2,13 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 
+import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
+
 import data from './data.json';
 import options from './storyFiles/mapOptions';
-
-import MapBoxStory from './MapBoxExample';
-import OpenLayersStory from './OpenLayersExample';
-import { CARD_ACTIONS } from '../../constants/LayoutConstants';
+import MapBoxExample from './MapBoxExample';
+import OpenLayersExample from './OpenLayersExample';
 
 export const Experimental = () => <StoryNotice componentName="MapCard" experimental />;
 Experimental.story = {
@@ -19,11 +19,11 @@ export default {
   title: 'Watson IoT Experimental/☢️ MapCard',
   decorators: [withKnobs, React.createElement],
   parameters: {
-    component: MapBoxExample,
+    component: MapBoxStory,
   },
 };
 
-export const MapBoxExample = () => {
+export const MapBoxStory = () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -38,7 +38,7 @@ export const MapBoxExample = () => {
     }
   };
   return (
-    <MapBoxStory
+    <MapBoxExample
       data={data}
       options={options}
       isLegendFullWidth={boolean('isLegendFullWidth', false)}
@@ -50,11 +50,11 @@ export const MapBoxExample = () => {
   );
 };
 
-MapBoxExample.story = {
-  name: 'MapBox example',
+MapBoxStory.story = {
+  name: 'Using MapBox',
 };
 
-export const OpenlayersExample = () => {
+export const OpenlayersStory = () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -69,7 +69,7 @@ export const OpenlayersExample = () => {
     }
   };
   return (
-    <OpenLayersStory
+    <OpenLayersExample
       data={data}
       options={options}
       isLegendFullWidth={boolean('isLegendFullWidth', false)}
@@ -81,6 +81,6 @@ export const OpenlayersExample = () => {
   );
 };
 
-OpenlayersExample.story = {
-  name: 'Open layers example',
+OpenlayersStory.story = {
+  name: 'Using Open layers',
 };

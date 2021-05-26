@@ -10,7 +10,10 @@ import {
   Sun32,
 } from '@carbon/icons-react';
 import { Accordion, AccordionItem } from 'carbon-components-react';
+// The MapBoxExample is not exported and is only used by StoryBook
+/* eslint-disable import/no-extraneous-dependencies */
 import mapboxgl from 'mapbox-gl';
+import PropTypes from 'prop-types';
 
 import MapCard from './MapCard';
 import Optionsfield from './Optionsfield';
@@ -18,7 +21,47 @@ import Optionsfield from './Optionsfield';
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
 
-const MapBoxStory = ({
+const propTypes = {
+  data: PropTypes.shape(PropTypes.any),
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      description: PropTypes.string,
+      property: PropTypes.string,
+      stops: PropTypes.arrayOf(PropTypes.array),
+    })
+  ),
+  isLegendFullWidth: PropTypes.bool,
+  onCardAction: PropTypes.func.isRequired,
+  availableActions: PropTypes.shape({
+    edit: PropTypes.bool,
+    clone: PropTypes.bool,
+    delete: PropTypes.bool,
+    expand: PropTypes.bool,
+    range: PropTypes.bool,
+    settings: PropTypes.bool,
+  }),
+  isSettingPanelOpen: PropTypes.bool,
+  isExpanded: PropTypes.bool,
+  isResizable: PropTypes.bool,
+};
+
+const defaultProps = {
+  data: {},
+  options: [],
+  isLegendFullWidth: false,
+  availableActions: {},
+  isSettingPanelOpen: false,
+  isExpanded: false,
+  isResizable: false,
+};
+
+/**
+ * Example implementation with MapCard using the MapBox map. This code illustrates
+ * a simplified version of how MapCard can be used and should not be seen as a
+ * production ready component.
+ */
+const MapBoxExample = ({
   data,
   options,
   isLegendFullWidth,
@@ -29,23 +72,23 @@ const MapBoxStory = ({
   isResizable,
   ...other
 }) => {
-  const toggleMapContol = (id) => {
-    setMapControls((state) =>
-      state.map((c) => (c.id === id ? { ...c, selected: !c.selected } : c))
-    );
-  };
-
-  const toggleLayeredContol = (id) => {
-    setLayeredControls((state) =>
-      state.map((c) => (c.id === id ? { ...c, selected: !c.selected } : c))
-    );
-  };
-
   const mapContainerRef = useRef(null);
   const [active, setActive] = useState(options[0]);
   const [map, setMap] = useState(null);
   const [activeSideBar, setActiveSideBar] = useState(1);
-  const [mapControls, setMapControls] = useState([
+  const [selectedControls, setSelectedControls] = useState([]);
+
+  const changeState = (i) => {
+    setActive(options[i]);
+  };
+
+  const toggleControlSelection = (id) => {
+    setSelectedControls((state) =>
+      selectedControls.includes(id) ? state.filter((currentId) => currentId !== id) : [...state, id]
+    );
+  };
+
+  const mapControls = [
     {
       hasScroll: true,
       visibleItemsCount: 4,
@@ -110,39 +153,38 @@ const MapBoxStory = ({
     {
       id: 'toggle1',
       kind: 'icon-selection',
-      selected: false,
+      selected: selectedControls.includes('toggle1'),
       icon: Events32,
       iconDescription: 'Toggle control 1',
-      onClick: () => toggleMapContol('toggle1'),
+      onClick: () => toggleControlSelection('toggle1'),
     },
     {
       id: 'toggle2',
       kind: 'icon-selection',
-      selected: false,
+      selected: selectedControls.includes('toggle2'),
       icon: Events32,
       iconDescription: 'Toggle control 2',
-      onClick: () => toggleMapContol('toggle2'),
+      onClick: () => toggleControlSelection('toggle2'),
     },
     {
       id: 'toggle3',
       kind: 'icon-selection',
-      selected: false,
+      selected: selectedControls.includes('toggle3'),
       icon: Events32,
       iconDescription: 'Toggle control 3',
-      onClick: () => toggleMapContol('toggle3'),
+      onClick: () => toggleControlSelection('toggle3'),
     },
-  ]);
+  ];
 
-  const [layeredControls, setLayeredControls] = useState([
+  const layeredControls = [
     {
-      kind: 'icon-selection',
-      selected: true,
       id: 'layerControl1',
+      selected: selectedControls.includes('layerControl1'),
+      kind: 'icon-selection',
       icon: Events32,
       iconDescription: 'Toggle Layer control 1',
       onClick: () => {
-        changeState(0);
-        toggleLayeredContol('layerControl1');
+        toggleControlSelection('layerControl1');
       },
     },
     {
@@ -155,67 +197,67 @@ const MapBoxStory = ({
       iconDescription: 'Layer control 3',
       onClick: () => changeState(0),
     },
-  ]);
+  ];
 
   // Initialize map when component mounts
-  useEffect(() => {
-    const map = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      // see https://www.carbondesignsystem.com/data-visualization/complex-charts/#mapbox
-      style: 'mapbox://styles/carbondesignsystem/ck7c8ce1y05h61ipb2fixfe76',
-      center: [5, 34],
-      zoom: 1.5,
-    });
-
-    map.on('load', () => {
-      map.addSource('countries', {
-        type: 'geojson',
-        data,
+  useEffect(
+    () => {
+      const mapboxMap = new mapboxgl.Map({
+        container: mapContainerRef.current,
+        // see https://www.carbondesignsystem.com/data-visualization/complex-charts/#mapbox
+        style: 'mapbox://styles/carbondesignsystem/ck7c8ce1y05h61ipb2fixfe76',
+        center: [5, 34],
+        zoom: 1.5,
       });
 
-      map.setLayoutProperty('country-label', 'text-field', [
-        'format',
-        ['get', 'name_en'],
-        { 'font-scale': 1.2 },
-        '\n',
-        {},
-      ]);
+      mapboxMap.on('load', () => {
+        mapboxMap.addSource('countries', {
+          type: 'geojson',
+          data,
+        });
 
-      map.addLayer(
-        {
-          id: 'countries',
-          type: 'fill',
-          source: 'countries',
-        },
-        'country-label'
-      );
+        mapboxMap.setLayoutProperty('country-label', 'text-field', [
+          'format',
+          ['get', 'name_en'],
+          { 'font-scale': 1.2 },
+          '\n',
+          {},
+        ]);
 
-      map.setPaintProperty('countries', 'fill-color', {
-        property: active.property,
-        stops: active.stops,
+        mapboxMap.addLayer(
+          {
+            id: 'countries',
+            type: 'fill',
+            source: 'countries',
+          },
+          'country-label'
+        );
+
+        mapboxMap.setPaintProperty('countries', 'fill-color', {
+          property: active.property,
+          stops: active.stops,
+        });
+
+        mapboxMap.resize();
+
+        setMap(mapboxMap);
       });
 
-      map.resize();
-
-      setMap(map);
-    });
-
-    // Clean up on unmount
-    return () => map.remove();
-  }, [isExpanded]);
+      // Clean up on unmount
+      return () => mapboxMap.remove();
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [isExpanded]
+  );
 
   useEffect(() => {
-    paint();
-  }, [active]);
-
-  const paint = () => {
     if (map) {
       map.setPaintProperty('countries', 'fill-color', {
         property: active.property,
         stops: active.stops,
       });
     }
-  };
+  }, [active, map]);
 
   const onZoomIn = () => {
     map.zoomIn({ duration: 250 });
@@ -223,10 +265,6 @@ const MapBoxStory = ({
 
   const onZoomOut = () => {
     map.zoomOut({ duration: 250 });
-  };
-
-  const changeState = (i) => {
-    setActive(options[i]);
   };
 
   const settingsContent = () => (
@@ -271,4 +309,6 @@ const MapBoxStory = ({
   );
 };
 
-export default MapBoxStory;
+MapBoxExample.propTypes = propTypes;
+MapBoxExample.defaultProps = defaultProps;
+export default MapBoxExample;

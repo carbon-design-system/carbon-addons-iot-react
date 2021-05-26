@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { ChevronLeft32, ChevronRight32 } from '@carbon/icons-react';
@@ -18,7 +18,10 @@ const propTypes = {
   titleText: PropTypes.string,
   hideLegendText: PropTypes.string,
   showLegendText: PropTypes.string,
-  onCollapsToggle: PropTypes.func,
+  /** list of text - color pairs for the legend. Each pair is an array where pos 0 is the text and pos 1 the color */
+  stops: PropTypes.arrayOf(PropTypes.array).isRequired,
+  /** callback for when the collapse toggle button is clicked */
+  onCollapsToggle: PropTypes.func.isRequired,
   testId: PropTypes.string,
 };
 
