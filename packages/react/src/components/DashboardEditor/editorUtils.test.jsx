@@ -154,6 +154,7 @@ describe('editorUtils', () => {
       const defaultCard = getDefaultCard(CARD_TYPES.IMAGE, i18n);
       expect(defaultCard.type).toEqual(CARD_TYPES.IMAGE);
       expect(defaultCard.content).toBeDefined();
+      expect(defaultCard.content.displayOption).toEqual('contain');
     });
     it('should return CustomCard', () => {
       const defaultCard = getDefaultCard(CARD_TYPES.CUSTOM, i18n);

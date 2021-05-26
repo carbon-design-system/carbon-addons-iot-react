@@ -93,6 +93,26 @@ const TimeSeriesCardPropTypes = {
     legendPosition: PropTypes.string,
     /** carbon charts legend truncation options */
     truncation: TruncationPropTypes,
+    /** if there are alerts associated with this chart (used to markup datapoints), this is a start/end set of alert ranges for each alert */
+    alertRanges: PropTypes.arrayOf(
+      PropTypes.shape({
+        endTimestamp: PropTypes.number,
+        startTimestamp: PropTypes.number,
+        /** color of the alert */
+        color: PropTypes.string,
+        /** more information about the alert */
+        details: PropTypes.string,
+      })
+    ),
+    /** set of thresholds these render dotted lines on the graph to indicate that the line values might be crossing logical thresholds */
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        axis: PropTypes.oneOf(['x', 'y']),
+        value: PropTypes.number,
+        label: PropTypes.string,
+        fillColor: PropTypes.string,
+      })
+    ),
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -200,6 +220,7 @@ const TimeSeriesCard = ({
       legendPosition,
       addSpaceOnEdges,
       truncation,
+      thresholds,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, contentWithDefaults, initialValues, others);
@@ -380,6 +401,9 @@ const TimeSeriesCard = ({
             number: maxTicksPerSize,
             formatter: formatTick,
           },
+          ...(thresholds?.some((threshold) => threshold.axis === 'x')
+            ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'x') }
+            : {}),
           includeZero: includeZeroOnXaxis,
           ...(domainRange ? { domain: domainRange } : {}),
         },
@@ -390,6 +414,9 @@ const TimeSeriesCard = ({
             formatter: (axisValue) =>
               chartValueFormatter(axisValue, newSize, null, locale, decimalPrecision),
           },
+          ...(thresholds?.some((threshold) => threshold.axis === 'y')
+            ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'y') }
+            : {}),
           ...(chartType !== TIME_SERIES_TYPES.BAR
             ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
             : {}),
@@ -442,6 +469,7 @@ const TimeSeriesCard = ({
       xLabel,
       maxTicksPerSize,
       formatTick,
+      thresholds,
       includeZeroOnXaxis,
       domainRange,
       yLabel,
