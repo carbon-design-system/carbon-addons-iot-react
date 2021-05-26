@@ -1296,8 +1296,6 @@ Locale.story = {
 
 export const Thresholds = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
-  const values = getIntervalChartData(interval, 20, { min: 10, max: 100 }, 100);
   return (
     <div
       style={{
@@ -1310,6 +1308,7 @@ export const Thresholds = () => {
         title={text('title', 'Pressure')}
         isLoading={boolean('isLoading', false)}
         isExpanded={boolean('isExpanded', false)}
+        isEditable
         content={object('content-thresholds', {
           series: [
             {
@@ -1326,11 +1325,15 @@ export const Thresholds = () => {
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
           thresholds: [
-            { axis: 'y', value: values[0].pressure, fillColor: 'red', label: 'Alert 1' },
-            { axis: 'x', value: values[0].timestamp, fillColor: 'yellow', label: 'Alert 2' },
+            {
+              axis: 'y',
+              value: 100,
+              fillColor: 'red',
+              label: 'Alert 1',
+            },
+            { axis: 'y', value: -1, fillColor: 'yellow', label: 'Alert 2' },
           ],
         })}
-        values={values}
         interval="day"
         breakpoint="lg"
         showTimeInGMT={boolean('showTimeInGMT', false)}
