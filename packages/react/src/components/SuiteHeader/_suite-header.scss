@@ -211,6 +211,9 @@
       fill: $ui-01;
     }
   }
+  button.admin-icon__hidden {
+    visibility: hidden !important;
+  }
   button.admin-icon__selected {
     background-color: $interactive-02;
     border: none;

@@ -150,6 +150,9 @@ const propTypes = {
     layoutInfoXl: PropTypes.string,
     layoutInfoLg: PropTypes.string,
     layoutInfoMd: PropTypes.string,
+    dashboardTitleLabel: PropTypes.string,
+    requiredMessage: PropTypes.string,
+    saveTitleButton: PropTypes.string,
 
     // card stirngs
     noDataLabel: PropTypes.string,
@@ -340,6 +343,9 @@ const defaultProps = {
     layoutInfoMd: 'Edit dashboard at medium layout (673 - 1056px)',
     layoutInfoSm: 'Edit dashboard at small layout (481 - 672px)',
     searchPlaceHolderText: 'Enter a value',
+    dashboardTitleLabel: 'Dashboard title',
+    requiredMessage: 'Required',
+    saveTitleButton: 'Save title',
   },
   locale: 'en',
   dataSeriesItemLinks: null,
