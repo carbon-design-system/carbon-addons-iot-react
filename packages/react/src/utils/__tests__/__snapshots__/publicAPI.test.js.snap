@@ -20967,6 +20967,87 @@ Map {
       },
     },
   },
+  "TearSheet" => Object {
+    "defaultProps": Object {
+      "children": undefined,
+      "className": undefined,
+      "closeAllTearSheets": undefined,
+      "description": "Description",
+      "goToPreviousSheet": undefined,
+      "headerExtraContent": null,
+      "i18n": Object {
+        "close": "Close",
+      },
+      "idx": undefined,
+      "onClose": undefined,
+      "openNextSheet": undefined,
+      "title": "Title",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "closeAllTearSheets": Object {
+        "type": "func",
+      },
+      "description": Object {
+        "type": "string",
+      },
+      "goToPreviousSheet": Object {
+        "type": "func",
+      },
+      "headerExtraContent": Object {
+        "type": "node",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "idx": Object {
+        "type": "number",
+      },
+      "onClose": Object {
+        "type": "func",
+      },
+      "openNextSheet": Object {
+        "type": "func",
+      },
+      "title": Object {
+        "type": "string",
+      },
+    },
+  },
+  "TearSheetWrapper" => Object {
+    "defaultProps": Object {
+      "children": undefined,
+      "className": undefined,
+      "isOpen": false,
+      "onCloseAllTearSheets": undefined,
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "isOpen": Object {
+        "type": "bool",
+      },
+      "onCloseAllTearSheets": Object {
+        "type": "func",
+      },
+    },
+  },
   "useDNDProviderElement" => Object {},
   "Accordion" => Object {
     "defaultProps": Object {

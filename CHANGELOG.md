@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.9...v2.146.0-next.10) (2021-05-26)
+
+
+### Bug Fixes
+
+* **suite-header:** fix keyboard navigation of application switcher links ([c0e352b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c0e352b709477e573f28f5db9549218b83b7d2b6))
+
+
+
+
+
+# [2.146.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.8...v2.146.0-next.9) (2021-05-25)
+
+
+### Bug Fixes
+
+* **tearsheet:** changes as per feedback 2 ([2b41f05](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2b41f05c82dcffd3ce80af91cb2f152130031f19))
+* **tearsheet:** className prefix and width fixes ([7e37193](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e37193a03e74f190c3027baaaef0f08ed2c5abc))
+* **tearsheet:** classnames added to TearSheet and TearSheetWrapper ([48c58d8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/48c58d8a5a1078ec6376b6e619696924021400a7))
+* **tearsheet:** fixes as per feedback ([5a47331](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5a473310f571712a0241d895f7c149a8e67faa7c))
+* **tearsheet:** TearSheet children element changes ([5c4145a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5c4145ae0fac76c6845b1f21342f27d46aebcd9d))
+* **tearsheet:** tearsheet constants added ([07a784f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/07a784fa6df199e4d3b624838785196d23a86be6))
+* **tearsheet:** updating public api test snap ([781f32b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/781f32b1eefa009419755fa81fa6147509f95194))
+
+
+### Features
+
+* **tearsheet:** new component ([69ebb8a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/69ebb8a52fc86470eda409ccd3c6d633f4982eb3))
+
+
+
+
+
+# [2.146.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.7...v2.146.0-next.8) (2021-05-25)
+
+
+### Features
+
+* **cardeditor:** let all cards add custom sections to the card editor ([b583255](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b5832556d86620f6a6fff4d5f5edfead5832aa27))
+
+
+
+
+
 # [2.146.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.6...v2.146.0-next.7) (2021-05-25)
 
 
