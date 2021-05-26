@@ -43,7 +43,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="44-search"
+                  aria-labelledby="43-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -64,15 +64,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="44"
-                    id="44-search"
+                    htmlFor="43"
+                    id="43-search"
                   >
                     Filter table
                   </label>
                   <input
                     autoComplete="off"
                     className="bx--search-input"
-                    id="44"
+                    id="43"
                     onChange={[Function]}
                     onKeyDown={[Function]}
                     placeholder="Enter a value"
@@ -412,7 +412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="45-search"
+                  aria-labelledby="44-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -433,15 +433,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="45"
-                    id="45-search"
+                    htmlFor="44"
+                    id="44-search"
                   >
                     Filter table
                   </label>
                   <input
                     autoComplete="off"
                     className="bx--search-input"
-                    id="45"
+                    id="44"
                     onChange={[Function]}
                     onKeyDown={[Function]}
                     placeholder="Enter a value"
@@ -688,7 +688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="47-search"
+                  aria-labelledby="46-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -709,15 +709,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="47"
-                    id="47-search"
+                    htmlFor="46"
+                    id="46-search"
                   >
                     Filter table
                   </label>
                   <input
                     autoComplete="off"
                     className="bx--search-input"
-                    id="47"
+                    id="46"
                     onChange={[Function]}
                     onKeyDown={[Function]}
                     placeholder="Enter a value"
@@ -945,7 +945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="46-search"
+                  aria-labelledby="45-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -966,15 +966,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="46"
-                    id="46-search"
+                    htmlFor="45"
+                    id="45-search"
                   >
                     Filter table
                   </label>
                   <input
                     autoComplete="off"
                     className="bx--search-input"
-                    id="46"
+                    id="45"
                     onChange={[Function]}
                     onKeyDown={[Function]}
                     placeholder="Enter a value"
@@ -1173,7 +1173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="50-search"
+                  aria-labelledby="49-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -1194,15 +1194,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="50"
-                    id="50-search"
+                    htmlFor="49"
+                    id="49-search"
                   >
                     Filter table
                   </label>
                   <input
                     autoComplete="off"
                     className="bx--search-input"
-                    id="50"
+                    id="49"
                     onChange={[Function]}
                     onKeyDown={[Function]}
                     placeholder="Enter a value"
@@ -1655,7 +1655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="48-search"
+                  aria-labelledby="47-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -1676,15 +1676,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="48"
-                    id="48-search"
+                    htmlFor="47"
+                    id="47-search"
                   >
                     Filter table
                   </label>
                   <input
                     autoComplete="off"
                     className="bx--search-input"
-                    id="48"
+                    id="47"
                     onChange={[Function]}
                     onKeyDown={[Function]}
                     placeholder="Enter a value"
@@ -2258,7 +2258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="49-search"
+                  aria-labelledby="48-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -2279,15 +2279,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="49"
-                    id="49-search"
+                    htmlFor="48"
+                    id="48-search"
                   >
                     Filter table
                   </label>
                   <input
                     autoComplete="off"
                     className="bx--search-input"
-                    id="49"
+                    id="48"
                     onChange={[Function]}
                     onKeyDown={[Function]}
                     placeholder="Enter a value"
