@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.11...v2.146.0-next.12) (2021-05-26)
+
+
+### Bug Fixes
+
+* **chart:** if the thresholds change regenerate the chart ([5c2b8d9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5c2b8d93d917acfdcb9628a91b05d1eeac41f14c))
+* **timeseriescard:** examine thresholds when generating sample values ([6ba32b3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6ba32b36a5b04a184c85ddd145ca9c6ab7d9280d))
+* **timeseriescard:** need to stop regenerating the sample data ([a7172cd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a7172cd87a296e56a4559b6977eb3d4727814934))
+
+
+
+
+
 # [2.146.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.10...v2.146.0-next.11) (2021-05-26)
 
 
