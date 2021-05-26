@@ -122,7 +122,7 @@
   "dependencies": {
     "@babel/runtime": "^7.10.2",
     "@carbon/charts": "^0.41.11",
-    "@carbon/charts-react": "^0.41.11",
+    "@carbon/charts-react": "^0.41.66",
     "@carbon/colors": "10.22.0",
     "@carbon/icons-react": "10.28.0",
     "@carbon/layout": "10.21.0",

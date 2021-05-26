@@ -233,7 +233,7 @@ const TimeSeriesCard = ({
   const objectAgnosticThresholds = JSON.stringify(thresholds);
 
   const sampleValues = useMemo(
-    () => generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds),
+    () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [objectAgnosticSeries, timeDataSourceId, interval, timeRange, objectAgnosticThresholds]
   );
@@ -534,7 +534,6 @@ const TimeSeriesCard = ({
               options={options}
               width="100%"
               height="100%"
-              key={`thresholds-key${thresholds?.length ? JSON.stringify(thresholds) : ''}`} // have to regen the component if thresholds change
             />
           </div>
           {isExpanded ? (

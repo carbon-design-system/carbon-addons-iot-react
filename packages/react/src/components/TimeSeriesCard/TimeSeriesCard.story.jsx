@@ -1296,6 +1296,9 @@ Locale.story = {
 
 export const Thresholds = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+  const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
+
+  const values = getIntervalChartData(interval, 20, { min: 10, max: 100 }, 100, 1572824320000);
   return (
     <div
       style={{
@@ -1308,13 +1311,13 @@ export const Thresholds = () => {
         title={text('title', 'Pressure')}
         isLoading={boolean('isLoading', false)}
         isExpanded={boolean('isExpanded', false)}
-        isEditable
+        isEditable={boolean('isEditable', true)}
         content={object('content-thresholds', {
           series: [
             {
               label: 'Pressure',
               dataSourceId: 'pressure',
-              color: text('color', COLORS.MAGENTA),
+              color: text('color', COLORS.PURPLE),
             },
           ],
           unit: 'm/sec',
@@ -1324,16 +1327,31 @@ export const Thresholds = () => {
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
+          alertRanges: [
+            {
+              startTimestamp: 1,
+              endTimestamp: 2572486422000,
+              color: '#FF0000',
+              details: 'Alert name',
+            },
+          ],
           thresholds: [
             {
               axis: 'y',
-              value: 100,
+              value: 300,
               fillColor: 'red',
               label: 'Alert 1',
             },
-            { axis: 'y', value: -1, fillColor: 'yellow', label: 'Alert 2' },
+            {
+              axis: 'y',
+              value: 4,
+              fillColor: 'red',
+              label: 'Alert 3',
+            },
+            { axis: 'y', value: -100, fillColor: 'yellow', label: 'Alert 2' },
           ],
         })}
+        values={values}
         interval="day"
         breakpoint="lg"
         showTimeInGMT={boolean('showTimeInGMT', false)}
