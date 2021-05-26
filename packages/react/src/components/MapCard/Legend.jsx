@@ -9,9 +9,11 @@ import Button from '../Button/Button';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  /** True if the legend should be full bleed  and occupy the full width of the map  */
+  /** true if the legend should be full bleed  and occupy the full width of the map  */
   isFullWidth: PropTypes.bool.isRequired,
+  /** true if the legend is collapsed (only relevant for isFullWidth:true) */
   isCollapsed: PropTypes.bool.isRequired,
+  /** true if there should be extra wide margins, like when a card is expanded to full page */
   increasedMargin: PropTypes.bool,
   titleText: PropTypes.string,
   hideLegendText: PropTypes.string,
