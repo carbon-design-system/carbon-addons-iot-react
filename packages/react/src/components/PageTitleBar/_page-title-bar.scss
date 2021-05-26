@@ -302,8 +302,15 @@
         }
       }
     }
+    .#{$prefix}--text-input {
+      margin-right: $spacing-05;
+      [dir='rtl'] & {
+        margin-right: unset;
+        margin-left: $spacing-05;
+      }
+    }
 
-    &--edit {
+    &--edit.#{$prefix}--btn.#{$prefix}--btn--field {
       margin-left: $spacing-05;
       [dir='rtl'] & {
         margin-left: unset;
