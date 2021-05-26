@@ -31,7 +31,7 @@ import { Filter16 } from '@carbon/icons';
         </div>
       </div>
     </ng-template>
-    <span
+    <div
       [aiFlyoutMenu]="templateRef"
       [offset]="offset"
       [flip]="flip"
@@ -57,7 +57,7 @@ import { Filter16 } from '@carbon/icons';
       >
         <svg ibmIcon="filter" size="16" class="bx--overflow-menu__icon"></svg>
       </button>
-    </span>
+    </div>
   `,
   encapsulation: ViewEncapsulation.None,
 })
