@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-script-url */
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight16, Bee32 } from '@carbon/icons-react';
 import { ButtonSkeleton } from 'carbon-components-react';
@@ -10,6 +10,7 @@ import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
 import { SkeletonText } from '../../SkeletonText';
 import SuiteHeader, { SuiteHeaderApplicationPropTypes } from '../SuiteHeader';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const defaultProps = {
   applications: null,
@@ -52,6 +53,30 @@ const SuiteHeaderAppSwitcher = ({
     : customApplications.length > 0
     ? [...customApplications]
     : null;
+
+  const handleRouteChange = useCallback(
+    ({ href, id, isExternal }) => async () => {
+      const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
+        appId: id,
+      });
+      if (result) {
+        if (isExternal) {
+          window.open(href, '_blank', 'noopener noreferrer');
+        } else {
+          window.location.href = href;
+        }
+      }
+    },
+    [onRouteChange]
+  );
+
+  const handleAllApplicationRoute = useCallback(async () => {
+    const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.NAVIGATOR, allApplicationsLink);
+    if (result) {
+      window.location.href = allApplicationsLink;
+    }
+  }, [allApplicationsLink, onRouteChange]);
+
   return (
     <ul className={baseClassName}>
       <li className={`${baseClassName}--nav-link`}>
@@ -64,15 +89,8 @@ const SuiteHeaderAppSwitcher = ({
           <Button
             kind="tertiary"
             testID="suite-header-app-switcher--all-applications"
-            onClick={async () => {
-              const result = await onRouteChange(
-                SuiteHeader.ROUTE_TYPES.NAVIGATOR,
-                allApplicationsLink
-              );
-              if (result) {
-                window.location.href = allApplicationsLink;
-              }
-            }}
+            onClick={handleAllApplicationRoute}
+            onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], handleAllApplicationRoute)}
             renderIcon={ArrowRight16}
           >
             {mergedI18n.allApplicationsLink}
@@ -90,32 +108,25 @@ const SuiteHeaderAppSwitcher = ({
           </div>
         </li>
       ) : (
-        mergedApplications.map(({ id, name, href, isExternal = false }) => (
-          <li
-            id={`suite-header-application-${id}`}
-            key={`key-${id}`}
-            className={`${baseClassName}--app-link`}
-          >
-            <a
-              href="javascript:void(0)"
-              data-testid={`suite-header-app-switcher--${id}`}
-              onClick={async () => {
-                const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
-                  appId: id,
-                });
-                if (result) {
-                  if (isExternal) {
-                    window.open(href, '_blank', 'noopener noreferrer');
-                  } else {
-                    window.location.href = href;
-                  }
-                }
-              }}
+        mergedApplications.map(({ id, name, href, isExternal = false }) => {
+          const eventHandler = handleRouteChange({ href, id, isExternal });
+          return (
+            <li
+              id={`suite-header-application-${id}`}
+              key={`key-${id}`}
+              className={`${baseClassName}--app-link`}
             >
-              {name}
-            </a>
-          </li>
-        ))
+              <Button
+                kind="ghost"
+                testID={`suite-header-app-switcher--${id}`}
+                onClick={eventHandler}
+                onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
+              >
+                {name}
+              </Button>
+            </li>
+          );
+        })
       )}
       {mergedApplications?.length === 0 ? (
         <div className={`${baseClassName}--no-app`}>
