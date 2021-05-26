@@ -1,19 +1,41 @@
 import React from 'react';
-import { settings } from '../../constants/Settings';
-import { Button } from '../../index';
 import { Layers16, CaretSortDown16 } from '@carbon/icons-react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+
+import { settings } from '../../constants/Settings';
+import { Button } from '../../index';
+import { MapControlPropType } from '../../constants/CardPropTypes';
+
 import ScrollingControls from './ScrollingControls';
+
 const { iotPrefix } = settings;
 const BASE_CLASS_NAME = `${iotPrefix}--map-controls`;
 
-const MapControls = ({
-  layeredControls,
-  controls,
-  tooltipPosition,
-  layerTriggerIconDescription,
-  isExpandedMode,
-}) => {
+const propTypes = {
+  /** list of map control buttons */
+  controls: PropTypes.arrayOf(MapControlPropType),
+  /** list of layered map control buttons that are expanded horizontally */
+  layeredControls: PropTypes.arrayOf(MapControlPropType),
+  i18n: PropTypes.object,
+  /** true if the map controls are in an expanded card */
+  isExpandedMode: PropTypes.bool,
+  /** position of the control buttons tooltip */
+  tooltipPosition: PropTypes.oneOf(['left', 'top', 'bottom', 'right']),
+};
+const defaultProps = {
+  controls: [],
+  layeredControls: [],
+  i18n: {
+    layerTriggerIconDescription: 'Layered controls',
+    scrollUp: 'Scroll up',
+    scrollDown: 'Scroll down',
+  },
+  isExpandedMode: false,
+};
+
+const MapControls = ({ layeredControls, controls, tooltipPosition, isExpandedMode, i18n }) => {
+  const { layerTriggerIconDescription, scrollUp, scrollDown } = i18n;
   const [layersOpen, setLayersOpen] = React.useState(false);
   const handleLayerClick = () => {
     setLayersOpen((openState) => !openState);
@@ -51,6 +73,8 @@ const MapControls = ({
             key={groupKey}
             controls={control.group}
             classname={groupClass}
+            scrollUpIconDescriptionText={scrollUp}
+            scrollDownIconDescriptionText={scrollDown}
             tooltipPosition={tooltipPosition}
             visibleItemsCount={control.visibleItemsCount}
           />
@@ -107,4 +131,6 @@ const MapControls = ({
   );
 };
 
+MapControls.propTypes = propTypes;
+MapControls.defaultProps = defaultProps;
 export default MapControls;

@@ -5,29 +5,16 @@ import { ChevronUp32, ChevronDown32 } from '@carbon/icons-react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
+import { MapControlPropType } from '../../constants/CardPropTypes';
 
 const { iotPrefix } = settings;
 const BASE_CLASS_NAME = `${iotPrefix}--map-scroll-controls`;
 
 const propTypes = {
-  classname: PropTypes.string,
-  /** The full list of avilable controls */
-  controls: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.oneOfType([
-        PropTypes.shape({
-          width: PropTypes.string,
-          height: PropTypes.string,
-          viewBox: PropTypes.string.isRequired,
-          svgData: PropTypes.object.isRequired,
-        }),
-        PropTypes.object, // Could be a react icon name
-        PropTypes.element,
-      ]),
-      iconDescription: PropTypes.string,
-      onClick: PropTypes.func,
-    })
-  ).isRequired,
+  /** The list of controls placed in the scrollable group*/
+  controls: PropTypes.arrayOf(MapControlPropType).isRequired,
+  scrollUpIconDescriptionText: PropTypes.string,
+  scrollDownIconDescriptionText: PropTypes.string,
   tooltipPosition: PropTypes.string,
   testId: PropTypes.string,
   /** Number of visible items shown between the scroll buttons */
@@ -38,16 +25,16 @@ const defaultProps = {
   visibleItemsCount: 6,
   tesId: 'map-scroll-controls',
   tooltipPosition: 'left',
-  scrollUpText: 'Scroll up',
-  scrollDownText: 'Scroll down',
+  scrollUpIconDescriptionText: 'Scroll up',
+  scrollDownIconDescriptionText: 'Scroll down',
 };
 
 const ScrollingControls = ({
   controls,
   visibleItemsCount,
   tooltipPosition,
-  scrollUpText,
-  scrollDownText,
+  scrollUpIconDescriptionText,
+  scrollDownIconDescriptionText,
 }) => {
   const scrollContainerRef = useRef();
   const buttonHeightPx = 40;
@@ -78,7 +65,7 @@ const ScrollingControls = ({
         hasIconOnly
         tooltipPosition={tooltipPosition}
         renderIcon={ChevronUp32}
-        iconDescription={scrollUpText}
+        iconDescription={scrollUpIconDescriptionText}
         onClick={() => handleScrolling(scrollBy * -1)}
       />
       {scrollUpDisabled ? null : <div className={`${BASE_CLASS_NAME}__gradient`}></div>}
@@ -122,7 +109,7 @@ const ScrollingControls = ({
         hasIconOnly
         tooltipPosition={tooltipPosition}
         renderIcon={ChevronDown32}
-        iconDescription={scrollDownText}
+        iconDescription={scrollDownIconDescriptionText}
         onClick={() => handleScrolling(scrollBy)}
       />
     </div>

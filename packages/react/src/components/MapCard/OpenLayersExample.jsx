@@ -251,7 +251,7 @@ const OpenLayersStory = ({
     });
   };
 
-  const sideBarContent = () => (
+  const settingsContent = () => (
     <Accordion className="settings-accordion" style={{ paddingTop: 0 }}>
       <AccordionItem
         title="GDP vs Population"
@@ -285,7 +285,7 @@ const OpenLayersStory = ({
       changeState={changeState}
       onCardAction={onCardAction}
       i18n={{ cardTitle: active.name }}
-      sideBarContent={sideBarContent}
+      settingsContent={settingsContent}
       isSettingPanelOpen={isSettingPanelOpen}
       {...other}
     />

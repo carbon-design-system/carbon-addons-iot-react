@@ -10,22 +10,40 @@ import MapControls from './MapControls';
 import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import { CARD_ACTIONS, CARD_SIZES } from '../../constants/LayoutConstants';
+import { CardPropTypes, MapCardPropTypes } from '../../constants/CardPropTypes';
 import { determineLayout } from '../ValueCard/valueCardUtils';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
 
-const defaultStrings = {
-  cardTitle: 'Card Title',
-  zoomIn: 'Zoom In',
-  zoomOut: 'Zoom out',
-  configurationTitle: 'Map configuration',
-  closeSideBarIconText: 'Close',
-  expandLabel: 'Expand',
-  layerTriggerIconDescription: 'Layered controls',
-  legendTitle: 'Legend',
-  hideLegend: 'Hide legend',
-  showLegend: 'Show legend',
+const propTypes = {
+  ...CardPropTypes,
+  ...MapCardPropTypes,
+};
+
+const defaultProps = {
+  isLegendFullWidth: false,
+  isSettingPanelOpen: false,
+  i18n: {
+    cardTitle: 'Card Title',
+    zoomIn: 'Zoom In',
+    zoomOut: 'Zoom out',
+    configurationTitle: 'Map configuration',
+    closeSettingsIconText: 'Close',
+    expandLabel: 'Expand',
+    layerTriggerIconDescription: 'Layered controls',
+    legendTitle: 'Legend',
+    hideLegend: 'Hide legend',
+    showLegend: 'Show legend',
+    scrollUp: 'Scroll up',
+    scrollDown: 'Scroll down',
+  },
+  layeredControls: [],
+  mapControls: [],
+  onZoomIn: () => {},
+  onZoomOut: () => {},
+  size: CARD_SIZES.LARGEWIDE,
+  stops: [],
 };
 
 const MapCard = ({
@@ -47,10 +65,10 @@ const MapCard = ({
   layeredControls,
   onCardAction,
   isSettingPanelOpen,
-  sideBarContent: SideBarContent,
+  settingsContent: SettingsContent,
   ...others
 }) => {
-  const mergedI18n = useMemo(() => ({ ...defaultStrings, ...i18n }), [i18n]);
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const langDir = useLangDirection();
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
@@ -75,7 +93,7 @@ const MapCard = ({
         controls={mapControls}
         layeredControls={layeredControls}
         tooltipPosition={tooltipPosition}
-        layerTriggerIconDescription={mergedI18n.layerTriggerIconDescription}
+        i18n={mergedI18n}
         isExpandedMode={isExpanded}
       />
     ) : null;
@@ -152,17 +170,19 @@ const MapCard = ({
               size="small"
               hasIconOnly
               renderIcon={Close16}
-              iconDescription={mergedI18n.closeSideBarIconText}
+              iconDescription={mergedI18n.closeSettingsIconText}
               onClick={() => {
                 onCardAction(id, CARD_ACTIONS.ON_SETTINGS_CLICK);
               }}
             />
           </div>
-          <SideBarContent />
+          <SettingsContent />
         </div>
       </>
     </Card>
   );
 };
 
+MapCard.propTypes = propTypes;
+MapCard.defaultProps = defaultProps;
 export default MapCard;
