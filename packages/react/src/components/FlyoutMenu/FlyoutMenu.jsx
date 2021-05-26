@@ -142,20 +142,20 @@ const FlyoutMenu = ({
           break;
         case FlyoutMenuDirection.TopStart:
           leftOffset = tooltipWidth / 2;
-          topOffset = caretHeight;
+          topOffset = caretHeight - 2 * borderWidth;
           break;
         case FlyoutMenuDirection.TopEnd:
           leftOffset = -tooltipWidth / 2 + buttonWidth;
-          topOffset = caretHeight;
+          topOffset = caretHeight - 2 * borderWidth;
           break;
         case FlyoutMenuDirection.BottomEnd:
-          topOffset = -caretHeight;
+          topOffset = -caretHeight + 2 * borderWidth;
           leftOffset = -tooltipWidth / 2 + buttonWidth;
           break;
         default:
           // Bottom Start
           leftOffset = tooltipWidth / 2;
-          topOffset = -caretHeight;
+          topOffset = -caretHeight + 2 * borderWidth;
       }
 
       if (document.dir === 'rtl') {
