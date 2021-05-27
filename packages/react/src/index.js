@@ -62,6 +62,8 @@ export SuiteHeaderLogoutModal from './components/SuiteHeader/SuiteHeaderLogoutMo
 export SuiteHeaderI18N from './components/SuiteHeader/i18n';
 export useSuiteHeaderData from './components/SuiteHeader/hooks/useSuiteHeaderData';
 export suiteHeaderData from './components/SuiteHeader/util/suiteHeaderData';
+export useUiResources from './components/SuiteHeader/hooks/useUiResources';
+export uiresources from './components/SuiteHeader/util/uiresources';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';

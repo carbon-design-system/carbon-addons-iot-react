@@ -8156,6 +8156,8 @@ Map {
   },
   "useSuiteHeaderData" => Object {},
   "suiteHeaderData" => Object {},
+  "useUiResources" => Object {},
+  "uiresources" => Object {},
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],
