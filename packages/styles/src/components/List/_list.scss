@@ -10,13 +10,11 @@
   }
   &--content {
     background: $ui-01;
-    flex: 1 1 0 0;
+    flex: 1;
     overflow-y: auto;
 
     &__full-height {
       overflow-y: unset;
-      // The content will be the only div that stretches to accomodate the full height
-      height: 100%;
     }
   }
 
