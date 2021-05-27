@@ -34,6 +34,7 @@ import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityF
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import StoryNotice from '../../internal/StoryNotice';
+import EmptyState from '../EmptyState';
 
 import README from './README.md';
 import Table from './Table';
@@ -81,13 +82,6 @@ const selectTextWrapping = ['always', 'never', 'auto', 'alwaysTruncate'];
 
 const renderStatusIcon = ({ value: status }) => {
   switch (status) {
-    case STATUS.RUNNING:
-    default:
-      return (
-        <svg height="10" width="10">
-          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="green" />
-        </svg>
-      );
     case STATUS.NOT_RUNNING:
       return (
         <svg height="10" width="10">
@@ -98,6 +92,14 @@ const renderStatusIcon = ({ value: status }) => {
       return (
         <svg height="10" width="10">
           <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
+        </svg>
+      );
+
+    case STATUS.RUNNING:
+    default:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="green" />
         </svg>
       );
   }
@@ -314,13 +316,13 @@ const getString = (index, length) =>
 const getStatus = (idx) => {
   const modStatus = idx % 3;
   switch (modStatus) {
-    case 0:
-    default:
-      return STATUS.RUNNING;
     case 1:
       return STATUS.NOT_RUNNING;
     case 2:
       return STATUS.BROKEN;
+    case 0:
+    default:
+      return STATUS.RUNNING;
   }
 };
 
@@ -421,6 +423,7 @@ const actions = {
     onRowSelected: action('onRowSelected'),
     onSelectAll: action('onSelectAll'),
     onEmptyStateAction: action('onEmptyStateAction'),
+    onErrorStateAction: action('onErrorStateAction'),
     onApplyRowAction: action('onApplyRowAction'),
     onRowExpanded: action('onRowExpanded'),
     onChangeOrdering: action('onChangeOrdering'),
@@ -3466,6 +3469,60 @@ WithNoDataAndCustomEmptyState.story = {
   name: 'with no data and custom empty state',
 };
 
+export const WithErrorState = withReadme(README, () => (
+  <Table
+    id="table"
+    columns={tableColumns}
+    data={[]}
+    actions={actions}
+    view={{
+      table: {
+        ordering: defaultOrdering,
+      },
+    }}
+    options={{ hasPagination: true }}
+    error={text('error', 'Error occured')}
+  />
+));
+
+WithErrorState.story = {
+  name: 'with error state',
+};
+
+const errorState = (
+  <EmptyState
+    icon="error"
+    title="Error occured while loading"
+    body={text('error', 'Error message')}
+    action={{
+      label: 'Reload',
+      onClick: action('onErrorStateAction'),
+      kind: 'ghost',
+    }}
+  />
+);
+
+export const WithCustomErrorState = withReadme(README, () => (
+  <Table
+    id="table"
+    columns={tableColumns}
+    data={[]}
+    actions={actions}
+    view={{
+      table: {
+        ordering: defaultOrdering,
+        errorState,
+      },
+    }}
+    options={{ hasPagination: true }}
+    error={text('error', 'Error occured')}
+  />
+));
+
+WithCustomErrorState.story = {
+  name: 'with custom error state',
+};
+
 export const WithLoadingState = withReadme(README, () => (
   <Table
     id="table"
@@ -3567,6 +3624,7 @@ export const WithResizeAndInitialColumnWidthsAndHiddenColumn = withReadme(README
           ordering: defaultOrdering,
         },
       }}
+      error={text('error', undefined)}
     />
   </FullWidthWrapper>
 ));
@@ -4128,6 +4186,9 @@ export const StatefulExampleWithI18NStrings = withReadme(README, () => (
       actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
       learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
       dismissText: text('i18n.dismissText', '__Dismiss__'),
+      // table error state
+      tableErrorStateTitle: text('i18n.tableErrorStateTitle', 'Unable to load the page'),
+      buttonLabelOnTableError: text('i18n.buttonLabelOnTableError', 'Refresh the page'),
     }}
   />
 ));
