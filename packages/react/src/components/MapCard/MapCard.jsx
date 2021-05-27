@@ -4,15 +4,15 @@ import { Maximize16, Close16 } from '@carbon/icons-react';
 import { useLangDirection } from 'use-lang-direction';
 
 import { Button } from '../../index';
-import Legend from './Legend';
-import ZoomControl from './ZoomControl';
-import MapControls from './MapControls';
 import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import { CARD_ACTIONS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { CardPropTypes, MapCardPropTypes } from '../../constants/CardPropTypes';
-import { determineLayout } from '../ValueCard/valueCardUtils';
 import { settings } from '../../constants/Settings';
+
+import Legend from './Legend';
+import ZoomControl from './ZoomControl';
+import MapControls from './MapControls';
 
 const { iotPrefix } = settings;
 
@@ -74,7 +74,6 @@ const MapCard = ({
   const langDir = useLangDirection();
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
-  const layout = determineLayout(newSize);
   const BASE_CLASS_NAME = `${iotPrefix}--map`;
   const resizeHandles = useMemo(() => (isResizable ? getResizeHandles(children) : []), [
     children,
@@ -82,13 +81,7 @@ const MapCard = ({
   ]);
   const [isLegendCollapsed, setIsLegendCollapsed] = useState(false);
 
-  const tooltipPosition = React.useMemo(() => {
-    if (langDir === 'ltr') {
-      return 'left';
-    } else {
-      return 'right';
-    }
-  }, [langDir]);
+  const tooltipPosition = React.useMemo(() => (langDir === 'ltr' ? 'left' : 'right'), [langDir]);
   const controls =
     mapControls || layeredControls ? (
       <MapControls

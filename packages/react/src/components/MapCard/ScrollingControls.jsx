@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'carbon-components-react';
 import { ChevronUp32, ChevronDown32 } from '@carbon/icons-react';
@@ -11,7 +11,7 @@ const { iotPrefix } = settings;
 const BASE_CLASS_NAME = `${iotPrefix}--map-scroll-controls`;
 
 const propTypes = {
-  /** The list of controls placed in the scrollable group*/
+  /** The list of controls placed in the scrollable group */
   controls: PropTypes.arrayOf(MapControlPropType).isRequired,
   scrollUpIconDescriptionText: PropTypes.string,
   scrollDownIconDescriptionText: PropTypes.string,
@@ -70,7 +70,7 @@ const ScrollingControls = ({
         iconDescription={scrollUpIconDescriptionText}
         onClick={() => handleScrolling(scrollBy * -1)}
       />
-      {scrollUpDisabled ? null : <div className={`${BASE_CLASS_NAME}__gradient`}></div>}
+      {scrollUpDisabled ? null : <div className={`${BASE_CLASS_NAME}__gradient`} />}
       <div
         ref={scrollContainerRef}
         style={{
@@ -101,7 +101,7 @@ const ScrollingControls = ({
             `${BASE_CLASS_NAME}__gradient`,
             `${BASE_CLASS_NAME}__gradient--flipped`
           )}
-        ></div>
+        />
       )}
       <Button
         data-testid={`${testId}-scroll-down`}

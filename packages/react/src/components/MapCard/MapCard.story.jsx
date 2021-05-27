@@ -15,14 +15,6 @@ Experimental.story = {
   name: experimentalStoryTitle,
 };
 
-export default {
-  title: 'Watson IoT Experimental/☢️ MapCard',
-  decorators: [withKnobs, React.createElement],
-  parameters: {
-    component: MapBoxStory,
-  },
-};
-
 export const MapBoxStory = () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
@@ -83,4 +75,12 @@ export const OpenlayersStory = () => {
 
 OpenlayersStory.story = {
   name: 'Using Open layers',
+};
+
+export default {
+  title: 'Watson IoT Experimental/☢️ MapCard',
+  decorators: [withKnobs, React.createElement],
+  parameters: {
+    component: MapBoxStory,
+  },
 };

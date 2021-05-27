@@ -17,7 +17,11 @@ const propTypes = {
   controls: PropTypes.arrayOf(MapControlPropType),
   /** list of layered map control buttons that are expanded horizontally */
   layeredControls: PropTypes.arrayOf(MapControlPropType),
-  i18n: PropTypes.object,
+  i18n: PropTypes.shape({
+    layerTriggerIconDescription: PropTypes.string,
+    scrollUp: PropTypes.string,
+    scrollDown: PropTypes.string,
+  }),
   /** true if the map controls are in an expanded card */
   isExpandedMode: PropTypes.bool,
   testId: PropTypes.string,
@@ -34,6 +38,7 @@ const defaultProps = {
   },
   isExpandedMode: false,
   testId: 'map-controls',
+  tooltipPosition: 'left',
 };
 
 const MapControls = ({
@@ -51,26 +56,6 @@ const MapControls = ({
   };
 
   const buttonSize = isExpandedMode ? 'field' : 'small';
-  const renderButton = (
-    { kind = 'ghost', icon, iconDescription, onClick, selected },
-    { index, tabIndex = 0, className = `${BASE_CLASS_NAME}-btn` }
-  ) => {
-    return (
-      <Button
-        tabIndex={tabIndex}
-        key={`${iconDescription}-${index}`}
-        className={className}
-        kind={kind}
-        size={buttonSize}
-        selected={selected}
-        hasIconOnly
-        tooltipPosition={tooltipPosition}
-        renderIcon={icon}
-        iconDescription={iconDescription}
-        onClick={onClick}
-      />
-    );
-  };
 
   const renderControl = (control, index) => {
     if (control.group) {
@@ -91,21 +76,56 @@ const MapControls = ({
         ) : null
       ) : (
         <div key={groupKey} className={groupClass}>
-          {control.group.map((control, myIndex) => {
-            return renderButton(control, { index: myIndex });
+          {control.group.map((groupedControl, myIndex) => {
+            return (
+              <Button
+                key={`${groupedControl.iconDescription}-${myIndex}`}
+                className={`${BASE_CLASS_NAME}-btn`}
+                kind={groupedControl.kind ?? 'ghost'}
+                size={buttonSize}
+                selected={groupedControl.selected}
+                hasIconOnly
+                tooltipPosition={tooltipPosition}
+                renderIcon={groupedControl.icon}
+                iconDescription={groupedControl.iconDescription}
+                onClick={groupedControl.onClick}
+              />
+            );
           })}
         </div>
       );
     }
-    return renderButton(control, { index });
+    return (
+      <Button
+        key={`${control.iconDescription}-${index}`}
+        className={`${BASE_CLASS_NAME}-btn`}
+        kind={control.kind ?? 'ghost'}
+        size={buttonSize}
+        selected={control.selected}
+        hasIconOnly
+        tooltipPosition={tooltipPosition}
+        renderIcon={control.icon}
+        iconDescription={control.iconDescription}
+        onClick={control.onClick}
+      />
+    );
   };
 
-  const renderLayers = (control, index) =>
-    renderButton(control, {
-      index,
-      className: `${BASE_CLASS_NAME}-layers-btn`,
-      tabIndex: layersOpen ? 0 : -1,
-    });
+  const renderLayers = (control, index) => (
+    <Button
+      key={`${control.iconDescription}-${index}`}
+      className={`${BASE_CLASS_NAME}-layers-btn`}
+      kind={control.kind ?? 'ghost'}
+      size={buttonSize}
+      selected={control.selected}
+      hasIconOnly
+      tooltipPosition={tooltipPosition}
+      renderIcon={control.icon}
+      iconDescription={control.iconDescription}
+      onClick={control.onClick}
+      tabIndex={layersOpen ? 0 : -1}
+    />
+  );
 
   return (
     <div

@@ -8,7 +8,10 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  i18n: PropTypes.object,
+  i18n: PropTypes.shape({
+    zoomIn: PropTypes.string,
+    zoomOut: PropTypes.string,
+  }),
   /** callback to handle zoom in */
   onZoomIn: PropTypes.func.isRequired,
   /** callback to handle zoom out */

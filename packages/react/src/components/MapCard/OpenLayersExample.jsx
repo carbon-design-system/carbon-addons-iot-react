@@ -1,23 +1,21 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Events32, SkillLevelAdvanced32 } from '@carbon/icons-react';
+import { Events32 } from '@carbon/icons-react';
 import { Accordion, AccordionItem } from 'carbon-components-react';
+import PropTypes from 'prop-types';
+// The OpenLayersExample is not exported and is only used by StoryBook
+/* eslint-disable import/no-extraneous-dependencies */
 import mapboxgl from 'mapbox-gl';
-import TileLayer from 'ol/layer/Tile';
-import VectorLayer from 'ol/layer/Vector';
-import OSM from 'ol/source/OSM';
 import Map from 'ol/Map';
 import { fromLonLat } from 'ol/proj';
 import View from 'ol/View';
-import { Feature } from 'ol';
-import Point from 'ol/geom/Point';
 import VectorSource from 'ol/source/Vector';
-import Snap from 'ol/interaction/Snap';
 import MapboxVector from 'ol/layer/MapboxVector';
 import VectorImage from 'ol/layer/VectorImage';
 import GeoJSON from 'ol/format/GeoJSON';
 import Style from 'ol/style/Style';
 import Fill from 'ol/style/Fill';
 import { defaults } from 'ol/control';
+/* eslint-enable import/no-extraneous-dependencies */
 
 import MapCard from './MapCard';
 import Optionsfield from './Optionsfield';
@@ -30,32 +28,9 @@ const view = new View({
   zoom: '2.5',
 });
 
-const staticFeature = new Feature({
-  geometry: new Point([0, 0]),
-});
-const staticSource = new VectorSource({
-  features: [staticFeature],
-});
-const staticLayer = new VectorLayer({
-  source: staticSource,
-});
-const pointerMoveSnap = new Snap({
-  source: staticSource,
-  pixelTolerance: 200,
-});
-
 const getColor = (feature, featureName = 'population') => {
   const gdp = feature.get('gdp_md_est');
   const pop = feature.get('pop_est');
-  [0, '#f8d5cc'],
-    [1000000, '#f4bfb6'],
-    [5000000, '#f1a8a5'],
-    [10000000, '#ee8f9a'],
-    [50000000, '#ec739b'],
-    [100000000, '#dd5ca8'],
-    [250000000, '#c44cc0'],
-    [500000000, '#9f43d7'],
-    [1000000000, '#6e40e6'];
   if (featureName === 'population') {
     switch (true) {
       case pop > 1000000 && pop < 5000000:
@@ -133,6 +108,39 @@ const population = new VectorImage({
   },
 });
 
+const propTypes = {
+  data: PropTypes.shape(PropTypes.any),
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      description: PropTypes.string,
+      property: PropTypes.string,
+      stops: PropTypes.arrayOf(PropTypes.array),
+    })
+  ),
+  isLegendFullWidth: PropTypes.bool,
+  onCardAction: PropTypes.func.isRequired,
+  availableActions: PropTypes.shape({
+    edit: PropTypes.bool,
+    clone: PropTypes.bool,
+    delete: PropTypes.bool,
+    expand: PropTypes.bool,
+    range: PropTypes.bool,
+    settings: PropTypes.bool,
+  }),
+  isSettingPanelOpen: PropTypes.bool,
+  isExpanded: PropTypes.bool,
+};
+
+const defaultProps = {
+  data: {},
+  options: [],
+  isLegendFullWidth: false,
+  availableActions: {},
+  isSettingPanelOpen: false,
+  isExpanded: false,
+};
+
 /**
  * Example implementation with MapCard using the Open Layers map. This code illustrates
  * a simplified version of how MapCard can be used and should not be seen as a
@@ -168,7 +176,7 @@ const OpenLayersExample = ({
         rotate: false,
         zoom: false,
       }),
-      view: view,
+      view,
       loadTilesWhileAnimating: true,
     });
     mapObject.setTarget(mapContainerRef.current);
@@ -178,6 +186,16 @@ const OpenLayersExample = ({
 
     return () => mapObject.setTarget(undefined);
   }, [isExpanded]);
+
+  const changeState = (i) => {
+    setActive(options[i]);
+    map.getLayers().forEach((lyr) => {
+      if (lyr.get('title')) {
+        lyr.setVisible(!lyr.get('visible'));
+      }
+    });
+  };
+
   const mapControls = [
     {
       group: [
@@ -247,15 +265,6 @@ const OpenLayersExample = ({
     });
   };
 
-  const changeState = (i) => {
-    setActive(options[i]);
-    map.getLayers().forEach(function (lyr) {
-      if (lyr.get('title')) {
-        lyr.setVisible(!lyr.get('visible'));
-      }
-    });
-  };
-
   const settingsContent = () => (
     <Accordion className="settings-accordion" style={{ paddingTop: 0 }}>
       <AccordionItem
@@ -297,4 +306,6 @@ const OpenLayersExample = ({
   );
 };
 
+OpenLayersExample.propTypes = propTypes;
+OpenLayersExample.defaultProps = defaultProps;
 export default OpenLayersExample;

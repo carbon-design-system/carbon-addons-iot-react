@@ -11,7 +11,7 @@ import {
 } from '@carbon/icons-react';
 import { Accordion, AccordionItem } from 'carbon-components-react';
 // The MapBoxExample is not exported and is only used by StoryBook
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import mapboxgl from 'mapbox-gl';
 import PropTypes from 'prop-types';
 
