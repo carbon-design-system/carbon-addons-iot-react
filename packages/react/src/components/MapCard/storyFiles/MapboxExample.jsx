@@ -16,7 +16,7 @@ import mapboxgl from 'mapbox-gl';
 import PropTypes from 'prop-types';
 
 import MapCard from '../MapCard';
-import Optionsfield from '../Optionsfield';
+import Optionsfield from './Optionsfield';
 import './mapbox-example.scss';
 
 mapboxgl.accessToken =
