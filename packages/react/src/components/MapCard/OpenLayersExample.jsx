@@ -19,6 +19,7 @@ import { defaults } from 'ol/control';
 
 import MapCard from './MapCard';
 import Optionsfield from './Optionsfield';
+import './storyFiles/open-layers-example.scss';
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';

@@ -17,6 +17,7 @@ import PropTypes from 'prop-types';
 
 import MapCard from './MapCard';
 import Optionsfield from './Optionsfield';
+import './storyFiles/mapbox-example.scss';
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
