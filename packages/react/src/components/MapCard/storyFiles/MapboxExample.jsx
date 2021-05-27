@@ -300,7 +300,6 @@ const MapboxExample = ({
       stops={active.stops}
       onZoomIn={onZoomIn}
       onZoomOut={onZoomOut}
-      changeState={changeState}
       onCardAction={onCardAction}
       i18n={{ cardTitle: active.name }}
       settingsContent={settingsContent}

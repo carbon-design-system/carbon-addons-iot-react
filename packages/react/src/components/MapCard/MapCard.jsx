@@ -58,7 +58,6 @@ const MapCard = ({
   i18n,
   id,
   isLegendFullWidth,
-  changeState,
   onZoomIn,
   onZoomOut,
   stops,

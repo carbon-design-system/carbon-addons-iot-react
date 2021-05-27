@@ -20,7 +20,7 @@ import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
 import ListCard from '../ListCard/ListCard';
 import MapboxCard from '../MapCard/storyFiles/MapboxExample';
-import data from '../MapCard/data.json';
+import data from '../MapCard/storyFiles/data.json';
 import options from '../MapCard/storyFiles/mapOptions';
 
 import DashboardGrid from './DashboardGrid';

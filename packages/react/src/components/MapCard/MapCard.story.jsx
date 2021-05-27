@@ -5,7 +5,7 @@ import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
-import data from './data.json';
+import data from './storyFiles/data.json';
 import options from './storyFiles/mapOptions';
 import MapboxExample from './storyFiles/MapboxExample';
 import OpenLayersExample from './storyFiles/OpenLayersExample';
