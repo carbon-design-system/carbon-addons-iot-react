@@ -4671,7 +4671,9 @@ Map {
       "onEdit": Object {
         "type": "func",
       },
-      "renderTitleFunction": undefined,
+      "renderTitleFunction": Object {
+        "type": "func",
+      },
       "rightContent": [Function],
       "stickyHeaderOffset": Object {
         "type": "number",
@@ -9163,13 +9165,13 @@ Map {
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
       "isSummaryDashboard": false,
+      "isTitleEditable": null,
       "locale": "en",
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
       "onCardJsonPreview": null,
       "onDelete": null,
-      "onEditTitle": null,
       "onExport": null,
       "onFetchDynamicDemoHotspots": [Function],
       "onImageDelete": null,
@@ -9717,6 +9719,9 @@ Map {
       "isSummaryDashboard": Object {
         "type": "bool",
       },
+      "isTitleEditable": Object {
+        "type": "bool",
+      },
       "locale": Object {
         "type": "string",
       },
@@ -9733,9 +9738,6 @@ Map {
         "type": "func",
       },
       "onDelete": Object {
-        "type": "func",
-      },
-      "onEditTitle": Object {
         "type": "func",
       },
       "onExport": Object {
