@@ -48,8 +48,10 @@ export const RowActionsStatePropTypes = PropTypes.arrayOf(
 export const EmptyStatePropTypes = PropTypes.oneOfType([
   PropTypes.shape({
     message: PropTypes.node.isRequired,
+    messageBody: PropTypes.node,
     /* Show a different message if no content is in the table matching the filters */
     messageWithFilters: PropTypes.node,
+    messageWithFiltersBody: PropTypes.node,
     /* If a label is not provided, no action button will be rendered */
     buttonLabel: PropTypes.node,
     /* Show a different button label if no content is in the table matching the filters */
