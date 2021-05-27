@@ -31,11 +31,11 @@ export class FlyoutMenuDirective extends TooltipDirective {
   /**
    * bx--tooltip__trigger is inherited from TooltipDirective and it enables focus indication
    */
-  @HostBinding("class.bx--tooltip__trigger") className = false;
+  @HostBinding('class.bx--tooltip__trigger') className = false;
   /**
    * Override tabindex to make it not tabbable
    */
-  @HostBinding("tabindex") tabIndex = -1;
+  @HostBinding('tabindex') tabIndex = -1;
   @HostBinding('class.iot--flyout-menu__open') get openClass() {
     return this.isOpen;
   }
