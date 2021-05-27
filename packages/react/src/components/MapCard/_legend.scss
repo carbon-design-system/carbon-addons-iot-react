@@ -4,9 +4,9 @@
   &-legend {
     max-width: 50%;
     background: $ui-02;
-    bottom: 1rem;
-    left: 1rem;
-    padding: 1rem;
+    bottom: $spacing-05;
+    left: $spacing-05;
+    padding: $spacing-05;
     position: absolute;
     z-index: 2;
     opacity: 0.8;
@@ -14,17 +14,17 @@
 
     [dir='rtl'] & {
       left: unset;
-      right: 1rem;
+      right: $spacing-05;
     }
   }
 
   &-legend--increased-margin {
-    bottom: 2rem;
-    left: 2rem;
+    bottom: $spacing-07;
+    left: $spacing-07;
 
     [dir='rtl'] & {
       left: unset;
-      right: 2rem;
+      right: $spacing-07;
     }
   }
 
@@ -49,7 +49,7 @@
       }
 
       & > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
-        margin-right: 0.5rem;
+        margin-right: $spacing-03;
       }
     }
 
@@ -66,7 +66,7 @@
     &-legend.#{$iot-prefix}--map-legend__fullwidth
     .#{$iot-prefix}--map-legend-keys-container
     > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
-    margin-left: 0.5rem;
+    margin-left: $spacing-03;
     margin-right: unset;
   }
 
@@ -110,12 +110,12 @@
 
   &-legend-keys-color {
     height: 1rem;
-    margin-right: 0.5rem;
+    margin-right: $spacing-03;
     width: 1rem;
     flex-shrink: 0;
 
     [dir='rtl'] & {
-      margin-left: 0.5rem;
+      margin-left: $spacing-03;
       margin-right: unset;
     }
   }

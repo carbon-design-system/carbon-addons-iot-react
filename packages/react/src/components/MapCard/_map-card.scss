@@ -12,6 +12,8 @@
   &-container {
     position: relative;
     height: 100%;
+    width: 100%;
+    transition: width $duration--fast-02 motion(entrance, productive);
 
     canvas {
       min-height: 100%;
@@ -20,11 +22,6 @@
 
   .mapboxgl-canvas-container {
     height: 100%;
-  }
-
-  &-container {
-    width: 100%;
-    transition: width $duration--fast-02 motion(entrance, productive);
   }
 
   &-settings {
@@ -50,10 +47,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0.25rem 0.5rem 0.25rem 1rem;
+    padding: $spacing-02 $spacing-03 $spacing-02 $spacing-05;
 
     [dir='rtl'] & {
-      padding: 0.25rem 1rem 0.25rem 0.5rem;
+      padding: $spacing-02 $spacing-05 $spacing-02 $spacing-03;
     }
   }
 
@@ -94,9 +91,9 @@
     position: absolute;
     justify-content: space-between;
     z-index: 2;
-    right: 1rem;
-    top: 1rem;
-    bottom: 1rem;
+    right: $spacing-05;
+    top: $spacing-05;
+    bottom: $spacing-05;
 
     &__has-increased-margins {
       right: 2rem;
@@ -113,7 +110,7 @@
     }
 
     [dir='rtl'] & {
-      left: 1rem;
+      left: $spacing-05;
       right: unset;
 
       &__has-increased-margins {
@@ -134,7 +131,7 @@
   &-controls-btn-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: $spacing-05;
   }
 
   &-controls-btn {
@@ -157,7 +154,7 @@
   &-controls-layers-trigger {
     background-color: white;
     @include box-shadow();
-    margin-bottom: 1rem;
+    margin-bottom: $spacing-05;
     position: absolute;
     right: 0;
     top: 0;
@@ -235,19 +232,6 @@
       }
     }
   }
-
-  // &-zoom {
-  //   position: relative;
-  //   background: #fff;
-  //   display: flex;
-  //   flex-direction: column;
-  //   z-index: 2;
-  //   @include box-shadow();
-
-  //   & > *:first-child {
-  //     border-bottom: 1px solid $ui-03; // should be updated to $button-separator once available
-  //   }
-  // }
 }
 
 // Open Layers
