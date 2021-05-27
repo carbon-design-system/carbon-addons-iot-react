@@ -8131,6 +8131,8 @@ Map {
   },
   "useSuiteHeaderData" => Object {},
   "suiteHeaderData" => Object {},
+  "useUiResources" => Object {},
+  "uiresources" => Object {},
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],
@@ -9163,7 +9165,7 @@ Map {
       "isSummaryDashboard": false,
       "locale": "en",
       "notification": null,
-      "onAddDataItems": [Function],
+      "onAddDataItems": null,
       "onCancel": null,
       "onCardChange": null,
       "onCardJsonPreview": null,
@@ -9805,7 +9807,7 @@ Map {
       },
       "icons": null,
       "isSummaryDashboard": false,
-      "onAddDataItems": [Function],
+      "onAddDataItems": null,
       "onCardJsonPreview": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [

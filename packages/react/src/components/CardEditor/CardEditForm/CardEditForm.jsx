@@ -132,7 +132,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   testID: 'card-edit-form',
   dataSeriesItemLinks: null,
-  onAddDataItems: () => {},
+  onAddDataItems: null,
 };
 
 /**

@@ -107,7 +107,7 @@ const defaultProps = {
   availableDimensions: {},
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
-  onAddDataItems: () => {},
+  onAddDataItems: null,
 };
 
 export const handleTranslationCallback = (idToTranslate, mergedI18n) => {

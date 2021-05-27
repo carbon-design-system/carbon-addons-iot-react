@@ -152,7 +152,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   testID: 'card-editor',
   dataSeriesItemLinks: null,
-  onAddDataItems: () => {},
+  onAddDataItems: null,
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;

@@ -351,7 +351,7 @@ const defaultProps = {
   locale: 'en',
   dataSeriesItemLinks: null,
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
-  onAddDataItems: () => {},
+  onAddDataItems: null,
 };
 
 const LAYOUTS = {
