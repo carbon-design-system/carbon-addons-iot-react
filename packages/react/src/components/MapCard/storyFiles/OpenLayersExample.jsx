@@ -17,9 +17,9 @@ import Fill from 'ol/style/Fill';
 import { defaults } from 'ol/control';
 /* eslint-enable import/no-extraneous-dependencies */
 
-import MapCard from './MapCard';
-import Optionsfield from './Optionsfield';
-import './storyFiles/open-layers-example.scss';
+import MapCard from '../MapCard';
+import Optionsfield from '../Optionsfield';
+import './open-layers-example.scss';
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';

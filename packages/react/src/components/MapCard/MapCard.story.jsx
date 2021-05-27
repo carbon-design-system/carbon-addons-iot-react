@@ -7,8 +7,8 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 
 import data from './data.json';
 import options from './storyFiles/mapOptions';
-import MapboxExample from './MapboxExample';
-import OpenLayersExample from './OpenLayersExample';
+import MapboxExample from './storyFiles/MapboxExample';
+import OpenLayersExample from './storyFiles/OpenLayersExample';
 
 export const Experimental = () => <StoryNotice componentName="MapCard" experimental />;
 Experimental.story = {

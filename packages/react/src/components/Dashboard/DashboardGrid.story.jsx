@@ -19,7 +19,7 @@ import ImageCard from '../ImageCard/ImageCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
 import ListCard from '../ListCard/ListCard';
-import MapboxCard from '../MapCard/MapboxExample';
+import MapboxCard from '../MapCard/storyFiles/MapboxExample';
 import data from '../MapCard/data.json';
 import options from '../MapCard/storyFiles/mapOptions';
 
