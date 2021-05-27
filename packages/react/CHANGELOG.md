@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.13...v2.146.0-next.14) (2021-05-27)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.146.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.12...v2.146.0-next.13) (2021-05-27)
+
+
+### Bug Fixes
+
+* **emptystate:** use default text align instead of foring it to left align to overcome rtl issue ([2d28b20](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2d28b20c50089f376ed87c772f7a4241c2c0298a))
+
+
+### Features
+
+* **emptystate:** left align the empty state in the table ([8f81374](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8f813741c07692f012e9cdb4b0576606dd471bb1))
+* **errortable:** add an error state to the table ([a23f035](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a23f035102625c7b0d86446502cc52a28b969544))
+
+
+
+
+
 # [2.146.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.11...v2.146.0-next.12) (2021-05-26)
 
 
