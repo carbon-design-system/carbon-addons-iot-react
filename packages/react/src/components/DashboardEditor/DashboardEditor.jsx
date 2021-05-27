@@ -469,7 +469,7 @@ const DashboardEditor = ({
         ? customGetDefaultCard(type)
         : getDefaultCard(type, mergedI18n);
 
-      // notify consumers that the card has been added if they're listening (they might want to tweak the card defaults here)
+      // notify consumers that the card has been added in onCardChange if we don't have an explicit customGetDefaultCard passed
       const cardConfig =
         onCardChange && !customGetDefaultCard
           ? onCardChange(defaultCard, dashboardJson)
