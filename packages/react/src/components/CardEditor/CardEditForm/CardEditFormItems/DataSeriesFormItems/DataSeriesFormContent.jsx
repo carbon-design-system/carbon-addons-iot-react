@@ -516,15 +516,17 @@ const DataSeriesFormItem = ({
           />
         )}
       </div>
-      <Button
-        key="add-data-item"
-        renderIcon={Add16}
-        kind="ghost"
-        onClick={onAddDataItems}
-        iconDescription={mergedI18n.addDataItems}
-      >
-        {mergedI18n.addDataItems}
-      </Button>
+      {isSummaryDashboard ? (
+        <Button
+          key="add-data-item"
+          renderIcon={Add16}
+          kind="ghost"
+          onClick={onAddDataItems}
+          iconDescription={mergedI18n.addDataItems}
+        >
+          {mergedI18n.addDataItems}
+        </Button>
+      ) : null}
       <List
         className={`${baseClassName}--data-item-list`}
         key={`data-item-list${selectedDataItems.length}`}

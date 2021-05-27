@@ -11,6 +11,7 @@ describe('CardEditor', () => {
     onAddCard: jest.fn(),
     onShowGallery: jest.fn(),
     onChange: jest.fn(),
+    onAddDataItems: jest.fn(),
   };
   const defaultCard = {
     id: 'card-0001',
@@ -26,6 +27,7 @@ describe('CardEditor', () => {
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
+        onAddDataItems={actions.onAddDataItems}
       />
     );
     const addTableCardBtn = screen.getByTitle('Data table');
@@ -40,6 +42,7 @@ describe('CardEditor', () => {
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
+        onAddDataItems={actions.onAddDataItems}
       />
     );
     userEvent.type(screen.getByRole('textbox', { name: 'Card title' }), 'z');
@@ -64,6 +67,7 @@ describe('CardEditor', () => {
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
+        onAddDataItems={actions.onAddDataItems}
       />
     );
     userEvent.type(screen.getByLabelText('Description (Optional)'), 'z');
@@ -82,6 +86,7 @@ describe('CardEditor', () => {
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
+        onAddDataItems={actions.onAddDataItems}
       />
     );
     userEvent.click(
@@ -132,6 +137,7 @@ describe('CardEditor', () => {
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
+        onAddDataItems={actions.onAddDataItems}
       />
     );
     const openEditorBtn = screen.getByRole('button', {
