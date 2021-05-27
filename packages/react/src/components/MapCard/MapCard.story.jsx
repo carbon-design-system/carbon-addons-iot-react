@@ -7,7 +7,7 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 
 import data from './data.json';
 import options from './storyFiles/mapOptions';
-import MapBoxExample from './MapBoxExample';
+import MapboxExample from './MapboxExample';
 import OpenLayersExample from './OpenLayersExample';
 
 export const Experimental = () => <StoryNotice componentName="MapCard" experimental />;
@@ -15,7 +15,7 @@ Experimental.story = {
   name: experimentalStoryTitle,
 };
 
-export const MapBoxStory = () => {
+export const MapboxStory = () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -30,7 +30,7 @@ export const MapBoxStory = () => {
     }
   };
   return (
-    <MapBoxExample
+    <MapboxExample
       data={data}
       options={options}
       isLegendFullWidth={boolean('isLegendFullWidth', false)}
@@ -42,8 +42,8 @@ export const MapBoxStory = () => {
   );
 };
 
-MapBoxStory.story = {
-  name: 'Using MapBox',
+MapboxStory.story = {
+  name: 'Using Mapbox',
 };
 
 export const OpenlayersStory = () => {
@@ -81,6 +81,6 @@ export default {
   title: 'Watson IoT Experimental/☢️ MapCard',
   decorators: [withKnobs, React.createElement],
   parameters: {
-    component: MapBoxStory,
+    component: MapboxStory,
   },
 };

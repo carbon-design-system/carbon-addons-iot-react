@@ -19,13 +19,13 @@ import ImageCard from '../ImageCard/ImageCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
 import ListCard from '../ListCard/ListCard';
-import MapBoxCard from '../MapCard/MapBoxExample';
+import MapboxCard from '../MapCard/MapboxExample';
 import data from '../MapCard/data.json';
 import options from '../MapCard/storyFiles/mapOptions';
 
 import DashboardGrid from './DashboardGrid';
 
-const MapBoxExample = ({ ...props }) => {
+const MapboxExample = ({ ...props }) => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -39,7 +39,7 @@ const MapBoxExample = ({ ...props }) => {
     }
   };
   return (
-    <MapBoxCard
+    <MapboxCard
       data={data}
       options={options}
       isLegendFullWidth={boolean('isLegendFullWidth', false)}
@@ -686,7 +686,7 @@ export const DashboardAllCardsAsResizable = () => {
       isResizable={isResizable}
       values={pieChartCardValues}
     />,
-    <MapBoxExample
+    <MapboxExample
       isResizable={isResizable}
       id="mapCard"
       key="mapCard"

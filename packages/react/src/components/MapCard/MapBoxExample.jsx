@@ -10,7 +10,7 @@ import {
   Sun32,
 } from '@carbon/icons-react';
 import { Accordion, AccordionItem } from 'carbon-components-react';
-// The MapBoxExample is not exported and is only used by StoryBook
+// The MapboxExample is not exported and is only used by StoryBook
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import mapboxgl from 'mapbox-gl';
 import PropTypes from 'prop-types';
@@ -57,11 +57,11 @@ const defaultProps = {
 };
 
 /**
- * Example implementation with MapCard using the MapBox map. This code illustrates
+ * Example implementation with MapCard using the Mapbox map. This code illustrates
  * a simplified version of how MapCard can be used and should not be seen as a
  * production ready component.
  */
-const MapBoxExample = ({
+const MapboxExample = ({
   data,
   options,
   isLegendFullWidth,
@@ -309,6 +309,6 @@ const MapBoxExample = ({
   );
 };
 
-MapBoxExample.propTypes = propTypes;
-MapBoxExample.defaultProps = defaultProps;
-export default MapBoxExample;
+MapboxExample.propTypes = propTypes;
+MapboxExample.defaultProps = defaultProps;
+export default MapboxExample;
