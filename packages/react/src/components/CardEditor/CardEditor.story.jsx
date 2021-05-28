@@ -3,9 +3,14 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
 import { EscalatorDown } from '@carbon/pictograms-react';
 import { Basketball32, Code24 } from '@carbon/icons-react';
+import { TextInput } from 'carbon-components-react';
 
 import munichBuilding from '../ImageCard/MunichBuilding.png';
-import { CARD_SIZES, DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
+import {
+  CARD_TYPES,
+  CARD_SIZES,
+  DASHBOARD_EDITOR_CARD_TYPES,
+} from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import CardEditor from './CardEditor';
@@ -295,4 +300,80 @@ export const WithTooltipLink = () => (
 
 Default.story = {
   name: 'default',
+};
+
+const renderCustomEditContent = (onChange, cardConfig) => {
+  return [
+    {
+      header: { title: 'customTitle', tooltip: { tooltipText: 'Custom Tooltip' } },
+      content: (
+        <TextInput
+          id="custom-content-textinput"
+          value={cardConfig.title}
+          labelText="Title"
+          onChange={(event) => onChange({ ...cardConfig, title: event.currentTarget.value })}
+        />
+      ),
+    },
+  ];
+};
+
+export const TimeSeriesCardWithCustom = () => {
+  return (
+    <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+      <CardEditor
+        cardConfig={{
+          renderEditContent: renderCustomEditContent,
+          type: CARD_TYPES.TIMESERIES,
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'discharge_flow_rate',
+                label: 'Discharge flow',
+                precision: 3,
+              },
+              {
+                dataSourceId: 'discharge_perc',
+                label: 'Max Discharge %',
+                precision: 3,
+              },
+            ],
+          },
+          dataSource: {
+            attributes: [
+              {
+                aggregator: 'mean',
+                attribute: 'discharge_flow_rate',
+                id: 'discharge_flow_rate',
+              },
+              {
+                aggregator: 'max',
+                attribute: 'discharge_perc',
+                id: 'discharge_perc',
+              },
+            ],
+          },
+          id: 'calculated',
+          size: 'MEDIUMTHIN',
+          title: 'Calculated',
+        }}
+        dataItems={[
+          { dataItemId: 'torque', dataSourceId: 'torque_max', label: 'Torque Max' },
+          { dataItemId: 'torque', dataSourceId: 'torque_min', label: 'Torque Min' },
+          { dataItemId: 'torque', dataSourceId: 'torque_mean', label: 'Torque Mean' },
+          { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
+          { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
+        ]}
+        errors={{}}
+        onShowGallery={action('onShowGallery')}
+        onChange={action('onChange')}
+        onAddCard={action('onAddCard')}
+        dataSeriesItemLinks={{ value: 'www.ibm.com' }}
+      />
+    </div>
+  );
+};
+
+TimeSeriesCardWithCustom.story = {
+  name: 'custom edit content',
 };
