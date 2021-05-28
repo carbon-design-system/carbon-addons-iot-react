@@ -2460,7 +2460,7 @@ export const WithSingleSelectAndNestedTableRows = withReadme(README, () => (
     }))}
     options={{
       hasPagination: true,
-      hasRowSelection: 'multi',
+      hasRowSelection: 'single',
       hasRowExpansion: true,
       hasRowNesting: true,
     }}
