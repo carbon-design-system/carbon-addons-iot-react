@@ -278,5 +278,5 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.146.0-next.15"
+  "version": "2.146.0-next.16"
 }
