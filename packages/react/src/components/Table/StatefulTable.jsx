@@ -241,9 +241,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableColumnSort(column, columns));
         callbackParent(onChangeSort, column, sortDirection);
       },
-      onRowSelected: (rowId, isSelected) => {
-        dispatch(tableRowSelect(rowId, isSelected, options.hasRowSelection));
-        callbackParent(onRowSelected, rowId, isSelected);
+      onRowSelected: (rowId, isSelected, newSelectedIds) => {
+        dispatch(tableRowSelect(newSelectedIds, options.hasRowSelection));
+        // Params rowId & isSelected kept for backwards compatability
+        callbackParent(onRowSelected, rowId, isSelected, newSelectedIds);
       },
       onRowClicked: (rowId) => {
         // This action doesn't update our table state, it's up to the user

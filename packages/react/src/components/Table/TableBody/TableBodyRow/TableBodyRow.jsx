@@ -73,6 +73,8 @@ const propTypes = {
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,
+  /** is the row currently in an indeterminate state, i.e. some but not all children are checked */
+  isIndeterminate: PropTypes.bool,
   /** is the row currently expanded */
   isExpanded: PropTypes.bool,
   /** optional row details */
@@ -114,6 +116,7 @@ const propTypes = {
 
 const defaultProps = {
   isSelected: false,
+  isIndeterminate: false,
   isExpanded: false,
   selectRowAria: 'Select row',
   overflowMenuAria: 'More actions',
@@ -381,6 +384,7 @@ const TableBodyRow = ({
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
   isSelected,
+  isIndeterminate,
   selectRowAria,
   overflowMenuAria,
   clickToExpandAria,
@@ -427,6 +431,7 @@ const TableBodyRow = ({
             id={`select-row-${tableId}-${id}`}
             labelText={selectRowAria}
             hideLabel
+            indeterminate={isIndeterminate}
             checked={isSelected}
             disabled={isSelectable === false}
           />
