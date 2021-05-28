@@ -318,7 +318,7 @@ const TableBody = ({
   };
 
   return (
-    <CarbonTableBody data-testID={testID}>
+    <CarbonTableBody data-testid={testID}>
       {rows.map((row) => {
         return shouldLazyRender ? (
           <VisibilitySensor

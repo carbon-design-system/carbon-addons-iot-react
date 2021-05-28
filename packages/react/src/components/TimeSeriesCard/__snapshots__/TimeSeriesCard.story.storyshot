@@ -1954,7 +1954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </thead>
                     <tbody
                       aria-live="polite"
-                      data-testID="TimeSeries-table-table-body"
+                      data-testid="TimeSeries-table-table-body"
                     >
                       <tr
                         className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
@@ -5778,6 +5778,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--time-series-card--wrapper"
+          >
+            <div
+              id="mock-line-chart"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard thresholds 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": "1rem4",
+          "width": "520px",
+        }
+      }
+    >
+      <div
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
+        id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Pressure"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Pressure
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar"
+          />
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
+        >
+          <div
+            className="iot--time-series-card--wrapper iot--time-series-card--wrapper__editable"
           >
             <div
               id="mock-line-chart"

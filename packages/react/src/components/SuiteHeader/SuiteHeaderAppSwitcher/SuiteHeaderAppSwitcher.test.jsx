@@ -56,6 +56,15 @@ describe('SuiteHeaderAppSwitcher', () => {
       commonProps.applications.find((app) => app.id === 'monitor').href
     );
   });
+  it('keyboard navigates an application link', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    render(<SuiteHeaderAppSwitcher {...commonProps} />);
+    await userEvent.type(screen.getByTestId('suite-header-app-switcher--monitor'), '{enter}');
+    expect(window.location.href).toBe(
+      commonProps.applications.find((app) => app.id === 'monitor').href
+    );
+  });
   it('clicks an external application link', async () => {
     delete window.location;
     window.location = { href: '' };

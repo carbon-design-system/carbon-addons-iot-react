@@ -1586,7 +1586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </thead>
                       <tbody
                         aria-live="polite"
-                        data-testID="table-for-card-tableCard-table-body"
+                        data-testid="table-for-card-tableCard-table-body"
                       >
                         <tr
                           className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"

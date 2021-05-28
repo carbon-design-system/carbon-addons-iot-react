@@ -732,6 +732,7 @@ the following props:
 | actions        | object |         | Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props (see [actions prop](#actions-prop))                                                        |
 | locale         | string |         | what locale should we use to format table values if left empty no locale formatting happens                                                                                                            |
 | i18n           | object |         | (see [i18n prop](#i18n-prop))                                                                                                                                                                          |
+| error          | string |         | Specify the error message that need to be displayed by default. Incase we use `view.table.errorState` property then the error state element will be rendered instead of error message                  |
 
 ### Column Prop
 
@@ -873,7 +874,8 @@ the following props:
 | table.emptyState.messageWithFilters     | node                             |         | Show a different message if no content is in the table matching the filters                                                                         |
 | table.emptyState.buttonLabel            | node                             |         | If a label is not provided, no action button will be rendered                                                                                       |
 | table.emptyState.buttonLabelWithFilters | node                             |         | Show a different button label if no content is in the table matching the filters                                                                    |
-| table.loadingState                      | object                           |         |                                                                                                                                                     |
+| table.errorState                        | element                          |         | Show the table errorState element when there is any error occure                                                                                    |
+| table.loadingState                      | object                           |         |
 | table.loadingState.isLoading            | bool                             |         | If the table is currently loading                                                                                                                   |
 | table.loadingState.rowCount             | number                           |         | The number of rows loaded                                                                                                                           |
 
@@ -912,6 +914,7 @@ the following props:
 | table.onColumnSelectionConfig   | func   |         |                                                                                                                                                                                                                 |
 | table.onColumnResize            | func   |         |                                                                                                                                                                                                                 |
 | table.onOverflowItemClicked     | func   |         |                                                                                                                                                                                                                 |
+| table.onTableErrorStateAction   | func   |         | callback action relavent on error state. This can be used with `error` message. When `view.table.errorState` property is used then this callback function has no effect.                                        |
 | onUserViewModified              | func   |         | callback for actions relevant for view management                                                                                                                                                               |
 
 ### i18n Prop

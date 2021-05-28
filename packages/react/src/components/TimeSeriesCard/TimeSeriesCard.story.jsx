@@ -1293,3 +1293,60 @@ export const Locale = () => {
 Locale.story = {
   name: 'locale',
 };
+
+export const Thresholds = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing05 + 4,
+      }}
+    >
+      <TimeSeriesCard
+        {...commonProps}
+        title={text('title', 'Pressure')}
+        isLoading={boolean('isLoading', false)}
+        isExpanded={boolean('isExpanded', false)}
+        isEditable
+        content={object('content-thresholds', {
+          series: [
+            {
+              label: 'Pressure',
+              dataSourceId: 'pressure',
+              color: text('color', COLORS.MAGENTA),
+            },
+          ],
+          unit: 'm/sec',
+          xLabel: 'Time',
+          yLabel: 'Pressure',
+          includeZeroOnXaxis: true,
+          includeZeroOnYaxis: true,
+          timeDataSourceId: 'timestamp',
+          addSpaceOnEdges: 1,
+          thresholds: [
+            {
+              axis: 'y',
+              value: 100,
+              fillColor: 'red',
+              label: 'Alert 1',
+            },
+            { axis: 'y', value: -1, fillColor: 'yellow', label: 'Alert 2' },
+          ],
+        })}
+        interval="day"
+        breakpoint="lg"
+        showTimeInGMT={boolean('showTimeInGMT', false)}
+        size={size}
+        onCardAction={action('onCardAction')}
+        i18n={{
+          tooltipGroupLabel: 'Translated Group',
+        }}
+      />
+    </div>
+  );
+};
+
+Thresholds.story = {
+  name: 'thresholds',
+};
