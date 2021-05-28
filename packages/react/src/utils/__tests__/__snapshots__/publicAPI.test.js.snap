@@ -7426,6 +7426,7 @@ Map {
       "i18n": Object {
         "closeText": "Close",
         "openText": "Open",
+        "sideNavLabelText": "Side navigation",
       },
       "isSideNavExpanded": false,
     },
@@ -7440,6 +7441,9 @@ Map {
               "type": "string",
             },
             "openText": Object {
+              "type": "string",
+            },
+            "sideNavLabelText": Object {
               "type": "string",
             },
           },
@@ -7889,6 +7893,9 @@ Map {
                     "type": "string",
                   },
                   "openText": Object {
+                    "type": "string",
+                  },
+                  "sideNavLabelText": Object {
                     "type": "string",
                   },
                 },
