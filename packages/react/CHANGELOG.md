@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.14...v2.146.0-next.15) (2021-05-28)
+
+
+### Bug Fixes
+
+* **image-controls:** fix styling of minimize icon ([90e539a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/90e539ac6538cf1e1a25de9ac9d582df8224095f))
+* **image-hotspots:** change onPan to showOnPan for clarity ([a472c72](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a472c725c0eaed755f21435f8e2a3573cb4131d1))
+* **table:** fix single select storybook example ([ed33842](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ed338420f2e1668e724f1e0b3a81a01010a9cc98))
+
+
+### Features
+
+* **image-hotspots:** add minimapBehavior prop for better control ([219def7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/219def70caf5ed2ef2cd5902568b62bad4faef9f))
+* **table:** improve nested row selections ([b3fb9f2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b3fb9f24a3e462445607a0b2956874dad0fdf6de)), closes [#124](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/124)
+
+
+
+
+
 # [2.146.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.13...v2.146.0-next.14) (2021-05-27)
 
 **Note:** Version bump only for package carbon-addons-iot-react
