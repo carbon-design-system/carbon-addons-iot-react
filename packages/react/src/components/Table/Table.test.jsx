@@ -9,7 +9,7 @@ import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
 
-import { getTableColumns, mockActions } from './Table.test.helpers';
+import { getTableColumns, mockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
 import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import EmptyTable from './EmptyTable/EmptyTable';
@@ -1135,184 +1135,439 @@ describe('Table', () => {
     expect(screen.queryAllByTestId('table-head--overflow').length).toBe(5);
   });
 
-  it('automatically checks "select all" if all rows are selected', () => {
-    const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map((row) => row.id);
-    const { rerender } = render(
-      <Table
-        id="tableid1"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: { selectedIds },
-        }}
-      />
-    );
+  describe('Row selection', () => {
+    const getTableColumns = () => [
+      {
+        id: 'string',
+        name: 'String',
+        isSortable: false,
+      },
+    ];
 
-    const selectAllCheckbox = screen.getByLabelText('Select all items');
-    expect(selectAllCheckbox).toBeInTheDocument();
-    expect(selectAllCheckbox).toHaveProperty('checked', true);
+    it('selects all child rows when a parent row is selected', () => {
+      const onRowSelectedMock = jest.fn();
+      render(
+        <Table
+          columns={getTableColumns()}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: [],
+              expandedIds: ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'],
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
 
-    rerender(
-      <Table
-        id="tableid2"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: { selectedIds: selectedIds.slice(1, 5) },
-        }}
-      />
-    );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
-  });
+      const row0Checkbox = screen.getAllByLabelText(i18nDefault.selectRowAria)[
+        getNestedRowIds().indexOf('row-0')
+      ];
+      fireEvent.click(row0Checkbox);
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-0', true, [
+        'row-0',
+        'row-0_A',
+        'row-0_B',
+      ]);
 
-  it('overrides automatic "select all" check if "isSelectAllSelected" is used', () => {
-    const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map((row) => row.id);
-    const { rerender } = render(
-      <Table
-        id="tableid1"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: {
-            selectedIds: selectedIds.slice(1, 5),
-            isSelectAllSelected: true,
-          },
-        }}
-      />
-    );
+      const row1Checkbox = screen.getAllByLabelText(i18nDefault.selectRowAria)[
+        getNestedRowIds().indexOf('row-1')
+      ];
+      fireEvent.click(row1Checkbox);
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-1', true, [
+        'row-1',
+        'row-1_A',
+        'row-1_B',
+        'row-1_B-1',
+        'row-1_B-2',
+        'row-1_B-2-A',
+        'row-1_B-2-B',
+        'row-1_B-3',
+        'row-1_C',
+        'row-1_D',
+        'row-1_D-1',
+        'row-1_D-2',
+        'row-1_D-3',
+      ]);
+    });
 
-    const selectAllCheckbox = screen.getByLabelText('Select all items');
-    expect(selectAllCheckbox).toBeInTheDocument();
-    expect(selectAllCheckbox).toHaveProperty('checked', true);
+    it('selects the parent if all child rows are selected', () => {
+      const onRowSelectedMock = jest.fn();
+      const { rerender } = render(
+        <Table
+          columns={getTableColumns()}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: ['row-0_A'],
+              expandedIds: ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'],
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
 
-    rerender(
-      <Table
-        id="tableid2"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: { selectedIds, isSelectAllSelected: false },
-        }}
-      />
-    );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
-  });
+      fireEvent.click(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[getNestedRowIds().indexOf('row-0_B')]
+      );
 
-  it('automatically marks "select all" as Indeterminate if some but not all rows are selected', () => {
-    const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map((row) => row.id);
-    const onApplyBatchAction = jest.fn();
-    const { rerender } = render(
-      <Table
-        id="tableid1"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: { selectedIds: selectedIds.slice(1, 5) },
-          toolbar: {
-            batchActions: [
-              {
-                id: 'test-batch-action',
-                labelText: 'test batch action',
-                iconDescription: 'test batch action',
-              },
-            ],
-          },
-        }}
-        actions={{
-          toolbar: {
-            onApplyBatchAction,
-          },
-        }}
-      />
-    );
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-0_B', true, [
+        'row-0',
+        'row-0_A',
+        'row-0_B',
+      ]);
 
-    const selectAllCheckbox = screen.getByLabelText('Select all items');
-    expect(selectAllCheckbox).toBeInTheDocument();
-    expect(selectAllCheckbox).toHaveProperty('indeterminate', true);
+      rerender(
+        <Table
+          columns={getTableColumns()}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: [
+                'row-1_A',
+                'row-1_B-1',
+                'row-1_B-2-B',
+                'row-1_B-3',
+                'row-1_C',
+                'row-1_D',
+                'row-1_D-1',
+                'row-1_D-2',
+                'row-1_D-3',
+              ],
+              expandedIds: ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'],
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
 
-    // add extra check to ensure onApplyBatchAction is called correctly to help
-    // us meet test requirements.
-    const alertAction = screen.getByRole('button', { name: 'test batch action' });
-    expect(alertAction).toBeVisible();
-    userEvent.click(alertAction);
-    expect(onApplyBatchAction).toHaveBeenCalledWith('test-batch-action');
+      fireEvent.click(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[
+          getNestedRowIds().indexOf('row-1_B-2-A')
+        ]
+      );
 
-    rerender(
-      <Table
-        id="tableid2"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: { selectedIds },
-        }}
-      />
-    );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
-  });
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-1_B-2-A', true, [
+        'row-1',
+        'row-1_A',
+        'row-1_B',
+        'row-1_B-1',
+        'row-1_B-2',
+        'row-1_B-2-A',
+        'row-1_B-2-B',
+        'row-1_B-3',
+        'row-1_C',
+        'row-1_D',
+        'row-1_D-1',
+        'row-1_D-2',
+        'row-1_D-3',
+      ]);
+    });
 
-  it('overrides automatically indeterminate state for "select all" if "isSelectAllSelected" or "isSelectAllIndeterminate" is used', () => {
-    const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map((row) => row.id);
-    const selectionThatWouldCauseAnIndeterminateState = selectedIds.slice(1, 5);
-    const { rerender } = render(
-      <Table
-        id="tableid1"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: {
-            selectedIds: selectionThatWouldCauseAnIndeterminateState,
-            isSelectAllSelected: false,
-          },
-        }}
-      />
-    );
+    it('deselects all child rows and parent rows when a row is deselected', () => {
+      const onRowSelectedMock = jest.fn();
+      const allRows = getNestedRows();
+      const row0AndChildren = ['row-0', 'row-0_A', 'row-0_B'];
+      const row1AndChildren = [
+        'row-1',
+        'row-1_A',
+        'row-1_B',
+        'row-1_B-1',
+        'row-1_B-2',
+        'row-1_B-2-A',
+        'row-1_B-2-B',
+        'row-1_B-3',
+        'row-1_C',
+        'row-1_D',
+        'row-1_D-1',
+        'row-1_D-2',
+        'row-1_D-3',
+      ];
+      const expandedIds = ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'];
+      const { rerender } = render(
+        <Table
+          columns={getTableColumns()}
+          data={allRows}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: [...row0AndChildren, ...row1AndChildren],
+              expandedIds,
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
 
-    const selectAllCheckbox = screen.getByLabelText('Select all items');
-    expect(selectAllCheckbox).toBeInTheDocument();
-    expect(selectAllCheckbox).toHaveProperty('indeterminate', false);
+      const row0Checkbox = screen.getAllByLabelText(i18nDefault.selectRowAria)[
+        getNestedRowIds().indexOf('row-0')
+      ];
+      fireEvent.click(row0Checkbox);
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-0', false, [...row1AndChildren]);
 
-    rerender(
-      <Table
-        id="tableid2"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: {
-            selectedIds: selectionThatWouldCauseAnIndeterminateState,
-            isSelectAllSelected: true,
-          },
-        }}
-      />
-    );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+      rerender(
+        <Table
+          columns={tableColumns}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: [...row1AndChildren],
+              expandedIds,
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
 
-    rerender(
-      <Table
-        id="tableid3"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: {
-            selectedIds: selectionThatWouldCauseAnIndeterminateState,
-            isSelectAllIndeterminate: false,
-          },
-        }}
-      />
-    );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+      const row1BCheckbox = screen.getAllByLabelText(i18nDefault.selectRowAria)[
+        getNestedRowIds().indexOf('row-1_B')
+      ];
+      fireEvent.click(row1BCheckbox);
+
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-1_B', false, [
+        'row-1_A',
+        'row-1_C',
+        'row-1_D',
+        'row-1_D-1',
+        'row-1_D-2',
+        'row-1_D-3',
+      ]);
+    });
+
+    it('shows selected as indeterminate if some but not all children are selected', () => {
+      const onRowSelectedMock = jest.fn();
+      render(
+        <Table
+          columns={getTableColumns()}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: ['row-0_B', 'row-1_B-2-B'],
+              expandedIds: ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'],
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
+      expect(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[getNestedRowIds().indexOf('row-0')]
+      ).toBePartiallyChecked();
+      expect(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[getNestedRowIds().indexOf('row-1')]
+      ).toBePartiallyChecked();
+      expect(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[getNestedRowIds().indexOf('row-1_B')]
+      ).toBePartiallyChecked();
+      expect(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[getNestedRowIds().indexOf('row-1_B-2')]
+      ).toBePartiallyChecked();
+    });
+
+    it('new selection replaces previous in single hasRowSelection mode', () => {
+      const onRowSelectedMock = jest.fn();
+      const initialSelection = ['row-0'];
+      render(
+        <Table
+          columns={getTableColumns()}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'single', hasRowNesting: false }}
+          view={{
+            table: {
+              selectedIds: initialSelection,
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
+      const row1 = screen.getByText('row-1');
+      fireEvent.click(row1);
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-1', true, ['row-1']);
+    });
+
+    it('automatically checks "select all" if all rows are selected', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const { rerender } = render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds },
+          }}
+        />
+      );
+
+      const selectAllCheckbox = screen.getByLabelText('Select all items');
+      expect(selectAllCheckbox).toBeInTheDocument();
+      expect(selectAllCheckbox).toHaveProperty('checked', true);
+
+      rerender(
+        <Table
+          id="tableid2"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds: selectedIds.slice(1, 5) },
+          }}
+        />
+      );
+      expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+    });
+
+    it('overrides automatic "select all" check if "isSelectAllSelected" is used', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const { rerender } = render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: {
+              selectedIds: selectedIds.slice(1, 5),
+              isSelectAllSelected: true,
+            },
+          }}
+        />
+      );
+
+      const selectAllCheckbox = screen.getByLabelText('Select all items');
+      expect(selectAllCheckbox).toBeInTheDocument();
+      expect(selectAllCheckbox).toHaveProperty('checked', true);
+
+      rerender(
+        <Table
+          id="tableid2"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds, isSelectAllSelected: false },
+          }}
+        />
+      );
+      expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+    });
+
+    it('automatically marks "select all" as Indeterminate if some but not all rows are selected', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const onApplyBatchAction = jest.fn();
+      const { rerender } = render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds: selectedIds.slice(1, 5) },
+            toolbar: {
+              batchActions: [
+                {
+                  id: 'test-batch-action',
+                  labelText: 'test batch action',
+                  iconDescription: 'test batch action',
+                },
+              ],
+            },
+          }}
+          actions={{
+            toolbar: {
+              onApplyBatchAction,
+            },
+          }}
+        />
+      );
+
+      const selectAllCheckbox = screen.getByLabelText('Select all items');
+      expect(selectAllCheckbox).toBeInTheDocument();
+      expect(selectAllCheckbox).toHaveProperty('indeterminate', true);
+
+      // add extra check to ensure onApplyBatchAction is called correctly to help
+      // us meet test requirements.
+      const alertAction = screen.getByRole('button', { name: 'test batch action' });
+      expect(alertAction).toBeVisible();
+      userEvent.click(alertAction);
+      expect(onApplyBatchAction).toHaveBeenCalledWith('test-batch-action');
+
+      rerender(
+        <Table
+          id="tableid2"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds },
+          }}
+        />
+      );
+      expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+    });
+
+    it('overrides automatically indeterminate state for "select all" if "isSelectAllSelected" or "isSelectAllIndeterminate" is used', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const selectionThatWouldCauseAnIndeterminateState = selectedIds.slice(1, 5);
+      const { rerender } = render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: {
+              selectedIds: selectionThatWouldCauseAnIndeterminateState,
+              isSelectAllSelected: false,
+            },
+          }}
+        />
+      );
+
+      const selectAllCheckbox = screen.getByLabelText('Select all items');
+      expect(selectAllCheckbox).toBeInTheDocument();
+      expect(selectAllCheckbox).toHaveProperty('indeterminate', false);
+
+      rerender(
+        <Table
+          id="tableid2"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: {
+              selectedIds: selectionThatWouldCauseAnIndeterminateState,
+              isSelectAllSelected: true,
+            },
+          }}
+        />
+      );
+      expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+
+      rerender(
+        <Table
+          id="tableid3"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: {
+              selectedIds: selectionThatWouldCauseAnIndeterminateState,
+              isSelectAllIndeterminate: false,
+            },
+          }}
+        />
+      );
+      expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+    });
   });
 
   describe('Foot', () => {

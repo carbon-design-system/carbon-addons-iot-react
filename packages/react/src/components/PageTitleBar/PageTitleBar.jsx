@@ -67,6 +67,8 @@ const PageTitleBarPropTypes = {
 
   /** Content rendered beneath title bar */
   content: PropTypes.node,
+  /** Callback to allow custom rendering of the title, it is called back with the title property */
+  renderTitleFunction: PropTypes.func,
 };
 
 const defaultProps = {
@@ -88,12 +90,14 @@ const defaultProps = {
   isLoading: false,
   tabs: undefined,
   content: undefined,
+  renderTitleFunction: undefined,
   headerMode: HEADER_MODES.STATIC,
   stickyHeaderOffset: 48, // default to 3rem to stick to the bottom of the suite header
 };
 
 const PageTitleBar = ({
   title,
+  renderTitleFunction,
   description,
   className,
   rightContent,
@@ -194,6 +198,7 @@ const PageTitleBar = ({
             size="field"
             hasIconOnly
             renderIcon={Edit16}
+            title={editIconDescription}
             iconDescription={editIconDescription}
             tooltipAlignment="center"
             tooltipPosition="bottom"
@@ -281,7 +286,7 @@ const PageTitleBar = ({
             ) : null}
             <div className="page-title-bar-title" ref={titleRef}>
               <div className="page-title-bar-title--text">
-                <h2 title={title}>{title}</h2>
+                {!renderTitleFunction ? <h2 title={title}>{title}</h2> : renderTitleFunction(title)}
                 {titleActions}
               </div>
             </div>

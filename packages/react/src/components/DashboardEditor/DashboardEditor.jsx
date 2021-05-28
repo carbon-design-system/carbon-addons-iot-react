@@ -65,8 +65,8 @@ const propTypes = {
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
   /** if provided, renders node underneath the header and above the dashboard grid */
   notification: PropTypes.node,
-  /** if provided, renders edit button next to title linked to this callback */
-  onEditTitle: PropTypes.func,
+  /** if provided, renders edit button next to title */
+  isTitleEditable: PropTypes.bool,
   /** if provided, returns an array of strings which are the dataItems to be allowed
    * on each card
    * getValidDataItems(card, selectedTimeRange)
@@ -150,6 +150,9 @@ const propTypes = {
     layoutInfoXl: PropTypes.string,
     layoutInfoLg: PropTypes.string,
     layoutInfoMd: PropTypes.string,
+    dashboardTitleLabel: PropTypes.string,
+    requiredMessage: PropTypes.string,
+    saveTitleButton: PropTypes.string,
 
     // card stirngs
     noDataLabel: PropTypes.string,
@@ -297,7 +300,7 @@ const defaultProps = {
   headerBreadcrumbs: null,
   notification: null,
   title: '',
-  onEditTitle: null,
+  isTitleEditable: null,
   getValidDataItems: null,
   getValidTimeRanges: null,
   availableImages: [],
@@ -340,6 +343,9 @@ const defaultProps = {
     layoutInfoMd: 'Edit dashboard at medium layout (673 - 1056px)',
     layoutInfoSm: 'Edit dashboard at small layout (481 - 672px)',
     searchPlaceHolderText: 'Enter a value',
+    dashboardTitleLabel: 'Dashboard title',
+    requiredMessage: 'Required',
+    saveTitleButton: 'Save title',
   },
   locale: 'en',
   dataSeriesItemLinks: null,
@@ -373,7 +379,6 @@ const DashboardEditor = ({
   onCardChange,
   onLayoutChange,
   onCardJsonPreview,
-  onEditTitle,
   onImport,
   onExport,
   onDelete,
@@ -389,6 +394,7 @@ const DashboardEditor = ({
   i18n,
   locale,
   dataSeriesItemLinks,
+  isTitleEditable,
   icons,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
@@ -567,6 +573,10 @@ const DashboardEditor = ({
     },
     [dashboardJson.cards, handleOnCardChange, selectedCardId]
   );
+  const handleEditTitle = useCallback(
+    (newTitle) => setDashboardJson((oldJSON) => ({ ...oldJSON, title: newTitle })),
+    []
+  );
 
   return isLoading ? (
     <div className={baseClassName}>
@@ -585,9 +595,8 @@ const DashboardEditor = ({
           renderHeader()
         ) : (
           <DashboardEditorHeader
-            title={title}
+            title={dashboardJson?.title || title}
             breadcrumbs={headerBreadcrumbs}
-            onEditTitle={onEditTitle}
             onImport={onImport}
             onExport={() => onExport(dashboardJson, imagesToUpload)}
             onDelete={onDelete}
@@ -596,6 +605,7 @@ const DashboardEditor = ({
             isSubmitDisabled={isSubmitDisabled}
             isSubmitLoading={isSubmitLoading}
             i18n={mergedI18n}
+            onEditTitle={isTitleEditable && handleEditTitle}
             dashboardJson={dashboardJson}
             selectedBreakpointIndex={selectedBreakpointIndex}
             setSelectedBreakpointIndex={setSelectedBreakpointIndex}
