@@ -177,7 +177,6 @@ export const Default = () => (
       headerEditTitleButton: 'Edit title updated',
     }}
     onAddImage={action('onAddImage')}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -380,7 +379,6 @@ export const WithInitialValue = () => (
         ],
       },
     }}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -411,6 +409,12 @@ export const WithInitialValue = () => (
 
 WithInitialValue.story = {
   name: 'with initialValue',
+};
+
+export const WithEditableTitle = () => <DashboardEditor title="Custom dashboard" isTitleEditable />;
+
+WithEditableTitle.story = {
+  namd: 'with editable title',
 };
 
 export const SummaryDashboardWithInitialValue = () => (
@@ -581,7 +585,6 @@ export const SummaryDashboardWithInitialValue = () => (
           ],
         },
       }}
-      onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
       onExport={action('onExport')}
       onDelete={action('onDelete')}
@@ -651,7 +654,6 @@ export const WithCustomOnCardChange = () => (
       ],
       layouts: {},
     }}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -691,7 +693,6 @@ export const WithNotifications = () => (
     isSubmitDisabled={boolean('isSubmitDisabled', false)}
     isSubmitLoading={boolean('isSubmitLoading', false)}
     title={text('title', 'My dashboard')}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -748,7 +749,6 @@ export const WithBreakpointSwitcher = () => (
       isSubmitLoading={boolean('isSubmitLoading', false)}
       title={text('title', 'My dashboard')}
       onAddImage={action('onAddImage')}
-      onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
       onExport={action('onExport')}
       onDelete={action('onDelete')}
@@ -815,7 +815,6 @@ export const CustomCardPreviewRenderer = () => (
       ],
       layouts: {},
     })}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -908,7 +907,6 @@ export const I18N = () => (
     dataItems={mockDataItems}
     availableImages={images}
     onAddImage={action('onAddImage')}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -1349,7 +1347,6 @@ export const WithCustomCards = () => {
       }}
       icons={{ CUSTOM1: <DataScientistIcon />, CUSTOM2: <EmptystateDefaultIcon /> }}
       onAddImage={action('onAddImage')}
-      onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
       onExport={action('onExport')}
       onDelete={action('onDelete')}
