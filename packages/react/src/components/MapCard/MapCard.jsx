@@ -51,7 +51,7 @@ const MapCard = ({
   children,
   mapContainerRef,
   availableActions,
-  size = CARD_SIZES.LARGEWIDE,
+  size,
   mapControls,
   isResizable,
   isExpanded,
