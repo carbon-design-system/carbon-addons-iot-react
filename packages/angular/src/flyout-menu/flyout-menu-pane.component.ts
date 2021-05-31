@@ -81,6 +81,11 @@ export class FlyoutMenuPane extends Dialog {
     return this._offset;
   }
   public hasContentTemplate = true;
+  /**
+   * Sets the role of the tooltip. If there's no focusable content we leave it as a `tooltip`,
+   * if there _is_ focusable content we switch to the interactive `dialog` role.
+   */
+  public role = 'tooltip';
   @Input() buttonLabel = this.i18n.get().OVERFLOW_MENU.OVERFLOW;
 
   @Input() light = false;
