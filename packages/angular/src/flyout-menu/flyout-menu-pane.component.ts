@@ -29,8 +29,6 @@ import { I18n } from 'carbon-components-angular/i18n';
  *	options
  * </ai-flyout-menu-pane>
  * ```
- *
- * <example-url>../../iframe.html?id=components-flyout-menu--basic</example-url>
  */
 @Component({
   selector: 'ai-flyout-menu-pane',
