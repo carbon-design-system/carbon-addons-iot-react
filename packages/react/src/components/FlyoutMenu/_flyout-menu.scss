@@ -261,7 +261,7 @@ $shadow: 0.4rem;
   }
 
   .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light) & {
-    background-color: transparent;
+    background-color: $ui-01;
   }
 
   .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__open) &:hover {
