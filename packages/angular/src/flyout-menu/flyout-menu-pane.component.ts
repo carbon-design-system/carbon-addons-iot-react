@@ -128,7 +128,7 @@ export class FlyoutMenuPane extends Dialog {
       let topFix =
         (closestRel ? closestRel.getBoundingClientRect().top * -1 : 0) -
         chevronHeight / 2 +
-        1.5 * borderWidth;
+        1 * borderWidth;
       const leftFix = closestRel ? closestRel.getBoundingClientRect().left * -1 : 0;
 
       if (this.dialogConfig.placement === 'top') {
