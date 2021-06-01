@@ -29,7 +29,23 @@ const propTypes = {
   /** optional features to enable or disable */
   hideZoomControls: PropTypes.bool,
   hideHotspots: PropTypes.bool,
-  hideMinimap: PropTypes.bool,
+  /* deprecated in favor of minimapBehavior below */
+  // eslint-disable-next-line consistent-return
+  hideMinimap: (props, propName, componentName) => {
+    if (__DEV__) {
+      const value = props[propName];
+      /* istanbul ignore else */
+      if (typeof value !== 'undefined') {
+        return new Error(
+          `${componentName}: '${propName}' prop is deprecated in favor of 'minimapBehavior="${
+            value ? 'hide' : 'show'
+          }"'.`
+        );
+      }
+    }
+  },
+  /* 'hide' always hides the minimap, 'show' always shows the minimap, 'showOnPan' only shows the minimap when panning an image */
+  minimapBehavior: PropTypes.oneOf(['hide', 'show', 'showOnPan']),
   /** when true activates mouse event based create & select hotspot fuctionality */
   isEditable: PropTypes.bool,
   isHotspotDataLoading: PropTypes.bool,
@@ -81,7 +97,9 @@ const defaultProps = {
   alt: null,
   hideZoomControls: false,
   hideHotspots: false,
-  hideMinimap: false,
+  /* @deprecated in favor of minimapBehavior */
+  hideMinimap: undefined,
+  minimapBehavior: 'showOnPan',
   isHotspotDataLoading: false,
   isEditable: false,
   onAddHotspotPosition: () => {},
@@ -117,6 +135,7 @@ export const prepareDrag = (event, cursor, setCursor) => {
 export const startDrag = (event, element, cursor, setCursor) => {
   const cursorX = event.clientX;
   const cursorY = event.clientY;
+  /* istanbul ignore else */
   if (element === 'image') {
     setCursor({
       ...cursor,
@@ -394,6 +413,7 @@ const ImageHotspots = ({
   hideZoomControls: hideZoomControlsProp,
   hideHotspots: hideHotspotsProp,
   hideMinimap: hideMinimapProp,
+  minimapBehavior,
   hotspots,
   i18n,
   background,
@@ -430,7 +450,7 @@ const ImageHotspots = ({
   const [options, setOptions] = useState({
     hideZoomControls: hideZoomControlsProp,
     hideHotspots: hideHotspotsProp,
-    hideMinimap: hideMinimapProp,
+    hideMinimap: minimapBehavior !== 'show',
   });
 
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
@@ -461,9 +481,9 @@ const ImageHotspots = ({
     setOptions({
       hideZoomControls: hideZoomControlsProp,
       hideHotspots: hideHotspotsProp,
-      hideMinimap: hideMinimapProp,
+      hideMinimap: minimapBehavior !== 'show',
     });
-  }, [hideZoomControlsProp, hideHotspotsProp, hideMinimapProp]);
+  }, [hideZoomControlsProp, hideHotspotsProp, minimapBehavior]);
 
   const orientation = width > height ? 'landscape' : 'portrait';
   const ratio = orientation === 'landscape' ? width / height : height / width;
@@ -753,7 +773,7 @@ const ImageHotspots = ({
           minimap={{ ...minimap, src }}
           draggable={draggable}
           dragging={dragging}
-          hideMinimap={!dragging || hideMinimap}
+          hideMinimap={minimapBehavior === 'showOnPan' ? !dragging || hideMinimapProp : hideMinimap}
           onZoomToFit={() =>
             zoom(1, zoomMax, container, image, setImage, minimap, setMinimap, options, setOptions)
           }
