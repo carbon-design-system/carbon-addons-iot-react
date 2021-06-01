@@ -19,6 +19,7 @@ import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import { OverflowMenu, OverflowMenuItem } from '../../../index';
+import { usePrevious } from '../../../hooks/usePrevious';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -296,11 +297,15 @@ const TableHead = ({
     useAutoTableLayoutForResize,
   ]);
 
+  const previousColumns = usePrevious(columns);
+  const previousOrdering = usePrevious(ordering);
   useEffect(
     () => {
       // We need to update the currentColumnWidths (state) after the initial render
       // only if the widths of the column prop is updated or columns are added/removed .
-      if (hasResize && columns.length && !isEmpty(currentColumnWidths)) {
+      const externallyModified =
+        !isEqual(columns, previousColumns) || !isEqual(ordering, previousOrdering);
+      if (hasResize && columns.length && !isEmpty(currentColumnWidths) && externallyModified) {
         checkColumnWidthFormat(columns);
 
         const removedColumnIDs = getIDsOfRemovedColumns(ordering, currentColumnWidths);
@@ -328,7 +333,7 @@ const TableHead = ({
     // since it would be directly overridden by the column props. This effect can be removed
     // with issue https://github.com/IBM/carbon-addons-iot-react/issues/1224
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [hasResize, columns, ordering]
+    [hasResize, columns, ordering, previousColumns]
   );
 
   const lastVisibleColumn = ordering.filter((col) => !col.isHidden).slice(-1)[0];
