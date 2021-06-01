@@ -1,0 +1,69 @@
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { CustomDateTimeSelection, DateRange, RelativeRange } from './date-time-picker.component';
+
+@Component({
+  selector: 'ai-custom-date-time',
+  template: `
+    <div class="bx--form-item" *ngIf="hasRelative && hasAbsolute">
+      <fieldset class="bx--fieldset">
+        <legend class="bx--label">Custom range</legend>
+        <ibm-radio-group [(ngModel)]="mode">
+          <ibm-radio value="relative">Relative</ibm-radio>
+          <ibm-radio value="absolute">Absolute</ibm-radio>
+        </ibm-radio-group>
+      </fieldset>
+    </div>
+    <!-- relative picker -->
+    <ai-date-time-relative
+      *ngIf="mode === 'relative' && hasRelative"
+      (valueChange)="relativeChange($event)"
+      [value]="value"
+    >
+    </ai-date-time-relative>
+    <ai-date-time-absolute
+      *ngIf="mode === 'absolute' && hasAbsolute"
+      (valueChange)="absoluteChange($event)"
+      [value]="value"
+    >
+    </ai-date-time-absolute>
+  `,
+})
+export class CustomDateTimeComponent implements OnChanges {
+  mode: 'relative' | 'absolute' = 'relative';
+  value = [];
+  @Input() range: CustomDateTimeSelection = null;
+  @Input() hasRelative = true;
+  @Input() hasAbsolute = true;
+  @Output() rangeChange: EventEmitter<CustomDateTimeSelection> = new EventEmitter();
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes?.range?.currentValue) {
+      const [type, start, end, relativeConfig] = changes.range.currentValue;
+      if (type === 'RELATIVE') {
+        this.mode = 'relative';
+        this.value = [start, end, relativeConfig];
+      }
+      if (type === 'ABSOLUTE') {
+        this.mode = 'absolute';
+        this.value = [start, end];
+      }
+    }
+
+    if (changes?.hasRelative?.currentValue === false) {
+      this.mode = 'absolute';
+    }
+
+    if (changes?.hasAbsolute?.currentValue === false) {
+      this.mode = 'relative';
+    }
+  }
+
+  relativeChange(change: [Date, Date, RelativeRange]) {
+    this.rangeChange.emit(['RELATIVE', ...change]);
+  }
+
+  absoluteChange(change: DateRange) {
+    console.log(change);
+    this.rangeChange.emit(['ABSOLUTE', ...change]);
+  }
+}

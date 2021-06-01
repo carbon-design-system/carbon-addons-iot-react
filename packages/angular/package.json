@@ -101,6 +101,7 @@
     "@ai-apps/styles": "^2.145.1-next.0",
     "@carbon/icons": "10.20.0",
     "@carbon/telemetry": "0.0.0-alpha.6",
+    "date-fns": "^2.22.1",
     "flatpickr": "4.6.1"
   }
 }
