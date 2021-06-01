@@ -13,14 +13,12 @@
     },
     {
       "type": "node",
-      "runtimeVersion": "14.4.0",
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/lib/index.js"
     },
     {
       "type": "node",
-      "runtimeVersion": "14.4.0",
       "request": "launch",
       "name": "Jest All",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
@@ -28,7 +26,9 @@
         "NODE_ICU_DATA": "node_modules/full-icu",
         "TZ": "America/Chicago"
       },
-      "args": ["--runInBand"],
+      "args": [
+        "--runInBand"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
@@ -38,11 +38,15 @@
     },
     {
       "type": "node",
-      "runtimeVersion": "14.4.0",
       "request": "launch",
       "name": "Jest Current File",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
-      "args": ["${relativeFile}", "--config", "jest.config.js"],
+      "args": [
+        "${relativeFile}",
+        "--config",
+        "jest.config.js",
+        "--detectOpenHandles"
+      ],
       "cwd": "${workspaceFolder}/packages/react",
       "env": {
         "NODE_ICU_DATA": "node_modules/full-icu",
