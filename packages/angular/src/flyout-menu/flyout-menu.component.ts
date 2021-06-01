@@ -43,17 +43,15 @@ import { Filter16 } from '@carbon/icons';
         aria-label="Helpful description"
         data-testid="flyout-menu-button"
         tabindex="0"
+        ibmButton="ghost"
+        iconOnly="true"
         class="
         iot--flyout-menu--trigger-button
         iot--btn
-        bx--btn
-        bx--btn--ghost
-        bx--btn--icon-only
         bx--tooltip__trigger
         bx--tooltip--a11y
         bx--tooltip--top
         bx--tooltip--align-center"
-        type="button"
       >
         <svg ibmIcon="filter" size="16" class="bx--overflow-menu__icon"></svg>
       </button>
