@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.17...v2.146.0-next.18) (2021-06-01)
+
+
+### Features
+
+* **dashboard-editor:** add get-default-card prop to editor ([7c656f5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7c656f50ded051775e076a4491da156d02f15887))
+
+
+
+
+
 # [2.146.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.16...v2.146.0-next.17) (2021-05-28)
 
 
