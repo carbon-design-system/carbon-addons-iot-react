@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.16...v2.146.0-next.17) (2021-05-28)
+
+
+### Bug Fixes
+
+* **side-nav:** remove bad props from story and component ([27706a2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/27706a27aadb29264fa94963b3bdceb23447a1fb))
+
+
+
+
+
+# [2.146.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.15...v2.146.0-next.16) (2021-05-28)
+
+
+### Bug Fixes
+
+* **dashboardtemplateeditor:** fix approach for editing title ([8f73167](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8f73167462bd2e49858d6508fd36ca8cdc76a470))
+
+
+
+
+
 # [2.146.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.14...v2.146.0-next.15) (2021-05-28)
 
 
