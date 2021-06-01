@@ -77,6 +77,10 @@ const propTypes = {
    * getValidTimeRanges(card, selectedDataItems)
    */
   getValidTimeRanges: PropTypes.func,
+  /** if provided, determines the default cardConfig for a new card when it is added
+   * getDefaultCard(cardType)
+   */
+  getDefaultCard: PropTypes.func,
   /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
@@ -303,6 +307,7 @@ const defaultProps = {
   isTitleEditable: null,
   getValidDataItems: null,
   getValidTimeRanges: null,
+  getDefaultCard: null,
   availableImages: [],
   dataItems: [],
   availableDimensions: {},
@@ -371,6 +376,7 @@ const DashboardEditor = ({
   renderIconByName,
   getValidDataItems,
   getValidTimeRanges,
+  getDefaultCard: customGetDefaultCard,
   dataItems,
   availableImages,
   headerBreadcrumbs,
@@ -459,10 +465,15 @@ const DashboardEditor = ({
    */
   const addCard = useCallback(
     (type) => {
-      // notify consumers that the card has been added if they're listening (they might want to tweak the card defaults)
-      const cardConfig = onCardChange
-        ? onCardChange(getDefaultCard(type, mergedI18n), dashboardJson)
+      const defaultCard = customGetDefaultCard // Use the default card specified by the consumer if it exists
+        ? customGetDefaultCard(type)
         : getDefaultCard(type, mergedI18n);
+
+      // notify consumers that the card has been added in onCardChange if we don't have an explicit customGetDefaultCard passed
+      const cardConfig =
+        onCardChange && !customGetDefaultCard
+          ? onCardChange(defaultCard, dashboardJson)
+          : defaultCard;
 
       // eslint-disable-next-line no-shadow
       setDashboardJson((dashboardJson) => ({
@@ -472,7 +483,7 @@ const DashboardEditor = ({
       setSelectedCardId(cardConfig.id);
       setNeedsScroll(true);
     },
-    [dashboardJson, mergedI18n, onCardChange]
+    [customGetDefaultCard, dashboardJson, mergedI18n, onCardChange]
   );
 
   /**

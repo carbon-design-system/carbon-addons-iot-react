@@ -1391,3 +1391,88 @@ export const WithCustomCards = () => {
 WithCustomCards.story = {
   name: 'With custom cards',
 };
+
+export const withGetDefaultCard = () => {
+  const renderDefaultCard = ({ cardContent }) => <h5>{cardContent || 'My custom 1 content'}</h5>;
+
+  return (
+    <DashboardEditor
+      title={text('title', 'My dashboard')}
+      getValidDataItems={() => mockDataItems}
+      dataItems={mockDataItems}
+      availableImages={images}
+      onAddImage={action('onAddImage')}
+      onEditTitle={action('onEditTitle')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      onImageDelete={action('onImageDelete')}
+      onLayoutChange={action('onLayoutChange')}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
+      availableDimensions={{
+        deviceid: ['73000', '73001', '73002'],
+        manufacturer: ['rentech', 'GHI Industries'],
+      }}
+      onCardChange={(cardConfig) => {
+        if (cardConfig.type === 'MYCUSTOMCARD') {
+          return {
+            ...cardConfig,
+            content: renderDefaultCard(cardConfig),
+          };
+        }
+        return cardConfig;
+      }}
+      getDefaultCard={(type) => {
+        switch (type) {
+          case 'MYCUSTOMCARD':
+            return {
+              id: 'custom1Id',
+              type: 'MYCUSTOMCARD',
+              title: 'My custom 1',
+              size: 'MEDIUM',
+              content: renderDefaultCard,
+              renderEditContent: (onChange, cardConfig) => [
+                {
+                  header: { title: 'Edit custom 1', tooltip: { tooltipText: 'tooltip' } },
+                  content: (
+                    <TextInput
+                      onChange={(e) => onChange({ ...cardConfig, cardContent: e.target.value })}
+                    />
+                  ),
+                },
+              ],
+            };
+          case 'MYCUSTOMCARD2':
+            return {
+              id: 'custom2Id',
+              type: 'MYCUSTOMCARD2',
+              title: 'My custom 2',
+              size: 'MEDIUMTHIN',
+              content: () => <h5>My custom 2 content</h5>,
+            };
+          default:
+            return {
+              id: 'defaultId',
+              title: 'defaultCard',
+              size: 'MEDIUM',
+              content: () => <h5>Default card</h5>,
+            };
+        }
+      }}
+      supportedCardTypes={array('supportedCardTypes', ['MYCUSTOMCARD', 'MYCUSTOMCARD2'])}
+      breakpointSwitcher={{ enabled: true }}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+      isLoading={boolean('isLoading', false)}
+    />
+  );
+};
+
+withGetDefaultCard.story = {
+  name: 'With get default card',
+};

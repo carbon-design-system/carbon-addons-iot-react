@@ -9158,6 +9158,7 @@ Map {
       "breakpointSwitcher": null,
       "dataItems": Array [],
       "dataSeriesItemLinks": null,
+      "getDefaultCard": null,
       "getValidDataItems": null,
       "getValidTimeRanges": null,
       "headerBreadcrumbs": null,
@@ -9351,6 +9352,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "getDefaultCard": Object {
+        "type": "func",
       },
       "getValidDataItems": Object {
         "type": "func",
