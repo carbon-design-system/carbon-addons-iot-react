@@ -73,13 +73,13 @@
     display: block;
     background-color: $ui-01;
     border: none;
-    border-bottom: 1px solid $carbon--gray-50;
     width: 100%;
     height: $spacing-08;
     cursor: pointer;
     color: $carbon--gray-100;
     outline: 0.125rem solid transparent;
     transition: background-color $duration--fast-01 carbon--motion(standard);
+
     .#{$iot-prefix}--date-time-picker__field {
       background: none;
       appearance: none;
@@ -94,10 +94,17 @@
       cursor: pointer;
       outline: none;
       white-space: nowrap;
+      border-bottom: 1px solid $carbon--gray-50;
+
       & > span {
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+      &:hover {
+        background-color: $hover-ui;
+      }
+
       .#{$iot-prefix}--date-time-picker__icon {
         position: absolute;
         top: 0;
@@ -108,6 +115,7 @@
         cursor: pointer;
       }
     }
+
     .#{$iot-prefix}--date-time-picker__menu {
       display: none;
       cursor: default;
