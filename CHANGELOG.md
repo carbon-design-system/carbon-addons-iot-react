@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.18...v2.146.0-next.19) (2021-06-01)
+
+
+### Bug Fixes
+
+* **tablecard:** allow row-specific and cardvariable prop ([158323d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/158323d6c7032d8a063dda88bbfdda6b259c359b))
+* **tablecard:** remove unused argument ([a0b4231](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a0b423155008a92be43db64e7800b30bfdb5235e))
+
+
+
+
+
 # [2.146.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.17...v2.146.0-next.18) (2021-06-01)
 
 
