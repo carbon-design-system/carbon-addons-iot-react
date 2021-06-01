@@ -264,10 +264,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   onClick={[Function]}
                   style={
                     Object {
+                      "alignItems": "center",
                       "background": "#fff",
                       "border": "none",
                       "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "display": "flex",
                       "height": "25px",
+                      "justifyContent": "center",
                       "width": "25px",
                     }
                   }
@@ -276,15 +279,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 >
                   +
                 </button>
-                <br />
                 <button
                   onClick={[Function]}
                   style={
                     Object {
+                      "alignItems": "center",
                       "background": "#fff",
                       "border": "none",
                       "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "display": "flex",
                       "height": "25px",
+                      "justifyContent": "center",
                       "width": "25px",
                     }
                   }
@@ -679,10 +684,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   onClick={[Function]}
                   style={
                     Object {
+                      "alignItems": "center",
                       "background": "#fff",
                       "border": "none",
                       "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "display": "flex",
                       "height": "25px",
+                      "justifyContent": "center",
                       "width": "25px",
                     }
                   }
@@ -691,15 +699,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 >
                   +
                 </button>
-                <br />
                 <button
                   onClick={[Function]}
                   style={
                     Object {
+                      "alignItems": "center",
                       "background": "#fff",
                       "border": "none",
                       "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "display": "flex",
                       "height": "25px",
+                      "justifyContent": "center",
                       "width": "25px",
                     }
                   }
@@ -1190,10 +1200,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   onClick={[Function]}
                   style={
                     Object {
+                      "alignItems": "center",
                       "background": "#fff",
                       "border": "none",
                       "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "display": "flex",
                       "height": "25px",
+                      "justifyContent": "center",
                       "width": "25px",
                     }
                   }
@@ -1202,15 +1215,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 >
                   +
                 </button>
-                <br />
                 <button
                   onClick={[Function]}
                   style={
                     Object {
+                      "alignItems": "center",
                       "background": "#fff",
                       "border": "none",
                       "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "display": "flex",
                       "height": "25px",
+                      "justifyContent": "center",
                       "width": "25px",
                     }
                   }
@@ -1323,7 +1338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               >
                 <label
                   className="bx--file-browse-btn"
-                  htmlFor="id14"
+                  htmlFor="id15"
                   onKeyDown={[Function]}
                   size="field"
                   tabIndex={0}
@@ -1336,7 +1351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                     <input
                       accept={Array []}
                       className="bx--file-input"
-                      id="id14"
+                      id="id15"
                       multiple={false}
                       onChange={[Function]}
                       onClick={[Function]}
@@ -1506,7 +1521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               >
                 <label
                   className="bx--file-browse-btn"
-                  htmlFor="id13"
+                  htmlFor="id14"
                   onKeyDown={[Function]}
                   size="field"
                   tabIndex={0}
@@ -1519,7 +1534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                     <input
                       accept={Array []}
                       className="bx--file-input"
-                      id="id13"
+                      id="id14"
                       multiple={false}
                       onChange={[Function]}
                       onClick={[Function]}

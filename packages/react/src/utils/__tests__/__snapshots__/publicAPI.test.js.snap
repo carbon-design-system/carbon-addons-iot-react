@@ -312,7 +312,13 @@ Map {
                     "isRequired": true,
                     "type": "node",
                   },
+                  "messageBody": Object {
+                    "type": "node",
+                  },
                   "messageWithFilters": Object {
+                    "type": "node",
+                  },
+                  "messageWithFiltersBody": Object {
                     "type": "node",
                   },
                 },
@@ -360,6 +366,7 @@ Map {
           "onColumnResize": [Function],
           "onColumnSelectionConfig": [Function],
           "onEmptyStateAction": null,
+          "onErrorStateAction": null,
           "onOverflowItemClicked": [Function],
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
@@ -378,8 +385,10 @@ Map {
           "onToggleFilter": [Function],
         },
       },
+      "error": null,
       "i18n": Object {
         "batchCancel": "Cancel",
+        "buttonLabelOnTableError": "Refresh the page",
         "clearAllFilters": "Clear all filters",
         "clearFilterAria": "Clear filter",
         "clearSelectionAria": "Clear selection",
@@ -417,6 +426,7 @@ Map {
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
+        "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle Aggregations",
       },
       "id": null,
@@ -538,6 +548,9 @@ Map {
                     "type": "func",
                   },
                   "onSelectAll": Object {
+                    "type": "func",
+                  },
+                  "onTableErrorStateAction": Object {
                     "type": "func",
                   },
                 },
@@ -856,6 +869,9 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "error": Object {
+        "type": "string",
       },
       "expandedData": Object {
         "args": Array [
@@ -1316,7 +1332,13 @@ Map {
                                 "isRequired": true,
                                 "type": "node",
                               },
+                              "messageBody": Object {
+                                "type": "node",
+                              },
                               "messageWithFilters": Object {
+                                "type": "node",
+                              },
+                              "messageWithFiltersBody": Object {
                                 "type": "node",
                               },
                             },
@@ -1329,6 +1351,9 @@ Map {
                       ],
                     ],
                     "type": "oneOfType",
+                  },
+                  "errorState": Object {
+                    "type": "element",
                   },
                   "expandedIds": Object {
                     "args": Array [
@@ -4671,7 +4696,9 @@ Map {
       "onEdit": Object {
         "type": "func",
       },
-      "renderTitleFunction": undefined,
+      "renderTitleFunction": Object {
+        "type": "func",
+      },
       "rightContent": [Function],
       "stickyHeaderOffset": Object {
         "type": "number",
@@ -7399,6 +7426,7 @@ Map {
       "i18n": Object {
         "closeText": "Close",
         "openText": "Open",
+        "sideNavLabelText": "Side navigation",
       },
       "isSideNavExpanded": false,
     },
@@ -7413,6 +7441,9 @@ Map {
               "type": "string",
             },
             "openText": Object {
+              "type": "string",
+            },
+            "sideNavLabelText": Object {
               "type": "string",
             },
           },
@@ -7864,6 +7895,9 @@ Map {
                   "openText": Object {
                     "type": "string",
                   },
+                  "sideNavLabelText": Object {
+                    "type": "string",
+                  },
                 },
               ],
               "type": "shape",
@@ -8131,6 +8165,8 @@ Map {
   },
   "useSuiteHeaderData" => Object {},
   "suiteHeaderData" => Object {},
+  "useUiResources" => Object {},
+  "uiresources" => Object {},
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],
@@ -9122,6 +9158,7 @@ Map {
       "breakpointSwitcher": null,
       "dataItems": Array [],
       "dataSeriesItemLinks": null,
+      "getDefaultCard": null,
       "getValidDataItems": null,
       "getValidTimeRanges": null,
       "headerBreadcrumbs": null,
@@ -9161,13 +9198,13 @@ Map {
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
       "isSummaryDashboard": false,
+      "isTitleEditable": null,
       "locale": "en",
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
       "onCardJsonPreview": null,
       "onDelete": null,
-      "onEditTitle": null,
       "onExport": null,
       "onFetchDynamicDemoHotspots": [Function],
       "onImageDelete": null,
@@ -9315,6 +9352,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "getDefaultCard": Object {
+        "type": "func",
       },
       "getValidDataItems": Object {
         "type": "func",
@@ -9715,6 +9755,9 @@ Map {
       "isSummaryDashboard": Object {
         "type": "bool",
       },
+      "isTitleEditable": Object {
+        "type": "bool",
+      },
       "locale": Object {
         "type": "string",
       },
@@ -9731,9 +9774,6 @@ Map {
         "type": "func",
       },
       "onDelete": Object {
-        "type": "func",
-      },
-      "onEditTitle": Object {
         "type": "func",
       },
       "onExport": Object {
@@ -20964,6 +21004,87 @@ Map {
       },
       "testID": Object {
         "type": "string",
+      },
+    },
+  },
+  "TearSheet" => Object {
+    "defaultProps": Object {
+      "children": undefined,
+      "className": undefined,
+      "closeAllTearSheets": undefined,
+      "description": "Description",
+      "goToPreviousSheet": undefined,
+      "headerExtraContent": null,
+      "i18n": Object {
+        "close": "Close",
+      },
+      "idx": undefined,
+      "onClose": undefined,
+      "openNextSheet": undefined,
+      "title": "Title",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "closeAllTearSheets": Object {
+        "type": "func",
+      },
+      "description": Object {
+        "type": "string",
+      },
+      "goToPreviousSheet": Object {
+        "type": "func",
+      },
+      "headerExtraContent": Object {
+        "type": "node",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "idx": Object {
+        "type": "number",
+      },
+      "onClose": Object {
+        "type": "func",
+      },
+      "openNextSheet": Object {
+        "type": "func",
+      },
+      "title": Object {
+        "type": "string",
+      },
+    },
+  },
+  "TearSheetWrapper" => Object {
+    "defaultProps": Object {
+      "children": undefined,
+      "className": undefined,
+      "isOpen": false,
+      "onCloseAllTearSheets": undefined,
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "isOpen": Object {
+        "type": "bool",
+      },
+      "onCloseAllTearSheets": Object {
+        "type": "func",
       },
     },
   },

@@ -119,9 +119,6 @@ const configureAxes = (content) => {
         formatter: (axisValue) =>
           chartValueFormatter(axisValue, newSize, null, locale, decimalPrecision),
       },
-      ...(chartType !== TIME_SERIES_TYPES.BAR
-        ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
-        : {}),
       stacked: chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
       includeZero: includeZeroOnYaxis,
       scaleType: 'linear',

@@ -228,9 +228,14 @@ const TimeSeriesCard = ({
   const previousTick = useRef();
   dayjs.locale(locale);
 
+  // Workaround since downstream consumers might keep regenerating the series object and useMemo does a direct in-memory comparison for the object
+  const objectAgnosticSeries = JSON.stringify(series);
+  const objectAgnosticThresholds = JSON.stringify(thresholds);
+
   const sampleValues = useMemo(
-    () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
-    [series, timeDataSourceId, interval, timeRange]
+    () => generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [objectAgnosticSeries, timeDataSourceId, interval, timeRange, objectAgnosticThresholds]
   );
 
   const values = useMemo(() => (isEditable ? sampleValues : valuesProp), [
@@ -417,9 +422,6 @@ const TimeSeriesCard = ({
           ...(thresholds?.some((threshold) => threshold.axis === 'y')
             ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'y') }
             : {}),
-          ...(chartType !== TIME_SERIES_TYPES.BAR
-            ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
-            : {}),
           stacked: chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
           includeZero: includeZeroOnYaxis,
           scaleType: 'linear',
@@ -532,6 +534,7 @@ const TimeSeriesCard = ({
               options={options}
               width="100%"
               height="100%"
+              key={`thresholds-key${thresholds?.length ? objectAgnosticThresholds : ''}`} // have to regen the component if thresholds change
             />
           </div>
           {isExpanded ? (
