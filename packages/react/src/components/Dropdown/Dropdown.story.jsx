@@ -84,7 +84,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'Watson IoT/Dropdown',
+  title: '1 - Watson IoT/Dropdown',
   decorators: [withKnobs],
   parameters: {
     component: Dropdown,

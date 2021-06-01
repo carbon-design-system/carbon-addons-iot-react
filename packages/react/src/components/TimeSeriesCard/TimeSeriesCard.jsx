@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useCallback } from 'react';
+import React, { useRef, useMemo, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { LineChart, StackedBarChart } from '@carbon/charts-react';
@@ -7,7 +7,7 @@ import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import capitalize from 'lodash/capitalize';
 import defaultsDeep from 'lodash/defaultsDeep';
-import useDeepCompareEffect from 'use-deep-compare-effect';
+import isEqual from 'lodash/isEqual';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import {
@@ -32,6 +32,7 @@ import {
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 import dayjs from '../../utils/dayjs';
+import { usePrevious } from '../../hooks/usePrevious';
 
 import {
   generateSampleValues,
@@ -92,6 +93,26 @@ const TimeSeriesCardPropTypes = {
     legendPosition: PropTypes.string,
     /** carbon charts legend truncation options */
     truncation: TruncationPropTypes,
+    /** if there are alerts associated with this chart (used to markup datapoints), this is a start/end set of alert ranges for each alert */
+    alertRanges: PropTypes.arrayOf(
+      PropTypes.shape({
+        endTimestamp: PropTypes.number,
+        startTimestamp: PropTypes.number,
+        /** color of the alert */
+        color: PropTypes.string,
+        /** more information about the alert */
+        details: PropTypes.string,
+      })
+    ),
+    /** set of thresholds these render dotted lines on the graph to indicate that the line values might be crossing logical thresholds */
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        axis: PropTypes.oneOf(['x', 'y']),
+        value: PropTypes.number,
+        label: PropTypes.string,
+        fillColor: PropTypes.string,
+      })
+    ),
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -199,6 +220,7 @@ const TimeSeriesCard = ({
       legendPosition,
       addSpaceOnEdges,
       truncation,
+      thresholds,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, contentWithDefaults, initialValues, others);
@@ -206,9 +228,14 @@ const TimeSeriesCard = ({
   const previousTick = useRef();
   dayjs.locale(locale);
 
+  // Workaround since downstream consumers might keep regenerating the series object and useMemo does a direct in-memory comparison for the object
+  const objectAgnosticSeries = JSON.stringify(series);
+  const objectAgnosticThresholds = JSON.stringify(thresholds);
+
   const sampleValues = useMemo(
-    () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
-    [series, timeDataSourceId, interval, timeRange]
+    () => generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [objectAgnosticSeries, timeDataSourceId, interval, timeRange, objectAgnosticThresholds]
   );
 
   const values = useMemo(() => (isEditable ? sampleValues : valuesProp), [
@@ -272,20 +299,21 @@ const TimeSeriesCard = ({
   // Set the colors for each dataset
   const colors = useMemo(() => formatColors(series), [series]);
 
-  /** This is needed to update the chart when the lines and values change */
-  useDeepCompareEffect(() => {
-    if (chartRef && chartRef.chart) {
-      const chartData = formatChartData(timeDataSourceId, series, valueSort);
-      chartRef.chart.model.setData(chartData);
-    }
-  }, [valueSort, series, timeDataSourceId]);
-
   /** This caches the chart value */
   const chartData = useMemo(() => formatChartData(timeDataSourceId, series, valueSort), [
     timeDataSourceId,
     series,
     valueSort,
   ]);
+
+  const previousChartData = usePrevious(chartData);
+
+  /** This is needed to update the chart when the lines and values change */
+  useEffect(() => {
+    if (chartRef && chartRef.chart && !isEqual(chartData, previousChartData)) {
+      chartRef.chart.model.setData(chartData);
+    }
+  }, [chartData, previousChartData]);
 
   const isChartDataEmpty = isEmpty(chartData);
 
@@ -378,6 +406,9 @@ const TimeSeriesCard = ({
             number: maxTicksPerSize,
             formatter: formatTick,
           },
+          ...(thresholds?.some((threshold) => threshold.axis === 'x')
+            ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'x') }
+            : {}),
           includeZero: includeZeroOnXaxis,
           ...(domainRange ? { domain: domainRange } : {}),
         },
@@ -388,8 +419,8 @@ const TimeSeriesCard = ({
             formatter: (axisValue) =>
               chartValueFormatter(axisValue, newSize, null, locale, decimalPrecision),
           },
-          ...(chartType !== TIME_SERIES_TYPES.BAR
-            ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
+          ...(thresholds?.some((threshold) => threshold.axis === 'y')
+            ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'y') }
             : {}),
           stacked: chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
           includeZero: includeZeroOnYaxis,
@@ -440,6 +471,7 @@ const TimeSeriesCard = ({
       xLabel,
       maxTicksPerSize,
       formatTick,
+      thresholds,
       includeZeroOnXaxis,
       domainRange,
       yLabel,
@@ -502,6 +534,7 @@ const TimeSeriesCard = ({
               options={options}
               width="100%"
               height="100%"
+              key={`thresholds-key${thresholds?.length ? objectAgnosticThresholds : ''}`} // have to regen the component if thresholds change
             />
           </div>
           {isExpanded ? (

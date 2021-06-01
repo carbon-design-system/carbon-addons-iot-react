@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableDetailWizard Stateful example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableDetailWizard Stateful example 1`] = `
 <div
   className="storybook-container"
 >
@@ -402,7 +402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableDetailWizard Static 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableDetailWizard Static 1`] = `
 <div
   className="storybook-container"
 >
@@ -800,7 +800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableDetailWizard with error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableDetailWizard with error 1`] = `
 <div
   className="storybook-container"
 >

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
-import React, { useState, useLayoutEffect, createRef, useCallback } from 'react';
+import React, { useState, useLayoutEffect, createRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
@@ -8,7 +8,6 @@ import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
 import debounce from 'lodash/debounce';
 import classnames from 'classnames';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import {
   TableColumnsPropTypes,
@@ -297,7 +296,7 @@ const TableHead = ({
     useAutoTableLayoutForResize,
   ]);
 
-  useDeepCompareEffect(
+  useEffect(
     () => {
       // We need to update the currentColumnWidths (state) after the initial render
       // only if the widths of the column prop is updated or columns are added/removed .
@@ -344,7 +343,7 @@ const TableHead = ({
       <TableRow>
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
-            testID={`${testID}-row-expansion-column`}
+            data-testid={`${testID}-row-expansion-column`}
             className={classnames({
               [`${iotPrefix}--table-expand-resize`]: hasResize,
             })}

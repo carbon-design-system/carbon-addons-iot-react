@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Custom description and public checkbox (using overrides) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Custom description and public checkbox (using overrides) 1`] = `
 <div
   className="storybook-container"
 >
@@ -316,7 +316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Custom form (using overrides) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Custom form (using overrides) 1`] = `
 <div
   className="storybook-container"
 >
@@ -484,7 +484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Default with knobs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Default with knobs 1`] = `
 <div
   className="storybook-container"
 >
@@ -717,7 +717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Prefilled 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Prefilled 1`] = `
 <div
   className="storybook-container"
 >
