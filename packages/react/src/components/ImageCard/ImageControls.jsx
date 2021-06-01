@@ -48,6 +48,9 @@ const ImageControls = ({
     border: 'none',
     background: '#fff',
     boxShadow: '0px 0px 2px 0px rgba(0,0,0,0.5)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   };
   return (
     <>
@@ -58,13 +61,11 @@ const ImageControls = ({
               <Minimize20 aria-label={zoomToFit} />
             </button>
             <br />
-            <br />
           </>
         )}
         <button title={zoomIn} type="button" style={buttonStyle} onClick={onZoomIn}>
           +
         </button>
-        <br />
         <button title={zoomOut} type="button" style={buttonStyle} onClick={onZoomOut}>
           -
         </button>

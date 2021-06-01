@@ -8,6 +8,9 @@ import getSuiteHeaderData, {
   defaultFetchApi,
 } from '../util/suiteHeaderData';
 
+/**
+ * @deprecated use useUiResources instead
+ */
 const useSuiteHeaderData = ({
   baseApiUrl,
   domain,
