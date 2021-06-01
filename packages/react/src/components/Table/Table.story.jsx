@@ -32,6 +32,7 @@ import {
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';
+import EmptyState from '../EmptyState';
 
 import README from './README.md';
 import Table from './Table';
@@ -79,13 +80,6 @@ export const selectTextWrapping = ['always', 'never', 'auto', 'alwaysTruncate'];
 
 const renderStatusIcon = ({ value: status }) => {
   switch (status) {
-    case STATUS.RUNNING:
-    default:
-      return (
-        <svg height="10" width="10">
-          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="green" />
-        </svg>
-      );
     case STATUS.NOT_RUNNING:
       return (
         <svg height="10" width="10">
@@ -96,6 +90,14 @@ const renderStatusIcon = ({ value: status }) => {
       return (
         <svg height="10" width="10">
           <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
+        </svg>
+      );
+
+    case STATUS.RUNNING:
+    default:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="green" />
         </svg>
       );
   }
@@ -312,13 +314,13 @@ const getString = (index, length) =>
 const getStatus = (idx) => {
   const modStatus = idx % 3;
   switch (modStatus) {
-    case 0:
-    default:
-      return STATUS.RUNNING;
     case 1:
       return STATUS.NOT_RUNNING;
     case 2:
       return STATUS.BROKEN;
+    case 0:
+    default:
+      return STATUS.RUNNING;
   }
 };
 
@@ -419,6 +421,7 @@ export const tableActions = {
     onRowSelected: action('onRowSelected'),
     onSelectAll: action('onSelectAll'),
     onEmptyStateAction: action('onEmptyStateAction'),
+    onErrorStateAction: action('onErrorStateAction'),
     onApplyRowAction: action('onApplyRowAction'),
     onRowExpanded: action('onRowExpanded'),
     onChangeOrdering: action('onChangeOrdering'),
@@ -2042,6 +2045,60 @@ WithNoData.story = {
   name: 'states: no data, custom empty and loading states',
 };
 
+export const WithErrorState = withReadme(README, () => (
+  <Table
+    id="table"
+    columns={tableColumns}
+    data={[]}
+    actions={tableActions}
+    view={{
+      table: {
+        ordering: defaultOrdering,
+      },
+    }}
+    options={{ hasPagination: true }}
+    error={text('error', 'Error occured')}
+  />
+));
+
+WithErrorState.story = {
+  name: 'with error state',
+};
+
+const errorState = (
+  <EmptyState
+    icon="error"
+    title="Error occured while loading"
+    body={text('error', 'Error message')}
+    action={{
+      label: 'Reload',
+      onClick: action('onErrorStateAction'),
+      kind: 'ghost',
+    }}
+  />
+);
+
+export const WithCustomErrorState = withReadme(README, () => (
+  <Table
+    id="table"
+    columns={tableColumns}
+    data={[]}
+    actions={tableActions}
+    view={{
+      table: {
+        ordering: defaultOrdering,
+        errorState,
+      },
+    }}
+    options={{ hasPagination: true }}
+    error={text('error', 'Error occured')}
+  />
+));
+
+WithCustomErrorState.story = {
+  name: 'with custom error state',
+};
+
 export const WithResizeAndInitialColumnWidthsAndHiddenColumn = withReadme(README, () => (
   <FullWidthWrapper>
     <Table
@@ -2061,6 +2118,7 @@ export const WithResizeAndInitialColumnWidthsAndHiddenColumn = withReadme(README
           ordering: defaultOrdering,
         },
       }}
+      error={text('error', undefined)}
     />
   </FullWidthWrapper>
 ));

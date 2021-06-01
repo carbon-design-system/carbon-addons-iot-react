@@ -195,20 +195,8 @@ describe('table reducer', () => {
     it('TABLE_ROW_SELECT', () => {
       expect(initialState.view.table.selectedIds).toEqual([]);
 
-      // Negative case where I unselect a row
-      const tableWithNoRowsSelected = tableReducer(
-        initialState,
-        tableRowSelect('row-1', false, 'multi')
-      );
-      expect(tableWithNoRowsSelected.view.table.selectedIds).toEqual([]);
-      expect(tableWithNoRowsSelected.view.table.isSelectAllSelected).toEqual(false);
-      expect(tableWithNoRowsSelected.view.table.isSelectAllIndeterminate).toEqual(false);
-
       // Select a row
-      const tableWithSelectedRow = tableReducer(
-        initialState,
-        tableRowSelect('row-1', true, 'multi')
-      );
+      const tableWithSelectedRow = tableReducer(initialState, tableRowSelect(['row-1'], 'multi'));
       expect(tableWithSelectedRow.view.table.selectedIds).toEqual(['row-1']);
       expect(tableWithSelectedRow.view.table.isSelectAllSelected).toEqual(false);
       expect(tableWithSelectedRow.view.table.isSelectAllIndeterminate).toEqual(true);
@@ -216,7 +204,7 @@ describe('table reducer', () => {
       // Unselect the row
       const tableWithUnSelectedRow = tableReducer(
         tableWithSelectedRow,
-        tableRowSelect('row-1', false, 'multi')
+        tableRowSelect([], 'multi')
       );
       expect(tableWithUnSelectedRow.view.table.selectedIds).toEqual([]);
       expect(tableWithUnSelectedRow.view.table.isSelectAllSelected).toEqual(false);
@@ -239,7 +227,7 @@ describe('table reducer', () => {
       // Select a row
       const tableWithSelectedRow = tableReducer(
         updatedInitialState,
-        tableRowSelect('row-1', true, 'single')
+        tableRowSelect(['row-1'], 'single')
       );
       expect(tableWithSelectedRow.view.table.selectedIds).toEqual(['row-1']);
       expect(tableWithSelectedRow.view.table.isSelectAllSelected).toEqual(false);
@@ -257,7 +245,7 @@ describe('table reducer', () => {
             },
           },
         },
-        tableRowSelect('row-2', true, 'single')
+        tableRowSelect(['row-2'], 'single')
       );
       expect(tableWithPreviouslySelectedRow.view.table.selectedIds).toEqual(['row-2']);
       expect(tableWithPreviouslySelectedRow.view.table.isSelectAllSelected).toEqual(false);

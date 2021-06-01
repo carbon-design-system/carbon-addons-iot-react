@@ -107,7 +107,7 @@ const TimeSeriesCardPropTypes = {
     /** set of thresholds these render dotted lines on the graph to indicate that the line values might be crossing logical thresholds */
     thresholds: PropTypes.arrayOf(
       PropTypes.shape({
-        axis: PropTypes.oneOf('x', 'y'),
+        axis: PropTypes.oneOf(['x', 'y']),
         value: PropTypes.number,
         label: PropTypes.string,
         fillColor: PropTypes.string,
@@ -228,9 +228,14 @@ const TimeSeriesCard = ({
   const previousTick = useRef();
   dayjs.locale(locale);
 
+  // Workaround since downstream consumers might keep regenerating the series object and useMemo does a direct in-memory comparison for the object
+  const objectAgnosticSeries = JSON.stringify(series);
+  const objectAgnosticThresholds = JSON.stringify(thresholds);
+
   const sampleValues = useMemo(
-    () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
-    [series, timeDataSourceId, interval, timeRange]
+    () => generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [objectAgnosticSeries, timeDataSourceId, interval, timeRange, objectAgnosticThresholds]
   );
 
   const values = useMemo(() => (isEditable ? sampleValues : valuesProp), [
@@ -401,7 +406,9 @@ const TimeSeriesCard = ({
             number: maxTicksPerSize,
             formatter: formatTick,
           },
-          thresholds: thresholds?.filter((threshold) => threshold.axis === 'x'),
+          ...(thresholds?.some((threshold) => threshold.axis === 'x')
+            ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'x') }
+            : {}),
           includeZero: includeZeroOnXaxis,
           ...(domainRange ? { domain: domainRange } : {}),
         },
@@ -412,9 +419,8 @@ const TimeSeriesCard = ({
             formatter: (axisValue) =>
               chartValueFormatter(axisValue, newSize, null, locale, decimalPrecision),
           },
-          thresholds: thresholds?.filter((threshold) => threshold.axis === 'y'),
-          ...(chartType !== TIME_SERIES_TYPES.BAR
-            ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
+          ...(thresholds?.some((threshold) => threshold.axis === 'y')
+            ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'y') }
             : {}),
           stacked: chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
           includeZero: includeZeroOnYaxis,
@@ -528,6 +534,7 @@ const TimeSeriesCard = ({
               options={options}
               width="100%"
               height="100%"
+              key={`thresholds-key${thresholds?.length ? objectAgnosticThresholds : ''}`} // have to regen the component if thresholds change
             />
           </div>
           {isExpanded ? (

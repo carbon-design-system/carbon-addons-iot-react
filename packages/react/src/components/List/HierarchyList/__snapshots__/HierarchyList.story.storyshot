@@ -624,7 +624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id15"
+                    id="id16"
                     name="Chicago White Sox"
                     onChange={[Function]}
                     tabIndex={0}
@@ -633,7 +633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id15"
+                    htmlFor="id16"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -668,7 +668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id16"
+                    id="id17"
                     name="New York Yankees"
                     onChange={[Function]}
                     tabIndex={0}
@@ -677,7 +677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id16"
+                    htmlFor="id17"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -712,7 +712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id17"
+                    id="id18"
                     name="Houston Astros"
                     onChange={[Function]}
                     tabIndex={0}
@@ -721,7 +721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id17"
+                    htmlFor="id18"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -756,7 +756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id18"
+                    id="id19"
                     name="Atlanta Braves"
                     onChange={[Function]}
                     tabIndex={0}
@@ -765,7 +765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id18"
+                    htmlFor="id19"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -800,7 +800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id19"
+                    id="id20"
                     name="New York Mets"
                     onChange={[Function]}
                     tabIndex={0}
@@ -809,7 +809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id19"
+                    htmlFor="id20"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -844,7 +844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id20"
+                    id="id21"
                     name="Washington Nationals"
                     onChange={[Function]}
                     tabIndex={0}
@@ -853,7 +853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id20"
+                    htmlFor="id21"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1018,22 +1018,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Chicago White Sox
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   aria-label="Expand"
                   className="iot--list-item--expand-icon"
@@ -1097,22 +1101,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   New York Yankees
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   aria-label="Expand"
                   className="iot--list-item--expand-icon"
@@ -1176,22 +1184,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Houston Astros
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   aria-label="Expand"
                   className="iot--list-item--expand-icon"
@@ -1255,22 +1267,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Atlanta Braves
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   aria-label="Expand"
                   className="iot--list-item--expand-icon"
@@ -1334,22 +1350,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   New York Mets
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   aria-label="Close"
                   className="iot--list-item--expand-icon"
@@ -1413,22 +1433,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Jeff McNeil
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   className="iot--list-item--nesting-offset"
                   style={
@@ -1474,22 +1498,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Amed Rosario
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   className="iot--list-item--nesting-offset"
                   style={
@@ -1535,22 +1563,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Michael Conforto is a super duper long name that will get cut off
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   className="iot--list-item--nesting-offset"
                   style={
@@ -1596,22 +1628,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Pete Alonso
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   className="iot--list-item--nesting-offset"
                   style={
@@ -1657,22 +1693,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Wilson Ramos
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   className="iot--list-item--nesting-offset"
                   style={
@@ -1718,22 +1758,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Robinson Cano
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   className="iot--list-item--nesting-offset"
                   style={
@@ -1779,22 +1823,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   JD Davis
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   className="iot--list-item--nesting-offset"
                   style={
@@ -1840,22 +1888,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Brandon Nimmo
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   className="iot--list-item--nesting-offset"
                   style={
@@ -1901,22 +1953,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Jacob Degrom
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   className="iot--list-item--nesting-offset"
                   style={
@@ -1962,22 +2018,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   Washington Nationals
                 </div>
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  title="Drag handle"
                 >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
                 <div
                   aria-label="Expand"
                   className="iot--list-item--expand-icon"

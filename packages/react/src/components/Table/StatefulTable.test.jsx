@@ -7,9 +7,9 @@ import userEvent from '@testing-library/user-event';
 
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
-import { mockActions } from './Table.test.helpers';
-import { initialState } from './Table.story';
 import { StatefulTableWithNestedRowItems } from './StatefulTable.story';
+import { mockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
+import { initialState } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
 
 describe('stateful table with real reducer', () => {
@@ -640,5 +640,88 @@ describe('stateful table with real reducer', () => {
       expect(container.querySelectorAll('tbody > tr')).toHaveLength(10);
       expect(screen.getByText('1–10 of 11 items')).toBeVisible();
     });
+  });
+
+  it('properly changes state of child and parent row selections', () => {
+    const onRowSelectedMock = jest.fn();
+    const selectRowLabel = 'Select row';
+    render(
+      <StatefulTable
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+            isSortable: false,
+          },
+        ]}
+        data={getNestedRows()}
+        options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+        view={{
+          table: {
+            selectedIds: [],
+            expandedIds: ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'],
+          },
+        }}
+        actions={{ table: { onRowSelected: onRowSelectedMock } }}
+      />
+    );
+
+    fireEvent.click(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-2')]
+    );
+
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1')]
+    ).toBePartiallyChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_A')]
+    ).not.toBeChecked();
+
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B')]
+    ).toBePartiallyChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-1')]
+    ).not.toBeChecked();
+
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-2')]
+    ).toBeChecked();
+
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-2-A')]
+    ).toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-2-B')]
+    ).toBeChecked();
+
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-3')]
+    ).not.toBeChecked();
+
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-3')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_C')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_D')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_D-1')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_D-2')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_D-3')]
+    ).not.toBeChecked();
+
+    expect(onRowSelectedMock).toHaveBeenCalledWith('row-1_B-2', true, [
+      'row-1_B-2',
+      'row-1_B-2-A',
+      'row-1_B-2-B',
+    ]);
   });
 });

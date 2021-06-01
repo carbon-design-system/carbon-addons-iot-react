@@ -533,6 +533,9 @@ export const StatefulExampleWithI18NStrings = withReadme(README, () => (
       actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
       learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
       dismissText: text('i18n.dismissText', '__Dismiss__'),
+      // table error state
+      tableErrorStateTitle: text('i18n.tableErrorStateTitle', 'Unable to load the page'),
+      buttonLabelOnTableError: text('i18n.buttonLabelOnTableError', 'Refresh the page'),
     }}
   />
 ));
