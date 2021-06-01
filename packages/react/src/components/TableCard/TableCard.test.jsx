@@ -143,8 +143,7 @@ describe('TableCard', () => {
       />
     );
     expect(screen.getAllByText('Link').length).toEqual(11);
-    // 6 b/c the first 6 are the sort a tags in the header for each column
-    expect(document.querySelectorAll('a')[6].getAttribute('href')).toEqual('https://ibm.com/73003');
+    expect(document.querySelector('a').getAttribute('href')).toEqual('https://ibm.com/73003');
   });
   it('Clicked row actions', () => {
     const onCardAction = jest.fn();

@@ -1417,21 +1417,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             }
                           }
                         >
-                          <a
+                          <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort bx--table-sort--active bx--table-sort--ascending"
                             data-column="timestamp"
                             data-floating-menu-container={true}
                             id="column-timestamp"
                             onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="button"
                             style={
                               Object {
                                 "--table-header-width": "",
                               }
                             }
-                            tabIndex="0"
                           >
                             <span
                               className="bx--table-header-label"
@@ -1475,7 +1472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
                               />
                             </svg>
-                          </a>
+                          </button>
                         </th>
                         <th
                           aria-sort="none"
@@ -1488,21 +1485,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             }
                           }
                         >
-                          <a
+                          <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="ENTITY_ID"
                             data-floating-menu-container={true}
                             id="column-ENTITY_ID"
                             onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="button"
                             style={
                               Object {
                                 "--table-header-width": "",
                               }
                             }
-                            tabIndex="0"
                           >
                             <span
                               className="bx--table-header-label"
@@ -1546,7 +1540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
                               />
                             </svg>
-                          </a>
+                          </button>
                         </th>
                         <th
                           aria-sort="none"
@@ -1559,21 +1553,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             }
                           }
                         >
-                          <a
+                          <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="temperature"
                             data-floating-menu-container={true}
                             id="column-temperature"
                             onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="button"
                             style={
                               Object {
                                 "--table-header-width": "",
                               }
                             }
-                            tabIndex="0"
                           >
                             <span
                               className="bx--table-header-label"
@@ -1617,7 +1608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
                               />
                             </svg>
-                          </a>
+                          </button>
                         </th>
                         <th
                           aria-sort="none"
@@ -1630,21 +1621,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             }
                           }
                         >
-                          <a
+                          <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="humidity"
                             data-floating-menu-container={true}
                             id="column-humidity"
                             onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="button"
                             style={
                               Object {
                                 "--table-header-width": "",
                               }
                             }
-                            tabIndex="0"
                           >
                             <span
                               className="bx--table-header-label"
@@ -1688,7 +1676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
                               />
                             </svg>
-                          </a>
+                          </button>
                         </th>
                         <th
                           aria-sort="none"
@@ -1701,21 +1689,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             }
                           }
                         >
-                          <a
+                          <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="ecount"
                             data-floating-menu-container={true}
                             id="column-ecount"
                             onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="button"
                             style={
                               Object {
                                 "--table-header-width": "",
                               }
                             }
-                            tabIndex="0"
                           >
                             <span
                               className="bx--table-header-label"
@@ -1759,7 +1744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
                               />
                             </svg>
-                          </a>
+                          </button>
                         </th>
                         <th
                           aria-sort="none"
@@ -1772,21 +1757,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             }
                           }
                         >
-                          <a
+                          <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="devname"
                             data-floating-menu-container={true}
                             id="column-devname"
                             onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="button"
                             style={
                               Object {
                                 "--table-header-width": "",
                               }
                             }
-                            tabIndex="0"
                           >
                             <span
                               className="bx--table-header-label"
@@ -1830,7 +1812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
                               />
                             </svg>
-                          </a>
+                          </button>
                         </th>
                         <th
                           aria-sort="none"
@@ -1843,21 +1825,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             }
                           }
                         >
-                          <a
+                          <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="pressure"
                             data-floating-menu-container={true}
                             id="column-pressure"
                             onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="button"
                             style={
                               Object {
                                 "--table-header-width": "",
                               }
                             }
-                            tabIndex="0"
                           >
                             <span
                               className="bx--table-header-label"
@@ -1901,7 +1880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
                               />
                             </svg>
-                          </a>
+                          </button>
                         </th>
                         <th
                           aria-sort="none"
@@ -1914,21 +1893,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             }
                           }
                         >
-                          <a
+                          <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="status"
                             data-floating-menu-container={true}
                             id="column-status"
                             onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="button"
                             style={
                               Object {
                                 "--table-header-width": "",
                               }
                             }
-                            tabIndex="0"
                           >
                             <span
                               className="bx--table-header-label"
@@ -1972,7 +1948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
                               />
                             </svg>
-                          </a>
+                          </button>
                         </th>
                       </tr>
                     </thead>

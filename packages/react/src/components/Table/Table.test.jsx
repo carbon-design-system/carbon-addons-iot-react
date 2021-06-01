@@ -232,7 +232,7 @@ describe('Table', () => {
         view={view}
       />
     );
-    wrapper.find('a#column-string').simulate('click');
+    wrapper.find('button#column-string').simulate('click');
     expect(mockActions.table.onChangeSort).toHaveBeenCalled();
   });
 

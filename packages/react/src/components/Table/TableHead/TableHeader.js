@@ -67,6 +67,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     thStyle,
     initialWidth,
     testID,
+    hasMultiSort,
     ...rest
   },
   ref
@@ -98,6 +99,21 @@ const TableHeader = React.forwardRef(function TableHeader(
     [`${prefix}--table-sort--ascending`]: isSortHeader && sortDirection === sortStates.DESC,
   });
   const ariaSort = !isSortHeader ? 'none' : sortDirections[sortDirection];
+  const ButtonTag = hasMultiSort ? `a` : `button`;
+  const buttonProps = hasMultiSort
+    ? {
+        role: 'button',
+        tabIndex: 0,
+        className,
+        onClick,
+        onKeyDown: handleSpecificKeyDown(['Enter', 'Space'], onClick),
+        ...rest,
+      }
+    : {
+        className,
+        onClick,
+        ...rest,
+      };
 
   return (
     <th
@@ -109,14 +125,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       style={thStyle}
       data-testid={testID}
     >
-      <a
-        role="button"
-        tabIndex="0"
-        className={className}
-        onClick={onClick}
-        onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], onClick)}
-        {...rest}
-      >
+      <ButtonTag {...buttonProps}>
         {!hasTooltip ? (
           <span className={`${prefix}--table-header-label`}>{children}</span>
         ) : (
@@ -140,7 +149,7 @@ const TableHeader = React.forwardRef(function TableHeader(
             sortStates,
           })}
         />
-      </a>
+      </ButtonTag>
     </th>
   );
 });
@@ -155,6 +164,8 @@ TableHeader.propTypes = {
    * Pass in children that will be embedded in the table header label
    */
   children: PropTypes.node,
+
+  hasMultiSort: PropTypes.bool,
 
   /** does the header have a tooltip, if so do not truncate */
   hasTooltip: PropTypes.bool,
@@ -212,6 +223,7 @@ TableHeader.defaultProps = {
   children: '',
   isSortHeader: false,
   hasTooltip: false,
+  hasMultiSort: false,
   isSortable: false,
   sortDirection: 'NONE',
   onClick: (onClick) => `${onClick}`,
