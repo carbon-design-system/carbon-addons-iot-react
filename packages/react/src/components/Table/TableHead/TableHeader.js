@@ -61,13 +61,14 @@ const TableHeader = React.forwardRef(function TableHeader(
     // eslint-disable-next-line react/prop-types
     onClick,
     scope,
+    hasMultiSort,
+    hasOverflow,
     hasTooltip,
     sortDirection,
     translateWithId: t,
     thStyle,
     initialWidth,
     testID,
-    hasMultiSort,
     ...rest
   },
   ref
@@ -99,21 +100,22 @@ const TableHeader = React.forwardRef(function TableHeader(
     [`${prefix}--table-sort--ascending`]: isSortHeader && sortDirection === sortStates.DESC,
   });
   const ariaSort = !isSortHeader ? 'none' : sortDirections[sortDirection];
-  const ButtonTag = hasMultiSort ? `a` : `button`;
-  const buttonProps = hasMultiSort
-    ? {
-        role: 'button',
-        tabIndex: 0,
-        className,
-        onClick,
-        onKeyDown: handleSpecificKeyDown(['Enter', 'Space'], onClick),
-        ...rest,
-      }
-    : {
-        className,
-        onClick,
-        ...rest,
-      };
+  const ButtonTag = hasMultiSort || hasOverflow ? `a` : `button`;
+  const buttonProps =
+    hasMultiSort || hasOverflow
+      ? {
+          role: 'button',
+          tabIndex: 0,
+          className,
+          onClick,
+          onKeyDown: handleSpecificKeyDown(['Enter', 'Space'], onClick),
+          ...rest,
+        }
+      : {
+          className,
+          onClick,
+          ...rest,
+        };
 
   return (
     <th
@@ -164,6 +166,8 @@ TableHeader.propTypes = {
    * Pass in children that will be embedded in the table header label
    */
   children: PropTypes.node,
+
+  hasOverflow: PropTypes.bool,
 
   hasMultiSort: PropTypes.bool,
 
@@ -223,6 +227,7 @@ TableHeader.defaultProps = {
   children: '',
   isSortHeader: false,
   hasTooltip: false,
+  hasOverflow: false,
   hasMultiSort: false,
   isSortable: false,
   sortDirection: 'NONE',

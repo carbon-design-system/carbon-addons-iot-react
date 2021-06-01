@@ -385,6 +385,7 @@ const TableHead = ({
               hasTooltip={!!matchingColumnMeta.tooltip}
               ref={columnRef[matchingColumnMeta.id]}
               hasMultiSort={hasMultiSort}
+              hasOverflow={hasOverflow}
               thStyle={{
                 width:
                   currentColumnWidths[matchingColumnMeta.id] &&
