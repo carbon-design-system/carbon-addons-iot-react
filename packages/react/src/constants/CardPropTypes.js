@@ -624,9 +624,9 @@ export const MapCardPropTypes = {
     ])
   ),
   /** callback when user zooms in */
-  onZoomIn: PropTypes.func,
+  onZoomIn: PropTypes.func.isRequired,
   /** callback when user zooms out */
-  onZoomOut: PropTypes.func,
+  onZoomOut: PropTypes.func.isRequired,
   /** an element or component containing the settingspanel (side bar content) */
   settingsContent: PropTypes.elementType,
   /** list of text - color pairs for the legend. Each pair is an array where pos 0 is the text and pos 1 the color */

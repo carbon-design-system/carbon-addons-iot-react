@@ -40,8 +40,6 @@ const defaultProps = {
   },
   layeredControls: [],
   mapControls: [],
-  onZoomIn: () => {},
-  onZoomOut: () => {},
   size: CARD_SIZES.LARGEWIDE,
   stops: [],
   testId: 'map-card',
@@ -82,7 +80,7 @@ const MapCard = ({
 
   const tooltipPosition = React.useMemo(() => (langDir === 'ltr' ? 'left' : 'right'), [langDir]);
   const controls =
-    mapControls || layeredControls ? (
+    mapControls.length || layeredControls.length ? (
       <MapControls
         testId={`${testId}-map-controls`}
         controls={mapControls}
@@ -95,7 +93,7 @@ const MapCard = ({
 
   const myAvailableActions = {
     ...availableActions,
-    settings: isExpanded && availableActions.settings,
+    settings: isExpanded && availableActions?.settings,
   };
 
   return (
@@ -112,7 +110,7 @@ const MapCard = ({
       onCardAction={onCardAction}
       contentClassName={`${BASE_CLASS_NAME}-card-content`}
       className={`${BASE_CLASS_NAME}`}
-      testId={testId}
+      testID={testId}
       {...others}
     >
       <>

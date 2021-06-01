@@ -88,10 +88,11 @@ export const CardTitle = (
 );
 
 const CardContent = (props) => {
-  const { children, dimensions, isExpanded, className } = props;
+  const { children, dimensions, isExpanded, className, testID } = props;
   const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
   return (
     <div
+      data-testid={testID}
       style={{ [`--card-content-height`]: height }}
       className={classnames(className, `${iotPrefix}--card--content`, {
         [`${iotPrefix}--card--content--expanded`]: isExpanded,
@@ -149,12 +150,13 @@ CardWrapper.defaultProps = {
   tabIndex: undefined,
 };
 CardContent.propTypes = {
+  testID: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   isExpanded: CardPropTypes.isExpanded.isRequired,
 };
-CardContent.defaultProps = { children: undefined, className: '' };
+CardContent.defaultProps = { children: undefined, className: '', testID: 'card-content' };
 EmptyMessageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };
@@ -396,6 +398,7 @@ const Card = (props) => {
                   </CardHeader>
                 )}
                 <CardContent
+                  testID={`${testID}-content`}
                   dimensions={dimensions}
                   isExpanded={isExpanded}
                   className={contentClassName}

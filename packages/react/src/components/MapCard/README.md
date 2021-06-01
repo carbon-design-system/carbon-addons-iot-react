@@ -48,20 +48,20 @@ const toggleControlSelection = (id) => {
 
 const mapControls = [
   {
-    id: 'example-id'
+    id: 'example-id',
     icon: Rain32,
     iconDescription: 'Rainy',
     onClick: toggleControlSelection('example-id'),
     kind: 'icon-selection',
-    selected: selectedControls.includes('example-id'),,
+    selected: selectedControls.includes('example-id'),
   },
   {
-    id: 'example-id2'
+    id: 'example-id2',
     icon: Sun32,
     iconDescription: 'Sunny',
     onClick: toggleControlSelection('example-id2'),
     kind: 'icon-selection',
-    selected: selectedControls.includes('example-id2'),,
+    selected: selectedControls.includes('example-id2'),
   },
 ];
 ```

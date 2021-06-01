@@ -22,6 +22,7 @@ export const MapboxStory = () => {
   const handleOnCardAction = (id, actionType) => {
     action('onCardAction')(actionType);
     if (actionType === CARD_ACTIONS.CLOSE_EXPANDED_CARD) {
+      setSettingsOpen(false);
       setIsExpanded(false);
     } else if (actionType === CARD_ACTIONS.OPEN_EXPANDED_CARD) {
       setIsExpanded(true);
@@ -53,6 +54,7 @@ export const OpenlayersStory = () => {
   const handleOnCardAction = (id, actionType) => {
     action('onCardAction')(actionType);
     if (actionType === CARD_ACTIONS.CLOSE_EXPANDED_CARD) {
+      setSettingsOpen(false);
       setIsExpanded(false);
     } else if (actionType === CARD_ACTIONS.OPEN_EXPANDED_CARD) {
       setIsExpanded(true);

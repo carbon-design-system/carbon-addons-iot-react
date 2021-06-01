@@ -21130,8 +21130,6 @@ Map {
       "isSettingPanelOpen": false,
       "layeredControls": Array [],
       "mapControls": Array [],
-      "onZoomIn": [Function],
-      "onZoomOut": [Function],
       "size": "LARGEWIDE",
       "stops": Array [],
       "testId": "map-card",
@@ -22013,9 +22011,11 @@ Map {
         "type": "func",
       },
       "onZoomIn": Object {
+        "isRequired": true,
         "type": "func",
       },
       "onZoomOut": Object {
+        "isRequired": true,
         "type": "func",
       },
       "renderEditContent": Object {

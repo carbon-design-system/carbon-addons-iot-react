@@ -72,6 +72,7 @@ const ScrollingControls = ({
       />
       {scrollUpDisabled ? null : <div className={`${BASE_CLASS_NAME}__gradient`} />}
       <div
+        data-testid={`${testId}-scroll-area`}
         ref={scrollContainerRef}
         style={{
           [`--visble-items-count`]: visibleItemsCount,

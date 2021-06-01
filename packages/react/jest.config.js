@@ -36,6 +36,18 @@ module.exports = {
       // https://github.com/carbon-design-system/carbon-charts/issues/594
       functions: 77,
     },
+    './src/components/MapCard/storyFiles/MapboxExample.jsx': {
+      statements: 0,
+      branches: 0,
+      functions: 0,
+      lines: 0,
+    },
+    './src/components/MapCard/storyFiles/OpenLayersExample.jsx': {
+      statements: 0,
+      branches: 0,
+      functions: 0,
+      lines: 0,
+    },
   },
   globals: {
     __DEV__: false,
