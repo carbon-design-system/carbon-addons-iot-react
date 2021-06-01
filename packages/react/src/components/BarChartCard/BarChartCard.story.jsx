@@ -27,12 +27,14 @@ export default {
 
 export const SimpleBar = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles by city')}
         id="simple-sample"
+        breakpoint={breakpoint}
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
@@ -74,12 +76,14 @@ SimpleBar.story = {
 
 export const SimpleBarTimeSeriesCustomDomainRange = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles over 4 days')}
         id="simple-time-sample"
+        breakpoint={breakpoint}
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
@@ -134,12 +138,14 @@ SimpleBarTimeSeriesCustomDomainRange.story = {
 
 export const GroupedBar = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles and temperature in cities')}
         id="grouped-sample"
+        breakpoint={breakpoint}
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
@@ -189,15 +195,16 @@ GroupedBar.story = {
 
 export const StackedBar = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
-
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles and temperature in cities')}
         id="stacked-sample"
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
+        breakpoint={breakpoint}
         content={{
           ...object('content', {
             type: BAR_CHART_TYPES.STACKED,
@@ -243,15 +250,17 @@ StackedBar.story = {
 
 export const StackedBarTimeSeries = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles / emissions over 4 days')}
         id="stacked-horizontal-sample"
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
+        breakpoint={breakpoint}
         content={{
           type: BAR_CHART_TYPES.STACKED,
           xLabel: 'Dates',
@@ -295,15 +304,17 @@ StackedBarTimeSeries.story = {
 
 export const StackedBarTimeSeriesWithCategories = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles by city over time')}
         id="stacked-horizontal-sample"
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
+        breakpoint={breakpoint}
         content={{
           type: BAR_CHART_TYPES.STACKED,
           xLabel: 'Dates',
