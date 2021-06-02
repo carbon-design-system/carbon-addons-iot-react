@@ -24,7 +24,7 @@ mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
 
 const propTypes = {
-  data: PropTypes.shape(PropTypes.any),
+  data: PropTypes.shape({}),
   options: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
