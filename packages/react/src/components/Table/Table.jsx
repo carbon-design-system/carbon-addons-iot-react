@@ -30,6 +30,7 @@ import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWi
 import TableBody from './TableBody/TableBody';
 import Pagination from './Pagination';
 import TableFoot from './TableFoot/TableFoot';
+import ErrorTable from './ErrorTable/ErrorTable';
 
 const { iotPrefix } = settings;
 
@@ -195,6 +196,8 @@ const propTypes = {
       singleRowEditButtons: PropTypes.element,
       expandedIds: PropTypes.arrayOf(PropTypes.string),
       emptyState: EmptyStatePropTypes,
+      /** use custom error state or use error message directly */
+      errorState: PropTypes.element,
       loadingState: PropTypes.shape({
         isLoading: PropTypes.bool,
         rowCount: PropTypes.number,
@@ -248,6 +251,7 @@ const propTypes = {
       onColumnSelectionConfig: PropTypes.func,
       onColumnResize: PropTypes.func,
       onOverflowItemClicked: PropTypes.func,
+      onTableErrorStateAction: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -255,6 +259,9 @@ const propTypes = {
   /** what locale should we use to format table values if left empty no locale formatting happens */
   locale: PropTypes.string,
   i18n: I18NPropTypes,
+  /** Specify the error message that need to be displayed by default.
+   * Incase we use view.table.errorState property then the error state will be displayed instead of error message */
+  error: PropTypes.string,
 };
 
 export const defaultProps = (baseProps) => ({
@@ -338,6 +345,7 @@ export const defaultProps = (baseProps) => ({
       onRowClicked: defaultFunction('actions.table.onRowClicked'),
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
       onEmptyStateAction: null,
+      onErrorStateAction: null,
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
@@ -390,7 +398,11 @@ export const defaultProps = (baseProps) => ({
     filterNone: 'Unsort rows by this header',
     filterAscending: 'Sort rows by this header in ascending order',
     filterDescending: 'Sort rows by this header in descending order',
+    // table error state
+    tableErrorStateTitle: 'Unable to load the page',
+    buttonLabelOnTableError: 'Refresh the page',
   },
+  error: null,
 });
 
 const Table = (props) => {
@@ -411,6 +423,7 @@ const Table = (props) => {
     // Table Toolbar props
     secondaryTitle,
     tooltip,
+    error,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -461,7 +474,7 @@ const Table = (props) => {
     view.table.ordering,
     // Remove the error as it's a React.Element/Node which can not be compared
     view.table.rowActions.map((action) => {
-      const { error, ...nonElements } = action;
+      const { error: errorElement, ...nonElements } = action;
       return nonElements;
     }),
     view.table.expandedIds,
@@ -774,88 +787,102 @@ const Table = (props) => {
             hasFastFilter={options?.hasFilter === 'onKeyPress'}
             testID={`${id}-table-head`}
           />
-          {view.table.loadingState.isLoading ? (
-            <TableSkeletonWithHeaders
-              columns={visibleColumns}
-              {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
-              rowCount={view.table.loadingState.rowCount}
-              testID={`${id}-table-skeleton`}
-            />
-          ) : visibleData && visibleData.length ? (
-            <TableBody
-              langDir={langDir}
-              tableId={id || tableId}
-              rows={visibleData}
-              locale={locale}
-              rowActionsState={view.table.rowActions}
-              singleRowEditButtons={view.table.singleRowEditButtons}
-              expandedRows={expandedData}
-              columns={visibleColumns}
-              expandedIds={view.table.expandedIds}
-              selectedIds={view.table.selectedIds}
-              {...pick(
-                i18n,
-                'overflowMenuAria',
-                'clickToExpandAria',
-                'clickToCollapseAria',
-                'inProgressText',
-                'actionFailedText',
-                'learnMoreText',
-                'dismissText',
-                'selectRowAria'
-              )}
-              totalColumns={totalColumns}
-              {...pick(
-                options,
-                'hasRowSelection',
-                'hasRowExpansion',
-                'hasRowActions',
-                'hasRowNesting',
-                'shouldExpandOnRowClick',
-                'shouldLazyRender'
-              )}
-              wrapCellText={options.wrapCellText}
-              truncateCellText={useCellTextTruncate}
-              ordering={view.table.ordering}
-              rowEditMode={rowEditMode}
-              actions={pick(
-                actions.table,
-                'onRowSelected',
-                'onApplyRowAction',
-                'onClearRowError',
-                'onRowExpanded',
-                'onRowClicked'
-              )}
-              testID={`${id}-table-body`}
-            />
-          ) : (
-            <EmptyTable
-              id={id}
-              totalColumns={totalColumns}
-              isFiltered={isFiltered}
-              emptyState={
-                // only show emptyState if no filters or search is applied
-                view.table.emptyState && !isFiltered
-                  ? view.table.emptyState
-                  : {
-                      message: i18n.emptyMessage,
-                      messageBody: i18n.emptyMessageBody,
-                      messageWithFilters: i18n.emptyMessageWithFilters,
-                      messageWithFiltersBody: i18n.emptyMessageWithFiltersBody,
-                      buttonLabel: i18n.emptyButtonLabel,
-                      buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
-                    }
-              }
-              onEmptyStateAction={
-                isFiltered && i18n.emptyButtonLabelWithFilters
-                  ? handleClearFilters // show clear filters
-                  : !isFiltered && actions.table.onEmptyStateAction
-                  ? actions.table.onEmptyStateAction
-                  : undefined // if not filtered then show normal empty state
-              }
-              testID={`${id}-table-empty`}
-            />
-          )}
+
+          {
+            // Table contents
+            view.table.loadingState.isLoading ? (
+              <TableSkeletonWithHeaders
+                columns={visibleColumns}
+                {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+                rowCount={view.table.loadingState.rowCount}
+                testID={`${id}-table-skeleton`}
+              />
+            ) : error ? (
+              <ErrorTable
+                id={id}
+                testID={`${id}-table-error-body`}
+                i18n={i18n}
+                totalColumns={totalColumns}
+                error={error}
+                errorState={view.table.errorState}
+                onErrorStateAction={actions.table.onErrorStateAction}
+              />
+            ) : visibleData && visibleData.length ? (
+              <TableBody
+                langDir={langDir}
+                tableId={id || tableId}
+                rows={visibleData}
+                locale={locale}
+                rowActionsState={view.table.rowActions}
+                singleRowEditButtons={view.table.singleRowEditButtons}
+                expandedRows={expandedData}
+                columns={visibleColumns}
+                expandedIds={view.table.expandedIds}
+                selectedIds={view.table.selectedIds}
+                {...pick(
+                  i18n,
+                  'overflowMenuAria',
+                  'clickToExpandAria',
+                  'clickToCollapseAria',
+                  'inProgressText',
+                  'actionFailedText',
+                  'learnMoreText',
+                  'dismissText',
+                  'selectRowAria'
+                )}
+                totalColumns={totalColumns}
+                {...pick(
+                  options,
+                  'hasRowSelection',
+                  'hasRowExpansion',
+                  'hasRowActions',
+                  'hasRowNesting',
+                  'shouldExpandOnRowClick',
+                  'shouldLazyRender'
+                )}
+                wrapCellText={options.wrapCellText}
+                truncateCellText={useCellTextTruncate}
+                ordering={view.table.ordering}
+                rowEditMode={rowEditMode}
+                actions={pick(
+                  actions.table,
+                  'onRowSelected',
+                  'onApplyRowAction',
+                  'onClearRowError',
+                  'onRowExpanded',
+                  'onRowClicked'
+                )}
+                testID={`${id}-table-body`}
+              />
+            ) : (
+              <EmptyTable
+                id={id}
+                totalColumns={totalColumns}
+                isFiltered={isFiltered}
+                emptyState={
+                  // only show emptyState if no filters or search is applied
+                  view.table.emptyState && !isFiltered
+                    ? view.table.emptyState
+                    : {
+                        message: i18n.emptyMessage,
+                        messageBody: i18n.emptyMessageBody,
+                        messageWithFilters: i18n.emptyMessageWithFilters,
+                        messageWithFiltersBody: i18n.emptyMessageWithFiltersBody,
+                        buttonLabel: i18n.emptyButtonLabel,
+                        buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
+                      }
+                }
+                onEmptyStateAction={
+                  isFiltered && i18n.emptyButtonLabelWithFilters
+                    ? handleClearFilters // show clear filters
+                    : !isFiltered && actions.table.onEmptyStateAction
+                    ? actions.table.onEmptyStateAction
+                    : undefined // if not filtered then show normal empty state
+                }
+                testID={`${id}-table-empty`}
+              />
+            )
+          }
           {hasAggregations ? (
             <TableFoot
               options={{

@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Link } from '../..';
 
@@ -72,6 +73,16 @@ describe('DashboardEditor', () => {
     ],
   };
 
+  it('edit title', () => {
+    render(
+      <DashboardEditor {...commonProps} isTitleEditable initialValue={{ cards: [mockValueCard] }} />
+    );
+    userEvent.click(screen.getByRole('button', { name: 'Edit title' }));
+    userEvent.type(screen.getByRole('textbox', { name: 'Dashboard title' }), '25');
+    userEvent.click(screen.getByRole('button', { name: 'Save title' }));
+    // updates the title on screen
+    expect(screen.getByRole('heading', { name: 'My dashboard25' })).not.toBeNull();
+  });
   it('verify icon renders in editor', () => {
     render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
     // no card should be selected, meaning the gallery should be open
