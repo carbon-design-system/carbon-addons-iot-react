@@ -89,8 +89,6 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
-
-  onAddDataItems: PropTypes.func,
 };
 
 const defaultProps = {
@@ -132,7 +130,6 @@ const defaultProps = {
   isSummaryDashboard: false,
   testID: 'card-edit-form',
   dataSeriesItemLinks: null,
-  onAddDataItems: null,
 };
 
 /**
@@ -264,7 +261,6 @@ const CardEditForm = ({
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
-  onAddDataItems,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const [showEditor, setShowEditor] = useState(false);
@@ -316,7 +312,6 @@ const CardEditForm = ({
               currentBreakpoint={currentBreakpoint}
               dataSeriesItemLinks={dataSeriesItemLinks}
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-              onAddDataItems={onAddDataItems}
             />
           </Tab>
           {!isCustomCardWithNoSettings ? (
@@ -334,7 +329,7 @@ const CardEditForm = ({
         <div className={`${baseClassName}--footer`}>
           <Button
             testID={`${testID}-open-editor-button`}
-            kind="tertiary"
+            kind="ghost"
             size="small"
             renderIcon={Code16}
             onClick={() => {

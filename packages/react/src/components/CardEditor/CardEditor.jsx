@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { Apps16 } from '@carbon/icons-react';
+import { Apps16, Data_116 as Data116 } from '@carbon/icons-react';
 import isNil from 'lodash/isNil';
 import warning from 'warning';
 
@@ -111,6 +111,7 @@ const propTypes = {
     galleryHeader: PropTypes.string,
     addCardButton: PropTypes.string,
     searchPlaceHolderText: PropTypes.string,
+    editDataItems: PropTypes.string,
   }),
   currentBreakpoint: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
@@ -127,7 +128,7 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
-  onAddDataItems: PropTypes.func,
+  onEditDataItems: PropTypes.func,
 };
 
 const defaultProps = {
@@ -139,6 +140,7 @@ const defaultProps = {
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
     searchPlaceHolderText: 'Enter a search',
+    editDataItems: 'Edit data items',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
@@ -152,7 +154,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   testID: 'card-editor',
   dataSeriesItemLinks: null,
-  onAddDataItems: null,
+  onEditDataItems: null,
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -177,7 +179,7 @@ const CardEditor = ({
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
-  onAddDataItems,
+  onEditDataItems,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -194,23 +196,11 @@ const CardEditor = ({
 
   return (
     <div className={baseClassName} data-testid={testID}>
-      {!showGallery ? (
-        <div className={`${baseClassName}--header`}>
-          <Button
-            className="gallery-button"
-            kind="ghost"
-            size="small"
-            renderIcon={Apps16}
-            onClick={onShowGallery}
-          >
-            {mergedI18n.addCardButton}
-          </Button>
-        </div>
-      ) : (
+      {showGallery ? (
         <div className={`${baseClassName}--header`}>
           <h2 className={`${baseClassName}--header--title`}>{mergedI18n.galleryHeader}</h2>
         </div>
-      )}
+      ) : null}
       <div className={`${baseClassName}--content`}>
         {showGallery ? (
           <CardGalleryList
@@ -235,10 +225,30 @@ const CardEditor = ({
             currentBreakpoint={currentBreakpoint}
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-            onAddDataItems={onAddDataItems}
           />
         )}
       </div>
+      {showGallery ? null : (
+        <div className={`${baseClassName}--footer`}>
+          <Button kind="ghost" size="small" renderIcon={Apps16} onClick={onShowGallery}>
+            {mergedI18n.addCardButton}
+          </Button>
+        </div>
+      )}
+      {isSummaryDashboard ? (
+        <div className={`${baseClassName}--footer`}>
+          <Button
+            key="edit-data-item"
+            kind="ghost"
+            size="small"
+            renderIcon={Data116}
+            onClick={onEditDataItems}
+            iconDescription={mergedI18n.editDataItems}
+          >
+            {mergedI18n.editDataItems}
+          </Button>
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Edit16, Subtract16, Add16 } from '@carbon/icons-react';
+import { Edit16, Subtract16 } from '@carbon/icons-react';
 import omit from 'lodash/omit';
 import isEmpty from 'lodash/isEmpty';
 import uuid from 'uuid';
@@ -104,7 +104,6 @@ const propTypes = {
     addDataItems: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
-  onAddDataItems: PropTypes.func,
 };
 
 const defaultProps = {
@@ -147,7 +146,6 @@ const defaultProps = {
   availableDimensions: {},
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
-  onAddDataItems: null,
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -248,7 +246,6 @@ const DataSeriesFormItem = ({
   i18n,
   dataSeriesItemLinks,
   translateWithId,
-  onAddDataItems,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -516,17 +513,7 @@ const DataSeriesFormItem = ({
           />
         )}
       </div>
-      {isSummaryDashboard ? (
-        <Button
-          key="add-data-item"
-          renderIcon={Add16}
-          kind="ghost"
-          onClick={onAddDataItems}
-          iconDescription={mergedI18n.addDataItems}
-        >
-          {mergedI18n.addDataItems}
-        </Button>
-      ) : null}
+
       <List
         className={`${baseClassName}--data-item-list`}
         key={`data-item-list${selectedDataItems.length}`}
