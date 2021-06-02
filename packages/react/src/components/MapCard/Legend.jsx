@@ -61,8 +61,8 @@ const Legend = ({
   return isFullWidth ? (
     <div
       data-testid={testId}
-      className={classnames(`${iotPrefix}--map-legend`, `${iotPrefix}--map-legend__fullwidth`, {
-        [`${iotPrefix}--map-legend__fullwidth--collapsed`]: isCollapsed,
+      className={classnames(`${iotPrefix}--map-legend`, `${iotPrefix}--map-legend--fullwidth`, {
+        [`${iotPrefix}--map-legend--fullwidth-collapsed`]: isCollapsed,
       })}
     >
       <Button
@@ -85,7 +85,7 @@ const Legend = ({
         <div title={titleText} className={`${iotPrefix}--map-legend__label`}>
           {titleText}
         </div>
-        <div className={`${iotPrefix}--map-legend-keys-container`}>
+        <div className={`${iotPrefix}--map-legend__keys-container`}>
           {stops.map(renderLegendKeys)}
         </div>
       </div>

@@ -28,7 +28,7 @@
     }
   }
 
-  &-legend__fullwidth {
+  &-legend--fullwidth {
     // We want the same height independent if scrollbars are present and
     // we need space for the logo and attribution links.
     height: 6.5rem;
@@ -42,7 +42,7 @@
     padding: $spacing-03;
     padding-bottom: $spacing-02; // Needed for horizontal scrollbar
 
-    .#{$iot-prefix}--map-legend-keys-container {
+    .#{$iot-prefix}--map-legend__keys-container {
       overflow-x: auto;
       .#{$iot-prefix}--map-legend-keys {
         margin-bottom: 0;
@@ -58,13 +58,13 @@
     }
   }
 
-  &-legend__fullwidth--collapsed {
+  &-legend--fullwidth-collapsed {
     width: $spacing-09;
   }
 
   [dir='rtl']
-    &-legend.#{$iot-prefix}--map-legend__fullwidth
-    .#{$iot-prefix}--map-legend-keys-container
+    &-legend.#{$iot-prefix}--map-legend--fullwidth
+    .#{$iot-prefix}--map-legend__keys-container
     > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
     margin-left: $spacing-03;
     margin-right: unset;
@@ -94,11 +94,11 @@
     width: calc(100% - #{$spacing-09});
   }
 
-  &-legend__fullwidth--collapsed .#{$iot-prefix}--map-legend-keys-container {
+  &-legend--fullwidth-collapsed .#{$iot-prefix}--map-legend__keys-container {
     overflow-x: hidden;
   }
 
-  &-legend-keys-container {
+  &-legend__keys-container {
     display: flex;
     padding-bottom: $spacing-02;
   }

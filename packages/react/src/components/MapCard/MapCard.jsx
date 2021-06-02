@@ -116,15 +116,15 @@ const MapCard = ({
       <>
         <div
           ref={mapContainerRef}
-          className={classnames(`${BASE_CLASS_NAME}-container`, {
-            [`${BASE_CLASS_NAME}-container__open`]: isSettingPanelOpen,
+          className={classnames(`${BASE_CLASS_NAME}__container`, {
+            [`${BASE_CLASS_NAME}__container--open`]: isSettingPanelOpen,
           })}
         >
           <div
             className={classnames(`${BASE_CLASS_NAME}-controls`, {
-              [`${BASE_CLASS_NAME}-controls__has-fullwidth-legend`]:
+              [`${BASE_CLASS_NAME}-controls--has-fullwidth-legend`]:
                 isLegendFullWidth && !isLegendCollapsed,
-              [`${BASE_CLASS_NAME}-controls__has-increased-margins`]: isExpanded,
+              [`${BASE_CLASS_NAME}-controls--has-increased-margins`]: isExpanded,
             })}
           >
             {controls}
@@ -153,11 +153,11 @@ const MapCard = ({
         </div>
         <div
           className={classnames(`${BASE_CLASS_NAME}-settings`, {
-            [`${BASE_CLASS_NAME}-settings__open`]: isSettingPanelOpen,
+            [`${BASE_CLASS_NAME}-settings--open`]: isSettingPanelOpen,
           })}
         >
           <div className={`${BASE_CLASS_NAME}-settings-header`}>
-            <h3 className={`${BASE_CLASS_NAME}-settings-header-title`}>
+            <h3 className={`${BASE_CLASS_NAME}-settings-header__title`}>
               {mergedI18n.configurationTitle}
             </h3>
             <Button

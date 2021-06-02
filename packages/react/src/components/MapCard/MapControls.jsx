@@ -130,14 +130,14 @@ const MapControls = ({
   return (
     <div
       data-testid={testId}
-      className={classnames(`${BASE_CLASS_NAME}-container`, {
-        [`${BASE_CLASS_NAME}-container__has-layers`]: layeredControls.length,
+      className={classnames(`${BASE_CLASS_NAME}__container`, {
+        [`${BASE_CLASS_NAME}__container--has-layers`]: layeredControls.length,
       })}
     >
       {layeredControls.length !== 0 && (
         <div
           className={classnames(`${BASE_CLASS_NAME}-layers`, {
-            [`${BASE_CLASS_NAME}-layers__open`]: layersOpen,
+            [`${BASE_CLASS_NAME}-layers--open`]: layersOpen,
           })}
         >
           <Button

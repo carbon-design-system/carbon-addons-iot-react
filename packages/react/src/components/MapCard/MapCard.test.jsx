@@ -107,7 +107,7 @@ describe('MapCards', () => {
     });
 
     expect(screen.getByTestId('map-card-legend')).not.toHaveClass(
-      `${iotPrefix}--map-legend__fullwidth`
+      `${iotPrefix}--map-legend--fullwidth`
     );
     expect(screen.queryByTitle(MapCard.defaultProps.i18n.legendTitle)).not.toBeInTheDocument();
   });
@@ -137,7 +137,7 @@ describe('MapCards', () => {
 
     expect(screen.getByTitle(MapCard.defaultProps.i18n.legendTitle)).toBeVisible();
     expect(screen.getByTestId('map-card-legend')).toHaveClass(
-      `${iotPrefix}--map-legend__fullwidth`
+      `${iotPrefix}--map-legend--fullwidth`
     );
   });
 
@@ -187,7 +187,7 @@ describe('MapCards', () => {
     );
 
     expect(screen.getByTestId('map-card-legend')).not.toHaveClass(
-      `${iotPrefix}--map-legend__fullwidth--collapsed`
+      `${iotPrefix}--map-legend--fullwidth-collapsed`
     );
     const hideLegendButton = screen.getByRole('button', {
       name: MapCard.defaultProps.i18n.hideLegend,
@@ -197,7 +197,7 @@ describe('MapCards', () => {
     // Toggle legend to collapse
     userEvent.click(hideLegendButton);
     expect(screen.getByTestId('map-card-legend')).toHaveClass(
-      `${iotPrefix}--map-legend__fullwidth--collapsed`
+      `${iotPrefix}--map-legend--fullwidth-collapsed`
     );
     const showLegendButton = screen.getByRole('button', {
       name: MapCard.defaultProps.i18n.showLegend,
@@ -207,7 +207,7 @@ describe('MapCards', () => {
     // Toggle show
     userEvent.click(showLegendButton);
     expect(screen.getByTestId('map-card-legend')).not.toHaveClass(
-      `${iotPrefix}--map-legend__fullwidth--collapsed`
+      `${iotPrefix}--map-legend--fullwidth-collapsed`
     );
   });
 
@@ -256,10 +256,10 @@ describe('MapCards', () => {
     });
 
     expect(showSettingsBtn).toBeVisible();
-    // Using the class modifier "__open" to determine if the settings panel is open since
+    // Using the class modifier "--open" to determine if the settings panel is open since
     // the actual settings panel is never really hidden, just pushed outside the container
     // which the testing library can't detect.
-    expect(container.querySelectorAll(`.${iotPrefix}--map-settings__open`).length).toBeFalsy();
+    expect(container.querySelectorAll(`.${iotPrefix}--map-settings--open`).length).toBeFalsy();
 
     userEvent.click(showSettingsBtn);
     expect(cardActionCallback).toHaveBeenCalledWith('map-card', 'ON_SETTINGS_CLICK');
@@ -288,10 +288,10 @@ describe('MapCards', () => {
 
     expect(showSettingsBtn).toBeVisible();
 
-    // Using the class modifier "__open" to determine if the settings panel is open since
+    // Using the class modifier "--open" to determine if the settings panel is open since
     // the actual settings panel is never really hidden, just pushed outside the container
     // which the testing library doesn't detect.
-    expect(container.querySelectorAll(`.${iotPrefix}--map-settings__open`).length).toBeTruthy();
+    expect(container.querySelectorAll(`.${iotPrefix}--map-settings--open`).length).toBeTruthy();
   });
 
   it('fires card action callback when user clicks map configuration close button', () => {
@@ -359,10 +359,10 @@ describe('MapCards', () => {
     const triggerButton = screen.getByRole('button', {
       name: 'Layered controls',
     });
-    expect(triggerButton.closest('.iot--map-controls-layers__open')).toBe(null);
+    expect(triggerButton.closest('.iot--map-controls-layers--open')).toBe(null);
 
     userEvent.click(triggerButton);
-    expect(triggerButton.closest('.iot--map-controls-layers__open')).not.toBe(null);
+    expect(triggerButton.closest('.iot--map-controls-layers--open')).not.toBe(null);
 
     const rainyButton = screen.getByRole('button', {
       name: 'Rainy',
