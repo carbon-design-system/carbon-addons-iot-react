@@ -44,18 +44,19 @@ const Legend = ({
   onCollapsToggle,
   testId,
 }) => {
-  const renderLegendKeys = (stop, i) => {
-    return (
-      <div key={i} className={`${iotPrefix}--map-legend-keys`}>
-        <span
-          className={`${iotPrefix}--map-legend-keys-color`}
-          style={{ backgroundColor: stop[1] }}
-        />
-        <span
-          className={`${iotPrefix}--map-legend-keys-value`}
-        >{`${stop[0].toLocaleString()}`}</span>
-      </div>
-    );
+  const renderLegendKeys = () => {
+    return stops.map(([value, color], i) => {
+      const localValue = value.toLocaleString();
+      return (
+        <div key={`${localValue}-${color}-${i}`} className={`${iotPrefix}--map-legend-keys`}>
+          <span
+            className={`${iotPrefix}--map-legend-keys-color`}
+            style={{ backgroundColor: color }}
+          />
+          <span className={`${iotPrefix}--map-legend-keys-value`}>{localValue}</span>
+        </div>
+      );
+    });
   };
 
   return isFullWidth ? (
@@ -85,9 +86,7 @@ const Legend = ({
         <div title={titleText} className={`${iotPrefix}--map-legend__label`}>
           {titleText}
         </div>
-        <div className={`${iotPrefix}--map-legend__keys-container`}>
-          {stops.map(renderLegendKeys)}
-        </div>
+        <div className={`${iotPrefix}--map-legend__keys-container`}>{renderLegendKeys()}</div>
       </div>
     </div>
   ) : (
@@ -97,7 +96,7 @@ const Legend = ({
         [`${iotPrefix}--map-legend--increased-margin`]: increasedMargin,
       })}
     >
-      {stops.map(renderLegendKeys)}
+      {renderLegendKeys()}
     </div>
   );
 };

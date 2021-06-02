@@ -15,7 +15,7 @@ const propTypes = {
 const Optionsfield = ({ changeState, property, options }) => {
   const renderOptions = (option, i) => {
     return (
-      <label htmlFor={option.name} key={i} className="toggle-container">
+      <label htmlFor={option.name} key={option.name} className="toggle-container">
         <input
           id={option.name}
           onChange={() => changeState(i)}

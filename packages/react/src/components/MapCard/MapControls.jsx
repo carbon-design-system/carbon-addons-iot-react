@@ -60,7 +60,10 @@ const MapControls = ({
   const renderControl = (control, index) => {
     if (control.group) {
       const groupClass = `${BASE_CLASS_NAME}-btn-group`;
-      const groupKey = `btn-group-${index}`;
+      const groupKey = control.group.reduce(
+        (key, childControl) => `${key}${childControl.iconDescription}`,
+        index
+      );
       return control.hasScroll ? (
         isExpandedMode ? (
           <ScrollingControls
