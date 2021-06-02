@@ -95,7 +95,8 @@ const propTypes = {
    * direction of document
    */
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
-
+  /** shows an additional column that can expand/shrink as the table is resized  */
+  showExpanderColumn: PropTypes.bool,
   testID: PropTypes.string,
 };
 
@@ -121,6 +122,7 @@ const defaultProps = {
   rowEditMode: false,
   singleRowEditButtons: null,
   langDir: 'ltr',
+  showExpanderColumn: false,
   testID: '',
 };
 
@@ -156,6 +158,7 @@ const TableBody = ({
   singleRowEditButtons,
   langDir,
   testID,
+  showExpanderColumn,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -310,6 +313,7 @@ const TableBody = ({
         }}
         rowActions={row.rowActions}
         values={row.values}
+        showExpanderColumn={showExpanderColumn}
       />
     );
     return shouldShowChildren

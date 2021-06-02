@@ -113,6 +113,20 @@ describe('ColumnHeaderRow', () => {
     expect(renderedElement.container.innerHTML).toContain('colspan="3"');
   });
 
+  it('adds extra colspan when showExpanderColumn is true', () => {
+    const tableHeadProps = {
+      ...commonTableHeadProps,
+      options: { ...commonTableHeadProps.options },
+      showExpanderColumn: true,
+    };
+
+    const renderedElement = render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
+
+    expect(renderedElement.container.innerHTML).toContain('Column 1');
+    expect(renderedElement.container.innerHTML).toContain('Column 2');
+    expect(renderedElement.container.innerHTML).toContain('colspan="3"');
+  });
+
   it('column selection config renders and fires callback on click', () => {
     const onColumnSelectionConfig = jest.fn();
     const tableHeadProps = {
