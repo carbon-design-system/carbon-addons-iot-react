@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow is not selectable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableBodyRow is not selectable 1`] = `
 <div
   className="storybook-container"
 >
@@ -25,7 +25,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             aria-live="polite"
           >
             <tr
-              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
               onClick={[Function]}
             >
               <td
@@ -156,7 +156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow is selectable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableBodyRow is selectable 1`] = `
 <div
   className="storybook-container"
 >
@@ -181,7 +181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             aria-live="polite"
           >
             <tr
-              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
               onClick={[Function]}
             >
               <td
@@ -312,7 +312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableBodyRow normal 1`] = `
 <div
   className="storybook-container"
 >
@@ -337,7 +337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             aria-live="polite"
           >
             <tr
-              className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
               onClick={[Function]}
             >
               <td
@@ -391,7 +391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow row actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableBodyRow row actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -546,7 +546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow row actions with overflow 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableBodyRow row actions with overflow 1`] = `
 <div
   className="storybook-container"
 >
@@ -748,7 +748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow rowActions error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableBodyRow rowActions error 1`] = `
 <div
   className="storybook-container"
 >
@@ -914,7 +914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableBodyRow rowActions running 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableBodyRow rowActions running 1`] = `
 <div
   className="storybook-container"
 >

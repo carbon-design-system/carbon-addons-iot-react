@@ -7,12 +7,15 @@ import {
 } from 'carbon-components-react';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import { withReadme } from 'storybook-readme';
+import { select } from '@storybook/addon-knobs';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
+import README from './README.md';
 import MenuButton from './MenuButton';
 
-const menuItems = [
+export const menuItems = [
   <ContextMenuSelectableItem
     key="publish"
     label="Publish"
@@ -62,10 +65,11 @@ Experimental.story = {
   name: experimentalStoryTitle,
 };
 
+const SingleButton = () => <MenuButton label="Actions">{menuItems}</MenuButton>;
 /**
  * If no primary action is given, but has a label we assume it's a single menu button.
  */
-export const SingleMenuButton = () => <MenuButton label="Actions">{menuItems}</MenuButton>;
+export const SingleMenuButton = withReadme(README, () => <SingleButton />);
 
 SingleMenuButton.story = {
   name: 'menu button',
@@ -74,11 +78,14 @@ SingleMenuButton.story = {
 /**
  * if a primary action and label are given, then we assume it's a split button.
  */
-export const SplitMenuButton = () => (
+
+const SplitButton = () => (
   <MenuButton onPrimaryActionClick={action('onPrimaryActionClick')} label="Create">
     {menuItems}
   </MenuButton>
 );
+
+export const SplitMenuButton = withReadme(README, () => <SplitButton />);
 
 SplitMenuButton.story = {
   name: 'split menu button',
@@ -87,123 +94,139 @@ SplitMenuButton.story = {
 /**
  * if no label is given then it assumes it's an icon only menu.
  */
-export const IconOnlyMenuButton = () => (
+const IconOnlyButton = () => (
   <MenuButton renderOpenIcon={OverflowMenuVertical16} renderCloseIcon={OverflowMenuVertical16}>
     {menuItems}
   </MenuButton>
 );
 
+export const IconOnlyMenuButton = withReadme(README, () => <IconOnlyButton />);
+
 IconOnlyMenuButton.story = {
   name: 'icon only menu button',
 };
 
-export const AutoPositioningExample = () => (
-  <div
-    style={{
-      display: 'flex',
-      flex: '1',
-      flexDirection: 'column',
-      height: 'calc(100vh)',
-    }}
-  >
-    <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'flex-start',
-          justifyContent: 'flex-start',
-          flex: 1,
-        }}
-      >
-        <IconOnlyMenuButton />
+export const AutoPositioningExample = () => {
+  const COMPONENTS = {
+    IconOnlyButton,
+    SplitButton,
+    SingleButton,
+  };
+
+  const key = select(
+    'component',
+    ['IconOnlyButton', 'SplitButton', 'SingleButton'],
+    'IconOnlyButton'
+  );
+  const Component = COMPONENTS?.[key];
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flex: '1',
+        flexDirection: 'column',
+        height: 'calc(100vh)',
+      }}
+    >
+      <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'flex-start',
+            flex: 1,
+          }}
+        >
+          <Component />
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+          }}
+        >
+          <Component />
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            alignItems: 'flex-start',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Component />
+        </div>
       </div>
-      <div
-        style={{
-          display: 'flex',
-          flex: 1,
-          alignItems: 'flex-start',
-          justifyContent: 'center',
-        }}
-      >
-        <IconOnlyMenuButton />
+      <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            flex: 1,
+          }}
+        >
+          <Component />
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Component />
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Component />
+        </div>
       </div>
-      <div
-        style={{
-          display: 'flex',
-          flex: 1,
-          alignItems: 'flex-start',
-          justifyContent: 'flex-end',
-        }}
-      >
-        <IconOnlyMenuButton />
+      <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-end',
+            justifyContent: 'flex-start',
+            flex: 1,
+          }}
+        >
+          <Component />
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            alignItems: 'flex-end',
+            justifyContent: 'center',
+          }}
+        >
+          <Component />
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            alignItems: 'flex-end',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Component />
+        </div>
       </div>
     </div>
-    <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-start',
-          flex: 1,
-        }}
-      >
-        <IconOnlyMenuButton />
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <IconOnlyMenuButton />
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-        }}
-      >
-        <IconOnlyMenuButton />
-      </div>
-    </div>
-    <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'flex-end',
-          justifyContent: 'flex-start',
-          flex: 1,
-        }}
-      >
-        <IconOnlyMenuButton />
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flex: 1,
-          alignItems: 'flex-end',
-          justifyContent: 'center',
-        }}
-      >
-        <IconOnlyMenuButton />
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flex: 1,
-          alignItems: 'flex-end',
-          justifyContent: 'flex-end',
-        }}
-      >
-        <IconOnlyMenuButton />
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 AutoPositioningExample.story = {
   name: 'icon only with auto positioning',
@@ -216,4 +239,5 @@ export default {
   parameters: {
     component: MenuButton,
   },
+  excludeStories: ['menuItems'],
 };

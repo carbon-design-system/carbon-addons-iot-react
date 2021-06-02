@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideNav SideNav component 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SideNav SideNav component 1`] = `
 <div
   className="storybook-container"
 >
@@ -67,43 +67,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
             IBM
           </span>
            
-          Watson IoT Platform 
+          <span>
+            Watson IoT Platform 
+          </span>
+          <span
+            className="iot--header__short-name"
+          >
+            Watson IoT Platform 
+          </span>
         </a>
         <div
           className="bx--header__global"
         >
-          <button
-            aria-label="user"
-            aria-pressed={null}
-            className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-            data-testid="menu-item-user-global"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
+          <div
+            className="bx--header__global"
           >
-            <span
-              className="bx--assistive-text"
+            <button
+              aria-label="user"
+              aria-pressed={null}
+              className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+              data-testid="menu-item-user-global"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              user
-            </span>
-            <svg
-              aria-hidden={true}
-              className="bx--header__menu-item bx--header__menu-title"
-              description="Icon"
-              fill="white"
-              focusable="false"
-              height={24}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={24}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M31 30H29V27a3 3 0 00-3-3H22a3 3 0 00-3 3v3H17V27a5 5 0 015-5h4a5 5 0 015 5zM24 12a3 3 0 11-3 3 3 3 0 013-3m0-2a5 5 0 105 5A5 5 0 0024 10zM15 22H13V19a3 3 0 00-3-3H6a3 3 0 00-3 3v3H1V19a5 5 0 015-5h4a5 5 0 015 5zM8 4A3 3 0 115 7 3 3 0 018 4M8 2a5 5 0 105 5A5 5 0 008 2z"
-              />
-            </svg>
-          </button>
+              <span
+                className="bx--assistive-text"
+              >
+                user
+              </span>
+              <svg
+                aria-hidden={true}
+                className="bx--header__menu-item bx--header__menu-title"
+                description="Icon"
+                fill="white"
+                focusable="false"
+                height={24}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M31 30H29V27a3 3 0 00-3-3H22a3 3 0 00-3 3v3H17V27a5 5 0 015-5h4a5 5 0 015 5zM24 12a3 3 0 11-3 3 3 3 0 013-3m0-2a5 5 0 105 5A5 5 0 0024 10zM15 22H13V19a3 3 0 00-3-3H6a3 3 0 00-3 3v3H1V19a5 5 0 015-5h4a5 5 0 015 5zM8 4A3 3 0 115 7 3 3 0 018 4M8 2a5 5 0 105 5A5 5 0 008 2z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </header>
       <div
@@ -114,23 +125,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
         aria-label="Side navigation"
         className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
         onBlur={[Function]}
-        onClickSideNavExpand={[Function]}
         onFocus={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
-        switcherProps={
-          Object {
-            "className": "class",
-            "labelText": "ExampleOne",
-            "onChange": [Function],
-            "options": Array [
-              "ExampleOne",
-              "ExampleTwo",
-            ],
-            "switcherTitle": "Applications",
-          }
-        }
-        translateById={[Function]}
       >
         <ul
           className="bx--side-nav__items"

@@ -114,7 +114,7 @@ const headerButton = (
 );
 
 export default {
-  title: 'Watson IoT/List',
+  title: '1 - Watson IoT/List',
 
   parameters: {
     component: List,
@@ -641,4 +641,29 @@ export const IsLoading = () => (
 
 IsLoading.story = {
   name: 'with isLoading',
+};
+
+export const WithPagination = () => (
+  <div style={{ height: 300, overflow: 'auto', width: 400 }}>
+    <List
+      title={text('title', 'NY Yankees')}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key]) => ({
+          id: key,
+          content: { value: key },
+        })
+      )}
+      isLoading={boolean('isLoading', false)}
+      pagination={{
+        page: 1,
+        onPage() {},
+        maxPage: 10,
+        pageOfPagesText: (page) => `Page ${page}`,
+      }}
+      isFullHeight
+    />
+  </div>
+);
+WithPagination.story = {
+  name: 'with pagination',
 };

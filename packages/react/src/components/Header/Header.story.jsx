@@ -4,6 +4,7 @@ import { text } from '@storybook/addon-knobs';
 import NotificationOn from '@carbon/icons-react/lib/notification/16';
 import HeaderHelp from '@carbon/icons-react/lib/help/16';
 import Avatar from '@carbon/icons-react/lib/user--avatar/16';
+import { Bullhorn16, Checkbox16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Tag } from '../Tag';
@@ -150,7 +151,7 @@ const headerPanel = {
 };
 
 export default {
-  title: 'Watson IoT/Header',
+  title: '1 - Watson IoT/Header',
 
   parameters: {
     component: Header,
@@ -209,6 +210,44 @@ export const HeaderSubtitle = () => (
 
 HeaderSubtitle.story = {
   name: 'header subtitle',
+};
+
+export const SmallBreakpoint = () => (
+  <div style={{ width: '100%', height: '100vh' }}>
+    <Header
+      {...HeaderProps}
+      actionItems={[
+        {
+          label: 'Announcements',
+          onClick: action('click fired'),
+          btnContent: <Bullhorn16 fill="white" description="Announcements" />,
+        },
+        {
+          label: 'Custom icon 1',
+          onClick: action('click fired'),
+          btnContent: <Checkbox16 fill="white" description="icon" />,
+        },
+        {
+          label: 'Custom icon 2',
+          onClick: action('click fired'),
+          btnContent: <Checkbox16 fill="white" description="icon" />,
+        },
+        {
+          label: 'Custom icon 3',
+          onClick: action('click fired'),
+          btnContent: <Checkbox16 fill="white" description="icon" />,
+        },
+        ...HeaderProps.actionItems,
+      ]}
+      appName={text('appName', 'Maximo Application Suite')}
+      shortAppName={text('shortAppName', 'Maximo')}
+      subtitle={text('subtitle', 'Manage')}
+    />
+  </div>
+);
+
+SmallBreakpoint.story = {
+  name: 'small breakpoint',
 };
 
 export const HeaderComponentSubtitle = () => (

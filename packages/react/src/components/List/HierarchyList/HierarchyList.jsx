@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
 import isEqual from 'lodash/isEqual';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
@@ -15,6 +14,7 @@ import {
   DropLocation,
 } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
+import { usePrevious } from '../../../hooks/usePrevious';
 
 import HierarchyListReorderModal from './HierarchyListReorderModal/HierarchyListReorderModal';
 import BulkActionHeader from './BulkActionHeader';
@@ -81,6 +81,8 @@ const propTypes = {
   sendingData: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   /** optional classname to be passed to the dom element */
   className: PropTypes.string,
+  /** an optional id string passed to the list search field */
+  searchId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -119,6 +121,7 @@ const defaultProps = {
   },
   className: null,
   items: [],
+  searchId: null,
 };
 
 /**
@@ -186,6 +189,17 @@ export const searchForNestedItemIds = (items, value) => {
   return filteredItems;
 };
 
+const reduceItems = (items) =>
+  items.reduce((carry, { id, children }) => {
+    return [
+      ...carry,
+      {
+        id,
+        children: children ? reduceItems(children) : undefined,
+      },
+    ];
+  }, []);
+
 const HierarchyList = ({
   editingStyle,
   title,
@@ -208,6 +222,7 @@ const HierarchyList = ({
   cancelMoveClicked,
   sendingData,
   className,
+  searchId,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -218,10 +233,16 @@ const HierarchyList = ({
   const [selectedIds, setSelectedIds] = useState([]);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
   const [showModal, setShowModal] = useState(false);
-
-  useDeepCompareEffect(() => {
-    setFilteredItems(items);
-  }, [items]);
+  // these are used in filtering, and since items may contain nodes or react elements
+  // we don't want to do equality checks against those, so we strip the items down to
+  // the basics need for filtering checks and memoize them for use in the useEffect below
+  const itemsStrippedOfNodeElements = useMemo(() => reduceItems(items), [items]);
+  const previousItems = usePrevious(items);
+  useEffect(() => {
+    if (!isEqual(items, previousItems)) {
+      setFilteredItems(items);
+    }
+  }, [items, previousItems]);
 
   const selectedItemRef = useCallback((node) => {
     if (node && node.parentNode) {
@@ -260,12 +281,14 @@ const HierarchyList = ({
     cancelMoveClicked();
   };
 
-  useDeepCompareEffect(
-    // have to use deep compare to accurately compare items
+  useEffect(
     () => {
       // Expand the parent elements of the defaultSelectedId
       if (defaultSelectedId) {
-        const tempFilteredItems = searchForNestedItemIds(items, defaultSelectedId);
+        const tempFilteredItems = searchForNestedItemIds(
+          itemsStrippedOfNodeElements,
+          defaultSelectedId
+        );
         const tempExpandedIds = [...expandedIds];
         // Expand the categories that have found results
         tempFilteredItems.forEach((categoryItem) => {
@@ -279,7 +302,8 @@ const HierarchyList = ({
         }
       }
     },
-    [defaultSelectedId, items]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [defaultSelectedId, itemsStrippedOfNodeElements]
   );
 
   const numberOfItems = filteredItems.length;
@@ -396,6 +420,7 @@ const HierarchyList = ({
         search={
           hasSearch
             ? {
+                id: searchId,
                 value: searchValue,
                 onChange: (evt) => {
                   setSearchValue(evt.target.value);

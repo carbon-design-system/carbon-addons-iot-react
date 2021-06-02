@@ -42,6 +42,30 @@ describe('timeSeriesUtils', () => {
       expect(sampleValues[7].temperature).toBeDefined();
       expect(sampleValues[7].severity).toEqual(3);
     });
+    it('generateSampleValues with thresholds', () => {
+      const sampleValues = generateSampleValues(
+        [{ dataSourceId: 'temperature' }, { dataSourceId: 'temperature' }],
+        'timestamp',
+        'day',
+        undefined,
+        [
+          {
+            axis: 'y',
+            value: 100,
+            fillColor: 'red',
+            label: 'Alert 1',
+          },
+          {
+            axis: 'y',
+            value: 5,
+            fillColor: 'red',
+            label: 'Alert 1',
+          },
+        ]
+      );
+      expect(sampleValues.some((value) => value.temperature > 100)).toEqual(true);
+      expect(sampleValues.some((value) => value.temperature < 5)).toEqual(true);
+    });
     it('generateSampleValues hour', () => {
       const sampleValues = generateSampleValues(
         [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
@@ -163,6 +187,11 @@ describe('timeSeriesUtils', () => {
     it('should not add date if missing', () => {
       const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
       const updatedTooltip = handleTooltip([], defaultTooltip, [], 'Detected alert:');
+      expect(updatedTooltip).toEqual(defaultTooltip);
+    });
+    it('should not throw error if dataOrHoveredElement is undefined', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      const updatedTooltip = handleTooltip(undefined, defaultTooltip, [], 'Detected alert:');
       expect(updatedTooltip).toEqual(defaultTooltip);
     });
     it('should add date', () => {

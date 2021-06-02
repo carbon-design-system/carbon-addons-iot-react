@@ -14,6 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
   >
     <div
       className="iot--menu-button"
+      data-testid="menu-button-wrapper"
     >
       <button
         className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
@@ -626,6 +627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--menu-button"
+            data-testid="menu-button-wrapper"
           >
             <button
               className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
@@ -1181,6 +1183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--menu-button"
+            data-testid="menu-button-wrapper"
           >
             <button
               className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
@@ -1736,6 +1739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--menu-button"
+            data-testid="menu-button-wrapper"
           >
             <button
               className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
@@ -2301,6 +2305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--menu-button"
+            data-testid="menu-button-wrapper"
           >
             <button
               className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
@@ -2856,6 +2861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--menu-button"
+            data-testid="menu-button-wrapper"
           >
             <button
               className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
@@ -3411,6 +3417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--menu-button"
+            data-testid="menu-button-wrapper"
           >
             <button
               className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
@@ -3976,6 +3983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--menu-button"
+            data-testid="menu-button-wrapper"
           >
             <button
               className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
@@ -4531,6 +4539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--menu-button"
+            data-testid="menu-button-wrapper"
           >
             <button
               className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
@@ -5086,6 +5095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--menu-button"
+            data-testid="menu-button-wrapper"
           >
             <button
               className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
@@ -5672,6 +5682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
   >
     <div
       className="iot--menu-button"
+      data-testid="menu-button-wrapper"
     >
       <button
         aria-pressed={null}
@@ -6240,6 +6251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
   >
     <div
       className="iot--menu-button"
+      data-testid="menu-button-wrapper"
     >
       <button
         aria-pressed={null}

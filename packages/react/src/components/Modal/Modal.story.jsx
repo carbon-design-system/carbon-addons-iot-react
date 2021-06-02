@@ -134,7 +134,7 @@ const ModalStateManager = ({ renderLauncher: LauncherContent, children: ModalCon
 };
 
 export default {
-  title: 'Modal',
+  title: '3 - Carbon/Modal',
   decorators: [withKnobs],
   parameters: {
     component: Modal,

@@ -1,6 +1,200 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar base 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar With Custom Render Function 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "150vh",
+          }
+        }
+      >
+        <div
+          className="page-title-bar"
+          style={
+            Object {
+              "--header-offset": "48px",
+              "--scroll-transition-progress": 1,
+            }
+          }
+        >
+          <div
+            className="page-title-bar-header"
+          >
+            <div
+              className="page-title-bar-breadcrumb-bg"
+            />
+            <div
+              className="page-title-bar-breadcrumb breadcrumb--container"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Type
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <span
+                      className="bx--link"
+                    >
+                      Instance
+                    </span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
+            >
+              <div
+                className="page-title-bar-title--text"
+              >
+                <h2>
+                  Page title
+                   
+                  <svg
+                    aria-hidden={true}
+                    color="red"
+                    fill="currentColor"
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <path
+                      d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
+                    />
+                  </svg>
+                </h2>
+              </div>
+            </div>
+            <div
+              className="page-title-bar-header-right"
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                  }
+                }
+              >
+                <span
+                  style={
+                    Object {
+                      "marginRight": "1rem",
+                    }
+                  }
+                >
+                  <b>
+                    Last updated:
+                  </b>
+                   yesterday
+                </span>
+                <button
+                  aria-pressed={null}
+                  className="some-right-content iot--btn bx--btn bx--btn--field bx--btn--primary"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Take an action
+                  <svg
+                    aria-hidden={true}
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar base 1`] = `
 <div
   className="storybook-container"
 >
@@ -80,7 +274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar isLoading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar isLoading 1`] = `
 <div
   className="storybook-container"
 >
@@ -145,7 +339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with breadcrumb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with breadcrumb 1`] = `
 <div
   className="storybook-container"
 >
@@ -322,7 +516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with breadcrumbs, actions, and tabs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with breadcrumbs, actions, and tabs 1`] = `
 <div
   className="storybook-container"
 >
@@ -461,6 +655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="Edit page title"
                   type="button"
                 >
                   <span
@@ -621,11 +816,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-30__panel"
+                      aria-controls="tab-32__panel"
                       aria-selected={true}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-30"
+                      id="tab-32"
                       role="tab"
                       tabIndex={0}
                       type="button"
@@ -640,11 +835,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-31__panel"
+                      aria-controls="tab-33__panel"
                       aria-selected={false}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-31"
+                      id="tab-33"
                       role="tab"
                       tabIndex={-1}
                       type="button"
@@ -659,11 +854,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-32__panel"
+                      aria-controls="tab-34__panel"
                       aria-selected={false}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-32"
+                      id="tab-34"
                       role="tab"
                       tabIndex={-1}
                       type="button"
@@ -763,7 +958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with condensed with primary + secondary buttons 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with condensed with primary + secondary buttons 1`] = `
 <div
   className="storybook-container"
 >
@@ -1063,7 +1258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with description 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with description 1`] = `
 <div
   className="storybook-container"
 >
@@ -1156,7 +1351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with dynamic with an offset 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with dynamic with an offset 1`] = `
 <div
   className="storybook-container"
 >
@@ -1291,7 +1486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with dynamic with breadcrumbs, actions, and content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with dynamic with breadcrumbs, actions, and content 1`] = `
 <div
   className="storybook-container"
 >
@@ -1647,7 +1842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with dynamic with breadcrumbs, actions, and tabs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with dynamic with breadcrumbs, actions, and tabs 1`] = `
 <div
   className="storybook-container"
 >
@@ -1792,6 +1987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="Edit page title"
                   type="button"
                 >
                   <span
@@ -1961,11 +2157,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-33__panel"
+                      aria-controls="tab-35__panel"
                       aria-selected={true}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-33"
+                      id="tab-35"
                       role="tab"
                       tabIndex={0}
                       type="button"
@@ -1980,11 +2176,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-34__panel"
+                      aria-controls="tab-36__panel"
                       aria-selected={false}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-34"
+                      id="tab-36"
                       role="tab"
                       tabIndex={-1}
                       type="button"
@@ -1999,11 +2195,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-35__panel"
+                      aria-controls="tab-37__panel"
                       aria-selected={false}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-35"
+                      id="tab-37"
                       role="tab"
                       tabIndex={-1}
                       type="button"
@@ -2626,7 +2822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with dynamic with breadcrumbs, actions, and upper actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with dynamic with breadcrumbs, actions, and upper actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -2863,7 +3059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with dynamic with just a title 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with dynamic with just a title 1`] = `
 <div
   className="storybook-container"
 >
@@ -2970,7 +3166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with editable title bar and subtitle 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with editable title bar and subtitle 1`] = `
 <div
   className="storybook-container"
 >
@@ -3028,6 +3224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="Edit page title"
                   type="button"
                 >
                   <span
@@ -3094,7 +3291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with rich content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with rich content 1`] = `
 <div
   className="storybook-container"
 >
@@ -3269,7 +3466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with search and tabs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with search and tabs 1`] = `
 <div
   className="storybook-container"
 >
@@ -3408,6 +3605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
+                  title="Edit page title"
                   type="button"
                 >
                   <span
@@ -3665,11 +3863,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-27__panel"
+                      aria-controls="tab-29__panel"
                       aria-selected={true}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-27"
+                      id="tab-29"
                       role="tab"
                       tabIndex={0}
                       type="button"
@@ -3684,11 +3882,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-28__panel"
+                      aria-controls="tab-30__panel"
                       aria-selected={false}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-28"
+                      id="tab-30"
                       role="tab"
                       tabIndex={-1}
                       type="button"
@@ -3703,11 +3901,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-29__panel"
+                      aria-controls="tab-31__panel"
                       aria-selected={false}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-29"
+                      id="tab-31"
                       role="tab"
                       tabIndex={-1}
                       type="button"
@@ -3807,7 +4005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with select action and an overflowing page title 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with select action and an overflowing page title 1`] = `
 <div
   className="storybook-container"
 >
@@ -4128,7 +4326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with status description and breadcrumbs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with status description and breadcrumbs 1`] = `
 <div
   className="storybook-container"
 >
@@ -4295,7 +4493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with tooltip description with node 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with tooltip description with node 1`] = `
 <div
   className="storybook-container"
 >

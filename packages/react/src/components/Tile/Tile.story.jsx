@@ -77,7 +77,7 @@ const props = {
 };
 
 export default {
-  title: 'Tile',
+  title: '3 - Carbon/Tile',
   decorators: [withKnobs],
 
   parameters: {
