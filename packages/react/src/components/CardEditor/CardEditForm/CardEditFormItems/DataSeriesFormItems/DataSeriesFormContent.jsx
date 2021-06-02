@@ -101,7 +101,6 @@ const propTypes = {
     clearSelectionText: PropTypes.string,
     openMenuText: PropTypes.string,
     closeMenuText: PropTypes.string,
-    addDataItems: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
 };
@@ -138,7 +137,6 @@ const defaultProps = {
     clearSelectionText: 'Clear selection',
     openMenuText: 'Open menu',
     closeMenuText: 'Close menu',
-    addDataItems: 'Add data items',
   },
   getValidDataItems: null,
   dataItems: [],
