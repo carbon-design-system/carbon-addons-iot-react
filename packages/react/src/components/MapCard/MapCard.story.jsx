@@ -80,7 +80,7 @@ OpenlayersStory.story = {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ MapCard',
+  title: '2 - Watson IoT Experimental/☢️ MapCard',
   decorators: [withKnobs, React.createElement],
   parameters: {
     component: MapboxStory,
