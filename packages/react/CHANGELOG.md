@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.20...v2.146.0-next.21) (2021-06-02)
+
+
+### Bug Fixes
+
+* **hotspot:** use carbon colors and mixins for hotspot styles ([87d0638](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/87d063873d7a99cf594afed2d5cdccfe9d19b38e))
+
+
+
+
+
 # [2.146.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.19...v2.146.0-next.20) (2021-06-02)
 
 
