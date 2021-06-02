@@ -1,6 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withReadme } from 'storybook-readme';
 
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
@@ -9,13 +10,14 @@ import data from './storyFiles/data.json';
 import options from './storyFiles/mapOptions';
 import MapboxExample from './storyFiles/MapboxExample';
 import OpenLayersExample from './storyFiles/OpenLayersExample';
+import MapCardREADME from './README.md';
 
 export const Experimental = () => <StoryNotice componentName="MapCard" experimental />;
 Experimental.story = {
   name: experimentalStoryTitle,
 };
 
-export const MapboxStory = () => {
+export const MapboxStory = withReadme(MapCardREADME, () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -41,13 +43,13 @@ export const MapboxStory = () => {
       isExpanded={isExpanded}
     />
   );
-};
+});
 
 MapboxStory.story = {
   name: 'Using Mapbox',
 };
 
-export const OpenlayersStory = () => {
+export const OpenlayersStory = withReadme(MapCardREADME, () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -73,7 +75,7 @@ export const OpenlayersStory = () => {
       isExpanded={isExpanded}
     />
   );
-};
+});
 
 OpenlayersStory.story = {
   name: 'Using Open layers',
