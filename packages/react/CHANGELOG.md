@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.19...v2.146.0-next.20) (2021-06-02)
+
+
+### Bug Fixes
+
+* **table:** merge fix column resize with useprevious ([b00a820](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b00a820b27b68d6129ed50b1fe197c5062b1ed7e))
+* **table:** resizable table handles window width changes ([cd00a1c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cd00a1c04dba24ddc5dd8bec2400712be5c44ff9))
+
+
+
+
+
 # [2.146.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.18...v2.146.0-next.19) (2021-06-01)
 
 
