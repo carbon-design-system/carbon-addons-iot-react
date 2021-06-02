@@ -371,6 +371,27 @@ describe('MapCards', () => {
     expect(rainyClickCallback).toHaveBeenCalled();
   });
 
+  it('only adds layered control trigger button if there are layered controls to show', () => {
+    render(
+      <MapCard
+        id="map-card"
+        testId="map-card"
+        mapContainerRef={React.createRef()}
+        stops={[]}
+        onZoomIn={() => {}}
+        onZoomOut={() => {}}
+        settingsContent={settingsContentMock}
+        layeredControls={[]}
+      />
+    );
+
+    expect(
+      screen.queryByRole('button', {
+        name: 'Layered controls',
+      })
+    ).not.toBeInTheDocument();
+  });
+
   it('can add "selactable" layered map controls', () => {
     const layeredMapControls = [
       {
@@ -452,12 +473,6 @@ describe('MapCards', () => {
 
     userEvent.click(
       screen.getByRole('button', {
-        name: 'Layered controls',
-      })
-    );
-
-    userEvent.click(
-      screen.getByRole('button', {
         name: 'Rainy',
       })
     );
@@ -500,12 +515,6 @@ describe('MapCards', () => {
           },
         ]}
       />
-    );
-
-    userEvent.click(
-      screen.getByRole('button', {
-        name: 'Layered controls',
-      })
     );
 
     const sunnyButton = screen.getByRole('button', {
@@ -551,12 +560,6 @@ describe('MapCards', () => {
           },
         ]}
       />
-    );
-
-    userEvent.click(
-      screen.getByRole('button', {
-        name: 'Layered controls',
-      })
     );
 
     expect(
@@ -617,12 +620,6 @@ describe('MapCards', () => {
           },
         ]}
       />
-    );
-
-    userEvent.click(
-      screen.getByRole('button', {
-        name: 'Layered controls',
-      })
     );
 
     expect(
