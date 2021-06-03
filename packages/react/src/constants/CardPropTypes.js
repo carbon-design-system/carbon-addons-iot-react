@@ -631,6 +631,8 @@ export const MapCardPropTypes = {
   settingsContent: PropTypes.elementType,
   /** list of text - color pairs for the legend. Each pair is an array where pos 0 is the text and pos 1 the color */
   stops: PropTypes.array,
+  /** the ref used needed by a drag and drop library like react-dnd. Is added to the map container element. */
+  dropRef: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func]),
 };
 
 export const CardPropTypes = {

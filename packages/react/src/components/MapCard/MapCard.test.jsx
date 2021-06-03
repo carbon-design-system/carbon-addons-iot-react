@@ -760,7 +760,7 @@ describe('MapCards', () => {
     HTMLElement.prototype.scrollBy = originalScrollBy;
   });
 
-  it('can handles scrollable "grouped" width visibleItemsCount:1 ', () => {
+  it('can handle scrollable "grouped" width visibleItemsCount:1 ', () => {
     const visibleItemsCount = 1;
     const buttonHeight = 40;
     const onClickCallback = jest.fn();
@@ -830,5 +830,26 @@ describe('MapCards', () => {
     });
 
     HTMLElement.prototype.scrollBy = originalScrollBy;
+  });
+
+  it('can handle multiple references', () => {
+    const mapRef = React.createRef();
+    const dropRef = React.createRef();
+    render(
+      <MapCard
+        id="map-card"
+        testId="map-card"
+        mapContainerRef={mapRef}
+        dropRef={dropRef}
+        stops={[]}
+        onZoomIn={() => {}}
+        onZoomOut={() => {}}
+        settingsContent={settingsContentMock}
+        isExpanded
+      />
+    );
+
+    expect(mapRef.current).toHaveClass('iot--map__container');
+    expect(dropRef.current).toHaveClass('iot--map__container');
   });
 });
