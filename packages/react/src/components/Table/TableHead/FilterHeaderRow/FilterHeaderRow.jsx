@@ -75,6 +75,8 @@ class FilterHeaderRow extends Component {
     hasFastFilter: PropTypes.bool,
 
     testID: PropTypes.string,
+    /** shows an additional column that can expand/shrink as the table is resized  */
+    showExpanderColumn: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -180,6 +182,7 @@ class FilterHeaderRow extends Component {
       isDisabled,
       hasFastFilter,
       testID,
+      showExpanderColumn,
     } = this.props;
     const { filterValues } = this.state;
     return isVisible ? (
@@ -356,6 +359,12 @@ class FilterHeaderRow extends Component {
           })}
         {hasRowActions ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
+        ) : null}
+        {showExpanderColumn ? (
+          <TableHeader
+            testID={`${testID}-expander-column`}
+            className={`${iotPrefix}--filter-header-row--header`}
+          />
         ) : null}
       </TableRow>
     ) : null;

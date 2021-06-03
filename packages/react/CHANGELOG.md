@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.20...v2.146.0-next.21) (2021-06-02)
+
+
+### Bug Fixes
+
+* **hotspot:** use carbon colors and mixins for hotspot styles ([87d0638](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/87d063873d7a99cf594afed2d5cdccfe9d19b38e))
+
+
+
+
+
+# [2.146.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.19...v2.146.0-next.20) (2021-06-02)
+
+
+### Bug Fixes
+
+* **table:** merge fix column resize with useprevious ([b00a820](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b00a820b27b68d6129ed50b1fe197c5062b1ed7e))
+* **table:** resizable table handles window width changes ([cd00a1c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cd00a1c04dba24ddc5dd8bec2400712be5c44ff9))
+
+
+
+
+
+# [2.146.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.18...v2.146.0-next.19) (2021-06-01)
+
+
+### Bug Fixes
+
+* **tablecard:** allow row-specific and cardvariable prop ([158323d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/158323d6c7032d8a063dda88bbfdda6b259c359b))
+* **tablecard:** remove unused argument ([a0b4231](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a0b423155008a92be43db64e7800b30bfdb5235e))
+
+
+
+
+
+# [2.146.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.17...v2.146.0-next.18) (2021-06-01)
+
+
+### Features
+
+* **dashboard-editor:** add get-default-card prop to editor ([7c656f5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7c656f50ded051775e076a4491da156d02f15887))
+
+
+
+
+
 # [2.146.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.16...v2.146.0-next.17) (2021-05-28)
 
 
