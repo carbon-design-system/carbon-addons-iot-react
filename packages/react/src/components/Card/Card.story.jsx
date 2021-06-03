@@ -12,13 +12,13 @@ import README from './Card.md';
 import Card from './Card';
 
 export const getDataStateProp = () => ({
-  label: text('dataState : Label', 'No data available for this score at this time'),
+  label: text('dataState.label', 'No data available for this score at this time'),
   description: text(
-    'dataState : Description',
+    'dataState.description',
     'The last successful score was 68 at 13:21 - 10/21/2019 but wait, there is more, according to the latest test results this line is too long.'
   ),
   extraTooltipText: text(
-    'dataState : ExtraTooltipText',
+    'dataState.extraTooltipText',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   ),
   learnMoreElement: (
