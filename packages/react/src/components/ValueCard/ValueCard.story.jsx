@@ -10,7 +10,7 @@ import { getDataStateProp } from '../Card/Card.story';
 import ValueCard from './ValueCard';
 
 export default {
-  title: 'Watson IoT/ValueCard',
+  title: '1 - Watson IoT/ValueCard',
 
   parameters: {
     component: ValueCard,

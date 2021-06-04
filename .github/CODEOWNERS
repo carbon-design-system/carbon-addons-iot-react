@@ -17,7 +17,7 @@
 # These users own any files in the following directory at the root of
 # the repository and any of its subdirectories.
 
-* @bryancboyd @scottdickerson @davidicus @leetosc @cgirani @stuckless @tomklapiscak @JoelArmendariz @jessieyan @blechner @sstone2423
+* @bryancboyd @scottdickerson @davidicus @leetosc @cgirani @stuckless @tomklapiscak @JoelArmendariz @jessieyan @blechner @sstone2423 @herleraja
 
 #####
 # Core admin team should be notified of changes to build/test/deploy
@@ -43,4 +43,4 @@
 **/publicAPI.test.js.snap  @davidicus
 
 # Angular team should be required for Angular changes
-/packages/angular/ @IBM/carbon-angular
+/packages/angular/ @carbon-design-system/angular-maintainers

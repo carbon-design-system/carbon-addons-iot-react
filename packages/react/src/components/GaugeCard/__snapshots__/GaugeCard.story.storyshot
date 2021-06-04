@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/GaugeCard basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/GaugeCard basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -191,7 +191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Gauge
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/GaugeCard basic with expand 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/GaugeCard basic with expand 1`] = `
 <div
   className="storybook-container"
 >
@@ -416,7 +416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Gauge
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/GaugeCard with data state no-data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/GaugeCard with data state no-data 1`] = `
 <div
   className="storybook-container"
 >

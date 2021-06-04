@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Accept JSON 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Accept JSON 1`] = `
 <div
   className="storybook-container"
 >
@@ -93,7 +93,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Browse 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Browse 1`] = `
 <div
   className="storybook-container"
 >
@@ -122,7 +122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
       <label
         aria-disabled={false}
         className="bx--btn bx--btn--secondary"
-        htmlFor="id11"
+        htmlFor="id12"
         onKeyDown={[Function]}
         tabIndex={0}
       >
@@ -136,7 +136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         accept={Array []}
         className="bx--visually-hidden"
         disabled={false}
-        id="id11"
+        id="id12"
         multiple={true}
         onChange={[Function]}
         onClick={[Function]}
@@ -174,7 +174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Browse only one 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Browse only one 1`] = `
 <div
   className="storybook-container"
 >
@@ -203,7 +203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
       <label
         aria-disabled={false}
         className="bx--btn bx--btn--secondary"
-        htmlFor="id12"
+        htmlFor="id13"
         onKeyDown={[Function]}
         tabIndex={0}
       >
@@ -217,7 +217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         accept={Array []}
         className="bx--visually-hidden"
         disabled={false}
-        id="id12"
+        id="id13"
         multiple={false}
         onChange={[Function]}
         onClick={[Function]}
@@ -255,7 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Drag and drop 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Drag and drop 1`] = `
 <div
   className="storybook-container"
 >
@@ -344,7 +344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Drag only one file 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Drag only one file 1`] = `
 <div
   className="storybook-container"
 >
@@ -433,7 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Show files false 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Show files false 1`] = `
 <div
   className="storybook-container"
 >

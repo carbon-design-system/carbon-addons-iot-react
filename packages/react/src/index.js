@@ -62,6 +62,8 @@ export SuiteHeaderLogoutModal from './components/SuiteHeader/SuiteHeaderLogoutMo
 export SuiteHeaderI18N from './components/SuiteHeader/i18n';
 export useSuiteHeaderData from './components/SuiteHeader/hooks/useSuiteHeaderData';
 export suiteHeaderData from './components/SuiteHeader/util/suiteHeaderData';
+export useUiResources from './components/SuiteHeader/hooks/useUiResources';
+export uiresources from './components/SuiteHeader/util/uiresources';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
@@ -117,6 +119,8 @@ export DynamicHotspotSourcePicker from './components/HotspotEditorModal/DynamicH
 export ComboChartCard from './components/ComboChartCard/ComboChartCard';
 export MenuButton from './components/MenuButton/MenuButton';
 export ListBuilder from './components/ListBuilder/ListBuilder';
+export TearSheet from './components/TearSheet/TearSheet';
+export TearSheetWrapper from './components/TearSheet/TearSheetWrapper';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';

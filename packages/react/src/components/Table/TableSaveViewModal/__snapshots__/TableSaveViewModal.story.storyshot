@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Custom description and public checkbox (using overrides) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Custom description and public checkbox (using overrides) 1`] = `
 <div
   className="storybook-container"
 >
@@ -118,7 +118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 onAnimationEnd={[Function]}
               >
                 <button
-                  aria-controls="accordion-item-115"
+                  aria-controls="accordion-item-118"
                   aria-expanded={false}
                   className="bx--accordion__heading"
                   onClick={[Function]}
@@ -148,7 +148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
                 <div
                   className="bx--accordion__content"
-                  id="accordion-item-115"
+                  id="accordion-item-118"
                 >
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -160,7 +160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 onAnimationEnd={[Function]}
               >
                 <button
-                  aria-controls="accordion-item-116"
+                  aria-controls="accordion-item-119"
                   aria-expanded={false}
                   className="bx--accordion__heading"
                   onClick={[Function]}
@@ -190,7 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
                 <div
                   className="bx--accordion__content"
-                  id="accordion-item-116"
+                  id="accordion-item-119"
                 >
                   <p>
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -316,7 +316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Custom form (using overrides) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Custom form (using overrides) 1`] = `
 <div
   className="storybook-container"
 >
@@ -484,7 +484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Default with knobs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Default with knobs 1`] = `
 <div
   className="storybook-container"
 >
@@ -717,7 +717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Prefilled 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Prefilled 1`] = `
 <div
   className="storybook-container"
 >

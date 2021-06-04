@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Started About Storybook 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Getting Started About Storybook 1`] = `
 <div
   className="storybook-container"
 >
@@ -3777,6 +3777,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                     role="cell"
                   >
+                    useUiResources
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
+                    uiresources
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
                     Dashboard
                   </div>
                 </div>
@@ -4463,6 +4491,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                     role="cell"
                   >
+                    TearSheet
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
+                    TearSheetWrapper
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
                     useDNDProviderElement
                   </div>
                 </div>
@@ -4914,7 +4970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Started Support 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Getting Started Support 1`] = `
 <div
   className="storybook-container"
 >

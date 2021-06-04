@@ -312,7 +312,13 @@ Map {
                     "isRequired": true,
                     "type": "node",
                   },
+                  "messageBody": Object {
+                    "type": "node",
+                  },
                   "messageWithFilters": Object {
+                    "type": "node",
+                  },
+                  "messageWithFiltersBody": Object {
                     "type": "node",
                   },
                 },
@@ -360,6 +366,7 @@ Map {
           "onColumnResize": [Function],
           "onColumnSelectionConfig": [Function],
           "onEmptyStateAction": null,
+          "onErrorStateAction": null,
           "onOverflowItemClicked": [Function],
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
@@ -378,8 +385,10 @@ Map {
           "onToggleFilter": [Function],
         },
       },
+      "error": null,
       "i18n": Object {
         "batchCancel": "Cancel",
+        "buttonLabelOnTableError": "Refresh the page",
         "clearAllFilters": "Clear all filters",
         "clearFilterAria": "Clear filter",
         "clearSelectionAria": "Clear selection",
@@ -417,6 +426,7 @@ Map {
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
+        "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle Aggregations",
       },
       "id": null,
@@ -538,6 +548,9 @@ Map {
                     "type": "func",
                   },
                   "onSelectAll": Object {
+                    "type": "func",
+                  },
+                  "onTableErrorStateAction": Object {
                     "type": "func",
                   },
                 },
@@ -856,6 +869,9 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "error": Object {
+        "type": "string",
       },
       "expandedData": Object {
         "args": Array [
@@ -1316,7 +1332,13 @@ Map {
                                 "isRequired": true,
                                 "type": "node",
                               },
+                              "messageBody": Object {
+                                "type": "node",
+                              },
                               "messageWithFilters": Object {
+                                "type": "node",
+                              },
+                              "messageWithFiltersBody": Object {
                                 "type": "node",
                               },
                             },
@@ -1329,6 +1351,9 @@ Map {
                       ],
                     ],
                     "type": "oneOfType",
+                  },
+                  "errorState": Object {
+                    "type": "element",
                   },
                   "expandedIds": Object {
                     "args": Array [
@@ -1582,6 +1607,7 @@ Map {
       "openMenuText": "Open menu",
       "options": Object {},
       "selectAllText": "Select all",
+      "showExpanderColumn": false,
       "testID": "",
     },
     "propTypes": Object {
@@ -1910,6 +1936,9 @@ Map {
               "isRequired": true,
               "type": "bool",
             },
+            "useAutoTableLayoutForResize": Object {
+              "type": "bool",
+            },
             "wrapCellText": Object {
               "args": Array [
                 Array [
@@ -1928,6 +1957,9 @@ Map {
       },
       "selectAllText": Object {
         "type": "string",
+      },
+      "showExpanderColumn": Object {
+        "type": "bool",
       },
       "tableId": Object {
         "isRequired": true,
@@ -2069,6 +2101,7 @@ Map {
       "selectedIds": Array [],
       "shouldExpandOnRowClick": false,
       "shouldLazyRender": false,
+      "showExpanderColumn": false,
       "singleRowEditButtons": null,
       "testID": "",
       "totalColumns": 0,
@@ -2518,6 +2551,9 @@ Map {
         "type": "bool",
       },
       "shouldLazyRender": Object {
+        "type": "bool",
+      },
+      "showExpanderColumn": Object {
         "type": "bool",
       },
       "singleRowEditButtons": Object {
@@ -3064,6 +3100,7 @@ Map {
       "hasRowExpansion": false,
       "hasRowSelection": false,
       "rowCount": 10,
+      "showExpanderColumn": false,
       "testID": "",
     },
     "propTypes": Object {
@@ -3101,6 +3138,9 @@ Map {
       },
       "rowCount": Object {
         "type": "number",
+      },
+      "showExpanderColumn": Object {
+        "type": "bool",
       },
       "testID": Object {
         "type": "string",
@@ -4597,6 +4637,7 @@ Map {
       },
       "isLoading": false,
       "onEdit": null,
+      "renderTitleFunction": undefined,
       "rightContent": undefined,
       "stickyHeaderOffset": 48,
       "style": null,
@@ -4668,6 +4709,9 @@ Map {
         "type": "bool",
       },
       "onEdit": Object {
+        "type": "func",
+      },
+      "renderTitleFunction": Object {
         "type": "func",
       },
       "rightContent": [Function],
@@ -5657,6 +5701,9 @@ Map {
         "type": "func",
       },
       "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderEditContent": Object {
         "type": "func",
       },
       "renderExpandIcon": Object {
@@ -7250,6 +7297,7 @@ Map {
       "hasSideNav": true,
       "headerPanel": null,
       "i18n": Object {
+        "closeMenu": "Close menu",
         "mainHeader": "main header",
         "openMenu": "Open menu",
       },
@@ -7344,6 +7392,9 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "closeMenu": Object {
+              "type": "string",
+            },
             "mainHeader": Object {
               "type": "string",
             },
@@ -7358,6 +7409,9 @@ Map {
         "type": "func",
       },
       "prefix": Object {
+        "type": "string",
+      },
+      "shortAppName": Object {
         "type": "string",
       },
       "skipto": Object {
@@ -7387,6 +7441,7 @@ Map {
       "i18n": Object {
         "closeText": "Close",
         "openText": "Open",
+        "sideNavLabelText": "Side navigation",
       },
       "isSideNavExpanded": false,
     },
@@ -7401,6 +7456,9 @@ Map {
               "type": "string",
             },
             "openText": Object {
+              "type": "string",
+            },
+            "sideNavLabelText": Object {
               "type": "string",
             },
           },
@@ -7852,6 +7910,9 @@ Map {
                   "openText": Object {
                     "type": "string",
                   },
+                  "sideNavLabelText": Object {
+                    "type": "string",
+                  },
                 },
               ],
               "type": "shape",
@@ -8119,6 +8180,8 @@ Map {
   },
   "useSuiteHeaderData" => Object {},
   "suiteHeaderData" => Object {},
+  "useUiResources" => Object {},
+  "uiresources" => Object {},
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],
@@ -9110,12 +9173,15 @@ Map {
       "breakpointSwitcher": null,
       "dataItems": Array [],
       "dataSeriesItemLinks": null,
+      "getDefaultCard": null,
       "getValidDataItems": null,
       "getValidTimeRanges": null,
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
+        "dashboardTitleLabel": "Dashboard title",
         "defaultCardTitle": "Untitled",
+        "editDataItems": "Edit data items",
         "galleryHeader": "Gallery",
         "headerCancelButton": "Cancel",
         "headerDeleteButton": "Delete",
@@ -9133,6 +9199,8 @@ Map {
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
+        "requiredMessage": "Required",
+        "saveTitleButton": "Save title",
         "searchPlaceHolderText": "Enter a value",
         "selectAGroupBy": "Select a group by",
       },
@@ -9146,13 +9214,14 @@ Map {
       "isSubmitDisabled": false,
       "isSubmitLoading": false,
       "isSummaryDashboard": false,
+      "isTitleEditable": null,
       "locale": "en",
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
       "onCardJsonPreview": null,
       "onDelete": null,
-      "onEditTitle": null,
+      "onEditDataItems": null,
       "onExport": null,
       "onFetchDynamicDemoHotspots": [Function],
       "onImageDelete": null,
@@ -9301,6 +9370,9 @@ Map {
         ],
         "type": "shape",
       },
+      "getDefaultCard": Object {
+        "type": "func",
+      },
       "getValidDataItems": Object {
         "type": "func",
       },
@@ -9414,6 +9486,9 @@ Map {
             "contentTabLabel": Object {
               "type": "string",
             },
+            "dashboardTitleLabel": Object {
+              "type": "string",
+            },
             "dataItem": Object {
               "type": "string",
             },
@@ -9457,6 +9532,9 @@ Map {
               "type": "string",
             },
             "edit": Object {
+              "type": "string",
+            },
+            "editDataItems": Object {
               "type": "string",
             },
             "errorTitle": Object {
@@ -9597,6 +9675,12 @@ Map {
             "primaryButtonLabelText": Object {
               "type": "string",
             },
+            "requiredMessage": Object {
+              "type": "string",
+            },
+            "saveTitleButton": Object {
+              "type": "string",
+            },
             "searchPlaceHolderText": Object {
               "type": "string",
             },
@@ -9691,6 +9775,9 @@ Map {
       "isSummaryDashboard": Object {
         "type": "bool",
       },
+      "isTitleEditable": Object {
+        "type": "bool",
+      },
       "locale": Object {
         "type": "string",
       },
@@ -9709,7 +9796,7 @@ Map {
       "onDelete": Object {
         "type": "func",
       },
-      "onEditTitle": Object {
+      "onEditDataItems": Object {
         "type": "func",
       },
       "onExport": Object {
@@ -9770,6 +9857,7 @@ Map {
       "i18n": Object {
         "addCardButton": "Add card",
         "closeGalleryButton": "Back",
+        "editDataItems": "Edit data items",
         "galleryHeader": "Gallery",
         "openGalleryButton": "Add card",
         "openJSONButton": "Open JSON editor",
@@ -9778,6 +9866,7 @@ Map {
       "icons": null,
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
+      "onEditDataItems": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -9944,6 +10033,9 @@ Map {
             "addCardButton": Object {
               "type": "string",
             },
+            "editDataItems": Object {
+              "type": "string",
+            },
             "galleryHeader": Object {
               "type": "string",
             },
@@ -9974,6 +10066,9 @@ Map {
       },
       "onChange": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onEditDataItems": Object {
         "type": "func",
       },
       "onShowGallery": Object {
@@ -11087,6 +11182,9 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderEditContent": Object {
+        "type": "func",
+      },
       "renderExpandIcon": Object {
         "args": Array [
           Array [
@@ -11952,6 +12050,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "renderEditContent": Object {
+        "type": "func",
       },
       "renderExpandIcon": Object {
         "args": Array [
@@ -12901,6 +13002,9 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderEditContent": Object {
+        "type": "func",
+      },
       "renderExpandIcon": Object {
         "args": Array [
           Array [
@@ -13516,6 +13620,30 @@ Map {
             "addSpaceOnEdges": Object {
               "type": "number",
             },
+            "alertRanges": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "type": "string",
+                      },
+                      "details": Object {
+                        "type": "string",
+                      },
+                      "endTimestamp": Object {
+                        "type": "number",
+                      },
+                      "startTimestamp": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "chartType": [Function],
             "decimalPrecision": Object {
               "type": "number",
@@ -13596,6 +13724,36 @@ Map {
             },
             "showLegend": Object {
               "type": "bool",
+            },
+            "thresholds": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "axis": Object {
+                        "args": Array [
+                          Array [
+                            "x",
+                            "y",
+                          ],
+                        ],
+                        "type": "oneOf",
+                      },
+                      "fillColor": Object {
+                        "type": "string",
+                      },
+                      "label": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
             },
             "timeDataSourceId": Object {
               "type": "string",
@@ -13824,6 +13982,9 @@ Map {
         "type": "func",
       },
       "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderEditContent": Object {
         "type": "func",
       },
       "renderExpandIcon": Object {
@@ -14639,6 +14800,9 @@ Map {
         "type": "func",
       },
       "onUpload": Object {
+        "type": "func",
+      },
+      "renderEditContent": Object {
         "type": "func",
       },
       "renderExpandIcon": Object {
@@ -15557,6 +15721,9 @@ Map {
         "type": "func",
       },
       "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderEditContent": Object {
         "type": "func",
       },
       "renderExpandIcon": Object {
@@ -16480,6 +16647,9 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderEditContent": Object {
+        "type": "func",
+      },
       "renderExpandIcon": Object {
         "args": Array [
           Array [
@@ -17316,6 +17486,9 @@ Map {
         "type": "func",
       },
       "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderEditContent": Object {
         "type": "func",
       },
       "renderExpandIcon": Object {
@@ -20557,6 +20730,9 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderEditContent": Object {
+        "type": "func",
+      },
       "renderExpandIcon": Object {
         "args": Array [
           Array [
@@ -20859,6 +21035,87 @@ Map {
       },
       "testID": Object {
         "type": "string",
+      },
+    },
+  },
+  "TearSheet" => Object {
+    "defaultProps": Object {
+      "children": undefined,
+      "className": undefined,
+      "closeAllTearSheets": undefined,
+      "description": "Description",
+      "goToPreviousSheet": undefined,
+      "headerExtraContent": null,
+      "i18n": Object {
+        "close": "Close",
+      },
+      "idx": undefined,
+      "onClose": undefined,
+      "openNextSheet": undefined,
+      "title": "Title",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "closeAllTearSheets": Object {
+        "type": "func",
+      },
+      "description": Object {
+        "type": "string",
+      },
+      "goToPreviousSheet": Object {
+        "type": "func",
+      },
+      "headerExtraContent": Object {
+        "type": "node",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "idx": Object {
+        "type": "number",
+      },
+      "onClose": Object {
+        "type": "func",
+      },
+      "openNextSheet": Object {
+        "type": "func",
+      },
+      "title": Object {
+        "type": "string",
+      },
+    },
+  },
+  "TearSheetWrapper" => Object {
+    "defaultProps": Object {
+      "children": undefined,
+      "className": undefined,
+      "isOpen": false,
+      "onCloseAllTearSheets": undefined,
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "isOpen": Object {
+        "type": "bool",
+      },
+      "onCloseAllTearSheets": Object {
+        "type": "func",
       },
     },
   },

@@ -6,15 +6,15 @@ export type Content = string | Observable<string>;
 
 export interface TableSettingsOptions {
   panes?: TableSettingsPane[];
-  content?: Content;
-  title?: Content;
+  content?: any;
+  title?: any;
   template?: TemplateRef<any>;
 }
 
 // tslint:disable: max-classes-per-file
 export class TableSettings {
-  content: Content;
-  title: Content;
+  content: any;
+  title: any;
   template: TemplateRef<any>;
   protected panes: TableSettingsPane[] = [];
 

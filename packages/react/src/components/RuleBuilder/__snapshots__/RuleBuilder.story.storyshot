@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ RuleBuilder new filter 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ RuleBuilder new filter 1`] = `
 <div
   className="storybook-container"
 >
@@ -182,11 +182,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-36__panel"
+                  aria-controls="tab-38__panel"
                   aria-selected={true}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-36"
+                  id="tab-38"
                   role="tab"
                   tabIndex={0}
                   type="button"
@@ -201,11 +201,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-37__panel"
+                  aria-controls="tab-39__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-37"
+                  id="tab-39"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -813,7 +813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
-                          data-testID="edit-table-table-toolbar-batch-actions"
+                          data-testid="edit-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -1321,7 +1321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
-                          data-testID="read-table-table-toolbar-batch-actions"
+                          data-testid="read-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -2561,7 +2561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ RuleBuilder with existing filter rules 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ RuleBuilder with existing filter rules 1`] = `
 <div
   className="storybook-container"
 >
@@ -2748,11 +2748,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-38__panel"
+                  aria-controls="tab-40__panel"
                   aria-selected={true}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-38"
+                  id="tab-40"
                   role="tab"
                   tabIndex={0}
                   type="button"
@@ -2767,11 +2767,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="presentation"
               >
                 <button
-                  aria-controls="tab-39__panel"
+                  aria-controls="tab-41__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
-                  id="tab-39"
+                  id="tab-41"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -5220,7 +5220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
-                          data-testID="edit-table-table-toolbar-batch-actions"
+                          data-testid="edit-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -5430,7 +5430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </thead>
                             <tbody
                               aria-live="polite"
-                              data-testID="edit-table-table-body"
+                              data-testid="edit-table-table-body"
                             >
                               <tr
                                 className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
@@ -5492,7 +5492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
-                          data-testID="read-table-table-toolbar-batch-actions"
+                          data-testid="read-table-table-toolbar-batch-actions"
                         >
                           <div
                             className="bx--batch-summary"
@@ -5702,7 +5702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </thead>
                             <tbody
                               aria-live="polite"
-                              data-testID="read-table-table-body"
+                              data-testid="read-table-table-body"
                             >
                               <tr
                                 className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
@@ -7080,7 +7080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ RuleBuilder ️⚠️ Experimental Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ RuleBuilder ️⚠️ Experimental Notice  1`] = `
 <div
   className="storybook-container"
 >

@@ -6,12 +6,6 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ],
-    "nohoist": [
-      "carbon-components-angular",
-      "**carbon-components-react",
-      "**@storybook/*",
-      "**storybook*"
     ]
   },
   "main": "lib/src/index.js",
@@ -77,8 +71,6 @@
   "sideEffects": false,
   "version": "0.0.0-development",
   "resolutions": {
-    "carbon-addons-iot-react/@emotion/core": "10.0.27",
-    "carbon-addons-iot-react/@storybook/theming": "5.3.17",
     "carbon-addons-iot-react/chokidar": "3.3.1",
     "carbon-addons-iot-react/react-grid-layout": "1.2.2",
     "react-test-renderer": "16.14.0",

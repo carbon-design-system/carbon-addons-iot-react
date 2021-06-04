@@ -109,15 +109,6 @@ const links = [
   },
 ];
 
-const switcherProps = {
-  options: ['ExampleOne', 'ExampleTwo'],
-  labelText: 'ExampleOne',
-  onChange: () => {},
-  className: 'class',
-  switcherTitle: 'Applications',
-};
-
-// const link = <Icon name="header--help" fill="white" description="Icon" />;
 const HeaderProps = {
   user: 'JohnDoe@ibm.com',
   tenant: 'TenantId: Acme',
@@ -139,7 +130,7 @@ const HeaderProps = {
 };
 
 export default {
-  title: 'Watson IoT/SideNav',
+  title: '1 - Watson IoT/SideNav',
 
   parameters: {
     component: SideNav,
@@ -156,12 +147,7 @@ export const SideNavComponent = () => (
             isSideNavExpanded={isSideNavExpanded}
             onClickSideNavExpand={onClickSideNavExpand}
           />
-          <SideNav
-            links={links}
-            isSideNavExpanded={isSideNavExpanded}
-            onClickSideNavExpand={onClickSideNavExpand}
-            switcherProps={switcherProps}
-          />
+          <SideNav links={links} isSideNavExpanded={isSideNavExpanded} />
           <div className={`${iotPrefix}--main-content`}>
             <PageTitleBar title="Title" description="Description" />
           </div>
@@ -193,7 +179,6 @@ SideNavComponent.story = {
         <SideNav
           links={links}
           isSideNavExpanded={isSideNavExpanded}
-          onClickSideNavExpand={onClickSideNavExpand}
         />
       </>
     )}
