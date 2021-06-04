@@ -41,7 +41,7 @@ import { DocumentService } from 'carbon-components-angular';
         <button
           ibmButton="primary"
           [iconOnly]="true"
-          [hasAssistiveText]="iconOnly && label"
+          [hasAssistiveText]="iconOnly && !!label"
           class="iot--menu-button__secondary iot--menu-button__trigger"
           (click)="toggleMenu()"
         >
@@ -53,7 +53,7 @@ import { DocumentService } from 'carbon-components-angular';
         <button
           ibmButton="ghost"
           [iconOnly]="true"
-          [hasAssistiveText]="iconOnly && label"
+          [hasAssistiveText]="iconOnly && !!label"
           class="iot--menu-button__secondary"
           (click)="toggleMenu()"
         >
