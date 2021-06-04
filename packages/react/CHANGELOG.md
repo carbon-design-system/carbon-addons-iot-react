@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.21...v2.146.0-next.22) (2021-06-04)
+
+
+### Bug Fixes
+
+* **dataseriesformitem:** display add data item button only for summary dashboard ([e675c36](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e675c36b908265435a5cf326f24e3fd75c441217))
+* **dataseriesformitem:** display add data item button only for summary dashboard ([66d696e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/66d696e1e82f163a566a7315c2f8998b97b22655))
+
+
+### Features
+
+* **dashboardeditor:** add edit data item button to the dashboard editor ([8f3a741](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8f3a741d81e15d2a20d61025848225887f5b13dd))
+* **dashboardeditor:** add edit data item button to the dashboard editor ([7b7527c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7b7527c8aae2bec70747b0f5c6aa6fa7b2acafaa))
+* **dataseriesformcontent:** add data item button ([c7e5ebb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c7e5ebbddb43f6972ac154e5d5d23616036826ef))
+* **dataseriesformcontent:** add data item button ([56534e5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/56534e5e03f21bb86b854dd8702ae798ebe22060))
+
+
+
+
+
 # [2.146.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.20...v2.146.0-next.21) (2021-06-02)
 
 
