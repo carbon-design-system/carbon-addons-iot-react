@@ -452,8 +452,8 @@ const DataSeriesFormItem = ({
           translateWithId={translateWithId}
         />
       )}
-      {canMultiSelectDataItems ? (
-        <div className={`${baseClassName}--input`}>
+      <div className={`${baseClassName}--input`}>
+        {canMultiSelectDataItems ? (
           <ComboBox
             // need to re-gen if selected card changes or if a dataItem is removed from the list
             key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
@@ -476,10 +476,8 @@ const DataSeriesFormItem = ({
             onChange={handleSimpleDataSeriesChange}
             light
           />
-        </div>
-      ) : (
-        // Can't select more than one dataItem
-        <div className={`${baseClassName}--input`}>
+        ) : (
+          // Can't select more than one dataItem
           <Dropdown
             id={`${cardConfig.id}_dataSourceId`}
             direction="bottom"
@@ -511,8 +509,9 @@ const DataSeriesFormItem = ({
               onChange(newCard);
             }}
           />
-        </div>
-      )}
+        )}
+      </div>
+
       <List
         className={`${baseClassName}--data-item-list`}
         key={`data-item-list${selectedDataItems.length}`}
