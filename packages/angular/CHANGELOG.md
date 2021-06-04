@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.23](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.22...v2.146.0-next.23) (2021-06-04)
+
+
+### Features
+
+* **tabs:** add initial implementation of Angular tabs components ([bf1c632](https://github.com/IBM/carbon-components-angular/commit/bf1c632c93e7ac6ab8870143df7e5069d7108710))
+
+
+
+
+
 ## [2.145.1-next.1](https://github.com/IBM/carbon-components-angular/compare/v2.145.1-next.0...v2.145.1-next.1) (2021-05-15)
 
 **Note:** Version bump only for package @ai-apps/angular
