@@ -7,6 +7,10 @@
   }
 
   &--open {
+    .#{$iot-prefix}--menu-button__trigger {
+      background-color: $active-primary;
+    }
+
     .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only {
       background-color: $ui-01;
       @include box-shadow;

@@ -15,6 +15,17 @@ storiesOf('Components/Button menu', module)
   .add('Basic', () => ({
     template: `
       <ai-button-menu label="Button">
+        <ibm-context-menu-item label="Create"></ibm-context-menu-item>
+				<ibm-context-menu-item label="Import"></ibm-context-menu-item>
+        <ibm-context-menu-item label="Share"></ibm-context-menu-item>
+				<ibm-context-menu-divider></ibm-context-menu-divider>
+				<ibm-context-menu-item label="Delete"></ibm-context-menu-item>
+      </ai-button-menu>
+    `,
+  }))
+  .add('Complex', () => ({
+    template: `
+      <ai-button-menu label="Button">
         <ibm-context-menu-item label="Cut" info="⌘X"></ibm-context-menu-item>
 				<ibm-context-menu-item label="Option with icon" icon="calendar"></ibm-context-menu-item>
 				<ibm-context-menu-divider></ibm-context-menu-divider>

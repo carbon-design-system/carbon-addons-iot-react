@@ -19,7 +19,11 @@ import { DocumentService } from 'carbon-components-angular';
       class="iot--menu-button"
     >
       <ng-container *ngIf="!split && !iconOnly">
-        <button ibmButton="primary" class="iot--menu-button__primary" (click)="toggleMenu()">
+        <button
+          ibmButton="primary"
+          class="iot--menu-button__primary iot--menu-button__trigger"
+          (click)="toggleMenu()"
+        >
           {{ label }}
           <svg *ngIf="!open" class="bx--btn__icon" [ibmIcon]="openIcon" size="16"></svg>
           <svg *ngIf="open" class="bx--btn__icon" [ibmIcon]="closeIcon" size="16"></svg>
@@ -38,7 +42,7 @@ import { DocumentService } from 'carbon-components-angular';
           ibmButton="primary"
           [iconOnly]="true"
           [hasAssistiveText]="iconOnly && label"
-          class="iot--menu-button__secondary"
+          class="iot--menu-button__secondary iot--menu-button__trigger"
           (click)="toggleMenu()"
         >
           <svg *ngIf="!open" class="bx--btn__icon" [ibmIcon]="openIcon" size="16"></svg>
@@ -141,10 +145,5 @@ export class ButtonMenuComponent implements AfterViewInit {
       }
       button.focus();
     }
-  }
-
-  @HostListener('click')
-  handleClick() {
-    console.log('click');
   }
 }
