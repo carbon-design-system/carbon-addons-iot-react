@@ -269,6 +269,8 @@ const propTypes = {
     fontSize: PropTypes.string,
     abbreviateNumbers: PropTypes.string,
     abbreviateNumbersTooltip: PropTypes.string,
+
+    editDataItems: PropTypes.string,
   }),
   /** locale data */
   locale: PropTypes.string,
@@ -287,6 +289,7 @@ const propTypes = {
   onFetchDynamicDemoHotspots: PropTypes.func,
   /** should we allow resizing cards dynamically */
   isCardResizable: PropTypes.bool,
+  onEditDataItems: PropTypes.func,
 };
 
 const defaultProps = {
@@ -351,10 +354,12 @@ const defaultProps = {
     dashboardTitleLabel: 'Dashboard title',
     requiredMessage: 'Required',
     saveTitleButton: 'Save title',
+    editDataItems: 'Edit data items',
   },
   locale: 'en',
   dataSeriesItemLinks: null,
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
+  onEditDataItems: null,
 };
 
 const LAYOUTS = {
@@ -404,6 +409,7 @@ const DashboardEditor = ({
   icons,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
+  onEditDataItems,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -757,6 +763,7 @@ const DashboardEditor = ({
             currentBreakpoint={currentBreakpoint}
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+            onEditDataItems={onEditDataItems}
           />
         </ErrorBoundary>
       </div>

@@ -233,7 +233,7 @@ AutoPositioningExample.story = {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ MenuButton',
+  title: '2 - Watson IoT Experimental/☢️ MenuButton',
 
   decorators: [],
   parameters: {

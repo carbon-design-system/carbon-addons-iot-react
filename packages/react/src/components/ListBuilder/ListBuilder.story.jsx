@@ -289,7 +289,7 @@ ComplexNestedExample.story = {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ ListBuilder',
+  title: '2 - Watson IoT Experimental/☢️ ListBuilder',
   decorators: [withKnobs],
   parameters: {
     component: ListBuilder,

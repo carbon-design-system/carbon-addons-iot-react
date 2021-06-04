@@ -2831,6 +2831,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
             </div>
+            <div
+              className="iot--card-editor--footer"
+            >
+              <button
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Edit data items
+                <svg
+                  aria-hidden="true"
+                  aria-label="Edit data items"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 6H28V8H15zM15 24H28V26H15zM4 15H17V17H4zM7 11a4 4 0 114-4A4 4 0 017 11zM7 5A2 2 0 109 7 2 2 0 007 5zM7 29a4 4 0 114-4A4 4 0 017 29zm0-6a2 2 0 102 2A2 2 0 007 23zM25 20a4 4 0 114-4A4 4 0 0125 20zm0-6a2 2 0 102 2A2 2 0 0025 14z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
