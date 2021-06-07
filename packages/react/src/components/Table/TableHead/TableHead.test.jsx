@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import cloneDeep from 'lodash/cloneDeep';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 
 import { settings } from '../../../constants/Settings';
 
@@ -239,6 +239,7 @@ describe('TableHead', () => {
           truncateCellText: false,
         },
         actions: myActions,
+        showExpanderColumn: true,
       };
     });
 
@@ -387,7 +388,7 @@ describe('TableHead', () => {
       expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
     });
 
-    it('the last visible column should never have a resize handle', () => {
+    it('should not add resize handle to the last visible column if there is no expander column', () => {
       myProps.tableState = {
         ...myProps.tableState,
         ordering: [
@@ -396,6 +397,7 @@ describe('TableHead', () => {
           { columnId: 'col3', isHidden: false },
         ],
       };
+      myProps.showExpanderColumn = false;
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
       const wrapper = mount(<TableHead {...myProps} />);
@@ -421,6 +423,59 @@ describe('TableHead', () => {
 
       const modLastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
       expect(modLastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
+    });
+
+    it('should always add resize handle to the last visible column if there is an expander column', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: false },
+          { columnId: 'col2', isHidden: false },
+          { columnId: 'col3', isHidden: false },
+        ],
+      };
+      myProps.showExpanderColumn = true;
+
+      render(<TableHead {...myProps} />);
+
+      const lastColumnResizeHandle = within(screen.getByTitle('Column 3').closest('th')).getByRole(
+        'button',
+        {
+          name: 'Resize column',
+        }
+      );
+
+      expect(lastColumnResizeHandle).not.toBeNull();
+    });
+
+    it('should add an extra expander column if prop showExpanderColumn:true', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: false },
+          { columnId: 'col2', isHidden: false },
+        ],
+      };
+      myProps.showExpanderColumn = true;
+      myProps.testID = 'my-test';
+
+      render(<TableHead {...myProps} />);
+      expect(screen.getByTestId('my-test-expander-column')).not.toBeNull();
+    });
+
+    it('should not add an extra expander column if prop showExpanderColumn:false', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: false },
+          { columnId: 'col2', isHidden: false },
+        ],
+      };
+      myProps.showExpanderColumn = false;
+      myProps.testID = 'my-test';
+
+      render(<TableHead {...myProps} />);
+      expect(screen.queryByTestId('my-test-expander-column')).toBeNull();
     });
 
     it('should update the column widths when column prop changes and all column prop have widths defined', () => {

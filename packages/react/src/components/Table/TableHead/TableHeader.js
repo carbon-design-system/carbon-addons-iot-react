@@ -174,8 +174,8 @@ TableHeader.propTypes = {
   /** does the header have a tooltip, if so do not truncate */
   hasTooltip: PropTypes.bool,
   /**
-   * The initial width of the column when resize is active and the fixed with
-   * if resize is inactive. E.g. '200px'
+   * The initial width of the column when hasResize:true. The fixed width
+   * if hasResize:false. E.g. '200px'
    */
   initialWidth: PropTypes.string,
 

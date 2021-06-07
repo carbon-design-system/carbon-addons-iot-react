@@ -121,6 +121,7 @@ export MenuButton from './components/MenuButton/MenuButton';
 export ListBuilder from './components/ListBuilder/ListBuilder';
 export TearSheet from './components/TearSheet/TearSheet';
 export TearSheetWrapper from './components/TearSheet/TearSheetWrapper';
+export MapCard from './components/MapCard/MapCard';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';

@@ -39,17 +39,20 @@ const propTypes = {
     ).isRequired,
   }).isRequired,
   testID: PropTypes.string,
+  showExpanderColumn: PropTypes.bool,
 };
 
 const defaultProps = {
   options: {},
   testID: 'table-foot',
+  showExpanderColumn: false,
 };
 
 const TableFoot = ({
   testID,
   options: { hasRowExpansion, hasRowSelection, hasRowActions },
   tableState: { aggregations, ordering },
+  showExpanderColumn,
 }) => {
   const visibleColumns = ordering.filter((col) => !col.isHidden);
 
@@ -94,6 +97,7 @@ const TableFoot = ({
           );
         })}
         {hasRowActions ? <TableCell /> : null}
+        {showExpanderColumn ? <TableCell data-testid={`${testID}-expander-column`} /> : null}
       </TableRow>
     </tfoot>
   );

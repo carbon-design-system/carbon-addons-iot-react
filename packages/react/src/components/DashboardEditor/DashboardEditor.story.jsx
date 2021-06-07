@@ -591,6 +591,7 @@ export const SummaryDashboardWithInitialValue = () => (
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
       onLayoutChange={action('onLayoutChange')}
+      onEditDataItems={action('onEditDataItems')}
       supportedCardTypes={[
         'TIMESERIES',
         'SIMPLE_BAR',

@@ -125,6 +125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -293,6 +294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -431,6 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -599,6 +602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -770,6 +774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -938,6 +943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -1031,6 +1037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -1202,6 +1209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <div
             className="iot--card--content iot--card--content--expanded"
+            data-testid="Card-content"
             style={
               Object {
                 "--card-content-height": "256px",
@@ -2898,8 +2906,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--pagination__text"
-                    htmlFor="bx-pagination-select-53"
-                    id="bx-pagination-select-53-count-label"
+                    htmlFor="bx-pagination-select-51"
+                    id="bx-pagination-select-51-count-label"
                   >
                     Items per page:
                   </label>
@@ -2918,7 +2926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-53"
+                            id="bx-pagination-select-51"
                             onChange={[Function]}
                             value={10}
                           >
@@ -2983,7 +2991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="bx-pagination-select-53-right"
+                        htmlFor="bx-pagination-select-51-right"
                       >
                         Page number, of 1 pages
                       </label>
@@ -2996,7 +3004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-53-right"
+                            id="bx-pagination-select-51-right"
                             onChange={[Function]}
                             value={1}
                           >
@@ -3256,6 +3264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -3424,6 +3433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -3592,6 +3602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -3760,6 +3771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -3928,6 +3940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -4096,6 +4109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -4264,6 +4278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -4432,6 +4447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -4600,6 +4616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -4762,6 +4779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -4930,6 +4948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -5098,6 +5117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -5266,6 +5286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -5434,6 +5455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -5602,6 +5624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -5770,6 +5793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -5863,6 +5887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -6031,6 +6056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -6199,6 +6225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",

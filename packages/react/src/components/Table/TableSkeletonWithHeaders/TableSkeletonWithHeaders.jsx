@@ -14,6 +14,8 @@ const propTypes = {
   rowCount: PropTypes.number,
   columns: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string.isRequired })),
   testID: PropTypes.string,
+  /** shows an additional column that can expand/shrink as the table is resized  */
+  showExpanderColumn: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -23,6 +25,7 @@ const defaultProps = {
   rowCount: 10,
   columns: [],
   testID: '',
+  showExpanderColumn: false,
 };
 
 /** This component is exactly like the DataTableSkeleton component from carbon, but it shows your headers while it loads */
@@ -33,6 +36,7 @@ const TableSkeletonWithHeaders = ({
   columns,
   rowCount,
   testID,
+  showExpanderColumn,
 }) => (
   <TableBody data-testid={testID}>
     <TableRow className={`${iotPrefix}--table-skeleton-with-headers--table-row`}>
@@ -43,6 +47,7 @@ const TableSkeletonWithHeaders = ({
           <SkeletonText />
         </TableCell>
       ))}
+      {showExpanderColumn ? <TableCell data-testid={`${testID}-expander-column`} /> : null}
       {hasRowActions ? <TableCell /> : null}
     </TableRow>
     {[...Array(rowCount > 0 ? rowCount - 1 : 0)].map((row, index) => (
@@ -55,6 +60,9 @@ const TableSkeletonWithHeaders = ({
         {columns.map((column) => (
           <TableCell key={`emptycell-${column.id}`} />
         ))}
+        {showExpanderColumn ? (
+          <TableCell data-testid={`${testID}-skeletonRow-${index}-expander-column`} />
+        ) : null}
         {hasRowActions ? <TableCell /> : null}
       </TableRow>
     ))}

@@ -101,6 +101,11 @@
     min-width: 40px;
   }
 
+  .#{$iot-prefix}--table-header-expander-column {
+    width: auto;
+    padding: 0;
+  }
+
   .#{$iot-prefix}--tableheader-filter > .#{$prefix}--table-header-label {
     overflow: visible;
   }

@@ -147,7 +147,7 @@ describe('TableFoot', () => {
     expect(newFirstAggregationCell.textContent).toEqual('20');
   });
 
-  it('adds empty cells for rowExpension, rowSelection & rowActions', () => {
+  it('adds empty cells for rowExpension, rowSelection, rowActions & resize expander column', () => {
     const tableFootTestId = 'table-foot';
     const label = 'Total';
     const firstColumnTestId = `${tableFootTestId}-aggregation-${ordering[0].columnId}`;
@@ -166,12 +166,13 @@ describe('TableFoot', () => {
             aggregations: {},
             ordering: [],
           }}
+          showExpanderColumn
         />
       </table>
     );
 
     expect(container.querySelectorAll('tr').length).toEqual(1);
-    expect(container.querySelectorAll('td').length).toEqual(3);
+    expect(container.querySelectorAll('td').length).toEqual(4);
     rerender(
       <table>
         <TableFoot
@@ -186,6 +187,7 @@ describe('TableFoot', () => {
             aggregations: { label, columns: [{ id: 'c', value: '10' }] },
             ordering,
           }}
+          showExpanderColumn
         />
       </table>
     );
@@ -193,7 +195,7 @@ describe('TableFoot', () => {
     expect(screen.getByTestId(firstColumnTestId).textContent).toEqual(label);
     expect(screen.getByTestId(thirdColumnTestId).textContent).toEqual('10');
     expect(container.querySelectorAll('tr').length).toEqual(1);
-    expect(container.querySelectorAll('td').length).toEqual(6);
+    expect(container.querySelectorAll('td').length).toEqual(7);
   });
 
   it('has the correct classes for alignment and sorting', () => {

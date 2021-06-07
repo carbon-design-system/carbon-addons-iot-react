@@ -6,13 +6,6 @@ import Button from '../Button';
 import TearSheetWrapper from './TearSheetWrapper';
 import TearSheet from './TearSheet';
 
-export const Default = () => <StandardTearSheet />;
-export default {
-  title: 'TearSheet',
-  decorators: [withKnobs],
-  component: Default,
-};
-
 const TearSheetChild = ({ openNextSheet, goToPreviousSheet, onClose }) => (
   <div
     style={{
@@ -144,4 +137,11 @@ const StandardTearSheet = () => {
       </TearSheetWrapper>
     </>
   );
+};
+
+export const Default = () => <StandardTearSheet />;
+export default {
+  title: '1 - Watson IoT/TearSheet',
+  decorators: [withKnobs],
+  component: Default,
 };
