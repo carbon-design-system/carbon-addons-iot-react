@@ -26,7 +26,7 @@ import {
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
-import { OverridePropTypes } from './SharedPropTypes';
+import { ButtonIconPropType, OverridePropTypes } from './SharedPropTypes';
 
 export const CHART_COLORS = [
   purple70,
@@ -587,6 +587,52 @@ export const ComboChartPropTypes = {
   }),
 };
 
+/** These props all comes from the Button component */
+export const MapControlPropType = PropTypes.shape({
+  /** optionally used by the consumer, ignored by the Mapcard */
+  id: PropTypes.string,
+  /** the icon to be displayed by the button */
+  icon: ButtonIconPropType,
+  /** the icon text description */
+  iconDescription: PropTypes.string,
+  /** defaults to 'ghost', use 'icon-selection' for toggle buttons  */
+  kind: PropTypes.oneOf(['ghost', 'icon-selection']),
+  /** the callback for when a control is clicked */
+  onClick: PropTypes.func,
+  /** toggle selected styling for buttons of kind=icon-selection */
+  selected: PropTypes.bool,
+});
+
+export const MapCardPropTypes = {
+  /** true makes the legend full bleed at the bottom of the map */
+  isLegendFullWidth: PropTypes.bool,
+  /** true if the settings panel should be showing */
+  isSettingPanelOpen: PropTypes.bool,
+  /** list of layered map control buttons that are expanded horizontally */
+  layeredControls: PropTypes.arrayOf(MapControlPropType),
+  /** reference to the container element that holds the 3rd party map */
+  mapContainerRef: PropTypes.object.isRequired,
+  /** list of map control buttons */
+  mapControls: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      MapControlPropType,
+      PropTypes.shape({
+        group: PropTypes.arrayOf(MapControlPropType),
+        visibleItemsCount: PropTypes.number,
+        hasScroll: PropTypes.bool,
+      }),
+    ])
+  ),
+  /** callback when user zooms in */
+  onZoomIn: PropTypes.func.isRequired,
+  /** callback when user zooms out */
+  onZoomOut: PropTypes.func.isRequired,
+  /** an element or component containing the settingspanel (side bar content) */
+  settingsContent: PropTypes.elementType,
+  /** list of text - color pairs for the legend. Each pair is an array where pos 0 is the text and pos 1 the color */
+  stops: PropTypes.array,
+};
+
 export const CardPropTypes = {
   title: PropTypes.string,
   id: PropTypes.string,
@@ -624,6 +670,7 @@ export const CardPropTypes = {
     delete: PropTypes.bool,
     expand: PropTypes.bool,
     range: PropTypes.bool,
+    settings: PropTypes.bool,
   }),
   /** All the labels that need translation */
   i18n: PropTypes.shape({
@@ -669,6 +716,8 @@ export const CardPropTypes = {
   dashboardColumns: DashboardColumnsPropTypes,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
+  /** HTML classes that should be aplied to the content container */
+  contentClassName: PropTypes.string,
   /** optional function that should return an icon react element based on a icon name, it is called back with the icon name and then an object containing additional icon properties to add to the rendered icon */
   renderIconByName: PropTypes.func,
   /** Event handlers needed for Dashboard Grid - isEditable */
