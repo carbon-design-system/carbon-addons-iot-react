@@ -18,7 +18,7 @@ const propTypes = {
   onZoomOut: PropTypes.func.isRequired,
   /** set true to use button size 'small' instead of size 'field' */
   smallButtons: PropTypes.bool,
-  testId: PropTypes.string,
+  testID: PropTypes.string,
   /** position of the control buttons tooltip */
   tooltipPosition: PropTypes.oneOf(['left', 'top', 'bottom', 'right']).isRequired,
 };
@@ -29,13 +29,13 @@ const defaultProps = {
     zoomOut: 'Zoom out',
   },
   smallButtons: false,
-  testId: 'map-zoom-control',
+  testID: 'map-zoom-control',
 };
 
-const Zoom = ({ onZoomIn, onZoomOut, i18n, testId, tooltipPosition, smallButtons }) => {
+const Zoom = ({ onZoomIn, onZoomOut, i18n, testID, tooltipPosition, smallButtons }) => {
   const buttonSize = smallButtons ? 'small' : 'field';
   return (
-    <div className={`${iotPrefix}--map-zoom`} data-testid={testId}>
+    <div className={`${iotPrefix}--map-zoom`} data-testid={testID}>
       <Button
         renderIcon={ZoomIn32}
         hasIconOnly
@@ -44,7 +44,7 @@ const Zoom = ({ onZoomIn, onZoomOut, i18n, testId, tooltipPosition, smallButtons
         onClick={onZoomIn}
         tooltipPosition={tooltipPosition}
         iconDescription={i18n.zoomIn}
-        data-testid={`${testId}-zoom-in`}
+        data-testid={`${testID}-zoom-in`}
       />
       <Button
         renderIcon={ZoomOut32}
@@ -54,7 +54,7 @@ const Zoom = ({ onZoomIn, onZoomOut, i18n, testId, tooltipPosition, smallButtons
         onClick={onZoomOut}
         tooltipPosition={tooltipPosition}
         iconDescription={i18n.zoomOut}
-        data-testid={`${testId}-zoom-out`}
+        data-testid={`${testID}-zoom-out`}
       />
     </div>
   );

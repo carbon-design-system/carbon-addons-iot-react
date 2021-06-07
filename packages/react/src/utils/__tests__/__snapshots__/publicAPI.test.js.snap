@@ -21187,7 +21187,7 @@ Map {
       "mapControls": Array [],
       "size": "LARGEWIDE",
       "stops": Array [],
-      "testId": "map-card",
+      "testID": "map-card",
     },
     "propTypes": Object {
       "availableActions": Object {

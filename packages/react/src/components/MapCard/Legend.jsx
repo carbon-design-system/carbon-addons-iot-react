@@ -22,7 +22,7 @@ const propTypes = {
   stops: PropTypes.arrayOf(PropTypes.array).isRequired,
   /** callback for when the collapse toggle button is clicked */
   onCollapsToggle: PropTypes.func.isRequired,
-  testId: PropTypes.string,
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -30,7 +30,7 @@ const defaultProps = {
   hideLegendText: 'Hide legend',
   showLegendText: 'Show legend',
   increasedMargin: false,
-  testId: 'map-legend',
+  testID: 'map-legend',
 };
 
 const Legend = ({
@@ -42,7 +42,7 @@ const Legend = ({
   showLegendText,
   isCollapsed,
   onCollapsToggle,
-  testId,
+  testID,
 }) => {
   const renderLegendKeys = () => {
     return stops.map(([value, color], i) => {
@@ -61,13 +61,13 @@ const Legend = ({
 
   return isFullWidth ? (
     <div
-      data-testid={testId}
+      data-testid={testID}
       className={classnames(`${iotPrefix}--map-legend`, `${iotPrefix}--map-legend--fullwidth`, {
         [`${iotPrefix}--map-legend--fullwidth-collapsed`]: isCollapsed,
       })}
     >
       <Button
-        data-testid={`${testId}-collapse-toggle`}
+        data-testid={`${testID}-collapse-toggle`}
         className={`${iotPrefix}--map-legend__collapse-btn`}
         kind="ghost"
         size="small"
@@ -91,7 +91,7 @@ const Legend = ({
     </div>
   ) : (
     <div
-      data-testid={testId}
+      data-testid={testID}
       className={classnames(`${iotPrefix}--map-legend`, {
         [`${iotPrefix}--map-legend--increased-margin`]: increasedMargin,
       })}

@@ -42,7 +42,7 @@ const defaultProps = {
   mapControls: [],
   size: CARD_SIZES.LARGEWIDE,
   stops: [],
-  testId: 'map-card',
+  testID: 'map-card',
 };
 
 const MapCard = ({
@@ -64,7 +64,7 @@ const MapCard = ({
   onCardAction,
   isSettingPanelOpen,
   settingsContent: SettingsContent,
-  testId,
+  testID,
   ...others
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
@@ -82,7 +82,7 @@ const MapCard = ({
   const controls =
     mapControls.length || layeredControls.length ? (
       <MapControls
-        testId={`${testId}-map-controls`}
+        testID={`${testID}-map-controls`}
         controls={mapControls}
         layeredControls={layeredControls}
         tooltipPosition={tooltipPosition}
@@ -110,7 +110,7 @@ const MapCard = ({
       onCardAction={onCardAction}
       contentClassName={`${BASE_CLASS_NAME}-card-content`}
       className={`${BASE_CLASS_NAME}`}
-      testID={testId}
+      testID={testID}
       {...others}
     >
       <>
@@ -129,7 +129,7 @@ const MapCard = ({
           >
             {controls}
             <ZoomControl
-              testId={`${testId}-zoom-control`}
+              testID={`${testID}-zoom-control`}
               i18n={{ zoomIn: mergedI18n.zoomIn, zoomOut: mergedI18n.zoomOut }}
               onZoomIn={onZoomIn}
               onZoomOut={onZoomOut}
@@ -138,7 +138,7 @@ const MapCard = ({
             />
           </div>
           <Legend
-            testId={`${testId}-legend`}
+            testID={`${testID}-legend`}
             hideLegendText={mergedI18n.hideLegend}
             showLegendText={mergedI18n.showLegend}
             titleText={mergedI18n.legendTitle}
