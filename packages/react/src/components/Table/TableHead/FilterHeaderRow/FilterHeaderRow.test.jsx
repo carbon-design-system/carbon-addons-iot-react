@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { ComboBox, TextInput } from 'carbon-components-react';
+import { render } from '@testing-library/react';
 
 import { settings } from '../../../../constants/Settings';
 
@@ -92,5 +93,29 @@ describe('FilterHeaderRow', () => {
 
     wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`).simulate('click');
     expect(wrapper.state().filterValues.col1).toEqual('myVal');
+  });
+
+  it('adds an extra cell for the expander column when showExpanderColumn is true', () => {
+    const { container, rerender } = render(
+      <FilterHeaderRow
+        showExpanderColumn={false}
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[{ id: 'col1' }, { id: 'col2' }]}
+        filters={[]}
+      />
+    );
+    expect(container.querySelectorAll('th').length).toEqual(3);
+
+    rerender(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[{ id: 'col1' }, { id: 'col2' }]}
+        filters={[]}
+      />
+    );
+    expect(container.querySelectorAll('th').length).toEqual(4);
   });
 });

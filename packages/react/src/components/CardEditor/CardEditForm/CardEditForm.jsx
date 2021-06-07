@@ -329,7 +329,7 @@ const CardEditForm = ({
         <div className={`${baseClassName}--footer`}>
           <Button
             testID={`${testID}-open-editor-button`}
-            kind="tertiary"
+            kind="ghost"
             size="small"
             renderIcon={Code16}
             onClick={() => {

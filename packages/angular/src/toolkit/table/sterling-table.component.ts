@@ -16,7 +16,7 @@ import { Table } from 'carbon-components-angular';
   template: `
     <table
       ibmTable
-      sortable="true"
+      [sortable]="true"
       [size]="size"
       [striped]="striped"
       [skeleton]="skeleton"

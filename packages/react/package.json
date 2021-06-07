@@ -206,6 +206,7 @@
     "@testing-library/dom": "^7.22.2",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/react": "^10.4.8",
+    "@testing-library/react-hooks": "^5.1.2",
     "@testing-library/user-event": "^12.1.1",
     "accessibility-checker": "^3.0.6",
     "autoprefixer": "^9.4.4",
@@ -249,8 +250,10 @@
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-styled-components": "^6.3.1",
     "lint-staged": "^8.1.0",
+    "mapbox-gl": "^2.1.1",
     "node-sass": "^4.13.1",
     "object-assign": "^4.1.1",
+    "ol": "^6.5.0",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.1.2",
     "prettier-config-carbon": "^0.4.0",
@@ -278,5 +281,5 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.146.0-next.18"
+  "version": "2.146.0-next.24"
 }

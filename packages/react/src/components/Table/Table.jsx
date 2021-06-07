@@ -30,6 +30,7 @@ import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWi
 import TableBody from './TableBody/TableBody';
 import Pagination from './Pagination';
 import TableFoot from './TableFoot/TableFoot';
+import { useShowExpanderColumn } from './expanderColumnHook';
 import ErrorTable from './ErrorTable/ErrorTable';
 
 const { iotPrefix } = settings;
@@ -567,11 +568,19 @@ const Table = (props) => {
       : undefined;
   }, [data, hasAggregations, aggregationsProp]);
 
+  const showExpanderColumn = useShowExpanderColumn({
+    hasResize: options.hasResize,
+    useAutoTableLayoutForResize: options.useAutoTableLayoutForResize,
+    ordering: view.table.ordering,
+    columns,
+  });
+
   const totalColumns =
     visibleColumns.length +
     (hasMultiSelect ? 1 : 0) +
     (options.hasRowExpansion ? 1 : 0) +
-    (options.hasRowActions ? 1 : 0);
+    (options.hasRowActions ? 1 : 0) +
+    (showExpanderColumn ? 1 : 0);
 
   const isFiltered =
     view.filters.length > 0 ||
@@ -786,6 +795,7 @@ const Table = (props) => {
             }}
             hasFastFilter={options?.hasFilter === 'onKeyPress'}
             testID={`${id}-table-head`}
+            showExpanderColumn={showExpanderColumn}
           />
 
           {
@@ -796,6 +806,7 @@ const Table = (props) => {
                 {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
                 rowCount={view.table.loadingState.rowCount}
                 testID={`${id}-table-skeleton`}
+                showExpanderColumn={showExpanderColumn}
               />
             ) : error ? (
               <ErrorTable
@@ -853,6 +864,7 @@ const Table = (props) => {
                   'onRowClicked'
                 )}
                 testID={`${id}-table-body`}
+                showExpanderColumn={showExpanderColumn}
               />
             ) : (
               <EmptyTable
@@ -893,6 +905,7 @@ const Table = (props) => {
                 ordering: view.table.ordering,
               }}
               testID={`${id}-table-foot`}
+              showExpanderColumn={showExpanderColumn}
             />
           ) : null}
         </CarbonTable>
