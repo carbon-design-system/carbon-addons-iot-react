@@ -1,8 +1,4 @@
-import {
-  Component,
-  HostBinding,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
 
 /**
  * html:
@@ -15,9 +11,7 @@ import {
  */
 @Component({
   selector: 'ai-flyout-menu-footer',
-  template: `
-    <ng-content></ng-content>
-  `,
+  template: ` <ng-content></ng-content> `,
   encapsulation: ViewEncapsulation.None,
 })
 export class FlyoutMenuFooter {
