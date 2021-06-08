@@ -3,9 +3,6 @@ import { IconService } from 'carbon-components-angular';
 import { Filter16 } from '@carbon/icons';
 
 /**
- * The Filter menu component encapsulates the OverFlowMenu directive, and the flyout iconography
- * into one convienent component
- *
  * [See demo](../../?path=/story/components-flyout-menu--basic)
  *
  * html:
@@ -25,10 +22,7 @@ import { Filter16 } from '@carbon/icons';
         <div class="iot--flyout-menu--content">
           <ng-content></ng-content>
         </div>
-        <div class="iot--flyout-menu__bottom-container">
-          <ng-content select="[cancelButton]"></ng-content>
-          <ng-content select="[applyButton]"></ng-content>
-        </div>
+        <ng-content select="ai-flyout-menu-footer"></ng-content>
       </div>
     </ng-template>
     <div

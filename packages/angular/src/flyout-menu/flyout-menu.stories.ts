@@ -25,8 +25,10 @@ storiesOf('Components/Filter menu', module)
             <a ibmLink (click)="clearFilterClicked($event)" class="clear-flyout" href="#">Clear</a>
           </div>
           Columns
-          <button ibmButton="secondary" cancelButton>Cancel</button>
-          <button ibmButton applyButton>Apply</button>
+          <ai-flyout-menu-footer>
+            <button ibmButton="secondary">Cancel</button>
+            <button ibmButton>Apply</button>
+          </ai-flyout-menu-footer>
         </ai-flyout-menu>
       </div>
       <ibm-placeholder></ibm-placeholder>

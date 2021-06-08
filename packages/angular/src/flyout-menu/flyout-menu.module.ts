@@ -16,10 +16,11 @@ import {
 import { FlyoutMenu } from './flyout-menu.component';
 import { FlyoutMenuPane } from './flyout-menu-pane.component';
 import { FlyoutMenuDirective } from './flyout-menu.directive';
+import { FlyoutMenuFooter } from './flyout-menu-footer.component';
 
 @NgModule({
-  declarations: [FlyoutMenu, FlyoutMenuPane, FlyoutMenuDirective],
-  exports: [FlyoutMenu, FlyoutMenuPane, FlyoutMenuDirective],
+  declarations: [FlyoutMenu, FlyoutMenuPane, FlyoutMenuDirective, FlyoutMenuFooter],
+  exports: [FlyoutMenu, FlyoutMenuPane, FlyoutMenuDirective, FlyoutMenuFooter],
   providers: [DialogService],
   entryComponents: [FlyoutMenuPane],
   imports: [
