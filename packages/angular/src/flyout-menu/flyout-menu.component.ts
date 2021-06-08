@@ -38,7 +38,7 @@ import { Filter16 } from '@carbon/icons';
         data-testid="flyout-menu-button"
         tabindex="0"
         ibmButton="ghost"
-        iconOnly="true"
+        [iconOnly]="true"
         class="
         iot--flyout-menu--trigger-button
         iot--btn

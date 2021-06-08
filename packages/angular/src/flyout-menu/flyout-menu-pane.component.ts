@@ -5,6 +5,7 @@ import {
   Input,
   Optional,
   Output,
+  TemplateRef,
   ViewEncapsulation,
 } from '@angular/core';
 import {
@@ -54,7 +55,7 @@ import { I18n } from 'carbon-components-angular/i18n';
     >
       <ng-template
         *ngIf="hasContentTemplate"
-        [ngTemplateOutlet]="dialogConfig.content"
+        [ngTemplateOutlet]="contentTemplate"
         [ngTemplateOutletContext]="{ tooltip: this }"
       >
       </ng-template>
@@ -79,6 +80,9 @@ export class FlyoutMenuPane extends Dialog {
     return this._offset;
   }
   public hasContentTemplate = true;
+  public get contentTemplate() {
+    return this.dialogConfig.content as TemplateRef<any>;
+  }
   /**
    * Sets the role of the tooltip. If there's no focusable content we leave it as a `tooltip`,
    * if there _is_ focusable content we switch to the interactive `dialog` role.
