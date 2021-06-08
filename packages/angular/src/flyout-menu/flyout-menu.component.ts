@@ -22,7 +22,9 @@ import { Filter16 } from '@carbon/icons';
         <div class="iot--flyout-menu--content">
           <ng-content></ng-content>
         </div>
-        <ng-content select="ai-flyout-menu-footer, .iot--flyout-menu__bottom-container"></ng-content>
+        <ng-content
+          select="ai-flyout-menu-footer, .iot--flyout-menu__bottom-container"
+        ></ng-content>
       </div>
     </ng-template>
     <div
