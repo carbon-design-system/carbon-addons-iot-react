@@ -111,3 +111,14 @@ export const HotspotPropTypes = {
   /** For text hotspots, the border width in px, e.g. 12  */
   borderWidth: PropTypes.number,
 };
+
+export const ButtonIconPropType = PropTypes.oneOfType([
+  PropTypes.shape({
+    width: PropTypes.string,
+    height: PropTypes.string,
+    viewBox: PropTypes.string.isRequired,
+    svgData: PropTypes.object.isRequired,
+  }),
+  PropTypes.object, // Could be a react icon name
+  PropTypes.element,
+]);

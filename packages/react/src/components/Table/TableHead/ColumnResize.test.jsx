@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { settings } from '../../../constants/Settings';
 
@@ -9,6 +9,253 @@ import TableHeader from './TableHeader';
 const { iotPrefix } = settings;
 
 describe('ColumnResize', () => {
+  const resizeHandleWidth = 4;
+
+  it('should handle resize of last column when expander column is present', () => {
+    const testColumnId = 'lastCol';
+    const testColumnWidth = 100;
+    const resizeHandlePosition = testColumnWidth - resizeHandleWidth;
+    jest
+      .spyOn(HTMLElement.prototype, 'offsetLeft', 'get')
+      .mockImplementation(() => resizeHandlePosition);
+    const onResize = jest.fn();
+    const ref = React.createRef(null);
+    const forwardMouseEvent = (e) => {
+      if (ref.current) {
+        ref.current.forwardMouseEvent(e);
+      }
+    };
+    render(
+      <table>
+        <thead>
+          <tr>
+            <TableHeader ref={ref} onMouseUp={forwardMouseEvent} onMouseMove={forwardMouseEvent}>
+              <ColumnResize
+                showExpanderColumn
+                ref={ref}
+                currentColumnWidths={{
+                  firstCol: { width: 100, id: 'firstCol' },
+                  lastCol: { width: testColumnWidth, id: testColumnId },
+                }}
+                columnId={testColumnId}
+                ordering={[
+                  { columnId: 'firstCol', isHidden: false },
+                  { columnId: testColumnId, isHidden: false },
+                ]}
+                onResize={onResize}
+                paddingExtra={0}
+              />
+            </TableHeader>
+          </tr>
+        </thead>
+      </table>
+    );
+
+    const handle = screen.getByRole('button', { name: 'Resize column' });
+
+    fireEvent.mouseDown(handle, {
+      clientX: 0,
+    });
+    fireEvent.mouseMove(handle, {
+      clientX: 50,
+    });
+    fireEvent.mouseUp(handle);
+    expect(onResize).toHaveBeenCalledWith([
+      {
+        id: testColumnId,
+        width: 150,
+      },
+    ]);
+    jest.clearAllMocks();
+  });
+
+  it('should handle resize of last column when expander column is present in RTL', () => {
+    const testColumnId = 'lastCol';
+    const testColumnWidth = 100;
+    const resizeHandlePosition = 0;
+    const originalDir = document.dir;
+    document.dir = 'rtl';
+    jest
+      .spyOn(HTMLElement.prototype, 'offsetLeft', 'get')
+      .mockImplementation(() => resizeHandlePosition);
+    const onResize = jest.fn();
+    const ref = React.createRef(null);
+    const forwardMouseEvent = (e) => {
+      if (ref.current) {
+        ref.current.forwardMouseEvent(e);
+      }
+    };
+    render(
+      <table>
+        <thead>
+          <tr>
+            <TableHeader ref={ref} onMouseUp={forwardMouseEvent} onMouseMove={forwardMouseEvent}>
+              <ColumnResize
+                showExpanderColumn
+                ref={ref}
+                currentColumnWidths={{
+                  firstCol: { width: 100, id: 'firstCol' },
+                  lastCol: { width: testColumnWidth, id: testColumnId },
+                }}
+                columnId={testColumnId}
+                ordering={[
+                  { columnId: 'firstCol', isHidden: false },
+                  { columnId: testColumnId, isHidden: false },
+                ]}
+                onResize={onResize}
+                paddingExtra={0}
+              />
+            </TableHeader>
+          </tr>
+        </thead>
+      </table>
+    );
+
+    const handle = screen.getByRole('button', { name: 'Resize column' });
+    fireEvent.mouseDown(handle, {
+      clientX: 0,
+    });
+    fireEvent.mouseMove(handle, {
+      clientX: -50,
+    });
+    fireEvent.mouseUp(handle);
+    expect(onResize).toHaveBeenCalledWith([
+      {
+        id: testColumnId,
+        width: 150,
+      },
+    ]);
+    jest.clearAllMocks();
+    document.dir = originalDir;
+  });
+
+  it('should handle resize column (that is not the last) when expander column is present', () => {
+    const testColumnId = 'firstCol';
+    const testColumnWidth = 200;
+    const resizeHandlePosition = testColumnWidth - resizeHandleWidth;
+
+    jest
+      .spyOn(HTMLElement.prototype, 'offsetLeft', 'get')
+      .mockImplementation(() => resizeHandlePosition);
+    const onResize = jest.fn();
+    const ref = React.createRef(null);
+    const forwardMouseEvent = (e) => {
+      if (ref.current) {
+        ref.current.forwardMouseEvent(e);
+      }
+    };
+    render(
+      <table>
+        <thead>
+          <tr>
+            <TableHeader ref={ref} onMouseUp={forwardMouseEvent} onMouseMove={forwardMouseEvent}>
+              <ColumnResize
+                showExpanderColumn
+                ref={ref}
+                currentColumnWidths={{
+                  firstCol: { width: testColumnWidth, id: testColumnId },
+                  lastCol: { width: 200, id: 'lastCol' },
+                }}
+                columnId={testColumnId}
+                ordering={[
+                  { columnId: testColumnId, isHidden: false },
+                  { columnId: 'lastCol', isHidden: false },
+                ]}
+                onResize={onResize}
+                paddingExtra={0}
+              />
+            </TableHeader>
+          </tr>
+        </thead>
+      </table>
+    );
+
+    const handle = screen.getByRole('button', { name: 'Resize column' });
+    fireEvent.mouseDown(handle, {
+      clientX: 0,
+    });
+    fireEvent.mouseMove(handle, {
+      clientX: 50,
+    });
+    fireEvent.mouseUp(handle);
+    expect(onResize).toHaveBeenCalledWith([
+      {
+        id: testColumnId,
+        width: 250,
+      },
+      {
+        id: 'lastCol',
+        width: 150,
+      },
+    ]);
+    jest.clearAllMocks();
+  });
+
+  it('should handle resize column (that is not the last) when expander column is present in RTL', () => {
+    const testColumnId = 'firstCol';
+    const testColumnWidth = 200;
+    const resizeHandlePosition = 0;
+    const originalDir = document.dir;
+    document.dir = 'rtl';
+
+    jest
+      .spyOn(HTMLElement.prototype, 'offsetLeft', 'get')
+      .mockImplementation(() => resizeHandlePosition);
+    const onResize = jest.fn();
+    const ref = React.createRef(null);
+    const forwardMouseEvent = (e) => {
+      if (ref.current) {
+        ref.current.forwardMouseEvent(e);
+      }
+    };
+    render(
+      <table>
+        <thead>
+          <tr>
+            <TableHeader ref={ref} onMouseUp={forwardMouseEvent} onMouseMove={forwardMouseEvent}>
+              <ColumnResize
+                showExpanderColumn
+                ref={ref}
+                currentColumnWidths={{
+                  firstCol: { width: testColumnWidth, id: testColumnId },
+                  lastCol: { width: 200, id: 'lastCol' },
+                }}
+                columnId={testColumnId}
+                ordering={[
+                  { columnId: testColumnId, isHidden: false },
+                  { columnId: 'lastCol', isHidden: false },
+                ]}
+                onResize={onResize}
+                paddingExtra={0}
+              />
+            </TableHeader>
+          </tr>
+        </thead>
+      </table>
+    );
+
+    const handle = screen.getByRole('button', { name: 'Resize column' });
+    fireEvent.mouseDown(handle, {
+      clientX: 0,
+    });
+    fireEvent.mouseMove(handle, {
+      clientX: -50,
+    });
+    fireEvent.mouseUp(handle);
+    expect(onResize).toHaveBeenCalledWith([
+      {
+        id: testColumnId,
+        width: 250,
+      },
+      {
+        id: 'lastCol',
+        width: 150,
+      },
+    ]);
+    jest.clearAllMocks();
+    document.dir = originalDir;
+  });
+
   it('should set left position when resizing and within bounds', () => {
     jest.spyOn(HTMLElement.prototype, 'offsetLeft', 'get').mockImplementation(() => 96);
     const onResize = jest.fn();
@@ -24,6 +271,7 @@ describe('ColumnResize', () => {
           <tr>
             <TableHeader ref={ref} onMouseUp={forwardMouseEvent} onMouseMove={forwardMouseEvent}>
               <ColumnResize
+                showExpanderColumn={false}
                 ref={ref}
                 currentColumnWidths={{
                   test: { width: 100, id: 'test' },
@@ -90,6 +338,7 @@ describe('ColumnResize', () => {
           <tr>
             <TableHeader ref={ref} onMouseUp={forwardMouseEvent} onMouseMove={forwardMouseEvent}>
               <ColumnResize
+                showExpanderColumn={false}
                 ref={ref}
                 currentColumnWidths={{
                   test: { width: 100, id: 'test' },

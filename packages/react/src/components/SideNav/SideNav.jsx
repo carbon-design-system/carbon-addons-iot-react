@@ -58,21 +58,20 @@ export const SideNavPropTypes = {
     })
   ).isRequired,
   isSideNavExpanded: PropTypes.bool,
-  /** An array of strings which will be options of switcher */
-  // switcherProps: PropTypes.obj,
   i18n: PropTypes.shape({
     closeText: PropTypes.string,
     openText: PropTypes.string,
+    sideNavLabelText: PropTypes.string,
   }),
 };
 
 const defaultProps = {
   defaultExpanded: false,
   isSideNavExpanded: false,
-  // switcherProps: null,
   i18n: {
     closeText: 'Close',
     openText: 'Open',
+    sideNavLabelText: 'Side navigation',
   },
 };
 
@@ -130,8 +129,10 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
     })
     .filter((i) => i);
 
-  const translateById = (id) =>
-    id !== 'carbon.sidenav.state.closed' ? i18n.closeText : i18n.openText;
+  // TODO: Will be added back in when footer is added for rails.
+  // see: https://github.com/carbon-design-system/carbon/blob/main/packages/react/src/components/UIShell/SideNav.js#L143
+  // const translateById = (id) =>
+  //   id !== 'carbon.sidenav.state.closed' ? i18n.closeText : i18n.openText;
 
   return (
     <CarbonSideNav
@@ -140,13 +141,14 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
         [`${prefix}--side-nav--expanded`]: isSideNavExpanded,
       })}
       expanded={isSideNavExpanded}
-      translateById={translateById}
-      aria-label="Side navigation"
+      // TODO: Will be added back in when footer is added for rails.
+      // see: https://github.com/carbon-design-system/carbon/blob/main/packages/react/src/components/UIShell/SideNav.js#L143
+      // translateById={translateById}
+      aria-label={i18n.sideNavLabelText}
       defaultExpanded={defaultExpanded}
       isRail
       {...props} // spreading here as base component does not pass to DOM element.
     >
-      {/* {switcherProps && <SideNavSwitcher {...switcherProps} />} */}
       <SideNavItems>{nav}</SideNavItems>
     </CarbonSideNav>
   );

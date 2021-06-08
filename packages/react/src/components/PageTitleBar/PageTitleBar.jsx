@@ -68,7 +68,7 @@ const PageTitleBarPropTypes = {
   /** Content rendered beneath title bar */
   content: PropTypes.node,
   /** Callback to allow custom rendering of the title, it is called back with the title property */
-  renderTitleFunction: PropTypes.function,
+  renderTitleFunction: PropTypes.func,
 };
 
 const defaultProps = {

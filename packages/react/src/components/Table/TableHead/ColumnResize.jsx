@@ -17,6 +17,12 @@ const propTypes = {
   onResize: PropTypes.func.isRequired,
   ordering: PropTypes.arrayOf(PropTypes.object).isRequired,
   paddingExtra: PropTypes.number.isRequired,
+  showExpanderColumn: PropTypes.bool.isRequired,
+  resizeColumnText: PropTypes.string,
+};
+
+const defaultProps = {
+  resizeColumnText: 'Resize column',
 };
 
 const dragHandleWidth = 4;
@@ -37,25 +43,42 @@ export const getColumnDragBounds = (myColumn, siblingColumn, paddingExtra) => {
 
 export const getUpdatedColumnWidths = (dropXPos, myColumn, affectedSiblingColumn) => {
   const myColumnNewWidth = document.dir === 'rtl' ? myColumn.width - dropXPos : dropXPos;
-  const newAffectedSiblingColumnWidth =
-    document.dir === 'rtl'
-      ? affectedSiblingColumn.width + dropXPos
-      : affectedSiblingColumn.width + myColumn.width - dropXPos;
+  const updatedColumns = [{ id: myColumn.id, width: myColumnNewWidth }];
 
-  return [
-    { id: myColumn.id, width: myColumnNewWidth },
-    { id: affectedSiblingColumn.id, width: newAffectedSiblingColumnWidth },
-  ];
+  if (!affectedSiblingColumn.isExpanderColumn) {
+    const newAffectedSiblingColumnWidth =
+      document.dir === 'rtl'
+        ? affectedSiblingColumn.width + dropXPos
+        : affectedSiblingColumn.width + myColumn.width - dropXPos;
+    updatedColumns.push({ id: affectedSiblingColumn.id, width: newAffectedSiblingColumnWidth });
+  }
+
+  return updatedColumns;
 };
 
-const findNextVisibleSibling = (ordering, myColIndex, currentColumnWidths) => {
+const findNextVisibleSibling = ({
+  ordering,
+  myColIndex,
+  currentColumnWidths,
+  showExpanderColumn,
+}) => {
   const nextColIndex = ordering.findIndex((col, i) => i > myColIndex && !col.isHidden);
-  const nextColId = ordering[nextColIndex].columnId;
-  return currentColumnWidths[nextColId];
+  const nextColId = ordering[nextColIndex]?.columnId;
+
+  return nextColIndex === -1 && showExpanderColumn
+    ? { width: Infinity, isExpanderColumn: true }
+    : currentColumnWidths[nextColId];
 };
 
 const ColumnResize = React.forwardRef((props, ref) => {
-  const { currentColumnWidths, columnId, ordering, paddingExtra } = props;
+  const {
+    currentColumnWidths,
+    columnId,
+    ordering,
+    paddingExtra,
+    showExpanderColumn,
+    resizeColumnText,
+  } = props;
   const [startX, setStartX] = useState(0);
   const [leftPosition, setLeftPosition] = useState(0);
   const [columnIsBeingResized, setColumnIsBeingResized] = useState(false);
@@ -64,9 +87,15 @@ const ColumnResize = React.forwardRef((props, ref) => {
 
   const setAffectedColumns = () => {
     const myCol = currentColumnWidths[columnId];
-    const myColIndex = ordering.findIndex((col) => col.columnId === columnId);
-    const siblingColumn = findNextVisibleSibling(ordering, myColIndex, currentColumnWidths);
     setMyColumn(myCol);
+
+    const myColIndex = ordering.findIndex((col) => col.columnId === columnId);
+    const siblingColumn = findNextVisibleSibling({
+      ordering,
+      myColIndex,
+      currentColumnWidths,
+      showExpanderColumn,
+    });
     setAffectedSiblingColumn(siblingColumn);
   };
 
@@ -117,8 +146,11 @@ const ColumnResize = React.forwardRef((props, ref) => {
   }));
 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <div
+      role="button"
+      tabIndex="0"
+      aria-label={resizeColumnText}
       onClick={(e) => e.stopPropagation()}
       onMouseDown={(e) => onMouseDown(e)}
       style={{
@@ -133,5 +165,6 @@ const ColumnResize = React.forwardRef((props, ref) => {
 });
 
 ColumnResize.propTypes = propTypes;
+ColumnResize.defaultProps = defaultProps;
 
 export default ColumnResize;
