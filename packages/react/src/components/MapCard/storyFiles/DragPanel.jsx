@@ -8,7 +8,7 @@ const propTypes = {
   id: PropTypes.string.isRequired,
   left: PropTypes.number,
   top: PropTypes.number,
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
 
 const defaultProps = {
@@ -28,7 +28,7 @@ const DragPanel = ({ id, left, top, children }) => {
     [id, left, top]
   );
   return isDragging ? null : (
-    <div className="drag-panel" ref={drag} style={{ left, top }} role="dragPanel">
+    <div className="drag-panel" ref={drag} style={{ left, top }}>
       {children}
     </div>
   );

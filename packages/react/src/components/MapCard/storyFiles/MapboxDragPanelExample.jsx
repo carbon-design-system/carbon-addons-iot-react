@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useDrop } from 'react-dnd';
 import update from 'immutability-helper';
-// The MapboxExample is not exported and is only used by StoryBook
+// The MapboxDragPanelExample is not exported and is only used by StoryBook
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import mapboxgl from 'mapbox-gl';
 import PropTypes from 'prop-types';
@@ -56,7 +56,7 @@ const defaultProps = {
  * production ready component. The drag functionality is provided by react-dnd and
  * the MapCard provides a dropRef parameter for the ref needed by react-dnd.
  */
-const MapboxExample = ({
+const MapboxDragPanelExample = ({
   data,
   options,
   isLegendFullWidth,
@@ -204,6 +204,6 @@ const MapboxExample = ({
   );
 };
 
-MapboxExample.propTypes = propTypes;
-MapboxExample.defaultProps = defaultProps;
-export default MapboxExample;
+MapboxDragPanelExample.propTypes = propTypes;
+MapboxDragPanelExample.defaultProps = defaultProps;
+export default MapboxDragPanelExample;
