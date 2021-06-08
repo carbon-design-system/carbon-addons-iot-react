@@ -1353,8 +1353,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             >
                               <label
                                 className="bx--pagination__text"
-                                htmlFor="bx-pagination-select-5"
-                                id="bx-pagination-select-5-count-label"
+                                htmlFor="bx-pagination-select-4"
+                                id="bx-pagination-select-4-count-label"
                               >
                                 Items per page:
                               </label>
@@ -1373,7 +1373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     >
                                       <select
                                         className="bx--select-input"
-                                        id="bx-pagination-select-5"
+                                        id="bx-pagination-select-4"
                                         onChange={[Function]}
                                         value={10}
                                       >
@@ -1438,7 +1438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 >
                                   <label
                                     className="bx--label bx--visually-hidden"
-                                    htmlFor="bx-pagination-select-5-right"
+                                    htmlFor="bx-pagination-select-4-right"
                                   >
                                     Page number, of 10 pages
                                   </label>
@@ -1451,7 +1451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     >
                                       <select
                                         className="bx--select-input"
-                                        id="bx-pagination-select-5-right"
+                                        id="bx-pagination-select-4-right"
                                         onChange={[Function]}
                                         value={1}
                                       >
@@ -20012,8 +20012,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <label
                               className="bx--pagination__text"
-                              htmlFor="bx-pagination-select-4"
-                              id="bx-pagination-select-4-count-label"
+                              htmlFor="bx-pagination-select-3"
+                              id="bx-pagination-select-3-count-label"
                             >
                               Items per page:
                             </label>
@@ -20032,7 +20032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   >
                                     <select
                                       className="bx--select-input"
-                                      id="bx-pagination-select-4"
+                                      id="bx-pagination-select-3"
                                       onChange={[Function]}
                                       value={10}
                                     >
@@ -20097,7 +20097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               >
                                 <label
                                   className="bx--label bx--visually-hidden"
-                                  htmlFor="bx-pagination-select-4-right"
+                                  htmlFor="bx-pagination-select-3-right"
                                 >
                                   Page number, of 10 pages
                                 </label>
@@ -20110,7 +20110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   >
                                     <select
                                       className="bx--select-input"
-                                      id="bx-pagination-select-4-right"
+                                      id="bx-pagination-select-3-right"
                                       onChange={[Function]}
                                       value={1}
                                     >

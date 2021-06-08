@@ -14968,6 +14968,7 @@ Map {
         "overflowMenuDescription": "Open and close list of options",
         "periodToDateLabel": "Period to date",
         "rollingPeriodLabel": "Rolling period",
+        "searchLabel": "Search",
         "searchPlaceholder": "Search",
         "selectSeverityPlaceholder": "Select a severity",
         "selectTimeRangeLabel": "Select time range",
