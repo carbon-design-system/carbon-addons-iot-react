@@ -31,7 +31,7 @@ describe('MapCards', () => {
     return (
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={mapContainerRef}
         stops={[]}
         onZoomIn={jest.fn()}
@@ -54,7 +54,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={zoomInCallback}
@@ -82,7 +82,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[
           ['Thing A', 'red'],
@@ -116,7 +116,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[
           ['Thing A', 'red'],
@@ -150,7 +150,7 @@ describe('MapCards', () => {
     rerender(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[
           ['Thing A', 'red'],
@@ -173,7 +173,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[
           ['Thing A', 'red'],
@@ -216,7 +216,7 @@ describe('MapCards', () => {
     const { rerender, container } = render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -238,7 +238,7 @@ describe('MapCards', () => {
     rerender(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -269,7 +269,7 @@ describe('MapCards', () => {
     const { container } = render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -299,7 +299,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -346,7 +346,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -375,7 +375,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -414,7 +414,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -448,7 +448,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -490,7 +490,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -535,7 +535,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -591,7 +591,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -660,7 +660,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}
@@ -772,7 +772,7 @@ describe('MapCards', () => {
     render(
       <MapCard
         id="map-card"
-        testId="map-card"
+        testID="map-card"
         mapContainerRef={React.createRef()}
         stops={[]}
         onZoomIn={() => {}}

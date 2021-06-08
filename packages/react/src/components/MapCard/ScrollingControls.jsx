@@ -16,14 +16,14 @@ const propTypes = {
   scrollUpIconDescriptionText: PropTypes.string,
   scrollDownIconDescriptionText: PropTypes.string,
   tooltipPosition: PropTypes.string,
-  testId: PropTypes.string,
+  testID: PropTypes.string,
   /** Number of visible items shown between the scroll buttons */
   visibleItemsCount: PropTypes.number,
 };
 
 const defaultProps = {
   visibleItemsCount: 6,
-  testId: 'map-scroll-controls',
+  testID: 'map-scroll-controls',
   tooltipPosition: 'left',
   scrollUpIconDescriptionText: 'Scroll up',
   scrollDownIconDescriptionText: 'Scroll down',
@@ -35,7 +35,7 @@ const ScrollingControls = ({
   tooltipPosition,
   scrollUpIconDescriptionText,
   scrollDownIconDescriptionText,
-  testId,
+  testID,
 }) => {
   const scrollContainerRef = useRef();
   const buttonHeightPx = 40;
@@ -57,9 +57,9 @@ const ScrollingControls = ({
   };
 
   return (
-    <div data-testid={testId} className={classnames(`${BASE_CLASS_NAME}__container`)}>
+    <div data-testid={testID} className={classnames(`${BASE_CLASS_NAME}__container`)}>
       <Button
-        data-testid={`${testId}-scroll-up`}
+        data-testid={`${testID}-scroll-up`}
         className={classnames(`${BASE_CLASS_NAME}__btn`, `${BASE_CLASS_NAME}__scroll-btn`)}
         disabled={scrollUpDisabled}
         kind="ghost"
@@ -72,7 +72,7 @@ const ScrollingControls = ({
       />
       {scrollUpDisabled ? null : <div className={`${BASE_CLASS_NAME}__gradient`} />}
       <div
-        data-testid={`${testId}-scroll-area`}
+        data-testid={`${testID}-scroll-area`}
         ref={scrollContainerRef}
         style={{
           [`--visble-items-count`]: visibleItemsCount,
@@ -105,7 +105,7 @@ const ScrollingControls = ({
         />
       )}
       <Button
-        data-testid={`${testId}-scroll-down`}
+        data-testid={`${testID}-scroll-down`}
         className={classnames(`${BASE_CLASS_NAME}__btn`, `${BASE_CLASS_NAME}__scroll-btn`)}
         disabled={scrollDownDisabled}
         kind="ghost"

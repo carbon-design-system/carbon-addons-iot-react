@@ -9187,6 +9187,7 @@ Map {
         "closeGalleryButton": "Back",
         "dashboardTitleLabel": "Dashboard title",
         "defaultCardTitle": "Untitled",
+        "editDataItems": "Edit data items",
         "galleryHeader": "Gallery",
         "headerCancelButton": "Cancel",
         "headerDeleteButton": "Delete",
@@ -9226,6 +9227,7 @@ Map {
       "onCardChange": null,
       "onCardJsonPreview": null,
       "onDelete": null,
+      "onEditDataItems": null,
       "onExport": null,
       "onFetchDynamicDemoHotspots": [Function],
       "onImageDelete": null,
@@ -9538,6 +9540,9 @@ Map {
             "edit": Object {
               "type": "string",
             },
+            "editDataItems": Object {
+              "type": "string",
+            },
             "errorTitle": Object {
               "type": "string",
             },
@@ -9797,6 +9802,9 @@ Map {
       "onDelete": Object {
         "type": "func",
       },
+      "onEditDataItems": Object {
+        "type": "func",
+      },
       "onExport": Object {
         "type": "func",
       },
@@ -9855,6 +9863,7 @@ Map {
       "i18n": Object {
         "addCardButton": "Add card",
         "closeGalleryButton": "Back",
+        "editDataItems": "Edit data items",
         "galleryHeader": "Gallery",
         "openGalleryButton": "Add card",
         "openJSONButton": "Open JSON editor",
@@ -9863,6 +9872,7 @@ Map {
       "icons": null,
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
+      "onEditDataItems": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -10029,6 +10039,9 @@ Map {
             "addCardButton": Object {
               "type": "string",
             },
+            "editDataItems": Object {
+              "type": "string",
+            },
             "galleryHeader": Object {
               "type": "string",
             },
@@ -10059,6 +10072,9 @@ Map {
       },
       "onChange": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onEditDataItems": Object {
         "type": "func",
       },
       "onShowGallery": Object {
@@ -21187,7 +21203,7 @@ Map {
       "mapControls": Array [],
       "size": "LARGEWIDE",
       "stops": Array [],
-      "testId": "map-card",
+      "testID": "map-card",
     },
     "propTypes": Object {
       "availableActions": Object {
