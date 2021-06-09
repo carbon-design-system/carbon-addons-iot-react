@@ -2,12 +2,14 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { spacing05 } from '@carbon/layout';
+import { withReadme } from 'storybook-readme';
 
 import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { getIntervalChartData, chartData } from '../../utils/sample';
 
 import TimeSeriesCard from './TimeSeriesCard';
+import README from './TimeSeriesCard.md';
 
 const commonProps = {
   id: 'facility-temperature',
@@ -21,7 +23,7 @@ export default {
   },
 };
 
-export const SinglePoint = () => {
+export const SinglePoint = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
@@ -67,13 +69,13 @@ export const SinglePoint = () => {
       />
     </div>
   );
-};
+});
 
 SinglePoint.story = {
   name: 'with single point and variables',
 };
 
-export const SingleLineIntervalDataChoices = () => {
+export const SingleLineIntervalDataChoices = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   const interval = select(
@@ -128,13 +130,13 @@ export const SingleLineIntervalDataChoices = () => {
       />
     </div>
   );
-};
+});
 
 SingleLineIntervalDataChoices.story = {
   name: 'with single line, intervals, configurable data points, and zoomBar',
 };
 
-export const MultiLineIntervalDataChoices = () => {
+export const MultiLineIntervalDataChoices = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   const interval = select(
@@ -205,13 +207,13 @@ export const MultiLineIntervalDataChoices = () => {
       />
     </div>
   );
-};
+});
 
 MultiLineIntervalDataChoices.story = {
   name: 'with multiple lines, intervals, configurable data points, and zoomBar',
 };
 
-export const CustomColors = () => {
+export const CustomColors = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
@@ -257,13 +259,13 @@ export const CustomColors = () => {
       />
     </div>
   );
-};
+});
 
 CustomColors.story = {
   name: 'with custom colors',
 };
 
-export const DomainRange = () => {
+export const DomainRange = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   const data = getIntervalChartData('day', 50, { min: 10, max: 100 }, 100);
@@ -304,13 +306,13 @@ export const DomainRange = () => {
       />
     </div>
   );
-};
+});
 
 DomainRange.story = {
   name: 'with domainRange',
 };
 
-export const HighlightAlertRanges = () => {
+export const HighlightAlertRanges = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -368,13 +370,13 @@ export const HighlightAlertRanges = () => {
       />
     </div>
   );
-};
+});
 
 HighlightAlertRanges.story = {
   name: 'with highlight alert ranges',
 };
 
-export const EmptyForARange = () => {
+export const EmptyForARange = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -413,13 +415,13 @@ export const EmptyForARange = () => {
       />
     </div>
   );
-};
+});
 
 EmptyForARange.story = {
   name: 'with empty for a range',
 };
 
-export const IsEditable = () => {
+export const IsEditable = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -469,13 +471,13 @@ export const IsEditable = () => {
       />
     </div>
   );
-};
+});
 
 IsEditable.story = {
   name: 'with isEditable',
 };
 
-export const IsExpanded = () => {
+export const IsExpanded = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   // needs static data so that the snapshot will always retain the same values
@@ -587,13 +589,13 @@ export const IsExpanded = () => {
       />
     </div>
   );
-};
+});
 
 IsExpanded.story = {
   name: 'with isExpanded',
 };
 
-export const DataFilter = () => {
+export const DataFilter = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -659,13 +661,13 @@ export const DataFilter = () => {
       />
     </div>
   );
-};
+});
 
 DataFilter.story = {
   name: 'with dataFilter',
 };
 
-export const Thresholds = () => {
+export const Thresholds = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
   const values = getIntervalChartData(interval, 20, { min: 10, max: 100 }, 100);
@@ -716,7 +718,7 @@ export const Thresholds = () => {
       />
     </div>
   );
-};
+});
 
 Thresholds.story = {
   name: 'with thresholds',

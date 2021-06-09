@@ -9,7 +9,7 @@ import { withReadme } from 'storybook-readme';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
-import SimpleListREADME from './README.md';
+import README from './SimpleList.md';
 
 export const getListItems = (num) =>
   Array(num)
@@ -128,7 +128,7 @@ export default {
   excludeStories: ['getListItems'],
 };
 
-export const Basic = withReadme(SimpleListREADME, () => (
+export const Basic = withReadme(README, () => (
   <div style={{ width: 500 }}>
     <SimpleList
       title={text('Text', 'Simple List')}
@@ -151,7 +151,7 @@ Basic.story = {
   name: 'basic',
 };
 
-export const ListWithEmptyRow = withReadme(SimpleListREADME, () => (
+export const ListWithEmptyRow = withReadme(README, () => (
   <div
     style={{
       width: 500,
@@ -181,7 +181,7 @@ ListWithEmptyRow.story = {
   name: 'list with empty row',
 };
 
-export const ListWithLargeRow = withReadme(SimpleListREADME, () => (
+export const ListWithLargeRow = withReadme(README, () => (
   <div
     style={{
       width: 500,
@@ -212,7 +212,7 @@ ListWithLargeRow.story = {
   name: 'list with large row',
 };
 
-export const ListWithMultipleActions = withReadme(SimpleListREADME, () => (
+export const ListWithMultipleActions = withReadme(README, () => (
   <div
     style={{
       width: 500,
@@ -242,7 +242,7 @@ ListWithMultipleActions.story = {
   name: 'list with multiple actions',
 };
 
-export const ListWithOverflowMenu = withReadme(SimpleListREADME, () => (
+export const ListWithOverflowMenu = withReadme(README, () => (
   <div
     style={{
       width: 500,
@@ -272,7 +272,7 @@ ListWithOverflowMenu.story = {
   name: 'list with overflow menu',
 };
 
-export const LargeRowListWithMultipleActions = withReadme(SimpleListREADME, () => (
+export const LargeRowListWithMultipleActions = withReadme(README, () => (
   <div
     style={{
       width: 500,
@@ -303,7 +303,7 @@ LargeRowListWithMultipleActions.story = {
   name: 'large row list with multiple actions',
 };
 
-export const LargeRowListWithOverflowMenu = withReadme(SimpleListREADME, () => (
+export const LargeRowListWithOverflowMenu = withReadme(README, () => (
   <div
     style={{
       width: 500,
