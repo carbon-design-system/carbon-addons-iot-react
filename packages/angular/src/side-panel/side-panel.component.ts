@@ -47,22 +47,22 @@ import { IconService } from 'carbon-components-angular';
         <svg *ngIf="showClose && !shouldShowDrawer" ibmIcon="close" size="16"></svg>
         <svg
           *ngIf="shouldShowDrawer && active && side === 'left'"
-          ibmIcon="chevron--left"
+          [ibmIcon]="closeIcon || 'chevron--left'"
           size="16"
         ></svg>
         <svg
           *ngIf="shouldShowDrawer && active && side === 'right'"
-          ibmIcon="chevron--right"
+          [ibmIcon]="closeIcon || 'chevron--right'"
           size="16"
         ></svg>
         <svg
           *ngIf="shouldShowDrawer && !active && side === 'left'"
-          ibmIcon="open-panel--left"
+          [ibmIcon]="drawerIcon || 'open-panel--left'"
           size="16"
         ></svg>
         <svg
           *ngIf="shouldShowDrawer && !active && side === 'right'"
-          ibmIcon="open-panel--right"
+          [ibmIcon]="drawerIcon || 'open-panel--right'"
           size="16"
         ></svg>
       </button>
@@ -93,6 +93,14 @@ export class SidePanel implements OnInit {
   }
   @Input() showClose = true;
   @Input() showDrawer = false;
+  /**
+   * Name of the icon to use when `showDrawer` is `true` and `active` is `false`
+   */
+  @Input() drawerIcon: string;
+  /**
+   * Name of the icon to use as close icon when `showDrawer` is `true`
+   */
+  @Input() closeIcon: string;
   @Input() variation: 'slide-in' | 'inline' | 'slide-over' = 'inline';
   /**
    * Activates the panel when set to `true`, by sliding it in or over.
