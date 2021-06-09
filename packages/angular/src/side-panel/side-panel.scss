@@ -1,0 +1,92 @@
+@import '../../../styles/src/globals/vars';
+
+$side-panel-width: 320px;
+$side-panel-drawer-width: 48px;
+$border-width: 1px;
+
+.#{$iot-prefix}--side-panel {
+  display: block;
+  position: relative;
+  background-color: $ui-background;
+  width: fit-content;
+  overflow-x: hidden;
+  display: inline-block;
+  min-width: $side-panel-width;
+  transition: min-width 250ms, width 250ms, left 250ms, right 250ms;
+
+  &.#{$iot-prefix}--side-panel__right {
+    right: 0;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.#{$iot-prefix}--side-panel-title {
+  padding: $spacing-05;
+}
+
+.#{$iot-prefix}--side-panel__drawer {
+  width: $side-panel-drawer-width;
+  min-width: $side-panel-drawer-width;
+
+  .panel {
+    &.#{$iot-prefix}--side-panel__left .panel-content {
+      right: $side-panel-width;
+      position: relative;
+    }
+    &.#{$iot-prefix}--side-panel__right .panel-content {
+      left: $side-panel-drawer-width;
+      position: relative;
+    }
+  }
+}
+
+.#{$iot-prefix}--side-panel__inline {
+  border: $border-width solid $ui-03;
+}
+
+.#{$iot-prefix}--side-panel__slide-in,
+.#{$iot-prefix}--side-panel__slide-over {
+  min-width: 0;
+  width: 0;
+
+  &.active {
+    width: $side-panel-width;
+    min-width: $side-panel-width;
+    border: $border-width solid $ui-03;
+
+    .panel {
+      &.#{$iot-prefix}--side-panel__left {
+        left: 0;
+      }
+
+      &.#{$iot-prefix}--side-panel__right {
+        right: 0;
+      }
+    }
+  }
+
+  .panel {
+    width: $side-panel-width;
+    position: relative;
+    transition: width 250ms, left 250ms, right 250ms;
+
+    &.#{$iot-prefix}--side-panel__left {
+      left: -$side-panel-width;
+    }
+    &.#{$iot-prefix}--side-panel__right {
+      right: -$side-panel-width;
+    }
+  }
+}
+
+.#{$iot-prefix}--side-panel__slide-over {
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
