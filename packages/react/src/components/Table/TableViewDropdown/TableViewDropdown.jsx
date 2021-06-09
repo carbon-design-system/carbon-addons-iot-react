@@ -106,11 +106,13 @@ const TableViewDropdown = ({
     // 'View all' is equivalent to a "default view", which would not be able to get resaved. The user should supply
     // their own default views that can be changed if they would like that functionality
     const dialogItems =
-      selectedViewEdited && selectedViewId !== 'view-all'
+      selectedViewEdited && selectedViewId && selectedViewId !== 'view-all'
         ? [saveAsNewItem, saveItem, manageViewsItem]
         : [saveAsNewItem, manageViewsItem];
 
-    return [viewAllItem, ...views, ...dialogItems];
+    // move the action / dialog items to the top so that they are always easily accessible in the case that there are
+    // many views. The user would need to scroll all the way to the bottom to find the actions
+    return [...dialogItems, viewAllItem, ...views];
   }, [
     i18n.saveAsNewView,
     i18n.saveChanges,
