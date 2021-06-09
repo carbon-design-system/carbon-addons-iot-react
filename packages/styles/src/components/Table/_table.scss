@@ -60,7 +60,7 @@ html[dir='rtl'] {
   }
   .empty-table-cell--default {
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: middle;
     flex-direction: column;
     padding: $spacing-09;

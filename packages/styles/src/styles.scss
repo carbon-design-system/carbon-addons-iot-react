@@ -209,8 +209,11 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/ListCard/listCard';
 @import 'components/List/list';
 @import 'components/ListBuilder/list-builder';
+@import 'components/TearSheet/tear-sheet-wrapper';
+@import 'components/TearSheet/tear-sheet';
 @import 'components/List/ListItem/list-item';
 @import 'components/List/ListHeader/list-header';
+@import 'components/MapCard/map-card';
 @import 'components/List/HierarchyList/hierarchy-list';
 @import 'components/MenuButton/menu-button';
 @import 'components/PageTitleBar/page-title-bar';

@@ -88,12 +88,13 @@ export const CardTitle = (
 );
 
 const CardContent = (props) => {
-  const { children, dimensions, isExpanded } = props;
+  const { children, dimensions, isExpanded, className, testID } = props;
   const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
   return (
     <div
+      data-testid={testID}
       style={{ [`--card-content-height`]: height }}
-      className={classnames(`${iotPrefix}--card--content`, {
+      className={classnames(className, `${iotPrefix}--card--content`, {
         [`${iotPrefix}--card--content--expanded`]: isExpanded,
       })}
     >
@@ -149,11 +150,13 @@ CardWrapper.defaultProps = {
   tabIndex: undefined,
 };
 CardContent.propTypes = {
+  testID: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.node,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   isExpanded: CardPropTypes.isExpanded.isRequired,
 };
-CardContent.defaultProps = { children: undefined };
+CardContent.defaultProps = { children: undefined, className: '', testID: 'card-content' };
 EmptyMessageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };
@@ -179,6 +182,7 @@ export const defaultProps = {
     delete: false,
     range: false,
     expand: false,
+    settings: false,
   },
   renderExpandIcon: undefined,
   rowHeight: ROW_HEIGHT,
@@ -256,6 +260,7 @@ const Card = (props) => {
     className,
     values,
     testID,
+    contentClassName,
     ...others
   } = props;
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
@@ -392,7 +397,12 @@ const Card = (props) => {
                     {cardToolbar}
                   </CardHeader>
                 )}
-                <CardContent dimensions={dimensions} isExpanded={isExpanded}>
+                <CardContent
+                  testID={`${testID}-content`}
+                  dimensions={dimensions}
+                  isExpanded={isExpanded}
+                  className={contentClassName}
+                >
                   {!isVisible && isLazyLoading ? ( // if not visible don't show anything
                     ''
                   ) : isLoading ? (

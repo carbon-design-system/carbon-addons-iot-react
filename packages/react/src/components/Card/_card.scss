@@ -25,6 +25,11 @@ $iot-header-padding: $spacing-05;
   box-sizing: border-box;
 }
 
+.#{$iot-prefix}--card.react-grid-item > .react-resizable-handle {
+  // Make sure the resize handle is placed on top of absolute positioned card content
+  z-index: 2;
+}
+
 .#{$iot-prefix}--card--title {
   flex: 1;
   // min-width value is required to ensure flex child with text properly truncates
