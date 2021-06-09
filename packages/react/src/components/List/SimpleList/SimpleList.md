@@ -1,0 +1,50 @@
+# `SimpleList` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Props](#props)
+- [External links](#external-links)
+  - [Source Code](#source-code)
+  - [Feedback](#feedback)
+
+## Getting Started
+
+## Props
+
+| Name                                         | Type                                                                                                                                            | Default                                                                                                  | Description                                                               |
+| :------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------ |
+| <span style="color: #31a148">title \*</span> | string                                                                                                                                          |                                                                                                          | list title                                                                |
+| hasSearch                                    | bool                                                                                                                                            | false                                                                                                    | use search with default behavior                                          |
+| buttons                                      | arrayOf                                                                                                                                         | []                                                                                                       | action buttons on right side of list title                                |
+| editingStyle                                 | enum:<br>&nbsp;EditingStyle.Single<br>&nbsp;EditingStyle.Multiple<br>&nbsp;EditingStyle.SingleNesting<br>&nbsp;EditingStyle.MultipleNesting<br> | null                                                                                                     | list editing style                                                        |
+| <span style="color: #31a148">items \*</span> | array\<object\>                                                                                                                                 |                                                                                                          | data source of list items                                                 |
+| items[].id                                   | string                                                                                                                                          |                                                                                                          |                                                                           |
+| items[].content                              | shape                                                                                                                                           |                                                                                                          |                                                                           |
+| items[].content.value                        | string                                                                                                                                          |                                                                                                          |                                                                           |
+| items[].content.icon                         | node                                                                                                                                            |                                                                                                          |                                                                           |
+| items[].children                             | array\<object\>                                                                                                                                 |                                                                                                          |                                                                           |
+| items[].isSelectable                         | bool                                                                                                                                            |                                                                                                          |                                                                           |
+| isFullHeight                                 | bool                                                                                                                                            | false                                                                                                    | use full height in list                                                   |
+| isLargeRow                                   | bool                                                                                                                                            | false                                                                                                    | use large/fat row in list                                                 |
+| isLoading                                    | bool                                                                                                                                            | false                                                                                                    | optional skeleton to be rendered while loading data                       |
+| i18n                                         | shape                                                                                                                                           | { searchPlaceHolderText: 'Enter a value', pageOfPagesText: (page) => `Page ${page}`, items: '%d items',} | i18n strings                                                              |
+| i18n.searchPlaceHolderText                   | string                                                                                                                                          |                                                                                                          |                                                                           |
+| i18n.pageOfPagesText                         | function                                                                                                                                        |                                                                                                          |                                                                           |
+| i18n.expand                                  | string                                                                                                                                          |                                                                                                          |                                                                           |
+| i18n.close                                   | string                                                                                                                                          |                                                                                                          |                                                                           |
+| pageSize                                     | string                                                                                                                                          | null                                                                                                     | pageSize                                                                  |
+| onListUpdated                                | function                                                                                                                                        | () => {}                                                                                                 | callback function returned a modified list                                |
+| hasPagination                                | bool                                                                                                                                            | true                                                                                                     | optionally renders SimplePagination at the bottom of the list             |
+| onSelect                                     | function                                                                                                                                        | null                                                                                                     | Optional callback when a item is selected. OnSelect(itemId, parentItemId) |
+
+## External Links
+
+### Source Code
+
+[Source code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/SimpleList)
+
+### Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/SimpleList/SimpleList.md).
