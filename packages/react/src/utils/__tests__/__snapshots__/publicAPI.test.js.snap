@@ -370,6 +370,7 @@ Map {
           "onOverflowItemClicked": [Function],
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
+          "onToggleAggregations": [Function],
         },
         "toolbar": Object {
           "onApplyAdvancedFilter": [Function],
@@ -427,7 +428,7 @@ Map {
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
         "tableErrorStateTitle": "Unable to load the page",
-        "toggleAggregations": "Toggle Aggregations",
+        "toggleAggregations": "Toggle aggregations",
       },
       "id": null,
       "lightweight": false,
@@ -551,6 +552,9 @@ Map {
                     "type": "func",
                   },
                   "onTableErrorStateAction": Object {
+                    "type": "func",
+                  },
+                  "onToggleAggregations": Object {
                     "type": "func",
                   },
                 },
@@ -1005,6 +1009,9 @@ Map {
             "selectRowAria": Object {
               "type": "string",
             },
+            "toggleAggregations": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -1203,6 +1210,9 @@ Map {
                             "id": Object {
                               "isRequired": true,
                               "type": "string",
+                            },
+                            "isHidden": Object {
+                              "type": "bool",
                             },
                             "isSortable": Object {
                               "type": "bool",
@@ -1602,6 +1612,7 @@ Map {
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
         "simpleFiltersTabLabel": "Simple filters",
+        "toggleAggregations": "Toggle aggregations",
       },
       "lightweight": false,
       "openMenuText": "Open menu",
@@ -1895,6 +1906,9 @@ Map {
               "type": "string",
             },
             "selectRowAria": Object {
+              "type": "string",
+            },
+            "toggleAggregations": Object {
               "type": "string",
             },
           },
@@ -3193,6 +3207,7 @@ Map {
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
         "simpleFiltersTabLabel": "Simple filters",
+        "toggleAggregations": "Toggle aggregations",
       },
       "secondaryTitle": null,
       "testID": "",
@@ -28561,6 +28576,7 @@ Map {
     "TABLE_ROW_SELECT": "TABLE_ROW_SELECT",
     "TABLE_ROW_SELECT_ALL": "TABLE_ROW_SELECT_ALL",
     "TABLE_SEARCH_APPLY": "TABLE_SEARCH_APPLY",
+    "TABLE_TOGGLE_AGGREGATIONS": "TABLE_TOGGLE_AGGREGATIONS",
     "TABLE_TOOLBAR_TOGGLE": "TABLE_TOOLBAR_TOGGLE",
     "tableActionApply": Object {},
     "tableActionCancel": Object {},
@@ -28588,6 +28604,7 @@ Map {
     "tableRowSelect": Object {},
     "tableRowSelectAll": Object {},
     "tableSearchApply": Object {},
+    "tableToggleAggregations": Object {},
     "tableToolbarToggle": Object {},
   },
   "AlertTableIcon" => Object {},

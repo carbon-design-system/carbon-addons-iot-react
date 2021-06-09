@@ -31,6 +31,7 @@ import {
   TABLE_ADVANCED_FILTER_TOGGLE,
   TABLE_ADVANCED_FILTER_CANCEL,
   TABLE_ADVANCED_FILTER_APPLY,
+  TABLE_TOGGLE_AGGREGATIONS,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -559,6 +560,18 @@ export const tableReducer = (state = {}, action) => {
         }),
         action
       );
+    }
+
+    case TABLE_TOGGLE_AGGREGATIONS: {
+      return update(state, {
+        view: {
+          aggregations: {
+            isHidden: {
+              $set: !state.view.aggregations.isHidden,
+            },
+          },
+        },
+      });
     }
 
     // Actions that are handled by the base reducer

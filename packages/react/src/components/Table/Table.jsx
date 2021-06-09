@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback, useRef } from 'react';
+import React, { useMemo, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
@@ -121,6 +121,8 @@ const propTypes = {
           align: PropTypes.oneOf(['start', 'center', 'end']),
           /** allows the aggregation to align with sortable columns extra padding */
           isSortable: PropTypes.bool,
+          /** hide the aggregation row without removing the aggregations object */
+          isHidden: PropTypes.bool,
         })
       ),
     }),
@@ -253,6 +255,7 @@ const propTypes = {
       onColumnResize: PropTypes.func,
       onOverflowItemClicked: PropTypes.func,
       onTableErrorStateAction: PropTypes.func,
+      onToggleAggregations: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -351,6 +354,7 @@ export const defaultProps = (baseProps) => ({
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
       onOverflowItemClicked: defaultFunction('actions.table.onOverflowItemClicked'),
+      onToggleAggregations: defaultFunction('actions.table.onToggleAggregations'),
     },
     onUserViewModified: null,
   },
@@ -388,7 +392,7 @@ export const defaultProps = (baseProps) => ({
     itemsSelected: 'items selected',
     itemSelected: 'item selected',
     rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
-    toggleAggregations: 'Toggle Aggregations',
+    toggleAggregations: 'Toggle aggregations',
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageBody: '',
@@ -537,17 +541,12 @@ const Table = (props) => {
       ).isHidden
   );
 
-  const [hasAggregations, setHasAggregations] = useState(options.hasAggregations);
   const aggregationsProp = view.aggregations;
   const getColumnNumbers = (tableData, columnId) =>
     tableData.map((row) => row.values[columnId]).filter((value) => Number.isFinite(value));
 
-  const onToggleAggregations = useCallback(() => setHasAggregations((prev) => !prev), [
-    setHasAggregations,
-  ]);
-
   const aggregations = useMemo(() => {
-    return hasAggregations && aggregationsProp.columns
+    return options.hasAggregations && aggregationsProp.columns
       ? {
           label: aggregationsProp.label,
           columns: aggregationsProp.columns.map((col) => {
@@ -564,9 +563,10 @@ const Table = (props) => {
             return calculateValue ? { ...col, value: aggregatedValue.toString() } : col;
           }),
           align: aggregationsProp.align,
+          isHidden: aggregationsProp?.isHidden ?? false,
         }
       : undefined;
-  }, [data, hasAggregations, aggregationsProp]);
+  }, [data, options.hasAggregations, aggregationsProp]);
 
   const showExpanderColumn = useShowExpanderColumn({
     hasResize: options.hasResize,
@@ -668,7 +668,7 @@ const Table = (props) => {
                   actions.toolbar.onApplySearch(value);
                 }
               },
-              onToggleAggregations,
+              onToggleAggregations: actions.table.onToggleAggregations,
             }}
             options={{
               ...pick(
@@ -752,7 +752,7 @@ const Table = (props) => {
             options={{
               ...pick(
                 options,
-                'hasAggregation',
+                'hasAggregations',
                 'hasColumnSelectionConfig',
                 'hasResize',
                 'hasRowActions',
@@ -895,7 +895,8 @@ const Table = (props) => {
               />
             )
           }
-          {hasAggregations ? (
+
+          {options.hasAggregations && !aggregationsProp.isHidden ? (
             <TableFoot
               options={{
                 ...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions'),

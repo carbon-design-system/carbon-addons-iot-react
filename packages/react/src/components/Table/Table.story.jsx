@@ -431,6 +431,7 @@ const actions = {
     onChangeSort: action('onChangeSort'),
     onColumnResize: action('onColumnResize'),
     onOverflowItemClicked: action('onOverflowItemClicked'),
+    onToggleAggregations: action('onToggleAggregations'),
   },
 };
 
@@ -2230,10 +2231,23 @@ export const BasicDumbTable = withReadme(README, () => (
     data={tableData}
     actions={actions}
     options={{
+      hasAggregations: boolean('hasAggregations', true),
       hasSearch: boolean('hasSearch', false),
       hasFilter: boolean('hasFilter', false),
       hasPagination: boolean('hasPagination', false),
       hasRowEdit: boolean('hasRowEdit', false),
+    }}
+    view={{
+      aggregations: {
+        label: 'Total',
+        columns: [
+          {
+            id: 'number',
+            align: 'start',
+            isSortable: true,
+          },
+        ],
+      },
     }}
   />
 ));

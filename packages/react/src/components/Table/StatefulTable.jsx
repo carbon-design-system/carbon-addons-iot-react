@@ -28,6 +28,7 @@ import {
   tableAdvancedFiltersApply,
   tableAdvancedFiltersCancel,
   tableAdvancedFiltersCreate,
+  tableToggleAggregations,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -144,6 +145,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onChangeOrdering,
     onColumnResize,
     onOverflowItemClicked,
+    onToggleAggregations,
   } = table || {};
 
   const getRowAction = (data, actionId, rowId) => {
@@ -294,6 +296,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       },
       onOverflowItemClicked: (id) => {
         callbackParent(onOverflowItemClicked, id);
+      },
+      onToggleAggregations: () => {
+        dispatch(tableToggleAggregations());
+        callbackParent(onToggleAggregations);
       },
     },
     onUserViewModified: (viewConfiguration) => {

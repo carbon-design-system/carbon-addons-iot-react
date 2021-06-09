@@ -26,6 +26,7 @@ export const TABLE_ADVANCED_FILTER_REMOVE = 'TABLE_ADVANCED_FILTER_REMOVE';
 export const TABLE_ADVANCED_FILTER_CHANGE = 'TABLE_ADVANCED_FILTER_CHANGE';
 export const TABLE_ADVANCED_FILTER_TOGGLE = 'TABLE_ADVANCED_FILTER_TOGGLE';
 export const TABLE_ADVANCED_FILTER_APPLY = 'TABLE_ADVANCED_FILTER_APPLY';
+export const TABLE_TOGGLE_AGGREGATIONS = 'TABLE_TOGGLE_AGGREGATIONS';
 
 export const tableRegister = ({
   data,
@@ -194,4 +195,8 @@ export const tableAdvancedFiltersChange = () => ({
 export const tableAdvancedFiltersApply = (filterState) => ({
   type: TABLE_ADVANCED_FILTER_APPLY,
   payload: filterState,
+});
+
+export const tableToggleAggregations = () => ({
+  type: TABLE_TOGGLE_AGGREGATIONS,
 });

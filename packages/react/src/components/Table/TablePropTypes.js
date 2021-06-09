@@ -189,6 +189,7 @@ export const I18NPropTypes = PropTypes.shape({
   filterAscending: PropTypes.string,
   filterDescending: PropTypes.string,
   rowCountInHeader: PropTypes.func,
+  toggleAggregations: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {
@@ -239,6 +240,7 @@ export const defaultI18NPropTypes = {
   filterAscending: 'Sort rows by this header in ascending order',
   filterDescending: 'Sort rows by this header in descending order',
   rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
+  toggleAggregations: 'Toggle aggregations',
 };
 
 export const TableSearchPropTypes = PropTypes.shape({
