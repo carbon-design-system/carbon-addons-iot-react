@@ -255,7 +255,7 @@ export const _CustomViewSelected = () => {
 };
 
 _CustomViewSelected.story = {
-  name: 'Custom view selected - edited',
+  name: 'Custom view selected',
   decorators: [createElement],
   parameters: {
     info: {
