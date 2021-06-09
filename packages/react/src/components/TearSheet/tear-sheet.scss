@@ -31,5 +31,6 @@
     height: var(--content-max-height);
     overflow-y: auto;
     overflow-x: auto;
+    transition: all $duration--slow-01 motion(standard, expressive);
   }
 }

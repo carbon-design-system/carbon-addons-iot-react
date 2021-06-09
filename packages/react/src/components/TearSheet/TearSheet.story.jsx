@@ -6,7 +6,13 @@ import Button from '../Button';
 import TearSheetWrapper from './TearSheetWrapper';
 import TearSheet from './TearSheet';
 
-const TearSheetChild = ({ openNextSheet, goToPreviousSheet, onClose }) => (
+const TearSheetChild = ({
+  setHeaderAdditionalContent,
+  clearHeaderContent,
+  openNextSheet,
+  goToPreviousSheet,
+  onClose,
+}) => (
   <div
     style={{
       width: '1000px',
@@ -22,6 +28,20 @@ const TearSheetChild = ({ openNextSheet, goToPreviousSheet, onClose }) => (
       style={{ margin: '2rem 2rem 0 2rem', maxWidth: '13rem' }}
     >
       Open 2nd sheet
+    </Button>
+    <Button
+      kind="tertiary"
+      onClick={setHeaderAdditionalContent}
+      style={{ marginLeft: '2rem', maxWidth: '13rem' }}
+    >
+      Set header additional content
+    </Button>
+    <Button
+      kind="tertiary"
+      onClick={clearHeaderContent}
+      style={{ marginLeft: '2rem', maxWidth: '13rem' }}
+    >
+      Clear header additional content
     </Button>
     <div
       style={{
@@ -47,7 +67,11 @@ const TearSheetChild = ({ openNextSheet, goToPreviousSheet, onClose }) => (
   </div>
 );
 
-const TearSheetChild2 = ({ closeAllTearSheets }) => (
+const TearSheetChild2 = ({
+  closeAllTearSheets,
+  setHeaderAdditionalContent,
+  clearHeaderContent,
+}) => (
   <div
     style={{
       width: '1000px',
@@ -61,7 +85,20 @@ const TearSheetChild2 = ({ closeAllTearSheets }) => (
       <Button onClick={closeAllTearSheets} style={{ marginBottom: '2rem' }}>
         Close all TearSheets
       </Button>
-
+      <Button
+        kind="tertiary"
+        onClick={setHeaderAdditionalContent}
+        style={{ marginLeft: '2rem', maxWidth: '13rem' }}
+      >
+        Set header additional content
+      </Button>
+      <Button
+        kind="tertiary"
+        onClick={clearHeaderContent}
+        style={{ marginLeft: '2rem', maxWidth: '13rem' }}
+      >
+        Clear header additional content
+      </Button>
       <h1>Lorem ipsum dolor</h1>
       <h2 style={{ padding: '1rem 0' }}>sit amet</h2>
       <p>
@@ -116,7 +153,8 @@ const TearSheetChild2 = ({ closeAllTearSheets }) => (
 
 const StandardTearSheet = () => {
   const [isOpen, setOpen] = useState(false);
-
+  const [headerAdditionalContent, setHeaderAdditionalContent] = useState(null);
+  const [headerAdditionalContent2, setHeaderAdditionalContent2] = useState(null);
   return (
     <>
       <Button style={{ margin: '8rem 0 0 8rem' }} onClick={() => setOpen(true)}>
@@ -128,11 +166,35 @@ const StandardTearSheet = () => {
           title="First sheet"
           description="Generic description"
           onClose={() => setOpen(false)}
+          headerExtraContent={headerAdditionalContent}
         >
-          <TearSheetChild onClose={() => setOpen(false)} />
+          <TearSheetChild
+            onClose={() => setOpen(false)}
+            setHeaderAdditionalContent={() => {
+              setHeaderAdditionalContent(
+                <div style={{ height: '40px', display: 'flex', alignItems: 'center' }}>
+                  Header additional content
+                </div>
+              );
+            }}
+            clearHeaderContent={() => setHeaderAdditionalContent(null)}
+          />
         </TearSheet>
-        <TearSheet title="Second sheet" description="Generic description">
-          <TearSheetChild2 />
+        <TearSheet
+          title="Second sheet"
+          description="Generic description"
+          headerExtraContent={headerAdditionalContent2}
+        >
+          <TearSheetChild2
+            setHeaderAdditionalContent={() => {
+              setHeaderAdditionalContent2(
+                <div style={{ height: '40px', display: 'flex', alignItems: 'center' }}>
+                  Header additional content
+                </div>
+              );
+            }}
+            clearHeaderContent={() => setHeaderAdditionalContent2(null)}
+          />
         </TearSheet>
       </TearSheetWrapper>
     </>

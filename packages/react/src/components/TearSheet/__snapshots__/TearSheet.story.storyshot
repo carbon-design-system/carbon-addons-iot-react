@@ -129,6 +129,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 Open 2nd sheet
               </button>
+              <button
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--tertiary"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "marginLeft": "2rem",
+                    "maxWidth": "13rem",
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                Set header additional content
+              </button>
+              <button
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--tertiary"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "marginLeft": "2rem",
+                    "maxWidth": "13rem",
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                Clear header additional content
+              </button>
               <div
                 style={
                   Object {
@@ -273,6 +307,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   type="button"
                 >
                   Close all TearSheets
+                </button>
+                <button
+                  aria-pressed={null}
+                  className="iot--btn bx--btn bx--btn--tertiary"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "marginLeft": "2rem",
+                      "maxWidth": "13rem",
+                    }
+                  }
+                  tabIndex={0}
+                  type="button"
+                >
+                  Set header additional content
+                </button>
+                <button
+                  aria-pressed={null}
+                  className="iot--btn bx--btn bx--btn--tertiary"
+                  data-testid="Button"
+                  disabled={false}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "marginLeft": "2rem",
+                      "maxWidth": "13rem",
+                    }
+                  }
+                  tabIndex={0}
+                  type="button"
+                >
+                  Clear header additional content
                 </button>
                 <h1>
                   Lorem ipsum dolor
