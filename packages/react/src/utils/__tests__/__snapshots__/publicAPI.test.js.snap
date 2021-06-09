@@ -19579,6 +19579,9 @@ Map {
             "iconDropdownLabelText": Object {
               "type": "string",
             },
+            "iconDropdownTitleText": Object {
+              "type": "string",
+            },
             "infoMessageText": Object {
               "type": "string",
             },
@@ -19775,36 +19778,96 @@ Map {
       "formValues": Object {
         "args": Array [
           Object {
-            "args": Array [
-              Array [
-                Object {
-                  "type": "string",
-                },
-                Object {
-                  "type": "number",
-                },
-                Object {
-                  "type": "bool",
-                },
-                Object {
-                  "args": Array [
-                    Object {
-                      "carbonColor": Object {
-                        "type": "string",
+            "backgroundColor": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "carbonColor": Object {
+                          "type": "string",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
                       },
-                      "name": Object {
-                        "type": "string",
-                      },
-                    },
-                  ],
-                  "type": "shape",
-                },
+                    ],
+                    "type": "shape",
+                  },
+                ],
               ],
-            ],
-            "type": "oneOfType",
+              "type": "oneOfType",
+            },
+            "backgroundOpacity": Object {
+              "type": "number",
+            },
+            "bold": Object {
+              "type": "bool",
+            },
+            "borderColor": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "carbonColor": Object {
+                          "type": "string",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "borderWidth": Object {
+              "type": "number",
+            },
+            "fontColor": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "carbonColor": Object {
+                          "type": "string",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "fontSize": Object {
+              "type": "number",
+            },
+            "italic": Object {
+              "type": "bool",
+            },
+            "underline": Object {
+              "type": "bool",
+            },
           },
         ],
-        "type": "objectOf",
+        "type": "shape",
       },
       "i18n": Object {
         "args": Array [
@@ -19819,6 +19882,9 @@ Map {
               "type": "string",
             },
             "borderWidthInvalidText": Object {
+              "type": "string",
+            },
+            "borderWidthLabelText": Object {
               "type": "string",
             },
             "deleteButtonIconDescription": Object {
@@ -19837,6 +19903,9 @@ Map {
               "type": "string",
             },
             "fontSizeInvalidText": Object {
+              "type": "string",
+            },
+            "fontSizeLabelText": Object {
               "type": "string",
             },
             "infoMessageText": Object {

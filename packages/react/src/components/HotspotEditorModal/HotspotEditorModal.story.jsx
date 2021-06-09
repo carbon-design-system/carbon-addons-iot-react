@@ -3,12 +3,14 @@ import { action } from '@storybook/addon-actions';
 import { boolean, withKnobs } from '@storybook/addon-knobs';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
 import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
+import { withReadme } from 'storybook-readme';
 
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import landscape from './landscape.jpg';
 import HotspotEditorModal from './HotspotEditorModal';
+import HotspotEditorModalREADME from './README.md';
 
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
 Experimental.story = {
@@ -52,20 +54,20 @@ const cardConfig = {
 
 const dataItems = [
   {
-    dataSourceId: 'temp_last',
     dataItemId: 'temp_last',
+    dataSourceId: 'temp_last',
     label: '{high} temp',
     unit: '{unitVar}',
   },
   {
-    dataSourceId: 'temperature',
     dataItemId: 'temperature',
+    dataSourceId: 'temperature',
     label: 'Temperature',
     unit: '°',
   },
   {
-    dataSourceId: 'pressure',
     dataItemId: 'pressure',
+    dataSourceId: 'pressure',
     label: 'Pressure',
     unit: 'psi',
   },
@@ -99,7 +101,7 @@ export default {
   },
 };
 
-export const Empty = () => {
+export const Empty = withReadme(HotspotEditorModalREADME, () => {
   return (
     <HotspotEditorModal
       backgroundColors={selectableColors}
@@ -116,16 +118,9 @@ export const Empty = () => {
       onSave={action('onSave')}
     />
   );
-};
-Empty.story = {
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
-};
+});
 
-export const EmptyWithGetValidDataItemsCallback = () => {
+export const EmptyWithGetValidDataItemsCallback = withReadme(HotspotEditorModalREADME, () => {
   return (
     <HotspotEditorModal
       backgroundColors={selectableColors}
@@ -146,17 +141,12 @@ export const EmptyWithGetValidDataItemsCallback = () => {
       onSave={action('onSave')}
     />
   );
-};
+});
 EmptyWithGetValidDataItemsCallback.story = {
   name: 'Empty with getValidDataItems callback',
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
 };
 
-export const WidthExistingHotspots = () => {
+export const WithExistingHotspots = withReadme(HotspotEditorModalREADME, () => {
   const myCardConfig = {
     ...cardConfig,
     values: {
@@ -227,17 +217,9 @@ export const WidthExistingHotspots = () => {
       onSave={action('onSave')}
     />
   );
-};
-WidthExistingHotspots.story = {
-  parameters: {
-    text: '',
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
-};
+});
 
-export const WidthExistingDynamicHotspots = () => {
+export const WithExistingDynamicHotspots = withReadme(HotspotEditorModalREADME, () => {
   const myCardConfig = {
     ...cardConfig,
     values: {
@@ -273,11 +255,4 @@ export const WidthExistingDynamicHotspots = () => {
       showTooManyHotspotsInfo={boolean('showTooManyHotspotsInfo', true)}
     />
   );
-};
-WidthExistingDynamicHotspots.story = {
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
-};
+});

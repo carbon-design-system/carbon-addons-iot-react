@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
+import { withReadme } from 'storybook-readme';
 
 import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker';
+import DynamicHotspotSourcePickerREADME from './README.md';
 
 const dataItems = [
   {
@@ -53,19 +55,11 @@ export const WithStateInStory = () => {
     );
   };
 
-  return <WithState />;
+  const WithReadMeAndState = withReadme(DynamicHotspotSourcePickerREADME, WithState);
+
+  return <WithReadMeAndState />;
 };
 
 WithStateInStory.story = {
   name: 'Example with externaly managed state',
-  parameters: {
-    info: {
-      text: `
-      ~~~js
-
-      ~~~
-      `,
-      propTables: [DynamicHotspotSourcePicker],
-    },
-  },
 };

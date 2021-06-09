@@ -76,7 +76,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        thresholds={cardConfigWithPresets.thresholds || []}
         title="elevators"
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
@@ -105,7 +104,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
@@ -144,7 +142,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
@@ -161,7 +158,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
@@ -202,7 +198,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
