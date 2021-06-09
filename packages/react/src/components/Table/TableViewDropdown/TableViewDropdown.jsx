@@ -102,9 +102,13 @@ const TableViewDropdown = ({
       customAction: onManageViews,
       icon: Settings16,
     };
-    const dialogItems = selectedViewEdited
-      ? [saveAsNewItem, saveItem, manageViewsItem]
-      : [saveAsNewItem, manageViewsItem];
+    // Save changes button show only appear if the view has been edited and the current view is not 'View all'
+    // 'View all' is equivalent to a "default view", which would not be able to get resaved. The user should supply
+    // their own default views that can be changed if they would like that functionality
+    const dialogItems =
+      selectedViewEdited && selectedViewId !== 'view-all'
+        ? [saveAsNewItem, saveItem, manageViewsItem]
+        : [saveAsNewItem, manageViewsItem];
 
     return [viewAllItem, ...views, ...dialogItems];
   }, [
@@ -114,9 +118,10 @@ const TableViewDropdown = ({
     onSaveAsNewView,
     onSaveChanges,
     onManageViews,
+    selectedViewEdited,
+    selectedViewId,
     viewAllItem,
     views,
-    selectedViewEdited,
   ]);
 
   const mySelectedItem = allItems.find((item) => item.id === selectedViewId) || viewAllItem;

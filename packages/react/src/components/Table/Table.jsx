@@ -434,16 +434,12 @@ const Table = (props) => {
 
   const initialRendering = useRef(true);
 
-  console.log(view.toolbar.search.defaultValue);
-
   // The save/load view functionality needs access to the latest view configuration
   // and also needs to know when the configuration has changed for the StatefulTable.
   // This effect satifies both those needs.
   useDeepCompareEffect(() => {
     if (options.hasUserViewManagement && onUserViewModified) {
-      console.log(searchValue);
       if (!initialRendering.current) {
-        console.log(searchValue);
         onUserViewModified({
           view,
           columns,
@@ -667,7 +663,6 @@ const Table = (props) => {
                 'onToggleAdvancedFilter'
               ),
               onApplySearch: (value) => {
-                console.log(value);
                 searchValue.current = value;
                 if (actions.toolbar?.onApplySearch) {
                   actions.toolbar.onApplySearch(value);
