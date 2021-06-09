@@ -861,7 +861,7 @@ export const StatefulExampleWithCreateSaveViews = withReadme(README, () => {
     isPublic: true,
     isDeleteable: true,
     isEditable: true,
-    title: 'My view 1',
+    title: 'Search view',
     props: {
       view: {
         filters: [],
@@ -871,7 +871,7 @@ export const StatefulExampleWithCreateSaveViews = withReadme(README, () => {
         },
         toolbar: {
           activeBar: 'column',
-          search: { defaultValue: text('defaultSearchValue', 'pinoc') },
+          search: { defaultValue: text('defaultSearchValue', 'pinoc'), defaultExpanded: true },
         },
       },
       columns: defaultState.columns,
@@ -883,7 +883,7 @@ export const StatefulExampleWithCreateSaveViews = withReadme(README, () => {
     isPublic: false,
     isDeleteable: true,
     isEditable: true,
-    title: 'My view 2',
+    title: 'Filters and search view',
     props: {
       view: {
         filters: [{ columnId: 'string', value: 'helping' }],
@@ -896,7 +896,7 @@ export const StatefulExampleWithCreateSaveViews = withReadme(README, () => {
         },
         toolbar: {
           activeBar: 'filter',
-          search: { defaultValue: '' },
+          search: { defaultValue: 'help', defaultExpanded: true },
         },
       },
       columns: defaultState.columns,

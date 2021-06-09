@@ -322,8 +322,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         toolbar: {
           ...view?.toolbar,
           search: {
-            ...view?.toolbar?.search,
             defaultValue: initialDefaultSearch,
+            ...view?.toolbar?.search,
           },
           customToolbarContent,
         },
