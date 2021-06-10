@@ -38,7 +38,7 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
   const [containers] = useState(childrenArray.map(() => createRef()));
   const [initialContainersWidth, setInitialContainersWidth] = useState(null);
   const [containersStyles, setContainersStyles] = useState({});
-  const [openTearSheetHeaderHeight, setOpenTearSheetHeaderHeight] = useState(null);
+  const [activeTearSheetHeaderHeight, setActiveTearSheetHeaderHeight] = useState(null);
   const [animationClasses, setAnimationClasses] = useState(
     childrenArray.reduce(
       (acc, c, idx) => ({
@@ -62,18 +62,18 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
           tearSheetsNodes?.[activeTearSheetIdx]?.children?.[0].getBoundingClientRect().height
         )
       ) &&
-      openTearSheetHeaderHeight !==
+      activeTearSheetHeaderHeight !==
         Math.round(
           tearSheetsNodes?.[activeTearSheetIdx]?.children?.[0].getBoundingClientRect().height
         )
     ) {
-      setOpenTearSheetHeaderHeight(
+      setActiveTearSheetHeaderHeight(
         Math.round(
           tearSheetsNodes?.[activeTearSheetIdx]?.children?.[0].getBoundingClientRect().height
         )
       );
     }
-  }, [activeTearSheetIdx, tearSheetsNodes, openTearSheetHeaderHeight]);
+  }, [activeTearSheetIdx, tearSheetsNodes, activeTearSheetHeaderHeight]);
 
   useEffect(() => (isOpen ? setActiveTearSheetIdx(0) : setActiveTearSheetIdx(null)), [isOpen]);
 
@@ -146,7 +146,7 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
     windowSize.width,
     windowSize.height,
     windowSize,
-    openTearSheetHeaderHeight,
+    activeTearSheetHeaderHeight,
   ]);
 
   const goToSheet = (idx) => setActiveTearSheetIdx(idx);
