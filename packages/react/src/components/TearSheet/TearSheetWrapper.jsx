@@ -1,4 +1,11 @@
-import React, { Children, cloneElement, useEffect, useState, createRef } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  useEffect,
+  useState,
+  createRef,
+  useLayoutEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -54,7 +61,7 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
     []
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const tearSheetHeaderHeight = Math.round(
       tearSheetsNodes?.[activeTearSheetIdx]?.children?.[0].getBoundingClientRect().height
     );
