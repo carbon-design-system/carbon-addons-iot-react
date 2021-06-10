@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.25...v2.146.0-next.26) (2021-06-10)
+
+
+### Bug Fixes
+
+* **dynamichotspotsourcepicker:** removed jest-fm from story ([37d51a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/37d51a3ae17983cca70c11f5175b5f30077e0e91))
+* **hotspoteditormodal:** fixed broken stories ([9ce5032](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ce503243830cbbfdd21604ecbd97a8dcb4722a5))
+
+
+
+
+
+# [2.146.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.24...v2.146.0-next.25) (2021-06-08)
+
+
+### Bug Fixes
+
+* **flyout-menu:** background color ([5e58c2a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5e58c2a2a99b8d0d58f292e2f27078bc5ad32b73))
+* **flyout-menu:** max-width ([6c29381](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6c29381a0d7e3636dfbba70b88ed86ddc43a5f6f))
+* **flyout-menu:** positioning ([3ffd6c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3ffd6c5be4db6124787847d5cffc824c7e7e4f6b))
+* **flyout-menu:** update icon colors ([6ed887c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6ed887ceae972e19f329bcbe4f8366809434e186))
+
+
+### Features
+
+* **flyout-menu:** update styles ([82686c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/82686c5fc4ff8a7d00c3ca1cc078d54c1dae4275))
+* **flyout-menu:** use react styles for ng flyout ([74bf195](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/74bf195df67743d7c14df2d86c910c69bab819c1))
+
+
+
+
+
 # [2.146.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.23...v2.146.0-next.24) (2021-06-07)
 
 
