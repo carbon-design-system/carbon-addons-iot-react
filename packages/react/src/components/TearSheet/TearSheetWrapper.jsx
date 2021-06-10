@@ -55,23 +55,15 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
   );
 
   useEffect(() => {
+    const tearSheetHeaderHeight = Math.round(
+      tearSheetsNodes?.[activeTearSheetIdx]?.children?.[0].getBoundingClientRect().height
+    );
     if (
       activeTearSheetIdx !== null &&
-      !Number.isNaN(
-        Math.round(
-          tearSheetsNodes?.[activeTearSheetIdx]?.children?.[0].getBoundingClientRect().height
-        )
-      ) &&
-      activeTearSheetHeaderHeight !==
-        Math.round(
-          tearSheetsNodes?.[activeTearSheetIdx]?.children?.[0].getBoundingClientRect().height
-        )
+      !Number.isNaN(tearSheetHeaderHeight) &&
+      activeTearSheetHeaderHeight !== tearSheetHeaderHeight
     ) {
-      setActiveTearSheetHeaderHeight(
-        Math.round(
-          tearSheetsNodes?.[activeTearSheetIdx]?.children?.[0].getBoundingClientRect().height
-        )
-      );
+      setActiveTearSheetHeaderHeight(tearSheetHeaderHeight);
     }
   }, [activeTearSheetIdx, tearSheetsNodes, activeTearSheetHeaderHeight]);
 
