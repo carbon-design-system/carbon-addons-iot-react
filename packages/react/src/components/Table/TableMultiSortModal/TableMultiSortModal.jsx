@@ -299,6 +299,7 @@ const TableMultiSortModal = ({
               iconDescription={i18n.multiSortAddColumn}
               onClick={handleAddMultiSortColumn(index)}
               testID={`${columnId}-add-sort-button`}
+              disabled={selectedMultiSortColumns.length >= multiSortColumns.length}
             />
             <Button
               hasIconOnly
