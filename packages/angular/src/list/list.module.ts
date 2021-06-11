@@ -10,16 +10,8 @@ export { ListModel } from './list-model.class';
 export { ListItem } from './list-item.class';
 
 @NgModule({
-  declarations: [
-    ListComponent,
-    ListHeaderComponent,
-    ListItemComponent
-  ],
-  exports: [
-    ListComponent,
-    ListHeaderComponent,
-    ListItemComponent
-  ],
+  declarations: [ListComponent, ListHeaderComponent, ListItemComponent],
+  exports: [ListComponent, ListHeaderComponent, ListItemComponent],
   imports: [CommonModule, IconModule, CheckboxModule, SearchModule],
 })
 export class ListModule {}

@@ -6,15 +6,13 @@ import { ListModel } from './list-model.class';
   selector: 'ai-list',
   template: `
     <div class="iot--list">
-      <ai-list-header
-        [title]="title"
-        [search]="true"
-        (onSearch)="onSearch($event)">
+      <ai-list-header [title]="title" [search]="true" (onSearch)="onSearch($event)">
       </ai-list-header>
       <div class="iot--list--content">
         <ng-template
           [ngTemplateOutlet]="listItemTemplateRef"
-          [ngTemplateOutletContext]="{ $implicit: model }">
+          [ngTemplateOutletContext]="{ $implicit: model }"
+        >
         </ng-template>
       </div>
     </div>
@@ -25,21 +23,18 @@ import { ListModel } from './list-model.class';
           [listItem]="data"
           [isSelectable]="isSelectable"
           (checkedChange)="onSelect($event)"
-          (expansionClick)="onExpand($event)">
+          (expansionClick)="onExpand($event)"
+        >
         </ai-list-item>
       </ng-container>
 
       <ng-container *ngIf="data.items && data.items.length && data.expanded">
-        <ng-template
-          ngFor
-          [ngForOf]="data.items"
-          [ngForTemplate]="listItemTemplateRef">
+        <ng-template ngFor [ngForOf]="data.items" [ngForTemplate]="listItemTemplateRef">
         </ng-template>
       </ng-container>
     </ng-template>
   `,
 })
-
 export class ListComponent {
   @Input() model: ListModel;
   @Input() title: string;

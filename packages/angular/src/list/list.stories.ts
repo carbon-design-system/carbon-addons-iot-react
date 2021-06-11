@@ -27,19 +27,19 @@ nestedListModel.items = [
                 items: [
                   new ListItem({ value: 'Armadillo' }),
                   new ListItem({ value: 'Catfish' }),
-                  new ListItem({ value: 'Alligator' })
-                ]
-              })
-            ]
+                  new ListItem({ value: 'Alligator' }),
+                ],
+              }),
+            ],
           }),
           new ListItem({ value: 'Fox' }),
-          new ListItem({ value: 'Elephant' })
-        ]
+          new ListItem({ value: 'Elephant' }),
+        ],
       }),
       new ListItem({
-        value: 'Cat'
-      })
-    ]
+        value: 'Cat',
+      }),
+    ],
   }),
   new ListItem({ value: 'Dog' }),
   new ListItem({ value: 'Fish' }),
@@ -59,10 +59,10 @@ nestedListModel.items = [
             items: [
               new ListItem({ value: 'Armadillo' }),
               new ListItem({ value: 'Catfish' }),
-              new ListItem({ value: 'Alligator' })
-            ]
-          })
-        ]
+              new ListItem({ value: 'Alligator' }),
+            ],
+          }),
+        ],
       }),
       new ListItem({
         value: 'Sub category 2',
@@ -75,14 +75,14 @@ nestedListModel.items = [
             items: [
               new ListItem({ value: 'Armadillo' }),
               new ListItem({ value: 'Catfish' }),
-              new ListItem({ value: 'Alligator' })
-            ]
-          })
-        ]
-      })
-    ]
+              new ListItem({ value: 'Alligator' }),
+            ],
+          }),
+        ],
+      }),
+    ],
   }),
-  new ListItem({ value: 'Giraffe' })
+  new ListItem({ value: 'Giraffe' }),
 ];
 
 const simpleListModel = new ListModel();
@@ -92,7 +92,7 @@ simpleListModel.items = [
   new ListItem({ value: 'Giraffe' }),
   new ListItem({ value: 'Elk' }),
   new ListItem({ value: 'Anteater' }),
-  new ListItem({ value: 'Armadillo' })
+  new ListItem({ value: 'Armadillo' }),
 ];
 
 storiesOf('Components/List', module)
@@ -107,14 +107,14 @@ storiesOf('Components/List', module)
       <ai-list [model]="model" title="Simple list items" [isSelectable]="true"></ai-list>
     `,
     props: {
-      model: simpleListModel
-    }
+      model: simpleListModel,
+    },
   }))
   .add('Hierarchical list', () => ({
     template: `
       <ai-list [model]="model" title="Nested list items" [isSelectable]="true" [search]="true"></ai-list>
     `,
     props: {
-      model: nestedListModel
+      model: nestedListModel,
     },
   }));

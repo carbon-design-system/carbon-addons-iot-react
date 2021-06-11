@@ -13,13 +13,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
         <ibm-search
           placeholder="search"
           (valueChange)="onSearch.emit($event)"
-          (clear)="onSearch.emit('')">
+          (clear)="onSearch.emit('')"
+        >
         </ibm-search>
       </div>
     </div>
   `,
 })
-
 export class ListHeaderComponent {
   @Input() title: string;
   @Input() search: boolean;

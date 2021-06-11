@@ -23,7 +23,7 @@ export class ListModel {
       parentId,
       items: item.items && item.items.length
         ? this.initListItems(item.items, this.adjustDepth(items, depth), item.id)
-        : []
+        : [],
     }));
   }
 
@@ -50,21 +50,25 @@ export class ListModel {
     return items.map((item: ListItem) => ({
       ...item,
       expanded: item.id === expansionId ? !item.expanded : item.expanded,
-      items: item.items && item.items.length ? this.toggleListItem(item.items, expansionId) : []
+      items: item.items && item.items.length ? this.toggleListItem(item.items, expansionId) : [],
     }));
   }
 
   // This sets all nested children `selected` values to the parent `selected` value.
-  protected updateAllChildrenSelectedStates(items: ListItem[], parentId: string, selected: boolean) {
+  protected updateAllChildrenSelectedStates(
+    items: ListItem[],
+    parentId: string,
+    selected: boolean
+  ) {
     return items.map((item: ListItem) => {
       if (item.parentId === parentId || item.id === parentId) {
+        // Set selected state of all direct children of this item.
         return {
           ...item,
           selected,
           items: this.itemContainsChildren(item)
-            // Set selected state of all direct children of this item.
             ? this.updateAllChildrenSelectedStates(item.items, item.id, selected)
-            : []
+            : [],
         };
       }
 
@@ -72,7 +76,7 @@ export class ListModel {
         ...item,
         items: this.itemContainsChildren(item)
           ? this.updateAllChildrenSelectedStates(item.items, parentId, selected)
-          : []
+          : [],
       };
     });
   }
@@ -111,13 +115,14 @@ export class ListModel {
         // If the parent matches the search then add the parent and all children.
         if (item.value.toLowerCase().includes(searchString.toLowerCase())) {
           filteredItems.push(item);
-        } else { // If its children did, we still need the item with only the search matching children.
+        } else {
+          // If its children did, we still need the item with only the search matching children.
           const matchingChildren = this.searchForNestedItemValues(item.items, searchString);
           if (matchingChildren.length > 0) {
             filteredItems.push({
               ...item,
               expanded: true,
-              items: matchingChildren
+              items: matchingChildren,
             });
           }
         }

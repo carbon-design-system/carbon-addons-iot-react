@@ -29,7 +29,7 @@ export class ListItem {
       value: '',
       nestingLevel: 0,
       expanded: false,
-      items: []
+      items: [],
     };
 
     const data = Object.assign({}, defaults, rawData);
