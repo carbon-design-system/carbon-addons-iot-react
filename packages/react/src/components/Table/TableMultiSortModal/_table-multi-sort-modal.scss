@@ -1,18 +1,22 @@
 .#{$iot-prefix}--table-multi-sort-modal {
-  .#{$prefix}--modal-container,
-  .#{$prefix}--modal-content {
-    overflow: visible;
+  html[dir='rtl'] & .#{$prefix}--modal-content {
+    padding-right: $spacing-05;
+    grid-template-columns: 3.5fr 3.5fr 1fr 1fr;
   }
 
-  &__content {
+  .#{$prefix}--modal-content {
     display: grid;
     gap: $spacing-05;
-    grid-template-columns: 1fr 1fr 40px 40px;
-
+    grid-template-columns: 1fr 1fr 48px 48px;
     button.#{$prefix}--btn--icon-only {
       height: 40px;
       width: 48px;
       margin-top: 24px;
     }
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 }

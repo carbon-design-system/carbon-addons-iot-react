@@ -41,6 +41,7 @@ import {
   TABLE_MULTI_SORT_CANCEL,
   TABLE_MULTI_SORT_ADD_COLUMN,
   TABLE_MULTI_SORT_REMOVE_COLUMN,
+  TABLE_MULTI_SORT_CLEAR,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -390,10 +391,19 @@ export const tableReducer = (state = {}, action) => {
       const columnId = action.payload;
       const sorts = ['NONE', 'ASC', 'DESC'];
       const currentSort = get(state, 'view.table.sort');
-      const currentSortDir =
-        currentSort && currentSort.columnId === columnId ? currentSort.direction : 'NONE';
+      const isInMultiSort =
+        Array.isArray(currentSort) && currentSort.some((column) => column.columnId === columnId);
+      const currentSortDir = isInMultiSort
+        ? currentSort.find((sort) => sort.columnId === columnId).direction
+        : currentSort && currentSort.columnId === columnId
+        ? currentSort.direction
+        : 'NONE';
 
-      const nextSortDir = sorts[(sorts.findIndex((i) => i === currentSortDir) + 1) % sorts.length];
+      const nextSortDir = isInMultiSort
+        ? currentSortDir === 'ASC'
+          ? 'DESC'
+          : 'ASC'
+        : sorts[(sorts.findIndex((i) => i === currentSortDir) + 1) % sorts.length];
 
       // validate if there is any column of timestamp type
       const isTimestampColumn =
@@ -403,26 +413,40 @@ export const tableReducer = (state = {}, action) => {
 
       const customColumnSort = getCustomColumnSort(get(state, 'columns'), columnId);
 
+      let filteredData;
+      let nextSort;
+      if (isInMultiSort) {
+        nextSort = currentSort.reduce((carry, column) => {
+          if (column.columnId === columnId) {
+            return [...carry, { ...column, direction: nextSortDir }];
+          }
+
+          return [...carry, column];
+        }, []);
+        filteredData = handleMultiSort(nextSort, state.columns, state.data);
+      } else {
+        filteredData =
+          nextSortDir !== 'NONE'
+            ? customColumnSort // if there's a custom column sort apply it
+              ? customColumnSort({
+                  data: state.view.table.filteredData || state.data,
+                  columnId,
+                  direction: nextSortDir,
+                })
+              : getSortedData(
+                  state.view.table.filteredData || state.data,
+                  columnId,
+                  nextSortDir,
+                  isTimestampColumn
+                )
+            : filterData(state.data, state.view.filters, state.columns); // reset to original filters
+      }
       return baseTableReducer(
         update(state, {
           view: {
             table: {
               filteredData: {
-                $set:
-                  nextSortDir !== 'NONE'
-                    ? customColumnSort // if there's a custom column sort apply it
-                      ? customColumnSort({
-                          data: state.view.table.filteredData || state.data,
-                          columnId,
-                          direction: nextSortDir,
-                        })
-                      : getSortedData(
-                          state.view.table.filteredData || state.data,
-                          columnId,
-                          nextSortDir,
-                          isTimestampColumn
-                        )
-                    : filterData(state.data, state.view.filters, state.columns), // reset to original filters
+                $set: filteredData,
               },
             },
           },
@@ -656,6 +680,24 @@ export const tableReducer = (state = {}, action) => {
           table: {
             showMultiSortModal: {
               $set: false,
+            },
+          },
+        },
+      });
+    }
+
+    case TABLE_MULTI_SORT_CLEAR: {
+      return update(state, {
+        view: {
+          table: {
+            showMultiSortModal: {
+              $set: false,
+            },
+            sort: {
+              $set: undefined,
+            },
+            filteredData: {
+              $set: filterData(state.data, state.view.filters, state.columns),
             },
           },
         },

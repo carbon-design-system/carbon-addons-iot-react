@@ -29,6 +29,7 @@ export const TABLE_ADVANCED_FILTER_APPLY = 'TABLE_ADVANCED_FILTER_APPLY';
 export const TABLE_MULTI_SORT_TOGGLE_MODAL = 'TABLE_MULTI_SORT_TOGGLE_MODAL';
 export const TABLE_MULTI_SORT_SAVE = 'TABLE_MULTI_SORT_SAVE';
 export const TABLE_MULTI_SORT_CANCEL = 'TABLE_MULTI_SORT_CANCEL';
+export const TABLE_MULTI_SORT_CLEAR = 'TABLE_MULTI_SORT_CLEAR';
 export const TABLE_MULTI_SORT_ADD_COLUMN = 'TABLE_MULTI_SORT_ADD_COLUMN';
 export const TABLE_MULTI_SORT_REMOVE_COLUMN = 'TABLE_MULTI_SORT_REMOVE_COLUMN';
 
@@ -212,6 +213,10 @@ export const tableSaveMultiSortColumns = (sortColumns) => ({
 
 export const tableCancelMultiSortColumns = () => ({
   type: TABLE_MULTI_SORT_CANCEL,
+});
+
+export const tableClearMultiSortColumns = () => ({
+  type: TABLE_MULTI_SORT_CLEAR,
 });
 
 export const tableAddMultiSortColumn = (index) => ({

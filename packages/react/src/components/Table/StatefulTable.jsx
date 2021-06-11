@@ -33,6 +33,7 @@ import {
   tableCancelMultiSortColumns,
   tableAddMultiSortColumn,
   tableRemoveMultiSortColumn,
+  tableClearMultiSortColumns,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -151,6 +152,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onOverflowItemClicked,
     onSaveMultiSortColumns,
     onCancelMultiSortColumns,
+    onClearMultiSortColumns,
     onAddMultiSortColumn,
     onRemoveMultiSortColumn,
   } = table || {};
@@ -314,6 +316,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onCancelMultiSortColumns: () => {
         dispatch(tableCancelMultiSortColumns());
         callbackParent(onCancelMultiSortColumns);
+      },
+      onClearMultiSortColumns: () => {
+        dispatch(tableClearMultiSortColumns());
+        callbackParent(onClearMultiSortColumns);
       },
       onAddMultiSortColumn: (index) => {
         dispatch(tableAddMultiSortColumn(index));

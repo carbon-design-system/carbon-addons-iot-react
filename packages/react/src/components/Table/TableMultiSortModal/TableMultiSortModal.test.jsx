@@ -9,6 +9,7 @@ const callbacks = {
   onRemoveMultiSortColumn: jest.fn(),
   onSaveMultiSortColumns: jest.fn(),
   onCancelMultiSortColumns: jest.fn(),
+  onClearMultiSortColumns: jest.fn(),
 };
 describe('TableMultiSortModal', () => {
   it('should call callbacks when saving, canceling, adding or removing columns', () => {
@@ -76,12 +77,10 @@ describe('TableMultiSortModal', () => {
         direction: 'ASC',
       },
     ]);
-    userEvent.click(screen.getByText('String'));
-    userEvent.click(screen.getByText('Number'));
-    userEvent.click(screen.queryAllByText('Ascending')[0]);
-    userEvent.click(screen.queryAllByText('Descending')[0]);
+    userEvent.selectOptions(screen.getAllByTestId('multi-sort-modal-column-select')[0], 'number');
+    userEvent.selectOptions(screen.getAllByTestId('multi-sort-modal-direction-select')[0], 'DESC');
     userEvent.click(screen.getByRole('button', { name: 'Sort' }));
-    expect(callbacks.onSaveMultiSortColumns).toHaveBeenCalledWith([
+    expect(callbacks.onSaveMultiSortColumns).toHaveBeenLastCalledWith([
       {
         columnId: 'number',
         direction: 'DESC',
@@ -91,6 +90,8 @@ describe('TableMultiSortModal', () => {
         direction: 'ASC',
       },
     ]);
+
+    userEvent.click(screen.getByRole('button', { name: 'Clear sorting' }));
   });
 
   it('should only allow selecting isSortabled and visible columns', () => {
@@ -183,6 +184,7 @@ describe('TableMultiSortModal', () => {
           multiSortModalTitle: '__Select columns to sort__',
           multiSortModalPrimaryLabel: '__Sort__',
           multiSortModalSecondaryLabel: '__Cancel__',
+          multiSortModalClearLabel: '__Clear sorting__',
           multiSortSelectColumnLabel: '__Select a column__',
           multiSortSelectColumnSortByTitle: '__Sort by__',
           multiSortSelectColumnThenByTitle: '__Then by__',
@@ -202,6 +204,7 @@ describe('TableMultiSortModal', () => {
     expect(screen.getByText('__Select columns to sort__')).toBeVisible();
     expect(screen.getByRole('button', { name: '__Sort__' })).toBeVisible();
     expect(screen.getByRole('button', { name: '__Cancel__' })).toBeVisible();
+    expect(screen.getByRole('button', { name: '__Clear sorting__' })).toBeVisible();
     expect(screen.getByText('__Sort by__')).toBeVisible();
     expect(screen.getByText('__Sort order__')).toBeVisible();
     expect(screen.getByText('__Add column__')).toBeVisible();

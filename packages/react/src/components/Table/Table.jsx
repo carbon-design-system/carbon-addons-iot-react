@@ -258,6 +258,8 @@ const propTypes = {
       onSaveMultiSortColumns: PropTypes.func,
       /* () => {} */
       onCancelMultiSortColumns: PropTypes.func,
+      /* () => {} */
+      onClearMultiSortColumns: PropTypes.func,
       /* (index) => {} */
       onAddMultiSortColumn: PropTypes.func,
       /* (index) => {} */
@@ -416,6 +418,7 @@ export const defaultProps = (baseProps) => ({
     multiSortModalTitle: 'Select columns to sort',
     multiSortModalPrimaryLabel: 'Sort',
     multiSortModalSecondaryLabel: 'Cancel',
+    multiSortModalClearLabel: 'Clear sorting',
     multiSortSelectColumnLabel: 'Select a column',
     multiSortSelectColumnSortByTitle: 'Sort by',
     multiSortSelectColumnThenByTitle: 'Then by',
@@ -967,6 +970,7 @@ const Table = (props) => {
       ) : null}
       {options.hasMultiSort && (
         <TableMultiSortModal
+          testId={`${id}-multi-sort-modal`}
           columns={columns}
           ordering={view.table.ordering}
           sort={Array.isArray(view.table.sort) ? view.table.sort : [view.table.sort]}
@@ -976,7 +980,8 @@ const Table = (props) => {
               'onSaveMultiSortColumns',
               'onCancelMultiSortColumns',
               'onAddMultiSortColumn',
-              'onRemoveMultiSortColumn'
+              'onRemoveMultiSortColumn',
+              'onClearMultiSortColumns'
             ),
           }}
           showMultiSortModal={view.table.showMultiSortModal}
