@@ -310,7 +310,7 @@ import { MapCard } from 'carbon-addons-iot-react';
 import { useDrop } from 'react-dnd';
 import update from 'immutability-helper';
 
-const DragPanel = ({ id, left, top, children }) => {
+const DragPanel = ({ id, left, top, height, width, children }) => {
   const style = {
     position: 'absolute',
     zIndex: 3,
@@ -322,7 +322,7 @@ const DragPanel = ({ id, left, top, children }) => {
   const [{ isDragging }, drag] = useDrag(
     () => ({
       type: 'dragPanel',
-      item: { id, left, top },
+      item: { id, left, top, height, width },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
       }),
@@ -330,7 +330,7 @@ const DragPanel = ({ id, left, top, children }) => {
     [id, left, top]
   );
   return isDragging ? null : (
-    <div style={style} ref={drag} style={{ left, top }}>
+    <div className="drag-panel" ref={drag} style={{ left, top, height, width }}>
       {children}
     </div>
   );
@@ -342,8 +342,14 @@ const MapboxDragPanelExample = ({ data }) => {
   // Below is only related to drag and drop panels
 
   const [panels, setPanels] = useState({
-    panelA: { top: 16, left: 16, content: <p>I am a draggable panel</p> },
-    panelB: { top: 200, left: 200, content: 'I am another draggable panel' },
+    panelA: { top: 16, left: 16, width: 100, height: 200, content: <p>I am a draggable panel</p> },
+    panelB: {
+      top: 50,
+      left: 200,
+      width: 100,
+      height: 200,
+      content: 'I am another draggable panel',
+    },
   });
 
   const movePanel = useCallback(
@@ -363,10 +369,21 @@ const MapboxDragPanelExample = ({ data }) => {
     () => ({
       accept: 'dragPanel',
       drop(item, monitor) {
+        const dropZonePadding = 16;
         const delta = monitor.getDifferenceFromInitialOffset();
         const left = Math.round(item.left + delta.x);
         const top = Math.round(item.top + delta.y);
-        movePanel(item.id, left, top);
+        const dropZoneHeight = mapContainerRef.current.clientHeight;
+        const dropZoneWidth = mapContainerRef.current.clientWidth;
+        const minTop = dropZonePadding;
+        const maxTop = dropZoneHeight - dropZonePadding - item.height;
+        const minLeft = dropZonePadding;
+        const maxLeft = dropZoneWidth - dropZonePadding - item.width;
+
+        const adjustedTop = top < minTop ? minTop : top > maxTop ? maxTop : top;
+        const adjustedLeft = left < minLeft ? minLeft : left > maxLeft ? maxLeft : left;
+
+        movePanel(item.id, adjustedLeft, adjustedTop);
         return undefined;
       },
     }),
@@ -376,9 +393,9 @@ const MapboxDragPanelExample = ({ data }) => {
   return (
     <MapCard id="map-card" dropRef={drop}>
       {Object.keys(panels).map((key) => {
-        const { left, top, content } = panels[key];
+        const { left, top, content, height, width } = panels[key];
         return (
-          <DragPanel key={key} id={key} left={left} top={top}>
+          <DragPanel key={key} id={key} left={left} top={top} height={height} width={width}>
             {content}
           </DragPanel>
         );

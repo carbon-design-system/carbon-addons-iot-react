@@ -140,8 +140,14 @@ const MapboxDragPanelExample = ({
   };
 
   const [panels, setPanels] = useState({
-    panelA: { top: 16, left: 16, content: <p>I am a draggable panel</p> },
-    panelB: { top: 200, left: 200, content: 'I am another draggable panel' },
+    panelA: { top: 16, left: 16, width: 100, height: 200, content: <p>I am a draggable panel</p> },
+    panelB: {
+      top: 50,
+      left: 200,
+      width: 100,
+      height: 200,
+      content: 'I am another draggable panel',
+    },
   });
 
   const movePanel = useCallback(
@@ -161,10 +167,21 @@ const MapboxDragPanelExample = ({
     () => ({
       accept: 'dragPanel',
       drop(item, monitor) {
+        const dropZonePadding = 16;
         const delta = monitor.getDifferenceFromInitialOffset();
         const left = Math.round(item.left + delta.x);
         const top = Math.round(item.top + delta.y);
-        movePanel(item.id, left, top);
+        const dropZoneHeight = mapContainerRef.current.clientHeight;
+        const dropZoneWidth = mapContainerRef.current.clientWidth;
+        const minTop = dropZonePadding;
+        const maxTop = dropZoneHeight - dropZonePadding - item.height;
+        const minLeft = dropZonePadding;
+        const maxLeft = dropZoneWidth - dropZonePadding - item.width;
+
+        const adjustedTop = top < minTop ? minTop : top > maxTop ? maxTop : top;
+        const adjustedLeft = left < minLeft ? minLeft : left > maxLeft ? maxLeft : left;
+
+        movePanel(item.id, adjustedLeft, adjustedTop);
         return undefined;
       },
     }),
@@ -193,9 +210,9 @@ const MapboxDragPanelExample = ({
       {...other}
     >
       {Object.keys(panels).map((key) => {
-        const { left, top, content } = panels[key];
+        const { left, top, content, height, width } = panels[key];
         return (
-          <DragPanel key={key} id={key} left={left} top={top}>
+          <DragPanel key={key} id={key} left={left} top={top} height={height} width={width}>
             {content}
           </DragPanel>
         );

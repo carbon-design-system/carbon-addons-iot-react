@@ -9,6 +9,8 @@ const propTypes = {
   left: PropTypes.number,
   top: PropTypes.number,
   children: PropTypes.node.isRequired,
+  height: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
 };
 
 const defaultProps = {
@@ -16,11 +18,11 @@ const defaultProps = {
   top: 0,
 };
 
-const DragPanel = ({ id, left, top, children }) => {
+const DragPanel = ({ id, left, top, height, width, children }) => {
   const [{ isDragging }, drag] = useDrag(
     () => ({
       type: 'dragPanel',
-      item: { id, left, top },
+      item: { id, left, top, height, width },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
       }),
@@ -28,7 +30,7 @@ const DragPanel = ({ id, left, top, children }) => {
     [id, left, top]
   );
   return isDragging ? null : (
-    <div className="drag-panel" ref={drag} style={{ left, top }}>
+    <div className="drag-panel" ref={drag} style={{ left, top, height, width }}>
       {children}
     </div>
   );
