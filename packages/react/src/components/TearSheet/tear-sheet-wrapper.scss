@@ -1,39 +1,50 @@
 .#{$iot-prefix}--tear-sheet-wrapper {
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   opacity: 0;
   z-index: -1;
   position: fixed;
-  transition: all $duration--slow-01 motion(standard, expressive);
+  transition: all $duration--slow-01 motion(standard, expressive) $duration--slow-01;
 
   &--container {
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, 0);
+    position: absolute;
     background: none;
+    left: 50%;
+    top: 5.5rem;
+    transform: translate(-50%, 100vh);
     transition: all $duration--slow-01 motion(standard, expressive);
-    width: initial;
-    max-height: calc(var(--window-height) - 88px);
-    max-width: var(--content-max-width);
-    height: auto;
-    .#{$iot-prefix}--tear-sheet {
-      max-width: inherit;
-      width: 100%;
+    height: calc(100vh - 5.5rem);
+    width: calc(100vw - 4rem);
+    opacity: 1;
+    margin: 0 auto;
+
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible
+      &:not(.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden) {
+      transform: translate(-50%, 0);
     }
-    &.is-hidden {
+
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible &__is-hidden {
       filter: brightness(75%);
+      transform: translate(-50%, 100vw);
+      width: calc(100vw - 5rem);
       & * {
-        transition: filter duration--slow-01 motion(standard, expressive);
+        transition: all $duration--slow-01 motion(standard, expressive);
       }
+    }
+
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible
+      &:first-child.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden {
+      transform: translate(-50%, -20px);
     }
   }
 
-  &.is-visible {
+  &.#{$iot-prefix}--tear-sheet-wrapper__is-visible {
     background-color: $overlay-01;
     z-index: 5999;
-    transition: background-color $duration--slow-02 motion(standard, productive);
+    transition: opacity $duration--slow-01 motion(standard, expressive),
+      background-color $duration--slow-02 motion(standard, productive);
     opacity: 1;
   }
 }
