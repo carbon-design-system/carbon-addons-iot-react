@@ -6,7 +6,11 @@ import { ListModel } from './list-model.class';
   selector: 'ai-list',
   template: `
     <div class="iot--list">
-      <ai-list-header [title]="title"></ai-list-header>
+      <ai-list-header
+        [title]="title"
+        [search]="true"
+        (onSearch)="onSearch($event)">
+      </ai-list-header>
       <div class="iot--list--content">
         <ng-template
           [ngTemplateOutlet]="listItemTemplateRef"
@@ -15,12 +19,17 @@ import { ListModel } from './list-model.class';
       </div>
     </div>
 
-    <ng-template #listItemTemplateRef let-data>
+    <ng-template #listItemTemplateRef let-data let-index="index">
       <ng-container *ngIf="data.value">
-        <ai-list-item [value]="data.value" [nestingLevel]="data.nestingLevel"></ai-list-item>
+        <ai-list-item
+          [listItem]="data"
+          [isSelectable]="isSelectable"
+          (checkedChange)="onSelect($event)"
+          (expansionClick)="onExpand($event)">
+        </ai-list-item>
       </ng-container>
 
-      <ng-container *ngIf="data.items && data.items.length">
+      <ng-container *ngIf="data.items && data.items.length && data.expanded">
         <ng-template
           ngFor
           [ngForOf]="data.items"
@@ -33,5 +42,19 @@ import { ListModel } from './list-model.class';
 
 export class ListComponent {
   @Input() model: ListModel;
-  @Input() title;
+  @Input() title: string;
+  @Input() isSelectable: boolean;
+  @Input() search: boolean;
+
+  onExpand(id: string) {
+    this.model.expandListItem(id);
+  }
+
+  onSelect({ id, checked }) {
+    this.model.selectListItem(id, checked);
+  }
+
+  onSearch(searchString: string) {
+    this.model.search(searchString);
+  }
 }
