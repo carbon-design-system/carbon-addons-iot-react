@@ -1,7 +1,12 @@
 .#{$iot-prefix}--table-multi-sort-modal {
-  html[dir='rtl'] & .#{$prefix}--modal-content {
-    padding-right: $spacing-05;
-    grid-template-columns: 3.5fr 3.5fr 1fr 1fr;
+  html[dir='rtl'] & {
+    .#{$prefix}--modal-content {
+      padding-right: $spacing-05;
+      padding-left: $spacing-09;
+    }
+    .#{$prefix}--modal-header {
+      padding-right: $spacing-09;
+    }
   }
 
   .#{$prefix}--modal-content {
