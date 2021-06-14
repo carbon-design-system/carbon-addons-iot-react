@@ -53,16 +53,19 @@ const cardConfig = {
 const dataItems = [
   {
     dataSourceId: 'temp_last',
+    dataItemId: 'temp_last',
     label: '{high} temp',
     unit: '{unitVar}',
   },
   {
     dataSourceId: 'temperature',
+    dataItemId: 'temperature',
     label: 'Temperature',
     unit: '°',
   },
   {
     dataSourceId: 'pressure',
+    dataItemId: 'pressure',
     label: 'Pressure',
     unit: 'psi',
   },

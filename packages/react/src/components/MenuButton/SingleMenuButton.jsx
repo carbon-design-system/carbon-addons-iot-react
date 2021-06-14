@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { settings } from '../../constants/Settings';
 import Button from '../Button';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   /**
@@ -45,6 +48,7 @@ export const SingleMenuButton = React.forwardRef(
     return (
       <Button
         ref={ref}
+        className={`${iotPrefix}--menu-button__trigger`}
         onClick={label ? onPrimaryActionClick : onSecondaryActionClick}
         iconDescription={iconDescription}
         renderIcon={renderIcon}

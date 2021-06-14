@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.27...v2.146.0-next.28) (2021-06-14)
+
+
+### Bug Fixes
+
+* **mapcard:** improved drag and drop example ([2ab5a34](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2ab5a34163f49e534e721885f58565d8cf7d41ab)), closes [#2366](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2366)
+
+
+### Features
+
+* **mapcard:** added draggable related content panels and updated react-dnd ([d605c4f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d605c4f9a6ff5a526154c76be8bb15780226b1ec))
+* **mapcard:** dragable panels documentation and code cleanup ([2a2c07d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2a2c07d26bbe17bebc9f5b2c15513cb62e80493b))
+
+
+
+
+
+# [2.146.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.26...v2.146.0-next.27) (2021-06-11)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.146.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.25...v2.146.0-next.26) (2021-06-10)
+
+
+### Bug Fixes
+
+* **dynamichotspotsourcepicker:** removed jest-fm from story ([37d51a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/37d51a3ae17983cca70c11f5175b5f30077e0e91))
+* **hotspoteditormodal:** fixed broken stories ([9ce5032](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ce503243830cbbfdd21604ecbd97a8dcb4722a5))
+
+
+
+
+
 # [2.146.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.24...v2.146.0-next.25) (2021-06-08)
 
 
