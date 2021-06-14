@@ -6,10 +6,11 @@
 - [Map controls](#map-controls)
 - [Zoom control](#zoom-control)
 - [Layered map controls](#layered-map-controls)
-- [legend](#legend)
+- [Legend](#legend)
 - [Settings content](#settings-content)
 - [Mapbox Example](#mapbox-example)
 - [Open layers Example](#open-layers-example)
+- [Custom draggable panels](#custom-draggable-panels)
 - [Props](#props)
 - [Feedback](#feedback)
 - External Links
@@ -190,7 +191,7 @@ const settingsContent = () => (
 
 ## Mapbox Example
 
-The go to choice for interactive maps in Carbon is [Mapbox](https://www.carbondesignsystem.com/data-visualization/complex-charts/#mapbox). PAL provides an full example implementation of the `MapCard` using Mapbox [here](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/MapCard/storyFiles).
+The go to choice for interactive maps in Carbon is [Mapbox](https://www.carbondesignsystem.com/data-visualization/complex-charts/#mapbox). PAL provides a full example implementation of the `MapCard` using Mapbox [here](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/MapCard/storyFiles).
 
 Below is a simplified example of a Mapbox implementation showing one layer with a few stops defined for the legend. It supports zooming. The example is heavily limited for the sake of simplicity.
 
@@ -285,6 +286,125 @@ const MapboxExample = ({ data }) => {
 
 PAL provides an example implementation of the `MapCard` using Open Layers [here](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/MapCard/storyFiles).
 
+## Custom draggable panels
+
+See the Mapbox Example above for details on how to use the MapCard with Mapbox. This section builds on that example in order to explain how to add absolutely positioned panels that can be dragged and dropped across the map.
+
+PAL provides a full example implementation called [MapboxDragPanelExample](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/MapCard/storyFiles).
+
+**Please note** that in order for the MapboxDragPanelExample to work it needs acces to the DndProvider of the react-dnd library. There is a helper component exported for that purpose. Use it to wrap the component that should provide the drag and drop. See [draganddrop.md](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/docs/draganddrop.md) for more info.
+
+```jsx
+render(
+  <DragAndDrop>
+    <MapboxDragPanelExample />
+  </DragAndDrop>
+);
+```
+
+The details of the Mapbox Example have been stripped in the example below so that the code only shows what is relevant for creating draggable panels with react-dnd.
+
+```jsx
+import React, { useState, useCallback } from 'react';
+import { MapCard } from 'carbon-addons-iot-react';
+import { useDrop } from 'react-dnd';
+import update from 'immutability-helper';
+
+const DragPanel = ({ id, left, top, height, width, children }) => {
+  const style = {
+    position: 'absolute',
+    zIndex: 3,
+    opacity: 0.8,
+    cursor: 'move',
+    padding: '1rem',
+    background: 'white',
+  };
+  const [{ isDragging }, drag] = useDrag(
+    () => ({
+      type: 'dragPanel',
+      item: { id, left, top, height, width },
+      collect: (monitor) => ({
+        isDragging: monitor.isDragging(),
+      }),
+    }),
+    [id, left, top]
+  );
+  return isDragging ? null : (
+    <div className="drag-panel" ref={drag} style={{ left, top, height, width }}>
+      {children}
+    </div>
+  );
+};
+
+const MapboxDragPanelExample = ({ data }) => {
+  // This example is a simplification
+  // See MapboxExample for above for stripped out code.
+  // Below is only related to drag and drop panels
+
+  const [panels, setPanels] = useState({
+    panelA: { top: 16, left: 16, width: 100, height: 200, content: <p>I am a draggable panel</p> },
+    panelB: {
+      top: 50,
+      left: 200,
+      width: 100,
+      height: 200,
+      content: 'I am another draggable panel',
+    },
+  });
+
+  const movePanel = useCallback(
+    (id, left, top) => {
+      setPanels(
+        update(panels, {
+          [id]: {
+            $merge: { left, top },
+          },
+        })
+      );
+    },
+    [panels, setPanels]
+  );
+
+  const [, drop] = useDrop(
+    () => ({
+      accept: 'dragPanel',
+      drop(item, monitor) {
+        const dropZonePadding = 16;
+        const delta = monitor.getDifferenceFromInitialOffset();
+        const left = Math.round(item.left + delta.x);
+        const top = Math.round(item.top + delta.y);
+        const dropZoneHeight = mapContainerRef.current.clientHeight;
+        const dropZoneWidth = mapContainerRef.current.clientWidth;
+        const minTop = dropZonePadding;
+        const maxTop = dropZoneHeight - dropZonePadding - item.height;
+        const minLeft = dropZonePadding;
+        const maxLeft = dropZoneWidth - dropZonePadding - item.width;
+
+        const adjustedTop = top < minTop ? minTop : top > maxTop ? maxTop : top;
+        const adjustedLeft = left < minLeft ? minLeft : left > maxLeft ? maxLeft : left;
+
+        movePanel(item.id, adjustedLeft, adjustedTop);
+        return undefined;
+      },
+    }),
+    [movePanel]
+  );
+
+  return (
+    <MapCard id="map-card" dropRef={drop}>
+      {Object.keys(panels).map((key) => {
+        const { left, top, content, height, width } = panels[key];
+        return (
+          <DragPanel key={key} id={key} left={left} top={top} height={height} width={width}>
+            {content}
+          </DragPanel>
+        );
+      })}
+    </MapCard>
+  );
+};
+```
+
 ## Props
 
 | Name                 | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Default                                                                                                                                                                                                                                                                                                                                             | Description                                                                                                                                                                                                                                                                                                                                      |
@@ -335,6 +455,7 @@ PAL provides an example implementation of the `MapCard` using Open Layers [here]
 | locale               | PropTypes.string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                                                                                     | the locale of the card, needed for number and date formatting                                                                                                                                                                                                                                                                                    |
 | resizeHandles        | PropTypes.array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |                                                                                                                                                                                                                                                                                                                                                     | a way to pass down dashboard grid resize handles, only used by other card types                                                                                                                                                                                                                                                                  |
 | renderEditContent    | PropTypes.func                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                     | Optional callback function that is passed an onChange function and the original cardConfig function. This allows additional information to be passed to be used in the Card Editor for this type. You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render \* |
+| dropRef              | PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func])                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                                                                                                                                                                                                                                                                     | the ref needed by a drag and drop library like react-dnd. Is added to the map container element.                                                                                                                                                                                                                                                 |
 
 ## Feedback
 
