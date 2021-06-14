@@ -390,7 +390,7 @@ const TableToolbar = ({
               <OverflowMenuItem
                 itemText={i18n.toggleAggregations}
                 key="table-aggregations-overflow-item"
-                onClick={onToggleAggregations}
+                onClick={() => onToggleAggregations()}
               />
             </OverflowMenu>
           ) : null}
