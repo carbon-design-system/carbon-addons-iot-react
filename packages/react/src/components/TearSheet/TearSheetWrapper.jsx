@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, useEffect, useState, createRef } from 'react';
+import React, { Children, cloneElement, useEffect, useState, useMemo, createRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -26,13 +26,10 @@ const defaultProps = {
 const baseClassName = `${iotPrefix}--tear-sheet-wrapper`;
 
 const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children }) => {
-  // const windowSize = useWindowSize();
   const [activeTearSheetIdx, setActiveTearSheetIdx] = useState(null);
-  const childrenArray = Children.toArray(children).slice(0, 2); // Limit of 2 TearSheets
+  const childrenArray = useMemo(Children.toArray(children).slice(0, 2), [children]); // Limit of 2 TearSheets
   const [containers] = useState(childrenArray.map(() => createRef()));
-  // const [initialContainersWidth, setInitialContainersWidth] = useState(null);
-  // const [containersStyles, setContainersStyles] = useState({});
-  const [animationClasses, setAnimationClasses] = useState(
+  const [animationClasses, setAnimationClasses] = useState(() =>
     childrenArray.reduce(
       (acc, c, idx) => ({
         ...acc,

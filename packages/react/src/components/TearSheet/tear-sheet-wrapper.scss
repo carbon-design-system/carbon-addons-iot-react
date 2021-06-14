@@ -35,7 +35,10 @@
     }
 
     .#{$iot-prefix}--tear-sheet-wrapper__is-visible
-      &:first-child.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden {
+      &:first-child.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden,
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible
+      &:first-child.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden
+      + .#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden {
       transform: translate(-50%, -0.75rem);
     }
   }
