@@ -27,7 +27,7 @@ const baseClassName = `${iotPrefix}--tear-sheet-wrapper`;
 
 const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children }) => {
   const [activeTearSheetIdx, setActiveTearSheetIdx] = useState(null);
-  const childrenArray = useMemo(Children.toArray(children).slice(0, 2), [children]); // Limit of 2 TearSheets
+  const childrenArray = useMemo(() => Children.toArray(children).slice(0, 2), [children]); // Limit of 2 TearSheets
   const [containers] = useState(childrenArray.map(() => createRef()));
   const [animationClasses, setAnimationClasses] = useState(() =>
     childrenArray.reduce(
