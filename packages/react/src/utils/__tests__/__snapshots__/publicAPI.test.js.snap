@@ -19438,7 +19438,6 @@ Map {
   "HotspotEditorTooltipTab" => Object {
     "defaultProps": Object {
       "formValues": Object {},
-      "hotspotIconFillColors": undefined,
       "hotspotIcons": Array [],
       "i18n": Object {
         "colorDropdownLabelText": "Select a color",
@@ -19532,6 +19531,7 @@ Map {
             "type": "shape",
           },
         ],
+        "isRequired": true,
         "type": "arrayOf",
       },
       "hotspotIcons": Object {
