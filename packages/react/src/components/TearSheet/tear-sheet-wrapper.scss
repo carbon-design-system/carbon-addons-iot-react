@@ -16,7 +16,7 @@
     transform: translate(-50%, 100vh);
     transition: all $duration--slow-01 motion(standard, expressive);
     height: calc(100vh - 5.5rem);
-    width: calc(100vw - 4rem);
+    width: calc(100vw - 8rem);
     opacity: 1;
     margin: 0 auto;
 
@@ -28,7 +28,7 @@
     .#{$iot-prefix}--tear-sheet-wrapper__is-visible &__is-hidden {
       filter: brightness(75%);
       transform: translate(-50%, 100vw);
-      width: calc(100vw - 5rem);
+      width: calc(100vw - 9.5rem);
       & * {
         transition: all $duration--slow-01 motion(standard, expressive);
       }
@@ -36,7 +36,7 @@
 
     .#{$iot-prefix}--tear-sheet-wrapper__is-visible
       &:first-child.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden {
-      transform: translate(-50%, -20px);
+      transform: translate(-50%, -1.25rem);
     }
   }
 
