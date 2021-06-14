@@ -3,12 +3,90 @@
 ## Table of Contents
 
 - [Getting started](#getting-started)
+- [Large modal](#large-modal)
+- [Error state](#error-state)
+- [Sending data](#sending-data)
+- [No footer](#no-footer)
 - [Props](#props)
 - [External links](#external-links)
   - [Source Code](#source-code)
   - [Feedback](#feedback)
 
 ## Getting Started
+
+Renders a carbon modal dialog. This dialog adds these additional features on top of the base carbon dialog:
+
+- adds header.helpText prop to explain dialog
+- adds type prop for warning and error type dialogs
+- adds isLarge prop for large and small class styling dialogs
+- adds isFetchingData props for loading state
+- adds error and dataError prop to display notification about error at bottom of dialog
+- if submitFailed prop, it will find and scroll the failing carbon element into view
+- shows spinner on primary dialog button if sendingData prop is true
+
+We also prevent the dialog from closing if you click outside it.
+This dialog can be decorated by reduxDialog HoC and/or reduxForm HoC to automatically populate the fields below marked as
+REDUXFORM or REDUXDIALOG
+
+## Large modal
+
+```jsx
+<ComposedModal
+  isLarge
+  header={{
+    label: 'Big Modal',
+    title: 'Needs a lot of space to contain all the info',
+  }}
+  onSubmit={() => {}}
+  onClose={() => {}}
+>
+  Lots of really wide content here...
+</ComposedModal>
+```
+
+## Error state
+
+```jsx
+<ComposedModal
+  error="Error sending data to server"
+  header={{
+    label: 'DataError',
+    title: 'Cannot communicate with server',
+  }}
+  onSubmit={() => {}}
+  onClose={() => {}}
+  onClearError={() => {}}
+>
+  body content
+</ComposedModal>
+```
+
+## Sending data
+
+```jsx
+<ComposedModal
+  sendingData
+  header={{
+    label: 'Sending data',
+    title: 'We are submitting data to the backend',
+  }}
+  onSubmit={() => {}}
+  onClose={() => {}}
+/>
+```
+
+## No footer
+
+```jsx
+<ComposedModal
+  header={{
+    label: 'No footer',
+    title: 'Dialog without footer',
+  }}
+  passiveModal
+  onClose={() => {}}
+/>
+```
 
 ## Props
 
