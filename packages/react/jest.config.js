@@ -9,6 +9,7 @@ module.exports = {
     '!src/components/WizardInline/**/*.js?(x)',
     '!src/components/Page/(EditPage|PageHero).jsx',
     '!src/components/Dashboard/(Dashboard|CardRenderer).jsx',
+    '!src/components/MapCard/storyFiles/*.jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov'],

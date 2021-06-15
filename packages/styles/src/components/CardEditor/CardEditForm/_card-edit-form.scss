@@ -169,6 +169,10 @@
     }
     &--item-end {
       width: 100%;
+
+      .#{$prefix}--number input[type='number'] {
+        padding-right: 0;
+      }
     }
     &--item-dropdown {
       margin-right: $spacing-05;
@@ -177,8 +181,9 @@
   }
 
   &--footer {
-    padding: $spacing-05;
+    border-top: solid 1px $ui-03;
     & > button {
+      justify-content: space-between;
       width: 100%;
     }
   }

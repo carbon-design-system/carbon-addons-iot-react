@@ -60,6 +60,7 @@ describe('DashboardEditor', () => {
     onExport: mockOnExport,
     onCancel: mockOnCancel,
     onSubmit: mockOnSubmit,
+    onEditDataItems: jest.fn(),
     supportedCardTypes: [
       'TIMESERIES',
       'SIMPLE_BAR',

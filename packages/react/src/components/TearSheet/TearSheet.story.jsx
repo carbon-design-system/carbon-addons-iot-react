@@ -6,18 +6,15 @@ import Button from '../Button';
 import TearSheetWrapper from './TearSheetWrapper';
 import TearSheet from './TearSheet';
 
-export const Default = () => <StandardTearSheet />;
-export default {
-  title: 'TearSheet',
-  decorators: [withKnobs],
-  component: Default,
-};
-
-const TearSheetChild = ({ openNextSheet, goToPreviousSheet, onClose }) => (
+const TearSheetChild = ({
+  setHeaderAdditionalContent,
+  clearHeaderContent,
+  openNextSheet,
+  goToPreviousSheet,
+  onClose,
+}) => (
   <div
     style={{
-      width: '1000px',
-      justifyContent: 'space-between',
       display: 'flex',
       flexDirection: 'column',
       height: '100%',
@@ -26,15 +23,30 @@ const TearSheetChild = ({ openNextSheet, goToPreviousSheet, onClose }) => (
     <Button
       kind="tertiary"
       onClick={openNextSheet}
-      style={{ margin: '2rem 2rem 0 2rem', maxWidth: '13rem' }}
+      style={{ margin: '2rem 2rem 0', maxWidth: '13rem' }}
     >
       Open 2nd sheet
+    </Button>
+    <Button
+      kind="tertiary"
+      onClick={setHeaderAdditionalContent}
+      style={{ marginLeft: '2rem', maxWidth: '13rem' }}
+    >
+      Set header additional content
+    </Button>
+    <Button
+      kind="tertiary"
+      onClick={clearHeaderContent}
+      style={{ marginLeft: '2rem', maxWidth: '13rem' }}
+    >
+      Clear header additional content
     </Button>
     <div
       style={{
         display: 'flex',
         justifyContent: 'flex-end',
         borderTop: '1px solid #e0e0e0',
+        marginTop: 'auto',
       }}
     >
       <Button
@@ -57,7 +69,6 @@ const TearSheetChild = ({ openNextSheet, goToPreviousSheet, onClose }) => (
 const TearSheetChild2 = ({ closeAllTearSheets }) => (
   <div
     style={{
-      width: '1000px',
       height: '100%',
       display: 'inline-flex',
       flexDirection: 'column',
@@ -123,6 +134,7 @@ const TearSheetChild2 = ({ closeAllTearSheets }) => (
 
 const StandardTearSheet = () => {
   const [isOpen, setOpen] = useState(false);
+  const [headerAdditionalContent, setHeaderAdditionalContent] = useState(null);
 
   return (
     <>
@@ -135,8 +147,19 @@ const StandardTearSheet = () => {
           title="First sheet"
           description="Generic description"
           onClose={() => setOpen(false)}
+          headerExtraContent={headerAdditionalContent}
         >
-          <TearSheetChild onClose={() => setOpen(false)} />
+          <TearSheetChild
+            onClose={() => setOpen(false)}
+            setHeaderAdditionalContent={() => {
+              setHeaderAdditionalContent(
+                <div style={{ height: '40px', display: 'flex', alignItems: 'center' }}>
+                  Header additional content
+                </div>
+              );
+            }}
+            clearHeaderContent={() => setHeaderAdditionalContent(null)}
+          />
         </TearSheet>
         <TearSheet title="Second sheet" description="Generic description">
           <TearSheetChild2 />
@@ -144,4 +167,11 @@ const StandardTearSheet = () => {
       </TearSheetWrapper>
     </>
   );
+};
+
+export const Default = () => <StandardTearSheet />;
+export default {
+  title: '1 - Watson IoT/TearSheet',
+  decorators: [withKnobs],
+  component: Default,
 };

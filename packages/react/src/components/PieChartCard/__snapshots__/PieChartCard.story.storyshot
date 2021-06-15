@@ -84,6 +84,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </div>
           <div
             className="iot--card--content iot--card--content--expanded"
+            data-testid="basicCardStoryTest-content"
             style={
               Object {
                 "--card-content-height": "576px",
@@ -642,6 +643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="iot--card--content"
+          data-testid="basicCardStoryTest-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -766,6 +768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="iot--card--content"
+          data-testid="basicCardStoryTest-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -890,6 +893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="iot--card--content"
+          data-testid="basicCardStoryTest-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -1014,6 +1018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="iot--card--content"
+          data-testid="basicCardStoryTest-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -1138,6 +1143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="iot--card--content"
+          data-testid="basicCardStoryTest-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -1265,6 +1271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="iot--card--content"
+          data-testid="basicCardStoryTest-content"
           style={
             Object {
               "--card-content-height": "576px",
