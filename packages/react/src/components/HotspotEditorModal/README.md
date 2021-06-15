@@ -6,7 +6,6 @@ The HotspotEditorModal allows a user to create and edit hotspots for the ImageHo
 
 - [Code example](#code-example)
 - [Types of hotspots](#types-of-hotspots)
-- [Thresholds](#thresholds)
 - [State management](#state-management)
 - [Props](#props)
 - [Prop cardConfig](#prop-cardconfig)
@@ -102,7 +101,7 @@ Hotspots of typ text are managed under the context switch called "Labels". They 
 
 ## Thresholds
 
-Thresholds are by default added under each hotspot in the cardConfig, e.g.
+Thresholds are added and read from each hotspot's attributes in the cardConfig:
 
 ```jsx
 cardConfig: {
@@ -137,22 +136,6 @@ cardConfig: {
       },
     ];
   }
-}
-```
-
-But thresholds can also be defined directly on the cardConfig. In that case the dataSourceId must be included in the thresholds prop and it will be applied to all hotspots using that data source item. The HotspotEditoModal will respect the usage of this thresholds prop and if it is present then new and existing thresholds will be placed here instead of under each hotspot.
-
-```jsx
-cardConfig: {
-  thresholds: [
-    {
-      dataSourceId: 'temperature',
-      comparison: '>',
-      value: 30.5,
-      icon: 'Warning',
-      color: '#da1e28',
-    },
-  ];
 }
 ```
 
