@@ -4,12 +4,11 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
-import { withReadme } from 'storybook-readme';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
-import SimpleListREADME from './README.md';
+import SimpleListREADME from './README.mdx';
 
 export const getListItems = (num) =>
   Array(num)
@@ -123,12 +122,15 @@ export default {
 
   parameters: {
     component: SimpleList,
+    docs: {
+      page: SimpleListREADME,
+    },
   },
 
   excludeStories: ['getListItems'],
 };
 
-export const Basic = withReadme(SimpleListREADME, () => (
+export const Basic = () => (
   <div style={{ width: 500 }}>
     <SimpleList
       title={text('Text', 'Simple List')}
@@ -142,13 +144,13 @@ export const Basic = withReadme(SimpleListREADME, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 Basic.story = {
   name: 'basic',
 };
 
-export const TallListIsFullHeightTrue = withReadme(SimpleListREADME, () => (
+export const TallListIsFullHeightTrue = () => (
   <div
     style={{
       width: 500,
@@ -170,13 +172,13 @@ export const TallListIsFullHeightTrue = withReadme(SimpleListREADME, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 TallListIsFullHeightTrue.story = {
   name: 'tall list (isFullHeight = true)',
 };
 
-export const TallListIsFullHeightFalse = withReadme(SimpleListREADME, () => (
+export const TallListIsFullHeightFalse = () => (
   <div
     style={{
       width: 500,
@@ -197,13 +199,13 @@ export const TallListIsFullHeightFalse = withReadme(SimpleListREADME, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 TallListIsFullHeightFalse.story = {
   name: 'tall list (isFullHeight = false)',
 };
 
-export const ListWithOverflowGrow = withReadme(SimpleListREADME, () => (
+export const ListWithOverflowGrow = () => (
   <div
     style={{
       width: 500,
@@ -225,13 +227,13 @@ export const ListWithOverflowGrow = withReadme(SimpleListREADME, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 ListWithOverflowGrow.story = {
   name: 'list with overflow grow',
 };
 
-export const ListWithPageSize = withReadme(SimpleListREADME, () => (
+export const ListWithPageSize = () => (
   <div
     style={{
       width: 500,
@@ -253,13 +255,13 @@ export const ListWithPageSize = withReadme(SimpleListREADME, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 ListWithPageSize.story = {
   name: 'list with pageSize',
 };
 
-export const ListWithEmptyRow = withReadme(SimpleListREADME, () => (
+export const ListWithEmptyRow = () => (
   <div
     style={{
       width: 500,
@@ -280,13 +282,13 @@ export const ListWithEmptyRow = withReadme(SimpleListREADME, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 ListWithEmptyRow.story = {
   name: 'list with empty row',
 };
 
-export const ListWithLargeRow = withReadme(SimpleListREADME, () => (
+export const ListWithLargeRow = () => (
   <div
     style={{
       width: 500,
@@ -309,13 +311,13 @@ export const ListWithLargeRow = withReadme(SimpleListREADME, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 ListWithLargeRow.story = {
   name: 'list with large row',
 };
 
-export const ListWithMultipleActions = withReadme(SimpleListREADME, () => (
+export const ListWithMultipleActions = () => (
   <div
     style={{
       width: 500,
@@ -337,13 +339,13 @@ export const ListWithMultipleActions = withReadme(SimpleListREADME, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 ListWithMultipleActions.story = {
   name: 'list with multiple actions',
 };
 
-export const ListWithOverflowMenu = withReadme(SimpleListREADME, () => (
+export const ListWithOverflowMenu = () => (
   <div
     style={{
       width: 500,
@@ -365,13 +367,13 @@ export const ListWithOverflowMenu = withReadme(SimpleListREADME, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 ListWithOverflowMenu.story = {
   name: 'list with overflow menu',
 };
 
-export const LargeRowListWithMultipleActions = withReadme(SimpleListREADME, () => (
+export const LargeRowListWithMultipleActions = () => (
   <div
     style={{
       width: 500,
@@ -394,13 +396,13 @@ export const LargeRowListWithMultipleActions = withReadme(SimpleListREADME, () =
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 LargeRowListWithMultipleActions.story = {
   name: 'large row list with multiple actions',
 };
 
-export const LargeRowListWithOverflowMenu = withReadme(SimpleListREADME, () => (
+export const LargeRowListWithOverflowMenu = () => (
   <div
     style={{
       width: 500,
@@ -423,7 +425,7 @@ export const LargeRowListWithOverflowMenu = withReadme(SimpleListREADME, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 LargeRowListWithOverflowMenu.story = {
   name: 'large row list with overflow menu',
@@ -466,7 +468,7 @@ ListWithReorder.story = {
   name: 'list with reorder',
 };
 
-export const HiddenPagination = withReadme(SimpleListREADME, () => (
+export const HiddenPagination = () => (
   <div style={{ width: 500 }}>
     <SimpleList
       title={text('Text', 'Simple List')}
@@ -480,7 +482,7 @@ export const HiddenPagination = withReadme(SimpleListREADME, () => (
       hasPagination={false}
     />
   </div>
-));
+);
 
 HiddenPagination.story = {
   name: 'hidden pagination',
