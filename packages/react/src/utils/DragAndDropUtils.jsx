@@ -163,3 +163,26 @@ export function DragAndDrop(props) {
   const DNDElement = useDNDProviderElement(props);
   return <React.Fragment>{DNDElement}</React.Fragment>;
 }
+
+/**
+ * Allows the merging of multiple refs when a components needs to handle more than one,
+ * e.g. when combining a map and a (drag and) drop target reference for the same element.
+ * @param  {...any} refs Refs that should be merged are passed as separate parameters
+ * @returns A function that will update the current property or call the ref function of all merged refs
+ */
+export const mergeRefs = (...refs) => {
+  const filteredRefs = refs.filter(Boolean);
+  return !filteredRefs.length
+    ? null
+    : filteredRefs.length === 1
+    ? filteredRefs[0]
+    : (currentInstance) => {
+        filteredRefs.forEach((ref) => {
+          if (typeof ref === 'function') {
+            ref(currentInstance);
+          } else if (ref) {
+            ref.current = currentInstance; // eslint-disable-line no-param-reassign
+          }
+        });
+      };
+};

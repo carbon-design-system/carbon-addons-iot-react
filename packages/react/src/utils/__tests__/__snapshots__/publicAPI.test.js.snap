@@ -21709,6 +21709,22 @@ Map {
         ],
         "type": "shape",
       },
+      "dropRef": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {},
+              ],
+              "type": "shape",
+            },
+            Object {
+              "type": "func",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
