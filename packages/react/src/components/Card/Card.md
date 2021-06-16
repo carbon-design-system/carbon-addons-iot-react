@@ -17,9 +17,23 @@ The `Card` component is the foundation of all cards in the library.
 import { Card } from 'carbon-addons-iot-react';
 ```
 
-## Custom Card Content
+## Implementing a custom card
+
+To develop a custom card component.
+
+- Create a new card component that uses the base Card component
+- If you want to hide the title/toolbar, do not pass a title prop
+- (Optionally, if you want to use the card in a Dashboard) Extend the Card Renderer so the Dashboard knows how to render your card type
+- (Optionally, if you want to use the card in a Dashboard) Create a validator for this card type within "utils/schemas/validators" and add it to the validateDashboardJSON function used to validate dashboards on import.
+
+### Data flow for a card in the dashboard
+
+All data loading for a card goes through the dashboard's onFetchData function. There are two ways to trigger a refetch of data for a card. The first is to directly interact
+with the Card's range controls. The second is for the Dashboard to trigger that all of the cards need a reload by updating it's isLoading bit. The CardRenderer component will call the onSetupCard function of the dashboard first
+for each card (if it exists), then will call the onFetchData function for the dashboard.
 
 ```jsx
+const isEditable = true;
 <Card
   availableActions={{
     expand: true,
@@ -440,7 +454,7 @@ import { Card } from 'carbon-addons-iot-react';
     weeklyLabel: 'Weekly',
   }}
   id="mycard"
-  isEditable={false}
+  isEditable={true}
   isEmpty={false}
   isExpanded={false}
   isLazyLoading={false}
@@ -469,13 +483,34 @@ import { Card } from 'carbon-addons-iot-react';
   timeRange={undefined}
   title="Custom Card Title"
   toolbar={undefined}
-  values={[
-    {
-      timestamp: 12341231231,
-      value1: 'my value',
-    },
-  ]}
-/>
+  values={[{ timestamp: 12341231231, value1: 'my value' }]}
+>
+  {!isEditable
+    ? (_$, { cardToolbar, values }) => (
+        <Table
+          id="my table"
+          secondaryTitle={title}
+          columns={[
+            {
+              id: 'value1',
+              name: 'String',
+              filter: { placeholderText: 'enter a string' },
+            },
+            {
+              id: 'timestamp',
+              name: 'Date',
+              filter: { placeholderText: 'enter a date' },
+            },
+          ]}
+          data={values.map((value, index) => ({
+            id: `rowid-${index}`,
+            values: value,
+          }))}
+          view={{ toolbar: { customToolbarContent: cardToolbar } }}
+        />
+      )
+    : 'Fake Sample Data'}
+</Card>;
 ```
 
 ## Props
