@@ -41,7 +41,12 @@ const runYarn = (command, packageToRun) => {
     stdio: 'inherit',
     cwd: resolve('packages', packageToRun),
   });
-  childProcess.on('exit', () => {
+  childProcess.on('exit', (code) => {
+    // check for code (may be null) and check if it has a non-zero value
+    if (code && code !== 0) {
+      process.exit(code);
+    }
+    // in all other cases we can just exit(0), node should handle re-throwing other signals for us
     process.exit(0);
   });
 };
