@@ -512,6 +512,7 @@ const Table = (props) => {
     view.table.loadingState,
     view.table.filteredData,
     columns,
+    searchValue?.current,
   ]);
 
   const { maxPages, ...paginationProps } = view.pagination;
