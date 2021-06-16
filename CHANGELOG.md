@@ -3,6 +3,101 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.30...v2.146.0-next.31) (2021-06-16)
+
+
+### Bug Fixes
+
+* **table:** fix button in button when multi-sort is used ([9eb700f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9eb700f6e137aa1da926518c7244d9ee749cdfb4))
+* **table:** i18n fixes, better testing, and rtl for multi-sort columns ([f4b086b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f4b086b65bf58a1d28dafe5e11de84ef7d30b510))
+* **table:** maintain backwards compat. on custom sort ([42f56d1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/42f56d13aad49a165499152d8cbf31ab4bd5bae7))
+* **table:** multi-sort modal rtl spacing ([f6518d2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f6518d2643c2610877ce5b6561b3bc062d16c3be))
+* **table:** switch sort to A tag to prevent button-in-button warning ([91c78ed](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/91c78ed92a29f3c95773ac820c39031428f3ed27))
+* **table:** use A tag when hasOverflow, too ([f24a8fa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f24a8fa8a34d5b2230dcfdb516e3693f79f8a58e))
+* **table-head:** use i18n for multi-sort overflow menu name ([db1cc9f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/db1cc9f8c31b3e141a99f2d43bd2c8d35be1ac47))
+
+
+### Features
+
+* **table:** add i18n for overflow menu, remove console.logs ([8475e5b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8475e5bd8b8bd42b186e6fcb59bef5571e2220a1))
+* **table:** added multi-sort column capabilities to table ([c0d345a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c0d345ac25047e0a85ee221b0b8fe0002aa9cebc))
+* **table:** limit multi-sort to number of sortable columns ([a6333c4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a6333c41d28f9f27a870bca099cef7795e09f842))
+* **table:** multi-sort clearing, better modal ux, change sort direction ([bf12ebb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bf12ebb592e113df63979ae8088cb2ebd3132e0f))
+* **table:** update snapshots for multi-sort table columns ([de6a883](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/de6a88300bd6c6ec2e8336ee5569fdc89f5a39c2))
+
+
+
+
+
+# [2.146.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.29...v2.146.0-next.30) (2021-06-15)
+
+
+### Bug Fixes
+
+* **dataseriesformitemmodal:** allowed isLarge prop ([5d1b45b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5d1b45bcea1492d97ce008980a9675de3869bd43)), closes [#2393](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2393)
+
+
+
+
+
+# [2.146.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.28...v2.146.0-next.29) (2021-06-14)
+
+
+### Bug Fixes
+
+* **tearsheet:** change styles from vw to percentages ([32e987d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/32e987dad0914fc1728a7817d6b3bdc05d10a977))
+* **tearsheet:** fix broken test ([593f875](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/593f87542d08ef2009387c51b94b817e02f44f2e))
+* **tearsheet:** fix error with useMemo ([dda7958](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dda795857a7e43698e6886649258d1a0ad216ddd))
+* **tearsheet:** fix styles in RTL ([46bf61a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/46bf61a1d09321664a5ed983e5a7a22e508166f4))
+* **tearsheet:** fix test to reflect class change ([ae45d75](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ae45d75d10c135e9def4a89eed7bf4189ed6e013))
+* **tearsheet:** remove comments and allow for 3 layers in styles ([4b06318](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4b063189eb1a88f90c647cb5cc8b349eaee00d7d))
+
+
+### Features
+
+* **tearsheet:** update styles to match spec ([e2c58d9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e2c58d91a6f6e0bc9e0cba19afaf63d71cd8dd31))
+
+
+
+
+
+# [2.146.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.27...v2.146.0-next.28) (2021-06-14)
+
+
+### Bug Fixes
+
+* **mapcard:** improved drag and drop example ([2ab5a34](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2ab5a34163f49e534e721885f58565d8cf7d41ab)), closes [#2366](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2366)
+
+
+### Features
+
+* **mapcard:** added draggable related content panels and updated react-dnd ([d605c4f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d605c4f9a6ff5a526154c76be8bb15780226b1ec))
+* **mapcard:** dragable panels documentation and code cleanup ([2a2c07d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2a2c07d26bbe17bebc9f5b2c15513cb62e80493b))
+
+
+
+
+
+# [2.146.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.26...v2.146.0-next.27) (2021-06-11)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.25...v2.146.0-next.26) (2021-06-10)
+
+
+### Bug Fixes
+
+* **dynamichotspotsourcepicker:** removed jest-fm from story ([37d51a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/37d51a3ae17983cca70c11f5175b5f30077e0e91))
+* **hotspoteditormodal:** fixed broken stories ([9ce5032](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ce503243830cbbfdd21604ecbd97a8dcb4722a5))
+
+
+
+
+
 # [2.146.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.24...v2.146.0-next.25) (2021-06-08)
 
 

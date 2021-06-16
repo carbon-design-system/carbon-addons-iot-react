@@ -17,7 +17,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       data-testid="menu-button-wrapper"
     >
       <button
-        className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+        className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
         data-testid="menu-button-icon"
         disabled={false}
         onClick={[Function]}
@@ -630,7 +630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
-              className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
               onClick={[Function]}
@@ -1186,7 +1186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
-              className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
               onClick={[Function]}
@@ -1742,7 +1742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
-              className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
               onClick={[Function]}
@@ -2308,7 +2308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
-              className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
               onClick={[Function]}
@@ -2864,7 +2864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
-              className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
               onClick={[Function]}
@@ -3420,7 +3420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
-              className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
               onClick={[Function]}
@@ -3986,7 +3986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
-              className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
               onClick={[Function]}
@@ -4542,7 +4542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
-              className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
               onClick={[Function]}
@@ -5098,7 +5098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
-              className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
               onClick={[Function]}
@@ -5686,7 +5686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     >
       <button
         aria-pressed={null}
-        className="iot--btn bx--btn bx--btn--primary"
+        className="iot--menu-button__trigger iot--btn bx--btn bx--btn--primary"
         data-testid="menu-button-single"
         disabled={false}
         onClick={[Function]}
@@ -6266,7 +6266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </button>
       <button
         aria-pressed={null}
-        className="iot--menu-button__secondary iot--btn bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+        className="iot--menu-button__secondary iot--menu-button__trigger iot--btn bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
         data-testid="menu-button-secondary"
         disabled={false}
         onClick={[Function]}
