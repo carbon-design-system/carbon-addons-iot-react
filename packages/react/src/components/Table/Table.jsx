@@ -121,10 +121,10 @@ const propTypes = {
           align: PropTypes.oneOf(['start', 'center', 'end']),
           /** allows the aggregation to align with sortable columns extra padding */
           isSortable: PropTypes.bool,
-          /** hide the aggregation row without removing the aggregations object */
-          isHidden: PropTypes.bool,
         })
       ),
+      /** hide the aggregation row without removing the aggregations object */
+      isHidden: PropTypes.bool,
     }),
     pagination: PropTypes.shape({
       pageSize: PropTypes.number,
@@ -238,6 +238,8 @@ const propTypes = {
       onCancelAdvancedFilter: PropTypes.func,
       /** Fired when an advanced filter is selected or removed. */
       onChangeAdvancedFilter: PropTypes.func,
+      /** fired when 'Toggle aggregations' is clicked in the overflow menu */
+      onToggleAggregations: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -255,7 +257,6 @@ const propTypes = {
       onColumnResize: PropTypes.func,
       onOverflowItemClicked: PropTypes.func,
       onTableErrorStateAction: PropTypes.func,
-      onToggleAggregations: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -342,6 +343,7 @@ export const defaultProps = (baseProps) => ({
       onApplyAdvancedFilter: defaultFunction('actions.toolbar.onApplyAdvancedFilter'),
       onChangeAdvancedFilter: defaultFunction('actions.toolbar.onChangeAdvancedFilter'),
       onToggleAdvancedFilter: defaultFunction('actions.toolbar.onToggleAdvancedFilter'),
+      onToggleAggregations: defaultFunction('actions.toolbar.onToggleAggregations'),
     },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
@@ -354,7 +356,6 @@ export const defaultProps = (baseProps) => ({
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
       onOverflowItemClicked: defaultFunction('actions.table.onOverflowItemClicked'),
-      onToggleAggregations: defaultFunction('actions.table.onToggleAggregations'),
     },
     onUserViewModified: null,
   },
@@ -562,7 +563,6 @@ const Table = (props) => {
             }
             return calculateValue ? { ...col, value: aggregatedValue.toString() } : col;
           }),
-          align: aggregationsProp.align,
           isHidden: aggregationsProp?.isHidden ?? false,
         }
       : undefined;
@@ -660,7 +660,8 @@ const Table = (props) => {
                 'onCreateAdvancedFilter',
                 'onChangeAdvancedFilter',
                 'onRemoveAdvancedFilter',
-                'onToggleAdvancedFilter'
+                'onToggleAdvancedFilter',
+                'onToggleAggregations'
               ),
               onApplySearch: (value) => {
                 searchValue.current = value;
@@ -668,7 +669,6 @@ const Table = (props) => {
                   actions.toolbar.onApplySearch(value);
                 }
               },
-              onToggleAggregations: actions.table.onToggleAggregations,
             }}
             options={{
               ...pick(

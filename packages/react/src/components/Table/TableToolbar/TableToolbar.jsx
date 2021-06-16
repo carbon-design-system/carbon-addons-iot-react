@@ -390,6 +390,9 @@ const TableToolbar = ({
               <OverflowMenuItem
                 itemText={i18n.toggleAggregations}
                 key="table-aggregations-overflow-item"
+                // wrapping in function to prevent error in netlify storybook deploys.
+                // When passing the event directly to the storybook action it throws an iframe access
+                // error. This might a temporary issue and can be removed later.
                 onClick={() => onToggleAggregations()}
               />
             </OverflowMenu>

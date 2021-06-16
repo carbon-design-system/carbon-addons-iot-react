@@ -370,7 +370,6 @@ Map {
           "onOverflowItemClicked": [Function],
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
-          "onToggleAggregations": [Function],
         },
         "toolbar": Object {
           "onApplyAdvancedFilter": [Function],
@@ -382,6 +381,7 @@ Map {
           "onRemoveAdvancedFilter": [Function],
           "onShowRowEdit": [Function],
           "onToggleAdvancedFilter": [Function],
+          "onToggleAggregations": [Function],
           "onToggleColumnSelection": [Function],
           "onToggleFilter": [Function],
         },
@@ -554,9 +554,6 @@ Map {
                   "onTableErrorStateAction": Object {
                     "type": "func",
                   },
-                  "onToggleAggregations": Object {
-                    "type": "func",
-                  },
                 },
               ],
               "isRequired": true,
@@ -602,6 +599,9 @@ Map {
                     "type": "func",
                   },
                   "onToggleAdvancedFilter": Object {
+                    "type": "func",
+                  },
+                  "onToggleAggregations": Object {
                     "type": "func",
                   },
                   "onToggleColumnSelection": Object {
@@ -1211,9 +1211,6 @@ Map {
                               "isRequired": true,
                               "type": "string",
                             },
-                            "isHidden": Object {
-                              "type": "bool",
-                            },
                             "isSortable": Object {
                               "type": "bool",
                             },
@@ -1236,6 +1233,9 @@ Map {
                       },
                     ],
                     "type": "arrayOf",
+                  },
+                  "isHidden": Object {
+                    "type": "bool",
                   },
                   "label": Object {
                     "type": "string",

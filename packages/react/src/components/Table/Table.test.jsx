@@ -1609,7 +1609,7 @@ describe('Table', () => {
           tooltip="this is a tooltip"
           options={{ hasAggregations: true }}
           actions={{
-            table: {
+            toolbar: {
               onToggleAggregations,
             },
           }}

@@ -132,6 +132,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onApplyAdvancedFilter,
     onCancelAdvancedFilter,
     onCreateAdvancedFilter,
+    onToggleAggregations,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -145,7 +146,6 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onChangeOrdering,
     onColumnResize,
     onOverflowItemClicked,
-    onToggleAggregations,
   } = table || {};
 
   const getRowAction = (data, actionId, rowId) => {
@@ -235,6 +235,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableAdvancedFiltersCreate());
         callbackParent(onCreateAdvancedFilter);
       },
+      onToggleAggregations: () => {
+        dispatch(tableToggleAggregations());
+        callbackParent(onToggleAggregations);
+      },
       onDownloadCSV,
     },
     table: {
@@ -296,10 +300,6 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       },
       onOverflowItemClicked: (id) => {
         callbackParent(onOverflowItemClicked, id);
-      },
-      onToggleAggregations: () => {
-        dispatch(tableToggleAggregations());
-        callbackParent(onToggleAggregations);
       },
     },
     onUserViewModified: (viewConfiguration) => {

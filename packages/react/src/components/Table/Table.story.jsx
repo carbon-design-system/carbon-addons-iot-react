@@ -417,6 +417,7 @@ const actions = {
     onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
     onApplyAdvancedFilter: action('onApplyAdvancedFilter'),
     onToggleAdvancedFilter: action('onToggleAdvancedFilter'),
+    onToggleAggregations: action('onToggleAggregations'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
@@ -431,7 +432,6 @@ const actions = {
     onChangeSort: action('onChangeSort'),
     onColumnResize: action('onColumnResize'),
     onOverflowItemClicked: action('onOverflowItemClicked'),
-    onToggleAggregations: action('onToggleAggregations'),
   },
 };
 
