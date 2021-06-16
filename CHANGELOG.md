@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.29...v2.146.0-next.30) (2021-06-15)
+
+
+### Bug Fixes
+
+* **dataseriesformitemmodal:** allowed isLarge prop ([5d1b45b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5d1b45bcea1492d97ce008980a9675de3869bd43)), closes [#2393](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2393)
+
+
+
+
+
 # [2.146.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.28...v2.146.0-next.29) (2021-06-14)
 
 

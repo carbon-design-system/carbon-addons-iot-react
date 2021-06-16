@@ -915,4 +915,44 @@ describe('DataSeriesFormItemModal', () => {
     const modalTitle = screen.getByText('Customize data series');
     expect(modalTitle).toBeInTheDocument();
   });
+
+  it('Renders the DataSeriesEditorTable as size xs by default', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={groupedBarConfig}
+        editDataItem={editGroupedBarDataItem}
+        editDataSeries={[editGroupedBarDataItem]}
+      />
+    );
+
+    const xsContainer = screen
+      .getByText('Customize data series')
+      .closest('.bx--modal-container--xs');
+    expect(xsContainer).toBeInTheDocument();
+
+    const largeContainer = screen
+      .queryByText('Customize data series')
+      .closest('.iot--composed-modal--large');
+    expect(largeContainer).not.toBeInTheDocument();
+  });
+
+  it('Renders the DataSeriesEditorTable as size large if isLarge prop is true', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={groupedBarConfig}
+        editDataItem={editGroupedBarDataItem}
+        editDataSeries={[editGroupedBarDataItem]}
+        isLarge
+      />
+    );
+
+    const largeContainer = screen
+      .getByText('Customize data series')
+      .closest('.iot--composed-modal--large');
+    expect(largeContainer).toBeInTheDocument();
+  });
 });
