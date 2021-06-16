@@ -200,20 +200,42 @@ export const baseTableReducer = (state = {}, action) => {
       const columnId = action.payload;
       const sorts = ['NONE', 'ASC', 'DESC'];
       const currentSort = state.view.table.sort;
-      const currentSortDir =
-        currentSort && currentSort.columnId === columnId ? state.view.table.sort.direction : 'NONE';
-      const nextSortDir = sorts[(sorts.findIndex((i) => i === currentSortDir) + 1) % sorts.length];
+      const isInMultiSort =
+        Array.isArray(currentSort) && currentSort.some((column) => column.columnId === columnId);
+      const currentSortDir = isInMultiSort
+        ? currentSort.find((sort) => sort.columnId === columnId).direction
+        : currentSort && currentSort.columnId === columnId
+        ? currentSort.direction
+        : 'NONE';
+      const nextSortDir = isInMultiSort
+        ? currentSortDir === 'ASC'
+          ? 'DESC'
+          : 'ASC'
+        : sorts[(sorts.findIndex((i) => i === currentSortDir) + 1) % sorts.length];
+
+      let sort;
+      if (isInMultiSort) {
+        sort = currentSort.reduce((carry, column) => {
+          if (column.columnId === columnId) {
+            return [...carry, { ...column, direction: nextSortDir }];
+          }
+
+          return [...carry, column];
+        }, []);
+      } else {
+        sort =
+          nextSortDir === 'NONE'
+            ? undefined
+            : {
+                columnId: action.payload,
+                direction: nextSortDir,
+              };
+      }
       return update(state, {
         view: {
           table: {
             sort: {
-              $set:
-                nextSortDir === 'NONE'
-                  ? undefined
-                  : {
-                      columnId: action.payload,
-                      direction: nextSortDir,
-                    },
+              $set: sort,
             },
           },
         },

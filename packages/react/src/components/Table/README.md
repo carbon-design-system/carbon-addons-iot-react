@@ -6,6 +6,7 @@
 - [Sorting](#sorting)
   - [Programmatic sorting](#programmatic-sorting)
   - [Custom sorting](#custom-sorting)
+  - [Multi-sorting](#multi-sorting)
 - [Expansion](#expansion)
   - [Programmatic expansion](#programmatic-expansion)
 - [Selection](#selection)
@@ -285,6 +286,45 @@ const columns = [
   },
   // other columns...
 ];
+```
+
+### Multi-sorting
+
+By passing `options.hasMultiSort` you can enable multi-sort columns functionality. If you want to set the sorted column order,
+you can pass an array of sort objects to the `view.table.sort`, and interact with this data via the callbacks on `actions.table`. See example below.
+
+```jsx
+<Table
+  id="table"
+  columns={columns}
+  data={data}
+  actions={{
+    table: {
+      onAddMultiSortColumn: (index) => {},
+      onRemoveMultiSortColumn: (index) => {},
+      /* example onSaveMultiSortColumns param structure: ([{columnId: 'select', direction: 'ASC'}, {columnId: 'string', direction: 'ASC'}]) => {} */
+      onSaveMultiSortColumns: (multiSortedColumns) => {},
+      onCancelMultiSortColumns: () => {},
+    },
+  }}
+  options={{
+    hasMultiSort: true,
+  }}
+  view={{
+    table: {
+      sort: [
+        {
+          columnId: 'select',
+          direction: 'ASC',
+        },
+        {
+          columnId: 'string',
+          direction: 'ASC',
+        },
+      ],
+    },
+  }}
+/>
 ```
 
 ## Expansion
@@ -808,6 +848,7 @@ the following props:
 |                             |                                                |         | \_ always - Wrap if needed for all table column configurations                                                     |
 |                             |                                                |         | \_ never - Tables with dynamic columns widths grow larger and tables with fixed or resizable columns truncate.     |
 |                             |                                                |         | \_ alwaysTruncate - Always truncate if needed for all table column configurations                                  |
+| hasMultiSort                | bool                                           |         | If true, the sortable columns in the table will be able to be sorted by multiple dimensions                        |
 
 ### View Prop
 
@@ -853,7 +894,7 @@ the following props:
 | table.isSelectAllSelected               | bool                             |         | If true, the select all option is checked                                                                                                           |
 | table.isSelectAllIndeterminate          | bool                             |         |                                                                                                                                                     |
 | table.selectedIds                       | string[]                         |         | An array of row ids that are currently selected                                                                                                     |
-| table.sort                              | object                           |         | an object in the form of {columnId: string; direction: 'NONE' or 'ASC' or 'DESC' }                                                                  |
+| table.sort                              | object, array                    |         | an object or array of objects in the form of {columnId: string; direction: 'NONE' or 'ASC' or 'DESC' }                                              |
 | table.sort.columnId                     | string                           |         | the id of the column to sort                                                                                                                        |
 | table.sort.direction                    | 'NONE', 'ASC', or 'DESC'         |         |                                                                                                                                                     |
 | table.ordering                          | object[]                         |         | an array of objects representing the order and visibility of the columns                                                                            |
@@ -914,50 +955,66 @@ the following props:
 | table.onColumnSelectionConfig   | func   |         |                                                                                                                                                                                                                 |
 | table.onColumnResize            | func   |         |                                                                                                                                                                                                                 |
 | table.onOverflowItemClicked     | func   |         |                                                                                                                                                                                                                 |
+| table.onSaveMultiSortColumns    | func   |         |                                                                                                                                                                                                                 |
+| table.onCancelMultiSortColumns  | func   |         |                                                                                                                                                                                                                 |
+| table.onAddMultiSortColumn      | func   |         |                                                                                                                                                                                                                 |
+| table.onRemoveMultiSortColumn   | func   |         |                                                                                                                                                                                                                 |
 | table.onTableErrorStateAction   | func   |         | callback action relavent on error state. This can be used with `error` message. When `view.table.errorState` property is used then this callback function has no effect.                                        |
 | onUserViewModified              | func   |         | callback for actions relevant for view management                                                                                                                                                               |
 
 ### i18n Prop
 
-| Name                      | Type   | Default | Description                                            |
-| :------------------------ | :----- | :------ | :----------------------------------------------------- |
-| pageBackwardAria          | string |         | pagination                                             |
-| pageForwardAria           | string |         |
-| pageNumberAria            | string |         |
-| itemsPerPage              | string |         |
-| itemsRange                | func   |         | (min, max) => `${min}-${max} items`                    |
-| currentPage               | func   |         | (page) => `page ${page}`                               |
-| itemsRangeWithTotal       | func   |         | (min, max, total) => `${min}-${max} of ${total} items` |
-| pageRange                 | func   |         | (current, total) => `${current} of ${total} pages`     |
-| overflowMenuAria          | string |         |
-| clickToExpandAria         | string |         |
-| clickToCollapseAria       | string |         |
-| selectAllAria             | string |         |
-| selectRowAria             | string |         |
-| searchLabel               | string |         | toolbar                                                |
-| searchPlaceholder         | string |         |
-| clearAllFilters           | string |         |
-| columnSelectionButtonAria | string |         |
-| columnSelectionConfig     | string |         |
-| filterButtonAria          | string |         |
-| editButtonAria            | string |         |
-| clearFilterAria           | string |         |
-| filterAria                | string |         |
-| downloadIconDescription   | string |         |
-| openMenuAria              | string |         |
-| closeMenuAria             | string |         |
-| clearSelectionAria        | string |         |
-| batchCancel               | string |         |
-| itemsSelected             | string |         |
-| itemSelected              | string |         |
-| inProgressText            | string |         | I18N label for in progress                             |
-| actionFailedText          | string |         | I18N label for action failed                           |
-| learnMoreText             | string |         | I18N label for learn more                              |
-| dismissText               | string |         | I18N label for dismiss                                 |
-| filterNone                | string |         |                                                        |
-| filterAscending           | string |         |                                                        |
-| filterDescending          | string |         |                                                        |
-| rowCountInHeader          | func   |         |                                                        |
+| Name                             | Type   | Default                  | Description                                            |
+| :------------------------------- | :----- | :----------------------- | :----------------------------------------------------- |
+| pageBackwardAria                 | string |                          | pagination                                             |
+| pageForwardAria                  | string |                          |
+| pageNumberAria                   | string |                          |
+| itemsPerPage                     | string |                          |
+| itemsRange                       | func   |                          | (min, max) => `${min}-${max} items`                    |
+| currentPage                      | func   |                          | (page) => `page ${page}`                               |
+| itemsRangeWithTotal              | func   |                          | (min, max, total) => `${min}-${max} of ${total} items` |
+| pageRange                        | func   |                          | (current, total) => `${current} of ${total} pages`     |
+| overflowMenuAria                 | string |                          |
+| clickToExpandAria                | string |                          |
+| clickToCollapseAria              | string |                          |
+| selectAllAria                    | string |                          |
+| selectRowAria                    | string |                          |
+| searchLabel                      | string |                          | toolbar                                                |
+| searchPlaceholder                | string |                          |
+| clearAllFilters                  | string |                          |
+| columnSelectionButtonAria        | string |                          |
+| columnSelectionConfig            | string |                          |
+| filterButtonAria                 | string |                          |
+| editButtonAria                   | string |                          |
+| clearFilterAria                  | string |                          |
+| filterAria                       | string |                          |
+| downloadIconDescription          | string |                          |
+| openMenuAria                     | string |                          |
+| closeMenuAria                    | string |                          |
+| clearSelectionAria               | string |                          |
+| batchCancel                      | string |                          |
+| itemsSelected                    | string |                          |
+| itemSelected                     | string |                          |
+| inProgressText                   | string |                          | I18N label for in progress                             |
+| actionFailedText                 | string |                          | I18N label for action failed                           |
+| learnMoreText                    | string |                          | I18N label for learn more                              |
+| dismissText                      | string |                          | I18N label for dismiss                                 |
+| filterNone                       | string |                          |                                                        |
+| filterAscending                  | string |                          |                                                        |
+| filterDescending                 | string |                          |                                                        |
+| rowCountInHeader                 | func   |                          |                                                        |
+| multiSortModalTitle              | string | 'Select columns to sort' |                                                        |
+| multiSortModalPrimaryLabel       | string | 'Sort'                   |                                                        |
+| multiSortModalSecondaryLabel     | string | 'Cancel'                 |                                                        |
+| multiSortSelectColumnLabel       | string | 'Select a column'        |                                                        |
+| multiSortSelectColumnSortByTitle | string | 'Sort by'                |                                                        |
+| multiSortSelectColumnThenByTitle | string | 'Then by'                |                                                        |
+| multiSortDirectionLabel          | string | 'Select a direction'     |                                                        |
+| multiSortDirectionTitle          | string | 'Sort order'             |                                                        |
+| multiSortAddColumn               | string | 'Add column'             |                                                        |
+| multiSortRemoveColumn            | string | 'Remove column'          |                                                        |
+| multiSortAscending               | string | 'Ascending'              |                                                        |
+| multiSortDescending              | string | 'Descending'             |                                                        |
 
 ## Source Code
 
