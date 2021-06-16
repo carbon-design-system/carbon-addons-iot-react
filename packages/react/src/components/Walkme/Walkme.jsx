@@ -16,10 +16,7 @@ const propTypes = {
   lang: PropTypes.string,
 };
 
-const Walkme = ({
-  path,
-  lang,
-}) => {
+const Walkme = ({ path, lang }) => {
   return (
     <HelmetProvider>
       <Helmet>
@@ -33,7 +30,7 @@ const Walkme = ({
         <script type="text/javascript" src={path} />
       </Helmet>
     </HelmetProvider>
-  )
+  );
 };
 
 Walkme.defaultProps = defaultProps;
