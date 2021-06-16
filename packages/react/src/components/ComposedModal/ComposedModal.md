@@ -28,6 +28,10 @@ We also prevent the dialog from closing if you click outside it.
 This dialog can be decorated by reduxDialog HoC and/or reduxForm HoC to automatically populate the fields below marked as
 REDUXFORM or REDUXDIALOG
 
+```jsx
+import { ComposedModal } from 'carbon-addons-iot-react';
+```
+
 ## Large modal
 
 ```jsx
@@ -103,9 +107,9 @@ REDUXFORM or REDUXDIALOG
 | footer.secondaryButtonLabel                    | string                                      |                 |                                                                                                                                                                              |
 | footer.isPrimaryButtonHidden                   | bool                                        |                 | should the primary button be hidden (i.e. only show Cancel)                                                                                                                  |
 | footer.isPrimaryButtonDisabled                 | bool                                        |                 | should the primary button be disabled                                                                                                                                        |
-| type                                           | enum:<br>&nbsp;'warn'<br>&nbsp;'normal'<br> | null            | NEW PROP: Type of dialog, affects colors, styles of dialog                                                                                                                   |
-| isLarge                                        | bool                                        | false           | NEW PROP: Whether this particular dialog needs to be very large                                                                                                              |
-| isFullScreen                                   | bool                                        | false           | NEW PROP: Whether this particular dialog needs to be full width                                                                                                              |
+| type                                           | enum:<br>&nbsp;'warn'<br>&nbsp;'normal'<br> | null            | Type of dialog, affects colors, styles of dialog                                                                                                                             |
+| isLarge                                        | bool                                        | false           | Whether this particular dialog needs to be very large                                                                                                                        |
+| isFullScreen                                   | bool                                        | false           | Whether this particular dialog needs to be full width                                                                                                                        |
 | open                                           | bool                                        | true            | Should the dialog be open or not                                                                                                                                             |
 | <span style="color: #31a148">onClose \*</span> | function                                    |                 | Close the dialog                                                                                                                                                             |
 | sendingData                                    | bool, string                                | null            | Is data currently being sent to the backend                                                                                                                                  |

@@ -10,6 +10,12 @@
 
 ## Getting Started
 
+The `SimpleList` implements some basic features for you as a wrapper around the `List` component and makes it easier to get started building lists without re-inventing things like search or loading states.
+
+```jsx
+import { SimpleList } from 'carbon-addons-iot-react';
+```
+
 ## Props
 
 | Name                                         | Type                                                                                                                                            | Default                                                                                                  | Description                                                               |

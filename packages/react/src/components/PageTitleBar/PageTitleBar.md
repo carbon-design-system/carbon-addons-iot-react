@@ -1,4 +1,4 @@
-# `TableCard` component
+# `PageTitleBar` component
 
 ## Table of Contents
 
@@ -9,6 +9,10 @@
   - [Feedback](#feedback)
 
 ## Getting Started
+
+```jsx
+import { PageTitleBar } from 'carbon-addons-iot-react';
+```
 
 ## Props
 
@@ -21,7 +25,7 @@
 | rightContent                                 | deprecate(<br/> PropTypes.node,<br/> '\nThe prop `rightContent` for PageTitleBar has been deprecated in favor of `extraContent`'<br/>)                                                                       | undefined                                                                              | Optional node to render in the right side of the PageTitleBar NOTE: Deprecated in favor of extraContent                                                                                                                                                                |
 | extraContent                                 | node                                                                                                                                                                                                         | undefined                                                                              | Optional node to render to the side of the PageTitleBar                                                                                                                                                                                                                |
 | upperActions                                 | node                                                                                                                                                                                                         | undefined                                                                              | Optional node to render actions/text above the main actions area                                                                                                                                                                                                       |
-| breadcrumb                                   | array\<node\>                                                                                                                                                                                                | null                                                                                   | Breadcrumbs to show                                                                                                                                                                                                                                                    |
+| breadcrumb                                   | arrayOf(node)                                                                                                                                                                                                | null                                                                                   | Breadcrumbs to show                                                                                                                                                                                                                                                    |
 | collapsed                                    | bool                                                                                                                                                                                                         | undefined                                                                              | Should page description be collapsed into tooltip. Should be `true` when using in conjunction with tabs.                                                                                                                                                               |
 | editable                                     | bool                                                                                                                                                                                                         | false                                                                                  | Is the title editable, will display edit icon with callback                                                                                                                                                                                                            |
 | isLoading                                    | bool                                                                                                                                                                                                         | false                                                                                  | Is the page actively loading                                                                                                                                                                                                                                           |

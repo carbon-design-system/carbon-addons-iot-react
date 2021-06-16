@@ -619,32 +619,6 @@ WithTags.story = {
   name: 'with tags',
 };
 
-export const IsLoading = withReadme(README, () => (
-  <div style={{ width: 400 }}>
-    <List
-      title={text('title', 'NY Yankees')}
-      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
-        ([key]) => ({
-          id: key,
-          content: {
-            value: key,
-            tags: [
-              <Tag type="blue" title="descriptor" key="tag1">
-                default
-              </Tag>,
-            ],
-          },
-        })
-      )}
-      isLoading={boolean('isLoading', true)}
-    />
-  </div>
-));
-
-IsLoading.story = {
-  name: 'with isLoading',
-};
-
 export const WithPagination = withReadme(README, () => (
   <div style={{ height: 300, overflow: 'auto', width: 400 }}>
     <List

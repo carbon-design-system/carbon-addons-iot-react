@@ -231,44 +231,6 @@ WithCustomRangeSelector.story = {
   name: 'with custom range selector',
 };
 
-export const IsEditable = withReadme(README, () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
-  return (
-    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
-      <Card
-        title={text('title', 'Card with render prop')}
-        id="facilitycard-basic"
-        size={size}
-        isLoading={boolean('isloading', false)}
-        isEmpty={boolean('isEmpty', false)}
-        isEditable={boolean('isEditable', true)}
-        isExpanded={boolean('isExpanded', false)}
-        breakpoint={breakpoint}
-        availableActions={object('availableActions', {
-          range: true,
-          expand: true,
-          edit: true,
-          clone: true,
-          delete: true,
-        })}
-        onCardAction={action('onCardAction')}
-        onFocus={action('onFocus')}
-        onBlur={action('onBlur')}
-        onClick={action('onClick')}
-        tabIndex={0}
-        i18n={object('i18n', {
-          overflowMenuDescription: 'Open and close list of options',
-        })}
-      />
-    </div>
-  );
-});
-
-IsEditable.story = {
-  name: 'is editable',
-};
-
 export const SizeGallery = withReadme(README, () => {
   return Object.keys(CARD_SIZES).map((i) => (
     <React.Fragment key={`card-${i}`}>

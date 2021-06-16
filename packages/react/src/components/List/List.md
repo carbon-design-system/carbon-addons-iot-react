@@ -3,12 +3,44 @@
 ## Table of Contents
 
 - [Getting started](#getting-started)
+- [Simple list](#simple-list)
 - [Props](#props)
 - [External links](#external-links)
   - [Source Code](#source-code)
   - [Feedback](#feedback)
 
 ## Getting Started
+
+The list allows you to render a list of items of varying complexity and hierarchy.
+
+```jsx
+import { List } from 'carbon-addons-iot-react';
+```
+
+## Simple list
+
+```jsx
+const yankees = {
+  'DJ LeMahieu': '2B',
+  'Luke Voit': '1B',
+  'Gary Sanchez': 'C',
+  'Kendrys Morales': 'DH',
+  'Gleyber Torres': 'SS',
+  'Clint Frazier': 'RF',
+  'Brett Gardner': 'LF',
+  'Gio Urshela': '3B',
+  'Cameron Maybin': 'RF',
+  'Robinson Cano': '2B',
+};
+
+<List
+  title="New York Yankees"
+  items={Object.entries(yankees).map(([key]) => ({
+    id: key,
+    content: { value: key },
+  }))}
+/>;
+```
 
 ## Props
 
@@ -29,7 +61,7 @@
 | items[].content            | shape                                                                                                                                           |                                                                              |                                                                                    |
 | items[].content.value      | string                                                                                                                                          |                                                                              |                                                                                    |
 | items[].content.icon       | node                                                                                                                                            |                                                                              |                                                                                    |
-| items[].content.tags       | array\<node\>                                                                                                                                   |                                                                              |                                                                                    |
+| items[].content.tags       | arrayOf(node)                                                                                                                                   |                                                                              |                                                                                    |
 | items[].children           | object                                                                                                                                          |                                                                              |                                                                                    |
 | items[].isSelectable       | boolean                                                                                                                                         |                                                                              |                                                                                    |
 | editingStyle               | enum:<br>&nbsp;EditingStyle.Single<br>&nbsp;EditingStyle.Multiple<br>&nbsp;EditingStyle.SingleNesting<br>&nbsp;EditingStyle.MultipleNesting<br> | null                                                                         | list editing style                                                                 |
@@ -41,7 +73,7 @@
 | i18n.searchPlaceHolderText | string                                                                                                                                          |                                                                              |                                                                                    |
 | i18n.expand                | string                                                                                                                                          |                                                                              |                                                                                    |
 | i18n.close                 | string                                                                                                                                          |                                                                              |                                                                                    |
-| selectedIds                | array\<string\>                                                                                                                                 | []                                                                           | Multiple currently selected items                                                  |
+| selectedIds                | arrayOf(string)                                                                                                                                 | []                                                                           | Multiple currently selected items                                                  |
 | pagination                 | shape                                                                                                                                           | null                                                                         | pagination at the bottom of list                                                   |
 | pagination.page            | number                                                                                                                                          |                                                                              |                                                                                    |
 | pagination.maxPage         | number                                                                                                                                          |                                                                              |                                                                                    |
@@ -53,7 +85,7 @@
 | pagination.totalItems      | number                                                                                                                                          |                                                                              |                                                                                    |
 | pagination.totalItemsText  | string                                                                                                                                          |                                                                              |                                                                                    |
 | pagination.testID          | string                                                                                                                                          |                                                                              |                                                                                    |
-| expandedIds                | array\<string\>                                                                                                                                 | []                                                                           | ids of row expanded                                                                |
+| expandedIds                | arrayOf(string)                                                                                                                                 | []                                                                           | ids of row expanded                                                                |
 | handleSelect               | function                                                                                                                                        | () => {}                                                                     | call back function of select                                                       |
 | toggleExpansion            | function                                                                                                                                        | () => {}                                                                     | call back function of expansion                                                    |
 | onItemMoved                | function                                                                                                                                        | () => {}                                                                     | callback function for reorder                                                      |
@@ -70,7 +102,3 @@
 
 Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
 [GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/List/List.md).
-
-```
-
-```

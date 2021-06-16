@@ -86,7 +86,7 @@ export const SimpleBarTimeSeriesCustomDomainRange = withReadme(README, () => {
         breakpoint={breakpoint}
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={{
           ...object('content', {
             xLabel: 'Date',
