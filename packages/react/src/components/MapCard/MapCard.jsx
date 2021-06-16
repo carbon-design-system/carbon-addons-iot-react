@@ -9,6 +9,7 @@ import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFun
 import { CARD_ACTIONS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { CardPropTypes, MapCardPropTypes } from '../../constants/CardPropTypes';
 import { settings } from '../../constants/Settings';
+import { mergeRefs } from '../../utils/DragAndDropUtils';
 
 import Legend from './Legend';
 import ZoomControl from './ZoomControl';
@@ -64,6 +65,7 @@ const MapCard = ({
   onCardAction,
   isSettingPanelOpen,
   settingsContent: SettingsContent,
+  dropRef,
   testID,
   ...others
 }) => {
@@ -115,11 +117,12 @@ const MapCard = ({
     >
       <>
         <div
-          ref={mapContainerRef}
+          ref={mergeRefs(mapContainerRef, dropRef)}
           className={classnames(`${BASE_CLASS_NAME}__container`, {
             [`${BASE_CLASS_NAME}__container--open`]: isSettingPanelOpen,
           })}
         >
+          {children}
           <div
             className={classnames(`${BASE_CLASS_NAME}-controls`, {
               [`${BASE_CLASS_NAME}-controls--has-fullwidth-legend`]:

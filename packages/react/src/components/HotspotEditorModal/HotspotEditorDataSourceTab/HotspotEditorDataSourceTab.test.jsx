@@ -81,6 +81,7 @@ describe('HotspotEditorDataSourceTab', () => {
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
+        translateWithId={() => {}}
       />
     );
     userEvent.click(screen.getAllByRole('button')[0]);
@@ -108,6 +109,7 @@ describe('HotspotEditorDataSourceTab', () => {
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
+        translateWithId={() => {}}
       />
     );
     userEvent.click(screen.getAllByRole('button')[0]);
@@ -146,6 +148,7 @@ describe('HotspotEditorDataSourceTab', () => {
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
+        translateWithId={() => {}}
       />
     );
     userEvent.click(screen.getAllByRole('button')[2]);
@@ -162,13 +165,18 @@ describe('HotspotEditorDataSourceTab', () => {
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
+        translateWithId={() => {}}
       />
     );
 
     // edit button
     userEvent.click(screen.getAllByRole('button')[1]);
-    // add threshold
-    userEvent.click(screen.getAllByRole('button')[3]);
+
+    userEvent.click(
+      screen.getByRole('button', {
+        name: HotspotEditorDataSourceTab.defaultProps.i18n.dataItemEditorDataItemAddThreshold,
+      })
+    );
     // save
     userEvent.click(screen.getAllByRole('button')[11]);
     // Card config with the elevators hotspot removed
@@ -198,6 +206,7 @@ describe('HotspotEditorDataSourceTab', () => {
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
+        translateWithId={() => {}}
       />
     );
     // edit button
