@@ -164,4 +164,4 @@ The formValues prop object is a subset of and structured the same way as the Hot
 ## Feedback
 
 Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
-[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/MenuButton/README.md).
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal/HotspotEditorTooltipTab/README.md).

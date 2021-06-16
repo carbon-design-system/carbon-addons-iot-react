@@ -74,7 +74,7 @@ These props can also be passed as part of the i18n prop of the HotspotModalEdito
 ## Feedback
 
 Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
-[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/MenuButton/README.md).
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal/DynamicHotspotSourcePicker/README.md).
 
 ```
 
