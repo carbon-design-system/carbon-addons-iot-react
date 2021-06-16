@@ -7581,6 +7581,8 @@ Map {
       "surveyData": null,
       "userDisplayName": null,
       "username": null,
+      "walkmeLang": "en",
+      "walkmePath": null,
     },
     "propTypes": Object {
       "appName": Object {
@@ -8003,6 +8005,12 @@ Map {
       "username": Object {
         "type": "string",
       },
+      "walkmeLang": Object {
+        "type": "string",
+      },
+      "walkmePath": Object {
+        "type": "string",
+      },
     },
   },
   "SuiteHeaderProfile" => Object {
@@ -8188,6 +8196,20 @@ Map {
   "suiteHeaderData" => Object {},
   "useUiResources" => Object {},
   "uiresources" => Object {},
+  "Walkme" => Object {
+    "defaultProps": Object {
+      "lang": "en",
+    },
+    "propTypes": Object {
+      "lang": Object {
+        "type": "string",
+      },
+      "path": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+    },
+  },
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],

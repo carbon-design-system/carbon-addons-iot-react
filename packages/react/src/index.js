@@ -64,6 +64,8 @@ export useSuiteHeaderData from './components/SuiteHeader/hooks/useSuiteHeaderDat
 export suiteHeaderData from './components/SuiteHeader/util/suiteHeaderData';
 export useUiResources from './components/SuiteHeader/hooks/useUiResources';
 export uiresources from './components/SuiteHeader/util/uiresources';
+export Walkme from './components/Walkme/Walkme';
+
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
