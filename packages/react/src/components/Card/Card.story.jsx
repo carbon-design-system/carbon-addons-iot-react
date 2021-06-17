@@ -2,21 +2,23 @@ import React from 'react';
 import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Tree16 } from '@carbon/icons-react';
+import { withReadme } from 'storybook-readme';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
 
+import README from './Card.md';
 import Card from './Card';
 
 export const getDataStateProp = () => ({
-  label: text('dataState : Label', 'No data available for this score at this time'),
+  label: text('dataState.label', 'No data available for this score at this time'),
   description: text(
-    'dataState : Description',
+    'dataState.description',
     'The last successful score was 68 at 13:21 - 10/21/2019 but wait, there is more, according to the latest test results this line is too long.'
   ),
   extraTooltipText: text(
-    'dataState : ExtraTooltipText',
+    'dataState.extraTooltipText',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   ),
   learnMoreElement: (
@@ -36,55 +38,88 @@ export default {
   excludeStories: ['getDataStateProp'],
 };
 
-export const Basic = () => {
-  const StatefulExample = () => {
-    const [selected, setSelected] = React.useState(false);
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-    const handleClick = () => {
-      setSelected(true);
-    };
-    const handleBlur = (e) => {
-      if (
-        !e.currentTarget.contains(e.relatedTarget) ||
-        (e.target === e.currentTarget && e.relatedTarget === null)
-      ) {
-        setSelected(false);
-      }
-      action('onBlur');
-    };
-    return (
-      <div style={{ width: text('width', `450px`), margin: 20 }}>
+const CardStoryStateManager = ({ children }) => {
+  const [selected, setSelected] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleClick = (e) => {
+    setSelected(true);
+    action('onClick')(e);
+  };
+  const handleBlur = (e) => {
+    if (
+      !e.currentTarget.contains(e.relatedTarget) ||
+      (e.target === e.currentTarget && e.relatedTarget === null)
+    ) {
+      setSelected(false);
+    }
+    action('onBlur')(e);
+  };
+
+  const handleCardAction = (cardId, cardAction) => {
+    if (cardAction === 'OPEN_EXPANDED_CARD') {
+      setExpanded(true);
+    }
+
+    if (cardAction === 'CLOSE_EXPANDED_CARD') {
+      setExpanded(false);
+    }
+
+    action('onCardAction')(cardId, cardAction);
+  };
+
+  return React.Children.map(children, (child) => {
+    return React.cloneElement(child, {
+      ...child.props,
+      onClick: handleClick,
+      onBlur: handleBlur,
+      isSelected: selected,
+      isExpanded: expanded,
+      onCardAction: handleCardAction,
+    });
+  });
+};
+
+export const Basic = withReadme(README, () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+
+  return (
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
+      <CardStoryStateManager>
         <Card
-          title={text('title', 'Card Title')}
+          title={text('title', 'Card title')}
           id="facilitycard-basic"
           size={size}
           isLoading={boolean('isloading', false)}
-          isSelected={selected}
           isEmpty={boolean('isEmpty', false)}
           isEditable={boolean('isEditable', false)}
-          isExpanded={boolean('isExpanded', false)}
-          breakpoint="lg"
-          availableActions={{ range: true, expand: true }}
-          onCardAction={action('onCardAction')}
+          breakpoint={breakpoint}
+          availableActions={object('availableActions', {
+            range: true,
+            expand: true,
+            edit: true,
+            clone: false,
+            delete: false,
+          })}
+          renderExpandIcon={Tree16}
           onFocus={action('onFocus')}
-          onBlur={handleBlur}
           tabIndex={0}
-          onClick={handleClick}
         />
-      </div>
-    );
-  };
-  return <StatefulExample />;
-};
+      </CardStoryStateManager>
+    </div>
+  );
+});
 
 Basic.story = {
-  name: 'basic',
+  name: 'basic stateful example with custom expand icon',
 };
 
-export const WithEllipsedTitleTooltipExternalTooltip = () => {
+export const WithEllipsedTitleTooltipExternalTooltip = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <Card
         title={text(
           'title',
@@ -92,103 +127,75 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         )}
         id="facilitycard-basic"
         size={size}
-        isLoading={boolean('isLoading', false)}
+        isLoading={boolean('isloading', false)}
         isEmpty={boolean('isEmpty', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpanded', false)}
-        breakpoint="lg"
-        availableActions={{ range: true, expand: true }}
+        breakpoint={breakpoint}
+        availableActions={object('availableActions', {
+          range: true,
+          expand: true,
+          edit: true,
+          clone: false,
+          delete: false,
+        })}
         onCardAction={action('onCardAction')}
+        onFocus={action('onFocus')}
+        onBlur={action('onBlur')}
+        onClick={action('onClick')}
+        tabIndex={0}
         tooltip={<p>this is the external tooltip content</p>}
       />
     </div>
   );
-};
+});
 
 WithEllipsedTitleTooltipExternalTooltip.story = {
   name: 'with ellipsed title tooltip & external tooltip',
 };
 
-export const BasicWithRenderProp = () => {
+export const BasicWithRenderProp = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <Card
         title={text('title', 'Card with render prop')}
-        id="render-prop-basic"
+        id="facilitycard-basic"
         size={size}
-        isLoading={boolean('isLoading', false)}
+        isLoading={boolean('isloading', false)}
         isEmpty={boolean('isEmpty', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpanded', false)}
-        breakpoint="lg"
-        availableActions={{ range: true, expand: true }}
+        breakpoint={breakpoint}
+        availableActions={object('availableActions', {
+          range: true,
+          expand: true,
+          edit: true,
+          clone: false,
+          delete: false,
+        })}
         onCardAction={action('onCardAction')}
-        // eslint-disable-next-line react/no-children-prop
-        children={(childSize) => (
+        onFocus={action('onFocus')}
+        onBlur={action('onBlur')}
+        onClick={action('onClick')}
+        tabIndex={0}
+      >
+        {(childSize) => (
           <p>
             Content width is {childSize.width} and height is {childSize.height}
           </p>
         )}
-      />
+      </Card>
     </div>
   );
-};
+});
 
 BasicWithRenderProp.story = {
-  name: 'basic with render prop',
+  name: 'with render prop',
 };
 
-export const WithLoading = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <Card
-        title={text('title', 'Card Title')}
-        id="facilitycard-with-loading"
-        size={size}
-        isLoading={boolean('isLoading', true)}
-        isEmpty={boolean('isEmpty', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpanded', false)}
-        breakpoint="lg"
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-WithLoading.story = {
-  name: 'with loading',
-};
-
-export const WithRangeSelector = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <Card
-        title={text('title', 'Card Title')}
-        id="facilitycard-with-loading"
-        size={size}
-        isLoading={boolean('isLoading', false)}
-        isEmpty={boolean('isEmpty', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpanded', false)}
-        breakpoint="lg"
-        onCardAction={action('onCardAction')}
-        availableActions={{
-          range: true,
-        }}
-      />
-    </div>
-  );
-};
-
-WithRangeSelector.story = {
-  name: 'with range selector',
-};
-
-export const WithCustomRangeSelector = () => {
+export const WithCustomRangeSelector = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
     <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -218,119 +225,13 @@ export const WithCustomRangeSelector = () => {
       />
     </div>
   );
-};
+});
 
 WithCustomRangeSelector.story = {
   name: 'with custom range selector',
 };
 
-export const IsEditable = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <Card
-        title={text('title', 'Card Title')}
-        id="facilitycard-with-loading"
-        size={size}
-        isLoading={boolean('isLoading', false)}
-        isEmpty={boolean('isEmpty', false)}
-        isEditable={boolean('isEditable', true)}
-        isExpanded={boolean('isExpanded', false)}
-        i18n={object('i18n', { overflowMenuDescription: 'Open and close list of options' })}
-        breakpoint="lg"
-        onCardAction={action('onCardAction')}
-        availableActions={{
-          edit: true,
-          clone: true,
-          delete: true,
-        }}
-      />
-    </div>
-  );
-};
-
-IsEditable.story = {
-  name: 'is editable',
-};
-
-export const IsExpandable = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <Card
-        title={text('title', 'Card Title')}
-        id="facilitycard-with-loading"
-        size={size}
-        isLoading={boolean('isLoading', false)}
-        isEmpty={boolean('isEmpty', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpanded', false)}
-        breakpoint="lg"
-        onCardAction={action('onCardAction')}
-        availableActions={{
-          expand: true,
-        }}
-      />
-    </div>
-  );
-};
-
-IsExpandable.story = {
-  name: 'is expandable',
-};
-
-export const IsExpandableCustomExpandIcon = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <Card
-        title={text('title', 'Card Title')}
-        id="facilitycard-with-loading"
-        size={size}
-        isLoading={boolean('isLoading', false)}
-        isEmpty={boolean('isEmpty', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpanded', false)}
-        renderExpandIcon={Tree16}
-        breakpoint="lg"
-        onCardAction={action('onCardAction')}
-        availableActions={{
-          expand: true,
-        }}
-      />
-    </div>
-  );
-};
-
-IsExpandableCustomExpandIcon.story = {
-  name: 'is expandable - custom expand icon',
-};
-
-export const WithEmptyState = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <Card
-        title={text('title', 'Card Title')}
-        id="facilitycard-empty"
-        size={size}
-        isLoading={boolean('isLoading', false)}
-        isEmpty={boolean('isEmpty', true)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpanded', false)}
-        breakpoint="lg"
-        availableActions={{ range: true }}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-WithEmptyState.story = {
-  name: 'with empty state',
-};
-
-export const SizeGallery = () => {
+export const SizeGallery = withReadme(README, () => {
   return Object.keys(CARD_SIZES).map((i) => (
     <React.Fragment key={`card-${i}`}>
       <h3>{i}</h3>
@@ -355,16 +256,17 @@ export const SizeGallery = () => {
       </div>
     </React.Fragment>
   ));
-};
+});
 
 SizeGallery.story = {
   name: 'size gallery',
 };
 
-export const Error = () => {
+export const Error = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <Card
         title={text('title', 'Card Title')}
         id="facilitycard-error"
@@ -376,77 +278,57 @@ export const Error = () => {
       />
     </div>
   );
-};
+});
 
 Error.story = {
-  name: 'error',
+  name: 'with error',
 };
 
-export const ErrorSmall = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+export const ImplementingACustomCard = withReadme(README, () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const isEditable = boolean('isEditable', false);
+  const title = text('title', 'Custom Card Title');
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <Card
-        title={text('title', 'Card Title')}
-        id="facilitycard-error-small"
+        title={title}
+        id="mycard"
         size={size}
-        error={text('error', 'API threw Nullpointer')}
-        isLoading={boolean('isLoading', false)}
-        breakpoint="lg"
+        values={[{ timestamp: 12341231231, value1: 'my value' }]}
+        availableActions={{ range: size !== CARD_SIZES.SMALL, expand: true }}
         onCardAction={action('onCardAction')}
-      />
+        hideHeader
+      >
+        {!isEditable
+          ? (_$, { cardToolbar, values }) => (
+              <Table
+                id="my table"
+                secondaryTitle={title}
+                columns={[
+                  {
+                    id: 'value1',
+                    name: 'String',
+                    filter: { placeholderText: 'enter a string' },
+                  },
+                  {
+                    id: 'timestamp',
+                    name: 'Date',
+                    filter: { placeholderText: 'enter a date' },
+                  },
+                ]}
+                data={values.map((value, index) => ({
+                  id: `rowid-${index}`,
+                  values: value,
+                }))}
+                view={{ toolbar: { customToolbarContent: cardToolbar } }}
+              />
+            )
+          : 'Fake Sample Data'}
+      </Card>
     </div>
   );
-};
-
-ErrorSmall.story = {
-  name: 'error/small',
-};
-
-export const ImplementingACustomCard = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  const SampleCustomCard = ({ title, isEditable, ...others }) => (
-    <Card {...others} hideHeader>
-      {!isEditable
-        ? (_$, { cardToolbar, values }) => (
-            <Table
-              id="my table"
-              secondaryTitle={title}
-              columns={[
-                {
-                  id: 'value1',
-                  name: 'String',
-                  filter: { placeholderText: 'enter a string' },
-                },
-                {
-                  id: 'timestamp',
-                  name: 'Date',
-                  filter: { placeholderText: 'enter a date' },
-                },
-              ]}
-              data={values.map((value, index) => ({
-                id: `rowid-${index}`,
-                values: value,
-              }))}
-              view={{ toolbar: { customToolbarContent: cardToolbar } }}
-            />
-          )
-        : 'Fake Sample Data'}
-    </Card>
-  );
-
-  return (
-    <SampleCustomCard
-      id="mycard"
-      title={text('title', 'Card Title')}
-      size={size}
-      isEditable={boolean('isEditable', false)}
-      values={[{ timestamp: 12341231231, value1: 'my value' }]}
-      availableActions={{ range: size !== CARD_SIZES.SMALL, expand: true }}
-      onCardAction={action('onCardAction')}
-    />
-  );
-};
+});
 
 ImplementingACustomCard.story = {
   name: 'implementing a custom card',

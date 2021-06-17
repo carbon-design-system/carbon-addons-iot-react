@@ -1,8 +1,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, object, text } from '@storybook/addon-knobs';
+import { boolean, object, select, text } from '@storybook/addon-knobs';
 import { OverflowMenu, OverflowMenuItem, Tooltip } from 'carbon-components-react';
+import { withReadme } from 'storybook-readme';
 
+import README from './ComposedModal.md';
 import ComposedModal from './ComposedModal';
 
 export default {
@@ -26,99 +28,67 @@ REDUXFORM or REDUXDIALOG`,
   },
 };
 
-export const WarningDialog = () => (
+export const WarningDialog = withReadme(README, () => (
   <ComposedModal
-    type="warn"
+    isLarge={boolean('isLarge', false)}
+    type={select('type', ['warn', 'normal'], 'warn')}
     header={{
-      label: 'Scary Operation',
-      title: 'Delete Stuff',
-      helpText: 'Deleting stuff can be hazardous to your health..',
+      label: text('header.label', 'Scary Operation'),
+      title: text('header.title', 'Delete Stuff'),
+      helpText: text('header.helpText', 'Deleting stuff can be hazardous to your health..'),
     }}
     onSubmit={action('submit')}
     onClose={action('close')}
+    passiveModal={boolean('passiveModal', false)}
+    isFullScreen={boolean('isFullScreen', false)}
   />
-);
+));
 
 WarningDialog.story = {
-  name: 'warning dialog',
+  name: 'as warning dialog',
 };
 
-export const BigModal = () => (
-  <ComposedModal
-    isLarge
-    header={{
-      label: 'Big Modal',
-      title: 'Needs a lot of space to contain all the info',
-    }}
-    onSubmit={action('submit')}
-    onClose={action('close')}
-  >
-    Lots of really wide content here...
-  </ComposedModal>
-);
+export const States = withReadme(README, () => {
+  const error = text('error', 'an error has occurred');
+  const isFetchingData = boolean('isFetchingData', true);
+  const sendingData = boolean('sendingData', false);
+  return (
+    <ComposedModal
+      sendingData={sendingData}
+      isFetchingData={isFetchingData}
+      error={!isFetchingData && !sendingData ? error : undefined}
+      header={{
+        label:
+          !isFetchingData && !sendingData
+            ? 'DataError'
+            : isFetchingData
+            ? 'Fetching Data'
+            : 'Sending Data',
+        title:
+          !isFetchingData && !sendingData
+            ? 'Cannot communicate with server'
+            : isFetchingData
+            ? 'We are retreiving data from the server.'
+            : 'We are submitting data to the backend',
+      }}
+      onSubmit={action('submit')}
+      onClose={action('close')}
+      onClearError={action('onClearError')}
+      isLarge={boolean('isLarge', false)}
+      type={select('type', ['warn', 'normal'], 'normal')}
+      passiveModal={boolean('passiveModal', false)}
+      isFullScreen={boolean('isFullScreen', false)}
+    >
+      {text('body content', '')}
+    </ComposedModal>
+  );
+});
 
-BigModal.story = {
-  name: 'big modal',
+States.story = {
+  name: 'with error, isFetchingData, and sendingData states',
 };
 
-export const FetchingData = () => <ComposedModal isFetchingData onClose={action('close')} />;
-
-FetchingData.story = {
-  name: 'fetching data',
-};
-
-export const ErrorStates = () => (
-  <ComposedModal
-    error="Error sending data to server"
-    header={{
-      label: 'DataError',
-      title: 'Cannot communicate with server',
-    }}
-    onSubmit={action('submit')}
-    onClose={action('close')}
-    onClearError={action('onClearError')}
-  >
-    {text('body content', '')}
-  </ComposedModal>
-);
-
-ErrorStates.story = {
-  name: 'error states',
-};
-
-export const SendingData = () => (
-  <ComposedModal
-    sendingData
-    header={{
-      label: 'Sending data',
-      title: 'We are submitting data to the backend',
-    }}
-    onSubmit={action('submit')}
-    onClose={action('close')}
-  />
-);
-
-SendingData.story = {
-  name: 'sending data',
-};
-
-export const NoFooter = () => (
-  <ComposedModal
-    header={{
-      label: 'No footer',
-      title: 'Dialog without footer',
-    }}
-    passiveModal={boolean('passiveModal', true)}
-    onSubmit={action('onSubmit')}
-    onClose={action('close')}
-  />
-);
-
-NoFooter.story = {
-  name: 'no footer',
-};
-
-export const _CustomFooter = () => (
+export const WithCustomFooter = withReadme(README, () => (
   <ComposedModal
     sendingData
     header={{
@@ -135,14 +105,19 @@ export const _CustomFooter = () => (
       </div>
     }
     onClose={action('close')}
+    isLarge={boolean('isLarge', false)}
+    type={select('type', ['warn', 'normal'], 'normal')}
+    onSubmit={action('submit')}
+    passiveModal={boolean('passiveModal', false)}
+    isFullScreen={boolean('isFullScreen', false)}
   />
-);
+));
 
-_CustomFooter.story = {
-  name: 'custom footer',
+WithCustomFooter.story = {
+  name: 'with custom footer',
 };
 
-export const PrimaryButtonIsHidden = () => (
+export const PrimaryButtonIsHidden = withReadme(README, () => (
   <ComposedModal
     header={{
       label: 'Custom footer',
@@ -153,14 +128,19 @@ export const PrimaryButtonIsHidden = () => (
       isPrimaryButtonDisabled: false,
     })}
     onClose={action('close')}
+    isLarge={boolean('isLarge', false)}
+    type={select('type', ['warn', 'normal'], 'normal')}
+    onSubmit={action('submit')}
+    passiveModal={boolean('passiveModal', false)}
+    isFullScreen={boolean('isFullScreen', false)}
   />
-);
+));
 
 PrimaryButtonIsHidden.story = {
-  name: 'primary button is hidden',
+  name: 'with hidden or disabled buttons',
 };
 
-export const HeaderCustomNodes = () => (
+export const HeaderCustomNodes = withReadme(README, () => (
   <ComposedModal
     header={{
       label: <strong>Custom node label</strong>,
@@ -168,14 +148,18 @@ export const HeaderCustomNodes = () => (
     }}
     onClose={action('close')}
     onSubmit={action('submit')}
+    isLarge={boolean('isLarge', false)}
+    type={select('type', ['warn', 'normal'], 'normal')}
+    passiveModal={boolean('passiveModal', false)}
+    isFullScreen={boolean('isFullScreen', false)}
   />
-);
+));
 
 HeaderCustomNodes.story = {
-  name: 'header custom nodes',
+  name: 'with custom header nodes',
 };
 
-export const I18N = () => (
+export const ComposedModalWithOverflowAndTooltip = withReadme(README, () => (
   <ComposedModal
     header={{
       label: 'Translated bottom buttons',
@@ -188,26 +172,10 @@ export const I18N = () => (
     }}
     onClose={action('close')}
     onSubmit={action('submit')}
-  />
-);
-
-I18N.story = {
-  name: 'i18n',
-};
-
-export const ComposedModalWithOverflowAndTooltip = () => (
-  <ComposedModal
-    header={{
-      label: 'Translated bottom buttons',
-      title: 'Dialog with bottom buttons and close button flyover translated',
-    }}
-    iconDescription="My Close Button"
-    footer={{
-      primaryButtonLabel: 'My Submit',
-      secondaryButtonLabel: 'My Cancel',
-    }}
-    onClose={action('close')}
-    onSubmit={action('submit')}
+    isLarge={boolean('isLarge', false)}
+    type={select('type', ['warn', 'normal'], 'normal')}
+    passiveModal={boolean('passiveModal', false)}
+    isFullScreen={boolean('isFullScreen', false)}
   >
     <OverflowMenu title="Test Overflow" iconDescription="Expand">
       <OverflowMenuItem key="default" onClick={action('onClick')} itemText="Click me" />
@@ -216,8 +184,8 @@ export const ComposedModalWithOverflowAndTooltip = () => (
       Hi there
     </Tooltip>
   </ComposedModal>
-);
+));
 
 ComposedModalWithOverflowAndTooltip.story = {
-  name: 'composed modal with overflow and tooltip',
+  name: 'with i18n, overflow menu, and tooltip',
 };
