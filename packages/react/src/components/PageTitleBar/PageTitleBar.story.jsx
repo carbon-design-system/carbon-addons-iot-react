@@ -4,6 +4,7 @@ import { select, text, boolean, number, withKnobs, optionsKnob } from '@storyboo
 import { Add24, TrashCan24, SettingsAdjust24, Warning24 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 import { Tabs, Tab, Search, Select, SelectItem, InlineLoading } from 'carbon-components-react';
+import { withReadme } from 'storybook-readme';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import TileCatalogNew from '../TileCatalogNew/TileCatalogNew';
@@ -11,6 +12,7 @@ import { getTiles } from '../TileCatalogNew/TileCatalogNew.story';
 import Button from '../Button';
 
 import PageTitleBar from './PageTitleBar';
+import README from './PageTitleBar.md';
 
 export const commonPageTitleBarProps = {
   title: 'Page title',
@@ -32,7 +34,7 @@ export const commonPageTitleBarProps = {
   ),
 };
 
-export const PageTitleBarNodeTooltip = () => (
+export const PageTitleBarNodeTooltip = withReadme(README, () => (
   <div>
     <p>Descriptive text about this page and what the user can or should do on it </p>
     <div
@@ -49,7 +51,7 @@ export const PageTitleBarNodeTooltip = () => (
       </Button>
     </div>
   </div>
-);
+));
 
 export const pageTitleBarBreadcrumb = [
   <a href="/">Home</a>,
@@ -73,67 +75,51 @@ export default {
   excludeStories: ['commonPageTitleBarProps', 'pageTitleBarBreadcrumb', 'PageTitleBarNodeTooltip'],
 };
 
-export const Base = () => <PageTitleBar title={commonPageTitleBarProps.title} />;
+export const Base = withReadme(README, () => {
+  return (
+    <PageTitleBar
+      title={text('title', commonPageTitleBarProps.title)}
+      headerMode={select('headerMode', ['CONDENSED', 'DYNAMIC', 'STATIC', 'STICKY'], 'STATIC')}
+      description={text('description', '')}
+      breadcrumb={optionsKnob('breadcrumb', breadcrumbKnobOptions, breadcrumbDefaultValue, {
+        display: 'select',
+      })}
+      stickyHeaderOffset={number('stickyHeaderOffset', 0)}
+      collapsed={boolean('collapsed', false)}
+      editable={boolean('editable', false)}
+      isLoading={boolean('isLoading', false)}
+      forceContentOutside={boolean('forceContentOutside', false)}
+    />
+  );
+});
 
 Base.story = {
   name: 'base',
 };
 
-export const WithBreadcrumb = () => (
+export const WithTooltipDescriptionWithNode = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, breadcrumbDefaultValue, {
-        display: 'select',
-      })}
-      extraContent={commonPageTitleBarProps.extraContent}
-    />
-  </div>
-);
-
-WithBreadcrumb.story = {
-  name: 'with breadcrumb',
-};
-
-WithBreadcrumb.story = {
-  name: 'with breadcrumb',
-};
-
-export const WithDescription = () => (
-  <div style={{ height: '150vh' }}>
-    <PageTitleBar
-      title={text('title', commonPageTitleBarProps.title)}
-      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, undefined, {
-        display: 'select',
-      })}
-      description={commonPageTitleBarProps.description}
-      collapsed={boolean('collapse description', false)}
-    />
-  </div>
-);
-
-WithDescription.story = {
-  name: 'with description',
-};
-
-export const WithTooltipDescriptionWithNode = () => (
-  <div style={{ height: '150vh' }}>
-    <PageTitleBar
-      title={text('title', commonPageTitleBarProps.title)}
       description={<PageTitleBarNodeTooltip />}
-      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, breadcrumbDefaultValue, {
+      title={text('title', commonPageTitleBarProps.title)}
+      headerMode={select('headerMode', ['CONDENSED', 'DYNAMIC', 'STATIC', 'STICKY'], 'STATIC')}
+      breadcrumb={optionsKnob('breadcrumb', breadcrumbKnobOptions, breadcrumbDefaultValue, {
         display: 'select',
       })}
-      collapsed={boolean('collapse description', true)}
+      stickyHeaderOffset={number('stickyHeaderOffset', 0)}
+      collapsed={boolean('collapsed', false)}
+      editable={boolean('editable', false)}
+      isLoading={boolean('isLoading', false)}
+      forceContentOutside={boolean('forceContentOutside', false)}
     />
   </div>
-);
+));
 
 WithTooltipDescriptionWithNode.story = {
   name: 'with tooltip description with node',
 };
 
-export const WithStatusDescriptionAndCrumbs = () => (
+export const WithStatusDescriptionAndCrumbs = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       title={text('title', 'ZH002')}
@@ -145,13 +131,13 @@ export const WithStatusDescriptionAndCrumbs = () => (
       headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'STATIC')}
     />
   </div>
-);
+));
 
 WithStatusDescriptionAndCrumbs.story = {
   name: 'with status description and breadcrumbs',
 };
 
-export const WithEditableTitleBar = () => (
+export const WithEditableTitleBar = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       title={text('title', commonPageTitleBarProps.title)}
@@ -164,40 +150,13 @@ export const WithEditableTitleBar = () => (
       onEdit={action('edit')}
     />
   </div>
-);
+));
 
 WithEditableTitleBar.story = {
   name: 'with editable title bar and subtitle',
 };
 
-export const WithRichContent = () => (
-  <PageTitleBar
-    title={text('title', 'A page title could be really long, you never know')}
-    description={text('description', commonPageTitleBarProps.description)}
-    extraContent={
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ marginRight: spacing05 }}>
-          <b>Last updated:</b> yesterday
-        </span>
-        <Button
-          className="some-right-content"
-          size="field"
-          renderIcon={Add24}
-          onClick={action('click')}
-        >
-          Take an action
-        </Button>
-      </div>
-    }
-    content={<span>Just some plain text that should align nicely</span>}
-  />
-);
-
-WithRichContent.story = {
-  name: 'with rich content',
-};
-
-export const WithSelect = () => (
+export const WithSelect = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 0)}
@@ -254,13 +213,13 @@ export const WithSelect = () => (
       onEdit={action('edit')}
     />
   </div>
-);
+));
 
 WithSelect.story = {
   name: 'with select action and an overflowing page title',
 };
 
-export const WithSearch = () => (
+export const WithEverything = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 0)}
@@ -332,74 +291,13 @@ export const WithSearch = () => (
       onEdit={action('edit')}
     />
   </div>
-);
-
-WithSearch.story = {
-  name: 'with search and tabs',
-};
-
-export const WithEverything = () => (
-  <div style={{ height: '150vh' }}>
-    <PageTitleBar
-      stickyHeaderOffset={number('sticky header offset', 0)}
-      headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'STATIC')}
-      title={text('title', commonPageTitleBarProps.title)}
-      description={text('description', commonPageTitleBarProps.description)}
-      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, breadcrumbDefaultValue, {
-        display: 'select',
-      })}
-      collapsed={boolean('collapse description', false)}
-      editable={boolean('editable', true)}
-      extraContent={
-        <div>
-          <Button
-            renderIcon={Add24}
-            onClick={action('click')}
-            size="field"
-            hasIconOnly
-            iconDescription="Add"
-            kind="ghost"
-            tooltipPosition="bottom"
-            tooltipAlignment="center"
-          />
-          <Button
-            renderIcon={TrashCan24}
-            onClick={action('click')}
-            size="field"
-            hasIconOnly
-            iconDescription="Remove"
-            kind="ghost"
-            tooltipPosition="bottom"
-            tooltipAlignment="center"
-          />
-          <Button onClick={action('click')} size="field">
-            Take an action
-          </Button>
-        </div>
-      }
-      content={
-        <Tabs style={{ marginLeft: '-16px', marginRight: '-16px' }}>
-          <Tab label="Tab 1">
-            <div>Content for first tab.</div>
-          </Tab>
-          <Tab label="Tab 2">
-            <div>Content for second tab.</div>
-          </Tab>
-          <Tab label="Tab 3">
-            <div>Content for third tab.</div>
-          </Tab>
-        </Tabs>
-      }
-      onEdit={action('edit')}
-    />
-  </div>
-);
+));
 
 WithEverything.story = {
   name: 'with breadcrumbs, actions, and tabs',
 };
 
-export const WithCondensedHeader = () => (
+export const WithCondensedHeader = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 0)}
@@ -436,13 +334,13 @@ export const WithCondensedHeader = () => (
       onEdit={action('edit')}
     />
   </div>
-);
+));
 
 WithCondensedHeader.story = {
   name: 'with condensed with primary + secondary buttons',
 };
 
-export const WithCustomRenderFunction = () => (
+export const WithCustomRenderFunction = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       title={commonPageTitleBarProps.title}
@@ -457,41 +355,13 @@ export const WithCustomRenderFunction = () => (
       extraContent={commonPageTitleBarProps.extraContent}
     />
   </div>
-);
+));
 
-export const WithJustATitleAndDynamicScrolling = () => (
-  <div style={{ marginTop: '10rem', height: '150vh' }}>
-    <PageTitleBar
-      stickyHeaderOffset={number('sticky header offset', 100)}
-      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, undefined, {
-        display: 'select',
-      })}
-      title="testTitle"
-      headerMode="DYNAMIC"
-    />
-  </div>
-);
-WithJustATitleAndDynamicScrolling.story = {
-  name: 'with dynamic with just a title',
+WithCustomRenderFunction.story = {
+  name: 'with custom render function',
 };
 
-export const WithOffsetDownThePage = () => (
-  <div style={{ height: '150vh' }}>
-    <PageTitleBar
-      stickyHeaderOffset={number('sticky header offset', 20)}
-      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, breadcrumbDefaultValue, {
-        display: 'select',
-      })}
-      title="testTitle"
-      headerMode="DYNAMIC"
-    />
-  </div>
-);
-WithOffsetDownThePage.story = {
-  name: 'with dynamic with an offset',
-};
-
-export const WithDynamicScrolling = () => (
+export const WithDynamicScrolling = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 0)}
@@ -545,7 +415,7 @@ export const WithDynamicScrolling = () => (
       onEdit={action('edit')}
     />
   </div>
-);
+));
 
 WithDynamicScrolling.story = {
   name: 'with dynamic with breadcrumbs, actions, and content',
@@ -554,7 +424,7 @@ WithDynamicScrolling.story = {
   },
 };
 
-export const WithDynamicScrollingAndTabs = () => (
+export const WithDynamicScrollingAndTabs = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 0)}
@@ -617,7 +487,7 @@ export const WithDynamicScrollingAndTabs = () => (
       onEdit={action('edit')}
     />
   </div>
-);
+));
 
 WithDynamicScrollingAndTabs.story = {
   name: 'with dynamic with breadcrumbs, actions, and tabs',
@@ -628,63 +498,4 @@ WithDynamicScrollingAndTabs.parameters = {
     text: `Note: We need to set the sticky offset here to 0 (from the default 3rem) because storybook sets everything relative to their container with 3rem padding.
       The dynamicTransitionOffset isn't needed here, because the default 3rem is relative to the overall window scrollY and handles the storybook padding`,
   },
-};
-
-export const WithDynamicScrollingAndUpperActions = () => (
-  <div style={{ height: '150vh' }}>
-    <PageTitleBar
-      stickyHeaderOffset={number('sticky header offset', 0)}
-      headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'DYNAMIC')}
-      title={text('title', commonPageTitleBarProps.title)}
-      breadcrumb={optionsKnob('breadcrumbs', breadcrumbKnobOptions, breadcrumbDefaultValue, {
-        display: 'select',
-      })}
-      description={text('description', commonPageTitleBarProps.description)}
-      upperActions={
-        <div style={{ display: 'flex' }}>
-          <Button
-            renderIcon={Add24}
-            onClick={action('click')}
-            size="field"
-            hasIconOnly
-            iconDescription="Add"
-            kind="ghost"
-            tooltipPosition="bottom"
-            tooltipAlignment="center"
-          />
-          <Button
-            renderIcon={TrashCan24}
-            onClick={action('click')}
-            size="field"
-            hasIconOnly
-            iconDescription="Remove"
-            kind="ghost"
-            tooltipPosition="bottom"
-            tooltipAlignment="center"
-          />
-        </div>
-      }
-      extraContent={
-        <div style={{ display: 'flex' }}>
-          <Button onClick={action('click')} size="field">
-            Take an action
-          </Button>
-        </div>
-      }
-      onEdit={action('edit')}
-    />
-  </div>
-);
-
-WithDynamicScrollingAndUpperActions.story = {
-  name: 'with dynamic with breadcrumbs, actions, and upper actions',
-  info: {
-    text: `with dynamic scrolling, upper actions, and buttons the buttons should transition and sit next to the actions when the page header is condensed`,
-  },
-};
-
-export const IsLoading = () => <PageTitleBar title={commonPageTitleBarProps.title} isLoading />;
-
-IsLoading.story = {
-  name: 'isLoading',
 };

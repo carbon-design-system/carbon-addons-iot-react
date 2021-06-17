@@ -49,7 +49,7 @@ const values = {
 };
 
 export default {
-  title: __DEV__ ? '1 - Watson IoT/⚠️ ImageCard' : '1 - Watson IoT/ImageCard',
+  title: '1 - Watson IoT/ImageCard',
 
   parameters: {
     component: ImageCard,
@@ -58,16 +58,18 @@ export default {
 
 export const Basic = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: spacing06,
       }}
     >
       <ImageCard
         title={text('title', 'Image')}
         id="image-hotspots"
+        breakpoint={breakpoint}
         content={object('content', content)}
         values={{
           hotspots: [
@@ -117,7 +119,6 @@ export const Basic = () => {
             },
           ],
         }}
-        breakpoint="lg"
         size={size}
         onCardAction={action('onCardAction')}
       />
