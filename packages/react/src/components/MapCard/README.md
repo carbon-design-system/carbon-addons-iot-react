@@ -22,6 +22,10 @@
 The `MapCard` component requires an external map component to work and it aims to aid the creation of maps that meet the requirements of carbon's [Interactive Maps pattern](https://pages.github.ibm.com/ai-applications/design/patterns/maps/overview/). `MapCard` implements the card API and can be used the same way as other cards. There are two example implementations, using [Mapbox](#mapbox-example) and [Open Layers](#open-layers-example), provided in Storybook that serve as references for creating custom maps using any map engine and layers under the hood. `MapCard` exposes a container element via `mapContainerRef` for the initialization of the external engine.
 Besides inherited `Card` card actions, that among other things provides buttons and click callbacks for expansion to full page and toggling of a settings side panel, the `MapCard` component itself provides a few map specific features. The most important feature is allowing user control of the map by providing a set of special buttons, referred to as map controls.
 
+```jsx
+import { MapCard } from 'carbon-addons-iot-react';
+```
+
 ## Map controls
 
 Map controls are elements that are clicked or tapped to trigger an action (or to select and trigger an action). Map controls are defined by the programmer via the prop `mapControls` and directly overlay the map on the right side. The `mapControls` expects an array of objects, each defining a control button or a group. The order of the array defines the order in which the controls are displayed from top to bottom. The control button definition object has 3 mandatory props as exemplified below. The state of the map is handled outside the MapCard component.
