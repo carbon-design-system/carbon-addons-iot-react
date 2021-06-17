@@ -27,11 +27,14 @@ import { action } from '@storybook/addon-actions';
       >
         <div aiSidePanelTitle>
           Filter
-          <a ibmLink (click)="clearFilterClicked($event)" class="clear-flyout" href="#">Clear</a>
         </div>
-        Columns
-        <button ibmButton="secondary" cancelButton>Cancel</button>
-        <button ibmButton applyButton>Initiate</button>
+        <div class="panel-content">
+          Content
+        </div>
+        <div class="panel-footer">
+          <button ibmButton="secondary">Cancel</button>
+          <button ibmButton>Initiate</button>
+        </div>
       </ai-side-panel>
       <div style="display: inline-block; position: relative; margin-left: 1rem; margin-right: 1rem">
         <h2>Content</h2>
@@ -74,16 +77,43 @@ import { action } from '@storybook/addon-actions';
         [side]="side"
         (close)="active = !active; close.emit()"
       >
-        <div class="title">
-          Filter right
-          <a ibmLink (click)="clearFilterClicked($event)" class="clear-flyout" href="#">Clear</a>
-        </div>
-        Columns
-        <button ibmButton="secondary" cancelButton>Cancel</button>
-        <button ibmButton applyButton>Initiate</button>
+      <div aiSidePanelTitle>
+        Filter
+      </div>
+      <div class="panel-content">
+        Content
+      </div>
+      <div class="panel-footer">
+        <button ibmButton="secondary">Cancel</button>
+        <button ibmButton>Initiate</button>
+      </div>
       </ai-side-panel>
     </div>
   `,
+  styles: [`
+    .panel-content {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    .panel-footer {
+      min-width: 15.4rem;
+      display: flex;
+      width: calc(100% + 2px);
+      position: absolute;
+      bottom: 0;
+      margin: -1px;
+    }
+
+    .panel-footer > * {
+      flex-grow: 1;
+      margin: 1px;
+    }
+
+    .panel-footer > button.bx--btn {
+      padding-right: 60px;
+    }
+  `],
 })
 class StoryCustomComponent implements OnInit {
   @Input() showClose = true;
