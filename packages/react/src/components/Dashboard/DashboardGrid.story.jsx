@@ -4,7 +4,12 @@ import { boolean } from '@storybook/addon-knobs';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Card from '../Card/Card';
-import { CARD_DIMENSIONS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import {
+  CARD_DIMENSIONS,
+  CARD_SIZES,
+  CARD_TYPES,
+  CARD_ACTIONS,
+} from '../../constants/LayoutConstants';
 import { chartData, tableColumns, tableData } from '../../utils/sample';
 import PieChartCard from '../PieChartCard/PieChartCard';
 import ValueCard from '../ValueCard/ValueCard';
@@ -14,8 +19,38 @@ import ImageCard from '../ImageCard/ImageCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
 import ListCard from '../ListCard/ListCard';
+import MapboxCard from '../MapCard/storyFiles/MapboxExample';
+import data from '../MapCard/storyFiles/data.json';
+import options from '../MapCard/storyFiles/mapOptions';
 
 import DashboardGrid from './DashboardGrid';
+
+const MapboxExample = ({ ...props }) => {
+  const [settingsOpen, setSettingsOpen] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
+  const handleOnCardAction = (id, actionType) => {
+    if (actionType === CARD_ACTIONS.CLOSE_EXPANDED_CARD) {
+      setIsExpanded(false);
+    } else if (actionType === CARD_ACTIONS.OPEN_EXPANDED_CARD) {
+      setIsExpanded(true);
+    } else if (actionType === CARD_ACTIONS.ON_SETTINGS_CLICK) {
+      setSettingsOpen((oldSettingsState) => !oldSettingsState);
+    }
+  };
+  return (
+    <MapboxCard
+      data={data}
+      options={options}
+      isLegendFullWidth={boolean('isLegendFullWidth', false)}
+      onCardAction={handleOnCardAction}
+      availableActions={{ expand: true, settings: true }}
+      isSettingPanelOpen={settingsOpen}
+      isExpanded={isExpanded}
+      {...props}
+    />
+  );
+};
 
 const Cards = [
   <Card
@@ -59,7 +94,7 @@ const commonGridProps = {
 };
 
 export default {
-  title: __DEV__ ? '1 - Watson IoT/⚠️ Dashboard Grid' : '1 - Watson IoT/Dashboard Grid',
+  title: '1 - Watson IoT/Dashboard Grid',
 };
 
 export const DashboardDefaultLayouts = () => {
@@ -582,6 +617,7 @@ export const DashboardAllCardsAsResizable = () => {
     valueCard: CARD_SIZES.SMALLWIDE,
     gaugeCard: CARD_SIZES.MEDIUMTHIN,
     pieChartCard: CARD_SIZES.MEDIUM,
+    mapCard: CARD_SIZES.LARGEWIDE,
     tableCard: CARD_SIZES.LARGE,
     imageCard: CARD_SIZES.LARGE,
     timeSeriesCard: CARD_SIZES.LARGETHIN,
@@ -649,6 +685,13 @@ export const DashboardAllCardsAsResizable = () => {
       size={currentSizes.pieChartCard}
       isResizable={isResizable}
       values={pieChartCardValues}
+    />,
+    <MapboxExample
+      isResizable={isResizable}
+      id="mapCard"
+      key="mapCard"
+      title={`MapCard - ${currentSizes.mapCard}`}
+      size={currentSizes.mapCard}
     />,
     <TableCard
       title={`TableCard - ${currentSizes.tableCard}`}
@@ -729,6 +772,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
     ],
     xl: [
@@ -740,6 +784,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
     ],
     lg: [
@@ -751,6 +796,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
     ],
     md: [
@@ -762,6 +808,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 8, h: 4 },
     ],
     sm: [
@@ -773,6 +820,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'listCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 0, w: 4, h: 4 },
+      { i: 'mapCard', x: 4, y: 0, w: 4, h: 4 },
       { i: 'barChartCard', x: 8, y: 0, w: 4, h: 4 },
     ],
     xs: [
@@ -784,6 +832,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'listCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 0, w: 4, h: 4 },
+      { i: 'mapCard', x: 4, y: 0, w: 4, h: 4 },
       { i: 'barChartCard', x: 8, y: 0, w: 4, h: 4 },
     ],
   };
@@ -805,6 +854,10 @@ export const DashboardAllCardsAsResizable = () => {
         case 'tableCard':
           cardLayoutCopy.minW = CARD_DIMENSIONS.LARGE.max.w;
           cardLayoutCopy.minH = CARD_DIMENSIONS.LARGE.max.h;
+          break;
+        case 'mapCard':
+          cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUM.max.w;
+          cardLayoutCopy.minH = CARD_DIMENSIONS.MEDIUM.max.h;
           break;
         case 'imageCard':
           cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUMTHIN.max.w;

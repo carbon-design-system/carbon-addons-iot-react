@@ -38,6 +38,8 @@ class ColumnHeaderRow extends Component {
     columnSelectionConfigText: PropTypes.string,
     isDisabled: PropTypes.bool,
     testID: PropTypes.string,
+    /** shows an additional column that can expand/shrink as the table is resized  */
+    showExpanderColumn: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -75,6 +77,7 @@ class ColumnHeaderRow extends Component {
       columnSelectionConfigText,
       isDisabled,
       testID,
+      showExpanderColumn,
     } = this.props;
 
     const visibleColumns = columns.filter(
@@ -91,7 +94,7 @@ class ColumnHeaderRow extends Component {
           ) : null}
           <TableHeader
             className={`${iotPrefix}--column-header-row--table-header`}
-            colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)}
+            colSpan={visibleColumns.length + (hasRowActions ? 1 : 0) + (showExpanderColumn ? 1 : 0)}
             scope="col"
           >
             <div className={`${iotPrefix}--column-header-row--select-wrapper`}>

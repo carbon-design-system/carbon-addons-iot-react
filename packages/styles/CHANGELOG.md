@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.26...v2.146.0-next.27) (2021-06-11)
+
+**Note:** Version bump only for package @ai-apps/styles
+
+
+
+
+
+# [2.146.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.24...v2.146.0-next.25) (2021-06-08)
+
+
+### Bug Fixes
+
+* **flyout-menu:** background color ([5e58c2a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5e58c2a2a99b8d0d58f292e2f27078bc5ad32b73))
+* **flyout-menu:** max-width ([6c29381](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6c29381a0d7e3636dfbba70b88ed86ddc43a5f6f))
+* **flyout-menu:** update icon colors ([6ed887c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6ed887ceae972e19f329bcbe4f8366809434e186))
+
+
+### Features
+
+* **flyout-menu:** update styles ([82686c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/82686c5fc4ff8a7d00c3ca1cc078d54c1dae4275))
+
+
+
+
+
 ## [2.145.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0...v2.145.1-next.0) (2021-05-13)
 
 **Note:** Version bump only for package @ai-apps/styles

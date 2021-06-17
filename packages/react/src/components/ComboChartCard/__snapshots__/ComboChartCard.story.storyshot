@@ -128,6 +128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </div>
           <div
             className="iot--card--content iot--card--content--expanded"
+            data-testid="Card-content"
             style={
               Object {
                 "--card-content-height": "576px",
@@ -1695,8 +1696,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-2"
-                      id="bx-pagination-select-2-count-label"
+                      htmlFor="bx-pagination-select-1"
+                      id="bx-pagination-select-1-count-label"
                     >
                       Items per page:
                     </label>
@@ -1715,7 +1716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-2"
+                              id="bx-pagination-select-1"
                               onChange={[Function]}
                               value={10}
                             >
@@ -1780,7 +1781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-2-right"
+                          htmlFor="bx-pagination-select-1-right"
                         >
                           Page number, of 3 pages
                         </label>
@@ -1793,7 +1794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-2-right"
+                              id="bx-pagination-select-1-right"
                               onChange={[Function]}
                               value={1}
                             >
@@ -2070,6 +2071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "576px",
@@ -2277,6 +2279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",
@@ -2409,6 +2412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         </div>
         <div
           className="iot--card--content"
+          data-testid="Card-content"
           style={
             Object {
               "--card-content-height": "256px",

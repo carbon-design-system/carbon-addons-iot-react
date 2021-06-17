@@ -22,6 +22,7 @@ import {
   I18NPropTypes,
   RowActionsStatePropTypes,
   ActiveTableToolbarPropType,
+  TableSortPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -30,6 +31,8 @@ import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWi
 import TableBody from './TableBody/TableBody';
 import Pagination from './Pagination';
 import TableFoot from './TableFoot/TableFoot';
+import TableMultiSortModal from './TableMultiSortModal/TableMultiSortModal';
+import { useShowExpanderColumn } from './expanderColumnHook';
 import ErrorTable from './ErrorTable/ErrorTable';
 
 const { iotPrefix } = settings;
@@ -64,6 +67,7 @@ const propTypes = {
         hasSingleNestedHierarchy: PropTypes.bool,
       }),
     ]),
+    hasMultiSort: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.oneOfType([
       PropTypes.bool,
@@ -179,10 +183,7 @@ const propTypes = {
       isSelectAllSelected: PropTypes.bool,
       isSelectAllIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string),
-      sort: PropTypes.shape({
-        columnId: PropTypes.string,
-        direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
-      }),
+      sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]),
       /** Specify column ordering and visibility */
       ordering: PropTypes.arrayOf(
         PropTypes.shape({
@@ -202,6 +203,8 @@ const propTypes = {
         isLoading: PropTypes.bool,
         rowCount: PropTypes.number,
       }),
+      /* show the modal for selecting multi-sort columns */
+      showMultiSortModal: PropTypes.bool,
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
@@ -251,6 +254,16 @@ const propTypes = {
       onColumnSelectionConfig: PropTypes.func,
       onColumnResize: PropTypes.func,
       onOverflowItemClicked: PropTypes.func,
+      /* (multiSortedColumns) => {} */
+      onSaveMultiSortColumns: PropTypes.func,
+      /* () => {} */
+      onCancelMultiSortColumns: PropTypes.func,
+      /* () => {} */
+      onClearMultiSortColumns: PropTypes.func,
+      /* (index) => {} */
+      onAddMultiSortColumn: PropTypes.func,
+      /* (index) => {} */
+      onRemoveMultiSortColumn: PropTypes.func,
       onTableErrorStateAction: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
@@ -350,6 +363,10 @@ export const defaultProps = (baseProps) => ({
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
       onOverflowItemClicked: defaultFunction('actions.table.onOverflowItemClicked'),
+      onSaveMultiSortColumns: defaultFunction('actions.table.onSaveMultiSortColumns'),
+      onCancelMultiSortColumns: defaultFunction('actions.table.onCancelMultiSortColumns'),
+      onAddMultiSortColumn: defaultFunction('actions.table.onAddMultiSortColumn'),
+      onRemoveMultiSortColumn: defaultFunction('actions.table.onRemoveMultiSortColumn'),
     },
     onUserViewModified: null,
   },
@@ -398,6 +415,20 @@ export const defaultProps = (baseProps) => ({
     filterNone: 'Unsort rows by this header',
     filterAscending: 'Sort rows by this header in ascending order',
     filterDescending: 'Sort rows by this header in descending order',
+    multiSortModalTitle: 'Select columns to sort',
+    multiSortModalPrimaryLabel: 'Sort',
+    multiSortModalSecondaryLabel: 'Cancel',
+    multiSortModalClearLabel: 'Clear sorting',
+    multiSortSelectColumnLabel: 'Select a column',
+    multiSortSelectColumnSortByTitle: 'Sort by',
+    multiSortSelectColumnThenByTitle: 'Then by',
+    multiSortDirectionLabel: 'Select a direction',
+    multiSortDirectionTitle: 'Sort order',
+    multiSortAddColumn: 'Add column',
+    multiSortRemoveColumn: 'Remove column',
+    multiSortAscending: 'Ascending',
+    multiSortDescending: 'Descending',
+    multiSortOverflowItem: 'Multi-sort',
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',
@@ -481,6 +512,7 @@ const Table = (props) => {
     view.table.loadingState,
     view.table.filteredData,
     columns,
+    searchValue?.current,
   ]);
 
   const { maxPages, ...paginationProps } = view.pagination;
@@ -567,11 +599,19 @@ const Table = (props) => {
       : undefined;
   }, [data, hasAggregations, aggregationsProp]);
 
+  const showExpanderColumn = useShowExpanderColumn({
+    hasResize: options.hasResize,
+    useAutoTableLayoutForResize: options.useAutoTableLayoutForResize,
+    ordering: view.table.ordering,
+    columns,
+  });
+
   const totalColumns =
     visibleColumns.length +
     (hasMultiSelect ? 1 : 0) +
     (options.hasRowExpansion ? 1 : 0) +
-    (options.hasRowActions ? 1 : 0);
+    (options.hasRowActions ? 1 : 0) +
+    (showExpanderColumn ? 1 : 0);
 
   const isFiltered =
     view.filters.length > 0 ||
@@ -751,7 +791,8 @@ const Table = (props) => {
                 'hasRowNesting',
                 'hasSingleRowEdit',
                 'hasRowSelection',
-                'useAutoTableLayoutForResize'
+                'useAutoTableLayoutForResize',
+                'hasMultiSort'
               ),
               wrapCellText: options.wrapCellText,
               truncateCellText: useCellTextTruncate,
@@ -786,6 +827,7 @@ const Table = (props) => {
             }}
             hasFastFilter={options?.hasFilter === 'onKeyPress'}
             testID={`${id}-table-head`}
+            showExpanderColumn={showExpanderColumn}
           />
 
           {
@@ -796,6 +838,7 @@ const Table = (props) => {
                 {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
                 rowCount={view.table.loadingState.rowCount}
                 testID={`${id}-table-skeleton`}
+                showExpanderColumn={showExpanderColumn}
               />
             ) : error ? (
               <ErrorTable
@@ -853,6 +896,7 @@ const Table = (props) => {
                   'onRowClicked'
                 )}
                 testID={`${id}-table-body`}
+                showExpanderColumn={showExpanderColumn}
               />
             ) : (
               <EmptyTable
@@ -893,6 +937,7 @@ const Table = (props) => {
                 ordering: view.table.ordering,
               }}
               testID={`${id}-table-foot`}
+              showExpanderColumn={showExpanderColumn}
             />
           ) : null}
         </CarbonTable>
@@ -924,6 +969,26 @@ const Table = (props) => {
           testID={`${id}-table-pagination`}
         />
       ) : null}
+      {options.hasMultiSort && (
+        <TableMultiSortModal
+          testId={`${id}-multi-sort-modal`}
+          columns={columns}
+          ordering={view.table.ordering}
+          sort={Array.isArray(view.table.sort) ? view.table.sort : [view.table.sort]}
+          actions={{
+            ...pick(
+              actions.table,
+              'onSaveMultiSortColumns',
+              'onCancelMultiSortColumns',
+              'onAddMultiSortColumn',
+              'onRemoveMultiSortColumn',
+              'onClearMultiSortColumns'
+            ),
+          }}
+          showMultiSortModal={view.table.showMultiSortModal}
+          i18n={i18n}
+        />
+      )}
     </TableContainer>
   );
 };

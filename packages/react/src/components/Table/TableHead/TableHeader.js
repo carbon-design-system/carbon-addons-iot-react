@@ -12,6 +12,8 @@ import React from 'react';
 import { settings } from 'carbon-components';
 import { ArrowUp20 as Arrow, ArrowsVertical20 as Arrows } from '@carbon/icons-react';
 
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+
 export const sortStates = {
   NONE: 'NONE',
   DESC: 'DESC',
@@ -59,6 +61,8 @@ const TableHeader = React.forwardRef(function TableHeader(
     // eslint-disable-next-line react/prop-types
     onClick,
     scope,
+    hasMultiSort,
+    hasOverflow,
     hasTooltip,
     sortDirection,
     translateWithId: t,
@@ -96,6 +100,22 @@ const TableHeader = React.forwardRef(function TableHeader(
     [`${prefix}--table-sort--ascending`]: isSortHeader && sortDirection === sortStates.DESC,
   });
   const ariaSort = !isSortHeader ? 'none' : sortDirections[sortDirection];
+  const ButtonTag = hasMultiSort || hasOverflow ? `a` : `button`;
+  const buttonProps =
+    hasMultiSort || hasOverflow
+      ? {
+          role: 'button',
+          tabIndex: 0,
+          className,
+          onClick,
+          onKeyDown: handleSpecificKeyDown(['Enter', 'Space'], onClick),
+          ...rest,
+        }
+      : {
+          className,
+          onClick,
+          ...rest,
+        };
 
   return (
     <th
@@ -107,7 +127,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       style={thStyle}
       data-testid={testID}
     >
-      <button className={className} onClick={onClick} {...rest}>
+      <ButtonTag {...buttonProps}>
         {!hasTooltip ? (
           <span className={`${prefix}--table-header-label`}>{children}</span>
         ) : (
@@ -131,7 +151,7 @@ const TableHeader = React.forwardRef(function TableHeader(
             sortStates,
           })}
         />
-      </button>
+      </ButtonTag>
     </th>
   );
 });
@@ -147,11 +167,15 @@ TableHeader.propTypes = {
    */
   children: PropTypes.node,
 
+  hasOverflow: PropTypes.bool,
+
+  hasMultiSort: PropTypes.bool,
+
   /** does the header have a tooltip, if so do not truncate */
   hasTooltip: PropTypes.bool,
   /**
-   * The initial width of the column when resize is active and the fixed with
-   * if resize is inactive. E.g. '200px'
+   * The initial width of the column when hasResize:true. The fixed width
+   * if hasResize:false. E.g. '200px'
    */
   initialWidth: PropTypes.string,
 
@@ -197,12 +221,14 @@ TableHeader.propTypes = {
   testID: PropTypes.string,
 };
 
-/* instanbul ignore next: ignoring the default onCLick */
+/* istanbul ignore next: ignoring the default onClick */
 TableHeader.defaultProps = {
   className: '',
   children: '',
   isSortHeader: false,
   hasTooltip: false,
+  hasOverflow: false,
+  hasMultiSort: false,
   isSortable: false,
   sortDirection: 'NONE',
   onClick: (onClick) => `${onClick}`,

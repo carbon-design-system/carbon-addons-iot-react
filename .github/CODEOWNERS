@@ -43,4 +43,4 @@
 **/publicAPI.test.js.snap  @davidicus
 
 # Angular team should be required for Angular changes
-/packages/angular/ @IBM/carbon-angular
+/packages/angular/ @carbon-design-system/angular-maintainers
