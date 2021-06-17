@@ -25,12 +25,8 @@ import { action } from '@storybook/addon-actions';
         [side]="side"
         (close)="active = !active; close.emit()"
       >
-        <div aiSidePanelTitle>
-          Filter
-        </div>
-        <div class="panel-content">
-          Content
-        </div>
+        <div aiSidePanelTitle>Filter</div>
+        <div class="panel-content">Content</div>
         <div class="panel-footer">
           <button ibmButton="secondary">Cancel</button>
           <button ibmButton>Initiate</button>
@@ -77,43 +73,41 @@ import { action } from '@storybook/addon-actions';
         [side]="side"
         (close)="active = !active; close.emit()"
       >
-      <div aiSidePanelTitle>
-        Filter
-      </div>
-      <div class="panel-content">
-        Content
-      </div>
-      <div class="panel-footer">
-        <button ibmButton="secondary">Cancel</button>
-        <button ibmButton>Initiate</button>
-      </div>
+        <div aiSidePanelTitle>Filter</div>
+        <div class="panel-content">Content</div>
+        <div class="panel-footer">
+          <button ibmButton="secondary">Cancel</button>
+          <button ibmButton>Initiate</button>
+        </div>
       </ai-side-panel>
     </div>
   `,
-  styles: [`
-    .panel-content {
-      margin-left: 1rem;
-      margin-right: 1rem;
-    }
+  styles: [
+    `
+      .panel-content {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
 
-    .panel-footer {
-      min-width: 15.4rem;
-      display: flex;
-      width: calc(100% + 2px);
-      position: absolute;
-      bottom: 0;
-      margin: -1px;
-    }
+      .panel-footer {
+        min-width: 15.4rem;
+        display: flex;
+        width: calc(100% + 2px);
+        position: absolute;
+        bottom: 0;
+        margin: -1px;
+      }
 
-    .panel-footer > * {
-      flex-grow: 1;
-      margin: 1px;
-    }
+      .panel-footer > * {
+        flex-grow: 1;
+        margin: 1px;
+      }
 
-    .panel-footer > button.bx--btn {
-      padding-right: 60px;
-    }
-  `],
+      .panel-footer > button.bx--btn {
+        padding-right: 60px;
+      }
+    `,
+  ],
 })
 class StoryCustomComponent implements OnInit {
   @Input() showClose = true;
