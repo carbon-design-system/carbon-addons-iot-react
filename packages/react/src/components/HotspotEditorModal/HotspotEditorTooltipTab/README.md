@@ -1,12 +1,8 @@
 # `HotspotEditorTooltipTab` component
 
-HotspotEditorTooltipTab allows the user to change the title, description and icon of a hotspot of type 'fixed' or 'dynamic', but for hotspots of type 'text' these settings should not be available. The title and description are shown in the tooltip and the icons will be displayed directly on the image as the trigger button for the tooltip. If the `showInfoMessage` is true then no form controls are shown, only the text from the `infoMessageText`. The HotspotEditorTooltipTab is stateless and is controlled by the HotspotEditorModal or other parent depending on architecture.
-
-The component uses the [overrides pattern](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/docs/guides/overrides-pattern.md) to allow modification of the subcomponents titleTextInput and decriptionTextArea.
-
 ## Table of Contents
 
-- [Code example](#code-example)
+- [Getting started](#getting-started)
 - [Handling state changes](#handling-state-changes)
 - [Icons](#icons)
 - [Colors](#colors)
@@ -15,14 +11,22 @@ The component uses the [overrides pattern](https://github.com/carbon-design-syst
 - [Prop i18n](#prop-i18n)
 - [Feedback](#feedback)
 
-## Code example
+## Getting started
+
+HotspotEditorTooltipTab allows the user to change the title, description and icon of a hotspot of type 'fixed' or 'dynamic', but for hotspots of type 'text' these settings should not be available. The title and description are shown in the tooltip and the icons will be displayed directly on the image as the trigger button for the tooltip. If the `showInfoMessage` is true then no form controls are shown, only the text from the `infoMessageText`. The HotspotEditorTooltipTab is stateless and is controlled by the HotspotEditorModal or other parent depending on architecture.
+
+The component uses the [overrides pattern](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/docs/guides/overrides-pattern.md) to allow modification of the subcomponents titleTextInput and decriptionTextArea.
 
 This code example uses the hotspotStateHook to manage the state of the component. This is recommended but not required.
 
 ```jsx
+import {
+  HotspotEditorTooltipTab,
+  hotspotTypes,
+  useHotspotEditorState,
+} from 'carbon-addons-iot-react';
 import { red50, green50, blue50 } from '@carbon/colors';
 import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
-import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
 
 const selectableIcons = [
   {

@@ -1,10 +1,8 @@
 # `HotspotEditorModal` component
 
-The HotspotEditorModal allows a user to create and edit hotspots for the ImageHotspots component. A basic understanding of the ImageHotspots component is needed in order to follow this documentation. The HotspotEditorModal is a complex component that contains multiple subcomponents, each one described in their own README.md files. The subcomponents are designed for working with HotspotEditorModal, or an Application implemented version of it, and their APIs are designed to minimize data transformations when using the hotspotStateHook.js
-
 ## Table of Contents
 
-- [Code example](#code-example)
+- [Getting started](#getting-started)
 - [Types of hotspots](#types-of-hotspots)
 - [State management](#state-management)
 - [Props](#props)
@@ -17,12 +15,16 @@ The HotspotEditorModal allows a user to create and edit hotspots for the ImageHo
 - [Source Code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal)
 - [Feedback](#feedback)
 
-## Code example
+## Getting started
+
+The HotspotEditorModal allows a user to create and edit hotspots for the ImageHotspots component. A basic understanding of the ImageHotspots component is needed in order to follow this documentation. The HotspotEditorModal is a complex component that contains multiple subcomponents, each one described in their own README.md files. The subcomponents are designed for working with HotspotEditorModal, or an Application implemented version of it, and their APIs are designed to minimize data transformations when using the hotspotStateHook.js
 
 ```jsx
-import landscape from './landscape.jpg';
+import { HotspotEditorModal } from 'carbon-addons-iot-react';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
 import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
+
+import landscape from './landscape.jpg';
 
 const selectableColors = [
   { carbonColor: gray50, name: 'gray' },

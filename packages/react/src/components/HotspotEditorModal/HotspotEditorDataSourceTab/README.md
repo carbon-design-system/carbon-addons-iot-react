@@ -1,21 +1,23 @@
 # `HotspotEditorDataSourceTab` component
 
-The HotspotEditorDataSourceTab is part of the HotspotModalEditor and lets the user select the data source items used to render the content of a specific hotspot, e.g. a temperature or some other metric. The state is managed outside the component via the `onChange` callback.
-
-Each selected source item can be customized when it comes to how it should be displayed, e.g. a custom label, unit, decimal places.
-
 ## Table of Contents
 
-- [Code example](#code-example)
+- [Getting started](#getting-started)
 - [Handling the onChange callback](#handling-the-onchange-callback)
 - [Props](#props)
 - [Prop i18n](#prop-i18n)
 - [Prop cardConfig](#prop-cardconfig)
 - [Feedback](#feedback)
 
-## Code example
+## Getting started
+
+The HotspotEditorDataSourceTab is part of the HotspotModalEditor and lets the user select the data source items used to render the content of a specific hotspot, e.g. a temperature or some other metric. The state is managed outside the component via the `onChange` callback.
+
+Each selected source item can be customized when it comes to how it should be displayed, e.g. a custom label, unit, decimal places.
 
 ```jsx
+import { HotspotEditorDataSourceTab } from 'carbon-addons-iot-react';
+
 const cardConfig = {
   title: 'Floor Map',
   id: 'floor map picture',

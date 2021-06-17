@@ -1,17 +1,19 @@
 # `DynamicHotspotSourcePicker` component
 
-The DynamicHotspotSourcePicker is part of the HotspotModalEditor and lets a user pick the x and y coordinates of dynamic hotspots. The state of the dropdowns are handled outside the component and passed as `selectedSourceIdX` and `selectedSourceIdY`. Changes are emitted via the `onYValueChange` and `onXValueChange`.
-
 ## Table of Contents
 
-- [Code example](#code-example)
+- [Getting started](#getting-started)
 - [Props](#props)
 - [Prop i18n](#prop-i18n)
 - [Feedback](#feedback)
 
-## Code example
+## Getting started
+
+The DynamicHotspotSourcePicker is part of the HotspotModalEditor and lets a user pick the x and y coordinates of dynamic hotspots. The state of the dropdowns are handled outside the component and passed as `selectedSourceIdX` and `selectedSourceIdY`. Changes are emitted via the `onYValueChange` and `onXValueChange`.
 
 ```jsx
+import { DynamicHotspotSourcePicker } from 'carbon-addons-iot-react';
+
 const dataItems = [
   {
     dataSourceId: 'temperature',

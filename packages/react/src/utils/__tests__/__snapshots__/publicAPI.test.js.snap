@@ -22265,6 +22265,548 @@ Map {
     },
   },
   "useDNDProviderElement" => Object {},
+  "hotspotActionTypes" => Object {
+    "currentTypeSwitch": "CURRENT_TYPE_SWITCH",
+    "dynamicHotspotSourceClear": "DYNAMIC_HOTSPOT_SOURCE_CLEAR",
+    "dynamicHotspotSourceXChange": "DYNAMIC_HOTSPOT_SOURCE_X_CHANGE",
+    "dynamicHotspotSourceYChange": "DYNAMIC_HOTSPOT_SOURCE_Y_CHANGE",
+    "dynamicHotspotsLoadingChange": "DYNAMIC_HOTSPOTS_LOADING_CHANGE",
+    "dynamicHotspotsSet": "DYNAMIC_HOTSPOTS_SET",
+    "hotspotDataSourceChange": "HOTSPOT_DATA_SOURCE_CHANGE",
+    "hotspotDataSourceSettingsChange": "HOTSPOT_DATA_SOURCE_SETTINGS_CHANGE",
+    "hotspotSelect": "HOTSPOT_SELECT",
+    "hotspotTooltipChange": "HOTSPOT_TOOLTIP_CHANGE",
+    "hotspotsAdd": "HOTSPOTS_ADD",
+    "selectedHotspotDelete": "SELECTED_HOTSPOT_DELETE",
+    "textHotspotContentChange": "TEXT_HOTSPOT_CONTENT_CHANGE",
+    "textHotspotStyleChange": "TEXT_HOTSPOT_STYLE_CHANGE",
+  },
+  "hotspotTypes" => Object {
+    "DYNAMIC": "dynamic",
+    "FIXED": "fixed",
+    "TEXT": "text",
+  },
+  "hotspotEditorReducer" => Object {},
+  "useHotspotEditorState" => Object {
+    "prototypes": Object {
+      "configuration": Object {
+        "args": Array [
+          Object {
+            "initialState": Object {
+              "currentType": Object {
+                "args": Array [
+                  Array [
+                    "fixed",
+                    "dynamic",
+                    "text",
+                  ],
+                ],
+                "type": "oneOf",
+              },
+              "dynamicHotspotSourceX": Object {
+                "args": Array [
+                  Object {
+                    "dataSourceId": Object {
+                      "type": "string",
+                    },
+                  },
+                ],
+                "type": "shape",
+              },
+              "dynamicHotspotSourceY": Object {
+                "args": Array [
+                  Object {
+                    "dataSourceId": Object {
+                      "type": "string",
+                    },
+                  },
+                ],
+                "type": "shape",
+              },
+              "dynamicHotspotsLoading": Object {
+                "type": "bool",
+              },
+              "hotspots": Object {
+                "args": Array [
+                  Object {
+                    "backgroundColor": Object {
+                      "type": "string",
+                    },
+                    "backgroundOpacity": Object {
+                      "type": "number",
+                    },
+                    "bold": Object {
+                      "type": "bool",
+                    },
+                    "borderColor": Object {
+                      "type": "string",
+                    },
+                    "borderWidth": Object {
+                      "type": "number",
+                    },
+                    "color": Object {
+                      "type": "string",
+                    },
+                    "content": Object {
+                      "args": Array [
+                        Array [
+                          Object {
+                            "type": "element",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "attributes": Object {
+                                  "args": Array [
+                                    Object {
+                                      "args": Array [
+                                        Object {
+                                          "dataSourceId": Object {
+                                            "type": "string",
+                                          },
+                                          "label": Object {
+                                            "type": "string",
+                                          },
+                                          "precision": Object {
+                                            "type": "number",
+                                          },
+                                          "thresholds": Object {
+                                            "args": Array [
+                                              Object {
+                                                "args": Array [
+                                                  Object {
+                                                    "color": Object {
+                                                      "type": "string",
+                                                    },
+                                                    "comparison": Object {
+                                                      "args": Array [
+                                                        Array [
+                                                          "<",
+                                                          ">",
+                                                          "=",
+                                                          "<=",
+                                                          ">=",
+                                                        ],
+                                                      ],
+                                                      "type": "oneOf",
+                                                    },
+                                                    "icon": Object {
+                                                      "type": "string",
+                                                    },
+                                                    "value": Object {
+                                                      "type": "any",
+                                                    },
+                                                  },
+                                                ],
+                                                "type": "shape",
+                                              },
+                                            ],
+                                            "type": "arrayOf",
+                                          },
+                                          "unit": Object {
+                                            "type": "string",
+                                          },
+                                        },
+                                      ],
+                                      "type": "shape",
+                                    },
+                                  ],
+                                  "type": "arrayOf",
+                                },
+                                "description": Object {
+                                  "type": "string",
+                                },
+                                "hotspotThreshold": Object {
+                                  "args": Array [
+                                    Object {
+                                      "color": Object {
+                                        "type": "string",
+                                      },
+                                      "comparison": Object {
+                                        "args": Array [
+                                          Array [
+                                            "<",
+                                            ">",
+                                            "=",
+                                            "<=",
+                                            ">=",
+                                          ],
+                                        ],
+                                        "type": "oneOf",
+                                      },
+                                      "dataSourceId": Object {
+                                        "type": "string",
+                                      },
+                                      "icon": Object {
+                                        "type": "string",
+                                      },
+                                      "value": Object {
+                                        "type": "any",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                                "i18n": Object {
+                                  "args": Array [
+                                    Object {
+                                      "titleEditableHintText": Object {
+                                        "type": "string",
+                                      },
+                                      "titlePlaceholderText": Object {
+                                        "type": "string",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                                "id": Object {
+                                  "type": "string",
+                                },
+                                "isTitleEditable": Object {
+                                  "type": "bool",
+                                },
+                                "locale": Object {
+                                  "type": "string",
+                                },
+                                "onChange": Object {
+                                  "type": "func",
+                                },
+                                "renderIconByName": Object {
+                                  "type": "func",
+                                },
+                                "title": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "element",
+                                      },
+                                    ],
+                                  ],
+                                  "type": "oneOfType",
+                                },
+                                "values": Object {
+                                  "args": Array [
+                                    Object {
+                                      "type": "any",
+                                    },
+                                  ],
+                                  "type": "objectOf",
+                                },
+                              },
+                            ],
+                            "type": "shape",
+                          },
+                        ],
+                      ],
+                      "isRequired": true,
+                      "type": "oneOfType",
+                    },
+                    "fontColor": Object {
+                      "type": "string",
+                    },
+                    "fontSize": Object {
+                      "type": "number",
+                    },
+                    "height": Object {
+                      "type": "number",
+                    },
+                    "icon": Object {
+                      "type": "string",
+                    },
+                    "iconDescription": Object {
+                      "type": "string",
+                    },
+                    "isSelected": Object {
+                      "type": "bool",
+                    },
+                    "italic": Object {
+                      "type": "bool",
+                    },
+                    "onClick": Object {
+                      "type": "func",
+                    },
+                    "renderIconByName": Object {
+                      "type": "func",
+                    },
+                    "type": Object {
+                      "args": Array [
+                        Array [
+                          "fixed",
+                          "dynamic",
+                          "text",
+                        ],
+                      ],
+                      "type": "oneOf",
+                    },
+                    "underline": Object {
+                      "type": "bool",
+                    },
+                    "width": Object {
+                      "type": "number",
+                    },
+                    "x": Object {
+                      "isRequired": true,
+                      "type": "number",
+                    },
+                    "y": Object {
+                      "isRequired": true,
+                      "type": "number",
+                    },
+                  },
+                ],
+                "type": "arrayOf",
+              },
+              "selectedHotspot": Object {
+                "backgroundColor": Object {
+                  "type": "string",
+                },
+                "backgroundOpacity": Object {
+                  "type": "number",
+                },
+                "bold": Object {
+                  "type": "bool",
+                },
+                "borderColor": Object {
+                  "type": "string",
+                },
+                "borderWidth": Object {
+                  "type": "number",
+                },
+                "color": Object {
+                  "type": "string",
+                },
+                "content": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "element",
+                      },
+                      Object {
+                        "args": Array [
+                          Object {
+                            "attributes": Object {
+                              "args": Array [
+                                Object {
+                                  "args": Array [
+                                    Object {
+                                      "dataSourceId": Object {
+                                        "type": "string",
+                                      },
+                                      "label": Object {
+                                        "type": "string",
+                                      },
+                                      "precision": Object {
+                                        "type": "number",
+                                      },
+                                      "thresholds": Object {
+                                        "args": Array [
+                                          Object {
+                                            "args": Array [
+                                              Object {
+                                                "color": Object {
+                                                  "type": "string",
+                                                },
+                                                "comparison": Object {
+                                                  "args": Array [
+                                                    Array [
+                                                      "<",
+                                                      ">",
+                                                      "=",
+                                                      "<=",
+                                                      ">=",
+                                                    ],
+                                                  ],
+                                                  "type": "oneOf",
+                                                },
+                                                "icon": Object {
+                                                  "type": "string",
+                                                },
+                                                "value": Object {
+                                                  "type": "any",
+                                                },
+                                              },
+                                            ],
+                                            "type": "shape",
+                                          },
+                                        ],
+                                        "type": "arrayOf",
+                                      },
+                                      "unit": Object {
+                                        "type": "string",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                            "description": Object {
+                              "type": "string",
+                            },
+                            "hotspotThreshold": Object {
+                              "args": Array [
+                                Object {
+                                  "color": Object {
+                                    "type": "string",
+                                  },
+                                  "comparison": Object {
+                                    "args": Array [
+                                      Array [
+                                        "<",
+                                        ">",
+                                        "=",
+                                        "<=",
+                                        ">=",
+                                      ],
+                                    ],
+                                    "type": "oneOf",
+                                  },
+                                  "dataSourceId": Object {
+                                    "type": "string",
+                                  },
+                                  "icon": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "any",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            "i18n": Object {
+                              "args": Array [
+                                Object {
+                                  "titleEditableHintText": Object {
+                                    "type": "string",
+                                  },
+                                  "titlePlaceholderText": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            "id": Object {
+                              "type": "string",
+                            },
+                            "isTitleEditable": Object {
+                              "type": "bool",
+                            },
+                            "locale": Object {
+                              "type": "string",
+                            },
+                            "onChange": Object {
+                              "type": "func",
+                            },
+                            "renderIconByName": Object {
+                              "type": "func",
+                            },
+                            "title": Object {
+                              "args": Array [
+                                Array [
+                                  Object {
+                                    "type": "string",
+                                  },
+                                  Object {
+                                    "type": "element",
+                                  },
+                                ],
+                              ],
+                              "type": "oneOfType",
+                            },
+                            "values": Object {
+                              "args": Array [
+                                Object {
+                                  "type": "any",
+                                },
+                              ],
+                              "type": "objectOf",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                  ],
+                  "isRequired": true,
+                  "type": "oneOfType",
+                },
+                "fontColor": Object {
+                  "type": "string",
+                },
+                "fontSize": Object {
+                  "type": "number",
+                },
+                "height": Object {
+                  "type": "number",
+                },
+                "icon": Object {
+                  "type": "string",
+                },
+                "iconDescription": Object {
+                  "type": "string",
+                },
+                "isSelected": Object {
+                  "type": "bool",
+                },
+                "italic": Object {
+                  "type": "bool",
+                },
+                "onClick": Object {
+                  "type": "func",
+                },
+                "renderIconByName": Object {
+                  "type": "func",
+                },
+                "type": Object {
+                  "args": Array [
+                    Array [
+                      "fixed",
+                      "dynamic",
+                      "text",
+                    ],
+                  ],
+                  "type": "oneOf",
+                },
+                "underline": Object {
+                  "type": "bool",
+                },
+                "width": Object {
+                  "type": "number",
+                },
+                "x": Object {
+                  "isRequired": true,
+                  "type": "number",
+                },
+                "y": Object {
+                  "isRequired": true,
+                  "type": "number",
+                },
+              },
+              "thresholds": Object {
+                "args": Array [
+                  Object {
+                    "type": "object",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+            },
+            "reducer": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+    },
+  },
   "Accordion" => Object {
     "defaultProps": Object {
       "align": "end",

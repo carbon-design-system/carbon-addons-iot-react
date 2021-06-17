@@ -125,6 +125,12 @@ export MapCard from './components/MapCard/MapCard';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';
+export {
+  hotspotActionTypes,
+  hotspotTypes,
+  hotspotEditorReducer,
+  useHotspotEditorState,
+} from './components/HotspotEditorModal/hooks/hotspotStateHook';
 
 // Carbon proxy
 export {
