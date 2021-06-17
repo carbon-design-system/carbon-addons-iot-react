@@ -14,6 +14,7 @@ import {
   I18NPropTypes,
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
+  TableSortPropType,
 } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
@@ -52,6 +53,7 @@ const propTypes = {
     hasSingleRowEdit: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
+    hasMultiSort: PropTypes.bool,
     useAutoTableLayoutForResize: PropTypes.bool,
   }),
   /** List of columns */
@@ -77,10 +79,7 @@ const propTypes = {
       isSelectAllSelected: PropTypes.bool,
     }).isRequired,
     /** What sorting is currently applied */
-    sort: PropTypes.shape({
-      direction: PropTypes.string,
-      column: PropTypes.string,
-    }).isRequired,
+    sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]).isRequired,
     /** What column ordering is currently applied to the table */
     ordering: PropTypes.arrayOf(
       PropTypes.shape({
@@ -157,6 +156,7 @@ const TableHead = ({
     wrapCellText,
     truncateCellText,
     hasSingleRowEdit,
+    hasMultiSort,
     useAutoTableLayoutForResize,
   },
   columns,
@@ -378,7 +378,25 @@ const TableHead = ({
         ) : null}
         {ordering.map((item, columnIndex) => {
           const matchingColumnMeta = columns.find((column) => column.id === item.columnId);
-          const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
+          const hasSingleSort =
+            matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
+          const multiSortColumn =
+            hasMultiSort &&
+            matchingColumnMeta &&
+            Array.isArray(sort) &&
+            sort.find((c) => c.columnId === matchingColumnMeta.id);
+          const hasSort = hasSingleSort || hasMultiSort;
+          const sortOrder =
+            hasMultiSort && Array.isArray(sort)
+              ? sort.findIndex((c) => c.columnId === matchingColumnMeta.id) + 1
+              : -1;
+
+          const sortDirection = hasSingleSort
+            ? sort.direction
+            : hasMultiSort && multiSortColumn?.direction
+            ? multiSortColumn.direction
+            : 'NONE';
+
           const align =
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           const hasOverflow = Array.isArray(matchingColumnMeta?.overflowMenuItems);
@@ -402,6 +420,8 @@ const TableHead = ({
               isSortHeader={hasSort}
               hasTooltip={!!matchingColumnMeta.tooltip}
               ref={columnRef[matchingColumnMeta.id]}
+              hasMultiSort={hasMultiSort}
+              hasOverflow={hasOverflow}
               thStyle={{
                 width:
                   currentColumnWidths[matchingColumnMeta.id] &&
@@ -416,14 +436,14 @@ const TableHead = ({
                 }
               }}
               translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-              sortDirection={hasSort ? sort.direction : 'NONE'}
+              sortDirection={sortDirection}
               align={align}
               className={classnames(`table-header-label-${align}`, {
                 [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
                 'table-header-sortable': matchingColumnMeta.isSortable,
                 [`${iotPrefix}--table-header-resize`]: hasResize,
                 [`${iotPrefix}--table-head--table-header--with-overflow`]:
-                  matchingColumnMeta.isSortable && hasOverflow,
+                  hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable),
               })}
               // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
               data-floating-menu-container
@@ -438,7 +458,7 @@ const TableHead = ({
                 {matchingColumnMeta.name}
               </TableCellRenderer>
 
-              {hasOverflow ? (
+              {hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable) ? (
                 <OverflowMenu
                   className={`${iotPrefix}--table-head--overflow`}
                   direction="bottom"
@@ -446,15 +466,26 @@ const TableHead = ({
                   flipped={columnIndex === ordering.length - 1}
                   onClick={(e) => e.stopPropagation()}
                 >
-                  {matchingColumnMeta.overflowMenuItems.map((menuItem) => (
+                  {hasOverflow &&
+                    matchingColumnMeta.overflowMenuItems.map((menuItem) => (
+                      <OverflowMenuItem
+                        itemText={menuItem.text}
+                        key={`${columnIndex}--overflow-item-${menuItem.id}`}
+                        onClick={(e) => handleOverflowItemClick(e, menuItem)}
+                      />
+                    ))}
+                  {hasMultiSort && (
                     <OverflowMenuItem
-                      itemText={menuItem.text}
-                      key={`${columnIndex}--overflow-item-${menuItem.id}`}
-                      onClick={(e) => handleOverflowItemClick(e, menuItem)}
+                      itemText={i18n.multiSortOverflowItem}
+                      key={`${columnIndex}--overflow-item-multi-sort`}
+                      onClick={(e) => handleOverflowItemClick(e, { id: 'multi-sort' })}
                     />
-                  ))}
+                  )}
                 </OverflowMenu>
               ) : null}
+              {sortOrder > 0 && (
+                <span className={`${iotPrefix}--table-header-label__sort-order`}>{sortOrder}</span>
+              )}
               {hasResize && (item !== lastVisibleColumn || showExpanderColumn) ? (
                 <ColumnResize
                   showExpanderColumn={showExpanderColumn}
