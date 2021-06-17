@@ -9,6 +9,7 @@ import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
 import { Tag } from '../Tag';
 
 import List from './List';
+import ListREADME from './List.mdx';
 
 export const sampleHierarchy = {
   MLB: {
@@ -118,6 +119,9 @@ export default {
 
   parameters: {
     component: List,
+    docs: {
+      page: ListREADME,
+    },
   },
 
   excludeStories: ['sampleHierarchy'],
@@ -617,32 +621,6 @@ WithTags.story = {
   name: 'with tags',
 };
 
-export const IsLoading = () => (
-  <div style={{ width: 400 }}>
-    <List
-      title={text('title', 'NY Yankees')}
-      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
-        ([key]) => ({
-          id: key,
-          content: {
-            value: key,
-            tags: [
-              <Tag type="blue" title="descriptor" key="tag1">
-                default
-              </Tag>,
-            ],
-          },
-        })
-      )}
-      isLoading={boolean('isLoading', true)}
-    />
-  </div>
-);
-
-IsLoading.story = {
-  name: 'with isLoading',
-};
-
 export const WithPagination = () => (
   <div style={{ height: 300, overflow: 'auto', width: 400 }}>
     <List
@@ -664,6 +642,7 @@ export const WithPagination = () => (
     />
   </div>
 );
+
 WithPagination.story = {
   name: 'with pagination',
 };

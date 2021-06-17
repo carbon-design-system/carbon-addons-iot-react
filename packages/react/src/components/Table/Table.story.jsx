@@ -33,7 +33,7 @@ import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';
 import EmptyState from '../EmptyState';
 
-import TableREADME from './README.mdx';
+import TableREADME from './Table.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import AsyncTable from './AsyncTable/AsyncTable';
@@ -658,7 +658,7 @@ export const TableExampleWithCreateSaveViews = () => {
     isPublic: true,
     isDeleteable: true,
     isEditable: true,
-    title: 'My view 1',
+    title: 'Search view',
     props: {
       view: {
         filters: [],
@@ -668,7 +668,7 @@ export const TableExampleWithCreateSaveViews = () => {
         },
         toolbar: {
           activeBar: 'column',
-          search: { defaultValue: 'pinoc' },
+          search: { defaultValue: text('defaultSearchValue', 'pinoc'), defaultExpanded: true },
         },
       },
       columns: baseState.columns,
@@ -680,7 +680,7 @@ export const TableExampleWithCreateSaveViews = () => {
     isPublic: false,
     isDeleteable: true,
     isEditable: true,
-    title: 'My view 2',
+    title: 'Filters and search view',
     props: {
       view: {
         filters: [{ columnId: 'string', value: 'helping' }],
@@ -693,7 +693,7 @@ export const TableExampleWithCreateSaveViews = () => {
         },
         toolbar: {
           activeBar: 'filter',
-          search: { defaultValue: '' },
+          search: { defaultValue: 'help', defaultExpanded: true },
         },
       },
       columns: baseState.columns,

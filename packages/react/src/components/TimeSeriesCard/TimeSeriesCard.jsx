@@ -581,7 +581,10 @@ const TimeSeriesCard = ({
   );
 };
 
-TimeSeriesCard.propTypes = { ...CardPropTypes, ...TimeSeriesCardPropTypes };
+TimeSeriesCard.propTypes = {
+  ...CardPropTypes,
+  ...TimeSeriesCardPropTypes,
+};
 TimeSeriesCard.defaultProps = defaultProps;
 
 export default TimeSeriesCard;

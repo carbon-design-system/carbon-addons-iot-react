@@ -8,7 +8,7 @@ import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react'
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
-import SimpleListREADME from './README.mdx';
+import SimpleListREADME from './SimpleList.mdx';
 
 export const getListItems = (num) =>
   Array(num)
@@ -134,131 +134,23 @@ export const Basic = () => (
   <div style={{ width: 500 }}>
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getListItems(30)}
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'xl')}
       isLoading={boolean('isLoading', false)}
+      hasPagination={boolean('hasPagination', true)}
     />
   </div>
 );
 
 Basic.story = {
   name: 'basic',
-};
-
-export const TallListIsFullHeightTrue = () => (
-  <div
-    style={{
-      width: 500,
-      height: 500,
-      background: '#fee',
-      padding: spacing03,
-    }}
-  >
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
-      isFullHeight
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-        pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
-      }}
-      buttons={buttonsToRender}
-      items={getListItems(3)}
-      isLoading={boolean('isLoading', false)}
-    />
-  </div>
-);
-
-TallListIsFullHeightTrue.story = {
-  name: 'tall list (isFullHeight = true)',
-};
-
-export const TallListIsFullHeightFalse = () => (
-  <div
-    style={{
-      width: 500,
-      height: 500,
-      background: '#fee',
-      padding: spacing03,
-    }}
-  >
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-        pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
-      }}
-      buttons={buttonsToRender}
-      items={getListItems(3)}
-      isLoading={boolean('isLoading', false)}
-    />
-  </div>
-);
-
-TallListIsFullHeightFalse.story = {
-  name: 'tall list (isFullHeight = false)',
-};
-
-export const ListWithOverflowGrow = () => (
-  <div
-    style={{
-      width: 500,
-      height: 500,
-      background: '#fee',
-      padding: spacing03,
-    }}
-  >
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-        pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
-      }}
-      buttons={buttonsToRender}
-      items={getListItems(20)}
-      pageSize="xl"
-      isLoading={boolean('isLoading', false)}
-    />
-  </div>
-);
-
-ListWithOverflowGrow.story = {
-  name: 'list with overflow grow',
-};
-
-export const ListWithPageSize = () => (
-  <div
-    style={{
-      width: 500,
-      height: 500,
-      background: '#fee',
-      padding: spacing03,
-    }}
-  >
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-        pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
-      }}
-      buttons={buttonsToRender}
-      items={getListItems(20)}
-      pageSize="sm"
-      isLoading={boolean('isLoading', false)}
-    />
-  </div>
-);
-
-ListWithPageSize.story = {
-  name: 'list with pageSize',
 };
 
 export const ListWithEmptyRow = () => (
@@ -272,14 +164,17 @@ export const ListWithEmptyRow = () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={listItemsWithEmptyRow}
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'xl')}
       isLoading={boolean('isLoading', false)}
+      hasPagination={boolean('hasPagination', true)}
     />
   </div>
 );
@@ -299,16 +194,18 @@ export const ListWithLargeRow = () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getFatRowListItems(20)}
-      pageSize="sm"
-      isLargeRow
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow
+      hasPagination={boolean('hasPagination', true)}
     />
   </div>
 );
@@ -328,15 +225,17 @@ export const ListWithMultipleActions = () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getListItemsWithActions(5)}
-      pageSize="sm"
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
       isLoading={boolean('isLoading', false)}
+      hasPagination={boolean('hasPagination', true)}
     />
   </div>
 );
@@ -356,15 +255,17 @@ export const ListWithOverflowMenu = () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getListItemsWithOverflowMenu(5)}
-      pageSize="sm"
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
       isLoading={boolean('isLoading', false)}
+      hasPagination={boolean('hasPagination', true)}
     />
   </div>
 );
@@ -384,14 +285,16 @@ export const LargeRowListWithMultipleActions = () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getFatRowListItemsWithActions(5)}
-      pageSize="sm"
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
+      hasPagination={boolean('hasPagination', true)}
       isLargeRow
       isLoading={boolean('isLoading', false)}
     />
@@ -413,14 +316,16 @@ export const LargeRowListWithOverflowMenu = () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getFatRowListItemsWithOverflowMenu(5)}
-      pageSize="sm"
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
+      hasPagination={boolean('hasPagination', true)}
       isLargeRow
       isLoading={boolean('isLoading', false)}
     />
@@ -439,7 +344,7 @@ export const ListWithReorder = () => {
       <div style={{ width: 500 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
-          hasSearch
+          hasSearch={boolean('hasSearch', true)}
           i18n={{
             searchPlaceHolderText: 'Enter a search',
             pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
@@ -447,7 +352,10 @@ export const ListWithReorder = () => {
           }}
           buttons={buttonsToRender}
           items={items}
+          isFullHeight={boolean('isFullHeight', true)}
+          pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'xl')}
           isLoading={boolean('isLoading', false)}
+          hasPagination={boolean('hasPagination', true)}
           editingStyle={select(
             'Editing Style',
             [EditingStyle.Single, EditingStyle.Multiple],
@@ -465,31 +373,5 @@ export const ListWithReorder = () => {
 };
 
 ListWithReorder.story = {
-  name: 'list with reorder',
-};
-
-export const HiddenPagination = () => (
-  <div style={{ width: 500 }}>
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-      }}
-      buttons={buttonsToRender}
-      items={getListItems(5)}
-      isLoading={boolean('isLoading', false)}
-      hasPagination={false}
-    />
-  </div>
-);
-
-HiddenPagination.story = {
-  name: 'hidden pagination',
-
-  parameters: {
-    info: {
-      text: `Optionally hide the pagination by passing 'hasPagination: false'`,
-    },
-  },
+  name: 'with reorder',
 };

@@ -45,7 +45,10 @@ const PageTitleBarPropTypes = {
   /** Is the page actively loading */
   isLoading: PropTypes.bool,
   onEdit: PropTypes.func,
-  i18n: PropTypes.shape({ editIconDescription: PropTypes.string }),
+  i18n: PropTypes.shape({
+    editIconDescription: PropTypes.string,
+    tooltipIconDescription: PropTypes.string,
+  }),
   className: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.string),
 

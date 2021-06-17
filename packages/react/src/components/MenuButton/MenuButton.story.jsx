@@ -11,7 +11,7 @@ import { select } from '@storybook/addon-knobs';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
-import MenuButtonREADME from './README.mdx';
+import MenuButtonREADME from './MenuButton.mdx';
 import MenuButton from './MenuButton';
 
 export const menuItems = [

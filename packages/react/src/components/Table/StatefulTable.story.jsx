@@ -26,7 +26,7 @@ import {
   tableColumnsWithAlignment,
 } from './Table.story';
 import Table from './Table';
-import TableREADME from './README.mdx';
+import TableREADME from './Table.mdx';
 import TableManageViewsModal from './TableManageViewsModal/TableManageViewsModal';
 import TableViewDropdown from './TableViewDropdown/TableViewDropdown';
 import TableSaveViewModal from './TableSaveViewModal/TableSaveViewModal';

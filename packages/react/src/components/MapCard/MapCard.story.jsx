@@ -11,7 +11,7 @@ import options from './storyFiles/mapOptions';
 import MapboxExample from './storyFiles/MapboxExample';
 import MapboxDragPanelExample from './storyFiles/MapboxDragPanelExample';
 import OpenLayersExample from './storyFiles/OpenLayersExample';
-import MapCardREADME from './README.mdx';
+import MapCardREADME from './MapCard.mdx';
 
 export const Experimental = () => <StoryNotice componentName="MapCard" experimental />;
 Experimental.story = {

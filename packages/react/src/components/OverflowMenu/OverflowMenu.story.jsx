@@ -11,7 +11,7 @@ import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
 import { OverflowMenuItem } from '../OverflowMenuItem';
 
-import OverflowMenuREADME from './README.mdx';
+import OverflowMenuREADME from './OverflowMenu.mdx';
 
 import { OverflowMenu } from '.';
 

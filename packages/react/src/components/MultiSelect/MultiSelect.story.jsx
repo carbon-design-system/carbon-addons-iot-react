@@ -12,7 +12,7 @@ import { withKnobs, boolean, select, text, object } from '@storybook/addon-knobs
 
 import { Checkbox } from '../Checkbox';
 
-import MultiSelectREADME from './README.mdx';
+import MultiSelectREADME from './MultiSelect.mdx';
 
 import { MultiSelect } from '.';
 

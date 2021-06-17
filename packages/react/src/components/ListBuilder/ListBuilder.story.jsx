@@ -9,7 +9,7 @@ import Button from '../Button/Button';
 import { generateUserList } from '../SelectUsersModal/SelectUsersModal.story';
 
 import ListBuilder from './ListBuilder';
-import ListBuilderREADME from './README.mdx';
+import ListBuilderREADME from './ListBuilder.mdx';
 
 export const Experimental = () => <StoryNotice componentName="ListBuilder" experimental />;
 Experimental.story = {
