@@ -181,8 +181,9 @@
   }
 
   &--footer {
-    padding: $spacing-05;
+    border-top: solid 1px $ui-03;
     & > button {
+      justify-content: space-between;
       width: 100%;
     }
   }

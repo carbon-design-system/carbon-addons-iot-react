@@ -16,6 +16,7 @@ import mapboxgl from 'mapbox-gl';
 import PropTypes from 'prop-types';
 
 import MapCard from '../MapCard';
+import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 
 import Optionsfield from './Optionsfield';
 import './mapbox-example.scss';
@@ -288,25 +289,27 @@ const MapboxExample = ({
   );
 
   return (
-    <MapCard
-      id="map-card"
-      isExpanded={isExpanded}
-      isResizable={isResizable}
-      availableActions={availableActions}
-      mapControls={mapControls}
-      mapContainerRef={mapContainerRef}
-      isLegendFullWidth={isLegendFullWidth}
-      options={options}
-      layeredControls={layeredControls}
-      stops={active.stops}
-      onZoomIn={onZoomIn}
-      onZoomOut={onZoomOut}
-      onCardAction={onCardAction}
-      i18n={{ cardTitle: active.name }}
-      settingsContent={settingsContent}
-      isSettingPanelOpen={isSettingPanelOpen}
-      {...other}
-    />
+    <DragAndDrop>
+      <MapCard
+        id="map-card"
+        isExpanded={isExpanded}
+        isResizable={isResizable}
+        availableActions={availableActions}
+        mapControls={mapControls}
+        mapContainerRef={mapContainerRef}
+        isLegendFullWidth={isLegendFullWidth}
+        options={options}
+        layeredControls={layeredControls}
+        stops={active.stops}
+        onZoomIn={onZoomIn}
+        onZoomOut={onZoomOut}
+        onCardAction={onCardAction}
+        i18n={{ cardTitle: active.name }}
+        settingsContent={settingsContent}
+        isSettingPanelOpen={isSettingPanelOpen}
+        {...other}
+      />
+    </DragAndDrop>
   );
 };
 

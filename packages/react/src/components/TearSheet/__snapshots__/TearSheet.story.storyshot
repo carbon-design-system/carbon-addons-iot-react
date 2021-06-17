@@ -31,25 +31,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     <div
       className="iot--tear-sheet-wrapper"
       data-testid="iot--tear-sheet-wrapper"
-      style={
-        Object {
-          "--window-height": "768px",
-        }
-      }
     >
       <div
         className="iot--tear-sheet-wrapper--container"
         data-testid="container-0"
         id="container-0"
         onClick={[Function]}
-        style={
-          Object {
-            "--content-max-height": "680px",
-            "--content-max-width": "896px",
-            "bottom": "-768px",
-            "width": "0px",
-          }
-        }
       >
         <div
           className="iot--tear-sheet"
@@ -107,8 +94,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   "display": "flex",
                   "flexDirection": "column",
                   "height": "100%",
-                  "justifyContent": "space-between",
-                  "width": "1000px",
                 }
               }
             >
@@ -120,7 +105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 onClick={[Function]}
                 style={
                   Object {
-                    "margin": "2rem 2rem 0 2rem",
+                    "margin": "2rem 2rem 0",
                     "maxWidth": "13rem",
                   }
                 }
@@ -129,12 +114,47 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 Open 2nd sheet
               </button>
+              <button
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--tertiary"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "marginLeft": "2rem",
+                    "maxWidth": "13rem",
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                Set header additional content
+              </button>
+              <button
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--tertiary"
+                data-testid="Button"
+                disabled={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "marginLeft": "2rem",
+                    "maxWidth": "13rem",
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                Clear header additional content
+              </button>
               <div
                 style={
                   Object {
                     "borderTop": "1px solid #e0e0e0",
                     "display": "flex",
                     "justifyContent": "flex-end",
+                    "marginTop": "auto",
                   }
                 }
               >
@@ -181,14 +201,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         data-testid="container-1"
         id="container-1"
         onClick={[Function]}
-        style={
-          Object {
-            "--content-max-height": "680px",
-            "--content-max-width": "896px",
-            "bottom": "-768px",
-            "width": "0px",
-          }
-        }
       >
         <div
           className="iot--tear-sheet"
@@ -247,7 +259,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   "flexDirection": "column",
                   "height": "100%",
                   "justifyContent": "space-between",
-                  "width": "1000px",
                 }
               }
             >
