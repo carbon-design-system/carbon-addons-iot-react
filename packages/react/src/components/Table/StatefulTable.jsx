@@ -28,6 +28,12 @@ import {
   tableAdvancedFiltersApply,
   tableAdvancedFiltersCancel,
   tableAdvancedFiltersCreate,
+  tableMultiSortToggleModal,
+  tableSaveMultiSortColumns,
+  tableCancelMultiSortColumns,
+  tableAddMultiSortColumn,
+  tableRemoveMultiSortColumn,
+  tableClearMultiSortColumns,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -144,6 +150,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onChangeOrdering,
     onColumnResize,
     onOverflowItemClicked,
+    onSaveMultiSortColumns,
+    onCancelMultiSortColumns,
+    onClearMultiSortColumns,
+    onAddMultiSortColumn,
+    onRemoveMultiSortColumn,
   } = table || {};
 
   const getRowAction = (data, actionId, rowId) => {
@@ -293,7 +304,30 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onColumnResize, resizedColumns);
       },
       onOverflowItemClicked: (id) => {
+        if (id === 'multi-sort') {
+          dispatch(tableMultiSortToggleModal());
+        }
         callbackParent(onOverflowItemClicked, id);
+      },
+      onSaveMultiSortColumns: (sortColumns) => {
+        dispatch(tableSaveMultiSortColumns(sortColumns));
+        callbackParent(onSaveMultiSortColumns, sortColumns);
+      },
+      onCancelMultiSortColumns: () => {
+        dispatch(tableCancelMultiSortColumns());
+        callbackParent(onCancelMultiSortColumns);
+      },
+      onClearMultiSortColumns: () => {
+        dispatch(tableClearMultiSortColumns());
+        callbackParent(onClearMultiSortColumns);
+      },
+      onAddMultiSortColumn: (index) => {
+        dispatch(tableAddMultiSortColumn(index));
+        callbackParent(onAddMultiSortColumn, index);
+      },
+      onRemoveMultiSortColumn: (index) => {
+        dispatch(tableRemoveMultiSortColumn(index));
+        callbackParent(onRemoveMultiSortColumn, index);
       },
     },
     onUserViewModified: (viewConfiguration) => {

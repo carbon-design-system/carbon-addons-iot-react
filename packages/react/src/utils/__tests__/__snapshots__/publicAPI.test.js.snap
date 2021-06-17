@@ -360,7 +360,9 @@ Map {
           "onChangePage": [Function],
         },
         "table": Object {
+          "onAddMultiSortColumn": [Function],
           "onApplyRowAction": [Function],
+          "onCancelMultiSortColumns": [Function],
           "onChangeOrdering": [Function],
           "onChangeSort": [Function],
           "onColumnResize": [Function],
@@ -368,8 +370,10 @@ Map {
           "onEmptyStateAction": null,
           "onErrorStateAction": null,
           "onOverflowItemClicked": [Function],
+          "onRemoveMultiSortColumn": [Function],
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
+          "onSaveMultiSortColumns": [Function],
         },
         "toolbar": Object {
           "onApplyAdvancedFilter": [Function],
@@ -415,6 +419,20 @@ Map {
         "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
         "itemsSelected": "items selected",
+        "multiSortAddColumn": "Add column",
+        "multiSortAscending": "Ascending",
+        "multiSortDescending": "Descending",
+        "multiSortDirectionLabel": "Select a direction",
+        "multiSortDirectionTitle": "Sort order",
+        "multiSortModalClearLabel": "Clear sorting",
+        "multiSortModalPrimaryLabel": "Sort",
+        "multiSortModalSecondaryLabel": "Cancel",
+        "multiSortModalTitle": "Select columns to sort",
+        "multiSortOverflowItem": "Multi-sort",
+        "multiSortRemoveColumn": "Remove column",
+        "multiSortSelectColumnLabel": "Select a column",
+        "multiSortSelectColumnSortByTitle": "Sort by",
+        "multiSortSelectColumnThenByTitle": "Then by",
         "openMenuAria": "Open menu",
         "overflowMenuAria": "More actions",
         "pageBackwardAria": "Previous page",
@@ -514,13 +532,22 @@ Map {
             "table": Object {
               "args": Array [
                 Object {
+                  "onAddMultiSortColumn": Object {
+                    "type": "func",
+                  },
                   "onApplyRowAction": Object {
+                    "type": "func",
+                  },
+                  "onCancelMultiSortColumns": Object {
                     "type": "func",
                   },
                   "onChangeOrdering": Object {
                     "type": "func",
                   },
                   "onChangeSort": Object {
+                    "type": "func",
+                  },
+                  "onClearMultiSortColumns": Object {
                     "type": "func",
                   },
                   "onClearRowError": Object {
@@ -538,6 +565,9 @@ Map {
                   "onOverflowItemClicked": Object {
                     "type": "func",
                   },
+                  "onRemoveMultiSortColumn": Object {
+                    "type": "func",
+                  },
                   "onRowClicked": Object {
                     "type": "func",
                   },
@@ -545,6 +575,9 @@ Map {
                     "type": "func",
                   },
                   "onRowSelected": Object {
+                    "type": "func",
+                  },
+                  "onSaveMultiSortColumns": Object {
                     "type": "func",
                   },
                   "onSelectAll": Object {
@@ -972,6 +1005,54 @@ Map {
             "learnMoreText": Object {
               "type": "string",
             },
+            "multiSortAddColumn": Object {
+              "type": "string",
+            },
+            "multiSortAscending": Object {
+              "type": "string",
+            },
+            "multiSortClearAll": Object {
+              "type": "string",
+            },
+            "multiSortCloseMenu": Object {
+              "type": "string",
+            },
+            "multiSortCloseModal": Object {
+              "type": "string",
+            },
+            "multiSortDescending": Object {
+              "type": "string",
+            },
+            "multiSortDirectionLabel": Object {
+              "type": "string",
+            },
+            "multiSortDirectionTitle": Object {
+              "type": "string",
+            },
+            "multiSortModalPrimaryLabel": Object {
+              "type": "string",
+            },
+            "multiSortModalSecondaryLabel": Object {
+              "type": "string",
+            },
+            "multiSortModalTitle": Object {
+              "type": "string",
+            },
+            "multiSortOpenMenu": Object {
+              "type": "string",
+            },
+            "multiSortRemoveColumn": Object {
+              "type": "string",
+            },
+            "multiSortSelectColumnLabel": Object {
+              "type": "string",
+            },
+            "multiSortSelectColumnSortByTitle": Object {
+              "type": "string",
+            },
+            "multiSortSelectColumnThenByTitle": Object {
+              "type": "string",
+            },
             "openMenuAria": Object {
               "type": "string",
             },
@@ -1049,6 +1130,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "hasMultiSort": Object {
+              "type": "bool",
             },
             "hasOnlyPageData": Object {
               "type": "bool",
@@ -1446,28 +1530,63 @@ Map {
                     ],
                     "type": "arrayOf",
                   },
+                  "showMultiSortModal": Object {
+                    "type": "bool",
+                  },
                   "singleRowEditButtons": Object {
                     "type": "element",
                   },
                   "sort": Object {
                     "args": Array [
-                      Object {
-                        "columnId": Object {
-                          "type": "string",
-                        },
-                        "direction": Object {
+                      Array [
+                        Object {
                           "args": Array [
-                            Array [
-                              "NONE",
-                              "ASC",
-                              "DESC",
-                            ],
+                            Object {
+                              "columnId": Object {
+                                "type": "string",
+                              },
+                              "direction": Object {
+                                "args": Array [
+                                  Array [
+                                    "NONE",
+                                    "ASC",
+                                    "DESC",
+                                  ],
+                                ],
+                                "type": "oneOf",
+                              },
+                            },
                           ],
-                          "type": "oneOf",
+                          "type": "shape",
                         },
-                      },
+                        Object {
+                          "args": Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "columnId": Object {
+                                    "type": "string",
+                                  },
+                                  "direction": Object {
+                                    "args": Array [
+                                      Array [
+                                        "NONE",
+                                        "ASC",
+                                        "DESC",
+                                      ],
+                                    ],
+                                    "type": "oneOf",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                          ],
+                          "type": "arrayOf",
+                        },
+                      ],
                     ],
-                    "type": "shape",
+                    "type": "oneOfType",
                   },
                 },
               ],
@@ -1590,6 +1709,21 @@ Map {
         "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
         "itemsSelected": "items selected",
+        "multiSortAddColumn": "Add column",
+        "multiSortAscending": "Ascending",
+        "multiSortCloseMenu": "Close menu",
+        "multiSortCloseModal": "Close",
+        "multiSortDescending": "Descending",
+        "multiSortDirectionLabel": "Select a direction",
+        "multiSortDirectionTitle": "Sort order",
+        "multiSortModalPrimaryLabel": "Sort",
+        "multiSortModalSecondaryLabel": "Cancel",
+        "multiSortModalTitle": "Select columns to sort",
+        "multiSortOpenMenu": "Open menu",
+        "multiSortRemoveColumn": "Remove column",
+        "multiSortSelectColumnLabel": "Select a column",
+        "multiSortSelectColumnSortByTitle": "Sort by",
+        "multiSortSelectColumnThenByTitle": "Then by",
         "openMenuAria": "Open menu",
         "overflowMenuAria": "More actions",
         "pageBackwardAria": "Previous page",
@@ -1864,6 +1998,54 @@ Map {
             "learnMoreText": Object {
               "type": "string",
             },
+            "multiSortAddColumn": Object {
+              "type": "string",
+            },
+            "multiSortAscending": Object {
+              "type": "string",
+            },
+            "multiSortClearAll": Object {
+              "type": "string",
+            },
+            "multiSortCloseMenu": Object {
+              "type": "string",
+            },
+            "multiSortCloseModal": Object {
+              "type": "string",
+            },
+            "multiSortDescending": Object {
+              "type": "string",
+            },
+            "multiSortDirectionLabel": Object {
+              "type": "string",
+            },
+            "multiSortDirectionTitle": Object {
+              "type": "string",
+            },
+            "multiSortModalPrimaryLabel": Object {
+              "type": "string",
+            },
+            "multiSortModalSecondaryLabel": Object {
+              "type": "string",
+            },
+            "multiSortModalTitle": Object {
+              "type": "string",
+            },
+            "multiSortOpenMenu": Object {
+              "type": "string",
+            },
+            "multiSortRemoveColumn": Object {
+              "type": "string",
+            },
+            "multiSortSelectColumnLabel": Object {
+              "type": "string",
+            },
+            "multiSortSelectColumnSortByTitle": Object {
+              "type": "string",
+            },
+            "multiSortSelectColumnThenByTitle": Object {
+              "type": "string",
+            },
             "openMenuAria": Object {
               "type": "string",
             },
@@ -1910,6 +2092,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasMultiSort": Object {
+              "type": "bool",
+            },
             "hasResize": Object {
               "type": "bool",
             },
@@ -2058,17 +2243,56 @@ Map {
             },
             "sort": Object {
               "args": Array [
-                Object {
-                  "column": Object {
-                    "type": "string",
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "columnId": Object {
+                          "type": "string",
+                        },
+                        "direction": Object {
+                          "args": Array [
+                            Array [
+                              "NONE",
+                              "ASC",
+                              "DESC",
+                            ],
+                          ],
+                          "type": "oneOf",
+                        },
+                      },
+                    ],
+                    "type": "shape",
                   },
-                  "direction": Object {
-                    "type": "string",
+                  Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "columnId": Object {
+                              "type": "string",
+                            },
+                            "direction": Object {
+                              "args": Array [
+                                Array [
+                                  "NONE",
+                                  "ASC",
+                                  "DESC",
+                                ],
+                              ],
+                              "type": "oneOf",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
                   },
-                },
+                ],
               ],
               "isRequired": true,
-              "type": "shape",
+              "type": "oneOfType",
             },
           },
         ],
@@ -3181,6 +3405,21 @@ Map {
         "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
         "itemsSelected": "items selected",
+        "multiSortAddColumn": "Add column",
+        "multiSortAscending": "Ascending",
+        "multiSortCloseMenu": "Close menu",
+        "multiSortCloseModal": "Close",
+        "multiSortDescending": "Descending",
+        "multiSortDirectionLabel": "Select a direction",
+        "multiSortDirectionTitle": "Sort order",
+        "multiSortModalPrimaryLabel": "Sort",
+        "multiSortModalSecondaryLabel": "Cancel",
+        "multiSortModalTitle": "Select columns to sort",
+        "multiSortOpenMenu": "Open menu",
+        "multiSortRemoveColumn": "Remove column",
+        "multiSortSelectColumnLabel": "Select a column",
+        "multiSortSelectColumnSortByTitle": "Sort by",
+        "multiSortSelectColumnThenByTitle": "Then by",
         "openMenuAria": "Open menu",
         "overflowMenuAria": "More actions",
         "pageBackwardAria": "Previous page",
@@ -4699,6 +4938,9 @@ Map {
         "args": Array [
           Object {
             "editIconDescription": Object {
+              "type": "string",
+            },
+            "tooltipIconDescription": Object {
               "type": "string",
             },
           },
@@ -14990,6 +15232,7 @@ Map {
         "overflowMenuDescription": "Open and close list of options",
         "periodToDateLabel": "Period to date",
         "rollingPeriodLabel": "Rolling period",
+        "searchLabel": "Search",
         "searchPlaceholder": "Search",
         "selectSeverityPlaceholder": "Select a severity",
         "selectTimeRangeLabel": "Select time range",
@@ -28588,6 +28831,12 @@ Map {
     "TABLE_FILTER_CLEAR": "TABLE_FILTER_CLEAR",
     "TABLE_LOADING_SET": "TABLE_LOADING_SET",
     "TABLE_LOAD_VIEW": "TABLE_LOAD_VIEW",
+    "TABLE_MULTI_SORT_ADD_COLUMN": "TABLE_MULTI_SORT_ADD_COLUMN",
+    "TABLE_MULTI_SORT_CANCEL": "TABLE_MULTI_SORT_CANCEL",
+    "TABLE_MULTI_SORT_CLEAR": "TABLE_MULTI_SORT_CLEAR",
+    "TABLE_MULTI_SORT_REMOVE_COLUMN": "TABLE_MULTI_SORT_REMOVE_COLUMN",
+    "TABLE_MULTI_SORT_SAVE": "TABLE_MULTI_SORT_SAVE",
+    "TABLE_MULTI_SORT_TOGGLE_MODAL": "TABLE_MULTI_SORT_TOGGLE_MODAL",
     "TABLE_PAGE_CHANGE": "TABLE_PAGE_CHANGE",
     "TABLE_REGISTER": "TABLE_REGISTER",
     "TABLE_ROW_ACTION_COMPLETE": "TABLE_ROW_ACTION_COMPLETE",
@@ -28602,12 +28851,15 @@ Map {
     "TABLE_TOOLBAR_TOGGLE": "TABLE_TOOLBAR_TOGGLE",
     "tableActionApply": Object {},
     "tableActionCancel": Object {},
+    "tableAddMultiSortColumn": Object {},
     "tableAdvancedFiltersApply": Object {},
     "tableAdvancedFiltersCancel": Object {},
     "tableAdvancedFiltersChange": Object {},
     "tableAdvancedFiltersCreate": Object {},
     "tableAdvancedFiltersRemove": Object {},
     "tableAdvancedFiltersToggle": Object {},
+    "tableCancelMultiSortColumns": Object {},
+    "tableClearMultiSortColumns": Object {},
     "tableColumnOrder": Object {},
     "tableColumnResize": Object {},
     "tableColumnSort": Object {},
@@ -28615,8 +28867,10 @@ Map {
     "tableFilterApply": Object {},
     "tableFilterClear": Object {},
     "tableLoadingSet": Object {},
+    "tableMultiSortToggleModal": Object {},
     "tablePageChange": Object {},
     "tableRegister": Object {},
+    "tableRemoveMultiSortColumn": Object {},
     "tableRowActionComplete": Object {},
     "tableRowActionEdit": Object {},
     "tableRowActionError": Object {},
@@ -28625,6 +28879,7 @@ Map {
     "tableRowExpand": Object {},
     "tableRowSelect": Object {},
     "tableRowSelectAll": Object {},
+    "tableSaveMultiSortColumns": Object {},
     "tableSearchApply": Object {},
     "tableToolbarToggle": Object {},
   },

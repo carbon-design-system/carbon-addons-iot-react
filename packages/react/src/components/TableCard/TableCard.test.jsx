@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { render, within, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { tableColumns, tableData, actions2 } from '../../utils/sample';
@@ -590,5 +591,159 @@ describe('TableCard', () => {
     );
 
     expect(screen.queryAllByTitle('Expand to fullscreen')).toHaveLength(0);
+  });
+
+  describe('i18n', () => {
+    const content = {
+      columns: tableColumns.map((item) =>
+        item.dataSourceId === 'count' ? { ...item, precision: 3 } : { ...item }
+      ),
+      thresholds: [
+        {
+          dataSourceId: 'count',
+          comparison: '<',
+          value: 5,
+          severity: 3,
+        },
+        {
+          dataSourceId: 'count',
+          comparison: '>=',
+          value: 10,
+          severity: 1,
+        },
+        {
+          dataSourceId: 'count',
+          comparison: '=',
+          value: 7,
+          severity: 2,
+        },
+        {
+          dataSourceId: 'pressure',
+          comparison: '>=',
+          value: 10,
+          severity: 1,
+        },
+      ],
+      expandedRows: [
+        {
+          id: 'hour',
+          label: 'Time',
+          type: 'TIMESTAMP',
+        },
+      ],
+    };
+
+    const i18n = {
+      criticalLabel: '__Critical__',
+      moderateLabel: '__Moderate__',
+      lowLabel: '__Low__',
+      selectSeverityPlaceholder: '__Select a severity__',
+      severityLabel: '__Severity__',
+      searchLabel: '__Search__',
+      searchPlaceholder: '__Search__',
+      filterButtonAria: '__Filters__',
+      defaultFilterStringPlaceholdText: '__Type and hit enter to apply__',
+      pageBackwardAria: '__Previous page__',
+      pageForwardAria: '__Next page__',
+      pageNumberAria: '__Page Number__',
+      itemsRange: (min, max) => `__${min}–${max} items__`,
+      currentPage: (page) => `__page ${page}__`,
+      itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
+      pageRange: (current, total) => `__${current} of ${total} pages__`,
+      clickToExpandAria: '__Click to expand content__',
+      clickToCollapseAria: '__Click to collapse content__',
+      clearAllFilters: '__Clear all filters__',
+      clearFilterAria: '__Clear filter__',
+      filterAria: '__Filter__',
+      openMenuAria: '__Open menu__',
+      closeMenuAria: '__Close menu__',
+      clearSelectionAria: '__Clear selection__',
+      emptyMessage: '__There is no data__',
+      emptyMessageWithFilters: '__No results match the current filters__',
+      emptyButtonLabel: '__Create some data__',
+      emptyButtonLabelWithFilters: '__Clear all filters__',
+      inProgressText: '__In Progress__',
+      actionFailedText: '__Action Failed__',
+      learnMoreText: '__Learn More__',
+      dismissText: '__Dismiss__',
+      downloadIconDescription: '__Download table content__',
+    };
+
+    it('manages i18n correctly', () => {
+      render(
+        <TableCard
+          id="table-i18n"
+          title="Testing i18n"
+          content={content}
+          size={CARD_SIZES.LARGEWIDE}
+          values={tableData}
+          i18n={i18n}
+        />
+      );
+
+      expect(screen.queryAllByText('__Critical__')[0]).toBeInTheDocument();
+      expect(screen.queryAllByText('__Moderate__')[0]).toBeInTheDocument();
+      expect(screen.queryAllByText('__Low__')[0]).toBeInTheDocument();
+      expect(screen.queryByTitle('Count __Severity__')).toBeInTheDocument();
+      expect(screen.queryAllByLabelText('__Search__')[0]).toBeInTheDocument();
+      expect(screen.queryByPlaceholderText('__Search__')).toBeInTheDocument();
+      expect(screen.queryByTitle('__Filters__')).toBeInTheDocument();
+      expect(screen.queryByText('__Previous page__')).toBeInTheDocument();
+      expect(screen.queryByText('__Next page__')).toBeInTheDocument();
+      expect(screen.queryByText('__1–10 of 11 items__')).toBeInTheDocument();
+      expect(screen.queryAllByLabelText('__Click to expand content__')[0]).toBeInTheDocument();
+      expect(screen.queryByTitle('__Download table content__')).toBeInTheDocument();
+    });
+
+    it('translates filters', () => {
+      const { rerender } = render(
+        <TableCard
+          id="table-i18n"
+          title="Testing i18n"
+          content={content}
+          size={CARD_SIZES.LARGEWIDE}
+          values={tableData}
+          filters={[{ columnId: 'alert', value: 'failure' }]}
+          i18n={i18n}
+        />
+      );
+
+      // expect(screen.queryByText('__Click to collapse content__')).toBeInTheDocument();
+      expect(screen.queryByText(/__Clear all filters__/gi)).toBeInTheDocument();
+      expect(screen.queryByLabelText('__Filters__')).toBeInTheDocument();
+      userEvent.click(screen.queryByLabelText('__Filters__'));
+      expect(screen.queryByTitle('__Clear filter__')).toBeInTheDocument();
+      expect(
+        screen.queryAllByPlaceholderText('__Type and hit enter to apply__')[0]
+      ).toBeInTheDocument();
+
+      rerender(
+        <TableCard
+          id="table-i18n"
+          title="Testing i18n"
+          content={content}
+          size={CARD_SIZES.LARGEWIDE}
+          values={[]}
+          filters={[{ columnId: 'alert', value: 'failure' }]}
+          i18n={i18n}
+        />
+      );
+      expect(screen.queryByText('__No results match the current filters__')).toBeInTheDocument();
+    });
+
+    it('translates no data', () => {
+      render(
+        <TableCard
+          id="table-i18n"
+          title="Testing i18n"
+          content={content}
+          size={CARD_SIZES.LARGEWIDE}
+          values={[]}
+          i18n={i18n}
+        />
+      );
+
+      expect(screen.queryByText('__There is no data__')).toBeInTheDocument();
+    });
   });
 });
