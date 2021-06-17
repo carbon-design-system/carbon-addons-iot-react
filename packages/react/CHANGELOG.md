@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.32...v2.146.0-next.33) (2021-06-17)
+
+
+### Bug Fixes
+
+* **docs:** update card docs for implementing a custom card ([92a8dc3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/92a8dc332ea498e3af8c73349418344842dc894a))
+
+
+
+
+
+# [2.146.0-next.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.31...v2.146.0-next.32) (2021-06-16)
+
+
+### Bug Fixes
+
+* **statefultable:** dont overwrite defaultvalue in table props ([064b358](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/064b3584ed6d9b3448c63886df2664c2ea39825a))
+* **table:** was not sending every search update along with onUserViewModified ([bfd2c8e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bfd2c8edf22aa45a65ec76beb2e5b8606d264abd))
+* **tableviewdropdown:** correct story name ([91c1351](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/91c13511c015709842bbe7842944b00aaf8adcdc))
+* **tableviewdropdown:** view all should not be overwritten ([a24e404](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a24e4041f3bd17d4438287e3ba08720adbdecbed))
+
+
+
+
+
 # [2.146.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.30...v2.146.0-next.31) (2021-06-16)
 
 

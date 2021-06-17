@@ -16,6 +16,10 @@
 
 The `MenuButton` component has three main states. A single button that opens a dropdown menu. A split button that has a primary action on the main button and a secondary button that opens a dropdown menu. Finally, a single icon-only button that opens a dropdown menu. This may eventually replace the `OverflowMenu` item as it allows for nested groups, selectable items, and radio items within the menu. This is achieved by using the Carbon ContextMenu under the hood. The menu is populated by passing `ContextMenu*` items from Carbon as children of the `MenuButton`.
 
+```jsx
+import { MenuButton } from 'carbon-addons-iot-react';
+```
+
 ## Single button
 
 A single button is rendered when only a `label` is passed to the MenuButton.
