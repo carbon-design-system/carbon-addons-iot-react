@@ -37,10 +37,12 @@ $border-width: 1px;
   .panel {
     &.#{$iot-prefix}--side-panel__left .panel-content {
       right: $side-panel-width;
+      height: 100%;
       position: relative;
     }
     &.#{$iot-prefix}--side-panel__right .panel-content {
       left: $side-panel-drawer-width;
+      height: 100%;
       position: relative;
     }
   }
@@ -73,6 +75,7 @@ $border-width: 1px;
 
   .panel {
     width: $side-panel-width;
+    height: 100%;
     position: relative;
     transition: width 250ms, left 250ms, right 250ms;
 

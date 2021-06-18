@@ -87,6 +87,7 @@ import { action } from '@storybook/addon-actions';
       .panel-content {
         margin-left: 1rem;
         margin-right: 1rem;
+        min-height: 330px;
       }
 
       .panel-footer {
