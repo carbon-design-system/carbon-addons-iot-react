@@ -74,6 +74,7 @@ const propTypes = {
   ),
   validDataItems: DataItemsPropTypes,
   isSummaryDashboard: PropTypes.bool,
+  isLarge: PropTypes.bool,
   i18n: PropTypes.shape({
     dataItemEditorDataItemTitle: PropTypes.string,
     dataItemEditorDataItemLabel: PropTypes.string,
@@ -134,6 +135,7 @@ const defaultProps = {
   editDataItem: {},
   setEditDataItem: null,
   isSummaryDashboard: false,
+  isLarge: false,
   validDataItems: [],
 };
 
@@ -164,6 +166,7 @@ const DataSeriesFormItemModal = ({
   availableDimensions,
   onChange,
   i18n,
+  isLarge,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
@@ -546,6 +549,7 @@ const DataSeriesFormItemModal = ({
                   : mergedI18n.dataItemEditorDataSeriesTitle,
             }}
             size="xs"
+            isLarge={isLarge}
             footer={{
               primaryButtonLabel: mergedI18n.primaryButtonLabelText,
               secondaryButtonLabel: mergedI18n.secondaryButtonLabelText,

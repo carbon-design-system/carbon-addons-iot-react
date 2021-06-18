@@ -5727,13 +5727,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                         >
                           <div
                             aria-atomic="true"
-                            aria-labelledby="loading-id-8"
+                            aria-labelledby="loading-id-7"
                             aria-live="assertive"
                             className="bx--loading bx--loading--small"
                           >
                             <label
                               className="bx--visually-hidden"
-                              id="loading-id-8"
+                              id="loading-id-7"
                             >
                               Active loading indicator
                             </label>
