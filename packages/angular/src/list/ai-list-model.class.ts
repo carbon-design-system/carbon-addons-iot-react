@@ -152,7 +152,7 @@ export class AIListModel {
 
   protected updateAllChildrenSelectedIds(items: AIListItem[], selectedItemId: string, selected: boolean) {
     items.forEach((item: AIListItem) => {
-      if ((item.parentId === selectedItemId || item.id === selectedItemId)) {
+      if (item.isSelectable && (item.parentId === selectedItemId || item.id === selectedItemId)) {
         // All children of the item must have the same selected value as its' parent.
         this.updateListStateArray(this.selectedIds, item.id, selected);
         if (this.hasChildren(item)) {
@@ -175,10 +175,16 @@ export class AIListModel {
         // since parent's selected state depends on its children's selected states as well.
         this.updateAllParentsSelectedStates(item.items);
 
-        if (item.items.every((item: AIListItem) => this.selectedIds.includes(item.id))) {
+        if (
+          item.isSelectable
+          && item.items.every((item: AIListItem) => item.isSelectable ? this.selectedIds.includes(item.id) : true)
+        ) {
           this.updateListStateArray(this.selectedIds, item.id, true);
           this.updateListStateArray(this.indeterminateIds, item.id, false);
-        } else if (item.items.some((item: AIListItem) => this.selectedIds.includes(item.id))) {
+        } else if (
+          item.isSelectable
+          && item.items.some((item: AIListItem) => item.isSelectable ? this.selectedIds.includes(item.id) : false)
+        ) {
           this.updateListStateArray(this.selectedIds, item.id, false);
           this.updateListStateArray(this.indeterminateIds, item.id, true);
         } else {
