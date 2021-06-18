@@ -1,5 +1,3 @@
-const path = require('path');
-
 const { startDevServer } = require('@cypress/webpack-dev-server');
 
 const { BABEL_ENV } = process.env;
@@ -12,8 +10,6 @@ const webpackConfig = {
         loader: 'babel-loader',
         options: {
           presets: [
-            '@babel/preset-flow',
-            '@babel/preset-react',
             [
               '@babel/preset-env',
               {
@@ -26,6 +22,8 @@ const webpackConfig = {
                 loose: false,
               },
             ],
+            '@babel/preset-flow',
+            '@babel/preset-react',
           ],
         },
       },
@@ -34,9 +32,7 @@ const webpackConfig = {
         exclude: [/coverage/],
         sideEffects: true,
         use: [
-          // Creates `style` nodes from JS strings
           { loader: 'style-loader' },
-          // Translates CSS into CommonJS
           {
             loader: 'css-loader',
             options: { importLoaders: 2 },
@@ -45,27 +41,32 @@ const webpackConfig = {
             loader: 'postcss-loader',
             options: {
               plugins: () => [
+                /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
                 require('autoprefixer')({
                   browsers: ['last 1 version', 'ie >= 11'],
                 }),
               ],
             },
           },
-          // Compiles Sass to CSS
           {
             loader: 'fast-sass-loader',
             options: {
-              includePaths: [path.resolve(__dirname, '..', 'node_modules')],
+              includePaths: ['node_modules'],
             },
           },
         ],
       },
     ],
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 };
 
 module.exports = (on, config) => {
+  console.log('wanker');
   if (config.testingType === 'component') {
+    console.log('wanker inside!', JSON.stringify(webpackConfig));
     on('dev-server:start', (options) => startDevServer({ options, webpackConfig }));
   }
 

@@ -4,7 +4,8 @@
     "browser": true,
     "node": true,
     "es6": true,
-    "jest": true
+    "jest": true,
+    "cypress/globals": true
   },
   "parserOptions": {
     "ecmaFeatures": {
@@ -22,7 +23,8 @@
     "react-hooks",
     "prettier",
     "unicorn",
-    "testing-library"
+    "testing-library",
+    "cypress"
   ],
   "settings": {
     "react": {
@@ -39,7 +41,8 @@
     "airbnb",
     "prettier",
     "prettier/react",
-    "plugin:testing-library/react"
+    "plugin:testing-library/react",
+    "plugin:cypress/recommended"
   ],
   "globals": {
     "__WEBPACK__": true,
@@ -64,10 +67,7 @@
     "react/jsx-closing-bracket-location": 0,
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "import/first": [
-      2,
-      "absolute-first"
-    ],
+    "import/first": [2, "absolute-first"],
     "import/order": [
       2,
       {
@@ -83,17 +83,10 @@
     // https://nolanlawson.com/2018/03/20/smaller-lodash-bundles-with-webpack-and-babel/
     "lodash/chaining": [2, "never"],
     "lodash/import-scope": [2, "method"],
-    "react/destructuring-assignment": [
-      2,
-      "always",
-      { "ignoreClassFields": true }
-    ],
+    "react/destructuring-assignment": [2, "always", { "ignoreClassFields": true }],
     "jest/expect-expect": "error",
     "jest/prefer-hooks-on-top": "error",
-    "jest/consistent-test-it": [
-      "error",
-      { "fn": "test", "withinDescribe": "it" }
-    ],
+    "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "it" }],
     "unicorn/no-abusive-eslint-disable": "error",
     "testing-library/prefer-screen-queries": "error",
     "testing-library/prefer-wait-for": "error"
@@ -104,14 +97,12 @@
       "files": [
         "**/*-fixture.{js,jsx}",
         "**/*.test.{js,jsx}",
+        "**/*.test.e2e.{js,jsx}",
         "**/*.test.a11y.{js,jsx}",
         "**/*.story.{js,jsx}"
       ],
       "rules": {
-        "import/no-extraneous-dependencies": [
-          "error",
-          { "devDependencies": true }
-        ],
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
         "no-underscore-dangle": 0,
         "no-shadow": 0,
         "no-console": 0,
