@@ -47,12 +47,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           style={
             Object {
               "cursor": "auto",
-              "height": "auto",
+              "height": undefined,
               "left": undefined,
               "objectFit": null,
               "position": "relative",
               "top": undefined,
-              "width": "auto",
+              "width": undefined,
             }
           }
         />
@@ -707,12 +707,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           style={
             Object {
               "cursor": "auto",
-              "height": "auto",
+              "height": undefined,
               "left": undefined,
               "objectFit": null,
               "position": "relative",
               "top": undefined,
-              "width": "auto",
+              "width": undefined,
             }
           }
         />
@@ -1156,12 +1156,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           style={
             Object {
               "cursor": "auto",
-              "height": "auto",
+              "height": undefined,
               "left": undefined,
               "objectFit": null,
               "position": "relative",
               "top": undefined,
-              "width": "auto",
+              "width": undefined,
             }
           }
         />
@@ -1605,12 +1605,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           style={
             Object {
               "cursor": "auto",
-              "height": "auto",
+              "height": undefined,
               "left": undefined,
               "objectFit": null,
               "position": "relative",
               "top": undefined,
-              "width": "auto",
+              "width": undefined,
             }
           }
         />
@@ -2054,12 +2054,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           style={
             Object {
               "cursor": "auto",
-              "height": "auto",
+              "height": undefined,
               "left": undefined,
               "objectFit": null,
               "position": "relative",
               "top": undefined,
-              "width": "auto",
+              "width": undefined,
             }
           }
         />
@@ -2503,12 +2503,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           style={
             Object {
               "cursor": "auto",
-              "height": "auto",
+              "height": undefined,
               "left": undefined,
               "objectFit": null,
               "position": "relative",
               "top": undefined,
-              "width": "auto",
+              "width": undefined,
             }
           }
         />

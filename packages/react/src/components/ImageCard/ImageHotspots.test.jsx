@@ -436,7 +436,7 @@ describe('ImageHotspots', () => {
       const img = screen.getByAltText('landscape-test-image');
       fireEvent.load(img);
       expect(img).toHaveStyle({
-        height: '1150px',
+        height: 'auto', // 'auto' will ensure that it is stretch the full width of the image
       });
     });
   });
@@ -474,8 +474,10 @@ describe('ImageHotspots', () => {
 
       const img = screen.getByAltText('portrait-test-image');
       fireEvent.load(img);
+      const imgRect = img.getBoundingClientRect();
+      console.log(imgRect);
       expect(img).toHaveStyle({
-        width: '1536px',
+        width: 'auto', // 'auto' will ensure that it is stretch the full width of the image
       });
     });
 
@@ -493,16 +495,16 @@ describe('ImageHotspots', () => {
       const img = screen.getByAltText('portrait-test-image');
       fireEvent.load(img);
       expect(img).toHaveStyle({
-        width: '512px',
+        width: 'auto', // 'auto' will ensure that it is stretch the full width of the image
       });
       userEvent.click(screen.getByTitle('Zoom in'));
-      expect(img).toHaveStyle({ width: '1024px' });
+      expect(img).toHaveStyle({ width: 'auto' });
       userEvent.click(screen.getByTitle('Zoom out'));
-      expect(img).toHaveStyle({ width: '512px' });
+      expect(img).toHaveStyle({ width: 'auto' });
       userEvent.click(screen.getByTitle('Zoom in'));
-      expect(img).toHaveStyle({ width: '1024px' });
+      expect(img).toHaveStyle({ width: 'auto' });
       userEvent.click(screen.getByLabelText('Zoom to fit'));
-      expect(img).toHaveStyle({ width: '512px' });
+      expect(img).toHaveStyle({ width: 'auto' });
     });
 
     it('should always show minimap if minimapBehavior=show', () => {
@@ -562,7 +564,7 @@ describe('ImageHotspots', () => {
       expect(img).toHaveStyle({
         top: '-341.3333333333333px',
         left: '-256px',
-        width: '1024px',
+        width: 'auto', // 'auto' will ensure that it is stretch the full width of the image
       });
 
       let clientX = 256;
@@ -612,7 +614,7 @@ describe('ImageHotspots', () => {
       expect(img).toHaveStyle({
         top: '-341.3333333333333px',
         left: '-256px',
-        width: '1024px',
+        width: 'auto', // 'auto' will ensure that it is stretch the full width of the image
       });
 
       let clientX = 256;
@@ -656,7 +658,7 @@ describe('ImageHotspots', () => {
       expect(img).toHaveStyle({
         top: '-341.3333333333333px',
         left: '-256px',
-        width: '1024px',
+        width: 'auto', // 'auto' will ensure that it is stretch the full width of the image
       });
 
       let clientX = 256;

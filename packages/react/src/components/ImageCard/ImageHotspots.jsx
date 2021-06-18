@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState, useEffect } from 'react';
+import React, { useCallback, useMemo, useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
@@ -552,13 +552,15 @@ const ImageHotspots = ({
     background,
   };
 
+  const imageRef = useRef(null);
+
   const imageStyle = {
     cursor: isEditable && !dragging && isCtrlPressed ? 'crosshair' : 'auto',
     position: 'relative',
     left: image.offsetX,
     top: image.offsetY,
-    height: displayOption && image.scale === 1 ? '100%' : 'auto',
-    width: displayOption && image.scale === 1 ? '100%' : 'auto',
+    height: image.height,
+    width: image.width,
     objectFit: displayOption,
   };
 
@@ -674,21 +676,30 @@ const ImageHotspots = ({
     ]
   );
 
+  // Wait for the image to be loaded so that we can calculate height and width
   if (imageLoaded) {
-    if (container.orientation === 'landscape') {
-      imageStyle.height = displayOption && image.scale === 1 ? '100%' : image.height;
-    } else {
-      imageStyle.width = displayOption && image.scale === 1 ? '100%' : image.width;
-    }
-
     if (image.orientation === 'landscape') {
-      hotspotsStyle.width = image.width;
-      hotspotsStyle.height = image.width / image.ratio;
+      // Let the height be set relative to the width if the image is not stretched or filled
+      imageStyle.height = displayOption === 'contain' || !displayOption ? 'auto' : '100%';
+      // If the we are at scale 1, we need the width to stretch the full card, else use the scaled image width
+      imageStyle.width = displayOption && image.scale === 1 ? '100%' : image.width;
+      // The hotspots container sits on top of the image, so it needs to match its dimensions.
+      // Since the height is set relative to the width in the landscape case (when not stretched or filled),
+      // we just need to copy the result of that 'auto' here with the imageRef
+      hotspotsStyle.height =
+        displayOption === 'contain' || !displayOption ? imageRef?.current?.height : '100%';
+      // if the we are at scale 1, we need to stretch the full card, else use the scaled image width
+      hotspotsStyle.width = displayOption && image.scale === 1 ? '100%' : image.width;
     } else {
-      hotspotsStyle.width = image.height / image.ratio;
-      hotspotsStyle.height = image.height;
+      // same calculations as before, but for a 'portrait' image
+      imageStyle.height = displayOption && image.scale === 1 ? '100%' : image.height;
+      imageStyle.width = displayOption === 'contain' || !displayOption ? 'auto' : '100%';
+      hotspotsStyle.height = displayOption && image.scale === 1 ? '100%' : image.height;
+      hotspotsStyle.width =
+        displayOption === 'contain' || !displayOption ? imageRef?.current?.width : '100%';
     }
   }
+
   /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   return (
     <div
@@ -716,6 +727,8 @@ const ImageHotspots = ({
     >
       {src && (
         <img
+          key={`image-card-image--${displayOption}`} // need to regen here so that our ref updates
+          ref={imageRef}
           id={id}
           className={`${iotPrefix}--image-card-img`}
           src={src}
@@ -765,7 +778,9 @@ const ImageHotspots = ({
         />
       ) : null}
       {!isHotspotDataLoading && !hideHotspots && hotspots && (
-        <div style={hotspotsStyle}>{cachedHotspots}</div>
+        <div key={`image-hotspots--${displayOption}`} style={hotspotsStyle}>
+          {cachedHotspots}
+        </div>
       )}
       {!hideZoomControls && (
         <ImageControls
