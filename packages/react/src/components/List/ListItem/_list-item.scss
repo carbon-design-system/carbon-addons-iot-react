@@ -93,7 +93,7 @@
   color: $text-02;
   padding: $spacing-03 $spacing-05;
   align-items: center;
-  overflow-x: hidden;
+  overflow: hidden;
 
   &--handle {
     flex-shrink: 0;
