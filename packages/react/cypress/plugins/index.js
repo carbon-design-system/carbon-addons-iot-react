@@ -64,9 +64,9 @@ const webpackConfig = {
 };
 
 module.exports = (on, config) => {
-  console.log('wanker');
+  console.log('config call');
   if (config.testingType === 'component') {
-    console.log('wanker inside!', JSON.stringify(webpackConfig));
+    console.log('config call inside!', JSON.stringify(webpackConfig));
     on('dev-server:start', (options) => startDevServer({ options, webpackConfig }));
   }
 
