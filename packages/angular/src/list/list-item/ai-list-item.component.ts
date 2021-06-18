@@ -44,12 +44,12 @@ import { SelectionType } from '../ai-list-model.class';
         <div class='iot--list-item--content'>
           <div
             *ngIf="isSelectable && selectionType === 'multi'"
-            class="iot--list-item--content--icon iot--list-item--content--icon__left"
+            class='iot--list-item--content--icon iot--list-item--content--icon__left'
           >
             <ibm-checkbox
-              (checkedChange)="itemSelected.emit()"
-              [checked]="selected"
-              [indeterminate]="indeterminate"
+              (checkedChange)='itemSelected.emit()'
+              [checked]='selected'
+              [indeterminate]='indeterminate'
             >
             </ibm-checkbox>
           </div>

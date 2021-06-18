@@ -31,6 +31,11 @@ export interface AIListItem {
   isSelectable?: boolean;
 
   /**
+   * Indicates whther or not the item is selected.
+   */
+  selected?: boolean;
+
+  /**
    * Optional nested items.
    */
   items?: AIListItem[];

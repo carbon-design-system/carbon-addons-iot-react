@@ -17,16 +17,16 @@ export class AIListModel {
    * Initializes the `nestingLevel`s, `id`s, and `parentId`s
    * of the given `AIListItem`s if they are not already set.
    *
+   * Initializes `expandedIds` and `selectedIds` with the selected
+   * and expanded given items.
    */
   set items(items: AIListItem[]) {
     // Initialize `nestingLevel`s, `id`s, and `parentId`s if they are not already set.
     this._items = this.initializeListItems(items);
     this.expandedIds = [...this.expandedIds, ...this.getExpandedIdsFromListItems(this._items)];
+    this.selectedIds = [...this.selectedIds, ...this.getSelectedIdsFromListItems(this._items)];
   }
 
-  /**
-   * Gets the list items.
-   */
   get items() {
     return this._items;
   }
@@ -50,7 +50,7 @@ export class AIListModel {
   }
 
   /**
-   * This function initializes the `nestingLevel`s, `id`s, and `parentId`s
+   * This function initializes the `nestingLevel`s, as well as the `id`s, and `parentId`s
    * of the given `AIListItem`s if they are not already set.
    */
   initializeListItems(items: AIListItem[], currentNestingLevel = 0, parentIdOfCurrentLevel = null) {
@@ -72,20 +72,6 @@ export class AIListModel {
     });
   }
 
-  getExpandedIdsFromListItems(items: AIListItem[]) {
-    return items.reduce((expandedIds: string[], item: AIListItem) => {
-      if (item.expanded) {
-        expandedIds.push(item.id);
-      }
-
-      if (this.hasChildren(item)) {
-        expandedIds.push(...this.getExpandedIdsFromListItems(item.items));
-      }
-
-      return expandedIds;
-    }, []);
-  }
-
   handleExpansion(id: string) {
     const indexOfId = this.expandedIds.indexOf(id);
     indexOfId === -1 ? this.expandedIds.push(id) : this.expandedIds.splice(indexOfId, 1);
@@ -100,14 +86,52 @@ export class AIListModel {
     }
   }
 
-  updateArray(array: any[], item: any, insert = true) {
-    if (insert) {
-      if (!array.includes(item)) {
-        array.push(item);
+  /**
+   * This adds the given `newItem` to `items` as a child of `parentId`
+   * at the `index` relative to the child list of `parentId`.
+   * It will be added as a top level item if `parentId` null.
+   */
+  addItem(newItem: AIListItem, parentId: string, index = 0) {
+    this.items = this.insertItem(this._items, newItem, parentId, index);
+  }
+
+  /**
+   * This will remove the list item with the given `id`.
+   */
+  removeItem(id: string) {
+    this.items = this.filterListItems(this._items, id);
+    // Remove ids from the list state arrays after removing the item.
+    this.updateListStateArray(this.expandedIds, id, false);
+    this.updateListStateArray(this.selectedIds, id, false);
+    this.updateListStateArray(this.indeterminateIds, id, false);
+  }
+
+  getExpandedIdsFromListItems(items: AIListItem[]) {
+    return items.reduce((expandedIds: string[], item: AIListItem) => {
+      if (item.expanded) {
+        expandedIds.push(item.id);
       }
-    } else if (array.includes(item)) {
-      array.splice(array.indexOf(item), 1);
-    }
+
+      if (this.hasChildren(item)) {
+        expandedIds.push(...this.getExpandedIdsFromListItems(item.items));
+      }
+
+      return expandedIds;
+    }, []);
+  }
+
+  getSelectedIdsFromListItems(items: AIListItem[]) {
+    return items.reduce((selectedIds: string[], item: AIListItem) => {
+      if (item.selected) {
+        selectedIds.push(item.id);
+      }
+
+      if (this.hasChildren(item)) {
+        selectedIds.push(...this.getSelectedIdsFromListItems(item.items));
+      }
+
+      return selectedIds;
+    }, []);
   }
 
   isItemExpanded(id: string) {
@@ -128,9 +152,9 @@ export class AIListModel {
 
   protected updateAllChildrenSelectedIds(items: AIListItem[], selectedItemId: string, selected: boolean) {
     items.forEach((item: AIListItem) => {
-      if (item.parentId === selectedItemId || item.id === selectedItemId) {
+      if ((item.parentId === selectedItemId || item.id === selectedItemId)) {
         // All children of the item must have the same selected value as its' parent.
-        this.updateArray(this.selectedIds, item.id, selected);
+        this.updateListStateArray(this.selectedIds, item.id, selected);
         if (this.hasChildren(item)) {
           // The children of the children must also be updated to their parent's selected value.
           this.updateAllChildrenSelectedIds(item.items, item.id, selected);
@@ -152,17 +176,61 @@ export class AIListModel {
         this.updateAllParentsSelectedStates(item.items);
 
         if (item.items.every((item: AIListItem) => this.selectedIds.includes(item.id))) {
-          this.updateArray(this.selectedIds, item.id, true);
-          this.updateArray(this.indeterminateIds, item.id, false);
+          this.updateListStateArray(this.selectedIds, item.id, true);
+          this.updateListStateArray(this.indeterminateIds, item.id, false);
         } else if (item.items.some((item: AIListItem) => this.selectedIds.includes(item.id))) {
-          this.updateArray(this.selectedIds, item.id, false);
-          this.updateArray(this.indeterminateIds, item.id, true);
+          this.updateListStateArray(this.selectedIds, item.id, false);
+          this.updateListStateArray(this.indeterminateIds, item.id, true);
         } else {
-          this.updateArray(this.selectedIds, item.id, false);
-          this.updateArray(this.indeterminateIds, item.id, false);
+          this.updateListStateArray(this.selectedIds, item.id, false);
+          this.updateListStateArray(this.indeterminateIds, item.id, false);
         }
       }
     });
+  }
+
+  /**
+   * This adds the given `newItem` to `items` as a child of `parentId`
+   * at the `index` relative to the child list of `parentId`.
+   */
+  protected insertItem(items: AIListItem[], newItem: AIListItem, parentId: string, index = 0) {
+    return items.map((item: AIListItem) => {
+      if (this.hasChildren(item)) {
+        this.insertItem(item.items, newItem, parentId, index);
+      }
+
+      if (item.id === parentId) {
+        item.items.splice(index, 0, newItem);
+      }
+
+      return item;
+    });
+  }
+
+  /**
+   * This filters out the list item in `items` with the given `id`.
+   */
+  protected filterListItems(items: AIListItem[], id: string) {
+    return items.filter((item: AIListItem) => {
+      if (this.hasChildren (item)) {
+        item.items = this.filterListItems(item.items, id);
+      }
+      return item.id !== id;
+    });
+  }
+
+  /**
+   * Adds `item` to `array` if `item` doesn't already exist in `array` if `insert` is `true`.
+   * Removes `item` from `array` if `insert` is `false`.
+   */
+  protected updateListStateArray(array: any[], item: any, insert = true) {
+    if (insert) {
+      if (!array.includes(item)) {
+        array.push(item);
+      }
+    } else if (array.includes(item)) {
+      array.splice(array.indexOf(item), 1);
+    }
   }
 
   /**
