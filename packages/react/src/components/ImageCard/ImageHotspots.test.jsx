@@ -16,6 +16,8 @@ import ImageHotspots, {
   onImageLoad,
   zoom,
   handleMouseUp,
+  getLandscapeImageHotspotDimensions,
+  getPortraitImageHotspotDimensions,
 } from './ImageHotspots';
 
 const commonProps = {
@@ -935,5 +937,93 @@ describe('ImageHotspots', () => {
     userEvent.click(hotspotTitle);
     const editableHotspotTitle = within(hotspot).getByText('Test Title');
     expect(editableHotspotTitle).toBeVisible();
+  });
+
+  describe('getPortraitImageHotspotDimensions', () => {
+    it('Returns dimensions for the default view', () => {
+      expect(
+        getPortraitImageHotspotDimensions({ scale: 1 }, 'contain', { current: { width: '240px' } })
+      ).toEqual({
+        imageHeight: '100%',
+        imageWidth: 'auto',
+        hotspotHeight: '100%',
+        hotspotWidth: '240px',
+      });
+    });
+    it('Returns dimensions for a scaled up view', () => {
+      expect(
+        getPortraitImageHotspotDimensions({ scale: 2, height: '460px' }, 'contain', {
+          current: { width: '240px' },
+        })
+      ).toEqual({
+        imageHeight: '460px',
+        imageWidth: 'auto',
+        hotspotHeight: '460px',
+        hotspotWidth: '240px',
+      });
+    });
+    it('Returns dimensions for a stretched', () => {
+      expect(
+        getPortraitImageHotspotDimensions({ scale: 1, height: '460px' }, 'stretch', {
+          current: { width: '240px' },
+        })
+      ).toEqual({
+        imageHeight: '100%',
+        imageWidth: '100%',
+        hotspotHeight: '100%',
+        hotspotWidth: '100%',
+      });
+    });
+  });
+  describe('getLandscapeImageHotspotDimensions', () => {
+    it('Returns dimensions for the default view', () => {
+      expect(
+        getLandscapeImageHotspotDimensions(
+          { height: 240 },
+          { scale: 1, initialHeight: 240 },
+          'contain',
+          { current: { width: '240px' } }
+        )
+      ).toEqual({
+        imageHeight: '100%',
+        imageWidth: 'auto',
+        hotspotHeight: '100%',
+        hotspotWidth: '240px',
+      });
+    });
+    it('Returns dimensions for a scaled up view', () => {
+      expect(
+        getLandscapeImageHotspotDimensions(
+          { height: 240 },
+          { scale: 2, height: '460px' },
+          'contain',
+          {
+            current: { width: '240px', height: '124px' },
+          }
+        )
+      ).toEqual({
+        imageHeight: 'auto',
+        imageWidth: '100%',
+        hotspotHeight: '124px',
+        hotspotWidth: '100%',
+      });
+    });
+    it('Returns dimensions for a stretched', () => {
+      expect(
+        getLandscapeImageHotspotDimensions(
+          { height: 240 },
+          { scale: 1, height: '460px' },
+          'stretch',
+          {
+            current: { width: '240px' },
+          }
+        )
+      ).toEqual({
+        imageHeight: '100%',
+        imageWidth: '100%',
+        hotspotHeight: '100%',
+        hotspotWidth: '100%',
+      });
+    });
   });
 });

@@ -205,18 +205,28 @@ export const calculateImageHeight = (container, orientation, ratio, scale = 1) =
     ? container.width / ratio // landscape image and portrait container
     : container.height) * scale; // portrait image and landscape container
 
+/**
+ *
+ * @param {object} container
+ * @param {object} image
+ * @param {string} displayOption
+ * @param {object} imageRef
+ * @returns The height and width for both the image and the hotspot container.
+ */
 export const getLandscapeImageHotspotDimensions = (container, image, displayOption, imageRef) => {
   // This is an interesting case where the image is taller than the container but is still landscape.
-  // This causes a need to set the image initially by the height instead of the width
+  // This causes a need to set the image initially by height: 100% instead of width: 100%
   const isTallerThanContainer = container.height <= image.initialHeight;
 
-  // Let the height be set relative to the width if the image is not stretched or filled
+  // Let the height be set relative to the width if the image is not stretched or filled by the displayOption
   const imageHeight =
     (displayOption === 'contain' && !isTallerThanContainer) || image.scale !== 1 || !displayOption
       ? 'auto'
       : '100%';
 
-  // If the we are at scale 1, we need the width to stretch the full card, else use the scaled image width
+  // If we are zooming (not at scale 1 or stretching/filling) use 100% width to keep the image within the card,
+  // else if the image is taller than the container set the width relative to the 100% height
+  // else use the natural image width
   const imageWidth =
     displayOption && (displayOption !== 'contain' || image.scale !== 1)
       ? '100%'
@@ -232,7 +242,7 @@ export const getLandscapeImageHotspotDimensions = (container, image, displayOpti
       ? imageRef?.current?.height
       : '100%';
 
-  // if the we are at scale 1, we need to stretch the full card, else use the scaled image width
+  // Same logic as for the image width, but with the imageRef's width that was set by the "auto" attribute
   const hotspotWidth =
     displayOption && (displayOption !== 'contain' || image.scale !== 1)
       ? '100%'
@@ -243,9 +253,20 @@ export const getLandscapeImageHotspotDimensions = (container, image, displayOpti
   return { imageHeight, imageWidth, hotspotHeight, hotspotWidth };
 };
 
-export const getPortraitImageHotspotDimensions = (container, image, displayOption, imageRef) => {
+/**
+ *
+ * @param {object} container
+ * @param {object} image
+ * @param {string} displayOption
+ * @param {object} imageRef
+ * @returns The height and width for botht he image and the hotspot container.
+ */
+export const getPortraitImageHotspotDimensions = (image, displayOption, imageRef) => {
+  // If we're not zooming (ie we're on scale 1), we need to stretch the full height
   const imageHeight = displayOption && image.scale === 1 ? '100%' : image.height;
+  // Set width relative to the height if we are not stretched with displayOption or in the hotspot editor (!displayOption)
   const imageWidth = displayOption === 'contain' || !displayOption ? 'auto' : '100%';
+  // Same logic for the hotspot dimensions, using imageRef for the value given by the image width: auto
   const hotspotHeight = displayOption && image.scale === 1 ? '100%' : image.height;
   const hotspotWidth =
     displayOption === 'contain' || !displayOption ? imageRef?.current?.width : '100%';
@@ -742,7 +763,7 @@ const ImageHotspots = ({
         imageWidth,
         hotspotHeight,
         hotspotWidth,
-      } = getPortraitImageHotspotDimensions(container, image, displayOption, imageRef);
+      } = getPortraitImageHotspotDimensions(image, displayOption, imageRef);
       imageStyle.height = imageHeight;
       imageStyle.width = imageWidth;
       hotspotsStyle.height = hotspotHeight;
