@@ -205,6 +205,53 @@ export const calculateImageHeight = (container, orientation, ratio, scale = 1) =
     ? container.width / ratio // landscape image and portrait container
     : container.height) * scale; // portrait image and landscape container
 
+export const getLandscapeImageHotspotDimensions = (container, image, displayOption, imageRef) => {
+  // This is an interesting case where the image is taller than the container but is still landscape.
+  // This causes a need to set the image initially by the height instead of the width
+  const isTallerThanContainer = container.height <= image.initialHeight;
+
+  // Let the height be set relative to the width if the image is not stretched or filled
+  const imageHeight =
+    (displayOption === 'contain' && !isTallerThanContainer) || image.scale !== 1 || !displayOption
+      ? 'auto'
+      : '100%';
+
+  // If the we are at scale 1, we need the width to stretch the full card, else use the scaled image width
+  const imageWidth =
+    displayOption && (displayOption !== 'contain' || image.scale !== 1)
+      ? '100%'
+      : isTallerThanContainer && image.scale === 1
+      ? 'auto'
+      : image.width;
+
+  // The hotspots container sits on top of the image, so it needs to match its dimensions.
+  // Since the height is set relative to the width in the landscape case (when not stretched or filled),
+  // we just need to copy the result of that 'auto' here with the imageRef
+  const hotspotHeight =
+    (displayOption === 'contain' && !isTallerThanContainer) || image.scale !== 1 || !displayOption
+      ? imageRef?.current?.height
+      : '100%';
+
+  // if the we are at scale 1, we need to stretch the full card, else use the scaled image width
+  const hotspotWidth =
+    displayOption && (displayOption !== 'contain' || image.scale !== 1)
+      ? '100%'
+      : isTallerThanContainer && image.scale === 1
+      ? imageRef?.current?.width
+      : image.width;
+
+  return { imageHeight, imageWidth, hotspotHeight, hotspotWidth };
+};
+
+export const getPortraitImageHotspotDimensions = (container, image, displayOption, imageRef) => {
+  const imageHeight = displayOption && image.scale === 1 ? '100%' : image.height;
+  const imageWidth = displayOption === 'contain' || !displayOption ? 'auto' : '100%';
+  const hotspotHeight = displayOption && image.scale === 1 ? '100%' : image.height;
+  const hotspotWidth =
+    displayOption === 'contain' || !displayOption ? imageRef?.current?.width : '100%';
+  return { imageHeight, imageWidth, hotspotHeight, hotspotWidth };
+};
+
 /** Sets initialWidth and initialHeight of an image, offsets orientations in the state */
 export const onImageLoad = (
   { target: imageLoaded },
@@ -679,24 +726,27 @@ const ImageHotspots = ({
   // Wait for the image to be loaded so that we can calculate height and width
   if (imageLoaded) {
     if (image.orientation === 'landscape') {
-      // Let the height be set relative to the width if the image is not stretched or filled
-      imageStyle.height = displayOption === 'contain' || !displayOption ? 'auto' : '100%';
-      // If the we are at scale 1, we need the width to stretch the full card, else use the scaled image width
-      imageStyle.width = displayOption && image.scale === 1 ? '100%' : image.width;
-      // The hotspots container sits on top of the image, so it needs to match its dimensions.
-      // Since the height is set relative to the width in the landscape case (when not stretched or filled),
-      // we just need to copy the result of that 'auto' here with the imageRef
-      hotspotsStyle.height =
-        displayOption === 'contain' || !displayOption ? imageRef?.current?.height : '100%';
-      // if the we are at scale 1, we need to stretch the full card, else use the scaled image width
-      hotspotsStyle.width = displayOption && image.scale === 1 ? '100%' : image.width;
+      const {
+        imageHeight,
+        imageWidth,
+        hotspotHeight,
+        hotspotWidth,
+      } = getLandscapeImageHotspotDimensions(container, image, displayOption, imageRef);
+      imageStyle.height = imageHeight;
+      imageStyle.width = imageWidth;
+      hotspotsStyle.height = hotspotHeight;
+      hotspotsStyle.width = hotspotWidth;
     } else {
-      // same calculations as before, but for a 'portrait' image
-      imageStyle.height = displayOption && image.scale === 1 ? '100%' : image.height;
-      imageStyle.width = displayOption === 'contain' || !displayOption ? 'auto' : '100%';
-      hotspotsStyle.height = displayOption && image.scale === 1 ? '100%' : image.height;
-      hotspotsStyle.width =
-        displayOption === 'contain' || !displayOption ? imageRef?.current?.width : '100%';
+      const {
+        imageHeight,
+        imageWidth,
+        hotspotHeight,
+        hotspotWidth,
+      } = getPortraitImageHotspotDimensions(container, image, displayOption, imageRef);
+      imageStyle.height = imageHeight;
+      imageStyle.width = imageWidth;
+      hotspotsStyle.height = hotspotHeight;
+      hotspotsStyle.width = hotspotWidth;
     }
   }
 
