@@ -43,5 +43,5 @@ results
 .vscode
 
 # Cypress artifacts
-cypress/videos
-cypress/screenshots
+packages/react/cypress/videos/
+packages/react/cypress/screenshots/

@@ -64,7 +64,7 @@ const webpackConfig = {
           {
             loader: 'fast-sass-loader',
             options: {
-              includePaths: ['node_modules'],
+              includePaths: [path.resolve(__dirname, 'node_modules')],
             },
           },
         ],

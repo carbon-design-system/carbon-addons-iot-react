@@ -6,5 +6,7 @@
   },
   "fixturesFolder": false,
   "nodeVersion": "system",
-  "testFiles": "**/*.test.e2e.jsx"
+  "testFiles": "**/*.test.e2e.jsx",
+  "viewportWidth": 1670,
+  "viewportHeight": 900
 }
