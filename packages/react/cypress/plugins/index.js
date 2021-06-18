@@ -1,12 +1,25 @@
+const path = require('path');
+
 const { startDevServer } = require('@cypress/webpack-dev-server');
 
 const { BABEL_ENV } = process.env;
+
 const webpackConfig = {
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules|coverage|lib|css|es|scss|umd|results/,
+        exclude: [
+          path.resolve(__dirname, '../../node_modules'),
+          path.resolve(__dirname, '../../coverage'),
+          path.resolve(__dirname, '../../lib'),
+          path.resolve(__dirname, '../../css'),
+          path.resolve(__dirname, '../../es'),
+          path.resolve(__dirname, '../../scss'),
+          path.resolve(__dirname, '../../umd'),
+          path.resolve(__dirname, '../../results'),
+        ],
+        include: [path.resolve(__dirname, '../../src')],
         loader: 'babel-loader',
         options: {
           presets: [
@@ -64,9 +77,7 @@ const webpackConfig = {
 };
 
 module.exports = (on, config) => {
-  console.log('config call');
   if (config.testingType === 'component') {
-    console.log('config call inside!', JSON.stringify(webpackConfig));
     on('dev-server:start', (options) => startDevServer({ options, webpackConfig }));
   }
 

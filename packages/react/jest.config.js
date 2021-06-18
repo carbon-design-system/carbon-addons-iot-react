@@ -10,6 +10,7 @@ module.exports = {
     '!src/components/Page/(EditPage|PageHero).jsx',
     '!src/components/Dashboard/(Dashboard|CardRenderer).jsx',
     '!src/components/MapCard/storyFiles/*.jsx',
+    '!src/components/**/*.test.e2e.jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov'],

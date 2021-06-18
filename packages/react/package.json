@@ -50,7 +50,7 @@
     "test:clear": "yarn test:engines && cross-env TZ=America/Chicago jest --no-watchman --clearCache --colors",
     "test:engines": "check-node-version --node $(cat ../../.nvmrc) --yarn 1.x",
     "test:ci": "yarn test --ci --logHeapUsage --coverage",
-    "test:e2e": "cypress run-ct --config video=false,screenshotOnRunFailure=false"
+    "test:e2e": "DEBUG=cypress:webpack-dev-server:* DEBUG_DEPTH=10 cypress run-ct --config video=false,screenshotOnRunFailure=false"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
