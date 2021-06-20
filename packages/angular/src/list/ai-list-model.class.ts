@@ -77,9 +77,13 @@ export class AIListModel {
     this.selectedIds = [...new Set([...this.selectedIds, ...this.getSelectedIdsFromListItems(items)])];
   }
 
-  handleExpansion(id: string) {
+  handleExpansion(id: string, expand: boolean) {
     const indexOfId = this.expandedIds.indexOf(id);
-    indexOfId === -1 ? this.expandedIds.push(id) : this.expandedIds.splice(indexOfId, 1);
+    if (expand && indexOfId < 0) {
+      this.expandedIds.push(id);
+    } else if (!expand && indexOfId > -1) {
+      this.expandedIds.splice(indexOfId, 1);
+    }
   }
 
   /**

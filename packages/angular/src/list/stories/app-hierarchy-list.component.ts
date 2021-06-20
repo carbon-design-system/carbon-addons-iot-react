@@ -88,8 +88,15 @@ export class AppHierarchyList implements OnInit {
   handleSearch(searchString: string) {
     const filteredList = this.searchForNestedItemValues(items, searchString);
     this.model.items = filteredList;
-    filteredList.forEach((item: AIListItem) => {
-      this.model.handleExpansion(item.id);
+    this.expandItems(filteredList);
+  }
+
+  expandItems(items: AIListItem[]) {
+    items.forEach((item: AIListItem) => {
+      if (this.model.hasChildren(item)) {
+        this.expandItems(item.items);
+      }
+      this.model.handleExpansion(item.id, true);
     });
   }
 

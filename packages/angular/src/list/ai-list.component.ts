@@ -35,7 +35,7 @@ import { AIListItem } from './list-item/ai-list-item.interface';
             [expanded]="model.isItemExpanded(item.id)"
             [selected]="model.isItemSelected(item.id)"
             [indeterminate]="model.isItemIndeterminate(item.id)"
-            (expansionClick)="model.handleExpansion(item.id)"
+            (expansionClick)="toggleExpansion(item.id)"
             [draggable]="itemsDraggable"
             [isCategory]="item.isCategory"
             (itemSelected)="model.handleSelect(item.id, !model.isItemSelected(item.id), selectionType)"
@@ -104,5 +104,9 @@ export class AIListComponent {
     }
     this.isDragging = false;
     this.draggedItem = undefined;
+  }
+
+  toggleExpansion(id: string) {
+    this.model.handleExpansion(id, !this.model.isItemExpanded(id));
   }
 }
