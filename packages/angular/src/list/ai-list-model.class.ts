@@ -23,8 +23,7 @@ export class AIListModel {
   set items(items: AIListItem[]) {
     // Initialize `nestingLevel`s, `id`s, and `parentId`s if they are not already set.
     this._items = this.initializeListItems(items, this.getAdjustedNestingLevel(items, 0), null);
-    this.expandedIds = [...new Set([...this.expandedIds, ...this.getExpandedIdsFromListItems(this._items)])];
-    this.selectedIds = [...new Set([...this.selectedIds, ...this.getSelectedIdsFromListItems(this._items)])];
+    this.initializeListItems(this._items);
   }
 
   get items() {
@@ -72,18 +71,15 @@ export class AIListModel {
     });
   }
 
+  initializeListStates(items: AIListItem[]) {
+    // No duplicate ids.
+    this.expandedIds = [...new Set([...this.expandedIds, ...this.getExpandedIdsFromListItems(items)])];
+    this.selectedIds = [...new Set([...this.selectedIds, ...this.getSelectedIdsFromListItems(items)])];
+  }
+
   handleExpansion(id: string) {
     const indexOfId = this.expandedIds.indexOf(id);
     indexOfId === -1 ? this.expandedIds.push(id) : this.expandedIds.splice(indexOfId, 1);
-  }
-
-  handleSelect(id: string, selected: boolean, selectionType: SelectionType = SelectionType.SINGLE) {
-    if (selectionType === SelectionType.SINGLE) {
-      this.selectedIds = [id];
-    } else if (selectionType === SelectionType.MULTI) {
-      this.updateAllChildrenSelectedIds(this._items, id, selected);
-      this.updateAllParentsSelectedStates(this._items);
-    }
   }
 
   /**
@@ -100,7 +96,6 @@ export class AIListModel {
    */
   removeItem(id: string) {
     this.items = this.filterListItems(this._items, id);
-    // Remove ids from the list state arrays after removing the item.
   }
 
   getItem(id: string) {
@@ -177,19 +172,13 @@ export class AIListModel {
     return item.items && item.items.length > 0;
   }
 
-  /**
-   * This gets all the parent ids of the list item with the given `id` in `items`.
-   */
-  protected getAllParentIds(items: AIListItem[], id: string) {
-      return items.reduce((parentIds, item: AIListItem) => {
-      if (item.id === id) {
-        parentIds.push(item.id);
-        parentIds.push(...this.getAllParentIds(this._items, item.parentId));
-      } else if (this.hasChildren(item)) {
-        parentIds.push(...this.getAllParentIds(item.items, id));
-      }
-      return parentIds;
-    }, []);
+  handleSelect(id: string, selected: boolean, selectionType: SelectionType = SelectionType.SINGLE) {
+    if (selectionType === SelectionType.SINGLE) {
+      this.selectedIds = [id];
+    } else if (selectionType === SelectionType.MULTI) {
+      this.updateAllChildrenSelectedIds(this._items, id, selected);
+      this.updateAllParentsSelectedStates(this._items);
+    }
   }
 
   protected updateAllChildrenSelectedIds(items: AIListItem[], selectedItemId: string, selected: boolean) {
@@ -235,6 +224,21 @@ export class AIListModel {
         }
       }
     });
+  }
+
+  /**
+   * This gets all the parent ids of the list item with the given `id` in `items`.
+   */
+  protected getAllParentIds(items: AIListItem[], id: string) {
+      return items.reduce((parentIds, item: AIListItem) => {
+      if (item.id === id) {
+        parentIds.push(item.id);
+        parentIds.push(...this.getAllParentIds(this._items, item.parentId));
+      } else if (this.hasChildren(item)) {
+        parentIds.push(...this.getAllParentIds(item.items, id));
+      }
+      return parentIds;
+    }, []);
   }
 
   /**

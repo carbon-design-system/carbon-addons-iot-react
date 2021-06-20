@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { AIListModel, SelectionType } from './ai-list-model.class';
 import { AIListItem } from './list-item/ai-list-item.interface';
@@ -7,6 +7,8 @@ import { AIListItem } from './list-item/ai-list-item.interface';
   selector: 'ai-list',
   template: `
     <div class="iot--list">
+      <ai-list-header [hasSearch]="hasSearch" [title]="title" (onSearch)="onSearch.emit($event)">
+      </ai-list-header>
       <div class="iot--list--content">
         <ng-template
           [ngTemplateOutlet]="listItemTemplateRef"
@@ -17,24 +19,29 @@ import { AIListItem } from './list-item/ai-list-item.interface';
     </div>
     <ng-template #listItemTemplateRef let-item let-index="index">
       <ng-container *ngIf="item.value">
-        <ai-list-item
-          [value]="item.value"
-          [nestingLevel]="item.nestingLevel"
-          [hasChildren]="model.hasChildren(item)"
-          [isSelectable]="item.isSelectable"
-          [selectionType]="selectionType"
-          [expanded]="model.isItemExpanded(item.id)"
-          [selected]="model.isItemSelected(item.id)"
-          [indeterminate]="model.isItemIndeterminate(item.id)"
-          (expansionClick)="model.handleExpansion(item.id)"
-          [draggable]="itemsDraggable"
+        <ai-list-item-wrapper
+          [draggable]="itemsDraggable && item.draggable"
           [isDragging]="isDragging"
-          [isCategory]="item.isCategory"
-          (itemSelected)="model.handleSelect(item.id, !model.isItemSelected(item.id), selectionType)"
           (dragStart)="handleDragStart(item)"
+          (dragEnd)="handleDragEnd()"
           (itemDropped)="handleDrop(item, $event)"
         >
-        </ai-list-item>
+          <ai-list-item
+            [value]="item.value"
+            [nestingLevel]="item.nestingLevel"
+            [hasChildren]="model.hasChildren(item)"
+            [isSelectable]="item.isSelectable"
+            [selectionType]="selectionType"
+            [expanded]="model.isItemExpanded(item.id)"
+            [selected]="model.isItemSelected(item.id)"
+            [indeterminate]="model.isItemIndeterminate(item.id)"
+            (expansionClick)="model.handleExpansion(item.id)"
+            [draggable]="itemsDraggable"
+            [isCategory]="item.isCategory"
+            (itemSelected)="model.handleSelect(item.id, !model.isItemSelected(item.id), selectionType)"
+          >
+          </ai-list-item>
+        </ai-list-item-wrapper>
       </ng-container>
       <ng-container *ngIf="model.hasChildren(item) && model.isItemExpanded(item.id)">
         <ng-template ngFor [ngForOf]="item.items" [ngForTemplate]="listItemTemplateRef">
@@ -51,6 +58,12 @@ export class AIListComponent {
 
   @Input() itemsDraggable: boolean;
 
+  @Input() hasSearch = false;
+
+  @Input() title: string;
+
+  @Output() onSearch = new EventEmitter<string>();
+
   draggedItem: AIListItem | undefined;
 
   isDragging: boolean;
@@ -60,7 +73,15 @@ export class AIListComponent {
     this.draggedItem = item;
   }
 
+  handleDragEnd() {
+    this.isDragging = false;
+    this.draggedItem = undefined;
+  }
+
   handleDrop(dropLocation: AIListItem, dropPosition: string) {
+    if (!dropLocation || !dropPosition) {
+      return;
+    }
     // Prevent dropping an item into itself, or a parent.
     if (!this.model.getParentIds(dropLocation.id).includes(this.draggedItem.id)) {
       this.model.removeItem(this.draggedItem.id);

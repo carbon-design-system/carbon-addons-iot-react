@@ -4,7 +4,8 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { ListModule } from './list.module';
 import { AIListModel } from './ai-list-model.class';
 import { simpleListItems, nestedListItems, singleSelectNestedListItems, multiSelectNestedListItems } from './sample-data';
-import { DialogModule, IconModule, IconService } from 'carbon-components-angular';
+import { DialogModule, IconModule } from 'carbon-components-angular';
+import { AppHierarchyList } from './stories/app-hierarchy-list.component';
 
 const simpleListModel = new AIListModel();
 simpleListModel.items = simpleListItems;
@@ -22,12 +23,13 @@ storiesOf('Components/List', module)
   .addDecorator(
     moduleMetadata({
       imports: [ListModule, DialogModule, IconModule],
+      declarations: [AppHierarchyList]
     })
   )
   .addDecorator(withKnobs)
   .add('Simple list', () => ({
     template: `
-      <ai-list [model]="model"></ai-list>
+      <ai-list [model]="model" [title]="Simple list"></ai-list>
     `,
     props: {
       model: simpleListModel,
@@ -35,7 +37,7 @@ storiesOf('Components/List', module)
   }))
   .add('Hierarchy list with single select', () => ({
     template: `
-      <ai-list [model]="model" selectionType="single"></ai-list>
+      <ai-list [model]="model" selectionType="single" [title]="Single selection"></ai-list>
     `,
     props: {
       model: singleSelectHierarchyListModel,
@@ -51,7 +53,7 @@ storiesOf('Components/List', module)
   }))
   .add('Hierarchy list draggable items', () => ({
     template: `
-      <ai-list [model]="model" [itemsDraggable]="true"></ai-list>
+      <app-hierarchy-list></app-hierarchy-list>
     `,
     props: {
       model: draggableListModel,

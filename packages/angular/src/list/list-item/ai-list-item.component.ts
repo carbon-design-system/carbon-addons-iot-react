@@ -4,108 +4,84 @@ import { SelectionType } from '../ai-list-model.class';
 @Component({
   selector: 'ai-list-item',
   template: `
-    <div class='iot--list-item-parent'>
-      <ng-container *ngIf="draggable">
-        <div
-          class="iot--list-item-editable--drag-container"
-          role="listitem"
-          [draggable]="true"
-          (dragstart)="dragStart.emit()"
-          (dragover)="onDragOver($event)">
-          <div class="iot--list-item-editable--drop-targets" *ngIf="isDragging">
-            <div aiListTarget targetPosition='nested' (dropping)="itemDropped.emit('nested')" [targetSize]="100"></div>
-            <div aiListTarget targetPosition='above' (dropping)="itemDropped.emit('above')"></div>
-            <div aiListTarget targetPosition='below' (dropping)="itemDropped.emit('below')"></div>
-          </div>
-          <ng-template [ngTemplateOutlet]="listItemContent"></ng-template>
-        </div>
-      </ng-container>
-
-      <ng-container *ngIf="!draggable">
-        <ng-template [ngTemplateOutlet]="listItemContent"></ng-template>
-      </ng-container>
-    </div>
-
-    <ng-template #listItemContent>
-      <div
-        class='iot--list-item'
-        [ngClass]="{
-          'iot--list-item__selectable': isSelectable,
-          'iot--list-item__selected': selected,
-          'iot--list-item-editable': draggable
-        }"
-        (click)="onSingleSelect()"
+    <div
+      class='iot--list-item'
+      [ngClass]="{
+        'iot--list-item__selectable': isSelectable,
+        'iot--list-item__selected': selected,
+        'iot--list-item-editable': draggable
+      }"
+      (click)="onSingleSelect()"
+    >
+      <div class="iot--list-item-editable--drag-preview">
+        {{ value }}
+      </div>
+      <svg
+        *ngIf="draggable"
+        class="iot--list-item--handle"
+        xmlns="http://www.w3.org/2000/svg"
+        focusable="false"
+        preserveAspectRatio="xMidYMid meet"
+        aria-hidden="true"
+        width="16"
+        height="16"
+        viewBox="0 0 32 32"
       >
-        <div class="iot--list-item-editable--drag-preview">
-          {{ value }}
-        </div>
+        <path
+          d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+        ></path>
+      </svg>
+      <div
+        *ngIf='nestingLevel > 0'
+        class='iot--list-item--nesting-offset'
+        [ngStyle]='{ width: 30 * nestingLevel + "px" }'
+      ></div>
+      <div
+        *ngIf='hasChildren'
+        role='button'
+        (click)='expansionClick.emit()'
+        tabindex='0'
+        class="iot--list-item--expand-icon"
+      >
+        <svg *ngIf="!expanded" ibmIcon="chevron--down" size="16"></svg>
+        <!-- chevron--up doesn't exist in icons yet -->
         <svg
-          *ngIf="draggable"
-          class="iot--list-item--handle"
-          xmlns="http://www.w3.org/2000/svg"
+          *ngIf="expanded"
           focusable="false"
           preserveAspectRatio="xMidYMid meet"
-          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
           width="16"
           height="16"
-          viewBox="0 0 32 32"
+          viewBox="0 0 16 16"
+          role="img"
         >
-          <path
-            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-          ></path>
+          <path d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"></path>
         </svg>
+      </div>
+      <div class='iot--list-item--content'>
         <div
-          *ngIf='nestingLevel > 0'
-          class='iot--list-item--nesting-offset'
-          [ngStyle]='{ width: 30 * nestingLevel + "px" }'
-        ></div>
-        <div
-          *ngIf='hasChildren'
-          role='button'
-          (click)='expansionClick.emit()'
-          tabindex='0'
-          class="iot--list-item--expand-icon"
+          *ngIf="isSelectable && selectionType === 'multi'"
+          class='iot--list-item--content--icon iot--list-item--content--icon__left'
         >
-          <svg *ngIf="!expanded" ibmIcon="chevron--down" size="16"></svg>
-          <!-- chevron--up doesn't exist in icons yet -->
-          <svg
-            *ngIf="expanded"
-            focusable="false"
-            preserveAspectRatio="xMidYMid meet"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            role="img"
+          <ibm-checkbox
+            (checkedChange)='itemSelected.emit()'
+            [checked]='selected'
+            [indeterminate]='indeterminate'
           >
-            <path d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"></path>
-          </svg>
+          </ibm-checkbox>
         </div>
-        <div class='iot--list-item--content'>
-          <div
-            *ngIf="isSelectable && selectionType === 'multi'"
-            class='iot--list-item--content--icon iot--list-item--content--icon__left'
-          >
-            <ibm-checkbox
-              (checkedChange)='itemSelected.emit()'
-              [checked]='selected'
-              [indeterminate]='indeterminate'
-            >
-            </ibm-checkbox>
-          </div>
-          <div class='iot--list-item--content--values'>
-            <div class='iot--list-item--content--values--main'>
-              <div
-                class='iot--list-item--content--values--value'
-                [ngClass]="{ 'iot--list-item--category' : isCategory }">
-                {{ value }}
-              </div>
+        <div class='iot--list-item--content--values'>
+          <div class='iot--list-item--content--values--main'>
+            <div
+              class='iot--list-item--content--values--value'
+              [ngClass]="{ 'iot--list-item--category' : isCategory }">
+              {{ value }}
             </div>
           </div>
         </div>
       </div>
-    </ng-template>
+    </div>
   `,
 })
 export class AIListItemComponent {
@@ -146,8 +122,6 @@ export class AIListItemComponent {
    */
   @Input() draggable = false;
 
-  @Input() isDragging = false;
-
   /**
    * Indicates whether or not the list item can be selected.
    */
@@ -166,19 +140,9 @@ export class AIListItemComponent {
 
   @Output() itemSelected = new EventEmitter<any>();
 
-  @Output() dragStart = new EventEmitter<any>();
-
-  @Output() dragEnd = new EventEmitter<any>();
-
-  @Output() itemDropped = new EventEmitter<any>();
-
   onSingleSelect() {
     if (this.isSelectable && this.selectionType === SelectionType.SINGLE) {
       this.itemSelected.emit();
     }
-  }
-
-  onDragOver(ev: any) {
-    ev.preventDefault();
   }
 }
