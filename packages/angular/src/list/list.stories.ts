@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import { ListModule } from './list.module';
 import { AIListModel } from './ai-list-model.class';
-import { simpleListItems, singleSelectNestedListItems, multiSelectNestedListItems } from './sample-data';
+import { simpleListItems, nestedListItems, singleSelectNestedListItems, multiSelectNestedListItems } from './sample-data';
 import { DialogModule, IconModule, IconService } from 'carbon-components-angular';
 
 const simpleListModel = new AIListModel();
@@ -14,6 +14,9 @@ singleSelectHierarchyListModel.items = singleSelectNestedListItems;
 
 const multiSelectHierarchyListModel = new AIListModel();
 multiSelectHierarchyListModel.items = multiSelectNestedListItems;
+
+const draggableListModel = new AIListModel();
+draggableListModel.items = nestedListItems;
 
 storiesOf('Components/List', module)
   .addDecorator(
@@ -44,5 +47,13 @@ storiesOf('Components/List', module)
     `,
     props: {
       model: multiSelectHierarchyListModel,
+    },
+  }))
+  .add('Hierarchy list draggable items', () => ({
+    template: `
+      <ai-list [model]="model" [itemsDraggable]="true"></ai-list>
+    `,
+    props: {
+      model: draggableListModel,
     },
   }));

@@ -5,14 +5,55 @@ import { SelectionType } from '../ai-list-model.class';
   selector: 'ai-list-item',
   template: `
     <div class='iot--list-item-parent'>
+      <ng-container *ngIf="draggable">
+        <div
+          class="iot--list-item-editable--drag-container"
+          role="listitem"
+          [draggable]="true"
+          (dragstart)="dragStart.emit()"
+          (dragover)="onDragOver($event)">
+          <div class="iot--list-item-editable--drop-targets" *ngIf="isDragging">
+            <div aiListTarget targetPosition='nested' (dropping)="itemDropped.emit('nested')" [targetSize]="100"></div>
+            <div aiListTarget targetPosition='above' (dropping)="itemDropped.emit('above')"></div>
+            <div aiListTarget targetPosition='below' (dropping)="itemDropped.emit('below')"></div>
+          </div>
+          <ng-template [ngTemplateOutlet]="listItemContent"></ng-template>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="!draggable">
+        <ng-template [ngTemplateOutlet]="listItemContent"></ng-template>
+      </ng-container>
+    </div>
+
+    <ng-template #listItemContent>
       <div
         class='iot--list-item'
         [ngClass]="{
           'iot--list-item__selectable': isSelectable,
-          'iot--list-item__selected': selected
+          'iot--list-item__selected': selected,
+          'iot--list-item-editable': draggable
         }"
         (click)="onSingleSelect()"
       >
+        <div class="iot--list-item-editable--drag-preview">
+          {{ value }}
+        </div>
+        <svg
+          *ngIf="draggable"
+          class="iot--list-item--handle"
+          xmlns="http://www.w3.org/2000/svg"
+          focusable="false"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true"
+          width="16"
+          height="16"
+          viewBox="0 0 32 32"
+        >
+          <path
+            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+          ></path>
+        </svg>
         <div
           *ngIf='nestingLevel > 0'
           class='iot--list-item--nesting-offset'
@@ -57,15 +98,14 @@ import { SelectionType } from '../ai-list-model.class';
             <div class='iot--list-item--content--values--main'>
               <div
                 class='iot--list-item--content--values--value'
-                [title]='title ? title : value'
-              >
+                [ngClass]="{ 'iot--list-item--category' : isCategory }">
                 {{ value }}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </ng-template>
   `,
 })
 export class AIListItemComponent {
@@ -91,10 +131,22 @@ export class AIListItemComponent {
   @Input() expanded = false;
 
   /**
+   * Indicates whether or not a list item's displayed value should be bolded.
+   */
+  @Input() isCategory = false;
+
+  /**
    * Nesting level of the list item. Determines the amount of space the item will be indented
    * when rendered in the list.
    */
   @Input() nestingLevel = 0;
+
+  /**
+   * Indicates whether or not the item can be dragged into a different position.
+   */
+  @Input() draggable = false;
+
+  @Input() isDragging = false;
 
   /**
    * Indicates whether or not the list item can be selected.
@@ -114,9 +166,19 @@ export class AIListItemComponent {
 
   @Output() itemSelected = new EventEmitter<any>();
 
+  @Output() dragStart = new EventEmitter<any>();
+
+  @Output() dragEnd = new EventEmitter<any>();
+
+  @Output() itemDropped = new EventEmitter<any>();
+
   onSingleSelect() {
     if (this.isSelectable && this.selectionType === SelectionType.SINGLE) {
       this.itemSelected.emit();
     }
+  }
+
+  onDragOver(ev: any) {
+    ev.preventDefault();
   }
 }

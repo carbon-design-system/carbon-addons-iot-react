@@ -22,9 +22,9 @@ export class AIListModel {
    */
   set items(items: AIListItem[]) {
     // Initialize `nestingLevel`s, `id`s, and `parentId`s if they are not already set.
-    this._items = this.initializeListItems(items);
-    this.expandedIds = [...this.expandedIds, ...this.getExpandedIdsFromListItems(this._items)];
-    this.selectedIds = [...this.selectedIds, ...this.getSelectedIdsFromListItems(this._items)];
+    this._items = this.initializeListItems(items, this.getAdjustedNestingLevel(items, 0), null);
+    this.expandedIds = [...new Set([...this.expandedIds, ...this.getExpandedIdsFromListItems(this._items)])];
+    this.selectedIds = [...new Set([...this.selectedIds, ...this.getSelectedIdsFromListItems(this._items)])];
   }
 
   get items() {
@@ -60,7 +60,7 @@ export class AIListModel {
         ...item,
         id: item.id ? item.id : id,
         nestingLevel: this.hasChildren(item) ? currentNestingLevel - 1 : currentNestingLevel,
-        parentId: item.parentId ? item.parentId : parentIdOfCurrentLevel,
+        parentId: parentIdOfCurrentLevel,
         items: this.hasChildren(item)
           ? this.initializeListItems(
               item.items,
@@ -77,7 +77,7 @@ export class AIListModel {
     indexOfId === -1 ? this.expandedIds.push(id) : this.expandedIds.splice(indexOfId, 1);
   }
 
-  handleSelect(id: string, selected: boolean, selectionType: SelectionType | undefined = SelectionType.SINGLE) {
+  handleSelect(id: string, selected: boolean, selectionType: SelectionType = SelectionType.SINGLE) {
     if (selectionType === SelectionType.SINGLE) {
       this.selectedIds = [id];
     } else if (selectionType === SelectionType.MULTI) {
@@ -101,9 +101,36 @@ export class AIListModel {
   removeItem(id: string) {
     this.items = this.filterListItems(this._items, id);
     // Remove ids from the list state arrays after removing the item.
-    this.updateListStateArray(this.expandedIds, id, false);
-    this.updateListStateArray(this.selectedIds, id, false);
-    this.updateListStateArray(this.indeterminateIds, id, false);
+  }
+
+  getItem(id: string) {
+    for (let item of this._items) {
+      const searchHit = this.searchListItem(item, id);
+      if (searchHit !== null) {
+        return searchHit;
+      }
+    }
+    return null;
+  }
+
+  searchListItem(item: AIListItem, id: string) {
+    if (item.id === id) {
+      return item;
+    } else if (this.hasChildren(item)) {
+      let result = null;
+      for (let i = 0; result === null && i < item.items.length; i++) {
+          result = this.searchListItem(item.items[i], id);
+      }
+      return result;
+    }
+    return null;
+  }
+
+  /**
+   * This gets all the parent ids of the list item with the given `id`.
+   */
+  getParentIds(id: string) {
+    return this.getAllParentIds(this._items, id);
   }
 
   getExpandedIdsFromListItems(items: AIListItem[]) {
@@ -148,6 +175,21 @@ export class AIListModel {
 
   hasChildren(item: AIListItem) {
     return item.items && item.items.length > 0;
+  }
+
+  /**
+   * This gets all the parent ids of the list item with the given `id` in `items`.
+   */
+  protected getAllParentIds(items: AIListItem[], id: string) {
+      return items.reduce((parentIds, item: AIListItem) => {
+      if (item.id === id) {
+        parentIds.push(item.id);
+        parentIds.push(...this.getAllParentIds(this._items, item.parentId));
+      } else if (this.hasChildren(item)) {
+        parentIds.push(...this.getAllParentIds(item.items, id));
+      }
+      return parentIds;
+    }, []);
   }
 
   protected updateAllChildrenSelectedIds(items: AIListItem[], selectedItemId: string, selected: boolean) {
@@ -200,17 +242,22 @@ export class AIListModel {
    * at the `index` relative to the child list of `parentId`.
    */
   protected insertItem(items: AIListItem[], newItem: AIListItem, parentId: string, index = 0) {
-    return items.map((item: AIListItem) => {
-      if (this.hasChildren(item)) {
-        this.insertItem(item.items, newItem, parentId, index);
-      }
-
+    const newItems = items.map((item: AIListItem) => {
       if (item.id === parentId) {
         item.items.splice(index, 0, newItem);
       }
 
+      if (this.hasChildren(item)) {
+        this.insertItem(item.items, newItem, parentId, index);
+      }
+
       return item;
     });
+    if (parentId === null) {
+      newItems.splice(index, 0, newItem);
+    }
+
+    return newItems;
   }
 
   /**

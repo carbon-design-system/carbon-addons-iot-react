@@ -16,7 +16,7 @@ import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/cor
         class="handle"
         scDraggable
         [dragImage]="elementRef.nativeElement"
-        [imageOffset]="{ x: 4, y: 20 }"
+        [imageOffset]="{ x: 4, y: 40 }"
         (start)="!disabled ? dragStart.emit() : null"
         (end)="!disabled ? dragEnd.emit() : null"
       >

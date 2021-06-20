@@ -15,6 +15,11 @@ export interface AIListItem {
   value?: string;
 
   /**
+   * Indicates whether or not a list item's displayed value should be bolded.
+   */
+  isCategory?: boolean;
+
+  /**
    * Secondary content to be displayed in the list item.
    */
   secondaryContent?: string;
@@ -45,4 +50,9 @@ export interface AIListItem {
    * when rendered in the list.
    */
   nestingLevel?: number;
+
+  /**
+   * Indicates whether or not the item can be dragged into a different position.
+   */
+  draggable?: boolean;
 }
