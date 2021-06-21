@@ -71,8 +71,8 @@
   "sideEffects": false,
   "version": "0.0.0-development",
   "resolutions": {
-    "chokidar": "3.3.1",
-    "react-grid-layout": "1.2.2",
+    "carbon-addons-iot-react/chokidar": "3.3.1",
+    "carbon-addons-iot-react/react-grid-layout": "1.2.2",
     "react-test-renderer": "16.14.0",
     "react-dom": "16.14.0",
     "react": "16.14.0",
