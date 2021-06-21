@@ -49,8 +49,8 @@ export class AIListModel {
   }
 
   /**
-   * This function initializes the `nestingLevel`s, as well as the `id`s, and `parentId`s
-   * of the given `AIListItem`s if they are not already set.
+   * This function initializes the `nestingLevel`s, `id`s, and `parentId`s
+   * of the given `AIListItem`s.
    */
   initializeListItems(items: AIListItem[], currentNestingLevel = 0, parentIdOfCurrentLevel = null) {
     return items.map((item: AIListItem) => {

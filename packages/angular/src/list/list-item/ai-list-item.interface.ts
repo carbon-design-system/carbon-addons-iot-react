@@ -20,9 +20,11 @@ export interface AIListItem {
   isCategory?: boolean;
 
   /**
-   * Secondary content to be displayed in the list item.
+   * Secondary value to be displayed in the list item.
    */
-  secondaryContent?: string;
+  secondaryValue?: string;
+
+  rowActions?: any;
 
   /**
    * If the list item has child list items, this indicates whether or not it's

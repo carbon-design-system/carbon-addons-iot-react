@@ -78,6 +78,14 @@ import { SelectionType } from '../ai-list-model.class';
               [ngClass]="{ 'iot--list-item--category' : isCategory }">
               {{ value }}
             </div>
+            <div
+              *ngIf="secondaryValue !== null"
+              class="iot--list-item--content--values--value">
+              {{ secondaryValue }}
+            </div>
+            <div *ngIf="rowActions" class="iot--list-item--content--row-actions">
+              <ng-template [ngTemplateOutlet]="rowActions"></ng-template>
+            </div>
           </div>
         </div>
       </div>
@@ -89,6 +97,11 @@ export class AIListItemComponent {
    * Primary content to be displayed in the list item.
    */
   @Input() value: string;
+
+  /**
+   * Secondary content to be displayed in the list item.
+   */
+  @Input() secondaryValue: string;
 
   @Input() title: string;
 
@@ -132,6 +145,8 @@ export class AIListItemComponent {
   @Input() indeterminate = false;
 
   @Input() selectionType: SelectionType;
+
+  @Input() rowActions: any;
 
   /**
    * Emitted when the expansion button is clicked.
