@@ -17,9 +17,7 @@ import { nestedListItems } from '../sample-data';
     </ai-list>
 
     <ng-template #rowActions>
-      <ibm-overflow-menu
-        placement="bottom"
-        [flip]="true">
+      <ibm-overflow-menu placement="bottom" [flip]="true">
         <ibm-overflow-menu-option>
           An example option that is really long to show what should be done to handle long text
         </ibm-overflow-menu-option>
@@ -28,7 +26,9 @@ import { nestedListItems } from '../sample-data';
           <button class="bx--overflow-menu-options__btn">A fully custom option</button>
         </li>
         <ibm-overflow-menu-option>Option 4</ibm-overflow-menu-option>
-        <ibm-overflow-menu-option disabled="true" [divider]="true">Disabled</ibm-overflow-menu-option>
+        <ibm-overflow-menu-option disabled="true" [divider]="true"
+          >Disabled</ibm-overflow-menu-option
+        >
         <ibm-overflow-menu-option type="danger">Danger option</ibm-overflow-menu-option>
       </ibm-overflow-menu>
     </ng-template>
@@ -91,7 +91,10 @@ export class AppHierarchyList implements AfterViewInit {
         }
       } else if (item.value.toLowerCase().includes(searchString.toLowerCase())) {
         filteredItems.push(item);
-      } else if (item.secondaryValue && item.secondaryValue.toLowerCase().includes(searchString.toLowerCase())) {
+      } else if (
+        item.secondaryValue &&
+        item.secondaryValue.toLowerCase().includes(searchString.toLowerCase())
+      ) {
         filteredItems.push(item);
       }
 

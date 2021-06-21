@@ -41,14 +41,20 @@ import { AIListItem } from './list-item/ai-list-item.interface';
             (expansionClick)="toggleExpansion(item.id)"
             [draggable]="itemsDraggable"
             [isCategory]="item.isCategory"
-            (itemSelected)="model.handleSelect(item.id, !model.isItemSelected(item.id), selectionType)"
+            (itemSelected)="
+              model.handleSelect(item.id, !model.isItemSelected(item.id), selectionType)
+            "
           >
           </ai-list-item>
         </ai-list-item-wrapper>
       </ng-container>
 
       <ng-container *ngIf="model.hasChildren(item)">
-        <ng-template ngFor [ngForOf]="item.items" [ngForTemplate]="listItemTemplateRef"></ng-template>
+        <ng-template
+          ngFor
+          [ngForOf]="item.items"
+          [ngForTemplate]="listItemTemplateRef"
+        ></ng-template>
       </ng-container>
 
       <!-- Must be the top level of list items -->
@@ -58,7 +64,6 @@ import { AIListItem } from './list-item/ai-list-item.interface';
     </ng-template>
   `,
 })
-
 export class AIListComponent {
   @Input() model: AIListModel;
 
@@ -126,11 +131,15 @@ export class AIListComponent {
         if (dropLocation.parentId !== null) {
           const dropLocationParentItem = this.model.getItem(dropLocation.parentId);
           // Index of the `dropLocation` within it's parent's child items.
-          relativeIndex = dropLocationParentItem.items.findIndex((item: AIListItem) => item.id === dropLocation.id);
-        // Otherwise the insert location will be within the top level of the list items.
+          relativeIndex = dropLocationParentItem.items.findIndex(
+            (item: AIListItem) => item.id === dropLocation.id
+          );
+          // Otherwise the insert location will be within the top level of the list items.
         } else {
           // Index of `dropLocation` within the top level of the list items.
-          relativeIndex = this.model.items.findIndex((item: AIListItem) => item.id === dropLocation.id);
+          relativeIndex = this.model.items.findIndex(
+            (item: AIListItem) => item.id === dropLocation.id
+          );
         }
         this.model.addItem(
           this.draggedItem,

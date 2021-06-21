@@ -3,7 +3,12 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import { ListModule } from './list.module';
 import { AIListModel } from './ai-list-model.class';
-import { simpleListItems, nestedListItems, singleSelectNestedListItems, multiSelectNestedListItems } from './sample-data';
+import {
+  simpleListItems,
+  nestedListItems,
+  singleSelectNestedListItems,
+  multiSelectNestedListItems,
+} from './sample-data';
 import { DialogModule, IconModule, PlaceholderModule } from 'carbon-components-angular';
 import { AppHierarchyList } from './stories/app-hierarchy-list.component';
 
@@ -23,7 +28,7 @@ storiesOf('Components/List', module)
   .addDecorator(
     moduleMetadata({
       imports: [ListModule, DialogModule, IconModule, PlaceholderModule],
-      declarations: [AppHierarchyList]
+      declarations: [AppHierarchyList],
     })
   )
   .addDecorator(withKnobs)

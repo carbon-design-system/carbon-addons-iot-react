@@ -12,8 +12,20 @@ export { AIListModel } from './ai-list-model.class';
 export { AIListItem } from './list-item/ai-list-item.interface';
 
 @NgModule({
-  declarations: [AIListHeaderComponent, AIListItemComponent, AIListItemWrapperComponent, AIListComponent, AIListTargetDirective],
-  exports: [AIListHeaderComponent, AIListItemComponent, AIListItemWrapperComponent, AIListComponent, AIListTargetDirective],
+  declarations: [
+    AIListHeaderComponent,
+    AIListItemComponent,
+    AIListItemWrapperComponent,
+    AIListComponent,
+    AIListTargetDirective,
+  ],
+  exports: [
+    AIListHeaderComponent,
+    AIListItemComponent,
+    AIListItemWrapperComponent,
+    AIListComponent,
+    AIListTargetDirective,
+  ],
   imports: [CommonModule, IconModule, CheckboxModule, SearchModule],
 })
 export class ListModule {}

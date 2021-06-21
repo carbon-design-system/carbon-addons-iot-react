@@ -4,7 +4,7 @@ import { SelectionType } from '../ai-list-model.class';
 @Component({
   selector: 'ai-list-item-wrapper',
   template: `
-    <div class='iot--list-item-parent'>
+    <div class="iot--list-item-parent">
       <div
         *ngIf="draggable"
         class="iot--list-item-editable--drag-container"
@@ -12,24 +12,23 @@ import { SelectionType } from '../ai-list-model.class';
         [draggable]="true"
         (dragstart)="dragStart.emit()"
         (dragend)="dragEnd.emit()"
-        (dragover)="onDragOver($event)">
+        (dragover)="onDragOver($event)"
+      >
         <div class="iot--list-item-editable--drop-targets" *ngIf="isDragging">
           <div
             aiListTarget
-            targetPosition='nested'
+            targetPosition="nested"
             (dropping)="itemDropped.emit('nested')"
             [targetSize]="100"
-          >
-          </div>
-          <div aiListTarget targetPosition='above' (dropping)="itemDropped.emit('above')"></div>
-          <div aiListTarget targetPosition='below' (dropping)="itemDropped.emit('below')"></div>
+          ></div>
+          <div aiListTarget targetPosition="above" (dropping)="itemDropped.emit('above')"></div>
+          <div aiListTarget targetPosition="below" (dropping)="itemDropped.emit('below')"></div>
         </div>
         <ng-container [ngTemplateOutlet]="listItem"></ng-container>
       </div>
     </div>
 
-    <ng-container *ngIf="!draggable" [ngTemplateOutlet]="listItem">
-    </ng-container>
+    <ng-container *ngIf="!draggable" [ngTemplateOutlet]="listItem"> </ng-container>
 
     <ng-template #listItem>
       <ng-content></ng-content>

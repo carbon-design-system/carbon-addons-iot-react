@@ -2,7 +2,7 @@ import { AIListItem } from './list-item/ai-list-item.interface';
 
 export enum SelectionType {
   SINGLE = 'single',
-  MULTI = 'multi'
+  MULTI = 'multi',
 }
 
 export class AIListModel {
@@ -66,7 +66,7 @@ export class AIListModel {
               this.getAdjustedNestingLevel(items, currentNestingLevel),
               item.id ? item.id : id
             )
-          : []
+          : [],
       };
     });
   }
@@ -77,8 +77,12 @@ export class AIListModel {
    */
   initializeListStates(items: AIListItem[]) {
     // No duplicate ids.
-    this.expandedIds = [...new Set([...this.expandedIds, ...this.getExpandedIdsFromListItems(items)])];
-    this.selectedIds = [...new Set([...this.selectedIds, ...this.getSelectedIdsFromListItems(items)])];
+    this.expandedIds = [
+      ...new Set([...this.expandedIds, ...this.getExpandedIdsFromListItems(items)]),
+    ];
+    this.selectedIds = [
+      ...new Set([...this.selectedIds, ...this.getSelectedIdsFromListItems(items)]),
+    ];
   }
 
   /**
@@ -133,7 +137,7 @@ export class AIListModel {
     } else if (this.hasChildren(item)) {
       let result = null;
       for (let i = 0; result === null && i < item.items.length; i++) {
-          result = this.searchListItem(item.items[i], id);
+        result = this.searchListItem(item.items[i], id);
       }
       return result;
     }
@@ -234,7 +238,11 @@ export class AIListModel {
    * @param selectedItemId The `id` of the list item which is being selected or deselected.
    * @param selected `true` the item with the given `selectedItemId` should be selected, `false` if it should be deselected.
    */
-  protected updateAllChildrenSelectedIds(items: AIListItem[], selectedItemId: string, selected: boolean) {
+  protected updateAllChildrenSelectedIds(
+    items: AIListItem[],
+    selectedItemId: string,
+    selected: boolean
+  ) {
     items.forEach((item: AIListItem) => {
       if (item.isSelectable && (item.parentId === selectedItemId || item.id === selectedItemId)) {
         // All children of the item must have the same selected value as its' parent.
@@ -273,14 +281,18 @@ export class AIListModel {
         this.updateAllParentsSelectedStates(item.items);
 
         if (
-          item.isSelectable
-          && item.items.every((item: AIListItem) => item.isSelectable ? this.selectedIds.includes(item.id) : true)
+          item.isSelectable &&
+          item.items.every((item: AIListItem) =>
+            item.isSelectable ? this.selectedIds.includes(item.id) : true
+          )
         ) {
           this.updateListStateArray(this.selectedIds, item.id, true);
           this.updateListStateArray(this.indeterminateIds, item.id, false);
         } else if (
-          item.isSelectable
-          && item.items.some((item: AIListItem) => item.isSelectable ? this.selectedIds.includes(item.id) : false)
+          item.isSelectable &&
+          item.items.some((item: AIListItem) =>
+            item.isSelectable ? this.selectedIds.includes(item.id) : false
+          )
         ) {
           this.updateListStateArray(this.selectedIds, item.id, false);
           this.updateListStateArray(this.indeterminateIds, item.id, true);
@@ -296,7 +308,7 @@ export class AIListModel {
    * This gets all the parent ids of the list item with the given `id` in `items`.
    */
   protected getAllParentIds(items: AIListItem[], id: string) {
-      return items.reduce((parentIds, item: AIListItem) => {
+    return items.reduce((parentIds, item: AIListItem) => {
       if (item.id === id) {
         parentIds.push(item.id);
         parentIds.push(...this.getAllParentIds(this._items, item.parentId));
@@ -382,7 +394,7 @@ export class AIListModel {
    */
   protected filterListItems(items: AIListItem[], id: string) {
     return items.filter((item: AIListItem) => {
-      if (this.hasChildren (item)) {
+      if (this.hasChildren(item)) {
         item.items = this.filterListItems(item.items, id);
       }
       return item.id !== id;

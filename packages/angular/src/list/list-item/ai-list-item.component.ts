@@ -5,7 +5,7 @@ import { SelectionType } from '../ai-list-model.class';
   selector: 'ai-list-item',
   template: `
     <div
-      class='iot--list-item'
+      class="iot--list-item"
       [ngClass]="{
         'iot--list-item__selectable': isSelectable,
         'iot--list-item__selected': selected,
@@ -32,15 +32,15 @@ import { SelectionType } from '../ai-list-model.class';
         ></path>
       </svg>
       <div
-        *ngIf='nestingLevel > 0'
-        class='iot--list-item--nesting-offset'
-        [ngStyle]='{ width: 30 * nestingLevel + "px" }'
+        *ngIf="nestingLevel > 0"
+        class="iot--list-item--nesting-offset"
+        [ngStyle]="{ width: 30 * nestingLevel + 'px' }"
       ></div>
       <div
-        *ngIf='hasChildren'
-        role='button'
-        (click)='expansionClick.emit()'
-        tabindex='0'
+        *ngIf="hasChildren"
+        role="button"
+        (click)="expansionClick.emit()"
+        tabindex="0"
         class="iot--list-item--expand-icon"
       >
         <svg *ngIf="!expanded" ibmIcon="chevron--down" size="16"></svg>
@@ -59,28 +59,27 @@ import { SelectionType } from '../ai-list-model.class';
           <path d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"></path>
         </svg>
       </div>
-      <div class='iot--list-item--content'>
+      <div class="iot--list-item--content">
         <div
           *ngIf="isSelectable && selectionType === 'multi'"
-          class='iot--list-item--content--icon iot--list-item--content--icon__left'
+          class="iot--list-item--content--icon iot--list-item--content--icon__left"
         >
           <ibm-checkbox
-            (checkedChange)='itemSelected.emit()'
-            [checked]='selected'
-            [indeterminate]='indeterminate'
+            (checkedChange)="itemSelected.emit()"
+            [checked]="selected"
+            [indeterminate]="indeterminate"
           >
           </ibm-checkbox>
         </div>
-        <div class='iot--list-item--content--values'>
-          <div class='iot--list-item--content--values--main'>
+        <div class="iot--list-item--content--values">
+          <div class="iot--list-item--content--values--main">
             <div
-              class='iot--list-item--content--values--value'
-              [ngClass]="{ 'iot--list-item--category' : isCategory }">
+              class="iot--list-item--content--values--value"
+              [ngClass]="{ 'iot--list-item--category': isCategory }"
+            >
               {{ value }}
             </div>
-            <div
-              *ngIf="secondaryValue !== null"
-              class="iot--list-item--content--values--value">
+            <div *ngIf="secondaryValue !== null" class="iot--list-item--content--values--value">
               {{ secondaryValue }}
             </div>
             <div *ngIf="rowActions" class="iot--list-item--content--row-actions">
