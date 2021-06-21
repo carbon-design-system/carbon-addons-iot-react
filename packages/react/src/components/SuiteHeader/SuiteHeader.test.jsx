@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
@@ -234,5 +234,10 @@ describe('SuiteHeader', () => {
     );
     userEvent.click(screen.getByRole('button', { name: 'closes notification' }));
     expect(screen.queryByRole('alert')).toBeNull();
+  });
+  it('renders Walkme', async () => {
+    render(<SuiteHeader {...commonProps} walkmePath="/some/test/path" walkmeLang="en" />);
+    // Make sure the scripts in Walkme component were executed
+    await waitFor(() => expect(window._walkmeConfig).toEqual({ smartLoad: true }));
   });
 });

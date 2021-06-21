@@ -3805,6 +3805,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                     className="bx--structured-list-td"
                     role="cell"
                   >
+                    Walkme
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
                     Dashboard
                   </div>
                 </div>
