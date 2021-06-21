@@ -148,6 +148,7 @@
     "react-dnd": "14.0.2",
     "react-dnd-html5-backend": "14.0.0",
     "react-grid-layout": "1.2.2",
+    "react-helmet-async": "^1.0.9",
     "react-sizeme": "2.6.3",
     "react-transition-group": "^2.6.0",
     "react-visibility-sensor": "^5.0.2",
