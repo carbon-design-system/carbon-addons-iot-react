@@ -21,8 +21,18 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   `,
 })
 export class AIListHeaderComponent {
+  /**
+   * Title to be displayed on the list header.
+   */
   @Input() title: string;
+
+  /**
+   * Indicates whether a search bar should be rendered in the list header.
+   */
   @Input() hasSearch = false;
 
+  /**
+   * If a `hasSearch` is true, this is emitted when search value is changed.
+   */
   @Output() onSearch = new EventEmitter<any>();
 }

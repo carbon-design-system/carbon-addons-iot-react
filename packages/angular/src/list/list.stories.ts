@@ -45,7 +45,7 @@ storiesOf('Components/List', module)
   }))
   .add('Hierarchy list with multi select', () => ({
     template: `
-      <ai-list [model]="model" selectionType="multi"></ai-list>
+      <ai-list [model]="model" selectionType="multi" title="Multi selection"></ai-list>
     `,
     props: {
       model: multiSelectHierarchyListModel,

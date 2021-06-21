@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { SelectionType } from '../ai-list-model.class';
 
 @Component({
@@ -103,8 +103,6 @@ export class AIListItemComponent {
    */
   @Input() secondaryValue: string;
 
-  @Input() title: string;
-
   /**
    * Indicates whether or not the list item has children. It will display the expansion button
    * if it does.
@@ -140,19 +138,38 @@ export class AIListItemComponent {
    */
   @Input() isSelectable = false;
 
+  /**
+   * Indicates whether or not the item is selected.
+   */
   @Input() selected = false;
 
+  /**
+   * Indicates whether or not the item is in an `indeterminate` state.
+   * This happens when an item has children where some of the children are selected,
+   * but not all if `selectionType` is `multi`.
+   */
   @Input() indeterminate = false;
 
+  /**
+   * Indicates the editing style of the list item. If it is `multi` the list item will be
+   * rendered with a checkbox. If it is not given then the list item will not be editable,
+   * that is, you can't select it.
+   */
   @Input() selectionType: SelectionType;
 
-  @Input() rowActions: any;
+  /**
+   * This contains an optional row action that can be rendered in the list item.
+   */
+  @Input() rowActions: TemplateRef<any>;
 
   /**
    * Emitted when the expansion button is clicked.
    */
   @Output() expansionClick = new EventEmitter<any>();
 
+  /**
+   * Emitted if the item has been selected.
+   */
   @Output() itemSelected = new EventEmitter<any>();
 
   onSingleSelect() {

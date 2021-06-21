@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, TemplateRef, ViewChild } from '@angular/core';
 import { AIListModel } from '../ai-list-model.class';
 import { AIListItem } from '../list-item/ai-list-item.interface';
 import { nestedListItems } from '../sample-data';
@@ -37,7 +37,7 @@ import { nestedListItems } from '../sample-data';
 })
 export class AppHierarchyList implements AfterViewInit {
   @Input() model: AIListModel = new AIListModel();
-  @ViewChild('rowActions') rowAction;
+  @ViewChild('rowActions') rowAction: TemplateRef<any>;
 
   items = nestedListItems;
 

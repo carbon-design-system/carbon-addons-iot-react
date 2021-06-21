@@ -1,3 +1,5 @@
+import { TemplateRef } from '@angular/core';
+
 export interface AIListItem {
   /**
    * Unique identifier for the list item.
@@ -24,7 +26,10 @@ export interface AIListItem {
    */
   secondaryValue?: string;
 
-  rowActions?: any;
+  /**
+   * This contains an optional row action that can be rendered in the list item.
+   */
+  rowActions?: TemplateRef<any>;
 
   /**
    * If the list item has child list items, this indicates whether or not it's
@@ -38,7 +43,7 @@ export interface AIListItem {
   isSelectable?: boolean;
 
   /**
-   * Indicates whther or not the item is selected.
+   * Indicates whether or not the item is selected.
    */
   selected?: boolean;
 
