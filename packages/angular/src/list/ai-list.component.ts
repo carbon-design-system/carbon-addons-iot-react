@@ -17,6 +17,7 @@ import { AIListItem } from './list-item/ai-list-item.interface';
         </ng-template>
       </div>
     </div>
+
     <ng-template #listItemTemplateRef let-item let-index="index">
       <ng-container *ngIf="item.value">
         <ai-list-item-wrapper
@@ -45,9 +46,13 @@ import { AIListItem } from './list-item/ai-list-item.interface';
           </ai-list-item>
         </ai-list-item-wrapper>
       </ng-container>
-      <ng-container *ngIf="model.hasChildren(item) && model.isItemExpanded(item.id)">
-        <ng-template ngFor [ngForOf]="item.items" [ngForTemplate]="listItemTemplateRef">
-        </ng-template>
+
+      <ng-container *ngIf="model.hasChildren(item)">
+        <ng-template ngFor [ngForOf]="item.items" [ngForTemplate]="listItemTemplateRef"></ng-template>
+      </ng-container>
+
+      <ng-container *ngIf="isArray(item)">
+        <ng-template ngFor [ngForOf]="item" [ngForTemplate]="listItemTemplateRef"></ng-template>
       </ng-container>
     </ng-template>
   `,
@@ -110,5 +115,9 @@ export class AIListComponent {
 
   toggleExpansion(id: string) {
     this.model.handleExpansion(id, !this.model.isItemExpanded(id));
+  }
+
+  isArray(obj : any) {
+    return Array.isArray(obj)
   }
 }

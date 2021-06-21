@@ -36,17 +36,7 @@ export class AIListModel {
 
   indeterminateIds: string[] = [];
 
-  /**
-   * This is needed to initiate the recursive rendering of list items.
-   */
-  id = 'list-model';
-
   protected _items: AIListItem[] = [];
-
-  constructor() {
-    // This is needed to initiate the recursive rendering of list items.
-    this.expandedIds.push(this.id);
-  }
 
   /**
    * This function initializes the `nestingLevel`s, `id`s, and `parentId`s
