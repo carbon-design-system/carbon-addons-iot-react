@@ -32,19 +32,19 @@ export class AIListModel {
   /**
    * Ids of list items which are expanded.
    */
-  expandedIds: string[] = [];
+  expandedIds: Set<string> = new Set();
 
   /**
    * Ids of list items which are selected.
    */
-  selectedIds: string[] = [];
+  selectedIds: Set<string> = new Set();
 
   /**
    * Ids of list items which have an indeterminate checkbox state.
    *
    * Only applies for multi-select type editing style.
    */
-  indeterminateIds: string[] = [];
+  indeterminateIds: Set<string> = new Set();
 
   protected _items: AIListItem[] = [];
 
@@ -76,13 +76,8 @@ export class AIListModel {
    * the properties of the given list items.
    */
   initializeListStates(items: AIListItem[]) {
-    // No duplicate ids.
-    this.expandedIds = [
-      ...new Set([...this.expandedIds, ...this.getExpandedIdsFromListItems(items)]),
-    ];
-    this.selectedIds = [
-      ...new Set([...this.selectedIds, ...this.getSelectedIdsFromListItems(items)]),
-    ];
+    this.expandedIds = new Set([...this.expandedIds, ...this.getExpandedIdsFromListItems(items)]);
+    this.selectedIds = new Set([...this.selectedIds, ...this.getSelectedIdsFromListItems(items)]);
   }
 
   /**
@@ -90,11 +85,10 @@ export class AIListModel {
    * shrinks the list item if `expand` is false.
    */
   handleExpansion(id: string, expand: boolean) {
-    const indexOfId = this.expandedIds.indexOf(id);
-    if (expand && indexOfId < 0) {
-      this.expandedIds.push(id);
-    } else if (!expand && indexOfId > -1) {
-      this.expandedIds.splice(indexOfId, 1);
+    if (expand) {
+      this.expandedIds.add(id);
+    } else {
+      this.expandedIds.delete(id);
     }
   }
 
@@ -188,27 +182,6 @@ export class AIListModel {
   }
 
   /**
-   * This returns `true` if the list item with the given `id` is expanded.
-   */
-  isItemExpanded(id: string) {
-    return this.expandedIds.includes(id);
-  }
-
-  /**
-   * This returns `true` if the list item with the given `id` is selected.
-   */
-  isItemSelected(id: string) {
-    return this.selectedIds.includes(id);
-  }
-
-  /**
-   * This returns `true` if the list item with the given `id` is indeterminate.
-   */
-  isItemIndeterminate(id: string) {
-    return this.indeterminateIds.includes(id);
-  }
-
-  /**
    * This returns `true` if the list item with the given `id` has child list items.
    */
   hasChildren(item: AIListItem) {
@@ -222,7 +195,7 @@ export class AIListModel {
    */
   handleSelect(id: string, selected: boolean, selectionType: SelectionType = SelectionType.SINGLE) {
     if (selectionType === SelectionType.SINGLE) {
-      this.selectedIds = [id];
+      this.selectedIds = new Set([id]);
     } else if (selectionType === SelectionType.MULTI) {
       this.updateAllChildrenSelectedIds(this._items, id, selected);
       this.updateAllParentsSelectedStates(this._items);
@@ -246,7 +219,11 @@ export class AIListModel {
     items.forEach((item: AIListItem) => {
       if (item.isSelectable && (item.parentId === selectedItemId || item.id === selectedItemId)) {
         // All children of the item must have the same selected value as its' parent.
-        this.updateListStateArray(this.selectedIds, item.id, selected);
+        if (selected) {
+          this.selectedIds.add(item.id);
+        } else {
+          this.selectedIds.delete(item.id);
+        }
         if (this.hasChildren(item)) {
           // The children of the children must also be updated to their parent's selected value.
           this.updateAllChildrenSelectedIds(item.items, item.id, selected);
@@ -283,22 +260,22 @@ export class AIListModel {
         if (
           item.isSelectable &&
           item.items.every((item: AIListItem) =>
-            item.isSelectable ? this.selectedIds.includes(item.id) : true
+            item.isSelectable ? this.selectedIds.has(item.id) : true
           )
         ) {
-          this.updateListStateArray(this.selectedIds, item.id, true);
-          this.updateListStateArray(this.indeterminateIds, item.id, false);
+          this.selectedIds.add(item.id);
+          this.indeterminateIds.delete(item.id);
         } else if (
           item.isSelectable &&
           item.items.some((item: AIListItem) =>
-            item.isSelectable ? this.selectedIds.includes(item.id) : false
+            item.isSelectable ? this.selectedIds.has(item.id) : false
           )
         ) {
-          this.updateListStateArray(this.selectedIds, item.id, false);
-          this.updateListStateArray(this.indeterminateIds, item.id, true);
+          this.selectedIds.delete(item.id);
+          this.indeterminateIds.add(item.id);
         } else {
-          this.updateListStateArray(this.selectedIds, item.id, false);
-          this.updateListStateArray(this.indeterminateIds, item.id, false);
+          this.selectedIds.delete(item.id);
+          this.indeterminateIds.delete(item.id);
         }
       }
     });
@@ -406,19 +383,5 @@ export class AIListModel {
    */
   protected getAdjustedNestingLevel(items: AIListItem[], currentDepth: number) {
     return items.some((item) => this.hasChildren(item)) ? currentDepth + 1 : currentDepth;
-  }
-
-  /**
-   * Adds `item` to `array` if `item` doesn't already exist in `array` if `insert` is `true`.
-   * Removes `item` from `array` if `insert` is `false`.
-   */
-  protected updateListStateArray(array: any[], item: any, insert = true) {
-    if (insert) {
-      if (!array.includes(item)) {
-        array.push(item);
-      }
-    } else if (array.includes(item)) {
-      array.splice(array.indexOf(item), 1);
-    }
   }
 }

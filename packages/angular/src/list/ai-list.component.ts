@@ -19,7 +19,7 @@ import { AIListItem } from './list-item/ai-list-item.interface';
     </div>
 
     <ng-template #listItemTemplateRef let-item let-index="index">
-      <ng-container *ngIf="item.id && !isArray(item)">
+      <ng-container *ngIf="item.id">
         <ai-list-item-wrapper
           [draggable]="itemsDraggable && item.draggable"
           [isDragging]="isDragging"
@@ -35,31 +35,26 @@ import { AIListItem } from './list-item/ai-list-item.interface';
             [secondaryValue]="item.secondaryValue"
             [selectionType]="selectionType"
             [rowActions]="item.rowActions"
-            [expanded]="model.isItemExpanded(item.id)"
-            [selected]="model.isItemSelected(item.id)"
-            [indeterminate]="model.isItemIndeterminate(item.id)"
+            [expanded]="model.expandedIds.has(item.id)"
+            [selected]="model.selectedIds.has(item.id)"
+            [indeterminate]="model.indeterminateIds.has(item.id)"
             (expansionClick)="toggleExpansion(item.id)"
             [draggable]="itemsDraggable"
             [isCategory]="item.isCategory"
             (itemSelected)="
-              model.handleSelect(item.id, !model.isItemSelected(item.id), selectionType)
+              model.handleSelect(item.id, !model.selectedIds.has(item.id), selectionType)
             "
           >
           </ai-list-item>
         </ai-list-item-wrapper>
       </ng-container>
 
-      <ng-container *ngIf="model.hasChildren(item) && !isArray(item)">
+      <ng-container *ngIf="isListModel(item) || (model.hasChildren(item) && model.expandedIds.has(item.id))">
         <ng-template
           ngFor
           [ngForOf]="item.items"
           [ngForTemplate]="listItemTemplateRef"
         ></ng-template>
-      </ng-container>
-
-      <!-- Must be the top level of list items -->
-      <ng-container *ngIf="isArray(item)">
-        <ng-template ngFor [ngForOf]="item" [ngForTemplate]="listItemTemplateRef"></ng-template>
       </ng-container>
     </ng-template>
   `,
@@ -154,10 +149,10 @@ export class AIListComponent {
   }
 
   toggleExpansion(id: string) {
-    this.model.handleExpansion(id, !this.model.isItemExpanded(id));
+    this.model.handleExpansion(id, !this.model.expandedIds.has(id));
   }
 
-  isArray(obj: any) {
-    return Array.isArray(obj);
+  isListModel(obj: any) {
+    return obj instanceof AIListModel;
   }
 }
