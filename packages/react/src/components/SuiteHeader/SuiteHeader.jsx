@@ -13,6 +13,7 @@ import { Link } from '../Link';
 import { HeaderActionItemPropTypes, ChildContentPropTypes } from '../Header/Header';
 import { settings } from '../../constants/Settings';
 import { SkeletonText } from '../SkeletonText';
+import Walkme from '../Walkme/Walkme';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
@@ -104,6 +105,8 @@ const defaultProps = {
   customHelpLinks: [],
   customProfileLinks: [],
   customApplications: [],
+  walkmePath: null,
+  walkmeLang: 'en',
 };
 
 const propTypes = {
@@ -145,6 +148,10 @@ const propTypes = {
   customProfileLinks: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
   /** Array of custom applications */
   customApplications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
+  /** Path to Walkme entry point */
+  walkmePath: PropTypes.string,
+  /** Walkme language code */
+  walkmeLang: PropTypes.string,
 };
 
 const SuiteHeader = ({
@@ -167,6 +174,8 @@ const SuiteHeader = ({
   customHelpLinks,
   customProfileLinks,
   customApplications,
+  walkmePath,
+  walkmeLang,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
@@ -212,6 +221,7 @@ const SuiteHeader = ({
 
   return (
     <>
+      {walkmePath ? <Walkme path={walkmePath} lang={walkmeLang} /> : null}
       {showToast ? (
         <ToastNotification
           className={`${settings.iotPrefix}--suite-header-survey-toast`}
