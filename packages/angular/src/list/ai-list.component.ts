@@ -12,14 +12,14 @@ import { AIListItem } from './list-item/ai-list-item.interface';
       <div class="iot--list--content">
         <ng-template
           [ngTemplateOutlet]="listItemTemplateRef"
-          [ngTemplateOutletContext]="{ $implicit: model }"
+          [ngTemplateOutletContext]="{ $implicit: model.items }"
         >
         </ng-template>
       </div>
     </div>
 
     <ng-template #listItemTemplateRef let-item let-index="index">
-      <ng-container *ngIf="item.id">
+      <ng-container *ngIf="item.id && !isArray(item)">
         <ai-list-item-wrapper
           [draggable]="itemsDraggable && item.draggable"
           [isDragging]="isDragging"
@@ -49,12 +49,18 @@ import { AIListItem } from './list-item/ai-list-item.interface';
         </ai-list-item-wrapper>
       </ng-container>
 
-      <ng-container *ngIf="isListModel(item) || (model.hasChildren(item) && model.expandedIds.has(item.id))">
+      <ng-container
+        *ngIf="!isArray(item) && model.hasChildren(item) && model.expandedIds.has(item.id)"
+      >
         <ng-template
           ngFor
           [ngForOf]="item.items"
           [ngForTemplate]="listItemTemplateRef"
         ></ng-template>
+      </ng-container>
+
+      <ng-container *ngIf="isArray(item)">
+        <ng-template ngFor [ngForOf]="item" [ngForTemplate]="listItemTemplateRef"></ng-template>
       </ng-container>
     </ng-template>
   `,
@@ -152,7 +158,7 @@ export class AIListComponent {
     this.model.handleExpansion(id, !this.model.expandedIds.has(id));
   }
 
-  isListModel(obj: any) {
-    return obj instanceof AIListModel;
+  isArray(obj: any) {
+    return Array.isArray(obj);
   }
 }
