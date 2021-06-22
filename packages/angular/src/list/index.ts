@@ -6,7 +6,7 @@ export { AIListItemWrapperComponent } from './list-item/ai-list-item-wrapper.com
 
 // Interfaces and models
 export { AIListItem } from './list-item/ai-list-item.interface';
-export { AIListModel } from './ai-list-model.class';
+export { AIListModel, SelectionType } from './ai-list-model.class';
 
 // Directives
 export { AIListTargetDirective } from './list-item/ai-list-target.directive';

@@ -49,7 +49,7 @@ import { AIListItem } from './list-item/ai-list-item.interface';
         </ai-list-item-wrapper>
       </ng-container>
 
-      <ng-container *ngIf="model.hasChildren(item)">
+      <ng-container *ngIf="model.hasChildren(item) && !isArray(item)">
         <ng-template
           ngFor
           [ngForOf]="item.items"

@@ -22,7 +22,7 @@ export class AIListModel {
    */
   set items(items: AIListItem[]) {
     this._items = this.initializeListItems(items, this.getAdjustedNestingLevel(items, 0), null);
-    this.initializeListItems(this._items);
+    this.initializeListStates(this._items);
   }
 
   get items() {
@@ -129,7 +129,7 @@ export class AIListModel {
 
   /**
    * This searches through the given list item and its' children returning
-   * the item with the given `id` or `null` if that item doesn;t exist.
+   * the item with the given `id` or `null` if that item doesn't exist.
    */
   searchListItem(item: AIListItem, id: string) {
     if (item.id === id) {
