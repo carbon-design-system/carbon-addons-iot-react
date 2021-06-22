@@ -19610,6 +19610,7 @@ Map {
           "name": "cyan90",
         },
       ],
+      "disabled": false,
       "hideLabels": false,
       "label": "Select a color",
       "light": false,
@@ -19636,6 +19637,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "disabled": Object {
+        "type": "bool",
       },
       "hideLabels": Object {
         "type": "bool",

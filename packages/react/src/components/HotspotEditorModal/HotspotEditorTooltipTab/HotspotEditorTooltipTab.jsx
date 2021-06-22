@@ -141,6 +141,7 @@ const HotspotEditorTooltipTab = ({
   } = merge({}, defaultProps.i18n, i18n);
 
   const currentIconColor = formValues.color?.carbonColor ?? formValues.color ?? 'currentcolor';
+  const hasNonEditableContent = React.isValidElement(formValues?.content);
 
   const renderInfoMessage = () => (
     <div className={`${iotPrefix}--hotspot-editor--tooltip-info-message`}>
@@ -200,6 +201,7 @@ const HotspotEditorTooltipTab = ({
             onSubmit={preventFormSubmission}
           >
             <MyTitleTextInput
+              disabled={hasNonEditableContent}
               name="title"
               data-testid={`${testID}-title-input`}
               value={formValues.content?.title || ''}
@@ -214,6 +216,7 @@ const HotspotEditorTooltipTab = ({
               {...overrides?.titleTextInput?.props}
             />
             <MyDecriptionTextArea
+              disabled={hasNonEditableContent}
               name="description"
               id="tooltip-form-description"
               labelText={descriptionTextareaLabelText}

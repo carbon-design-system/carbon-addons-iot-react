@@ -32,6 +32,11 @@ describe('ColorDropdown', () => {
     expect(screen.getByText('Color')).toBeVisible();
   });
 
+  it('can be disabled', () => {
+    render(<ColorDropdown id="myColorDropdown" disabled onChange={() => {}} />);
+    expect(screen.getByRole('button')).toBeDisabled();
+  });
+
   it('renders custom labels', () => {
     const label = 'my label';
     const titleText = 'My title text';
