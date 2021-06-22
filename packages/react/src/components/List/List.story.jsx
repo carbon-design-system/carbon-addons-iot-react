@@ -4,11 +4,13 @@ import { boolean, text } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import someDeep from 'deepdash/someDeep';
+import { withReadme } from 'storybook-readme';
 
 import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
 import { Tag } from '../Tag';
 
 import List from './List';
+import README from './List.md';
 
 export const sampleHierarchy = {
   MLB: {
@@ -123,7 +125,7 @@ export default {
   excludeStories: ['sampleHierarchy'],
 };
 
-export const BasicSingleColumn = () => (
+export const BasicSingleColumn = withReadme(README, () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
@@ -136,13 +138,13 @@ export const BasicSingleColumn = () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-);
+));
 
 BasicSingleColumn.story = {
   name: 'basic (single column)',
 };
 
-export const BasicSingleColumnWithSearch = () => {
+export const BasicSingleColumnWithSearch = withReadme(README, () => {
   const ListWithSearch = () => {
     const [searchValue, setSearchValue] = useState(null);
     return (
@@ -168,13 +170,13 @@ export const BasicSingleColumnWithSearch = () => {
   };
 
   return <ListWithSearch />;
-};
+});
 
 BasicSingleColumnWithSearch.story = {
   name: 'basic (single column) with search',
 };
 
-export const SelectableItems = () => {
+export const SelectableItems = withReadme(README, () => {
   const ListWithSelectableItems = () => {
     const [selected, setSelected] = useState();
     return (
@@ -196,13 +198,13 @@ export const SelectableItems = () => {
     );
   };
   return <ListWithSelectableItems />;
-};
+});
 
 SelectableItems.story = {
   name: 'with selectable items',
 };
 
-export const WithSecondaryValue = () => (
+export const WithSecondaryValue = withReadme(README, () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
@@ -218,13 +220,13 @@ export const WithSecondaryValue = () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-);
+));
 
 WithSecondaryValue.story = {
   name: 'with secondaryValue',
 };
 
-export const WithIsLargeRowAndIcon = () => (
+export const WithIsLargeRowAndIcon = withReadme(README, () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
@@ -242,13 +244,13 @@ export const WithIsLargeRowAndIcon = () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-);
+));
 
 WithIsLargeRowAndIcon.story = {
   name: 'with isLargeRow and icon',
 };
 
-export const WithRowActionsSingle = () => (
+export const WithRowActionsSingle = withReadme(README, () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
@@ -276,13 +278,13 @@ export const WithRowActionsSingle = () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-);
+));
 
 WithRowActionsSingle.story = {
   name: 'with row actions (single)',
 };
 
-export const WithRowActionsMultiple = () => (
+export const WithRowActionsMultiple = withReadme(README, () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
@@ -305,13 +307,13 @@ export const WithRowActionsMultiple = () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-);
+));
 
 WithRowActionsMultiple.story = {
   name: 'with row actions (multiple)',
 };
 
-export const WithHierarchy = () => (
+export const WithHierarchy = withReadme(README, () => (
   <div style={{ width: 400 }}>
     <List
       title="Sports Teams"
@@ -354,13 +356,13 @@ export const WithHierarchy = () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-);
+));
 
 WithHierarchy.story = {
   name: 'with hierarchy',
 };
 
-export const WithCategoriesFixedHeight = () => (
+export const WithCategoriesFixedHeight = withReadme(README, () => (
   <div style={{ width: 400, height: 600 }}>
     <List
       title="Major League Baseball"
@@ -399,13 +401,13 @@ export const WithCategoriesFixedHeight = () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-);
+));
 
 WithCategoriesFixedHeight.story = {
   name: 'with categories, fixed height',
 };
 
-export const WithEmptyState = () => (
+export const WithEmptyState = withReadme(README, () => (
   <div style={{ width: 400, height: 600 }}>
     <List
       title="Major League Baseball"
@@ -416,13 +418,13 @@ export const WithEmptyState = () => (
       emptyState={text('hasEmptyState', 'No list items to show')}
     />
   </div>
-);
+));
 
 WithEmptyState.story = {
   name: 'with empty state',
 };
 
-export const WithCheckboxMultiSelection = () => {
+export const WithCheckboxMultiSelection = withReadme(README, () => {
   const MultiSelectList = () => {
     const [selectedIds, setSelectedIds] = useState([]);
     const [expandedIds, setExpandedIds] = useState([]);
@@ -585,13 +587,13 @@ export const WithCheckboxMultiSelection = () => {
     );
   };
   return <MultiSelectList />;
-};
+});
 
 WithCheckboxMultiSelection.story = {
   name: 'with checkbox multi-selection',
 };
 
-export const WithTags = () => (
+export const WithTags = withReadme(README, () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
@@ -611,39 +613,13 @@ export const WithTags = () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-);
+));
 
 WithTags.story = {
   name: 'with tags',
 };
 
-export const IsLoading = () => (
-  <div style={{ width: 400 }}>
-    <List
-      title={text('title', 'NY Yankees')}
-      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
-        ([key]) => ({
-          id: key,
-          content: {
-            value: key,
-            tags: [
-              <Tag type="blue" title="descriptor" key="tag1">
-                default
-              </Tag>,
-            ],
-          },
-        })
-      )}
-      isLoading={boolean('isLoading', true)}
-    />
-  </div>
-);
-
-IsLoading.story = {
-  name: 'with isLoading',
-};
-
-export const WithPagination = () => (
+export const WithPagination = withReadme(README, () => (
   <div style={{ height: 300, overflow: 'auto', width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
@@ -663,7 +639,8 @@ export const WithPagination = () => (
       isFullHeight
     />
   </div>
-);
+));
+
 WithPagination.story = {
   name: 'with pagination',
 };

@@ -126,6 +126,7 @@ const defaultProps = {
     moderateLabel: 'Moderate',
     lowLabel: 'Low',
     selectSeverityPlaceholder: 'Select a severity',
+    searchLabel: 'Search',
     searchPlaceholder: 'Search',
     filterButtonAria: 'Filters',
     defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
