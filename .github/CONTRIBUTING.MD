@@ -249,15 +249,3 @@ is.
 
 Here's the Public GIST URL:
 https://gist.github.com/scottdickerson/5e3fb697c29f2aaa058145a3349a8229
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
