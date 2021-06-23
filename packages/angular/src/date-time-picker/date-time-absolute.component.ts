@@ -20,6 +20,7 @@ import { format, getHours, getMinutes, setHours, setMinutes } from 'date-fns';
           rangeLabel="End date"
           [(ngModel)]="dateRange"
           (valueChange)="onChange()"
+          theme="light"
         >
         </ibm-date-picker>
       </div>
@@ -29,24 +30,49 @@ import { format, getHours, getMinutes, setHours, setMinutes } from 'date-fns';
         <!-- tmp until we can implement a better time selector -->
         <div class="bx--form-item" style="margin-right: 1rem">
           <label class="bx--label">Start time</label>
-          <input ibmText type="time" [(ngModel)]="startTime" (change)="onChange()" />
+          <input ibmText type="time" [(ngModel)]="startTime" (change)="onChange()" theme="light"/>
         </div>
         <!-- tmp until we can implement a better time selector -->
         <div class="bx--form-item">
           <label class="bx--label">End time</label>
-          <input ibmText type="time" [(ngModel)]="endTime" (change)="onChange()" />
+          <input ibmText type="time" [(ngModel)]="endTime" (change)="onChange()" theme="light"/>
         </div>
       </div>
     </fieldset>
   `,
   styles: [
     `
+      /*
+        all of this is a bunch of gross styling hacks until we can settle on a reasonable
+        UX decision for the range picker. By default react forces the picker open, which
+        totally breaks the interaction for re-selecting dates. We also need to fix the HTML
+        structure upstream as we can't apply the right spacing (easily) due to the duplication
+        of classes at multiple levels of the underlying datepicker.
+      */
       ::ng-deep .iot--date-time-picker__wrapper .bx--date-picker-container {
         opacity: 1;
       }
 
+      ::ng-deep .iot--date-time-picker__wrapper .bx--date-picker--range > .bx--date-picker-container:first-child {
+        margin-right: 0;
+      }
+
       ::ng-deep .iot--date-time-picker__wrapper .bx--date-picker--range {
         position: initial;
+      }
+
+      ::ng-deep .iot--date-time-picker__wrapper .bx--date-picker-input__wrapper {
+        max-width: 137px;
+      }
+
+      ::ng-deep .iot--date-time-picker__wrapper .bx--date-picker__input {
+        width: 100%;
+      }
+
+      /* we do this since there's only one level of ibm-date-picker-input. the other wrapper classes are duplicated */
+      ::ng-deep .iot--date-time-picker__wrapper .bx--date-picker--range .bx--date-picker-container:first-child ibm-date-picker-input {
+        margin-right: 16px;
+        width: 137px;
       }
     `,
   ],

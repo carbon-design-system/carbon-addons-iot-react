@@ -1,5 +1,6 @@
 import {
   Component,
+  ElementRef,
   EventEmitter,
   HostBinding,
   Input,
@@ -39,19 +40,21 @@ export type DateRange = [Date, Date];
       [ngClass]="{
         'iot--date-time-picker__box--light': theme === 'light'
       }"
-      [ibmTooltip]="formatCurrentRange()"
-      trigger="hover"
-      placement="bottom"
     >
-      <div class="iot--date-time-picker__field" (click)="togglePicker()">
+      <div
+        class="iot--date-time-picker__field"
+        (click)="togglePicker()"
+        (keydown.enter)="togglePicker()"
+        (keydown.space)="togglePicker()"
+        [ibmTooltip]="formatCurrentRange()"
+        [offset]="tooltipOffset"
+        trigger="hover"
+        placement="bottom"
+        role="button"
+        tabindex="0"
+      >
         <span [title]="formatCurrentRangeTitle()">{{ formatCurrentRangeTitle() }}</span>
         <svg ibmIcon="calendar" size="16" class="iot--date-time-picker__icon"></svg>
-        <!-- <span
-						ibmTooltip="Hello, World"
-						[isOpen]="true"
-						trigger="hover"
-						placement="bottom">
-					</span> -->
       </div>
       <div
         class="iot--date-time-picker__menu"
@@ -62,7 +65,11 @@ export type DateRange = [Date, Date];
       >
         <div class="iot--date-time-picker__menu-scroll">
           <!-- root view -->
-          <ol *ngIf="!selectingCustomRange" class="bx--list--ordered">
+          <ol
+            *ngIf="!selectingCustomRange"
+            (keyup)="navigateList($event)"
+            class="bx--list--ordered"
+          >
             <li
               class="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
             >
@@ -72,6 +79,7 @@ export type DateRange = [Date, Date];
               *ngIf="hasRelative || hasAbsolute"
               (click)="selectingCustomRange = true"
               class="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
+              tabindex="-1"
             >
               Custom Range
             </li>
@@ -79,6 +87,9 @@ export type DateRange = [Date, Date];
               *ngFor="let range of dateTimeRanges"
               class="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
               (click)="selectPresetRange(range)"
+              (keyup.space)="selectPresetRange(range)"
+              (keyup.enter)="selectPresetRange(range)"
+              [attr.tabindex]="selected[0] === range.key ? 0 : -1"
               [ngClass]="{
                 'iot--date-time-picker__listitem--preset-selected': selected[0] === range.key
               }"
@@ -98,10 +109,11 @@ export type DateRange = [Date, Date];
         <div class="iot--date-time-picker__menu-btn-set">
           <button
             *ngIf="selectingCustomRange"
-            (click)="selectingCustomRange = false"
+            (click)="onBack()"
             ibmButton="secondary"
             class="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel"
             type="button"
+            size="field"
           >
             Back
           </button>
@@ -111,6 +123,7 @@ export type DateRange = [Date, Date];
             (click)="onCancel()"
             class="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel"
             type="button"
+            size="field"
           >
             Cancel
           </button>
@@ -119,6 +132,7 @@ export type DateRange = [Date, Date];
             (click)="onApply()"
             class="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply"
             type="button"
+            size="field"
           >
             Apply
           </button>
@@ -197,14 +211,20 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   @Output() apply: EventEmitter<DateRange> = new EventEmitter();
   @Output() cancel: EventEmitter<void> = new EventEmitter();
 
-  // contains the most recent change to be applied when the "apply" button is clicked
-  unAppliedSelection: DateTimeSelection = null;
+  // contains the selection from before a custom selection was made (to handle the "back" case)
+  previousSelection: DateTimeSelection = null;
   selectingCustomRange = false;
   expanded = false;
 
+  get tooltipOffset() {
+    return { x: 0, y: 4 };
+  }
+
+  constructor(protected elementRef: ElementRef) {}
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes?.selected?.currentValue) {
-      const [type, start, end] = changes.selected.currentValue;
+      const [type] = changes.selected.currentValue;
       if (type === 'RELATIVE' || type === 'ABSOLUTE') {
         this.selectingCustomRange = true;
       }
@@ -237,7 +257,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     const formatString = 'yyyy-M-d HH:mm';
     let endFormatted = format(end, formatString);
     if (isThisMinute(end)) {
-      endFormatted = 'now';
+      endFormatted = 'Now';
     }
     return `${format(start, formatString)} to ${endFormatted}`;
   }
@@ -257,27 +277,30 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   selectPresetRange(range: DateTimeRange) {
     // set the selected value so the view updates
     this.selected = [range.key];
-    // queue the selection to emit when applied
-    this.unAppliedSelection = this.selected;
   }
 
   rangeChange(change: DateTimeSelection) {
-    // queue the selection to emit when applied
-    this.unAppliedSelection = change;
+    // store the previous selection if we don't have one yet
+    if (!this.previousSelection) {
+      this.previousSelection = this.selected;
+    }
+    this.selected = change;
+  }
+
+  onBack() {
+    this.selectingCustomRange = false;
+    if (this.previousSelection) {
+      this.selected = this.previousSelection;
+      // we've gone back, clear out any previous slection
+      this.previousSelection = null;
+    }
   }
 
   onApply() {
-    // if nothing has changed, dont do the apply
-    if (!this.unAppliedSelection) {
-      // but do close the dialog
-      this.expanded = false;
-      return;
-    }
-    const [rangeOrType, start, end] = this.unAppliedSelection;
+    const [rangeOrType, start, end] = this.selected;
     if (this.selectingCustomRange) {
-      this.selected = this.unAppliedSelection;
       this.apply.emit([start, end]);
-      this.selectedChange.emit(this.unAppliedSelection);
+      this.selectedChange.emit(this.selected);
     } else {
       // emit the date range
       const range = this.dateTimeRanges.find((range) => range.key === rangeOrType);
@@ -285,18 +308,47 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       this.selectedChange.emit(this.selected);
       this.apply.emit(range.getRange());
     }
-    // clear the unapplied selection
-    this.unAppliedSelection = null;
     this.expanded = false;
   }
 
   onCancel() {
     this.cancel.emit();
-    this.unAppliedSelection = null;
     this.expanded = false;
+  }
+
+  navigateList(event: KeyboardEvent) {
+    const target = event.target as HTMLElement;
+    switch (event.key) {
+      case 'ArrowUp': {
+        const prev = target.previousElementSibling as HTMLElement;
+        console.log(prev);
+        if (prev?.hasAttribute('tabindex')) {
+          target.tabIndex = -1;
+          prev.tabIndex = 0;
+          prev.focus();
+        }
+        break;
+      }
+      case 'ArrowDown': {
+        const next = target.nextElementSibling as HTMLElement;
+        if (next?.hasAttribute('tabindex')) {
+          target.tabIndex = -1;
+          next.tabIndex = 0;
+          next.focus();
+        }
+        break;
+      }
+    }
   }
 
   togglePicker() {
     this.expanded = !this.expanded;
+    if (this.expanded) {
+      const nativeElement: HTMLElement = this.elementRef.nativeElement;
+      const selected: HTMLElement = nativeElement.querySelector(
+        '.iot--date-time-picker__listitem--preset-selected'
+      );
+      setTimeout(() => selected.focus());
+    }
   }
 }
