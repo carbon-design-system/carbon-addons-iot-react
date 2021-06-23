@@ -174,6 +174,7 @@ export const stopPropagationAndCallback = (evt, callback, ...args) => {
 
 /**
  * Determines the smallest possible height that the dashboard can be while fitting all cards
+ * Cards have a max height of 16 units
  * @param {array} cards list of cards
  */
 export const getGridHeight = (cards) => cards.length * 16;
