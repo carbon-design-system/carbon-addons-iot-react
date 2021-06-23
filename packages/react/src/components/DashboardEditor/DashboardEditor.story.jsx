@@ -271,7 +271,7 @@ export const WithInitialValue = () => (
         {
           id: 'Timeseries',
           title: 'Timeseries',
-          size: 'MEDIUMWIDE',
+          size: 'MEDIUM',
           type: 'TIMESERIES',
           content: {
             series: [
@@ -324,57 +324,60 @@ export const WithInitialValue = () => (
       ],
       layouts: {
         lg: [
-          { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-          { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+          { i: 'Table', x: 0, y: 0 },
+          { i: 'Custom', x: 8, y: 0 },
           {
-            h: 2,
             i: 'Standard',
-            w: 4,
             x: 12,
             y: 0,
           },
           {
-            h: 2,
             i: 'Timeseries',
-            w: 8,
             x: 1,
             y: 4,
+          },
+          {
+            i: 'Bar',
+            x: 1,
+            y: 8,
           },
         ],
         md: [
-          { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-          { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+          { i: 'Table', x: 0, y: 0 },
+          { i: 'Custom', x: 0, y: 4 },
           {
-            h: 2,
             i: 'Standard',
-            w: 4,
-            x: 12,
-            y: 0,
+            x: 0,
+            y: 6,
           },
           {
-            h: 2,
             i: 'Timeseries',
-            w: 8,
-            x: 1,
-            y: 4,
+            x: 0,
+            y: 8,
+          },
+          {
+            i: 'Bar',
+            x: 0,
+            y: 10,
           },
         ],
-        xl: [
-          { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-          { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+        sm: [
+          { i: 'Table', x: 0, y: 0 },
+          { i: 'Custom', x: 4, y: 0 },
           {
-            h: 2,
             i: 'Standard',
-            w: 4,
-            x: 12,
-            y: 0,
+            x: 4,
+            y: 2,
           },
           {
-            h: 2,
             i: 'Timeseries',
-            w: 8,
             x: 1,
             y: 4,
+          },
+          {
+            i: 'Bar',
+            x: 1,
+            y: 6,
           },
         ],
       },
@@ -477,7 +480,7 @@ export const SummaryDashboardWithInitialValue = () => (
           {
             id: 'Timeseries',
             title: 'Timeseries',
-            size: 'MEDIUMWIDE',
+            size: 'MEDIUM',
             type: 'TIMESERIES',
             content: {
               series: [
@@ -530,56 +533,59 @@ export const SummaryDashboardWithInitialValue = () => (
         ],
         layouts: {
           lg: [
-            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 8, y: 0 },
             {
-              h: 2,
               i: 'Standard',
-              w: 4,
-              x: 12,
-              y: 0,
+              x: 8,
+              y: 2,
             },
             {
-              h: 2,
               i: 'Timeseries',
-              w: 8,
-              x: 1,
+              x: 0,
               y: 4,
+            },
+            {
+              i: 'Bar',
+              x: 0,
+              y: 6,
             },
           ],
           md: [
-            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 0, y: 4 },
             {
-              h: 2,
               i: 'Standard',
-              w: 4,
-              x: 12,
-              y: 0,
+              x: 0,
+              y: 6,
             },
             {
-              h: 2,
               i: 'Timeseries',
-              w: 8,
-              x: 1,
-              y: 4,
+              x: 0,
+              y: 8,
+            },
+            {
+              i: 'Bar',
+              x: 0,
+              y: 10,
             },
           ],
-          xl: [
-            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+          sm: [
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 4, y: 0 },
             {
-              h: 2,
               i: 'Standard',
-              w: 4,
-              x: 12,
-              y: 0,
+              x: 4,
+              y: 2,
             },
             {
-              h: 2,
               i: 'Timeseries',
-              w: 8,
-              x: 1,
+              x: 0,
+              y: 4,
+            },
+            {
+              i: 'Bar',
+              x: 4,
               y: 4,
             },
           ],
