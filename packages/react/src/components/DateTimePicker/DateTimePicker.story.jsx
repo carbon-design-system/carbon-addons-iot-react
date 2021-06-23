@@ -223,3 +223,23 @@ export const LightVersion = () => {
 LightVersion.story = {
   name: 'Light version',
 };
+
+export const Locale = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <DateTimePicker
+        id="datetimepicker25"
+        dateTimeMask={text('dateTimeMask', 'L HH:mm')}
+        locale={select('locale', ['en', 'fr', 'ja'], 'fr')}
+        defaultValue={defaultAbsoluteValue}
+        hasTimeInput={boolean('hasTimeInput', true)}
+      />
+    </div>
+  );
+};
