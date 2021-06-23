@@ -49,6 +49,7 @@ export const WithStateInStory = () => {
         <HotspotEditorTooltipTab
           showInfoMessage={boolean('showInfoMessage', false)}
           hotspotIcons={selectableIcons}
+          hotspotIconFillColors={colors}
           formValues={formValues}
           onChange={handleOnChange}
           onDelete={action('onDelete')}
@@ -117,6 +118,7 @@ export const WithInfoMessage = () => {
       <HotspotEditorTooltipTab
         showInfoMessage={boolean('showInfoMessage', true)}
         hotspotIcons={selectableIcons}
+        hotspotIconFillColors={colors}
         formValues={{}}
         onChange={action('onChange')}
         onDelete={action('onDelete')}

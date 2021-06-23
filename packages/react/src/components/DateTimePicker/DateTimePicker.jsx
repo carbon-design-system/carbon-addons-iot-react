@@ -288,6 +288,10 @@ const DateTimePicker = ({
     ...defaultProps.i18n,
     ...i18n,
   };
+  // initialize the dayjs locale
+  useEffect(() => {
+    dayjs.locale(locale);
+  }, [locale]);
 
   // State
   const [isExpanded, setIsExpanded] = useState(expanded);
