@@ -135,6 +135,7 @@ export const findLayoutOrGenerate = (layouts, cards, supportedLayouts) => {
   // iterate through each breakpoint
   return supportedLayouts.reduce((acc, layoutName) => {
     let layout = layouts && layouts[layoutName];
+    // If layouts exists and there is one for each card
     if (layout && layout.length === cards.length) {
       // We need to set the width and height based on the card.size using CARD_DIMENSIONS
       layout = layout.map((cardLayout) => {
