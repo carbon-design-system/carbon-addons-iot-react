@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.35...v2.146.0-next.36) (2021-06-23)
+
+
+### Bug Fixes
+
+* **dashboard-grid:** grid should generate layouts for all supported breakpoints for each card ([49d392b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/49d392b51bb1a201702ed0724a45f68562b77664))
+
+
+
+
+
 # [2.146.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.33...v2.146.0-next.35) (2021-06-23)
 
 
