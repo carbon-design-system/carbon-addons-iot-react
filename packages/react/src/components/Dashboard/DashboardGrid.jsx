@@ -127,7 +127,7 @@ export const getBreakPointSizes = (breakpoint, cardDimensions, cardSizes) => {
 
 /**
  * This function finds an existing layout for each dashboard breakpoint, validates it, and or generates a new one to return
- * @param {Object} layouts an keyed object of each layout for each breakpoint
+ * @param {Object} layouts a keyed object of each layout for each breakpoint
  * @param {Array<Object>} cards an array of the card props for each card
  * @param {Array<string>} supportedLayouts
  */
@@ -135,27 +135,26 @@ export const findLayoutOrGenerate = (layouts, cards, supportedLayouts) => {
   // iterate through each breakpoint
   return supportedLayouts.reduce((acc, layoutName) => {
     let layout = layouts && layouts[layoutName];
-    if (layout) {
-      // if we're using an existing layout, we need to add CARD_DIMENSIONS because they are not stored in our JSON document
-      layout = layout.reduce((updatedLayout, cardFromLayout) => {
-        const matchingCard = find(cards, { id: cardFromLayout.i });
-        if (matchingCard)
-          updatedLayout.push({
-            ...cardFromLayout,
-            ...CARD_DIMENSIONS[matchingCard.size][layoutName],
-          });
-        return updatedLayout;
-      }, []);
+    if (layout && layout.length === cards.length) {
+      // We need to set the width and height based on the card.size using CARD_DIMENSIONS
+      layout = layout.map((cardLayout) => {
+        const matchingCard = find(cards, { id: cardLayout.i });
+        return {
+          ...cardLayout,
+          ...(matchingCard ? { ...CARD_DIMENSIONS[matchingCard.size][layoutName] } : {}),
+        };
+      });
     } else {
-      // generate the layout if we're not passed from the parent
-      layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS);
+      // generate the layout if we're not passed one from the parent or if the layouts are missing for any breakpoints
+      layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS, layout);
     }
 
+    // Add the resizable flag
     const layoutWithResizableItems = layout.map((cardFromLayout) => {
       const matchingCard = find(cards, { id: cardFromLayout.i });
       return {
         ...cardFromLayout,
-        isResizable: matchingCard.isResizable,
+        isResizable: matchingCard?.isResizable,
       };
     });
 

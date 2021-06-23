@@ -1,10 +1,12 @@
 import {
   getSortedData,
   canFit,
+  getLayout,
   filterValidAttributes,
   generateCsv,
   convertStringsToDOMElement,
 } from '../componentUtilityFunctions';
+import { CARD_DIMENSIONS, DASHBOARD_COLUMNS } from '../../constants/LayoutConstants';
 
 const mockData = [
   { values: { number: 10, string: 'string', null: 1 } },
@@ -72,6 +74,41 @@ describe('componentUtilityFunctions', () => {
         [0, 0, 0, 0],
       ])
     ).toEqual(true);
+  });
+  it('getLayout', () => {
+    let layoutName = 'lg';
+    const cards = [
+      { id: 1, content: {}, size: 'MEDIUM' },
+      { id: 2, content: {}, size: 'MEDIUM' },
+      { id: 3, content: {}, size: 'LARGE' },
+    ];
+    const existingLayout = [{ i: 1, x: 2, y: 2 }];
+    const lgLayout = getLayout(
+      layoutName,
+      cards,
+      DASHBOARD_COLUMNS,
+      CARD_DIMENSIONS,
+      existingLayout
+    );
+    expect(lgLayout).toEqual([
+      { h: 2, i: 1, w: 8, x: 2, y: 2 },
+      { h: 2, i: 2, w: 8, x: 0, y: 0 },
+      { h: 4, i: 3, w: 8, x: 0, y: 4 },
+    ]);
+    layoutName = 'md';
+    const mdLayout = getLayout(
+      layoutName,
+      cards,
+      DASHBOARD_COLUMNS,
+      CARD_DIMENSIONS,
+      existingLayout
+    );
+    // This should throw a console error that the layout is bad, but not fail the test as react-grid-layout will fix it
+    expect(mdLayout).toEqual([
+      { h: 2, i: 1, w: 8, x: 2, y: 2 },
+      { h: 2, i: 2, w: 8, x: 0, y: 0 },
+      { h: 4, i: 3, w: 8, x: 0, y: 4 },
+    ]);
   });
   it('filterValidAttributes allow HTML attributes, event handlers, react lib', () => {
     // HTML

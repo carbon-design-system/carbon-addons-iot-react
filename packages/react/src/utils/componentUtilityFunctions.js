@@ -172,12 +172,18 @@ export const stopPropagationAndCallback = (evt, callback, ...args) => {
   callback(...args);
 };
 
-// Dashboard layout
-const gridHeight = 200;
+/**
+ * Determines the smallest possible height that the dashboard can be while fitting all cards
+ * @param {array} cards list of cards
+ */
+export const getGridHeight = (cards) => cards.length * 16;
 
-export const printGrid = (grid) => {
+/**
+ * Utility function that prints out the grid at the correct orientation
+ */
+export const printGrid = (grid, cards) => {
   let result = '';
-  for (let j = 0; j < gridHeight; j += 1) {
+  for (let j = 0; j < getGridHeight(cards); j += 1) {
     for (let i = 0; i < grid.length; i += 1) {
       result += `${grid[i][j]} `;
     }
@@ -187,7 +193,7 @@ export const printGrid = (grid) => {
 };
 
 /**
- *
+ * Checks to see if the bounds of a card (given x/y coordinates and width/height) fit the grid
  * @param {*} x  the current x location of a card
  * @param {*} y  the current y location of a card
  * @param {*} w  current width of a card
@@ -213,13 +219,16 @@ export const canFit = (x, y, w, h, grid) => {
  * @param {*} cardDimensions double object of card height and width keyed by card size and layout (see CARD_DIMENSIONS)
  * returns
  */
-export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) => {
+export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions, existingLayout) => {
   let currX = 0;
   let currY = 0;
+
+  // This grid is used to determine where a card can fit in the layout
   const grid = Array(dashboardColumns[layoutName])
     .fill(0)
-    .map(() => Array(gridHeight).fill(0));
+    .map(() => Array(getGridHeight(cards)).fill(0));
 
+  // This function updates the grid to reflect a card
   const placeCard = (x, y, w, h, num) => {
     for (let i = x; i < x + w; i += 1) {
       for (let j = y; j < y + h; j += 1) {
@@ -230,19 +239,46 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
 
   const layout = cards
     .map((card, index) => {
-      const { w, h } = cardDimensions[card.size][layoutName];
+      const { w, h } = cardDimensions[card.size][layoutName]; // These are width and height based on card.size.
+
+      // Handle pre-existing cards
+      const existingCardLayout = existingLayout?.find(({ i }) => i === card.id);
+      if (existingCardLayout) {
+        const { x, y } = existingCardLayout; // coordinates of a card that already exists
+        // Need to 'try' here because we will get an error if the user passes a layout that doesn't work
+        try {
+          // Need to place each existing card into the grid so that new cards know their bounds
+          placeCard(x, y, w, h, index + 1);
+        } catch (err) {
+          // In this case, since we didn't explicitly place it, react-grid-layout will handle it for us
+          console.error('Error displaying user defined layout: ', err);
+        }
+        return {
+          ...existingCardLayout,
+          w,
+          h,
+        };
+      }
+
+      // Handle new cards
       while (!canFit(currX, currY, w, h, grid)) {
+        // checks each position of the grid to see if the card fits, updating the currX and currY along the way
         currX += 1;
         if (currX > dashboardColumns[layoutName]) {
           currX = 0;
           currY += 1;
-          if (currY > gridHeight) {
+          if (currY > getGridHeight(cards)) {
             return null;
           }
         }
       }
-      placeCard(currX, currY, w, h, index + 1);
-      // printGrid(grid);
+      // Need to 'try' here because we will get an error if the user passes a layout that doesn't work
+      try {
+        placeCard(currX, currY, w, h, index + 1);
+      } catch (err) {
+        console.error('Error displaying user defined layout: ', err);
+      }
+
       const cardLayout = {
         i: card.id,
         x: currX,
@@ -254,7 +290,7 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
       return cardLayout;
     })
     .filter((i) => i !== null);
-  // printGrid(grid);
+
   return layout;
 };
 
