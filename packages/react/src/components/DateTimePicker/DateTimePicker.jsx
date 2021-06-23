@@ -780,7 +780,7 @@ const DateTimePicker = ({
                 })}
               </OrderedList>
             ) : (
-              <div>
+              <div className={`${iotPrefix}--date-time-picker__custom-wrapper`}>
                 {showRelativeOption ? (
                   <FormGroup
                     legendText={strings.customRangeLabel}
@@ -816,6 +816,7 @@ const DateTimePicker = ({
                           invalidText={strings.invalidNumberLabel}
                           step={1}
                           min={0}
+                          light
                           value={relativeValue ? relativeValue.lastNumber : 0}
                           onChange={onRelativeLastNumberChange}
                           translateWithId={(messageId) =>
@@ -829,6 +830,7 @@ const DateTimePicker = ({
                         <Select
                           {...others}
                           id={`${id}-last-interval`}
+                          light
                           defaultValue={
                             relativeValue ? relativeValue.lastInterval : INTERVAL_VALUES.MINUTES
                           }
@@ -856,6 +858,7 @@ const DateTimePicker = ({
                           {...others}
                           ref={relativeSelect}
                           id={`${id}-relative-to-when`}
+                          light
                           defaultValue={relativeValue ? relativeValue.relativeToWhen : ''}
                           onChange={onRelativeToWhenChange}
                           hideLabel
@@ -878,6 +881,7 @@ const DateTimePicker = ({
                             id={`${id}-relative-to-time`}
                             value={relativeValue ? relativeValue.relativeToTime : ''}
                             i18n={i18n}
+                            light
                             onChange={onRelativeToTimeChange}
                             spinner
                             autoComplete="off"
@@ -925,6 +929,7 @@ const DateTimePicker = ({
                             i18n={i18n}
                             onChange={onAbsoluteStartTimeChange}
                             spinner
+                            light
                             autoComplete="off"
                           />
                           <TimePickerSpinner
@@ -934,6 +939,7 @@ const DateTimePicker = ({
                             i18n={i18n}
                             onChange={onAbsoluteEndTimeChange}
                             spinner
+                            light
                             autoComplete="off"
                           />
                         </div>
@@ -951,6 +957,7 @@ const DateTimePicker = ({
               <Button
                 kind="secondary"
                 className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}
+                size="field"
                 {...others}
                 onClick={toggleIsCustomRange}
               >
@@ -961,6 +968,7 @@ const DateTimePicker = ({
                 kind="secondary"
                 className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-cancel`}
                 onClick={onCancelClick}
+                size="field"
                 {...others}
               >
                 {strings.cancelBtnLabel}
@@ -971,6 +979,7 @@ const DateTimePicker = ({
               className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-apply`}
               {...others}
               onClick={onApplyClick}
+              size="field"
             >
               {strings.applyBtnLabel}
             </Button>
