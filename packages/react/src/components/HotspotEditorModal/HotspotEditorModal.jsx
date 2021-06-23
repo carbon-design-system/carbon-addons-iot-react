@@ -494,7 +494,7 @@ const HotspotEditorModal = ({
               />
             </Tab>
             <Tab disabled={hasNonEditableContent} label={fixedTypeDataSourceTabLabelText}>
-              {renderDataSourceTab()}
+              {hasNonEditableContent ? null : renderDataSourceTab()}
             </Tab>
           </Tabs>
         )}
@@ -541,7 +541,7 @@ const HotspotEditorModal = ({
           />
         </Tab>
         <Tab disabled={hasNonEditableContent} label={textTypeDataSourceTabLabelText}>
-          {renderDataSourceTab()}
+          {hasNonEditableContent ? null : renderDataSourceTab()}
         </Tab>
       </Tabs>
     );

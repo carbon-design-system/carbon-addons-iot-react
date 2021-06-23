@@ -233,6 +233,8 @@ describe('HotspotEditorModal', () => {
         'true'
       )
     );
+
+    expect(screen.queryByLabelText('Data items')).not.toBeInTheDocument();
   });
 
   it('disables datasource tab for Hotspots of type "text" with element content', async () => {
@@ -286,6 +288,8 @@ describe('HotspotEditorModal', () => {
         'true'
       )
     );
+
+    expect(screen.queryByLabelText('Data items')).not.toBeInTheDocument();
   });
 
   it('exports cardConfig with initial settings', async () => {
