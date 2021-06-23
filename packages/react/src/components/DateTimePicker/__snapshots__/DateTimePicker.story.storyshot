@@ -300,6 +300,468 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTime Picker Locale 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1.5rem",
+        "width": "1056px",
+      }
+    }
+  >
+    <div
+      className="iot--date-time-picker__wrapper"
+      data-testid="date-time-picker"
+      id="datetimepicker25-iot--date-time-picker__wrapper"
+    >
+      <div
+        className="iot--date-time-picker__box "
+      >
+        <div
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <span
+            title="01/04/2020 12:34 to 06/04/2020 10:49"
+          >
+            01/04/2020 12:34 to 06/04/2020 10:49
+          </span>
+          <svg
+            aria-label="Calendar"
+            className="iot--date-time-picker__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+            />
+          </svg>
+        </div>
+        <div
+          className="iot--date-time-picker__menu"
+          role="listbox"
+        >
+          <div
+            className="iot--date-time-picker__menu-scroll"
+          >
+            <div>
+              <fieldset
+                className="bx--fieldset iot--date-time-picker__menu-formgroup"
+              >
+                <legend
+                  className="bx--label iot--date-time-picker__menu-formgroup"
+                >
+                  Custom range
+                </legend>
+                <div
+                  className="bx--form-item"
+                >
+                  <fieldset
+                    className="bx--radio-button-group bx--radio-button-group--label-right"
+                  >
+                    <div
+                      className="bx--radio-button-wrapper"
+                    >
+                      <input
+                        checked={false}
+                        className="bx--radio-button"
+                        id="datetimepicker25-relative"
+                        name="datetimepicker25-radiogroup"
+                        onChange={[Function]}
+                        type="radio"
+                        value="RELATIVE"
+                      />
+                      <label
+                        className="bx--radio-button__label"
+                        htmlFor="datetimepicker25-relative"
+                      >
+                        <span
+                          className="bx--radio-button__appearance"
+                        />
+                        <span
+                          className=""
+                        >
+                          Relative
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      className="bx--radio-button-wrapper"
+                    >
+                      <input
+                        checked={true}
+                        className="bx--radio-button"
+                        id="datetimepicker25-absolute"
+                        name="datetimepicker25-radiogroup"
+                        onChange={[Function]}
+                        type="radio"
+                        value="ABSOLUTE"
+                      />
+                      <label
+                        className="bx--radio-button__label"
+                        htmlFor="datetimepicker25-absolute"
+                      >
+                        <span
+                          className="bx--radio-button__appearance"
+                        />
+                        <span
+                          className=""
+                        >
+                          Absolute
+                        </span>
+                      </label>
+                    </div>
+                  </fieldset>
+                </div>
+              </fieldset>
+              <div
+                data-testid="date-time-picker-datepicker"
+              >
+                <div
+                  className="iot--date-time-picker__datepicker"
+                >
+                  <div
+                    className="bx--form-item"
+                  >
+                    <div
+                      className="bx--date-picker bx--date-picker--range bx--date-picker--nolabel"
+                      onClose={[Function]}
+                    >
+                      <div
+                        className="bx--date-picker-container bx--date-picker--nolabel"
+                      >
+                        <div
+                          className="bx--date-picker-input__wrapper"
+                        >
+                          <input
+                            className="bx--date-picker__input"
+                            disabled={false}
+                            id="datetimepicker25-date-picker-input-start"
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            pattern="\\\\d{1,2}\\\\/\\\\d{1,2}\\\\/\\\\d{4}"
+                            type="text"
+                          />
+                          <svg
+                            aria-hidden={true}
+                            className="bx--date-picker__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            onClick={[Function]}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        className="bx--date-picker-container bx--date-picker--nolabel"
+                      >
+                        <div
+                          className="bx--date-picker-input__wrapper"
+                        >
+                          <input
+                            className="bx--date-picker__input"
+                            disabled={false}
+                            id="datetimepicker25-date-picker-input-end"
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            pattern="\\\\d{1,2}\\\\/\\\\d{1,2}\\\\/\\\\d{4}"
+                            type="text"
+                          />
+                          <svg
+                            aria-hidden={true}
+                            className="bx--date-picker__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            onClick={[Function]}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <fieldset
+                  className="bx--fieldset iot--date-time-picker__menu-formgroup"
+                >
+                  <legend
+                    className="bx--label iot--date-time-picker__menu-formgroup"
+                  >
+                    
+                  </legend>
+                  <div
+                    className="iot--date-time-picker__fields-wrapper"
+                  >
+                    <div
+                      className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner"
+                    >
+                      <div
+                        className="bx--form-item"
+                      >
+                        <label
+                          className="bx--label"
+                          htmlFor="datetimepicker25-start-time"
+                        >
+                          Start time
+                        </label>
+                        <div
+                          className="bx--time-picker"
+                        >
+                          <div
+                            className="bx--time-picker__input"
+                          >
+                            <input
+                              autoComplete="off"
+                              className="bx--time-picker__input-field bx--text-input"
+                              disabled={false}
+                              id="datetimepicker25-start-time"
+                              maxLength={5}
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
+                              placeholder="hh:mm"
+                              type="text"
+                              value="12:34"
+                            />
+                          </div>
+                          <div
+                            className="iot--time-picker__controls"
+                          >
+                            <button
+                              aria-atomic="true"
+                              aria-label="Increment hours"
+                              aria-live="polite"
+                              className="iot--time-picker__controls--btn up-icon"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              title="Increment hours"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                className="up-icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={4}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 8 4"
+                                width={8}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 4L4 0 8 4z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-atomic="true"
+                              aria-label="Decrement hours"
+                              aria-live="polite"
+                              className="iot--time-picker__controls--btn down-icon"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              title="Decrement hours"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                className="down-icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={4}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 8 4"
+                                width={8}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 0L4 4 0 0z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner"
+                    >
+                      <div
+                        className="bx--form-item"
+                      >
+                        <label
+                          className="bx--label"
+                          htmlFor="datetimepicker25-end-time"
+                        >
+                          End time
+                        </label>
+                        <div
+                          className="bx--time-picker"
+                        >
+                          <div
+                            className="bx--time-picker__input"
+                          >
+                            <input
+                              autoComplete="off"
+                              className="bx--time-picker__input-field bx--text-input"
+                              disabled={false}
+                              id="datetimepicker25-end-time"
+                              maxLength={5}
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
+                              placeholder="hh:mm"
+                              type="text"
+                              value="10:49"
+                            />
+                          </div>
+                          <div
+                            className="iot--time-picker__controls"
+                          >
+                            <button
+                              aria-atomic="true"
+                              aria-label="Increment hours"
+                              aria-live="polite"
+                              className="iot--time-picker__controls--btn up-icon"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              title="Increment hours"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                className="up-icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={4}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 8 4"
+                                width={8}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 4L4 0 8 4z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-atomic="true"
+                              aria-label="Decrement hours"
+                              aria-live="polite"
+                              className="iot--time-picker__controls--btn down-icon"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              title="Decrement hours"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                className="down-icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={4}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 8 4"
+                                width={8}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 0L4 4 0 0z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--date-time-picker__menu-btn-set"
+          >
+            <button
+              aria-pressed={null}
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--secondary"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              aria-pressed={null}
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--primary"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTime Picker Selected absolute 1`] = `
 <div
   className="storybook-container"
