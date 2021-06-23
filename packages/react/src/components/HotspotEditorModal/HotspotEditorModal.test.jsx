@@ -333,26 +333,13 @@ describe('HotspotEditorModal', () => {
     // Modify the title and verify the result
     userEvent.type(titleInputElement, ' - modified');
     fireEvent.click(screen.getByRole('button', { name: 'Save' }));
-    // expect(onSave).toHaveBeenCalledWith(
-    //   expect.objectContaining({
-    //     values: expect.objectContaining({
-    //       hotspots: expect.arrayContaining([
-    //         expect.objectContaining({
-    //           content: expect.objectContaining({
-    //             title: 'My Device - modified',
-    //           }),
-    //         }),
-    //       ]),
-    //     }),
-    //   })
-    // );
 
     // Change to the data source tab
     fireEvent.click(screen.getByText('Data source'));
 
     // Add the data item alternative 'pressure'
     fireEvent.click(screen.getByText('Select data items'));
-    fireEvent.click(screen.getByText('pressure'));
+    fireEvent.click(screen.getByRole('option', { name: /pressure/i }));
 
     fireEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
     fireEvent.click(screen.getByRole('button', { name: 'Add threshold' }));
