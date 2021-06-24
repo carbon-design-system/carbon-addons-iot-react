@@ -455,7 +455,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Manufacturer')).toBeDefined();
 
     // Popup the Data Item Editor
-    fireEvent.click(screen.queryAllByText('Edit')[1]);
+    fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
     expect(screen.queryByText('Customize data series')).toBeDefined();
     fireEvent.click(screen.queryByText(/Add threshold/));
     fireEvent.click(screen.queryByText('Save'));
@@ -504,7 +504,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Manufacturer')).toBeDefined();
 
     // Popup the Data Item Editor
-    fireEvent.click(screen.queryAllByText('Edit')[1]);
+    fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
     expect(screen.queryByText('Customize data series')).toBeDefined();
     fireEvent.click(screen.queryByText('Save'));
     expect(mockOnChange).toHaveBeenCalledWith({

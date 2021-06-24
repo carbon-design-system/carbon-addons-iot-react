@@ -403,6 +403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               <div>
                 <div
                   className="bx--tag bx--tag--blue"
+                  disabled={null}
                   id="tag-24"
                 >
                   
@@ -414,6 +415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 </div>
                 <div
                   className="bx--tag bx--tag--disabled bx--tag--red"
+                  disabled={null}
                   id="tag-25"
                 >
                   

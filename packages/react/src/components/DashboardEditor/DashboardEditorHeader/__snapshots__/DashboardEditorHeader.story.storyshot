@@ -97,6 +97,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   aria-describedby="icon-tooltip-11"
                   className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                   onBlur={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}

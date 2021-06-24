@@ -314,7 +314,7 @@ describe('DashboardEditor', () => {
     // there should be no breakpoint text on initial render
     expect(screen.queryByText('Edit dashboard at')).not.toBeInTheDocument();
     // find and click small button
-    const smallBtn = screen.getByText('Small view');
+    const smallBtn = screen.getByRole('button', { name: 'Small view' });
     expect(smallBtn).toBeInTheDocument();
     fireEvent.click(smallBtn);
     // there should now be breakpoint text

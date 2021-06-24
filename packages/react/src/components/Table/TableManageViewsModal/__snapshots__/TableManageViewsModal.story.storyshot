@@ -79,21 +79,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               className="bx--search bx--search--lg iot--manage-views-modal__search"
               role="search"
             >
-              <svg
-                aria-hidden={true}
+              <div
                 className="bx--search-magnifier"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
               <label
                 className="bx--label"
                 htmlFor="manage-views-modal-search"
@@ -321,6 +325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--blue"
+                            disabled={null}
                             id="tag-35"
                           >
                             
@@ -1520,21 +1525,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               className="bx--search bx--search--lg iot--manage-views-modal__search"
               role="search"
             >
-              <svg
-                aria-hidden={true}
+              <div
                 className="bx--search-magnifier"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
               <label
                 className="bx--label"
                 htmlFor="manage-views-modal-search"
@@ -1654,6 +1663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-36"
                           >
                             
@@ -1821,6 +1831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--blue"
+                            disabled={null}
                             id="tag-37"
                           >
                             
@@ -1832,6 +1843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           </div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-38"
                           >
                             
@@ -1999,6 +2011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-39"
                           >
                             
@@ -2166,6 +2179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-40"
                           >
                             
@@ -2333,6 +2347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-41"
                           >
                             
@@ -2500,6 +2515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-42"
                           >
                             
@@ -2667,6 +2683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-43"
                           >
                             
@@ -2834,6 +2851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-44"
                           >
                             
@@ -3001,6 +3019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-45"
                           >
                             
@@ -3168,6 +3187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-46"
                           >
                             
@@ -3335,6 +3355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-47"
                           >
                             
@@ -3502,6 +3523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-48"
                           >
                             
@@ -3669,6 +3691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-49"
                           >
                             
@@ -3836,6 +3859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-50"
                           >
                             
@@ -4003,6 +4027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-51"
                           >
                             
@@ -4170,6 +4195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-52"
                           >
                             
@@ -4337,6 +4363,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-53"
                           >
                             
@@ -4504,6 +4531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-54"
                           >
                             
@@ -4671,6 +4699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-55"
                           >
                             
@@ -4838,6 +4867,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-56"
                           >
                             
@@ -5005,6 +5035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-57"
                           >
                             
@@ -5172,6 +5203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-58"
                           >
                             
@@ -5339,6 +5371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-59"
                           >
                             
@@ -5506,6 +5539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-60"
                           >
                             
@@ -5673,6 +5707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-61"
                           >
                             
@@ -5840,6 +5875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-62"
                           >
                             
@@ -6007,6 +6043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-63"
                           >
                             
@@ -6174,6 +6211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-64"
                           >
                             
@@ -6341,6 +6379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-65"
                           >
                             
@@ -6508,6 +6547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-66"
                           >
                             
@@ -6675,6 +6715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-67"
                           >
                             
@@ -6842,6 +6883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-68"
                           >
                             
@@ -7009,6 +7051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-69"
                           >
                             
@@ -7176,6 +7219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-70"
                           >
                             
@@ -7343,6 +7387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-71"
                           >
                             
@@ -7510,6 +7555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-72"
                           >
                             
@@ -7677,6 +7723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-73"
                           >
                             
@@ -7844,6 +7891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-74"
                           >
                             
@@ -8011,6 +8059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-75"
                           >
                             
@@ -8178,6 +8227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-76"
                           >
                             
@@ -8345,6 +8395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-77"
                           >
                             
@@ -8512,6 +8563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-78"
                           >
                             
@@ -8679,6 +8731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-79"
                           >
                             
@@ -8846,6 +8899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-80"
                           >
                             
@@ -9013,6 +9067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-81"
                           >
                             
@@ -9180,6 +9235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-82"
                           >
                             
@@ -9347,6 +9403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-83"
                           >
                             
@@ -9514,6 +9571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-84"
                           >
                             
@@ -9681,6 +9739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-85"
                           >
                             
@@ -9848,6 +9907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-86"
                           >
                             
@@ -10015,6 +10075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-87"
                           >
                             
@@ -10182,6 +10243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-88"
                           >
                             
@@ -10349,6 +10411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-89"
                           >
                             
@@ -10516,6 +10579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-90"
                           >
                             
@@ -10683,6 +10747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-91"
                           >
                             
@@ -10850,6 +10915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-92"
                           >
                             
@@ -11017,6 +11083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-93"
                           >
                             
@@ -11184,6 +11251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-94"
                           >
                             
@@ -11351,6 +11419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-95"
                           >
                             
@@ -11518,6 +11587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-96"
                           >
                             
@@ -11685,6 +11755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-97"
                           >
                             
@@ -11852,6 +11923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-98"
                           >
                             
@@ -12019,6 +12091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-99"
                           >
                             
@@ -12186,6 +12259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-100"
                           >
                             
@@ -12353,6 +12427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-101"
                           >
                             
@@ -12520,6 +12595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-102"
                           >
                             
@@ -12687,6 +12763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-103"
                           >
                             
@@ -12854,6 +12931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-104"
                           >
                             
@@ -13021,6 +13099,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-105"
                           >
                             
@@ -13188,6 +13267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-106"
                           >
                             
@@ -13355,6 +13435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-107"
                           >
                             
@@ -13522,6 +13603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-108"
                           >
                             
@@ -13689,6 +13771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-109"
                           >
                             
@@ -13856,6 +13939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-110"
                           >
                             
@@ -14023,6 +14107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-111"
                           >
                             
@@ -14190,6 +14275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-112"
                           >
                             
@@ -14357,6 +14443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-113"
                           >
                             
@@ -14524,6 +14611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-114"
                           >
                             
@@ -14691,6 +14779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-115"
                           >
                             
@@ -14858,6 +14947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-116"
                           >
                             
@@ -15025,6 +15115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-117"
                           >
                             
@@ -15192,6 +15283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-118"
                           >
                             
@@ -15359,6 +15451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-119"
                           >
                             
@@ -15526,6 +15619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-120"
                           >
                             
@@ -15693,6 +15787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-121"
                           >
                             
@@ -15860,6 +15955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-122"
                           >
                             
@@ -16027,6 +16123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-123"
                           >
                             
@@ -16194,6 +16291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-124"
                           >
                             
@@ -16361,6 +16459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-125"
                           >
                             
@@ -16528,6 +16627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-126"
                           >
                             
@@ -16695,6 +16795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-127"
                           >
                             
@@ -16862,6 +16963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-128"
                           >
                             
@@ -17029,6 +17131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-129"
                           >
                             
@@ -17196,6 +17299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-130"
                           >
                             
@@ -17363,6 +17467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-131"
                           >
                             
@@ -17530,6 +17635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-132"
                           >
                             
@@ -17697,6 +17803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-133"
                           >
                             
@@ -17864,6 +17971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-134"
                           >
                             
@@ -18031,6 +18139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--green"
+                            disabled={null}
                             id="tag-135"
                           >
                             
@@ -18198,6 +18307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         <div>
                           <div
                             className="bx--tag bx--tag--red"
+                            disabled={null}
                             id="tag-136"
                           >
                             

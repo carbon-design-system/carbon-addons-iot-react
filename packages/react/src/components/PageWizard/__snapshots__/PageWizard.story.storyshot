@@ -1438,6 +1438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       className="bx--btn bx--btn--tertiary"
                       disabled={false}
                       onBlur={[Function]}
+                      onClick={[Function]}
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}

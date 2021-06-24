@@ -95,21 +95,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   className="bx--search bx--search--xl bx--search--light"
                   role="search"
                 >
-                  <svg
-                    aria-hidden={true}
+                  <div
                     className="bx--search-magnifier"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden={true}
+                      className="bx--search-magnifier-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                      />
+                    </svg>
+                  </div>
                   <label
                     className="bx--label"
                     htmlFor="iot--image-gallery-modal--search"
@@ -254,7 +258,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="assemblyline"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -357,7 +360,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="floow_plan"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -457,7 +459,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="manufacturing_plant"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -557,7 +558,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="robot_arm"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -657,7 +657,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="tankmodal"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -757,7 +756,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="turbines"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -857,7 +855,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="extra-wide-image"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -957,7 +954,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="large"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -1057,7 +1053,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="large_portrait"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -1313,21 +1308,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   className="bx--search bx--search--xl bx--search--light"
                   role="search"
                 >
-                  <svg
-                    aria-hidden={true}
+                  <div
                     className="bx--search-magnifier"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden={true}
+                      className="bx--search-magnifier-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                      />
+                    </svg>
+                  </div>
                   <label
                     className="bx--label"
                     htmlFor="iot--image-gallery-modal--search"
@@ -1472,7 +1471,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="assemblyline"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -1575,7 +1573,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="floow_plan"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -1675,7 +1672,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="manufacturing_plant"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -1775,7 +1771,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="robot_arm"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -1875,7 +1870,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="tankmodal"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -1975,7 +1969,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="turbines"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -2075,7 +2068,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="extra-wide-image"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -2175,7 +2167,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="large"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span
@@ -2275,7 +2266,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   htmlFor="large_portrait"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  selected={false}
                   tabIndex={0}
                 >
                   <span

@@ -103,6 +103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       aria-describedby="icon-tooltip-3"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onBlur={[Function]}
+                      onClick={[Function]}
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
@@ -367,21 +368,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="bx--search bx--search--xl bx--search--light"
                             role="search"
                           >
-                            <svg
-                              aria-hidden={true}
+                            <div
                               className="bx--search-magnifier"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <path
-                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                              />
-                            </svg>
+                              <svg
+                                aria-hidden={true}
+                                className="bx--search-magnifier-icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                />
+                              </svg>
+                            </div>
                             <label
                               className="bx--label"
                               htmlFor="iot--image-gallery-modal--search"
@@ -2300,21 +2305,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="bx--search bx--search--sm"
                       role="search"
                     >
-                      <svg
-                        aria-hidden={true}
+                      <div
                         className="bx--search-magnifier"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <path
-                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          className="bx--search-magnifier-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                          />
+                        </svg>
+                      </div>
                       <label
                         className="bx--label"
                         htmlFor="iot--list-header--search"
@@ -3225,21 +3234,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--xl bx--search--light"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--image-gallery-modal--search"
@@ -3473,21 +3486,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--search bx--search--sm"
                     role="search"
                   >
-                    <svg
-                      aria-hidden={true}
+                    <div
                       className="bx--search-magnifier"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                    </div>
                     <label
                       className="bx--label"
                       htmlFor="iot--list-header--search"
@@ -4306,6 +4323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby="icon-tooltip-9"
                     className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                     onBlur={[Function]}
+                    onClick={[Function]}
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
@@ -4570,21 +4588,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--xl bx--search--light"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--image-gallery-modal--search"
@@ -4729,7 +4751,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="assemblyline"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -4832,7 +4853,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="floow_plan"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -4932,7 +4952,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="manufacturing_plant"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -5032,7 +5051,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="robot_arm"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -5132,7 +5150,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="tankmodal"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -5232,7 +5249,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="turbines"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -5332,7 +5348,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="extra-wide-image"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -5432,7 +5447,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="large"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -5532,7 +5546,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="large_portrait"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -5722,21 +5735,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--search bx--search--sm"
                     role="search"
                   >
-                    <svg
-                      aria-hidden={true}
+                    <div
                       className="bx--search-magnifier"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                    </div>
                     <label
                       className="bx--label"
                       htmlFor="iot--list-header--search"
@@ -7619,6 +7636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby="icon-tooltip-10"
                     className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                     onBlur={[Function]}
+                    onClick={[Function]}
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
@@ -7883,21 +7901,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--xl bx--search--light"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--image-gallery-modal--search"
@@ -8042,7 +8064,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="assemblyline"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -8145,7 +8166,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="floow_plan"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -8245,7 +8265,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="manufacturing_plant"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -8345,7 +8364,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="robot_arm"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -8445,7 +8463,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="tankmodal"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -8545,7 +8562,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="turbines"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -8645,7 +8661,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="extra-wide-image"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -8745,7 +8760,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="large"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -8845,7 +8859,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="large_portrait"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -9035,21 +9048,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--search bx--search--sm"
                     role="search"
                   >
-                    <svg
-                      aria-hidden={true}
+                    <div
                       className="bx--search-magnifier"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                    </div>
                     <label
                       className="bx--label"
                       htmlFor="iot--list-header--search"
@@ -9302,6 +9319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby="icon-tooltip-7"
                     className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                     onBlur={[Function]}
+                    onClick={[Function]}
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
@@ -9566,21 +9584,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--xl bx--search--light"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--image-gallery-modal--search"
@@ -10172,21 +10194,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--search bx--search--sm"
                     role="search"
                   >
-                    <svg
-                      aria-hidden={true}
+                    <div
                       className="bx--search-magnifier"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                    </div>
                     <label
                       className="bx--label"
                       htmlFor="iot--list-header--search"
@@ -10993,21 +11019,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="bx--search bx--search--xl bx--search--light"
                             role="search"
                           >
-                            <svg
-                              aria-hidden={true}
+                            <div
                               className="bx--search-magnifier"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <path
-                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                              />
-                            </svg>
+                              <svg
+                                aria-hidden={true}
+                                className="bx--search-magnifier-icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                />
+                              </svg>
+                            </div>
                             <label
                               className="bx--label"
                               htmlFor="iot--image-gallery-modal--search"
@@ -11241,21 +11271,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="bx--search bx--search--sm"
                       role="search"
                     >
-                      <svg
-                        aria-hidden={true}
+                      <div
                         className="bx--search-magnifier"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <path
-                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          className="bx--search-magnifier-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                          />
+                        </svg>
+                      </div>
                       <label
                         className="bx--label"
                         htmlFor="iot--list-header--search"
@@ -12075,6 +12109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby="icon-tooltip-1"
                     className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                     onBlur={[Function]}
+                    onClick={[Function]}
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
@@ -12339,21 +12374,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--xl bx--search--light"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--image-gallery-modal--search"
@@ -12498,7 +12537,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="assemblyline"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -12601,7 +12639,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="floow_plan"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -12701,7 +12738,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="manufacturing_plant"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -12801,7 +12837,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="robot_arm"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -12901,7 +12936,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="tankmodal"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -13001,7 +13035,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="turbines"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -13101,7 +13134,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="extra-wide-image"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -13201,7 +13233,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="large"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -13301,7 +13332,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="large_portrait"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -13491,21 +13521,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--search bx--search--sm"
                     role="search"
                   >
-                    <svg
-                      aria-hidden={true}
+                    <div
                       className="bx--search-magnifier"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                    </div>
                     <label
                       className="bx--label"
                       htmlFor="iot--list-header--search"
@@ -14455,6 +14489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby="icon-tooltip-8"
                     className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                     onBlur={[Function]}
+                    onClick={[Function]}
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
@@ -14719,21 +14754,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--xl bx--search--light"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--image-gallery-modal--search"
@@ -14878,7 +14917,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="assemblyline"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -14981,7 +15019,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="floow_plan"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -15081,7 +15118,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="manufacturing_plant"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -15181,7 +15217,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="robot_arm"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -15281,7 +15316,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="tankmodal"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -15381,7 +15415,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="turbines"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -15481,7 +15514,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="extra-wide-image"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -15581,7 +15613,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="large"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -15681,7 +15712,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           htmlFor="large_portrait"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          selected={false}
                           tabIndex={0}
                         >
                           <span
@@ -15871,21 +15901,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--search bx--search--sm"
                     role="search"
                   >
-                    <svg
-                      aria-hidden={true}
+                    <div
                       className="bx--search-magnifier"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                    </div>
                     <label
                       className="bx--label"
                       htmlFor="iot--list-header--search"
@@ -16902,6 +16936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       aria-describedby="icon-tooltip-6"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onBlur={[Function]}
+                      onClick={[Function]}
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
@@ -17166,21 +17201,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="bx--search bx--search--xl bx--search--light"
                             role="search"
                           >
-                            <svg
-                              aria-hidden={true}
+                            <div
                               className="bx--search-magnifier"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <path
-                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                              />
-                            </svg>
+                              <svg
+                                aria-hidden={true}
+                                className="bx--search-magnifier-icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                />
+                              </svg>
+                            </div>
                             <label
                               className="bx--label"
                               htmlFor="iot--image-gallery-modal--search"
@@ -17414,21 +17453,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="bx--search bx--search--sm"
                       role="search"
                     >
-                      <svg
-                        aria-hidden={true}
+                      <div
                         className="bx--search-magnifier"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <path
-                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          className="bx--search-magnifier-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                          />
+                        </svg>
+                      </div>
                       <label
                         className="bx--label"
                         htmlFor="iot--list-header--search"
@@ -18151,6 +18194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby="icon-tooltip-4"
                     className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                     onBlur={[Function]}
+                    onClick={[Function]}
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
@@ -18415,21 +18459,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--xl bx--search--light"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--image-gallery-modal--search"
@@ -18783,21 +18831,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--search bx--search--sm"
                     role="search"
                   >
-                    <svg
-                      aria-hidden={true}
+                    <div
                       className="bx--search-magnifier"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                    </div>
                     <label
                       className="bx--label"
                       htmlFor="iot--list-header--search"
@@ -19519,6 +19571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby="icon-tooltip-2"
                     className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                     onBlur={[Function]}
+                    onClick={[Function]}
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
@@ -19783,21 +19836,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--xl bx--search--light"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--image-gallery-modal--search"
@@ -21754,21 +21811,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--search bx--search--sm"
                     role="search"
                   >
-                    <svg
-                      aria-hidden={true}
+                    <div
                       className="bx--search-magnifier"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                    </div>
                     <label
                       className="bx--label"
                       htmlFor="iot--list-header--search"
@@ -22490,6 +22551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby="icon-tooltip-5"
                     className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                     onBlur={[Function]}
+                    onClick={[Function]}
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
@@ -22967,21 +23029,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--xl bx--search--light"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--image-gallery-modal--search"
@@ -23215,21 +23281,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--search bx--search--sm"
                     role="search"
                   >
-                    <svg
-                      aria-hidden={true}
+                    <div
                       className="bx--search-magnifier"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                    </div>
                     <label
                       className="bx--label"
                       htmlFor="iot--list-header--search"

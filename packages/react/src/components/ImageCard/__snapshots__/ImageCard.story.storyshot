@@ -1433,7 +1433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   data-testid="Button"
                   disabled={false}
                   onBlur={[Function]}
-                  onClick={null}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
@@ -1627,7 +1627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   data-testid="Button"
                   disabled={false}
                   onBlur={[Function]}
-                  onClick={null}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}

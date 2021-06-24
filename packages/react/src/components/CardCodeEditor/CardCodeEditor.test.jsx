@@ -33,7 +33,7 @@ describe('CardEditor', () => {
         onClose={() => {}}
       />
     );
-    const expand = screen.queryByText('Expand');
+    const expand = screen.queryByLabelText('Expand');
     userEvent.click(expand);
     await waitFor(() =>
       expect(container.querySelector('.iot--editor__expanded')).toBeInTheDocument()

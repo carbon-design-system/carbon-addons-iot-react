@@ -1072,6 +1072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               >
                 <div
                   className="bx--tag"
+                  disabled={null}
                   id="tag-13"
                 >
                   

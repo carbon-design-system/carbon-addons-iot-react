@@ -1491,6 +1491,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                     className="bx--structured-list-td"
                     role="cell"
                   >
+                    ExpandableSearch
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  />
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
                     SecondaryButton
                   </div>
                   <div
@@ -1674,6 +1688,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                     role="cell"
                   >
                     StructuredListCell
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
+                    StructuredListSkeleton
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
+                    StructuredListSkeleton
                   </div>
                 </div>
                 <div
@@ -2394,22 +2424,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                     role="cell"
                   >
                     SliderSkeleton
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    StructuredListSkeleton
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                    role="cell"
-                  >
-                    StructuredListSkeleton
                   </div>
                 </div>
                 <div
@@ -3001,6 +3015,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   >
                     SideNavSwitcher
                   </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
+                    unstable_FeatureFlags
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  />
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
+                    unstable_useFeatureFlag
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  />
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  >
+                    unstable_useFeatureFlags
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                    role="cell"
+                  />
                 </div>
                 <div
                   className="bx--structured-list-row"
