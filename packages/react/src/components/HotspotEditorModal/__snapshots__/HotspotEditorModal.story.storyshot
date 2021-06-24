@@ -95,6 +95,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="Hotspots"
                 >
                   Hotspots
                 </span>
@@ -110,6 +111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="Labels"
                 >
                   Labels
                 </span>
@@ -606,6 +608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="Hotspots"
                 >
                   Hotspots
                 </span>
@@ -621,6 +624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="Labels"
                 >
                   Labels
                 </span>
@@ -1117,6 +1121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="Hotspots"
                 >
                   Hotspots
                 </span>
@@ -1132,6 +1137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="Labels"
                 >
                   Labels
                 </span>
@@ -1603,6 +1609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="Hotspots"
                 >
                   Hotspots
                 </span>
@@ -1618,6 +1625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="Labels"
                 >
                   Labels
                 </span>

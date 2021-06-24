@@ -141,6 +141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <span
                     className="bx--content-switcher__label"
+                    title="List"
                   >
                     List
                   </span>
@@ -156,6 +157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <span
                     className="bx--content-switcher__label"
+                    title="Grid"
                   >
                     Grid
                   </span>
@@ -1542,6 +1544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <span
                     className="bx--content-switcher__label"
+                    title="__ListText__"
                   >
                     __ListText__
                   </span>
@@ -1557,6 +1560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <span
                     className="bx--content-switcher__label"
+                    title="__GridText__"
                   >
                     __GridText__
                   </span>
@@ -2534,6 +2538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <span
             className="bx--content-switcher__label"
+            title="List"
           >
             List
           </span>
@@ -2549,6 +2554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <span
             className="bx--content-switcher__label"
+            title="Grid"
           >
             Grid
           </span>

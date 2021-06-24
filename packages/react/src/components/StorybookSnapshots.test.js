@@ -145,11 +145,11 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         }
 
         if (
-          element.props?.className?.includes('bx--context-menu-option') ||
-          element.props?.className?.includes('bx--context-menu-divider')
+          element.props?.className?.includes('bx--menu-option') ||
+          element.props?.className?.includes('bx--menu-divider')
         ) {
           const parentNode = document.createElement('div');
-          parentNode.classList.add('bx--context-menu');
+          parentNode.classList.add('bx--menu');
           return {
             ...element,
             parentNode,

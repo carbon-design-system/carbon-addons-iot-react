@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { unstable_ContextMenu as ContextMenu } from 'carbon-components-react';
+import { unstable_Menu as Menu } from 'carbon-components-react';
 import { ChevronDown16, ChevronUp16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
@@ -191,9 +191,9 @@ const MenuButton = ({
         label={label}
         testID={testID}
       />
-      <ContextMenu open={isMenuOpen} {...position}>
+      <Menu open={isMenuOpen} {...position}>
         {contextMenuItems}
-      </ContextMenu>
+      </Menu>
     </div>
   );
 };

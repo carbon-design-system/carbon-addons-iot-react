@@ -284,6 +284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             >
               <span
                 className="bx--content-switcher__label"
+                title="All Devices"
               >
                 All Devices
               </span>
@@ -300,6 +301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             >
               <span
                 className="bx--content-switcher__label"
+                title="Diagnose"
               >
                 Diagnose
               </span>

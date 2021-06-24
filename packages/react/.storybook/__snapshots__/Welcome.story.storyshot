@@ -3129,7 +3129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                     className="bx--structured-list-td"
                     role="cell"
                   >
-                    unstable_ContextMenu
+                    unstable_Menu
                   </div>
                   <div
                     className="bx--structured-list-td"
@@ -3143,7 +3143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                     className="bx--structured-list-td"
                     role="cell"
                   >
-                    unstable_ContextMenuDivider
+                    unstable_MenuDivider
                   </div>
                   <div
                     className="bx--structured-list-td"
@@ -3157,7 +3157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                     className="bx--structured-list-td"
                     role="cell"
                   >
-                    unstable_ContextMenuGroup
+                    unstable_MenuGroup
                   </div>
                   <div
                     className="bx--structured-list-td"
@@ -3171,7 +3171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                     className="bx--structured-list-td"
                     role="cell"
                   >
-                    unstable_ContextMenuItem
+                    unstable_MenuItem
                   </div>
                   <div
                     className="bx--structured-list-td"
@@ -3185,7 +3185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                     className="bx--structured-list-td"
                     role="cell"
                   >
-                    unstable_ContextMenuRadioGroup
+                    unstable_MenuRadioGroup
                   </div>
                   <div
                     className="bx--structured-list-td"
@@ -3199,7 +3199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                     className="bx--structured-list-td"
                     role="cell"
                   >
-                    unstable_ContextMenuSelectableItem
+                    unstable_MenuSelectableItem
                   </div>
                   <div
                     className="bx--structured-list-td"
