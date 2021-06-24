@@ -540,20 +540,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         className="iot--list-item--content--row-actions"
                       >
                         <button
+                          aria-describedby={null}
                           aria-label="Add item to list"
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-1"
                           disabled={false}
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           role="button"
                           tabIndex={0}
                           type="button"
                         >
-                          <span
+                          <div
                             className="bx--assistive-text"
+                            onMouseEnter={[Function]}
                           >
                             Add item to list
-                          </span>
+                          </div>
                           <svg
                             aria-hidden="true"
                             aria-label="Add item to list"
@@ -604,20 +610,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         className="iot--list-item--content--row-actions"
                       >
                         <button
+                          aria-describedby={null}
                           aria-label="Add item to list"
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-2"
                           disabled={false}
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           role="button"
                           tabIndex={0}
                           type="button"
                         >
-                          <span
+                          <div
                             className="bx--assistive-text"
+                            onMouseEnter={[Function]}
                           >
                             Add item to list
-                          </span>
+                          </div>
                           <svg
                             aria-hidden="true"
                             aria-label="Add item to list"
@@ -668,20 +680,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         className="iot--list-item--content--row-actions"
                       >
                         <button
+                          aria-describedby={null}
                           aria-label="Add item to list"
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-3"
                           disabled={false}
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           role="button"
                           tabIndex={0}
                           type="button"
                         >
-                          <span
+                          <div
                             className="bx--assistive-text"
+                            onMouseEnter={[Function]}
                           >
                             Add item to list
-                          </span>
+                          </div>
                           <svg
                             aria-hidden="true"
                             aria-label="Add item to list"
@@ -982,20 +1000,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         className="iot--list-item--content--row-actions"
                       >
                         <button
+                          aria-describedby={null}
                           aria-label="Add item to list"
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-1"
                           disabled={false}
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           role="button"
                           tabIndex={0}
                           type="button"
                         >
-                          <span
+                          <div
                             className="bx--assistive-text"
+                            onMouseEnter={[Function]}
                           >
                             Add item to list
-                          </span>
+                          </div>
                           <svg
                             aria-hidden="true"
                             aria-label="Add item to list"
@@ -1139,20 +1163,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         className="iot--list-item--content--row-actions"
                       >
                         <button
+                          aria-describedby={null}
                           aria-label="Remove item from list"
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-2"
                           disabled={false}
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           role="button"
                           tabIndex={0}
                           type="button"
                         >
-                          <span
+                          <div
                             className="bx--assistive-text"
+                            onMouseEnter={[Function]}
                           >
                             Remove item from list
-                          </span>
+                          </div>
                           <svg
                             aria-hidden="true"
                             aria-label="Remove item from list"
@@ -1339,20 +1369,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         className="iot--list-item--content--row-actions"
                       >
                         <button
+                          aria-describedby={null}
                           aria-label="Add item to list"
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-1"
                           disabled={false}
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           role="button"
                           tabIndex={0}
                           type="button"
                         >
-                          <span
+                          <div
                             className="bx--assistive-text"
+                            onMouseEnter={[Function]}
                           >
                             Add item to list
-                          </span>
+                          </div>
                           <svg
                             aria-hidden="true"
                             aria-label="Add item to list"
@@ -1403,20 +1439,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         className="iot--list-item--content--row-actions"
                       >
                         <button
+                          aria-describedby={null}
                           aria-label="Add item to list"
                           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-2"
                           disabled={false}
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           role="button"
                           tabIndex={0}
                           type="button"
                         >
-                          <span
+                          <div
                             className="bx--assistive-text"
+                            onMouseEnter={[Function]}
                           >
                             Add item to list
-                          </span>
+                          </div>
                           <svg
                             aria-hidden="true"
                             aria-label="Add item to list"

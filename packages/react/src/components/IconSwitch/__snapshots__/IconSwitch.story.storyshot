@@ -18,19 +18,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
       role="tablist"
     >
       <button
+        aria-describedby={null}
         aria-pressed={null}
         className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >
-        <span
+        <div
           className="bx--assistive-text"
+          onMouseEnter={[Function]}
         >
           Graphical View
-        </span>
+        </div>
         <svg
           aria-hidden="true"
           aria-label="Graphical View"
@@ -50,19 +56,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         </svg>
       </button>
       <button
+        aria-describedby={null}
         aria-pressed={null}
         className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >
-        <span
+        <div
           className="bx--assistive-text"
+          onMouseEnter={[Function]}
         >
           Source View
-        </span>
+        </div>
         <svg
           aria-hidden="true"
           aria-label="Source View"
@@ -131,19 +143,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
       role="tablist"
     >
       <button
+        aria-describedby={null}
         aria-pressed={null}
         className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >
-        <span
+        <div
           className="bx--assistive-text"
+          onMouseEnter={[Function]}
         >
           Graphical View
-        </span>
+        </div>
         <svg
           aria-hidden="true"
           aria-label="Graphical View"
@@ -163,19 +181,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         </svg>
       </button>
       <button
+        aria-describedby={null}
         aria-pressed={null}
         className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >
-        <span
+        <div
           className="bx--assistive-text"
+          onMouseEnter={[Function]}
         >
           Source View
-        </span>
+        </div>
         <svg
           aria-hidden="true"
           aria-label="Source View"
@@ -239,19 +263,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
     }
   >
     <button
+      aria-describedby={null}
       aria-pressed={null}
       className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
       type="button"
     >
-      <span
+      <div
         className="bx--assistive-text"
+        onMouseEnter={[Function]}
       >
         Graphical View
-      </span>
+      </div>
       <svg
         aria-hidden="true"
         aria-label="Graphical View"
@@ -310,19 +340,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
     }
   >
     <button
+      aria-describedby={null}
       aria-pressed={null}
       className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
       type="button"
     >
-      <span
+      <div
         className="bx--assistive-text"
+        onMouseEnter={[Function]}
       >
         Graphical View
-      </span>
+      </div>
       <svg
         aria-hidden="true"
         aria-label="Graphical View"

@@ -121,11 +121,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             className="dashboard--header-actions"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--edit"
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Edit"
               type="button"
@@ -149,11 +154,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               </svg>
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--delete"
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Delete"
               type="button"
@@ -508,11 +518,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             className="dashboard--header-actions"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--edit"
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Edit"
               type="button"
@@ -536,11 +551,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               </svg>
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--delete"
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Delete"
               type="button"
@@ -567,11 +587,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               </svg>
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--btn--icon-only bx--btn bx--btn--ghost"
               disabled={false}
               id="action-icon--pin"
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Pin"
               type="button"

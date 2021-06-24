@@ -80,20 +80,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           className="bx--modal-footer bx--btn-set"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="bx--btn bx--btn--secondary"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
             Cancel
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="bx--btn bx--btn--primary"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >

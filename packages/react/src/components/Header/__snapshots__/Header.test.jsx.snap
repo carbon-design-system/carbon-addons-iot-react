@@ -72,11 +72,11 @@ exports[`Header should render 1`] = `
             title="help"
             type="button"
           >
-            <span
+            <div
               class="bx--assistive-text"
             >
               help
-            </span>
+            </div>
             <svg
               aria-hidden="true"
               class="bx--header__menu-item bx--header__menu-title"

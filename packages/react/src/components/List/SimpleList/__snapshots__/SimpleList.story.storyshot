@@ -51,18 +51,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 />
               </svg>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Close
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Close"
@@ -82,17 +88,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add"
@@ -972,18 +984,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 />
               </svg>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Close
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Close"
@@ -1003,17 +1021,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add"
@@ -1615,18 +1639,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 />
               </svg>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Close
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Close"
@@ -1646,17 +1676,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add"
@@ -2258,18 +2294,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 />
               </svg>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Close
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Close"
@@ -2289,17 +2331,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add"
@@ -2678,18 +2726,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 />
               </svg>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Close
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Close"
@@ -2709,17 +2763,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add"
@@ -3124,18 +3184,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 />
               </svg>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Close
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Close"
@@ -3155,17 +3221,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add"
@@ -3737,18 +3809,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 />
               </svg>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Close
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Close"
@@ -3768,17 +3846,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add"
@@ -4347,18 +4431,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 />
               </svg>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Close
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Close"
@@ -4378,17 +4468,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                 disabled={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add"

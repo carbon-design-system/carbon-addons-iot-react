@@ -22642,11 +22642,20 @@ Map {
       "feedback": Object {
         "type": "string",
       },
+      "feedbackTimeout": Object {
+        "type": "number",
+      },
       "hideCopyButton": Object {
         "type": "bool",
       },
       "light": Object {
         "type": "bool",
+      },
+      "maxCollapsedNumberOfRows": Object {
+        "type": "number",
+      },
+      "maxExpandedNumberOfRows": Object {
+        "type": "number",
       },
       "onClick": Object {
         "type": "func",
@@ -22805,9 +22814,7 @@ Map {
       "className": Object {
         "type": "string",
       },
-      "light": Object {
-        "type": "bool",
-      },
+      "light": [Function],
       "onChange": Object {
         "isRequired": true,
         "type": "func",
@@ -24244,6 +24251,7 @@ Map {
   },
   "FormGroup" => Object {
     "defaultProps": Object {
+      "hasMargin": true,
       "invalid": false,
       "message": false,
       "messageText": "",
@@ -24254,6 +24262,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "hasMargin": Object {
+        "type": "bool",
       },
       "invalid": Object {
         "type": "bool",
@@ -25252,6 +25263,9 @@ Map {
       "notificationType": Object {
         "type": "string",
       },
+      "onClose": Object {
+        "type": "func",
+      },
       "onCloseButtonClick": Object {
         "type": "func",
       },
@@ -25317,6 +25331,9 @@ Map {
       },
       "notificationType": Object {
         "type": "string",
+      },
+      "onClose": Object {
+        "type": "func",
       },
       "onCloseButtonClick": Object {
         "type": "func",
@@ -26997,6 +27014,9 @@ Map {
       "className": Object {
         "type": "string",
       },
+      "disabled": Object {
+        "type": "bool",
+      },
       "handleClick": Object {
         "type": "func",
       },
@@ -27123,6 +27143,9 @@ Map {
         "type": "string",
       },
       "defaultChecked": Object {
+        "type": "bool",
+      },
+      "disabled": Object {
         "type": "bool",
       },
       "iconDescription": [Function],
@@ -27602,10 +27625,16 @@ Map {
       "id": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
       "onFocus": Object {
         "type": "func",
       },
       "onMouseEnter": Object {
+        "type": "func",
+      },
+      "onMouseLeave": Object {
         "type": "func",
       },
       "tooltipText": Object {

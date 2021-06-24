@@ -562,11 +562,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-9__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-9"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -581,11 +579,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-10__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-10"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -1039,11 +1035,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--footer"
             >
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                 data-testid="card-edit-form-open-editor-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
@@ -1075,11 +1076,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--card-editor--footer"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -1203,11 +1209,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-11__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-11"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -1222,11 +1226,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-12__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-12"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -1949,11 +1951,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--footer"
             >
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                 data-testid="card-edit-form-open-editor-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
@@ -1985,11 +1992,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--card-editor--footer"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -2113,11 +2125,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-1__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-1"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -2132,11 +2142,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-2__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-2"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -2590,11 +2598,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--footer"
             >
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                 data-testid="card-edit-form-open-editor-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
@@ -2626,11 +2639,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--card-editor--footer"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -2754,11 +2772,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-7__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-7"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -2773,11 +2789,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-8__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-8"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -3092,10 +3106,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     value="munich_image"
                   />
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image-clear-button bx--btn bx--btn--field bx--btn--ghost"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
@@ -3119,10 +3138,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </button>
                 </label>
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="iot--card-edit-form--form-section-image-btn bx--btn bx--btn--sm bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
@@ -3454,11 +3478,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--footer"
             >
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                 data-testid="card-edit-form-open-editor-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
@@ -3490,11 +3519,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--card-editor--footer"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -3618,11 +3652,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-3__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-3"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -3637,11 +3669,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-4__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-4"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -4081,18 +4111,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--row-actions"
                             >
                               <button
+                                aria-describedby={null}
                                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
                                 tabIndex={0}
                                 type="button"
                               >
-                                <span
+                                <div
                                   className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
                                 >
                                   Edit
-                                </span>
+                                </div>
                                 <svg
                                   aria-hidden="true"
                                   aria-label="Edit"
@@ -4112,18 +4148,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </svg>
                               </button>
                               <button
+                                aria-describedby={null}
                                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
                                 tabIndex={0}
                                 type="button"
                               >
-                                <span
+                                <div
                                   className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
                                 >
                                   Remove
-                                </span>
+                                </div>
                                 <svg
                                   aria-hidden="true"
                                   aria-label="Remove"
@@ -4186,18 +4228,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--row-actions"
                             >
                               <button
+                                aria-describedby={null}
                                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
                                 tabIndex={0}
                                 type="button"
                               >
-                                <span
+                                <div
                                   className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
                                 >
                                   Edit
-                                </span>
+                                </div>
                                 <svg
                                   aria-hidden="true"
                                   aria-label="Edit"
@@ -4217,18 +4265,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </svg>
                               </button>
                               <button
+                                aria-describedby={null}
                                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
                                 data-testid="Button"
                                 disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
                                 tabIndex={0}
                                 type="button"
                               >
-                                <span
+                                <div
                                   className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
                                 >
                                   Remove
-                                </span>
+                                </div>
                                 <svg
                                   aria-hidden="true"
                                   aria-label="Remove"
@@ -4501,11 +4555,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--footer"
             >
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                 data-testid="card-edit-form-open-editor-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
@@ -4537,11 +4596,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--card-editor--footer"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -4682,11 +4746,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-5__panel"
                       aria-selected={true}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-5"
                       role="tab"
                       tabIndex={0}
                       type="button"
@@ -4701,11 +4763,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     role="presentation"
                   >
                     <button
-                      aria-controls="tab-6__panel"
                       aria-selected={false}
                       className="bx--tabs--scrollable__nav-link"
                       href="#"
-                      id="tab-6"
                       role="tab"
                       tabIndex={-1}
                       type="button"
@@ -5159,11 +5219,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="iot--card-edit-form--footer"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                   data-testid="card-edit-form-open-editor-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
@@ -5195,11 +5260,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             className="iot--card-editor--footer"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >

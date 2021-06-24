@@ -27,10 +27,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           className="iot--table-detail-wizard-header--button"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -350,22 +355,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Cancel
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -429,10 +444,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           className="iot--table-detail-wizard-header--button"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -748,22 +768,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Back
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -827,10 +857,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           className="iot--table-detail-wizard-header--button"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="bx--btn bx--btn--ghost"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -1221,22 +1256,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Cancel
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >

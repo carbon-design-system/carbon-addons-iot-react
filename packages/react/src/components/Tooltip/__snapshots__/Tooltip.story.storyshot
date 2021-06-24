@@ -878,11 +878,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <button
+      aria-describedby={null}
       aria-pressed={null}
       className="iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       style={
         Object {
           "margin": "4px 20px",
@@ -895,11 +900,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       Hide
     </button>
     <button
+      aria-describedby={null}
       aria-pressed={null}
       className="iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       style={
         Object {
           "margin": "4px 20px",

@@ -17,18 +17,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       data-testid="menu-button-wrapper"
     >
       <button
+        aria-describedby={null}
         className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
         data-testid="menu-button-icon"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >
-        <span
+        <div
           className="bx--assistive-text"
+          onMouseEnter={[Function]}
         >
           open menu button
-        </span>
+        </div>
         <svg
           aria-hidden="true"
           aria-label="open menu button"
@@ -509,8 +515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <li
           aria-expanded={null}
           aria-haspopup={null}
-          className="bx--context-menu-option"
-          kind="danger"
+          className="bx--context-menu-option bx--context-menu-option--danger"
           onClick={[Function]}
           onKeyDown={[Function]}
           onMouseEnter={null}
@@ -630,18 +635,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
+              aria-describedby={null}
               className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 open menu button
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="open menu button"
@@ -1122,8 +1133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               <li
                 aria-expanded={null}
                 aria-haspopup={null}
-                className="bx--context-menu-option"
-                kind="danger"
+                className="bx--context-menu-option bx--context-menu-option--danger"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onMouseEnter={null}
@@ -1186,18 +1196,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
+              aria-describedby={null}
               className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 open menu button
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="open menu button"
@@ -1678,8 +1694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               <li
                 aria-expanded={null}
                 aria-haspopup={null}
-                className="bx--context-menu-option"
-                kind="danger"
+                className="bx--context-menu-option bx--context-menu-option--danger"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onMouseEnter={null}
@@ -1742,18 +1757,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
+              aria-describedby={null}
               className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 open menu button
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="open menu button"
@@ -2234,8 +2255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               <li
                 aria-expanded={null}
                 aria-haspopup={null}
-                className="bx--context-menu-option"
-                kind="danger"
+                className="bx--context-menu-option bx--context-menu-option--danger"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onMouseEnter={null}
@@ -2308,18 +2328,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
+              aria-describedby={null}
               className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 open menu button
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="open menu button"
@@ -2800,8 +2826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               <li
                 aria-expanded={null}
                 aria-haspopup={null}
-                className="bx--context-menu-option"
-                kind="danger"
+                className="bx--context-menu-option bx--context-menu-option--danger"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onMouseEnter={null}
@@ -2864,18 +2889,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
+              aria-describedby={null}
               className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 open menu button
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="open menu button"
@@ -3356,8 +3387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               <li
                 aria-expanded={null}
                 aria-haspopup={null}
-                className="bx--context-menu-option"
-                kind="danger"
+                className="bx--context-menu-option bx--context-menu-option--danger"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onMouseEnter={null}
@@ -3420,18 +3450,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
+              aria-describedby={null}
               className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 open menu button
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="open menu button"
@@ -3912,8 +3948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               <li
                 aria-expanded={null}
                 aria-haspopup={null}
-                className="bx--context-menu-option"
-                kind="danger"
+                className="bx--context-menu-option bx--context-menu-option--danger"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onMouseEnter={null}
@@ -3986,18 +4021,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
+              aria-describedby={null}
               className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 open menu button
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="open menu button"
@@ -4478,8 +4519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               <li
                 aria-expanded={null}
                 aria-haspopup={null}
-                className="bx--context-menu-option"
-                kind="danger"
+                className="bx--context-menu-option bx--context-menu-option--danger"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onMouseEnter={null}
@@ -4542,18 +4582,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
+              aria-describedby={null}
               className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 open menu button
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="open menu button"
@@ -5034,8 +5080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               <li
                 aria-expanded={null}
                 aria-haspopup={null}
-                className="bx--context-menu-option"
-                kind="danger"
+                className="bx--context-menu-option bx--context-menu-option--danger"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onMouseEnter={null}
@@ -5098,18 +5143,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-testid="menu-button-wrapper"
           >
             <button
+              aria-describedby={null}
               className="iot--menu-button__trigger iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="menu-button-icon"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 open menu button
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="open menu button"
@@ -5590,8 +5641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               <li
                 aria-expanded={null}
                 aria-haspopup={null}
-                className="bx--context-menu-option"
-                kind="danger"
+                className="bx--context-menu-option bx--context-menu-option--danger"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onMouseEnter={null}
@@ -5685,11 +5735,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       data-testid="menu-button-wrapper"
     >
       <button
+        aria-describedby={null}
         aria-pressed={null}
         className="iot--menu-button__trigger iot--btn bx--btn bx--btn--primary"
         data-testid="menu-button-single"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >
@@ -6162,8 +6217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <li
           aria-expanded={null}
           aria-haspopup={null}
-          className="bx--context-menu-option"
-          kind="danger"
+          className="bx--context-menu-option bx--context-menu-option--danger"
           onClick={[Function]}
           onKeyDown={[Function]}
           onMouseEnter={null}
@@ -6254,30 +6308,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       data-testid="menu-button-wrapper"
     >
       <button
+        aria-describedby={null}
         aria-pressed={null}
         className="iot--menu-button__primary iot--btn bx--btn bx--btn--primary"
         data-testid="menu-button-primary"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >
         Create
       </button>
       <button
+        aria-describedby={null}
         aria-pressed={null}
         className="iot--menu-button__secondary iot--menu-button__trigger iot--btn bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
         data-testid="menu-button-secondary"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >
-        <span
+        <div
           className="bx--assistive-text"
+          onMouseEnter={[Function]}
         >
           open menu button
-        </span>
+        </div>
         <svg
           aria-hidden="true"
           aria-label="open menu button"
@@ -6746,8 +6811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <li
           aria-expanded={null}
           aria-haspopup={null}
-          className="bx--context-menu-option"
-          kind="danger"
+          className="bx--context-menu-option bx--context-menu-option--danger"
           onClick={[Function]}
           onKeyDown={[Function]}
           onMouseEnter={null}

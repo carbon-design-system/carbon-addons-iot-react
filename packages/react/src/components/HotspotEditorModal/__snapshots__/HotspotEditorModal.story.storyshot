@@ -260,18 +260,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
               <button
+                aria-describedby={null}
                 className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
                 data-testid="dynamic-hotspot-source-picker-clear-dropdown"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Clear coordinate sources
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Clear coordinate sources"
@@ -333,11 +339,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-13__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-13"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -352,11 +356,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-14__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-14"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -441,22 +443,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
             Cancel
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -759,18 +771,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
               <button
+                aria-describedby={null}
                 className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
                 data-testid="dynamic-hotspot-source-picker-clear-dropdown"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Clear coordinate sources
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Clear coordinate sources"
@@ -832,11 +850,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-15__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-15"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -851,11 +867,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-16__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-16"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -940,22 +954,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
             Cancel
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -1258,18 +1282,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
               <button
+                aria-describedby={null}
                 className="iot--dynamic-hotspot-source-picker__clear-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
                 data-testid="dynamic-hotspot-source-picker-clear-dropdown"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Clear coordinate sources
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Clear coordinate sources"
@@ -1410,22 +1440,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
             Cancel
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
             data-testid="ComposedModal-modal-primary-button"
             disabled={true}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -1728,18 +1768,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
               <button
+                aria-describedby={null}
                 className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
                 data-testid="dynamic-hotspot-source-picker-clear-dropdown"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Clear coordinate sources
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Clear coordinate sources"
@@ -1801,11 +1847,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-17__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-17"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -1820,11 +1864,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   role="presentation"
                 >
                   <button
-                    aria-controls="tab-18__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
-                    id="tab-18"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -1909,22 +1951,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--secondary"
             data-testid="ComposedModal-modal-secondary-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
             Cancel
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="ComposedModal-modal-primary-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >

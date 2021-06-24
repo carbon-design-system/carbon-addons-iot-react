@@ -85,7 +85,7 @@ describe('HotspotEditorDataSourceTab', () => {
       />
     );
     userEvent.click(screen.getAllByRole('button')[0]);
-    const options = screen.getByTitle(/elevators/);
+    const options = screen.getByLabelText(/elevators/);
     userEvent.click(options);
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({

@@ -20,11 +20,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       }
     >
       <button
+        aria-describedby={null}
         aria-pressed={null}
         className="iot--btn bx--btn bx--btn--primary"
         data-testid="Button"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >

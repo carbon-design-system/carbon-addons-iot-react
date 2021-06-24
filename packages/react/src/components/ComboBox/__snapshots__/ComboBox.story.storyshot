@@ -133,18 +133,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           </div>
           <div
             className="bx--form__helper-text"
-            id="combobox-helper-text-8"
+            id="combobox-helper-text-24"
           >
             Optional helper text here
           </div>
         </div>
       </div>
       <button
+        aria-describedby={null}
         aria-pressed={null}
         className="iot--btn bx--btn bx--btn--primary"
         data-testid="Button"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         style={
           Object {
             "marginTop": "1rem",
@@ -293,7 +298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           </div>
           <div
             className="bx--form__helper-text"
-            id="combobox-helper-text-3"
+            id="combobox-helper-text-9"
           >
             Optional helper text here
           </div>
@@ -437,7 +442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           </div>
           <div
             className="bx--form__helper-text"
-            id="combobox-helper-text-4"
+            id="combobox-helper-text-12"
           >
             Optional helper text here
           </div>
@@ -581,7 +586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           </div>
           <div
             className="bx--form__helper-text"
-            id="combobox-helper-text-7"
+            id="combobox-helper-text-21"
           >
             Optional helper text here
           </div>
@@ -740,18 +745,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
-          id="combobox-helper-text-5"
+          id="combobox-helper-text-15"
         >
           Optional helper text here
         </div>
       </div>
     </div>
     <button
+      aria-describedby={null}
       aria-pressed={null}
       className="iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       style={
         Object {
           "marginTop": "1rem",
@@ -899,7 +909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           </div>
           <div
             className="bx--form__helper-text"
-            id="combobox-helper-text-6"
+            id="combobox-helper-text-18"
           >
             Optional helper text here
           </div>

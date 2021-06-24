@@ -30,20 +30,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             className="iot--hotspot-text-style-tab__text-style"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="hotspot-bold"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
               onKeyDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Text Bold
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Text Bold"
@@ -63,20 +69,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </svg>
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="hotspot-italic"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
               onKeyDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Text Italic
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Text Italic"
@@ -96,20 +108,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </svg>
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="hotspot-underline"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
               onKeyDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Text Underline
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Text Underline"
@@ -620,11 +638,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--hotspot-text-style-tab__delete-button-container"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >

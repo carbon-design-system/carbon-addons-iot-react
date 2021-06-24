@@ -155,19 +155,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   role="tablist"
                 >
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
                     onKeyDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Grid
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Grid"
@@ -187,19 +193,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                     </svg>
                   </button>
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
                     onKeyDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       List
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="List"
@@ -289,17 +301,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="assemblyline.jpg"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -383,17 +401,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="floow_plan.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -477,17 +501,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="Manufacturing_plant.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -571,17 +601,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="robot_arm.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -665,17 +701,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="tankmodal.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -759,17 +801,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="turbines.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -853,17 +901,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="extra-wide-image.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -947,17 +1001,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="large.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -1041,17 +1101,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="large_portrait.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -1083,22 +1149,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="ComposedModal-modal-secondary-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Cancel
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
               data-testid="ComposedModal-modal-primary-button"
               disabled={true}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -1297,19 +1373,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   role="tablist"
                 >
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
                     onKeyDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Grid
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Grid"
@@ -1329,19 +1411,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                     </svg>
                   </button>
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
                     onKeyDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       List
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="List"
@@ -1431,17 +1519,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="assemblyline.jpg"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -1525,17 +1619,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="floow_plan.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -1619,17 +1719,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="Manufacturing_plant.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -1713,17 +1819,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="robot_arm.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -1807,17 +1919,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="tankmodal.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -1901,17 +2019,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="turbines.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -1995,17 +2119,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="extra-wide-image.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -2089,17 +2219,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="large.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -2183,17 +2319,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                         src="large_portrait.png"
                       />
                       <button
+                        aria-describedby={null}
                         className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Delete
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Delete"
@@ -2225,22 +2367,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="ComposedModal-modal-secondary-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Cancel
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
               data-testid="ComposedModal-modal-primary-button"
               disabled={true}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >

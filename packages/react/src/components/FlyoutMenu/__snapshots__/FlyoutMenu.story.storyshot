@@ -29,19 +29,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Helpful description"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Helpful description
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Helpful description"
@@ -156,11 +162,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
                   >
                     I'm a custom footer!  
                     <button
+                      aria-describedby={null}
                       aria-pressed={null}
                       className="iot--btn bx--btn bx--btn--primary"
                       data-testid="Button"
                       disabled={false}
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                       tabIndex={0}
                       type="button"
                     >
@@ -239,19 +250,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Helpful description"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Helpful description
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Helpful description"
@@ -349,19 +366,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Helpful description"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Helpful description
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Helpful description"
@@ -480,19 +503,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             }
           >
             <button
+              aria-describedby={null}
               aria-label="Helpful description"
               className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="flyout-menu-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Helpful description
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Helpful description"
@@ -553,19 +582,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             }
           >
             <button
+              aria-describedby={null}
               aria-label="Helpful description"
               className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="flyout-menu-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Helpful description
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Helpful description"
@@ -626,19 +661,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             }
           >
             <button
+              aria-describedby={null}
               aria-label="Helpful description"
               className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="flyout-menu-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Helpful description
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Helpful description"
@@ -709,19 +750,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             }
           >
             <button
+              aria-describedby={null}
               aria-label="Helpful description"
               className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="flyout-menu-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Helpful description
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Helpful description"
@@ -782,19 +829,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             }
           >
             <button
+              aria-describedby={null}
               aria-label="Helpful description"
               className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="flyout-menu-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Helpful description
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Helpful description"
@@ -855,19 +908,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             }
           >
             <button
+              aria-describedby={null}
               aria-label="Helpful description"
               className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="flyout-menu-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Helpful description
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Helpful description"
@@ -938,19 +997,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             }
           >
             <button
+              aria-describedby={null}
               aria-label="Helpful description"
               className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="flyout-menu-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Helpful description
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Helpful description"
@@ -1011,19 +1076,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             }
           >
             <button
+              aria-describedby={null}
               aria-label="Helpful description"
               className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="flyout-menu-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Helpful description
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Helpful description"
@@ -1084,19 +1155,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             }
           >
             <button
+              aria-describedby={null}
               aria-label="Helpful description"
               className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
               data-testid="flyout-menu-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Helpful description
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Helpful description"

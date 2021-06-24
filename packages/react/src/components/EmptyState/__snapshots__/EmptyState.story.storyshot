@@ -176,11 +176,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
           data-testid="EmptyState-action"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -497,11 +502,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
           data-testid="EmptyState-action"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -802,11 +812,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
           data-testid="EmptyState-action"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -1123,11 +1138,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
           data-testid="EmptyState-action"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -1838,11 +1858,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
           data-testid="EmptyState-action"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -2159,11 +2184,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
           data-testid="EmptyState-action"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -2480,11 +2510,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
           data-testid="EmptyState-action"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -2826,11 +2861,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
           data-testid="EmptyState-action"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -2903,11 +2943,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
           data-testid="EmptyState-action"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--primary"
             data-testid="Button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
