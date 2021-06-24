@@ -132,7 +132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--secondary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -142,7 +142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </button>
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--primary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -314,7 +314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--secondary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -324,7 +324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </button>
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--primary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -429,7 +429,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <div
               className="iot--date-time-picker__menu-scroll"
             >
-              <div>
+              <div
+                className="iot--date-time-picker__custom-wrapper"
+              >
                 <fieldset
                   className="bx--fieldset iot--date-time-picker__menu-formgroup"
                 >
@@ -607,14 +609,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             Start time
                           </label>
                           <div
-                            className="bx--time-picker"
+                            className="bx--time-picker bx--time-picker--light"
                           >
                             <div
                               className="bx--time-picker__input"
                             >
                               <input
                                 autoComplete="off"
-                                className="bx--time-picker__input-field bx--text-input"
+                                className="bx--time-picker__input-field bx--text-input bx--text-input--light"
                                 disabled={false}
                                 id="datetimepicker25-start-time"
                                 maxLength={5}
@@ -709,14 +711,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             End time
                           </label>
                           <div
-                            className="bx--time-picker"
+                            className="bx--time-picker bx--time-picker--light"
                           >
                             <div
                               className="bx--time-picker__input"
                             >
                               <input
                                 autoComplete="off"
-                                className="bx--time-picker__input-field bx--text-input"
+                                className="bx--time-picker__input-field bx--text-input bx--text-input--light"
                                 disabled={false}
                                 id="datetimepicker25-end-time"
                                 maxLength={5}
@@ -808,7 +810,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--secondary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--field bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -818,7 +820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </button>
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--primary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -923,7 +925,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <div
               className="iot--date-time-picker__menu-scroll"
             >
-              <div>
+              <div
+                className="iot--date-time-picker__custom-wrapper"
+              >
                 <fieldset
                   className="bx--fieldset iot--date-time-picker__menu-formgroup"
                 >
@@ -1101,14 +1105,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             Start time
                           </label>
                           <div
-                            className="bx--time-picker"
+                            className="bx--time-picker bx--time-picker--light"
                           >
                             <div
                               className="bx--time-picker__input"
                             >
                               <input
                                 autoComplete="off"
-                                className="bx--time-picker__input-field bx--text-input"
+                                className="bx--time-picker__input-field bx--text-input bx--text-input--light"
                                 disabled={false}
                                 id="datetimepicker-start-time"
                                 maxLength={5}
@@ -1203,14 +1207,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             End time
                           </label>
                           <div
-                            className="bx--time-picker"
+                            className="bx--time-picker bx--time-picker--light"
                           >
                             <div
                               className="bx--time-picker__input"
                             >
                               <input
                                 autoComplete="off"
-                                className="bx--time-picker__input-field bx--text-input"
+                                className="bx--time-picker__input-field bx--text-input bx--text-input--light"
                                 disabled={false}
                                 id="datetimepicker-end-time"
                                 maxLength={5}
@@ -1302,7 +1306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--secondary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--field bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1312,7 +1316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </button>
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--primary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1484,7 +1488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--secondary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1494,7 +1498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </button>
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--primary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1599,7 +1603,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <div
               className="iot--date-time-picker__menu-scroll"
             >
-              <div>
+              <div
+                className="iot--date-time-picker__custom-wrapper"
+              >
                 <fieldset
                   className="bx--fieldset iot--date-time-picker__menu-formgroup"
                 >
@@ -1685,7 +1691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         className="bx--form-item"
                       >
                         <div
-                          className="bx--number bx--number--helpertext"
+                          className="bx--number bx--number--helpertext bx--number--light"
                         >
                           <div
                             className="bx--number__input-wrapper"
@@ -1769,7 +1775,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         className="bx--form-item"
                       >
                         <div
-                          className="bx--select"
+                          className="bx--select bx--select--light"
                         >
                           <label
                             className="bx--label bx--visually-hidden"
@@ -1871,7 +1877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         className="bx--form-item"
                       >
                         <div
-                          className="bx--select"
+                          className="bx--select bx--select--light"
                         >
                           <label
                             className="bx--label bx--visually-hidden"
@@ -1931,14 +1937,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           className="bx--form-item"
                         >
                           <div
-                            className="bx--time-picker"
+                            className="bx--time-picker bx--time-picker--light"
                           >
                             <div
                               className="bx--time-picker__input"
                             >
                               <input
                                 autoComplete="off"
-                                className="bx--time-picker__input-field bx--text-input"
+                                className="bx--time-picker__input-field bx--text-input bx--text-input--light"
                                 disabled={false}
                                 id="datetimepicker-relative-to-time"
                                 maxLength={5}
@@ -2030,7 +2036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--secondary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--field bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2040,7 +2046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </button>
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--primary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2206,7 +2212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--secondary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2216,7 +2222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </button>
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--primary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2388,7 +2394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--secondary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -2398,7 +2404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </button>
               <button
                 aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--primary"
+                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}

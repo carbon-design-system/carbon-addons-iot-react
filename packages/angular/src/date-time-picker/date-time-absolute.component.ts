@@ -7,7 +7,7 @@ import {
   SimpleChange,
   SimpleChanges,
 } from '@angular/core';
-import { format, getHours, getMinutes, setHours, setMinutes } from 'date-fns';
+import { format, setHours, setMinutes } from 'date-fns';
 
 @Component({
   selector: 'ai-date-time-absolute',
@@ -30,12 +30,12 @@ import { format, getHours, getMinutes, setHours, setMinutes } from 'date-fns';
         <!-- tmp until we can implement a better time selector -->
         <div class="bx--form-item" style="margin-right: 1rem">
           <label class="bx--label">Start time</label>
-          <input ibmText type="time" [(ngModel)]="startTime" (change)="onChange()" theme="light"/>
+          <input ibmText type="time" [(ngModel)]="startTime" (change)="onChange()" theme="light" />
         </div>
         <!-- tmp until we can implement a better time selector -->
         <div class="bx--form-item">
           <label class="bx--label">End time</label>
-          <input ibmText type="time" [(ngModel)]="endTime" (change)="onChange()" theme="light"/>
+          <input ibmText type="time" [(ngModel)]="endTime" (change)="onChange()" theme="light" />
         </div>
       </div>
     </fieldset>
@@ -53,7 +53,10 @@ import { format, getHours, getMinutes, setHours, setMinutes } from 'date-fns';
         opacity: 1;
       }
 
-      ::ng-deep .iot--date-time-picker__wrapper .bx--date-picker--range > .bx--date-picker-container:first-child {
+      ::ng-deep
+        .iot--date-time-picker__wrapper
+        .bx--date-picker--range
+        > .bx--date-picker-container:first-child {
         margin-right: 0;
       }
 
@@ -70,7 +73,11 @@ import { format, getHours, getMinutes, setHours, setMinutes } from 'date-fns';
       }
 
       /* we do this since there's only one level of ibm-date-picker-input. the other wrapper classes are duplicated */
-      ::ng-deep .iot--date-time-picker__wrapper .bx--date-picker--range .bx--date-picker-container:first-child ibm-date-picker-input {
+      ::ng-deep
+        .iot--date-time-picker__wrapper
+        .bx--date-picker--range
+        .bx--date-picker-container:first-child
+        ibm-date-picker-input {
         margin-right: 16px;
         width: 137px;
       }

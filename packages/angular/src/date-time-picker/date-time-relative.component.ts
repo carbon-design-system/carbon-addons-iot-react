@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { setHours, setMinutes, sub, subDays } from 'date-fns';
-import { DateRange, RelativeRange } from './date-time-picker.component';
+import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.component';
 
 export type RelativeDateValue = [...DateRange, RelativeRange];
 
@@ -38,7 +38,12 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
           (change)="onChange()"
           theme="light"
         ></ibm-number>
-        <ibm-select class="bx--form-item" [(ngModel)]="timeRange" (valueChange)="onChange()" theme="light">
+        <ibm-select
+          class="bx--form-item"
+          [(ngModel)]="timeRange"
+          (valueChange)="onChange()"
+          theme="light"
+        >
           <option value="MINUTES">minutes</option>
           <option value="HOURS">hours</option>
           <option value="DAYS">days</option>
@@ -51,12 +56,23 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
     <fieldset class="bx--fieldset iot--date-time-picker__menu-formgroup">
       <legend class="bx--label">Relative to</legend>
       <div class="iot--date-time-picker__fields-wrapper">
-        <ibm-select class="bx--form-item" [(ngModel)]="relativeTo" (valueChange)="onChange()" theme="light">
+        <ibm-select
+          class="bx--form-item"
+          [(ngModel)]="relativeTo"
+          (valueChange)="onChange()"
+          theme="light"
+        >
           <option value="YESTERDAY" selected>Yesterday</option>
         </ibm-select>
         <!-- tmp until we can implement a better time selector -->
         <div class="bx--form-item">
-          <input ibmText type="time" [(ngModel)]="relativeTime" (change)="onChange()" theme="light"/>
+          <input
+            ibmText
+            type="time"
+            [(ngModel)]="relativeTime"
+            (change)="onChange()"
+            theme="light"
+          />
         </div>
       </div>
     </fieldset>
@@ -72,7 +88,7 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
   ],
 })
 export class DateTimeRelativeComponent implements OnChanges {
-  @Input() value: RelativeDateValue = null;
+  @Input() value: any[] = null;
   @Output() valueChange: EventEmitter<RelativeDateValue> = new EventEmitter();
 
   timeToSubtract = 0;
