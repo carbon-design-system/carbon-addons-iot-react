@@ -130,6 +130,76 @@ Basic.story = {
   name: 'basic',
 };
 
+export const WidthDisplayOptions = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
+  const myContent = { ...content, displayOption: myDisplayOption };
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize(breakpoint, size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <ImageCard
+        title={text('title', 'Image')}
+        id="image-hotspots"
+        breakpoint={breakpoint}
+        content={myContent}
+        values={{
+          hotspots: [
+            {
+              x: 0,
+              y: 0,
+              content: <span style={{ padding: spacing03 }}>0:0</span>,
+              color: 'green',
+              width: 20,
+              height: 20,
+            },
+            {
+              x: 0,
+              y: 99.99,
+              content: <span style={{ padding: spacing03 }}>0:99</span>,
+              color: 'green',
+              width: 20,
+              height: 20,
+            },
+            {
+              x: 99.99,
+              y: 99.99,
+              content: <span style={{ padding: spacing03 }}>99:99</span>,
+              color: 'green',
+              width: 20,
+              height: 20,
+            },
+            {
+              x: 99.99,
+              y: 0,
+              content: <span style={{ padding: spacing03 }}>99:0</span>,
+              color: 'green',
+              width: 20,
+              height: 20,
+            },
+          ],
+        }}
+        size={size}
+        onCardAction={action('onCardAction')}
+      />
+    </div>
+  );
+};
+
+WidthDisplayOptions.story = {
+  name: 'with displayOptions',
+};
+
 export const CustomRenderIconByName = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
   return (

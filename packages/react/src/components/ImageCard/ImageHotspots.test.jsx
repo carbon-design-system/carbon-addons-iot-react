@@ -16,6 +16,7 @@ import ImageHotspots, {
   onImageLoad,
   zoom,
   handleMouseUp,
+  calculateHotspotContainerLayout,
 } from './ImageHotspots';
 
 const commonProps = {
@@ -169,42 +170,183 @@ describe('ImageHotspots', () => {
     const image = container.querySelector('img');
     expect(isDOMComponent(image)).toBe(false);
   });
+
   it('calculateImageHeight', () => {
     // landscape test where image is bigger picks container height
     expect(
-      calculateImageHeight(
-        { orientation: 'landscape', ratio: 2, width: 300, height: 200 },
-        'landscape',
-        3
-      )
+      calculateImageHeight({
+        container: { orientation: 'landscape', ratio: 1.5, width: 300, height: 200 },
+        orientation: 'landscape',
+        ratio: 3,
+      })
     ).toEqual(100);
     // landscape container is bigger
     expect(
-      calculateImageHeight(
-        { orientation: 'landscape', ratio: 2, width: 300, height: 200 },
-        'landscape',
-        1
-      )
+      calculateImageHeight({
+        container: { orientation: 'landscape', ratio: 1.5, width: 300, height: 200 },
+        orientation: 'landscape',
+        ratio: 1,
+      })
     ).toEqual(200);
+    // portrait image and landscape container
+    expect(
+      calculateImageHeight({
+        container: { orientation: 'landscape', ratio: 2, width: 400, height: 200 },
+        orientation: 'portrait',
+        ratio: 1.5,
+        scale: 1,
+      })
+    ).toEqual(200);
+    // landscape image and portrait container
+    expect(
+      calculateImageHeight({
+        container: { orientation: 'portrait', ratio: 1.5, width: 300, height: 200 },
+        orientation: 'landscape',
+        ratio: 1.5,
+      })
+    ).toEqual(200);
+    // displayOption: 'fill',
+    expect(
+      calculateImageHeight({
+        container: { orientation: 'landscape', ratio: 1.5, width: 300, height: 200 },
+        orientation: 'landscape',
+        ratio: 1.5,
+        scale: 2,
+        displayOption: 'fill',
+      })
+    ).toEqual(400);
   });
   it('calculateImageWidth', () => {
     // landscape test where image is bigger picks container height
     expect(
-      calculateImageWidth(
-        { orientation: 'landscape', ratio: 2, width: 300, height: 200 },
-        'landscape',
-        3
-      )
+      calculateImageWidth({
+        container: { orientation: 'landscape', ratio: 1.5, width: 300, height: 200 },
+        orientation: 'landscape',
+        ratio: 3,
+      })
     ).toEqual(300);
     // landscape container is bigger
     expect(
-      calculateImageWidth(
-        { orientation: 'landscape', ratio: 2, width: 300, height: 200 },
-        'landscape',
-        1
-      )
+      calculateImageWidth({
+        container: { orientation: 'landscape', ratio: 1.5, width: 300, height: 200 },
+        orientation: 'landscape',
+        ratio: 1,
+      })
     ).toEqual(200);
+    // landscape image and portrait container
+    expect(
+      calculateImageWidth({
+        container: { orientation: 'portrait', ratio: 1.5, width: 300, height: 200 },
+        orientation: 'landscape',
+        ratio: 2,
+      })
+    ).toEqual(300);
+    // displayOption: 'fill',
+    expect(
+      calculateImageWidth({
+        container: { orientation: 'landscape', ratio: 1.5, width: 300, height: 200 },
+        orientation: 'landscape',
+        ratio: 1,
+        scale: 2,
+        displayOption: 'fill',
+      })
+    ).toEqual(600);
   });
+
+  describe('calculates hotspots container layout', () => {
+    it('handles objectFit "contain"', () => {
+      const landscape = calculateHotspotContainerLayout(
+        {
+          scale: 1,
+          orientation: 'landscape',
+          ratio: 3,
+          width: 300,
+          objectFitOffsetY: 50,
+        },
+        {},
+        'contain'
+      );
+      expect(landscape).toEqual({
+        width: 300,
+        height: 100,
+        top: 50,
+      });
+
+      const landscapeWithZoom = calculateHotspotContainerLayout(
+        {
+          scale: 1.5,
+          orientation: 'landscape',
+          ratio: 3,
+          width: 300,
+          offsetY: 25,
+        },
+        {},
+        'contain'
+      );
+      expect(landscapeWithZoom).toEqual({
+        width: 300,
+        height: 100,
+        top: 25,
+      });
+
+      const portrait = calculateHotspotContainerLayout(
+        {
+          scale: 1,
+          orientation: 'portrait',
+          ratio: 3,
+          offsetY: 0,
+          height: 300,
+        },
+        {},
+        'contain'
+      );
+      expect(portrait).toEqual({
+        width: 100,
+        height: 300,
+        top: 0,
+      });
+    });
+
+    it('handles objectFit "fill"', () => {
+      const noZoom = calculateHotspotContainerLayout(
+        { scale: 1, offsetY: 0 },
+        { width: 600, height: 200 },
+        'fill'
+      );
+      expect(noZoom).toEqual({ width: 600, height: 200, top: 0 });
+
+      const withZoom = calculateHotspotContainerLayout(
+        { offsetY: 0, scale: 2, width: 900, height: 300 },
+        {},
+        'fill'
+      );
+      expect(withZoom).toEqual({ width: 900, height: 300, top: 0 });
+    });
+
+    it('handles no objectFit used', () => {
+      const landscape = calculateHotspotContainerLayout(
+        { orientation: 'landscape', ratio: 3, offsetY: 0, width: 300 },
+        {},
+        undefined
+      );
+      expect(landscape).toEqual({ width: 300, height: 100, top: 0 });
+
+      const landscapeWithOffset = calculateHotspotContainerLayout(
+        { orientation: 'landscape', ratio: 3, offsetY: 50, width: 300 },
+        {},
+        undefined
+      );
+      expect(landscapeWithOffset).toEqual({ width: 300, height: 100, top: 50 });
+
+      const portrait = calculateHotspotContainerLayout(
+        { ratio: 3, offsetY: 0, orientation: 'portrait', height: 300 },
+        {},
+        undefined
+      );
+      expect(portrait).toEqual({ width: 100, height: 300, top: 0 });
+    });
+  });
+
   it('zoom', () => {
     const image = {
       initialWidth: 5000,
@@ -374,7 +516,6 @@ describe('ImageHotspots', () => {
           offsetParent: { offsetTop: 5, offsetLeft: 5 },
         },
       };
-      const image = { width: 300, height: 450 };
       let updatedCursor;
       const setCursor = jest.fn().mockImplementation((func) => {
         updatedCursor = func({});
@@ -382,7 +523,7 @@ describe('ImageHotspots', () => {
 
       handleMouseUp({
         event,
-        image,
+        image: { width: 300, height: 450, objectFitOffsetX: 0, objectFitOffsetY: 0 },
         cursor: { imageMousedown: true },
         setCursor,
         isEditable: true,
@@ -397,6 +538,19 @@ describe('ImageHotspots', () => {
         dragPrepared: false,
         imageMousedown: false,
       });
+
+      handleMouseUp({
+        event,
+        image: { width: 300, height: 450, objectFitOffsetX: 10, objectFitOffsetY: 10 },
+        cursor: { imageMousedown: true },
+        setCursor,
+        isEditable: true,
+        callback: onAddHotspotPositionCallback,
+      });
+      expect(onAddHotspotPositionCallback).toHaveBeenCalledWith({
+        x: 26.666666666666668,
+        y: 17.77777777777778,
+      });
     });
   });
 
@@ -410,33 +564,227 @@ describe('ImageHotspots', () => {
       jest.clearAllMocks();
     });
 
-    it('should fit landscape images', () => {
-      render(
-        <ImageHotspots
-          height={1150}
-          width={2370}
-          src={landscape}
-          alt="landscape-test-image"
-          displayOption="fit"
-        />
-      );
+    describe('using displayOption "contain"', () => {
+      it('should set image & hotspots container styling in portrait container', () => {
+        render(
+          <ImageHotspots
+            height={2370}
+            width={1150}
+            src={landscape}
+            alt="landscape-test-image"
+            id="landscape"
+            displayOption="contain"
+          />
+        );
 
-      const img = screen.getByAltText('landscape-test-image');
-      fireEvent.load(img);
-      expect(img).toHaveStyle({
-        height: '100%',
+        const img = screen.getByAltText('landscape-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '100%',
+          height: '100%',
+          top: '0',
+          left: '0',
+          'object-fit': 'contain',
+        });
+
+        const div = screen.getByTestId('landscape-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '1150px',
+          height: '558.0168776371307px',
+          top: '905.9915611814347px',
+          left: '0',
+        });
+      });
+
+      it('should set image & hotspots container styling in landscape container', () => {
+        render(
+          <ImageHotspots
+            height={1150}
+            width={2370}
+            src={landscape}
+            alt="landscape-test-image"
+            id="landscape"
+            displayOption="contain"
+          />
+        );
+
+        const img = screen.getByAltText('landscape-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '100%',
+          height: '100%',
+          top: '0',
+          left: '0',
+          'object-fit': 'contain',
+        });
+
+        const div = screen.getByTestId('landscape-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '2370px',
+          height: '1150px',
+          top: '0',
+          left: '0',
+        });
+      });
+
+      it('should set image & hotspots container styling in landscape container wider than image', () => {
+        render(
+          <ImageHotspots
+            height={1150}
+            width={2370 + 10}
+            src={landscape}
+            alt="landscape-test-image"
+            id="landscape"
+            displayOption="contain"
+          />
+        );
+
+        const img = screen.getByAltText('landscape-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '2370px',
+          height: '100%',
+          top: '0',
+          left: '0',
+          'object-fit': 'contain',
+        });
+
+        const div = screen.getByTestId('landscape-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '2370px',
+          height: '1150px',
+          top: '0',
+          left: '0',
+        });
       });
     });
 
-    it('should show whole landscape images when no displayOption', () => {
-      render(
-        <ImageHotspots height={1150} width={2370} src={landscape} alt="landscape-test-image" />
-      );
+    describe('using displayOption "fill"', () => {
+      it('should set image & hotspots container styling in portrait container', () => {
+        render(
+          <ImageHotspots
+            height={2370}
+            width={1150}
+            src={landscape}
+            alt="landscape-test-image"
+            id="landscape"
+            displayOption="fill"
+          />
+        );
 
-      const img = screen.getByAltText('landscape-test-image');
-      fireEvent.load(img);
-      expect(img).toHaveStyle({
-        height: '1150px',
+        const img = screen.getByAltText('landscape-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '100%',
+          height: '2370px',
+          top: '0',
+          left: '0',
+          'object-fit': 'fill',
+        });
+
+        const div = screen.getByTestId('landscape-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '1150px',
+          height: '2370px',
+          top: '0px',
+          left: '0',
+        });
+      });
+
+      it('should set image & hotspots container styling in landscape container', () => {
+        render(
+          <ImageHotspots
+            height={1150}
+            width={2370}
+            src={landscape}
+            alt="landscape-test-image"
+            id="landscape"
+            displayOption="fill"
+          />
+        );
+
+        const img = screen.getByAltText('landscape-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '2370px',
+          height: '100%',
+          top: '0',
+          left: '0',
+          'object-fit': 'fill',
+        });
+
+        const div = screen.getByTestId('landscape-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '2370px',
+          height: '1150px',
+          top: '0',
+          left: '0',
+        });
+      });
+    });
+
+    describe('using no displayOption', () => {
+      it('should set image & hotspots container styling in portrait container', () => {
+        render(
+          <ImageHotspots
+            height={2048}
+            width={1536}
+            src={portrait}
+            alt="portrait-test-image"
+            id="portrait"
+          />
+        );
+
+        const img = screen.getByAltText('portrait-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '1536px',
+          height: '745.3164556962025px',
+          top: '651.3417721518988px',
+          left: '0',
+        });
+        expect(img).not.toHaveStyle({ 'object-fit': 'fill' });
+        expect(img).not.toHaveStyle({ 'object-fit': 'contain' });
+
+        const div = screen.getByTestId('portrait-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '1536px',
+          height: '745.3164556962025px',
+          top: '651.3417721518988px',
+          left: '0',
+        });
+      });
+
+      it('should set image & hotspots container styling in landscape container', () => {
+        render(
+          <ImageHotspots
+            height={1536}
+            width={2048}
+            src={portrait}
+            alt="portrait-test-image"
+            id="portrait"
+          />
+        );
+
+        const img = screen.getByAltText('portrait-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '100%',
+          height: '993.7552742616033px',
+          top: '271.12236286919835px',
+          left: '0',
+        });
+
+        expect(img).not.toHaveStyle({ 'object-fit': 'fill' });
+        expect(img).not.toHaveStyle({ 'object-fit': 'contain' });
+
+        const div = screen.getByTestId('portrait-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '2048px',
+          height: '993.7552742616033px',
+          top: '271.12236286919835px',
+          left: '0',
+        });
       });
     });
   });
@@ -451,31 +799,196 @@ describe('ImageHotspots', () => {
       jest.clearAllMocks();
     });
 
-    it('should fit portrait images', () => {
-      render(
-        <ImageHotspots
-          height={2048}
-          width={1536}
-          src={portrait}
-          alt="portrait-test-image"
-          displayOption="fit"
-        />
-      );
+    describe('using displayOption "contain"', () => {
+      it('should set image & hotspots container styling in portrait container', () => {
+        render(
+          <ImageHotspots
+            height={2048}
+            width={1536}
+            src={portrait}
+            alt="portrait-test-image"
+            id="portrait"
+            displayOption="contain"
+          />
+        );
 
-      const img = screen.getByAltText('portrait-test-image');
-      fireEvent.load(img);
-      expect(img).toHaveStyle({
-        width: '100%',
+        const img = screen.getByAltText('portrait-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '100%',
+          height: '100%',
+          top: '0',
+          left: '0',
+          'object-fit': 'contain',
+        });
+
+        const div = screen.getByTestId('portrait-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '1536px',
+          height: '2048px',
+          top: '0',
+          left: '0',
+        });
+      });
+
+      it('should set image & hotspots container styling in landscape container', () => {
+        render(
+          <ImageHotspots
+            height={1536}
+            width={2048}
+            src={portrait}
+            alt="portrait-test-image"
+            id="portrait"
+            displayOption="contain"
+          />
+        );
+
+        const img = screen.getByAltText('portrait-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '100%',
+          height: '100%',
+          top: '0',
+          left: '0',
+          'object-fit': 'contain',
+        });
+
+        const div = screen.getByTestId('portrait-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '1152px',
+          height: '1536px',
+          top: '0',
+          left: '0',
+        });
       });
     });
 
-    it('should show whole portrait images when no displayOption', () => {
-      render(<ImageHotspots height={2048} width={1536} src={portrait} alt="portrait-test-image" />);
+    describe('using displayOption "fill"', () => {
+      it('should set image & hotspots container styling in portrait container', () => {
+        render(
+          <ImageHotspots
+            height={2048}
+            width={1536}
+            src={portrait}
+            alt="portrait-test-image"
+            id="portrait"
+            displayOption="fill"
+          />
+        );
 
-      const img = screen.getByAltText('portrait-test-image');
-      fireEvent.load(img);
-      expect(img).toHaveStyle({
-        width: '1536px',
+        const img = screen.getByAltText('portrait-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '100%',
+          height: '2048px',
+          top: '0',
+          left: '0',
+          'object-fit': 'fill',
+        });
+
+        const div = screen.getByTestId('portrait-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '1536px',
+          height: '2048px',
+          top: '0',
+          left: '0',
+        });
+      });
+
+      it('should set image & hotspots container styling in landscape container', () => {
+        render(
+          <ImageHotspots
+            height={1536}
+            width={2048}
+            src={portrait}
+            alt="portrait-test-image"
+            id="portrait"
+            displayOption="fill"
+          />
+        );
+
+        const img = screen.getByAltText('portrait-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '2048px',
+          height: '100%',
+          top: '0',
+          left: '0',
+          'object-fit': 'fill',
+        });
+
+        const div = screen.getByTestId('portrait-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '2048px',
+          height: '1536px',
+          top: '0',
+          left: '0',
+        });
+      });
+    });
+
+    describe('using no displayOption', () => {
+      it('should set image & hotspots container styling in portrait container', () => {
+        render(
+          <ImageHotspots
+            height={2048}
+            width={1536}
+            src={portrait}
+            alt="portrait-test-image"
+            id="portrait"
+          />
+        );
+
+        const img = screen.getByAltText('portrait-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '1536px',
+          height: '2048px',
+          top: '0',
+          left: '0',
+        });
+        expect(img).not.toHaveStyle({ 'object-fit': 'fill' });
+        expect(img).not.toHaveStyle({ 'object-fit': 'contain' });
+
+        const div = screen.getByTestId('portrait-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '1536px',
+          height: '2048px',
+          top: '0',
+          left: '0',
+        });
+      });
+
+      it('should set image & hotspots container styling in landscape container', () => {
+        render(
+          <ImageHotspots
+            height={1536}
+            width={2048}
+            src={portrait}
+            alt="portrait-test-image"
+            id="portrait"
+          />
+        );
+
+        const img = screen.getByAltText('portrait-test-image');
+        fireEvent.load(img);
+        expect(img).toHaveStyle({
+          width: '1152px',
+          height: '1536px',
+          top: '0',
+          left: '0',
+        });
+
+        expect(img).not.toHaveStyle({ 'object-fit': 'fill' });
+        expect(img).not.toHaveStyle({ 'object-fit': 'contain' });
+
+        const div = screen.getByTestId('portrait-hotspots-container');
+        expect(div).toHaveStyle({
+          width: '1152px',
+          height: '1536px',
+          top: '0',
+          left: '0',
+        });
       });
     });
 

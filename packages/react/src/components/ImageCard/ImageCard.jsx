@@ -178,9 +178,13 @@ const ImageCard = ({
                   />
                 ) : imgContent.src ? (
                   <ImageHotspots
+                    // Key regen needed for stories that modifies the displayOption
+                    key={imgContent?.displayOption}
                     {...imgContent}
-                    width={width - 16 * 2} // Need to adjust for card chrome
-                    height={height - (48 + 16)} // Need to adjust for card chrome
+                    // Adjust for side padding of iot-image-card__wrapper + border of iot-card--wrapper
+                    width={width - (16 * 2 + 4)}
+                    // Adjust for bottom padding of iot-image-card__wrapper + border of iot-card--wrapper
+                    height={height - (16 + 4)}
                     isExpanded={isExpanded}
                     hotspots={hotspots}
                     isHotspotDataLoading={isLoading}
