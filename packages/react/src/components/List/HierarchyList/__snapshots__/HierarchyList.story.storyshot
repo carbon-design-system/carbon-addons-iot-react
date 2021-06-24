@@ -611,7 +611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                     title="All rows"
                   >
                     <button
-                      className="bx--link"
+                      className="bx--link iot--hierarchy-list-bulk-modal--breadcrumb-button"
                       kind="ghost"
                       onClick={[Function]}
                       type="button"

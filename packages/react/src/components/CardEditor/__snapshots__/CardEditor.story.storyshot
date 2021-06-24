@@ -954,7 +954,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="calculated-abbreviate-numbers-tooltip"
                   >
                     <div
-                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -1496,7 +1495,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="card-edit-form-Data"
                   >
                     <div
-                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -1649,7 +1647,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="card-edit-form-customTitle"
                   >
                     <div
-                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -2517,7 +2514,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="calculated-abbreviate-numbers-tooltip"
                   >
                     <div
-                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -3059,7 +3055,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="card-edit-form-Image"
                   >
                     <div
-                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -3939,7 +3934,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="card-edit-form-Data"
                   >
                     <div
-                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -5138,7 +5132,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="card-1-abbreviate-numbers-tooltip"
                     >
                       <div
-                        aria-describedby={null}
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}

@@ -158,7 +158,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   }
                 >
                   <div
-                    aria-describedby={null}
                     aria-labelledby="hotspot-35-65"
                     className="bx--tooltip__label"
                     id="hotspot-35-65"
@@ -212,7 +211,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   }
                 >
                   <div
-                    aria-describedby={null}
                     aria-labelledby="hotspot-45-75"
                     className="bx--tooltip__label"
                     id="hotspot-45-75"
@@ -495,7 +493,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   }
                 >
                   <div
-                    aria-describedby={null}
                     aria-labelledby="hotspot-35-65"
                     className="bx--tooltip__label"
                     id="hotspot-35-65"
@@ -543,7 +540,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   }
                 >
                   <div
-                    aria-describedby={null}
                     aria-labelledby="hotspot-45-25"
                     className="bx--tooltip__label"
                     id="hotspot-45-25"
@@ -595,7 +591,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   }
                 >
                   <div
-                    aria-describedby={null}
                     aria-labelledby="hotspot-45-50"
                     className="bx--tooltip__label"
                     id="hotspot-45-50"
@@ -647,7 +642,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   }
                 >
                   <div
-                    aria-describedby={null}
                     aria-labelledby="hotspot-45-75"
                     className="bx--tooltip__label"
                     id="hotspot-45-75"

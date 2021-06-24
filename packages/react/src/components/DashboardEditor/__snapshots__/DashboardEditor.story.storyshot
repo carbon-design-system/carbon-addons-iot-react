@@ -107,6 +107,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "cursor": "default",
+                        }
+                      }
                       type="button"
                     >
                       <span
@@ -123,7 +128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           ]
                         }
                         aria-disabled={false}
-                        className="bx--btn bx--btn--ghost bx--btn--field"
+                        className="bx--btn bx--btn--ghost bx--btn--md"
                         htmlFor="id3"
                         onKeyDown={[Function]}
                         tabIndex={0}
@@ -4327,6 +4332,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "cursor": "default",
+                      }
+                    }
                     type="button"
                   >
                     <span
@@ -4343,7 +4353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ]
                       }
                       aria-disabled={false}
-                      className="bx--btn bx--btn--ghost bx--btn--field"
+                      className="bx--btn bx--btn--ghost bx--btn--md"
                       htmlFor="id9"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -7595,6 +7605,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "cursor": "default",
+                      }
+                    }
                     type="button"
                   >
                     <span
@@ -7611,7 +7626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ]
                       }
                       aria-disabled={false}
-                      className="bx--btn bx--btn--ghost bx--btn--field"
+                      className="bx--btn bx--btn--ghost bx--btn--md"
                       htmlFor="id10"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -9233,6 +9248,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "cursor": "default",
+                      }
+                    }
                     type="button"
                   >
                     <span
@@ -9249,7 +9269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ]
                       }
                       aria-disabled={false}
-                      className="bx--btn bx--btn--ghost bx--btn--field"
+                      className="bx--btn bx--btn--ghost bx--btn--md"
                       htmlFor="id7"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -12023,6 +12043,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "cursor": "default",
+                      }
+                    }
                     type="button"
                   >
                     <span
@@ -12039,7 +12064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ]
                       }
                       aria-disabled={false}
-                      className="bx--btn bx--btn--ghost bx--btn--field"
+                      className="bx--btn bx--btn--ghost bx--btn--md"
                       htmlFor="id1"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -14358,6 +14383,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "cursor": "default",
+                      }
+                    }
                     type="button"
                   >
                     <span
@@ -14374,7 +14404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ]
                       }
                       aria-disabled={false}
-                      className="bx--btn bx--btn--ghost bx--btn--field"
+                      className="bx--btn bx--btn--ghost bx--btn--md"
                       htmlFor="id8"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -16760,6 +16790,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "cursor": "default",
+                        }
+                      }
                       type="button"
                     >
                       <span
@@ -16776,7 +16811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           ]
                         }
                         aria-disabled={false}
-                        className="bx--btn bx--btn--ghost bx--btn--field"
+                        className="bx--btn bx--btn--ghost bx--btn--md"
                         htmlFor="id6"
                         onKeyDown={[Function]}
                         tabIndex={0}
@@ -18018,6 +18053,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "cursor": "default",
+                      }
+                    }
                     type="button"
                   >
                     <span
@@ -18034,7 +18074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ]
                       }
                       aria-disabled={false}
-                      className="bx--btn bx--btn--ghost bx--btn--field"
+                      className="bx--btn bx--btn--ghost bx--btn--md"
                       htmlFor="id4"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -19395,6 +19435,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "cursor": "default",
+                      }
+                    }
                     type="button"
                   >
                     <span
@@ -19411,7 +19456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ]
                       }
                       aria-disabled={false}
-                      className="bx--btn bx--btn--ghost bx--btn--field"
+                      className="bx--btn bx--btn--ghost bx--btn--md"
                       htmlFor="id2"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -22375,6 +22420,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     onFocus={[Function]}
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "cursor": "default",
+                      }
+                    }
                     type="button"
                   >
                     <span
@@ -22391,7 +22441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ]
                       }
                       aria-disabled={false}
-                      className="bx--btn bx--btn--ghost bx--btn--field"
+                      className="bx--btn bx--btn--ghost bx--btn--md"
                       htmlFor="id5"
                       onKeyDown={[Function]}
                       tabIndex={0}

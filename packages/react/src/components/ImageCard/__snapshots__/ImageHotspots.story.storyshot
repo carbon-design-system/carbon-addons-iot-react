@@ -82,7 +82,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-10-20"
               className="bx--tooltip__label"
               id="hotspot-10-20"
@@ -231,7 +230,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-10"
               className="bx--tooltip__label"
               id="hotspot-50-10"
@@ -281,7 +279,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-30-40"
               className="bx--tooltip__label"
               id="hotspot-30-40"
@@ -333,7 +330,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-60"
               className="bx--tooltip__label"
               id="hotspot-50-60"
@@ -742,7 +738,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-10-20"
               className="bx--tooltip__label"
               id="hotspot-10-20"
@@ -891,7 +886,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-10"
               className="bx--tooltip__label"
               id="hotspot-50-10"
@@ -941,7 +935,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-30-40"
               className="bx--tooltip__label"
               id="hotspot-30-40"
@@ -993,7 +986,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-60"
               className="bx--tooltip__label"
               id="hotspot-50-60"
@@ -1191,7 +1183,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-10-20"
               className="bx--tooltip__label"
               id="hotspot-10-20"
@@ -1340,7 +1331,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-10"
               className="bx--tooltip__label"
               id="hotspot-50-10"
@@ -1390,7 +1380,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-30-40"
               className="bx--tooltip__label"
               id="hotspot-30-40"
@@ -1442,7 +1431,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-60"
               className="bx--tooltip__label"
               id="hotspot-50-60"
@@ -1640,7 +1628,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-10-20"
               className="bx--tooltip__label"
               id="hotspot-10-20"
@@ -1789,7 +1776,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-10"
               className="bx--tooltip__label"
               id="hotspot-50-10"
@@ -1839,7 +1825,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-30-40"
               className="bx--tooltip__label"
               id="hotspot-30-40"
@@ -1891,7 +1876,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-60"
               className="bx--tooltip__label"
               id="hotspot-50-60"
@@ -2089,7 +2073,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-10-20"
               className="bx--tooltip__label"
               id="hotspot-10-20"
@@ -2238,7 +2221,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-10"
               className="bx--tooltip__label"
               id="hotspot-50-10"
@@ -2288,7 +2270,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-30-40"
               className="bx--tooltip__label"
               id="hotspot-30-40"
@@ -2340,7 +2321,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-60"
               className="bx--tooltip__label"
               id="hotspot-50-60"
@@ -2538,7 +2518,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-10-20"
               className="bx--tooltip__label"
               id="hotspot-10-20"
@@ -2687,7 +2666,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-10"
               className="bx--tooltip__label"
               id="hotspot-50-10"
@@ -2737,7 +2715,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-30-40"
               className="bx--tooltip__label"
               id="hotspot-30-40"
@@ -2789,7 +2766,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             }
           >
             <div
-              aria-describedby={null}
               aria-labelledby="hotspot-50-60"
               className="bx--tooltip__label"
               id="hotspot-50-60"
