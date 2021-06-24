@@ -2,11 +2,18 @@
   "projectId": "yxfokk",
   "componentFolder": "src",
   "env": {
-    "coverage": false
+    "coverage": false,
+    "failSilently": false
   },
   "fixturesFolder": false,
   "nodeVersion": "system",
   "testFiles": "**/*.test.e2e.jsx",
   "viewportWidth": 1670,
-  "viewportHeight": 900
+  "viewportHeight": 900,
+  "defaultCommandTimeout": 8000,
+  "trashAssetsBeforeRuns": true,
+  "component": {
+    "viewportWidth": 1670,
+    "viewportHeight": 900
+  }
 }

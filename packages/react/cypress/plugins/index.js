@@ -1,6 +1,9 @@
 const path = require('path');
 
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 const { startDevServer } = require('@cypress/webpack-dev-server');
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+const getCompareSnapshotsPlugin = require('cypress-image-diff-js/dist/plugin');
 
 const { BABEL_ENV } = process.env;
 
@@ -76,7 +79,38 @@ const webpackConfig = {
   },
 };
 
+const width = 1670;
+const height = 900;
+
 module.exports = (on, config) => {
+  on('before:browser:launch', (browser = {}, launchOptions) => {
+    /* eslint-disable dot-notation, no-param-reassign */
+    if (browser.name === 'chrome' && browser.isHeadless) {
+      launchOptions.args.push(`--window-size=${width},${height}`);
+      // force screen to be non-retina and just use our given resolution
+      launchOptions.args.push('--force-device-scale-factor=1');
+    }
+    if (browser.name === 'electron' && browser.isHeadless) {
+      // might not work on CI for some reason
+      launchOptions.preferences.width = width;
+      launchOptions.preferences.height = height;
+    }
+    if (browser.name === 'firefox' && browser.isHeadless) {
+      launchOptions.args.push(`--width=${width}`);
+      launchOptions.args.push(`--height=${height}`);
+    }
+    if (browser.family === 'chromium' && browser.name !== 'electron') {
+      launchOptions.args.push('--start-fullscreen');
+    }
+
+    if (browser.name === 'electron') {
+      launchOptions.preferences.fullscreen = true;
+    }
+
+    return launchOptions;
+  });
+
+  getCompareSnapshotsPlugin(on, webpackConfig);
   if (config.testingType === 'component') {
     on('dev-server:start', (options) => startDevServer({ options, webpackConfig }));
   }

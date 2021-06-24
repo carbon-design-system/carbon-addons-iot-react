@@ -7,3 +7,8 @@ import 'cypress-real-events/support';
 import '@testing-library/cypress/add-commands';
 
 import '../../src/styles.scss';
+import './commands';
+
+after(() => {
+  cy.task('generateReport');
+});
