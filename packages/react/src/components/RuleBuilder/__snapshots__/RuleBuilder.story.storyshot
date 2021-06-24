@@ -572,7 +572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <button
                     aria-describedby={null}
-                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="rsiru4rjba-remove-rule-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -609,7 +609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </button>
                   <button
                     aria-describedby={null}
-                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="rsiru4rjba-add-rule-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -646,7 +646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </button>
                   <button
                     aria-describedby={null}
-                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="rsiru4rjba-add-group-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -3247,7 +3247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <button
                     aria-describedby={null}
-                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="rsiru4rjba-remove-rule-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -3284,7 +3284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </button>
                   <button
                     aria-describedby={null}
-                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="rsiru4rjba-add-rule-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -3321,7 +3321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </button>
                   <button
                     aria-describedby={null}
-                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="rsiru4rjba-add-group-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -3520,7 +3520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <button
                     aria-describedby={null}
-                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="34bvyub9jq-remove-rule-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -3557,7 +3557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </button>
                   <button
                     aria-describedby={null}
-                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="34bvyub9jq-add-rule-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -3594,7 +3594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </button>
                   <button
                     aria-describedby={null}
-                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="34bvyub9jq-add-group-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -3869,7 +3869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <button
                       aria-describedby={null}
-                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="ewc2z5kyfu-remove-rule-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -3906,7 +3906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </button>
                     <button
                       aria-describedby={null}
-                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="ewc2z5kyfu-add-rule-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -3943,7 +3943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </button>
                     <button
                       aria-describedby={null}
-                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="ewc2z5kyfu-add-group-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -4142,7 +4142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <button
                       aria-describedby={null}
-                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="hks7h2zin4-remove-rule-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -4179,7 +4179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </button>
                     <button
                       aria-describedby={null}
-                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="hks7h2zin4-add-rule-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -4216,7 +4216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </button>
                     <button
                       aria-describedby={null}
-                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="hks7h2zin4-add-group-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -4491,7 +4491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <button
                         aria-describedby={null}
-                        className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="wg9hlv197c-remove-rule-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -4528,7 +4528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </button>
                       <button
                         aria-describedby={null}
-                        className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="wg9hlv197c-add-rule-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -4565,7 +4565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </button>
                       <button
                         aria-describedby={null}
-                        className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="wg9hlv197c-add-group-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -4840,7 +4840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <button
                           aria-describedby={null}
-                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="7kadk2wfv8-remove-rule-button"
                           disabled={false}
                           onBlur={[Function]}
@@ -4877,7 +4877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </button>
                         <button
                           aria-describedby={null}
-                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="7kadk2wfv8-add-rule-button"
                           disabled={false}
                           onBlur={[Function]}
@@ -4914,7 +4914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </button>
                         <button
                           aria-describedby={null}
-                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="7kadk2wfv8-add-group-button"
                           disabled={false}
                           onBlur={[Function]}
@@ -5113,7 +5113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <button
                           aria-describedby={null}
-                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="49mf09vjhn-remove-rule-button"
                           disabled={false}
                           onBlur={[Function]}
@@ -5150,7 +5150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </button>
                         <button
                           aria-describedby={null}
-                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="49mf09vjhn-add-rule-button"
                           disabled={false}
                           onBlur={[Function]}
@@ -5187,7 +5187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </button>
                         <button
                           aria-describedby={null}
-                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="49mf09vjhn-add-group-button"
                           disabled={false}
                           onBlur={[Function]}
@@ -6385,7 +6385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     <button
                                       aria-describedby={null}
                                       aria-label="Add"
-                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                       data-testid="Button"
                                       disabled={false}
                                       onBlur={[Function]}
@@ -6474,7 +6474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     <button
                                       aria-describedby={null}
                                       aria-label="Add"
-                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                       data-testid="Button"
                                       disabled={false}
                                       onBlur={[Function]}
@@ -6652,7 +6652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     <button
                                       aria-describedby={null}
                                       aria-label="Remove"
-                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                       data-testid="Button"
                                       disabled={false}
                                       onBlur={[Function]}
@@ -7008,7 +7008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     <button
                                       aria-describedby={null}
                                       aria-label="Add"
-                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                       data-testid="Button"
                                       disabled={false}
                                       onBlur={[Function]}
@@ -7097,7 +7097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     <button
                                       aria-describedby={null}
                                       aria-label="Add"
-                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                       data-testid="Button"
                                       disabled={false}
                                       onBlur={[Function]}
@@ -7316,7 +7316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     <button
                                       aria-describedby={null}
                                       aria-label="Remove"
-                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                       data-testid="Button"
                                       disabled={false}
                                       onBlur={[Function]}

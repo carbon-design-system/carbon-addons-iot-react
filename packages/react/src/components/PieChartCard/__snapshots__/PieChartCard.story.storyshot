@@ -195,7 +195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       <button
                         aria-describedby={null}
                         aria-label=""
-                        className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="flyout-menu-button"
                         disabled={false}
                         onBlur={[Function]}
