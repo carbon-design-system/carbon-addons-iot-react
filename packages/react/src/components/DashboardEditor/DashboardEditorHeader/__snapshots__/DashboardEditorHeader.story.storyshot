@@ -162,7 +162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </button>
                 <button
                   aria-describedby={null}
-                  className="iot--btn bx--btn bx--btn--md bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+                  className="iot--btn bx--btn bx--btn--md bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                   data-testid="Button"
                   disabled={false}
                   onBlur={[Function]}
@@ -202,7 +202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </button>
                 <button
                   aria-describedby={null}
-                  className="iot--btn bx--btn bx--btn--md bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+                  className="iot--btn bx--btn bx--btn--md bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                   data-testid="Button"
                   disabled={false}
                   onBlur={[Function]}
@@ -386,7 +386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </h2>
               <button
                 aria-describedby={null}
-                className="page-title-bar-title--edit iot--btn bx--btn bx--btn--md bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+                className="page-title-bar-title--edit iot--btn bx--btn bx--btn--md bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="Button"
                 disabled={false}
                 onBlur={[Function]}

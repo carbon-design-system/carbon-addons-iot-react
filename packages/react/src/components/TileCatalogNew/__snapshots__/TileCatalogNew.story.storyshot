@@ -36,7 +36,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <div
                 aria-labelledby="31-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+                className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
                 role="search"
               >
                 <div
@@ -402,7 +402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <div
                 aria-labelledby="32-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+                className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
                 role="search"
               >
                 <div
@@ -675,7 +675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <div
                 aria-labelledby="34-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+                className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
                 role="search"
               >
                 <div
@@ -929,7 +929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <div
                 aria-labelledby="33-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+                className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
                 role="search"
               >
                 <div
@@ -1154,7 +1154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <div
                 aria-labelledby="37-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+                className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
                 role="search"
               >
                 <div
@@ -1633,7 +1633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <div
                 aria-labelledby="35-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+                className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
                 role="search"
               >
                 <div
@@ -2233,7 +2233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <div
                 aria-labelledby="36-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+                className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
                 role="search"
               >
                 <div

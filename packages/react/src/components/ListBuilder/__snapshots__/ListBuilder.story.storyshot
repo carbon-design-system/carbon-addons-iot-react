@@ -554,7 +554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-label="Add item to list"
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-1"
                           disabled={false}
                           onBlur={[Function]}
@@ -624,7 +624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-label="Add item to list"
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-2"
                           disabled={false}
                           onBlur={[Function]}
@@ -694,7 +694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-label="Add item to list"
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-3"
                           disabled={false}
                           onBlur={[Function]}
@@ -1022,7 +1022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-label="Add item to list"
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-1"
                           disabled={false}
                           onBlur={[Function]}
@@ -1189,7 +1189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-label="Remove item from list"
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-2"
                           disabled={false}
                           onBlur={[Function]}
@@ -1399,7 +1399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-label="Add item to list"
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-1"
                           disabled={false}
                           onBlur={[Function]}
@@ -1469,7 +1469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-label="Add item to list"
-                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="list-builder-add-button-2"
                           disabled={false}
                           onBlur={[Function]}
