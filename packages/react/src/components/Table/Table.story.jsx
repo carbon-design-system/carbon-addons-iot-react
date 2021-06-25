@@ -417,7 +417,10 @@ const actions = {
     onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
     onApplyAdvancedFilter: action('onApplyAdvancedFilter'),
     onToggleAdvancedFilter: action('onToggleAdvancedFilter'),
-    onToggleAggregations: action('onToggleAggregations'),
+    // TODO: removed to mimic the current state of consumers in the wild
+    // since they won't be adding this prop to any of their components
+    // can be readded in V3.
+    // onToggleAggregations: action('onToggleAggregations'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
