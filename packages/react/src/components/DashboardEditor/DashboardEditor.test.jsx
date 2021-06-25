@@ -288,7 +288,6 @@ describe('DashboardEditor', () => {
     // find and click export button
     // Export button is iconOnly meaning we can't find it based off text
     const exportBtn = screen.getAllByRole('button')[2];
-    console.log(exportBtn);
     expect(exportBtn).toBeInTheDocument();
     fireEvent.click(exportBtn);
     expect(mockOnExport).toBeCalled();

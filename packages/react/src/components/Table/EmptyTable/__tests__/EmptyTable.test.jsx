@@ -11,7 +11,9 @@ const commonTableProps = {
 
 describe('EmptyTable', () => {
   it('custom empty state', () => {
-    render(<EmptyTable {...commonTableProps} emptyState={<span>my custom element</span>} />);
+    render(<EmptyTable {...commonTableProps} emptyState={<span>my custom element</span>} />, {
+      container: document.body.appendChild(document.createElement('table')),
+    });
     expect(screen.queryAllByText('my custom element')).toHaveLength(1);
   });
   it('no empty state action does not render button', () => {
@@ -19,7 +21,10 @@ describe('EmptyTable', () => {
       <EmptyTable
         {...commonTableProps}
         emptyState={{ message: 'I am empty', buttonLabel: 'clickme' }}
-      />
+      />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
     );
     expect(screen.queryAllByText('I am empty')).toHaveLength(1);
     expect(screen.queryAllByText('clickme')).toHaveLength(0);
@@ -34,7 +39,10 @@ describe('EmptyTable', () => {
           buttonLabel: 'clickme',
         }}
         onEmptyStateAction={mockEmptyStateAction}
-      />
+      />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
     );
 
     expect(screen.queryAllByText('I am empty')).toHaveLength(1);
@@ -54,7 +62,10 @@ describe('EmptyTable', () => {
           buttonLabelWithFilters: 'clickmyfilters',
         }}
         onEmptyStateAction={mockEmptyStateAction}
-      />
+      />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
     );
     expect(screen.queryAllByText('I am filter')).toHaveLength(1);
     expect(screen.queryAllByText('clickmyfilters')).toHaveLength(1);

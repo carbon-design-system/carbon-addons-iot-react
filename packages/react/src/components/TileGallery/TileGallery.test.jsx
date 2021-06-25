@@ -169,7 +169,6 @@ describe('TileGallery', () => {
 
     // Change Tile Item mode
     wrapper.find('button.bx--content-switcher-btn').first().simulate('click');
-    // console.log(`component::: ${noExtraWrapper.find('TileGallerySearch').debug()}`);
 
     // test have changes mode prop
     expect(wrapper.find('TileGalleryItem').first().props().mode).toEqual('list');

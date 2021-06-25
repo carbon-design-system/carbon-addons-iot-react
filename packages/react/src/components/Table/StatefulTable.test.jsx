@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
-import { screen, render, fireEvent } from '@testing-library/react';
+import { screen, render, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import StatefulTable from './StatefulTable';
@@ -94,7 +94,7 @@ describe('stateful table with real reducer', () => {
 
     expect(screen.queryByText('whiteboard can eat 2A')).toBeNull();
 
-    fireEvent.click(
+    userEvent.click(
       screen
         .getByText('whiteboard can eat 2')
         .closest('tr')
@@ -103,8 +103,12 @@ describe('stateful table with real reducer', () => {
 
     expect(screen.getByText('whiteboard can eat 2A')).toBeTruthy();
 
-    fireEvent.click(screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`));
-    fireEvent.click(screen.getByText('Add'));
+    act(() => {
+      userEvent.click(screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`));
+    });
+    act(() => {
+      userEvent.click(screen.getByText('Add'));
+    });
 
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
 
@@ -127,8 +131,13 @@ describe('stateful table with real reducer', () => {
         .querySelector('.bx--table-expand__button')
     );
     expect(screen.getByText('can pinocchio whiteboard 4B-2-B')).toBeTruthy();
-    userEvent.click(screen.getByTestId(`${tableId}-row-4_B-2-B-row-actions-cell-overflow`));
-    userEvent.click(screen.getByText('Add'));
+
+    act(() => {
+      userEvent.click(screen.getByTestId(`${tableId}-row-4_B-2-B-row-actions-cell-overflow`));
+    });
+    act(() => {
+      userEvent.click(screen.getByText('Add'));
+    });
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
   });
 

@@ -115,7 +115,11 @@ export const handleEnterKeyDown = (evt, callback) => {
   }
 };
 
-export const defaultFunction = (name) => () => console.info(`${name} not implemented`); // eslint-disable-line no-console
+export const defaultFunction = (name) => () => {
+  if (!process?.env?.JEST_WORKER_ID) {
+    console.info(`${name} not implemented`);
+  }
+}; // eslint-disable-line no-console
 
 export const sortTableData = (columnId, isTimestampColumn) => (a, b) => {
   if (isNil(a)) {

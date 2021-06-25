@@ -98,7 +98,7 @@ describe('CardEditor', () => {
   });
 
   it('shows gallery when no card is defined', () => {
-    render(<CardEditor />);
+    render(<CardEditor onShowGallery={jest.fn()} onChange={jest.fn()} onAddCard={jest.fn()} />);
 
     expect(screen.getByText('Gallery')).toBeTruthy();
   });
