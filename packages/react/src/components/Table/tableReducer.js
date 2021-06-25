@@ -3,8 +3,13 @@ import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
 import find from 'lodash/find';
+import { firstBy } from 'thenby';
 
-import { getSortedData, caseInsensitiveSearch } from '../../utils/componentUtilityFunctions';
+import {
+  getSortedData,
+  caseInsensitiveSearch,
+  sortTableData,
+} from '../../utils/componentUtilityFunctions';
 
 import {
   TABLE_PAGE_CHANGE,
@@ -32,6 +37,12 @@ import {
   TABLE_ADVANCED_FILTER_CANCEL,
   TABLE_ADVANCED_FILTER_APPLY,
   TABLE_TOGGLE_AGGREGATIONS,
+  TABLE_MULTI_SORT_TOGGLE_MODAL,
+  TABLE_MULTI_SORT_SAVE,
+  TABLE_MULTI_SORT_CANCEL,
+  TABLE_MULTI_SORT_ADD_COLUMN,
+  TABLE_MULTI_SORT_REMOVE_COLUMN,
+  TABLE_MULTI_SORT_CLEAR,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -204,6 +215,42 @@ export const getCustomColumnSort = (columns, columnId) => {
   return currentlySortedColumn && currentlySortedColumn.sortFunction; // see if there's a custom sort function passed
 };
 
+/**
+ * multi-sort helper for more readable code.
+ *
+ * @param {array} sort An array of sort objects [{columnId: string, direction: 'ASC' | 'DESC'}]
+ * @param {array} columns An array of table columns matching the table column prop
+ * @param {array} data An array of row data for the Table
+ *
+ * @returns the table data sorted by multiple dimensions
+ */
+const handleMultiSort = (sort, columns, data) => {
+  // setup the stack with a inert firstBy, so that we can jump straight into the
+  // thenBys below from the sort array
+  let sortStack = firstBy(() => 0);
+  sort.forEach(({ columnId, direction }) => {
+    const customSortFn = getCustomColumnSort(columns, columnId);
+    if (customSortFn) {
+      const sortedValues = customSortFn({ data, columnId, direction }).map(({ values }) => values);
+      sortStack = sortStack.thenBy((row) => row.values[columnId], {
+        cmp: (a, b) => {
+          return (
+            sortedValues.findIndex((row) => row[columnId] === a) -
+            sortedValues.findIndex((row) => row[columnId] === b)
+          );
+        },
+      });
+    } else {
+      sortStack = sortStack.thenBy((row) => row.values[columnId], {
+        cmp: sortTableData(columnId),
+        direction: direction === 'ASC' ? 'asc' : 'desc',
+      });
+    }
+  });
+
+  return data.sort(sortStack);
+};
+
 // little utility to both sort and filter
 export const filterSearchAndSort = (
   data,
@@ -213,17 +260,23 @@ export const filterSearchAndSort = (
   columns,
   advancedFilters = []
 ) => {
-  const { columnId, direction } = sort;
-
   const { value: searchValue } = search;
   const filteredData = filterData(data, filters, columns, advancedFilters);
   const searchedData =
     searchValue && searchValue !== '' ? searchData(filteredData, searchValue) : filteredData;
-  return !isEmpty(sort)
-    ? getCustomColumnSort(columns, columnId)
-      ? getCustomColumnSort(columns, columnId)({ data: searchedData, columnId, direction })
-      : getSortedData(searchedData, columnId, direction)
-    : searchedData;
+
+  if (isEmpty(sort)) {
+    return searchedData;
+  }
+
+  if (Array.isArray(sort)) {
+    return handleMultiSort(sort, columns, searchedData);
+  }
+
+  const { columnId, direction } = sort;
+  return getCustomColumnSort(columns, columnId)
+    ? getCustomColumnSort(columns, columnId)({ data: searchedData, columnId, direction })
+    : getSortedData(searchedData, columnId, direction);
 };
 
 /** This reducer handles sort, filter and search that needs data otherwise it proxies for the baseTableReducer */
@@ -339,10 +392,19 @@ export const tableReducer = (state = {}, action) => {
       const columnId = action.payload;
       const sorts = ['NONE', 'ASC', 'DESC'];
       const currentSort = get(state, 'view.table.sort');
-      const currentSortDir =
-        currentSort && currentSort.columnId === columnId ? currentSort.direction : 'NONE';
+      const isInMultiSort =
+        Array.isArray(currentSort) && currentSort.some((column) => column.columnId === columnId);
+      const currentSortDir = isInMultiSort
+        ? currentSort.find((sort) => sort.columnId === columnId).direction
+        : currentSort && currentSort.columnId === columnId
+        ? currentSort.direction
+        : 'NONE';
 
-      const nextSortDir = sorts[(sorts.findIndex((i) => i === currentSortDir) + 1) % sorts.length];
+      const nextSortDir = isInMultiSort
+        ? currentSortDir === 'ASC'
+          ? 'DESC'
+          : 'ASC'
+        : sorts[(sorts.findIndex((i) => i === currentSortDir) + 1) % sorts.length];
 
       // validate if there is any column of timestamp type
       const isTimestampColumn =
@@ -352,26 +414,40 @@ export const tableReducer = (state = {}, action) => {
 
       const customColumnSort = getCustomColumnSort(get(state, 'columns'), columnId);
 
+      let filteredData;
+      let nextSort;
+      if (isInMultiSort) {
+        nextSort = currentSort.reduce((carry, column) => {
+          if (column.columnId === columnId) {
+            return [...carry, { ...column, direction: nextSortDir }];
+          }
+
+          return [...carry, column];
+        }, []);
+        filteredData = handleMultiSort(nextSort, state.columns, state.data);
+      } else {
+        filteredData =
+          nextSortDir !== 'NONE'
+            ? customColumnSort // if there's a custom column sort apply it
+              ? customColumnSort({
+                  data: state.view.table.filteredData || state.data,
+                  columnId,
+                  direction: nextSortDir,
+                })
+              : getSortedData(
+                  state.view.table.filteredData || state.data,
+                  columnId,
+                  nextSortDir,
+                  isTimestampColumn
+                )
+            : filterData(state.data, state.view.filters, state.columns); // reset to original filters
+      }
       return baseTableReducer(
         update(state, {
           view: {
             table: {
               filteredData: {
-                $set:
-                  nextSortDir !== 'NONE'
-                    ? customColumnSort // if there's a custom column sort apply it
-                      ? customColumnSort({
-                          data: state.view.table.filteredData || state.data,
-                          columnId,
-                          direction: nextSortDir,
-                        })
-                      : getSortedData(
-                          state.view.table.filteredData || state.data,
-                          columnId,
-                          nextSortDir,
-                          isTimestampColumn
-                        )
-                    : filterData(state.data, state.view.filters, state.columns), // reset to original filters
+                $set: filteredData,
               },
             },
           },
@@ -572,6 +648,81 @@ export const tableReducer = (state = {}, action) => {
           },
         },
       });
+    }
+
+    case TABLE_MULTI_SORT_TOGGLE_MODAL: {
+      return update(state, {
+        view: {
+          table: {
+            showMultiSortModal: {
+              $set: !state.view.table.showMultiSortModal,
+            },
+          },
+        },
+      });
+    }
+
+    case TABLE_MULTI_SORT_SAVE: {
+      return update(state, {
+        view: {
+          table: {
+            sort: {
+              $set: action.payload,
+            },
+            filteredData: {
+              $set: filterSearchAndSort(
+                state.data,
+                action.payload,
+                get(state, 'view.toolbar.search'),
+                get(state, 'view.filters'),
+                get(state, 'columns'),
+                get(state, 'view.advancedFilters')
+              ),
+            },
+            showMultiSortModal: {
+              $set: false,
+            },
+          },
+        },
+      });
+    }
+
+    case TABLE_MULTI_SORT_CANCEL: {
+      return update(state, {
+        view: {
+          table: {
+            showMultiSortModal: {
+              $set: false,
+            },
+          },
+        },
+      });
+    }
+
+    case TABLE_MULTI_SORT_CLEAR: {
+      return update(state, {
+        view: {
+          table: {
+            showMultiSortModal: {
+              $set: false,
+            },
+            sort: {
+              $set: undefined,
+            },
+            filteredData: {
+              $set: filterData(state.data, state.view.filters, state.columns),
+            },
+          },
+        },
+      });
+    }
+
+    case TABLE_MULTI_SORT_ADD_COLUMN: {
+      return state;
+    }
+
+    case TABLE_MULTI_SORT_REMOVE_COLUMN: {
+      return state;
     }
 
     // Actions that are handled by the base reducer

@@ -299,7 +299,9 @@ describe('DateTimePicker', () => {
     wrapper.find('.bx--number__control-btn.up-icon').first().simulate('click');
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
-      `${today.format('YYYY-MM-DD')} 08:56 to ${today.format('YYYY-MM-DD')} 08:57`
+      `${today.subtract(1, 'minute').format('YYYY-MM-DD HH:mm')} to ${today.format(
+        'YYYY-MM-DD HH:mm'
+      )}`
     );
   });
 

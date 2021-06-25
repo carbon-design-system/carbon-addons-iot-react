@@ -3,6 +3,87 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.35...v2.146.0-next.36) (2021-06-23)
+
+
+### Bug Fixes
+
+* **dashboard-grid:** grid should generate layouts for all supported breakpoints for each card ([49d392b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/49d392b51bb1a201702ed0724a45f68562b77664))
+
+
+
+
+
+# [2.146.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.33...v2.146.0-next.35) (2021-06-23)
+
+
+### Bug Fixes
+
+* **datetimepicker:** listen to locale and initialize dayjs with it ([f652405](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f652405ae410f23452b55a29b9d7ee0d9ed2da34))
+* **hotspoteditortooltiptab:** fix for selected color not showing ([63bca57](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/63bca574e9f2239cce49b01179a83e681de90271)), closes [#2401](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2401)
+* **repo:** verison bump to fix publish failures ([02022bb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/02022bbdbad69ff4d839983c9c8eb7dd7a701f89))
+
+
+### Features
+
+* **walkme:** Including a `Walkme` component that renders a `Helmet` (from ` react-helmet-async`) to create the Walkme script tags under the head element. ([f56f934](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f56f934b1238a489edc3c2b07bd914b1430ffc30))
+* **walkme:** Testing properties set to window object during Walkme tests. ([6d2a91a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6d2a91ac9c4d345a4c3f5f632ff0cb7a64a7b154))
+
+
+
+
+
+# [2.146.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.32...v2.146.0-next.33) (2021-06-17)
+
+
+### Bug Fixes
+
+* **docs:** update card docs for implementing a custom card ([92a8dc3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/92a8dc332ea498e3af8c73349418344842dc894a))
+
+
+
+
+
+# [2.146.0-next.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.31...v2.146.0-next.32) (2021-06-16)
+
+
+### Bug Fixes
+
+* **statefultable:** dont overwrite defaultvalue in table props ([064b358](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/064b3584ed6d9b3448c63886df2664c2ea39825a))
+* **table:** was not sending every search update along with onUserViewModified ([bfd2c8e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bfd2c8edf22aa45a65ec76beb2e5b8606d264abd))
+* **tableviewdropdown:** correct story name ([91c1351](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/91c13511c015709842bbe7842944b00aaf8adcdc))
+* **tableviewdropdown:** view all should not be overwritten ([a24e404](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a24e4041f3bd17d4438287e3ba08720adbdecbed))
+
+
+
+
+
+# [2.146.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.30...v2.146.0-next.31) (2021-06-16)
+
+
+### Bug Fixes
+
+* **table:** fix button in button when multi-sort is used ([9eb700f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9eb700f6e137aa1da926518c7244d9ee749cdfb4))
+* **table:** i18n fixes, better testing, and rtl for multi-sort columns ([f4b086b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f4b086b65bf58a1d28dafe5e11de84ef7d30b510))
+* **table:** maintain backwards compat. on custom sort ([42f56d1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/42f56d13aad49a165499152d8cbf31ab4bd5bae7))
+* **table:** multi-sort modal rtl spacing ([f6518d2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f6518d2643c2610877ce5b6561b3bc062d16c3be))
+* **table:** switch sort to A tag to prevent button-in-button warning ([91c78ed](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/91c78ed92a29f3c95773ac820c39031428f3ed27))
+* **table:** use A tag when hasOverflow, too ([f24a8fa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f24a8fa8a34d5b2230dcfdb516e3693f79f8a58e))
+* **table-head:** use i18n for multi-sort overflow menu name ([db1cc9f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/db1cc9f8c31b3e141a99f2d43bd2c8d35be1ac47))
+
+
+### Features
+
+* **table:** add i18n for overflow menu, remove console.logs ([8475e5b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8475e5bd8b8bd42b186e6fcb59bef5571e2220a1))
+* **table:** added multi-sort column capabilities to table ([c0d345a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c0d345ac25047e0a85ee221b0b8fe0002aa9cebc))
+* **table:** limit multi-sort to number of sortable columns ([a6333c4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a6333c41d28f9f27a870bca099cef7795e09f842))
+* **table:** multi-sort clearing, better modal ux, change sort direction ([bf12ebb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bf12ebb592e113df63979ae8088cb2ebd3132e0f))
+* **table:** update snapshots for multi-sort table columns ([de6a883](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/de6a88300bd6c6ec2e8336ee5569fdc89f5a39c2))
+
+
+
+
+
 # [2.146.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.29...v2.146.0-next.30) (2021-06-15)
 
 

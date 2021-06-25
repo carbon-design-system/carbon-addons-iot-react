@@ -14,6 +14,10 @@
 
 The `ListBuilder` currently only supports Two column list building. The items props are all the items available for selection and the selectedItems prop are those items that are currently selected. The itemCount provides an override to change the number of available items if they aren't all provided in the items array. The onAdd and onRemove callbacks give you access to the itemId of the item being added or removed from the list.
 
+```jsx
+import { ListBuilder } from 'carbon-addons-iot-react';
+```
+
 ## Two columns
 
 ```jsx

@@ -1366,13 +1366,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   aria-atomic="true"
-                  aria-labelledby="loading-id-5"
+                  aria-labelledby="loading-id-4"
                   aria-live="assertive"
                   className="bx--loading bx--loading--small"
                 >
                   <label
                     className="bx--visually-hidden"
-                    id="loading-id-5"
+                    id="loading-id-4"
                   >
                     Active loading indicator
                   </label>

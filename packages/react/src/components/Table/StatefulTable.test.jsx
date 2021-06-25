@@ -7,8 +7,9 @@ import userEvent from '@testing-library/user-event';
 
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
+import { StatefulTableWithNestedRowItems } from './StatefulTable.story';
 import { mockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
-import { initialState, StatefulTableWithNestedRowItems } from './Table.story';
+import { initialState } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
 
 describe('stateful table with real reducer', () => {
