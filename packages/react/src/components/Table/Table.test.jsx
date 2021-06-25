@@ -1599,6 +1599,8 @@ describe('Table', () => {
         return `${sum + 1}`;
       });
 
+      const onToggleAggregations = jest.fn();
+
       render(
         <Table
           id="test"
@@ -1606,6 +1608,11 @@ describe('Table', () => {
           data={tableData}
           tooltip="this is a tooltip"
           options={{ hasAggregations: true }}
+          actions={{
+            toolbar: {
+              onToggleAggregations,
+            },
+          }}
           view={{
             aggregations: {
               columns: [
@@ -1615,6 +1622,9 @@ describe('Table', () => {
                 },
               ],
             },
+          }}
+          i18n={{
+            toggleAggregations: '__Toggle aggregations__',
           }}
         />
       );
@@ -1628,9 +1638,8 @@ describe('Table', () => {
 
       userEvent.click(overflow);
 
-      userEvent.click(screen.getByText('Toggle Aggregations'));
-      // should throw, because the footer isn't in the document anymore.
-      expect(() => screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`)).toThrow();
+      userEvent.click(screen.getByText('__Toggle aggregations__'));
+      expect(onToggleAggregations).toHaveBeenCalled();
 
       // simple extra test to confirm the tooltip is there and help us
       // meet testing requirements.
