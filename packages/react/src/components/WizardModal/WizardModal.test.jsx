@@ -11,6 +11,11 @@ const commonWizardProps = {
   isClickable: true,
   onSubmit: jest.fn(),
   onClose: jest.fn(),
+  header: {
+    title: 'Test Title',
+    label: 'test label',
+    helptext: 'test help text.',
+  },
 };
 
 describe('WizardModal', () => {
@@ -19,6 +24,7 @@ describe('WizardModal', () => {
     const wrapper = mount(
       <WizardModal
         {...commonWizardProps}
+        header
         steps={[
           {
             label: 'step1',

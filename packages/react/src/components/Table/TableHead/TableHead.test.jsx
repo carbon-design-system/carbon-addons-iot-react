@@ -12,6 +12,7 @@ import { MIN_COLUMN_WIDTH } from './columnWidthUtilityFunctions';
 const { iotPrefix } = settings;
 
 const commonTableHeadProps = {
+  tableId: 'tablehead-test',
   /** List of columns */
   columns: [
     { id: 'col1', name: 'Column 1', isSortable: false },

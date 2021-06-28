@@ -117,6 +117,9 @@ describe('CardEditor', () => {
           VALUE: inDomText,
           COOL_NEW_CARD: inDomText,
         }}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
         supportedCardTypes={['VALUE', 'COOL_NEW_CARD']}
         icons={{
           VALUE: <EscalatorDown data-testid={testId} />,

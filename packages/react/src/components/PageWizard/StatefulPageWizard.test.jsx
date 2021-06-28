@@ -9,6 +9,8 @@ describe('StatefulPageWizard', () => {
     const mocks = {
       onNext: jest.fn(),
       onClose: jest.fn(),
+      onSubmit: jest.fn(),
+      onClearError: jest.fn(),
     };
     const i18n = {
       next: 'Next',
@@ -34,6 +36,9 @@ describe('StatefulPageWizard', () => {
     const mocks = {
       onNext: jest.fn(),
       onBack: jest.fn(),
+      onSubmit: jest.fn(),
+      onClearError: jest.fn(),
+      onClose: jest.fn(),
     };
     const i18n = {
       next: 'Next',
@@ -64,6 +69,8 @@ describe('StatefulPageWizard', () => {
       onBack: jest.fn(),
       onNext: jest.fn(),
       onSubmit: jest.fn(),
+      onClearError: jest.fn(),
+      onClose: jest.fn(),
     };
     const i18n = {
       back: 'Back',
@@ -94,6 +101,9 @@ describe('StatefulPageWizard', () => {
     const mocks = {
       isClickable: true,
       setStep: jest.fn(),
+      onClose: jest.fn(),
+      onSubmit: jest.fn(),
+      onClearError: jest.fn(),
     };
 
     render(
@@ -111,6 +121,9 @@ describe('StatefulPageWizard', () => {
     const mocks = {
       isClickable: true,
       setStep: jest.fn(),
+      onClose: jest.fn(),
+      onSubmit: jest.fn(),
+      onClearError: jest.fn(),
     };
 
     render(<StatefulPageWizard {...mocks}>{content}</StatefulPageWizard>);
@@ -121,12 +134,18 @@ describe('StatefulPageWizard', () => {
   });
 
   it('not passing onBack function does not blow things up', () => {
+    const mocks = {
+      onClose: jest.fn(),
+      onClearError: jest.fn(),
+      onSubmit: jest.fn(),
+    };
+
     const i18n = {
       back: 'Back',
       next: 'Next',
     };
     const renderedElement = render(
-      <StatefulPageWizard currentStepId="step2" i18n={i18n} hasStickyFooter>
+      <StatefulPageWizard currentStepId="step2" i18n={i18n} {...mocks} hasStickyFooter>
         {content}
       </StatefulPageWizard>
     );
