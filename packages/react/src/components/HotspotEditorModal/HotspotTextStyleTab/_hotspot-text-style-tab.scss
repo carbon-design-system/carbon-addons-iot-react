@@ -30,7 +30,7 @@ $border-radius: 5px;
       width: 100%;
     }
 
-    .bx--form-item {
+    .#{$prefix}--form-item {
       min-width: 10rem;
     }
   }
