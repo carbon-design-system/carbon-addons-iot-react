@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.36...v2.146.0-next.37) (2021-06-25)
+
+
+### Bug Fixes
+
+* **table:** bring toggleAggregations into alignment with other actions ([3870e0b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3870e0ba2c56b12367ea622b718cdf1af80a513e))
+* **table:** move onToggleAggregations into toolbar and fix proptypes ([b14007a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b14007a0a96e06888a57f6f27792214522566369))
+* **table:** revert onToggleAggregations change ([6a2f986](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6a2f98679fbf33624810ff86e304a3ca1ea95300))
+* **table:** try not passing event to toggle action ([38a5ce1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/38a5ce1b0f8bc5ef10c542b0f60e88498fa86eaf))
+* **table:** try not passing event to toggle action ([aefabda](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aefabda022ecb3e141daf69ffca6e052c517e333))
+* **table:** useEffect to keep backwards compatibility in aggregations ([444bf66](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/444bf661078519f69cdf63b762bbbdcfccc66cb9))
+
+
+
+
+
+# [2.146.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.35...v2.146.0-next.36) (2021-06-23)
+
+
+### Bug Fixes
+
+* **dashboard-grid:** grid should generate layouts for all supported breakpoints for each card ([49d392b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/49d392b51bb1a201702ed0724a45f68562b77664))
+
+
+
+
+
 # [2.146.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.33...v2.146.0-next.35) (2021-06-23)
 
 

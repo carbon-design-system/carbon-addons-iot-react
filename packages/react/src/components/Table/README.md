@@ -16,6 +16,7 @@
   - [☢️ Advanced Filtering Experimental](#%EF%B8%8F-advanced-filtering-experimental)
 - [Pagination](#pagination)
 - [Batch actions](#batch-actions)
+- [Aggregation](#aggregation)
 - [Props](#props)
   - [Column Prop](#column-prop)
   - [Data Prop](#data-prop)
@@ -753,6 +754,38 @@ the following props:
 />
 ```
 
+## Aggregation
+
+The table can sum columns and show their aggregate total in a footer. A custom value can be passed, a function to sum the rows, or a default sum function will be provided. The `onToggleAggregations` prop passed to `actions.toolbar` serves as a callback to show or hide the the aggregations row in the bottom by changing the `aggregations.isHidden` prop.
+
+```jsx
+<Table
+  actions={{
+    toolbar: {
+      onToggleAggregations: () => {},
+    },
+  }}
+  options={{
+    hasAggregations: true,
+  }}
+  view={{
+    aggregations: {
+      label: 'Total:',
+      columns: [
+        {
+          id: 'number',
+          align: 'start',
+          isSortable: false,
+          // a function to sum the totals, or a given total to display
+          // value: (values) => string, '61056171'
+        },
+      ],
+      isHidden: false,
+    },
+  }}
+/>
+```
+
 ## Props
 
 ### Table Props
@@ -855,10 +888,13 @@ the following props:
 | Name                                    | Type                             | Default | Description                                                                                                                                         |
 | :-------------------------------------- | :------------------------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
 | aggregations                            | object                           |         | Allows certain columns to have an aggregated value in the footer of the table                                                                       |
-| aggregations[].id                       | string                           |         | The columnId of the column to aggregate                                                                                                             |
-| aggregations[].value                    | string or func                   |         | If the aggregation is computed elsewhere, the value can be passed here, or a function can be passed to compute it on the fly                        |
-| aggregations[].align                    | 'start', 'center', or 'end'      |         | allows the aggregate value to align with the rest of the column                                                                                     |
-| aggregations[].isSortable               | bool                             |         | Ensures the aggregate value aligns with the rest of the column by supplying the extra padding needed when a column is sortable                      |
+| aggregations.label                      | string                           |         | The text label for the aggregations bar in the table footer                                                                                         |
+| aggregations.isHidden                   | bool                             |         | hide the aggregations bar in the footer                                                                                                             |
+| aggregations.columns                    | arrayOf(object)                  |         |                                                                                                                                                     |
+| aggregations.columns[].id               | string                           |         | The columnId of the column to aggregate                                                                                                             |
+| aggregations.columns[].value            | string or func                   |         | If the aggregation is computed elsewhere, the value can be passed here, or a function can be passed to compute it on the fly                        |
+| aggregations.columns[].align            | 'start', 'center', or 'end'      |         | allows the aggregate value to align with the rest of the column                                                                                     |
+| aggregations.columns[].isSortable       | bool                             |         | Ensures the aggregate value aligns with the rest of the column by supplying the extra padding needed when a column is sortable                      |
 | pagination                              | object                           |         | Sets the pagination values for the table                                                                                                            |
 | pagination.pageSize                     | number                           |         | How many rows are displayed per page                                                                                                                |
 | pagination.pageSizes                    | number[]                         |         | An array of selections for choosing how many rows are displayed per page.                                                                           |
@@ -942,6 +978,7 @@ the following props:
 | toolbar.onCreateAdvancedFilter  | func   |         | Fired the 'create new advanced filter' button is clicked.                                                                                                                                                       |
 | toolbar.onCancelAdvancedFilter  | func   |         | Fired when then 'Cancel' button is clicked in the advanced filter flyout menu                                                                                                                                   |
 | toolbar.onChangeAdvancedFilter  | func   |         | Fired when an advanced filter is selected or removed.                                                                                                                                                           |
+| toolbar.onToggleAggregations    | func   |         | Fired when the "Toggle aggregations" option is clicked from the overflow menu in the table toolbar                                                                                                              |
 | table                           | object |         |                                                                                                                                                                                                                 |
 | table.onRowSelected             | func   |         |                                                                                                                                                                                                                 |
 | table.onRowClicked              | func   |         |                                                                                                                                                                                                                 |
