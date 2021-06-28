@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback, useRef } from 'react';
+import React, { useMemo, useState, useRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
@@ -126,6 +126,8 @@ const propTypes = {
           isSortable: PropTypes.bool,
         })
       ),
+      /** hide the aggregation row without removing the aggregations object */
+      isHidden: PropTypes.bool,
     }),
     pagination: PropTypes.shape({
       pageSize: PropTypes.number,
@@ -238,6 +240,8 @@ const propTypes = {
       onCancelAdvancedFilter: PropTypes.func,
       /** Fired when an advanced filter is selected or removed. */
       onChangeAdvancedFilter: PropTypes.func,
+      /** fired when 'Toggle aggregations' is clicked in the overflow menu */
+      onToggleAggregations: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -351,6 +355,10 @@ export const defaultProps = (baseProps) => ({
       onApplyAdvancedFilter: defaultFunction('actions.toolbar.onApplyAdvancedFilter'),
       onChangeAdvancedFilter: defaultFunction('actions.toolbar.onChangeAdvancedFilter'),
       onToggleAdvancedFilter: defaultFunction('actions.toolbar.onToggleAdvancedFilter'),
+      // TODO: removed to mimic the current state of consumers in the wild
+      // since they won't be adding this prop to any of their components
+      // can be readded in V3.
+      // onToggleAggregations: defaultFunction('actions.toolbar.onToggleAggregations'),
     },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
@@ -404,7 +412,7 @@ export const defaultProps = (baseProps) => ({
     itemsSelected: 'items selected',
     itemSelected: 'item selected',
     rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
-    toggleAggregations: 'Toggle Aggregations',
+    toggleAggregations: 'Toggle aggregations',
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageBody: '',
@@ -568,17 +576,39 @@ const Table = (props) => {
       ).isHidden
   );
 
-  const [hasAggregations, setHasAggregations] = useState(options.hasAggregations);
   const aggregationsProp = view.aggregations;
   const getColumnNumbers = (tableData, columnId) =>
     tableData.map((row) => row.values[columnId]).filter((value) => Number.isFinite(value));
 
-  const onToggleAggregations = useCallback(() => setHasAggregations((prev) => !prev), [
-    setHasAggregations,
+  /**
+   * All of this was written incorrectly the first time, and needs to be removed in v3. However,
+   * to maintain backwards compatibility for a minor release the state management is left in
+   * the Table here, and a useEffect is added. If the onToggleAggregations callback is not supplied
+   * by the consumer we manage the aggregations state here in the table, but if it is provided,
+   * we push the management of the aggregations.isHidden prop to the consumer to manage. Once
+   * we move to v3. The useState, useCallback, and useEffects can all be removed and just call
+   * the onToggleAggregations from the actions.toolbar prop.
+   */
+  const [hideAggregations, setHideAggregations] = useState(!options.hasAggregations);
+  const statefulOnToggleAggregations = useCallback(() => setHideAggregations((prev) => !prev), [
+    setHideAggregations,
   ]);
 
+  useEffect(() => {
+    if (!actions.toolbar.onToggleAggregations) {
+      setHideAggregations(!options.hasAggregations);
+    }
+  }, [actions.toolbar.onToggleAggregations, options.hasAggregations]);
+
+  const onToggleAggregations = actions.toolbar.onToggleAggregations
+    ? actions.toolbar.onToggleAggregations
+    : statefulOnToggleAggregations;
+
+  const aggregationsAreHidden =
+    aggregationsProp?.isHidden !== undefined ? aggregationsProp.isHidden : hideAggregations;
+
   const aggregations = useMemo(() => {
-    return hasAggregations && aggregationsProp.columns
+    return options.hasAggregations && aggregationsProp.columns
       ? {
           label: aggregationsProp.label,
           columns: aggregationsProp.columns.map((col) => {
@@ -594,10 +624,16 @@ const Table = (props) => {
             }
             return calculateValue ? { ...col, value: aggregatedValue.toString() } : col;
           }),
-          align: aggregationsProp.align,
+          isHidden: aggregationsAreHidden,
         }
       : undefined;
-  }, [data, hasAggregations, aggregationsProp]);
+  }, [
+    options.hasAggregations,
+    aggregationsProp.columns,
+    aggregationsProp.label,
+    aggregationsAreHidden,
+    data,
+  ]);
 
   const showExpanderColumn = useShowExpanderColumn({
     hasResize: options.hasResize,
@@ -693,13 +729,13 @@ const Table = (props) => {
                 'onRemoveAdvancedFilter',
                 'onToggleAdvancedFilter'
               ),
+              onToggleAggregations,
               onApplySearch: (value) => {
                 searchValue.current = value;
                 if (actions.toolbar?.onApplySearch) {
                   actions.toolbar.onApplySearch(value);
                 }
               },
-              onToggleAggregations,
             }}
             options={{
               ...pick(
@@ -783,7 +819,7 @@ const Table = (props) => {
             options={{
               ...pick(
                 options,
-                'hasAggregation',
+                'hasAggregations',
                 'hasColumnSelectionConfig',
                 'hasResize',
                 'hasRowActions',
@@ -927,7 +963,8 @@ const Table = (props) => {
               />
             )
           }
-          {hasAggregations ? (
+
+          {options.hasAggregations && !aggregationsAreHidden ? (
             <TableFoot
               options={{
                 ...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions'),

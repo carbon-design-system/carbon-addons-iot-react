@@ -28,6 +28,7 @@ import {
   tableAdvancedFiltersApply,
   tableAdvancedFiltersCancel,
   tableAdvancedFiltersCreate,
+  tableToggleAggregations,
   tableMultiSortToggleModal,
   tableSaveMultiSortColumns,
   tableCancelMultiSortColumns,
@@ -137,6 +138,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onApplyAdvancedFilter,
     onCancelAdvancedFilter,
     onCreateAdvancedFilter,
+    onToggleAggregations,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -243,6 +245,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onCreateAdvancedFilter: () => {
         dispatch(tableAdvancedFiltersCreate());
         callbackParent(onCreateAdvancedFilter);
+      },
+      onToggleAggregations: () => {
+        dispatch(tableToggleAggregations());
+        callbackParent(onToggleAggregations);
       },
       onDownloadCSV,
     },
