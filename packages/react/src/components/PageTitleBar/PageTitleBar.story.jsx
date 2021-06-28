@@ -11,7 +11,7 @@ import { getTiles } from '../TileCatalogNew/TileCatalogNew.story';
 import Button from '../Button';
 
 import PageTitleBar from './PageTitleBar';
-import PageTitleBarREADME from './PageTitleBar.md';
+import PageTitleBarREADME from './PageTitleBar.mdx';
 
 export const commonPageTitleBarProps = {
   title: 'Page title',
