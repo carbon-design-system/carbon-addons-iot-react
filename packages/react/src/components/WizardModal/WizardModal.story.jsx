@@ -57,9 +57,7 @@ export const BasicWizardModal = () => (
   />
 );
 
-BasicWizardModal.story = {
-  name: 'basic wizard modal',
-};
+BasicWizardModal.storyName = 'basic wizard modal';
 
 export const CustomFooter = () => (
   <StyledWizard
@@ -95,9 +93,7 @@ export const CustomFooter = () => (
   />
 );
 
-CustomFooter.story = {
-  name: 'custom footer',
-};
+CustomFooter.storyName = 'custom footer';
 
 export const SendingData = () => (
   <WizardModal
@@ -128,6 +124,4 @@ export const SendingData = () => (
   />
 );
 
-SendingData.story = {
-  name: 'sending data',
-};
+SendingData.storyName = 'sending data';

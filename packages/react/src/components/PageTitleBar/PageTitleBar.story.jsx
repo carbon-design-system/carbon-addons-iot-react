@@ -93,9 +93,7 @@ export const Base = withReadme(README, () => {
   );
 });
 
-Base.story = {
-  name: 'base',
-};
+Base.storyName = 'base';
 
 export const WithTooltipDescriptionWithNode = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
@@ -115,9 +113,7 @@ export const WithTooltipDescriptionWithNode = withReadme(README, () => (
   </div>
 ));
 
-WithTooltipDescriptionWithNode.story = {
-  name: 'with tooltip description with node',
-};
+WithTooltipDescriptionWithNode.storyName = 'with tooltip description with node';
 
 export const WithStatusDescriptionAndCrumbs = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
@@ -133,9 +129,7 @@ export const WithStatusDescriptionAndCrumbs = withReadme(README, () => (
   </div>
 ));
 
-WithStatusDescriptionAndCrumbs.story = {
-  name: 'with status description and breadcrumbs',
-};
+WithStatusDescriptionAndCrumbs.storyName = 'with status description and breadcrumbs';
 
 export const WithEditableTitleBar = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
@@ -152,9 +146,7 @@ export const WithEditableTitleBar = withReadme(README, () => (
   </div>
 ));
 
-WithEditableTitleBar.story = {
-  name: 'with editable title bar and subtitle',
-};
+WithEditableTitleBar.storyName = 'with editable title bar and subtitle';
 
 export const WithSelect = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
@@ -215,9 +207,7 @@ export const WithSelect = withReadme(README, () => (
   </div>
 ));
 
-WithSelect.story = {
-  name: 'with select action and an overflowing page title',
-};
+WithSelect.storyName = 'with select action and an overflowing page title';
 
 export const WithEverything = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
@@ -293,9 +283,7 @@ export const WithEverything = withReadme(README, () => (
   </div>
 ));
 
-WithEverything.story = {
-  name: 'with breadcrumbs, actions, and tabs',
-};
+WithEverything.storyName = 'with breadcrumbs, actions, and tabs';
 
 export const WithCondensedHeader = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
@@ -336,9 +324,7 @@ export const WithCondensedHeader = withReadme(README, () => (
   </div>
 ));
 
-WithCondensedHeader.story = {
-  name: 'with condensed with primary + secondary buttons',
-};
+WithCondensedHeader.storyName = 'with condensed with primary + secondary buttons';
 
 export const WithCustomRenderFunction = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
@@ -357,9 +343,7 @@ export const WithCustomRenderFunction = withReadme(README, () => (
   </div>
 ));
 
-WithCustomRenderFunction.story = {
-  name: 'with custom render function',
-};
+WithCustomRenderFunction.storyName = 'with custom render function';
 
 export const WithDynamicScrolling = withReadme(README, () => (
   <div style={{ height: '150vh' }}>
@@ -417,11 +401,10 @@ export const WithDynamicScrolling = withReadme(README, () => (
   </div>
 ));
 
-WithDynamicScrolling.story = {
-  name: 'with dynamic with breadcrumbs, actions, and content',
-  info: {
-    text: `with dynamic scrolling, upper actions, and buttons the buttons should transition and sit next to the actions when the page header is condensed`,
-  },
+WithDynamicScrolling.storyName = 'with dynamic with breadcrumbs, actions, and content';
+
+WithDynamicScrolling.info = {
+  text: `with dynamic scrolling, upper actions, and buttons the buttons should transition and sit next to the actions when the page header is condensed`,
 };
 
 export const WithDynamicScrollingAndTabs = withReadme(README, () => (
@@ -489,9 +472,7 @@ export const WithDynamicScrollingAndTabs = withReadme(README, () => (
   </div>
 ));
 
-WithDynamicScrollingAndTabs.story = {
-  name: 'with dynamic with breadcrumbs, actions, and tabs',
-};
+WithDynamicScrollingAndTabs.storyName = 'with dynamic with breadcrumbs, actions, and tabs';
 
 WithDynamicScrollingAndTabs.parameters = {
   info: {

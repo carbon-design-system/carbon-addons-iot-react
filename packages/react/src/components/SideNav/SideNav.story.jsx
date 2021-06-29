@@ -157,64 +157,62 @@ export const SideNavComponent = () => (
   </FullWidthWrapper>
 );
 
-SideNavComponent.story = {
-  name: 'SideNav component',
+SideNavComponent.storyName = 'SideNav component';
 
-  parameters: {
-    info: {
-      text: `
-    When implementing the Header and SideNav components you must utilized the HeaderContainer component
+SideNavComponent.parameters = {
+  info: {
+    text: `
+  When implementing the Header and SideNav components you must utilized the HeaderContainer component
 
-    <br/>
+  <br/>
 
-    ~~~js
-    <HeaderContainer
-    render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-      <>
-        <Header
-          {...HeaderProps}
-          isSideNavExpanded={isSideNavExpanded}
-          onClickSideNavExpand={onClickSideNavExpand}
-        />
-        <SideNav
-          links={links}
-          isSideNavExpanded={isSideNavExpanded}
-        />
-      </>
-    )}
-  />
+  ~~~js
+  <HeaderContainer
+  render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+    <>
+      <Header
+        {...HeaderProps}
+        isSideNavExpanded={isSideNavExpanded}
+        onClickSideNavExpand={onClickSideNavExpand}
+      />
+      <SideNav
+        links={links}
+        isSideNavExpanded={isSideNavExpanded}
+      />
+    </>
+  )}
+/>
 
-    ~~~
+  ~~~
 
-    <br/>
+  <br/>
 
-    If you want to style your main content to "push over" instead of being overlayed by the sidenav you can use the ".iot--side-nav--expanded" class. It could look something like this.
+  If you want to style your main content to "push over" instead of being overlayed by the sidenav you can use the ".iot--side-nav--expanded" class. It could look something like this.
 
-    <br/>
+  <br/>
 
-    ~~~scss
-    .iot--main-content {
-      width: calc(100% - 3rem);
-      transform: translateX(3rem);
-      transition: all .2s ease-in;
-    }
+  ~~~scss
+  .iot--main-content {
+    width: calc(100% - 3rem);
+    transform: translateX(3rem);
+    transition: all .2s ease-in;
+  }
 
+  .iot--side-nav--expanded + .iot--main-content {
+    width: calc(100% - 16rem);
+    transform: translateX(16rem);
+  }
+
+  html[dir='rtl'] {
+    .iot--main-content,
     .iot--side-nav--expanded + .iot--main-content {
-      width: calc(100% - 16rem);
-      transform: translateX(16rem);
+      transform: translateX(0);
     }
 
-    html[dir='rtl'] {
-      .iot--main-content,
-      .iot--side-nav--expanded + .iot--main-content {
-        transform: translateX(0);
-      }
+  }
 
-    }
+  ~~~
 
-    ~~~
-
-    `,
-    },
+  `,
   },
 };

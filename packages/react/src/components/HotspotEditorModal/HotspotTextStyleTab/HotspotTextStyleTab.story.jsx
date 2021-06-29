@@ -78,31 +78,29 @@ export const Default = () => {
   );
 };
 
-Default.story = {
-  name: 'default',
+Default.storyName = 'default';
 
-  parameters: {
-    info: {
-      propTables: [HotspotTextStyleTab],
-      text: `This is an example of the <HotspotTextStyleTab> HotSpot sub component. The state needs to be managed by the consuming application.
+Default.parameters = {
+  info: {
+    propTables: [HotspotTextStyleTab],
+    text: `This is an example of the <HotspotTextStyleTab> HotSpot sub component. The state needs to be managed by the consuming application.
 
-      ~~~js
-    const [formValues, setFormValues] = useState({});
+    ~~~js
+  const [formValues, setFormValues] = useState({});
 
-      return (
-        <HotspotTextStyleTab
-          fontColors={colors}
-          backgroundColors={colors}
-          borderColors={colors}
-          formValues={formValues}
-          onChange={(change) => {
-            setFormValues(merge({}, formValues, change));
-            action('onChange')(change);
-          }}
-        />
-      );
-      ~~~
-      `,
-    },
+    return (
+      <HotspotTextStyleTab
+        fontColors={colors}
+        backgroundColors={colors}
+        borderColors={colors}
+        formValues={formValues}
+        onChange={(change) => {
+          setFormValues(merge({}, formValues, change));
+          action('onChange')(change);
+        }}
+      />
+    );
+    ~~~
+    `,
   },
 };

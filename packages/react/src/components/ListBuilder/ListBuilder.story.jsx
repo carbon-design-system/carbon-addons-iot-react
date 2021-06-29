@@ -13,9 +13,7 @@ import ListBuilder from './ListBuilder';
 import README from './README.md';
 
 export const Experimental = () => <StoryNotice componentName="ListBuilder" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 export const NoItemsSelected = withReadme(README, () => (
   <ListBuilder
@@ -33,9 +31,7 @@ export const NoItemsSelected = withReadme(README, () => (
   />
 ));
 
-NoItemsSelected.story = {
-  name: 'with no items selected',
-};
+NoItemsSelected.storyName = 'with no items selected';
 
 export const ItemsSelected = withReadme(README, () => (
   <ListBuilder
@@ -53,9 +49,7 @@ export const ItemsSelected = withReadme(README, () => (
   />
 ));
 
-ItemsSelected.story = {
-  name: 'with items selected',
-};
+ItemsSelected.storyName = 'with items selected';
 
 export const StatefulExample = withReadme(README, () => {
   const [selected, setSelected] = useState([]);
@@ -109,10 +103,8 @@ export const StatefulExample = withReadme(README, () => {
   );
 });
 
-StatefulExample.story = {
-  name: 'stateful example',
-  decorators: [createElement],
-};
+StatefulExample.storyName = 'stateful example';
+StatefulExample.decorators = [createElement];
 
 const itemsAreEqual = (item1, item2) => {
   if (!item1 || !item2) {
@@ -283,10 +275,8 @@ export const ComplexNestedExample = withReadme(README, () => {
   );
 });
 
-ComplexNestedExample.story = {
-  name: 'complex nested example',
-  decorators: [createElement],
-};
+ComplexNestedExample.storyName = 'complex nested example';
+ComplexNestedExample.decorators = [createElement];
 
 export default {
   title: '2 - Watson IoT Experimental/☢️ ListBuilder',

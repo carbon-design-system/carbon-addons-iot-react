@@ -61,9 +61,7 @@ export const menuItems = [
 ];
 
 export const Experimental = () => <StoryNotice componentName="MenuButton" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 const SingleButton = () => <MenuButton label="Actions">{menuItems}</MenuButton>;
 /**
@@ -71,9 +69,7 @@ const SingleButton = () => <MenuButton label="Actions">{menuItems}</MenuButton>;
  */
 export const SingleMenuButton = withReadme(README, () => <SingleButton />);
 
-SingleMenuButton.story = {
-  name: 'menu button',
-};
+SingleMenuButton.storyName = 'menu button';
 
 /**
  * if a primary action and label are given, then we assume it's a split button.
@@ -87,9 +83,7 @@ const SplitButton = () => (
 
 export const SplitMenuButton = withReadme(README, () => <SplitButton />);
 
-SplitMenuButton.story = {
-  name: 'split menu button',
-};
+SplitMenuButton.storyName = 'split menu button';
 
 /**
  * if no label is given then it assumes it's an icon only menu.
@@ -102,9 +96,7 @@ const IconOnlyButton = () => (
 
 export const IconOnlyMenuButton = withReadme(README, () => <IconOnlyButton />);
 
-IconOnlyMenuButton.story = {
-  name: 'icon only menu button',
-};
+IconOnlyMenuButton.storyName = 'icon only menu button';
 
 export const AutoPositioningExample = () => {
   const COMPONENTS = {
@@ -228,9 +220,7 @@ export const AutoPositioningExample = () => {
   );
 };
 
-AutoPositioningExample.story = {
-  name: 'icon only with auto positioning',
-};
+AutoPositioningExample.storyName = 'icon only with auto positioning';
 
 export default {
   title: '2 - Watson IoT Experimental/☢️ MenuButton',

@@ -47,9 +47,7 @@ export const Default = () => (
   />
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const WithPreloadedContent = () => (
   <CardCodeEditor
@@ -60,6 +58,4 @@ export const WithPreloadedContent = () => (
   />
 );
 
-WithPreloadedContent.story = {
-  name: 'with preloaded content',
-};
+WithPreloadedContent.storyName = 'with preloaded content';

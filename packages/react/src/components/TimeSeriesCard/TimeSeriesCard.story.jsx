@@ -71,9 +71,7 @@ export const SinglePoint = withReadme(README, () => {
   );
 });
 
-SinglePoint.story = {
-  name: 'with single point and variables',
-};
+SinglePoint.storyName = 'with single point and variables';
 
 export const SingleLineIntervalDataChoices = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -132,9 +130,8 @@ export const SingleLineIntervalDataChoices = withReadme(README, () => {
   );
 });
 
-SingleLineIntervalDataChoices.story = {
-  name: 'with single line, intervals, configurable data points, and zoomBar',
-};
+SingleLineIntervalDataChoices.storyName =
+  'with single line, intervals, configurable data points, and zoomBar';
 
 export const MultiLineIntervalDataChoices = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -209,9 +206,8 @@ export const MultiLineIntervalDataChoices = withReadme(README, () => {
   );
 });
 
-MultiLineIntervalDataChoices.story = {
-  name: 'with multiple lines, intervals, configurable data points, and zoomBar',
-};
+MultiLineIntervalDataChoices.storyName =
+  'with multiple lines, intervals, configurable data points, and zoomBar';
 
 export const CustomColors = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -261,9 +257,7 @@ export const CustomColors = withReadme(README, () => {
   );
 });
 
-CustomColors.story = {
-  name: 'with custom colors',
-};
+CustomColors.storyName = 'with custom colors';
 
 export const DomainRange = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -308,9 +302,7 @@ export const DomainRange = withReadme(README, () => {
   );
 });
 
-DomainRange.story = {
-  name: 'with domainRange',
-};
+DomainRange.storyName = 'with domainRange';
 
 export const HighlightAlertRanges = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -372,9 +364,7 @@ export const HighlightAlertRanges = withReadme(README, () => {
   );
 });
 
-HighlightAlertRanges.story = {
-  name: 'with highlight alert ranges',
-};
+HighlightAlertRanges.storyName = 'with highlight alert ranges';
 
 export const EmptyForARange = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -417,9 +407,7 @@ export const EmptyForARange = withReadme(README, () => {
   );
 });
 
-EmptyForARange.story = {
-  name: 'with empty for a range',
-};
+EmptyForARange.storyName = 'with empty for a range';
 
 export const IsEditable = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -473,9 +461,7 @@ export const IsEditable = withReadme(README, () => {
   );
 });
 
-IsEditable.story = {
-  name: 'with isEditable',
-};
+IsEditable.storyName = 'with isEditable';
 
 export const IsExpanded = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -591,9 +577,7 @@ export const IsExpanded = withReadme(README, () => {
   );
 });
 
-IsExpanded.story = {
-  name: 'with isExpanded',
-};
+IsExpanded.storyName = 'with isExpanded';
 
 export const DataFilter = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -663,9 +647,7 @@ export const DataFilter = withReadme(README, () => {
   );
 });
 
-DataFilter.story = {
-  name: 'with dataFilter',
-};
+DataFilter.storyName = 'with dataFilter';
 
 export const Thresholds = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -720,6 +702,4 @@ export const Thresholds = withReadme(README, () => {
   );
 });
 
-Thresholds.story = {
-  name: 'with thresholds',
-};
+Thresholds.storyName = 'with thresholds';

@@ -62,32 +62,31 @@ export const WithStateInStory = () => {
   return <WithState />;
 };
 
-WithStateInStory.story = {
-  name: 'Example with externaly managed state',
-  parameters: {
-    info: {
-      text: `
-      ~~~js
-      const WithState = () => {
-        const [formValues, setFormValues] = useState({});
-        return (
-          <div>
-            <HotspotEditorTooltipTab
-              showInfoMessage={boolean('showInfoMessage', false)}
-              hotspotIcons={selectableIcons}
-              formValues={formValues}
-              onChange={(change) => {
-                setFormValues({ ...formValues, ...change });
-                action('onChange')(change);
-              }}
-              onDelete={action('onDelete')}/>
-          </div>
-        );
-      };
-      ~~~
-      `,
-      propTables: [HotspotEditorTooltipTab],
-    },
+WithStateInStory.storyName = 'Example with externaly managed state';
+
+WithStateInStory.parameters = {
+  info: {
+    text: `
+    ~~~js
+    const WithState = () => {
+      const [formValues, setFormValues] = useState({});
+      return (
+        <div>
+          <HotspotEditorTooltipTab
+            showInfoMessage={boolean('showInfoMessage', false)}
+            hotspotIcons={selectableIcons}
+            formValues={formValues}
+            onChange={(change) => {
+              setFormValues({ ...formValues, ...change });
+              action('onChange')(change);
+            }}
+            onDelete={action('onDelete')}/>
+        </div>
+      );
+    };
+    ~~~
+    `,
+    propTables: [HotspotEditorTooltipTab],
   },
 };
 

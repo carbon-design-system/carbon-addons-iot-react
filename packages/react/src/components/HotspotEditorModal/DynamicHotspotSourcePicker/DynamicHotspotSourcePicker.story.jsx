@@ -56,16 +56,15 @@ export const WithStateInStory = () => {
   return <WithState />;
 };
 
-WithStateInStory.story = {
-  name: 'Example with externaly managed state',
-  parameters: {
-    info: {
-      text: `
-      ~~~js
+WithStateInStory.storyName = 'Example with externaly managed state';
 
-      ~~~
-      `,
-      propTables: [DynamicHotspotSourcePicker],
-    },
+WithStateInStory.parameters = {
+  info: {
+    text: `
+    ~~~js
+
+    ~~~
+    `,
+    propTables: [DynamicHotspotSourcePicker],
   },
 };

@@ -15,9 +15,7 @@ import OpenLayersExample from './storyFiles/OpenLayersExample';
 import MapCardREADME from './README.md';
 
 export const Experimental = () => <StoryNotice componentName="MapCard" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 export const MapboxStory = withReadme(MapCardREADME, () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
@@ -47,9 +45,7 @@ export const MapboxStory = withReadme(MapCardREADME, () => {
   );
 });
 
-MapboxStory.story = {
-  name: 'Using Mapbox',
-};
+MapboxStory.storyName = 'Using Mapbox';
 
 export const MapboxDragPanelsStory = withReadme(MapCardREADME, () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
@@ -81,9 +77,7 @@ export const MapboxDragPanelsStory = withReadme(MapCardREADME, () => {
   );
 });
 
-MapboxDragPanelsStory.story = {
-  name: 'Using Mapbox with draggable panels',
-};
+MapboxDragPanelsStory.storyName = 'Using Mapbox with draggable panels';
 
 export const OpenlayersStory = withReadme(MapCardREADME, () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
@@ -113,9 +107,7 @@ export const OpenlayersStory = withReadme(MapCardREADME, () => {
   );
 });
 
-OpenlayersStory.story = {
-  name: 'Using Open layers',
-};
+OpenlayersStory.storyName = 'Using Open layers';
 
 export default {
   title: '2 - Watson IoT Experimental/☢️ MapCard',

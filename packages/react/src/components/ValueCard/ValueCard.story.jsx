@@ -56,14 +56,12 @@ export const SmallLongNoUnits = withReadme(README, () => {
   );
 });
 
-SmallLongNoUnits.story = {
-  name: 'with long text and no units',
+SmallLongNoUnits.storyName = 'with long text and no units';
 
-  parameters: {
-    info: {
-      text:
-        'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
-    },
+SmallLongNoUnits.parameters = {
+  info: {
+    text:
+      'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
   },
 };
 
@@ -114,9 +112,7 @@ export const WithTrends = withReadme(README, () => {
   );
 });
 
-WithTrends.story = {
-  name: 'with trends, variables, and label',
-};
+WithTrends.storyName = 'with trends, variables, and label';
 
 export const WithThresholds = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
@@ -181,9 +177,7 @@ export const WithThresholds = withReadme(README, () => {
   );
 });
 
-WithThresholds.story = {
-  name: 'with thresholds, custom icon renderer, and custom formatter',
-};
+WithThresholds.storyName = 'with thresholds, custom icon renderer, and custom formatter';
 
 export const SmallWideThresholdsString = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
@@ -230,9 +224,7 @@ export const SmallWideThresholdsString = withReadme(README, () => {
   );
 });
 
-SmallWideThresholdsString.story = {
-  name: 'with thresholds (string)',
-};
+SmallWideThresholdsString.storyName = 'with thresholds (string)';
 
 export const MediumThin3 = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
@@ -325,9 +317,7 @@ export const MediumThin3 = withReadme(README, () => {
   );
 });
 
-MediumThin3.story = {
-  name: 'with three data points and thresholds',
-};
+MediumThin3.storyName = 'with three data points and thresholds';
 
 export const WithFourDataPoints = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
@@ -378,9 +368,7 @@ export const WithFourDataPoints = withReadme(README, () => {
   );
 });
 
-WithFourDataPoints.story = {
-  name: 'with four data points',
-};
+WithFourDataPoints.storyName = 'with four data points';
 
 export const Large5 = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -430,9 +418,7 @@ export const Large5 = withReadme(README, () => {
   );
 });
 
-Large5.story = {
-  name: 'with five data points',
-};
+Large5.storyName = 'with five data points';
 
 export const LargeThin6 = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGETHIN);
@@ -486,9 +472,7 @@ export const LargeThin6 = withReadme(README, () => {
   );
 });
 
-LargeThin6.story = {
-  name: 'with six data points',
-};
+LargeThin6.storyName = 'with six data points';
 
 export const DataStateNoDataMediumScrollPage = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -538,9 +522,7 @@ export const DataStateNoDataMediumScrollPage = withReadme(README, () => {
   );
 });
 
-DataStateNoDataMediumScrollPage.story = {
-  name: 'with data state, custom icon',
-};
+DataStateNoDataMediumScrollPage.storyName = 'with data state, custom icon';
 
 export const Editable = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -580,9 +562,7 @@ export const Editable = withReadme(README, () => {
   );
 });
 
-Editable.story = {
-  name: 'with isEditable',
-};
+Editable.storyName = 'with isEditable';
 
 export const DataFilters = withReadme(README, () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -627,6 +607,4 @@ export const DataFilters = withReadme(README, () => {
   );
 });
 
-DataFilters.story = {
-  name: 'with dataFilters',
-};
+DataFilters.storyName = 'with dataFilters';

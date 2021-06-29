@@ -164,41 +164,40 @@ export const WithStateInStory = () => {
   return <WithState />;
 };
 
-WithStateInStory.story = {
-  name: 'Example with state in story',
-  parameters: {
-    info: {
-      text: `
-      ~~~js
-      const WithState = () => {
-        const { selectedHotspot, updateHotspotDataSource } = useHotspotEditorState({
-          initialState: {
-            selectedHotspot: cardConfig.content.hotspots[0],
-          },
-        });
-        return (
-          <div>
-            <HotspotEditorDataSourceTab
-              hotspot={selectedHotspot}
-              cardConfig={update(cardConfig, {
-                content: {
-                  hotspots: { $set: [selectedHotspot] },
-                },
-              })}
-              dataItems={dataItems}
-              translateWithId={() => {}}
-              onChange={(newData) => {
-                updateHotspotDataSource(newData);
-                action('onChange')(newData);
-              }}
-            />
-          </div>
-        );
-      };
-      ~~~
-      `,
-      propTables: [HotspotEditorDataSourceTab],
-    },
+WithStateInStory.storyName = 'Example with state in story';
+
+WithStateInStory.parameters = {
+  info: {
+    text: `
+    ~~~js
+    const WithState = () => {
+      const { selectedHotspot, updateHotspotDataSource } = useHotspotEditorState({
+        initialState: {
+          selectedHotspot: cardConfig.content.hotspots[0],
+        },
+      });
+      return (
+        <div>
+          <HotspotEditorDataSourceTab
+            hotspot={selectedHotspot}
+            cardConfig={update(cardConfig, {
+              content: {
+                hotspots: { $set: [selectedHotspot] },
+              },
+            })}
+            dataItems={dataItems}
+            translateWithId={() => {}}
+            onChange={(newData) => {
+              updateHotspotDataSource(newData);
+              action('onChange')(newData);
+            }}
+          />
+        </div>
+      );
+    };
+    ~~~
+    `,
+    propTables: [HotspotEditorDataSourceTab],
   },
 };
 
@@ -233,40 +232,39 @@ export const WithPresetValues = () => {
   return <WithState />;
 };
 
-WithPresetValues.story = {
-  name: 'With preset values',
-  parameters: {
-    info: {
-      text: `
-      ~~~js
-      const WithState = () => {
-        const { selectedHotspot, updateHotspotDataSource } = useHotspotEditorState({
-          initialState: {
-            selectedHotspot: cardConfigWithPresets.content.hotspots[0],
-          },
-        });
-        return (
-          <div>
-            <HotspotEditorDataSourceTab
-              hotspot={selectedHotspot}
-              cardConfig={update(cardConfigWithPresets, {
-                content: {
-                  hotspots: { $set: [selectedHotspot] },
-                },
-              })}
-              dataItems={dataItems}
-              translateWithId={() => {}}
-              onChange={(newData) => {
-                updateHotspotDataSource(newData);
-                action('onChange')(newData);
-              }}
-            />
-          </div>
-        );
-      };
-      ~~~
-      `,
-      propTables: [HotspotEditorDataSourceTab],
-    },
+WithPresetValues.storyName = 'With preset values';
+
+WithPresetValues.parameters = {
+  info: {
+    text: `
+    ~~~js
+    const WithState = () => {
+      const { selectedHotspot, updateHotspotDataSource } = useHotspotEditorState({
+        initialState: {
+          selectedHotspot: cardConfigWithPresets.content.hotspots[0],
+        },
+      });
+      return (
+        <div>
+          <HotspotEditorDataSourceTab
+            hotspot={selectedHotspot}
+            cardConfig={update(cardConfigWithPresets, {
+              content: {
+                hotspots: { $set: [selectedHotspot] },
+              },
+            })}
+            dataItems={dataItems}
+            translateWithId={() => {}}
+            onChange={(newData) => {
+              updateHotspotDataSource(newData);
+              action('onChange')(newData);
+            }}
+          />
+        </div>
+      );
+    };
+    ~~~
+    `,
+    propTables: [HotspotEditorDataSourceTab],
   },
 };

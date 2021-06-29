@@ -70,9 +70,7 @@ export const SimpleBar = withReadme(README, () => {
   );
 });
 
-SimpleBar.story = {
-  name: 'with simple bar',
-};
+SimpleBar.storyName = 'with simple bar';
 
 export const SimpleBarTimeSeriesCustomDomainRange = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
@@ -132,9 +130,8 @@ export const SimpleBarTimeSeriesCustomDomainRange = withReadme(README, () => {
   );
 });
 
-SimpleBarTimeSeriesCustomDomainRange.story = {
-  name: 'with simple bar of time series data and custom domainRange',
-};
+SimpleBarTimeSeriesCustomDomainRange.storyName =
+  'with simple bar of time series data and custom domainRange';
 
 export const GroupedBar = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
@@ -189,9 +186,7 @@ export const GroupedBar = withReadme(README, () => {
   );
 });
 
-GroupedBar.story = {
-  name: 'with grouped bar',
-};
+GroupedBar.storyName = 'with grouped bar';
 
 export const StackedBar = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
@@ -244,9 +239,7 @@ export const StackedBar = withReadme(README, () => {
   );
 });
 
-StackedBar.story = {
-  name: 'with stacked bar',
-};
+StackedBar.storyName = 'with stacked bar';
 
 export const StackedBarTimeSeries = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
@@ -298,9 +291,7 @@ export const StackedBarTimeSeries = withReadme(README, () => {
   );
 });
 
-StackedBarTimeSeries.story = {
-  name: 'with stacked bar of time series data',
-};
+StackedBarTimeSeries.storyName = 'with stacked bar of time series data';
 
 export const StackedBarTimeSeriesWithCategories = withReadme(README, () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
@@ -348,6 +339,5 @@ export const StackedBarTimeSeriesWithCategories = withReadme(README, () => {
   );
 });
 
-StackedBarTimeSeriesWithCategories.story = {
-  name: 'with stacked bar of time series data and categories',
-};
+StackedBarTimeSeriesWithCategories.storyName =
+  'with stacked bar of time series data and categories';

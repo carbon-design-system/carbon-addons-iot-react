@@ -170,9 +170,7 @@ export const HeaderActionButtonsWithDropdowns = () => (
   </div>
 );
 
-HeaderActionButtonsWithDropdowns.story = {
-  name: 'Header action buttons with dropdowns',
-};
+HeaderActionButtonsWithDropdowns.storyName = 'Header action buttons with dropdowns';
 
 export const HeaderSubmenu = () => (
   <div style={{ width: '100%', height: '100vh' }}>
@@ -180,9 +178,7 @@ export const HeaderSubmenu = () => (
   </div>
 );
 
-HeaderSubmenu.story = {
-  name: 'header submenu',
-};
+HeaderSubmenu.storyName = 'header submenu';
 
 export const HeaderNoSubmenu = () => (
   <Header
@@ -198,9 +194,7 @@ export const HeaderNoSubmenu = () => (
   />
 );
 
-HeaderNoSubmenu.story = {
-  name: 'Header no submenu',
-};
+HeaderNoSubmenu.storyName = 'Header no submenu';
 
 export const HeaderSubtitle = () => (
   <div style={{ width: '100%', height: '100vh' }}>
@@ -208,9 +202,7 @@ export const HeaderSubtitle = () => (
   </div>
 );
 
-HeaderSubtitle.story = {
-  name: 'header subtitle',
-};
+HeaderSubtitle.storyName = 'header subtitle';
 
 export const SmallBreakpoint = () => (
   <div style={{ width: '100%', height: '100vh' }}>
@@ -246,9 +238,7 @@ export const SmallBreakpoint = () => (
   </div>
 );
 
-SmallBreakpoint.story = {
-  name: 'small breakpoint',
-};
+SmallBreakpoint.storyName = 'small breakpoint';
 
 export const HeaderComponentSubtitle = () => (
   <div style={{ width: '100%', height: '100vh' }}>
@@ -267,6 +257,4 @@ export const HeaderComponentSubtitle = () => (
   </div>
 );
 
-HeaderComponentSubtitle.story = {
-  name: 'header subtitle component',
-};
+HeaderComponentSubtitle.storyName = 'header subtitle component';

@@ -140,9 +140,7 @@ export const BasicSingleColumn = withReadme(README, () => (
   </div>
 ));
 
-BasicSingleColumn.story = {
-  name: 'basic (single column)',
-};
+BasicSingleColumn.storyName = 'basic (single column)';
 
 export const BasicSingleColumnWithSearch = withReadme(README, () => {
   const ListWithSearch = () => {
@@ -172,9 +170,7 @@ export const BasicSingleColumnWithSearch = withReadme(README, () => {
   return <ListWithSearch />;
 });
 
-BasicSingleColumnWithSearch.story = {
-  name: 'basic (single column) with search',
-};
+BasicSingleColumnWithSearch.storyName = 'basic (single column) with search';
 
 export const SelectableItems = withReadme(README, () => {
   const ListWithSelectableItems = () => {
@@ -200,9 +196,7 @@ export const SelectableItems = withReadme(README, () => {
   return <ListWithSelectableItems />;
 });
 
-SelectableItems.story = {
-  name: 'with selectable items',
-};
+SelectableItems.storyName = 'with selectable items';
 
 export const WithSecondaryValue = withReadme(README, () => (
   <div style={{ width: 400 }}>
@@ -222,9 +216,7 @@ export const WithSecondaryValue = withReadme(README, () => (
   </div>
 ));
 
-WithSecondaryValue.story = {
-  name: 'with secondaryValue',
-};
+WithSecondaryValue.storyName = 'with secondaryValue';
 
 export const WithIsLargeRowAndIcon = withReadme(README, () => (
   <div style={{ width: 400 }}>
@@ -246,9 +238,7 @@ export const WithIsLargeRowAndIcon = withReadme(README, () => (
   </div>
 ));
 
-WithIsLargeRowAndIcon.story = {
-  name: 'with isLargeRow and icon',
-};
+WithIsLargeRowAndIcon.storyName = 'with isLargeRow and icon';
 
 export const WithRowActionsSingle = withReadme(README, () => (
   <div style={{ width: 400 }}>
@@ -280,9 +270,7 @@ export const WithRowActionsSingle = withReadme(README, () => (
   </div>
 ));
 
-WithRowActionsSingle.story = {
-  name: 'with row actions (single)',
-};
+WithRowActionsSingle.storyName = 'with row actions (single)';
 
 export const WithRowActionsMultiple = withReadme(README, () => (
   <div style={{ width: 400 }}>
@@ -309,9 +297,7 @@ export const WithRowActionsMultiple = withReadme(README, () => (
   </div>
 ));
 
-WithRowActionsMultiple.story = {
-  name: 'with row actions (multiple)',
-};
+WithRowActionsMultiple.storyName = 'with row actions (multiple)';
 
 export const WithHierarchy = withReadme(README, () => (
   <div style={{ width: 400 }}>
@@ -358,9 +344,7 @@ export const WithHierarchy = withReadme(README, () => (
   </div>
 ));
 
-WithHierarchy.story = {
-  name: 'with hierarchy',
-};
+WithHierarchy.storyName = 'with hierarchy';
 
 export const WithCategoriesFixedHeight = withReadme(README, () => (
   <div style={{ width: 400, height: 600 }}>
@@ -403,9 +387,7 @@ export const WithCategoriesFixedHeight = withReadme(README, () => (
   </div>
 ));
 
-WithCategoriesFixedHeight.story = {
-  name: 'with categories, fixed height',
-};
+WithCategoriesFixedHeight.storyName = 'with categories, fixed height';
 
 export const WithEmptyState = withReadme(README, () => (
   <div style={{ width: 400, height: 600 }}>
@@ -420,9 +402,7 @@ export const WithEmptyState = withReadme(README, () => (
   </div>
 ));
 
-WithEmptyState.story = {
-  name: 'with empty state',
-};
+WithEmptyState.storyName = 'with empty state';
 
 export const WithCheckboxMultiSelection = withReadme(README, () => {
   const MultiSelectList = () => {
@@ -589,9 +569,7 @@ export const WithCheckboxMultiSelection = withReadme(README, () => {
   return <MultiSelectList />;
 });
 
-WithCheckboxMultiSelection.story = {
-  name: 'with checkbox multi-selection',
-};
+WithCheckboxMultiSelection.storyName = 'with checkbox multi-selection';
 
 export const WithTags = withReadme(README, () => (
   <div style={{ width: 400 }}>
@@ -615,9 +593,7 @@ export const WithTags = withReadme(README, () => (
   </div>
 ));
 
-WithTags.story = {
-  name: 'with tags',
-};
+WithTags.storyName = 'with tags';
 
 export const WithPagination = withReadme(README, () => (
   <div style={{ height: 300, overflow: 'auto', width: 400 }}>
@@ -641,6 +617,4 @@ export const WithPagination = withReadme(README, () => (
   </div>
 ));
 
-WithPagination.story = {
-  name: 'with pagination',
-};
+WithPagination.storyName = 'with pagination';

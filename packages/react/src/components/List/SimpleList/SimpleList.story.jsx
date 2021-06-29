@@ -147,9 +147,7 @@ export const Basic = withReadme(README, () => (
   </div>
 ));
 
-Basic.story = {
-  name: 'basic',
-};
+Basic.storyName = 'basic';
 
 export const ListWithEmptyRow = withReadme(README, () => (
   <div
@@ -177,9 +175,7 @@ export const ListWithEmptyRow = withReadme(README, () => (
   </div>
 ));
 
-ListWithEmptyRow.story = {
-  name: 'list with empty row',
-};
+ListWithEmptyRow.storyName = 'list with empty row';
 
 export const ListWithLargeRow = withReadme(README, () => (
   <div
@@ -208,9 +204,7 @@ export const ListWithLargeRow = withReadme(README, () => (
   </div>
 ));
 
-ListWithLargeRow.story = {
-  name: 'list with large row',
-};
+ListWithLargeRow.storyName = 'list with large row';
 
 export const ListWithMultipleActions = withReadme(README, () => (
   <div
@@ -238,9 +232,7 @@ export const ListWithMultipleActions = withReadme(README, () => (
   </div>
 ));
 
-ListWithMultipleActions.story = {
-  name: 'list with multiple actions',
-};
+ListWithMultipleActions.storyName = 'list with multiple actions';
 
 export const ListWithOverflowMenu = withReadme(README, () => (
   <div
@@ -268,9 +260,7 @@ export const ListWithOverflowMenu = withReadme(README, () => (
   </div>
 ));
 
-ListWithOverflowMenu.story = {
-  name: 'list with overflow menu',
-};
+ListWithOverflowMenu.storyName = 'list with overflow menu';
 
 export const LargeRowListWithMultipleActions = withReadme(README, () => (
   <div
@@ -299,9 +289,7 @@ export const LargeRowListWithMultipleActions = withReadme(README, () => (
   </div>
 ));
 
-LargeRowListWithMultipleActions.story = {
-  name: 'large row list with multiple actions',
-};
+LargeRowListWithMultipleActions.storyName = 'large row list with multiple actions';
 
 export const LargeRowListWithOverflowMenu = withReadme(README, () => (
   <div
@@ -330,9 +318,7 @@ export const LargeRowListWithOverflowMenu = withReadme(README, () => (
   </div>
 ));
 
-LargeRowListWithOverflowMenu.story = {
-  name: 'large row list with overflow menu',
-};
+LargeRowListWithOverflowMenu.storyName = 'large row list with overflow menu';
 
 export const ListWithReorder = () => {
   const SimpleListWithReorder = () => {
@@ -370,6 +356,4 @@ export const ListWithReorder = () => {
   return <SimpleListWithReorder />;
 };
 
-ListWithReorder.story = {
-  name: 'with reorder',
-};
+ListWithReorder.storyName = 'with reorder';

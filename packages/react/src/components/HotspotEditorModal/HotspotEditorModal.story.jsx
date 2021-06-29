@@ -11,9 +11,7 @@ import landscape from './landscape.jpg';
 import HotspotEditorModal from './HotspotEditorModal';
 
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 const selectableIcons = [
   {
@@ -117,11 +115,10 @@ export const Empty = () => {
     />
   );
 };
-Empty.story = {
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
+
+Empty.parameters = {
+  info: {
+    propTables: [HotspotEditorModal],
   },
 };
 
@@ -147,12 +144,11 @@ export const EmptyWithGetValidDataItemsCallback = () => {
     />
   );
 };
-EmptyWithGetValidDataItemsCallback.story = {
-  name: 'Empty with getValidDataItems callback',
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
+EmptyWithGetValidDataItemsCallback.storyName = 'Empty with getValidDataItems callback';
+
+EmptyWithGetValidDataItemsCallback.parameters = {
+  info: {
+    propTables: [HotspotEditorModal],
   },
 };
 
@@ -228,12 +224,11 @@ export const WidthExistingHotspots = () => {
     />
   );
 };
-WidthExistingHotspots.story = {
-  parameters: {
-    text: '',
-    info: {
-      propTables: [HotspotEditorModal],
-    },
+
+WidthExistingHotspots.parameters = {
+  text: '',
+  info: {
+    propTables: [HotspotEditorModal],
   },
 };
 
@@ -274,10 +269,9 @@ export const WidthExistingDynamicHotspots = () => {
     />
   );
 };
-WidthExistingDynamicHotspots.story = {
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
+
+WidthExistingDynamicHotspots.parameters = {
+  info: {
+    propTables: [HotspotEditorModal],
   },
 };

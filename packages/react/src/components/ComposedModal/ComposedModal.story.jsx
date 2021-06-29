@@ -44,9 +44,7 @@ export const WarningDialog = withReadme(README, () => (
   />
 ));
 
-WarningDialog.story = {
-  name: 'as warning dialog',
-};
+WarningDialog.storyName = 'as warning dialog';
 
 export const States = withReadme(README, () => {
   const error = text('error', 'an error has occurred');
@@ -84,9 +82,7 @@ export const States = withReadme(README, () => {
   );
 });
 
-States.story = {
-  name: 'with error, isFetchingData, and sendingData states',
-};
+States.storyName = 'with error, isFetchingData, and sendingData states';
 
 export const WithCustomFooter = withReadme(README, () => (
   <ComposedModal
@@ -113,9 +109,7 @@ export const WithCustomFooter = withReadme(README, () => (
   />
 ));
 
-WithCustomFooter.story = {
-  name: 'with custom footer',
-};
+WithCustomFooter.storyName = 'with custom footer';
 
 export const PrimaryButtonIsHidden = withReadme(README, () => (
   <ComposedModal
@@ -136,9 +130,7 @@ export const PrimaryButtonIsHidden = withReadme(README, () => (
   />
 ));
 
-PrimaryButtonIsHidden.story = {
-  name: 'with hidden or disabled buttons',
-};
+PrimaryButtonIsHidden.storyName = 'with hidden or disabled buttons';
 
 export const HeaderCustomNodes = withReadme(README, () => (
   <ComposedModal
@@ -155,9 +147,7 @@ export const HeaderCustomNodes = withReadme(README, () => (
   />
 ));
 
-HeaderCustomNodes.story = {
-  name: 'with custom header nodes',
-};
+HeaderCustomNodes.storyName = 'with custom header nodes';
 
 export const ComposedModalWithOverflowAndTooltip = withReadme(README, () => (
   <ComposedModal
@@ -186,6 +176,4 @@ export const ComposedModalWithOverflowAndTooltip = withReadme(README, () => (
   </ComposedModal>
 ));
 
-ComposedModalWithOverflowAndTooltip.story = {
-  name: 'with i18n, overflow menu, and tooltip',
-};
+ComposedModalWithOverflowAndTooltip.storyName = 'with i18n, overflow menu, and tooltip';

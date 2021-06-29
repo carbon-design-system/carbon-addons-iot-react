@@ -602,46 +602,44 @@ export const BasicDumbTable = withReadme(README, () => (
   />
 ));
 
-BasicDumbTable.story = {
-  name: 'basic `dumb` table',
+BasicDumbTable.storyName = 'basic `dumb` table';
 
-  parameters: {
-    info: {
-      text: `
+BasicDumbTable.parameters = {
+  info: {
+    text: `
 
-      For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
+    For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
 
-      <br />
+    <br />
 
-      To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
+    To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
 
-      <br />
+    <br />
 
-      Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
+    Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
 
-      <br />
+    <br />
 
-      ~~~js
-      import { tableReducer, tableActions } from 'carbon-addons-iot-react';
+    ~~~js
+    import { tableReducer, tableActions } from 'carbon-addons-iot-react';
 
-      const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
+    const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
 
-      const actions = {
-        table: {
-          onChangeSort: column => {
-            dispatch(tableActions.tableColumnSort(column));
-          },
-        }
+    const actions = {
+      table: {
+        onChangeSort: column => {
+          dispatch(tableActions.tableColumnSort(column));
+        },
       }
+    }
 
-      <Table
-        {...state}
-        ...
-      ~~~
+    <Table
+      {...state}
+      ...
+    ~~~
 
-      <br />
-      `,
-    },
+    <br />
+    `,
   },
 };
 
@@ -1094,24 +1092,23 @@ export const TableExampleWithCreateSaveViews = withReadme(README, () => {
   );
 });
 
-TableExampleWithCreateSaveViews.story = {
-  name: 'Table Example with Create & Save Views',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      text: `
-      This story shows a partial implementation of how to add user View Management,
-      but the implemented examples should be enough to give you an idea on how to use it
-      together with your own state manager. We examplify by providing shallow implementations
-      for onChangeSort, onApplySearch and onApplyFilter. The story is using a simple state
-      object currentTableState and the data objects in the callbacks are just appended to that
-      state using the same ref, but in a real situation the state management would be more complex.
-      The story's source code is too complex to successfully be shown here, please view
-      the actual source code.
-      `,
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+TableExampleWithCreateSaveViews.storyName = 'Table Example with Create & Save Views';
+TableExampleWithCreateSaveViews.decorators = [createElement];
+
+TableExampleWithCreateSaveViews.parameters = {
+  info: {
+    text: `
+    This story shows a partial implementation of how to add user View Management,
+    but the implemented examples should be enough to give you an idea on how to use it
+    together with your own state manager. We examplify by providing shallow implementations
+    for onChangeSort, onApplySearch and onApplyFilter. The story is using a simple state
+    object currentTableState and the data objects in the callbacks are just appended to that
+    state using the same ref, but in a real situation the state management would be more complex.
+    The story's source code is too complex to successfully be shown here, please view
+    the actual source code.
+    `,
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
@@ -1277,68 +1274,67 @@ export const BasicTableWithFullRowEditExample = withReadme(README, () => {
   );
 });
 
-BasicTableWithFullRowEditExample.story = {
-  name: 'Basic table with full rowEdit example',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      text: `
+BasicTableWithFullRowEditExample.storyName = 'Basic table with full rowEdit example';
+BasicTableWithFullRowEditExample.decorators = [createElement];
 
-      This table has editable rows. It is wrapped in a component that handles the state of the table data and
-      the active bar to serve as a simple example of how to use the 'hasRowEdit' and the 'hasSingleRowEdit'
-      functionality with your own data store.
+BasicTableWithFullRowEditExample.parameters = {
+  info: {
+    text: `
 
-      When the 'hasRowEdit' is true an edit icon will be shown in the
-      table toolbar. Clicking the edit icon should enable row edit for all rows, but it requires the
-      columns to have an 'editDataFunction' prop defined. For StatefulTable this is handled automatically, for normal tables it
-      should be handled manually as shown in this story.
+    This table has editable rows. It is wrapped in a component that handles the state of the table data and
+    the active bar to serve as a simple example of how to use the 'hasRowEdit' and the 'hasSingleRowEdit'
+    functionality with your own data store.
 
-      The 'hasSingleRowEdit' must be combined with a row action that has the "isEdit" property set to true.
-      Clicking that row action shoulf turn that specific row editable, and it also requires the columns to have
-      provided a 'editDataFunction'. For StatefulTable the row action state is automatically updated with
-      isEditMode:true but for normal tables it should be handled manually as shown in this story.
+    When the 'hasRowEdit' is true an edit icon will be shown in the
+    table toolbar. Clicking the edit icon should enable row edit for all rows, but it requires the
+    columns to have an 'editDataFunction' prop defined. For StatefulTable this is handled automatically, for normal tables it
+    should be handled manually as shown in this story.
+
+    The 'hasSingleRowEdit' must be combined with a row action that has the "isEdit" property set to true.
+    Clicking that row action shoulf turn that specific row editable, and it also requires the columns to have
+    provided a 'editDataFunction'. For StatefulTable the row action state is automatically updated with
+    isEditMode:true but for normal tables it should be handled manually as shown in this story.
 
 
-      ~~~js
+    ~~~js
 
-      view = {
-        toolbar: {
-          activeBar: // conditionally set to 'rowEdit' using onShowRowEdit action
-          rowEditBarButtons: // JSX to show save and cancel buttons in the rowEdit bar
-        }
+    view = {
+      toolbar: {
+        activeBar: // conditionally set to 'rowEdit' using onShowRowEdit action
+        rowEditBarButtons: // JSX to show save and cancel buttons in the rowEdit bar
       }
+    }
 
-      actions = {
-        table: { onApplyRowAction: (action, rowId) => {
-          // Handle action === 'edit' to enable the rows edit mode
-        } },
-        toolbar: { onShowRowEdit: (action, rowId) => {
-          // Update your state to enable full table edit mode
-        } },
-      }
+    actions = {
+      table: { onApplyRowAction: (action, rowId) => {
+        // Handle action === 'edit' to enable the rows edit mode
+      } },
+      toolbar: { onShowRowEdit: (action, rowId) => {
+        // Update your state to enable full table edit mode
+      } },
+    }
 
-      options = { hasRowEdit: true, hasSingleRowEdit: true }
+    options = { hasRowEdit: true, hasSingleRowEdit: true }
 
-      columns={columns.map(i => ({
-        ...i,
-        editDataFunction: () => {
-          // Your edit data function here..
-        },
-      }))}
+    columns={columns.map(i => ({
+      ...i,
+      editDataFunction: () => {
+        // Your edit data function here..
+      },
+    }))}
 
-      The editDataFunction is called with this payload
-      {
-         value: PropTypes.any (current cell value),
-         columnId: PropTypes.string,
-         rowId: PropTypes.string,
-         row: the full data for this rowPropTypes.object like this {col: value, col2: value}
-      }
-      ~~~
+    The editDataFunction is called with this payload
+    {
+       value: PropTypes.any (current cell value),
+       columnId: PropTypes.string,
+       rowId: PropTypes.string,
+       row: the full data for this rowPropTypes.object like this {col: value, col2: value}
+    }
+    ~~~
 
-      `,
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+    `,
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
@@ -1389,9 +1385,7 @@ export const RowSelectionAndBatchActions = withReadme(README, () => {
   );
 });
 
-RowSelectionAndBatchActions.story = {
-  name: 'row selection: single or multi-select w/ batch actions',
-};
+RowSelectionAndBatchActions.storyName = 'row selection: single or multi-select w/ batch actions';
 
 export const WithSingleSelectAndNestedTableRows = withReadme(README, () => (
   <Table
@@ -1433,9 +1427,7 @@ export const WithSingleSelectAndNestedTableRows = withReadme(README, () => (
   />
 ));
 
-WithSingleSelectAndNestedTableRows.story = {
-  name: 'row selection: single with nested table rows',
-};
+WithSingleSelectAndNestedTableRows.storyName = 'row selection: single with nested table rows';
 
 export const WithRowExpansionAndOnRowClickExpands = withReadme(README, () => (
   <Table
@@ -1466,9 +1458,7 @@ export const WithRowExpansionAndOnRowClickExpands = withReadme(README, () => (
   />
 ));
 
-WithRowExpansionAndOnRowClickExpands.story = {
-  name: 'row expansion: on row click expands',
-};
+WithRowExpansionAndOnRowClickExpands.storyName = 'row expansion: on row click expands';
 
 export const WithRowExpansionAndActions = withReadme(README, () => (
   <Table
@@ -1541,87 +1531,85 @@ export const WithRowExpansionAndActions = withReadme(README, () => (
   />
 ));
 
-WithRowExpansionAndActions.story = {
-  name: 'row expansion: with actions',
+WithRowExpansionAndActions.storyName = 'row expansion: with actions';
 
-  parameters: {
-    info: {
-      text: `
+WithRowExpansionAndActions.parameters = {
+  info: {
+    text: `
 
-      To add custom row actions to each row you need to pass a rowActions array along with every row of your data.  The RowActionsPropTypes is defined as:
+    To add custom row actions to each row you need to pass a rowActions array along with every row of your data.  The RowActionsPropTypes is defined as:
 
-      <br />
+    <br />
 
-      ~~~js
-      RowActionPropTypes = PropTypes.arrayOf(
-        PropTypes.shape({
-          /** Unique id of the action */
-          id: PropTypes.string.isRequired,
-          /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
-          icon: PropTypes.oneOfType([
-            PropTypes.shape({
-              width: PropTypes.string,
-              height: PropTypes.string,
-              viewBox: PropTypes.string.isRequired,
-              svgData: PropTypes.object.isRequired,
-            }),
-            PropTypes.string,
-            PropTypes.node,
-          ]),
-          disabled: PropTypes.bool,
-          labelText: PropTypes.string,
-          /** Action should go into the overflow menu, not be rendered inline in the row */
-          isOverflow: PropTypes.bool,
-        })
-      );
+    ~~~js
+    RowActionPropTypes = PropTypes.arrayOf(
+      PropTypes.shape({
+        /** Unique id of the action */
+        id: PropTypes.string.isRequired,
+        /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
+        icon: PropTypes.oneOfType([
+          PropTypes.shape({
+            width: PropTypes.string,
+            height: PropTypes.string,
+            viewBox: PropTypes.string.isRequired,
+            svgData: PropTypes.object.isRequired,
+          }),
+          PropTypes.string,
+          PropTypes.node,
+        ]),
+        disabled: PropTypes.bool,
+        labelText: PropTypes.string,
+        /** Action should go into the overflow menu, not be rendered inline in the row */
+        isOverflow: PropTypes.bool,
+      })
+    );
 
-      data.map(row=>{id: row.id, values: {id: row.id}, rowActions=[{id: delete, icon: 'icon--delete', labelText: 'Delete'}]})
-      ~~~
+    data.map(row=>{id: row.id, values: {id: row.id}, rowActions=[{id: delete, icon: 'icon--delete', labelText: 'Delete'}]})
+    ~~~
 
-      <br />
+    <br />
 
-      You also need to set the options prop on the table to get the rowActions to render.
+    You also need to set the options prop on the table to get the rowActions to render.
 
-      <br />
+    <br />
 
-      ~~~js
-      options = {
-        hasRowActions: true
+    ~~~js
+    options = {
+      hasRowActions: true
+    }
+    ~~~
+
+    <br />
+
+    To listen to the row actions and trigger an event you should pass a function to the actions prop:
+
+    <br />
+
+    ~~~js
+    actions={
+      table: {
+        onApplyRowAction: myCustomListener
       }
-      ~~~
+    }
+    ~~~
 
-      <br />
+    <br />
 
-      To listen to the row actions and trigger an event you should pass a function to the actions prop:
+    The onApplyRowAction is called with the actionid, and then the rowid that was clicked.  If you return a promise, the table will assume this is an asynchronous action and will show an In Progress indicator until you resolve or reject the promise.
 
-      <br />
+    <br />
 
-      ~~~js
-      actions={
-        table: {
-          onApplyRowAction: myCustomListener
+    ~~~js
+      const myCustomListener = (actionid, rowid)=> {
+        if (actionid === 'myexpectedaction') {
+          console.log(\`perform action on row: \${rowid}\`)
         }
       }
-      ~~~
+    ~~~
 
-      <br />
+    <br />
 
-      The onApplyRowAction is called with the actionid, and then the rowid that was clicked.  If you return a promise, the table will assume this is an asynchronous action and will show an In Progress indicator until you resolve or reject the promise.
-
-      <br />
-
-      ~~~js
-        const myCustomListener = (actionid, rowid)=> {
-          if (actionid === 'myexpectedaction') {
-            console.log(\`perform action on row: \${rowid}\`)
-          }
-        }
-      ~~~
-
-      <br />
-
-      `,
-    },
+    `,
   },
 };
 
@@ -1663,9 +1651,7 @@ export const WithSorting = withReadme(README, () => (
   />
 ));
 
-WithSorting.story = {
-  name: 'sorting: single column',
-};
+WithSorting.storyName = 'sorting: single column';
 
 export const WithMultiSorting = withReadme(README, () => {
   const sortedData = tableData.slice(0, 10).sort(
@@ -1721,9 +1707,7 @@ export const WithMultiSorting = withReadme(README, () => {
   );
 });
 
-WithMultiSorting.story = {
-  name: 'sorting: multiple columns',
-};
+WithMultiSorting.storyName = 'sorting: multiple columns';
 
 export const WithFilters = withReadme(README, () => {
   text(
@@ -1775,9 +1759,7 @@ export const WithFilters = withReadme(README, () => {
   );
 });
 
-WithFilters.story = {
-  name: 'filtering: simple filters',
-};
+WithFilters.storyName = 'filtering: simple filters';
 
 export const WithAdvancedFilters = withReadme(README, () => {
   const operands = {
@@ -2023,9 +2005,7 @@ export const WithAdvancedFilters = withReadme(README, () => {
   );
 });
 
-WithAdvancedFilters.story = {
-  name: 'filtering: ☢️ advanced filters',
-};
+WithAdvancedFilters.storyName = 'filtering: ☢️ advanced filters';
 
 export const WithNoData = withReadme(README, () => {
   const emptyState = (
@@ -2058,9 +2038,7 @@ export const WithNoData = withReadme(README, () => {
   );
 });
 
-WithNoData.story = {
-  name: 'states: no data, custom empty and loading states',
-};
+WithNoData.storyName = 'states: no data, custom empty and loading states';
 
 export const WithErrorState = withReadme(README, () => (
   <Table
@@ -2078,9 +2056,7 @@ export const WithErrorState = withReadme(README, () => (
   />
 ));
 
-WithErrorState.story = {
-  name: 'with error state',
-};
+WithErrorState.storyName = 'with error state';
 
 const errorState = (
   <EmptyState
@@ -2112,9 +2088,7 @@ export const WithCustomErrorState = withReadme(README, () => (
   />
 ));
 
-WithCustomErrorState.story = {
-  name: 'with custom error state',
-};
+WithCustomErrorState.storyName = 'with custom error state';
 
 export const WithResizeAndInitialColumnWidthsAndHiddenColumn = withReadme(README, () => (
   <FullWidthWrapper>
@@ -2140,14 +2114,13 @@ export const WithResizeAndInitialColumnWidthsAndHiddenColumn = withReadme(README
   </FullWidthWrapper>
 ));
 
-WithResizeAndInitialColumnWidthsAndHiddenColumn.story = {
-  name: 'resize: initial column widths and hidden column',
+WithResizeAndInitialColumnWidthsAndHiddenColumn.storyName =
+  'resize: initial column widths and hidden column';
 
-  parameters: {
-    info: {
-      source: true,
-      propTables: false,
-    },
+WithResizeAndInitialColumnWidthsAndHiddenColumn.parameters = {
+  info: {
+    source: true,
+    propTables: false,
   },
 };
 
@@ -2289,14 +2262,16 @@ export const WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManage
   }
 );
 
-WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.story = {
-  name: 'resize: onColumnResize callback, no initial column width and column management',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      source: true,
-      propTables: false,
-    },
+WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.storyName =
+  'resize: onColumnResize callback, no initial column width and column management';
+WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.decorators = [
+  createElement,
+];
+
+WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.parameters = {
+  info: {
+    source: true,
+    propTables: false,
   },
 };
 
@@ -2327,16 +2302,16 @@ export const WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths = with
   )
 );
 
-WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths.story = {
-  name: 'resize: and no initial column width and auto adjusted column widths',
+WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths.storyName =
+  'resize: and no initial column width and auto adjusted column widths';
 
-  parameters: {
-    info: {
-      source: true,
-      propTables: false,
-    },
+WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths.parameters = {
+  info: {
+    source: true,
+    propTables: false,
   },
 };
+
 export const WithResizeAndNoInitialColumns = withReadme(README, () => {
   // Initial render is an empty columns array, which is updated after the first render
   const [columns, setColumns] = useState([]);
@@ -2362,10 +2337,8 @@ export const WithResizeAndNoInitialColumns = withReadme(README, () => {
   );
 });
 
-WithResizeAndNoInitialColumns.story = {
-  name: 'resize: and no initial columns',
-  decorators: [createElement],
-};
+WithResizeAndNoInitialColumns.storyName = 'resize: and no initial columns';
+WithResizeAndNoInitialColumns.decorators = [createElement];
 
 export const WithFixedColumnWidthAndNoResize = withReadme(README, () => (
   // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
@@ -2387,14 +2360,12 @@ export const WithFixedColumnWidthAndNoResize = withReadme(README, () => (
   </FullWidthWrapper>
 ));
 
-WithFixedColumnWidthAndNoResize.story = {
-  name: 'with fixed column width and no resize',
+WithFixedColumnWidthAndNoResize.storyName = 'with fixed column width and no resize';
 
-  parameters: {
-    info: {
-      source: true,
-      propTables: false,
-    },
+WithFixedColumnWidthAndNoResize.parameters = {
+  info: {
+    source: true,
+    propTables: false,
   },
 };
 
@@ -2410,16 +2381,14 @@ export const WithCustomRowHeight = withReadme(README, () => (
   </FullWidthWrapper>
 ));
 
-WithCustomRowHeight.story = {
-  name: 'with custom row height',
+WithCustomRowHeight.storyName = 'with custom row height';
 
-  parameters: {
-    info: {
-      source: false,
-      text: `This is an example of the <Table> component that has a custom row height. Pass a custom className prop to the Table component and use a css selector to change the height of all the rows.
-      `,
-      propTables: false,
-    },
+WithCustomRowHeight.parameters = {
+  info: {
+    source: false,
+    text: `This is an example of the <Table> component that has a custom row height. Pass a custom className prop to the Table component and use a css selector to change the height of all the rows.
+    `,
+    propTables: false,
   },
 };
 
@@ -2443,15 +2412,13 @@ export const WithHasOnlyPageData = withReadme(README, () => {
   );
 });
 
-WithHasOnlyPageData.story = {
-  name: 'with hasOnlyPageData',
+WithHasOnlyPageData.storyName = 'with hasOnlyPageData';
 
-  parameters: {
-    info: {
-      text:
-        'By default, tables with pagination will expect the entire table data to be passed in on the `data` prop; the visible data for a page is calculated dynamically by the table based on the page size and page number.  In the case where the table is rendering a large data set, the `options.hasOnlyPageData` prop can be used change this behavior.  With `options.hasOnlyPageData = true`, the `data` prop will be expected to contain only the rows for the visible page.',
-      source: true,
-    },
+WithHasOnlyPageData.parameters = {
+  info: {
+    text:
+      'By default, tables with pagination will expect the entire table data to be passed in on the `data` prop; the visible data for a page is calculated dynamically by the table based on the page size and page number.  In the case where the table is rendering a large data set, the `options.hasOnlyPageData` prop can be used change this behavior.  With `options.hasOnlyPageData = true`, the `data` prop will be expected to contain only the rows for the visible page.',
+    source: true,
   },
 };
 
@@ -2489,9 +2456,7 @@ export const HorizontalScrollCustomWidth = withReadme(README, () => {
   );
 });
 
-HorizontalScrollCustomWidth.story = {
-  name: 'horizontal scroll - custom width',
-};
+HorizontalScrollCustomWidth.storyName = 'horizontal scroll - custom width';
 
 export const HorizontalScrollFullWidthNoWrap = withReadme(README, () => {
   const tableColumnsConcat = [
@@ -2525,24 +2490,21 @@ export const HorizontalScrollFullWidthNoWrap = withReadme(README, () => {
   );
 });
 
-HorizontalScrollFullWidthNoWrap.story = {
-  name: 'horizontal scroll - full width - no wrap',
-};
+HorizontalScrollFullWidthNoWrap.storyName = 'horizontal scroll - full width - no wrap';
 
 export const FilteredSortedPaginatedTableWithAsynchronousDataSource = withReadme(README, () => {
   const apiClient = new MockApiClient(100, number('Fetch Duration (ms)', 500));
   return <AsyncTable fetchData={apiClient.getData} />;
 });
 
-FilteredSortedPaginatedTableWithAsynchronousDataSource.story = {
-  name: 'Filtered/Sorted/Paginated table with asynchronous data source',
+FilteredSortedPaginatedTableWithAsynchronousDataSource.storyName =
+  'Filtered/Sorted/Paginated table with asynchronous data source';
 
-  parameters: {
-    info: {
-      text:
-        'This is an example of how to use the <Table> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
-      source: false,
-    },
+FilteredSortedPaginatedTableWithAsynchronousDataSource.parameters = {
+  info: {
+    text:
+      'This is an example of how to use the <Table> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
+    source: false,
   },
 };
 
@@ -2566,9 +2528,7 @@ export const CustomToolbarContent = withReadme(README, () => (
   />
 ));
 
-CustomToolbarContent.story = {
-  name: 'Custom toolbar content',
-};
+CustomToolbarContent.storyName = 'Custom toolbar content';
 
 export const WithColumnSelection = withReadme(README, () => (
   <Table
@@ -2596,9 +2556,7 @@ export const WithColumnSelection = withReadme(README, () => (
   />
 ));
 
-WithColumnSelection.story = {
-  name: 'with column selection',
-};
+WithColumnSelection.storyName = 'with column selection';
 
 export const WithCustomTooltip = withReadme(README, () => (
   <Table
@@ -2620,9 +2578,7 @@ export const WithCustomTooltip = withReadme(README, () => (
   />
 ));
 
-WithCustomTooltip.story = {
-  name: 'with custom tooltip',
-};
+WithCustomTooltip.storyName = 'with custom tooltip';
 
 export const WithCustomCellRenderer = withReadme(README, () => {
   const renderDataFunction = ({ value }) => <div style={{ color: 'red' }}>{value}</div>;
@@ -2654,28 +2610,26 @@ export const WithCustomCellRenderer = withReadme(README, () => {
   );
 });
 
-WithCustomCellRenderer.story = {
-  name: 'with custom cell renderer',
+WithCustomCellRenderer.storyName = 'with custom cell renderer';
 
-  parameters: {
-    info: {
-      text: `To render a custom widget in a table cell, pass a renderDataFunction prop along with your column metadata.
+WithCustomCellRenderer.parameters = {
+  info: {
+    text: `To render a custom widget in a table cell, pass a renderDataFunction prop along with your column metadata.
 
-      <br />
+    <br />
 
-      ~~~js
-          The renderDataFunction is called with this payload
-         {
-            value: PropTypes.any (current cell value),
-            columnId: PropTypes.string,
-            rowId: PropTypes.string,
-            row: the full data for this rowPropTypes.object like this {col: value, col2: value}
-         }
-      ~~~
+    ~~~js
+        The renderDataFunction is called with this payload
+       {
+          value: PropTypes.any (current cell value),
+          columnId: PropTypes.string,
+          rowId: PropTypes.string,
+          row: the full data for this rowPropTypes.object like this {col: value, col2: value}
+       }
+    ~~~
 
-      <br />
-        `,
-    },
+    <br />
+      `,
   },
 };
 
@@ -2733,13 +2687,12 @@ export const WithStickyHeaderExperimentalAndCellTooltipCalculation = withReadme(
   );
 });
 
-WithStickyHeaderExperimentalAndCellTooltipCalculation.story = {
-  name: 'with sticky header (experimental) and cell tooltip calculation',
+WithStickyHeaderExperimentalAndCellTooltipCalculation.storyName =
+  'with sticky header (experimental) and cell tooltip calculation';
 
-  parameters: {
-    centered: { disable: true },
-    info: {
-      text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
-    },
+WithStickyHeaderExperimentalAndCellTooltipCalculation.parameters = {
+  centered: { disable: true },
+  info: {
+    text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
   },
 };
