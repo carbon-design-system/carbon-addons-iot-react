@@ -1,6 +1,5 @@
 import React, { createElement, useMemo, useRef, useState } from 'react';
 import { boolean, text, select, array } from '@storybook/addon-knobs';
-import { withReadme } from 'storybook-readme';
 import { action } from '@storybook/addon-actions';
 import { SettingsAdjust16 } from '@carbon/icons-react';
 import isEqual from 'lodash/isEqual';
@@ -27,7 +26,7 @@ import {
   tableColumnsWithAlignment,
 } from './Table.story';
 import Table from './Table';
-import README from './README.md';
+import TableREADME from './Table.mdx';
 import TableManageViewsModal from './TableManageViewsModal/TableManageViewsModal';
 import TableViewDropdown from './TableViewDropdown/TableViewDropdown';
 import TableSaveViewModal from './TableSaveViewModal/TableSaveViewModal';
@@ -98,6 +97,9 @@ export default {
 
   parameters: {
     component: StatefulTable,
+    docs: {
+      page: TableREADME,
+    },
   },
 
   excludeStories: [
@@ -110,7 +112,7 @@ export default {
   ],
 };
 
-export const SimpleStatefulExample = withReadme(README, () => (
+export const SimpleStatefulExample = () => (
   <FullWidthWrapper>
     <StatefulTable
       id="table"
@@ -126,7 +128,7 @@ export const SimpleStatefulExample = withReadme(README, () => (
       view={{ table: { selectedIds: array('selectedIds', []) } }}
     />
   </FullWidthWrapper>
-));
+);
 
 SimpleStatefulExample.story = {
   name: 'simple stateful table',
@@ -140,9 +142,9 @@ SimpleStatefulExample.story = {
   },
 };
 
-export const StatefulExampleWithRowNestingAndFixedColumns = withReadme(README, () => (
+export const StatefulExampleWithRowNestingAndFixedColumns = () => (
   <StatefulTableWithNestedRowItems />
-));
+);
 
 StatefulExampleWithRowNestingAndFixedColumns.story = {
   name: 'Stateful Example with row nesting and fixed columns',
@@ -195,7 +197,7 @@ StatefulExampleWithRowNestingAndFixedColumns.story = {
   },
 };
 
-export const StatefulExampleWithSingleNestedHierarchy = withReadme(README, () => {
+export const StatefulExampleWithSingleNestedHierarchy = () => {
   const tableData = initialState.data.map((i, idx) => ({
     ...i,
     children: [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)],
@@ -220,7 +222,7 @@ export const StatefulExampleWithSingleNestedHierarchy = withReadme(README, () =>
       />
     </div>
   );
-});
+};
 
 StatefulExampleWithSingleNestedHierarchy.story = {
   name: 'Stateful Example with single nested hierarchy',
@@ -277,7 +279,7 @@ StatefulExampleWithSingleNestedHierarchy.story = {
   },
 };
 
-export const StatefulExampleWithMultiselectFiltering = withReadme(README, () => (
+export const StatefulExampleWithMultiselectFiltering = () => (
   <FullWidthWrapper>
     <StatefulTable
       id="table"
@@ -317,7 +319,7 @@ export const StatefulExampleWithMultiselectFiltering = withReadme(README, () => 
       }}
     />
   </FullWidthWrapper>
-));
+);
 
 StatefulExampleWithMultiselectFiltering.story = {
   name: 'Stateful Example with multiselect filtering',
@@ -331,7 +333,7 @@ StatefulExampleWithMultiselectFiltering.story = {
   },
 };
 
-export const StatefulExampleWithPreSetMultiselectFiltering = withReadme(README, () => (
+export const StatefulExampleWithPreSetMultiselectFiltering = () => (
   <FullWidthWrapper>
     <StatefulTable
       id="table"
@@ -370,7 +372,7 @@ export const StatefulExampleWithPreSetMultiselectFiltering = withReadme(README, 
       }}
     />
   </FullWidthWrapper>
-));
+);
 
 StatefulExampleWithPreSetMultiselectFiltering.story = {
   name: 'Stateful Example with pre-set multiselect filtering',
@@ -384,7 +386,7 @@ StatefulExampleWithPreSetMultiselectFiltering.story = {
   },
 };
 
-export const Minitable = withReadme(README, () => (
+export const Minitable = () => (
   <StatefulTable
     id="table"
     secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
@@ -398,7 +400,7 @@ export const Minitable = withReadme(README, () => (
       hasRowSelection: 'single',
     }}
   />
-));
+);
 
 Minitable.story = {
   name: 'minitable',
@@ -410,7 +412,7 @@ Minitable.story = {
   },
 };
 
-export const SimpleStatefulExampleWithColumnOverflowMenu = withReadme(README, () => (
+export const SimpleStatefulExampleWithColumnOverflowMenu = () => (
   <FullWidthWrapper>
     <StatefulTable
       id="table"
@@ -440,7 +442,7 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = withReadme(README, ()
       }}
     />
   </FullWidthWrapper>
-));
+);
 
 SimpleStatefulExampleWithColumnOverflowMenu.story = {
   name: 'with column overflow menu and aggregate column values',
@@ -455,7 +457,7 @@ SimpleStatefulExampleWithColumnOverflowMenu.story = {
   },
 };
 
-export const StatefulExampleWithI18NStrings = withReadme(README, () => (
+export const StatefulExampleWithI18NStrings = () => (
   <StatefulTable
     id="table"
     {...initialState}
@@ -538,7 +540,7 @@ export const StatefulExampleWithI18NStrings = withReadme(README, () => (
       buttonLabelOnTableError: text('i18n.buttonLabelOnTableError', 'Refresh the page'),
     }}
   />
-));
+);
 
 StatefulExampleWithI18NStrings.story = {
   name: 'Stateful Example with I18N strings',
@@ -634,7 +636,7 @@ StatefulExampleWithColumnTooltip.story = {
   },
 };
 
-export const SimpleStatefulExampleWithAlignment = withReadme(README, () => (
+export const SimpleStatefulExampleWithAlignment = () => (
   <FullWidthWrapper>
     <StatefulTable
       id="table"
@@ -650,7 +652,7 @@ export const SimpleStatefulExampleWithAlignment = withReadme(README, () => (
       view={{ table: { selectedIds: array('selectedIds', []) } }}
     />
   </FullWidthWrapper>
-));
+);
 
 SimpleStatefulExampleWithAlignment.story = {
   name: 'Simple Stateful Example with alignment',
@@ -665,7 +667,7 @@ SimpleStatefulExampleWithAlignment.story = {
   },
 };
 
-export const StatefulExampleWithEveryThirdRowUnselectable = withReadme(README, () => (
+export const StatefulExampleWithEveryThirdRowUnselectable = () => (
   <StatefulTable
     id="table"
     {...initialState}
@@ -682,7 +684,7 @@ export const StatefulExampleWithEveryThirdRowUnselectable = withReadme(README, (
     }}
     view={{ table: { selectedIds: array('selectedIds', []) } }}
   />
-));
+);
 
 StatefulExampleWithEveryThirdRowUnselectable.story = {
   name: 'Stateful Example with every third row unselectable',
@@ -697,7 +699,7 @@ StatefulExampleWithEveryThirdRowUnselectable.story = {
   },
 };
 
-export const StatefulExampleWithExpansionMaxPagesAndColumnResize = withReadme(README, () => (
+export const StatefulExampleWithExpansionMaxPagesAndColumnResize = () => (
   <FullWidthWrapper>
     <StatefulTable
       id="table"
@@ -744,7 +746,7 @@ export const StatefulExampleWithExpansionMaxPagesAndColumnResize = withReadme(RE
       }}
     />
   </FullWidthWrapper>
-));
+);
 
 StatefulExampleWithExpansionMaxPagesAndColumnResize.story = {
   name: 'Stateful Example with expansion, maxPages, and column resize',
@@ -786,7 +788,7 @@ StatefulExampleWithExpansionMaxPagesAndColumnResize.story = {
   },
 };
 
-export const StatefulExampleWithCreateSaveViews = withReadme(README, () => {
+export const StatefulExampleWithCreateSaveViews = () => {
   // The initial default state for this story is one with no active filters
   // and no default search value etc, i.e. a view all scenario.
   const defaultState = {
@@ -1217,7 +1219,7 @@ export const StatefulExampleWithCreateSaveViews = withReadme(README, () => {
       />
     </FullWidthWrapper>
   );
-});
+};
 
 StatefulExampleWithCreateSaveViews.story = {
   name: 'Stateful Example with Create & Save Views',
@@ -1235,7 +1237,7 @@ StatefulExampleWithCreateSaveViews.story = {
   },
 };
 
-export const WithPreFilledSearch = withReadme(README, () => {
+export const WithPreFilledSearch = () => {
   const [defaultValue, setDefaultValue] = useState('toyota');
   const sampleDefaultValues = ['whiteboard', 'scott', 'helping'];
   return (
@@ -1288,7 +1290,7 @@ export const WithPreFilledSearch = withReadme(README, () => {
       />
     </>
   );
-});
+};
 
 WithPreFilledSearch.story = {
   name: 'with pre-filled search',
@@ -1300,7 +1302,7 @@ WithPreFilledSearch.story = {
   },
 };
 
-export const StatefulTableWithAdvancedFilters = withReadme(README, () => {
+export const StatefulTableWithAdvancedFilters = () => {
   const [showBuilder, setShowBuilder] = useState(false);
 
   const [advancedFilters, setAdvancedFilters] = useState([
@@ -1552,42 +1554,39 @@ export const StatefulTableWithAdvancedFilters = withReadme(README, () => {
       </div>
     </>
   );
-});
+};
 
 StatefulTableWithAdvancedFilters.story = {
   name: '☢️ StatefulTable with advanced filters',
   decorators: [createElement],
 };
 
-export const WithResizeAndInitialColumnWidthsOnSimpleStatefulWithRowSelectionSort = withReadme(
-  README,
-  () => (
-    <StatefulTable
-      id="table"
-      {...initialState}
-      actions={tableActions}
-      lightweight={boolean('lightweight', false)}
-      columns={tableColumns.map((i, idx) => ({
-        width: idx % 2 === 0 ? '100px' : '200px',
-        isSortable: true,
-        ...i,
-      }))}
-      options={{
-        hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
-        hasRowExpansion: false,
-        hasResize: true,
-        wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-      }}
-      view={{ table: { selectedIds: array('selectedIds', []) } }}
-    />
-  )
+export const WithResizeAndInitialColumnWidthsOnSimpleStatefulWithRowSelectionSort = () => (
+  <StatefulTable
+    id="table"
+    {...initialState}
+    actions={tableActions}
+    lightweight={boolean('lightweight', false)}
+    columns={tableColumns.map((i, idx) => ({
+      width: idx % 2 === 0 ? '100px' : '200px',
+      isSortable: true,
+      ...i,
+    }))}
+    options={{
+      hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+      hasRowExpansion: false,
+      hasResize: true,
+      wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+    }}
+    view={{ table: { selectedIds: array('selectedIds', []) } }}
+  />
 );
 
 WithResizeAndInitialColumnWidthsOnSimpleStatefulWithRowSelectionSort.story = {
   name: 'with resize and initial column widths on Simple Stateful with row selection & sort',
 };
 
-export const WithResizeHasColumnSelectionAndInitialColumnWidths = withReadme(README, () => (
+export const WithResizeHasColumnSelectionAndInitialColumnWidths = () => (
   <StatefulTable
     id="table"
     options={{
@@ -1607,7 +1606,7 @@ export const WithResizeHasColumnSelectionAndInitialColumnWidths = withReadme(REA
       },
     }}
   />
-));
+);
 
 WithResizeHasColumnSelectionAndInitialColumnWidths.story = {
   name: 'with resize, hasColumnSelection and initial column widths',
@@ -1620,7 +1619,7 @@ WithResizeHasColumnSelectionAndInitialColumnWidths.story = {
   },
 };
 
-export const WithMultiSorting = withReadme(README, () => {
+export const WithMultiSorting = () => {
   return (
     <StatefulTable
       columns={tableColumns.map((i, idx) => ({
@@ -1667,7 +1666,7 @@ export const WithMultiSorting = withReadme(README, () => {
       }}
     />
   );
-});
+};
 
 WithMultiSorting.story = {
   name: 'with multi-sorting',

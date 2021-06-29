@@ -2,13 +2,12 @@ import React from 'react';
 import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Tree16 } from '@carbon/icons-react';
-import { withReadme } from 'storybook-readme';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
 
-import README from './Card.md';
+import CardREADME from './Card.mdx';
 import Card from './Card';
 
 export const getDataStateProp = () => ({
@@ -33,6 +32,9 @@ export default {
 
   parameters: {
     component: Card,
+    docs: {
+      page: CardREADME,
+    },
   },
 
   excludeStories: ['getDataStateProp'],
@@ -80,7 +82,7 @@ const CardStoryStateManager = ({ children }) => {
   });
 };
 
-export const Basic = withReadme(README, () => {
+export const Basic = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -109,13 +111,13 @@ export const Basic = withReadme(README, () => {
       </CardStoryStateManager>
     </div>
   );
-});
+};
 
 Basic.story = {
   name: 'basic stateful example with custom expand icon',
 };
 
-export const WithEllipsedTitleTooltipExternalTooltip = withReadme(README, () => {
+export const WithEllipsedTitleTooltipExternalTooltip = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -148,13 +150,13 @@ export const WithEllipsedTitleTooltipExternalTooltip = withReadme(README, () => 
       />
     </div>
   );
-});
+};
 
 WithEllipsedTitleTooltipExternalTooltip.story = {
   name: 'with ellipsed title tooltip & external tooltip',
 };
 
-export const BasicWithRenderProp = withReadme(README, () => {
+export const BasicWithRenderProp = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -189,13 +191,13 @@ export const BasicWithRenderProp = withReadme(README, () => {
       </Card>
     </div>
   );
-});
+};
 
 BasicWithRenderProp.story = {
   name: 'with render prop',
 };
 
-export const WithCustomRangeSelector = withReadme(README, () => {
+export const WithCustomRangeSelector = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
     <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -225,13 +227,13 @@ export const WithCustomRangeSelector = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithCustomRangeSelector.story = {
   name: 'with custom range selector',
 };
 
-export const SizeGallery = withReadme(README, () => {
+export const SizeGallery = () => {
   return Object.keys(CARD_SIZES).map((i) => (
     <React.Fragment key={`card-${i}`}>
       <h3>{i}</h3>
@@ -256,13 +258,13 @@ export const SizeGallery = withReadme(README, () => {
       </div>
     </React.Fragment>
   ));
-});
+};
 
 SizeGallery.story = {
   name: 'size gallery',
 };
 
-export const Error = withReadme(README, () => {
+export const Error = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -278,13 +280,13 @@ export const Error = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 Error.story = {
   name: 'with error',
 };
 
-export const ImplementingACustomCard = withReadme(README, () => {
+export const ImplementingACustomCard = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const isEditable = boolean('isEditable', false);
   const title = text('title', 'Custom Card Title');
@@ -328,7 +330,7 @@ export const ImplementingACustomCard = withReadme(README, () => {
       </Card>
     </div>
   );
-});
+};
 
 ImplementingACustomCard.story = {
   name: 'implementing a custom card',

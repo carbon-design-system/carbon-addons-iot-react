@@ -2,24 +2,26 @@ import React from 'react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
-import { withReadme } from 'storybook-readme';
 
 import { CARD_SIZES, CARD_DATA_STATE } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { getDataStateProp } from '../Card/Card.story';
 
 import ValueCard from './ValueCard';
-import README from './ValueCard.md';
+import ValueCardREADME from './ValueCard.mdx';
 
 export default {
   title: '1 - Watson IoT/ValueCard',
 
   parameters: {
     component: ValueCard,
+    docs: {
+      page: ValueCardREADME,
+    },
   },
 };
 
-export const SmallLongNoUnits = withReadme(README, () => {
+export const SmallLongNoUnits = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -54,7 +56,7 @@ export const SmallLongNoUnits = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 SmallLongNoUnits.story = {
   name: 'with long text and no units',
@@ -67,7 +69,7 @@ SmallLongNoUnits.story = {
   },
 };
 
-export const WithTrends = withReadme(README, () => {
+export const WithTrends = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -112,13 +114,13 @@ export const WithTrends = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithTrends.story = {
   name: 'with trends, variables, and label',
 };
 
-export const WithThresholds = withReadme(README, () => {
+export const WithThresholds = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -179,13 +181,13 @@ export const WithThresholds = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithThresholds.story = {
   name: 'with thresholds, custom icon renderer, and custom formatter',
 };
 
-export const SmallWideThresholdsString = withReadme(README, () => {
+export const SmallWideThresholdsString = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -228,13 +230,13 @@ export const SmallWideThresholdsString = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 SmallWideThresholdsString.story = {
   name: 'with thresholds (string)',
 };
 
-export const MediumThin3 = withReadme(README, () => {
+export const MediumThin3 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -323,13 +325,13 @@ export const MediumThin3 = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 MediumThin3.story = {
   name: 'with three data points and thresholds',
 };
 
-export const WithFourDataPoints = withReadme(README, () => {
+export const WithFourDataPoints = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -376,13 +378,13 @@ export const WithFourDataPoints = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithFourDataPoints.story = {
   name: 'with four data points',
 };
 
-export const Large5 = withReadme(README, () => {
+export const Large5 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -428,13 +430,13 @@ export const Large5 = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 Large5.story = {
   name: 'with five data points',
 };
 
-export const LargeThin6 = withReadme(README, () => {
+export const LargeThin6 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGETHIN);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -484,13 +486,13 @@ export const LargeThin6 = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 LargeThin6.story = {
   name: 'with six data points',
 };
 
-export const DataStateNoDataMediumScrollPage = withReadme(README, () => {
+export const DataStateNoDataMediumScrollPage = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -536,13 +538,13 @@ export const DataStateNoDataMediumScrollPage = withReadme(README, () => {
       <div style={{ height: '150vh' }} />
     </div>
   );
-});
+};
 
 DataStateNoDataMediumScrollPage.story = {
   name: 'with data state, custom icon',
 };
 
-export const Editable = withReadme(README, () => {
+export const Editable = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -578,13 +580,13 @@ export const Editable = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 Editable.story = {
   name: 'with isEditable',
 };
 
-export const DataFilters = withReadme(README, () => {
+export const DataFilters = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -625,7 +627,7 @@ export const DataFilters = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 DataFilters.story = {
   name: 'with dataFilters',

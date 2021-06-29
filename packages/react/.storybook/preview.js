@@ -1,10 +1,10 @@
 import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 import { configureActions } from '@storybook/addon-actions';
 import { initializeRTL } from 'storybook-addon-rtl';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import theme from './theme';
 
 initializeRTL();
@@ -28,11 +28,12 @@ addParameters({
   },
 });
 
-addDecorator(
-  withInfo({
-    inline: false, // Global configuration for the info addon across all of your stories.
-  })
-);
+addParameters({
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
+});
 addDecorator((story) => <Container story={story} />);
 addDecorator(withA11y);
 addDecorator(withKnobs);
