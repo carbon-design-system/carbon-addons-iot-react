@@ -6,7 +6,7 @@ const realFindDOMNode = ReactDOM.findDOMNode;
 
 const realScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
 const realScrollTo = window.HTMLElement.prototype.scrollTo;
-
+const realCreateObjectURL = window.URL.createObjectURL;
 describe(`Storybook Snapshot tests and console checks`, () => {
   const spy = {};
   beforeAll((done) => {
@@ -91,6 +91,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
       getPropertyValue: () => '25',
     });
     window.document = new Document();
+    window.URL.createObjectURL = jest.fn();
   });
   initStoryshots({
     storyKindRegex: /Watson\sIoT.*$|.*Getting\sStarted/g,
@@ -169,5 +170,6 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     MockDate.reset();
     window.HTMLElement.prototype.scrollIntoView = realScrollIntoView;
     window.HTMLElement.prototype.scrollTo = realScrollTo;
+    window.URL.createObjectURL = realCreateObjectURL;
   });
 });

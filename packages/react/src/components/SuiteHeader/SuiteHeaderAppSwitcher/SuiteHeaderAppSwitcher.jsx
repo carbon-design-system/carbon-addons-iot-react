@@ -136,7 +136,7 @@ const SuiteHeaderAppSwitcher = ({
           </div>
           <span>{mergedI18n.requestAccess}</span>
           <a
-            href="javascript:void(0)"
+            href="#"
             data-testid="suite-header-app-switcher--no-access"
             onClick={async () => {
               const result = await onRouteChange(

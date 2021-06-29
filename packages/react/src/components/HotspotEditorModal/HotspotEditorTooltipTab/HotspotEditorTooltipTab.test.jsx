@@ -36,6 +36,7 @@ describe('HotspotEditorTooltipTab', () => {
         onChange={() => {}}
         onDelete={() => {}}
         translateWithId={() => {}}
+        hotspotIconFillColors={getColors()}
       />
     );
 
@@ -54,6 +55,7 @@ describe('HotspotEditorTooltipTab', () => {
         onChange={onChange}
         onDelete={() => {}}
         translateWithId={() => {}}
+        hotspotIconFillColors={getColors()}
       />
     );
 

@@ -10,6 +10,7 @@ import TearSheetWrapper from './TearSheetWrapper';
 
 const { iotPrefix } = settings;
 
+const TearSheetChildren = () => <div>TearSheet content</div>;
 const commonProps = {
   title: 'First TearSheet',
   description: 'First TearSheet description',
@@ -17,7 +18,7 @@ const commonProps = {
   i18n: {
     close: 'Close',
   },
-  children: <div>TearSheet content</div>,
+  children: <TearSheetChildren />,
 };
 
 const secondTearSheetCommonProps = {

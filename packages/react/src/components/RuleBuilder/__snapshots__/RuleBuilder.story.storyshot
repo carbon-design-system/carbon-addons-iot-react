@@ -5033,6 +5033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <input
                           className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
+                          defaultValue="My Filter"
                           disabled={false}
                           id="rule-builder-title-input"
                           onChange={[Function]}
@@ -5040,7 +5041,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           placeholder="Untitled 01"
                           title="Untitled 01"
                           type="text"
-                          value="My Filter"
                         />
                       </div>
                     </div>

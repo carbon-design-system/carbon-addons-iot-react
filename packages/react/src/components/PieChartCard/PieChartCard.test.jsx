@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
+import '@testing-library/jest-dom/extend-expect';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import Table from '../Table/Table';
@@ -84,6 +84,18 @@ describe('utility functions', () => {
 */
 
 describe('PieChartCard', () => {
+  const originalDev = global.__DEV__;
+  const originalError = console.error;
+  const error = jest.fn();
+  beforeEach(() => {
+    console.error = error;
+    global.__DEV__ = true;
+  });
+  afterEach(() => {
+    error.mockReset();
+    console.error = originalError;
+    global.__DEV__ = originalDev;
+  });
   it('shows loading skeleton for isLoading even for empty data  ', () => {
     const loadingSkeletonQuery = '.iot--pie-chart-container svg.chart-skeleton';
     const { container, rerender } = render(<PieChartCard {...pieChartCardProps} />);

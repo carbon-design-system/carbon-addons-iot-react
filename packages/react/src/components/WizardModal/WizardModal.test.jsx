@@ -24,7 +24,6 @@ describe('WizardModal', () => {
     const wrapper = mount(
       <WizardModal
         {...commonWizardProps}
-        header
         steps={[
           {
             label: 'step1',
