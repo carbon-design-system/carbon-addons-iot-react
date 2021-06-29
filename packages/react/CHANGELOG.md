@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.36...v2.146.0-next.37) (2021-06-25)
+
+
+### Bug Fixes
+
+* **table:** bring toggleAggregations into alignment with other actions ([3870e0b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3870e0ba2c56b12367ea622b718cdf1af80a513e))
+* **table:** move onToggleAggregations into toolbar and fix proptypes ([b14007a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b14007a0a96e06888a57f6f27792214522566369))
+* **table:** revert onToggleAggregations change ([6a2f986](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6a2f98679fbf33624810ff86e304a3ca1ea95300))
+* **table:** try not passing event to toggle action ([38a5ce1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/38a5ce1b0f8bc5ef10c542b0f60e88498fa86eaf))
+* **table:** try not passing event to toggle action ([aefabda](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aefabda022ecb3e141daf69ffca6e052c517e333))
+* **table:** useEffect to keep backwards compatibility in aggregations ([444bf66](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/444bf661078519f69cdf63b762bbbdcfccc66cb9))
+
+
+
+
+
+# [2.146.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.35...v2.146.0-next.36) (2021-06-23)
+
+
+### Bug Fixes
+
+* **dashboard-grid:** grid should generate layouts for all supported breakpoints for each card ([49d392b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/49d392b51bb1a201702ed0724a45f68562b77664))
+
+
+
+
+
+# [2.146.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.33...v2.146.0-next.35) (2021-06-23)
+
+
+### Bug Fixes
+
+* **datetimepicker:** listen to locale and initialize dayjs with it ([f652405](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f652405ae410f23452b55a29b9d7ee0d9ed2da34))
+* **hotspoteditortooltiptab:** fix for selected color not showing ([63bca57](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/63bca574e9f2239cce49b01179a83e681de90271)), closes [#2401](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2401)
+* **repo:** verison bump to fix publish failures ([02022bb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/02022bbdbad69ff4d839983c9c8eb7dd7a701f89))
+
+
+### Features
+
+* **walkme:** Including a `Walkme` component that renders a `Helmet` (from ` react-helmet-async`) to create the Walkme script tags under the head element. ([f56f934](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f56f934b1238a489edc3c2b07bd914b1430ffc30))
+* **walkme:** Testing properties set to window object during Walkme tests. ([6d2a91a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6d2a91ac9c4d345a4c3f5f632ff0cb7a64a7b154))
+
+
+
+
+
 # [2.146.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.32...v2.146.0-next.33) (2021-06-17)
 
 

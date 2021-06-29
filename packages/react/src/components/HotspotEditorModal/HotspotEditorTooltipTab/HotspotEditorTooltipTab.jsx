@@ -20,7 +20,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** Array of selectable color objects */
-  hotspotIconFillColors: PropTypes.arrayOf(ColorPropType),
+  hotspotIconFillColors: PropTypes.arrayOf(ColorPropType).isRequired,
   /** Array of selectable icon objects. Use icon size 24 for the icon */
   hotspotIcons: PropTypes.arrayOf(HotspotIconPropType),
   /** The state values of the controlled form elements e.g. { title: 'My hotspot 1', description: 'Lorem ipsum' } */
@@ -72,7 +72,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  hotspotIconFillColors: undefined,
   hotspotIcons: [],
   formValues: {},
   i18n: {
