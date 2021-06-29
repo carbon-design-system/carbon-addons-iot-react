@@ -82,11 +82,11 @@ describe('DashboardGrid', () => {
         [{ id: 'mycard', size: CARD_SIZES.MEDIUM }],
         ['xl', 'lg', 'md']
       );
-      // will be generated automatically with coordinates after first render
+      // should generate layouts for each existing card for each supported layout
       expect(regenerated).toEqual({
-        xl: [],
-        lg: [],
-        md: [],
+        xl: [{ h: 2, i: 'mycard', isResizable: undefined, w: 8, x: 0, y: 0 }],
+        lg: [{ h: 2, i: 'mycard', isResizable: undefined, w: 8, x: 0, y: 0 }],
+        md: [{ h: 2, i: 'mycard', isResizable: undefined, w: 8, x: 0, y: 0 }],
       });
     });
   });
