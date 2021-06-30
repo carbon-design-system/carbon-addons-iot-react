@@ -1,5 +1,4 @@
 import React from 'react';
-import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
 import { configureActions } from '@storybook/addon-actions';
 import { initializeRTL } from 'storybook-addon-rtl';
@@ -34,10 +33,4 @@ export const parameters = {
   },
 };
 
-export const decorators = [
-  withInfo({
-    inline: false, // Global configuration for the info addon across all of your stories.
-  }),
-  (story) => <Container story={story} />,
-  withKnobs,
-];
+export const decorators = [(story) => <Container story={story} />, withKnobs];
