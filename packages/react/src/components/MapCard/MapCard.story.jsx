@@ -1,7 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
-import { withReadme } from 'storybook-readme';
 
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
@@ -12,12 +11,12 @@ import options from './storyFiles/mapOptions';
 import MapboxExample from './storyFiles/MapboxExample';
 import MapboxDragPanelExample from './storyFiles/MapboxDragPanelExample';
 import OpenLayersExample from './storyFiles/OpenLayersExample';
-import MapCardREADME from './README.md';
+import MapCardREADME from './MapCard.mdx';
 
 export const Experimental = () => <StoryNotice componentName="MapCard" experimental />;
 Experimental.storyName = experimentalStoryTitle;
 
-export const MapboxStory = withReadme(MapCardREADME, () => {
+export const MapboxStory = () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -43,11 +42,11 @@ export const MapboxStory = withReadme(MapCardREADME, () => {
       isExpanded={isExpanded}
     />
   );
-});
+};
 
 MapboxStory.storyName = 'Using Mapbox';
 
-export const MapboxDragPanelsStory = withReadme(MapCardREADME, () => {
+export const MapboxDragPanelsStory = () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -75,11 +74,11 @@ export const MapboxDragPanelsStory = withReadme(MapCardREADME, () => {
       />
     </DragAndDrop>
   );
-});
+};
 
 MapboxDragPanelsStory.storyName = 'Using Mapbox with draggable panels';
 
-export const OpenlayersStory = withReadme(MapCardREADME, () => {
+export const OpenlayersStory = () => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -105,7 +104,7 @@ export const OpenlayersStory = withReadme(MapCardREADME, () => {
       isExpanded={isExpanded}
     />
   );
-});
+};
 
 OpenlayersStory.storyName = 'Using Open layers';
 
@@ -114,5 +113,8 @@ export default {
   decorators: [withKnobs, React.createElement],
   parameters: {
     component: MapboxStory,
+    docs: {
+      page: MapCardREADME,
+    },
   },
 };

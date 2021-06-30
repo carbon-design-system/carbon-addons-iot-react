@@ -4,7 +4,6 @@ import { select, text, boolean, number, withKnobs, optionsKnob } from '@storyboo
 import { Add24, TrashCan24, SettingsAdjust24, Warning24 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 import { Tabs, Tab, Search, Select, SelectItem, InlineLoading } from 'carbon-components-react';
-import { withReadme } from 'storybook-readme';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import TileCatalogNew from '../TileCatalogNew/TileCatalogNew';
@@ -12,7 +11,7 @@ import { getTiles } from '../TileCatalogNew/TileCatalogNew.story';
 import Button from '../Button';
 
 import PageTitleBar from './PageTitleBar';
-import README from './PageTitleBar.md';
+import PageTitleBarREADME from './PageTitleBar.mdx';
 
 export const commonPageTitleBarProps = {
   title: 'Page title',
@@ -34,7 +33,7 @@ export const commonPageTitleBarProps = {
   ),
 };
 
-export const PageTitleBarNodeTooltip = withReadme(README, () => (
+export const PageTitleBarNodeTooltip = () => (
   <div>
     <p>Descriptive text about this page and what the user can or should do on it </p>
     <div
@@ -51,7 +50,7 @@ export const PageTitleBarNodeTooltip = withReadme(README, () => (
       </Button>
     </div>
   </div>
-));
+);
 
 export const pageTitleBarBreadcrumb = [
   <a href="/">Home</a>,
@@ -70,12 +69,15 @@ export default {
 
   parameters: {
     component: PageTitleBar,
+    docs: {
+      page: PageTitleBarREADME,
+    },
   },
 
   excludeStories: ['commonPageTitleBarProps', 'pageTitleBarBreadcrumb', 'PageTitleBarNodeTooltip'],
 };
 
-export const Base = withReadme(README, () => {
+export const Base = () => {
   return (
     <PageTitleBar
       title={text('title', commonPageTitleBarProps.title)}
@@ -91,11 +93,11 @@ export const Base = withReadme(README, () => {
       forceContentOutside={boolean('forceContentOutside', false)}
     />
   );
-});
+};
 
 Base.storyName = 'base';
 
-export const WithTooltipDescriptionWithNode = withReadme(README, () => (
+export const WithTooltipDescriptionWithNode = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       description={<PageTitleBarNodeTooltip />}
@@ -111,11 +113,11 @@ export const WithTooltipDescriptionWithNode = withReadme(README, () => (
       forceContentOutside={boolean('forceContentOutside', false)}
     />
   </div>
-));
+);
 
 WithTooltipDescriptionWithNode.storyName = 'with tooltip description with node';
 
-export const WithStatusDescriptionAndCrumbs = withReadme(README, () => (
+export const WithStatusDescriptionAndCrumbs = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       title={text('title', 'ZH002')}
@@ -127,11 +129,11 @@ export const WithStatusDescriptionAndCrumbs = withReadme(README, () => (
       headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'STATIC')}
     />
   </div>
-));
+);
 
 WithStatusDescriptionAndCrumbs.storyName = 'with status description and breadcrumbs';
 
-export const WithEditableTitleBar = withReadme(README, () => (
+export const WithEditableTitleBar = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       title={text('title', commonPageTitleBarProps.title)}
@@ -144,11 +146,11 @@ export const WithEditableTitleBar = withReadme(README, () => (
       onEdit={action('edit')}
     />
   </div>
-));
+);
 
 WithEditableTitleBar.storyName = 'with editable title bar and subtitle';
 
-export const WithSelect = withReadme(README, () => (
+export const WithSelect = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 0)}
@@ -205,11 +207,11 @@ export const WithSelect = withReadme(README, () => (
       onEdit={action('edit')}
     />
   </div>
-));
+);
 
 WithSelect.storyName = 'with select action and an overflowing page title';
 
-export const WithEverything = withReadme(README, () => (
+export const WithEverything = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 0)}
@@ -281,11 +283,11 @@ export const WithEverything = withReadme(README, () => (
       onEdit={action('edit')}
     />
   </div>
-));
+);
 
 WithEverything.storyName = 'with breadcrumbs, actions, and tabs';
 
-export const WithCondensedHeader = withReadme(README, () => (
+export const WithCondensedHeader = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 0)}
@@ -322,11 +324,11 @@ export const WithCondensedHeader = withReadme(README, () => (
       onEdit={action('edit')}
     />
   </div>
-));
+);
 
 WithCondensedHeader.storyName = 'with condensed with primary + secondary buttons';
 
-export const WithCustomRenderFunction = withReadme(README, () => (
+export const WithCustomRenderFunction = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       title={commonPageTitleBarProps.title}
@@ -341,11 +343,11 @@ export const WithCustomRenderFunction = withReadme(README, () => (
       extraContent={commonPageTitleBarProps.extraContent}
     />
   </div>
-));
+);
 
 WithCustomRenderFunction.storyName = 'with custom render function';
 
-export const WithDynamicScrolling = withReadme(README, () => (
+export const WithDynamicScrolling = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 0)}
@@ -399,7 +401,7 @@ export const WithDynamicScrolling = withReadme(README, () => (
       onEdit={action('edit')}
     />
   </div>
-));
+);
 
 WithDynamicScrolling.storyName = 'with dynamic with breadcrumbs, actions, and content';
 
@@ -407,7 +409,7 @@ WithDynamicScrolling.info = {
   text: `with dynamic scrolling, upper actions, and buttons the buttons should transition and sit next to the actions when the page header is condensed`,
 };
 
-export const WithDynamicScrollingAndTabs = withReadme(README, () => (
+export const WithDynamicScrollingAndTabs = () => (
   <div style={{ height: '150vh' }}>
     <PageTitleBar
       stickyHeaderOffset={number('sticky header offset', 0)}
@@ -470,7 +472,7 @@ export const WithDynamicScrollingAndTabs = withReadme(README, () => (
       onEdit={action('edit')}
     />
   </div>
-));
+);
 
 WithDynamicScrollingAndTabs.storyName = 'with dynamic with breadcrumbs, actions, and tabs';
 

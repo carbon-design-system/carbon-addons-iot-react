@@ -42,6 +42,9 @@ export default {
 
   parameters: {
     component: ImageGalleryModal,
+    docs: {
+      inlineStories: false,
+    },
   },
 };
 

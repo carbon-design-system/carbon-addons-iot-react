@@ -1,7 +1,6 @@
 import React, { createElement, useMemo, useState } from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { withReadme } from 'storybook-readme';
 import isEmpty from 'lodash/isEmpty';
 import { ArrowRight16, Subtract16 } from '@carbon/icons-react';
 
@@ -10,12 +9,12 @@ import Button from '../Button/Button';
 import { generateUserList } from '../SelectUsersModal/SelectUsersModal.story';
 
 import ListBuilder from './ListBuilder';
-import README from './README.md';
+import ListBuilderREADME from './ListBuilder.mdx';
 
 export const Experimental = () => <StoryNotice componentName="ListBuilder" experimental />;
 Experimental.storyName = experimentalStoryTitle;
 
-export const NoItemsSelected = withReadme(README, () => (
+export const NoItemsSelected = () => (
   <ListBuilder
     onAdd={action('onAdd')}
     onRemove={action('onRemove')}
@@ -29,11 +28,11 @@ export const NoItemsSelected = withReadme(README, () => (
       { id: '2', content: { value: 'item two' } },
     ]}
   />
-));
+);
 
 NoItemsSelected.storyName = 'with no items selected';
 
-export const ItemsSelected = withReadme(README, () => (
+export const ItemsSelected = () => (
   <ListBuilder
     onAdd={action('onAdd')}
     onRemove={action('onRemove')}
@@ -47,11 +46,11 @@ export const ItemsSelected = withReadme(README, () => (
     ]}
     selectedItems={[{ id: '2', content: { value: 'item two' } }]}
   />
-));
+);
 
 ItemsSelected.storyName = 'with items selected';
 
-export const StatefulExample = withReadme(README, () => {
+export const StatefulExample = () => {
   const [selected, setSelected] = useState([]);
   const [items, setItems] = useState([
     {
@@ -101,7 +100,7 @@ export const StatefulExample = withReadme(README, () => {
   return (
     <ListBuilder onAdd={handleAdd} onRemove={handleRemove} items={items} selectedItems={selected} />
   );
-});
+};
 
 StatefulExample.storyName = 'stateful example';
 StatefulExample.decorators = [createElement];
@@ -176,7 +175,7 @@ const flattenUsers = (results, user) => {
     : results.concat(user);
 };
 
-export const ComplexNestedExample = withReadme(README, () => {
+export const ComplexNestedExample = () => {
   const [selectedUsers, setSelectedUsers] = useState([]);
   const users = generateUserList();
 
@@ -273,7 +272,7 @@ export const ComplexNestedExample = withReadme(README, () => {
       }}
     />
   );
-});
+};
 
 ComplexNestedExample.storyName = 'complex nested example';
 ComplexNestedExample.decorators = [createElement];
@@ -283,5 +282,8 @@ export default {
   decorators: [withKnobs],
   parameters: {
     component: ListBuilder,
+    docs: {
+      page: ListBuilderREADME,
+    },
   },
 };

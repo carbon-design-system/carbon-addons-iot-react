@@ -155,6 +155,9 @@ export default {
 
   parameters: {
     component: Header,
+    docs: {
+      inlineStories: false,
+    },
   },
 };
 

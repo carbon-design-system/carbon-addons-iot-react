@@ -37,6 +37,11 @@ export const defaultAbsoluteValue = {
 
 export default {
   title: '1 - Watson IoT/DateTime Picker',
+  parameters: {
+    docs: {
+      inlineStories: false,
+    },
+  },
   excludeStories: ['defaultRelativeValue', 'defaultAbsoluteValue'],
 };
 

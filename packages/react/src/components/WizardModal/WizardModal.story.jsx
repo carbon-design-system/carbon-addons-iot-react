@@ -22,6 +22,9 @@ export default {
 
   parameters: {
     component: WizardModal,
+    docs: {
+      inlineStories: false,
+    },
 
     info: `
   Extends ComposedModal to add Carbon's ProgressIndicator and Wizard pages and local state.  Refer to the ComposedModal component for additional props that can be passed

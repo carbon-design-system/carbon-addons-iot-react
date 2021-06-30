@@ -94,6 +94,9 @@ export default {
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorModal,
+    docs: {
+      inlineStories: false,
+    },
   },
 };
 

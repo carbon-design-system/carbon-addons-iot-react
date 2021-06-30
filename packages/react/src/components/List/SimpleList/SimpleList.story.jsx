@@ -4,12 +4,11 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
-import { withReadme } from 'storybook-readme';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
-import README from './SimpleList.md';
+import SimpleListREADME from './SimpleList.mdx';
 
 export const getListItems = (num) =>
   Array(num)
@@ -123,12 +122,15 @@ export default {
 
   parameters: {
     component: SimpleList,
+    docs: {
+      page: SimpleListREADME,
+    },
   },
 
   excludeStories: ['getListItems'],
 };
 
-export const Basic = withReadme(README, () => (
+export const Basic = () => (
   <div style={{ width: 500 }}>
     <SimpleList
       title={text('Text', 'Simple List')}
@@ -145,11 +147,11 @@ export const Basic = withReadme(README, () => (
       hasPagination={boolean('hasPagination', true)}
     />
   </div>
-));
+);
 
 Basic.storyName = 'basic';
 
-export const ListWithEmptyRow = withReadme(README, () => (
+export const ListWithEmptyRow = () => (
   <div
     style={{
       width: 500,
@@ -173,11 +175,11 @@ export const ListWithEmptyRow = withReadme(README, () => (
       hasPagination={boolean('hasPagination', true)}
     />
   </div>
-));
+);
 
 ListWithEmptyRow.storyName = 'list with empty row';
 
-export const ListWithLargeRow = withReadme(README, () => (
+export const ListWithLargeRow = () => (
   <div
     style={{
       width: 500,
@@ -202,11 +204,11 @@ export const ListWithLargeRow = withReadme(README, () => (
       hasPagination={boolean('hasPagination', true)}
     />
   </div>
-));
+);
 
 ListWithLargeRow.storyName = 'list with large row';
 
-export const ListWithMultipleActions = withReadme(README, () => (
+export const ListWithMultipleActions = () => (
   <div
     style={{
       width: 500,
@@ -230,11 +232,11 @@ export const ListWithMultipleActions = withReadme(README, () => (
       hasPagination={boolean('hasPagination', true)}
     />
   </div>
-));
+);
 
 ListWithMultipleActions.storyName = 'list with multiple actions';
 
-export const ListWithOverflowMenu = withReadme(README, () => (
+export const ListWithOverflowMenu = () => (
   <div
     style={{
       width: 500,
@@ -258,11 +260,11 @@ export const ListWithOverflowMenu = withReadme(README, () => (
       hasPagination={boolean('hasPagination', true)}
     />
   </div>
-));
+);
 
 ListWithOverflowMenu.storyName = 'list with overflow menu';
 
-export const LargeRowListWithMultipleActions = withReadme(README, () => (
+export const LargeRowListWithMultipleActions = () => (
   <div
     style={{
       width: 500,
@@ -287,11 +289,11 @@ export const LargeRowListWithMultipleActions = withReadme(README, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 LargeRowListWithMultipleActions.storyName = 'large row list with multiple actions';
 
-export const LargeRowListWithOverflowMenu = withReadme(README, () => (
+export const LargeRowListWithOverflowMenu = () => (
   <div
     style={{
       width: 500,
@@ -316,7 +318,7 @@ export const LargeRowListWithOverflowMenu = withReadme(README, () => (
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
 LargeRowListWithOverflowMenu.storyName = 'large row list with overflow menu';
 

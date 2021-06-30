@@ -3,6 +3,7 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
 import { configureActions } from '@storybook/addon-actions';
 import { initializeRTL } from 'storybook-addon-rtl';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 
 initializeRTL();
 
@@ -13,6 +14,10 @@ configureActions({
 });
 
 export const parameters = {
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
   options: {
     storySort: (a, b) =>
       a[1].kind.replace(/☢️-|🚫-|⚠️-/i, '') === b[1].kind.replace(/☢️-|🚫-|⚠️-/i, '')

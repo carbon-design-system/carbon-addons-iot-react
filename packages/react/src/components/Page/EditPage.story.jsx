@@ -17,6 +17,11 @@ const breadcrumb = [<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</
 
 export default {
   title: '1 - Watson IoT/🚫 EditPage',
+  parameters: {
+    docs: {
+      inlineStories: false,
+    },
+  },
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 
