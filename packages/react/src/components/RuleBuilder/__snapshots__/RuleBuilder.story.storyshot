@@ -174,11 +174,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               role="presentation"
             >
               <button
-                aria-controls="tab-35__panel"
+                aria-controls="tab-27__panel"
                 aria-selected={true}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-35"
+                id="tab-27"
                 role="tab"
                 tabIndex={0}
                 type="button"
@@ -193,11 +193,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               role="presentation"
             >
               <button
-                aria-controls="tab-36__panel"
+                aria-controls="tab-28__panel"
                 aria-selected={false}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-36"
+                id="tab-28"
                 role="tab"
                 tabIndex={-1}
                 type="button"
@@ -2708,11 +2708,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               role="presentation"
             >
               <button
-                aria-controls="tab-37__panel"
+                aria-controls="tab-29__panel"
                 aria-selected={true}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-37"
+                id="tab-29"
                 role="tab"
                 tabIndex={0}
                 type="button"
@@ -2727,11 +2727,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               role="presentation"
             >
               <button
-                aria-controls="tab-38__panel"
+                aria-controls="tab-30__panel"
                 aria-selected={false}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-38"
+                id="tab-30"
                 role="tab"
                 tabIndex={-1}
                 type="button"
