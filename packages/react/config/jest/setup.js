@@ -1,16 +1,20 @@
-'use strict';
-
 import React from 'react';
 import addons, { mockChannel } from '@storybook/addons';
 import MockDate from 'mockdate';
+
+// To support storybooks inside jest
+import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
+
+// Needed so that any component that uses sizeme can be jest tested
+import sizeMe from 'react-sizeme';
+
+import dayjs from '../../src/utils/dayjs';
 
 addons.setChannel(mockChannel());
 
 const enzyme = require.requireActual('enzyme');
 const Adapter = require.requireActual('enzyme-adapter-react-16');
 
-// To support storybooks inside jest
-import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
 registerRequireContextHook();
 
 enzyme.configure({ adapter: new Adapter() });
@@ -33,6 +37,7 @@ if (typeof window !== 'undefined') {
     observe() {
       // do nothing
     }
+
     unobserve() {
       // do nothing
     }
@@ -44,10 +49,6 @@ if (typeof window !== 'undefined') {
   window.HTMLElement.prototype.scrollIntoView = jest.fn();
 }
 
-// Needed so that any component that uses sizeme can be jest tested
-import sizeMe from 'react-sizeme';
-import dayjs from '../../src/utils/dayjs';
-
 sizeMe.noPlaceholders = true;
 
 // Force the timezone to be the same everywhere
@@ -55,3 +56,8 @@ dayjs.tz.setDefault('America/Chicago');
 Date.prototype.getTimezoneOffset = () => 300; // mock date offset
 MockDate.set(1537538254000);
 Date.prototype.getLocaleString = () => 'Mock Date!';
+
+// must check for window first or SSR tests will fail
+if (typeof window !== 'undefined' && typeof window.URL.createObjectURL === 'undefined') {
+  Object.defineProperty(window.URL, 'createObjectURL', { value: function noop() {} });
+}
