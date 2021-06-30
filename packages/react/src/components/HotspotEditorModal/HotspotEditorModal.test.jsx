@@ -464,7 +464,7 @@ describe('HotspotEditorModal', () => {
 
     // Add the data item alternative 'pressure'
     fireEvent.click(screen.getByText('Select data items'));
-    fireEvent.click(screen.getByText('pressure'));
+    fireEvent.click(screen.getByRole('option', { name: /pressure/i }));
 
     fireEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
     fireEvent.click(screen.getByRole('button', { name: 'Add threshold' }));

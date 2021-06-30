@@ -96,7 +96,7 @@ const cardConfigWithPresets = {
             {
               dataSourceId: 'temperature',
               dataItemId: 'temperature',
-              label: 'Temperature',
+              label: 'Temperature in Celsius',
               unit: '°',
             },
             {
