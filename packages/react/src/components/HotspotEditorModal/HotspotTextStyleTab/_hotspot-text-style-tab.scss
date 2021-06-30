@@ -6,6 +6,9 @@ $border-radius: 5px;
 .#{$iot-prefix}--hotspot-text-style-tab {
   &__form {
     @include vertical-form();
+    .#{$prefix}--number input[type='number'] {
+      padding-right: 5rem;
+    }
   }
 
   &__text-style {

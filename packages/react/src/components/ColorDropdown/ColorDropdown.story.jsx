@@ -29,6 +29,7 @@ export const DefaultExample = () => (
       light={boolean('light', false)}
       titleText={text('titleText', 'Color')}
       onChange={action('onChange')}
+      disabled={boolean('disabled', false)}
     />
   </div>
 );

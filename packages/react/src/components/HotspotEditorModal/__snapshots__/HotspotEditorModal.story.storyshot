@@ -345,6 +345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <button
                   aria-controls="tab-14__panel"
+                  aria-disabled={false}
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
@@ -812,6 +813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <button
                   aria-controls="tab-16__panel"
+                  aria-disabled={false}
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
@@ -1717,6 +1719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <button
                   aria-controls="tab-18__panel"
+                  aria-disabled={false}
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"

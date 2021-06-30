@@ -191,6 +191,8 @@ const HotspotTextStyleTab = ({
     borderWidth,
   } = formValues;
 
+  const hasNonEditableContent = React.isValidElement(formValues?.content);
+
   const renderInfoMessage = () => (
     <div className={`${iotPrefix}--hotspot-editor--text-info-message`}>
       <InformationFilled24 />
@@ -210,6 +212,7 @@ const HotspotTextStyleTab = ({
           >
             <div className={`${iotPrefix}--hotspot-text-style-tab__text-style`}>
               <IconSwitch
+                disabled={hasNonEditableContent}
                 onClick={() => onChange({ bold: !bold })}
                 data-testid="hotspot-bold"
                 selected={bold}
@@ -219,6 +222,7 @@ const HotspotTextStyleTab = ({
                 light={light}
               />
               <IconSwitch
+                disabled={hasNonEditableContent}
                 name="italic"
                 onClick={() => onChange({ italic: !italic })}
                 data-testid="hotspot-italic"
@@ -229,6 +233,7 @@ const HotspotTextStyleTab = ({
                 light={light}
               />
               <IconSwitch
+                disabled={hasNonEditableContent}
                 name="underline"
                 onClick={() => onChange({ underline: !underline })}
                 data-testid="hotspot-underline"
@@ -242,6 +247,7 @@ const HotspotTextStyleTab = ({
 
             <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
               <ColorDropdown
+                disabled={hasNonEditableContent}
                 key={fontColor?.carbonColor ?? fontColor}
                 id={`${iotPrefix}--hotspot-text-style-tab__font-color`}
                 titleText={fontColorLabelText}
@@ -256,6 +262,7 @@ const HotspotTextStyleTab = ({
               />
 
               <NumberInput
+                disabled={hasNonEditableContent}
                 allowEmpty
                 id={`${iotPrefix}--hotspot-text-style-tab__font-size`}
                 min={minFontSize}
