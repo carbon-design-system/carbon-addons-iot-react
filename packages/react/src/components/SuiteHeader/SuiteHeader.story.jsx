@@ -16,6 +16,7 @@ import { Tag } from '../Tag';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
+import SuiteHeaderREADME from './SuiteHeader.mdx';
 
 const sideNavLinks = [
   {
@@ -257,6 +258,9 @@ export default {
 
   parameters: {
     component: SuiteHeader,
+    docs: {
+      page: SuiteHeaderREADME,
+    },
   },
 };
 

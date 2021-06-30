@@ -9,7 +9,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-a11y',
     'storybook-addon-rtl',
-    'storybook-readme',
+    '@storybook/addon-docs',
   ],
   babel: async (options) => {
     // ensure all plugins are using loose: false (the default)

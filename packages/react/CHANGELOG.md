@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.37...v2.146.0-next.38) (2021-06-29)
+
+
+### Bug Fixes
+
+* **modal:** fix modal docs ([a845804](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a8458048c48c08d75fb745ffa64b287e597a37d1))
+* **repo:** fix bad tags in readmes breaking netlify ([2c6aa73](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2c6aa7306a484f0a2df554dcbb494420d87192fc))
+* **repo:** more doc fixes for netlify ([486b707](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/486b7075da515ef4a840b6ca3a09db3deccf83d2))
+* **repo:** replace `<br>` with `<br/>` for netlify deploys ([ac79186](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ac79186284fb35dc565e176294ad490dd2a6a5a7))
+* **repo:** scope resolutions to carbon-addons-iot-react ([7e42de3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e42de3452e5a4f9fb0d2a0acf50ad2752177ac6))
+
+
+
+
+
 # [2.146.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.36...v2.146.0-next.37) (2021-06-25)
 
 

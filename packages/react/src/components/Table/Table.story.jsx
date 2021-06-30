@@ -17,7 +17,6 @@ import { Add20, TrashCan16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
-import { withReadme } from 'storybook-readme';
 import { firstBy } from 'thenby';
 
 import {
@@ -34,7 +33,7 @@ import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';
 import EmptyState from '../EmptyState';
 
-import README from './README.md';
+import TableREADME from './Table.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import AsyncTable from './AsyncTable/AsyncTable';
@@ -554,6 +553,9 @@ export default {
 
   parameters: {
     component: Table,
+    docs: {
+      page: TableREADME,
+    },
   },
 
   excludeStories: [
@@ -572,7 +574,7 @@ export default {
   ],
 };
 
-export const BasicDumbTable = withReadme(README, () => (
+export const BasicDumbTable = () => (
   <Table
     id="table"
     useZebraStyles={boolean('useZebraStyles', false)}
@@ -600,7 +602,7 @@ export const BasicDumbTable = withReadme(README, () => (
       },
     }}
   />
-));
+);
 
 BasicDumbTable.story = {
   name: 'basic `dumb` table',
@@ -645,7 +647,7 @@ BasicDumbTable.story = {
   },
 };
 
-export const TableExampleWithCreateSaveViews = withReadme(README, () => {
+export const TableExampleWithCreateSaveViews = () => {
   // The initial default state for this story is one with no active filters
   // and no default search value etc, i.e. a view all scenario.
   const baseState = {
@@ -1092,7 +1094,7 @@ export const TableExampleWithCreateSaveViews = withReadme(README, () => {
       />
     </FullWidthWrapper>
   );
-});
+};
 
 TableExampleWithCreateSaveViews.story = {
   name: 'Table Example with Create & Save Views',
@@ -1115,7 +1117,7 @@ TableExampleWithCreateSaveViews.story = {
   },
 };
 
-export const BasicTableWithFullRowEditExample = withReadme(README, () => {
+export const BasicTableWithFullRowEditExample = () => {
   const [showRowEditBar, setShowRowEditBar] = useState(false);
   const startingData = tableData.map((i) => ({
     ...i,
@@ -1275,7 +1277,7 @@ export const BasicTableWithFullRowEditExample = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 BasicTableWithFullRowEditExample.story = {
   name: 'Basic table with full rowEdit example',
@@ -1342,7 +1344,7 @@ BasicTableWithFullRowEditExample.story = {
   },
 };
 
-export const RowSelectionAndBatchActions = withReadme(README, () => {
+export const RowSelectionAndBatchActions = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const hasRowSelection = select('hasRowSelection', ['single', 'multi'], 'multi');
@@ -1387,13 +1389,13 @@ export const RowSelectionAndBatchActions = withReadme(README, () => {
       }}
     />
   );
-});
+};
 
 RowSelectionAndBatchActions.story = {
   name: 'row selection: single or multi-select w/ batch actions',
 };
 
-export const WithSingleSelectAndNestedTableRows = withReadme(README, () => (
+export const WithSingleSelectAndNestedTableRows = () => (
   <Table
     id="table"
     columns={tableColumns}
@@ -1431,13 +1433,13 @@ export const WithSingleSelectAndNestedTableRows = withReadme(README, () => (
       },
     }}
   />
-));
+);
 
 WithSingleSelectAndNestedTableRows.story = {
   name: 'row selection: single with nested table rows',
 };
 
-export const WithRowExpansionAndOnRowClickExpands = withReadme(README, () => (
+export const WithRowExpansionAndOnRowClickExpands = () => (
   <Table
     id="table"
     columns={tableColumns}
@@ -1464,13 +1466,13 @@ export const WithRowExpansionAndOnRowClickExpands = withReadme(README, () => (
       },
     }}
   />
-));
+);
 
 WithRowExpansionAndOnRowClickExpands.story = {
   name: 'row expansion: on row click expands',
 };
 
-export const WithRowExpansionAndActions = withReadme(README, () => (
+export const WithRowExpansionAndActions = () => (
   <Table
     id="table"
     columns={tableColumns}
@@ -1539,7 +1541,7 @@ export const WithRowExpansionAndActions = withReadme(README, () => (
       },
     }}
   />
-));
+);
 
 WithRowExpansionAndActions.story = {
   name: 'row expansion: with actions',
@@ -1625,7 +1627,7 @@ WithRowExpansionAndActions.story = {
   },
 };
 
-export const WithSorting = withReadme(README, () => (
+export const WithSorting = () => (
   <Table
     columns={tableColumns.map((i, idx) => ({
       ...i,
@@ -1661,13 +1663,13 @@ export const WithSorting = withReadme(README, () => (
       },
     }}
   />
-));
+);
 
 WithSorting.story = {
   name: 'sorting: single column',
 };
 
-export const WithMultiSorting = withReadme(README, () => {
+export const WithMultiSorting = () => {
   const sortedData = tableData.slice(0, 10).sort(
     firstBy((row) => row.values.select).thenBy((row) => {
       return row.values.string;
@@ -1719,13 +1721,13 @@ export const WithMultiSorting = withReadme(README, () => {
       }}
     />
   );
-});
+};
 
 WithMultiSorting.story = {
   name: 'sorting: multiple columns',
 };
 
-export const WithFilters = withReadme(README, () => {
+export const WithFilters = () => {
   text(
     'instructions',
     "By changing the value in a filter to a value that doesn't it exist will show the no results screen"
@@ -1773,13 +1775,13 @@ export const WithFilters = withReadme(README, () => {
       }}
     />
   );
-});
+};
 
 WithFilters.story = {
   name: 'filtering: simple filters',
 };
 
-export const WithAdvancedFilters = withReadme(README, () => {
+export const WithAdvancedFilters = () => {
   const operands = {
     IN: (a, b) => a.includes(b),
     NEQ: (a, b) => a !== b,
@@ -2021,13 +2023,13 @@ export const WithAdvancedFilters = withReadme(README, () => {
       />
     </>
   );
-});
+};
 
 WithAdvancedFilters.story = {
   name: 'filtering: ☢️ advanced filters',
 };
 
-export const WithNoData = withReadme(README, () => {
+export const WithNoData = () => {
   const emptyState = (
     <div key="empty-state">
       <h1 key="empty-state-heading">Custom empty state</h1>
@@ -2056,13 +2058,13 @@ export const WithNoData = withReadme(README, () => {
       options={{ hasPagination: true }}
     />
   );
-});
+};
 
 WithNoData.story = {
   name: 'states: no data, custom empty and loading states',
 };
 
-export const WithErrorState = withReadme(README, () => (
+export const WithErrorState = () => (
   <Table
     id="table"
     columns={tableColumns}
@@ -2076,7 +2078,7 @@ export const WithErrorState = withReadme(README, () => (
     options={{ hasPagination: true }}
     error={text('error', 'Error occured')}
   />
-));
+);
 
 WithErrorState.story = {
   name: 'with error state',
@@ -2095,7 +2097,7 @@ const errorState = (
   />
 );
 
-export const WithCustomErrorState = withReadme(README, () => (
+export const WithCustomErrorState = () => (
   <Table
     id="table"
     columns={tableColumns}
@@ -2110,13 +2112,13 @@ export const WithCustomErrorState = withReadme(README, () => (
     options={{ hasPagination: true }}
     error={text('error', 'Error occured')}
   />
-));
+);
 
 WithCustomErrorState.story = {
   name: 'with custom error state',
 };
 
-export const WithResizeAndInitialColumnWidthsAndHiddenColumn = withReadme(README, () => (
+export const WithResizeAndInitialColumnWidthsAndHiddenColumn = () => (
   <FullWidthWrapper>
     <Table
       id="table"
@@ -2138,7 +2140,7 @@ export const WithResizeAndInitialColumnWidthsAndHiddenColumn = withReadme(README
       error={text('error', undefined)}
     />
   </FullWidthWrapper>
-));
+);
 
 WithResizeAndInitialColumnWidthsAndHiddenColumn.story = {
   name: 'resize: initial column widths and hidden column',
@@ -2151,143 +2153,140 @@ WithResizeAndInitialColumnWidthsAndHiddenColumn.story = {
   },
 };
 
-export const WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement = withReadme(
-  README,
-  () => {
-    const ColumnsModifier = ({ onAdd, onRemove, columns, ordering }) => {
-      const [colsToAddField, setColsToAddField] = useState('colX, colY');
-      const [colsToAddWidthField, setColsToAddWidthField] = useState('100px, 150px');
-      const [colsToDeleteField, setColsToDeleteField] = useState('select, status');
-      const [isHidden, setIsHidden] = useState(false);
-
-      return (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginBottom: '2rem',
-          }}
-        >
-          <Form style={{ maxWidth: '300px', marginRight: '2rem' }}>
-            <TextInput
-              labelText="Ids of one or more columns"
-              id="colsToAddInput"
-              value={colsToAddField}
-              type="text"
-              onChange={(evt) => setColsToAddField(evt.currentTarget.value)}
-            />
-            <FormGroup legendText="" style={{ marginBottom: '1rem' }}>
-              <Checkbox
-                labelText="add as hidden column(s)"
-                id="isHiddenCheckbox"
-                defaultChecked={isHidden}
-                onChange={() => setIsHidden(!isHidden)}
-              />
-            </FormGroup>
-            <TextInput
-              labelText="The width of the added columns (if any)"
-              id="colsToAddWidthInput"
-              value={colsToAddWidthField}
-              type="text"
-              onChange={(evt) => setColsToAddWidthField(evt.currentTarget.value)}
-            />
-            <Button
-              style={{ marginTop: '1rem' }}
-              onClick={() => onAdd(colsToAddField, colsToAddWidthField, isHidden)}
-            >
-              Add
-            </Button>
-          </Form>
-          <div style={{ maxWidth: '50%' }}>
-            <div style={{ margin: '1rem' }}>
-              <p>COLUMNS prop</p>
-              <samp>{JSON.stringify(columns)}</samp>
-            </div>
-            <div style={{ margin: '1rem' }}>
-              <p>ORDERING prop</p>
-              <samp>{JSON.stringify(ordering)}</samp>
-            </div>
-          </div>
-
-          <Form style={{ maxWidth: '300px' }}>
-            <TextInput
-              labelText="One or more IDs of columns to delete"
-              id="removeColInput"
-              value={colsToDeleteField}
-              type="text"
-              onChange={(evt) => setColsToDeleteField(evt.currentTarget.value)}
-            />
-            <Button
-              style={{ marginTop: '1rem' }}
-              id="removeColInput"
-              onClick={() => onRemove(colsToDeleteField)}
-            >
-              Remove
-            </Button>
-          </Form>
-        </div>
-      );
-    };
-
-    const [myColumns, setMyColumns] = useState(tableColumns.map(({ filter, ...rest }) => rest));
-    const [myOrdering, setMyOrdering] = useState(defaultOrdering);
-
-    const onAdd = (colIds, colWidths, isHidden) => {
-      const colsToAdd = colIds.split(', ');
-      const widths = colWidths.split(', ');
-      const newColumns = [];
-      const newOrdering = [];
-      colsToAdd.forEach((colToAddId, index) => {
-        newColumns.push({
-          id: colToAddId,
-          name: colToAddId,
-          width: widths[index] || undefined,
-        });
-        newOrdering.push({ columnId: colToAddId, isHidden });
-      });
-      setMyColumns([...myColumns, ...newColumns]);
-      setMyOrdering([...myOrdering, ...newOrdering]);
-    };
-
-    const onRemove = (colIds) => {
-      const colsToDelete = colIds.split(', ');
-      setMyColumns(myColumns.filter((col) => !colsToDelete.includes(col.id)));
-      setMyOrdering(myOrdering.filter((col) => !colsToDelete.includes(col.columnId)));
-    };
-    const onColumnResize = (cols) => setMyColumns(cols);
+export const WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement = () => {
+  const ColumnsModifier = ({ onAdd, onRemove, columns, ordering }) => {
+    const [colsToAddField, setColsToAddField] = useState('colX, colY');
+    const [colsToAddWidthField, setColsToAddWidthField] = useState('100px, 150px');
+    const [colsToDeleteField, setColsToDeleteField] = useState('select, status');
+    const [isHidden, setIsHidden] = useState(false);
 
     return (
-      <>
-        <ColumnsModifier
-          onAdd={onAdd}
-          onRemove={onRemove}
-          columns={myColumns}
-          ordering={myOrdering}
-        />
-        <Table
-          id="table"
-          options={{
-            hasColumnSelection: true,
-            hasResize: true,
-            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-          }}
-          columns={myColumns}
-          view={{
-            filters: [],
-            table: {
-              ordering: myOrdering,
-            },
-          }}
-          data={tableData}
-          actions={{
-            ...tableActions,
-            table: { ...tableActions.table, onColumnResize },
-          }}
-        />
-      </>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginBottom: '2rem',
+        }}
+      >
+        <Form style={{ maxWidth: '300px', marginRight: '2rem' }}>
+          <TextInput
+            labelText="Ids of one or more columns"
+            id="colsToAddInput"
+            value={colsToAddField}
+            type="text"
+            onChange={(evt) => setColsToAddField(evt.currentTarget.value)}
+          />
+          <FormGroup legendText="" style={{ marginBottom: '1rem' }}>
+            <Checkbox
+              labelText="add as hidden column(s)"
+              id="isHiddenCheckbox"
+              defaultChecked={isHidden}
+              onChange={() => setIsHidden(!isHidden)}
+            />
+          </FormGroup>
+          <TextInput
+            labelText="The width of the added columns (if any)"
+            id="colsToAddWidthInput"
+            value={colsToAddWidthField}
+            type="text"
+            onChange={(evt) => setColsToAddWidthField(evt.currentTarget.value)}
+          />
+          <Button
+            style={{ marginTop: '1rem' }}
+            onClick={() => onAdd(colsToAddField, colsToAddWidthField, isHidden)}
+          >
+            Add
+          </Button>
+        </Form>
+        <div style={{ maxWidth: '50%' }}>
+          <div style={{ margin: '1rem' }}>
+            <p>COLUMNS prop</p>
+            <samp>{JSON.stringify(columns)}</samp>
+          </div>
+          <div style={{ margin: '1rem' }}>
+            <p>ORDERING prop</p>
+            <samp>{JSON.stringify(ordering)}</samp>
+          </div>
+        </div>
+
+        <Form style={{ maxWidth: '300px' }}>
+          <TextInput
+            labelText="One or more IDs of columns to delete"
+            id="removeColInput"
+            value={colsToDeleteField}
+            type="text"
+            onChange={(evt) => setColsToDeleteField(evt.currentTarget.value)}
+          />
+          <Button
+            style={{ marginTop: '1rem' }}
+            id="removeColInput"
+            onClick={() => onRemove(colsToDeleteField)}
+          >
+            Remove
+          </Button>
+        </Form>
+      </div>
     );
-  }
-);
+  };
+
+  const [myColumns, setMyColumns] = useState(tableColumns.map(({ filter, ...rest }) => rest));
+  const [myOrdering, setMyOrdering] = useState(defaultOrdering);
+
+  const onAdd = (colIds, colWidths, isHidden) => {
+    const colsToAdd = colIds.split(', ');
+    const widths = colWidths.split(', ');
+    const newColumns = [];
+    const newOrdering = [];
+    colsToAdd.forEach((colToAddId, index) => {
+      newColumns.push({
+        id: colToAddId,
+        name: colToAddId,
+        width: widths[index] || undefined,
+      });
+      newOrdering.push({ columnId: colToAddId, isHidden });
+    });
+    setMyColumns([...myColumns, ...newColumns]);
+    setMyOrdering([...myOrdering, ...newOrdering]);
+  };
+
+  const onRemove = (colIds) => {
+    const colsToDelete = colIds.split(', ');
+    setMyColumns(myColumns.filter((col) => !colsToDelete.includes(col.id)));
+    setMyOrdering(myOrdering.filter((col) => !colsToDelete.includes(col.columnId)));
+  };
+  const onColumnResize = (cols) => setMyColumns(cols);
+
+  return (
+    <>
+      <ColumnsModifier
+        onAdd={onAdd}
+        onRemove={onRemove}
+        columns={myColumns}
+        ordering={myOrdering}
+      />
+      <Table
+        id="table"
+        options={{
+          hasColumnSelection: true,
+          hasResize: true,
+          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+        }}
+        columns={myColumns}
+        view={{
+          filters: [],
+          table: {
+            ordering: myOrdering,
+          },
+        }}
+        data={tableData}
+        actions={{
+          ...tableActions,
+          table: { ...tableActions.table, onColumnResize },
+        }}
+      />
+    </>
+  );
+};
 
 WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.story = {
   name: 'resize: onColumnResize callback, no initial column width and column management',
@@ -2300,31 +2299,28 @@ WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.story = 
   },
 };
 
-export const WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths = withReadme(
-  README,
-  () => (
-    <React.Fragment>
-      <p>
-        <strong>Note!</strong> <br />
-        For this configuration to work, the table must be wrapped in a container that has a width
-        defined in other than %. <br />
-        E.g. the FullWidthWrapper used by the storybook examples.
-      </p>
-      <FullWidthWrapper>
-        <Table
-          id="table"
-          options={{
-            hasResize: true,
-            useAutoTableLayoutForResize: true,
-            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-          }}
-          columns={tableColumns}
-          data={tableData}
-          actions={tableActions}
-        />
-      </FullWidthWrapper>
-    </React.Fragment>
-  )
+export const WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths = () => (
+  <React.Fragment>
+    <p>
+      <strong>Note!</strong> <br />
+      For this configuration to work, the table must be wrapped in a container that has a width
+      defined in other than %. <br />
+      E.g. the FullWidthWrapper used by the storybook examples.
+    </p>
+    <FullWidthWrapper>
+      <Table
+        id="table"
+        options={{
+          hasResize: true,
+          useAutoTableLayoutForResize: true,
+          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+        }}
+        columns={tableColumns}
+        data={tableData}
+        actions={tableActions}
+      />
+    </FullWidthWrapper>
+  </React.Fragment>
 );
 
 WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths.story = {
@@ -2337,7 +2333,7 @@ WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths.story = {
     },
   },
 };
-export const WithResizeAndNoInitialColumns = withReadme(README, () => {
+export const WithResizeAndNoInitialColumns = () => {
   // Initial render is an empty columns array, which is updated after the first render
   const [columns, setColumns] = useState([]);
   useLayoutEffect(() => {
@@ -2360,14 +2356,14 @@ export const WithResizeAndNoInitialColumns = withReadme(README, () => {
       actions={tableActions}
     />
   );
-});
+};
 
 WithResizeAndNoInitialColumns.story = {
   name: 'resize: and no initial columns',
   decorators: [createElement],
 };
 
-export const WithFixedColumnWidthAndNoResize = withReadme(README, () => (
+export const WithFixedColumnWidthAndNoResize = () => (
   // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
   <FullWidthWrapper>
     <Table
@@ -2385,7 +2381,7 @@ export const WithFixedColumnWidthAndNoResize = withReadme(README, () => (
       actions={tableActions}
     />
   </FullWidthWrapper>
-));
+);
 
 WithFixedColumnWidthAndNoResize.story = {
   name: 'with fixed column width and no resize',
@@ -2398,7 +2394,7 @@ WithFixedColumnWidthAndNoResize.story = {
   },
 };
 
-export const WithCustomRowHeight = withReadme(README, () => (
+export const WithCustomRowHeight = () => (
   // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
   <FullWidthWrapper>
     <StyledTableCustomRowHeight
@@ -2408,7 +2404,7 @@ export const WithCustomRowHeight = withReadme(README, () => (
       actions={tableActions}
     />
   </FullWidthWrapper>
-));
+);
 
 WithCustomRowHeight.story = {
   name: 'with custom row height',
@@ -2423,7 +2419,7 @@ WithCustomRowHeight.story = {
   },
 };
 
-export const WithHasOnlyPageData = withReadme(README, () => {
+export const WithHasOnlyPageData = () => {
   return (
     <Table
       id="table"
@@ -2441,7 +2437,7 @@ export const WithHasOnlyPageData = withReadme(README, () => {
       }}
     />
   );
-});
+};
 
 WithHasOnlyPageData.story = {
   name: 'with hasOnlyPageData',
@@ -2455,7 +2451,7 @@ WithHasOnlyPageData.story = {
   },
 };
 
-export const HorizontalScrollCustomWidth = withReadme(README, () => {
+export const HorizontalScrollCustomWidth = () => {
   const tableColumnsConcat = [
     { id: 'test2', name: 'Test 2' },
     { id: 'test3', name: 'Test 3' },
@@ -2487,13 +2483,13 @@ export const HorizontalScrollCustomWidth = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 HorizontalScrollCustomWidth.story = {
   name: 'horizontal scroll - custom width',
 };
 
-export const HorizontalScrollFullWidthNoWrap = withReadme(README, () => {
+export const HorizontalScrollFullWidthNoWrap = () => {
   const tableColumnsConcat = [
     { id: 'test2', name: 'Test 2' },
     { id: 'test3', name: 'Test 3' },
@@ -2523,16 +2519,16 @@ export const HorizontalScrollFullWidthNoWrap = withReadme(README, () => {
       }}
     />
   );
-});
+};
 
 HorizontalScrollFullWidthNoWrap.story = {
   name: 'horizontal scroll - full width - no wrap',
 };
 
-export const FilteredSortedPaginatedTableWithAsynchronousDataSource = withReadme(README, () => {
+export const FilteredSortedPaginatedTableWithAsynchronousDataSource = () => {
   const apiClient = new MockApiClient(100, number('Fetch Duration (ms)', 500));
   return <AsyncTable fetchData={apiClient.getData} />;
-});
+};
 
 FilteredSortedPaginatedTableWithAsynchronousDataSource.story = {
   name: 'Filtered/Sorted/Paginated table with asynchronous data source',
@@ -2546,7 +2542,7 @@ FilteredSortedPaginatedTableWithAsynchronousDataSource.story = {
   },
 };
 
-export const CustomToolbarContent = withReadme(README, () => (
+export const CustomToolbarContent = () => (
   <Table
     id="table"
     columns={tableColumns}
@@ -2564,13 +2560,13 @@ export const CustomToolbarContent = withReadme(README, () => (
       },
     }}
   />
-));
+);
 
 CustomToolbarContent.story = {
   name: 'Custom toolbar content',
 };
 
-export const WithColumnSelection = withReadme(README, () => (
+export const WithColumnSelection = () => (
   <Table
     id="table"
     columns={tableColumns}
@@ -2594,13 +2590,13 @@ export const WithColumnSelection = withReadme(README, () => (
       columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__'),
     }}
   />
-));
+);
 
 WithColumnSelection.story = {
   name: 'with column selection',
 };
 
-export const WithCustomTooltip = withReadme(README, () => (
+export const WithCustomTooltip = () => (
   <Table
     id="table"
     columns={tableColumns}
@@ -2618,13 +2614,13 @@ export const WithCustomTooltip = withReadme(README, () => (
       },
     }}
   />
-));
+);
 
 WithCustomTooltip.story = {
   name: 'with custom tooltip',
 };
 
-export const WithCustomCellRenderer = withReadme(README, () => {
+export const WithCustomCellRenderer = () => {
   const renderDataFunction = ({ value }) => <div style={{ color: 'red' }}>{value}</div>;
   return (
     <Table
@@ -2652,7 +2648,7 @@ export const WithCustomCellRenderer = withReadme(README, () => {
       }}
     />
   );
-});
+};
 
 WithCustomCellRenderer.story = {
   name: 'with custom cell renderer',
@@ -2679,7 +2675,7 @@ WithCustomCellRenderer.story = {
   },
 };
 
-export const WithStickyHeaderExperimentalAndCellTooltipCalculation = withReadme(README, () => {
+export const WithStickyHeaderExperimentalAndCellTooltipCalculation = () => {
   const renderDataFunction = ({ value }) => (
     <div style={{ position: 'relative' }} data-floating-menu-container>
       {value}
@@ -2731,7 +2727,7 @@ export const WithStickyHeaderExperimentalAndCellTooltipCalculation = withReadme(
       />
     </div>
   );
-});
+};
 
 WithStickyHeaderExperimentalAndCellTooltipCalculation.story = {
   name: 'with sticky header (experimental) and cell tooltip calculation',

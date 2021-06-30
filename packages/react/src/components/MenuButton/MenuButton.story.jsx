@@ -7,12 +7,11 @@ import {
 } from 'carbon-components-react';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withReadme } from 'storybook-readme';
 import { select } from '@storybook/addon-knobs';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
-import README from './README.md';
+import MenuButtonREADME from './MenuButton.mdx';
 import MenuButton from './MenuButton';
 
 export const menuItems = [
@@ -69,7 +68,7 @@ const SingleButton = () => <MenuButton label="Actions">{menuItems}</MenuButton>;
 /**
  * If no primary action is given, but has a label we assume it's a single menu button.
  */
-export const SingleMenuButton = withReadme(README, () => <SingleButton />);
+export const SingleMenuButton = () => <SingleButton />;
 
 SingleMenuButton.story = {
   name: 'menu button',
@@ -85,7 +84,7 @@ const SplitButton = () => (
   </MenuButton>
 );
 
-export const SplitMenuButton = withReadme(README, () => <SplitButton />);
+export const SplitMenuButton = () => <SplitButton />;
 
 SplitMenuButton.story = {
   name: 'split menu button',
@@ -100,7 +99,7 @@ const IconOnlyButton = () => (
   </MenuButton>
 );
 
-export const IconOnlyMenuButton = withReadme(README, () => <IconOnlyButton />);
+export const IconOnlyMenuButton = () => <IconOnlyButton />;
 
 IconOnlyMenuButton.story = {
   name: 'icon only menu button',
@@ -238,6 +237,9 @@ export default {
   decorators: [],
   parameters: {
     component: MenuButton,
+    docs: {
+      page: MenuButtonREADME,
+    },
   },
   excludeStories: ['menuItems'],
 };

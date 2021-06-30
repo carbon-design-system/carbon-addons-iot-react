@@ -2,9 +2,8 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, object, select, text } from '@storybook/addon-knobs';
 import { OverflowMenu, OverflowMenuItem, Tooltip } from 'carbon-components-react';
-import { withReadme } from 'storybook-readme';
 
-import README from './ComposedModal.md';
+import ComposedModalREADME from './ComposedModal.mdx';
 import ComposedModal from './ComposedModal';
 
 export default {
@@ -12,6 +11,9 @@ export default {
 
   parameters: {
     component: ComposedModal,
+    docs: {
+      page: ComposedModalREADME,
+    },
 
     info: `Renders a carbon modal dialog.  This dialog adds these additional features on top of the base carbon dialog:
     - adds header.helpText prop to explain dialog
@@ -28,7 +30,7 @@ REDUXFORM or REDUXDIALOG`,
   },
 };
 
-export const WarningDialog = withReadme(README, () => (
+export const WarningDialog = () => (
   <ComposedModal
     isLarge={boolean('isLarge', false)}
     type={select('type', ['warn', 'normal'], 'warn')}
@@ -42,13 +44,13 @@ export const WarningDialog = withReadme(README, () => (
     passiveModal={boolean('passiveModal', false)}
     isFullScreen={boolean('isFullScreen', false)}
   />
-));
+);
 
 WarningDialog.story = {
   name: 'as warning dialog',
 };
 
-export const States = withReadme(README, () => {
+export const States = () => {
   const error = text('error', 'an error has occurred');
   const isFetchingData = boolean('isFetchingData', true);
   const sendingData = boolean('sendingData', false);
@@ -82,13 +84,13 @@ export const States = withReadme(README, () => {
       {text('body content', '')}
     </ComposedModal>
   );
-});
+};
 
 States.story = {
   name: 'with error, isFetchingData, and sendingData states',
 };
 
-export const WithCustomFooter = withReadme(README, () => (
+export const WithCustomFooter = () => (
   <ComposedModal
     sendingData
     header={{
@@ -111,13 +113,13 @@ export const WithCustomFooter = withReadme(README, () => (
     passiveModal={boolean('passiveModal', false)}
     isFullScreen={boolean('isFullScreen', false)}
   />
-));
+);
 
 WithCustomFooter.story = {
   name: 'with custom footer',
 };
 
-export const PrimaryButtonIsHidden = withReadme(README, () => (
+export const PrimaryButtonIsHidden = () => (
   <ComposedModal
     header={{
       label: 'Custom footer',
@@ -134,13 +136,13 @@ export const PrimaryButtonIsHidden = withReadme(README, () => (
     passiveModal={boolean('passiveModal', false)}
     isFullScreen={boolean('isFullScreen', false)}
   />
-));
+);
 
 PrimaryButtonIsHidden.story = {
   name: 'with hidden or disabled buttons',
 };
 
-export const HeaderCustomNodes = withReadme(README, () => (
+export const HeaderCustomNodes = () => (
   <ComposedModal
     header={{
       label: <strong>Custom node label</strong>,
@@ -153,13 +155,13 @@ export const HeaderCustomNodes = withReadme(README, () => (
     passiveModal={boolean('passiveModal', false)}
     isFullScreen={boolean('isFullScreen', false)}
   />
-));
+);
 
 HeaderCustomNodes.story = {
   name: 'with custom header nodes',
 };
 
-export const ComposedModalWithOverflowAndTooltip = withReadme(README, () => (
+export const ComposedModalWithOverflowAndTooltip = () => (
   <ComposedModal
     header={{
       label: 'Translated bottom buttons',
@@ -184,7 +186,7 @@ export const ComposedModalWithOverflowAndTooltip = withReadme(README, () => (
       Hi there
     </Tooltip>
   </ComposedModal>
-));
+);
 
 ComposedModalWithOverflowAndTooltip.story = {
   name: 'with i18n, overflow menu, and tooltip',

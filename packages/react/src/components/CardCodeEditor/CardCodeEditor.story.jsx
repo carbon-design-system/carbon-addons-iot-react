@@ -32,6 +32,9 @@ export default {
 
   parameters: {
     component: CardCodeEditor,
+    docs: {
+      inlineStories: false,
+    },
   },
 
   excludeStories: ['isValidCallback'],
