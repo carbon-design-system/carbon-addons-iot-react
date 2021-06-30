@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.38...v2.146.0-next.39) (2021-06-30)
+
+
+### Bug Fixes
+
+* **hotspoteditordatasourcetab:** fixed custom labels for multiselect ([6fa19ea](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6fa19eabf658760952b8b39192816bdfd901cf65)), closes [#2391](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2391)
+* **hotspoteditormodal:** fixed merge conflicts ([0955400](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/09554007b8a2f07bfffe989bf093b94e649d1d4d))
+
+
+
+
+
 # [2.146.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.37...v2.146.0-next.38) (2021-06-29)
 
 
