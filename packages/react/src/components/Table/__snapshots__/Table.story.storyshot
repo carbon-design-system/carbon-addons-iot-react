@@ -8482,7 +8482,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <div
         className="bx--toolbar-content iot--table-toolbar-content"
         data-testid="table-table-toolbar-content"
-      />
+      >
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          aria-label="open and close list of options"
+          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu"
+          data-testid="table-head--overflow"
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          open={false}
+          type="button"
+        >
+          <svg
+            aria-label="open and close list of options"
+            className="bx--overflow-menu__icon iot--table-toolbar-aggregations__overflow-icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="16"
+              cy="8"
+              r="2"
+            />
+            <circle
+              cx="16"
+              cy="16"
+              r="2"
+            />
+            <circle
+              cx="16"
+              cy="24"
+              r="2"
+            />
+            <title>
+              open and close list of options
+            </title>
+          </svg>
+        </button>
+      </div>
     </section>
     <div
       className="addons-iot-table-container"
@@ -26071,6 +26118,56 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
           </tbody>
+          <tfoot
+            className="iot-table-foot"
+            data-testid="table-table-foot"
+          >
+            <tr>
+              <td
+                className="iot-table-foot--label"
+                data-testid="table-table-foot-aggregation-string"
+              >
+                Total:
+              </td>
+              <td
+                data-testid="table-table-foot-aggregation-date"
+              >
+                 
+              </td>
+              <td
+                data-testid="table-table-foot-aggregation-select"
+              >
+                 
+              </td>
+              <td
+                data-testid="table-table-foot-aggregation-secretField"
+              >
+                 
+              </td>
+              <td
+                data-testid="table-table-foot-aggregation-status"
+              >
+                 
+              </td>
+              <td
+                align="start"
+                className="iot-table-foot--value data-table-start"
+                data-testid="table-table-foot-aggregation-number"
+              >
+                215589
+              </td>
+              <td
+                data-testid="table-table-foot-aggregation-boolean"
+              >
+                 
+              </td>
+              <td
+                data-testid="table-table-foot-aggregation-node"
+              >
+                 
+              </td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </div>

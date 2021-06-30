@@ -397,6 +397,10 @@ export const tableActions = {
     onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
     onApplyAdvancedFilter: action('onApplyAdvancedFilter'),
     onToggleAdvancedFilter: action('onToggleAdvancedFilter'),
+    // TODO: removed to mimic the current state of consumers in the wild
+    // since they won't be adding this prop to any of their components
+    // can be readded in V3.
+    // onToggleAggregations: action('onToggleAggregations'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
@@ -564,10 +568,23 @@ export const BasicDumbTable = () => (
     data={tableData}
     actions={tableActions}
     options={{
+      hasAggregations: boolean('hasAggregations', true),
       hasSearch: boolean('hasSearch', false),
       hasFilter: boolean('hasFilter', false),
       hasPagination: boolean('hasPagination', false),
       hasRowEdit: boolean('hasRowEdit', false),
+    }}
+    view={{
+      aggregations: {
+        label: 'Total:',
+        columns: [
+          {
+            id: 'number',
+            align: 'start',
+            isSortable: false,
+          },
+        ],
+      },
     }}
   />
 );
