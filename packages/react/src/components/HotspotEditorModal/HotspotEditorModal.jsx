@@ -294,6 +294,7 @@ const HotspotEditorModal = ({
     },
   });
 
+  const hasNonEditableContent = React.isValidElement(selectedHotspot?.content);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const {
@@ -492,7 +493,9 @@ const HotspotEditorModal = ({
                 translateWithId={translateWithId}
               />
             </Tab>
-            <Tab label={fixedTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
+            <Tab disabled={hasNonEditableContent} label={fixedTypeDataSourceTabLabelText}>
+              {hasNonEditableContent ? null : renderDataSourceTab()}
+            </Tab>
           </Tabs>
         )}
       </>
@@ -537,7 +540,9 @@ const HotspotEditorModal = ({
             translateWithId={translateWithId}
           />
         </Tab>
-        <Tab label={textTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
+        <Tab disabled={hasNonEditableContent} label={textTypeDataSourceTabLabelText}>
+          {hasNonEditableContent ? null : renderDataSourceTab()}
+        </Tab>
       </Tabs>
     );
   };

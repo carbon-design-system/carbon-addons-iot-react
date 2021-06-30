@@ -166,6 +166,19 @@ export const WidthExistingHotspots = () => {
       ...cardConfig.values,
       hotspots: [
         {
+          x: 45,
+          y: 25,
+          color: green50,
+          content: <span style={{ padding: '1rem' }}>content is an element</span>,
+        },
+        {
+          x: 65,
+          y: 75,
+          type: 'text',
+          color: green50,
+          content: <span>content is an element</span>,
+        },
+        {
           x: 75,
           y: 10,
           type: 'text',

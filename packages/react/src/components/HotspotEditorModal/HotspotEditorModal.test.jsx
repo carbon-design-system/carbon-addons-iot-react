@@ -167,6 +167,131 @@ describe('HotspotEditorModal', () => {
     expect(dynamicHotspot2).toBeVisible();
   });
 
+  it('disables datasource tab for Hotspots of type "fixed" with element content', async () => {
+    const myCardConfig = getCardConfig();
+    myCardConfig.values.hotspots = [
+      {
+        title: 'using element content',
+        x: 45,
+        y: 25,
+        type: 'fixed',
+        color: green50,
+        content: <span>fixed - content is an element</span>,
+      },
+      {
+        x: 65,
+        y: 75,
+        type: 'text',
+        color: green50,
+        content: <span>text - content is an element</span>,
+      },
+      {
+        x: 75,
+        y: 10,
+        type: 'fixed',
+        content: { title: 'Normal' },
+      },
+    ];
+    const dataSourceTabName = 'Data source';
+
+    render(
+      <HotspotEditorModal
+        backgroundColors={getSelectableColors()}
+        borderColors={getSelectableColors()}
+        cardConfig={myCardConfig}
+        dataItems={getDataItems()}
+        defaultHotspotType="fixed"
+        fontColors={getSelectableColors()}
+        hotspotIconFillColors={getSelectableColors()}
+        hotspotIcons={getSelectableIcons()}
+        label={landscape}
+        onClose={jest.fn()}
+        onFetchDynamicDemoHotspots={() => {
+          return new Promise((resolve) => resolve(getDemoDynamicHotspots()));
+        }}
+        onSave={jest.fn()}
+      />
+    );
+
+    // Wait for the hotspots to have ben rendered
+    await waitFor(() => expect(screen.getByTestId('hotspot-45-25')).toBeTruthy());
+
+    // We use aria-disabled to check if the tab is enabled of not
+    expect(screen.getByRole('tab', { name: dataSourceTabName })).toHaveAttribute(
+      'aria-disabled',
+      'false'
+    );
+
+    const fixedHotspotWithElementContent = within(screen.getByTestId('hotspot-45-25')).getByRole(
+      'button'
+    );
+    userEvent.click(fixedHotspotWithElementContent);
+    expect(screen.getByText('fixed - content is an element')).toBeVisible();
+    await waitFor(() =>
+      expect(screen.getByRole('tab', { name: dataSourceTabName })).toHaveAttribute(
+        'aria-disabled',
+        'true'
+      )
+    );
+
+    expect(screen.queryByLabelText('Data items')).not.toBeInTheDocument();
+  });
+
+  it('disables datasource tab for Hotspots of type "text" with element content', async () => {
+    const myCardConfig = getCardConfig();
+    myCardConfig.values.hotspots = [
+      {
+        x: 65,
+        y: 75,
+        type: 'text',
+        color: green50,
+        content: <span>text - content is an element</span>,
+      },
+    ];
+    const dataSourceTabName = 'Data source';
+
+    render(
+      <HotspotEditorModal
+        backgroundColors={getSelectableColors()}
+        borderColors={getSelectableColors()}
+        cardConfig={myCardConfig}
+        dataItems={getDataItems()}
+        defaultHotspotType="fixed"
+        fontColors={getSelectableColors()}
+        hotspotIconFillColors={getSelectableColors()}
+        hotspotIcons={getSelectableIcons()}
+        label={landscape}
+        onClose={jest.fn()}
+        onFetchDynamicDemoHotspots={() => {
+          return new Promise((resolve) => resolve(getDemoDynamicHotspots()));
+        }}
+        onSave={jest.fn()}
+      />
+    );
+
+    // Wait for the hotspots to have ben rendered
+    await waitFor(() => expect(screen.getByTestId('hotspot-65-75')).toBeTruthy());
+
+    // We use aria-disabled to check if the tab is enabled of not
+    expect(screen.getByRole('tab', { name: dataSourceTabName })).toHaveAttribute(
+      'aria-disabled',
+      'false'
+    );
+
+    const textHotspotWithElementContent = within(screen.getByTestId('hotspot-65-75')).getByRole(
+      'complementary'
+    );
+    userEvent.click(textHotspotWithElementContent);
+    await waitFor(() =>
+      expect(screen.getByRole('tab', { name: dataSourceTabName })).toHaveAttribute(
+        'aria-disabled',
+        'true'
+      )
+    );
+
+    expect(screen.queryByLabelText('Data items')).not.toBeInTheDocument();
+  });
+
   it('exports cardConfig with initial settings', async () => {
     const onSave = jest.fn();
     const onFetchDynamicDemoHotspots = jest.fn().mockImplementation(() => {
