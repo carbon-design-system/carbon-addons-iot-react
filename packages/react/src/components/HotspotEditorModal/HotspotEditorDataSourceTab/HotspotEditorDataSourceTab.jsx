@@ -91,7 +91,7 @@ const defaultProps = {
 export const formatDataItemsForDropdown = (dataItems) =>
   dataItems?.map(({ dataSourceId, label }) => ({
     id: dataSourceId,
-    text: label,
+    label,
   }));
 
 const HotspotEditorDataSourceTab = ({
@@ -132,6 +132,16 @@ const HotspotEditorDataSourceTab = ({
     onChange({ attributes: newArray });
   };
 
+  // MultiSelect
+  // For the initial selection to work the objects in prop "initialSelectedItems"
+  // must be identical to the objects in prop "items". It is not enough that the
+  // ids are the same. Therefore, we must adjust the labels in "items" if they have
+  // been modified in the "initialSelectedItems".
+  const multiSelectItems = formatDataItemsForDropdown(dataItems).map((item) => ({
+    ...item,
+    label: initialSelectedItems.find((selected) => selected.id === item.id)?.label ?? item.label,
+  }));
+
   return (
     <div data-testid={testID}>
       <DataSeriesFormItemModal
@@ -148,13 +158,13 @@ const HotspotEditorDataSourceTab = ({
       />
       <div className={`${baseClassName}--input`}>
         <MultiSelect
-          key={cardConfig.id} // need to re-gen if selected card changes
+          // need to re-gen if multiSelectItems changes (i.e. the label)
+          key={`${multiSelectItems.map((item) => item.label).join('')}`}
           id={`${cardConfig.id}_dataSourceIds`}
           label={mergedI18n.selectDataItemsText}
           direction="bottom"
-          itemToString={(item) => item.id}
           initialSelectedItems={initialSelectedItems}
-          items={formatDataItemsForDropdown(dataItems)}
+          items={multiSelectItems}
           light
           onChange={handleSelectionChange}
           titleText={mergedI18n.dataItemText}

@@ -207,6 +207,9 @@ export default {
 
   parameters: {
     component: SelectUsersModal,
+    docs: {
+      inlineStories: false,
+    },
   },
   excludeStories: ['generateUserList'],
 };

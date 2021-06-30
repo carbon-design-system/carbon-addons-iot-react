@@ -1,14 +1,13 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
-import { withReadme } from 'storybook-readme';
 
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { barChartData } from '../../utils/barChartDataSample';
 
 import BarChartCard from './BarChartCard';
-import README from './BarChartCard.md';
+import BarChartCardREADME from './BarChartCard.mdx';
 
 const COLORS = ['blue', 'red', 'green', 'yellow'];
 
@@ -22,10 +21,13 @@ export default {
   title: __DEV__ ? '1 - Watson IoT/⚠️ BarChartCard' : '1 - Watson IoT/BarChartCard',
   parameters: {
     component: BarChartCard,
+    docs: {
+      page: BarChartCardREADME,
+    },
   },
 };
 
-export const SimpleBar = withReadme(README, () => {
+export const SimpleBar = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -68,13 +70,13 @@ export const SimpleBar = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 SimpleBar.story = {
   name: 'with simple bar',
 };
 
-export const SimpleBarTimeSeriesCustomDomainRange = withReadme(README, () => {
+export const SimpleBarTimeSeriesCustomDomainRange = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -130,13 +132,13 @@ export const SimpleBarTimeSeriesCustomDomainRange = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 SimpleBarTimeSeriesCustomDomainRange.story = {
   name: 'with simple bar of time series data and custom domainRange',
 };
 
-export const GroupedBar = withReadme(README, () => {
+export const GroupedBar = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -187,13 +189,13 @@ export const GroupedBar = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 GroupedBar.story = {
   name: 'with grouped bar',
 };
 
-export const StackedBar = withReadme(README, () => {
+export const StackedBar = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -242,13 +244,13 @@ export const StackedBar = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 StackedBar.story = {
   name: 'with stacked bar',
 };
 
-export const StackedBarTimeSeries = withReadme(README, () => {
+export const StackedBarTimeSeries = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -296,13 +298,13 @@ export const StackedBarTimeSeries = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 StackedBarTimeSeries.story = {
   name: 'with stacked bar of time series data',
 };
 
-export const StackedBarTimeSeriesWithCategories = withReadme(README, () => {
+export const StackedBarTimeSeriesWithCategories = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -346,7 +348,7 @@ export const StackedBarTimeSeriesWithCategories = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 StackedBarTimeSeriesWithCategories.story = {
   name: 'with stacked bar of time series data and categories',

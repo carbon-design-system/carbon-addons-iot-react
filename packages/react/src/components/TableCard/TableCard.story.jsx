@@ -3,24 +3,26 @@ import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Bee16 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
-import { withReadme } from 'storybook-readme';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { tableColumns, tableData, actions1 } from '../../utils/sample';
 
 import TableCard from './TableCard';
-import README from './TableCard.md';
+import TableCardREADME from './TableCard.mdx';
 
 export default {
   title: '1 - Watson IoT/TableCard',
 
   parameters: {
     component: TableCard,
+    docs: {
+      page: TableCardREADME,
+    },
   },
 };
 
-export const WithMultipleActions = withReadme(README, () => {
+export const WithMultipleActions = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -51,13 +53,13 @@ export const WithMultipleActions = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithMultipleActions.story = {
   name: 'with multiple actions',
 };
 
-export const WithLinks = withReadme(README, () => {
+export const WithLinks = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   const cardVariables = object('cardVariables', {
@@ -105,7 +107,7 @@ export const WithLinks = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithLinks.story = {
   name: 'with links and variables',
@@ -125,7 +127,7 @@ WithLinks.story = {
   },
 };
 
-export const WithThresholdsPrecisionAndExpandedRows = withReadme(README, () => {
+export const WithThresholdsPrecisionAndExpandedRows = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -240,13 +242,13 @@ export const WithThresholdsPrecisionAndExpandedRows = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithThresholdsPrecisionAndExpandedRows.story = {
   name: 'with thresholds, precision and expanded rows',
 };
 
-export const WithThresholdsOnlyWithIcon = withReadme(README, () => {
+export const WithThresholdsOnlyWithIcon = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -322,7 +324,7 @@ export const WithThresholdsOnlyWithIcon = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithThresholdsOnlyWithIcon.story = {
   name: 'with thresholds only with icon',
@@ -336,7 +338,7 @@ WithThresholdsOnlyWithIcon.story = {
   },
 };
 
-export const WithMatchingThresholds = withReadme(README, () => {
+export const WithMatchingThresholds = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -391,13 +393,13 @@ export const WithMatchingThresholds = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithMatchingThresholds.story = {
   name: 'with matching thresholds',
 };
 
-export const WithCustomColumnWidthAndSort = withReadme(README, () => {
+export const WithCustomColumnWidthAndSort = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -426,13 +428,13 @@ export const WithCustomColumnWidthAndSort = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithCustomColumnWidthAndSort.story = {
   name: 'with custom column width and sort',
 };
 
-export const WithRowExpansionAndRowSpecificLinkVariables = withReadme(README, () => {
+export const WithRowExpansionAndRowSpecificLinkVariables = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -475,7 +477,7 @@ export const WithRowExpansionAndRowSpecificLinkVariables = withReadme(README, ()
       />
     </div>
   );
-});
+};
 
 WithRowExpansionAndRowSpecificLinkVariables.story = {
   name: 'with row expansion, row specific link variables, and timestamp',
@@ -493,7 +495,7 @@ WithRowExpansionAndRowSpecificLinkVariables.story = {
   },
 };
 
-export const NoRowActions = withReadme(README, () => {
+export const NoRowActions = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -520,13 +522,13 @@ export const NoRowActions = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 NoRowActions.story = {
   name: 'no row actions',
 };
 
-export const Editable = withReadme(README, () => {
+export const Editable = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -552,13 +554,13 @@ export const Editable = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 Editable.story = {
   name: 'editable',
 };
 
-export const WithCustomFilters = withReadme(README, () => {
+export const WithCustomFilters = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -583,7 +585,7 @@ export const WithCustomFilters = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
 WithCustomFilters.story = {
   name: 'with custom filters',

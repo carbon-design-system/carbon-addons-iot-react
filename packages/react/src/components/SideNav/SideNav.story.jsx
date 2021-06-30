@@ -134,6 +134,9 @@ export default {
 
   parameters: {
     component: SideNav,
+    docs: {
+      inlineStories: false,
+    },
   },
 };
 
