@@ -14,6 +14,7 @@ import {
   OverridePropTypes,
   ColorPropType,
 } from '../../../constants/SharedPropTypes';
+import { getOverrides } from '../../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -41,6 +42,7 @@ const propTypes = {
     titleInputPlaceholderText: PropTypes.string,
     descriptionTextareaLabelText: PropTypes.string,
     descriptionTextareaPlaceholderText: PropTypes.string,
+    iconDropdownTitleText: PropTypes.string,
     iconDropdownLabelText: PropTypes.string,
     colorDropdownLabelText: PropTypes.string,
     colorDropdownTitleText: PropTypes.string,
@@ -140,6 +142,7 @@ const HotspotEditorTooltipTab = ({
   } = merge({}, defaultProps.i18n, i18n);
 
   const currentIconColor = formValues.color?.carbonColor ?? formValues.color ?? 'currentcolor';
+  const hasNonEditableContent = React.isValidElement(formValues?.content);
 
   const renderInfoMessage = () => (
     <div className={`${iotPrefix}--hotspot-editor--tooltip-info-message`}>
@@ -199,6 +202,7 @@ const HotspotEditorTooltipTab = ({
             onSubmit={preventFormSubmission}
           >
             <MyTitleTextInput
+              disabled={hasNonEditableContent}
               name="title"
               data-testid={`${testID}-title-input`}
               value={formValues.content?.title || ''}
@@ -210,9 +214,10 @@ const HotspotEditorTooltipTab = ({
               }}
               placeholder={titleInputPlaceholderText}
               type="text"
-              {...overrides?.titleTextInput?.props}
+              {...getOverrides(overrides?.titleTextInput?.props)}
             />
             <MyDecriptionTextArea
+              disabled={hasNonEditableContent}
               name="description"
               id="tooltip-form-description"
               labelText={descriptionTextareaLabelText}
@@ -222,7 +227,7 @@ const HotspotEditorTooltipTab = ({
               }}
               placeholder={descriptionTextareaPlaceholderText}
               value={formValues.content?.description || ''}
-              {...overrides?.decriptionTextArea?.props}
+              {...getOverrides(overrides?.decriptionTextArea?.props)}
             />
             {renderColorIconContainer()}
           </form>

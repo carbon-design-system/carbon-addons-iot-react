@@ -9,6 +9,7 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 
 import landscape from './landscape.jpg';
 import HotspotEditorModal from './HotspotEditorModal';
+import HotspotEditorModalREADME from './HotspotEditorModalREADME.mdx';
 
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
 Experimental.story = {
@@ -52,20 +53,20 @@ const cardConfig = {
 
 const dataItems = [
   {
-    dataSourceId: 'temp_last',
     dataItemId: 'temp_last',
+    dataSourceId: 'temp_last',
     label: '{high} temp',
     unit: '{unitVar}',
   },
   {
-    dataSourceId: 'temperature',
     dataItemId: 'temperature',
+    dataSourceId: 'temperature',
     label: 'Temperature',
     unit: '°',
   },
   {
-    dataSourceId: 'pressure',
     dataItemId: 'pressure',
+    dataSourceId: 'pressure',
     label: 'Pressure',
     unit: 'psi',
   },
@@ -98,6 +99,7 @@ export default {
     component: HotspotEditorModal,
     docs: {
       inlineStories: false,
+      page: HotspotEditorModalREADME,
     },
   },
 };
@@ -119,13 +121,6 @@ export const Empty = () => {
       onSave={action('onSave')}
     />
   );
-};
-Empty.story = {
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
 };
 
 export const EmptyWithGetValidDataItemsCallback = () => {
@@ -152,19 +147,27 @@ export const EmptyWithGetValidDataItemsCallback = () => {
 };
 EmptyWithGetValidDataItemsCallback.story = {
   name: 'Empty with getValidDataItems callback',
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
 };
 
-export const WidthExistingHotspots = () => {
+export const WithExistingHotspots = () => {
   const myCardConfig = {
     ...cardConfig,
     values: {
       ...cardConfig.values,
       hotspots: [
+        {
+          x: 45,
+          y: 25,
+          color: green50,
+          content: <span style={{ padding: '1rem' }}>content is an element</span>,
+        },
+        {
+          x: 65,
+          y: 75,
+          type: 'text',
+          color: green50,
+          content: <span>content is an element</span>,
+        },
         {
           x: 75,
           y: 10,
@@ -231,16 +234,8 @@ export const WidthExistingHotspots = () => {
     />
   );
 };
-WidthExistingHotspots.story = {
-  parameters: {
-    text: '',
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
-};
 
-export const WidthExistingDynamicHotspots = () => {
+export const WithExistingDynamicHotspots = () => {
   const myCardConfig = {
     ...cardConfig,
     values: {
@@ -276,11 +271,4 @@ export const WidthExistingDynamicHotspots = () => {
       showTooManyHotspotsInfo={boolean('showTooManyHotspotsInfo', true)}
     />
   );
-};
-WidthExistingDynamicHotspots.story = {
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
 };

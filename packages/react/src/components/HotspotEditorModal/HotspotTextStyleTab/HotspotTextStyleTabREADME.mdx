@@ -1,0 +1,148 @@
+# `HotspotTextStyleTab` component
+
+HotspotTextStyleTab allows the user to change the style of a hotspot of type 'text', but for hotspots of type 'fixed' or 'dynamic' these settings should not be available. If the `showInfoMessage` is true then no form controls are shown, only the text from the `infoMessageText`. The HotspotEditorTooltipTab is stateless and is controlled by the HotspotEditorModal or other parent depending on architecture.
+
+## Table of Contents
+
+- [Code example](#code-example)
+- [Handling state changes](#handling-state-changes)
+- [Props](#props)
+- [Prop i18n](#prop-i18n)
+- [Prop formValues](#prop-formvalues)
+- [Feedback](#feedback)
+
+## Code example
+
+This code example uses the hotspotStateHook to manage the state of the component. This is recommended but not required.
+
+```jsx
+import { purple70, cyan50, teal70 } from '@carbon/colors';
+import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
+
+const { selectedHotspot, deleteSelectedHotspot, updateTextHotspotStyle } = useHotspotEditorState({
+  initialState: { selectedHotspot: { type: hotspotTypes.TEXT } },
+});
+
+const colors = [
+  { carbonColor: purple70, name: 'purple70' },
+  { carbonColor: cyan50, name: 'cyan50' },
+  { carbonColor: teal70, name: 'teal70' },
+];
+
+<HotspotTextStyleTab
+  minFontSize={1}
+  maxFontSize={50}
+  minOpacity={0}
+  maxOpacity={100}
+  minBorderWidth={0}
+  maxBorderWidth={50}
+  fontColors={colors}
+  backgroundColors={colors}
+  borderColors={colors}
+  formValues={selectedHotspot}
+  onChange={updateTextHotspotStyle}
+  onDelete={deleteSelectedHotspot}
+  translateWithId={() => {}}
+/>;
+```
+
+## Handling state changes
+
+The component has two callbacks, `onChange` that is called for each change of the fields e.g.
+
+```jsx
+{
+  color: 'purple70';
+}
+```
+
+and the `onDelete` which is used to delete the hotspot entirely. To update the state of the text field and dropdowns the prop object `formValues` is used to describe the state of the complete form. The prop object is a subset of and structured the same way as the Hotspot type so you can pass in the latest version of your hotspot as the formValues. Below is an example of the expected formValues object:
+
+```jsx
+{
+  backgroundColor: 'purple70';
+  backgroundOpacity: 1;
+  bold: true;
+  borderColor: 'cyan50';
+  borderWidth: 1;
+  fontColor: 'teal70';
+  fontSize: 2;
+  italic: true;
+  type: 'text';
+}
+```
+
+The easiest way to handle state changes is by using the hotspotStateHook as described in the code example above.
+
+# Colors
+
+The colors for the dropdowns are defined by the props `fontColors`, `backgroundColors` & `borderColors`. These props expect an array of objects with the official carbon color and the display name you choose. When used in the formValues state object the color can be the color object described here, e.g.
+
+```jsx
+{ carbonColor: 'cyan50', name: 'cyan' }
+```
+
+or just the color value string `cyan50`.
+
+## Props
+
+| Name                                                       | Type                                  | Default   | Description                                                                                   |
+| :--------------------------------------------------------- | :------------------------------------ | :-------- | :-------------------------------------------------------------------------------------------- |
+| className                                                  | string                                | ''        | Specify an optional className to be applied to the container node                             |
+| light                                                      | bool                                  | true      | True if the light theme is to be used, defaults to true                                       |
+| i18n                                                       | shape([i18n](#prop-i18n))             |           | set of internationalized labels                                                               |
+| <span style={{color: "#31a148"}}>translateWithId \*</span> | function                              |           | Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component |
+| <span style={{color: "#31a148"}}>onChange \*</span>        | function                              |           | Callback for when any of the form element's value changes                                     |
+| <span style={{color: "#31a148"}}>onDelete \*</span>        | function                              |           | Callback for when the delete button is clicked                                                |
+| formValues                                                 | shape([formValues](#prop-formvalues)) |           | The state values of the controlled form elements, see defaults for shape                      |
+| fontColors                                                 | arrayOf                               | undefined | Array of colors to be shown for the font colors dropdown                                      |
+| backgroundColors                                           | arrayOf                               | undefined | Array of colors to be shown for the background colors dropdown                                |
+| borderColors                                               | arrayOf                               | undefined | Array of colors to be shown for the border colors dropdown                                    |
+| minFontSize                                                | number                                | undefined | Minimum Font size                                                                             |
+| maxFontSize                                                | number                                | undefined | Maximum Font size                                                                             |
+| minOpacity                                                 | number                                | undefined | Minimum Opacity Value                                                                         |
+| maxOpacity                                                 | number                                | undefined | Maximum Opacity Value                                                                         |
+| minBorderWidth                                             | number                                | undefined | Minimum Border Width                                                                          |
+| maxBorderWidth                                             | number                                | undefined | Maximum Border Width                                                                          |
+| showInfoMessage                                            | bool                                  | false     | Set to true to hide all form elements and show the info message                               |
+
+### Prop i18n
+
+These props can also be passed as part of the i18n prop of the HotspotModalEditor component.
+
+| Name                        | Type   | Default                                                                                                            | Description |
+| :-------------------------- | :----- | :----------------------------------------------------------------------------------------------------------------- | :---------- |
+| boldLabelText               | string | 'Text Bold'                                                                                                        |             |
+| infoMessageText             | string | 'Select an existing label on the image to edit it or hold the CTRL key and click on an empty region to create one' |             |
+| italicLabelText             | string | 'Text Italic'                                                                                                      |             |
+| underlineLabelText          | string | 'Text Underline'                                                                                                   |             |
+| fontColorLabelText          | string | 'Font color'                                                                                                       |             |
+| fontSizeLabelText           | string | 'Font Size'                                                                                                        |             |
+| fontSizeInvalidText         | string | 'Font Size is invalid'                                                                                             |             |
+| backgroundLabelText         | string | 'Background'                                                                                                       |             |
+| fillOpacityLabelText        | string | 'Fill Opacity'                                                                                                     |             |
+| fillOpacityInvalidText      | string | 'Fill Opacity is invalid'                                                                                          |             |
+| borderLabelText             | string | 'Border'                                                                                                           |             |
+| borderWidthLabelText        | string | 'Border Width'                                                                                                     |             |
+| borderWidthInvalidText      | string | 'Border Width is invalid'                                                                                          |             |
+| deleteButtonLabelText       | string | 'Delete hotspot'                                                                                                   |             |
+| deleteButtonIconDescription | string | 'Delete this hotspot'                                                                                              |             |
+
+### Prop formValues
+
+| Name              | Type                                         | Default   | Description |
+| :---------------- | :------------------------------------------- | :-------- | :---------- |
+| bold              | bool                                         | false     |             |
+| italic            | bool                                         | false     |             |
+| underline         | bool                                         | false     |             |
+| fontColor         | oneOfType([PropTypes.string, colorPropType]) | undefined |             |
+| fontSize          | number                                       | undefined |             |
+| backgroundColor   | oneOfType([PropTypes.string, colorPropType]) | undefined |             |
+| backgroundOpacity | number                                       | undefined |             |
+| borderColor       | oneOfType([PropTypes.string, colorPropType]) | undefined |             |
+| borderWidth       | number                                       | undefined |             |
+
+## Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/MenuButton/README.md).
