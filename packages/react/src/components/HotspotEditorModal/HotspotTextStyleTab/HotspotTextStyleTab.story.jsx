@@ -16,12 +16,11 @@ import {
   teal50,
   cyan90,
 } from '@carbon/colors';
-import { withReadme } from 'storybook-readme';
 
 import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
 
 import HotspotTextStyleTab from './HotspotTextStyleTab';
-import HotspotTextStyleTabREADME from './README.md';
+import HotspotTextStyleTabREADME from './HotspotTextStyleTabREADME.mdx';
 
 export default {
   title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab',
@@ -29,6 +28,9 @@ export default {
 
   parameters: {
     component: HotspotTextStyleTab,
+    docs: {
+      page: HotspotTextStyleTabREADME,
+    },
   },
 };
 
@@ -75,11 +77,9 @@ export const Default = () => {
     );
   };
 
-  const WithStateAndWithReadme = withReadme(HotspotTextStyleTabREADME, WithState);
-
   return (
     <div style={{ maxWidth: '500px' }}>
-      <WithStateAndWithReadme />
+      <WithState />
     </div>
   );
 };
@@ -117,11 +117,9 @@ export const UsingHotspotStateHook = () => {
     );
   };
 
-  const WithStateAndWithReadme = withReadme(HotspotTextStyleTabREADME, WithState);
-
   return (
     <div style={{ maxWidth: '500px' }}>
-      <WithStateAndWithReadme />
+      <WithState />
     </div>
   );
 };

@@ -3,12 +3,11 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { red50, green50, blue50 } from '@carbon/colors';
 import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
-import { withReadme } from 'storybook-readme';
 
 import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
-import HotspotEditorTooltipTabREADME from './README.md';
+import HotspotEditorTooltipTabREADME from './HotspotEditorTooltipTabREADME.mdx';
 
 const selectableIcons = [
   {
@@ -34,6 +33,9 @@ export default {
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorTooltipTab,
+    docs: {
+      page: HotspotEditorTooltipTabREADME,
+    },
   },
 };
 
@@ -62,9 +64,8 @@ export const WithStateInStory = () => {
       </div>
     );
   };
-  const WithStateAndWithReadme = withReadme(HotspotEditorTooltipTabREADME, WithState);
 
-  return <WithStateAndWithReadme />;
+  return <WithState />;
 };
 
 WithStateInStory.story = {
@@ -99,16 +100,14 @@ export const WithHotspotStateHook = () => {
     );
   };
 
-  const WithStateAndWithReadme = withReadme(HotspotEditorTooltipTabREADME, WithStateHook);
-
-  return <WithStateAndWithReadme />;
+  return <WithStateHook />;
 };
 
 WithHotspotStateHook.story = {
   name: 'Example using the HotspotStateHook',
 };
 
-export const WithPresetValuesAndCustomColors = withReadme(HotspotEditorTooltipTabREADME, () => {
+export const WithPresetValuesAndCustomColors = () => {
   return (
     <div>
       <HotspotEditorTooltipTab
@@ -129,9 +128,9 @@ export const WithPresetValuesAndCustomColors = withReadme(HotspotEditorTooltipTa
       />
     </div>
   );
-});
+};
 
-export const WithInfoMessage = withReadme(HotspotEditorTooltipTabREADME, () => {
+export const WithInfoMessage = () => {
   return (
     <div>
       <HotspotEditorTooltipTab
@@ -145,4 +144,4 @@ export const WithInfoMessage = withReadme(HotspotEditorTooltipTabREADME, () => {
       />
     </div>
   );
-});
+};

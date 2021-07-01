@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
-import { withReadme } from 'storybook-readme';
 
 import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker';
-import DynamicHotspotSourcePickerREADME from './README.md';
+import DynamicHotspotSourcePickerREADME from './DynamicHotspotSourcePickerREADME.mdx';
 
 const dataItems = [
   {
@@ -22,6 +21,9 @@ export default {
   decorators: [withKnobs],
   parameters: {
     component: DynamicHotspotSourcePicker,
+    docs: {
+      page: DynamicHotspotSourcePickerREADME,
+    },
   },
 };
 
@@ -55,9 +57,7 @@ export const WithStateInStory = () => {
     );
   };
 
-  const WithReadMeAndState = withReadme(DynamicHotspotSourcePickerREADME, WithState);
-
-  return <WithReadMeAndState />;
+  return <WithState />;
 };
 
 WithStateInStory.story = {

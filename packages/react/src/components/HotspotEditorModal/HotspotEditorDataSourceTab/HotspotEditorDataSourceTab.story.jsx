@@ -2,20 +2,22 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 import update from 'immutability-helper';
-import { withReadme } from 'storybook-readme';
 
 import imageFile from '../../ImageCard/landscape.jpg';
 import { CARD_SIZES, CARD_TYPES } from '../../../constants/LayoutConstants';
 import { useHotspotEditorState } from '../hooks/hotspotStateHook';
 
 import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab';
-import HotspotEditorDataSourceTabREADME from './README.md';
+import HotspotEditorDataSourceTabREADME from './HotspotEditorDataSourceTabREADME.mdx';
 
 export default {
   title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab',
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorDataSourceTab,
+    docs: {
+      page: HotspotEditorDataSourceTabREADME,
+    },
   },
 };
 
@@ -164,9 +166,7 @@ export const WithStateInStory = () => {
     );
   };
 
-  const WithStateAndReadme = withReadme(HotspotEditorDataSourceTabREADME, WithState);
-
-  return <WithStateAndReadme />;
+  return <WithState />;
 };
 
 WithStateInStory.story = {
@@ -201,9 +201,7 @@ export const WithPresetValues = () => {
     );
   };
 
-  const WithStateAndReadme = withReadme(HotspotEditorDataSourceTabREADME, WithState);
-
-  return <WithStateAndReadme />;
+  return <WithState />;
 };
 
 WithPresetValues.story = {

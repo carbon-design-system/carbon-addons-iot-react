@@ -3,14 +3,13 @@ import { action } from '@storybook/addon-actions';
 import { boolean, withKnobs } from '@storybook/addon-knobs';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
 import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
-import { withReadme } from 'storybook-readme';
 
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import landscape from './landscape.jpg';
 import HotspotEditorModal from './HotspotEditorModal';
-import HotspotEditorModalREADME from './README.md';
+import HotspotEditorModalREADME from './HotspotEditorModalREADME.mdx';
 
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
 Experimental.story = {
@@ -100,11 +99,12 @@ export default {
     component: HotspotEditorModal,
     docs: {
       inlineStories: false,
+      page: HotspotEditorModalREADME,
     },
   },
 };
 
-export const Empty = withReadme(HotspotEditorModalREADME, () => {
+export const Empty = () => {
   return (
     <HotspotEditorModal
       backgroundColors={selectableColors}
@@ -121,9 +121,9 @@ export const Empty = withReadme(HotspotEditorModalREADME, () => {
       onSave={action('onSave')}
     />
   );
-});
+};
 
-export const EmptyWithGetValidDataItemsCallback = withReadme(HotspotEditorModalREADME, () => {
+export const EmptyWithGetValidDataItemsCallback = () => {
   return (
     <HotspotEditorModal
       backgroundColors={selectableColors}
@@ -144,12 +144,12 @@ export const EmptyWithGetValidDataItemsCallback = withReadme(HotspotEditorModalR
       onSave={action('onSave')}
     />
   );
-});
+};
 EmptyWithGetValidDataItemsCallback.story = {
   name: 'Empty with getValidDataItems callback',
 };
 
-export const WithExistingHotspots = withReadme(HotspotEditorModalREADME, () => {
+export const WithExistingHotspots = () => {
   const myCardConfig = {
     ...cardConfig,
     values: {
@@ -233,9 +233,9 @@ export const WithExistingHotspots = withReadme(HotspotEditorModalREADME, () => {
       onSave={action('onSave')}
     />
   );
-});
+};
 
-export const WithExistingDynamicHotspots = withReadme(HotspotEditorModalREADME, () => {
+export const WithExistingDynamicHotspots = () => {
   const myCardConfig = {
     ...cardConfig,
     values: {
@@ -271,4 +271,4 @@ export const WithExistingDynamicHotspots = withReadme(HotspotEditorModalREADME, 
       showTooManyHotspotsInfo={boolean('showTooManyHotspotsInfo', true)}
     />
   );
-});
+};

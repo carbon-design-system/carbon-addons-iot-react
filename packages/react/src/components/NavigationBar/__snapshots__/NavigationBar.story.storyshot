@@ -100,11 +100,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-19__panel"
+              aria-controls="tab-27__panel"
               aria-selected={true}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-19"
+              id="tab-27"
               role="tab"
               tabIndex={0}
               type="button"
@@ -119,11 +119,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-20__panel"
+              aria-controls="tab-28__panel"
               aria-selected={false}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-20"
+              id="tab-28"
               role="tab"
               tabIndex={-1}
               type="button"
@@ -306,11 +306,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-13__panel"
+              aria-controls="tab-21__panel"
               aria-selected={true}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-13"
+              id="tab-21"
               role="tab"
               tabIndex={0}
               type="button"
@@ -325,11 +325,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-14__panel"
+              aria-controls="tab-22__panel"
               aria-selected={false}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-14"
+              id="tab-22"
               role="tab"
               tabIndex={-1}
               type="button"
@@ -498,11 +498,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-15__panel"
+              aria-controls="tab-23__panel"
               aria-selected={false}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-15"
+              id="tab-23"
               role="tab"
               tabIndex={-1}
               type="button"
@@ -517,11 +517,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-16__panel"
+              aria-controls="tab-24__panel"
               aria-selected={true}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-16"
+              id="tab-24"
               role="tab"
               tabIndex={0}
               type="button"
@@ -690,11 +690,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-17__panel"
+              aria-controls="tab-25__panel"
               aria-selected={true}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-17"
+              id="tab-25"
               role="tab"
               tabIndex={0}
               type="button"
@@ -709,11 +709,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-18__panel"
+              aria-controls="tab-26__panel"
               aria-selected={false}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-18"
+              id="tab-26"
               role="tab"
               tabIndex={-1}
               type="button"
