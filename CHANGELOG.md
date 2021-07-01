@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.40...v2.146.0-next.41) (2021-07-01)
+
+
+### Bug Fixes
+
+* **hotspoteditormodal:** added readme files and small fixes ([484a7f0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/484a7f0196d95d8cb8c86c08d497f6908a306f88))
+* **hotspoteditormodal:** doc changes and added statehook to export ([e76dcd9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e76dcd9663ec41a4023e25aba0411130d3486dc1))
+* **hotspoteditormodal:** fixed merge conflicts ([4a2b40b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4a2b40bcce32066cf0f6700537b7d20c934c8fbb))
+* **hotspoteditormodal:** pr feedback ([84da045](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/84da0458d55c12612a816511901f5d096bb96af1))
+* **hotspoteditormodal:** story and readme mdx updates ([806e60e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/806e60e3aab38f833dc995e82ee710a338ad940c))
+
+
+
+
+
 # [2.146.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.39...v2.146.0-next.40) (2021-06-30)
 
 
