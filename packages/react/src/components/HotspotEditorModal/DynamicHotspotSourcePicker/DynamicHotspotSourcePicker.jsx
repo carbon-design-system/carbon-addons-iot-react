@@ -10,6 +10,7 @@ import Button from '../../Button/Button';
 const { iotPrefix } = settings;
 
 const propTypes = {
+  /** List of data source objects. The same list is used for bothe the x and the y coordinate dropdown */
   dataSourceItems: PropTypes.arrayOf(
     PropTypes.shape({
       dataSourceId: PropTypes.string,

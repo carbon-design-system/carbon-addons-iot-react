@@ -32,6 +32,10 @@ $border-radius: 5px;
     .#{$prefix}--dropdown__wrapper.#{$prefix}--list-box__wrapper {
       width: 100%;
     }
+
+    .#{$prefix}--form-item {
+      min-width: 10rem;
+    }
   }
 }
 

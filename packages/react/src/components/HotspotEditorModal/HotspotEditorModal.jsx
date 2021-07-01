@@ -61,7 +61,7 @@ const propTypes = {
     title: PropTypes.string,
     /**
      * If this prop is present the HotspotEditorModal will place new and existing thresholds here
-     * instead of under the each hotspot in cardConfig.values.hotspots.
+     * instead of under each hotspot in cardConfig.values.hotspots.
      */
     thresholds: PropTypes.arrayOf(
       PropTypes.shape({
@@ -157,6 +157,7 @@ const propTypes = {
     textTypeDataSourceTabLabelText: PropTypes.string,
     tooManyHotspotsInfoText: PropTypes.string,
   }),
+  /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func,
 };
 

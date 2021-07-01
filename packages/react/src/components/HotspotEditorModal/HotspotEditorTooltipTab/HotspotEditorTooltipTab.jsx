@@ -14,6 +14,7 @@ import {
   OverridePropTypes,
   ColorPropType,
 } from '../../../constants/SharedPropTypes';
+import { getOverrides } from '../../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -41,6 +42,7 @@ const propTypes = {
     titleInputPlaceholderText: PropTypes.string,
     descriptionTextareaLabelText: PropTypes.string,
     descriptionTextareaPlaceholderText: PropTypes.string,
+    iconDropdownTitleText: PropTypes.string,
     iconDropdownLabelText: PropTypes.string,
     colorDropdownLabelText: PropTypes.string,
     colorDropdownTitleText: PropTypes.string,
@@ -212,7 +214,7 @@ const HotspotEditorTooltipTab = ({
               }}
               placeholder={titleInputPlaceholderText}
               type="text"
-              {...overrides?.titleTextInput?.props}
+              {...getOverrides(overrides?.titleTextInput?.props)}
             />
             <MyDecriptionTextArea
               disabled={hasNonEditableContent}
@@ -225,7 +227,7 @@ const HotspotEditorTooltipTab = ({
               }}
               placeholder={descriptionTextareaPlaceholderText}
               value={formValues.content?.description || ''}
-              {...overrides?.decriptionTextArea?.props}
+              {...getOverrides(overrides?.decriptionTextArea?.props)}
             />
             {renderColorIconContainer()}
           </form>

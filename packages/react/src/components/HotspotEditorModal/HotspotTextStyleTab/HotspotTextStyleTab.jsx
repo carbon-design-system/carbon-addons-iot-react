@@ -24,9 +24,7 @@ const colorPropType = PropTypes.shape({
 });
 
 const propTypes = {
-  /**
-   * Specify an optional className to be applied to the container node
-   */
+  /** Specify an optional className to be applied to the container node */
   className: PropTypes.string,
   /** True if the light theme is to be used, defaults to true */
   light: PropTypes.bool,
@@ -37,24 +35,35 @@ const propTypes = {
     italicLabelText: PropTypes.string,
     underlineLabelText: PropTypes.string,
     fontColorLabelText: PropTypes.string,
+    fontSizeLabelText: PropTypes.string,
     fontSizeInvalidText: PropTypes.string,
     backgroundLabelText: PropTypes.string,
     fillOpacityLabelText: PropTypes.string,
     fillOpacityInvalidText: PropTypes.string,
     borderLabelText: PropTypes.string,
+    borderWidthLabelText: PropTypes.string,
     borderWidthInvalidText: PropTypes.string,
     deleteButtonLabelText: PropTypes.string,
     deleteButtonIconDescription: PropTypes.string,
   }),
+  /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func.isRequired,
   /** Callback for when any of the form element's value changes */
   onChange: PropTypes.func.isRequired,
   /** Callback for when the delete button is clicked */
   onDelete: PropTypes.func.isRequired,
-  /** The state values of the controlled form elements, see defaults for shape */
-  formValues: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool, colorPropType])
-  ),
+  /** The state values of the controlled form elements */
+  formValues: PropTypes.shape({
+    bold: PropTypes.bool,
+    italic: PropTypes.bool,
+    underline: PropTypes.bool,
+    fontColor: PropTypes.oneOfType([PropTypes.string, colorPropType]),
+    fontSize: PropTypes.number,
+    backgroundColor: PropTypes.oneOfType([PropTypes.string, colorPropType]),
+    backgroundOpacity: PropTypes.number,
+    borderColor: PropTypes.oneOfType([PropTypes.string, colorPropType]),
+    borderWidth: PropTypes.number,
+  }),
   /** Array of colors to be shown for the font colors dropdown */
   fontColors: PropTypes.arrayOf(colorPropType),
   /** Array of colors to be shown for the background colors dropdown */
