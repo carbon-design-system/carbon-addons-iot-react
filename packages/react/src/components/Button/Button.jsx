@@ -46,7 +46,7 @@ const defaultProps = {
   recommended: false,
   hasIconOnly: false,
   selected: false,
-  testId: 'button',
+  testId: 'Button',
 };
 
 const Button = React.forwardRef((props, ref) => {

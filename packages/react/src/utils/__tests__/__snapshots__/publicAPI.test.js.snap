@@ -47,7 +47,7 @@ Map {
       "loading": false,
       "recommended": false,
       "selected": false,
-      "testId": "button",
+      "testId": "Button",
     },
     "propTypes": Object {
       "children": Object {
@@ -5235,7 +5235,6 @@ Map {
       "locale": "en",
       "showTimeInGMT": false,
       "size": "MEDIUMWIDE",
-      "testId": "bar-chart-card",
       "tooltipDateFormatPattern": "L HH:mm:ss",
       "values": null,
     },

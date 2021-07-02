@@ -1180,7 +1180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   >
                     <button
                       className="iot--map-controls-layers-trigger iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                      data-testid="button"
+                      data-testid="Button"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -1232,7 +1232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     >
                       <button
                         className="iot--map-controls-layers-btn iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                        data-testid="button"
+                        data-testid="Button"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={-1}
@@ -1263,7 +1263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </button>
                       <button
                         className="iot--map-controls-layers-btn iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                        data-testid="button"
+                        data-testid="Button"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={-1}
@@ -1294,7 +1294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </button>
                       <button
                         className="iot--map-controls-layers-btn iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                        data-testid="button"
+                        data-testid="Button"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={-1}
@@ -1330,7 +1330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   >
                     <button
                       className="iot--map-controls-btn iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                      data-testid="button"
+                      data-testid="Button"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -1361,7 +1361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     </button>
                     <button
                       className="iot--map-controls-btn iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                      data-testid="button"
+                      data-testid="Button"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -1392,7 +1392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     </button>
                     <button
                       className="iot--map-controls-btn iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                      data-testid="button"
+                      data-testid="Button"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -1424,7 +1424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </div>
                   <button
                     className="iot--map-controls-btn iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                    data-testid="button"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -1455,7 +1455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <button
                     className="iot--map-controls-btn iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                    data-testid="button"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -1486,7 +1486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <button
                     className="iot--map-controls-btn iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                    data-testid="button"
+                    data-testid="Button"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -1762,7 +1762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 </h3>
                 <button
                   className="iot--map-settings-close-btn iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-                  data-testid="button"
+                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -3970,7 +3970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--card react-grid-item cssTransforms react-resizable iot--bar-chart-card iot--card--wrapper"
-          data-testid="bar-chart-card"
+          data-testid="Card"
           id="barChartCard"
           onMouseDown={[Function]}
           onMouseUp={[Function]}
@@ -3992,11 +3992,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
-            data-testid="bar-chart-card-header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
-              data-testid="bar-chart-card-title"
+              data-testid="Card-title"
               title="BarChartCard - LARGEWIDE"
             >
               <div
@@ -4008,7 +4008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </div>
           <div
             className="iot--card--content"
-            data-testid="bar-chart-card-content"
+            data-testid="Card-content"
             style={
               Object {
                 "--card-content-height": "576px",

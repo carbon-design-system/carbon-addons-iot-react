@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="bar-chart-card"
+      data-testid="Card"
       id="grouped-sample"
       role="presentation"
       style={
@@ -25,11 +25,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
-        data-testid="bar-chart-card-header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
-          data-testid="bar-chart-card-title"
+          data-testid="Card-title"
           title="Particles and temperature in cities"
         >
           <div
@@ -40,12 +40,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="bar-chart-card-toolbar"
+          data-testid="Card-toolbar"
         >
           <button
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
-            data-testid="bar-chart-card-toolbar-expand-button"
+            data-testid="Card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -77,7 +77,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="bar-chart-card-content"
+        data-testid="Card-content"
         style={
           Object {
             "--card-content-height": "256px",
@@ -111,7 +111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="bar-chart-card"
+      data-testid="Card"
       id="simple-sample"
       role="presentation"
       style={
@@ -122,11 +122,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
-        data-testid="bar-chart-card-header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
-          data-testid="bar-chart-card-title"
+          data-testid="Card-title"
           title="Particles by city"
         >
           <div
@@ -137,12 +137,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="bar-chart-card-toolbar"
+          data-testid="Card-toolbar"
         >
           <button
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
-            data-testid="bar-chart-card-toolbar-expand-button"
+            data-testid="Card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -174,7 +174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="bar-chart-card-content"
+        data-testid="Card-content"
         style={
           Object {
             "--card-content-height": "256px",
@@ -208,7 +208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="bar-chart-card"
+      data-testid="Card"
       id="simple-time-sample"
       role="presentation"
       style={
@@ -219,11 +219,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
-        data-testid="bar-chart-card-header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
-          data-testid="bar-chart-card-title"
+          data-testid="Card-title"
           title="Particles over 4 days"
         >
           <div
@@ -234,7 +234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="bar-chart-card-toolbar"
+          data-testid="Card-toolbar"
         >
           <div
             className="iot--card--toolbar-date-range-wrapper"
@@ -244,7 +244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
               aria-haspopup={true}
               aria-label="open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu"
-              data-testid="bar-chart-card-toolbar-range-picker"
+              data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -284,7 +284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
           <button
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
-            data-testid="bar-chart-card-toolbar-expand-button"
+            data-testid="Card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -316,7 +316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="bar-chart-card-content"
+        data-testid="Card-content"
         style={
           Object {
             "--card-content-height": "256px",
@@ -350,7 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="bar-chart-card"
+      data-testid="Card"
       id="stacked-sample"
       role="presentation"
       style={
@@ -361,11 +361,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
-        data-testid="bar-chart-card-header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
-          data-testid="bar-chart-card-title"
+          data-testid="Card-title"
           title="Particles and temperature in cities"
         >
           <div
@@ -376,12 +376,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="bar-chart-card-toolbar"
+          data-testid="Card-toolbar"
         >
           <button
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
-            data-testid="bar-chart-card-toolbar-expand-button"
+            data-testid="Card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -413,7 +413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="bar-chart-card-content"
+        data-testid="Card-content"
         style={
           Object {
             "--card-content-height": "256px",
@@ -447,7 +447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="bar-chart-card"
+      data-testid="Card"
       id="stacked-horizontal-sample"
       role="presentation"
       style={
@@ -458,11 +458,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
-        data-testid="bar-chart-card-header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
-          data-testid="bar-chart-card-title"
+          data-testid="Card-title"
           title="Particles / emissions over 4 days"
         >
           <div
@@ -473,7 +473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="bar-chart-card-toolbar"
+          data-testid="Card-toolbar"
         >
           <div
             className="iot--card--toolbar-date-range-wrapper"
@@ -483,7 +483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
               aria-haspopup={true}
               aria-label="open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu"
-              data-testid="bar-chart-card-toolbar-range-picker"
+              data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -523,7 +523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
           <button
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
-            data-testid="bar-chart-card-toolbar-expand-button"
+            data-testid="Card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -555,7 +555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="bar-chart-card-content"
+        data-testid="Card-content"
         style={
           Object {
             "--card-content-height": "256px",
@@ -589,7 +589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="bar-chart-card"
+      data-testid="Card"
       id="stacked-horizontal-sample"
       role="presentation"
       style={
@@ -600,11 +600,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
-        data-testid="bar-chart-card-header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
-          data-testid="bar-chart-card-title"
+          data-testid="Card-title"
           title="Particles by city over time"
         >
           <div
@@ -615,7 +615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="bar-chart-card-toolbar"
+          data-testid="Card-toolbar"
         >
           <div
             className="iot--card--toolbar-date-range-wrapper"
@@ -625,7 +625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
               aria-haspopup={true}
               aria-label="open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu"
-              data-testid="bar-chart-card-toolbar-range-picker"
+              data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -665,7 +665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
           <button
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
-            data-testid="bar-chart-card-toolbar-expand-button"
+            data-testid="Card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -697,7 +697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="bar-chart-card-content"
+        data-testid="Card-content"
         style={
           Object {
             "--card-content-height": "256px",
