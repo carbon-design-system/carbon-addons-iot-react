@@ -305,9 +305,7 @@ export const Default = () => {
   );
 };
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const HeaderWithExtraContent = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
@@ -350,9 +348,7 @@ export const HeaderWithExtraContent = () => {
   );
 };
 
-HeaderWithExtraContent.story = {
-  name: 'Header with extra content',
-};
+HeaderWithExtraContent.storyName = 'Header with extra content';
 
 export const HeaderWithSideNav = () => (
   <SuiteHeader
@@ -391,9 +387,7 @@ export const HeaderWithSideNav = () => (
   />
 );
 
-HeaderWithSideNav.story = {
-  name: 'Header with side nav',
-};
+HeaderWithSideNav.storyName = 'Header with side nav';
 
 export const HeaderWithCustomSideNav = () => (
   <SuiteHeader
@@ -430,9 +424,7 @@ export const HeaderWithCustomSideNav = () => (
     onSideNavToggled={() => alert('onSideNavToggled')}
   />
 );
-HeaderWithCustomSideNav.story = {
-  name: 'Header with application-controlled side nav',
-};
+HeaderWithCustomSideNav.storyName = 'Header with application-controlled side nav';
 
 export const HeaderWithCustomActionItems = () => (
   <SuiteHeader
@@ -472,9 +464,7 @@ export const HeaderWithCustomActionItems = () => (
   />
 );
 
-HeaderWithCustomActionItems.story = {
-  name: 'Header with custom action items',
-};
+HeaderWithCustomActionItems.storyName = 'Header with custom action items';
 
 export const HeaderWithSurveyNotification = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
@@ -527,17 +517,13 @@ export const HeaderWithSurveyNotification = () => {
   );
 };
 
-HeaderWithSurveyNotification.story = {
-  name: 'Header with survey notification',
-};
+HeaderWithSurveyNotification.storyName = 'Header with survey notification';
 
 export const LoadingState = () => {
   return <SuiteHeader suiteName="Application Suite" appName="Application Name" />;
 };
 
-LoadingState.story = {
-  name: 'Loading state',
-};
+LoadingState.storyName = 'Loading state';
 
 export const HeaderWithIdleLogoutConfirmation = () => (
   <>
@@ -587,6 +573,4 @@ export const HeaderWithIdleLogoutConfirmation = () => (
   </>
 );
 
-HeaderWithIdleLogoutConfirmation.story = {
-  name: 'Header with idle user detection',
-};
+HeaderWithIdleLogoutConfirmation.storyName = 'Header with idle user detection';

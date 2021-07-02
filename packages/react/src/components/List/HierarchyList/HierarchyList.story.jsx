@@ -80,9 +80,7 @@ export const StatefulListWithNestedSearching = () => (
   </div>
 );
 
-StatefulListWithNestedSearching.story = {
-  name: 'Stateful list with nested searching',
-};
+StatefulListWithNestedSearching.storyName = 'Stateful list with nested searching';
 
 export const WithDefaultSelectedId = () => (
   <div style={{ width: 400, height: 400 }}>
@@ -129,9 +127,7 @@ export const WithDefaultSelectedId = () => (
   </div>
 );
 
-WithDefaultSelectedId.story = {
-  name: 'With defaultSelectedId',
-};
+WithDefaultSelectedId.storyName = 'With defaultSelectedId';
 
 export const WithOverflowMenu = () => (
   <div style={{ width: 400, height: 400 }}>
@@ -199,9 +195,7 @@ export const WithOverflowMenu = () => (
   </div>
 );
 
-WithOverflowMenu.story = {
-  name: 'With OverflowMenu',
-};
+WithOverflowMenu.storyName = 'With OverflowMenu';
 
 export const WithNestedReorder = () => {
   const HierarchyListWithReorder = () => {
@@ -314,9 +308,7 @@ export const WithDefaultExpandedIds = () => (
   </div>
 );
 
-WithDefaultExpandedIds.story = {
-  name: 'With defaultExpandedIds',
-};
+WithDefaultExpandedIds.storyName = 'With defaultExpandedIds';
 
 export const WithMixedHierarchies = () => (
   <div style={{ width: 400 }}>
@@ -399,9 +391,7 @@ export const WithMixedHierarchies = () => (
   </div>
 );
 
-WithMixedHierarchies.story = {
-  name: 'with mixed hierarchies',
-};
+WithMixedHierarchies.storyName = 'with mixed hierarchies';
 
 export const WithSelectableCategories = () => (
   <div style={{ width: 400, height: 400 }}>
@@ -449,6 +439,4 @@ export const WithSelectableCategories = () => (
   </div>
 );
 
-WithSelectableCategories.story = {
-  name: 'With selectable categories',
-};
+WithSelectableCategories.storyName = 'With selectable categories';

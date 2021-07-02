@@ -149,9 +149,7 @@ export const Basic = () => (
   </div>
 );
 
-Basic.story = {
-  name: 'basic',
-};
+Basic.storyName = 'basic';
 
 export const ListWithEmptyRow = () => (
   <div
@@ -179,9 +177,7 @@ export const ListWithEmptyRow = () => (
   </div>
 );
 
-ListWithEmptyRow.story = {
-  name: 'list with empty row',
-};
+ListWithEmptyRow.storyName = 'list with empty row';
 
 export const ListWithLargeRow = () => (
   <div
@@ -210,9 +206,7 @@ export const ListWithLargeRow = () => (
   </div>
 );
 
-ListWithLargeRow.story = {
-  name: 'list with large row',
-};
+ListWithLargeRow.storyName = 'list with large row';
 
 export const ListWithMultipleActions = () => (
   <div
@@ -240,9 +234,7 @@ export const ListWithMultipleActions = () => (
   </div>
 );
 
-ListWithMultipleActions.story = {
-  name: 'list with multiple actions',
-};
+ListWithMultipleActions.storyName = 'list with multiple actions';
 
 export const ListWithOverflowMenu = () => (
   <div
@@ -270,9 +262,7 @@ export const ListWithOverflowMenu = () => (
   </div>
 );
 
-ListWithOverflowMenu.story = {
-  name: 'list with overflow menu',
-};
+ListWithOverflowMenu.storyName = 'list with overflow menu';
 
 export const LargeRowListWithMultipleActions = () => (
   <div
@@ -301,9 +291,7 @@ export const LargeRowListWithMultipleActions = () => (
   </div>
 );
 
-LargeRowListWithMultipleActions.story = {
-  name: 'large row list with multiple actions',
-};
+LargeRowListWithMultipleActions.storyName = 'large row list with multiple actions';
 
 export const LargeRowListWithOverflowMenu = () => (
   <div
@@ -332,9 +320,7 @@ export const LargeRowListWithOverflowMenu = () => (
   </div>
 );
 
-LargeRowListWithOverflowMenu.story = {
-  name: 'large row list with overflow menu',
-};
+LargeRowListWithOverflowMenu.storyName = 'large row list with overflow menu';
 
 export const ListWithReorder = () => {
   const SimpleListWithReorder = () => {
@@ -372,6 +358,4 @@ export const ListWithReorder = () => {
   return <SimpleListWithReorder />;
 };
 
-ListWithReorder.story = {
-  name: 'with reorder',
-};
+ListWithReorder.storyName = 'with reorder';

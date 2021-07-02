@@ -15,7 +15,13 @@ describe('ImageCardFormContent', () => {
   it('onChange', () => {
     const mockOnChange = jest.fn();
 
-    render(<ImageCardFormContent onChange={mockOnChange} cardConfig={mockCardConfig} />);
+    render(
+      <ImageCardFormContent
+        onChange={mockOnChange}
+        cardConfig={mockCardConfig}
+        translateWithId={jest.fn()}
+      />
+    );
     // first button is the card tooltip
     userEvent.click(screen.getAllByRole('button')[1]);
     expect(mockOnChange).toHaveBeenCalledTimes(1);
@@ -23,7 +29,13 @@ describe('ImageCardFormContent', () => {
   });
   it('popup hotspot modal', () => {
     const mockOnChange = jest.fn();
-    render(<ImageCardFormContent onChange={mockOnChange} cardConfig={mockCardConfig} />);
+    render(
+      <ImageCardFormContent
+        onChange={mockOnChange}
+        cardConfig={mockCardConfig}
+        translateWithId={jest.fn()}
+      />
+    );
     // Open up the hotspot modal
     userEvent.click(screen.getByText('Edit image'));
     expect(screen.getByText('Hotspots')).toBeInTheDocument();

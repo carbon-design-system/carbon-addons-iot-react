@@ -165,8 +165,6 @@ describe('MapCards', () => {
 
     const toggleButton = screen.getByLabelText(MapCard.defaultProps.i18n.hideLegend);
     expect(toggleButton.firstChild).toHaveAttribute('d', chevronRightIconContent);
-
-    document.documentElement.setAttribute('dir', 'ltr');
   });
 
   it('allows user to toggle full width legend', () => {

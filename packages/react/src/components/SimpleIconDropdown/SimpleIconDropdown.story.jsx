@@ -8,9 +8,7 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 import SimpleIconDropdown from './SimpleIconDropdown';
 
 export const Experimental = () => <StoryNotice componentName="SimpleIconDropdown" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 export default {
   title: '2 - Watson IoT Experimental/☢️ SimpleIconDropdown',
@@ -54,11 +52,9 @@ export const WithSelectedIcon = () => (
   </div>
 );
 
-DefaultExample.story = {
-  parameters: {
-    info: {
-      propTables: [SimpleIconDropdown],
-      propTablesExclude: [],
-    },
+DefaultExample.parameters = {
+  info: {
+    propTables: [SimpleIconDropdown],
+    propTablesExclude: [],
   },
 };

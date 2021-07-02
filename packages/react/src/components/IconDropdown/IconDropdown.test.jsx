@@ -7,6 +7,7 @@ import { items } from './IconDropdown.story';
 
 const iconDropdownProps = {
   id: 'icon-dropdown-1',
+  dropdownId: 'icon-dropdown-1',
   label: 'Icon Dropdown menu options',
   items,
 };
@@ -32,14 +33,14 @@ describe('Icon Dropdown', () => {
     render(
       <IconDropdown
         {...iconDropdownProps}
-        selectedViewId={items[0].id}
+        selectedItem={items[0]}
         actions={{
           onChangeView: () => {},
         }}
       />
     );
 
-    const selectedItem = screen.queryByText(items[0].text);
+    const selectedItem = screen.queryAllByText(items[0].text)[0];
 
     expect(selectedItem).toBeDefined();
   });
@@ -100,7 +101,7 @@ describe('Icon Dropdown', () => {
         {...iconDropdownProps}
         helperText="help"
         items={itemsWithFooter}
-        selectedViewId={null}
+        selectedItem={null}
         actions={{
           onChangeView: () => {},
         }}

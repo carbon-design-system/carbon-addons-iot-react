@@ -68,9 +68,7 @@ export const WithStateInStory = () => {
   return <WithState />;
 };
 
-WithStateInStory.story = {
-  name: 'Example with externaly managed state',
-};
+WithStateInStory.storyName = 'Example with externaly managed state';
 
 export const WithHotspotStateHook = () => {
   const WithStateHook = () => {
@@ -103,9 +101,7 @@ export const WithHotspotStateHook = () => {
   return <WithStateHook />;
 };
 
-WithHotspotStateHook.story = {
-  name: 'Example using the HotspotStateHook',
-};
+WithHotspotStateHook.storyName = 'Example using the HotspotStateHook';
 
 export const WithPresetValuesAndCustomColors = () => {
   return (
