@@ -694,10 +694,10 @@ const DashboardEditor = ({
                     if (onLayoutChange) {
                       onLayoutChange(newLayout, newLayouts);
                     }
-                    setDashboardJson({
-                      ...dashboardJson,
+                    setDashboardJson((oldDashboard) => ({
+                      ...oldDashboard,
                       layouts: newLayouts,
-                    });
+                    }));
                   }}
                   onResizeStop={handleCardResize}
                   supportedLayouts={['lg', 'md', 'sm']}

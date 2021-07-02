@@ -2,13 +2,12 @@ import React from 'react';
 import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Tree16 } from '@carbon/icons-react';
-import { withReadme } from 'storybook-readme';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
 
-import README from './Card.md';
+import CardREADME from './Card.mdx';
 import Card from './Card';
 
 export const getDataStateProp = () => ({
@@ -33,6 +32,9 @@ export default {
 
   parameters: {
     component: Card,
+    docs: {
+      page: CardREADME,
+    },
   },
 
   excludeStories: ['getDataStateProp'],
@@ -80,7 +82,7 @@ const CardStoryStateManager = ({ children }) => {
   });
 };
 
-export const Basic = withReadme(README, () => {
+export const Basic = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
@@ -109,13 +111,11 @@ export const Basic = withReadme(README, () => {
       </CardStoryStateManager>
     </div>
   );
-});
-
-Basic.story = {
-  name: 'basic stateful example with custom expand icon',
 };
 
-export const WithEllipsedTitleTooltipExternalTooltip = withReadme(README, () => {
+Basic.storyName = 'basic stateful example with custom expand icon';
+
+export const WithEllipsedTitleTooltipExternalTooltip = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -148,13 +148,12 @@ export const WithEllipsedTitleTooltipExternalTooltip = withReadme(README, () => 
       />
     </div>
   );
-});
-
-WithEllipsedTitleTooltipExternalTooltip.story = {
-  name: 'with ellipsed title tooltip & external tooltip',
 };
 
-export const BasicWithRenderProp = withReadme(README, () => {
+WithEllipsedTitleTooltipExternalTooltip.storyName =
+  'with ellipsed title tooltip & external tooltip';
+
+export const BasicWithRenderProp = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -189,13 +188,11 @@ export const BasicWithRenderProp = withReadme(README, () => {
       </Card>
     </div>
   );
-});
-
-BasicWithRenderProp.story = {
-  name: 'with render prop',
 };
 
-export const WithCustomRangeSelector = withReadme(README, () => {
+BasicWithRenderProp.storyName = 'with render prop';
+
+export const WithCustomRangeSelector = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
     <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -225,13 +222,11 @@ export const WithCustomRangeSelector = withReadme(README, () => {
       />
     </div>
   );
-});
-
-WithCustomRangeSelector.story = {
-  name: 'with custom range selector',
 };
 
-export const SizeGallery = withReadme(README, () => {
+WithCustomRangeSelector.storyName = 'with custom range selector';
+
+export const SizeGallery = () => {
   return Object.keys(CARD_SIZES).map((i) => (
     <React.Fragment key={`card-${i}`}>
       <h3>{i}</h3>
@@ -256,13 +251,11 @@ export const SizeGallery = withReadme(README, () => {
       </div>
     </React.Fragment>
   ));
-});
-
-SizeGallery.story = {
-  name: 'size gallery',
 };
 
-export const Error = withReadme(README, () => {
+SizeGallery.storyName = 'size gallery';
+
+export const Error = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -278,13 +271,11 @@ export const Error = withReadme(README, () => {
       />
     </div>
   );
-});
-
-Error.story = {
-  name: 'with error',
 };
 
-export const ImplementingACustomCard = withReadme(README, () => {
+Error.storyName = 'with error';
+
+export const ImplementingACustomCard = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const isEditable = boolean('isEditable', false);
   const title = text('title', 'Custom Card Title');
@@ -328,28 +319,26 @@ export const ImplementingACustomCard = withReadme(README, () => {
       </Card>
     </div>
   );
-});
+};
 
-ImplementingACustomCard.story = {
-  name: 'implementing a custom card',
+ImplementingACustomCard.storyName = 'implementing a custom card';
 
-  parameters: {
-    inline: true,
-    source: true,
-    info: {
-      text: `
-    To develop a custom card component.
-     - Create a new card component that uses the base Card component
-     - See the simple SampleCustomCard in the source code of this story for an example
-     - If you want to hide the title/toolbar, do not pass a title prop
-     - (Optionally, if you want to use the card in a Dashboard) Extend the Card Renderer so the Dashboard knows how to render your card type
-     - (Optionally, if you want to use the card in a Dashboard) Create a validator for this card type within "utils/schemas/validators" and add it to the validateDashboardJSON function used to validate dashboards on import.
+ImplementingACustomCard.parameters = {
+  inline: true,
+  source: true,
+  info: {
+    text: `
+  To develop a custom card component.
+   - Create a new card component that uses the base Card component
+   - See the simple SampleCustomCard in the source code of this story for an example
+   - If you want to hide the title/toolbar, do not pass a title prop
+   - (Optionally, if you want to use the card in a Dashboard) Extend the Card Renderer so the Dashboard knows how to render your card type
+   - (Optionally, if you want to use the card in a Dashboard) Create a validator for this card type within "utils/schemas/validators" and add it to the validateDashboardJSON function used to validate dashboards on import.
 
-     ## Data flow for a card in the dashboard
-     All data loading for a card goes through the dashboard's onFetchData function.  There are two ways to trigger a refetch of data for a card.  The first is to directly interact
-     with the Card's range controls.  The second is for the Dashboard to trigger that all of the cards need a reload by updating it's isLoading bit.  The CardRenderer component will call the onSetupCard function of the dashboard first
-     for each card (if it exists), then will call the onFetchData function for the dashboard.
-     `,
-    },
+   ## Data flow for a card in the dashboard
+   All data loading for a card goes through the dashboard's onFetchData function.  There are two ways to trigger a refetch of data for a card.  The first is to directly interact
+   with the Card's range controls.  The second is for the Dashboard to trigger that all of the cards need a reload by updating it's isLoading bit.  The CardRenderer component will call the onSetupCard function of the dashboard first
+   for each card (if it exists), then will call the onFetchData function for the dashboard.
+   `,
   },
 };

@@ -5,7 +5,7 @@ import { render } from '@testing-library/react';
 import Breadcrumb from './Breadcrumb';
 
 const commonProps = {
-  onClick: () => console.log('clicked'),
+  onClick: jest.fn(),
 };
 
 describe('Breadcrumb', () => {

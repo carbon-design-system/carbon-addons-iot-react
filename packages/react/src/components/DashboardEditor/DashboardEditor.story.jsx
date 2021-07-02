@@ -29,9 +29,7 @@ import SimpleList from '../List/SimpleList/SimpleList';
 import DashboardEditor from './DashboardEditor';
 
 export const Experimental = () => <StoryNotice componentName="DashboardEditor" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 const images = [
   {
@@ -208,9 +206,7 @@ export const Default = () => (
   />
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const WithInitialValue = () => (
   <DashboardEditor
@@ -271,7 +267,7 @@ export const WithInitialValue = () => (
         {
           id: 'Timeseries',
           title: 'Timeseries',
-          size: 'MEDIUMWIDE',
+          size: 'MEDIUM',
           type: 'TIMESERIES',
           content: {
             series: [
@@ -324,57 +320,60 @@ export const WithInitialValue = () => (
       ],
       layouts: {
         lg: [
-          { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-          { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+          { i: 'Table', x: 0, y: 0 },
+          { i: 'Custom', x: 8, y: 0 },
           {
-            h: 2,
             i: 'Standard',
-            w: 4,
             x: 12,
             y: 0,
           },
           {
-            h: 2,
             i: 'Timeseries',
-            w: 8,
             x: 1,
             y: 4,
+          },
+          {
+            i: 'Bar',
+            x: 1,
+            y: 8,
           },
         ],
         md: [
-          { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-          { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+          { i: 'Table', x: 0, y: 0 },
+          { i: 'Custom', x: 0, y: 4 },
           {
-            h: 2,
             i: 'Standard',
-            w: 4,
-            x: 12,
-            y: 0,
+            x: 0,
+            y: 6,
           },
           {
-            h: 2,
             i: 'Timeseries',
-            w: 8,
-            x: 1,
-            y: 4,
+            x: 0,
+            y: 8,
+          },
+          {
+            i: 'Bar',
+            x: 0,
+            y: 10,
           },
         ],
-        xl: [
-          { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-          { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+        sm: [
+          { i: 'Table', x: 0, y: 0 },
+          { i: 'Custom', x: 4, y: 0 },
           {
-            h: 2,
             i: 'Standard',
-            w: 4,
-            x: 12,
-            y: 0,
+            x: 4,
+            y: 2,
           },
           {
-            h: 2,
             i: 'Timeseries',
-            w: 8,
             x: 1,
             y: 4,
+          },
+          {
+            i: 'Bar',
+            x: 1,
+            y: 6,
           },
         ],
       },
@@ -407,15 +406,11 @@ export const WithInitialValue = () => (
   />
 );
 
-WithInitialValue.story = {
-  name: 'with initialValue',
-};
+WithInitialValue.storyName = 'with initialValue';
 
 export const WithEditableTitle = () => <DashboardEditor title="Custom dashboard" isTitleEditable />;
 
-WithEditableTitle.story = {
-  namd: 'with editable title',
-};
+WithEditableTitle.namd = 'with editable title';
 
 export const SummaryDashboardWithInitialValue = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
@@ -477,7 +472,7 @@ export const SummaryDashboardWithInitialValue = () => (
           {
             id: 'Timeseries',
             title: 'Timeseries',
-            size: 'MEDIUMWIDE',
+            size: 'MEDIUM',
             type: 'TIMESERIES',
             content: {
               series: [
@@ -530,56 +525,59 @@ export const SummaryDashboardWithInitialValue = () => (
         ],
         layouts: {
           lg: [
-            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 8, y: 0 },
             {
-              h: 2,
               i: 'Standard',
-              w: 4,
-              x: 12,
-              y: 0,
+              x: 8,
+              y: 2,
             },
             {
-              h: 2,
               i: 'Timeseries',
-              w: 8,
-              x: 1,
+              x: 0,
               y: 4,
+            },
+            {
+              i: 'Bar',
+              x: 0,
+              y: 6,
             },
           ],
           md: [
-            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 0, y: 4 },
             {
-              h: 2,
               i: 'Standard',
-              w: 4,
-              x: 12,
-              y: 0,
+              x: 0,
+              y: 6,
             },
             {
-              h: 2,
               i: 'Timeseries',
-              w: 8,
-              x: 1,
-              y: 4,
+              x: 0,
+              y: 8,
+            },
+            {
+              i: 'Bar',
+              x: 0,
+              y: 10,
             },
           ],
-          xl: [
-            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+          sm: [
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 4, y: 0 },
             {
-              h: 2,
               i: 'Standard',
-              w: 4,
-              x: 12,
-              y: 0,
+              x: 4,
+              y: 2,
             },
             {
-              h: 2,
               i: 'Timeseries',
-              w: 8,
-              x: 1,
+              x: 0,
+              y: 4,
+            },
+            {
+              i: 'Bar',
+              x: 4,
               y: 4,
             },
           ],
@@ -615,9 +613,7 @@ export const SummaryDashboardWithInitialValue = () => (
   </div>
 );
 
-SummaryDashboardWithInitialValue.story = {
-  name: 'Summary Dashboard with initialValue',
-};
+SummaryDashboardWithInitialValue.storyName = 'Summary Dashboard with initialValue';
 
 export const WithCustomOnCardChange = () => (
   <DashboardEditor
@@ -685,9 +681,7 @@ export const WithCustomOnCardChange = () => (
   />
 );
 
-WithCustomOnCardChange.story = {
-  name: 'with custom onCardChange',
-};
+WithCustomOnCardChange.storyName = 'with custom onCardChange';
 
 export const WithNotifications = () => (
   <DashboardEditor
@@ -739,9 +733,7 @@ export const WithNotifications = () => (
   />
 );
 
-WithNotifications.story = {
-  name: 'with notifications',
-};
+WithNotifications.storyName = 'with notifications';
 
 export const WithBreakpointSwitcher = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
@@ -775,9 +767,7 @@ export const WithBreakpointSwitcher = () => (
   </div>
 );
 
-WithBreakpointSwitcher.story = {
-  name: 'with breakpoint switcher',
-};
+WithBreakpointSwitcher.storyName = 'with breakpoint switcher';
 
 export const CustomCardPreviewRenderer = () => (
   <DashboardEditor
@@ -874,9 +864,7 @@ export const CustomCardPreviewRenderer = () => (
   />
 );
 
-CustomCardPreviewRenderer.story = {
-  name: 'custom card preview renderer',
-};
+CustomCardPreviewRenderer.storyName = 'custom card preview renderer';
 
 export const CustomHeaderRenderer = () => (
   <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
@@ -887,9 +875,7 @@ export const CustomHeaderRenderer = () => (
   </div>
 );
 
-CustomHeaderRenderer.story = {
-  name: 'custom header renderer',
-};
+CustomHeaderRenderer.storyName = 'custom header renderer';
 
 export const isLoading = () => (
   <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
@@ -897,9 +883,7 @@ export const isLoading = () => (
   </div>
 );
 
-isLoading.story = {
-  name: 'isLoading',
-};
+isLoading.storyName = 'isLoading';
 
 export const I18N = () => (
   <DashboardEditor
@@ -1177,9 +1161,7 @@ export const I18N = () => (
   />
 );
 
-I18N.story = {
-  name: 'i18n',
-};
+I18N.storyName = 'i18n';
 
 export const WithCustomCards = () => {
   // Render the elements to show in the content editor side panel
@@ -1389,9 +1371,7 @@ export const WithCustomCards = () => {
   );
 };
 
-WithCustomCards.story = {
-  name: 'With custom cards',
-};
+WithCustomCards.storyName = 'With custom cards';
 
 export const withGetDefaultCard = () => {
   const renderDefaultCard = ({ cardContent }) => <h5>{cardContent || 'My custom 1 content'}</h5>;
@@ -1474,6 +1454,4 @@ export const withGetDefaultCard = () => {
   );
 };
 
-withGetDefaultCard.story = {
-  name: 'With get default card',
-};
+withGetDefaultCard.storyName = 'With get default card';

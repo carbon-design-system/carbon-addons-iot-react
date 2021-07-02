@@ -11,7 +11,7 @@ import Button from './Button';
 const { iotPrefix, prefix } = settings;
 
 const commonProps = {
-  onClick: () => console.log('clicked'),
+  onClick: jest.fn(),
 };
 
 const iconSelectionCommonProps = {
