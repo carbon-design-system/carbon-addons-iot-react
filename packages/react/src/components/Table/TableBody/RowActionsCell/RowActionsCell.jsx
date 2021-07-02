@@ -1,15 +1,10 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Button,
-  DataTable,
-  OverflowMenu,
-  OverflowMenuItem,
-  Loading,
-} from 'carbon-components-react';
+import { DataTable, OverflowMenu, OverflowMenuItem, Loading } from 'carbon-components-react';
 import classnames from 'classnames';
 import omit from 'lodash/omit';
 
+import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import icons from '../../../../utils/bundledIcons';
