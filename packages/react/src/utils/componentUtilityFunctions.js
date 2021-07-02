@@ -115,7 +115,12 @@ export const handleEnterKeyDown = (evt, callback) => {
   }
 };
 
-export const defaultFunction = (name) => () => console.info(`${name} not implemented`); // eslint-disable-line no-console
+export const defaultFunction = (name) => () => {
+  if (!process?.env?.JEST_WORKER_ID) {
+    // eslint-disable-next-line no-console
+    console.info(`${name} not implemented`);
+  }
+};
 
 export const sortTableData = (columnId, isTimestampColumn) => (a, b) => {
   if (isNil(a)) {
@@ -252,6 +257,7 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions, e
           placeCard(x, y, w, h, index + 1);
         } catch (err) {
           // In this case, since we didn't explicitly place it, react-grid-layout will handle it for us
+          // eslint-disable-next-line no-console
           console.error('Error displaying user defined layout: ', err);
         }
         return {
@@ -277,6 +283,7 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions, e
       try {
         placeCard(currX, currY, w, h, index + 1);
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.error('Error displaying user defined layout: ', err);
       }
 

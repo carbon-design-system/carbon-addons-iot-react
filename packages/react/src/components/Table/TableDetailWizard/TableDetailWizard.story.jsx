@@ -162,9 +162,7 @@ export const StatefulExample = () => (
   />
 );
 
-StatefulExample.story = {
-  name: 'Stateful example',
-};
+StatefulExample.storyName = 'Stateful example';
 
 export const Static = () => (
   <TableDetailWizard
@@ -198,6 +196,4 @@ export const WithError = () => (
   />
 );
 
-WithError.story = {
-  name: 'with error',
-};
+WithError.storyName = 'with error';

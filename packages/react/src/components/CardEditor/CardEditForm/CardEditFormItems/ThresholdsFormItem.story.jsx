@@ -40,11 +40,9 @@ export const ExampleWithInitialValues = () => (
   </div>
 );
 
-DefaultExample.story = {
-  parameters: {
-    info: {
-      propTables: [ThresholdsFormItem],
-      propTablesExclude: [],
-    },
+DefaultExample.parameters = {
+  info: {
+    propTables: [ThresholdsFormItem],
+    propTablesExclude: [],
   },
 };

@@ -111,16 +111,14 @@ export const DashboardDefaultLayouts = () => {
   );
 };
 
-DashboardDefaultLayouts.story = {
-  name: 'dashboard, default layouts',
+DashboardDefaultLayouts.storyName = 'dashboard, default layouts';
 
-  parameters: {
-    info: {
-      text: `
-    This is the simplest way to use the dashboard grid, just pass it a set of cards and let it figure out it's own layout to use.
-    # Component Overview
-    `,
-    },
+DashboardDefaultLayouts.parameters = {
+  info: {
+    text: `
+  This is the simplest way to use the dashboard grid, just pass it a set of cards and let it figure out it's own layout to use.
+  # Component Overview
+  `,
   },
 };
 
@@ -137,16 +135,14 @@ export const DashboardIsEditable = () => {
   );
 };
 
-DashboardIsEditable.story = {
-  name: 'dashboard, is Editable',
+DashboardIsEditable.storyName = 'dashboard, is Editable';
 
-  parameters: {
-    info: {
-      text: `
-      The onLayoutChange handler is triggered as you drag and drop the cards around
-      # Component Overview
-      `,
-    },
+DashboardIsEditable.parameters = {
+  info: {
+    text: `
+    The onLayoutChange handler is triggered as you drag and drop the cards around
+    # Component Overview
+    `,
   },
 };
 
@@ -179,18 +175,16 @@ export const DashboardCustomLayout = () => {
   );
 };
 
-DashboardCustomLayout.story = {
-  name: 'dashboard, custom layout',
+DashboardCustomLayout.storyName = 'dashboard, custom layout';
 
-  parameters: {
-    info: {
-      text: `
-      The breakpoint property tells the dashboard which
-      layout to use. You should listen to the onBreakpointChange event to keep
-      track of which breakpoint is currently being used in your local components state, and pass back in the breakpoint accordingly.
-      # Component Overview
-      `,
-    },
+DashboardCustomLayout.parameters = {
+  info: {
+    text: `
+    The breakpoint property tells the dashboard which
+    layout to use. You should listen to the onBreakpointChange event to keep
+    track of which breakpoint is currently being used in your local components state, and pass back in the breakpoint accordingly.
+    # Component Overview
+    `,
   },
 };
 
@@ -353,16 +347,14 @@ export const DashboardAllCardSizes = () => {
   );
 };
 
-DashboardAllCardSizes.story = {
-  name: 'dashboard, all card sizes',
+DashboardAllCardSizes.storyName = 'dashboard, all card sizes';
 
-  parameters: {
-    info: {
-      text: `
-    This is the simplest way to use the dashboard grid, just pass it a set of cards and let it figure out it's own layout to use.
-    # Component Overview
-    `,
-    },
+DashboardAllCardSizes.parameters = {
+  info: {
+    text: `
+  This is the simplest way to use the dashboard grid, just pass it a set of cards and let it figure out it's own layout to use.
+  # Component Overview
+  `,
   },
 };
 
@@ -411,59 +403,58 @@ export const DashboardResizableCard = () => {
   );
 };
 
-DashboardResizableCard.story = {
-  name: 'dashboard, resizable card',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      source: true,
-      text: `
-      This story demonstrates how a card can be resizable by dragging. During reszie the cards' size prop is
-      automatically updated to match the new size.
-      See the source code for the full example.
+DashboardResizableCard.storyName = 'dashboard, resizable card';
+DashboardResizableCard.decorators = [createElement];
 
-      ~~~js
-      const [currentSize, setCurrentSize] = useState(CARD_SIZES.SMALL);
-      const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
-      const isResizable = boolean('isResizable', false);
-      const layouts = {
-        max: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
-        xl: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
-        lg: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
-        md: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
-        sm: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
-        xs: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
-      };
+DashboardResizableCard.parameters = {
+  info: {
+    source: true,
+    text: `
+    This story demonstrates how a card can be resizable by dragging. During reszie the cards' size prop is
+    automatically updated to match the new size.
+    See the source code for the full example.
 
-      return (
-        <Fragment>
-          The card is resizable by dragging and the cards' size prop is
-          automatically updated to match the new size during the drag process.
-          <FullWidthWrapper>
-            <DashboardGrid
-              layouts={layouts}
-              breakpoint={currentBreakpoint}
-              onBreakpointChange={(newBreakpoint) =>
-                setCurrentBreakpoint(newBreakpoint)
-              }
-              onCardSizeChange={(cardSizeData, gridData) => {
-                const { size } = cardSizeData;
-                setCurrentSize(size);
-              }}
-              onResizeStop={() => {}}>
-              <Card
-                title={'Card -' + currentSize}
-                id="card"
-                isResizable={isResizable}
-                key="card"
-                size={currentSize}></Card>
-            </DashboardGrid>
-          </FullWidthWrapper>
-        </Fragment>
-      );
-      ~~~
-    `,
-    },
+    ~~~js
+    const [currentSize, setCurrentSize] = useState(CARD_SIZES.SMALL);
+    const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
+    const isResizable = boolean('isResizable', false);
+    const layouts = {
+      max: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
+      xl: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
+      lg: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
+      md: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
+      sm: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
+      xs: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
+    };
+
+    return (
+      <Fragment>
+        The card is resizable by dragging and the cards' size prop is
+        automatically updated to match the new size during the drag process.
+        <FullWidthWrapper>
+          <DashboardGrid
+            layouts={layouts}
+            breakpoint={currentBreakpoint}
+            onBreakpointChange={(newBreakpoint) =>
+              setCurrentBreakpoint(newBreakpoint)
+            }
+            onCardSizeChange={(cardSizeData, gridData) => {
+              const { size } = cardSizeData;
+              setCurrentSize(size);
+            }}
+            onResizeStop={() => {}}>
+            <Card
+              title={'Card -' + currentSize}
+              id="card"
+              isResizable={isResizable}
+              key="card"
+              size={currentSize}></Card>
+          </DashboardGrid>
+        </FullWidthWrapper>
+      </Fragment>
+    );
+    ~~~
+  `,
   },
 };
 
@@ -898,18 +889,17 @@ export const DashboardAllCardsAsResizable = () => {
   );
 };
 
-DashboardAllCardsAsResizable.story = {
-  name: 'dashboard, all cards as resizable',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      source: true,
-      text: `
-      This story demonstrates how all cards can be resizable by dragging. During reszie the cards' size prop is
-      automatically updated to match the new size. Some cards have a minimal size defined.
+DashboardAllCardsAsResizable.storyName = 'dashboard, all cards as resizable';
+DashboardAllCardsAsResizable.decorators = [createElement];
 
-      See the source code for the full example.
-    `,
-    },
+DashboardAllCardsAsResizable.parameters = {
+  info: {
+    source: true,
+    text: `
+    This story demonstrates how all cards can be resizable by dragging. During reszie the cards' size prop is
+    automatically updated to match the new size. Some cards have a minimal size defined.
+
+    See the source code for the full example.
+  `,
   },
 };

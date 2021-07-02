@@ -17,7 +17,6 @@ export default {
 };
 
 export const Default = () => <FormLabel>Form label</FormLabel>;
-Default.story = {};
 
 export const WithTooltip = () => (
   <FormLabel>
@@ -27,6 +26,4 @@ export const WithTooltip = () => (
   </FormLabel>
 );
 
-WithTooltip.story = {
-  name: 'Form Label with Tooltip',
-};
+WithTooltip.storyName = 'Form Label with Tooltip';

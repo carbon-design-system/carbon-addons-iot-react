@@ -8,8 +8,16 @@ import { Tag } from '../../Tag';
 import { UnconnectedListItem } from './ListItem';
 
 describe('ListItem', () => {
+  const commonProps = {
+    itemWillMove: jest.fn(),
+    onItemMoved: jest.fn(),
+    connectDragSource: jest.fn(),
+    connectDragPreview: jest.fn(),
+    isDragging: false,
+  };
+
   it('test ListItem gets rendered', () => {
-    render(<UnconnectedListItem id="1" value="some content" index={0} />);
+    render(<UnconnectedListItem id="1" value="some content" index={0} {...commonProps} />);
     expect(screen.getByText('some content')).toBeTruthy();
   });
 
@@ -21,6 +29,7 @@ describe('ListItem', () => {
         secondaryValue="second"
         index={0}
         isLargeRow
+        {...commonProps}
       />
     );
     expect(screen.getByText('some content')).toBeTruthy();
@@ -29,7 +38,16 @@ describe('ListItem', () => {
 
   it('ListItem when isSelectable set to true', () => {
     const onSelect = jest.fn();
-    render(<UnconnectedListItem id="1" value="test" isSelectable onSelect={onSelect} index={0} />);
+    render(
+      <UnconnectedListItem
+        id="1"
+        value="test"
+        isSelectable
+        onSelect={onSelect}
+        index={0}
+        {...commonProps}
+      />
+    );
     fireEvent.keyPress(screen.getAllByRole('button')[0], {
       key: 'Enter',
       charCode: 13,
@@ -39,14 +57,32 @@ describe('ListItem', () => {
 
   it('ListItem when isSelectable is set to true and onClick will trigger onSelect', () => {
     const onSelect = jest.fn();
-    render(<UnconnectedListItem id="1" value="" isSelectable onSelect={onSelect} index={0} />);
+    render(
+      <UnconnectedListItem
+        id="1"
+        value=""
+        isSelectable
+        onSelect={onSelect}
+        index={0}
+        {...commonProps}
+      />
+    );
     fireEvent.click(screen.getAllByRole('button')[0]);
     expect(onSelect).toHaveBeenCalledTimes(1);
   });
 
   it('ListItem when is Expandable set to true', () => {
     const onExpand = jest.fn();
-    render(<UnconnectedListItem id="1" value="" isExpandable onExpand={onExpand} index={0} />);
+    render(
+      <UnconnectedListItem
+        id="1"
+        value=""
+        isExpandable
+        onExpand={onExpand}
+        index={0}
+        {...commonProps}
+      />
+    );
     fireEvent.keyPress(screen.getAllByRole('button')[0], {
       key: 'Enter',
       charCode: 13,
@@ -56,7 +92,16 @@ describe('ListItem', () => {
 
   it('ListItem when is Expandable set to true and onClick will trigger onExpand', () => {
     const onExpand = jest.fn();
-    render(<UnconnectedListItem id="1" value="" isExpandable onExpand={onExpand} index={0} />);
+    render(
+      <UnconnectedListItem
+        id="1"
+        value=""
+        isExpandable
+        onExpand={onExpand}
+        index={0}
+        {...commonProps}
+      />
+    );
     fireEvent.click(screen.getAllByRole('button')[0]);
     expect(onExpand).toHaveBeenCalledTimes(1);
   });
@@ -70,6 +115,7 @@ describe('ListItem', () => {
         icon={<Add16 title="iconTitle" onClick={onClick} />}
         iconPosition="left"
         index={0}
+        {...commonProps}
       />
     );
     fireEvent.click(screen.getByTitle('iconTitle'));
@@ -78,21 +124,24 @@ describe('ListItem', () => {
 
   it('ListItem with rowActions', () => {
     const rowActionOnClick = jest.fn();
-    const rowActions = [<Edit16 title="iconTitle" onClick={rowActionOnClick} />];
-    render(<UnconnectedListItem id="1" value="test" rowActions={rowActions} index={0} />);
+    const rowActions = [<Edit16 key="edit" title="iconTitle" onClick={rowActionOnClick} />];
+    render(
+      <UnconnectedListItem id="1" value="test" rowActions={rowActions} index={0} {...commonProps} />
+    );
     fireEvent.click(screen.getByTitle('iconTitle'));
     expect(rowActionOnClick).toHaveBeenCalledTimes(1);
   });
 
   it('ListItem with long value has visible rowActions', () => {
     const rowActionOnClick = jest.fn();
-    const rowActions = [<Edit16 title="iconTitle" onClick={rowActionOnClick} />];
+    const rowActions = [<Edit16 key="edit" title="iconTitle" onClick={rowActionOnClick} />];
     render(
       <UnconnectedListItem
         id="1"
         value="test value with a really long string to ensure that it stretches the length of the ListItem"
         rowActions={rowActions}
         index={0}
+        {...commonProps}
       />
     );
     fireEvent.click(screen.getByTitle('iconTitle'));
@@ -107,13 +156,28 @@ describe('ListItem', () => {
     };
     const i18nDefaults = UnconnectedListItem.defaultProps.i18n;
     const { rerender } = render(
-      <UnconnectedListItem i18n={i18nTest} id="1" value="" isExpandable index={0} />
+      <UnconnectedListItem
+        i18n={i18nTest}
+        id="1"
+        value=""
+        isExpandable
+        index={0}
+        {...commonProps}
+      />
     );
     expect(screen.getByLabelText(i18nTest.expand)).toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefaults.expand)).not.toBeInTheDocument();
 
     rerender(
-      <UnconnectedListItem i18n={i18nTest} id="1" value="" isExpandable expanded index={0} />
+      <UnconnectedListItem
+        i18n={i18nTest}
+        id="1"
+        value=""
+        isExpandable
+        expanded
+        index={0}
+        {...commonProps}
+      />
     );
     expect(screen.getByLabelText(i18nTest.close)).toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefaults.close)).not.toBeInTheDocument();
@@ -128,17 +192,21 @@ describe('ListItem', () => {
         my tag 2
       </Tag>,
     ];
-    const { rerender } = render(<UnconnectedListItem id="1" value="test" index={0} />);
+    const { rerender } = render(
+      <UnconnectedListItem id="1" value="test" index={0} {...commonProps} />
+    );
     expect(screen.queryByText('my tag 1')).not.toBeInTheDocument();
     expect(screen.queryByText('my tag 2')).not.toBeInTheDocument();
 
-    rerender(<UnconnectedListItem id="1" value="test" tags={tags} index={0} />);
+    rerender(<UnconnectedListItem id="1" value="test" tags={tags} index={0} {...commonProps} />);
     expect(screen.getByText('my tag 1')).toBeVisible();
     expect(screen.getByText('my tag 2')).toBeVisible();
   });
 
   it('ListItem in edit mode', () => {
-    render(<UnconnectedListItem id="1" value="test" editingStyle="multiple" index={0} />);
+    render(
+      <UnconnectedListItem id="1" value="test" editingStyle="multiple" index={0} {...commonProps} />
+    );
     expect(screen.getByTestId('list-item-editable')).toBeTruthy();
   });
 
@@ -149,6 +217,11 @@ describe('ListItem', () => {
       editingStyle: 'single-nesting',
       index: 0,
       renderDropTargets: true,
+      isDragging: false,
+      connectDragSource: jest.fn(),
+      connectDragPreview: jest.fn(),
+      onItemMoved: jest.fn(),
+      itemWillMove: jest.fn(),
     };
 
     render(
@@ -169,6 +242,11 @@ describe('ListItem', () => {
       editingStyle: 'single',
       index: 0,
       renderDropTargets: true,
+      isDragging: false,
+      connectDragSource: jest.fn(),
+      connectDragPreview: jest.fn(),
+      onItemMoved: jest.fn(),
+      itemWillMove: jest.fn(),
     };
 
     render(
