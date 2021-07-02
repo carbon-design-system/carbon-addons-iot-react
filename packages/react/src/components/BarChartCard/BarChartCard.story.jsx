@@ -72,9 +72,7 @@ export const SimpleBar = () => {
   );
 };
 
-SimpleBar.story = {
-  name: 'with simple bar',
-};
+SimpleBar.storyName = 'with simple bar';
 
 export const SimpleBarTimeSeriesCustomDomainRange = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
@@ -134,9 +132,8 @@ export const SimpleBarTimeSeriesCustomDomainRange = () => {
   );
 };
 
-SimpleBarTimeSeriesCustomDomainRange.story = {
-  name: 'with simple bar of time series data and custom domainRange',
-};
+SimpleBarTimeSeriesCustomDomainRange.storyName =
+  'with simple bar of time series data and custom domainRange';
 
 export const GroupedBar = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
@@ -191,9 +188,7 @@ export const GroupedBar = () => {
   );
 };
 
-GroupedBar.story = {
-  name: 'with grouped bar',
-};
+GroupedBar.storyName = 'with grouped bar';
 
 export const StackedBar = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
@@ -246,9 +241,7 @@ export const StackedBar = () => {
   );
 };
 
-StackedBar.story = {
-  name: 'with stacked bar',
-};
+StackedBar.storyName = 'with stacked bar';
 
 export const StackedBarTimeSeries = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
@@ -300,9 +293,7 @@ export const StackedBarTimeSeries = () => {
   );
 };
 
-StackedBarTimeSeries.story = {
-  name: 'with stacked bar of time series data',
-};
+StackedBarTimeSeries.storyName = 'with stacked bar of time series data';
 
 export const StackedBarTimeSeriesWithCategories = () => {
   const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
@@ -350,6 +341,5 @@ export const StackedBarTimeSeriesWithCategories = () => {
   );
 };
 
-StackedBarTimeSeriesWithCategories.story = {
-  name: 'with stacked bar of time series data and categories',
-};
+StackedBarTimeSeriesWithCategories.storyName =
+  'with stacked bar of time series data and categories';

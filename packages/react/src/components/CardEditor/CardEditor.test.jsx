@@ -128,7 +128,7 @@ describe('CardEditor', () => {
   });
 
   it('shows gallery when no card is defined', () => {
-    render(<CardEditor />);
+    render(<CardEditor onShowGallery={jest.fn()} onChange={jest.fn()} onAddCard={jest.fn()} />);
 
     expect(screen.getByText('Gallery')).toBeTruthy();
   });
@@ -147,6 +147,9 @@ describe('CardEditor', () => {
           VALUE: inDomText,
           COOL_NEW_CARD: inDomText,
         }}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
         supportedCardTypes={['VALUE', 'COOL_NEW_CARD']}
         icons={{
           VALUE: <EscalatorDown data-testid={testId} />,

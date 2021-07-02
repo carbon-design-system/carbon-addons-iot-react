@@ -199,7 +199,7 @@ const ImageCard = ({
                     )}
                   />
                 ) : (
-                  <div className={`${iotPrefix}--image-card__empty`} i>
+                  <div className={`${iotPrefix}--image-card__empty`}>
                     <Image32 width={250} height={250} fill="gray" />
                   </div>
                 )

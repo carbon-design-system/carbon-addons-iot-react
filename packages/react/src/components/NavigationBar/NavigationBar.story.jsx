@@ -73,15 +73,11 @@ export default {
 
 export const Normal = () => <NavigationBar {...navBarProps} />;
 
-Normal.story = {
-  name: 'normal',
-};
+Normal.storyName = 'normal';
 
 export const StartWithTab2Selected = () => <NavigationBar {...navBarProps} selected={1} />;
 
-StartWithTab2Selected.story = {
-  name: 'start with tab 2 selected',
-};
+StartWithTab2Selected.storyName = 'start with tab 2 selected';
 
 export const WithActions = () => (
   <NavigationBar
@@ -102,12 +98,8 @@ export const WithActions = () => (
   />
 );
 
-WithActions.story = {
-  name: 'with actions',
-};
+WithActions.storyName = 'with actions';
 
 export const ExampleWithWorkArea = () => <StatefulNavigationBar />;
 
-ExampleWithWorkArea.story = {
-  name: 'example with workArea',
-};
+ExampleWithWorkArea.storyName = 'example with workArea';

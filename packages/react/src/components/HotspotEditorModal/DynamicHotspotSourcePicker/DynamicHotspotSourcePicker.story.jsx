@@ -60,6 +60,4 @@ export const WithStateInStory = () => {
   return <WithState />;
 };
 
-WithStateInStory.story = {
-  name: 'Example with externaly managed state',
-};
+WithStateInStory.storyName = 'Example with externaly managed state';

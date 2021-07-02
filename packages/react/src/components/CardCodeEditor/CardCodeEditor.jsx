@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import Editor from '@monaco-editor/react';
 import { CodeSnippetSkeleton, InlineNotification, CopyButton } from 'carbon-components-react';
 import { Popup16 } from '@carbon/icons-react';
@@ -82,6 +82,8 @@ const CardCodeEditor = ({
   const [isExpanded, setIsExpanded] = useState();
   const [error, setError] = useState(false);
 
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
     editorValue?.current?.layout();
@@ -118,16 +120,16 @@ const CardCodeEditor = ({
       })}
       isLarge
       header={{
-        label: i18n.modalLabel,
-        title: i18n.modalTitle,
-        helpText: i18n.modalHelpText || null,
+        label: mergedI18n.modalLabel,
+        title: mergedI18n.modalTitle,
+        helpText: mergedI18n.modalHelpText || null,
       }}
       onSubmit={handleOnSubmit}
       onClose={onClose}
-      iconDescription={i18n.modalIconDescription}
+      iconDescription={mergedI18n.modalIconDescription}
       footer={{
-        primaryButtonLabel: i18n.modalPrimaryButtonLabel,
-        secondaryButtonLabel: i18n.modalSecondaryButtonLabel,
+        primaryButtonLabel: mergedI18n.modalPrimaryButtonLabel,
+        secondaryButtonLabel: mergedI18n.modalSecondaryButtonLabel,
       }}
       {...composedModalProps}
     >
@@ -135,7 +137,7 @@ const CardCodeEditor = ({
         className={`${iotPrefix}--editor-expand`}
         hasIconOnly
         renderIcon={Popup16}
-        iconDescription={i18n.expandBtnLabel}
+        iconDescription={mergedI18n.expandBtnLabel}
         onClick={handleOnExpand}
         kind="ghost"
         // TODO: remove deprecated testID in v3.
@@ -146,7 +148,7 @@ const CardCodeEditor = ({
           className={`${iotPrefix}--editor-notification`}
           kind="error"
           onCloseButtonClick={() => setError(false)}
-          title={i18n.errorTitle}
+          title={mergedI18n.errorTitle}
           subtitle={error}
           // TODO: remove deprecated testID in v3.
           data-testid={`${testID || testId}-notification`}
@@ -161,8 +163,8 @@ const CardCodeEditor = ({
           <CopyButton
             className={`${iotPrefix}--editor-copy`}
             onClick={handleOnCopy}
-            iconDescription={i18n.copyBtnDescription}
-            feedback={i18n.copyBtnFeedBack}
+            iconDescription={mergedI18n.copyBtnDescription}
+            feedback={mergedI18n.copyBtnFeedBack}
             // TODO: remove deprecated testID in v3.
             data-testid={`${testID || testId}-copy-button`}
           />

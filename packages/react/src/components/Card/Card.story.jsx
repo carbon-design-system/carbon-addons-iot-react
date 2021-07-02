@@ -113,9 +113,7 @@ export const Basic = () => {
   );
 };
 
-Basic.story = {
-  name: 'basic stateful example with custom expand icon',
-};
+Basic.storyName = 'basic stateful example with custom expand icon';
 
 export const WithEllipsedTitleTooltipExternalTooltip = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -152,9 +150,8 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
   );
 };
 
-WithEllipsedTitleTooltipExternalTooltip.story = {
-  name: 'with ellipsed title tooltip & external tooltip',
-};
+WithEllipsedTitleTooltipExternalTooltip.storyName =
+  'with ellipsed title tooltip & external tooltip';
 
 export const BasicWithRenderProp = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -193,9 +190,7 @@ export const BasicWithRenderProp = () => {
   );
 };
 
-BasicWithRenderProp.story = {
-  name: 'with render prop',
-};
+BasicWithRenderProp.storyName = 'with render prop';
 
 export const WithCustomRangeSelector = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -229,9 +224,7 @@ export const WithCustomRangeSelector = () => {
   );
 };
 
-WithCustomRangeSelector.story = {
-  name: 'with custom range selector',
-};
+WithCustomRangeSelector.storyName = 'with custom range selector';
 
 export const SizeGallery = () => {
   return Object.keys(CARD_SIZES).map((i) => (
@@ -260,9 +253,7 @@ export const SizeGallery = () => {
   ));
 };
 
-SizeGallery.story = {
-  name: 'size gallery',
-};
+SizeGallery.storyName = 'size gallery';
 
 export const Error = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -282,9 +273,7 @@ export const Error = () => {
   );
 };
 
-Error.story = {
-  name: 'with error',
-};
+Error.storyName = 'with error';
 
 export const ImplementingACustomCard = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -332,26 +321,24 @@ export const ImplementingACustomCard = () => {
   );
 };
 
-ImplementingACustomCard.story = {
-  name: 'implementing a custom card',
+ImplementingACustomCard.storyName = 'implementing a custom card';
 
-  parameters: {
-    inline: true,
-    source: true,
-    info: {
-      text: `
-    To develop a custom card component.
-     - Create a new card component that uses the base Card component
-     - See the simple SampleCustomCard in the source code of this story for an example
-     - If you want to hide the title/toolbar, do not pass a title prop
-     - (Optionally, if you want to use the card in a Dashboard) Extend the Card Renderer so the Dashboard knows how to render your card type
-     - (Optionally, if you want to use the card in a Dashboard) Create a validator for this card type within "utils/schemas/validators" and add it to the validateDashboardJSON function used to validate dashboards on import.
+ImplementingACustomCard.parameters = {
+  inline: true,
+  source: true,
+  info: {
+    text: `
+  To develop a custom card component.
+   - Create a new card component that uses the base Card component
+   - See the simple SampleCustomCard in the source code of this story for an example
+   - If you want to hide the title/toolbar, do not pass a title prop
+   - (Optionally, if you want to use the card in a Dashboard) Extend the Card Renderer so the Dashboard knows how to render your card type
+   - (Optionally, if you want to use the card in a Dashboard) Create a validator for this card type within "utils/schemas/validators" and add it to the validateDashboardJSON function used to validate dashboards on import.
 
-     ## Data flow for a card in the dashboard
-     All data loading for a card goes through the dashboard's onFetchData function.  There are two ways to trigger a refetch of data for a card.  The first is to directly interact
-     with the Card's range controls.  The second is for the Dashboard to trigger that all of the cards need a reload by updating it's isLoading bit.  The CardRenderer component will call the onSetupCard function of the dashboard first
-     for each card (if it exists), then will call the onFetchData function for the dashboard.
-     `,
-    },
+   ## Data flow for a card in the dashboard
+   All data loading for a card goes through the dashboard's onFetchData function.  There are two ways to trigger a refetch of data for a card.  The first is to directly interact
+   with the Card's range controls.  The second is for the Dashboard to trigger that all of the cards need a reload by updating it's isLoading bit.  The CardRenderer component will call the onSetupCard function of the dashboard first
+   for each card (if it exists), then will call the onFetchData function for the dashboard.
+   `,
   },
 };

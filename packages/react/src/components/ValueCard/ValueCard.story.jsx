@@ -58,14 +58,12 @@ export const SmallLongNoUnits = () => {
   );
 };
 
-SmallLongNoUnits.story = {
-  name: 'with long text and no units',
+SmallLongNoUnits.storyName = 'with long text and no units';
 
-  parameters: {
-    info: {
-      text:
-        'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
-    },
+SmallLongNoUnits.parameters = {
+  info: {
+    text:
+      'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
   },
 };
 
@@ -116,9 +114,7 @@ export const WithTrends = () => {
   );
 };
 
-WithTrends.story = {
-  name: 'with trends, variables, and label',
-};
+WithTrends.storyName = 'with trends, variables, and label';
 
 export const WithThresholds = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
@@ -183,9 +179,7 @@ export const WithThresholds = () => {
   );
 };
 
-WithThresholds.story = {
-  name: 'with thresholds, custom icon renderer, and custom formatter',
-};
+WithThresholds.storyName = 'with thresholds, custom icon renderer, and custom formatter';
 
 export const SmallWideThresholdsString = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
@@ -232,9 +226,7 @@ export const SmallWideThresholdsString = () => {
   );
 };
 
-SmallWideThresholdsString.story = {
-  name: 'with thresholds (string)',
-};
+SmallWideThresholdsString.storyName = 'with thresholds (string)';
 
 export const MediumThin3 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
@@ -327,9 +319,7 @@ export const MediumThin3 = () => {
   );
 };
 
-MediumThin3.story = {
-  name: 'with three data points and thresholds',
-};
+MediumThin3.storyName = 'with three data points and thresholds';
 
 export const WithFourDataPoints = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
@@ -380,9 +370,7 @@ export const WithFourDataPoints = () => {
   );
 };
 
-WithFourDataPoints.story = {
-  name: 'with four data points',
-};
+WithFourDataPoints.storyName = 'with four data points';
 
 export const Large5 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -432,9 +420,7 @@ export const Large5 = () => {
   );
 };
 
-Large5.story = {
-  name: 'with five data points',
-};
+Large5.storyName = 'with five data points';
 
 export const LargeThin6 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGETHIN);
@@ -488,9 +474,7 @@ export const LargeThin6 = () => {
   );
 };
 
-LargeThin6.story = {
-  name: 'with six data points',
-};
+LargeThin6.storyName = 'with six data points';
 
 export const DataStateNoDataMediumScrollPage = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -540,9 +524,7 @@ export const DataStateNoDataMediumScrollPage = () => {
   );
 };
 
-DataStateNoDataMediumScrollPage.story = {
-  name: 'with data state, custom icon',
-};
+DataStateNoDataMediumScrollPage.storyName = 'with data state, custom icon';
 
 export const Editable = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -582,9 +564,7 @@ export const Editable = () => {
   );
 };
 
-Editable.story = {
-  name: 'with isEditable',
-};
+Editable.storyName = 'with isEditable';
 
 export const DataFilters = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -629,6 +609,4 @@ export const DataFilters = () => {
   );
 };
 
-DataFilters.story = {
-  name: 'with dataFilters',
-};
+DataFilters.storyName = 'with dataFilters';

@@ -1,13 +1,17 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import fileDownload from 'js-file-download';
 
 import Table from '../Table/Table';
 import { barChartData } from '../../utils/barChartDataSample';
 import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
 
 import BarChartCard from './BarChartCard';
+
+jest.mock('js-file-download');
 
 const barChartCardProps = {
   title: 'Sample',
@@ -37,19 +41,6 @@ const barChartCardProps = {
 */
 
 describe('BarChartCard', () => {
-  const originalCreateObjectURL = global.URL.createObjectURL;
-  const originalRevokeObjectURL = global.URL.revokeObjectURL;
-
-  beforeAll(() => {
-    global.URL.createObjectURL = jest.fn();
-    global.URL.revokeObjectURL = jest.fn();
-  });
-
-  afterAll(() => {
-    global.URL.createObjectURL = originalCreateObjectURL;
-    global.URL.revokeObjectURL = originalRevokeObjectURL;
-  });
-
   it('is selectable with either testID or testId', () => {
     const { rerender } = render(<BarChartCard {...barChartCardProps} testID="BAR-CHART-CARD" />);
     expect(screen.getByTestId('BAR-CHART-CARD')).toBeTruthy();
@@ -77,15 +68,18 @@ describe('BarChartCard', () => {
     expect(wrapper.find(Table)).toHaveLength(1);
   });
 
-  it('onCsvDownload should fire when download button is clicked', () => {
+  it('onCsvDownload should fire when download button is clicked', async () => {
     render(<BarChartCard {...barChartCardProps} isExpanded />);
     // First check that the button appeared
     const downloadBtn = screen.getByTestId('download-button');
     expect(downloadBtn).toBeTruthy();
     // click the button
-    fireEvent.click(downloadBtn);
+    userEvent.click(downloadBtn);
     // This means the csvDownloadHandler is firing
-    expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1);
+    expect(fileDownload).toHaveBeenCalledWith(
+      `Amsterdam,New York,Bangkok,San Francisco\n447,528,435,388,\n`,
+      'Sample.csv'
+    );
   });
 
   it('shows groupedBarChart on grouped data', () => {

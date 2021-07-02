@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event';
 import Breadcrumb from './Breadcrumb';
 
 const commonProps = {
-  onClick: () => console.log('clicked'),
+  onClick: jest.fn(),
 };
 
 describe('Breadcrumb', () => {
