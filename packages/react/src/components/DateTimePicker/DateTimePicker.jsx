@@ -368,12 +368,12 @@ const DateTimePicker = ({
     switch (value.kind) {
       case PICKER_KINDS.RELATIVE: {
         let endDate = dayjs();
-        // wait to parse it until fully typed
         if (value.relative.relativeToWhen !== '') {
           endDate =
             value.relative.relativeToWhen === RELATIVE_VALUES.YESTERDAY
               ? dayjs().add(-1, INTERVAL_VALUES.DAYS)
               : dayjs();
+          // wait to parse it until fully typed
           if (value.relative.relativeToTime.length === 5) {
             endDate = endDate.hour(Number(value.relative.relativeToTime.split(':')[0]));
             endDate = endDate.minute(Number(value.relative.relativeToTime.split(':')[1]));
