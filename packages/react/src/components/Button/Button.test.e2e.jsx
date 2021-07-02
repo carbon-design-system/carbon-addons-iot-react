@@ -9,18 +9,20 @@ const commonProps = {
 };
 
 describe('Button', () => {
-  beforeEach(() => {
-    mount(<Button {...commonProps}>Click Me</Button>);
-  });
-
   /* eslint-disable jest/expect-expect, testing-library/prefer-screen-queries */
-  it('renders the text', () => {
-    cy.findByText(/Click Me/).should('be.visible');
-  });
-
   onlyOn('headless', () => {
     it('matches image snapshot', () => {
+      mount(<Button {...commonProps}>Click Me</Button>);
       cy.findByText(/Click Me/).compareSnapshot('Button');
+    });
+
+    it('Ghost button matches image snapshot', () => {
+      mount(
+        <Button {...commonProps} kind="ghost">
+          Click Me
+        </Button>
+      );
+      cy.findByText(/Click Me/).compareSnapshot('Ghost_Button');
     });
   });
 });

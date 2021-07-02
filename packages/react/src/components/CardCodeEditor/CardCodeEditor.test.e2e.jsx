@@ -7,16 +7,14 @@ import CardCodeEditor from './CardCodeEditor';
 let onCopy;
 describe('CardCodeEditor loaded editor test', () => {
   /* eslint-disable  jest/expect-expect, testing-library/prefer-screen-queries */
-
   it('renders the script tag', () => {
-    onCopy = cy.stub();
     mount(
       <CardCodeEditor
         open
         onSubmit={() => {}}
         onClose={() => {}}
         language="json"
-        onCopy={(value) => onCopy(value)}
+        onCopy={() => {}}
         initialValue="/* write your code here */"
       />
     );
@@ -25,22 +23,6 @@ describe('CardCodeEditor loaded editor test', () => {
         '[src="https://cdn.jsdelivr.net/npm/monaco-editor@0.20.0/min/vs/editor/editor.main.js"]'
       )
       .should('exist');
-  });
-
-  it('intial value is loaded into editor', () => {
-    onCopy = cy.stub();
-    mount(
-      <CardCodeEditor
-        open
-        onSubmit={() => {}}
-        onClose={() => {}}
-        language="json"
-        onCopy={(value) => onCopy(value)}
-        initialValue="/* write your code here */"
-      />
-    );
-
-    cy.findByText(/\/\* write your code here \*\//).should('be.visible');
   });
 
   it('should call the onCopy function when icon is clicked', () => {
@@ -55,8 +37,8 @@ describe('CardCodeEditor loaded editor test', () => {
         initialValue="/* write your code here */"
       />
     );
-    // increase timeout for loading of 3rd party script (monaco)
-    cy.findByTitle(/Copy to clipboard/, { timeout: 10000 })
+    cy.findByTitle(/Copy to clipboard/)
+      .should('be.visible')
       .click()
       .then(() => {
         /* eslint-disable-next-line no-unused-expressions, jest/valid-expect */
@@ -64,23 +46,24 @@ describe('CardCodeEditor loaded editor test', () => {
       });
   });
 
-  onlyOn('headless', () => {
-    it('matches image snapshot', () => {
-      onCopy = cy.stub();
-      mount(
-        <CardCodeEditor
-          open
-          onSubmit={() => {}}
-          onClose={() => {}}
-          language="json"
-          onCopy={(value) => onCopy(value)}
-          initialValue="/* write your code here */"
-        />
-      );
-      /* eslint-disable-next-line jest/valid-expect-in-promise */
-      cy.findByText(/\/\* write your code here \*\//) // wait for script to load before screen shot
-        .should('be.visible')
-        .then(() => cy.get('.iot--editor-copy-wrapper').compareSnapshot('CardCodeEditor'));
+  it('intial value is loaded into editor', () => {
+    cy.viewport(1670, 900);
+    mount(
+      <CardCodeEditor
+        open
+        onSubmit={() => {}}
+        onClose={() => {}}
+        language="json"
+        onCopy={() => {}}
+        initialValue="/* write your code here */"
+      />
+    );
+
+    cy.findByText(/\/\* write your code here \*\//).should('be.visible');
+
+    // This component throws a network error with too many calls to the cdn script it loads so adding snapshot to existing instance
+    onlyOn('headless', () => {
+      cy.findByTestId('ComposedModal').compareSnapshot('CardCodeEditor');
     });
   });
 });

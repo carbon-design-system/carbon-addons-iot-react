@@ -79,13 +79,12 @@ const webpackConfig = {
   },
 };
 
-const width = 1670;
-const height = 900;
-
 module.exports = (on, config) => {
+  const width = 1670;
+  const height = 900;
   on('before:browser:launch', (browser = {}, launchOptions) => {
     /* eslint-disable dot-notation, no-param-reassign */
-    if (browser.name === 'chrome' && browser.isHeadless) {
+    if (browser.name === 'chrome' || browser.name === 'chromium') {
       launchOptions.args.push(`--window-size=${width},${height}`);
       // force screen to be non-retina and just use our given resolution
       launchOptions.args.push('--force-device-scale-factor=1');

@@ -51,8 +51,8 @@
     "test:engines": "check-node-version --node $(cat ../../.nvmrc) --yarn 1.x",
     "test:ci": "yarn test --ci --logHeapUsage --coverage",
     "test:e2e:update": "cypress-image-diff -u",
-    "test:e2e": "cypress open-ct --config video=false,screenshotOnRunFailure=false",
-    "test:e2e:ci": "cypress run-ct --config --record video=false,screenshotOnRunFailure=false"
+    "test:e2e": "cypress open-ct --browser chrome --config video=false,screenshotOnRunFailure=false",
+    "test:e2e:ci": "cypress run-ct  --browser chrome --headless --config --record video=false,screenshotOnRunFailure=false"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",

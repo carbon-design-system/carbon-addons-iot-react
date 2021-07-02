@@ -54,6 +54,41 @@ jobs:
           path-to-lcov: './packages/react/coverage/lcov.info'
           base-path: 'packages/react'
 
+  cypress-react:
+    name: Cypress React
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node14.16.0-chrome89-ff86
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
+      - name: Install dependencies
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          yarn --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
+
+      - name: Run tests, collect coverage
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd packages/react
+          yarn test:e2e:ci
+        with:
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          HEIGHT: 900
+          WIDTH: 1680
+
   test-angular:
     name: Test Angular
     runs-on: ubuntu-latest

@@ -9,6 +9,8 @@ import '@testing-library/cypress/add-commands';
 import '../../src/styles.scss';
 import './commands';
 
+Cypress.Screenshot.defaults({ capture: 'fullPage' });
+
 after(() => {
   cy.task('generateReport');
 });
