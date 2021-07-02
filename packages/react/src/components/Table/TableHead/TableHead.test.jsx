@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import cloneDeep from 'lodash/cloneDeep';
-import { render, screen, fireEvent, within } from '@testing-library/react';
+import { render, screen, fireEvent, within, act } from '@testing-library/react';
 
 import { settings } from '../../../constants/Settings';
 
@@ -12,6 +12,7 @@ import { MIN_COLUMN_WIDTH } from './columnWidthUtilityFunctions';
 const { iotPrefix } = settings;
 
 const commonTableHeadProps = {
+  tableId: 'tablehead-test',
   /** List of columns */
   columns: [
     { id: 'col1', name: 'Column 1', isSortable: false },
@@ -36,7 +37,9 @@ const commonTableHeadProps = {
 
 describe('TableHead', () => {
   it('columns should render', () => {
-    const wrapper = mount(<TableHead {...commonTableHeadProps} />);
+    const wrapper = mount(<TableHead {...commonTableHeadProps} />, {
+      attachTo: document.createElement('table'),
+    });
     const tableHeaders = wrapper.find(TableHeader);
     expect(tableHeaders).toHaveLength(3);
   });
@@ -50,7 +53,9 @@ describe('TableHead', () => {
         hasRowSelection: 'multi',
       },
     };
-    const wrapper = mount(<TableHead {...myProps} />);
+    const wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     const tableHeaders = wrapper.find(TableHeader);
     expect(tableHeaders).toHaveLength(4);
   });
@@ -63,7 +68,9 @@ describe('TableHead', () => {
         hasRowActions: true,
       },
     };
-    const wrapper = mount(<TableHead {...myProps} />);
+    const wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     const lastTableHeader = wrapper.find('TableHeader').last();
 
     expect(lastTableHeader.getDOMNode().className).toEqual(
@@ -75,7 +82,9 @@ describe('TableHead', () => {
 
   it('make sure data-column is set for width', () => {
     const myProps = { ...commonTableHeadProps };
-    const wrapper = mount(<TableHead {...myProps} />);
+    const wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     const tableHeaders = wrapper.find('th[data-column="col1"]');
     expect(tableHeaders).toHaveLength(1);
   });
@@ -86,11 +95,15 @@ describe('TableHead', () => {
       tableState: { ...commonTableHeadProps.tableState },
     };
     myProps.tableState.activeBar = 'filter';
-    let wrapper = mount(<TableHead {...myProps} />);
+    let wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     expect(wrapper.exists('FilterHeaderRow')).toBeTruthy();
 
     delete myProps.tableState.activeBar;
-    wrapper = mount(<TableHead {...myProps} />);
+    wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     expect(wrapper.exists('FilterHeaderRow')).toBeFalsy();
   });
 
@@ -100,7 +113,9 @@ describe('TableHead', () => {
       tableState: { ...commonTableHeadProps.tableState },
     };
     myProps.tableState.activeBar = 'column';
-    const wrapper = mount(<TableHead {...myProps} />);
+    const wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     expect(wrapper.exists('ColumnHeaderRow')).toBeTruthy();
   });
 
@@ -109,7 +124,9 @@ describe('TableHead', () => {
       ...commonTableHeadProps,
       options: { ...commonTableHeadProps.options, hasResize: true },
     };
-    const wrapper = mount(<TableHead {...myProps} />);
+    const wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     const tableHeaders = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
     tableHeaders.first().simulate('click');
     expect(tableHeaders).toHaveLength(2);
@@ -120,7 +137,9 @@ describe('TableHead', () => {
       ...commonTableHeadProps,
       options: { ...commonTableHeadProps.options, hasResize: false },
     };
-    const wrapper = mount(<TableHead {...myProps} />);
+    const wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     const tableHeaders = wrapper.find('div.column-resize-handle');
     expect(tableHeaders).toHaveLength(0);
   });
@@ -139,7 +158,9 @@ describe('TableHead', () => {
       hasResize: false,
     };
 
-    const wrapper = mount(<TableHead {...myProps} />);
+    const wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     const tableHeaders = wrapper.find(TableHeader);
     expect(tableHeaders).toHaveLength(2);
   });
@@ -147,6 +168,7 @@ describe('TableHead', () => {
   it('header renders with resizing columns when columns are empty on initial render', () => {
     const wrapper = mount(
       <TableHead
+        tableId="tablehead-test"
         columns={[]}
         tableState={{
           filters: [],
@@ -161,7 +183,10 @@ describe('TableHead', () => {
         }}
         actions={{ onColumnResize: jest.fn() }}
         options={{ ...commonTableHeadProps.options, hasResize: true }}
-      />
+      />,
+      {
+        attachTo: document.createElement('table'),
+      }
     );
     const tableHeaders = wrapper.find(TableHeader);
     expect(tableHeaders).toHaveLength(0);
@@ -171,6 +196,7 @@ describe('TableHead', () => {
       options: { ...commonTableHeadProps.options, hasResize: true },
     });
     // sync enzyme component tree with the updated dom
+
     wrapper.update();
     const tableHeaderResizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
     tableHeaderResizeHandles.first().simulate('mouseDown');
@@ -190,12 +216,16 @@ describe('TableHead', () => {
       options: { ...commonTableHeadProps.options, hasResize: false },
     };
 
-    let wrapper = mount(<TableHead {...myProps} />);
+    let wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     const nonSortableTableHead = wrapper.find(TableHeader).first().find('th');
     expect(nonSortableTableHead.prop('width')).toBe('101px');
 
     myProps.columns[0].isSortable = true;
-    wrapper = mount(<TableHead {...myProps} />);
+    wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
     const sortableTableHead = wrapper.find(TableHeader).first().find('th');
     expect(sortableTableHead.prop('width')).toBe('101px');
   });
@@ -250,7 +280,9 @@ describe('TableHead', () => {
     it('toggle hide column correctly updates the column widths of visible columns', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
-      const wrapper = mount(<TableHead {...myProps} />);
+      const wrapper = mount(<TableHead {...myProps} />, {
+        attachTo: document.createElement('table'),
+      });
       const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
       const orderingAfterTogleHide = [
         { columnId: 'col1', isHidden: true },
@@ -261,7 +293,9 @@ describe('TableHead', () => {
       // Hide col1. The width of col1 is proportionally distributed over
       // the remaining visible columns.
 
-      onColumnToggleFunc('col1', orderingAfterTogleHide);
+      act(() => {
+        onColumnToggleFunc('col1', orderingAfterTogleHide);
+      });
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '100px' },
@@ -291,7 +325,10 @@ describe('TableHead', () => {
             { id: 'col2', name: 'Column 2', width: '200px' },
             { id: 'col3', name: 'Column 3', width: '200px' },
           ]}
-        />
+        />,
+        {
+          attachTo: document.createElement('table'),
+        }
       );
       const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
 
@@ -303,7 +340,9 @@ describe('TableHead', () => {
 
       // Show col1. The width needed for col1 is proportionally subtracted from
       // the other visible columns.
-      onColumnToggleFunc('col1', orderingAfterTogleShow);
+      act(() => {
+        onColumnToggleFunc('col1', orderingAfterTogleShow);
+      });
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '133px' },
@@ -325,7 +364,9 @@ describe('TableHead', () => {
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
-      const wrapper = mount(<TableHead {...myProps} />);
+      const wrapper = mount(<TableHead {...myProps} />, {
+        attachTo: document.createElement('table'),
+      });
       const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
 
       const orderingAfterTogleShow = [
@@ -336,7 +377,9 @@ describe('TableHead', () => {
 
       // Show col1. The width needed for col1 is proportionally subtracted from
       // the other visible columns.
-      onColumnToggleFunc('col1', orderingAfterTogleShow);
+      act(() => {
+        onColumnToggleFunc('col1', orderingAfterTogleShow);
+      });
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '67px' },
@@ -368,7 +411,9 @@ describe('TableHead', () => {
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
 
-      const wrapper = mount(<TableHead {...myProps} />);
+      const wrapper = mount(<TableHead {...myProps} />, {
+        attachTo: document.createElement('table'),
+      });
       const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
 
       const orderingAfterTogleShow = [
@@ -378,7 +423,9 @@ describe('TableHead', () => {
       ];
 
       // Show col3 which has no initial column width.
-      onColumnToggleFunc('col3', orderingAfterTogleShow);
+      act(() => {
+        onColumnToggleFunc('col3', orderingAfterTogleShow);
+      });
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '133px' },
@@ -400,7 +447,9 @@ describe('TableHead', () => {
       myProps.showExpanderColumn = false;
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
-      const wrapper = mount(<TableHead {...myProps} />);
+      const wrapper = mount(<TableHead {...myProps} />, {
+        attachTo: document.createElement('table'),
+      });
       const resizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
       expect(resizeHandles).toHaveLength(2);
       const lastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
@@ -436,7 +485,9 @@ describe('TableHead', () => {
       };
       myProps.showExpanderColumn = true;
 
-      render(<TableHead {...myProps} />);
+      render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
 
       const lastColumnResizeHandle = within(screen.getByTitle('Column 3').closest('th')).getByRole(
         'button',
@@ -459,7 +510,9 @@ describe('TableHead', () => {
       myProps.showExpanderColumn = true;
       myProps.testID = 'my-test';
 
-      render(<TableHead {...myProps} />);
+      render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
       expect(screen.getByTestId('my-test-expander-column')).not.toBeNull();
     });
 
@@ -474,13 +527,17 @@ describe('TableHead', () => {
       myProps.showExpanderColumn = false;
       myProps.testID = 'my-test';
 
-      render(<TableHead {...myProps} />);
+      render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
       expect(screen.queryByTestId('my-test-expander-column')).toBeNull();
     });
 
     it('should update the column widths when column prop changes and all column prop have widths defined', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
-      const { rerender } = render(<TableHead {...myProps} />);
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '100px',
       });
@@ -494,7 +551,10 @@ describe('TableHead', () => {
             { id: 'col2', name: 'Column 2', width: '150px' },
             { id: 'col3', name: 'Column 3', width: '100px' },
           ]}
-        />
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
       );
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '250px',
@@ -515,7 +575,9 @@ describe('TableHead', () => {
       ];
       myProps.tableState.ordering = orderingWidthHiddenCol1;
 
-      const { rerender } = render(<TableHead {...myProps} />);
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
 
       rerender(
         <TableHead
@@ -525,7 +587,10 @@ describe('TableHead', () => {
             { id: 'col2', name: 'Column 2', width: '300px' },
             { id: 'col3', name: 'Column 3', width: '400px' },
           ]}
-        />
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
       );
       expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
         width: '300px',
@@ -537,7 +602,9 @@ describe('TableHead', () => {
 
     it('should not update the column widths when column prop changes and visible columns are lacking width', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
-      const { rerender } = render(<TableHead {...myProps} />);
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
       rerender(
         <TableHead
           {...myProps}
@@ -546,7 +613,10 @@ describe('TableHead', () => {
             { id: 'col2', name: 'Column 2', width: '150px' },
             { id: 'col3', name: 'Column 3', width: '100px' },
           ]}
-        />
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
       );
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '100px',
@@ -566,7 +636,10 @@ describe('TableHead', () => {
             { id: 'col2', name: 'Column 2', width: '150px' },
             { id: 'col3', name: 'Column 3' },
           ]}
-        />
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
       );
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '100px',
@@ -581,11 +654,15 @@ describe('TableHead', () => {
 
     it('handles removing columns by distributing the width on remaining cols', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
-      const { rerender } = render(<TableHead {...myProps} />);
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
       myProps.tableState.ordering = myProps.tableState.ordering.slice(2);
       myProps.columns = myProps.columns.slice(2);
 
-      rerender(<TableHead {...myProps} />);
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
 
       expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
         width: '300px',
@@ -601,11 +678,15 @@ describe('TableHead', () => {
       myProps.tableState.ordering = orderingWidthHiddenCol1;
       myProps.tableState.activeBar = 'column';
 
-      const { rerender } = render(<TableHead {...myProps} />);
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
       myProps.tableState.ordering = myProps.tableState.ordering.slice(1);
       myProps.columns = myProps.columns.slice(1);
 
-      rerender(<TableHead {...myProps} />);
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
       const toggleHideCol2Button = screen.getAllByText('Column 2')[1];
       fireEvent.click(toggleHideCol2Button);
 
@@ -623,7 +704,9 @@ describe('TableHead', () => {
       }));
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
 
-      const { rerender } = render(<TableHead {...myProps} />);
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
 
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '200px',
@@ -647,7 +730,9 @@ describe('TableHead', () => {
         { id: 'col5', name: 'Column 5', width: '150px' },
       ];
 
-      rerender(<TableHead {...myProps} />);
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
 
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '120px',
@@ -674,7 +759,9 @@ describe('TableHead', () => {
       }));
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
 
-      const { rerender } = render(<TableHead {...myProps} />);
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
 
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '200px',
@@ -701,7 +788,9 @@ describe('TableHead', () => {
       myProps.tableState.ordering = myProps.tableState.ordering.slice(1);
       myProps.columns = myProps.columns.slice(1);
 
-      rerender(<TableHead {...myProps} />);
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
 
       expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
         width: '150px',
@@ -716,7 +805,9 @@ describe('TableHead', () => {
 
     it('handles adding a new hidden column', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
-      const { rerender } = render(<TableHead {...myProps} />);
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
 
       // Add 1 new hidden columns
       myProps.tableState.ordering = [
@@ -725,7 +816,9 @@ describe('TableHead', () => {
       ];
       myProps.columns = [...myProps.columns, { id: 'col4', name: 'Column 4', width: '100px' }];
 
-      rerender(<TableHead {...myProps} />);
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
 
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '100px',

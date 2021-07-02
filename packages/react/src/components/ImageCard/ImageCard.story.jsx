@@ -126,9 +126,7 @@ export const Basic = () => {
   );
 };
 
-Basic.story = {
-  name: 'basic',
-};
+Basic.storyName = 'basic';
 
 export const CustomRenderIconByName = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -165,9 +163,7 @@ export const CustomRenderIconByName = () => {
   );
 };
 
-CustomRenderIconByName.story = {
-  name: 'custom renderIconByName',
-};
+CustomRenderIconByName.storyName = 'custom renderIconByName';
 
 export const IsEditable = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -192,9 +188,7 @@ export const IsEditable = () => {
   );
 };
 
-IsEditable.story = {
-  name: 'isEditable (experimental)',
-};
+IsEditable.storyName = 'isEditable (experimental)';
 
 export const HotspotsAreLoading = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -219,9 +213,7 @@ export const HotspotsAreLoading = () => {
   );
 };
 
-HotspotsAreLoading.story = {
-  name: 'hotspots are loading',
-};
+HotspotsAreLoading.storyName = 'hotspots are loading';
 
 export const Error = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -247,9 +239,7 @@ export const Error = () => {
   );
 };
 
-Error.story = {
-  name: 'error',
-};
+Error.storyName = 'error';
 
 export const ErrorLoadingImage = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -275,9 +265,7 @@ export const ErrorLoadingImage = () => {
   );
 };
 
-ErrorLoadingImage.story = {
-  name: 'error loading image',
-};
+ErrorLoadingImage.storyName = 'error loading image';
 
 export const ValidationError = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -303,6 +291,4 @@ export const ValidationError = () => {
   );
 };
 
-ValidationError.story = {
-  name: 'image upload error',
-};
+ValidationError.storyName = 'image upload error';

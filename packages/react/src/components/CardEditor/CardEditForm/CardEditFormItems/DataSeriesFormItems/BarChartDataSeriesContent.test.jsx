@@ -52,12 +52,24 @@ afterEach(() => {
 });
 describe('BarChartDataSeriesContent', () => {
   it('Defaults the groupBy to "timestamp" when no category is defined in a non-grouped chart', () => {
-    render(<BarChartDataSeriesContent cardConfig={barChartConfig} onChange={mockOnChange} />);
+    render(
+      <BarChartDataSeriesContent
+        cardConfig={barChartConfig}
+        onChange={mockOnChange}
+        translateWithId={jest.fn()}
+      />
+    );
     const defaultedGroupBy = screen.getByText('Time interval');
     expect(defaultedGroupBy).toBeInTheDocument();
   });
   it('Should not show subgroup if there are no available Dimensions', () => {
-    render(<BarChartDataSeriesContent cardConfig={barChartConfig} onChange={mockOnChange} />);
+    render(
+      <BarChartDataSeriesContent
+        cardConfig={barChartConfig}
+        onChange={mockOnChange}
+        translateWithId={jest.fn()}
+      />
+    );
     const defaultedGroupBy = screen.queryByText('Sub-group');
     expect(defaultedGroupBy).toBeNull();
   });
@@ -67,6 +79,7 @@ describe('BarChartDataSeriesContent', () => {
         cardConfig={barChartConfig}
         onChange={mockOnChange}
         availableDimensions={availableDimensions}
+        translateWithId={jest.fn()}
       />
     );
     const groupByField = screen.getByText('Time interval');
@@ -91,6 +104,7 @@ describe('BarChartDataSeriesContent', () => {
         }}
         onChange={mockOnChange}
         availableDimensions={availableDimensions}
+        translateWithId={jest.fn()}
       />
     );
 
@@ -110,6 +124,7 @@ describe('BarChartDataSeriesContent', () => {
         cardConfig={stackedBarChartConfig}
         onChange={mockOnChange}
         availableDimensions={availableDimensions}
+        translateWithId={jest.fn()}
       />
     );
 

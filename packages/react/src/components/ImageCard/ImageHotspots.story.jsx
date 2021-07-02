@@ -106,9 +106,7 @@ export const LandscapeImageLandscapeContainer = () => {
   );
 };
 
-LandscapeImageLandscapeContainer.story = {
-  name: 'landscape image & landscape container',
-};
+LandscapeImageLandscapeContainer.storyName = 'landscape image & landscape container';
 
 export const LandscapeImagePortraitContainer = () => {
   return (
@@ -128,9 +126,7 @@ export const LandscapeImagePortraitContainer = () => {
   );
 };
 
-LandscapeImagePortraitContainer.story = {
-  name: 'landscape image & portrait container',
-};
+LandscapeImagePortraitContainer.storyName = 'landscape image & portrait container';
 
 export const PortraitImageLandscapeContainer = () => {
   return (
@@ -150,9 +146,7 @@ export const PortraitImageLandscapeContainer = () => {
   );
 };
 
-PortraitImageLandscapeContainer.story = {
-  name: 'portrait image & landscape container',
-};
+PortraitImageLandscapeContainer.storyName = 'portrait image & landscape container';
 
 export const PortraitImagePortraitContainer = () => {
   return (
@@ -172,9 +166,7 @@ export const PortraitImagePortraitContainer = () => {
   );
 };
 
-PortraitImagePortraitContainer.story = {
-  name: 'portrait image & portrait container',
-};
+PortraitImagePortraitContainer.storyName = 'portrait image & portrait container';
 
 export const ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden = () => {
   return (
@@ -194,9 +186,8 @@ export const ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden = () => {
   );
 };
 
-ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden.story = {
-  name: 'image smaller than card, minimap and zoomcontrols should be hidden',
-};
+ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden.storyName =
+  'image smaller than card, minimap and zoomcontrols should be hidden';
 
 export const EditableWithTextHotspot = () => {
   const WithState = () => {
@@ -307,6 +298,4 @@ export const EditableWithTextHotspot = () => {
   return <WithState />;
 };
 
-EditableWithTextHotspot.story = {
-  name: 'Editable with text hotspot',
-};
+EditableWithTextHotspot.storyName = 'Editable with text hotspot';

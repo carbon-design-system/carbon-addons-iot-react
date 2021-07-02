@@ -169,9 +169,7 @@ export const WithStateInStory = () => {
   return <WithState />;
 };
 
-WithStateInStory.story = {
-  name: 'Example with state in story',
-};
+WithStateInStory.storyName = 'Example with state in story';
 
 export const WithPresetValues = () => {
   const WithState = () => {
@@ -204,6 +202,4 @@ export const WithPresetValues = () => {
   return <WithState />;
 };
 
-WithPresetValues.story = {
-  name: 'With preset values',
-};
+WithPresetValues.storyName = 'With preset values';

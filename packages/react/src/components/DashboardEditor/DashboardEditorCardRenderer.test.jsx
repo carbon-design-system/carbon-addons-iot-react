@@ -119,6 +119,7 @@ describe('DashboardEditorCardRenderer', () => {
               y: 65,
               color: 'purple',
               icon: 'Checkmark',
+              content: {},
             },
           ],
         }}
@@ -151,6 +152,7 @@ describe('DashboardEditorCardRenderer', () => {
               y: 65,
               color: 'purple',
               icon: 'Checkmark',
+              content: {},
             },
           ],
         }}
@@ -184,6 +186,7 @@ describe('DashboardEditorCardRenderer', () => {
               y: 65,
               color: 'purple',
               icon: 'Checkmark',
+              content: {},
             },
           ],
         }}

@@ -84,9 +84,7 @@ export const Default = () => {
   );
 };
 
-Default.story = {
-  name: 'Example with externaly managed state',
-};
+Default.storyName = 'Example with externaly managed state';
 
 export const UsingHotspotStateHook = () => {
   const WithState = () => {
@@ -124,6 +122,4 @@ export const UsingHotspotStateHook = () => {
   );
 };
 
-UsingHotspotStateHook.story = {
-  name: 'Using HotspotStateHook',
-};
+UsingHotspotStateHook.storyName = 'Using HotspotStateHook';

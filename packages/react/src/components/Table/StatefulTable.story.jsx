@@ -164,15 +164,14 @@ export const SimpleStatefulExample = () => (
   />
 );
 
-SimpleStatefulExample.story = {
-  name: 'simple stateful table',
-  parameters: {
-    info: {
-      text:
-        'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+SimpleStatefulExample.storyName = 'simple stateful table';
+
+SimpleStatefulExample.parameters = {
+  info: {
+    text:
+      'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
@@ -180,54 +179,53 @@ export const StatefulExampleWithRowNestingAndFixedColumns = () => (
   <StatefulTableWithNestedRowItems />
 );
 
-StatefulExampleWithRowNestingAndFixedColumns.story = {
-  name: 'with row nesting and fixed columns',
+StatefulExampleWithRowNestingAndFixedColumns.storyName =
+  'Stateful Example with row nesting and fixed columns';
 
-  parameters: {
-    info: {
-      text: `
+StatefulExampleWithRowNestingAndFixedColumns.parameters = {
+  info: {
+    text: `
 
-      This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
+    This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
 
-      <br />
+    <br />
 
-      ~~~js
-      data=[
-        {
-          id: 'rowid',
-          values: {
-            col1: 'value1
-          },
-          children: [
-            {
-              id: 'child-rowid,
-              values: {
-                col1: 'nested-value1'
-              }
+    ~~~js
+    data=[
+      {
+        id: 'rowid',
+        values: {
+          col1: 'value1
+        },
+        children: [
+          {
+            id: 'child-rowid,
+            values: {
+              col1: 'nested-value1'
             }
-          ]
-        }
-      ]
-      ~~~
+          }
+        ]
+      }
+    ]
+    ~~~
 
-      <br />
+    <br />
 
-      You must also set hasRowNesting to true in your table options
+    You must also set hasRowNesting to true in your table options
 
-      <br />
+    <br />
 
-      ~~~js
-        options={
-          hasRowNesting: true
-        }
-      ~~~
+    ~~~js
+      options={
+        hasRowNesting: true
+      }
+    ~~~
 
-      <br />
+    <br />
 
-      `,
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+    `,
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
@@ -261,58 +259,57 @@ export const StatefulExampleWithSingleNestedHierarchy = () => {
   );
 };
 
-StatefulExampleWithSingleNestedHierarchy.story = {
-  name: 'with single nested hierarchy',
+StatefulExampleWithSingleNestedHierarchy.storyName =
+  'Stateful Example with single nested hierarchy';
 
-  parameters: {
-    info: {
-      text: `
+StatefulExampleWithSingleNestedHierarchy.parameters = {
+  info: {
+    text: `
 
-      This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
-      In addition, if there is a single level of row nesting, hasRowNesting can be customized to add additional styling seen in this story
+    This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
+    In addition, if there is a single level of row nesting, hasRowNesting can be customized to add additional styling seen in this story
 
-      <br />
+    <br />
 
-      ~~~js
-      data=[
-        {
-          id: 'rowid',
-          values: {
-            col1: 'value1
-          },
-          children: [
-            {
-              id: 'child-rowid,
-              values: {
-                col1: 'nested-value1'
-              }
+    ~~~js
+    data=[
+      {
+        id: 'rowid',
+        values: {
+          col1: 'value1
+        },
+        children: [
+          {
+            id: 'child-rowid,
+            values: {
+              col1: 'nested-value1'
             }
-          ]
-        }
-      ]
-      ~~~
-
-      <br />
-
-      You must also set hasRowExpansion to true and hasRowNesting to an object with hasSingleLevelRowNesting to true in your table options
-
-      <br />
-
-      ~~~js
-        options={
-          hasRowExpansion: true,
-          hasRowNesting: {
-            hasSingleLevelRowNesting: true
           }
+        ]
+      }
+    ]
+    ~~~
+
+    <br />
+
+    You must also set hasRowExpansion to true and hasRowNesting to an object with hasSingleLevelRowNesting to true in your table options
+
+    <br />
+
+    ~~~js
+      options={
+        hasRowExpansion: true,
+        hasRowNesting: {
+          hasSingleLevelRowNesting: true
         }
-      ~~~
+      }
+    ~~~
 
-      <br />
+    <br />
 
-      `,
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+    `,
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
@@ -348,16 +345,15 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => (
   </FullWidthWrapper>
 );
 
-SimpleStatefulExampleWithColumnOverflowMenu.story = {
-  name: 'with column overflow menu and aggregate column values',
+SimpleStatefulExampleWithColumnOverflowMenu.storyName =
+  'with column overflow menu and aggregate column values';
 
-  parameters: {
-    info: {
-      text:
-        'This is an example of the <StatefulTable> component that implements the overflow menu in the column header. Refer to the source files under /src/components/Table/TableHead for details. ',
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+SimpleStatefulExampleWithColumnOverflowMenu.parameters = {
+  info: {
+    text:
+      'This is an example of the <StatefulTable> component that implements the overflow menu in the column header. Refer to the source files under /src/components/Table/TableHead for details. ',
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
@@ -387,16 +383,45 @@ export const SimpleStatefulExampleWithAlignment = () => (
   </FullWidthWrapper>
 );
 
-SimpleStatefulExampleWithAlignment.story = {
-  name: 'with column alignment, widths, tooltip, and every third row unselectable',
+SimpleStatefulExampleWithAlignment.storyName = 'Simple Stateful Example with alignment';
 
-  parameters: {
-    info: {
-      text:
-        'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+SimpleStatefulExampleWithAlignment.parameters = {
+  info: {
+    text:
+      'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
+  },
+};
+
+export const StatefulExampleWithEveryThirdRowUnselectable = () => (
+  <StatefulTable
+    id="table"
+    {...initialState}
+    secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+    data={initialState.data.map((eachRow, index) => ({
+      ...eachRow,
+      isSelectable: index % 3 !== 0,
+    }))}
+    actions={tableActions}
+    lightweight={boolean('lightweight', false)}
+    options={{
+      hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+      hasRowExpansion: false,
+    }}
+    view={{ table: { selectedIds: array('selectedIds', []) } }}
+  />
+);
+
+StatefulExampleWithEveryThirdRowUnselectable.storyName =
+  'Stateful Example with every third row unselectable';
+
+StatefulExampleWithEveryThirdRowUnselectable.parameters = {
+  info: {
+    text:
+      'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
@@ -448,43 +473,42 @@ export const StatefulExampleWithExpansionMaxPagesAndColumnResize = () => (
   </FullWidthWrapper>
 );
 
-StatefulExampleWithExpansionMaxPagesAndColumnResize.story = {
-  name: 'with expansion, maxPages, column resize, and custom toolbar content',
+StatefulExampleWithExpansionMaxPagesAndColumnResize.storyName =
+  'Stateful Example with expansion, maxPages, and column resize';
 
-  parameters: {
-    info: {
-      text: `
+StatefulExampleWithExpansionMaxPagesAndColumnResize.parameters = {
+  info: {
+    text: `
 
-      This table has expanded rows.  To support expanded rows, make sure to pass the expandedData prop to the table and set options.hasRowExpansion=true.
+    This table has expanded rows.  To support expanded rows, make sure to pass the expandedData prop to the table and set options.hasRowExpansion=true.
 
-      <br />
+    <br />
 
-      ~~~js
-      expandedData={[
-        {rowId: 'row-0',content: <RowExpansionContent />},
-        {rowId: 'row-1',content: <RowExpansionContent />},
-        {rowId: 'row-2',content: <RowExpansionContent />},
-        …
-      ]}
+    ~~~js
+    expandedData={[
+      {rowId: 'row-0',content: <RowExpansionContent />},
+      {rowId: 'row-1',content: <RowExpansionContent />},
+      {rowId: 'row-2',content: <RowExpansionContent />},
+      …
+    ]}
 
-      options = {
-        hasRowExpansion:true
+    options = {
+      hasRowExpansion:true
+    }
+
+    view={{
+      pagination: {
+        maxPages: 5,
       }
+    }}
 
-      view={{
-        pagination: {
-          maxPages: 5,
-        }
-      }}
+    ~~~
 
-      ~~~
+    <br />
 
-      <br />
-
-      `,
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+    `,
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
@@ -920,19 +944,18 @@ export const StatefulExampleWithCreateSaveViews = () => {
   );
 };
 
-StatefulExampleWithCreateSaveViews.story = {
-  name: 'with Create & Save Views',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      text: `
-      This story shows a complete implementation of user configurable View Management.
-      The story's source code is too complex to successfully be shown here, please view
-      the actual source code.
-      `,
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+StatefulExampleWithCreateSaveViews.storyName = 'Stateful Example with Create & Save Views';
+StatefulExampleWithCreateSaveViews.decorators = [createElement];
+
+StatefulExampleWithCreateSaveViews.parameters = {
+  info: {
+    text: `
+    This story shows a complete implementation of user configurable View Management.
+    The story's source code is too complex to successfully be shown here, please view
+    the actual source code.
+    `,
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
@@ -991,13 +1014,12 @@ export const WithPreFilledSearch = () => {
   );
 };
 
-WithPreFilledSearch.story = {
-  name: 'with pre-filled search',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      text: `The table will pre-fill a search value, expand the search input and trigger a search`,
-    },
+WithPreFilledSearch.storyName = 'with pre-filled search';
+WithPreFilledSearch.decorators = [createElement];
+
+WithPreFilledSearch.parameters = {
+  info: {
+    text: `The table will pre-fill a search value, expand the search input and trigger a search`,
   },
 };
 
@@ -1255,10 +1277,8 @@ export const StatefulTableWithAdvancedFilters = () => {
   );
 };
 
-StatefulTableWithAdvancedFilters.story = {
-  name: '☢️ with advanced filters',
-  decorators: [createElement],
-};
+StatefulTableWithAdvancedFilters.storyName = '☢️ with advanced filters';
+StatefulTableWithAdvancedFilters.decorators = [createElement];
 
 export const WithMultiSorting = () => {
   return (
@@ -1309,6 +1329,4 @@ export const WithMultiSorting = () => {
   );
 };
 
-WithMultiSorting.story = {
-  name: 'with multi-sorting',
-};
+WithMultiSorting.storyName = 'with multi-sorting';

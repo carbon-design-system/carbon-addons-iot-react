@@ -12,9 +12,7 @@ import HotspotEditorModal from './HotspotEditorModal';
 import HotspotEditorModalREADME from './HotspotEditorModalREADME.mdx';
 
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 const selectableIcons = [
   {
@@ -145,9 +143,7 @@ export const EmptyWithGetValidDataItemsCallback = () => {
     />
   );
 };
-EmptyWithGetValidDataItemsCallback.story = {
-  name: 'Empty with getValidDataItems callback',
-};
+EmptyWithGetValidDataItemsCallback.storyName = 'Empty with getValidDataItems callback';
 
 export const WithExistingHotspots = () => {
   const myCardConfig = {
