@@ -7817,6 +7817,10 @@ Map {
         "profileManageButton": "Manage profile",
         "profileTitle": "Profile",
         "requestEnhancement": "Request enhancement",
+        "sessionTimeoutModalBody": "You will be logged out due to inactivity in {countdown} seconds.",
+        "sessionTimeoutModalHeading": "Session Timeout",
+        "sessionTimeoutModalLogoutButton": "Log out",
+        "sessionTimeoutModalStayLoggedInButton": "Stay logged in",
         "settingsIcon": "Settings",
         "support": "Support",
         "surveyPrivacyPolicy": "Privacy Policy",
@@ -7829,9 +7833,11 @@ Map {
         "userIcon": "User",
         "whatsNew": "What's new",
       },
+      "idleTimeoutData": null,
       "isAdminView": false,
       "onRouteChange": [Function],
       "onSideNavToggled": [Function],
+      "onStayLoggedIn": [Function],
       "routes": null,
       "sideNavProps": null,
       "surveyData": null,
@@ -8066,6 +8072,18 @@ Map {
             "requestEnhancement": Object {
               "type": "string",
             },
+            "sessionTimeoutModalBody": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalHeading": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalLogoutButton": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalStayLoggedInButton": Object {
+              "type": "string",
+            },
             "settingsIcon": Object {
               "type": "string",
             },
@@ -8107,6 +8125,22 @@ Map {
         ],
         "type": "shape",
       },
+      "idleTimeoutData": Object {
+        "args": Array [
+          Object {
+            "cookieName": Object {
+              "type": "string",
+            },
+            "countdown": Object {
+              "type": "number",
+            },
+            "timeout": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "isAdminView": Object {
         "type": "bool",
       },
@@ -8114,6 +8148,9 @@ Map {
         "type": "func",
       },
       "onSideNavToggled": Object {
+        "type": "func",
+      },
+      "onStayLoggedIn": Object {
         "type": "func",
       },
       "routes": Object {
@@ -8135,6 +8172,9 @@ Map {
               "type": "string",
             },
             "logout": Object {
+              "type": "string",
+            },
+            "logoutInactivity": Object {
               "type": "string",
             },
             "navigator": Object {
@@ -8419,6 +8459,88 @@ Map {
       },
     },
   },
+  "IdleLogoutConfirmationModal" => Object {
+    "defaultProps": Object {
+      "className": null,
+      "i18n": Object {
+        "sessionTimeoutModalBody": "You will be logged out due to inactivity in {countdown} seconds.",
+        "sessionTimeoutModalHeading": "Session Timeout",
+        "sessionTimeoutModalLogoutButton": "Log out",
+        "sessionTimeoutModalStayLoggedInButton": "Stay logged in",
+      },
+      "idleTimeoutData": Object {
+        "cookieName": "_user_inactivity_timeout",
+        "countdown": 30,
+        "timeout": 1800,
+      },
+      "onRouteChange": [Function],
+      "onStayLoggedIn": [Function],
+      "routes": null,
+    },
+    "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "sessionTimeoutModalBody": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalHeading": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalLogoutButton": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalStayLoggedInButton": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "idleTimeoutData": Object {
+        "args": Array [
+          Object {
+            "cookieName": Object {
+              "type": "string",
+            },
+            "countdown": Object {
+              "type": "number",
+            },
+            "timeout": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "onRouteChange": Object {
+        "type": "func",
+      },
+      "onStayLoggedIn": Object {
+        "type": "func",
+      },
+      "routes": Object {
+        "args": Array [
+          Object {
+            "domain": Object {
+              "type": "string",
+            },
+            "logout": Object {
+              "type": "string",
+            },
+            "logoutInactivity": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+    },
+  },
+  "IdleTimer" => Object {},
   "SuiteHeaderI18N" => Object {
     "en": Object {
       "about": "About",
@@ -8435,6 +8557,10 @@ Map {
       "profileManageButton": "Manage profile",
       "profileTitle": "Profile",
       "requestEnhancement": "Request enhancement",
+      "sessionTimeoutModalBody": "You will be logged out due to inactivity in {countdown} seconds.",
+      "sessionTimeoutModalHeading": "Session Timeout",
+      "sessionTimeoutModalLogoutButton": "Log out",
+      "sessionTimeoutModalStayLoggedInButton": "Stay logged in",
       "settingsIcon": "Settings",
       "support": "Support",
       "surveyPrivacyPolicy": "Privacy Policy",

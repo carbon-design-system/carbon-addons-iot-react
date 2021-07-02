@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
@@ -19,6 +19,7 @@ const commonProps = {
     navigator: 'https://www.ibm.com',
     admin: 'https://www.ibm.com',
     logout: 'https://www.ibm.com',
+    logoutInactivity: 'https://www.ibm.com',
     whatsNew: 'https://www.ibm.com',
     gettingStarted: 'https://www.ibm.com',
     documentation: 'https://www.ibm.com',
@@ -41,9 +42,16 @@ const commonProps = {
   ],
 };
 
+const idleTimeoutDataProp = {
+  countdown: 10,
+  timeout: 10,
+  cookieName: '_user_inactivity_timeout',
+};
+
 describe('SuiteHeader', () => {
   let originalWindowLocation;
   beforeEach(() => {
+    jest.useFakeTimers();
     originalWindowLocation = { ...window.location };
     delete window.location;
     window.location = { href: '' };
@@ -52,6 +60,7 @@ describe('SuiteHeader', () => {
 
   afterEach(() => {
     window.location = { ...originalWindowLocation };
+    jest.useRealTimers();
   });
 
   it('renders with sidenav', () => {
@@ -234,6 +243,107 @@ describe('SuiteHeader', () => {
     );
     userEvent.click(screen.getByRole('button', { name: 'closes notification' }));
     expect(screen.queryByRole('alert')).toBeNull();
+  });
+  it('active user does not see idle logout confirmation dialog', () => {
+    render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    // Simulate a timestamp cookie that is in the future
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() + 1000}`,
+    });
+    jest.runOnlyPendingTimers();
+    expect(screen.getByTestId('idle-logout-confirmation')).not.toHaveClass('is-visible');
+  });
+  it('inactive user sees idle logout confirmation dialog', () => {
+    render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
+    });
+    jest.runOnlyPendingTimers();
+    expect(screen.getByTestId('idle-logout-confirmation')).toHaveClass('is-visible');
+  });
+  it('clicking Stay Logged In on the idle logout confirmation dialog triggers onStayLoggedIn callback', () => {
+    const mockOnStayLoggedIn = jest.fn();
+    render(
+      <SuiteHeader
+        {...commonProps}
+        idleTimeoutData={idleTimeoutDataProp}
+        onStayLoggedIn={mockOnStayLoggedIn}
+      />
+    );
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
+    });
+    jest.runOnlyPendingTimers();
+    const modalStayLoggedInButton = screen.getByText(
+      SuiteHeaderI18N.en.sessionTimeoutModalStayLoggedInButton
+    );
+    userEvent.click(modalStayLoggedInButton);
+    expect(mockOnStayLoggedIn).toHaveBeenCalled();
+  });
+  it('user clicks Log Out on the idle logout confirmation dialog', async () => {
+    render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
+    });
+    jest.runOnlyPendingTimers();
+    const modalLogoutButton = within(screen.getByTestId('idle-logout-confirmation')).getByText(
+      SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
+    );
+    await userEvent.click(modalLogoutButton);
+    expect(window.location.href).toBe(commonProps.routes.logout);
+  });
+  it('user clicks Log Out on the idle logout confirmation dialog (but no redirect)', async () => {
+    render(
+      <SuiteHeader
+        {...commonProps}
+        onRouteChange={async () => false}
+        idleTimeoutData={idleTimeoutDataProp}
+      />
+    );
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
+    });
+    jest.runOnlyPendingTimers();
+    const modalLogoutButton = within(screen.getByTestId('idle-logout-confirmation')).getByText(
+      SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
+    );
+    await userEvent.click(modalLogoutButton);
+    expect(window.location.href).not.toBe(commonProps.routes.logout);
+  });
+  it('idle user waits for the logout confirmation dialog countdown to finish', async () => {
+    render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
+    });
+    await jest.advanceTimersByTime((idleTimeoutDataProp.countdown + 1) * 1000);
+    expect(window.location.href).toBe(commonProps.routes.logoutInactivity);
+  });
+  it('idle user waits for the logout confirmation dialog countdown to finish (but no redirect)', async () => {
+    render(
+      <SuiteHeader
+        {...commonProps}
+        onRouteChange={async () => false}
+        dleTimeoutData={idleTimeoutDataProp}
+      />
+    );
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
+    });
+    await jest.advanceTimersByTime((idleTimeoutDataProp.countdown + 1) * 1000);
+    expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity);
   });
   it('renders Walkme', async () => {
     render(<SuiteHeader {...commonProps} walkmePath="/some/test/path" walkmeLang="en" />);
