@@ -70,7 +70,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         className="bx--modal-content"
       >
         <button
-          className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--editor-expand iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          data-testid="card-code-editor-expand-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -109,6 +110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             aria-label={null}
             aria-live="polite"
             className="iot--editor-copy bx--copy-btn bx--copy"
+            data-testid="card-code-editor-copy-button"
             onAnimationEnd={[Function]}
             onClick={[Function]}
             title="Copy to clipboard"
@@ -293,7 +295,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         className="bx--modal-content"
       >
         <button
-          className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--editor-expand iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          data-testid="card-code-editor-expand-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -332,6 +335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             aria-label={null}
             aria-live="polite"
             className="iot--editor-copy bx--copy-btn bx--copy"
+            data-testid="card-code-editor-copy-button"
             onAnimationEnd={[Function]}
             onClick={[Function]}
             title="Copy to clipboard"

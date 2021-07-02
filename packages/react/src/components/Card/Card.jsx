@@ -45,7 +45,7 @@ const CardWrapper = ({
   onFocus,
   onBlur,
   tabIndex,
-  testID,
+  testId,
   ...others
 }) => {
   const validOthers = filterValidAttributes(others);
@@ -53,7 +53,7 @@ const CardWrapper = ({
   return (
     <div
       role="presentation"
-      data-testid={testID}
+      data-testid={testId}
       id={id}
       style={{ ...style, '--card-default-height': `${dimensions.y}px` }}
       onMouseDown={onMouseDown}
@@ -88,11 +88,11 @@ export const CardTitle = (
 );
 
 const CardContent = (props) => {
-  const { children, dimensions, isExpanded, className, testID } = props;
+  const { children, dimensions, isExpanded, className, testId } = props;
   const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
   return (
     <div
-      data-testid={testID}
+      data-testid={testId}
       style={{ [`--card-content-height`]: height }}
       className={classnames(className, `${iotPrefix}--card--content`, {
         [`${iotPrefix}--card--content--expanded`]: isExpanded,
@@ -124,7 +124,7 @@ CardWrapper.propTypes = {
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   id: CardPropTypes.id,
   style: PropTypes.objectOf(PropTypes.string),
-  testID: CardPropTypes.testID,
+  testId: CardPropTypes.testId,
   onMouseDown: PropTypes.func,
   onMouseUp: PropTypes.func,
   onTouchEnd: PropTypes.func,
@@ -139,7 +139,7 @@ CardWrapper.defaultProps = {
   isSelected: false,
   id: undefined,
   style: undefined,
-  testID: 'Card',
+  testId: 'Card',
   onMouseDown: undefined,
   onMouseUp: undefined,
   onTouchEnd: undefined,
@@ -150,13 +150,13 @@ CardWrapper.defaultProps = {
   tabIndex: undefined,
 };
 CardContent.propTypes = {
-  testID: PropTypes.string,
+  testId: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   isExpanded: CardPropTypes.isExpanded.isRequired,
 };
-CardContent.defaultProps = { children: undefined, className: '', testID: 'card-content' };
+CardContent.defaultProps = { children: undefined, className: '', testId: 'card-content' };
 EmptyMessageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };
@@ -228,7 +228,7 @@ export const defaultProps = {
   onFocus: undefined,
   onBlur: undefined,
   tabIndex: undefined,
-  testID: CardWrapper.defaultProps.testID,
+  testId: CardWrapper.defaultProps.testId,
 };
 
 /** Dumb component that renders the card basics */
@@ -259,7 +259,7 @@ const Card = (props) => {
     style,
     className,
     values,
-    testID,
+    testId,
     contentClassName,
     ...others
   } = props;
@@ -350,7 +350,7 @@ const Card = (props) => {
             return (
               <CardWrapper
                 {...others} // you need all of these to support dynamic positioning during edit
-                testID={testID}
+                testId={testId}
                 id={id}
                 dimensions={dimensions}
                 isExpanded={isExpanded}
@@ -398,7 +398,7 @@ const Card = (props) => {
                   </CardHeader>
                 )}
                 <CardContent
-                  testID={`${testID}-content`}
+                  testId={`${testId}-content`}
                   dimensions={dimensions}
                   isExpanded={isExpanded}
                   className={contentClassName}

@@ -159,7 +159,7 @@ class RowActionsCell extends React.Component {
                       {...omit(others, ['isOverflow', 'isDelete', 'isEdit', 'hasDivider'])}
                       iconDescription={labelText || iconDescription}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
-                      data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
+                      testId={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
                       hasIconOnly={!labelText}
                       tooltipPosition="left"

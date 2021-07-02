@@ -126,7 +126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
                 data-testid="download-button"
                 disabled={true}
                 onClick={[Function]}
@@ -154,7 +154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
                 data-testid="filter-button"
                 disabled={true}
                 onClick={[Function]}
@@ -1611,7 +1611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -1639,7 +1639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -3060,7 +3060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -3088,7 +3088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -4715,7 +4715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -4743,7 +4743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -5631,7 +5631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -5659,7 +5659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -6840,7 +6840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -6868,7 +6868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -9275,7 +9275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -9303,7 +9303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -11550,7 +11550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -11578,7 +11578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -13334,7 +13334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -13362,7 +13362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -15468,7 +15468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -15496,7 +15496,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}

@@ -154,7 +154,7 @@ const RuleBuilder = ({
     () =>
       footerButtons?.map((i) => (
         <Button
-          data-testid={i.buttonId}
+          testId={i.buttonId}
           key={i.buttonId}
           kind="secondary"
           className={`${baseClass}--footer-actions-preview`}
@@ -260,7 +260,7 @@ const RuleBuilder = ({
           {actions}
           <Button
             className={`${baseClass}--header-actions-save`}
-            data-testid="rule-builder-save"
+            testId="rule-builder-save"
             onClick={() => onSave(currentFilter)}
             size="small"
           >
@@ -327,7 +327,7 @@ const RuleBuilder = ({
                             renderIcon={Add24}
                             id="add-editors-button"
                             kind="ghost"
-                            testID="rule-builder-add-edit-users"
+                            testId="rule-builder-add-edit-users"
                             onClick={handleAddAccess('edit')}
                           >
                             {mergedI18n.addUsersButtonLabel}
@@ -371,7 +371,7 @@ const RuleBuilder = ({
                             renderIcon={Add24}
                             id="add-read-users"
                             kind="ghost"
-                            testID="rule-builder-add-read-users"
+                            testId="rule-builder-add-read-users"
                             onClick={handleAddAccess('read')}
                           >
                             {mergedI18n.addUsersButtonLabel}
@@ -411,7 +411,7 @@ const RuleBuilder = ({
         <Button
           kind="secondary"
           className={`${baseClass}--footer-actions-cancel`}
-          testID="rule-builder-cancel"
+          testId="rule-builder-cancel"
           onClick={onCancel}
         >
           {mergedI18n.cancelLabel}

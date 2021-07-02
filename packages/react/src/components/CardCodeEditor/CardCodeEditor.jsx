@@ -1,17 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
-import {
-  CodeSnippetSkeleton,
-  InlineNotification,
-  CopyButton,
-  Button,
-} from 'carbon-components-react';
+import { CodeSnippetSkeleton, InlineNotification, CopyButton } from 'carbon-components-react';
 import { Popup16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import ComposedModal from '../ComposedModal';
 import { settings } from '../../constants/Settings';
+import Button from '../Button';
 
 const { iotPrefix } = settings;
 
@@ -43,6 +39,7 @@ const propTypes = {
   language: PropTypes.string,
   /** Initial value for the editor */
   initialValue: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -59,6 +56,7 @@ const defaultProps = {
   language: 'json',
   initialValue: null,
   onCopy: null,
+  testId: 'card-code-editor',
 };
 
 const CardCodeEditor = ({
@@ -68,6 +66,7 @@ const CardCodeEditor = ({
   i18n,
   language,
   initialValue,
+  testId,
   ...composedModalProps
 }) => {
   const editorValue = useRef();
@@ -103,6 +102,7 @@ const CardCodeEditor = ({
 
   return (
     <ComposedModal
+      data-testid={`${testId}-modal`}
       className={classnames(`${iotPrefix}--editor`, {
         [`${iotPrefix}--editor__expanded`]: isExpanded,
       })}
@@ -128,6 +128,7 @@ const CardCodeEditor = ({
         iconDescription={i18n.expandBtnLabel}
         onClick={handleOnExpand}
         kind="ghost"
+        testId={`${testId}-expand-button`}
       />
       {error && (
         <InlineNotification
@@ -136,6 +137,7 @@ const CardCodeEditor = ({
           onCloseButtonClick={() => setError(false)}
           title={i18n.errorTitle}
           subtitle={error}
+          testId={`${testId}-notification`}
         />
       )}
       <div className={`${iotPrefix}--editor-copy-wrapper`}>
@@ -145,9 +147,11 @@ const CardCodeEditor = ({
             onClick={handleOnCopy}
             iconDescription={i18n.copyBtnDescription}
             feedback={i18n.copyBtnFeedBack}
+            data-testid={`${testId}-copy-button`}
           />
         )}
         <Editor
+          data-testid={testId}
           className={`${iotPrefix}--editor-container`}
           wrapperClassName={`${iotPrefix}--editor-wrapper`}
           loading={<CodeSnippetSkeleton />}

@@ -116,7 +116,7 @@ const propTypes = {
   currentBreakpoint: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
     simpleBar: PropTypes.string,
@@ -152,7 +152,7 @@ const defaultProps = {
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
   isSummaryDashboard: false,
-  testID: 'card-editor',
+  testId: 'card-editor',
   dataSeriesItemLinks: null,
   onEditDataItems: null,
 };
@@ -175,7 +175,7 @@ const CardEditor = ({
   icons,
   i18n,
   currentBreakpoint,
-  testID,
+  testId,
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
@@ -195,7 +195,7 @@ const CardEditor = ({
   const showGallery = isNil(cardConfig);
 
   return (
-    <div className={baseClassName} data-testid={testID}>
+    <div className={baseClassName} data-testid={testId}>
       {showGallery ? (
         <div className={`${baseClassName}--header`}>
           <h2 className={`${baseClassName}--header--title`}>{mergedI18n.galleryHeader}</h2>
@@ -208,7 +208,7 @@ const CardEditor = ({
             onAddCard={onAddCard}
             supportedCardTypes={supportedCardTypes}
             i18n={mergedI18n}
-            data-testid={`${testID}-card-gallery-list`}
+            data-testid={`${testId}-card-gallery-list`}
           />
         ) : (
           <CardEditForm
@@ -230,7 +230,13 @@ const CardEditor = ({
       </div>
       {showGallery ? null : (
         <div className={`${baseClassName}--footer`}>
-          <Button kind="ghost" size="small" renderIcon={Apps16} onClick={onShowGallery}>
+          <Button
+            kind="ghost"
+            size="small"
+            renderIcon={Apps16}
+            onClick={onShowGallery}
+            testId={`${testId}-add-card-button`}
+          >
             {mergedI18n.addCardButton}
           </Button>
         </div>
@@ -244,6 +250,7 @@ const CardEditor = ({
             renderIcon={Data116}
             onClick={onEditDataItems}
             iconDescription={mergedI18n.editDataItems}
+            testId={`${testId}-edit-button`}
           >
             {mergedI18n.editDataItems}
           </Button>

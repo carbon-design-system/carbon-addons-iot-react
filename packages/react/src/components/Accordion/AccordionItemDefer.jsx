@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AccordionItem } from 'carbon-components-react';
 
-const AccordionItemDefer = ({ children, ...props }) => {
+const AccordionItemDefer = ({ children, testId = 'accordion-item-deferred', ...props }) => {
   const { open } = props;
   const [openState, setOpenState] = useState(open);
   const [hasEverBeenOpened, setHasEverBeenOpened] = useState(open);
@@ -16,7 +16,7 @@ const AccordionItemDefer = ({ children, ...props }) => {
     setHasEverBeenOpened(true);
   };
   return (
-    <AccordionItem data-testid="accordion-item-deferred" {...props} onHeadingClick={handleToggle}>
+    <AccordionItem data-testid={testId} {...props} onHeadingClick={handleToggle}>
       {(openState && children) || (hasEverBeenOpened && children)}
     </AccordionItem>
   );

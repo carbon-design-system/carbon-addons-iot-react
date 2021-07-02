@@ -137,7 +137,7 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
             : () => [
                 <Button
                   key={`${item.id}-list-item-button`}
-                  testID={`${testID}-add-button-${item.id}`}
+                  testId={`${testID}-add-button-${item.id}`}
                   role="button"
                   aria-label={mergedI18n.addLabel}
                   renderIcon={ArrowRight16}
@@ -169,7 +169,7 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
             : () => [
                 <Button
                   key={`${selectedItem.id}-list-item-button`}
-                  testID={`${testID}-add-button-${selectedItem.id}`}
+                  testId={`${testID}-add-button-${selectedItem.id}`}
                   role="button"
                   aria-label={mergedI18n.removeLabel}
                   renderIcon={Subtract16}

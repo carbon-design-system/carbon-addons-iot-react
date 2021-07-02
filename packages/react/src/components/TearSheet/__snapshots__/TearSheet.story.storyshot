@@ -7,7 +7,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   <button
     aria-pressed={null}
     className="iot--btn bx--btn bx--btn--primary"
-    data-testid="Button"
+    data-testid="button"
     disabled={false}
     onClick={[Function]}
     style={
@@ -92,7 +92,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <button
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--tertiary"
-              data-testid="Button"
+              data-testid="button"
               disabled={false}
               onClick={[Function]}
               style={
@@ -109,7 +109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <button
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--tertiary"
-              data-testid="Button"
+              data-testid="button"
               disabled={false}
               onClick={[Function]}
               style={
@@ -126,7 +126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <button
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--tertiary"
-              data-testid="Button"
+              data-testid="button"
               disabled={false}
               onClick={[Function]}
               style={
@@ -153,7 +153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <button
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
-                data-testid="Button"
+                data-testid="button"
                 disabled={false}
                 onClick={[Function]}
                 style={
@@ -170,7 +170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <button
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
-                data-testid="Button"
+                data-testid="button"
                 disabled={false}
                 style={
                   Object {
@@ -264,7 +264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <button
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary"
-                data-testid="Button"
+                data-testid="button"
                 disabled={false}
                 onClick={[Function]}
                 style={

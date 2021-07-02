@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="bar-chart-card"
       id="grouped-sample"
       role="presentation"
       style={
@@ -73,7 +73,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="bar-chart-card-content"
         style={
           Object {
             "--card-content-height": "256px",
@@ -107,7 +107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="bar-chart-card"
       id="simple-sample"
       role="presentation"
       style={
@@ -166,7 +166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="bar-chart-card-content"
         style={
           Object {
             "--card-content-height": "256px",
@@ -200,7 +200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="bar-chart-card"
       id="simple-time-sample"
       role="presentation"
       style={
@@ -303,7 +303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="bar-chart-card-content"
         style={
           Object {
             "--card-content-height": "256px",
@@ -337,7 +337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="bar-chart-card"
       id="stacked-sample"
       role="presentation"
       style={
@@ -396,7 +396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="bar-chart-card-content"
         style={
           Object {
             "--card-content-height": "256px",
@@ -430,7 +430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="bar-chart-card"
       id="stacked-horizontal-sample"
       role="presentation"
       style={
@@ -533,7 +533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="bar-chart-card-content"
         style={
           Object {
             "--card-content-height": "256px",
@@ -567,7 +567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="iot--card iot--bar-chart-card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="bar-chart-card"
       id="stacked-horizontal-sample"
       role="presentation"
       style={
@@ -670,7 +670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="bar-chart-card-content"
         style={
           Object {
             "--card-content-height": "256px",

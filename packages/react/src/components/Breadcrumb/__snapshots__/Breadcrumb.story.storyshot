@@ -6,11 +6,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 >
   <div
     className="breadcrumb--container"
-    data-testid="overflow"
+    data-testid="breadcrumb-container"
   >
     <nav
       aria-label="Breadcrumb"
       className="some-class"
+      data-testid="breadcrumb"
       onClick={[Function]}
     >
       <ol
@@ -61,11 +62,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 >
   <div
     className="breadcrumb--container"
-    data-testid="overflow"
+    data-testid="breadcrumb-container"
   >
     <nav
       aria-label="Breadcrumb"
       className="some-class"
+      data-testid="breadcrumb"
       onClick={[Function]}
     >
       <ol
@@ -125,11 +127,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       className="breadcrumb--container"
-      data-testid="overflow"
+      data-testid="breadcrumb-container"
     >
       <nav
         aria-label="Breadcrumb"
         className="some-class"
+        data-testid="breadcrumb-with-overflow"
         onClick={[Function]}
       >
         <ol

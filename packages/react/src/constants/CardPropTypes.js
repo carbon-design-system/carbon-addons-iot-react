@@ -734,7 +734,7 @@ export const CardPropTypes = {
   /** Optionally adds tab index to card container */
   tabIndex: PropTypes.number,
   /** For testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
   /** the locale of the card, needed for number and date formatting */
   locale: PropTypes.string,
   /** a way to pass down dashboard grid resize handles, only used by other card types */

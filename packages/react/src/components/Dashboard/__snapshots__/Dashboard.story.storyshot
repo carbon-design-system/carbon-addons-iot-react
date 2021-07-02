@@ -251,7 +251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             </div>
             <div
               className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
-              data-testid="Card"
+              data-testid="bar-chart-card"
               id="barchartcard"
               onMouseDown={[Function]}
               onMouseUp={[Function]}
@@ -322,7 +322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               </div>
               <div
                 className="iot--card--content"
-                data-testid="Card-content"
+                data-testid="bar-chart-card-content"
                 style={
                   Object {
                     "--card-content-height": "256px",
@@ -1612,7 +1612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </div>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="download-button"
                         disabled={false}
                         onClick={[Function]}
@@ -1640,7 +1640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </button>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="filter-button"
                         disabled={false}
                         onClick={[Function]}
@@ -3046,7 +3046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             </div>
             <div
               className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
-              data-testid="Card"
+              data-testid="bar-chart-card"
               id="barchartcard"
               onMouseDown={[Function]}
               onMouseUp={[Function]}
@@ -3117,7 +3117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               </div>
               <div
                 className="iot--card--content"
-                data-testid="Card-content"
+                data-testid="bar-chart-card-content"
                 style={
                   Object {
                     "--card-content-height": "256px",
@@ -4407,7 +4407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </div>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="download-button"
                         disabled={false}
                         onClick={[Function]}
@@ -4435,7 +4435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </button>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="filter-button"
                         disabled={false}
                         onClick={[Function]}
@@ -5870,7 +5870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             </div>
             <div
               className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
-              data-testid="Card"
+              data-testid="bar-chart-card"
               id="barchartcard"
               onMouseDown={[Function]}
               onMouseUp={[Function]}
@@ -5941,7 +5941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               </div>
               <div
                 className="iot--card--content"
-                data-testid="Card-content"
+                data-testid="bar-chart-card-content"
                 style={
                   Object {
                     "--card-content-height": "256px",
@@ -7231,7 +7231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </div>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="download-button"
                         disabled={false}
                         onClick={[Function]}
@@ -7259,7 +7259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </button>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="filter-button"
                         disabled={false}
                         onClick={[Function]}
@@ -8472,7 +8472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         >
           <div
             className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
-            data-testid="Card"
+            data-testid="bar-chart-card"
             id="expandedcard"
             onMouseDown={[Function]}
             onMouseUp={[Function]}
@@ -8543,7 +8543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             </div>
             <div
               className="iot--card--content"
-              data-testid="Card-content"
+              data-testid="bar-chart-card-content"
               style={
                 Object {
                   "--card-content-height": "576px",
@@ -9211,7 +9211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </div>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="download-button"
                         disabled={false}
                         onClick={[Function]}
@@ -9239,7 +9239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </button>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="filter-button"
                         disabled={false}
                         onClick={[Function]}
@@ -11251,7 +11251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             </div>
             <div
               className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
-              data-testid="Card"
+              data-testid="bar-chart-card"
               id="barchartcard"
               onMouseDown={[Function]}
               onMouseUp={[Function]}
@@ -11322,7 +11322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               </div>
               <div
                 className="iot--card--content"
-                data-testid="Card-content"
+                data-testid="bar-chart-card-content"
                 style={
                   Object {
                     "--card-content-height": "256px",
@@ -12612,7 +12612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </div>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="download-button"
                         disabled={false}
                         onClick={[Function]}
@@ -12640,7 +12640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </button>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="filter-button"
                         disabled={false}
                         onClick={[Function]}
@@ -27705,7 +27705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             </div>
             <div
               className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
-              data-testid="Card"
+              data-testid="bar-chart-card"
               id="barchartcard"
               onMouseDown={[Function]}
               onMouseUp={[Function]}
@@ -27776,7 +27776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               </div>
               <div
                 className="iot--card--content"
-                data-testid="Card-content"
+                data-testid="bar-chart-card-content"
                 style={
                   Object {
                     "--card-content-height": "256px",
@@ -29066,7 +29066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </div>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="download-button"
                         disabled={false}
                         onClick={[Function]}
@@ -29094,7 +29094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </button>
                       <button
                         aria-pressed={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                         data-testid="filter-button"
                         disabled={false}
                         onClick={[Function]}

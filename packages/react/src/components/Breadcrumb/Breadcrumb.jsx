@@ -33,6 +33,8 @@ const propTypes = {
    * the use of ResizeObserver
    */
   hasOverflow: PropTypes.bool,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -41,9 +43,10 @@ const defaultProps = {
   children: null,
   hasOverflow: false,
   'aria-label': null,
+  testId: 'breadcrumb',
 };
 
-const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
+const Breadcrumb = ({ children, className, hasOverflow, testId, ...other }) => {
   const childrenItems = Children.map(children, (child) => child);
   const breakingWidth = useRef([]);
 
@@ -101,10 +104,10 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
         'breadcrumb--container__overflowfull': afterOverflowItems.length === 1,
       })}
       ref={breadcrumbRef}
-      data-testid="overflow"
+      data-testid={`${testId}-container`}
     >
       {breadcrumbRef && hasOverflow ? (
-        <CarbonBreadcrumb className={className} {...other}>
+        <CarbonBreadcrumb data-testid={`${testId}-with-overflow`} className={className} {...other}>
           {childrenItems[0]}
           {overflowItems.length > 0 && (
             <span className="breadcrumb--overflow">
@@ -126,7 +129,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
           {afterOverflowItems}
         </CarbonBreadcrumb>
       ) : (
-        <CarbonBreadcrumb className={className} {...other}>
+        <CarbonBreadcrumb data-testid={testId} className={className} {...other}>
           {children}
         </CarbonBreadcrumb>
       )}

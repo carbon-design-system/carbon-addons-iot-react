@@ -60,6 +60,7 @@ const defaultProps = {
   showTimeInGMT: false,
   tooltipDateFormatPattern: 'L HH:mm:ss',
   values: null,
+  testId: 'bar-chart-card',
 };
 
 const BarChartCard = ({
@@ -83,6 +84,7 @@ const BarChartCard = ({
   timeRange,
   showTimeInGMT,
   tooltipDateFormatPattern,
+  testId,
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
@@ -363,6 +365,7 @@ const BarChartCard = ({
       isResizable={isResizable}
       resizeHandles={resizeHandles}
       timeRange={timeRange}
+      testId={testId}
       {...others}
     >
       {!isAllValuesEmpty ? (

@@ -1037,7 +1037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -1915,7 +1915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -2524,7 +2524,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -2957,7 +2957,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 />
                 <button
                   aria-pressed={null}
-                  className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image-clear-button bx--btn bx--btn--field bx--btn--ghost"
+                  className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image-clear-button iot--btn bx--btn bx--btn--field bx--btn--ghost"
+                  data-testid="button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -2984,7 +2985,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </label>
               <button
                 aria-pressed={null}
-                className="iot--card-edit-form--form-section-image-btn bx--btn bx--btn--sm bx--btn--primary"
+                className="iot--card-edit-form--form-section-image-btn iot--btn bx--btn bx--btn--sm bx--btn--primary"
+                data-testid="button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -3356,7 +3358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -3914,7 +3916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <button
                               className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                              data-testid="Button"
+                              data-testid="button"
                               disabled={false}
                               onClick={[Function]}
                               tabIndex={0}
@@ -3945,7 +3947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </button>
                             <button
                               className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                              data-testid="Button"
+                              data-testid="button"
                               disabled={false}
                               onClick={[Function]}
                               tabIndex={0}
@@ -4019,7 +4021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <button
                               className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                              data-testid="Button"
+                              data-testid="button"
                               disabled={false}
                               onClick={[Function]}
                               tabIndex={0}
@@ -4050,7 +4052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </button>
                             <button
                               className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                              data-testid="Button"
+                              data-testid="button"
                               disabled={false}
                               onClick={[Function]}
                               tabIndex={0}
@@ -4371,7 +4373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -4997,7 +4999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <button
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-            data-testid="Button"
+            data-testid="card-editor-add-card-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}

@@ -19,10 +19,16 @@ Map {
   ",
   },
   "AddCard" => Object {
+    "defaultProps": Object {
+      "testId": "add-card-tile",
+    },
     "propTypes": Object {
       "onClick": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "isRequired": true,
@@ -41,7 +47,7 @@ Map {
       "loading": false,
       "recommended": false,
       "selected": false,
-      "testID": "Button",
+      "testId": "button",
     },
     "propTypes": Object {
       "children": Object {
@@ -84,7 +90,7 @@ Map {
       "selected": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
     },
@@ -97,6 +103,7 @@ Map {
       "className": null,
       "hasOverflow": false,
       "noTrailingSlash": false,
+      "testId": "breadcrumb",
     },
     "propTypes": Object {
       "aria-label": Object {
@@ -113,6 +120,9 @@ Map {
       },
       "noTrailingSlash": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -5224,6 +5234,7 @@ Map {
       "locale": "en",
       "showTimeInGMT": false,
       "size": "MEDIUMWIDE",
+      "testId": "bar-chart-card",
       "tooltipDateFormatPattern": "L HH:mm:ss",
       "values": null,
     },
@@ -6014,7 +6025,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -10163,7 +10174,7 @@ Map {
         "LIST",
         "ALERT",
       ],
-      "testID": "card-editor",
+      "testId": "card-editor",
     },
     "propTypes": Object {
       "availableDimensions": Object {
@@ -10370,7 +10381,7 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
     },
@@ -10823,7 +10834,7 @@ Map {
       },
       "size": "MEDIUM",
       "tabIndex": undefined,
-      "testID": "Card",
+      "testId": "Card",
       "timeRange": undefined,
       "title": undefined,
       "toolbar": undefined,
@@ -11539,7 +11550,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -12415,6 +12426,9 @@ Map {
         "type": "number",
       },
       "testID": Object {
+        "type": "string",
+      },
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -13371,7 +13385,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -14362,7 +14376,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -15183,7 +15197,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -16099,7 +16113,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -17041,7 +17055,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -17889,7 +17903,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -21210,7 +21224,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -22529,7 +22543,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {

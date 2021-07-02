@@ -84,10 +84,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <button
                     className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
-                    data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
+                    testId="tableId-rowId-row-actions-button-add"
                     type="button"
                   >
                     <span
@@ -208,10 +208,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <button
                     className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
-                    data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
+                    testId="tableId-rowId-row-actions-button-add"
                     type="button"
                   >
                     <span
@@ -378,10 +378,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <button
                     className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
-                    data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
+                    testId="tableId-rowId-row-actions-button-add"
                     type="button"
                   >
                     <span
@@ -501,10 +501,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <button
                     className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
-                    data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
+                    testId="tableId-rowId-row-actions-button-add"
                     type="button"
                   >
                     <span

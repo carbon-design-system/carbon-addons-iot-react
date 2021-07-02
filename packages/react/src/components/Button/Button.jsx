@@ -27,7 +27,7 @@ const propTypes = {
   selected: PropTypes.bool,
 
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -39,7 +39,7 @@ const defaultProps = {
   recommended: false,
   hasIconOnly: false,
   selected: false,
-  testID: 'Button',
+  testId: 'button',
 };
 
 const Button = React.forwardRef((props, ref) => {
@@ -53,7 +53,7 @@ const Button = React.forwardRef((props, ref) => {
     recommended,
     hasIconOnly,
     selected,
-    testID,
+    testId,
     ...other
   } = props;
 
@@ -61,7 +61,7 @@ const Button = React.forwardRef((props, ref) => {
     <CarbonButton
       {...other}
       ref={ref}
-      data-testid={testID}
+      data-testid={testId}
       kind={kind === 'icon-selection' ? 'ghost' : kind}
       hasIconOnly={kind === 'icon-selection' ? true : hasIconOnly}
       onClick={onClick}
