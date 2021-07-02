@@ -31,8 +31,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-            data-testid="favorite"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -59,8 +59,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </button>
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-            data-testid="share"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -87,8 +87,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </button>
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-            data-testid="delete"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1928,6 +1928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--list"
+                    data-testid="list"
                   >
                     <div
                       className="iot--list-header-container"
@@ -2042,6 +2043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--list"
+                    data-testid="list"
                   >
                     <div
                       className="iot--list-header-container"
@@ -2264,6 +2266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--list"
+                    data-testid="list"
                   >
                     <div
                       className="iot--list-header-container"
@@ -2378,6 +2381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--list"
+                    data-testid="list"
                   >
                     <div
                       className="iot--list-header-container"
@@ -2565,8 +2569,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-            data-testid="favorite"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -2593,8 +2597,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </button>
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-            data-testid="share"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -2621,8 +2625,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </button>
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-            data-testid="delete"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -5831,6 +5835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--list"
+                    data-testid="list"
                   >
                     <div
                       className="iot--list-header-container"
@@ -6184,6 +6189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--list"
+                    data-testid="list"
                   >
                     <div
                       className="iot--list-header-container"
@@ -6459,6 +6465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--list"
+                    data-testid="list"
                   >
                     <div
                       className="iot--list-header-container"
@@ -6812,6 +6819,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--list"
+                    data-testid="list"
                   >
                     <div
                       className="iot--list-header-container"

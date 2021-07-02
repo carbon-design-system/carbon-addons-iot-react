@@ -182,6 +182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <button
                   aria-expanded={false}
@@ -1667,6 +1668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -1676,6 +1678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -1714,7 +1717,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </div>
                 <button
                   aria-pressed={null}
-                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                  data-testid="card-toolbar-expand-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -3116,6 +3120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -3125,6 +3130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -4771,6 +4777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -4780,6 +4787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -5687,6 +5695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -5696,6 +5705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -6896,6 +6906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -6905,6 +6916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -6943,7 +6955,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </div>
                 <button
                   aria-pressed={null}
-                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                  data-testid="card-toolbar-expand-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -9331,6 +9344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -9340,6 +9354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -11606,6 +11621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -11615,6 +11631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -11653,7 +11670,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </div>
                 <button
                   aria-pressed={null}
-                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                  data-testid="card-toolbar-expand-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -13390,6 +13408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -13399,6 +13418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -15524,6 +15544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -15533,6 +15554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}

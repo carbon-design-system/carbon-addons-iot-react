@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AccordionItem } from 'carbon-components-react';
+import PropTypes from 'prop-types';
 
-const AccordionItemDefer = ({ children, testId = 'accordion-item-deferred', ...props }) => {
+const AccordionItemDefer = ({ children, testId, ...props }) => {
   const { open } = props;
   const [openState, setOpenState] = useState(open);
   const [hasEverBeenOpened, setHasEverBeenOpened] = useState(open);
@@ -22,7 +23,14 @@ const AccordionItemDefer = ({ children, testId = 'accordion-item-deferred', ...p
   );
 };
 
-AccordionItemDefer.propTypes = AccordionItem.propTypes;
-AccordionItemDefer.defaultProps = AccordionItem.defaultProps;
+AccordionItemDefer.propTypes = {
+  ...AccordionItem.propTypes,
+  testId: PropTypes.string,
+};
+
+AccordionItemDefer.defaultProps = {
+  ...AccordionItem.defaultProps,
+  testId: 'accordion-item-deferred',
+};
 
 export default AccordionItemDefer;

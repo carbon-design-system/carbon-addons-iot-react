@@ -8,6 +8,7 @@ import classnames from 'classnames';
 import ComposedModal from '../ComposedModal';
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
+import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -39,6 +40,12 @@ const propTypes = {
   language: PropTypes.string,
   /** Initial value for the editor */
   initialValue: PropTypes.string,
+  // TODO: remove deprecated testID in v3.
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop is deprecated. Please use 'testId' instead.`
+  ),
   testId: PropTypes.string,
 };
 
@@ -66,6 +73,8 @@ const CardCodeEditor = ({
   i18n,
   language,
   initialValue,
+  // TODO: remove deprecated testID in v3.
+  testID,
   testId,
   ...composedModalProps
 }) => {
@@ -102,7 +111,8 @@ const CardCodeEditor = ({
 
   return (
     <ComposedModal
-      data-testid={`${testId}-modal`}
+      // TODO: remove deprecated testID in v3.
+      testID={`${testID || testId}-modal`}
       className={classnames(`${iotPrefix}--editor`, {
         [`${iotPrefix}--editor__expanded`]: isExpanded,
       })}
@@ -128,7 +138,8 @@ const CardCodeEditor = ({
         iconDescription={i18n.expandBtnLabel}
         onClick={handleOnExpand}
         kind="ghost"
-        testId={`${testId}-expand-button`}
+        // TODO: remove deprecated testID in v3.
+        testId={`${testID || testId}-expand-button`}
       />
       {error && (
         <InlineNotification
@@ -137,21 +148,26 @@ const CardCodeEditor = ({
           onCloseButtonClick={() => setError(false)}
           title={i18n.errorTitle}
           subtitle={error}
-          testId={`${testId}-notification`}
+          // TODO: remove deprecated testID in v3.
+          data-testid={`${testID || testId}-notification`}
         />
       )}
-      <div className={`${iotPrefix}--editor-copy-wrapper`}>
+      <div
+        // TODO: remove deprecated testID in v3.
+        data-testid={testID || testId}
+        className={`${iotPrefix}--editor-copy-wrapper`}
+      >
         {onCopy && (
           <CopyButton
             className={`${iotPrefix}--editor-copy`}
             onClick={handleOnCopy}
             iconDescription={i18n.copyBtnDescription}
             feedback={i18n.copyBtnFeedBack}
-            data-testid={`${testId}-copy-button`}
+            // TODO: remove deprecated testID in v3.
+            data-testid={`${testID || testId}-copy-button`}
           />
         )}
         <Editor
-          data-testid={testId}
           className={`${iotPrefix}--editor-container`}
           wrapperClassName={`${iotPrefix}--editor-wrapper`}
           loading={<CodeSnippetSkeleton />}

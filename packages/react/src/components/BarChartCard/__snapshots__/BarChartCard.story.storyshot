@@ -25,9 +25,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
+        data-testid="bar-chart-card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="bar-chart-card-title"
           title="Particles and temperature in cities"
         >
           <div
@@ -38,10 +40,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="bar-chart-card-toolbar"
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="bar-chart-card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -118,9 +122,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
+        data-testid="bar-chart-card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="bar-chart-card-title"
           title="Particles by city"
         >
           <div
@@ -131,10 +137,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="bar-chart-card-toolbar"
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="bar-chart-card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -211,9 +219,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
+        data-testid="bar-chart-card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="bar-chart-card-title"
           title="Particles over 4 days"
         >
           <div
@@ -224,6 +234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="bar-chart-card-toolbar"
         >
           <div
             className="iot--card--toolbar-date-range-wrapper"
@@ -233,6 +244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
               aria-haspopup={true}
               aria-label="open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              data-testid="bar-chart-card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -271,7 +283,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
           </div>
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="bar-chart-card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -348,9 +361,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
+        data-testid="bar-chart-card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="bar-chart-card-title"
           title="Particles and temperature in cities"
         >
           <div
@@ -361,10 +376,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="bar-chart-card-toolbar"
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="bar-chart-card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -441,9 +458,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
+        data-testid="bar-chart-card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="bar-chart-card-title"
           title="Particles / emissions over 4 days"
         >
           <div
@@ -454,6 +473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="bar-chart-card-toolbar"
         >
           <div
             className="iot--card--toolbar-date-range-wrapper"
@@ -463,6 +483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
               aria-haspopup={true}
               aria-label="open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              data-testid="bar-chart-card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -501,7 +522,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
           </div>
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="bar-chart-card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -578,9 +600,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     >
       <div
         className="iot--card--header"
+        data-testid="bar-chart-card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="bar-chart-card-title"
           title="Particles by city over time"
         >
           <div
@@ -591,6 +615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="bar-chart-card-toolbar"
         >
           <div
             className="iot--card--toolbar-date-range-wrapper"
@@ -600,6 +625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
               aria-haspopup={true}
               aria-label="open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              data-testid="bar-chart-card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -638,7 +664,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
           </div>
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="bar-chart-card-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}

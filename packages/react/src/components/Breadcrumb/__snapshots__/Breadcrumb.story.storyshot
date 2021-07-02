@@ -132,7 +132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       <nav
         aria-label="Breadcrumb"
         className="some-class"
-        data-testid="breadcrumb-with-overflow"
+        data-testid="breadcrumb"
         onClick={[Function]}
       >
         <ol

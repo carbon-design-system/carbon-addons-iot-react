@@ -107,17 +107,19 @@ const Breadcrumb = ({ children, className, hasOverflow, testId, ...other }) => {
       data-testid={`${testId}-container`}
     >
       {breadcrumbRef && hasOverflow ? (
-        <CarbonBreadcrumb data-testid={`${testId}-with-overflow`} className={className} {...other}>
+        <CarbonBreadcrumb data-testid={testId} className={className} {...other}>
           {childrenItems[0]}
           {overflowItems.length > 0 && (
             <span className="breadcrumb--overflow">
               <OverflowMenu
+                data-testid={`${testId}-overflow-menu`}
                 renderIcon={OverflowMenuHorizontal20}
                 menuOptionsClass="breadcrumb--overflow-items"
               >
                 {overflowItems.map((child, i) => (
                   <OverflowMenuItem
                     {...child.props}
+                    data-testid={`${testId}-overflow-menu-item-${i}`}
                     title={child.props.children}
                     key={`${child.props.children}-${i}`}
                     itemText={child.props.children}

@@ -31,6 +31,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       >
         <div
           className="iot--list iot--list__full-height"
+          data-testid="card-editor-card-gallery-list"
         >
           <div
             className="iot--list-header-container"
@@ -1549,6 +1550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="iot--list iot--card-edit-form--data-item-list"
+              data-testid="list"
             >
               <div
                 className="iot--list-header-container"
@@ -3870,6 +3872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="iot--list iot--card-edit-form--data-item-list"
+              data-testid="list"
             >
               <div
                 className="iot--list-header-container"
@@ -5060,6 +5063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       >
         <div
           className="iot--list iot--list__full-height"
+          data-testid="card-editor-card-gallery-list"
         >
           <div
             className="iot--list-header-container"

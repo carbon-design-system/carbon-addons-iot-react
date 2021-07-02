@@ -31,7 +31,7 @@ const barChartCardProps = {
   onCardAction: () => {},
 };
 
-/* 
+/*
   FYI: the underlying Carbon Charts controls have been mocked.
   Check __mocks__/@carbon/charts-react/ for details
 */
@@ -48,6 +48,13 @@ describe('BarChartCard', () => {
   afterAll(() => {
     global.URL.createObjectURL = originalCreateObjectURL;
     global.URL.revokeObjectURL = originalRevokeObjectURL;
+  });
+
+  it('is selectable with either testID or testId', () => {
+    const { rerender } = render(<BarChartCard {...barChartCardProps} testID="BAR-CHART-CARD" />);
+    expect(screen.getByTestId('BAR-CHART-CARD')).toBeTruthy();
+    rerender(<BarChartCard {...barChartCardProps} testId="barchart-card" />);
+    expect(screen.getByTestId('barchart-card')).toBeTruthy();
   });
 
   it('does not show bar chart when loading', () => {

@@ -85,6 +85,8 @@ const BarChartCard = ({
   showTimeInGMT,
   tooltipDateFormatPattern,
   testId,
+  // TODO: remove deprecated testID in v3.
+  testID,
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
@@ -365,7 +367,8 @@ const BarChartCard = ({
       isResizable={isResizable}
       resizeHandles={resizeHandles}
       timeRange={timeRange}
-      testId={testId}
+      // TODO: remove deprecated testID in v3.
+      testId={testID || testId}
       {...others}
     >
       {!isAllValuesEmpty ? (

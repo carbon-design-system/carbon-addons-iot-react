@@ -663,6 +663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </button>
                             <div
                               className="iot--card--toolbar"
+                              data-testid="card-toolbar"
                             >
                               <button
                                 aria-expanded={false}
@@ -1661,9 +1662,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--card--header"
+                      data-testid="Card-header"
                     >
                       <span
                         className="iot--card--title"
+                        data-testid="Card-title"
                         title="Custom rendered card"
                       >
                         <div
@@ -1674,6 +1677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </span>
                       <div
                         className="iot--card--toolbar"
+                        data-testid="Card-toolbar"
                       >
                         <button
                           aria-expanded={false}
@@ -1794,9 +1798,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--card--header"
+                      data-testid="Card-header"
                     >
                       <span
                         className="iot--card--title"
+                        data-testid="Card-title"
                         title="Value card"
                       >
                         <div
@@ -1807,6 +1813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </span>
                       <div
                         className="iot--card--toolbar"
+                        data-testid="Card-toolbar"
                       >
                         <button
                           aria-expanded={false}
@@ -1968,9 +1975,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--card--header"
+                      data-testid="Card-header"
                     >
                       <span
                         className="iot--card--title"
+                        data-testid="Card-title"
                         title="Timeseries"
                       >
                         <div
@@ -1981,6 +1990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </span>
                       <div
                         className="iot--card--toolbar"
+                        data-testid="Card-toolbar"
                       >
                         <button
                           aria-expanded={false}
@@ -2087,9 +2097,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--card--header"
+                      data-testid="bar-chart-card-header"
                     >
                       <span
                         className="iot--card--title"
+                        data-testid="bar-chart-card-title"
                         title="Bar"
                       >
                         <div
@@ -2100,6 +2112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </span>
                       <div
                         className="iot--card--toolbar"
+                        data-testid="bar-chart-card-toolbar"
                       >
                         <button
                           aria-expanded={false}
@@ -2206,6 +2219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--list iot--list__full-height"
+              data-testid="card-editor-card-gallery-list"
             >
               <div
                 className="iot--list-header-container"
@@ -3303,6 +3317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -5419,6 +5434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -8575,6 +8591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -9277,9 +9294,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Custom rendered card"
                     >
                       <div
@@ -9290,6 +9309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -9413,9 +9433,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Default rendered card"
                     >
                       <div
@@ -9426,6 +9448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -9633,6 +9656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -10648,6 +10672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--list iot--list__full-height"
+              data-testid="card-editor-card-gallery-list"
             >
               <div
                 className="iot--list-header-container"
@@ -12765,6 +12790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -14988,6 +15014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -16396,6 +16423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--list iot--list__full-height"
+              data-testid="card-editor-card-gallery-list"
             >
               <div
                 className="iot--list-header-container"
@@ -17567,9 +17595,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Untitled"
                     >
                       <div
@@ -17580,6 +17610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -17686,6 +17717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -18970,6 +19002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </button>
                           <div
                             className="iot--card--toolbar"
+                            data-testid="card-toolbar"
                           >
                             <button
                               aria-expanded={false}
@@ -19968,9 +20001,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Custom rendered card"
                     >
                       <div
@@ -19981,6 +20016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -20093,9 +20129,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Default rendered card"
                     >
                       <div
@@ -20106,6 +20144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -20313,9 +20352,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Timeseries"
                     >
                       <div
@@ -20326,6 +20367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -20432,9 +20474,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="bar-chart-card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="bar-chart-card-title"
                       title="Bar"
                     >
                       <div
@@ -20445,6 +20489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="bar-chart-card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -20551,6 +20596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -21933,6 +21979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"

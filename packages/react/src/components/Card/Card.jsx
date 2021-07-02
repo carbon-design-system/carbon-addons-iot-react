@@ -45,6 +45,9 @@ const CardWrapper = ({
   onFocus,
   onBlur,
   tabIndex,
+  // TODO: remove deprecated testID prop in v3
+  // eslint-disable-next-line react/prop-types
+  testID,
   testId,
   ...others
 }) => {
@@ -53,7 +56,7 @@ const CardWrapper = ({
   return (
     <div
       role="presentation"
-      data-testid={testId}
+      data-testid={testID || testId}
       id={id}
       style={{ ...style, '--card-default-height': `${dimensions.y}px` }}
       onMouseDown={onMouseDown}
@@ -76,13 +79,17 @@ const CardWrapper = ({
 
 /** Header components */
 export const CardHeader = (
-  { children } // eslint-disable-line react/prop-types
-) => <div className={`${iotPrefix}--card--header`}>{children}</div>;
+  { children, testId } // eslint-disable-line react/prop-types
+) => (
+  <div data-testid={testId} className={`${iotPrefix}--card--header`}>
+    {children}
+  </div>
+);
 
 export const CardTitle = (
-  { children, title } // eslint-disable-line react/prop-types
+  { children, title, testId } // eslint-disable-line react/prop-types
 ) => (
-  <span className={`${iotPrefix}--card--title`} title={title}>
+  <span data-testid={testId} className={`${iotPrefix}--card--title`} title={title}>
     {children}
   </span>
 );
@@ -259,6 +266,8 @@ const Card = (props) => {
     style,
     className,
     values,
+    // TODO: remove deprecated testID prop in v3
+    testID,
     testId,
     contentClassName,
     ...others
@@ -344,13 +353,16 @@ const Card = (props) => {
                 timeRange={timeRange}
                 timeRangeOptions={timeRangeOptions}
                 onCardAction={cachedOnCardAction}
+                // TODO: remove deprecated testID prop in v3
+                testId={`${testID || testId}-toolbar`}
               />
             ) : null;
 
             return (
               <CardWrapper
                 {...others} // you need all of these to support dynamic positioning during edit
-                testId={testId}
+                // TODO: remove deprecated testID prop in v3
+                testId={testID || testId}
                 id={id}
                 dimensions={dimensions}
                 isExpanded={isExpanded}
@@ -367,10 +379,18 @@ const Card = (props) => {
                 })}
               >
                 {!hideHeader && (
-                  <CardHeader>
-                    <CardTitle title={title}>
+                  <CardHeader
+                    // TODO: remove deprecated testID prop in v3
+                    testId={`${testID || testId}-header`}
+                  >
+                    <CardTitle
+                      title={title}
+                      // TODO: remove deprecated testID prop in v3
+                      testId={`${testID || testId}-title`}
+                    >
                       {hasTitleTooltip ? (
                         <Tooltip
+                          data-testid={`${testID || testId}-title-tooltip`}
                           ref={titleRef}
                           showIcon={false}
                           triggerClassName={`${iotPrefix}--card--title--text`}
@@ -385,6 +405,7 @@ const Card = (props) => {
                       )}
                       {tooltip && (
                         <Tooltip
+                          data-testid={`${testID || testId}-tooltip`}
                           triggerId={`card-tooltip-trigger-${id}`}
                           tooltipId={`card-tooltip-${id}`}
                           id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
@@ -398,7 +419,8 @@ const Card = (props) => {
                   </CardHeader>
                 )}
                 <CardContent
-                  testId={`${testId}-content`}
+                  // TODO: remove deprecated testID prop in v3
+                  testId={`${testID || testId}-content`}
                   dimensions={dimensions}
                   isExpanded={isExpanded}
                   className={contentClassName}

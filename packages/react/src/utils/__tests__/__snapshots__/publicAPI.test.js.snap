@@ -90,6 +90,7 @@ Map {
       "selected": Object {
         "type": "bool",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -6025,6 +6026,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -10381,6 +10383,7 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -11550,6 +11553,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -13385,6 +13389,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -14376,6 +14381,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -15197,6 +15203,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -16113,6 +16120,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -17055,6 +17063,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -17903,6 +17912,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -18736,6 +18746,7 @@ Map {
       "pagination": null,
       "search": null,
       "selectedIds": Array [],
+      "testId": "list",
       "title": null,
       "toggleExpansion": [Function],
     },
@@ -18964,6 +18975,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "type": "string",
       },
@@ -18990,6 +19004,7 @@ Map {
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
+      "testId": "simple-list",
     },
     "propTypes": Object {
       "buttons": Object {
@@ -19094,6 +19109,9 @@ Map {
       "pageSize": Object {
         "type": "string",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "isRequired": true,
         "type": "string",
@@ -19181,7 +19199,9 @@ Map {
     "small": "small",
   },
   "AccordionItemDefer" => Object {
-    "defaultProps": undefined,
+    "defaultProps": Object {
+      "testId": "accordion-item-deferred",
+    },
     "propTypes": Object {
       "children": Object {
         "type": "node",
@@ -19204,6 +19224,9 @@ Map {
       },
       "renderExpando": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "node",
@@ -21224,6 +21247,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -22543,6 +22567,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },

@@ -20,6 +20,36 @@ describe('CardEditor', () => {
     type: 'VALUE',
   };
 
+  it('is selectable by testID and testId', () => {
+    const { rerender } = render(
+      <CardEditor
+        supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
+        testID="CARD_EDITOR"
+      />
+    );
+
+    expect(screen.getByTestId('CARD_EDITOR')).toBeTruthy();
+
+    rerender(
+      <CardEditor
+        supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
+        testId="card-editor"
+        isSummaryDashboard
+      />
+    );
+    expect(screen.getByTestId('card-editor')).toBeTruthy();
+    expect(screen.getByTestId('card-editor-card-gallery-list')).toBeTruthy();
+    expect(screen.getByTestId('card-editor-edit-button')).toBeTruthy();
+  });
+
   it('fires onAddCard when user clicks on item in list', () => {
     render(
       <CardEditor
