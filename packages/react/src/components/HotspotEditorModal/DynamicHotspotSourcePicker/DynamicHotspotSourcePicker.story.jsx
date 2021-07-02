@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
 
 import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker';
+import DynamicHotspotSourcePickerREADME from './DynamicHotspotSourcePickerREADME.mdx';
 
 const dataItems = [
   {
@@ -20,6 +21,9 @@ export default {
   decorators: [withKnobs],
   parameters: {
     component: DynamicHotspotSourcePicker,
+    docs: {
+      page: DynamicHotspotSourcePickerREADME,
+    },
   },
 };
 
@@ -57,14 +61,3 @@ export const WithStateInStory = () => {
 };
 
 WithStateInStory.storyName = 'Example with externaly managed state';
-
-WithStateInStory.parameters = {
-  info: {
-    text: `
-    ~~~js
-
-    ~~~
-    `,
-    propTables: [DynamicHotspotSourcePicker],
-  },
-};

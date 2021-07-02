@@ -17,7 +17,10 @@ import {
   cyan90,
 } from '@carbon/colors';
 
+import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
+
 import HotspotTextStyleTab from './HotspotTextStyleTab';
+import HotspotTextStyleTabREADME from './HotspotTextStyleTabREADME.mdx';
 
 export default {
   title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab',
@@ -25,6 +28,9 @@ export default {
 
   parameters: {
     component: HotspotTextStyleTab,
+    docs: {
+      page: HotspotTextStyleTabREADME,
+    },
   },
 };
 
@@ -78,29 +84,42 @@ export const Default = () => {
   );
 };
 
-Default.storyName = 'default';
+Default.storyName = 'Example with externaly managed state';
 
-Default.parameters = {
-  info: {
-    propTables: [HotspotTextStyleTab],
-    text: `This is an example of the <HotspotTextStyleTab> HotSpot sub component. The state needs to be managed by the consuming application.
-
-    ~~~js
-  const [formValues, setFormValues] = useState({});
+export const UsingHotspotStateHook = () => {
+  const WithState = () => {
+    const {
+      selectedHotspot,
+      deleteSelectedHotspot,
+      updateTextHotspotStyle,
+    } = useHotspotEditorState({
+      initialState: { selectedHotspot: { type: hotspotTypes.TEXT } },
+    });
 
     return (
       <HotspotTextStyleTab
+        minFontSize={1}
+        maxFontSize={50}
+        minOpacity={0}
+        maxOpacity={100}
+        minBorderWidth={0}
+        maxBorderWidth={50}
         fontColors={colors}
         backgroundColors={colors}
         borderColors={colors}
-        formValues={formValues}
-        onChange={(change) => {
-          setFormValues(merge({}, formValues, change));
-          action('onChange')(change);
-        }}
+        formValues={selectedHotspot}
+        onChange={updateTextHotspotStyle}
+        onDelete={deleteSelectedHotspot}
+        translateWithId={() => {}}
       />
     );
-    ~~~
-    `,
-  },
+  };
+
+  return (
+    <div style={{ maxWidth: '500px' }}>
+      <WithState />
+    </div>
+  );
 };
+
+UsingHotspotStateHook.storyName = 'Using HotspotStateHook';

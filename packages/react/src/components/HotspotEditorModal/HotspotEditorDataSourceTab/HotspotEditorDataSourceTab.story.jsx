@@ -8,12 +8,16 @@ import { CARD_SIZES, CARD_TYPES } from '../../../constants/LayoutConstants';
 import { useHotspotEditorState } from '../hooks/hotspotStateHook';
 
 import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab';
+import HotspotEditorDataSourceTabREADME from './HotspotEditorDataSourceTabREADME.mdx';
 
 export default {
   title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab',
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorDataSourceTab,
+    docs: {
+      page: HotspotEditorDataSourceTabREADME,
+    },
   },
 };
 
@@ -96,7 +100,7 @@ const cardConfigWithPresets = {
             {
               dataSourceId: 'temperature',
               dataItemId: 'temperature',
-              label: 'Temperature',
+              label: 'Temperature in Celsius',
               unit: '°',
             },
             {
@@ -141,6 +145,7 @@ export const WithStateInStory = () => {
         selectedHotspot: cardConfig.content.hotspots[0],
       },
     });
+
     return (
       <div>
         <HotspotEditorDataSourceTab
@@ -165,41 +170,6 @@ export const WithStateInStory = () => {
 };
 
 WithStateInStory.storyName = 'Example with state in story';
-
-WithStateInStory.parameters = {
-  info: {
-    text: `
-    ~~~js
-    const WithState = () => {
-      const { selectedHotspot, updateHotspotDataSource } = useHotspotEditorState({
-        initialState: {
-          selectedHotspot: cardConfig.content.hotspots[0],
-        },
-      });
-      return (
-        <div>
-          <HotspotEditorDataSourceTab
-            hotspot={selectedHotspot}
-            cardConfig={update(cardConfig, {
-              content: {
-                hotspots: { $set: [selectedHotspot] },
-              },
-            })}
-            dataItems={dataItems}
-            translateWithId={() => {}}
-            onChange={(newData) => {
-              updateHotspotDataSource(newData);
-              action('onChange')(newData);
-            }}
-          />
-        </div>
-      );
-    };
-    ~~~
-    `,
-    propTables: [HotspotEditorDataSourceTab],
-  },
-};
 
 export const WithPresetValues = () => {
   const WithState = () => {
@@ -233,38 +203,3 @@ export const WithPresetValues = () => {
 };
 
 WithPresetValues.storyName = 'With preset values';
-
-WithPresetValues.parameters = {
-  info: {
-    text: `
-    ~~~js
-    const WithState = () => {
-      const { selectedHotspot, updateHotspotDataSource } = useHotspotEditorState({
-        initialState: {
-          selectedHotspot: cardConfigWithPresets.content.hotspots[0],
-        },
-      });
-      return (
-        <div>
-          <HotspotEditorDataSourceTab
-            hotspot={selectedHotspot}
-            cardConfig={update(cardConfigWithPresets, {
-              content: {
-                hotspots: { $set: [selectedHotspot] },
-              },
-            })}
-            dataItems={dataItems}
-            translateWithId={() => {}}
-            onChange={(newData) => {
-              updateHotspotDataSource(newData);
-              action('onChange')(newData);
-            }}
-          />
-        </div>
-      );
-    };
-    ~~~
-    `,
-    propTables: [HotspotEditorDataSourceTab],
-  },
-};

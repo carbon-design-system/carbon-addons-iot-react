@@ -149,6 +149,24 @@ describe('HotspotEditorTooltipTab', () => {
     expect(screen.getByText(iconObj.text)).toBeVisible();
   });
 
+  it('disables text input controls when content is an element', () => {
+    render(
+      <HotspotEditorTooltipTab
+        formValues={{
+          content: <span>I am an element</span>,
+        }}
+        hotspotIconFillColors={getColors()}
+        hotspotIcons={getIcons()}
+        onChange={() => {}}
+        onDelete={() => {}}
+        translateWithId={() => {}}
+      />
+    );
+
+    expect(screen.getByRole('textbox', { name: 'Title' })).toBeDisabled();
+    expect(screen.getByRole('textbox', { name: 'Description' })).toBeDisabled();
+  });
+
   it('calls onDelete when Delete hotspot button is clicked', () => {
     const onDelete = jest.fn();
     const { rerender } = render(

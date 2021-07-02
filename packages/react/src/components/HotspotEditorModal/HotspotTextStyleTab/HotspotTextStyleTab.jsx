@@ -24,9 +24,7 @@ const colorPropType = PropTypes.shape({
 });
 
 const propTypes = {
-  /**
-   * Specify an optional className to be applied to the container node
-   */
+  /** Specify an optional className to be applied to the container node */
   className: PropTypes.string,
   /** True if the light theme is to be used, defaults to true */
   light: PropTypes.bool,
@@ -37,24 +35,35 @@ const propTypes = {
     italicLabelText: PropTypes.string,
     underlineLabelText: PropTypes.string,
     fontColorLabelText: PropTypes.string,
+    fontSizeLabelText: PropTypes.string,
     fontSizeInvalidText: PropTypes.string,
     backgroundLabelText: PropTypes.string,
     fillOpacityLabelText: PropTypes.string,
     fillOpacityInvalidText: PropTypes.string,
     borderLabelText: PropTypes.string,
+    borderWidthLabelText: PropTypes.string,
     borderWidthInvalidText: PropTypes.string,
     deleteButtonLabelText: PropTypes.string,
     deleteButtonIconDescription: PropTypes.string,
   }),
+  /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func.isRequired,
   /** Callback for when any of the form element's value changes */
   onChange: PropTypes.func.isRequired,
   /** Callback for when the delete button is clicked */
   onDelete: PropTypes.func.isRequired,
-  /** The state values of the controlled form elements, see defaults for shape */
-  formValues: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool, colorPropType])
-  ),
+  /** The state values of the controlled form elements */
+  formValues: PropTypes.shape({
+    bold: PropTypes.bool,
+    italic: PropTypes.bool,
+    underline: PropTypes.bool,
+    fontColor: PropTypes.oneOfType([PropTypes.string, colorPropType]),
+    fontSize: PropTypes.number,
+    backgroundColor: PropTypes.oneOfType([PropTypes.string, colorPropType]),
+    backgroundOpacity: PropTypes.number,
+    borderColor: PropTypes.oneOfType([PropTypes.string, colorPropType]),
+    borderWidth: PropTypes.number,
+  }),
   /** Array of colors to be shown for the font colors dropdown */
   fontColors: PropTypes.arrayOf(colorPropType),
   /** Array of colors to be shown for the background colors dropdown */
@@ -182,6 +191,8 @@ const HotspotTextStyleTab = ({
     borderWidth,
   } = formValues;
 
+  const hasNonEditableContent = React.isValidElement(formValues?.content);
+
   const renderInfoMessage = () => (
     <div className={`${iotPrefix}--hotspot-editor--text-info-message`}>
       <InformationFilled24 />
@@ -201,6 +212,7 @@ const HotspotTextStyleTab = ({
           >
             <div className={`${iotPrefix}--hotspot-text-style-tab__text-style`}>
               <IconSwitch
+                disabled={hasNonEditableContent}
                 onClick={() => onChange({ bold: !bold })}
                 data-testid="hotspot-bold"
                 selected={bold}
@@ -210,6 +222,7 @@ const HotspotTextStyleTab = ({
                 light={light}
               />
               <IconSwitch
+                disabled={hasNonEditableContent}
                 name="italic"
                 onClick={() => onChange({ italic: !italic })}
                 data-testid="hotspot-italic"
@@ -220,6 +233,7 @@ const HotspotTextStyleTab = ({
                 light={light}
               />
               <IconSwitch
+                disabled={hasNonEditableContent}
                 name="underline"
                 onClick={() => onChange({ underline: !underline })}
                 data-testid="hotspot-underline"
@@ -233,6 +247,7 @@ const HotspotTextStyleTab = ({
 
             <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
               <ColorDropdown
+                disabled={hasNonEditableContent}
                 key={fontColor?.carbonColor ?? fontColor}
                 id={`${iotPrefix}--hotspot-text-style-tab__font-color`}
                 titleText={fontColorLabelText}
@@ -247,6 +262,7 @@ const HotspotTextStyleTab = ({
               />
 
               <NumberInput
+                disabled={hasNonEditableContent}
                 allowEmpty
                 id={`${iotPrefix}--hotspot-text-style-tab__font-size`}
                 min={minFontSize}

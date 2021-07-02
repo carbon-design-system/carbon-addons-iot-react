@@ -673,6 +673,7 @@ Advanced filtering is experimental and may be subject to change, so it's usage i
 ## Pagination
 
 Pagination is controlled through the `options.hasPagingation` prop combined with the `view.pagination` prop. Pagination has one callback event for onChangePage that is fired when the page or the number of items per page changes.
+By default, tables with pagination will expect the entire table data to be passed in on the `data` prop; the visible data for a page is calculated dynamically by the table based on the page size and page number. In the case where the table is rendering a large data set, the `options.hasOnlyPageData` prop can be used change this behavior. With `options.hasOnlyPageData = true`, the `data` prop will be expected to contain only the rows for the visible page.
 
 ```jsx
 <Table
@@ -692,6 +693,28 @@ Pagination is controlled through the `options.hasPagingation` prop combined with
       pageSize: 10,
       pageSizes: [10, 20, 30],
       totalItems: undefined,
+    },
+  }}
+/>
+```
+
+```jsx
+<Table
+  actions={{
+    pagination: {
+      onChangePage: ({ page, pageSize }) => {},
+    },
+  }}
+  options={{
+    hasPagination: true,
+    hasOnlyPageData: true,
+  }}
+  view={{
+    pagination: {
+      pageSize: 10,
+      pageSizes: [10, 20, 30],
+      page: 8267,
+      totalItems: 97532,
     },
   }}
 />
