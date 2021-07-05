@@ -70,11 +70,13 @@ export class AppHierarchyList implements AfterViewInit {
           // If its children did, we still need the item with only the search matching children.
           const matchingChildren = this.searchForNestedItemValues(item.items, searchString);
           if (matchingChildren.length > 0) {
-            filteredItems.push(new AIListItem({
-              ...item,
-              expanded: true,
-              items: matchingChildren,
-            }));
+            filteredItems.push(
+              new AIListItem({
+                ...item,
+                expanded: true,
+                items: matchingChildren,
+              })
+            );
           }
         }
       } else if (item.value.toLowerCase().includes(searchString.toLowerCase())) {

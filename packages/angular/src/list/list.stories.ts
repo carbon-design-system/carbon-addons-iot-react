@@ -25,5 +25,5 @@ storiesOf('Components/List', module)
   .add('Hierarchy list draggable items', () => ({
     template: `
       <app-hierarchy-list></app-hierarchy-list>
-    `
+    `,
   }));

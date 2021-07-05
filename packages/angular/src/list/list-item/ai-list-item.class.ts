@@ -12,62 +12,62 @@ export class AIListItem {
   id?: string;
 
   /**
-  * Id of the list item's direct parent.
-  */
+   * Id of the list item's direct parent.
+   */
   parentId?: string;
 
   /**
-  * Primary content to be displayed in the list item.
-  */
+   * Primary content to be displayed in the list item.
+   */
   value?: string;
 
   /**
-  * Indicates whether or not a list item's displayed value should be bolded.
-  */
+   * Indicates whether or not a list item's displayed value should be bolded.
+   */
   isCategory?: boolean;
 
   /**
-  * Secondary value to be displayed in the list item.
-  */
+   * Secondary value to be displayed in the list item.
+   */
   secondaryValue?: string;
 
   /**
-  * This contains an optional row action that can be rendered in the list item.
-  */
+   * This contains an optional row action that can be rendered in the list item.
+   */
   rowActions?: TemplateRef<any>;
 
   /**
-  * If the list item has child list items, this indicates whether or not it's
-  * direct children are displayed.
-  */
+   * If the list item has child list items, this indicates whether or not it's
+   * direct children are displayed.
+   */
   expanded?: boolean;
 
   /**
-  * Indicates whether or not the list item can be selected.
-  */
+   * Indicates whether or not the list item can be selected.
+   */
   isSelectable?: boolean;
 
   /**
-  * Indicates whether or not the item is selected.
-  */
+   * Indicates whether or not the item is selected.
+   */
   selected?: boolean;
 
   indeterminate?: boolean;
 
   /**
-  * Optional nested items.
-  */
+   * Optional nested items.
+   */
   items?: AIListItem[];
 
   /**
-  * Nesting level of the list item. Determines the amount of space the item will be indented
-  * when rendered in the list.
-  */
+   * Nesting level of the list item. Determines the amount of space the item will be indented
+   * when rendered in the list.
+   */
   nestingLevel?: number;
 
   /**
-  * Indicates whether or not the item can be dragged into a different position.
-  */
+   * Indicates whether or not the item can be dragged into a different position.
+   */
   isDraggable?: boolean;
 
   itemSelected = new EventEmitter();
@@ -81,7 +81,7 @@ export class AIListItem {
       indeterminate: false,
       selected: false,
       isDraggable: false,
-      items: []
+      items: [],
     };
 
     const data = Object.assign({}, defaults, rawData);

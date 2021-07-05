@@ -51,9 +51,7 @@ export enum SelectionType {
         </ai-list-item-wrapper>
       </ng-container>
 
-      <ng-container
-        *ngIf="!isArray(data.item) && data.item.hasChildren() && data.item.expanded"
-      >
+      <ng-container *ngIf="!isArray(data.item) && data.item.hasChildren() && data.item.expanded">
         <ng-container
           *ngFor="let item of data.item.items; index as i"
           [ngTemplateOutlet]="listItemTemplateRef"
@@ -133,15 +131,19 @@ export class AIListComponent {
     this.draggingState = {
       isDragging,
       draggedItem,
-      draggedItemsParent
+      draggedItemsParent,
     };
   }
 
   handleDrop(receivingItem: AIListItem, insertIndex: number) {
-    if (!this.draggingState.draggedItem.hasItem(receivingItem) &&
-      (receivingItem === null || receivingItem.id !== this.draggingState.draggedItem.id)) {
+    if (
+      !this.draggingState.draggedItem.hasItem(receivingItem) &&
+      (receivingItem === null || receivingItem.id !== this.draggingState.draggedItem.id)
+    ) {
       if (this.draggingState.draggedItemsParent === null) {
-        const removeIndex = this.items.findIndex((item: AIListItem) => item.id === this.draggingState.draggedItem.id);
+        const removeIndex = this.items.findIndex(
+          (item: AIListItem) => item.id === this.draggingState.draggedItem.id
+        );
         this.items.splice(removeIndex, 1);
       } else {
         this.draggingState.draggedItemsParent.removeItem(this.draggingState.draggedItem);
@@ -159,7 +161,11 @@ export class AIListComponent {
     return Array.isArray(obj);
   }
 
-  protected updateChildSelectedStates(items: AIListItem[], selectedId: string, selected: boolean = null) {
+  protected updateChildSelectedStates(
+    items: AIListItem[],
+    selectedId: string,
+    selected: boolean = null
+  ) {
     items.forEach((item: AIListItem) => {
       if (selected !== null && item.isSelectable) {
         item.select(selected);
@@ -185,13 +191,13 @@ export class AIListComponent {
 
       if (
         item.isSelectable &&
-        item.items.every((item: AIListItem) => item.isSelectable ? item.selected : true)
+        item.items.every((item: AIListItem) => (item.isSelectable ? item.selected : true))
       ) {
         item.select(true);
         item.updateIndeterminate(false);
       } else if (
         item.isSelectable &&
-        item.items.some((item: AIListItem) => item.isSelectable ? item.selected : false)
+        item.items.some((item: AIListItem) => (item.isSelectable ? item.selected : false))
       ) {
         item.select(false);
         item.updateIndeterminate(true);

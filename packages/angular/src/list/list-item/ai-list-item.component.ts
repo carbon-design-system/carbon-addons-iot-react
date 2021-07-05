@@ -80,7 +80,10 @@ import { AIListItem } from './ai-list-item.class';
             >
               {{ item.value }}
             </div>
-            <div *ngIf="item.secondaryValue !== null" class="iot--list-item--content--values--value">
+            <div
+              *ngIf="item.secondaryValue !== null"
+              class="iot--list-item--content--values--value"
+            >
               {{ item.secondaryValue }}
             </div>
             <div *ngIf="item.rowActions" class="iot--list-item--content--row-actions">
