@@ -37,7 +37,7 @@ class IdleTimer {
     if (this.intervalHandler) {
       clearInterval(this.intervalHandler);
     }
-    // Make sure we don't stack up setInterval threads
+    // Initialize the setInterval thread
     this.intervalHandler = setInterval(() => {
       // Check if user is idle
       if (this.getUserInactivityTimeout() < Date.now()) {

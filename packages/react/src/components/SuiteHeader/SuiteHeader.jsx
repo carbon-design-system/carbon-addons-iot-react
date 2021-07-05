@@ -5,6 +5,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
 import { ButtonSkeleton } from 'carbon-components-react';
+import classnames from 'classnames';
 
 import { SideNav, Header } from '../../index';
 import { SideNavPropTypes } from '../SideNav/SideNav';
@@ -320,7 +321,7 @@ const SuiteHeader = ({
         </>
       )}
       <Header
-        className={[`${settings.iotPrefix}--suite-header`, className].filter((i) => i).join(' ')}
+        className={classnames(`${settings.iotPrefix}--suite-header`, className)}
         url={navigatorRoute}
         hasSideNav={hasSideNav || sideNavProps !== null}
         onClickSideNavExpand={(evt) => {

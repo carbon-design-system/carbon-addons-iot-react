@@ -1,4 +1,5 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 
 import IdleLogoutConfirmationModal from './IdleLogoutConfirmationModal';
 
@@ -11,7 +12,7 @@ export default {
 };
 
 export const Default = () => (
-  <div style={{ background: 'white' }}>
+  <>
     <p>The logout confirmation dialog will show up after 10 seconds of inactivity.</p>
     <p>
       {
@@ -29,8 +30,9 @@ export const Default = () => (
         logoutInactivity: 'https://ibm.com',
         domain: '',
       }}
+      onStayLoggedIn={action('onStayLoggedIn')}
     />
-  </div>
+  </>
 );
 
 Default.storyName = 'default';

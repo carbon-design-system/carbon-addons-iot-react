@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import { settings } from '../../../constants/Settings';
 import { Modal } from '../../../index';
@@ -120,9 +121,7 @@ const IdleLogoutConfirmationModal = ({
   return (
     <Modal
       data-testid="idle-logout-confirmation"
-      className={[`${settings.iotPrefix}--session-timeout-modal`, className]
-        .filter((i) => i)
-        .join(' ')}
+      className={classnames(`${settings.iotPrefix}--session-timeout-modal`, className)}
       size="sm"
       open={logoutConfirmationCountdown > 0}
       modalHeading={mergedI18N.sessionTimeoutModalHeading}
