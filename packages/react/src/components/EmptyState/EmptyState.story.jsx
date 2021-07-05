@@ -48,9 +48,7 @@ export const FirstTimeUse = () => (
   />
 );
 
-FirstTimeUse.story = {
-  name: 'First-time use',
-};
+FirstTimeUse.storyName = 'First-time use';
 
 export const NoSearchResultsFound = () => (
   <EmptyState
@@ -80,9 +78,7 @@ export const Page404 = () => (
   />
 );
 
-Page404.story = {
-  name: '404 error',
-};
+Page404.storyName = '404 error';
 
 export const DataMissing = () => (
   <EmptyState

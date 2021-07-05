@@ -356,15 +356,13 @@ export const AutoPositioningExample = () => (
   </div>
 );
 
-AutoPositioningExample.story = {
-  name: 'auto positioning',
+AutoPositioningExample.storyName = 'auto positioning';
 
-  parameters: {
-    info: {
-      text: `
-          Overflow Menu is used when additional options are available to the user and there is a space constraint.
-          Create Overflow Menu Item components for each option on the menu.
-        `,
-    },
+AutoPositioningExample.parameters = {
+  info: {
+    text: `
+        Overflow Menu is used when additional options are available to the user and there is a space constraint.
+        Create Overflow Menu Item components for each option on the menu.
+      `,
   },
 };

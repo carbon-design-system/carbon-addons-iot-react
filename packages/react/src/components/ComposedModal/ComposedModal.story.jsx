@@ -46,9 +46,7 @@ export const WarningDialog = () => (
   />
 );
 
-WarningDialog.story = {
-  name: 'as warning dialog',
-};
+WarningDialog.storyName = 'as warning dialog';
 
 export const States = () => {
   const error = text('error', 'an error has occurred');
@@ -86,9 +84,7 @@ export const States = () => {
   );
 };
 
-States.story = {
-  name: 'with error, isFetchingData, and sendingData states',
-};
+States.storyName = 'with error, isFetchingData, and sendingData states';
 
 export const WithCustomFooter = () => (
   <ComposedModal
@@ -115,9 +111,7 @@ export const WithCustomFooter = () => (
   />
 );
 
-WithCustomFooter.story = {
-  name: 'with custom footer',
-};
+WithCustomFooter.storyName = 'with custom footer';
 
 export const PrimaryButtonIsHidden = () => (
   <ComposedModal
@@ -138,9 +132,7 @@ export const PrimaryButtonIsHidden = () => (
   />
 );
 
-PrimaryButtonIsHidden.story = {
-  name: 'with hidden or disabled buttons',
-};
+PrimaryButtonIsHidden.storyName = 'with hidden or disabled buttons';
 
 export const HeaderCustomNodes = () => (
   <ComposedModal
@@ -157,9 +149,7 @@ export const HeaderCustomNodes = () => (
   />
 );
 
-HeaderCustomNodes.story = {
-  name: 'with custom header nodes',
-};
+HeaderCustomNodes.storyName = 'with custom header nodes';
 
 export const ComposedModalWithOverflowAndTooltip = () => (
   <ComposedModal
@@ -188,6 +178,4 @@ export const ComposedModalWithOverflowAndTooltip = () => (
   </ComposedModal>
 );
 
-ComposedModalWithOverflowAndTooltip.story = {
-  name: 'with i18n, overflow menu, and tooltip',
-};
+ComposedModalWithOverflowAndTooltip.storyName = 'with i18n, overflow menu, and tooltip';

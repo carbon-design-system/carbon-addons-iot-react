@@ -16,9 +16,7 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 import CardEditor from './CardEditor';
 
 export const Experimental = () => <StoryNotice componentName="CardEditor" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 const CardEditorInteractive = () => {
   const defaultCard = {
@@ -110,9 +108,7 @@ export const Default = () => (
   </div>
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const ForTimeSeries = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
@@ -159,9 +155,7 @@ export const ForTimeSeries = () => (
   </div>
 );
 
-ForTimeSeries.story = {
-  name: 'for TimeSeries',
-};
+ForTimeSeries.storyName = 'for TimeSeries';
 
 export const WithNoCardDefinedGalleryView = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
@@ -209,15 +203,11 @@ export const WithNoCardDefinedGalleryViewAndCustomCards = () => (
   </div>
 );
 
-WithNoCardDefinedGalleryView.story = {
-  name: 'with no card defined (gallery view)',
-};
+WithNoCardDefinedGalleryView.storyName = 'with no card defined (gallery view)';
 
 export const Interactive = () => <CardEditorInteractive />;
 
-Interactive.story = {
-  name: 'interactive',
-};
+Interactive.storyName = 'interactive';
 
 export const ForImage = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
@@ -248,9 +238,7 @@ export const ForImage = () => (
   </div>
 );
 
-ForImage.story = {
-  name: 'for Image',
-};
+ForImage.storyName = 'for Image';
 
 export const WithTooltipLink = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
@@ -298,9 +286,7 @@ export const WithTooltipLink = () => (
   </div>
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 const renderCustomEditContent = (onChange, cardConfig) => {
   return [
@@ -374,6 +360,4 @@ export const TimeSeriesCardWithCustom = () => {
   );
 };
 
-TimeSeriesCardWithCustom.story = {
-  name: 'custom edit content',
-};
+TimeSeriesCardWithCustom.storyName = 'custom edit content';

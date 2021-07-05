@@ -7,7 +7,6 @@ import Dropdown from './Dropdown';
 
 const iconDropdownProps = {
   id: 'icon-dropdown-1',
-  dropdownId: 'dropdown-id-1',
   label: 'Icon Dropdown menu options',
   items,
 };
@@ -37,7 +36,7 @@ describe('Dropdown with Icon and Labels', () => {
   });
 
   it('Renders selected item', () => {
-    render(<Dropdown {...iconDropdownProps} selectedViewId={items[0].id} />);
+    render(<Dropdown {...iconDropdownProps} selectedItem={items[0]} />);
 
     const selectedItem = screen.queryByText(items[0].text);
 

@@ -1249,7 +1249,7 @@ describe('ImageHotspots', () => {
           {
             x: 50,
             y: 60,
-            content: 'Hotspot4',
+            content: {},
             color: 'green',
           },
         ]}

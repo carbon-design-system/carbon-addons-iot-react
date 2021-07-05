@@ -455,6 +455,20 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
+          translateWithId={jest.fn().mockImplementation((idToTranslate) => {
+            switch (idToTranslate) {
+              default:
+                return '';
+              case 'clear.all':
+                return 'Clear all';
+              case 'clear.selection':
+                return 'Clear selection';
+              case 'open.menu':
+                return 'Open';
+              case 'close.menu':
+                return 'Close';
+            }
+          })}
         />
       );
       const dataItemsDropdown = screen.getByRole('button', {

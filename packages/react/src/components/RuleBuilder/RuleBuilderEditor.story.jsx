@@ -97,9 +97,7 @@ export const EmptyRuleBuilderStory = () => (
   />
 );
 
-EmptyRuleBuilderStory.story = {
-  name: 'with an empty tree',
-};
+EmptyRuleBuilderStory.storyName = 'with an empty tree';
 
 export const RuleBuilderEditorNestedRulesStory = () => (
   <RuleBuilderEditor
@@ -109,9 +107,7 @@ export const RuleBuilderEditorNestedRulesStory = () => (
   />
 );
 
-RuleBuilderEditorNestedRulesStory.story = {
-  name: 'with a deeply nested rule tree',
-};
+RuleBuilderEditorNestedRulesStory.storyName = 'with a deeply nested rule tree';
 
 export const RuleBuilderCustomOperandsAndFieldRenderer = () => (
   <RuleBuilderEditor
@@ -182,9 +178,8 @@ export const RuleBuilderCustomOperandsAndFieldRenderer = () => (
   />
 );
 
-RuleBuilderCustomOperandsAndFieldRenderer.story = {
-  name: 'with custom column operands and field renderers',
-};
+RuleBuilderCustomOperandsAndFieldRenderer.storyName =
+  'with custom column operands and field renderers';
 
 export default {
   title: '2 - Watson IoT Experimental/☢️ RuleBuilder/RuleBuilderEditor',

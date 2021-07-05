@@ -55,9 +55,7 @@ export const WithMultipleActions = () => {
   );
 };
 
-WithMultipleActions.story = {
-  name: 'with multiple actions',
-};
+WithMultipleActions.storyName = 'with multiple actions';
 
 export const WithLinks = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
@@ -109,21 +107,19 @@ export const WithLinks = () => {
   );
 };
 
-WithLinks.story = {
-  name: 'with links and variables',
+WithLinks.storyName = 'with links and variables';
 
-  parameters: {
-    info: {
-      text: `<p>Links can added by providing a linkTemplate prop to the content.columns[i] property.
-                2 additional properties can be configured within the linkTemplate object: href and target</p>
-            <p>href is the url the link will use. This property is required.</p>
-            <p>target is whether you would like to open the link in a new window or not.
-                This property defaults to opening in the current window. Use '_blank' to open in a new window
-            </p>
-            <p> Note: if using row-specific variables in a TableCard href (ie a variable that has a different value per row),
-            do NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column</p>
-  `,
-    },
+WithLinks.parameters = {
+  info: {
+    text: `<p>Links can added by providing a linkTemplate prop to the content.columns[i] property.
+              2 additional properties can be configured within the linkTemplate object: href and target</p>
+          <p>href is the url the link will use. This property is required.</p>
+          <p>target is whether you would like to open the link in a new window or not.
+              This property defaults to opening in the current window. Use '_blank' to open in a new window
+          </p>
+          <p> Note: if using row-specific variables in a TableCard href (ie a variable that has a different value per row),
+          do NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column</p>
+`,
   },
 };
 
@@ -244,9 +240,7 @@ export const WithThresholdsPrecisionAndExpandedRows = () => {
   );
 };
 
-WithThresholdsPrecisionAndExpandedRows.story = {
-  name: 'with thresholds, precision and expanded rows',
-};
+WithThresholdsPrecisionAndExpandedRows.storyName = 'with thresholds, precision and expanded rows';
 
 export const WithThresholdsOnlyWithIcon = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
@@ -326,15 +320,13 @@ export const WithThresholdsOnlyWithIcon = () => {
   );
 };
 
-WithThresholdsOnlyWithIcon.story = {
-  name: 'with thresholds only with icon',
+WithThresholdsOnlyWithIcon.storyName = 'with thresholds only with icon';
 
-  parameters: {
-    info: {
-      text: `
-        If you don't pass the underlying 'pressure' or 'count' column we will show the threshold icon columns at the right of the table
-      `,
-    },
+WithThresholdsOnlyWithIcon.parameters = {
+  info: {
+    text: `
+      If you don't pass the underlying 'pressure' or 'count' column we will show the threshold icon columns at the right of the table
+    `,
   },
 };
 
@@ -395,9 +387,7 @@ export const WithMatchingThresholds = () => {
   );
 };
 
-WithMatchingThresholds.story = {
-  name: 'with matching thresholds',
-};
+WithMatchingThresholds.storyName = 'with matching thresholds';
 
 export const WithCustomColumnWidthAndSort = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
@@ -430,9 +420,7 @@ export const WithCustomColumnWidthAndSort = () => {
   );
 };
 
-WithCustomColumnWidthAndSort.story = {
-  name: 'with custom column width and sort',
-};
+WithCustomColumnWidthAndSort.storyName = 'with custom column width and sort';
 
 export const WithRowExpansionAndRowSpecificLinkVariables = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
@@ -479,19 +467,18 @@ export const WithRowExpansionAndRowSpecificLinkVariables = () => {
   );
 };
 
-WithRowExpansionAndRowSpecificLinkVariables.story = {
-  name: 'with row expansion, row specific link variables, and timestamp',
+WithRowExpansionAndRowSpecificLinkVariables.storyName =
+  'with row expansion, row specific link variables, and timestamp';
 
-  parameters: {
-    info: {
-      text: ` # Passing variables
-    To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
-    Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
-    Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
-    Note: if using row-specific variables in a TableCard href (ie a variable that has a different value per row),
-          do NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column
-    `,
-    },
+WithRowExpansionAndRowSpecificLinkVariables.parameters = {
+  info: {
+    text: ` # Passing variables
+  To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
+  Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
+  Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
+  Note: if using row-specific variables in a TableCard href (ie a variable that has a different value per row),
+        do NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column
+  `,
   },
 };
 
@@ -524,9 +511,7 @@ export const NoRowActions = () => {
   );
 };
 
-NoRowActions.story = {
-  name: 'no row actions',
-};
+NoRowActions.storyName = 'no row actions';
 
 export const Editable = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
@@ -556,9 +541,7 @@ export const Editable = () => {
   );
 };
 
-Editable.story = {
-  name: 'editable',
-};
+Editable.storyName = 'editable';
 
 export const WithCustomFilters = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
@@ -587,6 +570,4 @@ export const WithCustomFilters = () => {
   );
 };
 
-WithCustomFilters.story = {
-  name: 'with custom filters',
-};
+WithCustomFilters.storyName = 'with custom filters';

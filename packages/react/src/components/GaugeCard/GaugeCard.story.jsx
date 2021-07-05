@@ -82,9 +82,7 @@ export const Basic = () => {
   );
 };
 
-Basic.story = {
-  name: 'basic',
-};
+Basic.storyName = 'basic';
 
 export const BasicWithExpand = () => {
   return (
@@ -115,9 +113,7 @@ export const BasicWithExpand = () => {
   );
 };
 
-BasicWithExpand.story = {
-  name: 'basic with expand',
-};
+BasicWithExpand.storyName = 'basic with expand';
 
 export const WithDataStateNoData = () => {
   const myDataState = {
@@ -148,6 +144,4 @@ export const WithDataStateNoData = () => {
   );
 };
 
-WithDataStateNoData.story = {
-  name: 'with data state no-data',
-};
+WithDataStateNoData.storyName = 'with data state no-data';

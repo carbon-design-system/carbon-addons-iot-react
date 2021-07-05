@@ -147,9 +147,7 @@ export const WithIcons = () => {
   );
 };
 
-WithIcons.story = {
-  name: 'with icons and labels',
-};
+WithIcons.storyName = 'with icons and labels';
 
 export const Skeleton = () => (
   <div style={{ width: 300 }}>

@@ -95,9 +95,7 @@ export const Base = () => {
   );
 };
 
-Base.story = {
-  name: 'base',
-};
+Base.storyName = 'base';
 
 export const WithTooltipDescriptionWithNode = () => (
   <div style={{ height: '150vh' }}>
@@ -117,9 +115,7 @@ export const WithTooltipDescriptionWithNode = () => (
   </div>
 );
 
-WithTooltipDescriptionWithNode.story = {
-  name: 'with tooltip description with node',
-};
+WithTooltipDescriptionWithNode.storyName = 'with tooltip description with node';
 
 export const WithStatusDescriptionAndCrumbs = () => (
   <div style={{ height: '150vh' }}>
@@ -135,9 +131,7 @@ export const WithStatusDescriptionAndCrumbs = () => (
   </div>
 );
 
-WithStatusDescriptionAndCrumbs.story = {
-  name: 'with status description and breadcrumbs',
-};
+WithStatusDescriptionAndCrumbs.storyName = 'with status description and breadcrumbs';
 
 export const WithEditableTitleBar = () => (
   <div style={{ height: '150vh' }}>
@@ -154,9 +148,7 @@ export const WithEditableTitleBar = () => (
   </div>
 );
 
-WithEditableTitleBar.story = {
-  name: 'with editable title bar and subtitle',
-};
+WithEditableTitleBar.storyName = 'with editable title bar and subtitle';
 
 export const WithSelect = () => (
   <div style={{ height: '150vh' }}>
@@ -217,9 +209,7 @@ export const WithSelect = () => (
   </div>
 );
 
-WithSelect.story = {
-  name: 'with select action and an overflowing page title',
-};
+WithSelect.storyName = 'with select action and an overflowing page title';
 
 export const WithEverything = () => (
   <div style={{ height: '150vh' }}>
@@ -295,9 +285,7 @@ export const WithEverything = () => (
   </div>
 );
 
-WithEverything.story = {
-  name: 'with breadcrumbs, actions, and tabs',
-};
+WithEverything.storyName = 'with breadcrumbs, actions, and tabs';
 
 export const WithCondensedHeader = () => (
   <div style={{ height: '150vh' }}>
@@ -338,9 +326,7 @@ export const WithCondensedHeader = () => (
   </div>
 );
 
-WithCondensedHeader.story = {
-  name: 'with condensed with primary + secondary buttons',
-};
+WithCondensedHeader.storyName = 'with condensed with primary + secondary buttons';
 
 export const WithCustomRenderFunction = () => (
   <div style={{ height: '150vh' }}>
@@ -359,9 +345,7 @@ export const WithCustomRenderFunction = () => (
   </div>
 );
 
-WithCustomRenderFunction.story = {
-  name: 'with custom render function',
-};
+WithCustomRenderFunction.storyName = 'with custom render function';
 
 export const WithDynamicScrolling = () => (
   <div style={{ height: '150vh' }}>
@@ -419,11 +403,10 @@ export const WithDynamicScrolling = () => (
   </div>
 );
 
-WithDynamicScrolling.story = {
-  name: 'with dynamic with breadcrumbs, actions, and content',
-  info: {
-    text: `with dynamic scrolling, upper actions, and buttons the buttons should transition and sit next to the actions when the page header is condensed`,
-  },
+WithDynamicScrolling.storyName = 'with dynamic with breadcrumbs, actions, and content';
+
+WithDynamicScrolling.info = {
+  text: `with dynamic scrolling, upper actions, and buttons the buttons should transition and sit next to the actions when the page header is condensed`,
 };
 
 export const WithDynamicScrollingAndTabs = () => (
@@ -491,9 +474,7 @@ export const WithDynamicScrollingAndTabs = () => (
   </div>
 );
 
-WithDynamicScrollingAndTabs.story = {
-  name: 'with dynamic with breadcrumbs, actions, and tabs',
-};
+WithDynamicScrollingAndTabs.storyName = 'with dynamic with breadcrumbs, actions, and tabs';
 
 WithDynamicScrollingAndTabs.parameters = {
   info: {
