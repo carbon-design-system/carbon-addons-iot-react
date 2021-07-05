@@ -31,6 +31,4 @@ export const Default = () => (
   </StyledSimplePagination>
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';

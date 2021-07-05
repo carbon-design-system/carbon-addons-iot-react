@@ -11,11 +11,14 @@ import { settings } from '../../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
+  /** The hotspot for which the data source settings should be changed. */
   hotspot: PropTypes.shape({
     content: PropTypes.shape({
       attributes: PropTypes.arrayOf(PropTypes.object),
     }),
-  }),
+  }).isRequired,
+  /** This prop is mainly needed since the HotspotEditorDataSourceTab internally makes
+   * use of DataSeriesFormItemModal which has its API designed around the card config */
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
@@ -34,12 +37,11 @@ const propTypes = {
     values: PropTypes.shape({
       hotspots: PropTypes.arrayOf(PropTypes.object),
     }),
-  }),
+  }).isRequired,
   i18n: PropTypes.shape({
     selectDataItemsText: PropTypes.string,
     dataItemText: PropTypes.string,
     editText: PropTypes.string,
-    // items for data item modal
     dataItemEditorDataItemTitle: PropTypes.string,
     dataItemEditorDataItemCustomLabel: PropTypes.string,
     dataItemEditorDataItemUnit: PropTypes.string,
@@ -49,38 +51,29 @@ const propTypes = {
     primaryButtonLabelText: PropTypes.string,
     secondaryButtonLabelText: PropTypes.string,
   }),
-  /** callback called when hotspot data source changes, if new attributes are added it's called with an object only with attributes.
-   * If an existing data item is modified, this callback is called with the whole updated card
-   * TODO: ideally these two operations would be split into two different callbacks
-   */
+  /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func.isRequired,
-  /* callback when image input value changes */
+  /** callback when image input value changes */
   onChange: PropTypes.func.isRequired,
   /** Id that can be used for testing */
   testID: PropTypes.string,
-  /** an array of dataItems to be included on each card
-   * this prop will be ignored if getValidDataItems is defined
-   */
+  /** An array of data source items that can be selected for the specified hotspot */
   dataItems: PropTypes.arrayOf(
     PropTypes.shape({
       dataSourceId: PropTypes.string,
       label: PropTypes.string,
     })
   ),
-  /** an object where the keys are available dimensions and the values are the values available for those dimensions
-   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
-   */
+  /** An object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] } */
   availableDimensions: PropTypes.shape({}),
 };
 
 const defaultProps = {
-  hotspot: {},
-  cardConfig: {},
   i18n: {
     selectDataItemsText: 'Select data items',
     dataItemText: 'Data items',
     editText: 'Edit',
-    // items for data item modal
     dataItemEditorDataItemTitle: 'Data items',
     dataItemEditorDataItemCustomLabel: 'Custom label',
     dataItemEditorDataItemUnit: 'Unit',
@@ -98,7 +91,7 @@ const defaultProps = {
 export const formatDataItemsForDropdown = (dataItems) =>
   dataItems?.map(({ dataSourceId, label }) => ({
     id: dataSourceId,
-    text: label,
+    label,
   }));
 
 const HotspotEditorDataSourceTab = ({
@@ -139,6 +132,16 @@ const HotspotEditorDataSourceTab = ({
     onChange({ attributes: newArray });
   };
 
+  // MultiSelect
+  // For the initial selection to work the objects in prop "initialSelectedItems"
+  // must be identical to the objects in prop "items". It is not enough that the
+  // ids are the same. Therefore, we must adjust the labels in "items" if they have
+  // been modified in the "initialSelectedItems".
+  const multiSelectItems = formatDataItemsForDropdown(dataItems).map((item) => ({
+    ...item,
+    label: initialSelectedItems.find((selected) => selected.id === item.id)?.label ?? item.label,
+  }));
+
   return (
     <div data-testid={testID}>
       <DataSeriesFormItemModal
@@ -155,13 +158,13 @@ const HotspotEditorDataSourceTab = ({
       />
       <div className={`${baseClassName}--input`}>
         <MultiSelect
-          key={cardConfig.id} // need to re-gen if selected card changes
+          // need to re-gen if multiSelectItems changes (i.e. the label)
+          key={`${multiSelectItems.map((item) => item.label).join('')}`}
           id={`${cardConfig.id}_dataSourceIds`}
           label={mergedI18n.selectDataItemsText}
           direction="bottom"
-          itemToString={(item) => item.id}
           initialSelectedItems={initialSelectedItems}
-          items={formatDataItemsForDropdown(dataItems)}
+          items={multiSelectItems}
           light
           onChange={handleSelectionChange}
           titleText={mergedI18n.dataItemText}

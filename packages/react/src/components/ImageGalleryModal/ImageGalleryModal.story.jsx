@@ -42,6 +42,9 @@ export default {
 
   parameters: {
     component: ImageGalleryModal,
+    docs: {
+      inlineStories: false,
+    },
   },
 };
 
@@ -65,9 +68,7 @@ export const Basic = () => {
   );
 };
 
-Basic.story = {
-  name: 'basic',
-};
+Basic.storyName = 'basic';
 
 export const WithI18n = () => {
   return (
@@ -93,6 +94,4 @@ export const WithI18n = () => {
   );
 };
 
-WithI18n.story = {
-  name: 'With i18n',
-};
+WithI18n.storyName = 'With i18n';

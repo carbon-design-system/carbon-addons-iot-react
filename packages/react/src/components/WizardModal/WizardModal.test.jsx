@@ -9,8 +9,13 @@ import WizardModal from './WizardModal';
 
 const commonWizardProps = {
   isClickable: true,
-  onSubmit: () => console.log('submit'),
-  onClose: () => console.log('close'),
+  onSubmit: jest.fn(),
+  onClose: jest.fn(),
+  header: {
+    title: 'Test Title',
+    label: 'test label',
+    helptext: 'test help text.',
+  },
 };
 
 describe('WizardModal', () => {

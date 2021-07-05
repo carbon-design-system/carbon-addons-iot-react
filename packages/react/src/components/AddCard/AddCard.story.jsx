@@ -18,6 +18,4 @@ export default {
 
 export const HandlesClick = () => <AddCard {...AddCardProps} />;
 
-HandlesClick.story = {
-  name: 'handles click',
-};
+HandlesClick.storyName = 'handles click';
