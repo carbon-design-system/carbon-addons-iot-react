@@ -95,7 +95,7 @@ import { AIListItem } from './ai-list-item.class';
     </div>
   `,
 })
-export class AIListItemComponent implements OnInit, OnDestroy {
+export class AIListItemComponent {
   @Input() item: AIListItem;
   /**
    * Nesting level of the list item. Determines the amount of space the item will be indented
