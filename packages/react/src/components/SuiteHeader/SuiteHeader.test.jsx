@@ -264,6 +264,21 @@ describe('SuiteHeader', () => {
     jest.runOnlyPendingTimers();
     expect(screen.getByTestId('idle-logout-confirmation')).toHaveClass('is-visible');
   });
+  it('inactive user does not see idle logout confirmation dialog if timeout is set to 0', () => {
+    render(
+      <SuiteHeader
+        {...commonProps}
+        idleTimeoutData={{ ...commonProps.idleTimeoutData, timeout: 0 }}
+      />
+    );
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
+    });
+    jest.runOnlyPendingTimers();
+    expect(screen.getByTestId('idle-logout-confirmation')).not.toHaveClass('is-visible');
+  });
   it('clicking Stay Logged In on the idle logout confirmation dialog triggers onStayLoggedIn callback', () => {
     const mockOnStayLoggedIn = jest.fn();
     render(

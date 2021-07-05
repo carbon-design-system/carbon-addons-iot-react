@@ -87,7 +87,7 @@ const IdleLogoutConfirmationModal = ({
   const [logoutConfirmationCountdown, setLogoutConfirmationCountdown] = useState(0);
   // eslint-disable-next-line consistent-return
   useEffect(() => {
-    if (idleTimeoutData && routes) {
+    if (idleTimeoutData && idleTimeoutData?.timeout > 0 && routes) {
       const timer = new IdleTimer({
         timeout: idleTimeoutData.timeout,
         countdown: idleTimeoutData.countdown,

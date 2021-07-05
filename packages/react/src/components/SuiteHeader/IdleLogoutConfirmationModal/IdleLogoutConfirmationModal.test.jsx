@@ -51,6 +51,21 @@ describe('IdleLogoutConfirmationModal', () => {
     jest.runOnlyPendingTimers();
     expect(screen.getByTestId('idle-logout-confirmation')).toHaveClass('is-visible');
   });
+  it('inactive user does not see idle logout confirmation dialog if timeout is set to 0', () => {
+    render(
+      <IdleLogoutConfirmationModal
+        {...commonProps}
+        idleTimeoutData={{ ...commonProps.idleTimeoutData, timeout: 0 }}
+      />
+    );
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+    });
+    jest.runOnlyPendingTimers();
+    expect(screen.getByTestId('idle-logout-confirmation')).not.toHaveClass('is-visible');
+  });
   it('idle logout confirmation dialog works with default i18n', () => {
     render(<IdleLogoutConfirmationModal {...commonProps} i18n={undefined} />);
     // Simulate a timestamp cookie that is in the past
