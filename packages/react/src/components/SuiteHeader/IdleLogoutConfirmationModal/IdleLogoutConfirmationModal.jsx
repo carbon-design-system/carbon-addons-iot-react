@@ -85,7 +85,7 @@ const IdleLogoutConfirmationModal = ({
   const [restartIdleTimer, setRestartIdleTimer] = useState(false);
   // Countdown state. If countdown is greater than zero, logout confirmation dialog is going to be displayed
   const [logoutConfirmationCountdown, setLogoutConfirmationCountdown] = useState(0);
-
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (idleTimeoutData && routes) {
       const timer = new IdleTimer({
@@ -115,7 +115,6 @@ const IdleLogoutConfirmationModal = ({
         timer.cleanUp();
       };
     }
-    return () => {};
   }, [restartIdleTimer, idleTimeoutData, routes, onRouteChange, onStayLoggedIn]);
 
   return (
