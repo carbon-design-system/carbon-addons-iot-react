@@ -1,18 +1,17 @@
 import { AfterViewInit, Component, Input, TemplateRef, ViewChild } from '@angular/core';
-import { AIListModel } from '../ai-list-model.class';
-import { AIListItem } from '../list-item/ai-list-item.interface';
+import { AIListItem } from '../list-item/ai-list-item.class';
 import { nestedListItems } from '../sample-data';
 
 @Component({
   selector: 'app-hierarchy-list',
   template: `
     <ai-list
-      [model]="model"
-      [itemsDraggable]="true"
+      [items]="items"
       selectionType="multi"
       title="Draggable, selectable, searchable items"
       [hasSearch]="true"
       (onSearch)="handleSearch($event)"
+      [itemsDraggable]="true"
     >
     </ai-list>
 
@@ -36,7 +35,6 @@ import { nestedListItems } from '../sample-data';
   `,
 })
 export class AppHierarchyList implements AfterViewInit {
-  @Input() model: AIListModel = new AIListModel();
   @ViewChild('rowActions') rowAction: TemplateRef<any>;
 
   items = nestedListItems;
@@ -44,27 +42,17 @@ export class AppHierarchyList implements AfterViewInit {
   ngAfterViewInit() {
     this.addRowActionsToAllItems(this.items);
 
-    this.model.items = this.items;
+    this.items = this.items;
   }
 
   handleSearch(searchString: string) {
     const filteredList = this.searchForNestedItemValues(this.items, searchString);
-    this.model.items = filteredList;
-    this.expandItems(filteredList);
-  }
-
-  expandItems(items: AIListItem[]) {
-    items.forEach((item: AIListItem) => {
-      if (this.model.hasChildren(item)) {
-        this.expandItems(item.items);
-      }
-      this.model.handleExpansion(item.id, true);
-    });
+    this.items = filteredList;
   }
 
   addRowActionsToAllItems(items: AIListItem[]) {
     items.forEach((item: AIListItem) => {
-      if (this.model.hasChildren(item)) {
+      if (item.hasChildren()) {
         this.addRowActionsToAllItems(item.items);
       }
 
@@ -74,7 +62,7 @@ export class AppHierarchyList implements AfterViewInit {
 
   searchForNestedItemValues(items: AIListItem[], searchString: string) {
     return items.reduce((filteredItems: AIListItem[], item: AIListItem) => {
-      if (this.model.hasChildren(item)) {
+      if (item.hasChildren()) {
         // If the parent matches the search then add the parent and all children.
         if (item.value.toLowerCase().includes(searchString.toLowerCase())) {
           filteredItems.push(item);
@@ -82,11 +70,11 @@ export class AppHierarchyList implements AfterViewInit {
           // If its children did, we still need the item with only the search matching children.
           const matchingChildren = this.searchForNestedItemValues(item.items, searchString);
           if (matchingChildren.length > 0) {
-            filteredItems.push({
+            filteredItems.push(new AIListItem({
               ...item,
               expanded: true,
               items: matchingChildren,
-            });
+            }));
           }
         }
       } else if (item.value.toLowerCase().includes(searchString.toLowerCase())) {

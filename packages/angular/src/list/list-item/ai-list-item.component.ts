@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
-import { SelectionType } from '../ai-list-model.class';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { SelectionType } from '../ai-list.component';
+import { AIListItem } from './ai-list-item.class';
 
 @Component({
   selector: 'ai-list-item',
@@ -7,14 +8,14 @@ import { SelectionType } from '../ai-list-model.class';
     <div
       class="iot--list-item"
       [ngClass]="{
-        'iot--list-item__selectable': isSelectable,
-        'iot--list-item__selected': selected,
-        'iot--list-item-editable': draggable
+        'iot--list-item__selectable': item.isSelectable,
+        'iot--list-item__selected': item.selected,
+        'iot--list-item-editable': item.isDraggable
       }"
-      (click)="onSingleSelect()"
+      (click)="selectionType === 'single' ? item.select(!item.selected, true) : null"
     >
       <div class="iot--list-item-editable--drag-preview">
-        {{ value }}
+        {{ item.value }}
       </div>
       <svg
         *ngIf="draggable"
@@ -37,9 +38,9 @@ import { SelectionType } from '../ai-list-model.class';
         [ngStyle]="{ width: 30 * nestingLevel + 'px' }"
       ></div>
       <div
-        *ngIf="hasChildren"
+        *ngIf="item.items && item.items.length > 0"
         role="button"
-        (click)="expansionClick.emit()"
+        (click)="item.expand(!item.expanded)"
         tabindex="0"
         class="iot--list-item--expand-icon"
       >
@@ -61,13 +62,13 @@ import { SelectionType } from '../ai-list-model.class';
       </div>
       <div class="iot--list-item--content">
         <div
-          *ngIf="isSelectable && selectionType === 'multi'"
+          *ngIf="item.isSelectable && selectionType === 'multi'"
           class="iot--list-item--content--icon iot--list-item--content--icon__left"
         >
           <ibm-checkbox
-            (checkedChange)="itemSelected.emit()"
-            [checked]="selected"
-            [indeterminate]="indeterminate"
+            (checkedChange)="handleSelect($event)"
+            [checked]="item.selected"
+            [indeterminate]="item.indeterminate"
           >
           </ibm-checkbox>
         </div>
@@ -75,15 +76,15 @@ import { SelectionType } from '../ai-list-model.class';
           <div class="iot--list-item--content--values--main">
             <div
               class="iot--list-item--content--values--value"
-              [ngClass]="{ 'iot--list-item--category': isCategory }"
+              [ngClass]="{ 'iot--list-item--category': item.isCategory }"
             >
-              {{ value }}
+              {{ item.value }}
             </div>
-            <div *ngIf="secondaryValue !== null" class="iot--list-item--content--values--value">
-              {{ secondaryValue }}
+            <div *ngIf="item.secondaryValue !== null" class="iot--list-item--content--values--value">
+              {{ item.secondaryValue }}
             </div>
-            <div *ngIf="rowActions" class="iot--list-item--content--row-actions">
-              <ng-template [ngTemplateOutlet]="rowActions"></ng-template>
+            <div *ngIf="item.rowActions" class="iot--list-item--content--row-actions">
+              <ng-template [ngTemplateOutlet]="item.rowActions"></ng-template>
             </div>
           </div>
         </div>
@@ -91,36 +92,8 @@ import { SelectionType } from '../ai-list-model.class';
     </div>
   `,
 })
-export class AIListItemComponent {
-  /**
-   * Primary content to be displayed in the list item.
-   */
-  @Input() value: string;
-
-  /**
-   * Secondary content to be displayed in the list item.
-   */
-  @Input() secondaryValue: string;
-
-  /**
-   * Indicates whether or not the list item has children. It will display the expansion button
-   * if it does.
-   */
-  @Input() hasChildren = false;
-
-  /**
-   * If the list item has child list items, this indicates whether or not it's
-   * direct children are displayed.
-   *
-   * Expansion button will show a chevron pointing down if `true` and up if `false`.
-   */
-  @Input() expanded = false;
-
-  /**
-   * Indicates whether or not a list item's displayed value should be bolded.
-   */
-  @Input() isCategory = false;
-
+export class AIListItemComponent implements OnInit, OnDestroy {
+  @Input() item: AIListItem;
   /**
    * Nesting level of the list item. Determines the amount of space the item will be indented
    * when rendered in the list.
@@ -138,42 +111,21 @@ export class AIListItemComponent {
   @Input() isSelectable = false;
 
   /**
-   * Indicates whether or not the item is selected.
-   */
-  @Input() selected = false;
-
-  /**
-   * Indicates whether or not the item is in an `indeterminate` state.
-   * This happens when an item has children where some of the children are selected,
-   * but not all if `selectionType` is `multi`.
-   */
-  @Input() indeterminate = false;
-
-  /**
    * Indicates the editing style of the list item. If it is `multi` the list item will be
    * rendered with a checkbox. If it is not given then the list item will not be editable,
    * that is, you can't select it.
    */
   @Input() selectionType: SelectionType;
 
-  /**
-   * This contains an optional row action that can be rendered in the list item.
-   */
-  @Input() rowActions: TemplateRef<any>;
-
-  /**
-   * Emitted when the expansion button is clicked.
-   */
-  @Output() expansionClick = new EventEmitter<any>();
+  @Input() parentId: string;
 
   /**
    * Emitted if the item has been selected.
    */
   @Output() itemSelected = new EventEmitter<any>();
 
-  onSingleSelect() {
-    if (this.isSelectable && this.selectionType === SelectionType.SINGLE) {
-      this.itemSelected.emit();
-    }
+  handleSelect(select: boolean) {
+    this.item.select(select);
+    this.itemSelected.emit();
   }
 }

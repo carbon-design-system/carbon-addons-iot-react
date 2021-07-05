@@ -1,7 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AIListItem } from './list-item/ai-list-item.class';
 
-import { AIListModel, SelectionType } from './ai-list-model.class';
-import { AIListItem } from './list-item/ai-list-item.interface';
+export enum SelectionType {
+  SINGLE = 'single',
+  MULTI = 'multi',
+}
 
 @Component({
   selector: 'ai-list',
@@ -12,61 +15,79 @@ import { AIListItem } from './list-item/ai-list-item.interface';
       <div class="iot--list--content">
         <ng-template
           [ngTemplateOutlet]="listItemTemplateRef"
-          [ngTemplateOutletContext]="{ $implicit: model.items }"
+          [ngTemplateOutletContext]="{
+            $implicit: {
+              item: items,
+              nestingLevel: 0,
+              parentItem: null,
+              index: 0
+            }
+          }"
         >
         </ng-template>
       </div>
     </div>
 
-    <ng-template #listItemTemplateRef let-item let-index="index">
-      <ng-container *ngIf="item.id && !isArray(item)">
+    <ng-template #listItemTemplateRef let-data>
+      <ng-container *ngIf="data.item.id && !isArray(data.item)">
         <ai-list-item-wrapper
-          [draggable]="itemsDraggable && item.draggable"
-          [isDragging]="isDragging"
-          (dragStart)="handleDragStart(item)"
-          (dragEnd)="handleDragEnd()"
-          (itemDropped)="handleDrop(item, $event)"
+          [draggable]="itemsDraggable && data.item.isDraggable"
+          [isDragging]="draggingState.isDragging"
+          (dragStart)="setDraggingState(true, data.item, data.parentItem)"
+          (dragEnd)="setDraggingState(false, null, null)"
+          (droppedAbove)="handleDrop(data.parentItem, data.index)"
+          (droppedBelow)="handleDrop(data.parentItem, data.index + 1)"
+          (droppedNested)="handleDrop(data.item, 0)"
         >
           <ai-list-item
-            [value]="item.value"
-            [nestingLevel]="item.nestingLevel"
-            [hasChildren]="model.hasChildren(item)"
-            [isSelectable]="item.isSelectable"
-            [secondaryValue]="item.secondaryValue"
+            [item]="data.item"
+            [nestingLevel]="data.item.hasChildren() ? data.nestingLevel - 1 : data.nestingLevel"
+            (itemSelected)="handleSelect(data.item.id)"
+            [parentId]="data.parentId"
             [selectionType]="selectionType"
-            [rowActions]="item.rowActions"
-            [expanded]="model.expandedIds.has(item.id)"
-            [selected]="model.selectedIds.has(item.id)"
-            [indeterminate]="model.indeterminateIds.has(item.id)"
-            (expansionClick)="toggleExpansion(item.id)"
             [draggable]="itemsDraggable"
-            [isCategory]="item.isCategory"
-            (itemSelected)="
-              model.handleSelect(item.id, !model.selectedIds.has(item.id), selectionType)
-            "
           >
           </ai-list-item>
         </ai-list-item-wrapper>
       </ng-container>
 
       <ng-container
-        *ngIf="!isArray(item) && model.hasChildren(item) && model.expandedIds.has(item.id)"
+        *ngIf="!isArray(data.item) && data.item.hasChildren() && data.item.expanded"
       >
-        <ng-template
-          ngFor
-          [ngForOf]="item.items"
-          [ngForTemplate]="listItemTemplateRef"
-        ></ng-template>
+        <ng-container
+          *ngFor="let item of data.item.items; index as i"
+          [ngTemplateOutlet]="listItemTemplateRef"
+          [ngTemplateOutletContext]="{
+            $implicit: {
+              item: item,
+              nestingLevel: getAdjustedNestingLevel(data.item.items, data.nestingLevel),
+              parentItem: data.item,
+              index: i
+            }
+          }"
+        ></ng-container>
       </ng-container>
 
-      <ng-container *ngIf="isArray(item)">
-        <ng-template ngFor [ngForOf]="item" [ngForTemplate]="listItemTemplateRef"></ng-template>
+      <ng-container *ngIf="isArray(data.item)">
+        <ng-container
+          *ngFor="let item of data.item; index as i"
+          [ngTemplateOutlet]="listItemTemplateRef"
+          [ngTemplateOutletContext]="{
+            $implicit: {
+              item: item,
+              nestingLevel: getAdjustedNestingLevel(data.item, data.nestingLevel),
+              parentItem: null,
+              index: i
+            }
+          }"
+        >
+        </ng-container>
       </ng-container>
     </ng-template>
   `,
 })
 export class AIListComponent {
-  @Input() model: AIListModel;
+  @Input() items: AIListItem[];
 
   @Input() selectionType: SelectionType;
 
@@ -90,75 +111,106 @@ export class AIListComponent {
    */
   @Output() onSearch = new EventEmitter<string>();
 
-  /**
-   * If `itemsDraggable` is `true`, this is set to whatever list item is
-   * being dragged at any given moment.
-   */
-  draggedItem: AIListItem | undefined;
+  draggingState = { isDragging: false, draggedItem: null, draggedItemsParent: null };
 
   /**
-   * If `itemsDraggable` is `true`, this is set to `true` whenever a list
-   * item is being dragged and set to `false` when no list items are currently
-   * being dragged.
+   * This function returns the adjusted `nestingLevel`s of an AIListItem.
    */
-  isDragging = false;
-
-  handleDragStart(item: AIListItem | undefined) {
-    this.isDragging = true;
-    this.draggedItem = item;
+  getAdjustedNestingLevel(items: AIListItem[], currentDepth: number) {
+    return items.some((item) => item.hasChildren()) ? currentDepth + 1 : currentDepth;
   }
 
-  handleDragEnd() {
-    this.isDragging = false;
-    this.draggedItem = undefined;
+  handleSelect(selectedItemId: string) {
+    if (this.selectionType === SelectionType.MULTI) {
+      this.updateChildSelectedStates(this.items, selectedItemId);
+      this.updateParentSelectedStates(this.items);
+    } else {
+      this.handleSingleSelect(this.items, selectedItemId);
+    }
   }
 
-  /**
-   * @param dropLocation This is the list item where the `draggedItem` is dropped.
-   * @param dropPosition The is the portion of `dropLocation` that `draggedItem` was dropped.
-   */
-  handleDrop(dropLocation: AIListItem, dropPosition: 'below' | 'above' | 'nested') {
-    // Prevent dropping an item into itself, or into one of its' own children.
-    if (!this.model.getParentIds(dropLocation.id).includes(this.draggedItem.id)) {
-      this.model.removeItem(this.draggedItem.id);
-      // Put the item as a child of the `dropLocation` list item.
-      if (dropPosition === 'nested') {
-        this.model.addItem(this.draggedItem, dropLocation.id, 0);
+  setDraggingState(isDragging: boolean, draggedItem: AIListItem, draggedItemsParent: AIListItem) {
+    this.draggingState = {
+      isDragging,
+      draggedItem,
+      draggedItemsParent
+    };
+  }
+
+  handleDrop(receivingItem: AIListItem, insertIndex: number) {
+    if (!this.draggingState.draggedItem.hasItem(receivingItem) &&
+      (receivingItem === null || receivingItem.id !== this.draggingState.draggedItem.id)) {
+      if (this.draggingState.draggedItemsParent === null) {
+        const removeIndex = this.items.findIndex((item: AIListItem) => item.id === this.draggingState.draggedItem.id);
+        this.items.splice(removeIndex, 1);
       } else {
-        // This will be the index to insert the `draggedItem`, and will be based on
-        // the index of the `dropLocation` within its' parent's child items.
-        let relativeIndex = 0;
-        // The insert location will be within a list item's child items.
-        if (dropLocation.parentId !== null) {
-          const dropLocationParentItem = this.model.getItem(dropLocation.parentId);
-          // Index of the `dropLocation` within it's parent's child items.
-          relativeIndex = dropLocationParentItem.items.findIndex(
-            (item: AIListItem) => item.id === dropLocation.id
-          );
-          // Otherwise the insert location will be within the top level of the list items.
-        } else {
-          // Index of `dropLocation` within the top level of the list items.
-          relativeIndex = this.model.items.findIndex(
-            (item: AIListItem) => item.id === dropLocation.id
-          );
-        }
-        this.model.addItem(
-          this.draggedItem,
-          dropLocation.parentId,
-          relativeIndex + (dropPosition === 'below' ? 1 : 0)
-        );
+        this.draggingState.draggedItemsParent.removeItem(this.draggingState.draggedItem);
+      }
+      if (receivingItem === null) {
+        this.items.splice(insertIndex, 0, this.draggingState.draggedItem);
+      } else {
+        receivingItem.addItem(this.draggingState.draggedItem, insertIndex);
       }
     }
-
-    this.isDragging = false;
-    this.draggedItem = undefined;
-  }
-
-  toggleExpansion(id: string) {
-    this.model.handleExpansion(id, !this.model.expandedIds.has(id));
+    this.setDraggingState(false, null, null);
   }
 
   isArray(obj: any) {
     return Array.isArray(obj);
+  }
+
+  protected updateChildSelectedStates(items: AIListItem[], selectedId: string, selected: boolean = null) {
+    items.forEach((item: AIListItem) => {
+      if (selected !== null && item.isSelectable) {
+        item.select(selected);
+      }
+
+      if (item.items && item.items.length > 0) {
+        if (item.id === selectedId) {
+          this.updateChildSelectedStates(item.items, selectedId, item.selected);
+        } else {
+          this.updateChildSelectedStates(item.items, selectedId, selected);
+        }
+      }
+    });
+  }
+
+  protected updateParentSelectedStates(items: AIListItem[]) {
+    items.forEach((item: AIListItem) => {
+      if (item.items && item.items.length > 0) {
+        this.updateParentSelectedStates(item.items);
+      } else {
+        return;
+      }
+
+      if (
+        item.isSelectable &&
+        item.items.every((item: AIListItem) => item.isSelectable ? item.selected : true)
+      ) {
+        item.select(true);
+        item.updateIndeterminate(false);
+      } else if (
+        item.isSelectable &&
+        item.items.some((item: AIListItem) => item.isSelectable ? item.selected : false)
+      ) {
+        item.select(false);
+        item.updateIndeterminate(true);
+      } else {
+        item.select(false);
+        item.updateIndeterminate(false);
+      }
+    });
+  }
+
+  protected handleSingleSelect(items: AIListItem[], selectedId: string) {
+    items.forEach((item: AIListItem) => {
+      if (item.id !== selectedId) {
+        item.select(false);
+      }
+
+      if (item.items && item.items.length > 0) {
+        this.handleSingleSelect(item.items, selectedId);
+      }
+    });
   }
 }

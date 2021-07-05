@@ -8,8 +8,7 @@ import { AIListItemComponent } from './list-item/ai-list-item.component';
 import { AIListTargetDirective } from './list-item/ai-list-target.directive';
 import { AIListItemWrapperComponent } from './list-item/ai-list-item-wrapper.component';
 
-export { AIListModel } from './ai-list-model.class';
-export { AIListItem } from './list-item/ai-list-item.interface';
+export { AIListItem } from './list-item/ai-list-item.class';
 
 @NgModule({
   declarations: [

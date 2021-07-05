@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SelectionType } from '../ai-list-model.class';
+import { SelectionType } from '../ai-list.component';
 
 @Component({
   selector: 'ai-list-item-wrapper',
   template: `
     <div class="iot--list-item-parent">
       <div
-        *ngIf="draggable"
+        *ngIf="draggable; else listItem"
         class="iot--list-item-editable--drag-container"
         role="listitem"
         [draggable]="true"
@@ -18,17 +18,15 @@ import { SelectionType } from '../ai-list-model.class';
           <div
             aiListTarget
             targetPosition="nested"
-            (dropping)="itemDropped.emit('nested')"
+            (dropping)="droppedNested.emit()"
             [targetSize]="100"
           ></div>
-          <div aiListTarget targetPosition="above" (dropping)="itemDropped.emit('above')"></div>
-          <div aiListTarget targetPosition="below" (dropping)="itemDropped.emit('below')"></div>
+          <div aiListTarget targetPosition="above" (dropping)="droppedAbove.emit()"></div>
+          <div aiListTarget targetPosition="below" (dropping)="droppedBelow.emit()"></div>
         </div>
         <ng-container [ngTemplateOutlet]="listItem"></ng-container>
       </div>
     </div>
-
-    <ng-container *ngIf="!draggable" [ngTemplateOutlet]="listItem"> </ng-container>
 
     <ng-template #listItem>
       <ng-content></ng-content>
@@ -54,7 +52,11 @@ export class AIListItemWrapperComponent {
 
   @Output() dragEnd = new EventEmitter<any>();
 
-  @Output() itemDropped = new EventEmitter<any>();
+  @Output() droppedBelow = new EventEmitter<any>();
+
+  @Output() droppedAbove = new EventEmitter<any>();
+
+  @Output() droppedNested = new EventEmitter<any>();
 
   onDragOver(ev: any) {
     ev.preventDefault();
