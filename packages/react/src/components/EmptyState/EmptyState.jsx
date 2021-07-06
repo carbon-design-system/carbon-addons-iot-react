@@ -14,6 +14,7 @@ import {
   EmptystateNoresultsIcon as NoResultImage,
   EmptystateNotauthorizedIcon as NotAuthImage,
 } from '../../icons/components';
+import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -50,8 +51,13 @@ const props = {
   }),
   /** Specify an optional className to be applied to the container */
   className: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Specify a testid for testing this component */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -59,30 +65,46 @@ const defaultProps = {
   secondaryAction: null,
   icon: '',
   className: '',
-  testID: 'EmptyState',
+  testId: 'EmptyState',
 };
 
 /**
  * Component to set empty states
  * For reference, visit https://pages.github.ibm.com/ai-applications/design/components/empty-states/usage/
  */
-const EmptyState = ({ title, icon, body, action, secondaryAction, className, testID }) => (
-  <div className={classnames(`${iotPrefix}--empty-state`, className)} data-testid={testID}>
+const EmptyState = ({ title, icon, body, action, secondaryAction, className, testId, testID }) => (
+  <div
+    className={classnames(`${iotPrefix}--empty-state`, className)}
+    // TODO: remove deprecated testID in v3.
+    data-testid={testID || testId}
+  >
     <div className={`${iotPrefix}--empty-state--content`}>
       {icon &&
         React.createElement(typeof icon === 'string' ? icons[icon] : icon, {
           className: `${iotPrefix}--empty-state--icon`,
           alt: '',
-          'data-testid': `${testID}-icon`,
+          'data-testid': `${testID || testId}-icon`,
         })}
-      <h3 className={`${iotPrefix}--empty-state--title`} data-testid={`${testID}-title`}>
+      <h3
+        className={`${iotPrefix}--empty-state--title`}
+        // TODO: remove deprecated testID in v3.
+        data-testid={`${testID || testId}-title`}
+      >
         {title}
       </h3>
-      <p className={`${iotPrefix}--empty-state--text`} data-testid={`${testID}-body`}>
+      <p
+        className={`${iotPrefix}--empty-state--text`}
+        // TODO: remove deprecated testID in v3.
+        data-testid={`${testID || testId}-body`}
+      >
         {body}
       </p>
       {action && (
-        <div className={`${iotPrefix}--empty-state--action`} data-testid={`${testID}-action`}>
+        <div
+          className={`${iotPrefix}--empty-state--action`}
+          // TODO: remove deprecated testID in v3.
+          data-testid={`${testID || testId}-action`}
+        >
           <Button kind={action.kind} onClick={action.onClick}>
             {action.label}
           </Button>
@@ -91,7 +113,8 @@ const EmptyState = ({ title, icon, body, action, secondaryAction, className, tes
       {secondaryAction && (
         <div
           className={`${iotPrefix}--empty-state--link`}
-          data-testid={`${testID}-secondaryAction`}
+          // TODO: remove deprecated testID in v3.
+          data-testid={`${testID || testId}-secondaryAction`}
         >
           {secondaryAction.label && (
             // eslint-disable-next-line jsx-a11y/anchor-is-valid

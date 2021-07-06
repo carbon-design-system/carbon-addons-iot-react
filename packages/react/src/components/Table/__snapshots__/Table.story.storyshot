@@ -111811,6 +111811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </button>
         <div
           className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
+          data-testid="advanced-filter-flyout-container"
           style={
             Object {
               "--tooltip-visibility": "hidden",
@@ -112483,7 +112484,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <div
         className="iot--filtertags-container iot--filtertags-container__wrap"
         data-testid="filter-tag-container"
-        i18n={Object {}}
         id="filter-tag-container"
         onChange={null}
       >

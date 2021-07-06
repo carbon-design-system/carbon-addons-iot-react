@@ -4831,6 +4831,7 @@ Map {
       "onData": [Function],
       "onError": [Function],
       "showFiles": true,
+      "testId": "file-drop",
       "title": null,
     },
     "propTypes": Object {
@@ -4883,6 +4884,9 @@ Map {
       },
       "showFiles": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "string",
@@ -7021,7 +7025,7 @@ Map {
       "className": "",
       "icon": "",
       "secondaryAction": null,
-      "testID": "EmptyState",
+      "testId": "EmptyState",
     },
     "propTypes": Object {
       "action": Object {
@@ -7101,7 +7105,8 @@ Map {
         ],
         "type": "shape",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "title": Object {
@@ -19637,6 +19642,7 @@ Map {
       "id": "filter-tag-container",
       "onChange": null,
       "tagContainer": null,
+      "testId": "filter-tags",
     },
     "propTypes": Object {
       "children": Object {
@@ -19657,6 +19663,9 @@ Map {
       },
       "tagContainer": Object {
         "type": "elementType",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },

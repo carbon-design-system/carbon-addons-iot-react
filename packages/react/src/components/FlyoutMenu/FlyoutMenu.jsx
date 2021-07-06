@@ -211,6 +211,7 @@ const FlyoutMenu = ({
 
   return (
     <div
+      data-testid={`${testId}-container`}
       style={{
         '--tooltip-visibility': hideTooltip ? 'hidden' : 'visible',
       }}
