@@ -73,6 +73,8 @@ const propTypes = {
   modalSecondaryButtonLabelText: PropTypes.string,
   /** The text for the search input placeHolder */
   searchPlaceHolderText: PropTypes.string,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -95,6 +97,7 @@ const defaultProps = {
   modalSecondaryButtonLabelText: 'Cancel',
   modalCloseIconDescriptionText: 'Close',
   searchPlaceHolderText: 'Search image by file name',
+  testId: 'image-gallery-modal',
 };
 
 const ImageGalleryModal = ({
@@ -118,6 +121,7 @@ const ImageGalleryModal = ({
   searchProperty,
   onDelete,
   footer,
+  testId,
   ...composedModalProps
 }) => {
   const [activeView, setActiveView] = useState(defaultView);
@@ -168,6 +172,7 @@ const ImageGalleryModal = ({
           iconDescription={modalCloseIconDescriptionText}
           onRequestClose={() => setIsDeleteWarningModalOpen(false)}
           onRequestSubmit={handleDelete}
+          data-testid={`${testId}-warning-modal`}
         />
       ) : null}
       <ComposedModal
@@ -190,6 +195,7 @@ const ImageGalleryModal = ({
           // title only makes sense in the modal selector, not in the image card
           onSubmit(omit(selectedImage, 'title'));
         }}
+        testId={testId}
         {...composedModalProps}
       >
         <div className={`${baseClass}__top-section`}>
@@ -203,6 +209,7 @@ const ImageGalleryModal = ({
               labelText=""
               light
               placeholder={searchPlaceHolderText}
+              data-testid={`${testId}-search-input`}
             />
             <ContentSwitcher
               className={`${baseClass}__content-switcher`}
@@ -210,6 +217,7 @@ const ImageGalleryModal = ({
                 setActiveView(selected.name);
               }}
               selectedIndex={activeView === GRID ? 0 : 1}
+              data-testid={`${testId}-content-switcher`}
             >
               <IconSwitch
                 name={GRID}
@@ -217,6 +225,7 @@ const ImageGalleryModal = ({
                 text={gridButtonText}
                 renderIcon={Grid20}
                 index={0}
+                data-testid={`${testId}-grid-switch`}
               />
               <IconSwitch
                 name={LIST}
@@ -224,6 +233,7 @@ const ImageGalleryModal = ({
                 text={listButtonText}
                 renderIcon={List20}
                 index={1}
+                data-testid={`${testId}-list-switch`}
               />
             </ContentSwitcher>
           </div>
@@ -249,6 +259,7 @@ const ImageGalleryModal = ({
                 {...imageProps}
                 toggleImageSelection={() => toggleImageSelection(imageProps)}
                 isSelected={selectedImage?.id === imageProps.id}
+                testId={`${testId}-${imageProps.id}`}
               />
             ))}
           </div>

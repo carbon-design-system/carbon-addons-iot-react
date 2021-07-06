@@ -64,6 +64,10 @@ const defaultProps = {
     // eslint-disable-next-line react/prop-types
     return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
   },
+  // TODO: fix this after v3.
+  // since the default card props aren't merged with the default image card props the
+  // testId is technically undefined here, so we're matching the Card default to maintain backwards compat.
+  testId: 'Card',
 };
 
 const ImageCard = ({
@@ -87,7 +91,9 @@ const ImageCard = ({
   onUpload,
   validateUploadedImage,
   onBrowseClick,
+  // TODO: remove deprecated testID prop in v3.
   testID,
+  testId,
   ...others
 }) => {
   const [imgContent, setImgContent] = useState(content);
@@ -143,7 +149,8 @@ const ImageCard = ({
       isExpanded={isExpanded}
       isEditable={isEditable}
       resizeHandles={resizeHandles}
-      testId={testID}
+      // TODO: remove deprecated testID prop in v3.
+      testId={testID || testId}
       {...others}
       error={error}
       i18n={mergedI18n}
@@ -177,6 +184,8 @@ const ImageCard = ({
                     )}
                     hasInsertFromUrl={hasInsertFromUrl}
                     validateUploadedImage={validateUploadedImage}
+                    // TODO: remove deprecated testID prop in v3.
+                    testId={`${testID || testId}-image-uploader`}
                   />
                 ) : imgContent.src ? (
                   <ImageHotspots
@@ -197,9 +206,15 @@ const ImageCard = ({
                       'titlePlaceholderText',
                       'titleEditableHintText'
                     )}
+                    // TODO: remove deprecated testID prop in v3.
+                    testId={`${testID || testId}-image-hotspots`}
                   />
                 ) : (
-                  <div className={`${iotPrefix}--image-card__empty`}>
+                  <div
+                    // TODO: remove deprecated testID prop in v3.
+                    data-testid={`${testID || testId}-empty`}
+                    className={`${iotPrefix}--image-card__empty`}
+                  >
                     <Image32 width={250} height={250} fill="gray" />
                   </div>
                 )

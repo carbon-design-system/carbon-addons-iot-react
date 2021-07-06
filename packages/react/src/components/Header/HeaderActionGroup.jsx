@@ -21,6 +21,8 @@ const propTypes = {
     closeMenu: PropTypes.string,
     openMenu: PropTypes.string,
   }),
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -28,6 +30,7 @@ const defaultProps = {
     closeMenu: 'Close menu',
     openMenu: 'Open menu',
   },
+  testId: 'header-action-group',
 };
 /**
  * Keeps track of the state of which header menu item is currently expanded
@@ -35,7 +38,7 @@ const defaultProps = {
  * Renders all the actions that can be clicked to navigate, open header panels (side panels),
  * or dropdown menus, passing an onToggleExpansion to each action
  */
-const HeaderActionGroup = ({ actionItems, i18n }) => {
+const HeaderActionGroup = ({ actionItems, i18n, testId }) => {
   const overFlowContainerRef = useRef(null);
   const [overflowItems, setOverflowItems] = useState([]);
   const breakpoint = useRef(null);
@@ -81,9 +84,9 @@ const HeaderActionGroup = ({ actionItems, i18n }) => {
   }, [checkForOverflow]);
 
   return (
-    // added ever div here, because HeaderGlobalBar doesn't support refs
+    // added extra div here, because HeaderGlobalBar doesn't support refs
     <div ref={overFlowContainerRef} className={`${prefix}--header__global`}>
-      <HeaderGlobalBar>
+      <HeaderGlobalBar data-testid={`${testId}-global-bar`}>
         {
           // if we have overflow items and are not showing a header action submenu
           // then render the overflow menu
@@ -94,6 +97,7 @@ const HeaderActionGroup = ({ actionItems, i18n }) => {
             >
               <OverflowMenu
                 useAutoPositioning
+                data-testid={`${testId}-overflow-menu`}
                 onOpen={() => setOverflowOpen(true)}
                 onClose={() => setOverflowOpen(false)}
                 renderIcon={() =>
@@ -116,7 +120,7 @@ const HeaderActionGroup = ({ actionItems, i18n }) => {
                           item={child}
                           index={i}
                           key={`header-action-item-${child.label}-${i}`}
-                          testID={`header-action-item-${child.label}`}
+                          testId={`header-action-item-${child.label}`}
                           // used to render only the label in the overflow menu instead of the icon
                           renderLabel
                           i18n={mergedI18n}
@@ -130,6 +134,7 @@ const HeaderActionGroup = ({ actionItems, i18n }) => {
                     <OverflowMenuItem
                       title={child.label}
                       key={`${child.label}-${i}`}
+                      data-testid={`${testId}-overflow-menu-item-${i}`}
                       onClick={(event) => {
                         // because these items are passed an href="#" we want to prevent the default action
                         event.preventDefault();
@@ -162,7 +167,7 @@ const HeaderActionGroup = ({ actionItems, i18n }) => {
               item={menu}
               index={0}
               key={`header-action-item-${menu.label}-${0}`}
-              testID={`header-action-item-${menu.label}`}
+              testId={`header-action-item-${menu.label}`}
               // force this menu menu to be open
               defaultExpanded
               // close the menu and restore the overflow menu button
@@ -179,7 +184,7 @@ const HeaderActionGroup = ({ actionItems, i18n }) => {
                 item={item}
                 index={i}
                 key={`header-action-item-${item.label}-${i}`}
-                testID={`header-action-item-${item.label}`}
+                testId={`header-action-item-${item.label}`}
               />
             ))
           )

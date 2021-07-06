@@ -111,6 +111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
+    data-testid="header"
   >
     <a
       className="bx--skip-to-content"
@@ -122,6 +123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     <button
       aria-label="Open menu"
       className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+      data-testid="header-menu-button"
       onClick={[Function]}
       title="Open menu"
       type="button"
@@ -143,6 +145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </button>
     <a
       className="bx--header__name"
+      data-testid="header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -170,6 +173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
+        data-testid="header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -775,6 +779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
+    data-testid="header"
   >
     <a
       className="bx--skip-to-content"
@@ -785,6 +790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
+      data-testid="header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -812,6 +818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
+        data-testid="header-action-group-global-bar"
       >
         <button
           aria-label="bell"
@@ -1823,6 +1830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
+    data-testid="header"
   >
     <a
       className="bx--skip-to-content"
@@ -1833,6 +1841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
+      data-testid="header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -1877,6 +1886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
+        data-testid="header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -2482,6 +2492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
+    data-testid="header"
   >
     <a
       className="bx--skip-to-content"
@@ -2493,6 +2504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     <button
       aria-label="Open menu"
       className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+      data-testid="header-menu-button"
       onClick={[Function]}
       title="Open menu"
       type="button"
@@ -2514,6 +2526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </button>
     <a
       className="bx--header__name"
+      data-testid="header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -2541,6 +2554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
+        data-testid="header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -3521,6 +3535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
+    data-testid="header"
   >
     <a
       className="bx--skip-to-content"
@@ -3531,6 +3546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
+      data-testid="header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -3558,6 +3574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
+        data-testid="header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -4155,6 +4172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
+    data-testid="header"
   >
     <a
       className="bx--skip-to-content"
@@ -4165,6 +4183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
+      data-testid="header-name"
       href="javascript:void(0)"
     >
       <span
@@ -4192,6 +4211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
+        data-testid="header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -4718,6 +4738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
+    data-testid="header"
   >
     <a
       className="bx--skip-to-content"
@@ -4728,6 +4749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
+      data-testid="header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -4755,6 +4777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
+        data-testid="header-action-group-global-bar"
       >
         <button
           aria-label="Administration"

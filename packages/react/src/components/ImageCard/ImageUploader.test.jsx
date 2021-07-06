@@ -13,6 +13,15 @@ const { iotPrefix } = settings;
 // }
 
 describe('ImageUploader', () => {
+  it('should be selectable by testId', () => {
+    const testId = 'IMAGE_UPLOADER';
+    render(<ImageUploader hasInsertFromUrl testId={testId} />);
+    expect(screen.getByTestId(testId)).toBeDefined();
+    expect(screen.getByTestId(`${testId}-browse-button`)).toBeDefined();
+    expect(screen.getByTestId(`${testId}-file-drop-container`)).toBeDefined();
+    expect(screen.getByTestId(`${testId}-insert-from-url-button`)).toBeDefined();
+  });
+
   it('will switch to URL upload screen', () => {
     const { container } = render(<ImageUploader hasInsertFromUrl />);
 
