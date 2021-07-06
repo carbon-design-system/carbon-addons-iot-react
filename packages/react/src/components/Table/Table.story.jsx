@@ -1981,7 +1981,7 @@ export const WithTableStates = () => {
 
 WithTableStates.storyName = 'with custom states states: no data, custom empty, error, and loading';
 
-export const WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement = () => {
+export const WithOptionsToExploreColumnSettings = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
 
@@ -2060,8 +2060,21 @@ export const WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManage
     );
   };
 
-  const [myColumns, setMyColumns] = useState(tableColumns.map(({ filter, ...rest }) => rest));
-  const [myOrdering, setMyOrdering] = useState(defaultOrdering);
+  const initialColumnsWidth = select(
+    'initial column width',
+    [undefined, '100px', '300px', '10%'],
+    undefined
+  );
+  const [myColumns, setMyColumns] = useState(
+    [
+      ...tableColumns.map(({ filter, ...rest }) => rest),
+      { id: 'longName', name: 'Testing a really long column name that will occupy a lot of space' },
+    ].map((col) => (initialColumnsWidth ? { ...col, width: initialColumnsWidth } : col))
+  );
+  const [myOrdering, setMyOrdering] = useState([
+    ...defaultOrdering,
+    { columnId: 'longName', isHidden: false },
+  ]);
 
   const onAdd = (colIds, colWidths, isHidden) => {
     const colsToAdd = colIds.split(', ');
@@ -2088,45 +2101,44 @@ export const WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManage
   const onColumnResize = (cols) => setMyColumns(cols);
 
   return (
-    <FullWidthWrapper>
+    <>
       <ColumnsModifier
         onAdd={onAdd}
         onRemove={onRemove}
         columns={myColumns}
         ordering={myOrdering}
       />
-      <MyTable
-        id="table"
-        options={{
-          hasColumnSelection: boolean('options.hasColumnSelection', true),
-          hasResize: boolean('options.hasResize', true),
-          wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
-          useAutoTableLayoutForResize: boolean('options.useAutoTableLayoutForResize', true),
-        }}
-        columns={myColumns}
-        view={{
-          filters: [],
-          table: {
-            ordering: myOrdering,
-          },
-        }}
-        data={tableData}
-        actions={{
-          ...tableActions,
-          table: { ...tableActions.table, onColumnResize },
-        }}
-      />
-    </FullWidthWrapper>
+      <div style={{ width: select('table container width', ['auto', '800px'], '800px') }}>
+        <MyTable
+          id="table"
+          options={{
+            hasColumnSelection: boolean('options.hasColumnSelection', true),
+            hasResize: boolean('options.hasResize', true),
+            wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
+            useAutoTableLayoutForResize: boolean('options.useAutoTableLayoutForResize', false),
+            hasPagination: true,
+          }}
+          columns={myColumns}
+          view={{
+            filters: [],
+            table: {
+              ordering: myOrdering,
+            },
+          }}
+          data={tableData}
+          actions={{
+            ...tableActions,
+            table: { ...tableActions.table, onColumnResize },
+          }}
+        />
+      </div>
+    </>
   );
 };
 
-WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.storyName =
-  'resize: onColumnResize callback, no initial column width and column management';
-WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.decorators = [
-  createElement,
-];
-
-WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.parameters = {
+WithOptionsToExploreColumnSettings.storyName = 'with options to explore column settings';
+WithOptionsToExploreColumnSettings.decorators = [createElement];
+WithOptionsToExploreColumnSettings.parameters = {
   info: {
     source: true,
     propTables: false,
