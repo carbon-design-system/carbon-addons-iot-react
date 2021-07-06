@@ -10,6 +10,38 @@ const commonProps = {
 };
 
 describe('DashboardEditorHeader', () => {
+  it('should be selectable by testId', () => {
+    const mockEditTitle = jest.fn();
+    render(
+      <DashboardEditorHeader
+        {...commonProps}
+        onCancel={jest.fn()}
+        onSubmit={jest.fn()}
+        onImport={jest.fn()}
+        onDelete={jest.fn()}
+        onExport={jest.fn()}
+        breakpointSwitcher={{
+          enabled: true,
+        }}
+        onEditTitle={mockEditTitle}
+        testId="DASHBOARD_EDITOR_HEADER"
+      />
+    );
+
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-file-uploader-button')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-export-button')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-cancel-button')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-delete-button')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-submit-button')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-breakpoint-switcher')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-fit-to-screen-switch')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-large-switch')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-medium-switch')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-small-switch')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR_HEADER-page-title-bar')).toBeDefined();
+  });
+
   it('trigger edit mode and save new title', () => {
     const mockEditTitle = jest.fn();
     render(<DashboardEditorHeader {...commonProps} onEditTitle={mockEditTitle} />);

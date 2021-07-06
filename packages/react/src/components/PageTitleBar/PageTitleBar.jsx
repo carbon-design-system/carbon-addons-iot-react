@@ -72,6 +72,8 @@ const PageTitleBarPropTypes = {
   content: PropTypes.node,
   /** Callback to allow custom rendering of the title, it is called back with the title property */
   renderTitleFunction: PropTypes.func,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -96,6 +98,7 @@ const defaultProps = {
   renderTitleFunction: undefined,
   headerMode: HEADER_MODES.STATIC,
   stickyHeaderOffset: 48, // default to 3rem to stick to the bottom of the suite header
+  testId: 'page-title-bar',
 };
 
 const PageTitleBar = ({
@@ -118,6 +121,7 @@ const PageTitleBar = ({
   tabs,
   style,
   content,
+  testId,
 }) => {
   const titleBarContent = content || tabs;
 
@@ -190,6 +194,7 @@ const PageTitleBar = ({
             tooltipId="tooltip"
             renderIcon={Information16}
             iconDescription={tooltipIconDescription}
+            testId={`${testId}-tooltip`}
           >
             {typeof description === 'string' ? <p>{description}</p> : description}
           </Tooltip>
@@ -206,18 +211,20 @@ const PageTitleBar = ({
             tooltipAlignment="center"
             tooltipPosition="bottom"
             onClick={onEdit}
+            testId={`${testId}-edit-button`}
           />
         ) : null}
       </>
     ),
     [
-      collapsed,
       description,
+      collapsed,
       titleBarContent,
-      editIconDescription,
-      editable,
-      onEdit,
       tooltipIconDescription,
+      editable,
+      editIconDescription,
+      onEdit,
+      testId,
     ]
   );
 
@@ -238,6 +245,7 @@ const PageTitleBar = ({
 
   return (
     <div
+      data-testid={testId}
       className={classnames(className, 'page-title-bar', {
         'page-title-bar--sticky': headerMode === HEADER_MODES.STICKY,
         'page-title-bar--condensed-static': headerMode === HEADER_MODES.CONDENSED,

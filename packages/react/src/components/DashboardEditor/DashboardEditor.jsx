@@ -290,6 +290,8 @@ const propTypes = {
   /** should we allow resizing cards dynamically */
   isCardResizable: PropTypes.bool,
   onEditDataItems: PropTypes.func,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -360,6 +362,7 @@ const defaultProps = {
   dataSeriesItemLinks: null,
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
   onEditDataItems: null,
+  testId: 'dashboard-editor',
 };
 
 const LAYOUTS = {
@@ -410,6 +413,7 @@ const DashboardEditor = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
   onEditDataItems,
+  testId,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -596,11 +600,11 @@ const DashboardEditor = ({
   );
 
   return isLoading ? (
-    <div className={baseClassName}>
+    <div data-testid={`${testId}-loading`} className={baseClassName}>
       <SkeletonText width="30%" />
     </div>
   ) : (
-    <div className={baseClassName}>
+    <div data-testid={testId} className={baseClassName}>
       <div
         className={classnames(`${baseClassName}--content`, {
           // enables overflow: auto if a specific breakpoint is selected so the width can be managed
@@ -627,6 +631,7 @@ const DashboardEditor = ({
             selectedBreakpointIndex={selectedBreakpointIndex}
             setSelectedBreakpointIndex={setSelectedBreakpointIndex}
             breakpointSwitcher={breakpointSwitcher}
+            testId={`${testId}-header`}
           />
         )}
         {notification}
@@ -661,6 +666,7 @@ const DashboardEditor = ({
                     subtitle="Something went wrong. Please refresh the page."
                     kind="error"
                     lowContrast
+                    data-testid={`${testId}-error-notification`}
                   />
                 }
               >
@@ -682,6 +688,7 @@ const DashboardEditor = ({
                   deleteLabelText={i18n.imageGalleryDeleteLabelText}
                   deleteModalLabelText={i18n.imageGalleryDeleteModalLabelText}
                   deleteModalTitleText={i18n.imageGalleryDeleteModalTitleText}
+                  testId={`${testId}-image-gallery-modal`}
                 />
                 <DashboardGrid
                   isEditable
@@ -701,6 +708,7 @@ const DashboardEditor = ({
                   }}
                   onResizeStop={handleCardResize}
                   supportedLayouts={['lg', 'md', 'sm']}
+                  testId={`${testId}-grid`}
                 >
                   {dashboardJson?.cards?.map((cardConfig) => {
                     const isSelected = cardConfig.id === selectedCardId;
@@ -742,6 +750,7 @@ const DashboardEditor = ({
               subtitle="Something went wrong. Please refresh the page."
               kind="error"
               lowContrast
+              data-testid={`${testId}-sidebar-error-notification`}
             />
           }
         >
