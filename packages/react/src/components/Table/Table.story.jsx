@@ -2062,7 +2062,7 @@ export const WithOptionsToExploreColumnSettings = () => {
 
   const initialColumnsWidth = select(
     'initial column width',
-    [undefined, '100px', '300px', '10%'],
+    [undefined, '100px', '300px'],
     undefined
   );
   const [myColumns, setMyColumns] = useState(
@@ -2108,7 +2108,7 @@ export const WithOptionsToExploreColumnSettings = () => {
         columns={myColumns}
         ordering={myOrdering}
       />
-      <div style={{ width: select('table container width', ['auto', '800px'], '800px') }}>
+      <div style={{ width: select('table container width', ['auto', '300px', '800px'], '800px') }}>
         <MyTable
           id="table"
           options={{
