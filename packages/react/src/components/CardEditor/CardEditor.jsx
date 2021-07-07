@@ -249,8 +249,8 @@ const CardEditor = ({
             size="small"
             renderIcon={Apps16}
             onClick={onShowGallery}
-            // TODO: remove deprecated testID in v3
-            testId={`${testID || testId}-add-card-button`}
+            // TODO: remove deprecated testID in v3 and pass testId to overrride defaults
+            // testId={`${testID || testId}-add-card-button`}
           >
             {mergedI18n.addCardButton}
           </Button>

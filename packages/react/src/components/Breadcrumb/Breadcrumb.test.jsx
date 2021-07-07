@@ -30,7 +30,7 @@ describe('Breadcrumb', () => {
       </Breadcrumb>
     );
     expect(container.querySelector('.breadcrumb--overflow')).toBeFalsy();
-    expect(screen.getByTestId('breadcrumb-container')).toBeTruthy();
+    expect(screen.getByTestId('overflow')).toBeTruthy();
     expect(screen.getByTestId('breadcrumb')).toBeTruthy();
   });
 });
@@ -63,7 +63,7 @@ describe('Breadcrumb with overflow', () => {
       </Breadcrumb>
     );
     expect(container.querySelector('.breadcrumb--overflow')).toBeTruthy();
-    expect(screen.getByTestId('breadcrumb-test-container')).toBeTruthy();
+    expect(screen.getByTestId('overflow')).toBeTruthy();
     expect(screen.getByTestId('breadcrumb-test')).toBeTruthy();
     expect(screen.getByTestId('breadcrumb-test-overflow-menu')).toBeTruthy();
     userEvent.click(screen.getByTestId('breadcrumb-test-overflow-menu'));
