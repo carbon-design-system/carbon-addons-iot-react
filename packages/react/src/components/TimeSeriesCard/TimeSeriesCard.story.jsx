@@ -73,9 +73,7 @@ export const SinglePoint = () => {
   );
 };
 
-SinglePoint.story = {
-  name: 'with single point and variables',
-};
+SinglePoint.storyName = 'with single point and variables';
 
 export const SingleLineIntervalDataChoices = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -134,9 +132,8 @@ export const SingleLineIntervalDataChoices = () => {
   );
 };
 
-SingleLineIntervalDataChoices.story = {
-  name: 'with single line, intervals, configurable data points, and zoomBar',
-};
+SingleLineIntervalDataChoices.storyName =
+  'with single line, intervals, configurable data points, and zoomBar';
 
 export const MultiLineIntervalDataChoices = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -211,9 +208,8 @@ export const MultiLineIntervalDataChoices = () => {
   );
 };
 
-MultiLineIntervalDataChoices.story = {
-  name: 'with multiple lines, intervals, configurable data points, and zoomBar',
-};
+MultiLineIntervalDataChoices.storyName =
+  'with multiple lines, intervals, configurable data points, and zoomBar';
 
 export const CustomColors = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -263,9 +259,7 @@ export const CustomColors = () => {
   );
 };
 
-CustomColors.story = {
-  name: 'with custom colors',
-};
+CustomColors.storyName = 'with custom colors';
 
 export const DomainRange = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -310,9 +304,7 @@ export const DomainRange = () => {
   );
 };
 
-DomainRange.story = {
-  name: 'with domainRange',
-};
+DomainRange.storyName = 'with domainRange';
 
 export const HighlightAlertRanges = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -374,9 +366,7 @@ export const HighlightAlertRanges = () => {
   );
 };
 
-HighlightAlertRanges.story = {
-  name: 'with highlight alert ranges',
-};
+HighlightAlertRanges.storyName = 'with highlight alert ranges';
 
 export const EmptyForARange = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -419,9 +409,7 @@ export const EmptyForARange = () => {
   );
 };
 
-EmptyForARange.story = {
-  name: 'with empty for a range',
-};
+EmptyForARange.storyName = 'with empty for a range';
 
 export const IsEditable = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -475,9 +463,7 @@ export const IsEditable = () => {
   );
 };
 
-IsEditable.story = {
-  name: 'with isEditable',
-};
+IsEditable.storyName = 'with isEditable';
 
 export const IsExpanded = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -593,9 +579,7 @@ export const IsExpanded = () => {
   );
 };
 
-IsExpanded.story = {
-  name: 'with isExpanded',
-};
+IsExpanded.storyName = 'with isExpanded';
 
 export const DataFilter = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -665,9 +649,7 @@ export const DataFilter = () => {
   );
 };
 
-DataFilter.story = {
-  name: 'with dataFilter',
-};
+DataFilter.storyName = 'with dataFilter';
 
 export const Thresholds = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
@@ -722,6 +704,4 @@ export const Thresholds = () => {
   );
 };
 
-Thresholds.story = {
-  name: 'with thresholds',
-};
+Thresholds.storyName = 'with thresholds';

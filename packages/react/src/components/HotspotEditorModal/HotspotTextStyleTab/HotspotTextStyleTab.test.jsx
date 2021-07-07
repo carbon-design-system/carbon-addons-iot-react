@@ -43,6 +43,27 @@ describe('HotspotTextStyleTab', () => {
     expect(formValues.underline).toBe(true);
   });
 
+  it('disables input controls when content is an element', () => {
+    render(
+      <HotspotTextStyleTab
+        fontColors={colors}
+        backgroundColors={colors}
+        borderColors={colors}
+        formValues={{ content: <span>I am an element</span> }}
+        onChange={() => {}}
+        translateWithId={jest.fn()}
+        onDelete={() => {}}
+      />
+    );
+
+    expect(screen.getByTestId('hotspot-bold')).toBeDisabled();
+    expect(screen.getByTestId('hotspot-italic')).toBeDisabled();
+    expect(screen.getByTestId('hotspot-underline')).toBeDisabled();
+
+    expect(screen.getByRole('button', { name: 'Font color Select a color' })).toBeDisabled();
+    expect(screen.getByRole('spinbutton', { name: 'Font Size' })).toBeDisabled();
+  });
+
   it('handles dropdown updates', () => {
     let formValues = {
       fontColor: colors[0],

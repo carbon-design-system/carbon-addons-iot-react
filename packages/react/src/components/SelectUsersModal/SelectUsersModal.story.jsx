@@ -226,9 +226,7 @@ export const DefaultModal = () => {
   );
 };
 
-DefaultModal.story = {
-  name: 'default modal',
-};
+DefaultModal.storyName = 'default modal';
 
 export const InitialSelectionModal = () => {
   const userList = generateUserList();
@@ -244,9 +242,7 @@ export const InitialSelectionModal = () => {
   );
 };
 
-InitialSelectionModal.story = {
-  name: 'initial selected modal',
-};
+InitialSelectionModal.storyName = 'initial selected modal';
 
 export const FlatListModal = () => {
   const userList = generateUserList()[0].users;
@@ -262,9 +258,7 @@ export const FlatListModal = () => {
   );
 };
 
-FlatListModal.story = {
-  name: 'flat list of users',
-};
+FlatListModal.storyName = 'flat list of users';
 
 export const MixedGroupListModal = () => {
   const testUsers = [
@@ -314,6 +308,4 @@ export const MixedGroupListModal = () => {
   );
 };
 
-MixedGroupListModal.story = {
-  name: 'group list',
-};
+MixedGroupListModal.storyName = 'group list';

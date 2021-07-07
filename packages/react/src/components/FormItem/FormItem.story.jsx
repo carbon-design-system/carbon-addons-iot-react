@@ -22,10 +22,8 @@ export const Default = () => (
   </FormItem>
 );
 
-Default.story = {
-  parameters: {
-    info: {
-      text: 'Form item.',
-    },
+Default.parameters = {
+  info: {
+    text: 'Form item.',
   },
 };

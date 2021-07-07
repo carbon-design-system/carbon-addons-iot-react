@@ -4553,6 +4553,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
+                  hotspotActionTypes
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  hotspotTypes
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  hotspotEditorReducer
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  useHotspotEditorState
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
                   determineCardRange
                 </div>
               </div>
