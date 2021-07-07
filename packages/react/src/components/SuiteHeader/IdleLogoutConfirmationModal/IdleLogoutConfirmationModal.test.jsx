@@ -18,9 +18,11 @@ const commonProps = {
 
 describe('IdleLogoutConfirmationModal', () => {
   let originalWindowLocation;
+  let originalWindowDocumentCookie;
   beforeEach(() => {
     jest.useFakeTimers();
     originalWindowLocation = { ...window.location };
+    originalWindowDocumentCookie = window.document.cookie;
     delete window.location;
     window.location = { href: '' };
     window.open = jest.fn();
@@ -28,6 +30,7 @@ describe('IdleLogoutConfirmationModal', () => {
 
   afterEach(() => {
     window.location = { ...originalWindowLocation };
+    window.document.cookie = originalWindowDocumentCookie;
     jest.useRealTimers();
   });
 

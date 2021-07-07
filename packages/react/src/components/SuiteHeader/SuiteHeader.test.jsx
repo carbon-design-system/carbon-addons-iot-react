@@ -50,9 +50,11 @@ const idleTimeoutDataProp = {
 
 describe('SuiteHeader', () => {
   let originalWindowLocation;
+  let originalWindowDocumentCookie;
   beforeEach(() => {
     jest.useFakeTimers();
     originalWindowLocation = { ...window.location };
+    originalWindowDocumentCookie = window.document.cookie;
     delete window.location;
     window.location = { href: '' };
     window.open = jest.fn();
@@ -60,6 +62,7 @@ describe('SuiteHeader', () => {
 
   afterEach(() => {
     window.location = { ...originalWindowLocation };
+    window.document.cookie = originalWindowDocumentCookie;
     jest.useRealTimers();
   });
 

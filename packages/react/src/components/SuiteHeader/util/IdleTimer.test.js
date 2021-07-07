@@ -3,8 +3,10 @@ import IdleTimer from './IdleTimer';
 let timer;
 
 describe('IdleTimer', () => {
+  let originalWindowDocumentCookie;
   beforeEach(() => {
     jest.useFakeTimers();
+    originalWindowDocumentCookie = window.document.cookie;
     timer = new IdleTimer({});
     timer.onIdleTimeoutWarning = jest.fn();
     timer.onIdleTimeout = jest.fn();
@@ -12,6 +14,7 @@ describe('IdleTimer', () => {
   });
   afterEach(() => {
     timer.cleanUp();
+    window.document.cookie = originalWindowDocumentCookie;
     jest.useRealTimers();
   });
   it('starts the timer', () => {
