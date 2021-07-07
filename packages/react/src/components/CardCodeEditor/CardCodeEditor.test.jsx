@@ -30,7 +30,7 @@ describe('CardEditor', () => {
       />
     );
     expect(screen.getByTestId('card-code-editor')).toBeTruthy();
-    expect(screen.getByTestId('card-code-editor-modal')).toBeTruthy();
+    expect(screen.getByTestId('ComposedModal')).toBeTruthy();
     expect(screen.getByTestId('card-code-editor-expand-button')).toBeTruthy();
     expect(screen.getByTestId('card-code-editor-copy-button')).toBeTruthy();
   });

@@ -5,6 +5,12 @@ import userEvent from '@testing-library/user-event';
 import AddCard from './AddCard';
 
 describe('AddCard', () => {
+  it('should be selectable by testId', () => {
+    const onClick = jest.fn();
+    render(<AddCard title="My Title" onClick={onClick} testId="ADDCARD" />);
+    expect(screen.getByTestId('ADDCARD')).toBeDefined();
+  });
+
   it('onClick', () => {
     const onClick = jest.fn();
     render(<AddCard title="My Title" onClick={onClick} />);

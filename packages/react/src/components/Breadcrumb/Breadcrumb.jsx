@@ -104,7 +104,8 @@ const Breadcrumb = ({ children, className, hasOverflow, testId, ...other }) => {
         'breadcrumb--container__overflowfull': afterOverflowItems.length === 1,
       })}
       ref={breadcrumbRef}
-      data-testid={`${testId}-container`}
+      // TODO: fix in v3
+      data-testid="overflow"
     >
       {breadcrumbRef && hasOverflow ? (
         <CarbonBreadcrumb data-testid={testId} className={className} {...other}>
