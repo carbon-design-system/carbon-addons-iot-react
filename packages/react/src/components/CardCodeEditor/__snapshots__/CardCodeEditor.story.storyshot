@@ -7,7 +7,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
   <div
     className="bx--modal is-visible iot--editor iot--composed-modal--large iot--composed-modal"
     data-floating-menu-container={true}
-    data-testid="card-code-editor-modal"
+    data-testid="ComposedModal"
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -194,7 +194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         <button
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
-          data-testid="card-code-editor-modal-modal-secondary-button"
+          data-testid="ComposedModal-modal-secondary-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -205,7 +205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         <button
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--primary"
-          data-testid="card-code-editor-modal-modal-primary-button"
+          data-testid="ComposedModal-modal-primary-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -233,7 +233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
   <div
     className="bx--modal is-visible iot--editor iot--composed-modal--large iot--composed-modal"
     data-floating-menu-container={true}
-    data-testid="card-code-editor-modal"
+    data-testid="ComposedModal"
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -420,7 +420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         <button
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
-          data-testid="card-code-editor-modal-modal-secondary-button"
+          data-testid="ComposedModal-modal-secondary-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -431,7 +431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         <button
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--primary"
-          data-testid="card-code-editor-modal-modal-primary-button"
+          data-testid="ComposedModal-modal-primary-button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}

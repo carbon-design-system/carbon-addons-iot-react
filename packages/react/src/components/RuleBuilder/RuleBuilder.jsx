@@ -138,7 +138,7 @@ const RuleBuilder = ({
       actionBar?.map((i) => (
         <ToolbarSVGWrapper
           key={i.actionId}
-          data-testid={i.actionId}
+          testId={i.actionId}
           title={i.actionLabel}
           onClick={() => {
             i.actionCallback(currentFilter);
