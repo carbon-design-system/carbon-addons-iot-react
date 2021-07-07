@@ -29,6 +29,7 @@ const ListCard = ({
   className,
   children,
   testID,
+  testId,
   ...others
 }) => {
   const handleScroll = (e) => {
@@ -53,7 +54,8 @@ const ListCard = ({
       onScroll={handleScroll}
       isEmpty={isEmpty(data)}
       resizeHandles={resizeHandles}
-      testId={testID}
+      // TODO: remove deprecated 'testID' in v3.
+      testId={testID || testId}
       {...others}
     >
       <div
@@ -66,7 +68,10 @@ const ListCard = ({
         }}
       >
         <StructuredListWrapper>
-          <StructuredListBody>
+          <StructuredListBody
+            // TODO: remove deprecated 'testID' in v3.
+            data-testid={`${testID || testID}-list-body`}
+          >
             {data
               ? data.map((item) => {
                   return (
@@ -90,7 +95,14 @@ const ListCard = ({
                 })
               : null}
 
-            {isLoading ? <InlineLoading description="Loading data..." status="active" /> : null}
+            {isLoading ? (
+              <InlineLoading
+                // TODO: remove deprecated 'testID' in v3.
+                data-testid={`${testID || testId}-loading`}
+                description="Loading data..."
+                status="active"
+              />
+            ) : null}
           </StructuredListBody>
         </StructuredListWrapper>
       </div>

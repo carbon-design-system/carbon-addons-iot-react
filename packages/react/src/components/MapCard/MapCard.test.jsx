@@ -41,6 +41,36 @@ describe('MapCards', () => {
     );
   };
 
+  it('should be selectable by testID or testId', () => {
+    const { rerender } = render(
+      <MapCard
+        id="map-card"
+        testID="MAP_CARD"
+        mapContainerRef={React.createRef()}
+        stops={[]}
+        onZoomIn={jest.fn()}
+        onZoomOut={jest.fn()}
+        settingsContent={settingsContentMock}
+      />
+    );
+
+    expect(screen.getByTestId('MAP_CARD')).toBeDefined();
+
+    rerender(
+      <MapCard
+        id="map-card"
+        testId="map_card"
+        mapContainerRef={React.createRef()}
+        stops={[]}
+        onZoomIn={jest.fn()}
+        onZoomOut={jest.fn()}
+        settingsContent={settingsContentMock}
+      />
+    );
+
+    expect(screen.getByTestId('map_card')).toBeDefined();
+  });
+
   it('renders a map inside the card', () => {
     render(<MapImplementationMock />);
     const cardContent = screen.getByTestId('map-card-content');

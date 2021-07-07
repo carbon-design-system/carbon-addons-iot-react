@@ -736,7 +736,7 @@ export const CardPropTypes = {
   /** For testing */
   testID: deprecate(
     PropTypes.string,
-    `The 'testID' has been deprecated. Please use 'testId' instead.`
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
   ),
   testId: PropTypes.string,
   /** the locale of the card, needed for number and date formatting */

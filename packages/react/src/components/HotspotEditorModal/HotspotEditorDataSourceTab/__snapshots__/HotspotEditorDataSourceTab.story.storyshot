@@ -86,6 +86,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       >
         <div
           className="iot--list-header-container"
+          data-testid="HotspotEditorDataSourceTab-data-source-list-header"
         />
         <div
           className="iot--list--content"
@@ -227,6 +228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       >
         <div
           className="iot--list-header-container"
+          data-testid="HotspotEditorDataSourceTab-data-source-list-header"
         />
         <div
           className="iot--list--content"

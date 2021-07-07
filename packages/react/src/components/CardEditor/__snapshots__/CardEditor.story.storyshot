@@ -35,6 +35,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list-header-container"
+            data-testid="card-editor-card-gallery-list-header"
           >
             <div
               className="iot--list-header--search"
@@ -69,6 +70,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <input
                   autoComplete="off"
                   className="bx--search-input"
+                  data-testid="card-editor-card-gallery-list-header-search-input"
                   id="iot--list-header--search"
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -1554,6 +1556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 className="iot--list-header-container"
+                data-testid="list-header"
               />
               <div
                 className="iot--list--content"
@@ -3877,6 +3880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 className="iot--list-header-container"
+                data-testid="list-header"
               />
               <div
                 className="iot--list--content"
@@ -5068,6 +5072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list-header-container"
+            data-testid="card-editor-card-gallery-list-header"
           >
             <div
               className="iot--list-header--search"
@@ -5102,6 +5107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <input
                   autoComplete="off"
                   className="bx--search-input"
+                  data-testid="card-editor-card-gallery-list-header-search-input"
                   id="iot--list-header--search"
                   onChange={[Function]}
                   onKeyDown={[Function]}
