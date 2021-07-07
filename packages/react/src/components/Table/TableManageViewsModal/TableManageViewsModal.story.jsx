@@ -229,7 +229,7 @@ export const WithCustomRowActionsCustomRenderingAndNoPagination = () => {
   const renderButton = (id, onClick, icon, key, iconText) => (
     <Button
       key={key}
-      data-testid={key}
+      testId={key}
       hasIconOnly
       iconDescription={iconText}
       kind="ghost"
