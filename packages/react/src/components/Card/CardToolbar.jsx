@@ -170,6 +170,7 @@ const CardToolbar = ({
     </div>
   ) : (
     <div className={classnames(className, `${iotPrefix}--card--toolbar`)}>
+      {customToolbarContent}
       {availableActions.range ? (
         <CardRangePicker
           width={width}
@@ -209,7 +210,6 @@ const CardToolbar = ({
           )}
         </>
       ) : null}
-      {customToolbarContent}
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { Tree16 } from '@carbon/icons-react';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
-import DateTimePicker, { RELATIVE_VALUES } from '../DateTimePicker/DateTimePicker';
+import Button from '../Button/Button';
 
 import CardREADME from './Card.mdx';
 import Card from './Card';
@@ -292,17 +292,9 @@ export const ImplementingACustomCard = () => {
         onCardAction={action('onCardAction')}
         hideHeader
         customToolbarContent={
-          <DateTimePicker
-            id="datetimepicker"
-            dateTimeMask="YYYY-MM-DD HH:mm"
-            relatives={[
-              {
-                label: 'Yesterday',
-                value: RELATIVE_VALUES.YESTERDAY,
-              },
-            ]}
-            hasTimeInput
-          />
+          <Button hasIconOnly kind="ghost">
+            Custom
+          </Button>
         }
       >
         {!isEditable
