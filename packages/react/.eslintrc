@@ -97,7 +97,6 @@
       "files": [
         "**/*-fixture.{js,jsx}",
         "**/*.test.{js,jsx}",
-        "**/*.test.e2e.{js,jsx}",
         "**/*.test.a11y.{js,jsx}",
         "**/*.story.{js,jsx}"
       ],
@@ -130,6 +129,16 @@
         "no-template-curly-in-string": 0,
         "react/prop-types": 0,
         "react/jsx-no-bind": 0
+      }
+    },
+    {
+      "files": ["**/*.test.e2e.{js,jsx}"],
+      "rules": {
+        "jest/expect-expect": "off",
+        "jest/valid-expect": "off",
+        "no-unused-expressions": "off",
+        "testing-library/prefer-screen-queries": "off",
+        "import/no-extraneous-dependencies": "off"
       }
     }
   ]

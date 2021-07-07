@@ -6,7 +6,6 @@ import CardCodeEditor from './CardCodeEditor';
 
 let onCopy;
 describe('CardCodeEditor loaded editor test', () => {
-  /* eslint-disable  jest/expect-expect, testing-library/prefer-screen-queries */
   it('renders the script tag', () => {
     mount(
       <CardCodeEditor
@@ -41,7 +40,6 @@ describe('CardCodeEditor loaded editor test', () => {
       .should('be.visible')
       .click()
       .then(() => {
-        /* eslint-disable-next-line no-unused-expressions, jest/valid-expect */
         expect(onCopy).to.be.called;
       });
   });

@@ -82,8 +82,6 @@ jobs:
         run: |
           cd packages/react
           yarn test:e2e:ci
-        with:
-          record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           HEIGHT: 900

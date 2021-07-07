@@ -5,11 +5,10 @@ import { onlyOn } from '@cypress/skip-test';
 import Button from './Button';
 
 const commonProps = {
-  onClick: () => console.log('clicked'),
+  onClick: () => {},
 };
 
 describe('Button', () => {
-  /* eslint-disable jest/expect-expect, testing-library/prefer-screen-queries */
   onlyOn('headless', () => {
     it('matches image snapshot', () => {
       mount(<Button {...commonProps}>Click Me</Button>);
