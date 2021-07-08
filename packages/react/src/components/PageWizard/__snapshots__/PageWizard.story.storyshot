@@ -7,6 +7,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
   <div>
     <div
       className=""
+      data-testid="page-wizard"
     >
       <div
         className="iot--page-wizard--progress--horizontal"
@@ -509,6 +510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       </div>
       <div
         className="iot--page-wizard--content"
+        data-testid="page-wizard-content"
       >
         <div
           className="iot--page-wizard--step"
@@ -714,6 +716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         >
           <div
             className="iot--page-wizard iot--page-wizard__sticky"
+            data-testid="page-wizard"
           >
             <div
               className="iot--page-wizard--progress--vertical"
@@ -845,6 +848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             </div>
             <div
               className="iot--page-wizard--content"
+              data-testid="page-wizard-content"
             >
               <div
                 className="iot--page-wizard--step"
@@ -1108,6 +1112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         >
           <div
             className="iot--page-wizard iot--page-wizard__sticky"
+            data-testid="page-wizard"
           >
             <div
               className="iot--page-wizard--progress--vertical"
@@ -1239,6 +1244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             </div>
             <div
               className="iot--page-wizard--content"
+              data-testid="page-wizard-content"
             >
               <div
                 className="iot--page-wizard--step"
@@ -1552,9 +1558,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         >
           <div
             className="iot--page-wizard"
+            data-testid="page-wizard"
           >
             <div
               className="iot--page-wizard--content"
+              data-testid="page-wizard-content"
             >
               <div
                 className="iot--page-wizard--step"
@@ -1643,6 +1651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
   <div>
     <div
       className="iot--page-wizard"
+      data-testid="page-wizard"
     >
       <div
         className="iot--page-wizard--progress--vertical"
@@ -2145,6 +2154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       </div>
       <div
         className="iot--page-wizard--content"
+        data-testid="page-wizard-content"
       >
         <div
           className="iot--page-wizard--step"
@@ -2350,6 +2360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         >
           <div
             className="iot--page-wizard"
+            data-testid="page-wizard"
           >
             <div
               className="iot--page-wizard--progress--vertical"
@@ -2481,6 +2492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             </div>
             <div
               className="iot--page-wizard--content"
+              data-testid="page-wizard-content"
             >
               <div
                 className="iot--page-wizard--step"
@@ -2624,6 +2636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
   <div>
     <div
       className="iot--page-wizard"
+      data-testid="page-wizard"
     >
       <div
         className="iot--page-wizard--progress--vertical"
@@ -3126,6 +3139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       </div>
       <div
         className="iot--page-wizard--content"
+        data-testid="page-wizard-content"
       >
         <div
           className="iot--page-wizard--step"
@@ -3331,6 +3345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         >
           <div
             className="iot--page-wizard"
+            data-testid="page-wizard"
           >
             <div
               className="iot--page-wizard--progress--vertical"
@@ -3833,6 +3848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             </div>
             <div
               className="iot--page-wizard--content"
+              data-testid="page-wizard-content"
             >
               <div
                 className="iot--page-wizard--step"
