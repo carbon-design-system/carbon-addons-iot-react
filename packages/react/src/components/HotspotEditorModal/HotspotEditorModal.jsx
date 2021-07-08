@@ -61,7 +61,7 @@ const propTypes = {
     title: PropTypes.string,
     /**
      * If this prop is present the HotspotEditorModal will place new and existing thresholds here
-     * instead of under the each hotspot in cardConfig.values.hotspots.
+     * instead of under each hotspot in cardConfig.values.hotspots.
      */
     thresholds: PropTypes.arrayOf(
       PropTypes.shape({
@@ -157,6 +157,7 @@ const propTypes = {
     textTypeDataSourceTabLabelText: PropTypes.string,
     tooManyHotspotsInfoText: PropTypes.string,
   }),
+  /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func,
 };
 
@@ -294,6 +295,7 @@ const HotspotEditorModal = ({
     },
   });
 
+  const hasNonEditableContent = React.isValidElement(selectedHotspot?.content);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const {
@@ -492,7 +494,9 @@ const HotspotEditorModal = ({
                 translateWithId={translateWithId}
               />
             </Tab>
-            <Tab label={fixedTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
+            <Tab disabled={hasNonEditableContent} label={fixedTypeDataSourceTabLabelText}>
+              {hasNonEditableContent ? null : renderDataSourceTab()}
+            </Tab>
           </Tabs>
         )}
       </>
@@ -537,7 +541,9 @@ const HotspotEditorModal = ({
             translateWithId={translateWithId}
           />
         </Tab>
-        <Tab label={textTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
+        <Tab disabled={hasNonEditableContent} label={textTypeDataSourceTabLabelText}>
+          {hasNonEditableContent ? null : renderDataSourceTab()}
+        </Tab>
       </Tabs>
     );
   };

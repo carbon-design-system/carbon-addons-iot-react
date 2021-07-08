@@ -51,6 +51,7 @@ describe('HierarchyListReorderModal', () => {
         editingStyle={EditingStyle.MultipleNesting}
         selectedIds={selectedIds}
         open
+        onClose={jest.fn()}
       />
     );
 
@@ -75,6 +76,7 @@ describe('HierarchyListReorderModal', () => {
         editingStyle={EditingStyle.MultipleNesting}
         selectedIds={selectedIds}
         open
+        onClose={jest.fn()}
       />
     );
 
@@ -98,6 +100,7 @@ describe('HierarchyListReorderModal', () => {
         editingStyle={EditingStyle.MultipleNesting}
         selectedIds={selectedIds}
         open
+        onClose={jest.fn()}
       />
     );
 
@@ -131,6 +134,7 @@ describe('HierarchyListReorderModal', () => {
         editingStyle={EditingStyle.MultipleNesting}
         selectedIds={selectedIds}
         open
+        onClose={jest.fn()}
       />
     );
 
@@ -167,6 +171,7 @@ describe('HierarchyListReorderModal', () => {
         editingStyle={EditingStyle.MultipleNesting}
         selectedIds={selectedIds}
         open
+        onClose={jest.fn()}
       />
     );
 
@@ -202,6 +207,7 @@ describe('HierarchyListReorderModal', () => {
         onSubmit={(id) => {
           dropId = id;
         }}
+        onClose={jest.fn()}
       />
     );
 
@@ -230,6 +236,7 @@ describe('HierarchyListReorderModal', () => {
         onSubmit={(id) => {
           dropId = id;
         }}
+        onClose={jest.fn()}
       />
     );
 

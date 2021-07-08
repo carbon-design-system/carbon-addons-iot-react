@@ -42,7 +42,6 @@ const RowActionsError = ({
   return rowActionsError ? (
     <Fragment>
       <Tooltip
-        clickToOpen
         tabIndex={0}
         triggerText=""
         triggerId="tooltip-error"

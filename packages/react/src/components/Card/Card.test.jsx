@@ -95,7 +95,7 @@ describe('Card', () => {
 
     const button = screen.queryByLabelText('Expand to fullscreen');
 
-    const { container } = render(<Tree16 aria-hidden aria-label="Expand to fullscreen" />);
+    const { container } = render(<Tree16 aria-hidden="true" aria-label="Expand to fullscreen" />);
 
     expect(button.firstChild).toEqual(container.firstChild.firstChild);
   });

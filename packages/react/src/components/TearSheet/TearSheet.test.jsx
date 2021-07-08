@@ -10,6 +10,7 @@ import TearSheetWrapper from './TearSheetWrapper';
 
 const { iotPrefix } = settings;
 
+const TearSheetChildren = () => <div>TearSheet content</div>;
 const commonProps = {
   title: 'First TearSheet',
   description: 'First TearSheet description',
@@ -17,7 +18,7 @@ const commonProps = {
   i18n: {
     close: 'Close',
   },
-  children: <div>TearSheet content</div>,
+  children: <TearSheetChildren />,
 };
 
 const secondTearSheetCommonProps = {
@@ -116,7 +117,7 @@ describe('TearSheetWrapper', () => {
       </button>
     );
     render(
-      <TearSheetWrapper isOpen onCloseAllTearSheets={() => console.log('All TearSheets closed')}>
+      <TearSheetWrapper isOpen onCloseAllTearSheets={jest.fn()}>
         <TearSheet {...commonProps}>
           <TearSheetChild />
         </TearSheet>
@@ -184,7 +185,7 @@ describe('TearSheetWrapper', () => {
     );
     render(
       <TearSheetWrapper isOpen>
-        <TearSheet {...commonProps} onClose={() => console.log('TearSheet closed')}>
+        <TearSheet {...commonProps} onClose={jest.fn()}>
           {/* eslint-disable-next-line no-unused-vars */}
           <TearSheetChild />
         </TearSheet>

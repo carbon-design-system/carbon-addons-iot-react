@@ -204,7 +204,7 @@ describe('PageTitleBar', () => {
      render as zero width and zero height and mocking all the dimensions isn't really
      going to test the scroll handler like it should.
   */
-
+  // eslint-disable-next-line jest/no-commented-out-tests
   // it('Reacts to scrollY when set to dynamic', () => {
   //   const { container } = render(
   //     <div style={{ height: '30rem' }}>
