@@ -4754,6 +4754,7 @@ Map {
       "design": "normal",
       "extraContent": null,
       "onRowClick": [Function],
+      "testId": "resource-list",
     },
     "displayName": "ResourceList",
     "propTypes": Object {
@@ -4819,6 +4820,9 @@ Map {
       },
       "onRowClick": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
