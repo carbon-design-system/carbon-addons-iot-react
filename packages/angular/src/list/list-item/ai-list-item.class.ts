@@ -60,12 +60,6 @@ export class AIListItem {
   items?: AIListItem[];
 
   /**
-   * Nesting level of the list item. Determines the amount of space the item will be indented
-   * when rendered in the list.
-   */
-  nestingLevel?: number;
-
-  /**
    * Indicates whether or not the item can be dragged into a different position.
    */
   isDraggable?: boolean;
@@ -92,11 +86,11 @@ export class AIListItem {
     }
   }
 
-  expand(expanded: boolean) {
+  updateExpanded(expanded: boolean) {
     this.expanded = expanded;
   }
 
-  select(selected: boolean) {
+  updateSelected(selected: boolean) {
     this.selected = selected;
   }
 
@@ -124,6 +118,14 @@ export class AIListItem {
 
   hasChildren() {
     return this.items && this.items.length > 0;
+  }
+
+  someChildrenSelected() {
+    return this.items.some((item: AIListItem) => (item.isSelectable ? item.selected : false));
+  }
+
+  allChildrenSelected() {
+    return this.items.every((item: AIListItem) => (item.isSelectable ? item.selected : true));
   }
 
   protected hasItemAsChild(items: AIListItem[], item: AIListItem) {

@@ -32,7 +32,7 @@ export enum SelectionType {
       <ng-container *ngIf="data.item.id && !isArray(data.item)">
         <ai-list-item-wrapper
           [draggable]="itemsDraggable && data.item.isDraggable"
-          [isDragging]="draggingState.isDragging"
+          [isDragging]="isItemDragging"
           (dragStart)="setDraggingState(true, data.item, data.parentItem)"
           (dragEnd)="setDraggingState(false, null, null)"
           (droppedAbove)="handleDrop(data.parentItem, data.index)"
@@ -42,8 +42,7 @@ export enum SelectionType {
           <ai-list-item
             [item]="data.item"
             [nestingLevel]="data.item.hasChildren() ? data.nestingLevel - 1 : data.nestingLevel"
-            (itemSelected)="handleSelect(data.item.id)"
-            [parentId]="data.parentId"
+            (itemSelected)="handleSelect(data.item)"
             [selectionType]="selectionType"
             [draggable]="itemsDraggable"
           >
@@ -109,7 +108,51 @@ export class AIListComponent {
    */
   @Output() onSearch = new EventEmitter<string>();
 
-  draggingState = { isDragging: false, draggedItem: null, draggedItemsParent: null };
+  public isItemDragging = false;
+  public draggedItem: AIListItem = null;
+  public draggedItemParent: AIListItem = null;
+
+  handleSelect(selectedItem: AIListItem) {
+    if (this.selectionType === SelectionType.MULTI) {
+      this.updateChildSelectedStates(selectedItem);
+      this.updateParentSelectedStates(this.items);
+    } else {
+      this.onSingleSelect(this.items, selectedItem.id);
+    }
+  }
+
+  setDraggingState(isItemDragging: boolean, draggedItem: AIListItem, draggedItemParent: AIListItem) {
+    this.isItemDragging = isItemDragging;
+    this.draggedItem = draggedItem;
+    this.draggedItemParent = draggedItemParent;
+  }
+
+  handleDrop(receivingItem: AIListItem, insertIndex: number) {
+    // Don't allow list items to be dropped as one of its own children, and also
+    // don't allow list items to be dropped on itself.
+    if (
+      !this.draggedItem.hasItem(receivingItem) &&
+      (receivingItem === null || receivingItem.id !== this.draggedItem.id)
+    ) {
+      // Remove the `draggedItem` from its original position.
+      // If `draggedItemParent` is null it means `draggedItem` is a top level list item.
+      if (this.draggedItemParent === null) {
+        const removeIndex = this.items.findIndex((item: AIListItem) => item.id === this.draggedItem.id);
+        this.items.splice(removeIndex, 1);
+      } else {
+        this.draggedItemParent.removeItem(this.draggedItem);
+      }
+
+      // Place `draggedItem` as a child of `recievingItem` at the given `insertIndex`.
+      // If `receivingItem` is null it means put `draggedItem` as a top level list item.
+      if (receivingItem === null) {
+        this.items.splice(insertIndex, 0, this.draggedItem);
+      } else {
+        receivingItem.addItem(this.draggedItem, insertIndex);
+      }
+    }
+    this.setDraggingState(false, null, null);
+  }
 
   /**
    * This function returns the adjusted `nestingLevel`s of an AIListItem.
@@ -118,104 +161,48 @@ export class AIListComponent {
     return items.some((item) => item.hasChildren()) ? currentDepth + 1 : currentDepth;
   }
 
-  handleSelect(selectedItemId: string) {
-    if (this.selectionType === SelectionType.MULTI) {
-      this.updateChildSelectedStates(this.items, selectedItemId);
-      this.updateParentSelectedStates(this.items);
-    } else {
-      this.handleSingleSelect(this.items, selectedItemId);
-    }
-  }
-
-  setDraggingState(isDragging: boolean, draggedItem: AIListItem, draggedItemsParent: AIListItem) {
-    this.draggingState = {
-      isDragging,
-      draggedItem,
-      draggedItemsParent,
-    };
-  }
-
-  handleDrop(receivingItem: AIListItem, insertIndex: number) {
-    if (
-      !this.draggingState.draggedItem.hasItem(receivingItem) &&
-      (receivingItem === null || receivingItem.id !== this.draggingState.draggedItem.id)
-    ) {
-      if (this.draggingState.draggedItemsParent === null) {
-        const removeIndex = this.items.findIndex(
-          (item: AIListItem) => item.id === this.draggingState.draggedItem.id
-        );
-        this.items.splice(removeIndex, 1);
-      } else {
-        this.draggingState.draggedItemsParent.removeItem(this.draggingState.draggedItem);
-      }
-      if (receivingItem === null) {
-        this.items.splice(insertIndex, 0, this.draggingState.draggedItem);
-      } else {
-        receivingItem.addItem(this.draggingState.draggedItem, insertIndex);
-      }
-    }
-    this.setDraggingState(false, null, null);
-  }
-
   isArray(obj: any) {
     return Array.isArray(obj);
   }
 
-  protected updateChildSelectedStates(
-    items: AIListItem[],
-    selectedId: string,
-    selected: boolean = null
-  ) {
-    items.forEach((item: AIListItem) => {
-      if (selected !== null && item.isSelectable) {
-        item.select(selected);
-      }
-
-      if (item.items && item.items.length > 0) {
-        if (item.id === selectedId) {
-          this.updateChildSelectedStates(item.items, selectedId, item.selected);
-        } else {
-          this.updateChildSelectedStates(item.items, selectedId, selected);
-        }
-      }
-    });
+  protected updateChildSelectedStates(selectedItem: AIListItem) {
+    if (selectedItem.hasChildren()) {
+      selectedItem.items.forEach((item: AIListItem) => {
+        item.updateSelected(selectedItem.selected);
+        this.updateChildSelectedStates(item);
+      });
+    }
   }
 
   protected updateParentSelectedStates(items: AIListItem[]) {
     items.forEach((item: AIListItem) => {
-      if (item.items && item.items.length > 0) {
+      if (item.hasChildren()) {
         this.updateParentSelectedStates(item.items);
       } else {
         return;
       }
 
-      if (
-        item.isSelectable &&
-        item.items.every((item: AIListItem) => (item.isSelectable ? item.selected : true))
-      ) {
-        item.select(true);
+      if (item.isSelectable && item.allChildrenSelected()) {
+        item.updateSelected(true);
         item.updateIndeterminate(false);
-      } else if (
-        item.isSelectable &&
-        item.items.some((item: AIListItem) => (item.isSelectable ? item.selected : false))
-      ) {
-        item.select(false);
+      } else if (item.isSelectable && item.someChildrenSelected()) {
+        item.updateSelected(false);
         item.updateIndeterminate(true);
       } else {
-        item.select(false);
+        item.updateSelected(false);
         item.updateIndeterminate(false);
       }
     });
   }
 
-  protected handleSingleSelect(items: AIListItem[], selectedId: string) {
+  protected onSingleSelect(items: AIListItem[], selectedId: string) {
     items.forEach((item: AIListItem) => {
       if (item.id !== selectedId) {
-        item.select(false);
+        item.updateSelected(false);
       }
 
-      if (item.items && item.items.length > 0) {
-        this.handleSingleSelect(item.items, selectedId);
+      if (item.hasChildren()) {
+        this.onSingleSelect(item.items, selectedId);
       }
     });
   }

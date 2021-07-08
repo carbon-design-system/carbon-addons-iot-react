@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SelectionType } from '../ai-list.component';
 import { AIListItem } from './ai-list-item.class';
 
@@ -38,9 +38,9 @@ import { AIListItem } from './ai-list-item.class';
         [ngStyle]="{ width: 30 * nestingLevel + 'px' }"
       ></div>
       <div
-        *ngIf="item.items && item.items.length > 0"
+        *ngIf="item.hasChildren()"
         role="button"
-        (click)="item.expand(!item.expanded)"
+        (click)="item.updateExpanded(!item.expanded)"
         tabindex="0"
         class="iot--list-item--expand-icon"
       >
@@ -95,6 +95,7 @@ import { AIListItem } from './ai-list-item.class';
     </div>
   `,
 })
+
 export class AIListItemComponent {
   @Input() item: AIListItem;
   /**
@@ -120,15 +121,13 @@ export class AIListItemComponent {
    */
   @Input() selectionType: SelectionType;
 
-  @Input() parentId: string;
-
   /**
    * Emitted if the item has been selected.
    */
   @Output() itemSelected = new EventEmitter<any>();
 
   handleSelect(select: boolean) {
-    this.item.select(select);
+    this.item.updateSelected(select);
     this.itemSelected.emit();
   }
 }

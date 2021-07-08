@@ -8,10 +8,6 @@ export class AIListTargetDirective {
 
   @Input() targetSize = 33;
 
-  @Output() active = new EventEmitter<boolean>();
-
-  @Output() leave = new EventEmitter();
-
   @Output() dropping = new EventEmitter();
 
   isActive = false;
@@ -47,7 +43,6 @@ export class AIListTargetDirective {
   @HostListener('dragenter', ['$event'])
   handleDrag(event: DragEvent) {
     event.preventDefault();
-    this.active.emit(true);
     this.isActive = true;
   }
 
@@ -58,8 +53,6 @@ export class AIListTargetDirective {
 
   @HostListener('dragleave')
   handleLeave() {
-    this.leave.emit();
-    this.active.emit(false);
     this.isActive = false;
   }
 }
