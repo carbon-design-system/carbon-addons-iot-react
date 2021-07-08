@@ -17,6 +17,7 @@ import ImageHotspots, {
   zoom,
   handleMouseUp,
   calculateHotspotContainerLayout,
+  calculateObjectFitOffset,
 } from './ImageHotspots';
 
 const commonProps = {
@@ -251,6 +252,48 @@ describe('ImageHotspots', () => {
         displayOption: 'fill',
       })
     ).toEqual(600);
+  });
+
+  it('calculateObjectFitOffset', () => {
+    expect(
+      calculateObjectFitOffset({
+        displayOption: undefined,
+        container: { width: 600, height: 200 },
+        image: { width: 300, height: 200 },
+      })
+    ).toEqual({ x: 0, y: 0 });
+
+    expect(
+      calculateObjectFitOffset({
+        displayOption: 'fill',
+        container: { width: 600, height: 200 },
+        image: { width: 300, height: 200 },
+      })
+    ).toEqual({ x: 0, y: 0 });
+
+    expect(
+      calculateObjectFitOffset({
+        displayOption: 'contain',
+        container: { width: 300, height: 200 },
+        image: { width: 300, height: 200 },
+      })
+    ).toEqual({ x: 0, y: 0 });
+
+    expect(
+      calculateObjectFitOffset({
+        displayOption: 'contain',
+        container: { width: 600, height: 200 },
+        image: { width: 300, height: 200 },
+      })
+    ).toEqual({ x: 150, y: 0 });
+
+    expect(
+      calculateObjectFitOffset({
+        displayOption: 'contain',
+        container: { width: 300, height: 400 },
+        image: { width: 300, height: 200 },
+      })
+    ).toEqual({ x: 0, y: 100 });
   });
 
   describe('calculates hotspots container layout', () => {
@@ -642,7 +685,7 @@ describe('ImageHotspots', () => {
         const img = screen.getByAltText('landscape-test-image');
         fireEvent.load(img);
         expect(img).toHaveStyle({
-          width: '2370px',
+          width: '100%',
           height: '100%',
           top: '0',
           left: '0',

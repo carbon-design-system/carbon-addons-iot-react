@@ -278,6 +278,15 @@ export const calculateHotspotContainerLayout = (
   return { width, height, top };
 };
 
+export const calculateObjectFitOffset = ({ displayOption, container, image }) => {
+  const result = { x: 0, y: 0 };
+  if (displayOption === 'contain') {
+    result.y = container.height / 2 - image.height / 2;
+    result.x = container.width / 2 - image.width / 2;
+  }
+  return result;
+};
+
 /** Sets initialWidth and initialHeight of an image, offsets orientations in the state */
 export const onImageLoad = (
   { target: imageLoaded },
@@ -362,6 +371,8 @@ export const zoom = (
 
   // Reset image position, (i.e. zoom to fit)
   if (scale === 1) {
+    const objectFitOffset = calculateObjectFitOffset({ displayOption, container, image });
+
     setImage({
       ...image,
       width,
@@ -369,8 +380,8 @@ export const zoom = (
       scale: 1,
       offsetX: 0,
       offsetY: displayOption ? 0 : container.height / 2 - height / 2,
-      objectFitOffsetY: displayOption ? container.height / 2 - height / 2 : 0,
-      objectFitOffsetX: displayOption ? container.width / 2 - width / 2 : 0,
+      objectFitOffsetY: objectFitOffset.y,
+      objectFitOffsetX: objectFitOffset.x,
     });
     setMinimap({
       ...minimap,
@@ -486,17 +497,21 @@ export const getAccumulatedOffset = (imageElement) => {
  */
 export const cursorIsOnObjectFitOffset = (
   mouseEvent,
-  { height, width, objectFitOffsetY, objectFitOffsetX }
+  { height, width, objectFitOffsetY, objectFitOffsetX },
+  displayOption
 ) => {
-  const accumelatedOffset = getAccumulatedOffset(mouseEvent.currentTarget);
-  const posY = mouseEvent.clientY - accumelatedOffset.top;
-  const posX = mouseEvent.clientX - accumelatedOffset.left;
-  return (
-    posY < objectFitOffsetY ||
-    posX < objectFitOffsetX ||
-    posY > objectFitOffsetY + height ||
-    posX > objectFitOffsetX + width
-  );
+  if (displayOption === 'contain') {
+    const accumelatedOffset = getAccumulatedOffset(mouseEvent.currentTarget);
+    const posY = mouseEvent.clientY - accumelatedOffset.top;
+    const posX = mouseEvent.clientX - accumelatedOffset.left;
+    return (
+      posY < objectFitOffsetY ||
+      posX < objectFitOffsetX ||
+      posY > objectFitOffsetY + height ||
+      posX > width + objectFitOffsetX
+    );
+  }
+  return false;
 };
 
 /** Calculates the mouse click position in percentage and returns the
@@ -796,8 +811,8 @@ const ImageHotspots = ({
       if (!displayOption && image.orientation === 'portrait') {
         imageStyle.width = image.height / image.ratio;
       } else if (
+        !displayOption &&
         image.orientation === 'landscape' &&
-        displayOption !== 'fill' &&
         image.width < container.width
       ) {
         imageStyle.width = image.width;
@@ -863,13 +878,15 @@ const ImageHotspots = ({
             } else {
               setCursor({
                 ...cursor,
-                imageMousedown: !cursorIsOnObjectFitOffset(evt, image),
+                imageMousedown: !cursorIsOnObjectFitOffset(evt, image, displayOption),
               });
             }
           }}
           onMouseMove={(evt) => {
             if (!dragging) {
-              setAllowCrossHair(isEditable && !cursorIsOnObjectFitOffset(evt, image));
+              setAllowCrossHair(
+                isEditable && !cursorIsOnObjectFitOffset(evt, image, displayOption)
+              );
             }
             if (!hideZoomControls && draggable && dragPrepared) {
               startDrag(evt, 'image', cursor, setCursor);
