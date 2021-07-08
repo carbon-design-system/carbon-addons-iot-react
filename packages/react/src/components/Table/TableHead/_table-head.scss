@@ -20,7 +20,6 @@
     display: flex;
     user-select: none;
     overflow: hidden;
-    flex-wrap: wrap;
     // allow the multiselect filter to expand to full height and the table to scroll
     .#{$prefix}--multi-select .#{$prefix}--list-box__menu {
       max-height: unset;
