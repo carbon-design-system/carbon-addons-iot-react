@@ -1347,6 +1347,21 @@ describe('cardUtilityFunctions', () => {
         expect(updatedCard.thresholds[0].value).toEqual(100);
         expect(updatedCard.thresholds[1].value).toEqual('mystring');
       });
+
+      it('replaceVariables handles null targets', () => {
+        const card = {
+          title: 'untitled',
+          values: [{ value1: null, value2: 'a value: {value1}' }],
+        };
+        const cardVariables = {
+          value1: 'myValue1Value',
+        };
+        const variables = ['value1'];
+        expect(replaceVariables(variables, cardVariables, card)).toEqual({
+          title: 'untitled',
+          values: [{ value1: null, value2: 'a value: myValue1Value' }],
+        });
+      });
     });
   });
 
