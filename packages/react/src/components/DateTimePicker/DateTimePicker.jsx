@@ -1,8 +1,6 @@
-/* eslint-disable no-underscore-dangle */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Button,
   DatePicker,
   DatePickerInput,
   RadioButtonGroup,
@@ -22,55 +20,15 @@ import uuid from 'uuid';
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
 import dayjs from '../../utils/dayjs';
+import {
+  PICKER_KINDS,
+  PRESET_VALUES,
+  INTERVAL_VALUES,
+  RELATIVE_VALUES,
+} from '../../constants/DateConstants';
+import Button from '../Button/Button';
 
 const { iotPrefix } = settings;
-
-export const PICKER_KINDS = {
-  PRESET: 'PRESET',
-  RELATIVE: 'RELATIVE',
-  ABSOLUTE: 'ABSOLUTE',
-};
-
-export const PRESET_VALUES = [
-  {
-    id: 'item-01',
-    label: 'Last 30 minutes',
-    offset: 30,
-  },
-  {
-    id: 'item-02',
-    label: 'Last 1 hour',
-    offset: 60,
-  },
-  {
-    id: 'item-03',
-    label: 'Last 6 hours',
-    offset: 360,
-  },
-  {
-    id: 'item-04',
-    label: 'Last 12 hours',
-    offset: 720,
-  },
-  {
-    id: 'item-05',
-    label: 'Last 24 hours',
-    offset: 1440,
-  },
-];
-
-export const INTERVAL_VALUES = {
-  MINUTES: 'MINUTES',
-  HOURS: 'HOURS',
-  DAYS: 'DAYS',
-  WEEKS: 'WEEKS',
-  MONTHS: 'MONTHS',
-  YEARS: 'YEARS',
-};
-export const RELATIVE_VALUES = {
-  YESTERDAY: 'YESTERDAY',
-  TODAY: 'TODAY',
-};
 
 const propTypes = {
   testId: PropTypes.string,
@@ -176,6 +134,8 @@ const propTypes = {
   locale: PropTypes.string,
   /** Unique id of the component */
   id: PropTypes.string,
+  /** Optionally renders only an icon rather than displaying the current selected time */
+  hasIconOnly: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -261,6 +221,7 @@ const defaultProps = {
   light: false,
   locale: 'en',
   id: undefined,
+  hasIconOnly: false,
 };
 
 const DateTimePicker = ({
@@ -282,12 +243,17 @@ const DateTimePicker = ({
   light,
   locale,
   id = uuid.v4(),
+  hasIconOnly,
   ...others
 }) => {
-  const strings = {
-    ...defaultProps.i18n,
-    ...i18n,
-  };
+  const strings = useMemo(
+    () => ({
+      ...defaultProps.i18n,
+      ...i18n,
+    }),
+    [i18n]
+  );
+
   // initialize the dayjs locale
   useEffect(() => {
     dayjs.locale(locale);
@@ -710,11 +676,14 @@ const DateTimePicker = ({
       data-testid={testId}
       id={`${id}-${iotPrefix}--date-time-picker__wrapper`}
       className={`${iotPrefix}--date-time-picker__wrapper`}
+      style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
     >
       <div
-        className={`${iotPrefix}--date-time-picker__box ${
-          light ? `${iotPrefix}--date-time-picker__box--light` : ''
-        }`}
+        className={classnames({
+          [`${iotPrefix}--date-time-picker__box--light`]: light,
+          [`${iotPrefix}--date-time-picker__box--full`]: !hasIconOnly,
+          [`${iotPrefix}--date-time-picker__box--icon-only`]: hasIconOnly,
+        })}
       >
         <div
           data-testid={`${testId}__field`}
@@ -724,22 +693,26 @@ const DateTimePicker = ({
           onKeyPress={onFieldClick}
           tabIndex={0}
         >
-          {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
+          {hasIconOnly ? (
+            <Calendar16 aria-label={strings.calendarLabel} />
+          ) : isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
             <span title={humanValue}>{humanValue}</span>
           ) : humanValue ? (
-            <TooltipDefinition
-              align="start"
-              direction="bottom"
-              tooltipText={tooltipValue}
-              triggerClassName=""
-            >
-              {humanValue}
-            </TooltipDefinition>
+            <>
+              <TooltipDefinition
+                align="start"
+                direction="bottom"
+                tooltipText={tooltipValue}
+                triggerClassName=""
+              >
+                {humanValue}
+              </TooltipDefinition>
+              <Calendar16
+                aria-label={strings.calendarLabel}
+                className={`${iotPrefix}--date-time-picker__icon`}
+              />
+            </>
           ) : null}
-          <Calendar16
-            aria-label={strings.calendarLabel}
-            className={`${iotPrefix}--date-time-picker__icon`}
-          />
         </div>
         <div
           className={classnames(`${iotPrefix}--date-time-picker__menu`, {
