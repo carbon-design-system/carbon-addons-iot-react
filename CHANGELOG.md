@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.44](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.43...v2.146.0-next.44) (2021-07-08)
+
+
+### Bug Fixes
+
+* **card-variables:** handle null values in handle-card-variables ([a7ec678](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a7ec678fe93d0cfc986c95e8b72354e4a083f21a))
+
+
+
+
+
 # [2.146.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.42...v2.146.0-next.43) (2021-07-02)
 
 **Note:** Version bump only for package ibm-ai-applications
