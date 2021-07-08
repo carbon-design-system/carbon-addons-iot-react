@@ -95,7 +95,6 @@ import { AIListItem } from './ai-list-item.class';
     </div>
   `,
 })
-
 export class AIListItemComponent {
   @Input() item: AIListItem;
   /**

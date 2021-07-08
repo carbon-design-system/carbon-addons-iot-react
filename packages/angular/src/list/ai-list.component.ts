@@ -121,7 +121,11 @@ export class AIListComponent {
     }
   }
 
-  setDraggingState(isItemDragging: boolean, draggedItem: AIListItem, draggedItemParent: AIListItem) {
+  setDraggingState(
+    isItemDragging: boolean,
+    draggedItem: AIListItem,
+    draggedItemParent: AIListItem
+  ) {
     this.isItemDragging = isItemDragging;
     this.draggedItem = draggedItem;
     this.draggedItemParent = draggedItemParent;
@@ -137,7 +141,9 @@ export class AIListComponent {
       // Remove the `draggedItem` from its original position.
       // If `draggedItemParent` is null it means `draggedItem` is a top level list item.
       if (this.draggedItemParent === null) {
-        const removeIndex = this.items.findIndex((item: AIListItem) => item.id === this.draggedItem.id);
+        const removeIndex = this.items.findIndex(
+          (item: AIListItem) => item.id === this.draggedItem.id
+        );
         this.items.splice(removeIndex, 1);
       } else {
         this.draggedItemParent.removeItem(this.draggedItem);
