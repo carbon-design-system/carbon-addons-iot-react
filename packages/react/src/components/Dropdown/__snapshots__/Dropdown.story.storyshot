@@ -7,114 +7,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": 300,
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": 300,
-        }
-      }
+      className="bx--dropdown__wrapper bx--list-box__wrapper"
     >
-      <div
-        className="bx--dropdown__wrapper bx--list-box__wrapper"
+      <label
+        className="bx--label"
+        htmlFor="downshift-0-toggle-button"
+        id="downshift-0-label"
       >
-        <label
-          className="bx--label"
-          htmlFor="downshift-0-toggle-button"
-          id="downshift-0-label"
-        >
-          Dropdown label
-        </label>
-        <div
-          className="bx--dropdown iot--dropdown bx--list-box"
-          id="default"
+        Dropdown label
+      </label>
+      <div
+        className="bx--dropdown iot--dropdown bx--list-box"
+        id="default"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <button
+          aria-disabled={false}
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-0-label downshift-0-toggle-button"
+          className="bx--list-box__field"
+          disabled={false}
+          id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-disabled={false}
-            aria-expanded={false}
-            aria-haspopup="listbox"
-            aria-labelledby="downshift-0-label downshift-0-toggle-button"
-            className="bx--list-box__field"
-            disabled={false}
-            id="downshift-0-toggle-button"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
+          <span
+            className="bx--list-box__label"
           >
-            <span
-              className="bx--list-box__label"
-            >
-              Dropdown menu options
-            </span>
-            <div
-              className="bx--list-box__menu-icon"
-            >
-              <svg
-                aria-hidden={true}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                name="chevron--down"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                />
-                <title />
-              </svg>
-            </div>
-          </button>
+            Dropdown menu options
+          </span>
           <div
-            aria-labelledby="downshift-0-label"
-            className="bx--list-box__menu"
-            id="downshift-0-menu"
-            onBlur={[Function]}
-            onKeyDown={[Function]}
-            onMouseLeave={[Function]}
-            role="listbox"
-            tabIndex={-1}
-          />
-        </div>
+            className="bx--list-box__menu-icon"
+          >
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              name="chevron--down"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+              />
+              <title />
+            </svg>
+          </div>
+        </button>
         <div
-          className="bx--form__helper-text"
-        >
-          This is some helper text
-        </div>
+          aria-labelledby="downshift-0-label"
+          className="bx--list-box__menu"
+          id="downshift-0-menu"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+          onMouseLeave={[Function]}
+          role="listbox"
+          tabIndex={-1}
+        />
+      </div>
+      <div
+        className="bx--form__helper-text"
+      >
+        This is some helper text
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -125,109 +93,77 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": 600,
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": 600,
-        }
-      }
+      className="bx--dropdown__wrapper bx--list-box__wrapper bx--dropdown__wrapper--inline bx--list-box__wrapper--inline"
     >
-      <div
-        className="bx--dropdown__wrapper bx--list-box__wrapper bx--dropdown__wrapper--inline bx--list-box__wrapper--inline"
+      <label
+        className="bx--label"
+        htmlFor="downshift-0-toggle-button"
+        id="downshift-0-label"
       >
-        <label
-          className="bx--label"
-          htmlFor="downshift-0-toggle-button"
-          id="downshift-0-label"
-        >
-          Inline dropdown label
-        </label>
-        <div
-          className="bx--dropdown iot--dropdown bx--dropdown--inline bx--list-box"
-          id="inline"
+        Inline dropdown label
+      </label>
+      <div
+        className="bx--dropdown iot--dropdown bx--dropdown--inline bx--list-box"
+        id="inline"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <button
+          aria-disabled={false}
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-0-label downshift-0-toggle-button"
+          className="bx--list-box__field"
+          disabled={false}
+          id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-disabled={false}
-            aria-expanded={false}
-            aria-haspopup="listbox"
-            aria-labelledby="downshift-0-label downshift-0-toggle-button"
-            className="bx--list-box__field"
-            disabled={false}
-            id="downshift-0-toggle-button"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
+          <span
+            className="bx--list-box__label"
           >
-            <span
-              className="bx--list-box__label"
-            >
-              Dropdown menu options
-            </span>
-            <div
-              className="bx--list-box__menu-icon"
-            >
-              <svg
-                aria-hidden={true}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                name="chevron--down"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                />
-                <title />
-              </svg>
-            </div>
-          </button>
+            Dropdown menu options
+          </span>
           <div
-            aria-labelledby="downshift-0-label"
-            className="bx--list-box__menu"
-            id="downshift-0-menu"
-            onBlur={[Function]}
-            onKeyDown={[Function]}
-            onMouseLeave={[Function]}
-            role="listbox"
-            tabIndex={-1}
-          />
-        </div>
+            className="bx--list-box__menu-icon"
+          >
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              name="chevron--down"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+              />
+              <title />
+            </svg>
+          </div>
+        </button>
+        <div
+          aria-labelledby="downshift-0-label"
+          className="bx--list-box__menu"
+          id="downshift-0-menu"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+          onMouseLeave={[Function]}
+          role="listbox"
+          tabIndex={-1}
+        />
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -238,115 +174,83 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": 300,
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": 300,
-        }
-      }
+      className="bx--dropdown__wrapper bx--list-box__wrapper"
     >
-      <div
-        className="bx--dropdown__wrapper bx--list-box__wrapper"
+      <label
+        className="bx--label"
+        htmlFor="downshift-0-toggle-button"
+        id="downshift-0-label"
       >
-        <label
-          className="bx--label"
-          htmlFor="downshift-0-toggle-button"
-          id="downshift-0-label"
-        >
-          Dropdown label
-        </label>
-        <div
-          aria-label="Dropdown"
-          className="bx--dropdown iot--dropdown bx--list-box"
-          id="carbon-dropdown-example"
+        Dropdown label
+      </label>
+      <div
+        aria-label="Dropdown"
+        className="bx--dropdown iot--dropdown bx--list-box"
+        id="carbon-dropdown-example"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <button
+          aria-disabled={false}
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-0-label downshift-0-toggle-button"
+          className="bx--list-box__field"
+          disabled={false}
+          id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-disabled={false}
-            aria-expanded={false}
-            aria-haspopup="listbox"
-            aria-labelledby="downshift-0-label downshift-0-toggle-button"
-            className="bx--list-box__field"
-            disabled={false}
-            id="downshift-0-toggle-button"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
+          <span
+            className="bx--list-box__label"
           >
-            <span
-              className="bx--list-box__label"
-            >
-              Dropdown menu options
-            </span>
-            <div
-              className="bx--list-box__menu-icon"
-            >
-              <svg
-                aria-hidden={true}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                name="chevron--down"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                />
-                <title />
-              </svg>
-            </div>
-          </button>
+            Dropdown menu options
+          </span>
           <div
-            aria-labelledby="downshift-0-label"
-            className="bx--list-box__menu"
-            id="downshift-0-menu"
-            onBlur={[Function]}
-            onKeyDown={[Function]}
-            onMouseLeave={[Function]}
-            role="listbox"
-            tabIndex={-1}
-          />
-        </div>
+            className="bx--list-box__menu-icon"
+          >
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              name="chevron--down"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+              />
+              <title />
+            </svg>
+          </div>
+        </button>
         <div
-          className="bx--form__helper-text"
-        >
-          This is some helper text.
-        </div>
+          aria-labelledby="downshift-0-label"
+          className="bx--list-box__menu"
+          id="downshift-0-menu"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+          onMouseLeave={[Function]}
+          role="listbox"
+          tabIndex={-1}
+        />
+      </div>
+      <div
+        className="bx--form__helper-text"
+      >
+        This is some helper text.
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -357,54 +261,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": 300,
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": 300,
-        }
-      }
+      className="bx--skeleton bx--dropdown-v2 bx--list-box bx--form-item"
     >
       <div
-        className="bx--skeleton bx--dropdown-v2 bx--list-box bx--form-item"
+        className="bx--list-box__field"
       >
-        <div
-          className="bx--list-box__field"
-        >
-          <span
-            className="bx--list-box__label"
-          />
-        </div>
+        <span
+          className="bx--list-box__label"
+        />
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -415,114 +287,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "300px",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "300px",
-        }
-      }
+      className="bx--dropdown__wrapper bx--list-box__wrapper"
     >
-      <div
-        className="bx--dropdown__wrapper bx--list-box__wrapper"
+      <label
+        className="bx--label"
+        htmlFor="downshift-0-toggle-button"
+        id="downshift-0-label"
       >
-        <label
-          className="bx--label"
-          htmlFor="downshift-0-toggle-button"
-          id="downshift-0-label"
-        >
-          Dropdown label
-        </label>
-        <div
-          aria-label="Dropdown"
-          className="bx--dropdown iot--dropdown bx--list-box"
-          id="some-dropdown-id"
+        Dropdown label
+      </label>
+      <div
+        aria-label="Dropdown"
+        className="bx--dropdown iot--dropdown bx--list-box"
+        id="some-dropdown-id"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <button
+          aria-disabled={false}
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-0-label downshift-0-toggle-button"
+          className="bx--list-box__field"
+          disabled={false}
+          id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-disabled={false}
-            aria-expanded={false}
-            aria-haspopup="listbox"
-            aria-labelledby="downshift-0-label downshift-0-toggle-button"
-            className="bx--list-box__field"
-            disabled={false}
-            id="downshift-0-toggle-button"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
+          <span
+            className="bx--list-box__label"
           >
-            <span
-              className="bx--list-box__label"
-            >
-              Dropdown menu options
-            </span>
-            <div
-              className="bx--list-box__menu-icon"
-            >
-              <svg
-                aria-hidden={true}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                name="chevron--down"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                />
-                <title />
-              </svg>
-            </div>
-          </button>
+            Dropdown menu options
+          </span>
           <div
-            aria-labelledby="downshift-0-label"
-            className="bx--list-box__menu"
-            id="downshift-0-menu"
-            onBlur={[Function]}
-            onKeyDown={[Function]}
-            onMouseLeave={[Function]}
-            role="listbox"
-            tabIndex={-1}
-          />
-        </div>
+            className="bx--list-box__menu-icon"
+          >
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              name="chevron--down"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+              />
+              <title />
+            </svg>
+          </div>
+        </button>
         <div
-          className="bx--form__helper-text"
-        >
-          This is some helper text.
-        </div>
+          aria-labelledby="downshift-0-label"
+          className="bx--list-box__menu"
+          id="downshift-0-menu"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+          onMouseLeave={[Function]}
+          role="listbox"
+          tabIndex={-1}
+        />
+      </div>
+      <div
+        className="bx--form__helper-text"
+      >
+        This is some helper text.
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

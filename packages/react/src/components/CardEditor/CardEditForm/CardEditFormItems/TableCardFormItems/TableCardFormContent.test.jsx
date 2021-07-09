@@ -31,6 +31,7 @@ const commonProps = {
     deviceid: ['73000', '73001'],
   },
   onChange: mockOnChange,
+  selectedTimeRange: 'this week',
   setSelectedDataItems: jest.fn(),
   translateWithId: jest.fn((id) => {
     switch (id) {

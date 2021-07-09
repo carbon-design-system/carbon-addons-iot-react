@@ -1,7 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen, waitFor } from '@testing-library/react';
 
+import '@testing-library/jest-dom/extend-expect';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import Table from '../Table/Table';
@@ -84,7 +84,19 @@ describe('utility functions', () => {
 */
 
 describe('PieChartCard', () => {
-  it('shows loading skeleton for isLoading even for empty data  ', () => {
+  const originalDev = global.__DEV__;
+  const originalError = console.error;
+  const error = jest.fn();
+  beforeEach(() => {
+    console.error = error;
+    global.__DEV__ = true;
+  });
+  afterEach(() => {
+    error.mockReset();
+    console.error = originalError;
+    global.__DEV__ = originalDev;
+  });
+  it('shows loading skeleton for isLoading even for empty data  ', async () => {
     const loadingSkeletonQuery = '.iot--pie-chart-container svg.chart-skeleton';
     const { container, rerender } = render(<PieChartCard {...pieChartCardProps} />);
     let svgLoadingIcon = container.querySelector(loadingSkeletonQuery);
@@ -101,6 +113,12 @@ describe('PieChartCard', () => {
     rerender(<PieChartCard {...pieChartCardProps} values={[]} isLoading />);
     svgLoadingIcon = container.querySelector(loadingSkeletonQuery);
     expect(svgLoadingIcon).toBeVisible();
+
+    await waitFor(() => {
+      expect(error).toHaveBeenCalledWith(
+        expect.stringContaining('Missing CSS styles for Carbon Charts')
+      );
+    });
   });
 
   it('shows empty data message when there are no values', () => {
@@ -109,12 +127,17 @@ describe('PieChartCard', () => {
     expect(screen.queryByText(noDataMsg)).toBeVisible();
   });
 
-  it('shows table when the card is expanded', () => {
+  it('shows table when the card is expanded', async () => {
     render(<PieChartCard {...pieChartCardProps} isExpanded />);
     expect(screen.getByTestId('test-pie-chart-card-table')).toBeVisible();
+    await waitFor(() => {
+      expect(error).toHaveBeenCalledWith(
+        expect.stringContaining('Missing CSS styles for Carbon Charts')
+      );
+    });
   });
 
-  it('shows uses labels based on groupDataSourceId', () => {
+  it('shows uses labels based on groupDataSourceId', async () => {
     const groupBasedLabelExample = 'Misc';
     const categoryBasedLabelExample = 'cat A';
     const { rerender } = render(<PieChartCard {...pieChartCardProps} groupDataSourceId="group" />);
@@ -124,9 +147,14 @@ describe('PieChartCard', () => {
     rerender(<PieChartCard {...pieChartCardProps} content={{ groupDataSourceId: 'category' }} />);
     expect(screen.getByText(categoryBasedLabelExample)).toBeVisible();
     expect(screen.queryByText(groupBasedLabelExample)).toBeFalsy();
+    await waitFor(() => {
+      expect(error).toHaveBeenCalledWith(
+        expect.stringContaining('Missing CSS styles for Carbon Charts')
+      );
+    });
   });
 
-  it('supports card variables', () => {
+  it('supports card variables', async () => {
     const chartDataExampleWithVariable = [
       { ...chartDataExample[0], group: `{var1}` },
       ...chartDataExample.slice(1),
@@ -140,9 +168,14 @@ describe('PieChartCard', () => {
       />
     );
     expect(screen.getByText(variableValue)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(error).toHaveBeenCalledWith(
+        expect.stringContaining('Missing CSS styles for Carbon Charts')
+      );
+    });
   });
 
-  it('supports custom colors', () => {
+  it('supports custom colors', async () => {
     const colorsMap = {
       'cat A': 'red',
       'cat B': 'green',
@@ -167,9 +200,14 @@ describe('PieChartCard', () => {
     for (let index = 0; index < orderedColors.length; index += 1) {
       expect(slices.item(index).getAttribute('fill')).toEqual(orderedColors[index]);
     }
+    await waitFor(() => {
+      expect(error).toHaveBeenCalledWith(
+        expect.stringContaining('Missing CSS styles for Carbon Charts')
+      );
+    });
   });
 
-  it('supports custom labels', () => {
+  it('supports custom labels', async () => {
     render(
       <PieChartCard
         {...pieChartCardProps}
@@ -184,17 +222,29 @@ describe('PieChartCard', () => {
     chartDataExample.forEach((sliceData) => {
       expect(screen.getByText(`test-label-${sliceData.value}`)).toBeVisible();
     });
+
+    await waitFor(() => {
+      expect(error).toHaveBeenCalledWith(
+        expect.stringContaining('Missing CSS styles for Carbon Charts')
+      );
+    });
   });
 
-  it('shows sample data for isEditable', () => {
+  it('shows sample data for isEditable', async () => {
     render(<PieChartCard {...pieChartCardProps} isEditable />);
     expect(screen.getByText('Sample 0')).toBeVisible();
     expect(screen.getByText('Sample 1')).toBeVisible();
     expect(screen.getByText('Sample 2')).toBeVisible();
     expect(screen.getByText('Sample 3')).toBeVisible();
+
+    await waitFor(() => {
+      expect(error).toHaveBeenCalledWith(
+        expect.stringContaining('Missing CSS styles for Carbon Charts')
+      );
+    });
   });
 
-  it('uses custom colors for sample data slices', () => {
+  it('uses custom colors for sample data slices', async () => {
     const colorsMap = {
       'cat A': 'red',
       'cat B': 'green',
@@ -217,6 +267,12 @@ describe('PieChartCard', () => {
     // the value so we don't know the order of the colors in this test.
     expect([firstSliceColor, secondSliceColor]).toContain('red');
     expect([firstSliceColor, secondSliceColor]).toContain('green');
+
+    await waitFor(() => {
+      expect(error).toHaveBeenCalledWith(
+        expect.stringContaining('Missing CSS styles for Carbon Charts')
+      );
+    });
   });
 
   it('can be customised with component overrides', () => {
@@ -247,7 +303,7 @@ describe('PieChartCard', () => {
     expect(screen.getByTestId('custom-test-table')).toBeInTheDocument();
   });
 
-  it('can be customised with props overrides', () => {
+  it('can be customised with props overrides', async () => {
     render(
       <PieChartCard
         {...pieChartCardProps}
@@ -269,5 +325,11 @@ describe('PieChartCard', () => {
     expect(screen.getByTestId('custom-test-card')).toBeInTheDocument();
     expect(screen.getByText('cat A')).toBeInTheDocument();
     expect(screen.getByTestId('custom-test-table')).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(error).toHaveBeenCalledWith(
+        expect.stringContaining('Missing CSS styles for Carbon Charts')
+      );
+    });
   });
 });

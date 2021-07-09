@@ -286,7 +286,7 @@ const RuleBuilder = ({
                   className={`${baseClass}--title-input`}
                   labelText={mergedI18n.filterNameLabel}
                   light
-                  value={currentFilter.filterTitleText}
+                  defaultValue={currentFilter.filterTitleText}
                   placeholder="Untitled 01"
                   onChange={(e) => handleOnChange(e.target.value, 'TITLE')}
                 />

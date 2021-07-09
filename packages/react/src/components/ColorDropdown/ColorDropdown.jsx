@@ -29,6 +29,8 @@ const colorPropType = PropTypes.shape({
 const propTypes = {
   /** Array of colors to be shown */
   colors: PropTypes.arrayOf(colorPropType),
+  /** True disables the control */
+  disabled: PropTypes.bool,
   /** The label of the Dropdown, defaults to 'Select a color' */
   label: PropTypes.string,
   /** True if the dropdown should hide the color names that display next to the color box */
@@ -64,6 +66,7 @@ const defaultProps = {
     { carbonColor: teal50, name: 'teal50' },
     { carbonColor: cyan90, name: 'cyan90' },
   ],
+  disabled: false,
   label: 'Select a color',
   hideLabels: false,
   light: false,
@@ -75,6 +78,7 @@ const defaultProps = {
 
 const ColorDropdown = ({
   colors,
+  disabled,
   id,
   label,
   hideLabels,
@@ -129,7 +133,8 @@ const ColorDropdown = ({
       selectedItem={selectedColor}
       titleText={titleText}
       type="default"
-      test-id={testID}
+      data-testid={testID}
+      disabled={disabled}
     />
   );
 };

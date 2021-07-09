@@ -67,9 +67,7 @@ export const Stateful = () => (
   />
 );
 
-Stateful.story = {
-  name: 'stateful',
-};
+Stateful.storyName = 'stateful';
 
 export const Presentation = () => (
   <ProgressIndicator
@@ -87,9 +85,7 @@ export const Presentation = () => (
   />
 );
 
-Presentation.story = {
-  name: 'presentation',
-};
+Presentation.storyName = 'presentation';
 
 export const PresentationVertical = () => (
   <ProgressIndicator
@@ -105,9 +101,7 @@ export const PresentationVertical = () => (
   />
 );
 
-PresentationVertical.story = {
-  name: 'presentation vertical',
-};
+PresentationVertical.storyName = 'presentation vertical';
 
 export const HideLabelsAndDefaultStepWidth = () => (
   <ProgressIndicator
@@ -124,21 +118,17 @@ export const HideLabelsAndDefaultStepWidth = () => (
   />
 );
 
-HideLabelsAndDefaultStepWidth.story = {
-  name: 'hideLabels and default stepWidth',
-};
+HideLabelsAndDefaultStepWidth.storyName = 'hideLabels and default stepWidth';
 
 export const Skeleton = () => <ProgressIndicatorSkeleton />;
 
-Skeleton.story = {
-  name: 'skeleton',
+Skeleton.storyName = 'skeleton';
 
-  parameters: {
-    info: {
-      text: `
-              Placeholder skeleton state to use when content is loading.
-          `,
-    },
+Skeleton.parameters = {
+  info: {
+    text: `
+            Placeholder skeleton state to use when content is loading.
+        `,
   },
 };
 
@@ -203,11 +193,10 @@ export const CarbonDefaultProgressIndicator = () => (
   </CarbonProgressIndicator>
 );
 
-CarbonDefaultProgressIndicator.story = {
-  name: 'carbon progress indicator',
-  parameters: {
-    info: {
-      text: `The default Carbon Progress Indicator component.`,
-    },
+CarbonDefaultProgressIndicator.storyName = 'carbon progress indicator';
+
+CarbonDefaultProgressIndicator.parameters = {
+  info: {
+    text: `The default Carbon Progress Indicator component.`,
   },
 };

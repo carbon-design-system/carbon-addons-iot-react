@@ -8,7 +8,6 @@ import React, {
 } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select, array, object } from '@storybook/addon-knobs';
-import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
@@ -17,7 +16,6 @@ import { Add20, TrashCan16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
-import { withReadme } from 'storybook-readme';
 import { firstBy } from 'thenby';
 
 import {
@@ -34,7 +32,7 @@ import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';
 import EmptyState from '../EmptyState';
 
-import README from './README.md';
+import TableREADME from './Table.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import AsyncTable from './AsyncTable/AsyncTable';
@@ -377,22 +375,6 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
-const StyledTableCustomRowHeight = styled(Table)`
-  &&& {
-    & tr {
-      height: 5rem;
-    }
-  }
-`;
-
-const StyledCustomToolbarContent = styled.div`
-  &&& {
-    align-items: center;
-    display: flex;
-    padding: 0 1rem; /* stylelint-disable-line declaration-property-unit-blacklist */
-  }
-`;
-
 export const tableActions = {
   pagination: {
     /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
@@ -415,6 +397,10 @@ export const tableActions = {
     onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
     onApplyAdvancedFilter: action('onApplyAdvancedFilter'),
     onToggleAdvancedFilter: action('onToggleAdvancedFilter'),
+    // TODO: removed to mimic the current state of consumers in the wild
+    // since they won't be adding this prop to any of their components
+    // can be readded in V3.
+    // onToggleAggregations: action('onToggleAggregations'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
@@ -550,6 +536,9 @@ export default {
 
   parameters: {
     component: Table,
+    docs: {
+      page: TableREADME,
+    },
   },
 
   excludeStories: [
@@ -568,67 +557,80 @@ export default {
   ],
 };
 
-export const BasicDumbTable = withReadme(README, () => (
+export const BasicDumbTable = () => (
   <Table
     id="table"
+    secondaryTitle={text('secondaryTitle', 'Basic `dumb` table')}
     useZebraStyles={boolean('useZebraStyles', false)}
     lightweight={boolean('lightweight', false)}
+    tooltip={<div>Now with custom tooltip content!</div>}
     columns={tableColumns}
     data={tableData}
     actions={tableActions}
     options={{
+      hasAggregations: boolean('hasAggregations', true),
       hasSearch: boolean('hasSearch', false),
       hasFilter: boolean('hasFilter', false),
       hasPagination: boolean('hasPagination', false),
       hasRowEdit: boolean('hasRowEdit', false),
     }}
-  />
-));
-
-BasicDumbTable.story = {
-  name: 'basic `dumb` table',
-
-  parameters: {
-    info: {
-      text: `
-
-      For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
-
-      <br />
-
-      To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
-
-      <br />
-
-      Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
-
-      <br />
-
-      ~~~js
-      import { tableReducer, tableActions } from 'carbon-addons-iot-react';
-
-      const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
-
-      const actions = {
-        table: {
-          onChangeSort: column => {
-            dispatch(tableActions.tableColumnSort(column));
+    view={{
+      aggregations: {
+        label: 'Total:',
+        columns: [
+          {
+            id: 'number',
+            align: 'start',
+            isSortable: false,
           },
-        }
+        ],
+      },
+    }}
+  />
+);
+
+BasicDumbTable.storyName = 'basic `dumb` table';
+
+BasicDumbTable.parameters = {
+  info: {
+    text: `
+
+    For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
+
+    <br />
+
+    To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
+
+    <br />
+
+    Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
+
+    <br />
+
+    ~~~js
+    import { tableReducer, tableActions } from 'carbon-addons-iot-react';
+
+    const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
+
+    const actions = {
+      table: {
+        onChangeSort: column => {
+          dispatch(tableActions.tableColumnSort(column));
+        },
       }
+    }
 
-      <Table
-        {...state}
-        ...
-      ~~~
+    <Table
+      {...state}
+      ...
+    ~~~
 
-      <br />
-      `,
-    },
+    <br />
+    `,
   },
 };
 
-export const TableExampleWithCreateSaveViews = withReadme(README, () => {
+export const TableExampleWithCreateSaveViews = () => {
   // The initial default state for this story is one with no active filters
   // and no default search value etc, i.e. a view all scenario.
   const baseState = {
@@ -1075,30 +1077,29 @@ export const TableExampleWithCreateSaveViews = withReadme(README, () => {
       />
     </FullWidthWrapper>
   );
-});
+};
 
-TableExampleWithCreateSaveViews.story = {
-  name: 'Table Example with Create & Save Views',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      text: `
-      This story shows a partial implementation of how to add user View Management,
-      but the implemented examples should be enough to give you an idea on how to use it
-      together with your own state manager. We examplify by providing shallow implementations
-      for onChangeSort, onApplySearch and onApplyFilter. The story is using a simple state
-      object currentTableState and the data objects in the callbacks are just appended to that
-      state using the same ref, but in a real situation the state management would be more complex.
-      The story's source code is too complex to successfully be shown here, please view
-      the actual source code.
-      `,
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+TableExampleWithCreateSaveViews.storyName = 'Table Example with Create & Save Views';
+TableExampleWithCreateSaveViews.decorators = [createElement];
+
+TableExampleWithCreateSaveViews.parameters = {
+  info: {
+    text: `
+    This story shows a partial implementation of how to add user View Management,
+    but the implemented examples should be enough to give you an idea on how to use it
+    together with your own state manager. We examplify by providing shallow implementations
+    for onChangeSort, onApplySearch and onApplyFilter. The story is using a simple state
+    object currentTableState and the data objects in the callbacks are just appended to that
+    state using the same ref, but in a real situation the state management would be more complex.
+    The story's source code is too complex to successfully be shown here, please view
+    the actual source code.
+    `,
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
-export const BasicTableWithFullRowEditExample = withReadme(README, () => {
+export const BasicTableWithFullRowEditExample = () => {
   const [showRowEditBar, setShowRowEditBar] = useState(false);
   const startingData = tableData.map((i) => ({
     ...i,
@@ -1258,92 +1259,112 @@ export const BasicTableWithFullRowEditExample = withReadme(README, () => {
       />
     </div>
   );
-});
+};
 
-BasicTableWithFullRowEditExample.story = {
-  name: 'Basic table with full rowEdit example',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      text: `
+BasicTableWithFullRowEditExample.storyName = 'Basic table with full rowEdit example';
+BasicTableWithFullRowEditExample.decorators = [createElement];
 
-      This table has editable rows. It is wrapped in a component that handles the state of the table data and
-      the active bar to serve as a simple example of how to use the 'hasRowEdit' and the 'hasSingleRowEdit'
-      functionality with your own data store.
+BasicTableWithFullRowEditExample.parameters = {
+  info: {
+    text: `
 
-      When the 'hasRowEdit' is true an edit icon will be shown in the
-      table toolbar. Clicking the edit icon should enable row edit for all rows, but it requires the
-      columns to have an 'editDataFunction' prop defined. For StatefulTable this is handled automatically, for normal tables it
-      should be handled manually as shown in this story.
+    This table has editable rows. It is wrapped in a component that handles the state of the table data and
+    the active bar to serve as a simple example of how to use the 'hasRowEdit' and the 'hasSingleRowEdit'
+    functionality with your own data store.
 
-      The 'hasSingleRowEdit' must be combined with a row action that has the "isEdit" property set to true.
-      Clicking that row action shoulf turn that specific row editable, and it also requires the columns to have
-      provided a 'editDataFunction'. For StatefulTable the row action state is automatically updated with
-      isEditMode:true but for normal tables it should be handled manually as shown in this story.
+    When the 'hasRowEdit' is true an edit icon will be shown in the
+    table toolbar. Clicking the edit icon should enable row edit for all rows, but it requires the
+    columns to have an 'editDataFunction' prop defined. For StatefulTable this is handled automatically, for normal tables it
+    should be handled manually as shown in this story.
+
+    The 'hasSingleRowEdit' must be combined with a row action that has the "isEdit" property set to true.
+    Clicking that row action shoulf turn that specific row editable, and it also requires the columns to have
+    provided a 'editDataFunction'. For StatefulTable the row action state is automatically updated with
+    isEditMode:true but for normal tables it should be handled manually as shown in this story.
 
 
-      ~~~js
+    ~~~js
 
-      view = {
-        toolbar: {
-          activeBar: // conditionally set to 'rowEdit' using onShowRowEdit action
-          rowEditBarButtons: // JSX to show save and cancel buttons in the rowEdit bar
-        }
+    view = {
+      toolbar: {
+        activeBar: // conditionally set to 'rowEdit' using onShowRowEdit action
+        rowEditBarButtons: // JSX to show save and cancel buttons in the rowEdit bar
       }
+    }
 
-      actions = {
-        table: { onApplyRowAction: (action, rowId) => {
-          // Handle action === 'edit' to enable the rows edit mode
-        } },
-        toolbar: { onShowRowEdit: (action, rowId) => {
-          // Update your state to enable full table edit mode
-        } },
-      }
+    actions = {
+      table: { onApplyRowAction: (action, rowId) => {
+        // Handle action === 'edit' to enable the rows edit mode
+      } },
+      toolbar: { onShowRowEdit: (action, rowId) => {
+        // Update your state to enable full table edit mode
+      } },
+    }
 
-      options = { hasRowEdit: true, hasSingleRowEdit: true }
+    options = { hasRowEdit: true, hasSingleRowEdit: true }
 
-      columns={columns.map(i => ({
-        ...i,
-        editDataFunction: () => {
-          // Your edit data function here..
-        },
-      }))}
+    columns={columns.map(i => ({
+      ...i,
+      editDataFunction: () => {
+        // Your edit data function here..
+      },
+    }))}
 
-      The editDataFunction is called with this payload
-      {
-         value: PropTypes.any (current cell value),
-         columnId: PropTypes.string,
-         rowId: PropTypes.string,
-         row: the full data for this rowPropTypes.object like this {col: value, col2: value}
-      }
-      ~~~
+    The editDataFunction is called with this payload
+    {
+       value: PropTypes.any (current cell value),
+       columnId: PropTypes.string,
+       rowId: PropTypes.string,
+       row: the full data for this rowPropTypes.object like this {col: value, col2: value}
+    }
+    ~~~
 
-      `,
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
+    `,
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
   },
 };
 
-export const RowSelectionAndBatchActions = withReadme(README, () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+export const RowSelectionAndBatchActions = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const hasRowSelection = select('hasRowSelection', ['single', 'multi'], 'multi');
+  const hasRowSelection = select('options.hasRowSelection', ['single', 'multi'], 'multi');
   const selectedIds =
     hasRowSelection === 'multi'
-      ? array('selectedIds', ['row-3', 'row-4', 'row-6', 'row-7'])
-      : array('selectedIds', ['row-3']);
+      ? array('view.table.selectedIds', ['row-3', 'row-4', 'row-6', 'row-7'])
+      : array('view.table.selectedIds', ['row-3']);
   return (
     <MyTable
       id="table"
-      secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+      secondaryTitle={text('secondaryTitle', `Row count: ${initialState.data.length}`)}
       columns={tableColumns}
-      data={tableData.slice(0, 10)}
+      data={tableData.slice(0, number('number of rows in story', 10)).map((i, idx) => ({
+        ...i,
+        children:
+          idx === 3
+            ? [getNewRow(idx, 'A'), getNewRow(idx, 'B')]
+            : idx === 7
+            ? [
+                getNewRow(idx, 'A'),
+                {
+                  ...getNewRow(idx, 'B'),
+                  children: [getNewRow(idx, 'B-1'), getNewRow(idx, 'B-2')],
+                },
+                getNewRow(idx, 'C'),
+                {
+                  ...getNewRow(idx, 'D'),
+                  children: [getNewRow(idx, 'D-1'), getNewRow(idx, 'D-2'), getNewRow(idx, 'D-3')],
+                },
+              ]
+            : undefined,
+      }))}
       actions={tableActions}
       options={{
-        hasFilter: true,
-        hasPagination: true,
+        hasFilter: boolean('options.hasFilter', true),
+        hasPagination: boolean('options.hasPagination', true),
         hasRowSelection,
+        hasRowExpansion: boolean('options.hasRowExpansion', true),
+        hasRowNesting: boolean('options.hasRowNesting', true),
       }}
       view={{
         filters: [],
@@ -1365,355 +1386,255 @@ export const RowSelectionAndBatchActions = withReadme(README, () => {
             [undefined, true, false],
             undefined
           ),
+          expandedIds: array('view.table.expandedIds', ['row-3', 'row-7', 'row-7_B']),
           selectedIds,
         },
       }}
     />
   );
-});
-
-RowSelectionAndBatchActions.story = {
-  name: 'row selection: single or multi-select w/ batch actions',
 };
 
-export const WithSingleSelectAndNestedTableRows = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData.map((i, idx) => ({
-      ...i,
-      children:
-        idx === 3
-          ? [getNewRow(idx, 'A'), getNewRow(idx, 'B')]
-          : idx === 7
-          ? [
-              getNewRow(idx, 'A'),
-              {
-                ...getNewRow(idx, 'B'),
-                children: [getNewRow(idx, 'B-1'), getNewRow(idx, 'B-2')],
-              },
-              getNewRow(idx, 'C'),
-              {
-                ...getNewRow(idx, 'D'),
-                children: [getNewRow(idx, 'D-1'), getNewRow(idx, 'D-2'), getNewRow(idx, 'D-3')],
-              },
-            ]
-          : undefined,
-    }))}
-    options={{
-      hasPagination: true,
-      hasRowSelection: 'single',
-      hasRowExpansion: true,
-      hasRowNesting: true,
-    }}
-    actions={tableActions}
-    view={{
-      table: {
-        expandedIds: ['row-3', 'row-7', 'row-7_B'],
-        selectedIds: ['row-3_A'],
-      },
-    }}
-  />
-));
+RowSelectionAndBatchActions.storyName =
+  'with row selection: single or multi-select and batch actions';
 
-WithSingleSelectAndNestedTableRows.story = {
-  name: 'row selection: single with nested table rows',
-};
-
-export const WithRowExpansionAndOnRowClickExpands = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData}
-    actions={tableActions}
-    options={{
-      hasRowExpansion: true,
-      shouldExpandOnRowClick: true,
-    }}
-    view={{
-      filters: [],
-      table: {
-        ordering: defaultOrdering,
-        expandedRows: [
-          {
-            rowId: 'row-2',
-            content: <RowExpansionContent rowId="row-2" />,
-          },
-          {
-            rowId: 'row-5',
-            content: <RowExpansionContent rowId="row-5" />,
-          },
-        ],
-      },
-    }}
-  />
-));
-
-WithRowExpansionAndOnRowClickExpands.story = {
-  name: 'row expansion: on row click expands',
-};
-
-export const WithRowExpansionAndActions = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData.map((i, idx) => ({
-      ...i,
-      rowActions:
-        idx % 4 === 0 // every 4th row shouldn't have any actions
-          ? []
-          : [
-              {
-                id: 'drilldown',
-                renderIcon: Arrow,
-                iconDescription: 'See more',
-                labelText: 'See more',
-              },
-              {
-                id: 'add',
-                renderIcon: Add,
-                iconDescription: 'Add',
-                labelText: 'Add',
-                isOverflow: true,
-                hasDivider: true,
-              },
-              {
-                id: 'delete',
-                renderIcon: TrashCan16,
-                iconDescription: 'Delete',
-                labelText: 'Delete',
-                isOverflow: true,
-                isDelete: true,
-              },
-            ].filter((i) => i),
-    }))}
-    actions={tableActions}
-    options={{
-      hasRowExpansion: true,
-      hasRowActions: true,
-    }}
-    view={{
-      filters: [],
-      table: {
-        ordering: defaultOrdering,
-        expandedRows: [
-          {
-            rowId: 'row-2',
-            content: <RowExpansionContent rowId="row-2" />,
-          },
-          {
-            rowId: 'row-5',
-            content: <RowExpansionContent rowId="row-5" />,
-          },
-        ],
-        rowActions: [
-          {
-            rowId: 'row-1',
-            isRunning: true,
-          },
-          {
-            rowId: 'row-3',
-            error: {
-              title: 'Import failed',
-              message: 'Contact your administrator',
-            },
-          },
-        ],
-      },
-    }}
-  />
-));
-
-WithRowExpansionAndActions.story = {
-  name: 'row expansion: with actions',
-
-  parameters: {
-    info: {
-      text: `
-
-      To add custom row actions to each row you need to pass a rowActions array along with every row of your data.  The RowActionsPropTypes is defined as:
-
-      <br />
-
-      ~~~js
-      RowActionPropTypes = PropTypes.arrayOf(
-        PropTypes.shape({
-          /** Unique id of the action */
-          id: PropTypes.string.isRequired,
-          /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
-          icon: PropTypes.oneOfType([
-            PropTypes.shape({
-              width: PropTypes.string,
-              height: PropTypes.string,
-              viewBox: PropTypes.string.isRequired,
-              svgData: PropTypes.object.isRequired,
-            }),
-            PropTypes.string,
-            PropTypes.node,
-          ]),
-          disabled: PropTypes.bool,
-          labelText: PropTypes.string,
-          /** Action should go into the overflow menu, not be rendered inline in the row */
-          isOverflow: PropTypes.bool,
-        })
-      );
-
-      data.map(row=>{id: row.id, values: {id: row.id}, rowActions=[{id: delete, icon: 'icon--delete', labelText: 'Delete'}]})
-      ~~~
-
-      <br />
-
-      You also need to set the options prop on the table to get the rowActions to render.
-
-      <br />
-
-      ~~~js
-      options = {
-        hasRowActions: true
-      }
-      ~~~
-
-      <br />
-
-      To listen to the row actions and trigger an event you should pass a function to the actions prop:
-
-      <br />
-
-      ~~~js
-      actions={
-        table: {
-          onApplyRowAction: myCustomListener
-        }
-      }
-      ~~~
-
-      <br />
-
-      The onApplyRowAction is called with the actionid, and then the rowid that was clicked.  If you return a promise, the table will assume this is an asynchronous action and will show an In Progress indicator until you resolve or reject the promise.
-
-      <br />
-
-      ~~~js
-        const myCustomListener = (actionid, rowid)=> {
-          if (actionid === 'myexpectedaction') {
-            console.log(\`perform action on row: \${rowid}\`)
-          }
-        }
-      ~~~
-
-      <br />
-
-      `,
-    },
-  },
-};
-
-export const WithSorting = withReadme(README, () => (
-  <Table
-    columns={tableColumns.map((i, idx) => ({
-      ...i,
-      isSortable: idx !== 1,
-      align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
-    }))}
-    data={getSortedData(tableData, 'string', 'ASC')}
-    actions={tableActions}
-    options={{
-      hasFilter: false,
-      hasPagination: true,
-      hasRowSelection: 'multi',
-      hasAggregations: true,
-    }}
-    view={{
-      filters: [],
-      aggregations: {
-        label: 'Total',
-        columns: [
-          {
-            id: 'number',
-            align: 'end',
-            isSortable: true,
-          },
-        ],
-      },
-      table: {
-        ordering: defaultOrdering,
-        sort: {
-          columnId: 'string',
-          direction: 'ASC',
-        },
-      },
-    }}
-  />
-));
-
-WithSorting.story = {
-  name: 'sorting: single column',
-};
-
-export const WithMultiSorting = withReadme(README, () => {
-  const sortedData = tableData.slice(0, 10).sort(
-    firstBy((row) => row.values.select).thenBy((row) => {
-      return row.values.string;
-    })
+export const WithRowExpansionAndActions = () => {
+  const renderDataFunction = ({ value }) => (
+    <div style={{ color: value === 'BROKEN' ? 'red' : 'black' }}>{value}</div>
   );
-
   return (
     <Table
-      columns={tableColumns.map((i, idx) => ({
-        ...i,
-        isSortable: idx !== 1,
-        align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
+      id="table"
+      columns={tableColumns.map((c) => ({
+        ...c,
+        renderDataFunction,
       }))}
-      data={sortedData}
+      data={tableData.map((i, idx) => ({
+        ...i,
+        rowActions:
+          idx % 4 === 0 // every 4th row shouldn't have any actions
+            ? []
+            : [
+                {
+                  id: 'drilldown',
+                  renderIcon: Arrow,
+                  iconDescription: 'See more',
+                  labelText: 'See more',
+                },
+                {
+                  id: 'add',
+                  renderIcon: Add,
+                  iconDescription: 'Add',
+                  labelText: 'Add',
+                  isOverflow: true,
+                  hasDivider: true,
+                },
+                {
+                  id: 'delete',
+                  renderIcon: TrashCan16,
+                  iconDescription: 'Delete',
+                  labelText: 'Delete',
+                  isOverflow: true,
+                  isDelete: true,
+                },
+              ].filter((i) => i),
+      }))}
       actions={tableActions}
       options={{
-        hasFilter: false,
-        hasPagination: true,
-        hasRowSelection: 'multi',
-        hasAggregations: true,
-        hasMultiSort: true,
+        hasRowExpansion: true,
+        hasRowActions: true,
       }}
       view={{
         filters: [],
-        aggregations: {
-          label: 'Total',
-          columns: [
-            {
-              id: 'number',
-              align: 'end',
-              isSortable: true,
-            },
-          ],
-        },
         table: {
           ordering: defaultOrdering,
-          showMultiSortModal: true,
-          sort: [
+          expandedRows: [
             {
-              columnId: 'select',
-              direction: 'ASC',
+              rowId: 'row-2',
+              content: <RowExpansionContent rowId="row-2" />,
             },
             {
-              columnId: 'string',
-              direction: 'ASC',
+              rowId: 'row-5',
+              content: <RowExpansionContent rowId="row-5" />,
+            },
+          ],
+          rowActions: [
+            {
+              rowId: 'row-1',
+              isRunning: true,
+            },
+            {
+              rowId: 'row-3',
+              error: {
+                title: 'Import failed',
+                message: 'Contact your administrator',
+              },
             },
           ],
         },
       }}
     />
   );
-});
-
-WithMultiSorting.story = {
-  name: 'sorting: multiple columns',
 };
 
-export const WithFilters = withReadme(README, () => {
+WithRowExpansionAndActions.storyName = 'row expansion: with actions';
+
+WithRowExpansionAndActions.parameters = {
+  info: {
+    text: `
+
+    To add custom row actions to each row you need to pass a rowActions array along with every row of your data.  The RowActionsPropTypes is defined as:
+
+    <br />
+
+    ~~~js
+    RowActionPropTypes = PropTypes.arrayOf(
+      PropTypes.shape({
+        /** Unique id of the action */
+        id: PropTypes.string.isRequired,
+        /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
+        icon: PropTypes.oneOfType([
+          PropTypes.shape({
+            width: PropTypes.string,
+            height: PropTypes.string,
+            viewBox: PropTypes.string.isRequired,
+            svgData: PropTypes.object.isRequired,
+          }),
+          PropTypes.string,
+          PropTypes.node,
+        ]),
+        disabled: PropTypes.bool,
+        labelText: PropTypes.string,
+        /** Action should go into the overflow menu, not be rendered inline in the row */
+        isOverflow: PropTypes.bool,
+      })
+    );
+
+    data.map(row=>{id: row.id, values: {id: row.id}, rowActions=[{id: delete, icon: 'icon--delete', labelText: 'Delete'}]})
+    ~~~
+
+    <br />
+
+    You also need to set the options prop on the table to get the rowActions to render.
+
+    <br />
+
+    ~~~js
+    options = {
+      hasRowActions: true
+    }
+    ~~~
+
+    <br />
+
+    To listen to the row actions and trigger an event you should pass a function to the actions prop:
+
+    <br />
+
+    ~~~js
+    actions={
+      table: {
+        onApplyRowAction: myCustomListener
+      }
+    }
+    ~~~
+
+    <br />
+
+    The onApplyRowAction is called with the actionid, and then the rowid that was clicked.  If you return a promise, the table will assume this is an asynchronous action and will show an In Progress indicator until you resolve or reject the promise.
+
+    <br />
+
+    ~~~js
+      const myCustomListener = (actionid, rowid)=> {
+        if (actionid === 'myexpectedaction') {
+          console.log(\`perform action on row: \${rowid}\`)
+        }
+      }
+    ~~~
+
+    <br />
+
+    `,
+  },
+};
+
+export const WithSorting = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const hasMultiSort = boolean('options.hasMultiSort', false);
+
+  const sortedData = hasMultiSort
+    ? tableData.slice(0, 10).sort(
+        firstBy((row) => row.values.select).thenBy((row) => {
+          return row.values.string;
+        })
+      )
+    : getSortedData(tableData, 'string', 'ASC');
+  return (
+    <FullWidthWrapper>
+      <style>{`#custom-row-height table tr { height: 5rem;}`}</style>
+      <div id="custom-row-height">
+        <MyTable
+          columns={tableColumns.map((i, idx) => ({
+            ...i,
+            isSortable: idx !== 1,
+            align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
+          }))}
+          data={sortedData}
+          actions={tableActions}
+          options={{
+            hasFilter: boolean('options.hasFilter', false),
+            hasPagination: boolean('options.hasPagination', true),
+            hasRowSelection: boolean('options.hasRowSelection', 'multi'),
+            hasAggregations: boolean('options.hasAggregations', true),
+            hasMultiSort,
+          }}
+          view={{
+            filters: [],
+            aggregations: {
+              label: 'Total',
+              columns: [
+                {
+                  id: 'number',
+                  align: 'end',
+                  isSortable: true,
+                },
+              ],
+              isHidden: false,
+            },
+            table: {
+              ordering: defaultOrdering,
+              sort: hasMultiSort
+                ? [
+                    {
+                      columnId: 'select',
+                      direction: 'ASC',
+                    },
+                    {
+                      columnId: 'string',
+                      direction: 'ASC',
+                    },
+                  ]
+                : {
+                    columnId: 'string',
+                    direction: 'ASC',
+                  },
+            },
+          }}
+        />
+      </div>
+    </FullWidthWrapper>
+  );
+};
+
+WithSorting.storyName = 'with sorting and custom row height';
+
+export const WithFilters = () => {
   text(
     'instructions',
     "By changing the value in a filter to a value that doesn't it exist will show the no results screen"
   );
-  const filters = object('filters', [
+  const filters = object('view.filters', [
     {
       columnId: 'string',
       value: 'whiteboard',
@@ -1749,6 +1670,11 @@ export const WithFilters = withReadme(README, () => {
         },
         toolbar: {
           activeBar: 'filter',
+          customToolbarContent: (
+            <div style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}>
+              custom content
+            </div>
+          ),
         },
         table: {
           ordering: defaultOrdering,
@@ -1756,13 +1682,11 @@ export const WithFilters = withReadme(README, () => {
       }}
     />
   );
-});
-
-WithFilters.story = {
-  name: 'filtering: simple filters',
 };
 
-export const WithAdvancedFilters = withReadme(README, () => {
+WithFilters.storyName = 'with filtering and custom toolbar content';
+
+export const WithAdvancedFilters = () => {
   const operands = {
     IN: (a, b) => a.includes(b),
     NEQ: (a, b) => a !== b,
@@ -2004,13 +1928,11 @@ export const WithAdvancedFilters = withReadme(README, () => {
       />
     </>
   );
-});
-
-WithAdvancedFilters.story = {
-  name: 'filtering: ☢️ advanced filters',
 };
 
-export const WithNoData = withReadme(README, () => {
+WithAdvancedFilters.storyName = '☢️ with advanced filtering';
+
+export const WithTableStates = () => {
   const emptyState = (
     <div key="empty-state">
       <h1 key="empty-state-heading">Custom empty state</h1>
@@ -2018,309 +1940,203 @@ export const WithNoData = withReadme(README, () => {
     </div>
   );
 
+  const errorState = (
+    <EmptyState
+      icon="error"
+      title="Error occured while loading"
+      body={text('error', 'Error message')}
+      action={{
+        label: 'Reload',
+        onClick: action('onErrorStateAction'),
+        kind: 'ghost',
+      }}
+    />
+  );
+
   const loadingState = object('loadingState', {
     isLoading: false,
     rowCount: 7,
   });
 
+  const showErrorState = boolean('Show Custom Error State', false);
   return (
     <Table
       id="table"
       columns={tableColumns}
-      data={[]}
+      data={showErrorState ? tableData.slice(0, 20) : []}
       actions={tableActions}
       view={{
         table: {
           ordering: defaultOrdering,
           emptyState: boolean('Show Custom Empty State', false) ? emptyState : undefined,
+          errorState: showErrorState ? errorState : undefined,
           loadingState,
         },
       }}
       options={{ hasPagination: true }}
+      error={showErrorState ? 'Error!' : undefined}
     />
   );
-});
-
-WithNoData.story = {
-  name: 'states: no data, custom empty and loading states',
 };
 
-export const WithErrorState = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={[]}
-    actions={tableActions}
-    view={{
-      table: {
-        ordering: defaultOrdering,
-      },
-    }}
-    options={{ hasPagination: true }}
-    error={text('error', 'Error occured')}
-  />
-));
+WithTableStates.storyName = 'with custom states states: no data, custom empty, error, and loading';
 
-WithErrorState.story = {
-  name: 'with error state',
-};
+export const WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
 
-const errorState = (
-  <EmptyState
-    icon="error"
-    title="Error occured while loading"
-    body={text('error', 'Error message')}
-    action={{
-      label: 'Reload',
-      onClick: action('onErrorStateAction'),
-      kind: 'ghost',
-    }}
-  />
-);
-
-export const WithCustomErrorState = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={[]}
-    actions={tableActions}
-    view={{
-      table: {
-        ordering: defaultOrdering,
-        errorState,
-      },
-    }}
-    options={{ hasPagination: true }}
-    error={text('error', 'Error occured')}
-  />
-));
-
-WithCustomErrorState.story = {
-  name: 'with custom error state',
-};
-
-export const WithResizeAndInitialColumnWidthsAndHiddenColumn = withReadme(README, () => (
-  <FullWidthWrapper>
-    <Table
-      id="table"
-      options={{
-        hasResize: true,
-        wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-      }}
-      columns={tableColumns.map((i, idx) => ({
-        width: idx % 2 === 0 ? '100px' : '200px',
-        ...i,
-      }))}
-      data={tableData}
-      actions={tableActions}
-      view={{
-        table: {
-          ordering: defaultOrdering,
-        },
-      }}
-      error={text('error', undefined)}
-    />
-  </FullWidthWrapper>
-));
-
-WithResizeAndInitialColumnWidthsAndHiddenColumn.story = {
-  name: 'resize: initial column widths and hidden column',
-
-  parameters: {
-    info: {
-      source: true,
-      propTables: false,
-    },
-  },
-};
-
-export const WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement = withReadme(
-  README,
-  () => {
-    const ColumnsModifier = ({ onAdd, onRemove, columns, ordering }) => {
-      const [colsToAddField, setColsToAddField] = useState('colX, colY');
-      const [colsToAddWidthField, setColsToAddWidthField] = useState('100px, 150px');
-      const [colsToDeleteField, setColsToDeleteField] = useState('select, status');
-      const [isHidden, setIsHidden] = useState(false);
-
-      return (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginBottom: '2rem',
-          }}
-        >
-          <Form style={{ maxWidth: '300px', marginRight: '2rem' }}>
-            <TextInput
-              labelText="Ids of one or more columns"
-              id="colsToAddInput"
-              value={colsToAddField}
-              type="text"
-              onChange={(evt) => setColsToAddField(evt.currentTarget.value)}
-            />
-            <FormGroup legendText="" style={{ marginBottom: '1rem' }}>
-              <Checkbox
-                labelText="add as hidden column(s)"
-                id="isHiddenCheckbox"
-                defaultChecked={isHidden}
-                onChange={() => setIsHidden(!isHidden)}
-              />
-            </FormGroup>
-            <TextInput
-              labelText="The width of the added columns (if any)"
-              id="colsToAddWidthInput"
-              value={colsToAddWidthField}
-              type="text"
-              onChange={(evt) => setColsToAddWidthField(evt.currentTarget.value)}
-            />
-            <Button
-              style={{ marginTop: '1rem' }}
-              onClick={() => onAdd(colsToAddField, colsToAddWidthField, isHidden)}
-            >
-              Add
-            </Button>
-          </Form>
-          <div style={{ maxWidth: '50%' }}>
-            <div style={{ margin: '1rem' }}>
-              <p>COLUMNS prop</p>
-              <samp>{JSON.stringify(columns)}</samp>
-            </div>
-            <div style={{ margin: '1rem' }}>
-              <p>ORDERING prop</p>
-              <samp>{JSON.stringify(ordering)}</samp>
-            </div>
-          </div>
-
-          <Form style={{ maxWidth: '300px' }}>
-            <TextInput
-              labelText="One or more IDs of columns to delete"
-              id="removeColInput"
-              value={colsToDeleteField}
-              type="text"
-              onChange={(evt) => setColsToDeleteField(evt.currentTarget.value)}
-            />
-            <Button
-              style={{ marginTop: '1rem' }}
-              id="removeColInput"
-              onClick={() => onRemove(colsToDeleteField)}
-            >
-              Remove
-            </Button>
-          </Form>
-        </div>
-      );
-    };
-
-    const [myColumns, setMyColumns] = useState(tableColumns.map(({ filter, ...rest }) => rest));
-    const [myOrdering, setMyOrdering] = useState(defaultOrdering);
-
-    const onAdd = (colIds, colWidths, isHidden) => {
-      const colsToAdd = colIds.split(', ');
-      const widths = colWidths.split(', ');
-      const newColumns = [];
-      const newOrdering = [];
-      colsToAdd.forEach((colToAddId, index) => {
-        newColumns.push({
-          id: colToAddId,
-          name: colToAddId,
-          width: widths[index] || undefined,
-        });
-        newOrdering.push({ columnId: colToAddId, isHidden });
-      });
-      setMyColumns([...myColumns, ...newColumns]);
-      setMyOrdering([...myOrdering, ...newOrdering]);
-    };
-
-    const onRemove = (colIds) => {
-      const colsToDelete = colIds.split(', ');
-      setMyColumns(myColumns.filter((col) => !colsToDelete.includes(col.id)));
-      setMyOrdering(myOrdering.filter((col) => !colsToDelete.includes(col.columnId)));
-    };
-    const onColumnResize = (cols) => setMyColumns(cols);
+  const ColumnsModifier = ({ onAdd, onRemove, columns, ordering }) => {
+    const [colsToAddField, setColsToAddField] = useState('colX, colY');
+    const [colsToAddWidthField, setColsToAddWidthField] = useState('100px, 150px');
+    const [colsToDeleteField, setColsToDeleteField] = useState('select, status');
+    const [isHidden, setIsHidden] = useState(false);
 
     return (
-      <>
-        <ColumnsModifier
-          onAdd={onAdd}
-          onRemove={onRemove}
-          columns={myColumns}
-          ordering={myOrdering}
-        />
-        <Table
-          id="table"
-          options={{
-            hasColumnSelection: true,
-            hasResize: true,
-            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-          }}
-          columns={myColumns}
-          view={{
-            filters: [],
-            table: {
-              ordering: myOrdering,
-            },
-          }}
-          data={tableData}
-          actions={{
-            ...tableActions,
-            table: { ...tableActions.table, onColumnResize },
-          }}
-        />
-      </>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginBottom: '2rem',
+        }}
+      >
+        <Form style={{ maxWidth: '300px', marginRight: '2rem' }}>
+          <TextInput
+            labelText="Ids of one or more columns"
+            id="colsToAddInput"
+            value={colsToAddField}
+            type="text"
+            onChange={(evt) => setColsToAddField(evt.currentTarget.value)}
+          />
+          <FormGroup legendText="" style={{ marginBottom: '1rem' }}>
+            <Checkbox
+              labelText="add as hidden column(s)"
+              id="isHiddenCheckbox"
+              defaultChecked={isHidden}
+              onChange={() => setIsHidden(!isHidden)}
+            />
+          </FormGroup>
+          <TextInput
+            labelText="The width of the added columns (if any)"
+            id="colsToAddWidthInput"
+            value={colsToAddWidthField}
+            type="text"
+            onChange={(evt) => setColsToAddWidthField(evt.currentTarget.value)}
+          />
+          <Button
+            style={{ marginTop: '1rem' }}
+            onClick={() => onAdd(colsToAddField, colsToAddWidthField, isHidden)}
+          >
+            Add
+          </Button>
+        </Form>
+        <div style={{ maxWidth: '50%' }}>
+          <div style={{ margin: '1rem' }}>
+            <p>COLUMNS prop</p>
+            <samp>{JSON.stringify(columns)}</samp>
+          </div>
+          <div style={{ margin: '1rem' }}>
+            <p>ORDERING prop</p>
+            <samp>{JSON.stringify(ordering)}</samp>
+          </div>
+        </div>
+
+        <Form style={{ maxWidth: '300px' }}>
+          <TextInput
+            labelText="One or more IDs of columns to delete"
+            id="removeColInput"
+            value={colsToDeleteField}
+            type="text"
+            onChange={(evt) => setColsToDeleteField(evt.currentTarget.value)}
+          />
+          <Button
+            style={{ marginTop: '1rem' }}
+            id="removeColInput"
+            onClick={() => onRemove(colsToDeleteField)}
+          >
+            Remove
+          </Button>
+        </Form>
+      </div>
     );
-  }
-);
+  };
 
-WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.story = {
-  name: 'resize: onColumnResize callback, no initial column width and column management',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      source: true,
-      propTables: false,
-    },
+  const [myColumns, setMyColumns] = useState(tableColumns.map(({ filter, ...rest }) => rest));
+  const [myOrdering, setMyOrdering] = useState(defaultOrdering);
+
+  const onAdd = (colIds, colWidths, isHidden) => {
+    const colsToAdd = colIds.split(', ');
+    const widths = colWidths.split(', ');
+    const newColumns = [];
+    const newOrdering = [];
+    colsToAdd.forEach((colToAddId, index) => {
+      newColumns.push({
+        id: colToAddId,
+        name: colToAddId,
+        width: widths[index] || undefined,
+      });
+      newOrdering.push({ columnId: colToAddId, isHidden });
+    });
+    setMyColumns([...myColumns, ...newColumns]);
+    setMyOrdering([...myOrdering, ...newOrdering]);
+  };
+
+  const onRemove = (colIds) => {
+    const colsToDelete = colIds.split(', ');
+    setMyColumns(myColumns.filter((col) => !colsToDelete.includes(col.id)));
+    setMyOrdering(myOrdering.filter((col) => !colsToDelete.includes(col.columnId)));
+  };
+  const onColumnResize = (cols) => setMyColumns(cols);
+
+  return (
+    <FullWidthWrapper>
+      <ColumnsModifier
+        onAdd={onAdd}
+        onRemove={onRemove}
+        columns={myColumns}
+        ordering={myOrdering}
+      />
+      <MyTable
+        id="table"
+        options={{
+          hasColumnSelection: boolean('options.hasColumnSelection', true),
+          hasResize: boolean('options.hasResize', true),
+          wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
+          useAutoTableLayoutForResize: boolean('options.useAutoTableLayoutForResize', true),
+        }}
+        columns={myColumns}
+        view={{
+          filters: [],
+          table: {
+            ordering: myOrdering,
+          },
+        }}
+        data={tableData}
+        actions={{
+          ...tableActions,
+          table: { ...tableActions.table, onColumnResize },
+        }}
+      />
+    </FullWidthWrapper>
+  );
+};
+
+WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.storyName =
+  'resize: onColumnResize callback, no initial column width and column management';
+WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.decorators = [
+  createElement,
+];
+
+WithResizeOnColumnResizeCallbackNoInitialColumnWidthAndColumnManagement.parameters = {
+  info: {
+    source: true,
+    propTables: false,
   },
 };
 
-export const WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths = withReadme(
-  README,
-  () => (
-    <React.Fragment>
-      <p>
-        <strong>Note!</strong> <br />
-        For this configuration to work, the table must be wrapped in a container that has a width
-        defined in other than %. <br />
-        E.g. the FullWidthWrapper used by the storybook examples.
-      </p>
-      <FullWidthWrapper>
-        <Table
-          id="table"
-          options={{
-            hasResize: true,
-            useAutoTableLayoutForResize: true,
-            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-          }}
-          columns={tableColumns}
-          data={tableData}
-          actions={tableActions}
-        />
-      </FullWidthWrapper>
-    </React.Fragment>
-  )
-);
+export const WithResizeAndNoInitialColumns = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
 
-WithResizeAndNoInitialColumnWidthAndAutoAdjustedColumnWidths.story = {
-  name: 'resize: and no initial column width and auto adjusted column widths',
-
-  parameters: {
-    info: {
-      source: true,
-      propTables: false,
-    },
-  },
-};
-export const WithResizeAndNoInitialColumns = withReadme(README, () => {
   // Initial render is an empty columns array, which is updated after the first render
   const [columns, setColumns] = useState([]);
   useLayoutEffect(() => {
@@ -2331,114 +2147,35 @@ export const WithResizeAndNoInitialColumns = withReadme(README, () => {
       }))
     );
   }, []);
+
+  const hasColumnSelectionConfig = boolean('options.hasColumnSelectionConfig', false);
   return (
-    <Table
+    <MyTable
       id="table"
       options={{
-        hasResize: true,
-        wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+        hasResize: boolean('options.hasResize', true),
+        wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
+        hasColumnSelectionConfig,
       }}
       columns={columns}
       data={tableData}
       actions={tableActions}
-    />
-  );
-});
-
-WithResizeAndNoInitialColumns.story = {
-  name: 'resize: and no initial columns',
-  decorators: [createElement],
-};
-
-export const WithFixedColumnWidthAndNoResize = withReadme(README, () => (
-  // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
-  <FullWidthWrapper>
-    <Table
-      id="table"
-      options={{
-        hasResize: false,
-        hasColumnSelection: true,
-        wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-      }}
-      columns={tableColumns.map((i, idx) => ({
-        width: idx % 2 === 0 ? '20rem' : '10rem',
-        ...i,
-      }))}
-      data={tableData}
-      actions={tableActions}
-    />
-  </FullWidthWrapper>
-));
-
-WithFixedColumnWidthAndNoResize.story = {
-  name: 'with fixed column width and no resize',
-
-  parameters: {
-    info: {
-      source: true,
-      propTables: false,
-    },
-  },
-};
-
-export const WithCustomRowHeight = withReadme(README, () => (
-  // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
-  <FullWidthWrapper>
-    <StyledTableCustomRowHeight
-      id="table"
-      columns={tableColumns}
-      data={tableData}
-      actions={tableActions}
-    />
-  </FullWidthWrapper>
-));
-
-WithCustomRowHeight.story = {
-  name: 'with custom row height',
-
-  parameters: {
-    info: {
-      source: false,
-      text: `This is an example of the <Table> component that has a custom row height. Pass a custom className prop to the Table component and use a css selector to change the height of all the rows.
-      `,
-      propTables: false,
-    },
-  },
-};
-
-export const WithHasOnlyPageData = withReadme(README, () => {
-  return (
-    <Table
-      id="table"
-      columns={tableColumns}
-      options={{ hasOnlyPageData: true, hasPagination: true }}
-      data={tableData.slice(25, 35)} // this isn't the "8267th page", but we just want to indicate that it is not the first page of data
-      actions={tableActions}
       view={{
-        pagination: {
-          pageSize: 10,
-          pageSizes: [10, 20, 30],
-          page: 8267,
-          totalItems: 97532,
+        toolbar: {
+          activeBar: hasColumnSelectionConfig ? 'column' : undefined,
         },
       }}
+      i18n={{
+        columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__'),
+      }}
     />
   );
-});
-
-WithHasOnlyPageData.story = {
-  name: 'with hasOnlyPageData',
-
-  parameters: {
-    info: {
-      text:
-        'By default, tables with pagination will expect the entire table data to be passed in on the `data` prop; the visible data for a page is calculated dynamically by the table based on the page size and page number.  In the case where the table is rendering a large data set, the `options.hasOnlyPageData` prop can be used change this behavior.  With `options.hasOnlyPageData = true`, the `data` prop will be expected to contain only the rows for the visible page.',
-      source: true,
-    },
-  },
 };
 
-export const HorizontalScrollCustomWidth = withReadme(README, () => {
+WithResizeAndNoInitialColumns.storyName = 'with resize on no initial columns and column selection';
+WithResizeAndNoInitialColumns.decorators = [createElement];
+
+export const HorizontalScrollCustomWidth = () => {
   const tableColumnsConcat = [
     { id: 'test2', name: 'Test 2' },
     { id: 'test3', name: 'Test 3' },
@@ -2447,18 +2184,22 @@ export const HorizontalScrollCustomWidth = withReadme(README, () => {
       name: 'Test 4',
     },
   ];
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
   // You don't n,eed to use styled components, just pass a className to the Table component and use selectors to find the correct column
   return (
-    <div style={{ width: '800px' }}>
-      <Table
+    <div style={{ width: select('table container width', ['auto', '800px'], '800px') }}>
+      <MyTable
         id="table"
         columns={tableColumns.concat(tableColumnsConcat)}
         options={{
-          hasFilter: true,
-          hasPagination: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          hasFilter: boolean('options.hasFilter', true),
+          hasPagination: boolean('options.hasPagination', true),
+          wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
+          hasOnlyPageData: boolean('options.hasOnlyPageData', true),
         }}
-        data={tableData}
+        data={tableData.slice(25, 45)}
         actions={tableActions}
         view={{
           filters: [
@@ -2466,203 +2207,37 @@ export const HorizontalScrollCustomWidth = withReadme(README, () => {
             { columnId: 'select', value: 'option-B' },
           ],
           toolbar: { activeBar: 'filter' },
+          pagination: object('view.pagination', {
+            pageSize: 10,
+            pageSizes: [10, 20, 30],
+            page: 8267,
+            totalItems: 97532,
+          }),
         }}
       />
     </div>
   );
-});
-
-HorizontalScrollCustomWidth.story = {
-  name: 'horizontal scroll - custom width',
 };
 
-export const HorizontalScrollFullWidthNoWrap = withReadme(README, () => {
-  const tableColumnsConcat = [
-    { id: 'test2', name: 'Test 2' },
-    { id: 'test3', name: 'Test 3' },
-    {
-      id: 'test4',
-      name: 'Test 4',
-    },
-  ];
-  // You don't n,eed to use styled components, just pass a className to the Table component and use selectors to find the correct column
-  return (
-    <Table
-      id="table"
-      columns={tableColumns.concat(tableColumnsConcat)}
-      options={{
-        hasFilter: true,
-        hasPagination: true,
-        wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-      }}
-      data={tableData}
-      actions={tableActions}
-      view={{
-        filters: [
-          { columnId: 'string', value: 'whiteboard' },
-          { columnId: 'select', value: 'option-B' },
-        ],
-        toolbar: { activeBar: 'filter' },
-      }}
-    />
-  );
-});
+HorizontalScrollCustomWidth.storyName = 'with horizontal scroll and hasOnlyPageData';
 
-HorizontalScrollFullWidthNoWrap.story = {
-  name: 'horizontal scroll - full width - no wrap',
-};
-
-export const FilteredSortedPaginatedTableWithAsynchronousDataSource = withReadme(README, () => {
+export const FilteredSortedPaginatedTableWithAsynchronousDataSource = () => {
   const apiClient = new MockApiClient(100, number('Fetch Duration (ms)', 500));
   return <AsyncTable fetchData={apiClient.getData} />;
-});
+};
 
-FilteredSortedPaginatedTableWithAsynchronousDataSource.story = {
-  name: 'Filtered/Sorted/Paginated table with asynchronous data source',
+FilteredSortedPaginatedTableWithAsynchronousDataSource.storyName =
+  'Filtered/Sorted/Paginated table with asynchronous data source';
 
-  parameters: {
-    info: {
-      text:
-        'This is an example of how to use the <Table> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
-      source: false,
-    },
+FilteredSortedPaginatedTableWithAsynchronousDataSource.parameters = {
+  info: {
+    text:
+      'This is an example of how to use the <Table> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
+    source: false,
   },
 };
 
-export const CustomToolbarContent = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    options={{ hasFilter: true, hasPagination: true }}
-    data={tableData}
-    actions={tableActions}
-    view={{
-      filters: [
-        { columnId: 'string', value: 'whiteboard' },
-        { columnId: 'select', value: 'option-B' },
-      ],
-      toolbar: {
-        activeBar: 'filter',
-        customToolbarContent: <StyledCustomToolbarContent>my custom</StyledCustomToolbarContent>,
-      },
-    }}
-  />
-));
-
-CustomToolbarContent.story = {
-  name: 'Custom toolbar content',
-};
-
-export const WithColumnSelection = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData}
-    actions={tableActions}
-    options={{
-      hasPagination: true,
-      hasRowSelection: 'multi',
-      hasColumnSelection: true,
-      hasColumnSelectionConfig: boolean('hasColumnSelectionConfig', true),
-    }}
-    view={{
-      toolbar: {
-        activeBar: 'column',
-      },
-      table: {
-        ordering: defaultOrdering,
-      },
-    }}
-    i18n={{
-      columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__'),
-    }}
-  />
-));
-
-WithColumnSelection.story = {
-  name: 'with column selection',
-};
-
-export const WithCustomTooltip = withReadme(README, () => (
-  <Table
-    id="table"
-    columns={tableColumns}
-    data={tableData}
-    secondaryTitle="My title"
-    tooltip={<div>Table tooltip content</div>}
-    actions={tableActions}
-    view={{
-      table: {
-        ordering: defaultOrdering,
-        loadingState: {
-          isLoading: false,
-          rowCount: 7,
-        },
-      },
-    }}
-  />
-));
-
-WithCustomTooltip.story = {
-  name: 'with custom tooltip',
-};
-
-export const WithCustomCellRenderer = withReadme(README, () => {
-  const renderDataFunction = ({ value }) => <div style={{ color: 'red' }}>{value}</div>;
-  return (
-    <Table
-      id="table"
-      columns={tableColumns.map((i) => ({
-        ...i,
-        renderDataFunction,
-      }))}
-      data={tableData}
-      actions={tableActions}
-      options={{
-        hasFilter: true,
-        hasPagination: true,
-        hasRowSelection: 'multi',
-      }}
-      view={{
-        filters: [],
-        table: {
-          ordering: defaultOrdering,
-          sort: {
-            columnId: 'string',
-            direction: 'ASC',
-          },
-        },
-      }}
-    />
-  );
-});
-
-WithCustomCellRenderer.story = {
-  name: 'with custom cell renderer',
-
-  parameters: {
-    info: {
-      text: `To render a custom widget in a table cell, pass a renderDataFunction prop along with your column metadata.
-
-      <br />
-
-      ~~~js
-          The renderDataFunction is called with this payload
-         {
-            value: PropTypes.any (current cell value),
-            columnId: PropTypes.string,
-            rowId: PropTypes.string,
-            row: the full data for this rowPropTypes.object like this {col: value, col2: value}
-         }
-      ~~~
-
-      <br />
-        `,
-    },
-  },
-};
-
-export const WithStickyHeaderExperimentalAndCellTooltipCalculation = withReadme(README, () => {
+export const WithStickyHeaderExperimentalAndCellTooltipCalculation = () => {
   const renderDataFunction = ({ value }) => (
     <div style={{ position: 'relative' }} data-floating-menu-container>
       {value}
@@ -2714,15 +2289,14 @@ export const WithStickyHeaderExperimentalAndCellTooltipCalculation = withReadme(
       />
     </div>
   );
-});
+};
 
-WithStickyHeaderExperimentalAndCellTooltipCalculation.story = {
-  name: 'with sticky header (experimental) and cell tooltip calculation',
+WithStickyHeaderExperimentalAndCellTooltipCalculation.storyName =
+  'with sticky header (experimental) and cell tooltip calculation';
 
-  parameters: {
-    centered: { disable: true },
-    info: {
-      text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
-    },
+WithStickyHeaderExperimentalAndCellTooltipCalculation.parameters = {
+  centered: { disable: true },
+  info: {
+    text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
   },
 };

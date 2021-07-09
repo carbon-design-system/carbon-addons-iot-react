@@ -317,7 +317,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                         return (
                           <MultiSelect.Filterable
                             className={`${iotPrefix}--filter-flyout__simple-field`}
-                            key={columnStateValue}
+                            key={`${columnIndex}-${columnStateValue}`}
                             id={`column-${rowIndex}-${columnIndex}`}
                             aria-label={filterAria}
                             placeholder={column.placeholderText || 'Choose an option'}
@@ -407,7 +407,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                               };
                             });
                           }}
-                          value={filterState?.simple?.[column.id]}
+                          defaultValue={filterState?.simple?.[column.id]}
                         />
                         {filterState?.simple?.[column.id] ? (
                           <div

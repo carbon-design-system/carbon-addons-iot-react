@@ -7,81 +7,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "15rem",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "15rem",
-        }
-      }
+      className="iot--suite-header-profile"
     >
+      <h5>
+        Profile
+      </h5>
       <div
-        className="iot--suite-header-profile"
+        className="iot--suite-header-profile--loading iot--suite-header-profile--loading--no-logout"
+        data-testid="suite-header-profile--loading"
       >
-        <h5>
-          Profile
-        </h5>
-        <div
-          className="iot--suite-header-profile--loading iot--suite-header-profile--loading--no-logout"
-          data-testid="suite-header-profile--loading"
-        >
-          <div>
-            <p
-              className="bx--skeleton__text"
-              style={
-                Object {
-                  "width": "calc(80% - 73px)",
-                }
+        <div>
+          <p
+            className="bx--skeleton__text"
+            style={
+              Object {
+                "width": "calc(80% - 73px)",
               }
-            />
-            <p
-              className="bx--skeleton__text"
-              style={
-                Object {
-                  "width": "calc(80% - 11px)",
-                }
+            }
+          />
+          <p
+            className="bx--skeleton__text"
+            style={
+              Object {
+                "width": "calc(80% - 11px)",
               }
-            />
-            <p
-              className="bx--skeleton__text"
-              style={
-                Object {
-                  "width": "calc(80% - 43px)",
-                }
+            }
+          />
+          <p
+            className="bx--skeleton__text"
+            style={
+              Object {
+                "width": "calc(80% - 43px)",
               }
-            />
-          </div>
+            }
+          />
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -92,88 +60,56 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "15rem",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "15rem",
-        }
-      }
+      className="iot--suite-header-profile"
     >
+      <h5>
+        Profile
+      </h5>
       <div
-        className="iot--suite-header-profile"
+        className="iot--suite-header-profile--loading"
+        data-testid="suite-header-profile--loading"
       >
-        <h5>
-          Profile
-        </h5>
-        <div
-          className="iot--suite-header-profile--loading"
-          data-testid="suite-header-profile--loading"
-        >
-          <div>
-            <p
-              className="bx--skeleton__text"
-              style={
-                Object {
-                  "width": "calc(80% - 73px)",
-                }
+        <div>
+          <p
+            className="bx--skeleton__text"
+            style={
+              Object {
+                "width": "calc(80% - 73px)",
               }
-            />
-            <p
-              className="bx--skeleton__text"
-              style={
-                Object {
-                  "width": "calc(80% - 11px)",
-                }
+            }
+          />
+          <p
+            className="bx--skeleton__text"
+            style={
+              Object {
+                "width": "calc(80% - 11px)",
               }
-            />
-            <p
-              className="bx--skeleton__text"
-              style={
-                Object {
-                  "width": "calc(80% - 43px)",
-                }
+            }
+          />
+          <p
+            className="bx--skeleton__text"
+            style={
+              Object {
+                "width": "calc(80% - 43px)",
               }
-            />
-          </div>
-        </div>
-        <div
-          className="iot--suite-header-profile--logout iot--suite-header-profile--logout--loading"
-        >
-          <div
-            className="bx--skeleton bx--btn"
+            }
           />
         </div>
       </div>
+      <div
+        className="iot--suite-header-profile--logout iot--suite-header-profile--logout--loading"
+      >
+        <div
+          className="bx--skeleton bx--btn"
+        />
+      </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -184,86 +120,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "15rem",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "15rem",
-        }
-      }
+      className="iot--suite-header-profile"
     >
+      <h5>
+        Profile
+      </h5>
       <div
-        className="iot--suite-header-profile"
+        className="iot--suite-header-profile--user"
       >
-        <h5>
-          Profile
-        </h5>
         <div
-          className="iot--suite-header-profile--user"
+          className="iot--suite-header-profile--user--chip"
         >
-          <div
-            className="iot--suite-header-profile--user--chip"
-          >
-            TU
-          </div>
-          <div
-            className="iot--suite-header-profile--user--detail"
-          >
-            <div>
-              <strong>
-                Test User
-              </strong>
-            </div>
-            <div>
-              myuser
-            </div>
-          </div>
+          TU
         </div>
         <div
-          className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
+          className="iot--suite-header-profile--user--detail"
         >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
-            data-testid="suite-header-profile--profile"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Manage profile
-          </button>
+          <div>
+            <strong>
+              Test User
+            </strong>
+          </div>
+          <div>
+            myuser
+          </div>
         </div>
+      </div>
+      <div
+        className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
+      >
+        <button
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
+          data-testid="suite-header-profile--profile"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Manage profile
+        </button>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -274,100 +178,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "15rem",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "15rem",
-        }
-      }
+      className="iot--suite-header-profile"
     >
+      <h5>
+        Profile
+      </h5>
       <div
-        className="iot--suite-header-profile"
+        className="iot--suite-header-profile--user"
       >
-        <h5>
-          Profile
-        </h5>
         <div
-          className="iot--suite-header-profile--user"
+          className="iot--suite-header-profile--user--chip"
         >
-          <div
-            className="iot--suite-header-profile--user--chip"
-          >
-            TU
+          TU
+        </div>
+        <div
+          className="iot--suite-header-profile--user--detail"
+        >
+          <div>
+            <strong>
+              Test User
+            </strong>
           </div>
-          <div
-            className="iot--suite-header-profile--user--detail"
-          >
-            <div>
-              <strong>
-                Test User
-              </strong>
-            </div>
-            <div>
-              myuser
-            </div>
+          <div>
+            myuser
           </div>
         </div>
-        <div
-          className="iot--suite-header-profile--manage-button"
+      </div>
+      <div
+        className="iot--suite-header-profile--manage-button"
+      >
+        <button
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
+          data-testid="suite-header-profile--profile"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
-            data-testid="suite-header-profile--profile"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Manage profile
-          </button>
-        </div>
-        <div
-          className="iot--suite-header-profile--logout"
+          Manage profile
+        </button>
+      </div>
+      <div
+        className="iot--suite-header-profile--logout"
+      >
+        <button
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="suite-header-profile--logout"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="suite-header-profile--logout"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Log out
-          </button>
-        </div>
+          Log out
+        </button>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
