@@ -15,10 +15,11 @@ import {
 
 import { SidePanel } from './side-panel.component';
 import { SidePanelTitleDirective } from './side-panel-title.directive';
+import { SidePanelFooterDirective } from './side-panel-footer.directive';
 
 @NgModule({
-  declarations: [SidePanel, SidePanelTitleDirective],
-  exports: [SidePanel, SidePanelTitleDirective],
+  declarations: [SidePanel, SidePanelTitleDirective, SidePanelFooterDirective],
+  exports: [SidePanel, SidePanelTitleDirective, SidePanelFooterDirective],
   providers: [DialogService],
   imports: [
     ButtonModule,

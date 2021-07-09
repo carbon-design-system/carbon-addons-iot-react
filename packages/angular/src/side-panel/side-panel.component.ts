@@ -66,7 +66,7 @@ import { IconService } from 'carbon-components-angular';
           size="16"
         ></svg>
       </button>
-      <div class="panel-content">
+      <div class="panel-content-wrapper">
         <ng-content></ng-content>
       </div>
     </div>

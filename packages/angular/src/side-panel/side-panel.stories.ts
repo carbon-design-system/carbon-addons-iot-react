@@ -25,11 +25,11 @@ import { action } from '@storybook/addon-actions';
         [side]="side"
         (close)="active = !active; close.emit()"
       >
-        <div aiSidePanelTitle>Filter</div>
+        <div aiSidePanelTitle [condensed]="titleCondensed">Filter</div>
         <div class="panel-content">Content</div>
-        <div class="panel-footer">
-          <button ibmButton="secondary">Cancel</button>
-          <button ibmButton>Initiate</button>
+        <div aiSidePanelFooter>
+          <button ibmButton="secondary" size="lg">Cancel</button>
+          <button ibmButton size="lg">Initiate</button>
         </div>
       </ai-side-panel>
       <div style="display: inline-block; position: relative; margin-left: 1rem; margin-right: 1rem">
@@ -73,11 +73,11 @@ import { action } from '@storybook/addon-actions';
         [side]="side"
         (close)="active = !active; close.emit()"
       >
-        <div aiSidePanelTitle>Filter</div>
+        <div aiSidePanelTitle [condensed]="titleCondensed">Filter</div>
         <div class="panel-content">Content</div>
-        <div class="panel-footer">
-          <button ibmButton="secondary">Cancel</button>
-          <button ibmButton>Initiate</button>
+        <div aiSidePanelFooter>
+          <button ibmButton="secondary" size="lg">Cancel</button>
+          <button ibmButton size="lg">Initiate</button>
         </div>
       </ai-side-panel>
     </div>
@@ -88,24 +88,7 @@ import { action } from '@storybook/addon-actions';
         margin-left: 1rem;
         margin-right: 1rem;
         min-height: 330px;
-      }
-
-      .panel-footer {
-        min-width: 15.4rem;
-        display: flex;
-        width: calc(100% + 2px);
-        position: absolute;
-        bottom: 0;
-        margin: -1px;
-      }
-
-      .panel-footer > * {
-        flex-grow: 1;
-        margin: 1px;
-      }
-
-      .panel-footer > button.bx--btn {
-        padding-right: 60px;
+        height: 100%;
       }
     `,
   ],
@@ -117,6 +100,7 @@ class StoryCustomComponent implements OnInit {
   @Input() active: false;
   @Input() overlay: false;
   @Input() side: 'left' | 'right' = 'left';
+  @Input() titleCondensed = false;
   @Output() close = new EventEmitter();
 }
 
@@ -138,6 +122,7 @@ storiesOf('Components/Side panel', module)
         [overlay]="overlay"
         [variation]="variation"
         [side]="side"
+        [titleCondensed]="titleCondensed"
         (close)="close($event)">
       </ai-side-panel-component>
     `,
@@ -146,6 +131,7 @@ storiesOf('Components/Side panel', module)
       showDrawer: boolean('showDrawer', false),
       active: boolean('active', false),
       overlay: boolean('overlay', false),
+      titleCondensed: boolean('condensed', false),
       variation: select('variation', ['slide-in', 'inline', 'slide-over'], 'inline'),
       side: select('side', ['left', 'right'], 'left'),
       close: action('close'),

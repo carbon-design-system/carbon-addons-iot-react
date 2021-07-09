@@ -1,7 +1,7 @@
 @import '../../../styles/src/globals/vars';
 
 $side-panel-width: 320px;
-$side-panel-drawer-width: 48px;
+$side-panel-drawer-width: $spacing-09;
 $border-width: 1px;
 
 .#{$iot-prefix}--side-panel {
@@ -18,6 +18,20 @@ $border-width: 1px;
     right: 0;
   }
 
+  .panel {
+    height: 100%;
+
+    .panel-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .panel-content {
+      padding-bottom: $spacing-09;
+    }
+  }
+
   .close-button {
     position: absolute;
     top: 0;
@@ -28,6 +42,35 @@ $border-width: 1px;
 
 .#{$iot-prefix}--side-panel-title {
   padding: $spacing-05;
+  color: $text-01;
+  @include type-style('productive-heading-03');
+
+  &.#{$iot-prefix}--side-panel-title__condensed {
+    @include type-style('productive-heading-02');
+  }
+
+  &.#{$iot-prefix}--side-panel-title__with-close {
+    padding-right: $spacing-03;
+    margin-right: $spacing-09;
+  }
+}
+
+.#{$iot-prefix}--side-panel-footer {
+  min-width: 15.4rem;
+  display: flex;
+  width: 100%;
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  & > button.bx--btn {
+    padding-right: 60px;
+  }
+
+  :not(:last-child) {
+    margin-right: 1px;
+  }
 }
 
 .#{$iot-prefix}--side-panel__drawer {
@@ -35,12 +78,12 @@ $border-width: 1px;
   min-width: $side-panel-drawer-width;
 
   .panel {
-    &.#{$iot-prefix}--side-panel__left .panel-content {
+    &.#{$iot-prefix}--side-panel__left .panel-content-wrapper {
       right: $side-panel-width;
       height: 100%;
       position: relative;
     }
-    &.#{$iot-prefix}--side-panel__right .panel-content {
+    &.#{$iot-prefix}--side-panel__right .panel-content-wrapper {
       left: $side-panel-drawer-width;
       height: 100%;
       position: relative;
@@ -49,7 +92,23 @@ $border-width: 1px;
 }
 
 .#{$iot-prefix}--side-panel__inline {
-  border: $border-width solid $ui-03;
+  .panel {
+    &.#{$iot-prefix}--side-panel__left {
+      border-right: $border-width solid $ui-03;
+    }
+
+    &.#{$iot-prefix}--side-panel__right {
+      border-left: $border-width solid $ui-03;
+    }
+  }
+}
+
+.#{$iot-prefix}--side-panel__slide-in.active .panel.#{$iot-prefix}--side-panel__left {
+  border-right: $border-width solid $ui-03;
+}
+
+.#{$iot-prefix}--side-panel__slide-in.active .panel.#{$iot-prefix}--side-panel__right {
+  border-left: $border-width solid $ui-03;
 }
 
 .#{$iot-prefix}--side-panel__slide-in,
@@ -60,7 +119,6 @@ $border-width: 1px;
   &.active {
     width: $side-panel-width;
     min-width: $side-panel-width;
-    border: $border-width solid $ui-03;
 
     .panel {
       &.#{$iot-prefix}--side-panel__left {
