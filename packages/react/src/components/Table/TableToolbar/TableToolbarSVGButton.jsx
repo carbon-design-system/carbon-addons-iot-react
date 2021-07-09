@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Button } from 'carbon-components-react';
 
+import Button from '../../Button';
 import { settings } from '../../../constants/Settings';
 
 const { iotPrefix, prefix } = settings;
@@ -42,7 +42,7 @@ const TableToolbarSVGButton = ({ onClick, testId, className, description, isActi
       onClick={onClick}
       title={description}
       iconDescription={description}
-      data-testid={testId}
+      testId={testId}
     />
   );
 };

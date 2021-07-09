@@ -8,7 +8,7 @@ import Button from '../Button';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  testID: PropTypes.string.isRequired,
+  testId: PropTypes.string.isRequired,
 
   /**
    * The label on a single menu button
@@ -41,7 +41,7 @@ const propTypes = {
 
 export const SplitMenuButton = React.forwardRef(
   (
-    { label, iconDescription, renderIcon, onPrimaryActionClick, onSecondaryActionClick, testID },
+    { label, iconDescription, renderIcon, onPrimaryActionClick, onSecondaryActionClick, testId },
     ref
   ) => {
     return (
@@ -49,7 +49,7 @@ export const SplitMenuButton = React.forwardRef(
         <Button
           className={classnames(`${iotPrefix}--menu-button__primary`)}
           onClick={onPrimaryActionClick}
-          testID={`${testID}-primary`}
+          testId={`${testId}-primary`}
         >
           {label}
         </Button>
@@ -63,7 +63,7 @@ export const SplitMenuButton = React.forwardRef(
           iconDescription={iconDescription}
           renderIcon={renderIcon}
           onClick={onSecondaryActionClick}
-          testID={`${testID}-secondary`}
+          testId={`${testId}-secondary`}
         />
       </>
     );

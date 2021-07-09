@@ -67,7 +67,7 @@ const Legend = ({
       })}
     >
       <Button
-        data-testid={`${testID}-collapse-toggle`}
+        testId={`${testID}-collapse-toggle`}
         className={`${iotPrefix}--map-legend__collapse-btn`}
         kind="ghost"
         size="small"

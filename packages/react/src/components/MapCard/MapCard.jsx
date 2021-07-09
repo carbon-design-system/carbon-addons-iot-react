@@ -112,7 +112,7 @@ const MapCard = ({
       onCardAction={onCardAction}
       contentClassName={`${BASE_CLASS_NAME}-card-content`}
       className={`${BASE_CLASS_NAME}`}
-      testID={testID}
+      testId={testID}
       {...others}
     >
       <>

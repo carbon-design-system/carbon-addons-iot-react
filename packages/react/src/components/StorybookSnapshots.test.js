@@ -24,6 +24,8 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         !message.includes(
           'Warning: \nThe prop `blurb` for WizardInline has been deprecated in favor of `description`'
         ) &&
+        // TODO: remove deprecated testID in v3.
+        !message.includes(`The 'testID' has been deprecated.`) &&
         !message.includes('Warning: Function components cannot be given refs.') &&
         !message.includes('Failed to initialize WebGL.')
       ) {

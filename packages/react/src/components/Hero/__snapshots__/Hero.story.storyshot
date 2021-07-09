@@ -432,7 +432,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             </div>
             <button
               aria-pressed={null}
-              className="bx--btn bx--btn--secondary"
+              className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
               disabled={false}
               tabIndex={0}
               type="button"
@@ -441,7 +442,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             </button>
             <button
               aria-pressed={null}
-              className="bx--btn bx--btn--primary"
+              className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
               disabled={false}
               tabIndex={0}
               type="button"
