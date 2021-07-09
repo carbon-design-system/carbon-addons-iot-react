@@ -266,7 +266,7 @@ const CardEditor = ({
             onClick={onEditDataItems}
             iconDescription={mergedI18n.editDataItems}
             // TODO: remove deprecated testID in v3
-            testId={`${testID || testId}-edit-button`}
+            // testId={`${testID || testId}-edit-button`}
           >
             {mergedI18n.editDataItems}
           </Button>
