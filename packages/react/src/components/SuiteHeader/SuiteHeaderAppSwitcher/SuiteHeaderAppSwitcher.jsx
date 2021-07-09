@@ -88,7 +88,7 @@ const SuiteHeaderAppSwitcher = ({
         ) : (
           <Button
             kind="tertiary"
-            testID="suite-header-app-switcher--all-applications"
+            testId="suite-header-app-switcher--all-applications"
             onClick={handleAllApplicationRoute}
             onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], handleAllApplicationRoute)}
             renderIcon={ArrowRight16}
@@ -118,7 +118,7 @@ const SuiteHeaderAppSwitcher = ({
             >
               <Button
                 kind="ghost"
-                testID={`suite-header-app-switcher--${id}`}
+                testId={`suite-header-app-switcher--${id}`}
                 onClick={eventHandler}
                 onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
               >
