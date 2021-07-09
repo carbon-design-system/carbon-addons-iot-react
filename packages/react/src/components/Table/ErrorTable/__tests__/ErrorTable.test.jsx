@@ -15,6 +15,30 @@ const commonTableProps = {
 };
 
 describe('ErrorTable', () => {
+  it('should be selectable by testID or testId', () => {
+    const { rerender } = render(
+      <ErrorTable
+        {...commonTableProps}
+        errorState={<span>my custom element</span>}
+        testID="ERROR"
+      />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
+    );
+    expect(screen.getByTestId('ERROR')).toBeDefined();
+    rerender(
+      <ErrorTable
+        {...commonTableProps}
+        errorState={<span>my custom element</span>}
+        testId="error"
+      />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
+    );
+    expect(screen.getByTestId('error')).toBeDefined();
+  });
   it('custom error state', () => {
     render(<ErrorTable {...commonTableProps} errorState={<span>my custom element</span>} />, {
       container: document.body.appendChild(document.createElement('table')),

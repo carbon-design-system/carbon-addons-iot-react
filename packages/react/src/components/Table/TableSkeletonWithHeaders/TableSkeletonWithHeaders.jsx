@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { DataTable, SkeletonText } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
+import deprecate from '../../../internal/deprecate';
 
 const { TableBody, TableCell, TableRow } = DataTable;
 const { iotPrefix } = settings;
@@ -13,7 +14,13 @@ const propTypes = {
   hasRowActions: PropTypes.bool,
   rowCount: PropTypes.number,
   columns: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string.isRequired })),
-  testID: PropTypes.string,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
 };
@@ -24,6 +31,7 @@ const defaultProps = {
   hasRowActions: false,
   rowCount: 10,
   columns: [],
+  testId: '',
   testID: '',
   showExpanderColumn: false,
 };
@@ -36,9 +44,10 @@ const TableSkeletonWithHeaders = ({
   columns,
   rowCount,
   testID,
+  testId,
   showExpanderColumn,
 }) => (
-  <TableBody data-testid={testID}>
+  <TableBody data-testid={testID || testId}>
     <TableRow className={`${iotPrefix}--table-skeleton-with-headers--table-row`}>
       {hasRowSelection === 'multi' ? <TableCell /> : null}
       {hasRowExpansion ? <TableCell /> : null}
@@ -47,7 +56,9 @@ const TableSkeletonWithHeaders = ({
           <SkeletonText />
         </TableCell>
       ))}
-      {showExpanderColumn ? <TableCell data-testid={`${testID}-expander-column`} /> : null}
+      {showExpanderColumn ? (
+        <TableCell data-testid={`${testID || testId}-expander-column`} />
+      ) : null}
       {hasRowActions ? <TableCell /> : null}
     </TableRow>
     {[...Array(rowCount > 0 ? rowCount - 1 : 0)].map((row, index) => (
@@ -61,7 +72,7 @@ const TableSkeletonWithHeaders = ({
           <TableCell key={`emptycell-${column.id}`} />
         ))}
         {showExpanderColumn ? (
-          <TableCell data-testid={`${testID}-skeletonRow-${index}-expander-column`} />
+          <TableCell data-testid={`${testID || testId}-skeletonRow-${index}-expander-column`} />
         ) : null}
         {hasRowActions ? <TableCell /> : null}
       </TableRow>

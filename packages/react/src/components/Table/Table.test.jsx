@@ -178,6 +178,53 @@ describe('Table', () => {
     },
   ];
 
+  it('should be selectable with testId or id', () => {
+    const { rerender } = render(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={options}
+        view={view}
+        testId="__table__"
+      />
+    );
+    expect(screen.getByTestId('__table__')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-container')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-toolbar')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-toolbar-content')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-toolbar-batch-actions')).toBeDefined();
+    expect(screen.getByTestId('download-button')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-head')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-head-column-string')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-body')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-head-row-expansion-column')).toBeDefined();
+
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={options}
+        view={view}
+        id="__TABLE__"
+      />
+    );
+
+    expect(screen.getByTestId('__TABLE__')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-container')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-toolbar')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-toolbar-content')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-toolbar-batch-actions')).toBeDefined();
+    expect(screen.getByTestId('download-button')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-head')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-head-column-string')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-body')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-head-row-expansion-column')).toBeDefined();
+  });
+
   it('limits the number of pagination select options', () => {
     // 100 records should have 10 pages. With max pages option we expect 5.
     const wrapper = mount(

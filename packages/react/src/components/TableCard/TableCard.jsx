@@ -174,6 +174,7 @@ const TableCard = ({
   availableActions,
   isLoading,
   testID,
+  testId,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -639,7 +640,7 @@ const TableCard = ({
       hideHeader
       // Use the Table's loading state rather than Card's
       isLoading={false}
-      testId={testID}
+      testId={testID || testId}
       {...others}
     >
       {({ height }) => {

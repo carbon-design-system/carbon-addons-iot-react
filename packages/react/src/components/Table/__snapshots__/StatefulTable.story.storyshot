@@ -17643,7 +17643,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <button
             aria-pressed={null}
-            className="bx--btn bx--btn--secondary"
+            className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="table-table-toolbar-clear-filters-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -18838,8 +18839,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 />
                 <th
                   className="iot--filter-header-row--header"
+                  data-testid="table-table-head-filter-header-row-expander-column"
                   scope="col"
-                  testID="table-table-head-filter-header-row-expander-column"
                 />
               </tr>
             </thead>
@@ -43685,7 +43686,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <button
             aria-pressed={null}
-            className="bx--btn bx--btn--secondary"
+            className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="table-table-toolbar-clear-filters-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -44880,8 +44882,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 />
                 <th
                   className="iot--filter-header-row--header"
+                  data-testid="table-table-head-filter-header-row-expander-column"
                   scope="col"
-                  testID="table-table-head-filter-header-row-expander-column"
                 />
               </tr>
             </thead>
@@ -52107,7 +52109,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <button
             aria-pressed={null}
-            className="bx--btn bx--btn--secondary"
+            className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="table-table-toolbar-clear-filters-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -85416,7 +85419,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <button
             aria-pressed={null}
-            className="bx--btn bx--btn--secondary"
+            className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="table-table-toolbar-clear-filters-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -85501,6 +85505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <div
             aria-label="Story Filter Story Filter"
             className="bx--tag bx--tag--filter"
+            data-testid="null-filter-tag-story-filter"
             id="tag-30"
           >
             <span
