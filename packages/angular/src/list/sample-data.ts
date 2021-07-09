@@ -4,7 +4,7 @@ export const simpleListItems = [
   new AIListItem({ value: 'Canada', isSelectable: true }),
   new AIListItem({ value: 'Brazil', isSelectable: true }),
   new AIListItem({ value: 'Columbia', isSelectable: true }),
-  new AIListItem({ value: 'United States of Ameria', isSelectable: true }),
+  new AIListItem({ value: 'United States of America', isSelectable: true }),
   new AIListItem({ value: 'Uruguay', isSelectable: true }),
   new AIListItem({ value: 'Spain', isSelectable: true }),
 ];
@@ -26,7 +26,7 @@ export const nestedListItems = [
       }),
       new AIListItem({ value: 'Brazil', isSelectable: true, isDraggable: true }),
       new AIListItem({ value: 'Columbia', isSelectable: true, isDraggable: true }),
-      new AIListItem({ value: 'United States of Ameria', isSelectable: true, isDraggable: true }),
+      new AIListItem({ value: 'United States of America', isSelectable: true, isDraggable: true }),
       new AIListItem({ value: 'Uruguay', isSelectable: true, isDraggable: true }),
       new AIListItem({ value: 'Spain', isSelectable: true, isDraggable: true }),
     ],

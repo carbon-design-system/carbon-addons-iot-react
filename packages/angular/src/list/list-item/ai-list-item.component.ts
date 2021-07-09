@@ -40,14 +40,14 @@ import { AIListItem } from './ai-list-item.class';
       <div
         *ngIf="item.hasChildren()"
         role="button"
-        (click)="item.updateExpanded(!item.expanded)"
+        (click)="item.expand(!item.expanded)"
         tabindex="0"
         class="iot--list-item--expand-icon"
       >
-        <svg *ngIf="!expanded" ibmIcon="chevron--down" size="16"></svg>
+        <svg *ngIf="!item.expanded" ibmIcon="chevron--down" size="16"></svg>
         <!-- chevron--up doesn't exist in icons yet -->
         <svg
-          *ngIf="expanded"
+          *ngIf="item.expanded"
           focusable="false"
           preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ export class AIListItemComponent {
   @Output() itemSelected = new EventEmitter<any>();
 
   handleSelect(select: boolean) {
-    this.item.updateSelected(select);
+    this.item.select(select);
     this.itemSelected.emit();
   }
 }

@@ -78,23 +78,23 @@ export class AIListItem {
       items: [],
     };
 
-    const data = Object.assign({}, defaults, rawData);
-    for (const property of Object.getOwnPropertyNames(data)) {
-      if (data.hasOwnProperty(property)) {
-        this[property] = data[property];
-      }
-    }
+    Object.assign(this, defaults, rawData);
   }
 
-  updateExpanded(expanded: boolean) {
+  includes(searchString: string) {
+    return this.value.toLowerCase().includes(searchString.toLowerCase()) ||
+      this.items.some((listItem) => listItem.includes(searchString));
+  }
+
+  expand(expanded = true) {
     this.expanded = expanded;
   }
 
-  updateSelected(selected: boolean) {
+  select(selected = true) {
     this.selected = selected;
   }
 
-  updateIndeterminate(indeterminate: boolean) {
+  setIndeterminate(indeterminate = true) {
     this.indeterminate = indeterminate;
   }
 
@@ -113,7 +113,8 @@ export class AIListItem {
     if (item === undefined || item === null) {
       return false;
     }
-    return this.hasItemAsChild(this.items, item);
+
+    return this.id === item.id || this.items.some((listItem) => listItem.hasItem(item));
   }
 
   hasChildren() {
@@ -126,14 +127,5 @@ export class AIListItem {
 
   allChildrenSelected() {
     return this.items.every((item: AIListItem) => (item.isSelectable ? item.selected : true));
-  }
-
-  protected hasItemAsChild(items: AIListItem[], item: AIListItem) {
-    return items.reduce((hasItem: boolean, listItem: AIListItem) => {
-      if (listItem.items && listItem.items.length > 0) {
-        return hasItem || item.id === listItem.id || this.hasItemAsChild(listItem.items, item);
-      }
-      return hasItem || item.id === listItem.id;
-    }, false);
   }
 }

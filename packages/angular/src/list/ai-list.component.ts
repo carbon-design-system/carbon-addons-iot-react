@@ -10,7 +10,7 @@ export enum SelectionType {
   selector: 'ai-list',
   template: `
     <div class="iot--list">
-      <ai-list-header [hasSearch]="hasSearch" [title]="title" (onSearch)="onSearch.emit($event)">
+      <ai-list-header [hasSearch]="hasSearch" [title]="title" (onSearch)="searchString = $event">
       </ai-list-header>
       <div class="iot--list--content">
         <ng-template
@@ -29,12 +29,13 @@ export enum SelectionType {
     </div>
 
     <ng-template #listItemTemplateRef let-data>
-      <ng-container *ngIf="data.item.id && !isArray(data.item)">
+      <!-- Render item -->
+      <ng-container *ngIf="data.item.id && !isArray(data.item) && data.item.includes(searchString)">
         <ai-list-item-wrapper
           [draggable]="itemsDraggable && data.item.isDraggable"
-          [isDragging]="isItemDragging"
-          (dragStart)="setDraggingState(true, data.item, data.parentItem)"
-          (dragEnd)="setDraggingState(false, null, null)"
+          [isDragging]="draggingState.isDragging"
+          (dragStart)="setDraggingState({ isDragging: true, item: data.item, parent: data.parentItem })"
+          (dragEnd)="setDraggingState({ isDragging: false, item: null, parent: null })"
           (droppedAbove)="handleDrop(data.parentItem, data.index)"
           (droppedBelow)="handleDrop(data.parentItem, data.index + 1)"
           (droppedNested)="handleDrop(data.item, 0)"
@@ -50,6 +51,7 @@ export enum SelectionType {
         </ai-list-item-wrapper>
       </ng-container>
 
+      <!-- Item has children -->
       <ng-container *ngIf="!isArray(data.item) && data.item.hasChildren() && data.item.expanded">
         <ng-container
           *ngFor="let item of data.item.items; index as i"
@@ -65,6 +67,7 @@ export enum SelectionType {
         ></ng-container>
       </ng-container>
 
+      <!-- Top level item -->
       <ng-container *ngIf="isArray(data.item)">
         <ng-container
           *ngFor="let item of data.item; index as i"
@@ -89,7 +92,7 @@ export class AIListComponent {
   @Input() selectionType: SelectionType;
 
   /**
-   * Indicates whether or not items in the list are draggable.
+   * Indicates whether or not items in the list can be dragged into new positions.
    */
   @Input() itemsDraggable: boolean;
 
@@ -108,9 +111,42 @@ export class AIListComponent {
    */
   @Output() onSearch = new EventEmitter<string>();
 
-  public isItemDragging = false;
-  public draggedItem: AIListItem = null;
-  public draggedItemParent: AIListItem = null;
+  searchString = '';
+
+  draggingState = { isDragging: false, item: null, parent: null };
+
+  setDraggingState(data: any) {
+    this.draggingState = Object.assign({}, this.draggingState, data);
+  }
+
+  handleDrop(receiver: AIListItem, index: number) {
+    // Don't allow list items to be dropped as one of its own children, and also
+    // don't allow list items to be dropped on itself.
+    if (
+      !this.draggingState.item.hasItem(receiver) &&
+      (receiver === null || receiver.id !== this.draggingState.item.id)
+    ) {
+      // Remove the `draggedItem` from its original position.
+      // If `draggedItemParent` is null it means `draggedItem` is a top level list item.
+      if (this.draggingState.parent === null) {
+        const droppedItemIndex = this.items.findIndex(
+          (item: AIListItem) => item.id === this.draggingState.item.id
+        );
+        this.items.splice(droppedItemIndex, 1);
+      } else {
+        this.draggingState.parent.removeItem(this.draggingState.item);
+      }
+
+      // Place `draggedItem` as a child of `recievingItem` at the given `index`.
+      // If `receiver` is null it means put `draggedItem` as a top level list item.
+      if (receiver === null) {
+        this.items.splice(index, 0, this.draggingState.item);
+      } else {
+        receiver.addItem(this.draggingState.item, index);
+      }
+    }
+    this.setDraggingState({ isDragging: false, item: null, parent: null });
+  }
 
   handleSelect(selectedItem: AIListItem) {
     if (this.selectionType === SelectionType.MULTI) {
@@ -119,45 +155,6 @@ export class AIListComponent {
     } else {
       this.onSingleSelect(this.items, selectedItem.id);
     }
-  }
-
-  setDraggingState(
-    isItemDragging: boolean,
-    draggedItem: AIListItem,
-    draggedItemParent: AIListItem
-  ) {
-    this.isItemDragging = isItemDragging;
-    this.draggedItem = draggedItem;
-    this.draggedItemParent = draggedItemParent;
-  }
-
-  handleDrop(receivingItem: AIListItem, insertIndex: number) {
-    // Don't allow list items to be dropped as one of its own children, and also
-    // don't allow list items to be dropped on itself.
-    if (
-      !this.draggedItem.hasItem(receivingItem) &&
-      (receivingItem === null || receivingItem.id !== this.draggedItem.id)
-    ) {
-      // Remove the `draggedItem` from its original position.
-      // If `draggedItemParent` is null it means `draggedItem` is a top level list item.
-      if (this.draggedItemParent === null) {
-        const removeIndex = this.items.findIndex(
-          (item: AIListItem) => item.id === this.draggedItem.id
-        );
-        this.items.splice(removeIndex, 1);
-      } else {
-        this.draggedItemParent.removeItem(this.draggedItem);
-      }
-
-      // Place `draggedItem` as a child of `recievingItem` at the given `insertIndex`.
-      // If `receivingItem` is null it means put `draggedItem` as a top level list item.
-      if (receivingItem === null) {
-        this.items.splice(insertIndex, 0, this.draggedItem);
-      } else {
-        receivingItem.addItem(this.draggedItem, insertIndex);
-      }
-    }
-    this.setDraggingState(false, null, null);
   }
 
   /**
@@ -174,7 +171,7 @@ export class AIListComponent {
   protected updateChildSelectedStates(selectedItem: AIListItem) {
     if (selectedItem.hasChildren()) {
       selectedItem.items.forEach((item: AIListItem) => {
-        item.updateSelected(selectedItem.selected);
+        item.select(selectedItem.selected);
         this.updateChildSelectedStates(item);
       });
     }
@@ -189,14 +186,14 @@ export class AIListComponent {
       }
 
       if (item.isSelectable && item.allChildrenSelected()) {
-        item.updateSelected(true);
-        item.updateIndeterminate(false);
+        item.select();
+        item.setIndeterminate(false);
       } else if (item.isSelectable && item.someChildrenSelected()) {
-        item.updateSelected(false);
-        item.updateIndeterminate(true);
+        item.select(false);
+        item.setIndeterminate();
       } else {
-        item.updateSelected(false);
-        item.updateIndeterminate(false);
+        item.select(false);
+        item.setIndeterminate(false);
       }
     });
   }
@@ -204,7 +201,7 @@ export class AIListComponent {
   protected onSingleSelect(items: AIListItem[], selectedId: string) {
     items.forEach((item: AIListItem) => {
       if (item.id !== selectedId) {
-        item.updateSelected(false);
+        item.select(false);
       }
 
       if (item.hasChildren()) {
