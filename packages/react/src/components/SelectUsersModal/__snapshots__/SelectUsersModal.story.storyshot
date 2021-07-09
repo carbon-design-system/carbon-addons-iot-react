@@ -6,6 +6,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="iot--select-users-modal"
+    testId="select-users-modal-container"
   >
     <div
       className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
@@ -495,6 +496,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="iot--select-users-modal"
+    testId="select-users-modal-container"
   >
     <div
       className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
@@ -1575,6 +1577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="iot--select-users-modal"
+    testId="select-users-modal-container"
   >
     <div
       className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
@@ -2147,6 +2150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="iot--select-users-modal"
+    testId="select-users-modal-container"
   >
     <div
       className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"

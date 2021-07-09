@@ -6,6 +6,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="bx--modal bx--modal-tall"
+    data-testid="suite-header-logout-modal"
     onBlur={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -111,7 +112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
-    data-testid="header"
+    data-testid="suite-header"
   >
     <a
       className="bx--skip-to-content"
@@ -123,7 +124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     <button
       aria-label="Open menu"
       className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
-      data-testid="header-menu-button"
+      data-testid="suite-header-menu-button"
       onClick={[Function]}
       title="Open menu"
       type="button"
@@ -145,7 +146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </button>
     <a
       className="bx--header__name"
-      data-testid="header-name"
+      data-testid="suite-header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -173,7 +174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
-        data-testid="header-action-group-global-bar"
+        data-testid="suite-header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -457,6 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                     >
                       <div
                         className="iot--suite-header-profile"
+                        data-testid="suite-header-profile"
                       >
                         <h5>
                           Profile
@@ -584,6 +586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <ul
                     className="iot--suite-header-app-switcher"
+                    data-testid="suite-header-app-switcher"
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -674,6 +677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="bx--modal bx--modal-tall"
+    data-testid="suite-header-logout-modal"
     onBlur={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -779,7 +783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
-    data-testid="header"
+    data-testid="suite-header"
   >
     <a
       className="bx--skip-to-content"
@@ -790,7 +794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
-      data-testid="header-name"
+      data-testid="suite-header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -818,7 +822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
-        data-testid="header-action-group-global-bar"
+        data-testid="suite-header-action-group-global-bar"
       >
         <button
           aria-label="bell"
@@ -1414,6 +1418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                     >
                       <div
                         className="iot--suite-header-profile"
+                        data-testid="suite-header-profile"
                       >
                         <h5>
                           Profile
@@ -1597,6 +1602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <ul
                     className="iot--suite-header-app-switcher"
+                    data-testid="suite-header-app-switcher"
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -1721,6 +1727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="bx--modal bx--modal-tall"
+    data-testid="suite-header-logout-modal"
     onBlur={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -1830,7 +1837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
-    data-testid="header"
+    data-testid="suite-header"
   >
     <a
       className="bx--skip-to-content"
@@ -1841,7 +1848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
-      data-testid="header-name"
+      data-testid="suite-header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -1886,7 +1893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
-        data-testid="header-action-group-global-bar"
+        data-testid="suite-header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -2170,6 +2177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                     >
                       <div
                         className="iot--suite-header-profile"
+                        data-testid="suite-header-profile"
                       >
                         <h5>
                           Profile
@@ -2297,6 +2305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <ul
                     className="iot--suite-header-app-switcher"
+                    data-testid="suite-header-app-switcher"
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -2387,6 +2396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="bx--modal bx--modal-tall"
+    data-testid="suite-header-logout-modal"
     onBlur={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -2492,7 +2502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
-    data-testid="header"
+    data-testid="suite-header"
   >
     <a
       className="bx--skip-to-content"
@@ -2504,7 +2514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     <button
       aria-label="Open menu"
       className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
-      data-testid="header-menu-button"
+      data-testid="suite-header-menu-button"
       onClick={[Function]}
       title="Open menu"
       type="button"
@@ -2526,7 +2536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </button>
     <a
       className="bx--header__name"
-      data-testid="header-name"
+      data-testid="suite-header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -2554,7 +2564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
-        data-testid="header-action-group-global-bar"
+        data-testid="suite-header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -2838,6 +2848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                     >
                       <div
                         className="iot--suite-header-profile"
+                        data-testid="suite-header-profile"
                       >
                         <h5>
                           Profile
@@ -2965,6 +2976,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <ul
                     className="iot--suite-header-app-switcher"
+                    data-testid="suite-header-app-switcher"
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -3053,6 +3065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     aria-hidden={true}
     aria-label="Side navigation"
     className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
+    data-testid="suite-header-side-nav"
     onBlur={[Function]}
     onFocus={[Function]}
     onMouseEnter={[Function]}
@@ -3121,6 +3134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           >
             <button
               className="bx--side-nav__link"
+              data-testid="suite-header-side-nav-menu-item-0"
               label="Yet another link"
               title="Yet another link"
             >
@@ -3139,6 +3153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         <a
           aria-label="Devices"
           className="bx--side-nav__link"
+          data-testid="suite-header-side-nav-link-1"
           href="https://google.com"
           label="Devices"
           target="_blank"
@@ -3234,6 +3249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           >
             <button
               className="bx--side-nav__link"
+              data-testid="suite-header-side-nav-menu-item-2"
               label="Link 1"
               title="Link 1"
             >
@@ -3249,6 +3265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           >
             <a
               className="bx--side-nav__link"
+              data-testid="suite-header-side-nav-menu-item-2"
               label="Link 2"
               title="Link 2"
             >
@@ -3321,6 +3338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           >
             <button
               className="bx--side-nav__link bx--side-nav__link--current"
+              data-testid="suite-header-side-nav-menu-item-3"
               label="Yet another link"
               title="Yet another link"
             >
@@ -3344,6 +3362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="iot--suite-header-survey-toast bx--toast-notification bx--toast-notification--low-contrast bx--toast-notification--info"
+    data-testid="suite-header-notification"
     kind="info"
     role="alert"
   >
@@ -3430,6 +3449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   </div>
   <div
     className="bx--modal bx--modal-tall"
+    data-testid="suite-header-logout-modal"
     onBlur={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -3535,7 +3555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
-    data-testid="header"
+    data-testid="suite-header"
   >
     <a
       className="bx--skip-to-content"
@@ -3546,7 +3566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
-      data-testid="header-name"
+      data-testid="suite-header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -3574,7 +3594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
-        data-testid="header-action-group-global-bar"
+        data-testid="suite-header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -3858,6 +3878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                     >
                       <div
                         className="iot--suite-header-profile"
+                        data-testid="suite-header-profile"
                       >
                         <h5>
                           Profile
@@ -3985,6 +4006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <ul
                     className="iot--suite-header-app-switcher"
+                    data-testid="suite-header-app-switcher"
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -4075,6 +4097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="bx--modal bx--modal-tall"
+    data-testid="suite-header-logout-modal"
     onBlur={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -4172,7 +4195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
-    data-testid="header"
+    data-testid="suite-header"
   >
     <a
       className="bx--skip-to-content"
@@ -4183,7 +4206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
-      data-testid="header-name"
+      data-testid="suite-header-name"
       href="javascript:void(0)"
     >
       <span
@@ -4211,7 +4234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
-        data-testid="header-action-group-global-bar"
+        data-testid="suite-header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -4441,6 +4464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                     >
                       <div
                         className="iot--suite-header-profile"
+                        data-testid="suite-header-profile"
                       >
                         <h5>
                           Profile
@@ -4560,6 +4584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <ul
                     className="iot--suite-header-app-switcher"
+                    data-testid="suite-header-app-switcher"
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -4629,6 +4654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="bx--modal bx--modal-tall"
+    data-testid="suite-header-logout-modal"
     onBlur={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -4738,7 +4764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
-    data-testid="header"
+    data-testid="suite-header"
   >
     <a
       className="bx--skip-to-content"
@@ -4749,7 +4775,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
-      data-testid="header-name"
+      data-testid="suite-header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -4777,7 +4803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
-        data-testid="header-action-group-global-bar"
+        data-testid="suite-header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
@@ -5061,6 +5087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                     >
                       <div
                         className="iot--suite-header-profile"
+                        data-testid="suite-header-profile"
                       >
                         <h5>
                           Profile
@@ -5188,6 +5215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <ul
                     className="iot--suite-header-app-switcher"
+                    data-testid="suite-header-app-switcher"
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"

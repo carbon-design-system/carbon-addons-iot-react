@@ -2091,6 +2091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </span>
         <div
           className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
+          data-testid="iot-simple-pagination-backward-button"
           role="button"
           tabIndex={-1}
         >
@@ -2114,6 +2115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
+          data-testid="iot-simple-pagination-forward-button"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"
@@ -2750,6 +2752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </span>
         <div
           className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
+          data-testid="iot-simple-pagination-backward-button"
           role="button"
           tabIndex={-1}
         >
@@ -2773,6 +2776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
+          data-testid="iot-simple-pagination-forward-button"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"

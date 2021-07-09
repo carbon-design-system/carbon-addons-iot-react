@@ -120,6 +120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       aria-hidden={true}
       aria-label="Side navigation"
       className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
+      data-testid="side-nav"
       onBlur={[Function]}
       onFocus={[Function]}
       onMouseEnter={[Function]}
@@ -188,6 +189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             >
               <button
                 className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-0"
                 label="Yet another link"
                 onClick={[Function]}
                 title="Yet another link"
@@ -207,6 +209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           <a
             aria-label="Devices"
             className="bx--side-nav__link"
+            data-testid="side-nav-link-1"
             href="https://google.com"
             label="Devices"
             target="_blank"
@@ -302,6 +305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             >
               <button
                 className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-2"
                 label="Link 1"
                 onClick={[Function]}
                 title="Link 1"
@@ -318,6 +322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             >
               <a
                 className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-2"
                 href="/?path=/story/watson-iot-sidenav--sidenav-component"
                 label="Link 2"
                 onClick={[Function]}
@@ -392,6 +397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             >
               <button
                 className="bx--side-nav__link bx--side-nav__link--current"
+                data-testid="side-nav-menu-item-3"
                 label="Yet another link"
                 onClick={[Function]}
                 title="Yet another link"

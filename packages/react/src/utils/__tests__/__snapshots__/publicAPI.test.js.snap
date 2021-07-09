@@ -3290,7 +3290,8 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
-            "testID": Object {
+            "testID": [Function],
+            "testId": Object {
               "type": "string",
             },
             "totalItems": Object {
@@ -4493,7 +4494,7 @@ Map {
       "pageOfPagesText": [Function],
       "pageText": null,
       "prevPageText": "Prev page",
-      "testID": "iot-simple-pagination",
+      "testId": "iot-simple-pagination",
       "totalItems": undefined,
       "totalItemsText": "Items",
     },
@@ -4522,7 +4523,8 @@ Map {
       "prevPageText": Object {
         "type": "string",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "totalItems": Object {
@@ -7766,6 +7768,7 @@ Map {
         "sideNavLabelText": "Side navigation",
       },
       "isSideNavExpanded": false,
+      "testId": "side-nav",
     },
     "propTypes": Object {
       "defaultExpanded": Object {
@@ -7838,6 +7841,9 @@ Map {
         "isRequired": true,
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
     },
   },
   "SuiteHeader" => Object {
@@ -7895,6 +7901,7 @@ Map {
       "routes": null,
       "sideNavProps": null,
       "surveyData": null,
+      "testId": "suite-header",
       "userDisplayName": null,
       "username": null,
       "walkmeLang": "en",
@@ -8292,6 +8299,9 @@ Map {
               "isRequired": true,
               "type": "arrayOf",
             },
+            "testId": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -8314,6 +8324,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "userDisplayName": Object {
         "type": "string",
@@ -8338,6 +8351,7 @@ Map {
         "profileTitle": "Profile",
       },
       "onRequestLogout": null,
+      "testId": "suite-header-profile",
       "username": "",
     },
     "propTypes": Object {
@@ -8367,6 +8381,9 @@ Map {
       "onRequestLogout": Object {
         "type": "func",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "username": Object {
         "type": "string",
       },
@@ -8384,6 +8401,7 @@ Map {
         "requestAccess": "Contact your administrator to request application access.",
       },
       "onRouteChange": [Function],
+      "testId": "suite-header-app-switcher",
     },
     "propTypes": Object {
       "allApplicationsLink": Object {
@@ -8434,6 +8452,9 @@ Map {
       "onRouteChange": Object {
         "type": "func",
       },
+      "testId": Object {
+        "type": "string",
+      },
     },
   },
   "SuiteHeaderLogoutModal" => Object {
@@ -8445,6 +8466,7 @@ Map {
         "secondaryButton": "Cancel",
       },
       "isOpen": false,
+      "testId": "suite-header-logout-modal",
     },
     "propTypes": Object {
       "i18n": Object {
@@ -8476,6 +8498,9 @@ Map {
       "onLogout": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -19005,7 +19030,8 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
-            "testID": Object {
+            "testID": [Function],
+            "testId": Object {
               "type": "string",
             },
             "totalItems": Object {

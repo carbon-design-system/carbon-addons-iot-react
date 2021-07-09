@@ -107,6 +107,7 @@ const defaultProps = {
   customApplications: [],
   walkmePath: null,
   walkmeLang: 'en',
+  testId: 'suite-header',
 };
 
 const propTypes = {
@@ -152,6 +153,8 @@ const propTypes = {
   walkmePath: PropTypes.string,
   /** Walkme language code */
   walkmeLang: PropTypes.string,
+
+  testId: PropTypes.string,
 };
 
 const SuiteHeader = ({
@@ -176,6 +179,7 @@ const SuiteHeader = ({
   customApplications,
   walkmePath,
   walkmeLang,
+  testId,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
@@ -224,6 +228,7 @@ const SuiteHeader = ({
       {walkmePath ? <Walkme path={walkmePath} lang={walkmeLang} /> : null}
       {showToast ? (
         <ToastNotification
+          data-testid={`${testId}-notification`}
           className={`${settings.iotPrefix}--suite-header-survey-toast`}
           kind="info"
           title={
@@ -285,6 +290,7 @@ const SuiteHeader = ({
                   ['{userName}', userDisplayName],
                 ]),
         }}
+        testId={`${testId}-logout-modal`}
       />
       {routes && (
         <>
@@ -297,6 +303,7 @@ const SuiteHeader = ({
         </>
       )}
       <Header
+        testId={testId}
         className={[`${settings.iotPrefix}--suite-header`, className].filter((i) => i).join(' ')}
         url={navigatorRoute}
         hasSideNav={hasSideNav || sideNavProps !== null}
@@ -318,6 +325,7 @@ const SuiteHeader = ({
                 requestAccess: mergedI18N.switcherRequestAccess,
                 learnMoreLink: mergedI18N.switcherLearnMoreLink,
               }}
+              testId={`${testId}-app-switcher`}
             />
           )),
         }}
@@ -460,6 +468,7 @@ const SuiteHeader = ({
                         profileTitle: mergedI18N.profileTitle,
                         profileButton: mergedI18N.profileManageButton,
                       }}
+                      testId={`${testId}-profile`}
                     />
                   </span>
                 ),
@@ -496,7 +505,11 @@ const SuiteHeader = ({
         {...otherHeaderProps}
       />
       {sideNavProps ? (
-        <SideNav {...sideNavProps} isSideNavExpanded={isSideNavExpandedState} />
+        <SideNav
+          {...sideNavProps}
+          isSideNavExpanded={isSideNavExpandedState}
+          testId={`${testId}-side-nav`}
+        />
       ) : null}
     </>
   );
