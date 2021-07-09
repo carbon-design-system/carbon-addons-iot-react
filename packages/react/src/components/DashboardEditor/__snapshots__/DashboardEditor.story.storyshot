@@ -2858,7 +2858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <button
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-              data-testid="card-editor-edit-button"
+              data-testid="Button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}

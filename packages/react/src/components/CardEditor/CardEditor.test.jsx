@@ -47,7 +47,7 @@ describe('CardEditor', () => {
     );
     expect(screen.getByTestId('card-editor')).toBeTruthy();
     expect(screen.getByTestId('card-editor-card-gallery-list')).toBeTruthy();
-    expect(screen.getByTestId('card-editor-edit-button')).toBeTruthy();
+    expect(screen.getByTestId('Button')).toBeTruthy();
   });
 
   it('fires onAddCard when user clicks on item in list', () => {
