@@ -12,11 +12,6 @@ export class AIListItem {
   id?: string;
 
   /**
-   * Id of the list item's direct parent.
-   */
-  parentId?: string;
-
-  /**
    * Primary content to be displayed in the list item.
    */
   value?: string;
@@ -52,6 +47,9 @@ export class AIListItem {
    */
   selected?: boolean;
 
+  /**
+   * Indicates whether or not the list item is in an indeterminate state.
+   */
   indeterminate?: boolean;
 
   /**
@@ -63,8 +61,6 @@ export class AIListItem {
    * Indicates whether or not the item can be dragged into a different position.
    */
   isDraggable?: boolean;
-
-  itemSelected = new EventEmitter();
 
   constructor(rawData?: any) {
     const defaults = {
@@ -82,8 +78,10 @@ export class AIListItem {
   }
 
   includes(searchString: string) {
-    return this.value.toLowerCase().includes(searchString.toLowerCase()) ||
-      this.items.some((listItem) => listItem.includes(searchString));
+    return (
+      this.value.toLowerCase().includes(searchString.toLowerCase()) ||
+      this.items.some((listItem) => listItem.includes(searchString))
+    );
   }
 
   expand(expanded = true) {

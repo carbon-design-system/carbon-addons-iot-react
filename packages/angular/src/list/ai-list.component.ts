@@ -10,7 +10,7 @@ export enum SelectionType {
   selector: 'ai-list',
   template: `
     <div class="iot--list">
-      <ai-list-header [hasSearch]="hasSearch" [title]="title" (onSearch)="searchString = $event">
+      <ai-list-header [hasSearch]="hasSearch" [title]="title" (onSearch)="handleSearch($event)">
       </ai-list-header>
       <div class="iot--list--content">
         <ng-template
@@ -34,7 +34,9 @@ export enum SelectionType {
         <ai-list-item-wrapper
           [draggable]="itemsDraggable && data.item.isDraggable"
           [isDragging]="draggingState.isDragging"
-          (dragStart)="setDraggingState({ isDragging: true, item: data.item, parent: data.parentItem })"
+          (dragStart)="
+            setDraggingState({ isDragging: true, item: data.item, parent: data.parentItem })
+          "
           (dragEnd)="setDraggingState({ isDragging: false, item: null, parent: null })"
           (droppedAbove)="handleDrop(data.parentItem, data.index)"
           (droppedBelow)="handleDrop(data.parentItem, data.index + 1)"
@@ -155,6 +157,11 @@ export class AIListComponent {
     } else {
       this.onSingleSelect(this.items, selectedItem.id);
     }
+  }
+
+  handleSearch(searchString: string) {
+    this.searchString = searchString;
+    this.onSearch.emit(searchString);
   }
 
   /**
