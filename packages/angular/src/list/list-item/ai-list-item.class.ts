@@ -83,9 +83,9 @@ export class AIListItem {
   includes(searchString: string) {
     return (
       this.value.toLowerCase().includes(searchString.toLowerCase()) ||
-      this.secondaryValue !== undefined &&
-      this.secondaryValue !== null &&
-      this.secondaryValue.toLowerCase().includes(searchString.toLowerCase()) ||
+      (this.secondaryValue !== undefined &&
+        this.secondaryValue !== null &&
+        this.secondaryValue.toLowerCase().includes(searchString.toLowerCase())) ||
       this.items.some((listItem) => listItem.includes(searchString))
     );
   }

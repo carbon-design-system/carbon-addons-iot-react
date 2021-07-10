@@ -42,6 +42,6 @@ storiesOf('Components/List', module)
       </ai-list>
     `,
     props: {
-      items: nestedDraggableListItems
-    }
+      items: nestedDraggableListItems,
+    },
   }));

@@ -33,7 +33,6 @@ import { IconService } from 'carbon-components-angular';
         class="iot--list-item--expand-icon"
       >
         <svg *ngIf="!item.expanded" ibmIcon="chevron--down" size="16"></svg>
-        <!-- chevron--up doesn't exist in icons yet -->
         <svg *ngIf="item.expanded" ibmIcon="chevron--up" size="16"></svg>
       </div>
       <div class="iot--list-item--content">

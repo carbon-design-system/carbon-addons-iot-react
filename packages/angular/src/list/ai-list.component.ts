@@ -11,15 +11,13 @@ export enum SelectionType {
 @Component({
   selector: 'ai-list',
   template: `
-    <div
-      class="iot--list"
-      [ngClass]="{ 'iot--list__full-height': isFullHeight }"
-    >
+    <div class="iot--list" [ngClass]="{ 'iot--list__full-height': isFullHeight }">
       <ai-list-header [hasSearch]="hasSearch" [title]="title" (onSearch)="handleSearch($event)">
       </ai-list-header>
       <div
         class="iot--list--content"
-        [ngClass]="{ 'iot--list--content__full-height': isFullHeight }">
+        [ngClass]="{ 'iot--list--content__full-height': isFullHeight }"
+      >
         <ng-container
           *ngIf="items && items.length > 0"
           [ngTemplateOutlet]="listItemTemplateRef"
@@ -41,7 +39,11 @@ export enum SelectionType {
             <svg ibmIcon="bee" size="32"></svg>
             <p>{{ emptyState }}</p>
           </ng-container>
-          <ng-container *ngIf="isTemplate(emptyState)" #customTemplate [ngTemplateOutlet]="emptyState">
+          <ng-container
+            *ngIf="isTemplate(emptyState)"
+            #customTemplate
+            [ngTemplateOutlet]="emptyState"
+          >
           </ng-container>
         </div>
       </div>
