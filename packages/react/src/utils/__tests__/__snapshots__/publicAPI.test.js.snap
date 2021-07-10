@@ -3889,6 +3889,7 @@ Map {
       },
       "isClickable": false,
       "onBack": null,
+      "testId": "wizard-modal",
     },
     "propTypes": Object {
       "currentStepIndex": Object {
@@ -3968,6 +3969,9 @@ Map {
         "isRequired": true,
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
     },
   },
   "WizardInline" => Object {
@@ -3996,6 +4000,7 @@ Map {
       "sidebar": null,
       "stepWidth": 8,
       "submitLabel": "Add",
+      "testId": "wizard-inline",
       "title": null,
     },
     "propTypes": Object {
@@ -4101,6 +4106,9 @@ Map {
       },
       "submitLabel": Object {
         "type": "node",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "string",
@@ -4133,6 +4141,7 @@ Map {
       "sidebar": null,
       "stepWidth": 8,
       "submitLabel": "Add",
+      "testId": "wizard-inline",
       "title": null,
     },
     "propTypes": Object {
@@ -4238,6 +4247,9 @@ Map {
       },
       "submitLabel": Object {
         "type": "node",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "string",
@@ -12601,6 +12613,7 @@ Map {
       "isNumberValueCompact": false,
       "locale": "en",
       "size": "MEDIUM",
+      "testId": "Card",
       "values": null,
     },
     "propTypes": Object {

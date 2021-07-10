@@ -16831,6 +16831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             title="pressure: 68 >= 10"
                           >
                             <svg
+                              data-testid="card-icon"
                               fill="black"
                               focusable="true"
                               height={16}
@@ -17013,6 +17014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             title="pressure: 10 >= 10"
                           >
                             <svg
+                              data-testid="card-icon"
                               fill="black"
                               focusable="true"
                               height={16}
@@ -17741,6 +17743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             title="pressure: 10 >= 10"
                           >
                             <svg
+                              data-testid="card-icon"
                               fill="black"
                               focusable="true"
                               height={16}

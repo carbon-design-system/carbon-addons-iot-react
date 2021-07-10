@@ -52,6 +52,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <div
           className="iot--wizard-inline__sidebar"
+          data-testid="wizard-sidebar"
           style={
             Object {
               "--min-width": "250px",
@@ -318,7 +319,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <div
         className="iot--table-detail-wizard--content-container"
       >
-        <div>
+        <div
+          data-testid="wizard-content"
+        >
           <div
             style={
               Object {
@@ -341,6 +344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <div
           className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          data-testid="wizard-footer"
         >
           <button
             aria-pressed={null}
@@ -423,6 +427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <div
           className="iot--wizard-inline__sidebar"
+          data-testid="wizard-sidebar"
           style={
             Object {
               "--min-width": "250px",
@@ -684,7 +689,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <div
         className="iot--table-detail-wizard--content-container"
       >
-        <div>
+        <div
+          data-testid="wizard-content"
+        >
           <div
             style={
               Object {
@@ -708,6 +715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <div
           className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          data-testid="wizard-footer"
         >
           <button
             aria-pressed={null}
@@ -790,6 +798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <div
           className="iot--wizard-inline__sidebar"
+          data-testid="wizard-sidebar"
           style={
             Object {
               "--min-width": "250px",
@@ -1056,7 +1065,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <div
         className="iot--table-detail-wizard--content-container"
       >
-        <div>
+        <div
+          data-testid="wizard-content"
+        >
           <div
             style={
               Object {
@@ -1150,6 +1161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <div
           className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          data-testid="wizard-footer"
         >
           <button
             aria-pressed={null}

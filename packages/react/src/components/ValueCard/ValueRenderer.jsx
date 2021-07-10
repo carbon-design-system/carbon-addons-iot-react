@@ -18,6 +18,7 @@ const propTypes = {
   fontSize: PropTypes.number.isRequired,
   /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool.isRequired,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -26,6 +27,7 @@ const defaultProps = {
   color: null,
   locale: 'en',
   customFormatter: null,
+  testId: 'value',
 };
 
 /**
@@ -42,11 +44,17 @@ const ValueRenderer = ({
   customFormatter,
   fontSize,
   isNumberValueCompact,
+  testId,
 }) => {
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = (
-      <span className={`${BASE_CLASS_NAME}__value-renderer--boolean`}>{value.toString()}</span>
+      <span
+        data-testid={`${testId}-boolean`}
+        className={`${BASE_CLASS_NAME}__value-renderer--boolean`}
+      >
+        {value.toString()}
+      </span>
     );
   } else if (typeof value === 'number') {
     renderValue = formatNumberWithPrecision(value, precision, locale, isNumberValueCompact);
@@ -59,6 +67,7 @@ const ValueRenderer = ({
   return (
     <div className={`${BASE_CLASS_NAME}__value-renderer--wrapper`}>
       <span
+        data-testid={testId}
         className={classnames(`${BASE_CLASS_NAME}__value-renderer--value`, {
           [`${BASE_CLASS_NAME}__value-renderer--value--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
         })}
