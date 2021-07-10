@@ -543,6 +543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input"
+                              data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker25-start-time"
                               maxLength={5}
@@ -565,6 +566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               aria-label="Increment hours"
                               aria-live="polite"
                               className="iot--time-picker__controls--btn up-icon"
+                              data-testid="time-picker-spinner-up-button"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -595,6 +597,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               aria-label="Decrement hours"
                               aria-live="polite"
                               className="iot--time-picker__controls--btn down-icon"
+                              data-testid="time-picker-spinner-down-button"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -645,6 +648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input"
+                              data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker25-end-time"
                               maxLength={5}
@@ -667,6 +671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               aria-label="Increment hours"
                               aria-live="polite"
                               className="iot--time-picker__controls--btn up-icon"
+                              data-testid="time-picker-spinner-up-button"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -697,6 +702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               aria-label="Decrement hours"
                               aria-live="polite"
                               className="iot--time-picker__controls--btn down-icon"
+                              data-testid="time-picker-spinner-down-button"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -1005,6 +1011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input"
+                              data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker-start-time"
                               maxLength={5}
@@ -1027,6 +1034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               aria-label="Increment hours"
                               aria-live="polite"
                               className="iot--time-picker__controls--btn up-icon"
+                              data-testid="time-picker-spinner-up-button"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -1057,6 +1065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               aria-label="Decrement hours"
                               aria-live="polite"
                               className="iot--time-picker__controls--btn down-icon"
+                              data-testid="time-picker-spinner-down-button"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -1107,6 +1116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input"
+                              data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker-end-time"
                               maxLength={5}
@@ -1129,6 +1139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               aria-label="Increment hours"
                               aria-live="polite"
                               className="iot--time-picker__controls--btn up-icon"
+                              data-testid="time-picker-spinner-up-button"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -1159,6 +1170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               aria-label="Decrement hours"
                               aria-live="polite"
                               className="iot--time-picker__controls--btn down-icon"
+                              data-testid="time-picker-spinner-down-button"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -1771,6 +1783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input"
+                              data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker-relative-to-time"
                               maxLength={5}
@@ -1793,6 +1806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               aria-label="Increment hours"
                               aria-live="polite"
                               className="iot--time-picker__controls--btn up-icon"
+                              data-testid="time-picker-spinner-up-button"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -1823,6 +1837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               aria-label="Decrement hours"
                               aria-live="polite"
                               className="iot--time-picker__controls--btn down-icon"
+                              data-testid="time-picker-spinner-down-button"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
