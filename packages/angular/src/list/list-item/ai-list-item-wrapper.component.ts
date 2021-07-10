@@ -6,7 +6,7 @@ import { SelectionType } from '../ai-list.component';
   template: `
     <div class="iot--list-item-parent">
       <div
-        *ngIf="draggable; else listItem"
+        *ngIf="draggable && !disabled; else listItem"
         class="iot--list-item-editable--drag-container"
         role="listitem"
         [draggable]="true"
@@ -47,6 +47,8 @@ export class AIListItemWrapperComponent {
   @Input() isSelectable = false;
 
   @Input() selectionType: SelectionType;
+
+  @Input() disabled = false;
 
   @Output() dragStart = new EventEmitter<any>();
 

@@ -54,6 +54,7 @@ export enum SelectionType {
       <ng-container *ngIf="data.item.id && !isArray(data.item) && data.item.includes(searchString)">
         <ai-list-item-wrapper
           [draggable]="itemsDraggable && data.item.isDraggable"
+          [disabled]="data.item.disabled"
           [isDragging]="draggingState.isDragging"
           (dragStart)="
             setDraggingState({ isDragging: true, item: data.item, parent: data.parentItem })
@@ -213,7 +214,9 @@ export class AIListComponent implements OnInit {
   protected updateChildSelectedStates(selectedItem: AIListItem) {
     if (selectedItem.hasChildren()) {
       selectedItem.items.forEach((item: AIListItem) => {
-        item.select(selectedItem.selected);
+        if (!item.disabled) {
+          item.select(selectedItem.selected);
+        }
         this.updateChildSelectedStates(item);
       });
     }
@@ -231,10 +234,12 @@ export class AIListComponent implements OnInit {
         item.select();
         item.setIndeterminate(false);
       } else if (item.isSelectable && item.someChildrenSelected()) {
-        item.select(false);
+        item.select();
         item.setIndeterminate();
       } else {
-        item.select(false);
+        if (!item.items.every((listItem) => listItem.disabled)) {
+          item.select(false);
+        }
         item.setIndeterminate(false);
       }
     });
