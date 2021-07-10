@@ -1,5 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { nestedListItems } from '../sample-data';
+import { nestedDraggableListItems } from '../sample-data';
 
 @Component({
   selector: 'app-hierarchy-list',
@@ -15,6 +15,6 @@ import { nestedListItems } from '../sample-data';
   `,
 })
 export class AppHierarchyList implements AfterViewInit {
-  items = nestedListItems;
+  items = nestedDraggableListItems;
   displayedItems = this.items;
 }

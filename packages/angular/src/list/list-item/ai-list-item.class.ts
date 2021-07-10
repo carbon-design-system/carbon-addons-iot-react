@@ -47,6 +47,8 @@ export class AIListItem {
    */
   selected?: boolean;
 
+  disabled?: boolean;
+
   /**
    * Indicates whether or not the list item is in an indeterminate state.
    */
@@ -66,6 +68,7 @@ export class AIListItem {
     const defaults = {
       id: `list-item-${AIListItem.listItemCount++}`,
       value: '',
+      disabled: false,
       expanded: false,
       isSelectable: false,
       indeterminate: false,
@@ -80,6 +83,9 @@ export class AIListItem {
   includes(searchString: string) {
     return (
       this.value.toLowerCase().includes(searchString.toLowerCase()) ||
+      this.secondaryValue !== undefined &&
+      this.secondaryValue !== null &&
+      this.secondaryValue.toLowerCase().includes(searchString.toLowerCase()) ||
       this.items.some((listItem) => listItem.includes(searchString))
     );
   }
@@ -94,6 +100,10 @@ export class AIListItem {
 
   setIndeterminate(indeterminate = true) {
     this.indeterminate = indeterminate;
+  }
+
+  disable(disabled = true) {
+    this.disabled = disabled;
   }
 
   addItem(listItem: AIListItem, index: number) {

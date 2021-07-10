@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SelectionType } from '../ai-list.component';
 import { AIListItem } from './ai-list-item.class';
+import { ChevronUp16, Draggable16 } from '@carbon/icons';
+import { IconService } from 'carbon-components-angular';
 
 @Component({
   selector: 'ai-list-item',
@@ -12,26 +14,12 @@ import { AIListItem } from './ai-list-item.class';
         'iot--list-item__selected': item.selected,
         'iot--list-item-editable': item.isDraggable
       }"
-      (click)="selectionType === 'single' ? item.select(!item.selected, true) : null"
+      (click)="selectionType === 'single' ? handleSelect(!item.selected) : null"
     >
       <div class="iot--list-item-editable--drag-preview">
         {{ item.value }}
       </div>
-      <svg
-        *ngIf="draggable"
-        class="iot--list-item--handle"
-        xmlns="http://www.w3.org/2000/svg"
-        focusable="false"
-        preserveAspectRatio="xMidYMid meet"
-        aria-hidden="true"
-        width="16"
-        height="16"
-        viewBox="0 0 32 32"
-      >
-        <path
-          d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-        ></path>
-      </svg>
+      <svg *ngIf="draggable" ibmIcon="draggable" size="16"></svg>
       <div
         *ngIf="nestingLevel > 0"
         class="iot--list-item--nesting-offset"
@@ -46,19 +34,7 @@ import { AIListItem } from './ai-list-item.class';
       >
         <svg *ngIf="!item.expanded" ibmIcon="chevron--down" size="16"></svg>
         <!-- chevron--up doesn't exist in icons yet -->
-        <svg
-          *ngIf="item.expanded"
-          focusable="false"
-          preserveAspectRatio="xMidYMid meet"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          role="img"
-        >
-          <path d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"></path>
-        </svg>
+        <svg *ngIf="item.expanded" ibmIcon="chevron--up" size="16"></svg>
       </div>
       <div class="iot--list-item--content">
         <div
@@ -68,6 +44,7 @@ import { AIListItem } from './ai-list-item.class';
           <ibm-checkbox
             (checkedChange)="handleSelect($event)"
             [checked]="item.selected"
+            [disabled]="item.disabled"
             [indeterminate]="item.indeterminate"
           >
           </ibm-checkbox>
@@ -76,13 +53,19 @@ import { AIListItem } from './ai-list-item.class';
           <div class="iot--list-item--content--values--main">
             <div
               class="iot--list-item--content--values--value"
-              [ngClass]="{ 'iot--list-item--category': item.isCategory }"
+              [ngClass]="{
+                'iot--list-item--category': item.isCategory,
+                'iot--list-item--content--values__disabled': item.disabled
+              }"
             >
               {{ item.value }}
             </div>
             <div
               *ngIf="item.secondaryValue !== null"
               class="iot--list-item--content--values--value"
+              [ngClass]="{
+                'iot--list-item--content--values__disabled': item.disabled
+              }"
             >
               {{ item.secondaryValue }}
             </div>
@@ -95,7 +78,7 @@ import { AIListItem } from './ai-list-item.class';
     </div>
   `,
 })
-export class AIListItemComponent {
+export class AIListItemComponent implements OnInit {
   @Input() item: AIListItem;
   /**
    * Nesting level of the list item. Determines the amount of space the item will be indented
@@ -124,6 +107,13 @@ export class AIListItemComponent {
    * Emitted if the item has been selected.
    */
   @Output() itemSelected = new EventEmitter<any>();
+
+  constructor(protected iconService: IconService) {}
+
+  ngOnInit() {
+    this.iconService.register(ChevronUp16);
+    this.iconService.register(Draggable16);
+  }
 
   handleSelect(select: boolean) {
     this.item.select(select);

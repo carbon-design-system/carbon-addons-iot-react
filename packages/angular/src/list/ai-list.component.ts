@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { AIListItem } from './list-item/ai-list-item.class';
+import { IconService } from 'carbon-components-angular';
+import { Bee32 } from '@carbon/icons';
 
 export enum SelectionType {
   SINGLE = 'single',
@@ -9,11 +11,17 @@ export enum SelectionType {
 @Component({
   selector: 'ai-list',
   template: `
-    <div class="iot--list">
+    <div
+      class="iot--list"
+      [ngClass]="{ 'iot--list__full-height': isFullHeight }"
+    >
       <ai-list-header [hasSearch]="hasSearch" [title]="title" (onSearch)="handleSearch($event)">
       </ai-list-header>
-      <div class="iot--list--content">
-        <ng-template
+      <div
+        class="iot--list--content"
+        [ngClass]="{ 'iot--list--content__full-height': isFullHeight }">
+        <ng-container
+          *ngIf="items && items.length > 0"
           [ngTemplateOutlet]="listItemTemplateRef"
           [ngTemplateOutletContext]="{
             $implicit: {
@@ -24,7 +32,18 @@ export enum SelectionType {
             }
           }"
         >
-        </ng-template>
+        </ng-container>
+        <div
+          *ngIf="!items || items.length < 1"
+          class="iot--list--empty-state iot--list--empty-state__full-height"
+        >
+          <ng-container *ngIf="!isTemplate(emptyState)">
+            <svg ibmIcon="bee" size="32"></svg>
+            <p>{{ emptyState }}</p>
+          </ng-container>
+          <ng-container *ngIf="isTemplate(emptyState)" #customTemplate [ngTemplateOutlet]="emptyState">
+          </ng-container>
+        </div>
       </div>
     </div>
 
@@ -88,7 +107,7 @@ export enum SelectionType {
     </ng-template>
   `,
 })
-export class AIListComponent {
+export class AIListComponent implements OnInit {
   @Input() items: AIListItem[];
 
   @Input() selectionType: SelectionType;
@@ -108,6 +127,10 @@ export class AIListComponent {
    */
   @Input() title: string;
 
+  @Input() isFullHeight = false;
+
+  @Input() emptyState: string | TemplateRef<any> = 'No list items to show';
+
   /**
    * If a `hasSearch` is true, this is emitted when search value is changed.
    */
@@ -116,6 +139,12 @@ export class AIListComponent {
   searchString = '';
 
   draggingState = { isDragging: false, item: null, parent: null };
+
+  constructor(protected iconService: IconService) {}
+
+  ngOnInit() {
+    this.iconService.register(Bee32);
+  }
 
   setDraggingState(data: any) {
     this.draggingState = Object.assign({}, this.draggingState, data);
@@ -173,6 +202,10 @@ export class AIListComponent {
 
   isArray(obj: any) {
     return Array.isArray(obj);
+  }
+
+  public isTemplate(value: any) {
+    return value instanceof TemplateRef;
   }
 
   protected updateChildSelectedStates(selectedItem: AIListItem) {

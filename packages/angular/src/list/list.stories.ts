@@ -5,6 +5,7 @@ import { ListModule } from './list.module';
 import { simpleListItems } from './sample-data';
 import { DialogModule, IconModule, PlaceholderModule } from 'carbon-components-angular';
 import { AppHierarchyList } from './stories/app-hierarchy-list.component';
+import { nestedDraggableListItems } from './sample-data';
 
 storiesOf('Components/List', module)
   .addDecorator(
@@ -14,16 +15,33 @@ storiesOf('Components/List', module)
     })
   )
   .addDecorator(withKnobs)
-  .add('Simple list', () => ({
+  .add('Single select', () => ({
     template: `
-      <ai-list [items]="items" title="Simple list"></ai-list>
+      <ai-list [items]="items" title="Simple list" selectionType="single"></ai-list>
     `,
     props: {
       items: simpleListItems,
     },
   }))
+  .add('Empty list', () => ({
+    template: `
+      <div style="width: 400px; height: 600px">
+        <ai-list title="Empty list" [items]="[]" [isFullHeight]="true"></ai-list>
+      </div>
+    `,
+  }))
   .add('Hierarchy list draggable items', () => ({
     template: `
-      <app-hierarchy-list></app-hierarchy-list>
+      <ai-list
+        [items]="items"
+        selectionType="multi"
+        title="City Populations"
+        [hasSearch]="true"
+        [itemsDraggable]="true"
+      >
+      </ai-list>
     `,
+    props: {
+      items: nestedDraggableListItems
+    }
   }));
