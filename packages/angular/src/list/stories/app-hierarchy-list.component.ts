@@ -24,9 +24,7 @@ import { AIListItem } from '../list-item/ai-list-item.class';
     <ng-template #rowActions let-data>
       <ibm-overflow-menu placement="bottom" [flip]="true" [offset]="{ x: 4, y: -4 }">
         <ibm-overflow-menu-option (click)="data.select()">Select</ibm-overflow-menu-option>
-        <ibm-overflow-menu-option disabled="true" [divider]="true"
-          >Disabled</ibm-overflow-menu-option
-        >
+        <ibm-overflow-menu-option disabled="true" [divider]="true">Disabled</ibm-overflow-menu-option>
         <ibm-overflow-menu-option type="danger" (click)="data.selectDanger()">
           Danger option
         </ibm-overflow-menu-option>
