@@ -229,7 +229,7 @@ const TableMultiSortModal = ({
           <Button
             kind="ghost"
             onClick={handleClearMultiSortColumns}
-            testID={`${testId}-modal-clear-button`}
+            testId={`${testId}-modal-clear-button`}
           >
             {i18n.multiSortModalClearLabel}
           </Button>
@@ -237,14 +237,14 @@ const TableMultiSortModal = ({
           <Button
             kind="secondary"
             onClick={handleCancelMultiSortColumns}
-            testID={`${testId}-modal-secondary-button`}
+            testId={`${testId}-modal-secondary-button`}
           >
             {i18n.multiSortModalSecondaryLabel}
           </Button>
           <Button
             kind="primary"
             onClick={handleSaveMultiSortColumns}
-            testID={`${testId}-modal-primary-button`}
+            testId={`${testId}-modal-primary-button`}
             data-modal-primary-focus
           >
             {i18n.multiSortModalPrimaryLabel}
@@ -298,7 +298,7 @@ const TableMultiSortModal = ({
               tooltipPosition="top"
               iconDescription={i18n.multiSortAddColumn}
               onClick={handleAddMultiSortColumn(index)}
-              testID={`${columnId}-add-sort-button`}
+              testId={`${columnId}-add-sort-button`}
               disabled={selectedMultiSortColumns.length >= multiSortColumns.length}
             />
             <Button
@@ -308,7 +308,7 @@ const TableMultiSortModal = ({
               tooltipPosition="top"
               iconDescription={i18n.multiSortRemoveColumn}
               onClick={handleRemoveMultiSortColumn(index)}
-              testID={`${columnId}-remove-sort-button`}
+              testId={`${columnId}-remove-sort-button`}
               disabled={selectedMultiSortColumns.length === 1}
             />
           </Fragment>

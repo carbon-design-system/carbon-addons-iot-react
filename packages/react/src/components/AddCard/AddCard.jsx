@@ -13,18 +13,27 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   /** Callback function when icon is clicked */
   onClick: PropTypes.func.isRequired,
+
+  testId: PropTypes.string,
 };
 
 /**
  * Clickable card that shows "Add" button
  */
-const AddCard = ({ onClick, title, className }) => (
-  <ClickableTile className={classnames(`${iotPrefix}-add-card`, className)} handleClick={onClick}>
+const AddCard = ({ onClick, title, className, testId }) => (
+  <ClickableTile
+    data-testid={testId}
+    className={classnames(`${iotPrefix}-add-card`, className)}
+    handleClick={onClick}
+  >
     <p className={`${iotPrefix}-addcard-title`}>{title}</p>
     <Add20 fill={g10.icon01} description={title} />
   </ClickableTile>
 );
 
 AddCard.propTypes = propTypes;
+AddCard.defaultProps = {
+  testId: 'add-card-tile',
+};
 
 export default AddCard;

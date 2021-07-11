@@ -1,15 +1,10 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Button,
-  DataTable,
-  OverflowMenu,
-  OverflowMenuItem,
-  Loading,
-} from 'carbon-components-react';
+import { DataTable, OverflowMenu, OverflowMenuItem, Loading } from 'carbon-components-react';
 import classnames from 'classnames';
 import omit from 'lodash/omit';
 
+import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import icons from '../../../../utils/bundledIcons';
@@ -159,7 +154,7 @@ class RowActionsCell extends React.Component {
                       {...omit(others, ['isOverflow', 'isDelete', 'isEdit', 'hasDivider'])}
                       iconDescription={labelText || iconDescription}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
-                      data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
+                      testId={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
                       hasIconOnly={!labelText}
                       tooltipPosition="left"
