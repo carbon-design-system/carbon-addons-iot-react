@@ -44,4 +44,13 @@ storiesOf('Components/List', module)
     props: {
       items: nestedDraggableListItems,
     },
+  }))
+  .add('With row actions', () => ({
+    template: `
+      <app-hierarchy-list [items]="items">
+      </app-hierarchy-list>
+    `,
+    props: {
+      items: nestedDraggableListItems,
+    },
   }));

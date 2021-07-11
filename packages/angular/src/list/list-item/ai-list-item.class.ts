@@ -31,6 +31,8 @@ export class AIListItem {
    */
   rowActions?: TemplateRef<any>;
 
+  rowActionsContext?: any;
+
   /**
    * If the list item has child list items, this indicates whether or not it's
    * direct children are displayed.

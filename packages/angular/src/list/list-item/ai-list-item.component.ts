@@ -54,7 +54,8 @@ import { IconService } from 'carbon-components-angular';
               class="iot--list-item--content--values--value"
               [ngClass]="{
                 'iot--list-item--category': item.isCategory,
-                'iot--list-item--content--values__disabled': item.disabled
+                'iot--list-item--content--values__disabled': item.disabled,
+                'iot--list-item--content--values--value__with-actions': item.rowActions
               }"
             >
               {{ item.value }}
@@ -69,7 +70,11 @@ import { IconService } from 'carbon-components-angular';
               {{ item.secondaryValue }}
             </div>
             <div *ngIf="item.rowActions" class="iot--list-item--content--row-actions">
-              <ng-template [ngTemplateOutlet]="item.rowActions"></ng-template>
+              <ng-container
+                [ngTemplateOutlet]="item.rowActions"
+                [ngTemplateOutletContext]="item.rowActionsContext"
+              >
+              </ng-container>
             </div>
           </div>
         </div>
