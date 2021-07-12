@@ -7,10 +7,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   <div
     aria-label="Structured list section"
     className="bx--structured-list bx--structured-list--selection"
+    data-testid="structured-list"
     role="table"
   >
     <div
       className="bx--structured-list-thead"
+      data-testid="structured-list-head"
       role="rowgroup"
     >
       <div
@@ -42,11 +44,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     </div>
     <div
       className="bx--structured-list-tbody"
+      data-testid="structured-list-body"
       onKeyDown={[Function]}
       role="rowgroup"
     >
       <div
         className="bx--structured-list-row"
+        data-testid="structured-list-row-row-0"
         onClick={[Function]}
         role="row"
       >
@@ -113,6 +117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <div
         className="bx--structured-list-row"
+        data-testid="structured-list-row-row-1"
         onClick={[Function]}
         role="row"
       >
@@ -179,6 +184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <div
         className="bx--structured-list-row"
+        data-testid="structured-list-row-row-2"
         onClick={[Function]}
         role="row"
       >
@@ -255,10 +261,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   <div
     aria-label="Structured list section"
     className="bx--structured-list bx--structured-list--selection"
+    data-testid="structured-list"
     role="table"
   >
     <div
       className="bx--structured-list-thead"
+      data-testid="structured-list-head"
       role="rowgroup"
     >
       <div
@@ -290,11 +298,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     </div>
     <div
       className="bx--structured-list-tbody"
+      data-testid="structured-list-body"
       onKeyDown={[Function]}
       role="rowgroup"
     >
       <div
         className="bx--structured-list-row"
+        data-testid="structured-list-row-row-0"
         onClick={[Function]}
         role="row"
       >
@@ -337,6 +347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <div
         className="bx--structured-list-row"
+        data-testid="structured-list-row-row-1"
         onClick={[Function]}
         role="row"
       >
@@ -379,6 +390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <div
         className="bx--structured-list-row"
+        data-testid="structured-list-row-row-2"
         onClick={[Function]}
         role="row"
       >
@@ -431,10 +443,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   <div
     aria-label="Structured list section"
     className="bx--structured-list bx--structured-list--selection"
+    data-testid="structured-list"
     role="table"
   >
     <div
       className="bx--structured-list-thead"
+      data-testid="structured-list-head"
       role="rowgroup"
     >
       <div
@@ -466,11 +480,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     </div>
     <div
       className="bx--structured-list-tbody"
+      data-testid="structured-list-body"
       onKeyDown={[Function]}
       role="rowgroup"
     />
     <div
       className="iot--composed-structured-list__empty-content"
+      data-testid="structured-list-empty"
     >
       <svg
         aria-hidden={true}
@@ -503,10 +519,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   <div
     aria-label="Structured list section"
     className="bx--structured-list iot--composed-structured-list__wrapper bx--structured-list--selection"
+    data-testid="structured-list"
     role="table"
   >
     <div
       className="bx--structured-list-thead"
+      data-testid="structured-list-head"
       role="rowgroup"
     >
       <div
@@ -538,11 +556,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     </div>
     <div
       className="bx--structured-list-tbody"
+      data-testid="structured-list-body"
       onKeyDown={[Function]}
       role="rowgroup"
     />
     <div
       className="iot--composed-structured-list__empty-content"
+      data-testid="structured-list-empty"
     >
       <svg
         aria-hidden={true}
@@ -575,10 +595,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   <div
     aria-label="Structured list section"
     className="bx--structured-list iot--composed-structured-list__wrapper bx--structured-list--selection"
+    data-testid="structured-list"
     role="table"
   >
     <div
       className="bx--structured-list-thead"
+      data-testid="structured-list-head"
       role="rowgroup"
     >
       <div
@@ -610,11 +632,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     </div>
     <div
       className="bx--structured-list-tbody"
+      data-testid="structured-list-body"
       onKeyDown={[Function]}
       role="rowgroup"
     >
       <div
         className="bx--structured-list-row"
+        data-testid="structured-list-row-row-0"
         onClick={[Function]}
         role="row"
       >
@@ -657,6 +681,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <div
         className="bx--structured-list-row"
+        data-testid="structured-list-row-row-1"
         onClick={[Function]}
         role="row"
       >
@@ -699,6 +724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <div
         className="bx--structured-list-row"
+        data-testid="structured-list-row-row-2"
         onClick={[Function]}
         role="row"
       >
