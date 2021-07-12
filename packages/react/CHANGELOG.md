@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.46...v2.146.0-next.47) (2021-07-12)
+
+
+### Bug Fixes
+
+* **imagehotspots:** fixes object-fit contain fill and undefined ([5a9734d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5a9734d63d72ea6c4092e3982035d6f1d915660a))
+* **imagehotspots:** fixing pr feedback ([fa4cfdb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fa4cfdb085ffabc1740bdaa1d1b5c17bc1ecb9c4))
+
+
+
+
+
 # [2.146.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.45...v2.146.0-next.46) (2021-07-12)
 
 
