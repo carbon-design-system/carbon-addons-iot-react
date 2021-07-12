@@ -44,7 +44,7 @@ const Zoom = ({ onZoomIn, onZoomOut, i18n, testID, tooltipPosition, smallButtons
         onClick={onZoomIn}
         tooltipPosition={tooltipPosition}
         iconDescription={i18n.zoomIn}
-        data-testid={`${testID}-zoom-in`}
+        testId={`${testID}-zoom-in`}
       />
       <Button
         renderIcon={ZoomOut32}
@@ -54,7 +54,7 @@ const Zoom = ({ onZoomIn, onZoomOut, i18n, testID, tooltipPosition, smallButtons
         onClick={onZoomOut}
         tooltipPosition={tooltipPosition}
         iconDescription={i18n.zoomOut}
-        data-testid={`${testID}-zoom-out`}
+        testId={`${testID}-zoom-out`}
       />
     </div>
   );
