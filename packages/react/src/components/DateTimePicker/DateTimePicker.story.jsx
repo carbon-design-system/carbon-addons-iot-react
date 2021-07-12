@@ -53,7 +53,10 @@ export const Default = () => {
         },
       ]}
       hasTimeInput={boolean('hasTimeInput', true)}
+      onApply={action('onApply')}
+      onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
+      renderPresetTooltipText={() => 'User tooltip'}
     />
   );
 };
@@ -158,6 +161,8 @@ export const LightVersion = () => {
       light
       hasTimeInput={boolean('hasTimeInput', true)}
       hasIconOnly={boolean('hasIconOnly', false)}
+      onApply={action('onApply')}
+      onCancel={action('onCancel')}
     />
   );
 };
@@ -192,6 +197,8 @@ export const Locale = () => {
       defaultValue={defaultAbsoluteValue}
       hasTimeInput={boolean('hasTimeInput', true)}
       hasIconOnly={boolean('hasIconOnly', false)}
+      onApply={action('onApply')}
+      onCancel={action('onCancel')}
     />
   );
 };
