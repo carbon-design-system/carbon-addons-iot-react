@@ -13,12 +13,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--dashboard-editor"
+      data-testid="dashboard-editor"
     >
       <div
         className="iot--dashboard-editor--content"
       >
         <div
           className="page-title-bar"
+          data-testid="dashboard-editor-header-page-title-bar"
           style={
             Object {
               "--header-offset": "48px",
@@ -84,6 +86,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 className="iot--dashboard-editor-header--right"
+                data-testid="dashboard-editor-header"
               >
                 <div
                   className="iot--dashboard-editor-header--top"
@@ -121,6 +124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                       aria-disabled={false}
                       className="bx--btn bx--btn--ghost bx--btn--md"
+                      data-testid="dashboard-editor-header-file-uploader-button"
                       htmlFor="id3"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -432,6 +436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             aria-describedby={null}
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -470,6 +475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             aria-describedby={null}
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -2980,12 +2986,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -3055,6 +3063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -3280,6 +3289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -3318,6 +3328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -4189,12 +4200,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -4260,6 +4273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -4297,6 +4311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id9"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -4608,6 +4623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -4646,6 +4662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -7265,12 +7282,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -7336,6 +7355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -7345,6 +7365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   className="bx--content-switcher iot--dashboard-editor-header--bottom__switcher"
+                  data-testid="dashboard-editor-header-breakpoint-switcher"
                   onChange={[Function]}
                   role="tablist"
                 >
@@ -7352,6 +7373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-fit-to-screen-switch"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -7390,6 +7412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-large-switch"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -7428,6 +7451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-medium-switch"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -7470,6 +7494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-small-switch"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -7539,6 +7564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id10"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -7850,6 +7876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -7888,6 +7915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -9043,12 +9071,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -9114,6 +9144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -9151,6 +9182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id7"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -9462,6 +9494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -9500,6 +9533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -10708,6 +10742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--dashboard-editor"
+      data-testid="dashboard-editor"
     >
       <div
         className="iot--dashboard-editor--content"
@@ -10872,6 +10907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             aria-describedby={null}
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -10910,6 +10946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             aria-describedby={null}
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -11782,12 +11819,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -11853,6 +11892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -11890,6 +11930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id1"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -12201,6 +12242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -12239,6 +12281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -13925,12 +13968,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -13996,6 +14041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -14005,6 +14051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   className="bx--content-switcher iot--dashboard-editor-header--bottom__switcher"
+                  data-testid="dashboard-editor-header-breakpoint-switcher"
                   onChange={[Function]}
                   role="tablist"
                 >
@@ -14012,6 +14059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-fit-to-screen-switch"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -14050,6 +14098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-large-switch"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -14088,6 +14137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-medium-switch"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -14130,6 +14180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     aria-describedby={null}
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-small-switch"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -14199,6 +14250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id8"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -14510,6 +14562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -14548,6 +14601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -16242,6 +16296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--dashboard-editor"
+      data-testid="dashboard-editor-loading"
     >
       <p
         className="bx--skeleton__text"
@@ -16269,12 +16324,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--dashboard-editor"
+      data-testid="dashboard-editor"
     >
       <div
         className="iot--dashboard-editor--content"
       >
         <div
           className="page-title-bar"
+          data-testid="dashboard-editor-header-page-title-bar"
           style={
             Object {
               "--header-offset": "48px",
@@ -16340,6 +16397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 className="iot--dashboard-editor-header--right"
+                data-testid="dashboard-editor-header"
               >
                 <div
                   className="iot--dashboard-editor-header--top"
@@ -16349,6 +16407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="bx--content-switcher iot--dashboard-editor-header--bottom__switcher"
+                    data-testid="dashboard-editor-header-breakpoint-switcher"
                     onChange={[Function]}
                     role="tablist"
                   >
@@ -16356,6 +16415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       aria-describedby={null}
                       aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                      data-testid="dashboard-editor-header-fit-to-screen-switch"
                       disabled={false}
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -16394,6 +16454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       aria-describedby={null}
                       aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                      data-testid="dashboard-editor-header-large-switch"
                       disabled={false}
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -16432,6 +16493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       aria-describedby={null}
                       aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                      data-testid="dashboard-editor-header-medium-switch"
                       disabled={false}
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -16474,6 +16536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       aria-describedby={null}
                       aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                      data-testid="dashboard-editor-header-small-switch"
                       disabled={false}
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -16543,6 +16606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                       aria-disabled={false}
                       className="bx--btn bx--btn--ghost bx--btn--md"
+                      data-testid="dashboard-editor-header-file-uploader-button"
                       htmlFor="id6"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -16854,6 +16918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             aria-describedby={null}
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -16892,6 +16957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             aria-describedby={null}
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -17667,12 +17733,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -17738,6 +17806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -17775,6 +17844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id4"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -18086,6 +18156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -18124,6 +18195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -19021,12 +19093,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -19092,6 +19166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -19129,6 +19204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id2"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -19440,6 +19516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -19478,6 +19555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -21988,12 +22066,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -22059,6 +22139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -22096,6 +22177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id5"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -22620,6 +22702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
@@ -22658,6 +22741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-describedby={null}
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}

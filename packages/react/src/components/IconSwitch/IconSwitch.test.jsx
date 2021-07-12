@@ -18,6 +18,20 @@ const { prefix, iotPrefix } = settings;
 
 describe('IconSwitch', () => {
   describe('component rendering', () => {
+    it('should be selectable by testId', () => {
+      render(
+        <IconSwitch
+          name="blah"
+          size="default"
+          renderIcon={List16}
+          text="test"
+          index={0}
+          testId="ICON_SWITCH"
+        />
+      );
+      expect(screen.getByTestId('ICON_SWITCH')).toBeDefined();
+    });
+
     it('should have the expected text', () => {
       render(<IconSwitch name="blah" size="default" renderIcon={List16} text="test" index={0} />);
       expect(screen.getByRole('button')).toBeVisible();

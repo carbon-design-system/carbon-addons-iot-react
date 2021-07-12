@@ -11,9 +11,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       }
     }
   >
-    <div>
+    <div
+      data-testid="dashboard"
+    >
       <div
         className="dashboard--header"
+        data-testid="dashboard-header"
       >
         <div
           className="dashboard--header-left"
@@ -2878,9 +2881,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       }
     }
   >
-    <div>
+    <div
+      data-testid="dashboard"
+    >
       <div
         className="dashboard--header"
+        data-testid="dashboard-header"
       >
         <div
           className="dashboard--header-left"
@@ -5752,9 +5758,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       }
     }
   >
-    <div>
+    <div
+      data-testid="dashboard"
+    >
       <div
         className="dashboard--header"
+        data-testid="dashboard-header"
       >
         <div
           className="dashboard--header-left"
@@ -5779,7 +5788,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn--icon-only bx--btn bx--btn--ghost"
+              className="bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+              data-testid="dashboard-header-button-edit"
               disabled={false}
               id="action-icon--edit"
               onBlur={[Function]}
@@ -8653,9 +8663,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
 <div
   className="storybook-container"
 >
-  <div>
+  <div
+    data-testid="dashboard"
+  >
     <div
       className="dashboard--header"
+      data-testid="dashboard-header"
     >
       <div
         className="dashboard--header-left"
@@ -8828,9 +8841,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       }
     }
   >
-    <div>
+    <div
+      data-testid="dashboard"
+    >
       <div
         className="dashboard--header"
+        data-testid="dashboard-header"
       >
         <div
           className="dashboard--header-left"
@@ -9092,9 +9108,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
 <div
   className="storybook-container"
 >
-  <div>
+  <div
+    data-testid="dashboard"
+  >
     <div
       className="dashboard--header"
+      data-testid="dashboard-header"
     >
       <div
         className="dashboard--header-left"
@@ -9267,9 +9286,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       }
     }
   >
-    <div>
+    <div
+      data-testid="dashboard"
+    >
       <div
         className="dashboard--header"
+        data-testid="dashboard-header"
       >
         <div
           className="dashboard--header-left"
@@ -11299,9 +11321,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       }
     }
   >
-    <div>
+    <div
+      data-testid="dashboard"
+    >
       <div
         className="dashboard--header"
+        data-testid="dashboard-header"
       >
         <div
           className="dashboard--header-left"
@@ -14166,9 +14191,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
 <div
   className="storybook-container"
 >
-  <div>
+  <div
+    data-testid="dashboard"
+  >
     <div
       className="dashboard--header"
+      data-testid="dashboard-header"
     >
       <div
         className="dashboard--header-left"
@@ -14308,9 +14336,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Largest" Rendering (1056px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -15073,9 +15104,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Tightest" Rendering (1057px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -15838,9 +15872,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Largest" Rendering (1056px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -16355,9 +16392,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Tightest" Rendering (1057px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -16872,9 +16912,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Largest" Rendering (1056px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -17406,9 +17449,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Tightest" Rendering (1057px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -17940,9 +17986,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Largest" Rendering (1056px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -18499,9 +18548,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Tightest" Rendering (1057px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -19058,9 +19110,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Largest" Rendering (1056px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -21218,9 +21273,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Tightest" Rendering (1057px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -23378,9 +23436,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Largest" Rendering (1056px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -23883,9 +23944,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Tightest" Rendering (1057px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -24388,9 +24452,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Largest" Rendering (1056px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -25022,9 +25089,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Tightest" Rendering (1057px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -25656,9 +25726,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Largest" Rendering (1056px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -26090,9 +26163,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Tightest" Rendering (1057px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -26524,9 +26600,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Largest" Rendering (1056px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -27266,9 +27345,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         "Tightest" Rendering (1057px width)
       </h1>
       <hr />
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"
@@ -28011,9 +28093,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       }
     }
   >
-    <div>
+    <div
+      data-testid="dashboard"
+    >
       <div
         className="dashboard--header"
+        data-testid="dashboard-header"
       >
         <div
           className="dashboard--header-left"
@@ -28045,6 +28130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         }
       >
         <div
+          data-testid="dashboard-sidebar"
           style={
             Object {
               "flex": 0,
@@ -30911,9 +30997,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     }
   >
     <div>
-      <div>
+      <div
+        data-testid="dashboard"
+      >
         <div
           className="dashboard--header"
+          data-testid="dashboard-header"
         >
           <div
             className="dashboard--header-left"

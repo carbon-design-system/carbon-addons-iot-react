@@ -4911,6 +4911,7 @@ Map {
       "stickyHeaderOffset": 48,
       "style": null,
       "tabs": undefined,
+      "testId": "page-title-bar",
       "upperActions": undefined,
     },
     "propTypes": Object {
@@ -4999,6 +5000,9 @@ Map {
         "type": "objectOf",
       },
       "tabs": [Function],
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "isRequired": true,
         "type": "node",
@@ -8689,6 +8693,7 @@ Map {
       "renderIconByName": null,
       "setIsLoading": null,
       "sidebar": null,
+      "testId": "dashboard",
       "timeGrain": null,
       "title": null,
     },
@@ -9232,6 +9237,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "timeGrain": Object {
         "type": "string",
       },
@@ -9249,6 +9257,7 @@ Map {
       "lastUpdated": null,
       "lastUpdatedLabel": "Last updated:",
       "onDashboardAction": null,
+      "testId": "dashboard-header",
       "title": null,
     },
     "propTypes": Object {
@@ -9343,6 +9352,9 @@ Map {
       },
       "onDashboardAction": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "string",
@@ -9672,6 +9684,7 @@ Map {
         "LIST",
         "ALERT",
       ],
+      "testId": "dashboard-editor",
       "title": "",
     },
     "propTypes": Object {
@@ -10267,6 +10280,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "node",
@@ -19262,6 +19278,7 @@ Map {
       "onKeyDown": undefined,
       "selected": false,
       "size": "default",
+      "testId": "icon-switch",
     },
     "propTypes": Object {
       "className": Object {
@@ -19319,6 +19336,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "text": Object {
         "isRequired": true,

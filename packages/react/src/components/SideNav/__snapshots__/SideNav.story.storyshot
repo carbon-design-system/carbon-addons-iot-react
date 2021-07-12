@@ -414,6 +414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="page-title-bar"
+        data-testid="page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
