@@ -7,6 +7,8 @@ import isNil from 'lodash/isNil';
 
 import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { settings } from '../../constants/Settings';
+import DateTimePicker from '../DateTimePicker/DateTimePicker';
+import { RELATIVE_VALUES } from '../../constants/DateConstants';
 
 const { iotPrefix } = settings;
 
@@ -17,6 +19,8 @@ export const CardRangePickerPropTypes = {
    * i.e. { thisWeek: 'This week', lastWeek: 'Last week'}
    */
   timeRangeOptions: TimeRangeOptionsPropTypes, // eslint-disable-line react/require-default-props
+  /** Optionally changes the CardRangePicker to use the DateTimePicker component */
+  useDateTimePicker: PropTypes.bool,
   /** callback to handle interactions with the range picker */
   onCardAction: PropTypes.func.isRequired,
   /** set of internationalized labels */
@@ -29,12 +33,14 @@ export const CardRangePickerPropTypes = {
 const defaultProps = {
   timeRange: null,
   cardWidth: undefined,
+  useDateTimePicker: false,
 };
 
 const CardRangePicker = ({
   i18n,
   timeRange: timeRangeProp,
   timeRangeOptions,
+  useDateTimePicker,
   onCardAction,
   cardWidth,
 }) => {
@@ -48,7 +54,20 @@ const CardRangePicker = ({
     [setTimeRange, onCardAction]
   );
 
-  return (
+  return useDateTimePicker ? (
+    <DateTimePicker
+      id="datetimepicker"
+      dateTimeMask="YYYY-MM-DD HH:mm"
+      relatives={[
+        {
+          label: 'Yesterday',
+          value: RELATIVE_VALUES.YESTERDAY,
+        },
+      ]}
+      hasTimeInput
+      hasIconOnly
+    />
+  ) : (
     <div className={`${iotPrefix}--card--toolbar-date-range-wrapper`}>
       <ToolbarItem>
         {cardWidth > 400 ? (

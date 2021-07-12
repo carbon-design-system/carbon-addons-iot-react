@@ -168,6 +168,7 @@ export const defaultProps = {
   toolbar: undefined,
   hideHeader: false,
   timeRange: undefined,
+  useDateTimePicker: false,
   isLoading: false,
   isEmpty: false,
   /** In editable mode we'll show preview data */
@@ -251,6 +252,7 @@ const Card = (props) => {
     tooltip,
     timeRange,
     timeRangeOptions,
+    useDateTimePicker,
     onCardAction,
     availableActions,
     renderExpandIcon,
@@ -343,6 +345,7 @@ const Card = (props) => {
                 isExpanded={isExpanded}
                 timeRange={timeRange}
                 timeRangeOptions={timeRangeOptions}
+                useDateTimePicker={useDateTimePicker}
                 onCardAction={cachedOnCardAction}
               />
             ) : null;

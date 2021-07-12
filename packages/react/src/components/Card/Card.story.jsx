@@ -286,10 +286,18 @@ export const ImplementingACustomCard = () => {
         title={title}
         id="mycard"
         size={size}
-        values={[{ timestamp: 12341231231, value1: 'my value' }]}
+        values={[
+          { timestamp: 12341231231, value1: 'my value' },
+          { timestamp: 12341231231, value1: 'my value' },
+          { timestamp: 12341231231, value1: 'my value' },
+          { timestamp: 12341231231, value1: 'my value' },
+          { timestamp: 12341231231, value1: 'my value' },
+          { timestamp: 12341231231, value1: 'my value' },
+        ]}
         availableActions={{ range: size !== CARD_SIZES.SMALL, expand: true }}
         onCardAction={action('onCardAction')}
         hideHeader
+        useDateTimePicker
       >
         {!isEditable
           ? (_$, { cardToolbar, values }) => (

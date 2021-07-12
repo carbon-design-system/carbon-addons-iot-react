@@ -666,6 +666,8 @@ export const CardPropTypes = {
    * i.e. { thisWeek: 'This week', lastWeek: 'Last week'}
    */
   timeRangeOptions: TimeRangeOptionsPropTypes,
+  /** Optionally changes the CardRangePicker to use the DateTimePicker component */
+  useDateTimePicker: PropTypes.bool,
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,

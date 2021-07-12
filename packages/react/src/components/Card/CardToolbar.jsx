@@ -45,6 +45,8 @@ const propTypes = {
    * i.e. { thisWeek: 'This week', lastWeek: 'Last week'}
    */
   timeRangeOptions: TimeRangeOptionsPropTypes, // eslint-disable-line react/require-default-props
+  /** Optionally changes the CardRangePicker to use the DateTimePicker component */
+  useDateTimePicker: PropTypes.bool,
   i18n: PropTypes.shape({
     last24Hours: PropTypes.string,
     last7Days: PropTypes.string,
@@ -70,6 +72,7 @@ const defaultProps = {
   renderExpandIcon: Popup16,
   className: null,
   timeRangeOptions: null,
+  useDateTimePicker: false,
   i18n: {
     last24Hours: 'Last 24 hours',
     last7Days: 'Last 7 days',
@@ -98,6 +101,7 @@ const CardToolbar = ({
   availableActions,
   timeRange,
   timeRangeOptions: timeRangeOptionsProp,
+  useDateTimePicker,
   onCardAction,
   className,
 }) => {
@@ -172,6 +176,7 @@ const CardToolbar = ({
           i18n={mergedI18n}
           timeRange={timeRange}
           timeRangeOptions={timeRangeOptions}
+          useDateTimePicker={useDateTimePicker}
           onCardAction={onCardAction}
           cardWidth={width}
         />
