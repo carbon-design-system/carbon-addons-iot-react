@@ -77,7 +77,7 @@ const ComboBox = ({
 
     // only focus input if the tags or list have increased
     if (prevTagAndListCount.current < currentTagAndListCount) {
-      comboRef.current.textInput.current.focus();
+      comboRef.current.focus();
     }
 
     // Store the value for the next render
@@ -156,7 +156,7 @@ const ComboBox = ({
   // https://github.com/carbon-design-system/carbon/issues/6613
   const handleOnKeypress = (evt) => {
     // Current value of input
-    const currentValue = comboRef.current.textInput.current.value.trim();
+    const currentValue = comboRef.current.value.trim();
     if (evt.key === 'Enter' && currentValue) {
       const newItem = {
         id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${currentValue.length}`,
