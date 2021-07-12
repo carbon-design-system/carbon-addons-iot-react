@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.50](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.49...v2.146.0-next.50) (2021-07-12)
+
+
+### Bug Fixes
+
+* **header:** clicking directly on the icon failed to open overflowmenu ([9aa353a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9aa353a9e65f93ffce9f1a686ccc117e745c191b))
+
+
+
+
+
+# [2.146.0-next.49](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.48...v2.146.0-next.49) (2021-07-12)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
 # [2.146.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.47...v2.146.0-next.48) (2021-07-12)
 
 
