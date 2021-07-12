@@ -28,6 +28,7 @@ const ListCard = ({
   layout,
   className,
   children,
+  testID,
   ...others
 }) => {
   const handleScroll = (e) => {
@@ -52,6 +53,7 @@ const ListCard = ({
       onScroll={handleScroll}
       isEmpty={isEmpty(data)}
       resizeHandles={resizeHandles}
+      testId={testID}
       {...others}
     >
       <div

@@ -20,6 +20,27 @@ const cardProps = {
 };
 
 describe('Card', () => {
+  it('is selectable by testID or testId', () => {
+    const { rerender } = render(<Card {...cardProps} size={CARD_SIZES.SMALL} testID="CARD_TEST" />);
+
+    expect(screen.getByTestId('CARD_TEST')).toBeTruthy();
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.SMALL}
+        availableActions={{ range: true, expand: true }}
+        testId="card_test"
+      />
+    );
+    expect(screen.getByTestId('card_test')).toBeTruthy();
+    expect(screen.getByTestId('card_test-content')).toBeTruthy();
+    expect(screen.getByTestId('card_test-title')).toBeTruthy();
+    expect(screen.getByTestId('card_test-header')).toBeTruthy();
+    expect(screen.getByTestId('card_test-toolbar')).toBeTruthy();
+    expect(screen.getByTestId('card_test-toolbar-expand-button')).toBeTruthy();
+    expect(screen.getByTestId('card_test-toolbar-range-picker')).toBeTruthy();
+  });
+
   it('small', () => {
     const wrapper = mount(<Card {...cardProps} size={CARD_SIZES.SMALL} />);
 
@@ -95,7 +116,7 @@ describe('Card', () => {
 
     const button = screen.queryByLabelText('Expand to fullscreen');
 
-    const { container } = render(<Tree16 aria-hidden aria-label="Expand to fullscreen" />);
+    const { container } = render(<Tree16 aria-hidden="true" aria-label="Expand to fullscreen" />);
 
     expect(button.firstChild).toEqual(container.firstChild.firstChild);
   });

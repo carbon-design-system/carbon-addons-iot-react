@@ -24,12 +24,29 @@ describe('ColorDropdown', () => {
     return `rgb(${r}, ${g}, ${b})`;
   };
 
+  it('is selectable by testID or testId', () => {
+    const { rerender } = render(
+      <ColorDropdown id="myColorDropdown" onChange={() => {}} testID="COLOR_DROPDOWN" />
+    );
+
+    expect(screen.getByTestId('COLOR_DROPDOWN')).toBeTruthy();
+
+    rerender(<ColorDropdown id="myColorDropdown" onChange={() => {}} testId="color_dropdown" />);
+
+    expect(screen.getByTestId('color_dropdown')).toBeTruthy();
+  });
+
   it('renders default labels', () => {
     render(<ColorDropdown id="myColorDropdown" onChange={() => {}} />);
 
     expect(within(screen.getByRole('button')).getByText('Select a color')).toBeTruthy();
 
     expect(screen.getByText('Color')).toBeVisible();
+  });
+
+  it('can be disabled', () => {
+    render(<ColorDropdown id="myColorDropdown" disabled onChange={() => {}} />);
+    expect(screen.getByRole('button')).toBeDisabled();
   });
 
   it('renders custom labels', () => {

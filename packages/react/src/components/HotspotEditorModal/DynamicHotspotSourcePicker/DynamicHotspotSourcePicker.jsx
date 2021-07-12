@@ -10,6 +10,7 @@ import Button from '../../Button/Button';
 const { iotPrefix } = settings;
 
 const propTypes = {
+  /** List of data source objects. The same list is used for bothe the x and the y coordinate dropdown */
   dataSourceItems: PropTypes.arrayOf(
     PropTypes.shape({
       dataSourceId: PropTypes.string,
@@ -105,7 +106,7 @@ const DynamicHotspotSourcePicker = ({
       />
       {
         <Button
-          testID={`${testID}-clear-dropdown`}
+          testId={`${testID}-clear-dropdown`}
           className={classnames(`${classname}__clear-button`, {
             [`${classname}__clear-button--invisible`]: !selectedSourceIdX || !selectedSourceIdY,
           })}

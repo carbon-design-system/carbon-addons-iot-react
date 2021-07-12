@@ -42,6 +42,7 @@ const ValueCard = ({
   children,
   fontSize,
   isNumberValueCompact,
+  testID,
   ...others
 }) => {
   const availableActions = {
@@ -82,6 +83,7 @@ const ValueCard = ({
         [`${BASE_CLASS_NAME}__horizontal`]: layout === CARD_LAYOUTS.HORIZONTAL,
         [`${BASE_CLASS_NAME}__vertical`]: layout === CARD_LAYOUTS.VERTICAL,
       })}
+      testId={testID}
       {...others}
     >
       <div

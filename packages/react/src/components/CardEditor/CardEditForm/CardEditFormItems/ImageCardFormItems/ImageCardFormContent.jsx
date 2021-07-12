@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Close16, Scale32 } from '@carbon/icons-react';
-import { Button } from 'carbon-components-react';
 import omit from 'lodash/omit';
 
+import Button from '../../../../Button';
 import { DataItemsPropTypes } from '../../../../DashboardEditor/editorUtils';
 import HotspotEditorModal from '../../../../HotspotEditorModal/HotspotEditorModal';
 import { settings } from '../../../../../constants/Settings';
@@ -107,6 +107,7 @@ const ImageCardFormItems = ({
       {isHotspotModalShowing ? (
         <HotspotEditorModal
           cardConfig={cardConfig}
+          displayOption={cardConfig.content?.displayOption}
           getValidDataItems={getValidDataItems}
           dataItems={dataItems}
           availableDimensions={availableDimensions}

@@ -673,6 +673,7 @@ Advanced filtering is experimental and may be subject to change, so it's usage i
 ## Pagination
 
 Pagination is controlled through the `options.hasPagingation` prop combined with the `view.pagination` prop. Pagination has one callback event for onChangePage that is fired when the page or the number of items per page changes.
+By default, tables with pagination will expect the entire table data to be passed in on the `data` prop; the visible data for a page is calculated dynamically by the table based on the page size and page number. In the case where the table is rendering a large data set, the `options.hasOnlyPageData` prop can be used change this behavior. With `options.hasOnlyPageData = true`, the `data` prop will be expected to contain only the rows for the visible page.
 
 ```jsx
 <Table
@@ -692,6 +693,28 @@ Pagination is controlled through the `options.hasPagingation` prop combined with
       pageSize: 10,
       pageSizes: [10, 20, 30],
       totalItems: undefined,
+    },
+  }}
+/>
+```
+
+```jsx
+<Table
+  actions={{
+    pagination: {
+      onChangePage: ({ page, pageSize }) => {},
+    },
+  }}
+  options={{
+    hasPagination: true,
+    hasOnlyPageData: true,
+  }}
+  view={{
+    pagination: {
+      pageSize: 10,
+      pageSizes: [10, 20, 30],
+      page: 8267,
+      totalItems: 97532,
     },
   }}
 />
@@ -821,7 +844,7 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 | filter                 | object                   |         |                                                                                                                                                                                                        |
 | filter.placeholderText | string                   |         | i18n text for the filter                                                                                                                                                                               |
 | filter.isMultiselect   | bool                     |         | if true the table is filtered based on a multiselect component                                                                                                                                         |
-| filter.options         | object[]                 |         |                                                                                                                                                                                                        |
+| filter.options         | arrayOf(object)          |         |                                                                                                                                                                                                        |
 | filter.options[].id    | string, number, or, bool |         | The id of the filter option used in multiselect filtering                                                                                                                                              |
 | filter.options[].text  | string                   |         | the display value for this multiselect filter option                                                                                                                                                   |
 | filter.filterFunction  | func                     |         | Custom filter function call with (columnFilterValue, currentValue)                                                                                                                                     |
@@ -831,29 +854,29 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 
 ### Data Prop
 
-| Name                    | Type     | Default | Description                                                                                           |
-| :---------------------- | :------- | :------ | :---------------------------------------------------------------------------------------------------- |
-| id                      | string   |         | the id of this row                                                                                    |
-| values                  | object   |         | A {[columnId]: value} object containing all the values for this row                                   |
-| children                | object[] |         | An optional array of rows (in the same structure as the data prop) for children nested under this row |
-| rowActions              | object   |         | An optional list of actions visible on row how or expansion                                           |
-| rowActions[].id         | string   |         | unique id for this action                                                                             |
-| rowActions[].renderIcon |          |         | icon that gets pass through to the button component for this action                                   |
-| rowActions[].disabled   | bool     |         | disables this action                                                                                  |
-| rowActions[].labelText  | string   |         | label text shown on the action button                                                                 |
-| rowActions[].isOverflow | bool     |         | If true, the action will be rendered in the overflow menu not inline on the row                       |
-| rowActions[].hasDivider | bool     |         |                                                                                                       |
-| rowActions[].isDelete   | bool     |         |                                                                                                       |
-| rowActions[].isEdit     | bool     |         |                                                                                                       |
-| isSelectable            | bool     |         | is this row selecteable                                                                               |
+| Name                    | Type            | Default | Description                                                                                           |
+| :---------------------- | :-------------- | :------ | :---------------------------------------------------------------------------------------------------- |
+| id                      | string          |         | the id of this row                                                                                    |
+| values                  | object          |         | A {[columnId]: value} object containing all the values for this row                                   |
+| children                | arrayOf(object) |         | An optional array of rows (in the same structure as the data prop) for children nested under this row |
+| rowActions              | object          |         | An optional list of actions visible on row how or expansion                                           |
+| rowActions[].id         | string          |         | unique id for this action                                                                             |
+| rowActions[].renderIcon |                 |         | icon that gets pass through to the button component for this action                                   |
+| rowActions[].disabled   | bool            |         | disables this action                                                                                  |
+| rowActions[].labelText  | string          |         | label text shown on the action button                                                                 |
+| rowActions[].isOverflow | bool            |         | If true, the action will be rendered in the overflow menu not inline on the row                       |
+| rowActions[].hasDivider | bool            |         |                                                                                                       |
+| rowActions[].isDelete   | bool            |         |                                                                                                       |
+| rowActions[].isEdit     | bool            |         |                                                                                                       |
+| isSelectable            | bool            |         | is this row selecteable                                                                               |
 
 ### ExpandedData Prop
 
-| Name                   | Type     | Default | Description                                     |
-| :--------------------- | :------- | :------ | :---------------------------------------------- |
-| expandedData[]         | object[] |         |                                                 |
-| expandedData[].rowId   | string   |         | the rowId this expanded content is attached to  |
-| expandedData[].content | node     |         | a react node rendered when this row is expanded |
+| Name                   | Type            | Default | Description                                     |
+| :--------------------- | :-------------- | :------ | :---------------------------------------------- |
+| expandedData[]         | arrayOf(object) |         |                                                 |
+| expandedData[].rowId   | string          |         | the rowId this expanded content is attached to  |
+| expandedData[].content | node            |         | a react node rendered when this row is expanded |
 
 ### Options Prop
 
@@ -1060,4 +1083,4 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 ## Feedback
 
 Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
-[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/Table/README.md).
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/Table/Table.mdx).

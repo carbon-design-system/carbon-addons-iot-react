@@ -20,6 +20,36 @@ describe('CardEditor', () => {
     type: 'VALUE',
   };
 
+  it('is selectable by testID and testId', () => {
+    const { rerender } = render(
+      <CardEditor
+        supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
+        testID="CARD_EDITOR"
+      />
+    );
+
+    expect(screen.getByTestId('CARD_EDITOR')).toBeTruthy();
+
+    rerender(
+      <CardEditor
+        supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
+        testId="card-editor"
+        isSummaryDashboard
+      />
+    );
+    expect(screen.getByTestId('card-editor')).toBeTruthy();
+    expect(screen.getByTestId('card-editor-card-gallery-list')).toBeTruthy();
+    expect(screen.getByTestId('Button')).toBeTruthy();
+  });
+
   it('fires onAddCard when user clicks on item in list', () => {
     render(
       <CardEditor
@@ -98,7 +128,7 @@ describe('CardEditor', () => {
   });
 
   it('shows gallery when no card is defined', () => {
-    render(<CardEditor />);
+    render(<CardEditor onShowGallery={jest.fn()} onChange={jest.fn()} onAddCard={jest.fn()} />);
 
     expect(screen.getByText('Gallery')).toBeTruthy();
   });
@@ -117,6 +147,9 @@ describe('CardEditor', () => {
           VALUE: inDomText,
           COOL_NEW_CARD: inDomText,
         }}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
         supportedCardTypes={['VALUE', 'COOL_NEW_CARD']}
         icons={{
           VALUE: <EscalatorDown data-testid={testId} />,

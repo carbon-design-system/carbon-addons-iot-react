@@ -67,6 +67,11 @@ describe('TimeSeriesCard', () => {
   });
 
   it('type bar shows', () => {
+    const originalDev = global.__DEV__;
+    const originalError = console.error;
+    const error = jest.fn();
+    console.error = error;
+    global.__DEV__ = true;
     const wrapper = mount(
       <TimeSeriesCard
         {...timeSeriesCardProps}
@@ -78,6 +83,14 @@ describe('TimeSeriesCard', () => {
       />
     );
     expect(wrapper.find('#mock-bar-chart-stacked')).toHaveLength(1);
+    expect(error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
+      )
+    );
+
+    console.error = originalError;
+    global.__DEV__ = originalDev;
   });
 
   it('show line chart when only 1 color is set', () => {
