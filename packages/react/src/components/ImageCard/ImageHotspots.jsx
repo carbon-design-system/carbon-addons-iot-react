@@ -22,7 +22,7 @@ const propTypes = {
   src: PropTypes.string,
   /** alt tag and shown on mouseover */
   alt: PropTypes.string,
-  /** value for object-fit property - fit, fill, stretch */
+  /** value for object-fit property - 'contain' or 'fill' */
   displayOption: PropTypes.string,
   /** optional array of hotspots to render over the image */
   hotspots: PropTypes.arrayOf(PropTypes.shape(HotspotPropTypes)),
@@ -179,31 +179,113 @@ export const stopDrag = (cursor, setCursor) => {
   setCursor({ ...cursor, dragging: false, imageMousedown: false });
 };
 
-export const calculateImageWidth = (container, orientation, ratio, scale = 1) =>
-  (container.orientation === orientation
-    ? orientation === 'landscape'
-      ? ratio >= container.ratio
-        ? container.width // landscape image bigger than landscape container
-        : container.height * ratio // landscape image smaller than landscape container
-      : ratio >= container.ratio
-      ? container.height / ratio // portrait image bigger than portrait container
-      : container.width // portrait image smaller than portrait container
-    : orientation === 'landscape'
-    ? container.width // landscape image and portrait container
-    : container.height / ratio) * scale; // portrait image and landscape container
+export const calculateImageWidth = ({
+  container,
+  orientation,
+  ratio,
+  scale = 1,
+  displayOption,
+}) => {
+  if (displayOption === 'fill') {
+    return container.width * scale;
+  }
+  return (
+    (container.orientation === orientation
+      ? orientation === 'landscape'
+        ? ratio >= container.ratio
+          ? container.width // landscape image bigger than landscape container
+          : container.height * ratio // landscape image smaller than landscape container
+        : ratio >= container.ratio
+        ? container.height / ratio // portrait image bigger than portrait container
+        : container.width // portrait image smaller than portrait container
+      : orientation === 'landscape'
+      ? container.width // landscape image and portrait container
+      : container.height / ratio) * scale // portrait image and landscape container
+  );
+};
 
-export const calculateImageHeight = (container, orientation, ratio, scale = 1) =>
-  (container.orientation === orientation
-    ? orientation === 'landscape'
-      ? ratio >= container.ratio
-        ? container.width / ratio // landscape image bigger than landscape container
-        : container.height // landscape image smaller than landscape container
-      : ratio >= container.ratio
-      ? container.height // portrait image bigger than portrait container
-      : container.width * ratio // portrait image smaller than portrait container
-    : orientation === 'landscape'
-    ? container.width / ratio // landscape image and portrait container
-    : container.height) * scale; // portrait image and landscape container
+export const calculateImageHeight = ({
+  container,
+  orientation,
+  ratio,
+  scale = 1,
+  displayOption,
+}) => {
+  if (displayOption === 'fill') {
+    return container.height * scale;
+  }
+  return (
+    (container.orientation === orientation
+      ? orientation === 'landscape'
+        ? ratio >= container.ratio
+          ? container.width / ratio // landscape image bigger than landscape container
+          : container.height // landscape image smaller than landscape container
+        : ratio >= container.ratio
+        ? container.height // portrait image bigger than portrait container
+        : container.width * ratio // portrait image smaller than portrait container
+      : orientation === 'landscape'
+      ? container.width / ratio // landscape image and portrait container
+      : container.height) * scale // portrait image and landscape container
+  );
+};
+
+export const calculateHotspotContainerLayout = (
+  {
+    scale: imageScale,
+    orientation: imageOrientation,
+    ratio: imageRatio,
+    offsetY: imageOffsetY,
+    objectFitOffsetY: imageObjectFitOffsetY,
+    width: imageWidth,
+    height: imageHeight,
+  },
+  { height: containerHeight, width: containerWidth },
+  objectFit
+) => {
+  let width;
+  let height;
+  let top;
+
+  // CONTAIN
+  if (objectFit === 'contain') {
+    if (imageOrientation === 'landscape') {
+      width = imageWidth;
+      height = imageWidth / imageRatio;
+      top = imageScale > 1 ? imageOffsetY : imageObjectFitOffsetY;
+    } else if (imageOrientation === 'portrait') {
+      width = imageHeight / imageRatio;
+      height = imageHeight;
+      top = imageOffsetY;
+    }
+    // FILL
+  } else if (objectFit === 'fill') {
+    width = imageScale > 1 ? imageWidth : containerWidth;
+    height = imageScale > 1 ? imageHeight : containerHeight;
+    top = imageOffsetY;
+    // NO OBJECT FIT
+  } else if (!objectFit) {
+    if (imageOrientation === 'landscape') {
+      width = imageWidth;
+      height = imageWidth / imageRatio;
+      top = imageOffsetY;
+    } else if (imageOrientation === 'portrait') {
+      width = imageHeight / imageRatio;
+      height = imageHeight;
+      top = imageOffsetY;
+    }
+  }
+
+  return { width, height, top };
+};
+
+export const calculateObjectFitOffset = ({ displayOption, container, image }) => {
+  const result = { x: 0, y: 0 };
+  if (displayOption === 'contain') {
+    result.y = container.height / 2 - image.height / 2;
+    result.x = container.width / 2 - image.width / 2;
+  }
+  return result;
+};
 
 /** Sets initialWidth and initialHeight of an image, offsets orientations in the state */
 export const onImageLoad = (
@@ -214,15 +296,16 @@ export const onImageLoad = (
   minimap,
   setMinimap,
   options,
-  setOptions
+  setOptions,
+  displayOption
 ) => {
   const { offsetWidth: initialWidth, offsetHeight: initialHeight } = imageLoaded;
   const orientation = initialWidth > initialHeight ? 'landscape' : 'portrait';
   const ratio =
     orientation === 'landscape' ? initialWidth / initialHeight : initialHeight / initialWidth;
 
-  const width = calculateImageWidth(container, orientation, ratio);
-  const height = calculateImageHeight(container, orientation, ratio);
+  const width = calculateImageWidth({ container, orientation, ratio, displayOption });
+  const height = calculateImageHeight({ container, orientation, ratio, displayOption });
 
   // Because the first zoom is double, the initial image has to be big enough to support
   const resizable = initialWidth > 2 * width || initialHeight > 2 * height;
@@ -237,7 +320,9 @@ export const onImageLoad = (
     ratio,
     orientation,
     offsetX: 0,
-    offsetY: container.height / 2 - height / 2,
+    offsetY: 0,
+    objectFitOffsetY: 0,
+    objectFitOffsetX: 0,
   });
   setMinimap({
     ...minimap,
@@ -266,20 +351,37 @@ export const zoom = (
   minimap,
   setMinimap,
   options,
-  setOptions
+  setOptions,
+  displayOption
 ) => {
-  const width = calculateImageWidth(container, image.orientation, image.ratio, scale);
-  const height = calculateImageHeight(container, image.orientation, image.ratio, scale);
+  const width = calculateImageWidth({
+    container,
+    orientation: image.orientation,
+    ratio: image.ratio,
+    scale,
+    displayOption,
+  });
+  const height = calculateImageHeight({
+    container,
+    orientation: image.orientation,
+    ratio: image.ratio,
+    scale,
+    displayOption,
+  });
 
   // Reset image position, (i.e. zoom to fit)
   if (scale === 1) {
+    const objectFitOffset = calculateObjectFitOffset({ displayOption, container, image });
+
     setImage({
       ...image,
       width,
       height,
       scale: 1,
       offsetX: 0,
-      offsetY: container.height / 2 - height / 2,
+      offsetY: displayOption ? 0 : container.height / 2 - height / 2,
+      objectFitOffsetY: objectFitOffset.y,
+      objectFitOffsetX: objectFitOffset.x,
     });
     setMinimap({
       ...minimap,
@@ -295,7 +397,8 @@ export const zoom = (
   else if (scale > 1) {
     if (
       (zoomMax && scale < zoomMax) ||
-      (image.initialWidth > width && image.initialHeight > height)
+      image.initialWidth > width ||
+      image.initialHeight > height
     ) {
       const guideWidth =
         container.width >= width ? minimap.width : minimap.width / (width / container.width);
@@ -338,6 +441,8 @@ export const zoom = (
             : image.offsetY < offsetYMax
             ? offsetYMax
             : offsetY,
+        objectFitOffsetY: 0,
+        objectFitOffsetX: 0,
       });
       setMinimap({
         ...minimap,
@@ -383,20 +488,45 @@ export const getAccumulatedOffset = (imageElement) => {
   return offset;
 };
 
+/**
+ * The image element might use the css objectFit which can add some additional offset between the element
+ * edges and the actual visual image. This function can tell us if the cursor is on this offset.
+ * @param {*} mouseEvent
+ * @param {object} image with { height, width, objectFitOffsetY, objectFitOffsetX }
+ * @returns
+ */
+export const cursorIsOnObjectFitOffset = (
+  mouseEvent,
+  { height, width, objectFitOffsetY, objectFitOffsetX },
+  displayOption
+) => {
+  if (displayOption === 'contain') {
+    const accumelatedOffset = getAccumulatedOffset(mouseEvent.currentTarget);
+    const posY = mouseEvent.clientY - accumelatedOffset.top;
+    const posX = mouseEvent.clientX - accumelatedOffset.left;
+    return (
+      posY < objectFitOffsetY ||
+      posX < objectFitOffsetX ||
+      posY > objectFitOffsetY + height ||
+      posX > width + objectFitOffsetX
+    );
+  }
+  return false;
+};
+
 /** Calculates the mouse click position in percentage and returns the
  * result in a callback if a hotspot should be added */
 export const handleMouseUp = ({ event, image, cursor, setCursor, isEditable, callback }) => {
   setCursor((newCursor) => {
     return { ...newCursor, dragPrepared: false, imageMousedown: false };
   });
-
   // We only trigger the callback if the image is editable and the intitiating
   // mouse down event was on the actual image (as oppose of outside).
   if (isEditable && cursor?.imageMousedown) {
     const accumelatedOffset = getAccumulatedOffset(event.currentTarget);
     const relativePosition = {
-      x: event.clientX - accumelatedOffset.left,
-      y: event.clientY - accumelatedOffset.top,
+      x: event.clientX - (accumelatedOffset.left + image.objectFitOffsetX),
+      y: event.clientY - (accumelatedOffset.top + image.objectFitOffsetY),
     };
     const percentagePosition = {
       x: (relativePosition.x / image.width) * 100,
@@ -436,6 +566,8 @@ const ImageHotspots = ({
 }) => {
   // Need to keep track of whether the Ctrl key is currently pressed because we want to only add hotspots in that case
   const [isCtrlPressed, setIsCtrlPressed] = useState();
+  // Tracks if the crossHair cursor should be allowed based on mouse position
+  const [allowCrossHair, setAllowCrossHair] = useState(false);
   // Image needs to be stored in state because we're dragging it around when zoomed in, and we need to keep track of when it loads
   const [image, setImage] = useState({});
   // Minimap needs to be stored in state because we're dragging it around when zoomed in
@@ -444,7 +576,6 @@ const ImageHotspots = ({
     offsetX: 0,
     offsetY: 0,
   });
-  // TODO: Why do I keep track of cursor state
   const [cursor, setCursor] = useState({});
   // Options need to be stored in state because based on the zoom level they may change
   const [options, setOptions] = useState({
@@ -502,7 +633,8 @@ const ImageHotspots = ({
         minimap,
         setMinimap,
         options,
-        setOptions
+        setOptions,
+        displayOption
       );
     },
     // to prevent needing useDeepCompareEffect, since it's an anti-pattern
@@ -522,6 +654,8 @@ const ImageHotspots = ({
       image.ratio,
       image.offsetY,
       image.offsetX,
+      image.objectFitOffsetY,
+      image.objectFitOffsetX,
       image.width,
       image.height,
       minimap.initialSize,
@@ -553,22 +687,13 @@ const ImageHotspots = ({
   };
 
   const imageStyle = {
-    cursor: isEditable && !dragging && isCtrlPressed ? 'crosshair' : 'auto',
+    cursor: allowCrossHair && isCtrlPressed ? 'crosshair' : 'auto',
     position: 'relative',
     left: image.offsetX,
     top: image.offsetY,
-    height: displayOption && image.scale === 1 ? '100%' : 'auto',
-    width: displayOption && image.scale === 1 ? '100%' : 'auto',
+    height: displayOption === 'fill' ? image.height : image.scale === 1 ? '100%' : 'auto',
+    width: displayOption === 'fill' ? image.width : image.scale === 1 ? '100%' : 'auto',
     objectFit: displayOption,
-  };
-
-  const hotspotsStyle = {
-    position: 'absolute',
-    top: image.offsetY,
-    left: image.offsetX,
-    right: image.offsetX >= 0 ? 0 : 'auto',
-    margin: 'auto',
-    pointerEvents: 'none',
   };
 
   const onHotspotClicked = useCallback(
@@ -654,7 +779,6 @@ const ImageHotspots = ({
                 : hotspot.color
             }
             key={`${x}-${y}-${index}`}
-            style={hotspotsStyle}
             renderIconByName={getIconRenderFunction()}
             isSelected={hotspotIsSelected}
             onClick={onHotspotClicked}
@@ -669,25 +793,39 @@ const ImageHotspots = ({
       isEditable,
       onHotspotContentChanged,
       mergedI18n,
-      hotspotsStyle,
       onHotspotClicked,
     ]
   );
 
+  const hotspotsStyle = {
+    position: 'absolute',
+    left: image.offsetX,
+    right: image.offsetX >= 0 ? 0 : 'auto',
+    margin: 'auto',
+    pointerEvents: 'none',
+  };
+
   if (imageLoaded) {
     if (container.orientation === 'landscape') {
       imageStyle.height = displayOption && image.scale === 1 ? '100%' : image.height;
+      if (!displayOption && image.orientation === 'portrait') {
+        imageStyle.width = image.height / image.ratio;
+      } else if (
+        !displayOption &&
+        image.orientation === 'landscape' &&
+        image.width < container.width
+      ) {
+        imageStyle.width = image.width;
+      }
     } else {
       imageStyle.width = displayOption && image.scale === 1 ? '100%' : image.width;
+      imageStyle.height = displayOption ? imageStyle.height : image.height;
     }
 
-    if (image.orientation === 'landscape') {
-      hotspotsStyle.width = image.width;
-      hotspotsStyle.height = image.width / image.ratio;
-    } else {
-      hotspotsStyle.width = image.height / image.ratio;
-      hotspotsStyle.height = image.height;
-    }
+    const hotspotLayout = calculateHotspotContainerLayout(image, container, displayOption);
+    hotspotsStyle.height = hotspotLayout.height;
+    hotspotsStyle.width = hotspotLayout.width;
+    hotspotsStyle.top = hotspotLayout.top;
   }
   /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   return (
@@ -721,7 +859,17 @@ const ImageHotspots = ({
           src={src}
           alt={alt}
           onLoad={(event) =>
-            onImageLoad(event, container, image, setImage, minimap, setMinimap, options, setOptions)
+            onImageLoad(
+              event,
+              container,
+              image,
+              setImage,
+              minimap,
+              setMinimap,
+              options,
+              setOptions,
+              displayOption
+            )
           }
           style={imageStyle}
           onMouseDown={(evt) => {
@@ -730,11 +878,16 @@ const ImageHotspots = ({
             } else {
               setCursor({
                 ...cursor,
-                imageMousedown: true,
+                imageMousedown: !cursorIsOnObjectFitOffset(evt, image, displayOption),
               });
             }
           }}
           onMouseMove={(evt) => {
+            if (!dragging) {
+              setAllowCrossHair(
+                isEditable && !cursorIsOnObjectFitOffset(evt, image, displayOption)
+              );
+            }
             if (!hideZoomControls && draggable && dragPrepared) {
               startDrag(evt, 'image', cursor, setCursor);
             } else if (!hideZoomControls && dragging) {
@@ -765,7 +918,9 @@ const ImageHotspots = ({
         />
       ) : null}
       {!isHotspotDataLoading && !hideHotspots && hotspots && (
-        <div style={hotspotsStyle}>{cachedHotspots}</div>
+        <div data-testid={`${id}-hotspots-container`} style={hotspotsStyle}>
+          {cachedHotspots}
+        </div>
       )}
       {!hideZoomControls && (
         <ImageControls
@@ -775,7 +930,18 @@ const ImageHotspots = ({
           dragging={dragging}
           hideMinimap={minimapBehavior === 'showOnPan' ? !dragging || hideMinimapProp : hideMinimap}
           onZoomToFit={() =>
-            zoom(1, zoomMax, container, image, setImage, minimap, setMinimap, options, setOptions)
+            zoom(
+              1,
+              zoomMax,
+              container,
+              image,
+              setImage,
+              minimap,
+              setMinimap,
+              options,
+              setOptions,
+              displayOption
+            )
           }
           onZoomIn={() =>
             zoom(
@@ -787,7 +953,8 @@ const ImageHotspots = ({
               minimap,
               setMinimap,
               options,
-              setOptions
+              setOptions,
+              displayOption
             )
           }
           onZoomOut={() =>
@@ -800,7 +967,8 @@ const ImageHotspots = ({
               minimap,
               setMinimap,
               options,
-              setOptions
+              setOptions,
+              displayOption
             )
           }
         />
