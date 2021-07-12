@@ -56,9 +56,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Small"
             >
               <div
@@ -69,6 +71,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -119,9 +122,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Small Wide"
             >
               <div
@@ -132,6 +137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -182,9 +188,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Medium Thin"
             >
               <div
@@ -195,6 +203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -245,9 +254,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Medium"
             >
               <div
@@ -258,6 +269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -308,9 +320,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Medium Wide"
             >
               <div
@@ -321,6 +335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -371,9 +386,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Large Thin"
             >
               <div
@@ -384,6 +401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -434,9 +452,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Large"
             >
               <div
@@ -447,6 +467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -497,9 +518,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Large Wide"
             >
               <div
@@ -510,6 +533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -598,9 +622,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Card - SMALL"
             >
               <div
@@ -611,6 +637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -675,9 +702,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="ValueCard - SMALLWIDE"
             >
               <div
@@ -819,9 +848,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="GaugeCard - MEDIUMTHIN"
             >
               <div
@@ -986,9 +1017,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="PieChartCard - MEDIUM"
             >
               <div
@@ -1064,9 +1097,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="map-card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="map-card-title"
               title="MapCard - LARGEWIDE"
             >
               <div
@@ -1077,10 +1112,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="map-card-toolbar"
             >
               <button
                 aria-pressed={null}
-                className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                data-testid="map-card-toolbar-expand-button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1485,7 +1522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 >
                   <button
                     className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                    data-testid="Button"
+                    data-testid="map-card-zoom-control-zoom-in"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -1519,7 +1556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <button
                     className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-                    data-testid="Button"
+                    data-testid="map-card-zoom-control-zoom-out"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -2092,7 +2129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </div>
                   <button
                     aria-pressed={null}
-                    className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                     data-testid="download-button"
                     disabled={false}
                     onClick={[Function]}
@@ -2120,7 +2157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <button
                     aria-pressed={null}
-                    className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                     data-testid="filter-button"
                     disabled={false}
                     onClick={[Function]}
@@ -2148,6 +2185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="iot--card--toolbar"
+                    data-testid="card-toolbar"
                   >
                     <div
                       className="iot--card--toolbar-date-range-wrapper"
@@ -2157,6 +2195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         aria-haspopup={true}
                         aria-label="open and close list of options"
                         className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                        data-testid="card-toolbar-range-picker"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -2195,7 +2234,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     </div>
                     <button
                       aria-pressed={null}
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                      data-testid="card-toolbar-expand-button"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -3377,9 +3417,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="ImageCard - LARGE"
             >
               <div
@@ -3390,10 +3432,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             >
               <button
                 aria-pressed={null}
-                className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                data-testid="Card-toolbar-expand-button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -3471,6 +3515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   }
                 />
                 <div
+                  data-testid="null-hotspots-container"
                   style={
                     Object {
                       "left": undefined,
@@ -3478,7 +3523,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       "pointerEvents": "none",
                       "position": "absolute",
                       "right": "auto",
-                      "top": undefined,
                     }
                   }
                 >
@@ -3629,9 +3673,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="TimeSeriesCard - LARGETHIN"
             >
               <div
@@ -3696,9 +3742,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="ListCard - LARGETHIN"
             >
               <div
@@ -3944,9 +3992,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="BarChartCard - LARGEWIDE"
             >
               <div
@@ -4049,9 +4099,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Facility Metrics"
             >
               <div
@@ -4062,6 +4114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -4113,9 +4166,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Humidity"
             >
               <div
@@ -4126,6 +4181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -4177,9 +4233,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Utilization"
             >
               <div
@@ -4190,6 +4248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -4294,9 +4353,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           >
             <div
               className="iot--card--header"
+              data-testid="Card-header"
             >
               <span
                 className="iot--card--title"
+                data-testid="Card-title"
                 title="Facility Metrics"
               >
                 <div
@@ -4307,6 +4368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </span>
               <div
                 className="iot--card--toolbar"
+                data-testid="Card-toolbar"
               />
             </div>
             <div
@@ -4358,9 +4420,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           >
             <div
               className="iot--card--header"
+              data-testid="Card-header"
             >
               <span
                 className="iot--card--title"
+                data-testid="Card-title"
                 title="Humidity"
               >
                 <div
@@ -4371,6 +4435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </span>
               <div
                 className="iot--card--toolbar"
+                data-testid="Card-toolbar"
               />
             </div>
             <div
@@ -4422,9 +4487,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           >
             <div
               className="iot--card--header"
+              data-testid="Card-header"
             >
               <span
                 className="iot--card--title"
+                data-testid="Card-title"
                 title="Utilization"
               >
                 <div
@@ -4435,6 +4502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </span>
               <div
                 className="iot--card--toolbar"
+                data-testid="Card-toolbar"
               />
             </div>
             <div
@@ -4524,9 +4592,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Facility Metrics"
             >
               <div
@@ -4537,6 +4607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -4588,9 +4659,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Humidity"
             >
               <div
@@ -4601,6 +4674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -4652,9 +4726,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Utilization"
             >
               <div
@@ -4665,6 +4741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </span>
             <div
               className="iot--card--toolbar"
+              data-testid="Card-toolbar"
             />
           </div>
           <div
@@ -4751,9 +4828,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card--header"
+            data-testid="Card-header"
           >
             <span
               className="iot--card--title"
+              data-testid="Card-title"
               title="Card - SMALL"
             >
               <div

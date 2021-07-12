@@ -35,6 +35,7 @@ const propTypes = {
     LIST: PropTypes.string,
     CUSTOM: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -64,14 +65,16 @@ const defaultProps = {
     LIST: <ListIcon />,
     CUSTOM: <CustomCardIcon />,
   },
+  testId: 'card-gallery-list',
 };
 
-const CardGalleryList = ({ supportedCardTypes, onAddCard, icons, i18n }) => {
+const CardGalleryList = ({ supportedCardTypes, onAddCard, icons, i18n, testId }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const mergedIcons = { ...defaultProps.icons, ...icons };
 
   return (
     <SimpleList
+      testId={testId}
       title=""
       isFullHeight
       hasSearch

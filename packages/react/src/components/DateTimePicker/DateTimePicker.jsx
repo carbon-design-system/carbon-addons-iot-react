@@ -339,22 +339,24 @@ const DateTimePicker = ({
             value.relative.relativeToWhen === RELATIVE_VALUES.YESTERDAY
               ? dayjs().add(-1, INTERVAL_VALUES.DAYS)
               : dayjs();
-          if (value.relative.relativeToTime) {
-            endDate = endDate.hours(value.relative.relativeToTime.split(':')[0]);
-            endDate = endDate.minutes(value.relative.relativeToTime.split(':')[1]);
+          // wait to parse it until fully typed
+          if (value.relative.relativeToTime.length === 5) {
+            endDate = endDate.hour(Number(value.relative.relativeToTime.split(':')[0]));
+            endDate = endDate.minute(Number(value.relative.relativeToTime.split(':')[1]));
           }
+
+          const startDate = endDate
+            .clone()
+            .subtract(
+              value.relative.lastNumber,
+              value.relative.lastInterval ? value.relative.lastInterval : INTERVAL_VALUES.MINUTES
+            );
+          returnValue.relative.start = new Date(startDate.valueOf());
+          returnValue.relative.end = new Date(endDate.valueOf());
+          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
+            endDate
+          ).format(dateTimeMask)}`;
         }
-        const startDate = endDate
-          .clone()
-          .subtract(
-            value.relative.lastNumber,
-            value.relative.lastInterval ? value.relative.lastInterval : INTERVAL_VALUES.MINUTES
-          );
-        returnValue.relative.start = new Date(startDate.valueOf());
-        returnValue.relative.end = new Date(endDate.valueOf());
-        readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
-          endDate
-        ).format(dateTimeMask)}`;
         break;
       }
       case PICKER_KINDS.ABSOLUTE: {

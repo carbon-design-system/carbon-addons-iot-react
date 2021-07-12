@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.47...v2.146.0-next.48) (2021-07-12)
+
+
+### Bug Fixes
+
+* **datetimepicker:** comment was in the wrong place ([8d0f895](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8d0f89589a66c0a60af20ff5ad9d43e4ac59c672))
+* **datetimepicker:** correctly handle relative time changes ([132f42c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/132f42c76f4045159257bc8a431e053f54ae7880))
+* **suiteheader:** Increasing coverage of `IdleLogoutConfirmationModal.jsx` ([90a6ea4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/90a6ea45828cc9b0c75eeea19d0b3c2f2aad9fe2))
+* **suiteheader:** making sure `IdleTimer` is not started if idleTimeoutData === 0. ([937b27e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/937b27e56c7ca93f94f7da8c4cf70363b026cd77))
+* **suiteheader:** Saving original window.document.cookie before each test and restoring it after each test, per feedback. ([a5c4d66](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a5c4d6652a650b2541cb43403444150b949c0581))
+* **suiteheader:** Using `classnames` to concatenate classes, per feedback. ([cab23df](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cab23df5783ef18d228bc51b638100e4b8f49bd6))
+
+
+### Features
+
+* **suiteheader:** Adding support for an idle timeout confirmation modal in the SuiteHeader component. This modal gives the user 2 options: “Stay logged in” or “Log out”. Timeout and countdown start are configurable. Also, the modal uses a cookie so that user inactivity detection happens across tabs in the same domain. ([f5b2f36](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f5b2f36e46dd4728afbbdac02a1aef11c86e1c53))
+
+
+
+
+
+# [2.146.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.46...v2.146.0-next.47) (2021-07-12)
+
+
+### Bug Fixes
+
+* **imagehotspots:** fixes object-fit contain fill and undefined ([5a9734d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5a9734d63d72ea6c4092e3982035d6f1d915660a))
+* **imagehotspots:** fixing pr feedback ([fa4cfdb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fa4cfdb085ffabc1740bdaa1d1b5c17bc1ecb9c4))
+
+
+
+
+
+# [2.146.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.45...v2.146.0-next.46) (2021-07-12)
+
+
+### Bug Fixes
+
+* **table:** moved the changes to _column-header-row.scss ([151f3f3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/151f3f334b9dd079efe5859ea5627a2a0e0bc6dd))
+* **table:** moved the changes to _column-header-row.scss ([9515d01](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9515d0189fe973c2659d544f8e3c49e83a347c06))
+* **table:** wrap the column selection text ([4b34b9d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4b34b9de0d600e7c9f2d5d8272bd5ccfb537733a)), closes [#2482](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2482)
+
+
+
+
+
+# [2.146.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.44...v2.146.0-next.45) (2021-07-09)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.146.0-next.44](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.43...v2.146.0-next.44) (2021-07-08)
 
 

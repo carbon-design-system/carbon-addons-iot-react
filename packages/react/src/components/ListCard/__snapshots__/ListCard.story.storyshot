@@ -26,9 +26,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Simple List with Icon"
         >
           <div
@@ -268,9 +270,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Simple List with Icon"
         >
           <div
@@ -331,9 +335,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="List with extra content"
         >
           <div
@@ -507,9 +513,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="List with extra long content"
         >
           <div
