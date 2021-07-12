@@ -33,6 +33,8 @@ const propTypes = {
    * the use of ResizeObserver
    */
   hasOverflow: PropTypes.bool,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -41,9 +43,10 @@ const defaultProps = {
   children: null,
   hasOverflow: false,
   'aria-label': null,
+  testId: 'breadcrumb',
 };
 
-const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
+const Breadcrumb = ({ children, className, hasOverflow, testId, ...other }) => {
   const childrenItems = Children.map(children, (child) => child);
   const breakingWidth = useRef([]);
 
@@ -101,20 +104,23 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
         'breadcrumb--container__overflowfull': afterOverflowItems.length === 1,
       })}
       ref={breadcrumbRef}
+      // TODO: fix in v3
       data-testid="overflow"
     >
       {breadcrumbRef && hasOverflow ? (
-        <CarbonBreadcrumb className={className} {...other}>
+        <CarbonBreadcrumb data-testid={testId} className={className} {...other}>
           {childrenItems[0]}
           {overflowItems.length > 0 && (
             <span className="breadcrumb--overflow">
               <OverflowMenu
+                data-testid={`${testId}-overflow-menu`}
                 renderIcon={OverflowMenuHorizontal20}
                 menuOptionsClass="breadcrumb--overflow-items"
               >
                 {overflowItems.map((child, i) => (
                   <OverflowMenuItem
                     {...child.props}
+                    data-testid={`${testId}-overflow-menu-item-${i}`}
                     title={child.props.children}
                     key={`${child.props.children}-${i}`}
                     itemText={child.props.children}
@@ -126,7 +132,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
           {afterOverflowItems}
         </CarbonBreadcrumb>
       ) : (
-        <CarbonBreadcrumb className={className} {...other}>
+        <CarbonBreadcrumb data-testid={testId} className={className} {...other}>
           {children}
         </CarbonBreadcrumb>
       )}

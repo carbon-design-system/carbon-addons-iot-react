@@ -20,7 +20,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <button
           aria-pressed={null}
-          className="bx--btn bx--btn--ghost"
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="Button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -390,7 +391,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <button
           aria-pressed={null}
-          className="bx--btn bx--btn--ghost"
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="Button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
@@ -756,7 +758,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <button
           aria-pressed={null}
-          className="bx--btn bx--btn--ghost"
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="Button"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}

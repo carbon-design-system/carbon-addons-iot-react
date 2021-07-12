@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import ComposedStructuredList from './ComposedStructuredList';
 
@@ -46,6 +47,36 @@ const data = [
 ];
 
 describe('Structured List', () => {
+  it('should be selectable by testId', () => {
+    const onRowClick = jest.fn();
+    const { rerender } = render(
+      <ComposedStructuredList
+        design="normal"
+        columns={columns}
+        data={data}
+        onRowClick={onRowClick}
+        testId="composed_structured_list"
+      />
+    );
+
+    expect(screen.getByTestId('composed_structured_list')).toBeDefined();
+    expect(screen.getByTestId('composed_structured_list-head')).toBeDefined();
+    expect(screen.getByTestId('composed_structured_list-body')).toBeDefined();
+    expect(screen.getByTestId('composed_structured_list-row-row-0')).toBeDefined();
+
+    rerender(
+      <ComposedStructuredList
+        design="normal"
+        columns={columns}
+        data={[]}
+        onRowClick={onRowClick}
+        testId="composed_structured_list"
+      />
+    );
+
+    expect(screen.getByTestId('composed_structured_list-empty')).toBeDefined();
+  });
+
   // handle click function test
   it('onRowClick', () => {
     const onRowClick = jest.fn();
