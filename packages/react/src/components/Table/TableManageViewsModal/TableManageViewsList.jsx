@@ -16,7 +16,7 @@ const { iotPrefix } = settings;
 const renderButton = (id, onClick, icon, key, iconText) => (
   <Button
     key={key}
-    testID={key}
+    testId={key}
     hasIconOnly
     iconDescription={iconText}
     kind="ghost"
