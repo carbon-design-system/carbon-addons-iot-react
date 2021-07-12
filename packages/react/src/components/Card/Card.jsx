@@ -303,10 +303,10 @@ const Card = (props) => {
   };
 
   /** adds the id to the card action */
-  const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [
-    onCardAction,
-    id,
-  ]);
+  const cachedOnCardAction = useCallback(
+    (...args) => onCardAction(id, ...args),
+    [onCardAction, id]
+  );
 
   const getChildSize = (cardSize, cardTitle) => {
     const childSize = {

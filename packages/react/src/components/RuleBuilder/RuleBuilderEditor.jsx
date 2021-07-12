@@ -86,18 +86,19 @@ const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n }) => {
   );
 
   const handleAddRule = React.useCallback(
-    (ruleId, isGroup = false) => () => {
-      setTree((prev) => {
-        const newTree = {
-          ...prev,
-          rules: addRule(prev.rules, ruleId, isGroup),
-        };
+    (ruleId, isGroup = false) =>
+      () => {
+        setTree((prev) => {
+          const newTree = {
+            ...prev,
+            rules: addRule(prev.rules, ruleId, isGroup),
+          };
 
-        onChange(newTree);
+          onChange(newTree);
 
-        return newTree;
-      });
-    },
+          return newTree;
+        });
+      },
     [onChange]
   );
 

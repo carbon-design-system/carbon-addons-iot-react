@@ -202,8 +202,7 @@ ExperimentalMultiValueTags.storyName = 'multi-value tags';
 
 ExperimentalMultiValueTags.parameters = {
   info: {
-    text:
-      'This variation of the ComboBox is experimental. By setting `hasMultiValue` to true, when an item is selected it will create a persistent tag above the ComboBox. If the entered text does not match an item in the list, it will be added to the list.',
+    text: 'This variation of the ComboBox is experimental. By setting `hasMultiValue` to true, when an item is selected it will create a persistent tag above the ComboBox. If the entered text does not match an item in the list, it will be added to the list.',
     propTablesExclude: [Wrapper],
   },
 };
@@ -223,8 +222,7 @@ ExperimentalAddNewItemsToList.storyName = 'add new items to list';
 
 ExperimentalAddNewItemsToList.parameters = {
   info: {
-    text:
-      'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
+    text: 'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
     propTablesExclude: [Wrapper],
   },
 };
@@ -242,8 +240,7 @@ CustomOnBlurFunctionAutomaticallyAddsItemToTheList.storyName =
 
 CustomOnBlurFunctionAutomaticallyAddsItemToTheList.parameters = {
   info: {
-    text:
-      'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
+    text: 'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
     propTablesExclude: [Wrapper],
   },
 };

@@ -78,8 +78,7 @@ const getColor = (feature, featureName = 'population') => {
 
 const gdp = new VectorImage({
   source: new VectorSource({
-    url:
-      'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
+    url: 'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
     format: new GeoJSON(),
   }),
   visible: true,
@@ -95,8 +94,7 @@ const gdp = new VectorImage({
 
 const population = new VectorImage({
   source: new VectorSource({
-    url:
-      'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
+    url: 'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
     format: new GeoJSON(),
   }),
   visible: false,

@@ -90,8 +90,7 @@ CurrentPageWithAriaCurrent.storyName = 'current page with aria-current';
 
 CurrentPageWithAriaCurrent.parameters = {
   info: {
-    text:
-      'You can specify a BreadcrumbItem component as the current page with the `aria-current` prop by specifying `aria-current="page"`',
+    text: 'You can specify a BreadcrumbItem component as the current page with the `aria-current` prop by specifying `aria-current="page"`',
   },
 };
 

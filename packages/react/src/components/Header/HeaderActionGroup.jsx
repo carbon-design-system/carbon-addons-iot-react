@@ -53,7 +53,8 @@ const HeaderActionGroup = ({ actionItems, i18n }) => {
   const checkForOverflow = useCallback(() => {
     /* istanbul ignore else */
     if (overFlowContainerRef.current) {
-      const firstButtonInGroupRef = overFlowContainerRef.current?.lastChild?.firstChild?.getBoundingClientRect();
+      const firstButtonInGroupRef =
+        overFlowContainerRef.current?.lastChild?.firstChild?.getBoundingClientRect();
       const nameDivRef = overFlowContainerRef.current?.previousSibling?.getBoundingClientRect();
 
       /* istanbul ignore else */

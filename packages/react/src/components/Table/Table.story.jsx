@@ -2231,8 +2231,7 @@ FilteredSortedPaginatedTableWithAsynchronousDataSource.storyName =
 
 FilteredSortedPaginatedTableWithAsynchronousDataSource.parameters = {
   info: {
-    text:
-      'This is an example of how to use the <Table> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
+    text: 'This is an example of how to use the <Table> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
     source: false,
   },
 };
