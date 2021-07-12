@@ -14927,6 +14927,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "displayOption": Object {
+              "type": "string",
+            },
             "id": Object {
               "type": "string",
             },
