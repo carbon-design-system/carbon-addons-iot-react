@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.47...v2.146.0-next.48) (2021-07-12)
+
+
+### Bug Fixes
+
+* **datetimepicker:** comment was in the wrong place ([8d0f895](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8d0f89589a66c0a60af20ff5ad9d43e4ac59c672))
+* **datetimepicker:** correctly handle relative time changes ([132f42c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/132f42c76f4045159257bc8a431e053f54ae7880))
+* **suiteheader:** Increasing coverage of `IdleLogoutConfirmationModal.jsx` ([90a6ea4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/90a6ea45828cc9b0c75eeea19d0b3c2f2aad9fe2))
+* **suiteheader:** making sure `IdleTimer` is not started if idleTimeoutData === 0. ([937b27e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/937b27e56c7ca93f94f7da8c4cf70363b026cd77))
+* **suiteheader:** Saving original window.document.cookie before each test and restoring it after each test, per feedback. ([a5c4d66](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a5c4d6652a650b2541cb43403444150b949c0581))
+* **suiteheader:** Using `classnames` to concatenate classes, per feedback. ([cab23df](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cab23df5783ef18d228bc51b638100e4b8f49bd6))
+
+
+### Features
+
+* **suiteheader:** Adding support for an idle timeout confirmation modal in the SuiteHeader component. This modal gives the user 2 options: “Stay logged in” or “Log out”. Timeout and countdown start are configurable. Also, the modal uses a cookie so that user inactivity detection happens across tabs in the same domain. ([f5b2f36](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f5b2f36e46dd4728afbbdac02a1aef11c86e1c53))
+
+
+
+
+
 # [2.146.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.46...v2.146.0-next.47) (2021-07-12)
 
 

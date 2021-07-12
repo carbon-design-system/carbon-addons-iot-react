@@ -13,6 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="page-title-bar"
+      data-testid="dashboard-editor-header-page-title-bar"
       style={
         Object {
           "--header-offset": "48px",
@@ -78,6 +79,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--dashboard-editor-header--right"
+            data-testid="dashboard-editor-header"
           >
             <div
               className="iot--dashboard-editor-header--top"
@@ -106,6 +108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   }
                   aria-disabled={false}
                   className="bx--btn bx--btn--ghost bx--btn--field"
+                  data-testid="dashboard-editor-header-file-uploader-button"
                   htmlFor="id11"
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -255,6 +258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="page-title-bar"
+      data-testid="dashboard-editor-header-page-title-bar"
       style={
         Object {
           "--header-offset": "48px",
@@ -352,6 +356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--dashboard-editor-header--right"
+            data-testid="dashboard-editor-header"
           >
             <div
               className="iot--dashboard-editor-header--top"
