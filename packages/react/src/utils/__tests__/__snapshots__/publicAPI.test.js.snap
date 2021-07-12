@@ -183,7 +183,7 @@ Map {
       "passiveModal": false,
       "sendingData": null,
       "submitFailed": false,
-      "testID": "ComposedModal",
+      "testId": "ComposedModal",
       "type": null,
     },
     "propTypes": Object {
@@ -286,7 +286,8 @@ Map {
       "submitFailed": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "type": Object {
@@ -4626,6 +4627,7 @@ Map {
       "design": "mini",
       "isFixedWidth": false,
       "loadingDataLabel": "",
+      "testId": "structured-list",
     },
     "propTypes": Object {
       "StructuredListHeadClassName": Object {
@@ -4735,6 +4737,9 @@ Map {
       "onRowClick": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -7303,7 +7308,8 @@ Map {
       "submitFailed": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "type": Object {
@@ -19378,6 +19384,7 @@ Map {
       "onBlur": null,
       "onInputChange": null,
       "shouldFilterItem": [Function],
+      "testId": "combo",
       "type": "default",
       "wrapperClassName": null,
     },
@@ -19532,6 +19539,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "titleText": Object {
         "type": "node",
@@ -19816,7 +19826,7 @@ Map {
       "label": "Select a color",
       "light": false,
       "selectedColor": undefined,
-      "testID": undefined,
+      "testId": "color-dropdown",
       "titleText": "Color",
       "translateWithId": undefined,
     },
@@ -19872,7 +19882,8 @@ Map {
         ],
         "type": "shape",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "titleText": Object {
