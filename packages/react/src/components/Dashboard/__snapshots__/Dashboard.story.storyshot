@@ -2566,6 +2566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       }
                     />
                     <div
+                      data-testid="null-hotspots-container"
                       style={
                         Object {
                           "left": undefined,
@@ -2573,7 +2574,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           "pointerEvents": "none",
                           "position": "absolute",
                           "right": "auto",
-                          "top": undefined,
                         }
                       }
                     >
@@ -5408,6 +5408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       }
                     />
                     <div
+                      data-testid="null-hotspots-container"
                       style={
                         Object {
                           "left": undefined,
@@ -5415,7 +5416,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           "pointerEvents": "none",
                           "position": "absolute",
                           "right": "auto",
-                          "top": undefined,
                         }
                       }
                     >
@@ -8279,6 +8279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       }
                     />
                     <div
+                      data-testid="null-hotspots-container"
                       style={
                         Object {
                           "left": undefined,
@@ -8286,7 +8287,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           "pointerEvents": "none",
                           "position": "absolute",
                           "right": "auto",
-                          "top": undefined,
                         }
                       }
                     >
@@ -8905,6 +8905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       }
                     />
                     <div
+                      data-testid="null-hotspots-container"
                       style={
                         Object {
                           "left": undefined,
@@ -8912,7 +8913,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           "pointerEvents": "none",
                           "position": "absolute",
                           "right": "auto",
-                          "top": undefined,
                         }
                       }
                     />
@@ -13721,6 +13721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       }
                     />
                     <div
+                      data-testid="null-hotspots-container"
                       style={
                         Object {
                           "left": undefined,
@@ -13728,7 +13729,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           "pointerEvents": "none",
                           "position": "absolute",
                           "right": "auto",
-                          "top": undefined,
                         }
                       }
                     >
@@ -30428,6 +30428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       }
                     />
                     <div
+                      data-testid="null-hotspots-container"
                       style={
                         Object {
                           "left": undefined,
@@ -30435,7 +30436,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           "pointerEvents": "none",
                           "position": "absolute",
                           "right": "auto",
-                          "top": undefined,
                         }
                       }
                     >
