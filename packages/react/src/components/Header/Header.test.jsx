@@ -31,11 +31,11 @@ describe('Header', () => {
         ),
         childContent: [
           {
-            onCLick: () => console.log('hi'),
+            onClick: jest.fn(),
             content: <p>This is a link</p>,
           },
           {
-            onCLick: () => console.log('hi'),
+            onClick: jest.fn(),
             content: (
               <React.Fragment>
                 <span>
@@ -90,7 +90,7 @@ describe('Header', () => {
     actionItems: [
       {
         label: 'user',
-        onCLick: undefined,
+        onClick: undefined,
         btnContent: <User20 fill="white" description="Icon" />,
       },
     ],

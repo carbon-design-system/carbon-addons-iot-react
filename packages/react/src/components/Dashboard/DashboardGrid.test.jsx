@@ -116,7 +116,7 @@ describe('DashboardGrid', () => {
 
     const getCards = ({ isResizable }) => [
       <Card
-        testID="test-card"
+        testId="test-card"
         title="Card"
         id="card"
         key="card"
@@ -211,7 +211,7 @@ describe('DashboardGrid', () => {
         loadData={() => {}}
       />,
       <BarChartCard
-        testID="test-barChartCard"
+        testId="test-barChartCard"
         title="BarChartCard"
         id="barChartCard"
         key="barChartCard"
@@ -433,7 +433,7 @@ describe('DashboardGrid', () => {
           >
             {[
               <Card
-                testID="test-card"
+                testId="test-card"
                 title="Card"
                 id="card"
                 key="card"
@@ -489,7 +489,7 @@ describe('DashboardGrid', () => {
           >
             {[
               <Card
-                testID="test-card"
+                testId="test-card"
                 title="Card"
                 id="card"
                 key="card"

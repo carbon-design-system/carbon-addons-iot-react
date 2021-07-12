@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import List16 from '@carbon/icons-react';
 import userEvent from '@testing-library/user-event';
 

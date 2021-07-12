@@ -95,7 +95,7 @@ describe('DashboardEditor', () => {
     expect(cardTitle).toBeInTheDocument();
   });
   it('verify custom renderIconByName is called with threshold', () => {
-    const mockRenderIconByName = jest.fn();
+    const mockRenderIconByName = jest.fn(() => <div />);
     render(
       <DashboardEditor
         {...commonProps}
@@ -288,7 +288,6 @@ describe('DashboardEditor', () => {
     // find and click export button
     // Export button is iconOnly meaning we can't find it based off text
     const exportBtn = screen.getAllByRole('button')[2];
-    console.log(exportBtn);
     expect(exportBtn).toBeInTheDocument();
     fireEvent.click(exportBtn);
     expect(mockOnExport).toBeCalled();
@@ -326,6 +325,14 @@ describe('DashboardEditor', () => {
   });
 
   it('triggering an error should show error message', () => {
+    const originalDev = global.__DEV__;
+    const originalError = console.error;
+    const originalLog = console.log;
+    const error = jest.fn();
+    const log = jest.fn();
+    console.error = error;
+    console.log = log;
+    global.__DEV__ = true;
     render(
       <DashboardEditor
         {...commonProps}
@@ -354,9 +361,14 @@ describe('DashboardEditor', () => {
         }}
       />
     );
+    expect(log).toHaveBeenCalledTimes(2);
+    expect(error).toHaveBeenCalledTimes(6);
     const errMsg = screen.getAllByText('Something went wrong. Please refresh the page.');
 
     expect(errMsg).toHaveLength(2);
+    console.error = originalError;
+    console.log = originalLog;
+    global.__DEV__ = originalDev;
   });
 
   it('uses custom onCardChange callback', () => {

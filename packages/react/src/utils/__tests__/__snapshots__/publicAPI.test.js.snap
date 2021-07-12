@@ -19,10 +19,16 @@ Map {
   ",
   },
   "AddCard" => Object {
+    "defaultProps": Object {
+      "testId": "add-card-tile",
+    },
     "propTypes": Object {
       "onClick": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "isRequired": true,
@@ -41,7 +47,7 @@ Map {
       "loading": false,
       "recommended": false,
       "selected": false,
-      "testID": "Button",
+      "testId": "Button",
     },
     "propTypes": Object {
       "children": Object {
@@ -84,7 +90,8 @@ Map {
       "selected": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -97,6 +104,7 @@ Map {
       "className": null,
       "hasOverflow": false,
       "noTrailingSlash": false,
+      "testId": "breadcrumb",
     },
     "propTypes": Object {
       "aria-label": Object {
@@ -113,6 +121,9 @@ Map {
       },
       "noTrailingSlash": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -445,7 +456,7 @@ Map {
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
         "tableErrorStateTitle": "Unable to load the page",
-        "toggleAggregations": "Toggle Aggregations",
+        "toggleAggregations": "Toggle aggregations",
       },
       "id": null,
       "lightweight": false,
@@ -631,6 +642,9 @@ Map {
                     "type": "func",
                   },
                   "onToggleAdvancedFilter": Object {
+                    "type": "func",
+                  },
+                  "onToggleAggregations": Object {
                     "type": "func",
                   },
                   "onToggleColumnSelection": Object {
@@ -1086,6 +1100,9 @@ Map {
             "selectRowAria": Object {
               "type": "string",
             },
+            "toggleAggregations": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -1310,6 +1327,9 @@ Map {
                       },
                     ],
                     "type": "arrayOf",
+                  },
+                  "isHidden": Object {
+                    "type": "bool",
                   },
                   "label": Object {
                     "type": "string",
@@ -1736,6 +1756,7 @@ Map {
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
         "simpleFiltersTabLabel": "Simple filters",
+        "toggleAggregations": "Toggle aggregations",
       },
       "lightweight": false,
       "openMenuText": "Open menu",
@@ -2077,6 +2098,9 @@ Map {
               "type": "string",
             },
             "selectRowAria": Object {
+              "type": "string",
+            },
+            "toggleAggregations": Object {
               "type": "string",
             },
           },
@@ -3432,6 +3456,7 @@ Map {
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
         "simpleFiltersTabLabel": "Simple filters",
+        "toggleAggregations": "Toggle aggregations",
       },
       "secondaryTitle": null,
       "testID": "",
@@ -6000,7 +6025,8 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -7803,6 +7829,10 @@ Map {
         "profileManageButton": "Manage profile",
         "profileTitle": "Profile",
         "requestEnhancement": "Request enhancement",
+        "sessionTimeoutModalBody": "You will be logged out due to inactivity in {countdown} seconds.",
+        "sessionTimeoutModalHeading": "Session Timeout",
+        "sessionTimeoutModalLogoutButton": "Log out",
+        "sessionTimeoutModalStayLoggedInButton": "Stay logged in",
         "settingsIcon": "Settings",
         "support": "Support",
         "surveyPrivacyPolicy": "Privacy Policy",
@@ -7815,9 +7845,11 @@ Map {
         "userIcon": "User",
         "whatsNew": "What's new",
       },
+      "idleTimeoutData": null,
       "isAdminView": false,
       "onRouteChange": [Function],
       "onSideNavToggled": [Function],
+      "onStayLoggedIn": [Function],
       "routes": null,
       "sideNavProps": null,
       "surveyData": null,
@@ -8052,6 +8084,18 @@ Map {
             "requestEnhancement": Object {
               "type": "string",
             },
+            "sessionTimeoutModalBody": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalHeading": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalLogoutButton": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalStayLoggedInButton": Object {
+              "type": "string",
+            },
             "settingsIcon": Object {
               "type": "string",
             },
@@ -8093,6 +8137,22 @@ Map {
         ],
         "type": "shape",
       },
+      "idleTimeoutData": Object {
+        "args": Array [
+          Object {
+            "cookieName": Object {
+              "type": "string",
+            },
+            "countdown": Object {
+              "type": "number",
+            },
+            "timeout": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "isAdminView": Object {
         "type": "bool",
       },
@@ -8100,6 +8160,9 @@ Map {
         "type": "func",
       },
       "onSideNavToggled": Object {
+        "type": "func",
+      },
+      "onStayLoggedIn": Object {
         "type": "func",
       },
       "routes": Object {
@@ -8121,6 +8184,9 @@ Map {
               "type": "string",
             },
             "logout": Object {
+              "type": "string",
+            },
+            "logoutInactivity": Object {
               "type": "string",
             },
             "navigator": Object {
@@ -8405,6 +8471,88 @@ Map {
       },
     },
   },
+  "IdleLogoutConfirmationModal" => Object {
+    "defaultProps": Object {
+      "className": null,
+      "i18n": Object {
+        "sessionTimeoutModalBody": "You will be logged out due to inactivity in {countdown} seconds.",
+        "sessionTimeoutModalHeading": "Session Timeout",
+        "sessionTimeoutModalLogoutButton": "Log out",
+        "sessionTimeoutModalStayLoggedInButton": "Stay logged in",
+      },
+      "idleTimeoutData": Object {
+        "cookieName": "_user_inactivity_timeout",
+        "countdown": 30,
+        "timeout": 1800,
+      },
+      "onRouteChange": [Function],
+      "onStayLoggedIn": [Function],
+      "routes": null,
+    },
+    "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "sessionTimeoutModalBody": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalHeading": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalLogoutButton": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalStayLoggedInButton": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "idleTimeoutData": Object {
+        "args": Array [
+          Object {
+            "cookieName": Object {
+              "type": "string",
+            },
+            "countdown": Object {
+              "type": "number",
+            },
+            "timeout": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "onRouteChange": Object {
+        "type": "func",
+      },
+      "onStayLoggedIn": Object {
+        "type": "func",
+      },
+      "routes": Object {
+        "args": Array [
+          Object {
+            "domain": Object {
+              "type": "string",
+            },
+            "logout": Object {
+              "type": "string",
+            },
+            "logoutInactivity": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+    },
+  },
+  "IdleTimer" => Object {},
   "SuiteHeaderI18N" => Object {
     "en": Object {
       "about": "About",
@@ -8421,6 +8569,10 @@ Map {
       "profileManageButton": "Manage profile",
       "profileTitle": "Profile",
       "requestEnhancement": "Request enhancement",
+      "sessionTimeoutModalBody": "You will be logged out due to inactivity in {countdown} seconds.",
+      "sessionTimeoutModalHeading": "Session Timeout",
+      "sessionTimeoutModalLogoutButton": "Log out",
+      "sessionTimeoutModalStayLoggedInButton": "Stay logged in",
       "settingsIcon": "Settings",
       "support": "Support",
       "surveyPrivacyPolicy": "Privacy Policy",
@@ -10149,7 +10301,7 @@ Map {
         "LIST",
         "ALERT",
       ],
-      "testID": "card-editor",
+      "testId": "card-editor",
     },
     "propTypes": Object {
       "availableDimensions": Object {
@@ -10356,7 +10508,8 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -10809,7 +10962,7 @@ Map {
       },
       "size": "MEDIUM",
       "tabIndex": undefined,
-      "testID": "Card",
+      "testId": "Card",
       "timeRange": undefined,
       "title": undefined,
       "toolbar": undefined,
@@ -11525,7 +11678,8 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -12401,6 +12555,9 @@ Map {
         "type": "number",
       },
       "testID": Object {
+        "type": "string",
+      },
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -13357,7 +13514,8 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -14348,7 +14506,8 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -14894,6 +15053,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "displayOption": Object {
+              "type": "string",
+            },
             "id": Object {
               "type": "string",
             },
@@ -15169,7 +15331,8 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -16085,7 +16248,8 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -17027,7 +17191,8 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -17875,7 +18040,8 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -18708,6 +18874,7 @@ Map {
       "pagination": null,
       "search": null,
       "selectedIds": Array [],
+      "testId": "list",
       "title": null,
       "toggleExpansion": [Function],
     },
@@ -18936,6 +19103,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "type": "string",
       },
@@ -18962,6 +19132,7 @@ Map {
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
+      "testId": "simple-list",
     },
     "propTypes": Object {
       "buttons": Object {
@@ -19066,6 +19237,9 @@ Map {
       "pageSize": Object {
         "type": "string",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "isRequired": true,
         "type": "string",
@@ -19153,7 +19327,9 @@ Map {
     "small": "small",
   },
   "AccordionItemDefer" => Object {
-    "defaultProps": undefined,
+    "defaultProps": Object {
+      "testId": "accordion-item-deferred",
+    },
     "propTypes": Object {
       "children": Object {
         "type": "node",
@@ -19176,6 +19352,9 @@ Map {
       },
       "renderExpando": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "node",
@@ -19634,6 +19813,7 @@ Map {
           "name": "cyan90",
         },
       ],
+      "disabled": false,
       "hideLabels": false,
       "label": "Select a color",
       "light": false,
@@ -19660,6 +19840,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "disabled": Object {
+        "type": "bool",
       },
       "hideLabels": Object {
         "type": "bool",
@@ -19844,6 +20027,9 @@ Map {
               "type": "string",
             },
             "iconDropdownLabelText": Object {
+              "type": "string",
+            },
+            "iconDropdownTitleText": Object {
               "type": "string",
             },
             "infoMessageText": Object {
@@ -20042,36 +20228,96 @@ Map {
       "formValues": Object {
         "args": Array [
           Object {
-            "args": Array [
-              Array [
-                Object {
-                  "type": "string",
-                },
-                Object {
-                  "type": "number",
-                },
-                Object {
-                  "type": "bool",
-                },
-                Object {
-                  "args": Array [
-                    Object {
-                      "carbonColor": Object {
-                        "type": "string",
+            "backgroundColor": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "carbonColor": Object {
+                          "type": "string",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
                       },
-                      "name": Object {
-                        "type": "string",
-                      },
-                    },
-                  ],
-                  "type": "shape",
-                },
+                    ],
+                    "type": "shape",
+                  },
+                ],
               ],
-            ],
-            "type": "oneOfType",
+              "type": "oneOfType",
+            },
+            "backgroundOpacity": Object {
+              "type": "number",
+            },
+            "bold": Object {
+              "type": "bool",
+            },
+            "borderColor": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "carbonColor": Object {
+                          "type": "string",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "borderWidth": Object {
+              "type": "number",
+            },
+            "fontColor": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "carbonColor": Object {
+                          "type": "string",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "fontSize": Object {
+              "type": "number",
+            },
+            "italic": Object {
+              "type": "bool",
+            },
+            "underline": Object {
+              "type": "bool",
+            },
           },
         ],
-        "type": "objectOf",
+        "type": "shape",
       },
       "i18n": Object {
         "args": Array [
@@ -20086,6 +20332,9 @@ Map {
               "type": "string",
             },
             "borderWidthInvalidText": Object {
+              "type": "string",
+            },
+            "borderWidthLabelText": Object {
               "type": "string",
             },
             "deleteButtonIconDescription": Object {
@@ -20104,6 +20353,9 @@ Map {
               "type": "string",
             },
             "fontSizeInvalidText": Object {
+              "type": "string",
+            },
+            "fontSizeLabelText": Object {
               "type": "string",
             },
             "infoMessageText": Object {
@@ -21125,7 +21377,8 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -22444,7 +22697,8 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "timeRange": Object {
@@ -22463,6 +22717,548 @@ Map {
     },
   },
   "useDNDProviderElement" => Object {},
+  "hotspotActionTypes" => Object {
+    "currentTypeSwitch": "CURRENT_TYPE_SWITCH",
+    "dynamicHotspotSourceClear": "DYNAMIC_HOTSPOT_SOURCE_CLEAR",
+    "dynamicHotspotSourceXChange": "DYNAMIC_HOTSPOT_SOURCE_X_CHANGE",
+    "dynamicHotspotSourceYChange": "DYNAMIC_HOTSPOT_SOURCE_Y_CHANGE",
+    "dynamicHotspotsLoadingChange": "DYNAMIC_HOTSPOTS_LOADING_CHANGE",
+    "dynamicHotspotsSet": "DYNAMIC_HOTSPOTS_SET",
+    "hotspotDataSourceChange": "HOTSPOT_DATA_SOURCE_CHANGE",
+    "hotspotDataSourceSettingsChange": "HOTSPOT_DATA_SOURCE_SETTINGS_CHANGE",
+    "hotspotSelect": "HOTSPOT_SELECT",
+    "hotspotTooltipChange": "HOTSPOT_TOOLTIP_CHANGE",
+    "hotspotsAdd": "HOTSPOTS_ADD",
+    "selectedHotspotDelete": "SELECTED_HOTSPOT_DELETE",
+    "textHotspotContentChange": "TEXT_HOTSPOT_CONTENT_CHANGE",
+    "textHotspotStyleChange": "TEXT_HOTSPOT_STYLE_CHANGE",
+  },
+  "hotspotTypes" => Object {
+    "DYNAMIC": "dynamic",
+    "FIXED": "fixed",
+    "TEXT": "text",
+  },
+  "hotspotEditorReducer" => Object {},
+  "useHotspotEditorState" => Object {
+    "prototypes": Object {
+      "configuration": Object {
+        "args": Array [
+          Object {
+            "initialState": Object {
+              "currentType": Object {
+                "args": Array [
+                  Array [
+                    "fixed",
+                    "dynamic",
+                    "text",
+                  ],
+                ],
+                "type": "oneOf",
+              },
+              "dynamicHotspotSourceX": Object {
+                "args": Array [
+                  Object {
+                    "dataSourceId": Object {
+                      "type": "string",
+                    },
+                  },
+                ],
+                "type": "shape",
+              },
+              "dynamicHotspotSourceY": Object {
+                "args": Array [
+                  Object {
+                    "dataSourceId": Object {
+                      "type": "string",
+                    },
+                  },
+                ],
+                "type": "shape",
+              },
+              "dynamicHotspotsLoading": Object {
+                "type": "bool",
+              },
+              "hotspots": Object {
+                "args": Array [
+                  Object {
+                    "backgroundColor": Object {
+                      "type": "string",
+                    },
+                    "backgroundOpacity": Object {
+                      "type": "number",
+                    },
+                    "bold": Object {
+                      "type": "bool",
+                    },
+                    "borderColor": Object {
+                      "type": "string",
+                    },
+                    "borderWidth": Object {
+                      "type": "number",
+                    },
+                    "color": Object {
+                      "type": "string",
+                    },
+                    "content": Object {
+                      "args": Array [
+                        Array [
+                          Object {
+                            "type": "element",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "attributes": Object {
+                                  "args": Array [
+                                    Object {
+                                      "args": Array [
+                                        Object {
+                                          "dataSourceId": Object {
+                                            "type": "string",
+                                          },
+                                          "label": Object {
+                                            "type": "string",
+                                          },
+                                          "precision": Object {
+                                            "type": "number",
+                                          },
+                                          "thresholds": Object {
+                                            "args": Array [
+                                              Object {
+                                                "args": Array [
+                                                  Object {
+                                                    "color": Object {
+                                                      "type": "string",
+                                                    },
+                                                    "comparison": Object {
+                                                      "args": Array [
+                                                        Array [
+                                                          "<",
+                                                          ">",
+                                                          "=",
+                                                          "<=",
+                                                          ">=",
+                                                        ],
+                                                      ],
+                                                      "type": "oneOf",
+                                                    },
+                                                    "icon": Object {
+                                                      "type": "string",
+                                                    },
+                                                    "value": Object {
+                                                      "type": "any",
+                                                    },
+                                                  },
+                                                ],
+                                                "type": "shape",
+                                              },
+                                            ],
+                                            "type": "arrayOf",
+                                          },
+                                          "unit": Object {
+                                            "type": "string",
+                                          },
+                                        },
+                                      ],
+                                      "type": "shape",
+                                    },
+                                  ],
+                                  "type": "arrayOf",
+                                },
+                                "description": Object {
+                                  "type": "string",
+                                },
+                                "hotspotThreshold": Object {
+                                  "args": Array [
+                                    Object {
+                                      "color": Object {
+                                        "type": "string",
+                                      },
+                                      "comparison": Object {
+                                        "args": Array [
+                                          Array [
+                                            "<",
+                                            ">",
+                                            "=",
+                                            "<=",
+                                            ">=",
+                                          ],
+                                        ],
+                                        "type": "oneOf",
+                                      },
+                                      "dataSourceId": Object {
+                                        "type": "string",
+                                      },
+                                      "icon": Object {
+                                        "type": "string",
+                                      },
+                                      "value": Object {
+                                        "type": "any",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                                "i18n": Object {
+                                  "args": Array [
+                                    Object {
+                                      "titleEditableHintText": Object {
+                                        "type": "string",
+                                      },
+                                      "titlePlaceholderText": Object {
+                                        "type": "string",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                                "id": Object {
+                                  "type": "string",
+                                },
+                                "isTitleEditable": Object {
+                                  "type": "bool",
+                                },
+                                "locale": Object {
+                                  "type": "string",
+                                },
+                                "onChange": Object {
+                                  "type": "func",
+                                },
+                                "renderIconByName": Object {
+                                  "type": "func",
+                                },
+                                "title": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "element",
+                                      },
+                                    ],
+                                  ],
+                                  "type": "oneOfType",
+                                },
+                                "values": Object {
+                                  "args": Array [
+                                    Object {
+                                      "type": "any",
+                                    },
+                                  ],
+                                  "type": "objectOf",
+                                },
+                              },
+                            ],
+                            "type": "shape",
+                          },
+                        ],
+                      ],
+                      "isRequired": true,
+                      "type": "oneOfType",
+                    },
+                    "fontColor": Object {
+                      "type": "string",
+                    },
+                    "fontSize": Object {
+                      "type": "number",
+                    },
+                    "height": Object {
+                      "type": "number",
+                    },
+                    "icon": Object {
+                      "type": "string",
+                    },
+                    "iconDescription": Object {
+                      "type": "string",
+                    },
+                    "isSelected": Object {
+                      "type": "bool",
+                    },
+                    "italic": Object {
+                      "type": "bool",
+                    },
+                    "onClick": Object {
+                      "type": "func",
+                    },
+                    "renderIconByName": Object {
+                      "type": "func",
+                    },
+                    "type": Object {
+                      "args": Array [
+                        Array [
+                          "fixed",
+                          "dynamic",
+                          "text",
+                        ],
+                      ],
+                      "type": "oneOf",
+                    },
+                    "underline": Object {
+                      "type": "bool",
+                    },
+                    "width": Object {
+                      "type": "number",
+                    },
+                    "x": Object {
+                      "isRequired": true,
+                      "type": "number",
+                    },
+                    "y": Object {
+                      "isRequired": true,
+                      "type": "number",
+                    },
+                  },
+                ],
+                "type": "arrayOf",
+              },
+              "selectedHotspot": Object {
+                "backgroundColor": Object {
+                  "type": "string",
+                },
+                "backgroundOpacity": Object {
+                  "type": "number",
+                },
+                "bold": Object {
+                  "type": "bool",
+                },
+                "borderColor": Object {
+                  "type": "string",
+                },
+                "borderWidth": Object {
+                  "type": "number",
+                },
+                "color": Object {
+                  "type": "string",
+                },
+                "content": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "element",
+                      },
+                      Object {
+                        "args": Array [
+                          Object {
+                            "attributes": Object {
+                              "args": Array [
+                                Object {
+                                  "args": Array [
+                                    Object {
+                                      "dataSourceId": Object {
+                                        "type": "string",
+                                      },
+                                      "label": Object {
+                                        "type": "string",
+                                      },
+                                      "precision": Object {
+                                        "type": "number",
+                                      },
+                                      "thresholds": Object {
+                                        "args": Array [
+                                          Object {
+                                            "args": Array [
+                                              Object {
+                                                "color": Object {
+                                                  "type": "string",
+                                                },
+                                                "comparison": Object {
+                                                  "args": Array [
+                                                    Array [
+                                                      "<",
+                                                      ">",
+                                                      "=",
+                                                      "<=",
+                                                      ">=",
+                                                    ],
+                                                  ],
+                                                  "type": "oneOf",
+                                                },
+                                                "icon": Object {
+                                                  "type": "string",
+                                                },
+                                                "value": Object {
+                                                  "type": "any",
+                                                },
+                                              },
+                                            ],
+                                            "type": "shape",
+                                          },
+                                        ],
+                                        "type": "arrayOf",
+                                      },
+                                      "unit": Object {
+                                        "type": "string",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                            "description": Object {
+                              "type": "string",
+                            },
+                            "hotspotThreshold": Object {
+                              "args": Array [
+                                Object {
+                                  "color": Object {
+                                    "type": "string",
+                                  },
+                                  "comparison": Object {
+                                    "args": Array [
+                                      Array [
+                                        "<",
+                                        ">",
+                                        "=",
+                                        "<=",
+                                        ">=",
+                                      ],
+                                    ],
+                                    "type": "oneOf",
+                                  },
+                                  "dataSourceId": Object {
+                                    "type": "string",
+                                  },
+                                  "icon": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "any",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            "i18n": Object {
+                              "args": Array [
+                                Object {
+                                  "titleEditableHintText": Object {
+                                    "type": "string",
+                                  },
+                                  "titlePlaceholderText": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            "id": Object {
+                              "type": "string",
+                            },
+                            "isTitleEditable": Object {
+                              "type": "bool",
+                            },
+                            "locale": Object {
+                              "type": "string",
+                            },
+                            "onChange": Object {
+                              "type": "func",
+                            },
+                            "renderIconByName": Object {
+                              "type": "func",
+                            },
+                            "title": Object {
+                              "args": Array [
+                                Array [
+                                  Object {
+                                    "type": "string",
+                                  },
+                                  Object {
+                                    "type": "element",
+                                  },
+                                ],
+                              ],
+                              "type": "oneOfType",
+                            },
+                            "values": Object {
+                              "args": Array [
+                                Object {
+                                  "type": "any",
+                                },
+                              ],
+                              "type": "objectOf",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                  ],
+                  "isRequired": true,
+                  "type": "oneOfType",
+                },
+                "fontColor": Object {
+                  "type": "string",
+                },
+                "fontSize": Object {
+                  "type": "number",
+                },
+                "height": Object {
+                  "type": "number",
+                },
+                "icon": Object {
+                  "type": "string",
+                },
+                "iconDescription": Object {
+                  "type": "string",
+                },
+                "isSelected": Object {
+                  "type": "bool",
+                },
+                "italic": Object {
+                  "type": "bool",
+                },
+                "onClick": Object {
+                  "type": "func",
+                },
+                "renderIconByName": Object {
+                  "type": "func",
+                },
+                "type": Object {
+                  "args": Array [
+                    Array [
+                      "fixed",
+                      "dynamic",
+                      "text",
+                    ],
+                  ],
+                  "type": "oneOf",
+                },
+                "underline": Object {
+                  "type": "bool",
+                },
+                "width": Object {
+                  "type": "number",
+                },
+                "x": Object {
+                  "isRequired": true,
+                  "type": "number",
+                },
+                "y": Object {
+                  "isRequired": true,
+                  "type": "number",
+                },
+              },
+              "thresholds": Object {
+                "args": Array [
+                  Object {
+                    "type": "object",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+            },
+            "reducer": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+    },
+  },
   "Accordion" => Object {
     "defaultProps": Object {
       "align": "end",
@@ -28658,6 +29454,7 @@ Map {
     "TABLE_ROW_SELECT": "TABLE_ROW_SELECT",
     "TABLE_ROW_SELECT_ALL": "TABLE_ROW_SELECT_ALL",
     "TABLE_SEARCH_APPLY": "TABLE_SEARCH_APPLY",
+    "TABLE_TOGGLE_AGGREGATIONS": "TABLE_TOGGLE_AGGREGATIONS",
     "TABLE_TOOLBAR_TOGGLE": "TABLE_TOOLBAR_TOGGLE",
     "tableActionApply": Object {},
     "tableActionCancel": Object {},
@@ -28691,6 +29488,7 @@ Map {
     "tableRowSelectAll": Object {},
     "tableSaveMultiSortColumns": Object {},
     "tableSearchApply": Object {},
+    "tableToggleAggregations": Object {},
     "tableToolbarToggle": Object {},
   },
   "AlertTableIcon" => Object {},

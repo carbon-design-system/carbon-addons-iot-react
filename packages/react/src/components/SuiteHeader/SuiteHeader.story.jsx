@@ -16,6 +16,7 @@ import { Tag } from '../Tag';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
+import SuiteHeaderREADME from './SuiteHeader.mdx';
 
 const sideNavLinks = [
   {
@@ -257,6 +258,9 @@ export default {
 
   parameters: {
     component: SuiteHeader,
+    docs: {
+      page: SuiteHeaderREADME,
+    },
   },
 };
 
@@ -301,9 +305,7 @@ export const Default = () => {
   );
 };
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const HeaderWithExtraContent = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
@@ -346,9 +348,7 @@ export const HeaderWithExtraContent = () => {
   );
 };
 
-HeaderWithExtraContent.story = {
-  name: 'Header with extra content',
-};
+HeaderWithExtraContent.storyName = 'Header with extra content';
 
 export const HeaderWithSideNav = () => (
   <SuiteHeader
@@ -387,9 +387,7 @@ export const HeaderWithSideNav = () => (
   />
 );
 
-HeaderWithSideNav.story = {
-  name: 'Header with side nav',
-};
+HeaderWithSideNav.storyName = 'Header with side nav';
 
 export const HeaderWithCustomSideNav = () => (
   <SuiteHeader
@@ -426,9 +424,7 @@ export const HeaderWithCustomSideNav = () => (
     onSideNavToggled={() => alert('onSideNavToggled')}
   />
 );
-HeaderWithCustomSideNav.story = {
-  name: 'Header with application-controlled side nav',
-};
+HeaderWithCustomSideNav.storyName = 'Header with application-controlled side nav';
 
 export const HeaderWithCustomActionItems = () => (
   <SuiteHeader
@@ -468,9 +464,7 @@ export const HeaderWithCustomActionItems = () => (
   />
 );
 
-HeaderWithCustomActionItems.story = {
-  name: 'Header with custom action items',
-};
+HeaderWithCustomActionItems.storyName = 'Header with custom action items';
 
 export const HeaderWithSurveyNotification = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
@@ -523,14 +517,60 @@ export const HeaderWithSurveyNotification = () => {
   );
 };
 
-HeaderWithSurveyNotification.story = {
-  name: 'Header with survey notification',
-};
+HeaderWithSurveyNotification.storyName = 'Header with survey notification';
 
 export const LoadingState = () => {
   return <SuiteHeader suiteName="Application Suite" appName="Application Name" />;
 };
 
-LoadingState.story = {
-  name: 'Loading state',
-};
+LoadingState.storyName = 'Loading state';
+
+export const HeaderWithIdleLogoutConfirmation = () => (
+  <>
+    <SuiteHeader
+      suiteName="Application Suite"
+      appName="Application Name"
+      userDisplayName="Admin User"
+      username="adminuser"
+      routes={{
+        profile: 'https://www.ibm.com',
+        navigator: 'https://www.ibm.com',
+        admin: 'https://www.ibm.com',
+        logout: 'https://www.ibm.com',
+        logoutInactivity: 'https://www.ibm.com',
+        whatsNew: 'https://www.ibm.com',
+        gettingStarted: 'https://www.ibm.com',
+        documentation: 'https://www.ibm.com',
+        requestEnhancement: 'https://www.ibm.com',
+        support: 'https://www.ibm.com',
+        about: 'https://www.ibm.com',
+      }}
+      idleTimeoutData={{
+        timeout: 10,
+        countdown: 10,
+        cookieName: '_user_inactivity_timeout',
+      }}
+      applications={[
+        {
+          id: 'monitor',
+          name: 'Monitor',
+          href: 'https://www.ibm.com',
+        },
+        {
+          id: 'health',
+          name: 'Health',
+          href: 'https://google.com',
+          isExternal: true,
+        },
+      ]}
+    />
+    <p>The logout confirmation dialog will show up after 10 seconds of inactivity.</p>
+    <p>
+      {
+        'Open this story in another tab, wait for the dialog to show up in both tabs, then click "Stay logged in" to see the other dialog go away.'
+      }
+    </p>
+  </>
+);
+
+HeaderWithIdleLogoutConfirmation.storyName = 'Header with idle user detection';

@@ -59,6 +59,8 @@ export SuiteHeader from './components/SuiteHeader/SuiteHeader';
 export SuiteHeaderProfile from './components/SuiteHeader/SuiteHeaderProfile/SuiteHeaderProfile';
 export SuiteHeaderAppSwitcher from './components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
 export SuiteHeaderLogoutModal from './components/SuiteHeader/SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
+export IdleLogoutConfirmationModal from './components/SuiteHeader/IdleLogoutConfirmationModal/IdleLogoutConfirmationModal';
+export IdleTimer from './components/SuiteHeader/util/IdleTimer';
 export SuiteHeaderI18N from './components/SuiteHeader/i18n';
 export useSuiteHeaderData from './components/SuiteHeader/hooks/useSuiteHeaderData';
 export suiteHeaderData from './components/SuiteHeader/util/suiteHeaderData';
@@ -126,6 +128,12 @@ export MapCard from './components/MapCard/MapCard';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';
+export {
+  hotspotActionTypes,
+  hotspotTypes,
+  hotspotEditorReducer,
+  useHotspotEditorState,
+} from './components/HotspotEditorModal/hooks/hotspotStateHook';
 
 // Carbon proxy
 export {

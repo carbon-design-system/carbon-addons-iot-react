@@ -189,7 +189,7 @@ const MenuButton = ({
         iconDescription={isMenuOpen ? closeIconDescription : openIconDescription}
         renderIcon={isMenuOpen ? renderCloseIcon : renderOpenIcon}
         label={label}
-        testID={testID}
+        testId={testID}
       />
       <Menu open={isMenuOpen} {...position}>
         {contextMenuItems}

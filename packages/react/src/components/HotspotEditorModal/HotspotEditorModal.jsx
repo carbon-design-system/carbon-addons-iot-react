@@ -61,7 +61,7 @@ const propTypes = {
     title: PropTypes.string,
     /**
      * If this prop is present the HotspotEditorModal will place new and existing thresholds here
-     * instead of under the each hotspot in cardConfig.values.hotspots.
+     * instead of under each hotspot in cardConfig.values.hotspots.
      */
     thresholds: PropTypes.arrayOf(
       PropTypes.shape({
@@ -96,6 +96,8 @@ const propTypes = {
     hotspotTypes.TEXT,
     hotspotTypes.DYNAMIC,
   ]),
+  /** value for object-fit property - 'contain' or 'fill' */
+  displayOption: PropTypes.string,
 
   /** Array of selectable color objects for text hotspot font */
   fontColors: PropTypes.arrayOf(ColorPropType),
@@ -157,6 +159,7 @@ const propTypes = {
     textTypeDataSourceTabLabelText: PropTypes.string,
     tooManyHotspotsInfoText: PropTypes.string,
   }),
+  /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func,
 };
 
@@ -169,6 +172,7 @@ const defaultProps = {
   defaultBorderWidth: 0,
   defaultFontSize: 12,
   defaultHotspotType: hotspotTypes.FIXED,
+  displayOption: null,
   fontColors: selectableColors,
   getValidDataItems: undefined,
   hotspotIconFillColors: validThresholdColors,
@@ -231,6 +235,7 @@ const HotspotEditorModal = ({
   defaultBackgroundOpacity,
   defaultFontSize,
   defaultHotspotType,
+  displayOption,
   fontColors,
   getValidDataItems,
   hotspotIconFillColors,
@@ -294,6 +299,7 @@ const HotspotEditorModal = ({
     },
   });
 
+  const hasNonEditableContent = React.isValidElement(selectedHotspot?.content);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const {
@@ -492,7 +498,9 @@ const HotspotEditorModal = ({
                 translateWithId={translateWithId}
               />
             </Tab>
-            <Tab label={fixedTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
+            <Tab disabled={hasNonEditableContent} label={fixedTypeDataSourceTabLabelText}>
+              {hasNonEditableContent ? null : renderDataSourceTab()}
+            </Tab>
           </Tabs>
         )}
       </>
@@ -537,7 +545,9 @@ const HotspotEditorModal = ({
             translateWithId={translateWithId}
           />
         </Tab>
-        <Tab label={textTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
+        <Tab disabled={hasNonEditableContent} label={textTypeDataSourceTabLabelText}>
+          {hasNonEditableContent ? null : renderDataSourceTab()}
+        </Tab>
       </Tabs>
     );
   };
@@ -592,6 +602,7 @@ const HotspotEditorModal = ({
                 src={cardConfig.content.src}
                 id={imageId}
                 width={size.width}
+                displayOption={displayOption}
               />
             )}
           </div>

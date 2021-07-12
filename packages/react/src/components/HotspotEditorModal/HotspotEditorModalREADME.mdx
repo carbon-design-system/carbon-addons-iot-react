@@ -1,0 +1,258 @@
+# `HotspotEditorModal` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Types of hotspots](#types-of-hotspots)
+- [State management](#state-management)
+- [Props](#props)
+- [Prop cardConfig](#prop-cardconfig)
+- [Prop i18n](#prop-i18n)
+- [HotspotEditorTooltipTab](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal/HotspotEditorTooltipTab/README.md)
+- [HotspotTextStyleTab](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal/HotspotTextStyleTab/README.md)
+- [HotspotEditorDataSourceTab](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal/HotspotEditorDataSourceTab/README.md)
+- [DynamicHotspotSourcePicker](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal/DynamicHotspotSourcePicker/README.md)
+- [Source Code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal)
+- [Feedback](#feedback)
+
+## Getting started
+
+The HotspotEditorModal allows a user to create and edit hotspots for the ImageHotspots component. A basic understanding of the ImageHotspots component is needed in order to follow this documentation. The HotspotEditorModal is a complex component that contains multiple subcomponents, each one described in their own README.md files. The subcomponents are designed for working with HotspotEditorModal, or an Application implemented version of it, and their APIs are designed to minimize data transformations when using the hotspotStateHook.js
+
+```jsx
+import { HotspotEditorModal } from 'carbon-addons-iot-react';
+import { gray50, red50, green50, blue50 } from '@carbon/colors';
+import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
+
+import landscape from './landscape.jpg';
+
+const selectableColors = [
+  { carbonColor: gray50, name: 'gray' },
+  { carbonColor: red50, name: 'red' },
+  { carbonColor: green50, name: 'green' },
+  { carbonColor: blue50, name: 'blue' },
+];
+
+<HotspotEditorModal
+  backgroundColors={selectableColors}
+  borderColors={selectableColors}
+  cardConfig={{
+    content: {
+      alt: 'Floor Map',
+      image: 'firstfloor',
+      src: landscape,
+    },
+    id: 'floor map picture',
+    size: 'MEDIUM',
+    title: 'Floor Map',
+    type: 'IMAGE',
+    values: {
+      hotspots: [],
+    },
+  }}
+  dataItems={[
+    {
+      dataItemId: 'temp_last',
+      dataSourceId: 'temp_last',
+      label: '{high} temp',
+      unit: '{unitVar}',
+    },
+    {
+      dataItemId: 'temperature',
+      dataSourceId: 'temperature',
+      label: 'Temperature',
+      unit: '°',
+    },
+    {
+      dataItemId: 'pressure',
+      dataSourceId: 'pressure',
+      label: 'Pressure',
+      unit: 'psi',
+    },
+  ]}
+  defaultHotspotType="fixed"
+  fontColors={selectableColors}
+  hotspotIconFillColors={selectableColors}
+  hotspotIcons={[
+    {
+      id: 'InformationSquareFilled24',
+      icon: InformationSquareFilled24,
+      text: 'Information square filled',
+    },
+    {
+      id: 'InformationFilled24',
+      icon: InformationFilled24,
+      text: 'Information filled',
+    },
+  ]}
+  label={landscape}
+  onClose={() => {}}
+  onSave={() => {}}
+/>;
+```
+
+## Types of hotspots
+
+There are three types of hotspots; `fixed`, `text` and `dynamic`.
+
+Both fixed and dynamic hotspots are managed under the context switch called "Hotspots". Fixed hotspots are created by the user by ctrl + clicking on the image. The hotspot will be assigned the x,y coordinates of the click in percentage. Fixed hotspots can have an icon and the data of the hotspot is displayed in a tooltip.
+
+Dynamic hotspots are loaded dynamically based on the selected x, y coordinate data source. There might be multiple dynamic hotspots for a given combination of x, y coordinate data sources and they will all share the same configuration for appearance and data.
+
+Hotspots of typ text are managed under the context switch called "Labels". They are created the same way as fixed hotpots but with the difference that there is no icon and tooltip, the text is displayed directly on the image.
+
+## Thresholds
+
+Thresholds are added and read from each hotspot's attributes in the cardConfig:
+
+```jsx
+cardConfig: {
+  values: {
+    hotspots: [
+      {
+        x: 35,
+        y: 65,
+        content: {
+          title: 'My Device',
+          description: 'Description',
+          values: {
+            deviceid: '73000',
+            temperature: 35.05,
+          },
+          attributes: [
+            {
+              dataSourceId: 'temperature',
+              label: 'Custom label temp',
+              unit: '°',
+              thresholds: [
+                {
+                  comparison: '>',
+                  value: 30.5,
+                  icon: 'Warning',
+                  color: '#da1e28',
+                },
+              ],
+            },
+          ],
+        },
+      },
+    ];
+  }
+}
+```
+
+## State management
+
+The HotspotEditorModal is stateful and the hotspotStateHook.js offers a custom state manager hook that allows for inversion of control by accepting a custom the reducer, which can be based on the exported default hotspotEditorReducer. The hook is called with `useHotspotEditorState()` and accepts an initial state. It returns some up-to-date properties like selectedHotspot, currentType etc and all the state reducer functions needed to fully manage the states of all the subcomponents of the HotspotEditorModal. If you are using the exported HotspotEditorModal you normally don't need to care about the internal state management
+but if you want to modify how the data is processed before save or if you want to write your own HotspotEditor then this is relevant.
+
+Example usage:
+
+```jsx
+import { hotspotTypes, useHotspotEditorState } from './hooks/hotspotStateHook';
+
+const {
+  // State variables
+  currentType,
+  hotspots,
+  selectedHotspot,
+  dynamicHotspotsLoading,
+  dynamicHotspotSourceX,
+  dynamicHotspotSourceY,
+  // Functions to update the state
+  addHotspot,
+  clearDynamicHotspotsSource,
+  deleteSelectedHotspot,
+  setLoadingDynamicHotspots,
+  setSelectedHotspot,
+  setDynamicHotspots,
+  switchCurrentType,
+  updateHotspotDataSource,
+  updateHotspotTooltip,
+  updateTextHotspotStyle,
+  updateTextHotspotContent,
+  updateDynamicHotspotSourceX,
+  updateDynamicHotspotSourceY,
+} = useHotspotEditorState({
+  initialState: {
+    hotspots: initialHotspots.filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
+    currentType: defaultHotspotType,
+  },
+});
+```
+
+## Props
+
+| Name                                                  | Type                                                                                                                              | Default                                                                                                                                                                                  | Description                                                                                                                                                                                                                                                                                                                                      |
+| :---------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| availableDimensions                                   | shape                                                                                                                             | {}                                                                                                                                                                                       | an object where the keys are available dimensions and the values are the values available for those dimensions ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }                                                                                                                                        |
+| backgroundColors                                      | arrayOf(shape({ <br />&nbsp;&nbsp;carbonColor: string, <br />&nbsp;&nbsp; name: string <br />}))                                  | [ { carbonColor: gray50, name: 'gray' }, { carbonColor: red50, name: 'red' }, { carbonColor: green50, name: 'green' }, { carbonColor: blue50, name: 'blue' },]                           | Array of selectable color objects for text hotspot background                                                                                                                                                                                                                                                                                    |
+| borderColors                                          | arrayOf(shape({ <br />&nbsp;&nbsp;carbonColor: string, <br />&nbsp;&nbsp; name: string <br />}))                                  | [ { carbonColor: gray50, name: 'gray' }, { carbonColor: red50, name: 'red' }, { carbonColor: green50, name: 'green' }, { carbonColor: blue50, name: 'blue' },]                           | Array of selectable color objects for text hotspot border                                                                                                                                                                                                                                                                                        |
+| <span style={{color: "#31a148"}}>cardConfig \*</span> | shape([Prop cardConfig](#prop-cardconfig))                                                                                        |                                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                                                                  |
+| dataItems                                             | arrayOf(shape({ <br />&nbsp;&nbsp;dataSourceId: string, <br />&nbsp;&nbsp;label: string, <br />&nbsp;&nbsp;unit: string <br />})) | []                                                                                                                                                                                       |                                                                                                                                                                                                                                                                                                                                                  |
+| defaultBorderWidth                                    | number                                                                                                                            | 0                                                                                                                                                                                        | Default border width in px for new text hotspots                                                                                                                                                                                                                                                                                                 |
+| defaultBackgroundOpacity                              | number                                                                                                                            | 100                                                                                                                                                                                      | Default background fill opacity for new text hotspots                                                                                                                                                                                                                                                                                            |
+| defaultFontSize                                       | number                                                                                                                            | 12                                                                                                                                                                                       | Default font size in px for new text hotspots                                                                                                                                                                                                                                                                                                    |
+| defaultHotspotType                                    | enum:<br />&nbsp;'fixed'<br />&nbsp;'text'<br />&nbsp;'dynamic'<br />                                                             | 'fixed'                                                                                                                                                                                  |                                                                                                                                                                                                                                                                                                                                                  |
+| displayOption                                         | string                                                                                                                            | null                                                                                                                                                                                     | Value for object-fit property - 'contain' or 'fill'                                                                                                                                                                                                                                                                                              |
+| fontColors                                            | arrayOf(shape({ <br />&nbsp;&nbsp;carbonColor: string, <br />&nbsp;&nbsp; name: string <br />}))                                  | [ { carbonColor: gray50, name: 'gray' }, { carbonColor: red50, name: 'red' }, { carbonColor: green50, name: 'green' }, { carbonColor: blue50, name: 'blue' },]                           | Array of selectable color objects for text hotspot font                                                                                                                                                                                                                                                                                          |
+| getValidDataItems                                     | function                                                                                                                          | undefined                                                                                                                                                                                |                                                                                                                                                                                                                                                                                                                                                  |
+| hotspotIconFillColors                                 | arrayOf(shape({ <br />&nbsp;&nbsp;carbonColor: string, <br />&nbsp;&nbsp; name: string <br />}))                                  | validThresholdColors                                                                                                                                                                     | Array of selectable color objects for hotspot icon fill                                                                                                                                                                                                                                                                                          |
+| hotspotIcons                                          | arrayOf(shape({<br />&nbsp;&nbsp;id: string, <br />&nbsp;&nbsp;icon: object, <br />&nbsp;&nbsp;text: string <br />}))             | validHotspotIcons                                                                                                                                                                        | Array of selectable icon objects for the hotspots adds to the default icons                                                                                                                                                                                                                                                                      |
+| imageId                                               | string                                                                                                                            | undefined                                                                                                                                                                                |                                                                                                                                                                                                                                                                                                                                                  |
+| imageZoomMax                                          | number                                                                                                                            | undefined                                                                                                                                                                                |                                                                                                                                                                                                                                                                                                                                                  |
+| maxBorderWidth                                        | number                                                                                                                            | 50                                                                                                                                                                                       | Maximum Border Width                                                                                                                                                                                                                                                                                                                             |
+| maxFontSize                                           | number                                                                                                                            | 50                                                                                                                                                                                       | Maximum Font size                                                                                                                                                                                                                                                                                                                                |
+| maxHotspots                                           | number                                                                                                                            | 10                                                                                                                                                                                       | Maximum number of dynamic hotspots to load                                                                                                                                                                                                                                                                                                       |
+| maxOpacity                                            | number                                                                                                                            | 100                                                                                                                                                                                      | Maximum Opacity Value                                                                                                                                                                                                                                                                                                                            |
+| minOpacity                                            | number                                                                                                                            | 0                                                                                                                                                                                        | Minimum Opacity Value                                                                                                                                                                                                                                                                                                                            |
+| minBorderWidth                                        | number                                                                                                                            | 0                                                                                                                                                                                        | Minimum Border Width                                                                                                                                                                                                                                                                                                                             |
+| <span style={{color: "#31a148"}}>onClose \*</span>    | function                                                                                                                          |                                                                                                                                                                                          | Callback for modal cancel button and close icon button                                                                                                                                                                                                                                                                                           |
+| onFetchDynamicDemoHotspots                            | function                                                                                                                          | undefined                                                                                                                                                                                | Callback to fetch dynamic hotstpots. Should return a Promise that resolves to an array of demo hotspots matching the x & y source. Called with one param, an object with 3 values { maxHotspots: maximum number to return, xSource: the name of the data item to use as the xSource, ySource: the name of the data item to use as the ySource }. |
+| <span style={{color: "#31a148"}}>onSave \*</span>     | function                                                                                                                          |                                                                                                                                                                                          | Callback for modal save button returns the entire updated card config                                                                                                                                                                                                                                                                            |
+| open                                                  | bool                                                                                                                              | true                                                                                                                                                                                     | Should the dialog be open or not                                                                                                                                                                                                                                                                                                                 |
+| label                                                 | string                                                                                                                            | undefined                                                                                                                                                                                | the label of the hotspot modal                                                                                                                                                                                                                                                                                                                   |
+| showTooManyHotspotsInfo                               | bool                                                                                                                              | false                                                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                  |
+| i18n                                                  | shape([Prop i18n](#prop-i18n))                                                                                                    |                                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                                                                  |
+| translateWithId                                       | function                                                                                                                          | (idToTranslate) => { switch (idToTranslate) { default: return ''; case 'clear.all': return 'Clear all'; case 'open.menu': return 'Open menu'; case 'close.menu': return 'Close menu'; }} |                                                                                                                                                                                                                                                                                                                                                  |
+
+### Prop cardConfig
+
+| Name        | Type                                                                                                                                                                                                                                                              | Default | Description                                                                                                                                             |
+| :---------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| content     | shape({ <br />&nbsp;&nbsp;alt: string, <br />&nbsp;&nbsp;src: string, <br />&nbsp;&nbsp;image: string, <br />&nbsp;&nbsp;hideMinimap: bool, <br />&nbsp;&nbsp;hideHotspots: bool, <br />&nbsp;&nbsp;hideZoomControls: bool, id: <br />&nbsp;&nbsp;string <br />}) |         |                                                                                                                                                         |
+| description | string                                                                                                                                                                                                                                                            |         |                                                                                                                                                         |
+| id          | string                                                                                                                                                                                                                                                            |         |                                                                                                                                                         |
+| size        | string                                                                                                                                                                                                                                                            |         |                                                                                                                                                         |
+| title       | string                                                                                                                                                                                                                                                            |         |                                                                                                                                                         |
+| thresholds  | arrayOf(shape({ <br />&nbsp;&nbsp;dataSourceId: string, <br />&nbsp;&nbsp;comparison: string, <br />&nbsp;&nbsp;value: number, <br />&nbsp;&nbsp;color: string, <br />&nbsp;&nbsp;icon: string <br />}))                                                          |         | If this prop is present the HotspotEditorModal will place new and existing thresholds here instead of under each hotspot in cardConfig.values.hotspots. |
+| type        | string                                                                                                                                                                                                                                                            |         |                                                                                                                                                         |
+| values      | shape({ <br />&nbsp;&nbsp;hotspots: arrayOf(object) <br />})                                                                                                                                                                                                      |         |                                                                                                                                                         |
+
+### Prop i18n
+
+These are the i18n props used directly in the HotspotEditorModal, but this component has several other child components with their own i18n objects. I18n strings for child components can also be passed as properties for this prop. To see which strings and defaults are used per child component please see the readme files of the individual components.
+
+| Name                            | Type   | Default                                     | Description |
+| :------------------------------ | :----- | :------------------------------------------ | :---------- |
+| fixedTypeDataSourceTabLabelText | string | 'Data source'                               |             |
+| fixedTypeTooltipTabLabelText    | string | 'Tooltip'                                   |             |
+| hotspotsText                    | string | 'Hotspots'                                  |             |
+| labelsText                      | string | 'Labels'                                    |             |
+| loadingDynamicHotspotsText      | string | 'Locating hotspots'                         |             |
+| modalHeaderTitleText            | string | 'Edit image'                                |             |
+| modalIconDescriptionText        | string | 'Close'                                     |             |
+| cancelButtonLabelText           | string | 'Cancel'                                    |             |
+| saveButtonLabelText             | string | 'Save'                                      |             |
+| textStyleLabelText              | string | 'Text style'                                |             |
+| textTypeDataSourceTabLabelText  | string | 'Data source'                               |             |
+| tooManyHotspotsInfoText         | string | 'There are more hotspots than can be shown' |             |
+
+## Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal/README.md).
+
+```
+
+```

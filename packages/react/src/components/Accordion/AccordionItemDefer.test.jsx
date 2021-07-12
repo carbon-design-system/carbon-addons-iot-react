@@ -6,6 +6,18 @@ import AccordionItemDefer from './AccordionItemDefer';
 import { Accordion } from '.';
 
 describe('AccordionItemDefer', () => {
+  it('should be selectable by testId', () => {
+    render(
+      <Accordion>
+        <AccordionItemDefer id="a" title="Title one" testId="DEFFERED">
+          <p>This content</p>
+        </AccordionItemDefer>
+      </Accordion>
+    );
+
+    expect(screen.getByTestId('DEFFERED')).toBeDefined();
+  });
+
   it('renders content when expanded', () => {
     const { container } = render(
       <Accordion>

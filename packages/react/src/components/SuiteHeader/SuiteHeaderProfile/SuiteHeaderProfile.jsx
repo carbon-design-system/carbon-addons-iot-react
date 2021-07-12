@@ -58,7 +58,7 @@ const SuiteHeaderProfile = ({ displayName, username, onProfileClick, onRequestLo
             <Button
               kind="secondary"
               size="small"
-              testID="suite-header-profile--profile"
+              testId="suite-header-profile--profile"
               onClick={onProfileClick}
             >
               {mergedI18N.profileButton}
@@ -68,7 +68,7 @@ const SuiteHeaderProfile = ({ displayName, username, onProfileClick, onRequestLo
             <div className={`${baseClassName}--logout`}>
               <Button
                 kind="secondary"
-                testID="suite-header-profile--logout"
+                testId="suite-header-profile--logout"
                 onClick={onRequestLogout}
               >
                 {mergedI18N.logoutButton}

@@ -174,7 +174,7 @@ export const replaceVariables = (variables, cardVariables, target) => {
   // if it's an object, then recursively replace each value unless it's a react element
   if (typeof target === 'object') {
     // if it's a react element, leave it alone
-    return React.isValidElement(target)
+    return React.isValidElement(target) || isNil(target)
       ? target
       : mapValues(target, (property) =>
           replaceVariables(variables, insensitiveCardVariables, property)
