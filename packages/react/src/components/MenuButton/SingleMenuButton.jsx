@@ -31,7 +31,7 @@ const propTypes = {
    */
   iconDescription: PropTypes.string.isRequired,
 
-  testID: PropTypes.string.isRequired,
+  testId: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
@@ -42,7 +42,7 @@ const defaultProps = {
 
 export const SingleMenuButton = React.forwardRef(
   (
-    { onSecondaryActionClick, onPrimaryActionClick, label, iconDescription, renderIcon, testID },
+    { onSecondaryActionClick, onPrimaryActionClick, label, iconDescription, renderIcon, testId },
     ref
   ) => {
     return (
@@ -54,7 +54,7 @@ export const SingleMenuButton = React.forwardRef(
         renderIcon={renderIcon}
         hasIconOnly={!label}
         kind={!label ? 'ghost' : 'primary'}
-        testID={label ? `${testID}-single` : `${testID}-icon`}
+        testId={label ? `${testId}-single` : `${testId}-icon`}
       >
         {label}
       </Button>
