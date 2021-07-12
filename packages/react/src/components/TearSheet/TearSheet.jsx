@@ -89,7 +89,7 @@ const TearSheet = ({
           tooltipAlignment="end"
           tooltipPosition="bottom"
           onClick={onCloseButton}
-          testID={`tearSheetCloseBtn${idx}`}
+          testId={`tearSheetCloseBtn${idx}`}
         />
         <h2>{title}</h2>
         <span className={`${iotPrefix}--tear-sheet--header--description`}>{description}</span>

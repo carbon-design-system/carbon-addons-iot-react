@@ -82,6 +82,7 @@ const propTypes = {
   itemWillMove: PropTypes.func,
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -111,6 +112,7 @@ const defaultProps = {
     return true;
   },
   emptyState: 'No list items to show',
+  testId: 'list',
 };
 
 const List = forwardRef((props, ref) => {
@@ -136,6 +138,7 @@ const List = forwardRef((props, ref) => {
     onItemMoved,
     itemWillMove,
     emptyState,
+    testId,
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const selectedItemRef = ref;
@@ -232,6 +235,7 @@ const List = forwardRef((props, ref) => {
   return (
     <DragAndDrop>
       <div
+        data-testid={testId}
         className={classnames(`${iotPrefix}--list`, className, {
           [`${iotPrefix}--list__full-height`]: isFullHeight,
         })}

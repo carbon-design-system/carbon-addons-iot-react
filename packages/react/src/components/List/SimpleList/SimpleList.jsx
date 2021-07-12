@@ -57,6 +57,8 @@ const propTypes = {
    * OnSelect(itemId, parentItemId)
    */
   onSelect: PropTypes.func,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -75,6 +77,7 @@ const defaultProps = {
   pageSize: null,
   hasPagination: true,
   onSelect: null,
+  testId: 'simple-list',
 };
 
 const SimpleList = ({
@@ -91,6 +94,7 @@ const SimpleList = ({
   hasPagination,
   onSelect,
   title,
+  testId,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -211,6 +215,7 @@ const SimpleList = ({
       isLoading={isLoading}
       editingStyle={editingStyle}
       onItemMoved={onItemMoved}
+      testId={testId}
     />
   );
 };

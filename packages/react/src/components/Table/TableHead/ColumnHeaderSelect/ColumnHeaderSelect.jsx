@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
-import { Button } from 'carbon-components-react';
 import { Draggable16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 
+import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';
 
 const { iotPrefix } = settings;

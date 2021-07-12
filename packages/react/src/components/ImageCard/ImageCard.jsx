@@ -87,6 +87,7 @@ const ImageCard = ({
   onUpload,
   validateUploadedImage,
   onBrowseClick,
+  testID,
   ...others
 }) => {
   const [imgContent, setImgContent] = useState(content);
@@ -142,6 +143,7 @@ const ImageCard = ({
       isExpanded={isExpanded}
       isEditable={isEditable}
       resizeHandles={resizeHandles}
+      testId={testID}
       {...others}
       error={error}
       i18n={mergedI18n}
