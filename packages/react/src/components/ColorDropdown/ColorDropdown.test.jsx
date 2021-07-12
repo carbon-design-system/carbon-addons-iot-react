@@ -24,6 +24,18 @@ describe('ColorDropdown', () => {
     return `rgb(${r}, ${g}, ${b})`;
   };
 
+  it('is selectable by testID or testId', () => {
+    const { rerender } = render(
+      <ColorDropdown id="myColorDropdown" onChange={() => {}} testID="COLOR_DROPDOWN" />
+    );
+
+    expect(screen.getByTestId('COLOR_DROPDOWN')).toBeTruthy();
+
+    rerender(<ColorDropdown id="myColorDropdown" onChange={() => {}} testId="color_dropdown" />);
+
+    expect(screen.getByTestId('color_dropdown')).toBeTruthy();
+  });
+
   it('renders default labels', () => {
     render(<ColorDropdown id="myColorDropdown" onChange={() => {}} />);
 
