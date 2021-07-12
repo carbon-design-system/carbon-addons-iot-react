@@ -9383,6 +9383,7 @@ Map {
         "sm",
         "xs",
       ],
+      "testId": "dashboard-grid",
     },
     "propTypes": Object {
       "breakpoint": Object {
@@ -9608,6 +9609,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },

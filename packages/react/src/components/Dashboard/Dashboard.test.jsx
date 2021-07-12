@@ -170,6 +170,7 @@ describe('Dashboard', () => {
 
     expect(screen.getByTestId('DASHBOARD')).toBeDefined();
     expect(screen.getByTestId('DASHBOARD-header')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD-grid')).toBeDefined();
   });
   it('verify dashboard still renders with bad layout', () => {
     // should still render even with incorrect layout
