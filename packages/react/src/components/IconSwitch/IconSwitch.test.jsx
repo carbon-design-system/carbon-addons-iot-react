@@ -8,6 +8,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { List16 } from '@carbon/icons-react';
+import { render, screen } from '@testing-library/react';
 
 import { settings } from '../../constants/Settings';
 
@@ -20,6 +21,20 @@ describe('IconSwitch', () => {
     const buttonWrapper = mount(
       <IconSwitch name="blah" size="default" renderIcon={List16} text="test" index={0} />
     );
+
+    it('should be selectable by testId', () => {
+      render(
+        <IconSwitch
+          name="blah"
+          size="default"
+          renderIcon={List16}
+          text="test"
+          index={0}
+          testId="ICON_SWITCH"
+        />
+      );
+      expect(screen.getByTestId('ICON_SWITCH')).toBeDefined();
+    });
 
     it('should have the expected text', () => {
       expect(buttonWrapper.find('span').text()).toEqual('test');
