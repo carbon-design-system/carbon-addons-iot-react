@@ -273,7 +273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   }
                   width="100px"
                 >
-                  <div
+                  <span
                     className="bx--tooltip--definition bx--tooltip--a11y"
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
@@ -293,14 +293,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         Select
                       </span>
                     </button>
-                    <div
+                    <span
                       className="bx--assistive-text"
                       id="table-header-tooltip"
                       role="tooltip"
                     >
                       Select an option
-                    </div>
-                  </div>
+                    </span>
+                  </span>
                 </th>
                 <th
                   align="start"

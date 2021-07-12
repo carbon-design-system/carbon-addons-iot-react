@@ -1228,17 +1228,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   role="button"
                 >
                   
-                  <input
-                    accept={Array []}
-                    className="bx--file-input"
-                    id="id15"
-                    multiple={false}
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    tabIndex="-1"
-                    type="file"
-                  />
                 </div>
+                <input
+                  accept={Array []}
+                  className="bx--file-input"
+                  id="id15"
+                  multiple={false}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  tabIndex="-1"
+                  type="file"
+                />
               </label>
             </div>
             <div
@@ -1393,17 +1393,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   role="button"
                 >
                   
-                  <input
-                    accept={Array []}
-                    className="bx--file-input"
-                    id="id14"
-                    multiple={false}
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    tabIndex="-1"
-                    type="file"
-                  />
                 </div>
+                <input
+                  accept={Array []}
+                  className="bx--file-input"
+                  id="id14"
+                  multiple={false}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  tabIndex="-1"
+                  type="file"
+                />
               </label>
             </div>
             <div

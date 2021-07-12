@@ -28,7 +28,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="button"
           tabIndex={0}
         >
-          <div
+          <span
             className="bx--tooltip--definition bx--tooltip--a11y"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
@@ -42,14 +42,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               Last 30 minutes
             </button>
-            <div
+            <span
               className="bx--assistive-text"
               id="definition-tooltip-2"
               role="tooltip"
             >
               2018-10-28 07:04 to Now
-            </div>
-          </div>
+            </span>
+          </span>
           <svg
             aria-label="Calendar"
             className="iot--date-time-picker__icon"
@@ -189,7 +189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="button"
           tabIndex={0}
         >
-          <div
+          <span
             className="bx--tooltip--definition bx--tooltip--a11y"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
@@ -203,14 +203,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               Last 30 minutes
             </button>
-            <div
+            <span
               className="bx--assistive-text"
               id="definition-tooltip-10"
               role="tooltip"
             >
               2018-10-28 07:04 to Now
-            </div>
-          </div>
+            </span>
+          </span>
           <svg
             aria-label="Calendar"
             className="iot--date-time-picker__icon"
@@ -1294,7 +1294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="button"
           tabIndex={0}
         >
-          <div
+          <span
             className="bx--tooltip--definition bx--tooltip--a11y"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
@@ -1308,14 +1308,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               Last 12 hours
             </button>
-            <div
+            <span
               className="bx--assistive-text"
               id="definition-tooltip-4"
               role="tooltip"
             >
               2018-10-27 19:34 to Now
-            </div>
-          </div>
+            </span>
+          </span>
           <svg
             aria-label="Calendar"
             className="iot--date-time-picker__icon"
@@ -1979,7 +1979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="button"
           tabIndex={0}
         >
-          <div
+          <span
             className="bx--tooltip--definition bx--tooltip--a11y"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
@@ -1993,14 +1993,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               Last 12 hours
             </button>
-            <div
+            <span
               className="bx--assistive-text"
               id="definition-tooltip-8"
               role="tooltip"
             >
               2018-10-27 19:34 to Now
-            </div>
-          </div>
+            </span>
+          </span>
           <svg
             aria-label="Calendar"
             className="iot--date-time-picker__icon"
@@ -2134,7 +2134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="button"
           tabIndex={0}
         >
-          <div
+          <span
             className="bx--tooltip--definition bx--tooltip--a11y"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
@@ -2148,14 +2148,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               Last 12 hours
             </button>
-            <div
+            <span
               className="bx--assistive-text"
               id="definition-tooltip-6"
               role="tooltip"
             >
               2018-10-27 19:34 to Now
-            </div>
-          </div>
+            </span>
+          </span>
           <svg
             aria-label="Calendar"
             className="iot--date-time-picker__icon"

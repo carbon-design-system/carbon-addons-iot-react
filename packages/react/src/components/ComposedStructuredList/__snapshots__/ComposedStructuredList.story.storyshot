@@ -15,6 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="bx--structured-list-row bx--structured-list-row--header-row"
+        role="row"
       >
         <div
           className="bx--structured-list-th"
@@ -47,6 +48,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       <div
         className="bx--structured-list-row"
         onClick={[Function]}
+        role="row"
       >
         <div
           className="bx--structured-list-td bx--structured-list-content--nowrap"
@@ -112,6 +114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       <div
         className="bx--structured-list-row"
         onClick={[Function]}
+        role="row"
       >
         <div
           className="bx--structured-list-td bx--structured-list-content--nowrap"
@@ -177,6 +180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       <div
         className="bx--structured-list-row"
         onClick={[Function]}
+        role="row"
       >
         <div
           className="bx--structured-list-td bx--structured-list-content--nowrap"
@@ -259,6 +263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="bx--structured-list-row bx--structured-list-row--header-row"
+        role="row"
       >
         <div
           className="bx--structured-list-th"
@@ -291,6 +296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       <div
         className="bx--structured-list-row"
         onClick={[Function]}
+        role="row"
       >
         <div
           className="bx--structured-list-td bx--structured-list-content--nowrap"
@@ -332,6 +338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       <div
         className="bx--structured-list-row"
         onClick={[Function]}
+        role="row"
       >
         <div
           className="bx--structured-list-td bx--structured-list-content--nowrap"
@@ -373,6 +380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       <div
         className="bx--structured-list-row"
         onClick={[Function]}
+        role="row"
       >
         <div
           className="bx--structured-list-td bx--structured-list-content--nowrap"
@@ -431,6 +439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="bx--structured-list-row bx--structured-list-row--header-row"
+        role="row"
       >
         <div
           className="bx--structured-list-th"
@@ -502,6 +511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="bx--structured-list-row bx--structured-list-row--header-row"
+        role="row"
       >
         <div
           className="iot--composed-structured-list__list-cell bx--structured-list-th"
@@ -573,6 +583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="bx--structured-list-row bx--structured-list-row--header-row"
+        role="row"
       >
         <div
           className="iot--composed-structured-list__list-cell bx--structured-list-th"
@@ -605,6 +616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       <div
         className="bx--structured-list-row"
         onClick={[Function]}
+        role="row"
       >
         <div
           className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
@@ -646,6 +658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       <div
         className="bx--structured-list-row"
         onClick={[Function]}
+        role="row"
       >
         <div
           className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
@@ -687,6 +700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       <div
         className="bx--structured-list-row"
         onClick={[Function]}
+        role="row"
       >
         <div
           className="iot--composed-structured-list__list-cell bx--structured-list-td bx--structured-list-content--nowrap"
