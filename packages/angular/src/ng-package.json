@@ -9,6 +9,6 @@
 		"flatpickr",
 		"@carbon/icons",
 		"@carbon/telemetry",
-    "date-fns"
+		"date-fns"
 	]
 }
