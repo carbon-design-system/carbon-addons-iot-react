@@ -211,7 +211,8 @@ const DashboardEditorHeader = ({
             hasIconOnly
             renderIcon={DocumentExport16}
             onClick={() => onExport(dashboardJson)}
-            testId={`${testId}-export-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-export-button`}
           />
         )}
         {onDelete && (
@@ -224,7 +225,8 @@ const DashboardEditorHeader = ({
             hasIconOnly
             renderIcon={TrashCan16}
             onClick={onDelete}
-            testId={`${testId}-delete-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-delete-button`}
           />
         )}
         {onCancel && (
@@ -232,7 +234,8 @@ const DashboardEditorHeader = ({
             kind="secondary"
             size="field"
             onClick={onCancel}
-            testId={`${testId}-cancel-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-cancel-button`}
           >
             {mergedI18n.headerCancelButton}
           </Button>
@@ -243,7 +246,8 @@ const DashboardEditorHeader = ({
             disabled={isSubmitDisabled}
             onClick={() => onSubmit(dashboardJson)}
             loading={isSubmitLoading}
-            testId={`${testId}-submit-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-submit-button`}
           >
             {mergedI18n.headerSubmitButton}
           </Button>
@@ -320,6 +324,7 @@ const DashboardEditorHeader = ({
       renderTitleFunction={isTitleEditMode ? () => editComponents : null}
       onEdit={handleEditClick}
       i18n={{ editIconDescription: mergedI18n.headerEditTitleButton }}
+      // TODO: pass testId in v3 to override defaults
       testId={`${testId}-page-title-bar`}
     />
   );
