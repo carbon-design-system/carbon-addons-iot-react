@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.45...v2.146.0-next.46) (2021-07-12)
+
+
+### Bug Fixes
+
+* **table:** moved the changes to _column-header-row.scss ([151f3f3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/151f3f334b9dd079efe5859ea5627a2a0e0bc6dd))
+* **table:** moved the changes to _column-header-row.scss ([9515d01](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9515d0189fe973c2659d544f8e3c49e83a347c06))
+* **table:** wrap the column selection text ([4b34b9d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4b34b9de0d600e7c9f2d5d8272bd5ccfb537733a)), closes [#2482](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2482)
+
+
+
+
+
 # [2.146.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.44...v2.146.0-next.45) (2021-07-09)
 
 **Note:** Version bump only for package carbon-addons-iot-react
