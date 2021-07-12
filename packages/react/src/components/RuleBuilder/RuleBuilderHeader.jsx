@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Button } from 'carbon-components-react';
 import { Add32, TextNewLine32 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
+import Button from '../Button';
 import { settings } from '../../constants/Settings';
 
 import GroupLogic from './GroupLogic';
@@ -58,7 +58,7 @@ const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID }
       <GroupLogic id={id} selected={groupLogic} onChange={handleChangeGroupLogic} />
       <div className={`${iotPrefix}--rule-builder-header__buttons`}>
         <Button
-          data-testid={`${testID}-add-rule-button`}
+          testId={`${testID}-add-rule-button`}
           kind="ghost"
           renderIcon={Add32}
           onClick={onAddRule()}
@@ -66,7 +66,7 @@ const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID }
           {mergedI18n.addRule}
         </Button>
         <Button
-          data-testid={`${testID}-add-group-button`}
+          testId={`${testID}-add-group-button`}
           kind="ghost"
           renderIcon={TextNewLine32}
           onClick={onAddRule(undefined, true)}

@@ -6,6 +6,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/A
 >
   <a
     className="bx--link bx--tile bx--tile--clickable iot-add-card"
+    data-testid="add-card-tile"
     onClick={[Function]}
     onKeyDown={[Function]}
     rel={null}

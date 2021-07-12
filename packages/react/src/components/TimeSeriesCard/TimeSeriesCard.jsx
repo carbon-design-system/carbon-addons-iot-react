@@ -195,6 +195,7 @@ const TimeSeriesCard = ({
   domainRange,
   tooltipDateFormatPattern,
   showTimeInGMT,
+  testID,
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
@@ -515,6 +516,7 @@ const TimeSeriesCard = ({
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
       isLoading={isLoading}
       resizeHandles={resizeHandles}
+      testId={testID}
     >
       {!isChartDataEmpty ? (
         <>

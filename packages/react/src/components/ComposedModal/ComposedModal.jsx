@@ -222,7 +222,7 @@ class ComposedModal extends React.Component {
                 <Button
                   kind="secondary"
                   onClick={onClose}
-                  testID={`${testID}-modal-secondary-button`}
+                  testId={`${testID}-modal-secondary-button`}
                 >
                   {(footer && footer.secondaryButtonLabel) || 'Cancel'}
                 </Button>
@@ -235,7 +235,7 @@ class ComposedModal extends React.Component {
                       typeof sendingData === 'string'
                     }
                     onClick={onSubmit}
-                    testID={`${testID}-modal-${type === 'warn' ? 'danger' : 'primary'}-button`}
+                    testId={`${testID}-modal-${type === 'warn' ? 'danger' : 'primary'}-button`}
                   >
                     {(footer && footer.primaryButtonLabel) || 'Save'}
                   </Button>
