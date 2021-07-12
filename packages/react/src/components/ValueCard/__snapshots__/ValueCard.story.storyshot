@@ -25,9 +25,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Health score"
         >
           <div
@@ -185,9 +187,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Facility Conditions per device"
         >
           <div
@@ -333,9 +337,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Facility Conditions"
         >
           <div
@@ -619,9 +625,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Status"
         >
           <div
@@ -859,9 +867,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Really really really long card title?"
         >
           <div
@@ -1007,9 +1017,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Tagpath"
         >
           <div
@@ -1109,9 +1121,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Facility Conditions"
         >
           <div
@@ -1487,9 +1501,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Facility Conditions"
         >
           <div
@@ -1741,9 +1757,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Status"
         >
           <div
@@ -1857,9 +1875,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Alert Count"
         >
           <div
@@ -1976,9 +1996,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Foot Traffic - working"
         >
           <div

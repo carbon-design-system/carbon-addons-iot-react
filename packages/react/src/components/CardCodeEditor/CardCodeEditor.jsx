@@ -1,17 +1,14 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import Editor from '@monaco-editor/react';
-import {
-  CodeSnippetSkeleton,
-  InlineNotification,
-  CopyButton,
-  Button,
-} from 'carbon-components-react';
+import { CodeSnippetSkeleton, InlineNotification, CopyButton } from 'carbon-components-react';
 import { Popup16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import ComposedModal from '../ComposedModal';
 import { settings } from '../../constants/Settings';
+import Button from '../Button';
+import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -43,6 +40,13 @@ const propTypes = {
   language: PropTypes.string,
   /** Initial value for the editor */
   initialValue: PropTypes.string,
+  // TODO: remove deprecated testID in v3.
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop is deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -59,6 +63,7 @@ const defaultProps = {
   language: 'json',
   initialValue: null,
   onCopy: null,
+  testId: 'card-code-editor',
 };
 
 const CardCodeEditor = ({
@@ -68,6 +73,9 @@ const CardCodeEditor = ({
   i18n,
   language,
   initialValue,
+  // TODO: remove deprecated testID in v3.
+  testID,
+  testId,
   ...composedModalProps
 }) => {
   const editorValue = useRef();
@@ -105,6 +113,8 @@ const CardCodeEditor = ({
 
   return (
     <ComposedModal
+      // TODO: remove deprecated testID in v3 and pass testId to override defaults
+      // testID={`${testID || testId}-modal`}
       className={classnames(`${iotPrefix}--editor`, {
         [`${iotPrefix}--editor__expanded`]: isExpanded,
       })}
@@ -130,6 +140,8 @@ const CardCodeEditor = ({
         iconDescription={mergedI18n.expandBtnLabel}
         onClick={handleOnExpand}
         kind="ghost"
+        // TODO: remove deprecated testID in v3.
+        testId={`${testID || testId}-expand-button`}
       />
       {error && (
         <InlineNotification
@@ -138,15 +150,23 @@ const CardCodeEditor = ({
           onCloseButtonClick={() => setError(false)}
           title={mergedI18n.errorTitle}
           subtitle={error}
+          // TODO: remove deprecated testID in v3.
+          data-testid={`${testID || testId}-notification`}
         />
       )}
-      <div className={`${iotPrefix}--editor-copy-wrapper`}>
+      <div
+        // TODO: remove deprecated testID in v3.
+        data-testid={testID || testId}
+        className={`${iotPrefix}--editor-copy-wrapper`}
+      >
         {onCopy && (
           <CopyButton
             className={`${iotPrefix}--editor-copy`}
             onClick={handleOnCopy}
             iconDescription={mergedI18n.copyBtnDescription}
             feedback={mergedI18n.copyBtnFeedBack}
+            // TODO: remove deprecated testID in v3.
+            data-testid={`${testID || testId}-copy-button`}
           />
         )}
         <Editor
