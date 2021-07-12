@@ -79,6 +79,8 @@ const propTypes = {
     enabled: PropTypes.bool,
     allowedBreakpoints: PropTypes.arrayOf(PropTypes.string),
   }),
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -110,6 +112,7 @@ const defaultProps = {
   selectedBreakpointIndex: null,
   setSelectedBreakpointIndex: null,
   breakpointSwitcher: null,
+  testId: 'dashboard-editor-header',
 };
 
 const DashboardEditorHeader = ({
@@ -128,13 +131,14 @@ const DashboardEditorHeader = ({
   selectedBreakpointIndex,
   setSelectedBreakpointIndex,
   breakpointSwitcher,
+  testId,
 }) => {
   const [isTitleEditMode, setIsTitleEditMode] = useState(false);
   const [updatedTitle, setUpdatedTitle] = useState(title);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
-    <div className={`${baseClassName}--right`}>
+    <div data-testid={testId} className={`${baseClassName}--right`}>
       <div className={`${baseClassName}--top`} />
       <div className={`${baseClassName}--bottom`}>
         {breakpointSwitcher?.enabled && (
@@ -142,30 +146,35 @@ const DashboardEditorHeader = ({
             onChange={(e) => setSelectedBreakpointIndex(e.index)}
             selectedIndex={selectedBreakpointIndex}
             className={`${baseClassName}--bottom__switcher`}
+            data-testid={`${testId}-breakpoint-switcher`}
           >
             <IconSwitch
               name="fit-to-screen"
               text={mergedI18n.headerFitToScreenButton}
               renderIcon={Maximize16}
               index={0}
+              testId={`${testId}-fit-to-screen-switch`}
             />
             <IconSwitch
               name="large"
               text={mergedI18n.headerLargeButton}
               renderIcon={Screen16}
               index={1}
+              testId={`${testId}-large-switch`}
             />
             <IconSwitch
               name="medium"
               text={mergedI18n.headerMediumButton}
               renderIcon={Laptop16}
               index={2}
+              testId={`${testId}-medium-switch`}
             />
             <IconSwitch
               name="small"
               text={mergedI18n.headerSmallButton}
               renderIcon={Tablet16}
               index={3}
+              testId={`${testId}-small-switch`}
             />
           </ContentSwitcher>
         )}
@@ -187,6 +196,7 @@ const DashboardEditorHeader = ({
                 disableLabelChanges
                 accepts={['.json']}
                 multiple={false}
+                data-testid={`${testId}-file-uploader-button`}
               />
             </TooltipIcon>
           )
@@ -201,6 +211,8 @@ const DashboardEditorHeader = ({
             hasIconOnly
             renderIcon={DocumentExport16}
             onClick={() => onExport(dashboardJson)}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-export-button`}
           />
         )}
         {onDelete && (
@@ -213,10 +225,18 @@ const DashboardEditorHeader = ({
             hasIconOnly
             renderIcon={TrashCan16}
             onClick={onDelete}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-delete-button`}
           />
         )}
         {onCancel && (
-          <Button kind="secondary" size="field" onClick={onCancel}>
+          <Button
+            kind="secondary"
+            size="field"
+            onClick={onCancel}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-cancel-button`}
+          >
             {mergedI18n.headerCancelButton}
           </Button>
         )}
@@ -226,6 +246,8 @@ const DashboardEditorHeader = ({
             disabled={isSubmitDisabled}
             onClick={() => onSubmit(dashboardJson)}
             loading={isSubmitLoading}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-submit-button`}
           >
             {mergedI18n.headerSubmitButton}
           </Button>
@@ -254,6 +276,7 @@ const DashboardEditorHeader = ({
           }}
           invalidText={isEmpty(updatedTitle) ?? mergedI18n.requiredMessage}
           invalid={isEmpty(updatedTitle)}
+          data-testid={`${testId}-dashboard-title-input`}
         />
         <Button
           kind="ghost"
@@ -264,6 +287,7 @@ const DashboardEditorHeader = ({
             // revert the title back to the original
             setUpdatedTitle(title);
           }}
+          testId={`${testId}-cancel-title-button`}
         >
           {mergedI18n.headerCancelButton}
         </Button>
@@ -273,12 +297,22 @@ const DashboardEditorHeader = ({
             onEditTitle(updatedTitle);
             setIsTitleEditMode(false);
           }}
+          testId={`${testId}-save-title-button`}
         >
           {mergedI18n.saveTitleButton}
         </Button>
       </>
     ),
-    [onEditTitle, title, updatedTitle, mergedI18n]
+    [
+      mergedI18n.dashboardTitleLabel,
+      mergedI18n.requiredMessage,
+      mergedI18n.headerCancelButton,
+      mergedI18n.saveTitleButton,
+      updatedTitle,
+      testId,
+      title,
+      onEditTitle,
+    ]
   );
 
   return (
@@ -290,6 +324,7 @@ const DashboardEditorHeader = ({
       renderTitleFunction={isTitleEditMode ? () => editComponents : null}
       onEdit={handleEditClick}
       i18n={{ editIconDescription: mergedI18n.headerEditTitleButton }}
+      testId={`${testId}-page-title-bar`}
     />
   );
 };
