@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { act, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
@@ -36,12 +36,15 @@ describe('IdleLogoutConfirmationModal', () => {
 
   it('active user does not see idle logout confirmation dialog', () => {
     render(<IdleLogoutConfirmationModal {...commonProps} />);
+
     // Simulate a timestamp cookie that is in the future
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() + 1000}`,
     });
-    jest.runOnlyPendingTimers();
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
     expect(screen.getByTestId('idle-logout-confirmation')).not.toHaveClass('is-visible');
   });
   it('inactive user sees idle logout confirmation dialog', () => {
@@ -51,7 +54,9 @@ describe('IdleLogoutConfirmationModal', () => {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
     });
-    jest.runOnlyPendingTimers();
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
     expect(screen.getByTestId('idle-logout-confirmation')).toHaveClass('is-visible');
   });
   it('inactive user does not see idle logout confirmation dialog if timeout is set to 0', () => {
@@ -66,7 +71,9 @@ describe('IdleLogoutConfirmationModal', () => {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
     });
-    jest.runOnlyPendingTimers();
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
     expect(screen.getByTestId('idle-logout-confirmation')).not.toHaveClass('is-visible');
   });
   it('idle logout confirmation dialog works with default i18n', () => {
@@ -76,7 +83,9 @@ describe('IdleLogoutConfirmationModal', () => {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
     });
-    jest.runOnlyPendingTimers();
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
     expect(screen.getByTestId('idle-logout-confirmation')).toHaveClass('is-visible');
   });
   it('clicking Stay Logged In on the idle logout confirmation dialog triggers onStayLoggedIn callback', () => {
@@ -87,7 +96,9 @@ describe('IdleLogoutConfirmationModal', () => {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
     });
-    jest.runOnlyPendingTimers();
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
     const modalStayLoggedInButton = screen.getByText(
       SuiteHeaderI18N.en.sessionTimeoutModalStayLoggedInButton
     );
@@ -101,7 +112,9 @@ describe('IdleLogoutConfirmationModal', () => {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
     });
-    jest.runOnlyPendingTimers();
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
     const modalLogoutButton = within(screen.getByTestId('idle-logout-confirmation')).getByText(
       SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
     );
@@ -115,7 +128,9 @@ describe('IdleLogoutConfirmationModal', () => {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
     });
-    jest.runOnlyPendingTimers();
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
     const modalLogoutButton = within(screen.getByTestId('idle-logout-confirmation')).getByText(
       SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
     );
@@ -129,7 +144,9 @@ describe('IdleLogoutConfirmationModal', () => {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
     });
-    await jest.advanceTimersByTime((commonProps.idleTimeoutData.countdown + 1) * 1000);
+    await act(async () => {
+      await jest.advanceTimersByTime((commonProps.idleTimeoutData.countdown + 1) * 1000);
+    });
     expect(window.location.href).toBe(commonProps.routes.logoutInactivity);
   });
   it('idle user waits for the logout confirmation dialog countdown to finish (but no redirect)', async () => {
@@ -139,7 +156,9 @@ describe('IdleLogoutConfirmationModal', () => {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
     });
-    await jest.advanceTimersByTime((commonProps.idleTimeoutData.countdown + 1) * 1000);
+    await act(async () => {
+      await jest.advanceTimersByTime((commonProps.idleTimeoutData.countdown + 1) * 1000);
+    });
     expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity);
   });
 });
