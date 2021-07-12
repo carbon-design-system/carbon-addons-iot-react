@@ -287,7 +287,7 @@ const DashboardEditorHeader = ({
             // revert the title back to the original
             setUpdatedTitle(title);
           }}
-          data-testid={`${testId}-cancel-title-button`}
+          testId={`${testId}-cancel-title-button`}
         >
           {mergedI18n.headerCancelButton}
         </Button>
@@ -297,7 +297,7 @@ const DashboardEditorHeader = ({
             onEditTitle(updatedTitle);
             setIsTitleEditMode(false);
           }}
-          data-testid={`${testId}-save-title-button`}
+          testId={`${testId}-save-title-button`}
         >
           {mergedI18n.saveTitleButton}
         </Button>
@@ -324,7 +324,6 @@ const DashboardEditorHeader = ({
       renderTitleFunction={isTitleEditMode ? () => editComponents : null}
       onEdit={handleEditClick}
       i18n={{ editIconDescription: mergedI18n.headerEditTitleButton }}
-      // TODO: pass testId in v3 to override defaults
       testId={`${testId}-page-title-bar`}
     />
   );

@@ -94,9 +94,9 @@ describe('DashboardEditor', () => {
     expect(screen.getByTestId('DASHBOARD_EDITOR-header-large-switch')).toBeDefined();
     expect(screen.getByTestId('DASHBOARD_EDITOR-header-medium-switch')).toBeDefined();
     expect(screen.getByTestId('DASHBOARD_EDITOR-header-small-switch')).toBeDefined();
-    expect(screen.getByTestId('DASHBOARD_EDITOR-header-page-title-bar')).toBeDefined();
     expect(screen.getAllByTestId('Button').length).toBeGreaterThan(1);
-    // these can be added back in after v3 passes testId to these button and overrides the defaults
+    // these can be added back in after v3 passes testId to these components and overrides the defaults
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-page-title-bar')).toBeDefined();
     // expect(screen.getByTestId('DASHBOARD_EDITOR-header-export-button')).toBeDefined();
     // expect(screen.getByTestId('DASHBOARD_EDITOR-header-cancel-button')).toBeDefined();
     // expect(screen.getByTestId('DASHBOARD_EDITOR-header-delete-button')).toBeDefined();

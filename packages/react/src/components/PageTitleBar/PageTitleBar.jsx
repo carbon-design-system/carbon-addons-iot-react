@@ -211,7 +211,8 @@ const PageTitleBar = ({
             tooltipAlignment="center"
             tooltipPosition="bottom"
             onClick={onEdit}
-            testId={`${testId}-edit-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-edit-button`}
           />
         ) : null}
       </>
