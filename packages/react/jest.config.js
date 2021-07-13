@@ -28,6 +28,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
+    './src/components/Breadcrumb/Breadcrumb.jsx': all90Covered,
     './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
     './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
