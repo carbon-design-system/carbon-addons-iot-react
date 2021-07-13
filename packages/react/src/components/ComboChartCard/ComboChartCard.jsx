@@ -67,6 +67,9 @@ const ComboChartCard = ({
   showTimeInGMT,
   timeRange,
   tooltipDateFormatPattern,
+  // TODO: remove deprecated testID in v3.
+  testID,
+  testId,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -117,6 +120,7 @@ const ComboChartCard = ({
       resizeHandles={isResizable ? getResizeHandles(children) : []}
       timeRange={timeRange}
       size={increaseSmallCardSize(sizeProp, 'ComboChartCard')}
+      testId={testID || testId}
       {...others}
     >
       <div className={`${iotPrefix}--combo-chart-card__container`}>

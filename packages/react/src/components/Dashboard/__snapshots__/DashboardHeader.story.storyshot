@@ -13,6 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="dashboard--header"
+      data-testid="dashboard-header"
     >
       <div
         className="dashboard--header-left"
@@ -56,6 +57,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="dashboard--header"
+      data-testid="dashboard-header"
     >
       <div
         className="dashboard--header-left"
@@ -82,7 +84,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         >
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="dashboard-header-button-edit"
             disabled={false}
             id="action-icon--edit"
             onClick={[Function]}
@@ -110,7 +113,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="dashboard-header-button-delete"
             disabled={false}
             id="action-icon--delete"
             onClick={[Function]}
@@ -152,6 +156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
 >
   <div
     className="dashboard--header"
+    data-testid="dashboard-header"
   >
     <div
       className="dashboard--header-left"
@@ -198,6 +203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="dashboard--header"
+      data-testid="dashboard-header"
     >
       <div
         className="dashboard--header-left"
@@ -294,6 +300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="dashboard--header"
+      data-testid="dashboard-header"
     >
       <div
         className="dashboard--header-left"
@@ -373,7 +380,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         >
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="dashboard-header-button-edit"
             disabled={false}
             id="action-icon--edit"
             onClick={[Function]}
@@ -401,7 +409,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="dashboard-header-button-delete"
             disabled={false}
             id="action-icon--delete"
             onClick={[Function]}
@@ -432,7 +441,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="dashboard-header-button-pin"
             disabled={false}
             id="action-icon--pin"
             onClick={[Function]}

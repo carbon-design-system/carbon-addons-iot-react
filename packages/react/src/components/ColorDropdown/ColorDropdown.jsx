@@ -18,6 +18,7 @@ import {
 import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
+import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -47,8 +48,14 @@ const propTypes = {
   translateWithId: PropTypes.func,
   /** The selected color, use to set initial color */
   selectedColor: colorPropType,
+  // TODO: remove deprecated testID in v3.
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop is deprecated. Please use 'testId' instead.`
+  ),
   /** Id used if needed for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -71,7 +78,7 @@ const defaultProps = {
   hideLabels: false,
   light: false,
   selectedColor: undefined,
-  testID: undefined,
+  testId: 'color-dropdown',
   titleText: 'Color',
   translateWithId: undefined,
 };
@@ -86,7 +93,9 @@ const ColorDropdown = ({
   onChange,
   selectedColor: selectedColorProp,
   titleText,
+  // TODO: remove deprecated testID in v3.
   testID,
+  testId,
   translateWithId,
 }) => {
   React.useEffect(() => {
@@ -133,7 +142,7 @@ const ColorDropdown = ({
       selectedItem={selectedColor}
       titleText={titleText}
       type="default"
-      data-testid={testID}
+      data-testid={testID || testId}
       disabled={disabled}
     />
   );

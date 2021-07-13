@@ -183,7 +183,7 @@ Map {
       "passiveModal": false,
       "sendingData": null,
       "submitFailed": false,
-      "testID": "ComposedModal",
+      "testId": "ComposedModal",
       "type": null,
     },
     "propTypes": Object {
@@ -286,7 +286,8 @@ Map {
       "submitFailed": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "type": Object {
@@ -4626,6 +4627,7 @@ Map {
       "design": "mini",
       "isFixedWidth": false,
       "loadingDataLabel": "",
+      "testId": "structured-list",
     },
     "propTypes": Object {
       "StructuredListHeadClassName": Object {
@@ -4735,6 +4737,9 @@ Map {
       "onRowClick": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -4906,6 +4911,7 @@ Map {
       "stickyHeaderOffset": 48,
       "style": null,
       "tabs": undefined,
+      "testId": "page-title-bar",
       "upperActions": undefined,
     },
     "propTypes": Object {
@@ -4994,6 +5000,9 @@ Map {
         "type": "objectOf",
       },
       "tabs": [Function],
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "isRequired": true,
         "type": "node",
@@ -7303,7 +7312,8 @@ Map {
       "submitFailed": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "type": Object {
@@ -7829,6 +7839,10 @@ Map {
         "profileManageButton": "Manage profile",
         "profileTitle": "Profile",
         "requestEnhancement": "Request enhancement",
+        "sessionTimeoutModalBody": "You will be logged out due to inactivity in {countdown} seconds.",
+        "sessionTimeoutModalHeading": "Session Timeout",
+        "sessionTimeoutModalLogoutButton": "Log out",
+        "sessionTimeoutModalStayLoggedInButton": "Stay logged in",
         "settingsIcon": "Settings",
         "support": "Support",
         "surveyPrivacyPolicy": "Privacy Policy",
@@ -7841,9 +7855,11 @@ Map {
         "userIcon": "User",
         "whatsNew": "What's new",
       },
+      "idleTimeoutData": null,
       "isAdminView": false,
       "onRouteChange": [Function],
       "onSideNavToggled": [Function],
+      "onStayLoggedIn": [Function],
       "routes": null,
       "sideNavProps": null,
       "surveyData": null,
@@ -8078,6 +8094,18 @@ Map {
             "requestEnhancement": Object {
               "type": "string",
             },
+            "sessionTimeoutModalBody": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalHeading": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalLogoutButton": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalStayLoggedInButton": Object {
+              "type": "string",
+            },
             "settingsIcon": Object {
               "type": "string",
             },
@@ -8119,6 +8147,22 @@ Map {
         ],
         "type": "shape",
       },
+      "idleTimeoutData": Object {
+        "args": Array [
+          Object {
+            "cookieName": Object {
+              "type": "string",
+            },
+            "countdown": Object {
+              "type": "number",
+            },
+            "timeout": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "isAdminView": Object {
         "type": "bool",
       },
@@ -8126,6 +8170,9 @@ Map {
         "type": "func",
       },
       "onSideNavToggled": Object {
+        "type": "func",
+      },
+      "onStayLoggedIn": Object {
         "type": "func",
       },
       "routes": Object {
@@ -8147,6 +8194,9 @@ Map {
               "type": "string",
             },
             "logout": Object {
+              "type": "string",
+            },
+            "logoutInactivity": Object {
               "type": "string",
             },
             "navigator": Object {
@@ -8431,6 +8481,88 @@ Map {
       },
     },
   },
+  "IdleLogoutConfirmationModal" => Object {
+    "defaultProps": Object {
+      "className": null,
+      "i18n": Object {
+        "sessionTimeoutModalBody": "You will be logged out due to inactivity in {countdown} seconds.",
+        "sessionTimeoutModalHeading": "Session Timeout",
+        "sessionTimeoutModalLogoutButton": "Log out",
+        "sessionTimeoutModalStayLoggedInButton": "Stay logged in",
+      },
+      "idleTimeoutData": Object {
+        "cookieName": "_user_inactivity_timeout",
+        "countdown": 30,
+        "timeout": 1800,
+      },
+      "onRouteChange": [Function],
+      "onStayLoggedIn": [Function],
+      "routes": null,
+    },
+    "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "sessionTimeoutModalBody": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalHeading": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalLogoutButton": Object {
+              "type": "string",
+            },
+            "sessionTimeoutModalStayLoggedInButton": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "idleTimeoutData": Object {
+        "args": Array [
+          Object {
+            "cookieName": Object {
+              "type": "string",
+            },
+            "countdown": Object {
+              "type": "number",
+            },
+            "timeout": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "onRouteChange": Object {
+        "type": "func",
+      },
+      "onStayLoggedIn": Object {
+        "type": "func",
+      },
+      "routes": Object {
+        "args": Array [
+          Object {
+            "domain": Object {
+              "type": "string",
+            },
+            "logout": Object {
+              "type": "string",
+            },
+            "logoutInactivity": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+    },
+  },
+  "IdleTimer" => Object {},
   "SuiteHeaderI18N" => Object {
     "en": Object {
       "about": "About",
@@ -8447,6 +8579,10 @@ Map {
       "profileManageButton": "Manage profile",
       "profileTitle": "Profile",
       "requestEnhancement": "Request enhancement",
+      "sessionTimeoutModalBody": "You will be logged out due to inactivity in {countdown} seconds.",
+      "sessionTimeoutModalHeading": "Session Timeout",
+      "sessionTimeoutModalLogoutButton": "Log out",
+      "sessionTimeoutModalStayLoggedInButton": "Stay logged in",
       "settingsIcon": "Settings",
       "support": "Support",
       "surveyPrivacyPolicy": "Privacy Policy",
@@ -8557,6 +8693,7 @@ Map {
       "renderIconByName": null,
       "setIsLoading": null,
       "sidebar": null,
+      "testId": "dashboard",
       "timeGrain": null,
       "title": null,
     },
@@ -9100,6 +9237,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "timeGrain": Object {
         "type": "string",
       },
@@ -9117,6 +9257,7 @@ Map {
       "lastUpdated": null,
       "lastUpdatedLabel": "Last updated:",
       "onDashboardAction": null,
+      "testId": "dashboard-header",
       "title": null,
     },
     "propTypes": Object {
@@ -9211,6 +9352,9 @@ Map {
       },
       "onDashboardAction": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "string",
@@ -9540,6 +9684,7 @@ Map {
         "LIST",
         "ALERT",
       ],
+      "testId": "dashboard-editor",
       "title": "",
     },
     "propTypes": Object {
@@ -10135,6 +10280,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "node",
@@ -14927,6 +15075,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "displayOption": Object {
+              "type": "string",
+            },
             "id": Object {
               "type": "string",
             },
@@ -19127,6 +19278,7 @@ Map {
       "onKeyDown": undefined,
       "selected": false,
       "size": "default",
+      "testId": "icon-switch",
     },
     "propTypes": Object {
       "className": Object {
@@ -19184,6 +19336,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "text": Object {
         "isRequired": true,
@@ -19249,6 +19404,7 @@ Map {
       "onBlur": null,
       "onInputChange": null,
       "shouldFilterItem": [Function],
+      "testId": "combo",
       "type": "default",
       "wrapperClassName": null,
     },
@@ -19403,6 +19559,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "titleText": Object {
         "type": "node",
@@ -19687,7 +19846,7 @@ Map {
       "label": "Select a color",
       "light": false,
       "selectedColor": undefined,
-      "testID": undefined,
+      "testId": "color-dropdown",
       "titleText": "Color",
       "translateWithId": undefined,
     },
@@ -19743,7 +19902,8 @@ Map {
         ],
         "type": "shape",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "titleText": Object {
