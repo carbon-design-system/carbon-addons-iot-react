@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.50...v2.146.0-next.51) (2021-07-13)
+
+
+### Features
+
+* **table:** improve story for exploring column settings ([9fbbbdb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9fbbbdb09062449c687d7913b598d03386799bf6))
+* **table:** improved story ([ed1890a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ed1890a8ed41ad6bc3b2ae33ee00f446cd4abcef))
+
+
+
+
+
 # [2.146.0-next.50](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.49...v2.146.0-next.50) (2021-07-12)
 
 
