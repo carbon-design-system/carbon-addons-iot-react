@@ -150,6 +150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </div>
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
             title="Select a color"
           >
             <label
@@ -407,6 +408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </div>
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
             title="Select a color"
           >
             <label
@@ -733,6 +735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </div>
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
             title="Select a color"
           >
             <label

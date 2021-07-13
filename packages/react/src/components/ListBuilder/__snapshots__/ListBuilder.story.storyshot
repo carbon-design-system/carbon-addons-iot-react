@@ -13,6 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     >
       <div
         className="iot--list"
+        data-testid="list"
       >
         <div
           className="iot--list-header-container"
@@ -265,6 +266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     >
       <div
         className="iot--list"
+        data-testid="list"
       >
         <div
           className="iot--list-header-container"
@@ -390,6 +392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     >
       <div
         className="iot--list"
+        data-testid="list"
       >
         <div
           className="iot--list-header-container"
@@ -675,6 +678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     >
       <div
         className="iot--list"
+        data-testid="list"
       >
         <div
           className="iot--list-header-container"
@@ -800,6 +804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     >
       <div
         className="iot--list"
+        data-testid="list"
       >
         <div
           className="iot--list-header-container"
@@ -957,6 +962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     >
       <div
         className="iot--list"
+        data-testid="list"
       >
         <div
           className="iot--list-header-container"
@@ -1125,6 +1131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     >
       <div
         className="iot--list"
+        data-testid="list"
       >
         <div
           className="iot--list-header-container"
@@ -1346,6 +1353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     >
       <div
         className="iot--list"
+        data-testid="list"
       >
         <div
           className="iot--list-header-container"

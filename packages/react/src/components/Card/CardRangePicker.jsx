@@ -24,11 +24,13 @@ export const CardRangePickerPropTypes = {
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element])
   ).isRequired,
   cardWidth: PropTypes.number,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
   timeRange: null,
   cardWidth: undefined,
+  testId: 'card-range-picker',
 };
 
 const CardRangePicker = ({
@@ -37,6 +39,7 @@ const CardRangePicker = ({
   timeRangeOptions,
   onCardAction,
   cardWidth,
+  testId,
 }) => {
   const [timeRange, setTimeRange] = useState(timeRangeProp);
 
@@ -64,6 +67,7 @@ const CardRangePicker = ({
           iconDescription={i18n.selectTimeRangeLabel}
           menuOptionsClass={`${iotPrefix}--card--overflow`}
           renderIcon={EventSchedule16}
+          data-testid={testId}
         >
           <OverflowMenuItem
             key="default"

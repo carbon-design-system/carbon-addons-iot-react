@@ -17,6 +17,17 @@ const modalProps = {
 };
 
 describe('ComposedModal', () => {
+  it('should be selectable with either testID or testId', () => {
+    const { rerender } = render(<ComposedModal {...modalProps} testID="COMPOSED_MODAL" />);
+
+    expect(screen.getByTestId('COMPOSED_MODAL')).toBeDefined();
+    rerender(<ComposedModal {...modalProps} testID="composed_modal" />);
+
+    expect(screen.getByTestId('composed_modal')).toBeDefined();
+    expect(screen.getByTestId('composed_modal-modal-secondary-button')).toBeDefined();
+    expect(screen.getByTestId('composed_modal-modal-primary-button')).toBeDefined();
+  });
+
   it('invalid field should be scrolled into view', () => {
     const { rerender } = render(<ComposedModal {...modalProps} />);
     rerender(<ComposedModal {...modalProps} invalid submitFailed />);

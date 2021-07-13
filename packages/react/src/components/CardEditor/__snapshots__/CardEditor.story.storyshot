@@ -31,6 +31,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       >
         <div
           className="iot--list iot--list__full-height"
+          data-testid="card-editor-card-gallery-list"
         >
           <div
             className="iot--list-header-container"
@@ -1549,6 +1550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="iot--list iot--card-edit-form--data-item-list"
+              data-testid="list"
             >
               <div
                 className="iot--list-header-container"
@@ -2957,7 +2959,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 />
                 <button
                   aria-pressed={null}
-                  className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image-clear-button bx--btn bx--btn--field bx--btn--ghost"
+                  className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image-clear-button iot--btn bx--btn bx--btn--field bx--btn--ghost"
+                  data-testid="Button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -2984,7 +2987,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </label>
               <button
                 aria-pressed={null}
-                className="iot--card-edit-form--form-section-image-btn bx--btn bx--btn--sm bx--btn--primary"
+                className="iot--card-edit-form--form-section-image-btn iot--btn bx--btn bx--btn--sm bx--btn--primary"
+                data-testid="Button"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -3072,33 +3076,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <input
                           checked={false}
                           className="bx--radio-button"
-                          data-testid="iot--card-edit-form--input-radio2"
-                          id="iot--card-edit-form--input-radio-2"
-                          name="iot--card-edit-form--input-radios"
-                          onChange={[Function]}
-                          type="radio"
-                          value="cover"
-                        />
-                        <label
-                          className="bx--radio-button__label"
-                          htmlFor="iot--card-edit-form--input-radio-2"
-                        >
-                          <span
-                            className="bx--radio-button__appearance"
-                          />
-                          <span
-                            className=""
-                          >
-                            Fill
-                          </span>
-                        </label>
-                      </div>
-                      <div
-                        className="bx--radio-button-wrapper"
-                      >
-                        <input
-                          checked={false}
-                          className="bx--radio-button"
                           data-testid="iot--card-edit-form--input-radio3"
                           id="iot--card-edit-form--input-radio-3"
                           name="iot--card-edit-form--input-radios"
@@ -3129,6 +3106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  data-testid="color-dropdown"
                   title="Select a color"
                 >
                   <label
@@ -3868,6 +3846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="iot--list iot--card-edit-form--data-item-list"
+              data-testid="list"
             >
               <div
                 className="iot--list-header-container"
@@ -5058,6 +5037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       >
         <div
           className="iot--list iot--list__full-height"
+          data-testid="card-editor-card-gallery-list"
         >
           <div
             className="iot--list-header-container"

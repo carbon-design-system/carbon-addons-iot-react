@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Button } from 'carbon-components-react';
 
+import Button from '../Button';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 
