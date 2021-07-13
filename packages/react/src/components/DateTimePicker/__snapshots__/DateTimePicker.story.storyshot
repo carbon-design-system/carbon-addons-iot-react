@@ -79,78 +79,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
               >
-<<<<<<< HEAD
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
-                >
-                  2018-10-28 07:04 to Now
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
-                  onClick={[Function]}
-                >
-                  Custom Range
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
-                  onClick={[Function]}
-                >
-                  Last 30 minutes
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 1 hour
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 6 hours
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 12 hours
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 24 hours
-                </li>
-              </ol>
-            </div>
-            <div
-              className="iot--date-time-picker__menu-btn-set"
-            >
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
-                disabled={false}
-=======
                 2018-10-28 07:04 to Now
               </li>
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 onClick={[Function]}
               >
-<<<<<<< HEAD
-                Cancel
-              </button>
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
-                disabled={false}
-=======
                 Custom Range
               </li>
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 onClick={[Function]}
               >
                 Last 30 minutes
@@ -291,78 +229,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
               >
-<<<<<<< HEAD
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
-                >
-                  2018-10-28 07:04 to Now
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
-                  onClick={[Function]}
-                >
-                  Custom Range
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
-                  onClick={[Function]}
-                >
-                  Last 30 minutes
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 1 hour
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 6 hours
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 12 hours
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 24 hours
-                </li>
-              </ol>
-            </div>
-            <div
-              className="iot--date-time-picker__menu-btn-set"
-            >
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
-                disabled={false}
-=======
                 2018-10-28 07:04 to Now
               </li>
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 onClick={[Function]}
               >
-<<<<<<< HEAD
-                Cancel
-              </button>
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
-                disabled={false}
-=======
                 Custom Range
               </li>
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 onClick={[Function]}
               >
                 Last 30 minutes
@@ -481,23 +357,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             className="iot--date-time-picker__menu-scroll"
           >
-<<<<<<< HEAD
-            <div
-              className="iot--date-time-picker__menu-scroll"
-            >
-              <div
-                className="iot--date-time-picker__custom-wrapper"
-              >
-                <fieldset
-                  className="bx--fieldset iot--date-time-picker__menu-formgroup"
-=======
             <div>
               <fieldset
                 className="bx--fieldset iot--date-time-picker__menu-formgroup"
               >
                 <legend
                   className="bx--label iot--date-time-picker__menu-formgroup"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 >
                   Custom range
                 </legend>
@@ -652,7 +517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <legend
                     className="bx--label iot--date-time-picker__menu-formgroup"
                   >
-                    
+
                   </legend>
                   <div
                     className="iot--date-time-picker__fields-wrapper"
@@ -775,94 +640,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           className="bx--time-picker"
                         >
                           <div
-<<<<<<< HEAD
-                            className="bx--time-picker bx--time-picker--light"
-                          >
-                            <div
-                              className="bx--time-picker__input"
-                            >
-                              <input
-                                autoComplete="off"
-                                className="bx--time-picker__input-field bx--text-input bx--text-input--light"
-                                disabled={false}
-                                id="datetimepicker25-start-time"
-                                maxLength={5}
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onClick={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
-                                placeholder="hh:mm"
-                                type="text"
-                                value="12:34"
-                              />
-                            </div>
-                            <div
-                              className="iot--time-picker__controls"
-                            >
-                              <button
-                                aria-atomic="true"
-                                aria-label="Increment hours"
-                                aria-live="polite"
-                                className="iot--time-picker__controls--btn up-icon"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
-                                onMouseOut={[Function]}
-                                onMouseOver={[Function]}
-                                title="Increment hours"
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  className="up-icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={4}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 8 4"
-                                  width={8}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M0 4L4 0 8 4z"
-                                  />
-                                </svg>
-                              </button>
-                              <button
-                                aria-atomic="true"
-                                aria-label="Decrement hours"
-                                aria-live="polite"
-                                className="iot--time-picker__controls--btn down-icon"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
-                                onMouseOut={[Function]}
-                                onMouseOver={[Function]}
-                                title="Decrement hours"
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  className="down-icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={4}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 8 4"
-                                  width={8}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M8 0L4 4 0 0z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
-=======
                             className="bx--time-picker__input"
                           >
                             <input
@@ -881,35 +658,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               type="text"
                               value="10:49"
                             />
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                           </div>
                           <div
-<<<<<<< HEAD
-                            className="bx--time-picker bx--time-picker--light"
-                          >
-                            <div
-                              className="bx--time-picker__input"
-                            >
-                              <input
-                                autoComplete="off"
-                                className="bx--time-picker__input-field bx--text-input bx--text-input--light"
-                                disabled={false}
-                                id="datetimepicker25-end-time"
-                                maxLength={5}
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onClick={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
-                                placeholder="hh:mm"
-                                type="text"
-                                value="10:49"
-                              />
-                            </div>
-                            <div
-                              className="iot--time-picker__controls"
-=======
                             className="iot--time-picker__controls"
                           >
                             <button
@@ -925,7 +675,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               onMouseOver={[Function]}
                               title="Increment hours"
                               type="button"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                             >
                               <svg
                                 aria-hidden={true}
@@ -993,29 +742,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               tabIndex={0}
               type="button"
             >
-<<<<<<< HEAD
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--field bx--btn--secondary"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Back
-              </button>
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Apply
-              </button>
-            </div>
-=======
               Back
             </button>
             <button
@@ -1028,7 +754,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               Apply
             </button>
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
           </div>
         </div>
       </div>
@@ -1094,23 +819,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             className="iot--date-time-picker__menu-scroll"
           >
-<<<<<<< HEAD
-            <div
-              className="iot--date-time-picker__menu-scroll"
-            >
-              <div
-                className="iot--date-time-picker__custom-wrapper"
-              >
-                <fieldset
-                  className="bx--fieldset iot--date-time-picker__menu-formgroup"
-=======
             <div>
               <fieldset
                 className="bx--fieldset iot--date-time-picker__menu-formgroup"
               >
                 <legend
                   className="bx--label iot--date-time-picker__menu-formgroup"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 >
                   Custom range
                 </legend>
@@ -1265,7 +979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <legend
                     className="bx--label iot--date-time-picker__menu-formgroup"
                   >
-                    
+
                   </legend>
                   <div
                     className="iot--date-time-picker__fields-wrapper"
@@ -1306,32 +1020,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             />
                           </div>
                           <div
-<<<<<<< HEAD
-                            className="bx--time-picker bx--time-picker--light"
-                          >
-                            <div
-                              className="bx--time-picker__input"
-                            >
-                              <input
-                                autoComplete="off"
-                                className="bx--time-picker__input-field bx--text-input bx--text-input--light"
-                                disabled={false}
-                                id="datetimepicker-start-time"
-                                maxLength={5}
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onClick={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
-                                placeholder="hh:mm"
-                                type="text"
-                                value="12:34"
-                              />
-                            </div>
-                            <div
-                              className="iot--time-picker__controls"
-=======
                             className="iot--time-picker__controls"
                           >
                             <button
@@ -1347,7 +1035,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               onMouseOver={[Function]}
                               title="Increment hours"
                               type="button"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                             >
                               <svg
                                 aria-hidden={true}
@@ -1435,32 +1122,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             />
                           </div>
                           <div
-<<<<<<< HEAD
-                            className="bx--time-picker bx--time-picker--light"
-                          >
-                            <div
-                              className="bx--time-picker__input"
-                            >
-                              <input
-                                autoComplete="off"
-                                className="bx--time-picker__input-field bx--text-input bx--text-input--light"
-                                disabled={false}
-                                id="datetimepicker-end-time"
-                                maxLength={5}
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onClick={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
-                                placeholder="hh:mm"
-                                type="text"
-                                value="10:49"
-                              />
-                            </div>
-                            <div
-                              className="iot--time-picker__controls"
-=======
                             className="iot--time-picker__controls"
                           >
                             <button
@@ -1476,7 +1137,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               onMouseOver={[Function]}
                               title="Increment hours"
                               type="button"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                             >
                               <svg
                                 aria-hidden={true}
@@ -1544,29 +1204,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               tabIndex={0}
               type="button"
             >
-<<<<<<< HEAD
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--field bx--btn--secondary"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Back
-              </button>
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Apply
-              </button>
-            </div>
-=======
               Back
             </button>
             <button
@@ -1579,7 +1216,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               Apply
             </button>
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
           </div>
         </div>
       </div>
@@ -1667,78 +1303,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
               >
-<<<<<<< HEAD
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
-                >
-                  2018-10-27 19:34 to Now
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
-                  onClick={[Function]}
-                >
-                  Custom Range
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 30 minutes
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 1 hour
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 6 hours
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
-                  onClick={[Function]}
-                >
-                  Last 12 hours
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 24 hours
-                </li>
-              </ol>
-            </div>
-            <div
-              className="iot--date-time-picker__menu-btn-set"
-            >
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
-                disabled={false}
-=======
                 2018-10-27 19:34 to Now
               </li>
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 onClick={[Function]}
               >
-<<<<<<< HEAD
-                Cancel
-              </button>
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
-                disabled={false}
-=======
                 Custom Range
               </li>
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 onClick={[Function]}
               >
                 Last 30 minutes
@@ -1857,23 +1431,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             className="iot--date-time-picker__menu-scroll"
           >
-<<<<<<< HEAD
-            <div
-              className="iot--date-time-picker__menu-scroll"
-            >
-              <div
-                className="iot--date-time-picker__custom-wrapper"
-              >
-                <fieldset
-                  className="bx--fieldset iot--date-time-picker__menu-formgroup"
-=======
             <div>
               <fieldset
                 className="bx--fieldset iot--date-time-picker__menu-formgroup"
               >
                 <legend
                   className="bx--label iot--date-time-picker__menu-formgroup"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 >
                   Custom range
                 </legend>
@@ -1957,11 +1520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         className="bx--number bx--number--helpertext"
                       >
                         <div
-<<<<<<< HEAD
-                          className="bx--number bx--number--helpertext bx--number--light"
-=======
                           className="bx--number__input-wrapper"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                         >
                           <input
                             aria-describedby={null}
@@ -2051,12 +1610,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           Select
                         </label>
                         <div
-<<<<<<< HEAD
-                          className="bx--select bx--select--light"
-=======
                           className="bx--select-input__wrapper"
                           data-invalid={null}
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                         >
                           <select
                             className="bx--select-input"
@@ -2157,12 +1712,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           Select
                         </label>
                         <div
-<<<<<<< HEAD
-                          className="bx--select bx--select--light"
-=======
                           className="bx--select-input__wrapper"
                           data-invalid={null}
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                         >
                           <select
                             className="bx--select-input"
@@ -2215,32 +1766,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           className="bx--time-picker"
                         >
                           <div
-<<<<<<< HEAD
-                            className="bx--time-picker bx--time-picker--light"
-                          >
-                            <div
-                              className="bx--time-picker__input"
-                            >
-                              <input
-                                autoComplete="off"
-                                className="bx--time-picker__input-field bx--text-input bx--text-input--light"
-                                disabled={false}
-                                id="datetimepicker-relative-to-time"
-                                maxLength={5}
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onClick={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
-                                placeholder="hh:mm"
-                                type="text"
-                                value="13:30"
-                              />
-                            </div>
-                            <div
-                              className="iot--time-picker__controls"
-=======
                             className="bx--time-picker__input"
                           >
                             <input
@@ -2276,7 +1801,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               onMouseOver={[Function]}
                               title="Increment hours"
                               type="button"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                             >
                               <svg
                                 aria-hidden={true}
@@ -2344,29 +1868,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               tabIndex={0}
               type="button"
             >
-<<<<<<< HEAD
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--field bx--btn--secondary"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Back
-              </button>
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Apply
-              </button>
-            </div>
-=======
               Back
             </button>
             <button
@@ -2379,7 +1880,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               Apply
             </button>
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
           </div>
         </div>
       </div>
@@ -2467,72 +1967,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
               >
-<<<<<<< HEAD
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
-                >
-                  2018-10-27 19:34 to Now
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 30 minutes
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 1 hour
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 6 hours
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
-                  onClick={[Function]}
-                >
-                  Last 12 hours
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 24 hours
-                </li>
-              </ol>
-            </div>
-            <div
-              className="iot--date-time-picker__menu-btn-set"
-            >
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
-                disabled={false}
-=======
                 2018-10-27 19:34 to Now
               </li>
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 onClick={[Function]}
               >
-<<<<<<< HEAD
-                Cancel
-              </button>
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
-                disabled={false}
-=======
                 Last 30 minutes
               </li>
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 onClick={[Function]}
               >
                 Last 1 hour
@@ -2667,78 +2111,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
               >
-<<<<<<< HEAD
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
-                >
-                  2018-10-27 19:34 to Now
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
-                  onClick={[Function]}
-                >
-                  Custom Range
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 30 minutes
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 1 hour
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 6 hours
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
-                  onClick={[Function]}
-                >
-                  Last 12 hours
-                </li>
-                <li
-                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                  onClick={[Function]}
-                >
-                  Last 24 hours
-                </li>
-              </ol>
-            </div>
-            <div
-              className="iot--date-time-picker__menu-btn-set"
-            >
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
-                disabled={false}
-=======
                 2018-10-27 19:34 to Now
               </li>
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 onClick={[Function]}
               >
-<<<<<<< HEAD
-                Cancel
-              </button>
-              <button
-                aria-pressed={null}
-                className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
-                disabled={false}
-=======
                 Custom Range
               </li>
               <li
                 className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
->>>>>>> c565ecdcb6b97a0abe433779b647e5e97fcd8f1e
                 onClick={[Function]}
               >
                 Last 30 minutes
