@@ -29,6 +29,7 @@ module.exports = {
       lines: 80,
     },
     './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
+    './src/components/Table/TableBody/TableBodyRow/TableBodyRow.jsx': all90Covered,
     './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
