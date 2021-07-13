@@ -4831,6 +4831,7 @@ Map {
       "onData": [Function],
       "onError": [Function],
       "showFiles": true,
+      "testId": "file-drop",
       "title": null,
     },
     "propTypes": Object {
@@ -4884,6 +4885,9 @@ Map {
       "showFiles": Object {
         "type": "bool",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "type": "string",
       },
@@ -4911,6 +4915,7 @@ Map {
       "stickyHeaderOffset": 48,
       "style": null,
       "tabs": undefined,
+      "testId": "page-title-bar",
       "upperActions": undefined,
     },
     "propTypes": Object {
@@ -4999,6 +5004,9 @@ Map {
         "type": "objectOf",
       },
       "tabs": [Function],
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "isRequired": true,
         "type": "node",
@@ -7017,7 +7025,7 @@ Map {
       "className": "",
       "icon": "",
       "secondaryAction": null,
-      "testID": "EmptyState",
+      "testId": "EmptyState",
     },
     "propTypes": Object {
       "action": Object {
@@ -7097,7 +7105,8 @@ Map {
         ],
         "type": "shape",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "title": Object {
@@ -8689,6 +8698,7 @@ Map {
       "renderIconByName": null,
       "setIsLoading": null,
       "sidebar": null,
+      "testId": "dashboard",
       "timeGrain": null,
       "title": null,
     },
@@ -9232,6 +9242,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "timeGrain": Object {
         "type": "string",
       },
@@ -9249,6 +9262,7 @@ Map {
       "lastUpdated": null,
       "lastUpdatedLabel": "Last updated:",
       "onDashboardAction": null,
+      "testId": "dashboard-header",
       "title": null,
     },
     "propTypes": Object {
@@ -9344,6 +9358,9 @@ Map {
       "onDashboardAction": Object {
         "type": "func",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "type": "string",
       },
@@ -9366,6 +9383,7 @@ Map {
         "sm",
         "xs",
       ],
+      "testId": "dashboard-grid",
     },
     "propTypes": Object {
       "breakpoint": Object {
@@ -9592,6 +9610,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
     },
   },
   "DashboardEditor" => Object {
@@ -9672,6 +9693,7 @@ Map {
         "LIST",
         "ALERT",
       ],
+      "testId": "dashboard-editor",
       "title": "",
     },
     "propTypes": Object {
@@ -10267,6 +10289,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "node",
@@ -19262,6 +19287,7 @@ Map {
       "onKeyDown": undefined,
       "selected": false,
       "size": "default",
+      "testId": "icon-switch",
     },
     "propTypes": Object {
       "className": Object {
@@ -19319,6 +19345,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "text": Object {
         "isRequired": true,
@@ -19746,6 +19775,7 @@ Map {
       "id": "filter-tag-container",
       "onChange": null,
       "tagContainer": null,
+      "testId": "filter-tags",
     },
     "propTypes": Object {
       "children": Object {
@@ -19766,6 +19796,9 @@ Map {
       },
       "tagContainer": Object {
         "type": "elementType",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },

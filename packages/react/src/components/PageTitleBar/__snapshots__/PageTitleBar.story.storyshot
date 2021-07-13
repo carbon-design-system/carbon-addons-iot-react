@@ -13,6 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
   >
     <div
       className="page-title-bar"
+      data-testid="page-title-bar"
       style={
         Object {
           "--header-offset": "0px",
@@ -109,6 +110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="page-title-bar"
+        data-testid="page-title-bar"
         style={
           Object {
             "--header-offset": "0px",
@@ -616,6 +618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="page-title-bar page-title-bar--condensed-static"
+        data-testid="page-title-bar"
         style={
           Object {
             "--header-offset": "0px",
@@ -884,6 +887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="page-title-bar"
+        data-testid="page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -1046,6 +1050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic"
+        data-testid="page-title-bar"
         style={
           Object {
             "--header-offset": "0px",
@@ -1370,6 +1375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic"
+        data-testid="page-title-bar"
         style={
           Object {
             "--header-offset": "0px",
@@ -2318,6 +2324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="page-title-bar"
+        data-testid="page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -2411,6 +2418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic"
+        data-testid="page-title-bar"
         style={
           Object {
             "--header-offset": "0px",
@@ -2700,6 +2708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="page-title-bar"
+        data-testid="page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -2835,6 +2844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="page-title-bar"
+        data-testid="page-title-bar"
         style={
           Object {
             "--header-offset": "0px",
