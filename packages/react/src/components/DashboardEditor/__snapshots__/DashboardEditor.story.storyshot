@@ -510,6 +510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </span>
               </div>
               <div
+                data-testid="dashboard-editor-grid"
                 style={
                   Object {
                     "flex": 1,
@@ -3284,6 +3285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -5407,6 +5409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -8575,6 +8578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -9282,6 +9286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -10665,6 +10670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </span>
               </div>
               <div
+                data-testid="dashboard-editor-grid"
                 style={
                   Object {
                     "flex": 1,
@@ -12789,6 +12795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -15024,6 +15031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -16445,6 +16453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </span>
               </div>
               <div
+                data-testid="dashboard-editor-grid"
                 style={
                   Object {
                     "flex": 1,
@@ -17622,6 +17631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -18921,6 +18931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -22019,6 +22030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
