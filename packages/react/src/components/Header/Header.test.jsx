@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, act } from '@testing-library/react';
 import { User20, Help20, Checkbox16 } from '@carbon/icons-react';
 import userEvent from '@testing-library/user-event';
 
@@ -380,6 +380,11 @@ describe('Header', () => {
     expect(screen.getByText('Custom icon 1')).toBeVisible();
     userEvent.click(screen.getAllByLabelText('open and close list of options')[0]);
     expect(screen.queryByText('Custom icon 1')).toBeNull();
+    act(() => {
+      userEvent.click(screen.getByLabelText('Open menu', { selector: 'svg' }));
+    });
+    expect(screen.getByText('Watson')).toBeVisible();
+    expect(screen.getByText('Custom icon 1')).toBeVisible();
     HTMLElement.prototype.getBoundingClientRect = originalBounding;
     window.innerWidth = originalWidth;
   });

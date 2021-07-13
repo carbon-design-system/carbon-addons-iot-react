@@ -1,3 +1,10 @@
+const all90Covered = {
+  statements: 90,
+  branches: 90,
+  functions: 90,
+  lines: 90,
+};
+
 module.exports = {
   collectCoverageFrom: [
     'src/components/**/*.js?(x)',
@@ -21,6 +28,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
+    './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
     './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,

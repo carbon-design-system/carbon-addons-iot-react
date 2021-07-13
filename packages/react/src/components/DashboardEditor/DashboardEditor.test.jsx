@@ -60,6 +60,7 @@ describe('DashboardEditor', () => {
     onExport: mockOnExport,
     onCancel: mockOnCancel,
     onSubmit: mockOnSubmit,
+    onDelete: jest.fn(),
     onEditDataItems: jest.fn(),
     supportedCardTypes: [
       'TIMESERIES',
@@ -72,6 +73,35 @@ describe('DashboardEditor', () => {
       'CUSTOM',
     ],
   };
+
+  it('should be selectable by testId', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        isTitleEditable
+        initialValue={{ cards: [mockValueCard] }}
+        testId="DASHBOARD_EDITOR"
+        breakpointSwitcher={{
+          enabled: true,
+        }}
+      />
+    );
+    expect(screen.getByTestId('DASHBOARD_EDITOR')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-file-uploader-button')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-breakpoint-switcher')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-fit-to-screen-switch')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-large-switch')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-medium-switch')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-small-switch')).toBeDefined();
+    expect(screen.getAllByTestId('Button').length).toBeGreaterThan(1);
+    // these can be added back in after v3 passes testId to these components and overrides the defaults
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-page-title-bar')).toBeDefined();
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-export-button')).toBeDefined();
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-cancel-button')).toBeDefined();
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-delete-button')).toBeDefined();
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-submit-button')).toBeDefined();
+  });
 
   it('edit title', () => {
     render(
