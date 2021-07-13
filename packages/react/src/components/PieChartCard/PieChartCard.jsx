@@ -231,7 +231,7 @@ const PieChartCard = ({
       isEditable={isEditable}
       isResizable={isResizable}
       resizeHandles={resizeHandles}
-      testID={testID}
+      testId={testID}
       {...others}
       {...overrides?.card?.props}
     >

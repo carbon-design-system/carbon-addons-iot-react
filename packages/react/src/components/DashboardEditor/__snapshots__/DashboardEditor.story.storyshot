@@ -13,12 +13,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--dashboard-editor"
+      data-testid="dashboard-editor"
     >
       <div
         className="iot--dashboard-editor--content"
       >
         <div
           className="page-title-bar"
+          data-testid="dashboard-editor-header-page-title-bar"
           style={
             Object {
               "--header-offset": "48px",
@@ -84,6 +86,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 className="iot--dashboard-editor-header--right"
+                data-testid="dashboard-editor-header"
               >
                 <div
                   className="iot--dashboard-editor-header--top"
@@ -112,6 +115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                       aria-disabled={false}
                       className="bx--btn bx--btn--ghost bx--btn--field"
+                      data-testid="dashboard-editor-header-file-uploader-button"
                       htmlFor="id3"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -396,6 +400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -428,6 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -504,6 +510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </span>
               </div>
               <div
+                data-testid="dashboard-editor-grid"
                 style={
                   Object {
                     "flex": 1,
@@ -607,7 +614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <button
                               aria-pressed={null}
-                              className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
+                              className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
                               data-testid="download-button"
                               disabled={true}
                               onClick={[Function]}
@@ -635,7 +642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </button>
                             <button
                               aria-pressed={null}
-                              className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
+                              className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
                               data-testid="filter-button"
                               disabled={true}
                               onClick={[Function]}
@@ -663,6 +670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </button>
                             <div
                               className="iot--card--toolbar"
+                              data-testid="card-toolbar"
                             >
                               <button
                                 aria-expanded={false}
@@ -1661,9 +1669,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--card--header"
+                      data-testid="Card-header"
                     >
                       <span
                         className="iot--card--title"
+                        data-testid="Card-title"
                         title="Custom rendered card"
                       >
                         <div
@@ -1674,6 +1684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </span>
                       <div
                         className="iot--card--toolbar"
+                        data-testid="Card-toolbar"
                       >
                         <button
                           aria-expanded={false}
@@ -1794,9 +1805,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--card--header"
+                      data-testid="Card-header"
                     >
                       <span
                         className="iot--card--title"
+                        data-testid="Card-title"
                         title="Value card"
                       >
                         <div
@@ -1807,6 +1820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </span>
                       <div
                         className="iot--card--toolbar"
+                        data-testid="Card-toolbar"
                       >
                         <button
                           aria-expanded={false}
@@ -1968,9 +1982,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--card--header"
+                      data-testid="Card-header"
                     >
                       <span
                         className="iot--card--title"
+                        data-testid="Card-title"
                         title="Timeseries"
                       >
                         <div
@@ -1981,6 +1997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </span>
                       <div
                         className="iot--card--toolbar"
+                        data-testid="Card-toolbar"
                       >
                         <button
                           aria-expanded={false}
@@ -2087,9 +2104,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--card--header"
+                      data-testid="Card-header"
                     >
                       <span
                         className="iot--card--title"
+                        data-testid="Card-title"
                         title="Bar"
                       >
                         <div
@@ -2100,6 +2119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </span>
                       <div
                         className="iot--card--toolbar"
+                        data-testid="Card-toolbar"
                       >
                         <button
                           aria-expanded={false}
@@ -2206,6 +2226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--list iot--list__full-height"
+              data-testid="card-editor-card-gallery-list"
             >
               <div
                 className="iot--list-header-container"
@@ -2873,12 +2894,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -2942,6 +2965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -3151,6 +3175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -3183,6 +3208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -3259,6 +3285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -3303,6 +3330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -4034,12 +4062,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -4105,6 +4135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -4133,6 +4164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id9"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -4417,6 +4449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -4449,6 +4482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -5375,6 +5409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -5419,6 +5454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -7048,12 +7084,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -7119,6 +7157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -7128,12 +7167,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   className="bx--content-switcher iot--dashboard-editor-header--bottom__switcher"
+                  data-testid="dashboard-editor-header-breakpoint-switcher"
                   onChange={[Function]}
                   role="tablist"
                 >
                   <button
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-fit-to-screen-switch"
                     disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -7166,6 +7207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <button
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-large-switch"
                     disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -7198,6 +7240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <button
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-medium-switch"
                     disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -7234,6 +7277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <button
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-small-switch"
                     disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -7289,6 +7333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id10"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -7573,6 +7618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -7605,6 +7651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -8531,6 +8578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -8575,6 +8623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -8740,12 +8789,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -8811,6 +8862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -8839,6 +8891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id7"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -9123,6 +9176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -9155,6 +9209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -9231,6 +9286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -9277,9 +9333,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Custom rendered card"
                     >
                       <div
@@ -9290,6 +9348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -9413,9 +9472,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Default rendered card"
                     >
                       <div
@@ -9426,6 +9487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -9633,6 +9695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -10337,6 +10400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--dashboard-editor"
+      data-testid="dashboard-editor"
     >
       <div
         className="iot--dashboard-editor--content"
@@ -10496,6 +10560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -10528,6 +10593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -10604,6 +10670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </span>
               </div>
               <div
+                data-testid="dashboard-editor-grid"
                 style={
                   Object {
                     "flex": 1,
@@ -10648,6 +10715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--list iot--list__full-height"
+              data-testid="card-editor-card-gallery-list"
             >
               <div
                 className="iot--list-header-container"
@@ -11380,12 +11448,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -11451,6 +11521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -11479,6 +11550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id1"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -11763,6 +11835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -11795,6 +11868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -12721,6 +12795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -12765,6 +12840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -13461,12 +13537,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -13532,6 +13610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -13541,12 +13620,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   className="bx--content-switcher iot--dashboard-editor-header--bottom__switcher"
+                  data-testid="dashboard-editor-header-breakpoint-switcher"
                   onChange={[Function]}
                   role="tablist"
                 >
                   <button
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-fit-to-screen-switch"
                     disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -13579,6 +13660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <button
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-large-switch"
                     disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -13611,6 +13693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <button
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-medium-switch"
                     disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -13647,6 +13730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <button
                     aria-pressed={null}
                     className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    data-testid="dashboard-editor-header-small-switch"
                     disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -13702,6 +13786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id8"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -13986,6 +14071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -14018,6 +14104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -14944,6 +15031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -14988,6 +15076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -15692,6 +15781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--dashboard-editor"
+      data-testid="dashboard-editor-loading"
     >
       <p
         className="bx--skeleton__text"
@@ -15719,12 +15809,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--dashboard-editor"
+      data-testid="dashboard-editor"
     >
       <div
         className="iot--dashboard-editor--content"
       >
         <div
           className="page-title-bar"
+          data-testid="dashboard-editor-header-page-title-bar"
           style={
             Object {
               "--header-offset": "48px",
@@ -15790,6 +15882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 className="iot--dashboard-editor-header--right"
+                data-testid="dashboard-editor-header"
               >
                 <div
                   className="iot--dashboard-editor-header--top"
@@ -15799,12 +15892,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="bx--content-switcher iot--dashboard-editor-header--bottom__switcher"
+                    data-testid="dashboard-editor-header-breakpoint-switcher"
                     onChange={[Function]}
                     role="tablist"
                   >
                     <button
                       aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      data-testid="dashboard-editor-header-fit-to-screen-switch"
                       disabled={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -15837,6 +15932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     <button
                       aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      data-testid="dashboard-editor-header-large-switch"
                       disabled={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -15869,6 +15965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     <button
                       aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      data-testid="dashboard-editor-header-medium-switch"
                       disabled={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -15905,6 +16002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     <button
                       aria-pressed={null}
                       className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      data-testid="dashboard-editor-header-small-switch"
                       disabled={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -15960,6 +16058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                       aria-disabled={false}
                       className="bx--btn bx--btn--ghost bx--btn--field"
+                      data-testid="dashboard-editor-header-file-uploader-button"
                       htmlFor="id6"
                       onKeyDown={[Function]}
                       tabIndex={0}
@@ -16244,6 +16343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -16276,6 +16376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-pressed={null}
                             className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                            data-testid="icon-switch"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -16352,6 +16453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </span>
               </div>
               <div
+                data-testid="dashboard-editor-grid"
                 style={
                   Object {
                     "flex": 1,
@@ -16396,6 +16498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--list iot--list__full-height"
+              data-testid="card-editor-card-gallery-list"
             >
               <div
                 className="iot--list-header-container"
@@ -17031,12 +17134,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -17102,6 +17207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -17130,6 +17236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id4"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -17414,6 +17521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -17446,6 +17554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -17522,6 +17631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -17567,9 +17677,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Untitled"
                     >
                       <div
@@ -17580,6 +17692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -17686,6 +17799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -18320,12 +18434,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -18391,6 +18507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -18419,6 +18536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id2"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -18703,6 +18821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -18735,6 +18854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -18811,6 +18931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -18914,7 +19035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         >
                           <button
                             aria-pressed={null}
-                            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
+                            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
                             data-testid="download-button"
                             disabled={true}
                             onClick={[Function]}
@@ -18942,7 +19063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </button>
                           <button
                             aria-pressed={null}
-                            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
+                            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
                             data-testid="filter-button"
                             disabled={true}
                             onClick={[Function]}
@@ -18970,6 +19091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </button>
                           <div
                             className="iot--card--toolbar"
+                            data-testid="card-toolbar"
                           >
                             <button
                               aria-expanded={false}
@@ -19968,9 +20090,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Custom rendered card"
                     >
                       <div
@@ -19981,6 +20105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -20093,9 +20218,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Default rendered card"
                     >
                       <div
@@ -20106,6 +20233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -20313,9 +20441,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Timeseries"
                     >
                       <div
@@ -20326,6 +20456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -20432,9 +20563,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     className="iot--card--header"
+                    data-testid="Card-header"
                   >
                     <span
                       className="iot--card--title"
+                      data-testid="Card-title"
                       title="Bar"
                     >
                       <div
@@ -20445,6 +20578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </span>
                     <div
                       className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
                     >
                       <button
                         aria-expanded={false}
@@ -20551,6 +20685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"
@@ -21185,12 +21320,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 >
   <div
     className="iot--dashboard-editor"
+    data-testid="dashboard-editor"
   >
     <div
       className="iot--dashboard-editor--content"
     >
       <div
         className="page-title-bar"
+        data-testid="dashboard-editor-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -21256,6 +21393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--dashboard-editor-header--right"
+              data-testid="dashboard-editor-header"
             >
               <div
                 className="iot--dashboard-editor-header--top"
@@ -21284,6 +21422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
+                    data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id5"
                     onKeyDown={[Function]}
                     tabIndex={0}
@@ -21781,6 +21920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -21813,6 +21953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-pressed={null}
                           className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          data-testid="icon-switch"
                           disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -21889,6 +22030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </span>
             </div>
             <div
+              data-testid="dashboard-editor-grid"
               style={
                 Object {
                   "flex": 1,
@@ -21933,6 +22075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--list iot--list__full-height"
+            data-testid="card-editor-card-gallery-list"
           >
             <div
               className="iot--list-header-container"

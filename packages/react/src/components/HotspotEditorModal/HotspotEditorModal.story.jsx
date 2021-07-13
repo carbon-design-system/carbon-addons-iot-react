@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
 import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
 
@@ -103,8 +103,15 @@ export default {
 };
 
 export const Empty = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <HotspotEditorModal
+      key={myDisplayOption}
       backgroundColors={selectableColors}
       borderColors={selectableColors}
       cardConfig={cardConfig}
@@ -117,13 +124,21 @@ export const Empty = () => {
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
+      displayOption={myDisplayOption}
     />
   );
 };
 
 export const EmptyWithGetValidDataItemsCallback = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <HotspotEditorModal
+      key={myDisplayOption}
       backgroundColors={selectableColors}
       borderColors={selectableColors}
       cardConfig={cardConfig}
@@ -140,6 +155,7 @@ export const EmptyWithGetValidDataItemsCallback = () => {
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
+      displayOption={myDisplayOption}
     />
   );
 };
@@ -163,6 +179,38 @@ export const WithExistingHotspots = () => {
           type: 'text',
           color: green50,
           content: <span>content is an element</span>,
+        },
+        {
+          x: 0,
+          y: 0,
+          content: <span>0:0</span>,
+          color: 'green',
+          width: 20,
+          height: 20,
+        },
+        {
+          x: 0,
+          y: 99.9,
+          content: <span>0:99</span>,
+          color: 'green',
+          width: 20,
+          height: 20,
+        },
+        {
+          x: 99.9,
+          y: 99.9,
+          content: <span>99:99</span>,
+          color: 'green',
+          width: 20,
+          height: 20,
+        },
+        {
+          x: 99.9,
+          y: 0,
+          content: <span>99:0</span>,
+          color: 'green',
+          width: 20,
+          height: 20,
         },
         {
           x: 75,
@@ -209,8 +257,15 @@ export const WithExistingHotspots = () => {
     },
   };
 
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <HotspotEditorModal
+      key={myDisplayOption}
       availableDimensions={{
         manufacturer: ['Rentech', 'GHI Industries'],
         deviceid: ['73000', '73001', '73002'],
@@ -227,6 +282,7 @@ export const WithExistingHotspots = () => {
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
+      displayOption={myDisplayOption}
     />
   );
 };
@@ -249,8 +305,15 @@ export const WithExistingDynamicHotspots = () => {
     },
   };
 
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <HotspotEditorModal
+      key={myDisplayOption}
       backgroundColors={selectableColors}
       borderColors={selectableColors}
       cardConfig={myCardConfig}
@@ -265,6 +328,7 @@ export const WithExistingDynamicHotspots = () => {
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
       showTooManyHotspotsInfo={boolean('showTooManyHotspotsInfo', true)}
+      displayOption={myDisplayOption}
     />
   );
 };

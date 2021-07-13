@@ -1,9 +1,9 @@
 import React, { useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
-import { Button } from 'carbon-components-react';
 import { TrashCan16, Edit16, Copy16 } from '@carbon/icons-react';
 
+import Button from '../../Button';
 import { Tag } from '../../Tag';
 
 import TableManageViewsModal from './TableManageViewsModal';
@@ -229,7 +229,7 @@ export const WithCustomRowActionsCustomRenderingAndNoPagination = () => {
   const renderButton = (id, onClick, icon, key, iconText) => (
     <Button
       key={key}
-      data-testid={key}
+      testId={key}
       hasIconOnly
       iconDescription={iconText}
       kind="ghost"

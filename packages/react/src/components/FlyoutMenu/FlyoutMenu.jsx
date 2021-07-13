@@ -44,7 +44,9 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     <Button
       className={`${iotPrefix}--flyout-menu__cancel`}
       kind="secondary"
-      testID="flyout-menu-cancel"
+      // TODO: in v3 pass testId from parent and insert here to allow it to be configurable
+      // ie. `${testId}-menu-cancel`
+      testId="flyout-menu-cancel"
       onClick={() => {
         setIsOpen(false);
 
@@ -59,7 +61,9 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     <Button
       className={`${iotPrefix}--flyout-menu__submit`}
       aria-label={i18n.applyButtonText}
-      testID="flyout-menu-apply"
+      // TODO: in v3 pass testId from parent and insert here to allow it to be configurable
+      // ie. `${testId}-menu-cancel`
+      testId="flyout-menu-apply"
       onClick={() => {
         setIsOpen(false);
         if (onApply) {
@@ -211,6 +215,7 @@ const FlyoutMenu = ({
 
   return (
     <div
+      data-testid={`${testId}-container`}
       style={{
         '--tooltip-visibility': hideTooltip ? 'hidden' : 'visible',
       }}
@@ -232,7 +237,7 @@ const FlyoutMenu = ({
         disabled={disabled}
         hasIconOnly
         kind="ghost"
-        testID={`${testId}-button`}
+        testId={`${testId}-button`}
         size={buttonSize}
         renderIcon={renderIcon}
         onClick={() => {

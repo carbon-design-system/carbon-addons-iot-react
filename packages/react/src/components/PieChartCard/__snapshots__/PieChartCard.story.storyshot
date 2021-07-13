@@ -31,9 +31,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <div
           className="iot--card--header"
+          data-testid="basicCardStoryTest-header"
         >
           <span
             className="iot--card--title"
+            data-testid="basicCardStoryTest-title"
             title="Animations turned on and FlyoutMenu added to table"
           >
             <div
@@ -44,10 +46,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </span>
           <div
             className="iot--card--toolbar"
+            data-testid="basicCardStoryTest-toolbar"
           >
             <button
               aria-pressed={null}
-              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+              data-testid="basicCardStoryTest-toolbar-close-button"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -135,7 +139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 >
                   <button
                     aria-pressed={null}
-                    className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                     data-testid="download-button"
                     disabled={false}
                     onClick={[Function]}
@@ -163,6 +167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   </button>
                   <div
                     className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
+                    data-testid="flyout-menu-container"
                     style={
                       Object {
                         "--tooltip-visibility": "hidden",
@@ -555,9 +560,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="iot--card--header"
+        data-testid="basicCardStoryTest-header"
       >
         <span
           className="iot--card--title"
+          data-testid="basicCardStoryTest-title"
           title="Schools"
         >
           <div
@@ -568,10 +575,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="basicCardStoryTest-toolbar"
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -648,9 +657,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="iot--card--header"
+        data-testid="basicCardStoryTest-header"
       >
         <span
           className="iot--card--title"
+          data-testid="basicCardStoryTest-title"
           title="Schools"
         >
           <div
@@ -661,10 +672,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="basicCardStoryTest-toolbar"
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -741,9 +754,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="iot--card--header"
+        data-testid="basicCardStoryTest-header"
       >
         <span
           className="iot--card--title"
+          data-testid="basicCardStoryTest-title"
           title="Schools"
         >
           <div
@@ -754,10 +769,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="basicCardStoryTest-toolbar"
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -834,9 +851,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="iot--card--header"
+        data-testid="basicCardStoryTest-header"
       >
         <span
           className="iot--card--title"
+          data-testid="basicCardStoryTest-title"
           title="Schools"
         >
           <div
@@ -847,10 +866,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="basicCardStoryTest-toolbar"
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -927,9 +948,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="iot--card--header"
+        data-testid="basicCardStoryTest-header"
       >
         <span
           className="iot--card--title"
+          data-testid="basicCardStoryTest-title"
           title="Schools"
         >
           <div
@@ -940,10 +963,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="basicCardStoryTest-toolbar"
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}
@@ -1023,9 +1048,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     >
       <div
         className="iot--card--header"
+        data-testid="basicCardStoryTest-header"
       >
         <span
           className="iot--card--title"
+          data-testid="basicCardStoryTest-title"
           title="Schools"
         >
           <div
@@ -1036,10 +1063,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="basicCardStoryTest-toolbar"
         >
           <button
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
             onClick={[Function]}
             tabIndex={0}

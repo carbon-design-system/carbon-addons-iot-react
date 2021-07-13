@@ -1,9 +1,9 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 import { spacing02 } from '@carbon/layout';
 
+import Button from '../Button';
 import { COLORS } from '../../styles/styles';
 
 const ResourceListSection = styled.section`

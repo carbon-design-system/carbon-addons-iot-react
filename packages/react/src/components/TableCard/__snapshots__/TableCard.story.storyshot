@@ -126,7 +126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
                 data-testid="download-button"
                 disabled={true}
                 onClick={[Function]}
@@ -154,7 +154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
                 data-testid="filter-button"
                 disabled={true}
                 onClick={[Function]}
@@ -182,6 +182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <button
                   aria-expanded={false}
@@ -1134,8 +1135,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-30"
-                id="bx-pagination-select-30-count-label"
+                htmlFor="bx-pagination-select-31"
+                id="bx-pagination-select-31-count-label"
               >
                 Items per page:
               </label>
@@ -1154,7 +1155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-30"
+                        id="bx-pagination-select-31"
                         onChange={[Function]}
                         value={10}
                       >
@@ -1219,7 +1220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-30-right"
+                    htmlFor="bx-pagination-select-31-right"
                   >
                     Page number, of 10 pages
                   </label>
@@ -1232,7 +1233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-30-right"
+                        id="bx-pagination-select-31-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -1611,7 +1612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -1639,7 +1640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -1667,6 +1668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -1676,6 +1678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -1714,7 +1717,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </div>
                 <button
                   aria-pressed={null}
-                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                  data-testid="card-toolbar-expand-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -2647,8 +2651,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-29"
-                id="bx-pagination-select-29-count-label"
+                htmlFor="bx-pagination-select-30"
+                id="bx-pagination-select-30-count-label"
               >
                 Items per page:
               </label>
@@ -2667,7 +2671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-29"
+                        id="bx-pagination-select-30"
                         onChange={[Function]}
                         value={10}
                       >
@@ -2732,7 +2736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-29-right"
+                    htmlFor="bx-pagination-select-30-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -2745,7 +2749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-29-right"
+                        id="bx-pagination-select-30-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -3060,7 +3064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -3088,7 +3092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -3116,6 +3120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -3125,6 +3130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -4336,8 +4342,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-27"
-                id="bx-pagination-select-27-count-label"
+                htmlFor="bx-pagination-select-28"
+                id="bx-pagination-select-28-count-label"
               >
                 Items per page:
               </label>
@@ -4356,7 +4362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-27"
+                        id="bx-pagination-select-28"
                         onChange={[Function]}
                         value={10}
                       >
@@ -4421,7 +4427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-27-right"
+                    htmlFor="bx-pagination-select-28-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -4434,7 +4440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-27-right"
+                        id="bx-pagination-select-28-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -4715,7 +4721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -4743,7 +4749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -4771,6 +4777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -4780,6 +4787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -5226,8 +5234,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-31"
-                id="bx-pagination-select-31-count-label"
+                htmlFor="bx-pagination-select-32"
+                id="bx-pagination-select-32-count-label"
               >
                 Items per page:
               </label>
@@ -5246,7 +5254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-31"
+                        id="bx-pagination-select-32"
                         onChange={[Function]}
                         value={10}
                       >
@@ -5311,7 +5319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-31-right"
+                    htmlFor="bx-pagination-select-32-right"
                   >
                     Page number, of 1 pages
                   </label>
@@ -5324,7 +5332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-31-right"
+                        id="bx-pagination-select-32-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -5631,7 +5639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -5659,7 +5667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -5687,6 +5695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -5696,6 +5705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -6427,8 +6437,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-23"
-                id="bx-pagination-select-23-count-label"
+                htmlFor="bx-pagination-select-24"
+                id="bx-pagination-select-24-count-label"
               >
                 Items per page:
               </label>
@@ -6447,7 +6457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-23"
+                        id="bx-pagination-select-24"
                         onChange={[Function]}
                         value={10}
                       >
@@ -6512,7 +6522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-23-right"
+                    htmlFor="bx-pagination-select-24-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -6525,7 +6535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-23-right"
+                        id="bx-pagination-select-24-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -6840,7 +6850,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -6868,7 +6878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -6896,6 +6906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -6905,6 +6916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -6943,7 +6955,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </div>
                 <button
                   aria-pressed={null}
-                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                  data-testid="card-toolbar-expand-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -8862,8 +8875,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-26"
-                id="bx-pagination-select-26-count-label"
+                htmlFor="bx-pagination-select-27"
+                id="bx-pagination-select-27-count-label"
               >
                 Items per page:
               </label>
@@ -8882,7 +8895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-26"
+                        id="bx-pagination-select-27"
                         onChange={[Function]}
                         value={10}
                       >
@@ -8947,7 +8960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-26-right"
+                    htmlFor="bx-pagination-select-27-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -8960,7 +8973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-26-right"
+                        id="bx-pagination-select-27-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -9275,7 +9288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -9303,7 +9316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -9331,6 +9344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -9340,6 +9354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -11137,8 +11152,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-22"
-                id="bx-pagination-select-22-count-label"
+                htmlFor="bx-pagination-select-23"
+                id="bx-pagination-select-23-count-label"
               >
                 Items per page:
               </label>
@@ -11157,7 +11172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-22"
+                        id="bx-pagination-select-23"
                         onChange={[Function]}
                         value={10}
                       >
@@ -11222,7 +11237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-22-right"
+                    htmlFor="bx-pagination-select-23-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -11235,7 +11250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-22-right"
+                        id="bx-pagination-select-23-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -11550,7 +11565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -11578,7 +11593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -11606,6 +11621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -11615,6 +11631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -11653,7 +11670,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </div>
                 <button
                   aria-pressed={null}
-                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                  data-testid="card-toolbar-expand-button"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -12921,8 +12939,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-28"
-                id="bx-pagination-select-28-count-label"
+                htmlFor="bx-pagination-select-29"
+                id="bx-pagination-select-29-count-label"
               >
                 Items per page:
               </label>
@@ -12941,7 +12959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-28"
+                        id="bx-pagination-select-29"
                         onChange={[Function]}
                         value={10}
                       >
@@ -13006,7 +13024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-28-right"
+                    htmlFor="bx-pagination-select-29-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -13019,7 +13037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-28-right"
+                        id="bx-pagination-select-29-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -13334,7 +13352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -13362,7 +13380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -13390,6 +13408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -13399,6 +13418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -15055,8 +15075,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-25"
-                id="bx-pagination-select-25-count-label"
+                htmlFor="bx-pagination-select-26"
+                id="bx-pagination-select-26-count-label"
               >
                 Items per page:
               </label>
@@ -15075,7 +15095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-25"
+                        id="bx-pagination-select-26"
                         onChange={[Function]}
                         value={10}
                       >
@@ -15140,7 +15160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-25-right"
+                    htmlFor="bx-pagination-select-26-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -15153,7 +15173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-25-right"
+                        id="bx-pagination-select-26-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -15468,7 +15488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
                 onClick={[Function]}
@@ -15496,7 +15516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <button
                 aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
                 onClick={[Function]}
@@ -15524,6 +15544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="iot--card--toolbar"
+                data-testid="card-toolbar"
               >
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
@@ -15533,6 +15554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     aria-haspopup={true}
                     aria-label="open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    data-testid="card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -17784,8 +17806,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-24"
-                id="bx-pagination-select-24-count-label"
+                htmlFor="bx-pagination-select-25"
+                id="bx-pagination-select-25-count-label"
               >
                 Items per page:
               </label>
@@ -17804,7 +17826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-24"
+                        id="bx-pagination-select-25"
                         onChange={[Function]}
                         value={10}
                       >
@@ -17869,7 +17891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-24-right"
+                    htmlFor="bx-pagination-select-25-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -17882,7 +17904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-24-right"
+                        id="bx-pagination-select-25-right"
                         onChange={[Function]}
                         value={1}
                       >

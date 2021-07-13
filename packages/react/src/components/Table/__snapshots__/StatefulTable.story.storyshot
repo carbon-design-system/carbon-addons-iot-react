@@ -17251,6 +17251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <div
             className="iot--list iot--manage-views-list iot--list__full-height"
+            data-testid="list"
           >
             <div
               className="iot--list-header-container"
@@ -17651,7 +17652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
             data-testid="column-selection-button"
             disabled={false}
             onClick={[Function]}
@@ -17679,7 +17680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn bx--btn bx--btn--ghost"
             data-testid="filter-button"
             disabled={false}
             onClick={[Function]}
@@ -17707,7 +17708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
             data-testid="row-edit-button"
             disabled={false}
             onClick={[Function]}
@@ -19087,7 +19088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-11-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -19406,7 +19407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-17-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -19725,7 +19726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-41-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -20044,7 +20045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-47-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -20363,7 +20364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-71-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -20682,7 +20683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-77-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -21001,7 +21002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-1-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -21320,7 +21321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-7-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -21639,7 +21640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-31-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -21958,7 +21959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-37-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -43693,7 +43694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
             data-testid="download-button"
             disabled={false}
             onClick={[Function]}
@@ -43721,7 +43722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
             data-testid="column-selection-button"
             disabled={false}
             onClick={[Function]}
@@ -43749,7 +43750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn bx--btn bx--btn--ghost"
             data-testid="filter-button"
             disabled={false}
             onClick={[Function]}
@@ -43777,7 +43778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
             data-testid="row-edit-button"
             disabled={false}
             onClick={[Function]}
@@ -43805,6 +43806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <div
             className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
+            data-testid="flyout-menu-container"
             style={
               Object {
                 "--tooltip-visibility": "hidden",
@@ -45121,7 +45123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-1-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -46001,7 +46003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-22-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -46313,7 +46315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-31-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -46625,7 +46627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-34-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -46937,7 +46939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-46-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -47533,7 +47535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-61-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -48253,7 +48255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
             data-testid="column-selection-button"
             disabled={false}
             onClick={[Function]}
@@ -48281,7 +48283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
             data-testid="filter-button"
             disabled={false}
             onClick={[Function]}
@@ -48309,7 +48311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
             data-testid="row-edit-button"
             disabled={false}
             onClick={[Function]}
@@ -49115,7 +49117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-1-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -49432,7 +49434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-2-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -49742,7 +49744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-3-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -50348,7 +50350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-5-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -50658,7 +50660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-6-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -50975,7 +50977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-7-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -51574,7 +51576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-9-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -52114,7 +52116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
             data-testid="column-selection-button"
             disabled={false}
             onClick={[Function]}
@@ -52142,7 +52144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn bx--btn bx--btn--ghost"
             data-testid="filter-button"
             disabled={false}
             onClick={[Function]}
@@ -52170,7 +52172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <button
             aria-pressed={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
             data-testid="row-edit-button"
             disabled={false}
             onClick={[Function]}
@@ -53082,7 +53084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-1-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -53971,7 +53973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-22-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -54286,7 +54288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-31-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -54601,7 +54603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-34-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -54916,7 +54918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-46-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -55518,7 +55520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <button
                         aria-pressed={null}
-                        className="bx--btn bx--btn--sm bx--btn--ghost"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                         data-testid="table-row-61-row-actions-button-drilldown"
                         disabled={false}
                         onClick={[Function]}
@@ -80681,7 +80683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <button
           aria-pressed={null}
-          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
+          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
           data-testid="column-selection-button"
           disabled={false}
           onClick={[Function]}
@@ -85423,6 +85425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </button>
           <div
             className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
+            data-testid="advanced-filter-flyout-container"
             style={
               Object {
                 "--tooltip-visibility": "hidden",
@@ -85491,7 +85494,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         <div
           className="iot--filtertags-container iot--filtertags-container__wrap"
           data-testid="filter-tag-container"
-          i18n={Object {}}
           id="filter-tag-container"
           onChange={null}
         >
