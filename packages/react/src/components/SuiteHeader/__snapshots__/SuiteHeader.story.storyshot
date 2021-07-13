@@ -1830,6 +1830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   <header
     aria-label="main header"
     className="bx--header iot--suite-header"
+    data-testid="header"
   >
     <a
       className="bx--skip-to-content"
@@ -1840,6 +1841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     </a>
     <a
       className="bx--header__name"
+      data-testid="header-name"
       href="https://www.ibm.com"
     >
       <span
@@ -1884,6 +1886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <div
         className="bx--header__global"
+        data-testid="header-action-group-global-bar"
       >
         <button
           aria-label="Administration"
