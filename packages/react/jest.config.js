@@ -30,6 +30,7 @@ module.exports = {
     },
     './src/components/Breadcrumb/Breadcrumb.jsx': all90Covered,
     './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
+    './src/components/Table/TableBody/TableBodyRow/TableBodyRow.jsx': all90Covered,
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
     './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
       statements: 80,
