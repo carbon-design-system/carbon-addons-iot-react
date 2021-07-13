@@ -168,7 +168,8 @@ const ImageUploader = ({
           <Button
             size={buttonSize}
             onClick={handleUploadByURL}
-            testId={`${testId}-url-upload-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-url-upload-button`}
           >
             {i18n.uploadByURLButton}
           </Button>
@@ -176,7 +177,8 @@ const ImageUploader = ({
             size={buttonSize}
             onClick={handleCancelFromURLClick}
             kind="ghost"
-            testId={`${testId}-url-cancel-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-url-cancel-button`}
           >
             {i18n.uploadByURLCancel}
           </Button>
