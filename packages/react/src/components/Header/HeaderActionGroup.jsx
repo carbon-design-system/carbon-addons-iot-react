@@ -3,7 +3,6 @@ import { HeaderGlobalBar } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import { Close16, OverflowMenuVertical16 } from '@carbon/icons-react';
 import ReactDOM from 'react-dom';
-import { white } from '@carbon/colors';
 
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
@@ -95,14 +94,41 @@ const HeaderActionGroup = ({ actionItems, i18n }) => {
             >
               <OverflowMenu
                 useAutoPositioning
-                onOpen={() => setOverflowOpen(true)}
-                onClose={() => setOverflowOpen(false)}
-                renderIcon={() =>
-                  // show a close icon when open per design specs
+                onClick={({ target }) => {
+                  if (target.tagName === 'BUTTON') {
+                    setOverflowOpen((prev) => !prev);
+                  } else {
+                    /**
+                     * This is a hack to get around the onClick event firing twice when clicking
+                     * directly on the svg within the button instead of the button itself. A stopPropagation
+                     * makes the overflow not open, so we have to resort to reading the aria-expanded value to
+                     * know whether the OverflowMenu is open and adjust the icons accordingly. This double-click
+                     * only occurs when changing the icon. If the same icon is always used it works as expected.
+                     * My guess is this is because of the outsideClickClosing that the overflow menu does. WHen the
+                     * icon is change it is "outside" of the element for a momemnt and causes a close--that or a re-render that
+                     * is triggered when the icon changes.
+                     */
+                    const button = target.closest('button');
+                    setTimeout(() => {
+                      const expanded = button?.getAttribute('aria-expanded') === 'true';
+                      setOverflowOpen(expanded);
+                    }, 0);
+                  }
+                }}
+                open={overflowOpen}
+                renderIcon={(iconProps) =>
                   overflowOpen ? (
-                    <Close16 fill={white} description={mergedI18n.closeMenu} />
+                    <Close16
+                      {...iconProps}
+                      aria-label={mergedI18n.closeMenu}
+                      description={mergedI18n.closeMenu}
+                    />
                   ) : (
-                    <OverflowMenuVertical16 fill={white} description={mergedI18n.openMenu} />
+                    <OverflowMenuVertical16
+                      {...iconProps}
+                      aria-label={mergedI18n.openMenu}
+                      description={mergedI18n.openMenu}
+                    />
                   )
                 }
               >
