@@ -85,7 +85,7 @@ const HeaderActionGroup = ({ actionItems, i18n, testId }) => {
   return (
     // added extra div here, because HeaderGlobalBar doesn't support refs
     <div ref={overFlowContainerRef} className={`${prefix}--header__global`}>
-      <HeaderGlobalBar data-testid={`${testId}-global-bar`}>
+      <HeaderGlobalBar data-testid={testId}>
         {
           // if we have overflow items and are not showing a header action submenu
           // then render the overflow menu

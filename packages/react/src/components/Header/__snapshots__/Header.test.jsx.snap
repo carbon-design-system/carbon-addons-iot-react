@@ -61,7 +61,7 @@ exports[`Header should render 1`] = `
     >
       <div
         class="bx--header__global"
-        data-testid="header-action-group-global-bar"
+        data-testid="header-action-group"
       >
         <div
           class="bx--header__submenu bx--header-action-btn action-btn__group"

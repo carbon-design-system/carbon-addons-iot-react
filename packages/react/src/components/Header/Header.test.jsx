@@ -96,6 +96,14 @@ describe('Header', () => {
     ],
   };
 
+  it('should be selectable by testId', () => {
+    render(<Header {...HeaderProps} hasSideNav testId="__header__" />);
+    expect(screen.getByTestId('__header__')).toBeDefined();
+    expect(screen.getByTestId('__header__-menu-button')).toBeDefined();
+    expect(screen.getByTestId('__header__-name')).toBeDefined();
+    expect(screen.getByTestId('__header__-action-group')).toBeDefined();
+  });
+
   it('should render', () => {
     const { container } = render(<Header {...HeaderProps} />);
     expect(container).toMatchSnapshot();
