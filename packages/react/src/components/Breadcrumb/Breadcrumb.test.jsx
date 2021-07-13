@@ -70,6 +70,33 @@ describe('Breadcrumb with overflow', () => {
     expect(screen.getByTestId('breadcrumb-test-overflow-menu-item-0')).toBeTruthy();
   });
 
+  it('shows overflowed items completely when there is enough space again', () => {
+    const { container, rerender } = render(
+      <Breadcrumb {...commonProps} hasOverflow>
+        <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+      </Breadcrumb>
+    );
+    expect(container.querySelector('.breadcrumb--overflow')).toBeTruthy();
+
+    Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
+      writable: true,
+      configurable: true,
+      value: 800,
+    });
+
+    rerender(
+      <Breadcrumb {...commonProps} hasOverflow>
+        <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+      </Breadcrumb>
+    );
+
+    expect(container.querySelector('.breadcrumb--overflow')).toBeFalsy();
+  });
+
   describe('has dev console warning(s)', () => {
     const originalDev = window.__DEV__;
     const originalResizeObserver = window.ResizeObserver;

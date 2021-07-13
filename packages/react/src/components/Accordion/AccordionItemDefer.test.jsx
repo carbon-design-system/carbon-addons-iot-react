@@ -56,4 +56,17 @@ describe('AccordionItemDefer', () => {
       screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(1);
   });
+
+  it('triggers callback when heading is clicked', () => {
+    const headingClicked = jest.fn();
+    render(
+      <Accordion>
+        <AccordionItemDefer id="a" title="Title one" onHeadingClick={headingClicked}>
+          <p>This content</p>
+        </AccordionItemDefer>
+      </Accordion>
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Title one' }));
+    expect(headingClicked).toHaveBeenCalled();
+  });
 });

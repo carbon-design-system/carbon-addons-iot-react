@@ -29,7 +29,9 @@ module.exports = {
       lines: 80,
     },
     './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': all90Covered,
+    './src/components/Breadcrumb/Breadcrumb.jsx': all90Covered,
     './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
+    './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
     './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,

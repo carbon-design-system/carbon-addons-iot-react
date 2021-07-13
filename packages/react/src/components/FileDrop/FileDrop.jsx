@@ -35,6 +35,7 @@ const propTypes = {
   dragAndDropLabel: PropTypes.string,
   /** file type either TEXT or BINARY to determine the correct encoding */
   fileType: PropTypes.oneOf(Object.values(FILE_TYPES)),
+  testId: PropTypes.string,
 };
 /* istanbul ignore next */
 const defaultProps = {
@@ -50,6 +51,7 @@ const defaultProps = {
   onError: () => {},
   dragAndDropLabel: 'Drag and drop your file here or ',
   fileType: FILE_TYPES.BINARY,
+  testId: 'file-drop',
 };
 
 /**
@@ -216,6 +218,7 @@ class FileDrop extends React.Component {
       showFiles,
       className,
       dragAndDropLabel,
+      testId,
     } = this.props;
     const { hover } = this.state;
 
@@ -235,7 +238,11 @@ class FileDrop extends React.Component {
           }}
           role="presentation"
         >
-          <button type="button" className={`${iotPrefix}--file-drop__link-button`}>
+          <button
+            data-testid={`${testId}-link-button`}
+            type="button"
+            className={`${iotPrefix}--file-drop__link-button`}
+          >
             {buttonLabel}
           </button>
         </span>
@@ -258,6 +265,7 @@ class FileDrop extends React.Component {
                 <p className="bx--file-filename">{name}</p>
                 <span className="bx--file__state-container">
                   <Filename
+                    data-testid={`${testId}-file-${name}`}
                     status={uploadState}
                     onKeyDown={(evt) => {
                       if (evt.key === 'Enter' || evt.key === 'Space') {
@@ -277,8 +285,10 @@ class FileDrop extends React.Component {
     );
 
     return kind === 'drag-and-drop' ? (
-      <div className={className}>
-        <strong className="bx--label">{title}</strong>
+      <div data-testid={testId} className={className}>
+        <strong data-testid={`${testId}-title`} className="bx--label">
+          {title}
+        </strong>
         <input
           style={{ visibility: 'hidden' }}
           type="file"
@@ -286,6 +296,7 @@ class FileDrop extends React.Component {
           accept={accept}
           multiple={multiple}
           onChange={this.handleChange}
+          data-testid={`${testId}-file-input`}
         />
         <div
           className={`${iotPrefix}--file-drop__text`}
@@ -293,15 +304,24 @@ class FileDrop extends React.Component {
           onDragOver={this.fileDragHover}
           onDragLeave={this.fileDragHover}
           onDrop={this.fileDrop}
+          data-testid={`${testId}-drop-zone`}
         >
           {linkElement}
         </div>
         {showFiles ? fileNameElements : null}
       </div>
     ) : (
-      <div id={id} className="bx--form-item">
-        {title ? <strong className="bx--label">{title}</strong> : null}
-        {description ? <p className="bx--label-description">{description}</p> : null}
+      <div data-testid={testId} id={id} className="bx--form-item">
+        {title ? (
+          <strong data-testid={`${testId}-title`} className="bx--label">
+            {title}
+          </strong>
+        ) : null}
+        {description ? (
+          <p data-testid={`${testId}-description`} className="bx--label-description">
+            {description}
+          </p>
+        ) : null}
         <FileUploaderButton
           labelText={buttonLabel}
           multiple={multiple}
@@ -309,6 +329,7 @@ class FileDrop extends React.Component {
           onChange={this.handleChange}
           disableLabelChanges
           accept={accept}
+          data-testid={`${testId}-uploader-button`}
         />
         {showFiles ? fileNameElements : null}
       </div>
