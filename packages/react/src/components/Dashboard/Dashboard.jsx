@@ -395,6 +395,7 @@ const Dashboard = ({
           isEditable={isEditable}
           breakpoint={breakpoint}
           onBreakpointChange={cachedOnBreakpointChange}
+          testId={`${testId}-grid`}
         >
           {gridContents}
         </DashboardGrid>
