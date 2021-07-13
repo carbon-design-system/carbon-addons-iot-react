@@ -132,13 +132,14 @@
       }
     },
     {
-      "files": ["**/*.test.e2e.{js,jsx}"],
+      "files": ["**/*.test.e2e.{js,jsx}", "cypress/**"],
       "rules": {
         "jest/expect-expect": "off",
         "jest/valid-expect": "off",
         "no-unused-expressions": "off",
         "testing-library/prefer-screen-queries": "off",
-        "import/no-extraneous-dependencies": "off"
+        "import/no-extraneous-dependencies": "off",
+        "global-require": "off"
       }
     }
   ]

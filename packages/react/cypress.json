@@ -2,7 +2,7 @@
   "projectId": "yxfokk",
   "componentFolder": "src",
   "env": {
-    "coverage": false,
+    "coverage": true,
     "failSilently": false
   },
   "fixturesFolder": false,

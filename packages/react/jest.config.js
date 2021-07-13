@@ -14,7 +14,8 @@ module.exports = {
     '!src/components/**/*.test.e2e.jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
-  coverageReporters: ['html', 'text-summary', 'lcov'],
+  coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
+  coverageDirectory: 'jest/coverage',
   coverageThreshold: {
     global: {
       statements: 80,

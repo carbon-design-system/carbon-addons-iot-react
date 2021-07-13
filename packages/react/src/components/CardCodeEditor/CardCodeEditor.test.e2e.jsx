@@ -44,7 +44,7 @@ describe('CardCodeEditor loaded editor test', () => {
       });
   });
 
-  it('intial value is loaded into editor', () => {
+  it('should load intial value into editor', () => {
     cy.viewport(1670, 900);
     mount(
       <CardCodeEditor
@@ -56,7 +56,9 @@ describe('CardCodeEditor loaded editor test', () => {
         initialValue="/* write your code here */"
       />
     );
-
+    // wait for script to load. fails intermittently without
+    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
+    cy.wait(200);
     cy.findByText(/\/\* write your code here \*\//).should('be.visible');
 
     // This component throws a network error with too many calls to the cdn script it loads so adding snapshot to existing instance
