@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button,
@@ -308,8 +308,8 @@ const DateTimePicker = ({
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
 
   // Refs
-  const datePickerRef = React.createRef();
-  const relativeSelect = React.createRef(null);
+  const datePickerRef = useRef(null);
+  const relativeSelect = useRef(null);
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -476,36 +476,31 @@ const DateTimePicker = ({
     setIsExpanded(!isExpanded);
   };
 
-  useEffect(
-    () => {
-      if (
-        datePickerRef.current &&
-        datePickerRef.current.inputField &&
-        datePickerRef.current.toInputField
-      ) {
-        if (focusOnFirstField) {
-          datePickerRef.current.inputField.focus();
-        } else {
-          datePickerRef.current.toInputField.focus();
-        }
+  useEffect(() => {
+    if (
+      datePickerRef.current &&
+      datePickerRef.current.inputField &&
+      datePickerRef.current.toInputField
+    ) {
+      if (focusOnFirstField) {
+        datePickerRef.current.inputField.focus();
+      } else {
+        datePickerRef.current.toInputField.focus();
       }
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [focusOnFirstField]
-  );
+    }
+  }, [focusOnFirstField]);
 
-  const onDatePickerChange = (range) => {
+  const onDatePickerChange = ([start, end]) => {
     const newAbsolute = { ...absoluteValue };
-
-    if (range[1]) {
+    if (end) {
       setFocusOnFirstField(!focusOnFirstField);
-      newAbsolute.start = range[0]; // eslint-disable-line prefer-destructuring
+      newAbsolute.start = start;
       newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
-      newAbsolute.end = range[1]; // eslint-disable-line prefer-destructuring
+      newAbsolute.end = end;
       newAbsolute.endDate = dayjs(newAbsolute.end).format('MM/DD/YYYY');
     }
 
-    newAbsolute.start = range[0]; // eslint-disable-line prefer-destructuring
+    newAbsolute.start = start;
     newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
 
     setAbsoluteValue(newAbsolute);
