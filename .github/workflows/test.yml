@@ -12,6 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Check git version
+        run: |
+          git --version
+
       - uses: dorny/paths-filter@v2
         id: changes
         with:
