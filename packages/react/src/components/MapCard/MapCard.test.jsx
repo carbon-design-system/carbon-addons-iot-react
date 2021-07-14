@@ -51,10 +51,37 @@ describe('MapCards', () => {
         onZoomIn={jest.fn()}
         onZoomOut={jest.fn()}
         settingsContent={settingsContentMock}
+        mapControls={[
+          {
+            hasScroll: true,
+            visibleItemsCount: 4,
+            group: [
+              {
+                icon: Hail32,
+                iconDescription: 'Map scroll hail',
+                onClick: jest.fn(),
+              },
+              {
+                icon: Rain32,
+                iconDescription: 'Map scroll rain',
+                onClick: jest.fn(),
+              },
+              {
+                icon: Sun32,
+                iconDescription: 'Map scroll sun',
+                onClick: jest.fn(),
+              },
+            ],
+          },
+        ]}
       />
     );
 
     expect(screen.getByTestId('MAP_CARD')).toBeDefined();
+    expect(screen.getByTestId('MAP_CARD-map-controls')).toBeDefined();
+    expect(screen.getByTestId('MAP_CARD-zoom-control')).toBeDefined();
+    expect(screen.getByTestId('MAP_CARD-legend')).toBeDefined();
+    expect(screen.getByTestId('MAP_CARD-settings')).toBeDefined();
 
     rerender(
       <MapCard
@@ -65,10 +92,37 @@ describe('MapCards', () => {
         onZoomIn={jest.fn()}
         onZoomOut={jest.fn()}
         settingsContent={settingsContentMock}
+        mapControls={[
+          {
+            hasScroll: true,
+            visibleItemsCount: 4,
+            group: [
+              {
+                icon: Hail32,
+                iconDescription: 'Map scroll hail',
+                onClick: jest.fn(),
+              },
+              {
+                icon: Rain32,
+                iconDescription: 'Map scroll rain',
+                onClick: jest.fn(),
+              },
+              {
+                icon: Sun32,
+                iconDescription: 'Map scroll sun',
+                onClick: jest.fn(),
+              },
+            ],
+          },
+        ]}
       />
     );
 
     expect(screen.getByTestId('map_card')).toBeDefined();
+    expect(screen.getByTestId('map_card-map-controls')).toBeDefined();
+    expect(screen.getByTestId('map_card-zoom-control')).toBeDefined();
+    expect(screen.getByTestId('map_card-legend')).toBeDefined();
+    expect(screen.getByTestId('map_card-settings')).toBeDefined();
   });
 
   it('renders a map inside the card', () => {
