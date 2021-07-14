@@ -14,7 +14,15 @@ jobs:
 
       - name: Check git version
         run: |
-          git --version
+          currentver="$(git version | cut -f3 -d" ")"
+          requiredver="2.22.0"
+          if [ "$(printf '%s\n' "$requiredver" "$currentver" | sort -V | head -n1)" = "$requiredver" ]; then
+            sudo apt-get update
+            sudo apt-get install git
+            echo "A version of git higher or equal to ${requiredver} is requied. Updating"
+          else
+            echo "${currentver} is greater than or equal ${requiredver}"
+          fi
 
       - uses: dorny/paths-filter@v2
         id: changes
@@ -39,13 +47,13 @@ jobs:
           yarn lerna run --stream postinstall
           yarn lerna link
 
-      - name: Run tests, collect coverage
+      - name: Run Jest tests, collect coverage
         if: steps.changes.outputs.react == 'true'
         run: |
           cd packages/react
           yarn test:ci
 
-      - name: Run tests, collect coverage
+      - name: Run Cypress tests, collect coverage
         if: steps.changes.outputs.react == 'true'
         run: |
           cd packages/react
