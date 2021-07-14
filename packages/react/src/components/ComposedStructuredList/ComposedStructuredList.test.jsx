@@ -60,8 +60,8 @@ describe('Structured List', () => {
     );
 
     expect(screen.getByTestId('composed_structured_list')).toBeDefined();
-    expect(screen.getByTestId('composed_structured_list-wrapper')).toBeDefined();
     expect(screen.getByTestId('composed_structured_list-head')).toBeDefined();
+    expect(screen.getByTestId('composed_structured_list-body')).toBeDefined();
     expect(screen.getByTestId('composed_structured_list-row-row-0')).toBeDefined();
 
     rerender(

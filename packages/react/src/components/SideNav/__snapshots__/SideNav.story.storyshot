@@ -76,7 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       >
         <div
           className="bx--header__global"
-          data-testid="header-action-group-global-bar"
+          data-testid="header-action-group"
         >
           <button
             aria-label="user"

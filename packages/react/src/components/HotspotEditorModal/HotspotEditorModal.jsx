@@ -96,6 +96,8 @@ const propTypes = {
     hotspotTypes.TEXT,
     hotspotTypes.DYNAMIC,
   ]),
+  /** value for object-fit property - 'contain' or 'fill' */
+  displayOption: PropTypes.string,
 
   /** Array of selectable color objects for text hotspot font */
   fontColors: PropTypes.arrayOf(ColorPropType),
@@ -172,6 +174,7 @@ const defaultProps = {
   defaultBorderWidth: 0,
   defaultFontSize: 12,
   defaultHotspotType: hotspotTypes.FIXED,
+  displayOption: null,
   fontColors: selectableColors,
   getValidDataItems: undefined,
   hotspotIconFillColors: validThresholdColors,
@@ -235,6 +238,7 @@ const HotspotEditorModal = ({
   defaultBackgroundOpacity,
   defaultFontSize,
   defaultHotspotType,
+  displayOption,
   fontColors,
   getValidDataItems,
   hotspotIconFillColors,
@@ -461,7 +465,8 @@ const HotspotEditorModal = ({
           selectedSourceIdY={dynamicHotspotSourceY}
           onClear={clearDynamicHotspotsSource}
           translateWithId={translateWithId}
-          testId={`${testId}-hotspot-source-picker`}
+          // TODO: pass testId in v3 to override defaults
+          // testId={`${testId}-hotspot-source-picker`}
         />
         {showTooManyHotspotsInfo ? (
           <InlineNotification
@@ -561,7 +566,8 @@ const HotspotEditorModal = ({
 
   return (
     <ComposedModal
-      data-testid={`${testId}-modal`}
+      // TODO: pass testId in v3 to override defaults
+      // testId={testId}
       className={`${iotPrefix}--hotspot-editor-modal`}
       header={{
         label,
@@ -610,6 +616,7 @@ const HotspotEditorModal = ({
                 src={cardConfig.content.src}
                 id={imageId}
                 width={size.width}
+                displayOption={displayOption}
               />
             )}
           </div>
