@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.56...v2.146.0-next.57) (2021-07-14)
+
+
+### Bug Fixes
+
+* **rowactionscell:** fixed rendering of icons by name ([07248ce](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/07248ce067d06b14146f16e3418525f47446101f))
+
+
+
+
+
 # [2.146.0-next.56](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.55...v2.146.0-next.56) (2021-07-14)
 
 **Note:** Version bump only for package ibm-ai-applications
