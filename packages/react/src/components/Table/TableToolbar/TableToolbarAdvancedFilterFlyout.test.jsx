@@ -311,7 +311,7 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
         'multi-select-column': [],
       },
     });
-    userEvent.click(screen.getAllByLabelText('Multi-Select Column')[1]);
+    userEvent.click(screen.getByLabelText('Multi-Select Column'));
     userEvent.click(within(screen.getByTestId('advanced-filter-flyout')).getByText('option-X'));
     userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
     expect(handleApplyFilter).toHaveBeenLastCalledWith({

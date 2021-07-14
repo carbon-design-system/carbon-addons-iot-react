@@ -44,11 +44,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           data-testid="Card-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -149,7 +154,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-35-65"
                   className="bx--tooltip__label"
                   id="hotspot-35-65"
@@ -203,7 +207,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-45-75"
                   className="bx--tooltip__label"
                   id="hotspot-45-75"
@@ -348,11 +351,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           data-testid="Card-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -453,7 +461,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-35-65"
                   className="bx--tooltip__label"
                   id="hotspot-35-65"
@@ -501,7 +508,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-45-25"
                   className="bx--tooltip__label"
                   id="hotspot-45-25"
@@ -553,7 +559,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-45-50"
                   className="bx--tooltip__label"
                   id="hotspot-45-50"
@@ -605,7 +610,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-45-75"
                   className="bx--tooltip__label"
                   id="hotspot-45-75"
@@ -741,11 +745,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           data-testid="Card-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -842,11 +851,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           data-testid="Card-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -943,11 +957,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           data-testid="Card-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -1211,17 +1230,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   role="button"
                 >
                   
-                  <input
-                    accept={Array []}
-                    className="bx--file-input"
-                    id="id15"
-                    multiple={false}
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    tabIndex="-1"
-                    type="file"
-                  />
                 </div>
+                <input
+                  accept={Array []}
+                  className="bx--file-input"
+                  id="id15"
+                  multiple={false}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  tabIndex="-1"
+                  type="file"
+                />
               </label>
             </div>
             <div
@@ -1259,22 +1278,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
               </p>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--tertiary"
                 data-testid="Button"
                 disabled={false}
-                onClick={null}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
                 Add from gallery
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--tertiary"
                 data-testid="Button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
@@ -1368,17 +1397,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   role="button"
                 >
                   
-                  <input
-                    accept={Array []}
-                    className="bx--file-input"
-                    id="id14"
-                    multiple={false}
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    tabIndex="-1"
-                    type="file"
-                  />
                 </div>
+                <input
+                  accept={Array []}
+                  className="bx--file-input"
+                  id="id14"
+                  multiple={false}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  tabIndex="-1"
+                  type="file"
+                />
               </label>
             </div>
             <div
@@ -1416,22 +1445,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
               </p>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--tertiary"
                 data-testid="Button"
                 disabled={false}
-                onClick={null}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
                 Add from gallery
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--tertiary"
                 data-testid="Button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
@@ -1490,11 +1529,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           data-testid="Card-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -1595,7 +1639,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-0-0"
                   className="bx--tooltip__label"
                   id="hotspot-0-0"
@@ -1647,7 +1690,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-0-99.99"
                   className="bx--tooltip__label"
                   id="hotspot-0-99.99"
@@ -1699,7 +1741,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-99.99-99.99"
                   className="bx--tooltip__label"
                   id="hotspot-99.99-99.99"
@@ -1751,7 +1792,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-99.99-0"
                   className="bx--tooltip__label"
                   id="hotspot-99.99-0"

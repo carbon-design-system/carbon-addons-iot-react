@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  unstable_ContextMenuItem as ContextMenuItem,
-  unstable_ContextMenuDivider as ContextMenuDivider,
-  unstable_ContextMenuRadioGroup as ContextMenuRadioGroup,
-  unstable_ContextMenuSelectableItem as ContextMenuSelectableItem,
+  unstable_MenuItem as MenuItem,
+  unstable_MenuDivider as MenuDivider,
+  unstable_MenuRadioGroup as MenuRadioGroup,
+  unstable_MenuSelectableItem as MenuSelectableItem,
 } from 'carbon-components-react';
 import { ChevronDown16, ChevronUp16, Copy16, TrashCan16 } from '@carbon/icons-react';
 import { render, screen } from '@testing-library/react';
@@ -26,40 +26,35 @@ const callbacks = {
   delete: jest.fn(),
 };
 const menuItems = [
-  <ContextMenuSelectableItem
+  <MenuSelectableItem
     key="publish"
     label="Publish"
     initialChecked={false}
     onChange={callbacks.publish}
   />,
-  <ContextMenuDivider key="div-1" />,
-  <ContextMenuItem
-    key="duplicate"
-    renderIcon={Copy16}
-    label="Duplicate"
-    onClick={callbacks.duplicate}
-  />,
-  <ContextMenuDivider key="div-2" />,
-  <ContextMenuItem key="share" label="Share with">
-    <ContextMenuRadioGroup
+  <MenuDivider key="div-1" />,
+  <MenuItem key="duplicate" renderIcon={Copy16} label="Duplicate" onClick={callbacks.duplicate} />,
+  <MenuDivider key="div-2" />,
+  <MenuItem key="share" label="Share with">
+    <MenuRadioGroup
       label="Shared with"
       items={['None', 'Product Team', 'Organization', 'Company']}
       initialSelectedItem="None"
       onChange={callbacks.share}
     />
-  </ContextMenuItem>,
-  <ContextMenuDivider key="div-3" />,
-  <ContextMenuItem key="export" label="Export">
-    <ContextMenuItem label="CSV" onClick={callbacks.csv} />
-    <ContextMenuItem label="JSON" onClick={callbacks.json} />
-  </ContextMenuItem>,
-  <ContextMenuItem
+  </MenuItem>,
+  <MenuDivider key="div-3" />,
+  <MenuItem key="export" label="Export">
+    <MenuItem label="CSV" onClick={callbacks.csv} />
+    <MenuItem label="JSON" onClick={callbacks.json} />
+  </MenuItem>,
+  <MenuItem
     key="disabled"
     label={<span title="You must have proper credentials to use this option.">Disabled</span>}
     disabled
   />,
-  <ContextMenuDivider key="div-4" />,
-  <ContextMenuItem
+  <MenuDivider key="div-4" />,
+  <MenuItem
     key="delete"
     label="Delete"
     renderIcon={TrashCan16}
@@ -143,14 +138,10 @@ describe('MenuButton', () => {
   it('should be open the menu when clicking the button in single button mode', () => {
     const { container } = render(<MenuButton label="Create">{menuItems}</MenuButton>);
 
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByRole('button', { name: 'Create' }));
     expect(screen.getByText('Publish')).toBeVisible();
-    expect(container.querySelector(`.${prefix}--context-menu`)).toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
   });
 
   it('should be open the menu when clicking the secondary button split button mode', () => {
@@ -160,14 +151,10 @@ describe('MenuButton', () => {
       </MenuButton>
     );
 
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByLabelText('open menu button'));
     expect(screen.getByText('Publish')).toBeVisible();
-    expect(container.querySelector(`.${prefix}--context-menu`)).toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
   });
 
   it('should not open when clicking the primary action of a split button', () => {
@@ -177,14 +164,10 @@ describe('MenuButton', () => {
       </MenuButton>
     );
 
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByRole('button', { name: 'Create' }));
     expect(callbacks.primary).toHaveBeenCalled();
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
   });
 
   it('should close the menu when clicking a child item with an onClick handler', () => {
@@ -194,19 +177,13 @@ describe('MenuButton', () => {
       </MenuButton>
     );
 
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByLabelText('open menu button'));
 
-    expect(container.querySelector(`.${prefix}--context-menu`)).toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByTitle('Duplicate'));
     expect(callbacks.duplicate).toHaveBeenCalled();
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
   });
 
   it('should show a warning when using an icon without an icon description', () => {

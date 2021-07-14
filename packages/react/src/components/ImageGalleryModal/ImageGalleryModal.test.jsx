@@ -170,8 +170,8 @@ describe('ImageGalleryModal', () => {
 
     userEvent.click(screen.getAllByRole('button', { name: 'Delete' })[0]);
     expect(onDelete).not.toHaveBeenCalled();
-    expect(screen.queryByText(/Are you sure you want/)).toBeInTheDocument();
-    userEvent.click(screen.getAllByRole('button', { name: 'Delete' })[0]);
+    expect(screen.queryByText(/Are you sure you want/)).toBeVisible();
+    userEvent.click(screen.getAllByRole('button', { name: /delete/i })[0]);
     expect(onDelete).toHaveBeenCalled();
   });
 });
