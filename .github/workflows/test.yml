@@ -6,23 +6,10 @@ jobs:
   test-react:
     name: Test React
     runs-on: ubuntu-latest
-    container: cypress/browsers:node14.16.0-chrome89-ff86
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Check git version
-        run: |
-          currentver="$(git --version)"
-          requiredver="2.22.0"
-          if [ "$(printf '%s\n' "$requiredver" "$currentver" | sort -V | head -n1)" = "$requiredver" ]; then
-            apt-get update
-            apt-get install git
-            echo "A version of git higher or equal to ${requiredver} is requied. Updating"
-          else
-            echo "${currentver} is greater than or equal ${requiredver}"
-          fi
 
       - uses: dorny/paths-filter@v2
         id: changes
