@@ -9,6 +9,20 @@ export const simpleListItems = [
   new AIListItem({ value: 'Spain', isSelectable: true }),
 ];
 
+export const largeListItems = [
+  new AIListItem({ value: 'Canada', size: 'lg', isDraggable: true, isSelectable: true }),
+  new AIListItem({ value: 'Brazil', size: 'lg', isDraggable: true, isSelectable: true }),
+  new AIListItem({ value: 'Columbia', size: 'lg', isDraggable: true, isSelectable: true }),
+  new AIListItem({
+    value: 'United States of America',
+    size: 'lg',
+    isDraggable: true,
+    isSelectable: true,
+  }),
+  new AIListItem({ value: 'Uruguay', size: 'lg', isDraggable: true, isSelectable: true }),
+  new AIListItem({ value: 'Spain', size: 'lg', isDraggable: true, isSelectable: true }),
+];
+
 export const nestedDraggableListItems = [
   new AIListItem({
     value: 'Canada',

@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SelectionType } from '../ai-list.component';
 
 @Component({
   selector: 'ai-list-item-wrapper',
   template: `
-    <div class="iot--list-item-parent">
+    <div data-floating-menu-container="true" class="iot--list-item-parent">
       <div
         *ngIf="draggable && !disabled; else listItem"
         class="iot--list-item-editable--drag-container"
@@ -14,7 +13,11 @@ import { SelectionType } from '../ai-list.component';
         (dragend)="dragEnd.emit()"
         (dragover)="onDragOver($event)"
       >
-        <div class="iot--list-item-editable--drop-targets" *ngIf="isDragging">
+        <div
+          class="iot--list-item-editable--drop-targets"
+          [ngClass]="{ 'iot--list-item__large': size === 'lg' }"
+          *ngIf="isDragging"
+        >
           <div
             aiListTarget
             targetPosition="nested"
@@ -46,7 +49,7 @@ export class AIListItemWrapperComponent {
    */
   @Input() isSelectable = false;
 
-  @Input() selectionType: SelectionType;
+  @Input() size: 'md' | 'lg' = 'md';
 
   @Input() disabled = false;
 

@@ -9,17 +9,17 @@ export class AIListItem {
   /**
    * Unique identifier for the list item.
    */
-  id?: string;
+  id = `list-item-${AIListItem.listItemCount++}`;
 
   /**
    * Primary content to be displayed in the list item.
    */
-  value?: string;
+  value = '';
 
   /**
    * Indicates whether or not a list item's displayed value should be bolded.
    */
-  isCategory?: boolean;
+  isCategory = false;
 
   /**
    * Secondary value to be displayed in the list item.
@@ -37,49 +37,39 @@ export class AIListItem {
    * If the list item has child list items, this indicates whether or not it's
    * direct children are displayed.
    */
-  expanded?: boolean;
+  expanded = false;
 
   /**
    * Indicates whether or not the list item can be selected.
    */
-  isSelectable?: boolean;
+  isSelectable = false;
 
   /**
    * Indicates whether or not the item is selected.
    */
-  selected?: boolean;
+  selected = false;
 
-  disabled?: boolean;
+  disabled = false;
 
   /**
    * Indicates whether or not the list item is in an indeterminate state.
    */
-  indeterminate?: boolean;
+  indeterminate = false;
 
   /**
    * Optional nested items.
    */
-  items?: AIListItem[];
+  items: AIListItem[] = [];
+
+  size: 'md' | 'lg' = 'md';
 
   /**
    * Indicates whether or not the item can be dragged into a different position.
    */
-  isDraggable?: boolean;
+  isDraggable = false;
 
   constructor(rawData?: any) {
-    const defaults = {
-      id: `list-item-${AIListItem.listItemCount++}`,
-      value: '',
-      disabled: false,
-      expanded: false,
-      isSelectable: false,
-      indeterminate: false,
-      selected: false,
-      isDraggable: false,
-      items: [],
-    };
-
-    Object.assign(this, defaults, rawData);
+    Object.assign(this, {}, rawData);
   }
 
   includes(searchString: string) {

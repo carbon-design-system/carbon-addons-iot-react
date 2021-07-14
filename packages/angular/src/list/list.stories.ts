@@ -2,10 +2,9 @@ import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { withKnobs } from '@storybook/addon-knobs';
 
 import { ListModule } from './list.module';
-import { simpleListItems } from './sample-data';
 import { DialogModule, IconModule, PlaceholderModule } from 'carbon-components-angular';
 import { AppHierarchyList } from './stories/app-hierarchy-list.component';
-import { nestedDraggableListItems } from './sample-data';
+import { simpleListItems, nestedDraggableListItems, largeListItems } from './sample-data';
 
 storiesOf('Components/List', module)
   .addDecorator(
@@ -52,5 +51,20 @@ storiesOf('Components/List', module)
     `,
     props: {
       items: nestedDraggableListItems,
+    },
+  }))
+  .add('With large items', () => ({
+    template: `
+      <ai-list
+        [items]="items"
+        selectionType="single"
+        title="City Populations"
+        [hasSearch]="true"
+        [itemsDraggable]="true"
+      >
+      </ai-list>
+    `,
+    props: {
+      items: largeListItems,
     },
   }));

@@ -8,18 +8,26 @@ import { IconService } from 'carbon-components-angular';
   selector: 'ai-list-item',
   template: `
     <div
+      role="button"
+      tabindex="0"
       class="iot--list-item"
       [ngClass]="{
         'iot--list-item__selectable': item.isSelectable,
         'iot--list-item__selected': item.selected,
-        'iot--list-item-editable': item.isDraggable
+        'iot--list-item-editable': item.isDraggable,
+        'iot--list-item__large': item.size === 'lg'
       }"
       (click)="selectionType === 'single' ? handleSelect(!item.selected) : null"
     >
       <div class="iot--list-item-editable--drag-preview">
         {{ item.value }}
       </div>
-      <svg *ngIf="draggable" ibmIcon="draggable" size="16"></svg>
+      <svg
+        *ngIf="draggable && item.isDraggable"
+        class="iot--list-item--handle"
+        ibmIcon="draggable"
+        size="16"
+      ></svg>
       <div
         *ngIf="nestingLevel > 0"
         class="iot--list-item--nesting-offset"
@@ -35,7 +43,13 @@ import { IconService } from 'carbon-components-angular';
         <svg *ngIf="!item.expanded" ibmIcon="chevron--down" size="16"></svg>
         <svg *ngIf="item.expanded" ibmIcon="chevron--up" size="16"></svg>
       </div>
-      <div class="iot--list-item--content">
+      <div
+        class="iot--list-item--content"
+        [ngClass]="{
+          'iot--list-item--content__selected': item.selected,
+          'iot--list-item--content__large': item.size === 'lg'
+        }"
+      >
         <div
           *ngIf="item.isSelectable && selectionType === 'multi'"
           class="iot--list-item--content--icon iot--list-item--content--icon__left"
@@ -48,8 +62,14 @@ import { IconService } from 'carbon-components-angular';
           >
           </ibm-checkbox>
         </div>
-        <div class="iot--list-item--content--values">
-          <div class="iot--list-item--content--values--main">
+        <div
+          class="iot--list-item--content--values"
+          [ngClass]="{ 'iot--list-item--content--values__large': item.size === 'lg' }"
+        >
+          <div
+            class="iot--list-item--content--values--main"
+            [ngClass]="{ 'iot--list-item--content--values--main__large': item.size === 'lg' }"
+          >
             <div
               class="iot--list-item--content--values--value"
               [ngClass]="{
@@ -61,10 +81,11 @@ import { IconService } from 'carbon-components-angular';
               {{ item.value }}
             </div>
             <div
-              *ngIf="item.secondaryValue !== null"
+              *ngIf="item.secondaryValue !== undefined"
               class="iot--list-item--content--values--value"
               [ngClass]="{
-                'iot--list-item--content--values__disabled': item.disabled
+                'iot--list-item--content--values__disabled': item.disabled,
+                'iot--list-item--content--values--value__large': item.size === 'lg'
               }"
             >
               {{ item.secondaryValue }}

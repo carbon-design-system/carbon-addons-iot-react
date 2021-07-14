@@ -55,6 +55,7 @@ export enum SelectionType {
         <ai-list-item-wrapper
           [draggable]="itemsDraggable && data.item.isDraggable"
           [disabled]="data.item.disabled"
+          [size]="data.item.size"
           [isDragging]="draggingState.isDragging"
           (dragStart)="
             setDraggingState({ isDragging: true, item: data.item, parent: data.parentItem })
@@ -171,7 +172,7 @@ export class AIListComponent implements OnInit {
         this.draggingState.parent.removeItem(this.draggingState.item);
       }
 
-      // Place `draggedItem` as a child of `recievingItem` at the given `index`.
+      // Place `draggedItem` as a child of `receivingItem` at the given `index`.
       // If `receiver` is null it means put `draggedItem` as a top level list item.
       if (receiver === null) {
         this.items.splice(index, 0, this.draggingState.item);

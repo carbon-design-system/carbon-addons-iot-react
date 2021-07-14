@@ -24,7 +24,9 @@ import { AIListItem } from '../list-item/ai-list-item.class';
     <ng-template #rowActions let-data>
       <ibm-overflow-menu placement="bottom" [flip]="true" [offset]="{ x: 4, y: -4 }">
         <ibm-overflow-menu-option (click)="data.select()">Select</ibm-overflow-menu-option>
-        <ibm-overflow-menu-option disabled="true" [divider]="true">Disabled</ibm-overflow-menu-option>
+        <ibm-overflow-menu-option disabled="true" [divider]="true">
+          Disabled
+        </ibm-overflow-menu-option>
         <ibm-overflow-menu-option type="danger" (click)="data.selectDanger()">
           Danger option
         </ibm-overflow-menu-option>
@@ -41,10 +43,10 @@ export class AppHierarchyList implements AfterViewInit {
 
   @ViewChild('rowActions') rowActions: TemplateRef<any>;
 
-  addRowActionsToAllItems(items: AIListItem[]) {
+  addRowActions(items: AIListItem[]) {
     items.forEach((item: AIListItem) => {
       if (item.hasChildren()) {
-        this.addRowActionsToAllItems(item.items);
+        this.addRowActions(item.items);
       }
 
       if (!item.isCategory) {
@@ -64,6 +66,6 @@ export class AppHierarchyList implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.addRowActionsToAllItems(this.items);
+    this.addRowActions(this.items);
   }
 }
