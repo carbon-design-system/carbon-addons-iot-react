@@ -33,6 +33,7 @@ module.exports = {
     './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
     './src/components/Table/TableBody/TableBodyRow/TableBodyRow.jsx': all90Covered,
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
+    './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,

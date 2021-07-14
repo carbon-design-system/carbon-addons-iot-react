@@ -73,12 +73,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div>
           <div
             className="bx--content-switcher"
+            data-testid="hotspot-editor-modal-content-switcher"
             onChange={[Function]}
             role="tablist"
           >
             <button
               aria-selected={true}
               className="bx--content-switcher-btn bx--content-switcher--selected"
+              data-testid="hotspot-editor-modal-hotspots-switch"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="tab"
@@ -94,6 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <button
               aria-selected={false}
               className="bx--content-switcher-btn"
+              data-testid="hotspot-editor-modal-labels-switch"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="tab"
@@ -541,12 +544,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div>
           <div
             className="bx--content-switcher"
+            data-testid="hotspot-editor-modal-content-switcher"
             onChange={[Function]}
             role="tablist"
           >
             <button
               aria-selected={true}
               className="bx--content-switcher-btn bx--content-switcher--selected"
+              data-testid="hotspot-editor-modal-hotspots-switch"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="tab"
@@ -562,6 +567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <button
               aria-selected={false}
               className="bx--content-switcher-btn"
+              data-testid="hotspot-editor-modal-labels-switch"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="tab"
@@ -1009,12 +1015,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div>
           <div
             className="bx--content-switcher"
+            data-testid="hotspot-editor-modal-content-switcher"
             onChange={[Function]}
             role="tablist"
           >
             <button
               aria-selected={true}
               className="bx--content-switcher-btn bx--content-switcher--selected"
+              data-testid="hotspot-editor-modal-hotspots-switch"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="tab"
@@ -1030,6 +1038,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <button
               aria-selected={false}
               className="bx--content-switcher-btn"
+              data-testid="hotspot-editor-modal-labels-switch"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="tab"
@@ -1221,6 +1230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </div>
           <div
             className="bx--inline-notification bx--inline-notification--info"
+            data-testid="hotspot-editor-modal-too-many-hotspots-notification"
             kind="info"
             role="alert"
           >
@@ -1290,6 +1300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <div
             aria-live="assertive"
             className="bx--inline-loading iot--hotspot-editor-modal__dynamic-loading"
+            data-testid="hotspot-editor-modal-loading-hotspots"
           >
             <div
               className="bx--inline-loading__animation"
@@ -1447,12 +1458,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div>
           <div
             className="bx--content-switcher"
+            data-testid="hotspot-editor-modal-content-switcher"
             onChange={[Function]}
             role="tablist"
           >
             <button
               aria-selected={true}
               className="bx--content-switcher-btn bx--content-switcher--selected"
+              data-testid="hotspot-editor-modal-hotspots-switch"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="tab"
@@ -1468,6 +1481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <button
               aria-selected={false}
               className="bx--content-switcher-btn"
+              data-testid="hotspot-editor-modal-labels-switch"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="tab"

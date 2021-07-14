@@ -5,6 +5,7 @@ exports[`Header should render 1`] = `
   <header
     aria-label="main header"
     class="bx--header custom-class-name"
+    data-testid="header"
   >
     <a
       class="bx--skip-to-content"
@@ -16,6 +17,7 @@ exports[`Header should render 1`] = `
     <button
       aria-label="Open menu"
       class="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+      data-testid="header-menu-button"
       title="Open menu"
       type="button"
     >
@@ -36,6 +38,7 @@ exports[`Header should render 1`] = `
     </button>
     <a
       class="bx--header__name"
+      data-testid="header-name"
       href="http://localhost:8989"
     >
       <span
@@ -58,6 +61,7 @@ exports[`Header should render 1`] = `
     >
       <div
         class="bx--header__global"
+        data-testid="header-action-group"
       >
         <div
           class="bx--header__submenu bx--header-action-btn action-btn__group"
