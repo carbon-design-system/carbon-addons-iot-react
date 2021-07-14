@@ -14,6 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
   >
     <div
       className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light iot--flyout-menu__open"
+      data-testid="flyout-menu-container"
       style={
         Object {
           "--tooltip-visibility": "hidden",
@@ -199,6 +200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
   >
     <div
       className="iot--flyout-menu iot--flyout-menu__bottom"
+      data-testid="flyout-menu-container"
       style={
         Object {
           "--tooltip-visibility": "hidden",
@@ -282,6 +284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
   >
     <div
       className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
+      data-testid="flyout-menu-container"
       style={
         Object {
           "--tooltip-visibility": "hidden",
@@ -386,6 +389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       >
         <div
           className="iot--flyout-menu iot--flyout-menu__left"
+          data-testid="flyout-menu-container"
           style={
             Object {
               "--tooltip-visibility": "hidden",
@@ -464,6 +468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       >
         <div
           className="iot--flyout-menu iot--flyout-menu__top"
+          data-testid="flyout-menu-container"
           style={
             Object {
               "--tooltip-visibility": "hidden",
@@ -542,6 +547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       >
         <div
           className="iot--flyout-menu iot--flyout-menu__right"
+          data-testid="flyout-menu-container"
           style={
             Object {
               "--tooltip-visibility": "hidden",
@@ -630,6 +636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       >
         <div
           className="iot--flyout-menu iot--flyout-menu__left"
+          data-testid="flyout-menu-container"
           style={
             Object {
               "--tooltip-visibility": "hidden",
@@ -708,6 +715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       >
         <div
           className="iot--flyout-menu iot--flyout-menu__top"
+          data-testid="flyout-menu-container"
           style={
             Object {
               "--tooltip-visibility": "hidden",
@@ -786,6 +794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       >
         <div
           className="iot--flyout-menu iot--flyout-menu__right"
+          data-testid="flyout-menu-container"
           style={
             Object {
               "--tooltip-visibility": "hidden",
@@ -874,6 +883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       >
         <div
           className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="flyout-menu-container"
           style={
             Object {
               "--tooltip-visibility": "hidden",
@@ -952,6 +962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       >
         <div
           className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="flyout-menu-container"
           style={
             Object {
               "--tooltip-visibility": "hidden",
@@ -1030,6 +1041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       >
         <div
           className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="flyout-menu-container"
           style={
             Object {
               "--tooltip-visibility": "hidden",

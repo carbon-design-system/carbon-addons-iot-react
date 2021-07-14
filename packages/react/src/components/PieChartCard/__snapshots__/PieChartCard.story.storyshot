@@ -182,6 +182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   </button>
                   <div
                     className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
+                    data-testid="flyout-menu-container"
                     style={
                       Object {
                         "--tooltip-visibility": "hidden",

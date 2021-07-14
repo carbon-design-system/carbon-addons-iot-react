@@ -13,6 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
     }
   >
     <div
+      data-testid="dashboard-grid"
       style={
         Object {
           "flex": 1,
@@ -580,6 +581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
     }
   >
     <div
+      data-testid="dashboard-grid"
       style={
         Object {
           "flex": 1,
@@ -4178,6 +4180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
     }
   >
     <div
+      data-testid="dashboard-grid"
       style={
         Object {
           "flex": 1,
@@ -4432,6 +4435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         Sample sidebar
       </div>
       <div
+        data-testid="dashboard-grid"
         style={
           Object {
             "flex": 1,
@@ -4671,6 +4675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
     }
   >
     <div
+      data-testid="dashboard-grid"
       style={
         Object {
           "flex": 1,
@@ -4909,6 +4914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
     }
   >
     <div
+      data-testid="dashboard-grid"
       style={
         Object {
           "flex": 1,

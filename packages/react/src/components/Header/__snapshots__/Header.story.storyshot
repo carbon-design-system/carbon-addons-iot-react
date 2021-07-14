@@ -15,6 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
     <header
       aria-label="main header"
       className="bx--header iot--header--story-test-class"
+      data-testid="header"
     >
       <a
         className="bx--skip-to-content"
@@ -26,6 +27,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       <button
         aria-label="Open the menu"
         className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+        data-testid="header-menu-button"
         onClick={null}
         title="Open the menu"
         type="button"
@@ -47,6 +49,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       </button>
       <a
         className="bx--header__name"
+        data-testid="header-name"
         href="http://localhost:8989"
       >
         <span
@@ -69,6 +72,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       >
         <div
           className="bx--header__global"
+          data-testid="header-action-group"
         >
           <button
             aria-describedby={null}
@@ -403,6 +407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
   <header
     aria-label="main header"
     className="bx--header iot--header--story-test-class"
+    data-testid="header"
   >
     <a
       className="bx--skip-to-content"
@@ -414,6 +419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
     <button
       aria-label="Open the menu"
       className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+      data-testid="header-menu-button"
       onClick={null}
       title="Open the menu"
       type="button"
@@ -435,6 +441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
     </button>
     <a
       className="bx--header__name"
+      data-testid="header-name"
       href="http://localhost:8989"
     >
       <span
@@ -457,6 +464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
     >
       <div
         className="bx--header__global"
+        data-testid="header-action-group"
       >
         <button
           aria-describedby={null}
@@ -519,6 +527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
     <header
       aria-label="main header"
       className="bx--header iot--header--story-test-class"
+      data-testid="header"
     >
       <a
         className="bx--skip-to-content"
@@ -530,6 +539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       <button
         aria-label="Open menu"
         className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+        data-testid="header-menu-button"
         onClick={null}
         title="Open menu"
         type="button"
@@ -551,6 +561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       </button>
       <a
         className="bx--header__name"
+        data-testid="header-name"
         href="http://localhost:8989"
       >
         <span
@@ -573,6 +584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       >
         <div
           className="bx--header__global"
+          data-testid="header-action-group"
         >
           <div
             className="bx--header__submenu bx--header-action-btn action-btn__group"
@@ -694,6 +706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
     <header
       aria-label="main header"
       className="bx--header custom-class-name"
+      data-testid="header"
     >
       <a
         className="bx--skip-to-content"
@@ -705,6 +718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       <button
         aria-label="Open menu"
         className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+        data-testid="header-menu-button"
         onClick={null}
         title="Open menu"
         type="button"
@@ -726,6 +740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       </button>
       <a
         className="bx--header__name"
+        data-testid="header-name"
         href="http://localhost:8989"
       >
         <span
@@ -753,6 +768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       >
         <div
           className="bx--header__global"
+          data-testid="header-action-group"
         >
           <div
             className="bx--header__submenu bx--header-action-btn action-btn__group"
@@ -874,6 +890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
     <header
       aria-label="main header"
       className="bx--header iot--header--story-test-class"
+      data-testid="header"
     >
       <a
         className="bx--skip-to-content"
@@ -885,6 +902,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       <button
         aria-label="Open menu"
         className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+        data-testid="header-menu-button"
         onClick={null}
         title="Open menu"
         type="button"
@@ -906,6 +924,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       </button>
       <a
         className="bx--header__name"
+        data-testid="header-name"
         href="http://localhost:8989"
       >
         <span
@@ -955,6 +974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       >
         <div
           className="bx--header__global"
+          data-testid="header-action-group"
         >
           <div
             className="bx--header__submenu bx--header-action-btn action-btn__group"
@@ -1076,6 +1096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
     <header
       aria-label="main header"
       className="bx--header custom-class-name"
+      data-testid="header"
     >
       <a
         className="bx--skip-to-content"
@@ -1087,6 +1108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       <button
         aria-label="Open the menu"
         className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+        data-testid="header-menu-button"
         onClick={null}
         title="Open the menu"
         type="button"
@@ -1108,6 +1130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       </button>
       <a
         className="bx--header__name"
+        data-testid="header-name"
         href="http://localhost:8989"
       >
         <span
@@ -1135,6 +1158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       >
         <div
           className="bx--header__global"
+          data-testid="header-action-group"
         >
           <button
             aria-describedby={null}

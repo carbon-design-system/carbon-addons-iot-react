@@ -30,7 +30,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
     <div
       className="iot--filtertags-container iot--filtertags-container__wrap"
       data-testid="filter-tag-container"
-      i18n={Object {}}
       id="filter-tag-container"
       onChange={null}
     >
@@ -202,7 +201,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
   <div
     className="iot--filtertags-container"
     data-testid="filter-tag-container"
-    i18n={Object {}}
     id="filter-tag-container"
     onChange={null}
   >

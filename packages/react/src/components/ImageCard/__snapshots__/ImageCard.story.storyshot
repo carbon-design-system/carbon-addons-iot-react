@@ -1209,6 +1209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         >
           <div
             className="iot--image-uploader"
+            data-testid="Card-image-uploader"
           >
             <div
               className="bx--file"
@@ -1218,6 +1219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             >
               <label
                 className="bx--file-browse-btn"
+                data-testid="Card-image-uploader-file-drop-container"
                 htmlFor="id15"
                 onKeyDown={[Function]}
                 size="field"
@@ -1374,6 +1376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         >
           <div
             className="iot--image-uploader"
+            data-testid="Card-image-uploader"
           >
             <div
               className="bx--file"
@@ -1383,6 +1386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
             >
               <label
                 className="bx--file-browse-btn"
+                data-testid="Card-image-uploader-file-drop-container"
                 htmlFor="id14"
                 onKeyDown={[Function]}
                 size="field"

@@ -13,9 +13,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="Hero__StyledHero-nej8yx-0 fTphDS"
+      data-testid="hero"
     >
       <p
         className="bx--skeleton__text"
+        data-testid="hero-loading"
         style={
           Object {
             "width": "30%",
@@ -40,12 +42,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="Hero__StyledHero-nej8yx-0 fTphDS"
+      data-testid="hero"
     >
       <div
         className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
       >
         <div
           className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+          data-testid="hero-title"
         >
           Explore
         </div>
@@ -68,6 +72,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="Hero__StyledHero-nej8yx-0 fTphDS"
+      data-testid="hero"
     >
       <div
         className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
@@ -119,6 +124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       >
         <div
           className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+          data-testid="hero-title"
         >
           Explore
         </div>
@@ -138,6 +144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <p
         className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
+        data-testid="hero-description"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut auctor tortor, et condimentum dolor. Pellentesque ac justo nec dui semper bibendum. Sed mollis euismod nisi nec dapibus. Vestibulum vehicula tristique mi facilisis aliquet. Sed lacinia nisi eget dolor suscipit convallis
       </p>
@@ -159,6 +166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="Hero__StyledHero-nej8yx-0 fTphDS"
+      data-testid="hero"
     >
       <div
         className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
@@ -220,6 +228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       >
         <div
           className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+          data-testid="hero-title"
         >
           Explore
         </div>
@@ -239,6 +248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <p
         className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
+        data-testid="hero-description"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut auctor tortor, et condimentum dolor. Pellentesque ac justo nec dui semper bibendum. Sed mollis euismod nisi nec dapibus. Vestibulum vehicula tristique mi facilisis aliquet. Sed lacinia nisi eget dolor suscipit convallis
       </p>
@@ -260,6 +270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="Hero__StyledHero-nej8yx-0 fTphDS"
+      data-testid="hero"
     >
       <div
         className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
@@ -311,6 +322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       >
         <div
           className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+          data-testid="hero-title"
         >
           Explore
         </div>
@@ -331,6 +343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           aria-label="Close"
           className="bx--modal-close"
           data-modal-close={true}
+          data-testid="hero-close-button"
           onClick={[Function]}
           type="button"
         >
@@ -353,6 +366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <p
         className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
+        data-testid="hero-description"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut auctor tortor, et condimentum dolor. Pellentesque ac justo nec dui semper bibendum. Sed mollis euismod nisi nec dapibus. Vestibulum vehicula tristique mi facilisis aliquet. Sed lacinia nisi eget dolor suscipit convallis
       </p>
@@ -374,18 +388,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="Hero__StyledHero-nej8yx-0 fTphDS"
+      data-testid="hero"
     >
       <div
         className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
       >
         <div
           className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+          data-testid="hero-title"
         >
           Explore
         </div>
       </div>
       <p
         className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
+        data-testid="hero-description"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut auctor tortor, et condimentum dolor. Pellentesque ac justo nec dui semper bibendum. Sed mollis euismod nisi nec dapibus. Vestibulum vehicula tristique mi facilisis aliquet. Sed lacinia nisi eget dolor suscipit convallis
       </p>
@@ -407,12 +424,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="Hero__StyledHero-nej8yx-0 fTphDS"
+      data-testid="hero"
     >
       <div
         className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
       >
         <div
           className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+          data-testid="hero-title"
         >
           Explore
         </div>
@@ -467,6 +486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <p
         className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
+        data-testid="hero-description"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut auctor tortor, et condimentum dolor. Pellentesque ac justo nec dui semper bibendum. Sed mollis euismod nisi nec dapibus. Vestibulum vehicula tristique mi facilisis aliquet. Sed lacinia nisi eget dolor suscipit convallis
       </p>
@@ -488,6 +508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="Hero__StyledHero-nej8yx-0 fTphDS"
+      data-testid="hero"
     >
       <div
         className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
@@ -539,6 +560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       >
         <div
           className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+          data-testid="hero-title"
         >
           Explore
           <div
@@ -594,6 +616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <p
         className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
+        data-testid="hero-description"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut auctor tortor, et condimentum dolor. Pellentesque ac justo nec dui semper bibendum. Sed mollis euismod nisi nec dapibus. Vestibulum vehicula tristique mi facilisis aliquet. Sed lacinia nisi eget dolor suscipit convallis
       </p>
@@ -615,6 +638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="Hero__StyledHero-nej8yx-0 fTphDS"
+      data-testid="hero"
     >
       <div
         className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
@@ -666,6 +690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       >
         <div
           className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+          data-testid="hero-title"
         >
           Explore
           <div
@@ -721,6 +746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <p
         className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
+        data-testid="hero-description"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut auctor tortor, et condimentum dolor. Pellentesque ac justo nec dui semper bibendum. Sed mollis euismod nisi nec dapibus. Vestibulum vehicula tristique mi facilisis aliquet. Sed lacinia nisi eget dolor suscipit convallis
       </p>

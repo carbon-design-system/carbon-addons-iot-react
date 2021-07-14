@@ -59,6 +59,8 @@ export const DashboardGridPropTypes = {
   onResizeStop: PropTypes.func,
   /** Callback for when a card has been resized by drag */
   onCardSizeChange: PropTypes.func,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -70,6 +72,7 @@ const defaultProps = {
   onBreakpointChange: null,
   onResizeStop: null,
   onCardSizeChange: null,
+  testId: 'dashboard-grid',
 };
 
 const getClosestMatchingSizes = ({ sortedSizes, value, dimension }) => {
@@ -201,6 +204,7 @@ const DashboardGrid = ({
   onBreakpointChange,
   onCardSizeChange,
   onResizeStop: onResizeStopCallback,
+  testId,
   ...others
 }) => {
   const gridRef = useResize(useRef(null));
@@ -309,7 +313,7 @@ const DashboardGrid = ({
   };
 
   return (
-    <div style={{ flex: 1 }} ref={gridRef}>
+    <div data-testid={testId} style={{ flex: 1 }} ref={gridRef}>
       <GridLayout
         className={classnames(`${iotPrefix}--dashboard-grid`, {
           // Stop the initial animation unless we need to support editing drag-and-drop

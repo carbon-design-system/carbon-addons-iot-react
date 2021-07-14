@@ -4831,6 +4831,7 @@ Map {
       "onData": [Function],
       "onError": [Function],
       "showFiles": true,
+      "testId": "file-drop",
       "title": null,
     },
     "propTypes": Object {
@@ -4883,6 +4884,9 @@ Map {
       },
       "showFiles": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "string",
@@ -6858,6 +6862,7 @@ Map {
       "light": false,
       "onChange": [Function],
       "selectedItem": null,
+      "testId": "icon-dropdown",
       "titleText": "",
       "translateWithId": undefined,
       "type": "default",
@@ -6988,6 +6993,9 @@ Map {
         ],
         "type": "shape",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "titleText": Object {
         "args": Array [
           Array [
@@ -7021,7 +7029,7 @@ Map {
       "className": "",
       "icon": "",
       "secondaryAction": null,
-      "testID": "EmptyState",
+      "testId": "EmptyState",
     },
     "propTypes": Object {
       "action": Object {
@@ -7101,7 +7109,8 @@ Map {
         ],
         "type": "shape",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "title": Object {
@@ -7130,6 +7139,7 @@ Map {
       "onDelete": null,
       "searchPlaceHolderText": "Search image by file name",
       "searchProperty": "id",
+      "testId": "ComposedModal",
     },
     "propTypes": Object {
       "children": Object {
@@ -7481,6 +7491,9 @@ Map {
       "rightContentBreadcrumb": Object {
         "type": "node",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "type": "node",
       },
@@ -7589,6 +7602,7 @@ Map {
       "prefix": "IBM",
       "skipto": "#main-content",
       "subtitle": null,
+      "testId": "header",
       "url": "#",
     },
     "propTypes": Object {
@@ -7713,6 +7727,9 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "url": Object {
         "type": "string",
@@ -9378,6 +9395,7 @@ Map {
         "sm",
         "xs",
       ],
+      "testId": "dashboard-grid",
     },
     "propTypes": Object {
       "breakpoint": Object {
@@ -9603,6 +9621,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -14603,6 +14624,7 @@ Map {
       "onBrowseClick": null,
       "onUpload": [Function],
       "renderIconByName": [Function],
+      "testId": "Card",
       "validateUploadedImage": null,
     },
     "propTypes": Object {
@@ -19768,6 +19790,7 @@ Map {
       "id": "filter-tag-container",
       "onChange": null,
       "tagContainer": null,
+      "testId": "filter-tags",
     },
     "propTypes": Object {
       "children": Object {
@@ -19788,6 +19811,9 @@ Map {
       },
       "tagContainer": Object {
         "type": "elementType",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -19937,7 +19963,7 @@ Map {
       "primaryInputId": undefined,
       "showDeleteButton": true,
       "showInfoMessage": false,
-      "testID": "HotspotEditorTooltipTab",
+      "testId": "HotspotEditorTooltipTab",
     },
     "propTypes": Object {
       "formValues": Object {
@@ -20146,7 +20172,8 @@ Map {
       "showInfoMessage": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "translateWithId": Object {
@@ -20452,7 +20479,7 @@ Map {
       "id": "dynamic-hotspot-source-picker",
       "selectedSourceIdX": undefined,
       "selectedSourceIdY": undefined,
-      "testID": "dynamic-hotspot-source-picker",
+      "testId": "dynamic-hotspot-source-picker",
     },
     "propTypes": Object {
       "dataSourceItems": Object {
@@ -20517,7 +20544,8 @@ Map {
       "selectedSourceIdY": Object {
         "type": "string",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "translateWithId": Object {
