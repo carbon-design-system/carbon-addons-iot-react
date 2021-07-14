@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Add32, Edit16 } from '@carbon/icons-react';
@@ -89,35 +88,65 @@ describe('RowActionsCell', () => {
   });
 
   it('action container background knows when overflow menu is open (in order to stay visible)', () => {
+    const originalBounding = Element.prototype.getBoundingClientRect;
+    Element.prototype.getBoundingClientRect = () => {
+      return {
+        bottom: 328,
+        height: 280,
+        left: 215,
+        right: 375,
+        top: 48,
+        width: 160,
+        x: 215,
+        y: 48,
+      };
+    };
     const tableRow = document.createElement('tr');
     const actions = [{ id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' }];
-    const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
-      attachTo: tableRow,
+    const { container } = render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
+      container: document.body.appendChild(tableRow),
     });
 
-    let container = wrapper.find(
+    let actionContainer = container.querySelectorAll(
       `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
     );
-    expect(container).toHaveLength(0);
+    expect(actionContainer).toHaveLength(0);
 
-    const overflowMenu = wrapper.find('OverflowMenu');
-    overflowMenu.simulate('click');
-    overflowMenu.props().onOpen();
-    wrapper.update();
-    container = wrapper.find(
-      `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
-    );
-    expect(container).toHaveLength(1);
+    const overflowMenu = screen.getByRole('button', {
+      name: RowActionsCell.defaultProps.overflowMenuAria,
+    });
 
-    overflowMenu.props().onClose();
-    wrapper.update();
-    container = wrapper.find(
+    userEvent.click(overflowMenu);
+
+    actionContainer = container.querySelectorAll(
       `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
     );
-    expect(container).toHaveLength(0);
+    expect(actionContainer).toHaveLength(1);
+
+    // Close by clicking the menu
+    userEvent.click(overflowMenu);
+    actionContainer = container.querySelectorAll(
+      `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
+    );
+    expect(actionContainer).toHaveLength(0);
+
+    HTMLElement.prototype.getBoundingClientRect = originalBounding;
   });
 
   it('autoselects the first enabled alternative when the overflow menu is opened', () => {
+    const originalBounding = Element.prototype.getBoundingClientRect;
+    Element.prototype.getBoundingClientRect = () => {
+      return {
+        bottom: 328,
+        height: 280,
+        left: 215,
+        right: 375,
+        top: 48,
+        width: 160,
+        x: 215,
+        y: 48,
+      };
+    };
     const tableRow = document.createElement('tr');
     const actions = [
       { disabled: true, id: 'add', isOverflow: true, labelText: 'Add' },
@@ -130,30 +159,27 @@ describe('RowActionsCell', () => {
       },
     ];
 
-    const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
-      attachTo: tableRow,
+    const { container } = render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
+      container: document.body.appendChild(tableRow),
     });
-    const container = wrapper.find(
+    const actionContainer = container.querySelectorAll(
       `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
     );
-    expect(container).toHaveLength(0);
+    expect(actionContainer).toHaveLength(0);
 
-    const overflowMenu = wrapper.find('OverflowMenu');
-    overflowMenu.simulate('click');
-    overflowMenu.props().onOpen();
-    wrapper.update();
-    expect(overflowMenu.props().selectorPrimaryFocus).toEqual(
-      `.${iotPrefix}--action-overflow-item--initialFocus`
+    const overflowMenu = screen.getByRole('button', {
+      name: RowActionsCell.defaultProps.overflowMenuAria,
+    });
+
+    userEvent.click(overflowMenu);
+
+    expect(screen.getByTitle('Add').closest('button')).toBeDisabled();
+    expect(screen.getByTitle('Edit').closest('button')).not.toBeDisabled();
+    expect(screen.getByTitle('Edit').closest('button')).toHaveClass(
+      `${iotPrefix}--action-overflow-item--initialFocus`
     );
 
-    const menuItems = wrapper.find(
-      `.${iotPrefix}--row-actions-container .${iotPrefix}--action-overflow-item`
-    );
-    expect(menuItems.first().find('button').getDOMNode().disabled).toBeTruthy();
-    expect(menuItems.at(2).find('button').getDOMNode().disabled).toBeFalsy();
-    expect(
-      menuItems.at(2).hasClass(`${iotPrefix}--action-overflow-item--initialFocus`)
-    ).toBeTruthy();
+    HTMLElement.prototype.getBoundingClientRect = originalBounding;
   });
   describe('RowActionsError', () => {
     it('should show errors and be dismissable when onClearError is given', () => {
