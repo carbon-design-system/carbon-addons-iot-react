@@ -60,10 +60,8 @@ describe('StatefulWizardInline', () => {
     expect(error).toHaveBeenCalledTimes(2);
   });
   it('error', () => {
-    const wrapper = mount(<StatefulWizardInline {...commonWizardProps} error="I'm in error" />);
-    const progressIndicatorButtons = wrapper.find('InlineNotification');
-    expect(progressIndicatorButtons).toHaveLength(1);
-    expect(error).toHaveBeenCalledTimes(1);
+    render(<StatefulWizardInline {...commonWizardProps} error="I'm in error" />);
+    expect(screen.queryAllByRole('alert')).toHaveLength(1);
   });
   it('error clear error', () => {
     const mockClearError = jest.fn();

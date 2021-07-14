@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.59](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.58...v2.146.0-next.59) (2021-07-14)
+
+
+### Bug Fixes
+
+* **repo:** visual regressions on flyout menu and table ([3ea785e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3ea785e8298c0227c5bed3425450be7dc0613c41))
+
+
+### Features
+
+* **repo:** upgrade Carbon to 10.39/7.39 ([8f9710d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8f9710d761fc78d70c75acb66aff3199c96b77bc))
+
+
+
+
+
 # [2.146.0-next.58](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.57...v2.146.0-next.58) (2021-07-14)
 
 

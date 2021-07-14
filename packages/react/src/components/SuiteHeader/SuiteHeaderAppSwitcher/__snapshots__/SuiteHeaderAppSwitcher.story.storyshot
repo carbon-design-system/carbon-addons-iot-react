@@ -22,12 +22,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           My applications
         </p>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--tertiary"
           data-testid="suite-header-app-switcher--all-applications"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -112,12 +117,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           My applications
         </p>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--tertiary"
           data-testid="suite-header-app-switcher--all-applications"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -204,12 +214,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           My applications
         </p>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--tertiary"
           data-testid="suite-header-app-switcher--all-applications"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -239,12 +254,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         id="suite-header-application-monitor"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--ghost"
           data-testid="suite-header-app-switcher--monitor"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -256,12 +276,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         id="suite-header-application-health"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--ghost"
           data-testid="suite-header-app-switcher--health"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >

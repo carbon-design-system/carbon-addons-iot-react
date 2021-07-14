@@ -68,7 +68,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               className="iot--data-state-grid"
             >
               <div
-                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__icon-myStoryId"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__icon-myStoryId"
@@ -105,7 +104,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                 </svg>
               </div>
               <div
-                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__label-myStoryId"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__label-myStoryId"
@@ -126,7 +124,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                 </span>
               </div>
               <div
-                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__description-myStoryId"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__description-myStoryId"

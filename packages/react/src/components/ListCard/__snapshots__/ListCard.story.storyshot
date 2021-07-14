@@ -73,6 +73,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             >
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -99,6 +100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -125,6 +127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -139,6 +142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -182,6 +186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -196,6 +201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -210,6 +216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -224,6 +231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -383,6 +391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             >
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -416,6 +425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -449,6 +459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -562,6 +573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             >
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -595,6 +607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
@@ -628,6 +641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               </div>
               <div
                 className="bx--structured-list-row"
+                role="row"
               >
                 <div
                   className="list-card--item bx--structured-list-td"
