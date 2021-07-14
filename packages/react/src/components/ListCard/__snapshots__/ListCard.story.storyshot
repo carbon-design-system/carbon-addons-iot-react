@@ -67,7 +67,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
           >
             <div
               className="bx--structured-list-tbody"
-              data-testid="undefined-list-body"
+              data-testid="Card-list-body"
               onKeyDown={[Function]}
               role="rowgroup"
             >
@@ -377,7 +377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
           >
             <div
               className="bx--structured-list-tbody"
-              data-testid="undefined-list-body"
+              data-testid="Card-list-body"
               onKeyDown={[Function]}
               role="rowgroup"
             >
@@ -556,7 +556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
           >
             <div
               className="bx--structured-list-tbody"
-              data-testid="undefined-list-body"
+              data-testid="Card-list-body"
               onKeyDown={[Function]}
               role="rowgroup"
             >

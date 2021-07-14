@@ -17344,6 +17344,7 @@ Map {
       "hasMoreData": false,
       "isLoading": false,
       "layout": "",
+      "testId": "Card",
     },
     "displayName": "ListCard",
     "propTypes": Object {
