@@ -17,8 +17,8 @@ jobs:
           currentver="$(git --version)"
           requiredver="2.22.0"
           if [ "$(printf '%s\n' "$requiredver" "$currentver" | sort -V | head -n1)" = "$requiredver" ]; then
-            sudo apt-get update
-            sudo apt-get install git
+            apt-get update
+            apt-get install git
             echo "A version of git higher or equal to ${requiredver} is requied. Updating"
           else
             echo "${currentver} is greater than or equal ${requiredver}"
