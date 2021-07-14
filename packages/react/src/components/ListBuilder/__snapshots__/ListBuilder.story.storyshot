@@ -38,21 +38,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--search bx--search--sm"
               role="search"
             >
-              <svg
-                aria-hidden={true}
+              <div
                 className="bx--search-magnifier"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
               <label
                 className="bx--label"
                 htmlFor="iot--list-builder__all--search"
@@ -291,21 +295,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--search bx--search--sm"
               role="search"
             >
-              <svg
-                aria-hidden={true}
+              <div
                 className="bx--search-magnifier"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
               <label
                 className="bx--label"
                 htmlFor="iot--list-builder__selected--search"
@@ -417,21 +425,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--search bx--search--sm"
               role="search"
             >
-              <svg
-                aria-hidden={true}
+              <div
                 className="bx--search-magnifier"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
               <label
                 className="bx--label"
                 htmlFor="iot--list-builder__all--search"
@@ -503,20 +515,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="iot--list-item--content--row-actions"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Add item to list"
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="list-builder-add-button-1"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         role="button"
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Add item to list
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Add item to list"
@@ -567,20 +585,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="iot--list-item--content--row-actions"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Add item to list"
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="list-builder-add-button-2"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         role="button"
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Add item to list
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Add item to list"
@@ -631,20 +655,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="iot--list-item--content--row-actions"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Add item to list"
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="list-builder-add-button-3"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         role="button"
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Add item to list
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Add item to list"
@@ -703,21 +733,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--search bx--search--sm"
               role="search"
             >
-              <svg
-                aria-hidden={true}
+              <div
                 className="bx--search-magnifier"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
               <label
                 className="bx--label"
                 htmlFor="iot--list-builder__selected--search"
@@ -829,21 +863,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--search bx--search--sm"
               role="search"
             >
-              <svg
-                aria-hidden={true}
+              <div
                 className="bx--search-magnifier"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
               <label
                 className="bx--label"
                 htmlFor="iot--list-builder__all--search"
@@ -915,20 +953,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="iot--list-item--content--row-actions"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Add item to list"
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="list-builder-add-button-1"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         role="button"
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Add item to list
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Add item to list"
@@ -987,21 +1031,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--search bx--search--sm"
               role="search"
             >
-              <svg
-                aria-hidden={true}
+              <div
                 className="bx--search-magnifier"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
               <label
                 className="bx--label"
                 htmlFor="iot--list-builder__selected--search"
@@ -1073,20 +1121,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="iot--list-item--content--row-actions"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Remove item from list"
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="list-builder-add-button-2"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         role="button"
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Remove item from list
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Remove item from list"
@@ -1156,21 +1210,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--search bx--search--sm"
               role="search"
             >
-              <svg
-                aria-hidden={true}
+              <div
                 className="bx--search-magnifier"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
               <label
                 className="bx--label"
                 htmlFor="iot--list-builder__all--search"
@@ -1242,20 +1300,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="iot--list-item--content--row-actions"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Add item to list"
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="list-builder-add-button-1"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         role="button"
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Add item to list
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Add item to list"
@@ -1306,20 +1370,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="iot--list-item--content--row-actions"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Add item to list"
-                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="list-builder-add-button-2"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         role="button"
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Add item to list
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Add item to list"
@@ -1378,21 +1448,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--search bx--search--sm"
               role="search"
             >
-              <svg
-                aria-hidden={true}
+              <div
                 className="bx--search-magnifier"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
               <label
                 className="bx--label"
                 htmlFor="iot--list-builder__selected--search"

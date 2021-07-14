@@ -75,25 +75,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
           data-testid="ComposedModal-modal-secondary-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Cancel
         </button>
         <button
+          aria-describedby="danger-description-66"
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--danger"
           data-testid="ComposedModal-modal-danger-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
+          <span
+            className="bx--visually-hidden"
+            id="danger-description-66"
+          >
+            danger
+          </span>
           Save
         </button>
       </div>
@@ -278,22 +294,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
           data-testid="ComposedModal-modal-secondary-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Cancel
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--primary"
           data-testid="ComposedModal-modal-primary-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -420,11 +446,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
           data-testid="ComposedModal-modal-secondary-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -564,7 +595,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           Trigger Text
           <div
-            aria-describedby={null}
             aria-labelledby="my test tooltip"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
@@ -603,22 +633,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
           data-testid="ComposedModal-modal-secondary-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           My Cancel
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--primary"
           data-testid="ComposedModal-modal-primary-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
