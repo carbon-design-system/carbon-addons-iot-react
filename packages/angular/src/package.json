@@ -22,9 +22,10 @@
     "carbon-components-angular": "^4.0.0"
   },
   "dependencies": {
+    "@ai-apps/styles": "^2.145.0-next.16",
     "@carbon/icons": "10.20.0",
     "@carbon/telemetry": "0.0.0-alpha.6",
-    "flatpickr": "4.6.1",
-    "@ai-apps/styles": "^2.145.0-next.16"
+    "date-fns": "2.22.1",
+    "flatpickr": "4.6.1"
   }
 }
