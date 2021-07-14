@@ -14,9 +14,9 @@ jobs:
 
       - name: Check git version
         run: |
-          currentver="$(git version | cut -f3 -d" ")"
+          currentver="$(git --version)"
           requiredver="2.22.0"
-          if [ "$(printf '%s\n' "$currentver" "$requiredver" | sort -V | head -n1)" = "$requiredver" ]; then
+          if [ "$(printf '%s\n' "$requiredver" "$currentver" | sort -V | head -n1)" = "$requiredver" ]; then
             sudo apt-get update
             sudo apt-get install git
             echo "A version of git higher or equal to ${requiredver} is requied. Updating"
