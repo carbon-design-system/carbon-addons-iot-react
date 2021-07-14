@@ -126,7 +126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--md bx--btn--secondary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -141,7 +141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -287,7 +287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--md bx--btn--secondary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -302,7 +302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -761,7 +761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--field bx--btn--secondary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--md bx--btn--secondary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -776,7 +776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -1235,7 +1235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--field bx--btn--secondary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--md bx--btn--secondary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -1250,7 +1250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -1396,7 +1396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--md bx--btn--secondary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -1411,7 +1411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -1922,7 +1922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--field bx--btn--secondary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-back bx--btn bx--btn--md bx--btn--secondary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -1937,7 +1937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -2077,7 +2077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--md bx--btn--secondary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -2092,7 +2092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -2238,7 +2238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--field bx--btn--secondary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-cancel bx--btn bx--btn--md bx--btn--secondary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -2253,7 +2253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--field bx--btn--primary"
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
