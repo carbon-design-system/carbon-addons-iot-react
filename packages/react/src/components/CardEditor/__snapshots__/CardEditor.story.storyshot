@@ -3079,33 +3079,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <input
                           checked={false}
                           className="bx--radio-button"
-                          data-testid="iot--card-edit-form--input-radio2"
-                          id="iot--card-edit-form--input-radio-2"
-                          name="iot--card-edit-form--input-radios"
-                          onChange={[Function]}
-                          type="radio"
-                          value="cover"
-                        />
-                        <label
-                          className="bx--radio-button__label"
-                          htmlFor="iot--card-edit-form--input-radio-2"
-                        >
-                          <span
-                            className="bx--radio-button__appearance"
-                          />
-                          <span
-                            className=""
-                          >
-                            Fill
-                          </span>
-                        </label>
-                      </div>
-                      <div
-                        className="bx--radio-button-wrapper"
-                      >
-                        <input
-                          checked={false}
-                          className="bx--radio-button"
                           data-testid="iot--card-edit-form--input-radio3"
                           id="iot--card-edit-form--input-radio-3"
                           name="iot--card-edit-form--input-radios"

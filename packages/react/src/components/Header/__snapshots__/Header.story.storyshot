@@ -72,7 +72,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       >
         <div
           className="bx--header__global"
-          data-testid="header-action-group-global-bar"
+          data-testid="header-action-group"
         >
           <button
             aria-label="alerts"
@@ -446,7 +446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
     >
       <div
         className="bx--header__global"
-        data-testid="header-action-group-global-bar"
+        data-testid="header-action-group"
       >
         <button
           aria-label="user"
@@ -560,7 +560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       >
         <div
           className="bx--header__global"
-          data-testid="header-action-group-global-bar"
+          data-testid="header-action-group"
         >
           <div
             className="bx--header__submenu bx--header-action-btn action-btn__group"
@@ -744,7 +744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       >
         <div
           className="bx--header__global"
-          data-testid="header-action-group-global-bar"
+          data-testid="header-action-group"
         >
           <div
             className="bx--header__submenu bx--header-action-btn action-btn__group"
@@ -949,7 +949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       >
         <div
           className="bx--header__global"
-          data-testid="header-action-group-global-bar"
+          data-testid="header-action-group"
         >
           <div
             className="bx--header__submenu bx--header-action-btn action-btn__group"
@@ -1133,7 +1133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       >
         <div
           className="bx--header__global"
-          data-testid="header-action-group-global-bar"
+          data-testid="header-action-group"
         >
           <button
             aria-label="Announcements"

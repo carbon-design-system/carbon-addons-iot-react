@@ -211,7 +211,8 @@ const DashboardEditorHeader = ({
             hasIconOnly
             renderIcon={DocumentExport16}
             onClick={() => onExport(dashboardJson)}
-            testId={`${testId}-export-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-export-button`}
           />
         )}
         {onDelete && (
@@ -224,7 +225,8 @@ const DashboardEditorHeader = ({
             hasIconOnly
             renderIcon={TrashCan16}
             onClick={onDelete}
-            testId={`${testId}-delete-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-delete-button`}
           />
         )}
         {onCancel && (
@@ -232,7 +234,8 @@ const DashboardEditorHeader = ({
             kind="secondary"
             size="field"
             onClick={onCancel}
-            testId={`${testId}-cancel-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-cancel-button`}
           >
             {mergedI18n.headerCancelButton}
           </Button>
@@ -243,7 +246,8 @@ const DashboardEditorHeader = ({
             disabled={isSubmitDisabled}
             onClick={() => onSubmit(dashboardJson)}
             loading={isSubmitLoading}
-            testId={`${testId}-submit-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-submit-button`}
           >
             {mergedI18n.headerSubmitButton}
           </Button>
@@ -283,7 +287,7 @@ const DashboardEditorHeader = ({
             // revert the title back to the original
             setUpdatedTitle(title);
           }}
-          data-testid={`${testId}-cancel-title-button`}
+          testId={`${testId}-cancel-title-button`}
         >
           {mergedI18n.headerCancelButton}
         </Button>
@@ -293,7 +297,7 @@ const DashboardEditorHeader = ({
             onEditTitle(updatedTitle);
             setIsTitleEditMode(false);
           }}
-          data-testid={`${testId}-save-title-button`}
+          testId={`${testId}-save-title-button`}
         >
           {mergedI18n.saveTitleButton}
         </Button>

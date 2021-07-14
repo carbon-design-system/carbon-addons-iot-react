@@ -112,11 +112,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </div>
           <div
             className="iot--dynamic-hotspot-source-picker"
-            data-testid="hotspot-editor-modal-hotspot-source-picker"
+            data-testid="dynamic-hotspot-source-picker"
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-x-coordinate-dropdown"
+              data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
             >
               <label
                 className="bx--label"
@@ -186,7 +186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-y-coordinate-dropdown"
+              data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
             >
               <label
                 className="bx--label"
@@ -256,7 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <button
               className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-clear-dropdown"
+              data-testid="dynamic-hotspot-source-picker-clear-dropdown"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -583,11 +583,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </div>
           <div
             className="iot--dynamic-hotspot-source-picker"
-            data-testid="hotspot-editor-modal-hotspot-source-picker"
+            data-testid="dynamic-hotspot-source-picker"
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-x-coordinate-dropdown"
+              data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
             >
               <label
                 className="bx--label"
@@ -657,7 +657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-y-coordinate-dropdown"
+              data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
             >
               <label
                 className="bx--label"
@@ -727,7 +727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <button
               className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-clear-dropdown"
+              data-testid="dynamic-hotspot-source-picker-clear-dropdown"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -1054,11 +1054,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </div>
           <div
             className="iot--dynamic-hotspot-source-picker"
-            data-testid="hotspot-editor-modal-hotspot-source-picker"
+            data-testid="dynamic-hotspot-source-picker"
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-x-coordinate-dropdown"
+              data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
             >
               <label
                 className="bx--label"
@@ -1128,7 +1128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-y-coordinate-dropdown"
+              data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
             >
               <label
                 className="bx--label"
@@ -1198,7 +1198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <button
               className="iot--dynamic-hotspot-source-picker__clear-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-clear-dropdown"
+              data-testid="dynamic-hotspot-source-picker-clear-dropdown"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -1497,11 +1497,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </div>
           <div
             className="iot--dynamic-hotspot-source-picker"
-            data-testid="hotspot-editor-modal-hotspot-source-picker"
+            data-testid="dynamic-hotspot-source-picker"
           >
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-x-coordinate-dropdown"
+              data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
             >
               <label
                 className="bx--label"
@@ -1571,7 +1571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-y-coordinate-dropdown"
+              data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
             >
               <label
                 className="bx--label"
@@ -1641,7 +1641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <button
               className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-              data-testid="hotspot-editor-modal-hotspot-source-picker-clear-dropdown"
+              data-testid="dynamic-hotspot-source-picker-clear-dropdown"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
