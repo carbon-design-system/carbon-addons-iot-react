@@ -9,7 +9,7 @@ import { useResize } from '../../internal/UseResizeObserver';
 
 const { prefix, iotPrefix } = settings;
 /* eslint-disable-next-line react/prop-types */
-const DefaultWrapper = React.forwardRef(({ children, ...props }, ref) => {
+const DefaultWrapper = React.forwardRef(({ children, i18n, ...props }, ref) => {
   return (
     <div {...props} ref={ref}>
       {children}
@@ -23,7 +23,7 @@ const OverflowTag = ({ children }) => (
   </span>
 );
 
-const FilterTags = ({ children, hasOverflow, id, tagContainer, onChange, i18n }) => {
+const FilterTags = ({ children, hasOverflow, id, tagContainer, onChange, i18n, testId }) => {
   const TagContainer = tagContainer || DefaultWrapper;
   const overFlowContainerRef = useRef(null);
   useResize(overFlowContainerRef);
@@ -82,7 +82,8 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer, onChange, i18n })
     <TagContainer
       key={`${hasOverflow}-Tag-Container`}
       id={id}
-      data-testid={id}
+      // TODO: remove id in v3
+      data-testid={id || testId}
       className={classnames(`${iotPrefix}--filtertags-container`, {
         [`${iotPrefix}--filtertags-container__wrap`]: hasOverflow,
       })}
@@ -102,9 +103,11 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer, onChange, i18n })
           menuOffset={{
             top: 15,
           }}
+          data-testid={`${testId}-overflow-menu`}
         >
           {overflowItems.map((child, i) => (
             <OverflowMenuItem
+              data-testid={`${testId}-overflow-menu-item-${i}`}
               className={`${iotPrefix}--filtertags-overflow-item`}
               title={child.props.children}
               key={`${child.props.children}-${i}`}
@@ -147,6 +150,8 @@ const propTypes = {
    */
   // eslint-disable-next-line react/forbid-prop-types
   i18n: PropTypes.object,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -155,6 +160,7 @@ const defaultProps = {
   tagContainer: null,
   onChange: null,
   i18n: {},
+  testId: 'filter-tags',
 };
 
 FilterTags.propTypes = propTypes;

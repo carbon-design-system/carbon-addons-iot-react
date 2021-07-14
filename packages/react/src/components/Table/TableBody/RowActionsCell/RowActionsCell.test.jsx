@@ -185,10 +185,74 @@ describe('RowActionsCell', () => {
       userEvent.click(
         within(screen.getByTestId('row-action-container-background')).getByRole('button')
       );
-      const clearButton = screen.getByText('dismiss');
+      expect(screen.getByRole('link', { name: 'learn-more' })).toBeVisible();
+      const clearButton = screen.getByRole('button', { name: 'dismiss' });
       expect(clearButton).toBeVisible();
+
       userEvent.click(clearButton);
       expect(onClearError).toHaveBeenCalledTimes(1);
+    });
+
+    it('should only show "dismiss" button if there is an onClearError prop', () => {
+      const tableRow = document.createElement('tr');
+      const actions = [{ id: 'addAction', renderIcon: Add32, iconDescription: 'See more' }];
+      render(
+        <RowActionsCell
+          id="test"
+          tableId="test-table"
+          actionFailedText="action-failed"
+          learnMoreText="learn-more"
+          dismissText="dismiss"
+          rowActionsError={{
+            title: 'an-error',
+            message: 'it-did-occur',
+            learnMoreURL: 'https://example.com',
+          }}
+          onApplyRowAction={jest.fn()}
+          onClearError={undefined}
+          actions={actions}
+        />,
+        {
+          container: document.body.appendChild(tableRow),
+        }
+      );
+
+      expect(screen.getByText('action-failed')).toBeVisible();
+      userEvent.click(
+        within(screen.getByTestId('row-action-container-background')).getByRole('button')
+      );
+      expect(screen.queryByRole('button', { name: 'dismiss' })).not.toBeInTheDocument();
+    });
+
+    it('should only show "learn more" link if there is a learnMoreURL prop', () => {
+      const tableRow = document.createElement('tr');
+      const actions = [{ id: 'addAction', renderIcon: Add32, iconDescription: 'See more' }];
+      const onClearError = jest.fn();
+      render(
+        <RowActionsCell
+          id="test"
+          tableId="test-table"
+          actionFailedText="action-failed"
+          learnMoreText="learn-more"
+          dismissText="dismiss"
+          rowActionsError={{
+            title: 'an-error',
+            message: 'it-did-occur',
+          }}
+          onApplyRowAction={jest.fn()}
+          onClearError={onClearError}
+          actions={actions}
+        />,
+        {
+          container: document.body.appendChild(tableRow),
+        }
+      );
+
+      expect(screen.getByText('action-failed')).toBeVisible();
+      userEvent.click(
+        within(screen.getByTestId('row-action-container-background')).getByRole('button')
+      );
+      expect(screen.queryByRole('link', { name: 'learn-more' })).not.toBeInTheDocument();
     });
 
     it('should return null if no errors given', () => {
