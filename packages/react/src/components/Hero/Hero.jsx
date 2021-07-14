@@ -29,6 +29,7 @@ export const HeroPropTypes = {
   onClose: PropTypes.func,
   i18n: PropTypes.shape({ closeLabel: PropTypes.string }),
   className: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -42,6 +43,7 @@ const defaultProps = {
   onClose: null,
   i18n: { closeLabel: 'Close' },
   isLoading: false,
+  testId: 'hero',
 };
 
 const StyledHero = styled.div`
@@ -98,6 +100,7 @@ const Hero = ({
   isLoading,
   i18n: { closeLabel },
   onClose,
+  testId,
 }) => {
   if (__DEV__) {
     warning(
@@ -106,9 +109,9 @@ const Hero = ({
     );
   }
   return (
-    <StyledHero className={className}>
+    <StyledHero data-testid={testId} className={className}>
       {isLoading ? (
-        <SkeletonText width="30%" />
+        <SkeletonText data-testid={`${testId}-loading`} width="30%" />
       ) : (
         <Fragment>
           {breadcrumb ? (
@@ -123,7 +126,7 @@ const Hero = ({
           ) : null}
 
           <StyledTitleSection breadcrumb={!!breadcrumb}>
-            <StyledTitle>
+            <StyledTitle data-testid={`${testId}-title`}>
               {title}
               {tooltip ? (
                 <Tooltip
@@ -135,6 +138,7 @@ const Hero = ({
                   renderIcon={React.forwardRef((props, ref) => (
                     <Information20 ref={ref} />
                   ))}
+                  data-testid={`${testId}-tooltip`}
                 >
                   <p>{tooltip.message}</p>
                   {tooltip.href && tooltip.linkLabel ? (
@@ -155,6 +159,7 @@ const Hero = ({
                 data-modal-close
                 aria-label={closeLabel}
                 onClick={onClose}
+                data-testid={`${testId}-close-button`}
               >
                 <svg
                   className="bx--modal-close__icon"
@@ -172,7 +177,11 @@ const Hero = ({
               </button>
             ) : null}
           </StyledTitleSection>
-          {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}
+          {description ? (
+            <StyledPageDescription data-testid={`${testId}-description`}>
+              {description}
+            </StyledPageDescription>
+          ) : null}
         </Fragment>
       )}
     </StyledHero>

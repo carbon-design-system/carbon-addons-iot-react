@@ -13,6 +13,20 @@ const iconDropdownProps = {
 };
 
 describe('Icon Dropdown', () => {
+  it('should be selectable by testId', () => {
+    render(
+      <IconDropdown
+        items={items}
+        {...iconDropdownProps}
+        actions={{
+          onChangeView: () => {},
+        }}
+        testId="ICON_DROPDOWN"
+      />
+    );
+    expect(screen.getByTestId('ICON_DROPDOWN')).toBeDefined();
+  });
+
   it('Renders default', () => {
     render(
       <IconDropdown

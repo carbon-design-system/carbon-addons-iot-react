@@ -15,6 +15,7 @@ import {
   ColorPropType,
 } from '../../../constants/SharedPropTypes';
 import { getOverrides } from '../../../utils/componentUtilityFunctions';
+import deprecate from '../../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -67,8 +68,13 @@ const propTypes = {
   showDeleteButton: PropTypes.bool,
   /** Shows the info message if true */
   showInfoMessage: PropTypes.bool,
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop is deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -92,7 +98,7 @@ const defaultProps = {
   primaryInputId: undefined,
   showInfoMessage: false,
   showDeleteButton: true,
-  testID: 'HotspotEditorTooltipTab',
+  testId: 'HotspotEditorTooltipTab',
 };
 
 const preventFormSubmission = (e) => e.preventDefault();
@@ -124,7 +130,9 @@ const HotspotEditorTooltipTab = ({
   overrides,
   showInfoMessage,
   showDeleteButton,
+  // TODO: remove the deprecated testID prop in v3
   testID,
+  testId,
   translateWithId,
 }) => {
   const {
@@ -198,13 +206,13 @@ const HotspotEditorTooltipTab = ({
         <>
           <form
             className={`${iotPrefix}--hotspot-editor--tooltip-form`}
-            data-testid={testID}
+            data-testid={testID || testId}
             onSubmit={preventFormSubmission}
           >
             <MyTitleTextInput
               disabled={hasNonEditableContent}
               name="title"
-              data-testid={`${testID}-title-input`}
+              data-testid={`${testID || testId}-title-input`}
               value={formValues.content?.title || ''}
               id={primaryInputId || 'tooltip-form-title'}
               labelText={titleInputLabelText}
