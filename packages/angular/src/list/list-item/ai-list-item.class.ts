@@ -72,6 +72,29 @@ export class AIListItem {
     Object.assign(this, {}, rawData);
   }
 
+  /**
+   * This method returns `true` if `searchString` is a substring of `value`
+   * or `secondaryValue` of this list item or any of its children.
+   * This method may be overridden to achieve a custom search.
+   *
+   * For example, if I want `ai-list` to only filter based on secondary
+   * values and have case matter, I can create a custom `AIListItem`:
+   *
+   * class CustomAIListItem extends AIListItem {
+   *   constructor(rawData: any) {
+   *     super(rawData);
+   *   }
+   *
+   *   includes(searchString: string) {
+   *     return this.secondaryValue.includes(searchString) || this.items.some((listItem) => listItem.includes(searchString));
+   *   }
+   * }
+   *
+   * Then instead of passing in an array of `AIListItem`s into `ai-list`,
+   * you can pass in an array of `CustomAIListItem`s and if you have the
+   * search bar turned on, it will filter out items based on your custom
+   * `includes` method.
+   */
   includes(searchString: string) {
     return (
       this.value.toLowerCase().includes(searchString.toLowerCase()) ||

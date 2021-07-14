@@ -1,3 +1,4 @@
+import { AppCustomList } from './stories/app-custom-list.component';
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { withKnobs } from '@storybook/addon-knobs';
 
@@ -10,7 +11,7 @@ storiesOf('Components/List', module)
   .addDecorator(
     moduleMetadata({
       imports: [ListModule, DialogModule, IconModule, PlaceholderModule],
-      declarations: [AppHierarchyList],
+      declarations: [AppHierarchyList, AppCustomList],
     })
   )
   .addDecorator(withKnobs)
@@ -67,4 +68,9 @@ storiesOf('Components/List', module)
     props: {
       items: largeListItems,
     },
+  }))
+  .add('With custom search', () => ({
+    template: `
+      <app-custom-list></app-custom-list>
+    `,
   }));
