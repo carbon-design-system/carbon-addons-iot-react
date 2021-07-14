@@ -69,6 +69,14 @@ describe('RowActionsCell', () => {
     expect(btns[1].id).toEqual('tableId-rowId-row-actions-cell-overflow');
   });
 
+  it('handles no actions', () => {
+    const tableRow = document.createElement('tr');
+    render(<RowActionsCell {...commonRowActionsProps} />, {
+      container: document.body.appendChild(tableRow),
+    });
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+  });
+
   it('actions are wrapped in special gradient background container', () => {
     const tableRow = document.createElement('tr');
     const action = {
@@ -87,100 +95,6 @@ describe('RowActionsCell', () => {
     expect(screen.queryByText(action.labelText)).toBeTruthy();
   });
 
-  it('action container background knows when overflow menu is open (in order to stay visible)', () => {
-    const originalBounding = Element.prototype.getBoundingClientRect;
-    Element.prototype.getBoundingClientRect = () => {
-      return {
-        bottom: 328,
-        height: 280,
-        left: 215,
-        right: 375,
-        top: 48,
-        width: 160,
-        x: 215,
-        y: 48,
-      };
-    };
-    const tableRow = document.createElement('tr');
-    const actions = [{ id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' }];
-    const { container } = render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
-      container: document.body.appendChild(tableRow),
-    });
-
-    let actionContainer = container.querySelectorAll(
-      `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
-    );
-    expect(actionContainer).toHaveLength(0);
-
-    const overflowMenu = screen.getByRole('button', {
-      name: RowActionsCell.defaultProps.overflowMenuAria,
-    });
-
-    userEvent.click(overflowMenu);
-
-    actionContainer = container.querySelectorAll(
-      `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
-    );
-    expect(actionContainer).toHaveLength(1);
-
-    // Close by clicking the menu
-    userEvent.click(overflowMenu);
-    actionContainer = container.querySelectorAll(
-      `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
-    );
-    expect(actionContainer).toHaveLength(0);
-
-    HTMLElement.prototype.getBoundingClientRect = originalBounding;
-  });
-
-  it('autoselects the first enabled alternative when the overflow menu is opened', () => {
-    const originalBounding = Element.prototype.getBoundingClientRect;
-    Element.prototype.getBoundingClientRect = () => {
-      return {
-        bottom: 328,
-        height: 280,
-        left: 215,
-        right: 375,
-        top: 48,
-        width: 160,
-        x: 215,
-        y: 48,
-      };
-    };
-    const tableRow = document.createElement('tr');
-    const actions = [
-      { disabled: true, id: 'add', isOverflow: true, labelText: 'Add' },
-      {
-        disabled: false,
-        id: 'edit',
-        renderIcon: Edit16,
-        isOverflow: true,
-        labelText: 'Edit',
-      },
-    ];
-
-    const { container } = render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
-      container: document.body.appendChild(tableRow),
-    });
-    const actionContainer = container.querySelectorAll(
-      `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
-    );
-    expect(actionContainer).toHaveLength(0);
-
-    const overflowMenu = screen.getByRole('button', {
-      name: RowActionsCell.defaultProps.overflowMenuAria,
-    });
-
-    userEvent.click(overflowMenu);
-
-    expect(screen.getByTitle('Add').closest('button')).toBeDisabled();
-    expect(screen.getByTitle('Edit').closest('button')).not.toBeDisabled();
-    expect(screen.getByTitle('Edit').closest('button')).toHaveClass(
-      `${iotPrefix}--action-overflow-item--initialFocus`
-    );
-
-    HTMLElement.prototype.getBoundingClientRect = originalBounding;
-  });
   describe('RowActionsError', () => {
     it('should show errors and be dismissable when onClearError is given', () => {
       const tableRow = document.createElement('tr');
@@ -233,6 +147,120 @@ describe('RowActionsCell', () => {
 
       expect(screen.queryByText('action-failed')).toBeNull();
       expect(screen.queryByTestId('row-action-container-background')).toBeNull();
+    });
+  });
+
+  describe('overflowMenu', () => {
+    let originalBounding;
+
+    beforeAll(() => {
+      originalBounding = Element.prototype.getBoundingClientRect;
+      // If this is not mocked the OverflowMenu won't trigger the onOpen callback
+      // and the menu items won't be visible.
+      Element.prototype.getBoundingClientRect = () => ({
+        height: 100,
+        width: 100,
+      });
+    });
+    afterAll(() => {
+      HTMLElement.prototype.getBoundingClientRect = originalBounding;
+    });
+
+    it('action container background knows when overflow menu is open (in order to stay visible)', () => {
+      const tableRow = document.createElement('tr');
+      const actions = [{ id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' }];
+      const { container } = render(
+        <RowActionsCell {...commonRowActionsProps} actions={actions} />,
+        {
+          container: document.body.appendChild(tableRow),
+        }
+      );
+
+      let actionContainer = container.querySelectorAll(
+        `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
+      );
+      expect(actionContainer).toHaveLength(0);
+
+      const overflowMenu = screen.getByRole('button', {
+        name: RowActionsCell.defaultProps.overflowMenuAria,
+      });
+
+      userEvent.click(overflowMenu);
+
+      actionContainer = container.querySelectorAll(
+        `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
+      );
+      expect(actionContainer).toHaveLength(1);
+
+      // Close by clicking the menu
+      userEvent.click(overflowMenu);
+      actionContainer = container.querySelectorAll(
+        `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
+      );
+      expect(actionContainer).toHaveLength(0);
+    });
+
+    it('autoselects the first enabled alternative when the overflow menu is opened', () => {
+      const tableRow = document.createElement('tr');
+      const actions = [
+        { disabled: true, id: 'add', isOverflow: true, labelText: 'Add' },
+        {
+          disabled: false,
+          id: 'edit',
+          renderIcon: Edit16,
+          isOverflow: true,
+          labelText: 'Edit',
+        },
+      ];
+
+      const { container } = render(
+        <RowActionsCell {...commonRowActionsProps} actions={actions} />,
+        {
+          container: document.body.appendChild(tableRow),
+        }
+      );
+      const actionContainer = container.querySelectorAll(
+        `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
+      );
+      expect(actionContainer).toHaveLength(0);
+
+      const overflowMenu = screen.getByRole('button', {
+        name: RowActionsCell.defaultProps.overflowMenuAria,
+      });
+
+      userEvent.click(overflowMenu);
+
+      expect(screen.getByTitle('Add').closest('button')).toBeDisabled();
+      expect(screen.getByTitle('Add').closest('button')).toBeVisible();
+      expect(screen.getByTitle('Edit').closest('button')).not.toBeDisabled();
+      expect(screen.getByTitle('Edit').closest('button')).toBeVisible();
+      expect(screen.getByTitle('Edit').closest('button')).toHaveClass(
+        `${iotPrefix}--action-overflow-item--initialFocus`
+      );
+    });
+
+    it('renders overflow action icons from strings using bundled icons', () => {
+      const tableRow = document.createElement('tr');
+      const actions = [
+        {
+          id: 'edit',
+          renderIcon: 'edit',
+          iconDescription: 'Edit stuff',
+          labelText: 'Edit icon label',
+          isOverflow: true,
+        },
+      ];
+      render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
+        container: document.body.appendChild(tableRow),
+      });
+
+      userEvent.click(
+        screen.getByRole('button', {
+          name: RowActionsCell.defaultProps.overflowMenuAria,
+        })
+      );
+
+      expect(screen.getByLabelText('Edit icon label', { selector: 'svg' })).toBeVisible();
     });
   });
 });
