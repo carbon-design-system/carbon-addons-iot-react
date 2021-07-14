@@ -59,10 +59,12 @@ export default {
 };
 
 export const Basic = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'sm');
   return (
     <div
       style={{
-        width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: layout05,
       }}
     >
@@ -71,7 +73,8 @@ export const Basic = () => {
         tooltip={<p>Health - of floor 8</p>}
         id="GaugeCard"
         title={text('Text', 'Health')}
-        size={CARD_SIZES.SMALL}
+        size={size}
+        breakpoint={breakpoint}
         values={{
           usage: number('Gauge value', 81),
           usageTrend: '12%',

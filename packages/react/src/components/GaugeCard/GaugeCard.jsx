@@ -11,7 +11,7 @@ import { getResizeHandles } from '../../utils/cardUtilityFunctions';
 
 const { iotPrefix } = settings;
 // r value of the circle in SVG
-const radius = 36;
+const radius = 28;
 // radius doubled plus stroke
 const gaugeSize = radius * 2 + 8;
 // circumference of SVG.
@@ -151,7 +151,7 @@ const GaugeCard = ({
                       { [`${iotPrefix}--gauge-value-lg`]: valueLength <= 2 }
                     )}
                     x={gaugeSize / 2}
-                    y="33"
+                    y={gaugeSize / 2 + 8}
                     textAnchor="middle"
                   >
                     <tspan>{values[gauge.dataSourceId]}</tspan>
