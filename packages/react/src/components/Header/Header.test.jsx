@@ -380,7 +380,7 @@ describe('Header', () => {
     userEvent.click(overflowMenuButton);
     expect(screen.getByText('Watson')).toBeVisible();
     expect(screen.getByText('Custom icon 1')).toBeVisible();
-    userEvent.click(screen.getByRole('button', { name: 'help' }));
+    userEvent.click(screen.getByRole('menuitem', { name: 'help' }));
     expect(screen.getByText('This is a link')).toBeVisible();
     userEvent.click(screen.getByRole('button', { name: 'help' }));
     expect(screen.queryByText('Custom icon 1')).toBeNull();
