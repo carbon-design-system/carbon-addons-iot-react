@@ -2,12 +2,12 @@
 
 .#{$iot-prefix}--gauge-container {
   display: flex;
+  flex-wrap: wrap;
   font-size: carbon--type-scale(1);
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  row-gap: var(--gauge-row-gap);
+  column-gap: $spacing-05;
 }
 
 .#{$iot-prefix}--gauge {
@@ -64,9 +64,9 @@
 }
 
 .#{$iot-prefix}--gauge-trend {
-  margin-top: auto;
   padding-left: $spacing-05;
-  align-self: flex-start;
+  display: flex;
+  align-items: center;
 
   & p::before {
     border-left: 0.3rem solid transparent;
