@@ -1829,6 +1829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             </div>
             <div
               className="iot--map-settings"
+              data-testid="map-card-settings"
             >
               <div
                 className="iot--map-settings-header"
@@ -3900,6 +3901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               >
                 <div
                   className="bx--structured-list-tbody"
+                  data-testid="Card-list-body"
                   onKeyDown={[Function]}
                   role="rowgroup"
                 >

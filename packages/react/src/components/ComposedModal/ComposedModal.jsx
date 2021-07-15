@@ -81,7 +81,7 @@ export const ComposedModalPropTypes = {
   // eslint-disable-next-line react/require-default-props
   testID: deprecate(
     PropTypes.string,
-    `The 'testID' has been deprecated. Please use 'testId' instead.`
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
   ),
   /** Id that can be used for testing */
   testId: PropTypes.string,

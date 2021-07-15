@@ -162,6 +162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--list-header-container"
+            data-testid="list-header"
           >
             <div
               className="iot--list-header"
@@ -1577,6 +1578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--list-header-container"
+            data-testid="list-header"
           >
             <div
               className="iot--list-header"
