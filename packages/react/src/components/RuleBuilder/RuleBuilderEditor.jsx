@@ -87,69 +87,56 @@ const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n }) => {
 
   const handleAddRule = React.useCallback(
     (ruleId, isGroup = false) => () => {
-      setTree((prev) => {
-        const newTree = {
-          ...prev,
-          rules: addRule(prev.rules, ruleId, isGroup),
-        };
-
-        onChange(newTree);
-
-        return newTree;
-      });
+      const newTree = {
+        ...tree,
+        rules: addRule(tree.rules, ruleId, isGroup),
+      };
+      setTree(newTree);
+      onChange(newTree);
     },
-    [onChange]
+    [onChange, tree]
   );
 
   const handleRemoveRule = React.useCallback(
     (ruleId) => () => {
-      setTree((prev) => {
-        const newTree = {
-          ...prev,
-          rules: filterRulesById([...prev.rules], ruleId),
-        };
-
-        onChange(newTree);
-
-        return newTree;
-      });
+      const newTree = {
+        ...tree,
+        rules: filterRulesById([...tree.rules], ruleId),
+      };
+      setTree(newTree);
+      onChange(newTree);
     },
-    [onChange]
+    [onChange, tree]
   );
 
   const handleChange = React.useCallback(
     (changed, isRoot) => {
-      setTree((prev) => {
-        if (!isRoot) {
-          const path = findRulePathById(prev.rules, changed.id);
-          const rule = getRuleByPath(prev.rules, path);
+      let newTree;
+      if (!isRoot) {
+        const path = findRulePathById(tree.rules, changed.id);
+        const rule = getRuleByPath(tree.rules, path);
 
-          const newTree = {
-            ...prev,
-            rules: updateRuleAtPath(
-              prev.rules,
-              {
-                ...rule,
-                ...changed,
-              },
-              path
-            ),
-          };
-
-          onChange(newTree);
-          return newTree;
-        }
-
-        const newTree = {
-          ...prev,
+        newTree = {
+          ...tree,
+          rules: updateRuleAtPath(
+            tree.rules,
+            {
+              ...rule,
+              ...changed,
+            },
+            path
+          ),
+        };
+      } else {
+        newTree = {
+          ...tree,
           ...changed,
         };
-
-        onChange(newTree);
-        return newTree;
-      });
+      }
+      setTree(newTree);
+      onChange(newTree);
     },
-    [onChange]
+    [onChange, tree]
   );
 
   return (
