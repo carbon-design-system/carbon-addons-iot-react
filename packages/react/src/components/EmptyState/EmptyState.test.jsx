@@ -38,6 +38,16 @@ const icons = {
 };
 
 describe('EmptyState', () => {
+  it('should be selectable by testID or testId', () => {
+    const { rerender } = render(<EmptyState {...commonProps} testID="EMPTY_STATE" />);
+    expect(screen.getByTestId(`EMPTY_STATE-title`).textContent).toEqual(title);
+    expect(screen.getByTestId(`EMPTY_STATE-body`).textContent).toEqual(body);
+    expect(screen.queryByTestId(`EMPTY_STATE-icon`)).toBeNull();
+    rerender(<EmptyState {...commonProps} testId="empty_state" />);
+    expect(screen.getByTestId(`empty_state-title`).textContent).toEqual(title);
+    expect(screen.getByTestId(`empty_state-body`).textContent).toEqual(body);
+    expect(screen.queryByTestId(`empty_state-icon`)).toBeNull();
+  });
   it('shows title and body', () => {
     render(<EmptyState {...commonProps} />);
     expect(screen.getByTestId(`${testID}-title`).textContent).toEqual(title);

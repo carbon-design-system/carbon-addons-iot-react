@@ -37,6 +37,21 @@ const getActions = () => ({
 });
 
 describe('ImageGalleryModal', () => {
+  it('should be selectable by testId', () => {
+    const content = getTestContent();
+    const testId = 'image_gallery_modal';
+    render(
+      <ImageGalleryModal content={content} {...getActions()} onDelete={jest.fn()} testId={testId} />
+    );
+    expect(screen.getByTestId(testId)).toBeDefined();
+    expect(screen.getByTestId(`${testId}-a-delete-button`)).toBeDefined();
+    expect(screen.getByTestId(`${testId}-grid-switch`)).toBeDefined();
+    expect(screen.getByTestId(`${testId}-list-switch`)).toBeDefined();
+    expect(screen.getByTestId(`${testId}-search-input`)).toBeDefined();
+    userEvent.click(screen.getByTestId(`${testId}-a-delete-button`));
+    expect(screen.getByTestId(`${testId}-warning-modal`)).toBeDefined();
+  });
+
   it('renders image title prop if present', () => {
     const content = getTestContent();
     render(<ImageGalleryModal content={content} {...getActions()} />);
@@ -155,8 +170,8 @@ describe('ImageGalleryModal', () => {
 
     userEvent.click(screen.getAllByRole('button', { name: 'Delete' })[0]);
     expect(onDelete).not.toHaveBeenCalled();
-    expect(screen.queryByText(/Are you sure you want/)).toBeInTheDocument();
-    userEvent.click(screen.getAllByRole('button', { name: 'Delete' })[0]);
+    expect(screen.queryByText(/Are you sure you want/)).toBeVisible();
+    userEvent.click(screen.getAllByRole('button', { name: /delete/i })[0]);
     expect(onDelete).toHaveBeenCalled();
   });
 });

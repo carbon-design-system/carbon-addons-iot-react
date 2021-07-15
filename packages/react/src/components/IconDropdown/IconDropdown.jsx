@@ -82,6 +82,8 @@ const propTypes = {
    * The dropdown type, `default` or `inline`
    */
   type: PropTypes.oneOf(['default', 'inline']),
+
+  testId: PropTypes.string,
 };
 
 const defaultPropTypes = {
@@ -98,6 +100,7 @@ const defaultPropTypes = {
   invalidText: '',
   onChange: () => {},
   translateWithId: undefined,
+  testId: 'icon-dropdown',
 };
 
 const defaultItemSize = 48;
@@ -113,6 +116,7 @@ const IconDropdown = ({
   direction,
   onChange,
   translateWithId,
+  testId,
   ...other
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -170,6 +174,7 @@ const IconDropdown = ({
 
     return (
       <div
+        data-testid={`${testId}-footer`}
         className={`${iotPrefix}--icon-dropdown__footer`}
         style={{
           width: `${width}px`,
@@ -263,6 +268,7 @@ const IconDropdown = ({
             }
           },
         }}
+        data-testid={testId}
         {...other}
         itemToString={itemToString}
       />

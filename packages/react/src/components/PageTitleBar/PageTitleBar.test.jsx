@@ -10,6 +10,10 @@ import PageTitleBar from './PageTitleBar';
 import { commonPageTitleBarProps, pageTitleBarBreadcrumb } from './PageTitleBar.story';
 
 describe('PageTitleBar', () => {
+  it('should be selectable via testId', () => {
+    render(<PageTitleBar {...commonPageTitleBarProps} testId="PAGE_TITLE_BAR" />);
+    expect(screen.getByTestId('PAGE_TITLE_BAR')).toBeDefined();
+  });
   it('Renders common props as expected', () => {
     const wrapper = mount(<PageTitleBar {...commonPageTitleBarProps} />);
     expect(wrapper.find('.page-title-bar-title--text h2')).toHaveLength(1);

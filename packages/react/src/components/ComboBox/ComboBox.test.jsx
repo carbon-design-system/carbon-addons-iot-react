@@ -103,7 +103,7 @@ describe('ComboBox', () => {
     const tags = screen.getByTestId('combo-tags');
 
     userEvent.click(screen.getByTitle('Open'));
-    userEvent.click(screen.getByTitle('Option 1'));
+    userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
 
     expect(tags.childElementCount).toEqual(1);
     expect(tags.firstChild.firstChild.firstChild.innerHTML).toEqual('Option 1');

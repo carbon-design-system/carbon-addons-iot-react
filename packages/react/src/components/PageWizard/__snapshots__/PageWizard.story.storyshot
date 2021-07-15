@@ -558,22 +558,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             className="iot--page-wizard--content--actions"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Cancel
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -594,6 +604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
   <div>
     <div
       className="page-title-bar"
+      data-testid="page-title-bar"
       style={
         Object {
           "--header-offset": "48px",
@@ -669,7 +680,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             >
               
               <div
-                aria-describedby={null}
                 aria-label="More information"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -948,22 +958,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   className="iot--page-wizard--content--actions--sticky"
                 >
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
                     Cancel
                   </button>
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
@@ -987,6 +1007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
   <div>
     <div
       className="page-title-bar"
+      data-testid="page-title-bar"
       style={
         Object {
           "--header-offset": "48px",
@@ -1062,7 +1083,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             >
               
               <div
-                aria-describedby={null}
                 aria-label="More information"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -1341,31 +1361,47 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   className="iot--page-wizard--content--actions--sticky iot--page-wizard--content--after-footer"
                 >
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="bx--btn bx--btn--tertiary"
                     disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
                     Save and close
                   </button>
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
                     Cancel
                   </button>
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
@@ -1430,6 +1466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
   <div>
     <div
       className="page-title-bar"
+      data-testid="page-title-bar"
       style={
         Object {
           "--header-offset": "48px",
@@ -1505,7 +1542,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             >
               
               <div
-                aria-describedby={null}
                 aria-label="More information"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -1601,22 +1637,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   className="iot--page-wizard--content--actions"
                 >
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
                     Cancel
                   </button>
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
@@ -2191,22 +2237,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             className="iot--page-wizard--content--actions"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Cancel
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -2227,6 +2283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
   <div>
     <div
       className="page-title-bar"
+      data-testid="page-title-bar"
       style={
         Object {
           "--header-offset": "48px",
@@ -2302,7 +2359,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             >
               
               <div
-                aria-describedby={null}
                 aria-label="More information"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -2581,22 +2637,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   className="iot--page-wizard--content--actions"
                 >
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
                     Cancel
                   </button>
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
@@ -3171,22 +3237,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             className="iot--page-wizard--content--actions"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Cancel
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -3207,6 +3283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
   <div>
     <div
       className="page-title-bar"
+      data-testid="page-title-bar"
       style={
         Object {
           "--header-offset": "48px",
@@ -3282,7 +3359,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             >
               
               <div
-                aria-describedby={null}
                 aria-label="More information"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -3877,22 +3953,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   className="iot--page-wizard--content--actions"
                 >
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--secondary"
                     data-testid="Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
                     Cancel
                   </button>
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="iot--btn bx--btn bx--btn--primary"
                     data-testid="Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
