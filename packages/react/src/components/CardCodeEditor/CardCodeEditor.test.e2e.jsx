@@ -32,7 +32,7 @@ describe('CardCodeEditor loaded editor test', () => {
         onSubmit={() => {}}
         onClose={() => {}}
         language="json"
-        onCopy={(value) => onCopy(value)}
+        onCopy={onCopy}
         initialValue="/* write your code here */"
       />
     );

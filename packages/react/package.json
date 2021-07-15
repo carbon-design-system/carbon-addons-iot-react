@@ -34,7 +34,8 @@
     "lint": "yarn lint:javascript && yarn lint:stylelint",
     "lint:javascript": "eslint --ext .jsx --ext .js .",
     "lint:stylelint": "stylelint './src/**/*.scss' --syntax scss --ignorePath .gitignore --custom-formatter ./config/stylelint/sassMsgFormatter.js",
-    "pre-commit": "yarn svg-convert && yarn lint-staged && yarn reports:clean && yarn test:base && yarn test:e2e && yarn reports",
+    "pre-commit": "yarn svg-convert && yarn lint-staged",
+    "pre-push": "yarn reports:clean && yarn test:base && yarn test:e2e && yarn reports",
     "postinstall": "carbon-telemetry collect --install",
     "start": "yarn test:engines && yarn storybook",
     "storybook": "yarn test:engines && start-storybook -p 3000 -s public/development",
@@ -54,7 +55,7 @@
     "test:e2e": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress run-ct --browser chrome --config video=false,screenshotOnRunFailure=false",
     "test:e2e:interactive": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress open-ct --browser chrome --config video=false,screenshotOnRunFailure=false",
     "test:e2e:ci": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress run-ct  --browser chrome --headless --config --record video=false,screenshotOnRunFailure=false",
-    "reports:clean": "rimraf .nyc_output reports coverage",
+    "reports:clean": "rimraf .nyc_output reports",
     "reports:copy": "mkdir reports || true && cp cypress/coverage/coverage-final.json reports/from-cypress.json && cp jest/coverage/coverage-final.json reports/from-jest.json",
     "reports:combine": "mkdir .nyc_output || true && npx nyc merge reports && mv coverage.json .nyc_output/out.json && npx nyc report --check-coverage --per-file --report-dir coverage",
     "reports": "yarn reports:copy && yarn reports:combine"
@@ -105,6 +106,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn pre-commit",
+      "pre-push": "yarn pre-push",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
