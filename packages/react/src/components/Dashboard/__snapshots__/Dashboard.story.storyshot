@@ -1179,52 +1179,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                     }
                   }
                 >
-                  <div>
-                    <svg
-                      aria-labelledby="gauge-label"
-                      className="iot--gauge react-grid-item cssTransforms react-resizable-hide react-resizable"
-                      percent="0"
-                      style={
-                        Object {
-                          "--gauge-bg": "#e0e0e0",
-                          "--gauge-colors": "#f1c21b",
-                          "--gauge-max-value": 100,
-                          "--gauge-size": "68px",
-                          "--gauge-trend-color": undefined,
-                          "--gauge-value": 73,
-                          "--stroke-dash": 137.60175822723292,
-                          "--stroke-dash-array": 188.49555921538757,
-                        }
+                  <svg
+                    aria-labelledby="gauge-label"
+                    className="iot--gauge react-grid-item cssTransforms react-resizable-hide react-resizable"
+                    percent="0"
+                    style={
+                      Object {
+                        "--gauge-bg": "#e0e0e0",
+                        "--gauge-colors": "#f1c21b",
+                        "--gauge-max-value": 100,
+                        "--gauge-size": "68px",
+                        "--gauge-trend-color": undefined,
+                        "--gauge-value": 73,
+                        "--stroke-dash": 137.60175822723292,
+                        "--stroke-dash-array": 188.49555921538757,
                       }
+                    }
+                  >
+                    <circle
+                      className="iot--gauge-bg"
+                      cx={34}
+                      cy={34}
+                      r={30}
+                    />
+                    <circle
+                      className="iot--gauge-fg"
+                      cx={34}
+                      cy={34}
+                      r={30}
+                    />
+                    <text
+                      className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
+                      id="gauge-label"
+                      textAnchor="middle"
+                      x={34}
+                      y={42}
                     >
-                      <circle
-                        className="iot--gauge-bg"
-                        cx={34}
-                        cy={34}
-                        r={30}
-                      />
-                      <circle
-                        className="iot--gauge-fg"
-                        cx={34}
-                        cy={34}
-                        r={30}
-                      />
-                      <text
-                        className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
-                        id="gauge-label"
-                        textAnchor="middle"
-                        x={34}
-                        y={42}
-                      >
-                        <tspan>
-                          73
-                        </tspan>
-                        <tspan>
-                          %
-                        </tspan>
-                      </text>
-                    </svg>
-                  </div>
+                      <tspan>
+                        73
+                      </tspan>
+                      <tspan>
+                        %
+                      </tspan>
+                    </text>
+                  </svg>
                   <div
                     className="iot--gauge-trend iot--gauge-trend__up"
                   >
@@ -4060,52 +4058,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                     }
                   }
                 >
-                  <div>
-                    <svg
-                      aria-labelledby="gauge-label"
-                      className="iot--gauge react-grid-item cssTransforms react-resizable-hide react-resizable"
-                      percent="0"
-                      style={
-                        Object {
-                          "--gauge-bg": "#e0e0e0",
-                          "--gauge-colors": "#f1c21b",
-                          "--gauge-max-value": 100,
-                          "--gauge-size": "68px",
-                          "--gauge-trend-color": undefined,
-                          "--gauge-value": 73,
-                          "--stroke-dash": 137.60175822723292,
-                          "--stroke-dash-array": 188.49555921538757,
-                        }
+                  <svg
+                    aria-labelledby="gauge-label"
+                    className="iot--gauge react-grid-item cssTransforms react-resizable-hide react-resizable"
+                    percent="0"
+                    style={
+                      Object {
+                        "--gauge-bg": "#e0e0e0",
+                        "--gauge-colors": "#f1c21b",
+                        "--gauge-max-value": 100,
+                        "--gauge-size": "68px",
+                        "--gauge-trend-color": undefined,
+                        "--gauge-value": 73,
+                        "--stroke-dash": 137.60175822723292,
+                        "--stroke-dash-array": 188.49555921538757,
                       }
+                    }
+                  >
+                    <circle
+                      className="iot--gauge-bg"
+                      cx={34}
+                      cy={34}
+                      r={30}
+                    />
+                    <circle
+                      className="iot--gauge-fg"
+                      cx={34}
+                      cy={34}
+                      r={30}
+                    />
+                    <text
+                      className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
+                      id="gauge-label"
+                      textAnchor="middle"
+                      x={34}
+                      y={42}
                     >
-                      <circle
-                        className="iot--gauge-bg"
-                        cx={34}
-                        cy={34}
-                        r={30}
-                      />
-                      <circle
-                        className="iot--gauge-fg"
-                        cx={34}
-                        cy={34}
-                        r={30}
-                      />
-                      <text
-                        className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
-                        id="gauge-label"
-                        textAnchor="middle"
-                        x={34}
-                        y={42}
-                      >
-                        <tspan>
-                          73
-                        </tspan>
-                        <tspan>
-                          %
-                        </tspan>
-                      </text>
-                    </svg>
-                  </div>
+                      <tspan>
+                        73
+                      </tspan>
+                      <tspan>
+                        %
+                      </tspan>
+                    </text>
+                  </svg>
                   <div
                     className="iot--gauge-trend iot--gauge-trend__up"
                   >
@@ -6976,52 +6972,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                     }
                   }
                 >
-                  <div>
-                    <svg
-                      aria-labelledby="gauge-label"
-                      className="iot--gauge react-grid-item cssTransforms react-resizable-hide react-resizable"
-                      percent="0"
-                      style={
-                        Object {
-                          "--gauge-bg": "#e0e0e0",
-                          "--gauge-colors": "#f1c21b",
-                          "--gauge-max-value": 100,
-                          "--gauge-size": "68px",
-                          "--gauge-trend-color": undefined,
-                          "--gauge-value": 73,
-                          "--stroke-dash": 137.60175822723292,
-                          "--stroke-dash-array": 188.49555921538757,
-                        }
+                  <svg
+                    aria-labelledby="gauge-label"
+                    className="iot--gauge react-grid-item cssTransforms react-resizable-hide react-resizable"
+                    percent="0"
+                    style={
+                      Object {
+                        "--gauge-bg": "#e0e0e0",
+                        "--gauge-colors": "#f1c21b",
+                        "--gauge-max-value": 100,
+                        "--gauge-size": "68px",
+                        "--gauge-trend-color": undefined,
+                        "--gauge-value": 73,
+                        "--stroke-dash": 137.60175822723292,
+                        "--stroke-dash-array": 188.49555921538757,
                       }
+                    }
+                  >
+                    <circle
+                      className="iot--gauge-bg"
+                      cx={34}
+                      cy={34}
+                      r={30}
+                    />
+                    <circle
+                      className="iot--gauge-fg"
+                      cx={34}
+                      cy={34}
+                      r={30}
+                    />
+                    <text
+                      className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
+                      id="gauge-label"
+                      textAnchor="middle"
+                      x={34}
+                      y={42}
                     >
-                      <circle
-                        className="iot--gauge-bg"
-                        cx={34}
-                        cy={34}
-                        r={30}
-                      />
-                      <circle
-                        className="iot--gauge-fg"
-                        cx={34}
-                        cy={34}
-                        r={30}
-                      />
-                      <text
-                        className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
-                        id="gauge-label"
-                        textAnchor="middle"
-                        x={34}
-                        y={42}
-                      >
-                        <tspan>
-                          73
-                        </tspan>
-                        <tspan>
-                          %
-                        </tspan>
-                      </text>
-                    </svg>
-                  </div>
+                      <tspan>
+                        73
+                      </tspan>
+                      <tspan>
+                        %
+                      </tspan>
+                    </text>
+                  </svg>
                   <div
                     className="iot--gauge-trend iot--gauge-trend__up"
                   >
@@ -12512,52 +12506,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                     }
                   }
                 >
-                  <div>
-                    <svg
-                      aria-labelledby="gauge-label"
-                      className="iot--gauge react-grid-item cssTransforms react-resizable-hide react-resizable"
-                      percent="0"
-                      style={
-                        Object {
-                          "--gauge-bg": "#e0e0e0",
-                          "--gauge-colors": "#f1c21b",
-                          "--gauge-max-value": 100,
-                          "--gauge-size": "68px",
-                          "--gauge-trend-color": undefined,
-                          "--gauge-value": 73,
-                          "--stroke-dash": 137.60175822723292,
-                          "--stroke-dash-array": 188.49555921538757,
-                        }
+                  <svg
+                    aria-labelledby="gauge-label"
+                    className="iot--gauge react-grid-item cssTransforms react-resizable-hide react-resizable"
+                    percent="0"
+                    style={
+                      Object {
+                        "--gauge-bg": "#e0e0e0",
+                        "--gauge-colors": "#f1c21b",
+                        "--gauge-max-value": 100,
+                        "--gauge-size": "68px",
+                        "--gauge-trend-color": undefined,
+                        "--gauge-value": 73,
+                        "--stroke-dash": 137.60175822723292,
+                        "--stroke-dash-array": 188.49555921538757,
                       }
+                    }
+                  >
+                    <circle
+                      className="iot--gauge-bg"
+                      cx={34}
+                      cy={34}
+                      r={30}
+                    />
+                    <circle
+                      className="iot--gauge-fg"
+                      cx={34}
+                      cy={34}
+                      r={30}
+                    />
+                    <text
+                      className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
+                      id="gauge-label"
+                      textAnchor="middle"
+                      x={34}
+                      y={42}
                     >
-                      <circle
-                        className="iot--gauge-bg"
-                        cx={34}
-                        cy={34}
-                        r={30}
-                      />
-                      <circle
-                        className="iot--gauge-fg"
-                        cx={34}
-                        cy={34}
-                        r={30}
-                      />
-                      <text
-                        className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
-                        id="gauge-label"
-                        textAnchor="middle"
-                        x={34}
-                        y={42}
-                      >
-                        <tspan>
-                          73
-                        </tspan>
-                        <tspan>
-                          %
-                        </tspan>
-                      </text>
-                    </svg>
-                  </div>
+                      <tspan>
+                        73
+                      </tspan>
+                      <tspan>
+                        %
+                      </tspan>
+                    </text>
+                  </svg>
                   <div
                     className="iot--gauge-trend iot--gauge-trend__up"
                   >
@@ -29333,52 +29325,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                     }
                   }
                 >
-                  <div>
-                    <svg
-                      aria-labelledby="gauge-label"
-                      className="iot--gauge react-grid-item cssTransforms react-resizable-hide react-resizable"
-                      percent="0"
-                      style={
-                        Object {
-                          "--gauge-bg": "#e0e0e0",
-                          "--gauge-colors": "#f1c21b",
-                          "--gauge-max-value": 100,
-                          "--gauge-size": "68px",
-                          "--gauge-trend-color": undefined,
-                          "--gauge-value": 73,
-                          "--stroke-dash": 137.60175822723292,
-                          "--stroke-dash-array": 188.49555921538757,
-                        }
+                  <svg
+                    aria-labelledby="gauge-label"
+                    className="iot--gauge react-grid-item cssTransforms react-resizable-hide react-resizable"
+                    percent="0"
+                    style={
+                      Object {
+                        "--gauge-bg": "#e0e0e0",
+                        "--gauge-colors": "#f1c21b",
+                        "--gauge-max-value": 100,
+                        "--gauge-size": "68px",
+                        "--gauge-trend-color": undefined,
+                        "--gauge-value": 73,
+                        "--stroke-dash": 137.60175822723292,
+                        "--stroke-dash-array": 188.49555921538757,
                       }
+                    }
+                  >
+                    <circle
+                      className="iot--gauge-bg"
+                      cx={34}
+                      cy={34}
+                      r={30}
+                    />
+                    <circle
+                      className="iot--gauge-fg"
+                      cx={34}
+                      cy={34}
+                      r={30}
+                    />
+                    <text
+                      className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
+                      id="gauge-label"
+                      textAnchor="middle"
+                      x={34}
+                      y={42}
                     >
-                      <circle
-                        className="iot--gauge-bg"
-                        cx={34}
-                        cy={34}
-                        r={30}
-                      />
-                      <circle
-                        className="iot--gauge-fg"
-                        cx={34}
-                        cy={34}
-                        r={30}
-                      />
-                      <text
-                        className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
-                        id="gauge-label"
-                        textAnchor="middle"
-                        x={34}
-                        y={42}
-                      >
-                        <tspan>
-                          73
-                        </tspan>
-                        <tspan>
-                          %
-                        </tspan>
-                      </text>
-                    </svg>
-                  </div>
+                      <tspan>
+                        73
+                      </tspan>
+                      <tspan>
+                        %
+                      </tspan>
+                    </text>
+                  </svg>
                   <div
                     className="iot--gauge-trend iot--gauge-trend__up"
                   >
