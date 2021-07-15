@@ -1,24 +1,26 @@
+@import '../../../../styles/scss/globals/vars';
+
 // TODO add styling hooks to carbon-components-angular so we can remove aiTableHeadCell
 .table-head-cell-text,
 .table-head-cell-icons {
   top: 0;
 }
 
-.bx--data-table--compact {
+.#{$prefix}--data-table--compact {
   .table-head-cell-text,
   .table-head-cell-icons {
     line-height: 24px;
   }
 }
 
-.bx--data-table--short {
+.#{$prefix}--data-table--short {
   .table-head-cell-text,
   .table-head-cell-icons {
     line-height: 32px;
   }
 }
 
-.bx--data-table--tall {
+.#{$prefix}--data-table--tall {
   .table-head-cell-text,
   .table-head-cell-icons {
     line-height: 64px;
@@ -30,12 +32,12 @@
   margin-right: 10px;
 }
 
-.bx--table-sort.bx--table-sort--active .bx--table-sort__icon {
+.#{$prefix}--table-sort.#{$prefix}--table-sort--active .#{$prefix}--table-sort__icon {
   top: 16px;
 }
 
 .ai-table {
-  .bx--table-header-label,
+  .#{$prefix}--table-header-label,
   .table-head-cell-text {
     padding-left: 16px;
   }

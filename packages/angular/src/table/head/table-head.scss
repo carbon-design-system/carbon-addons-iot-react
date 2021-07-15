@@ -1,4 +1,5 @@
 @import '~carbon-components/scss/globals/scss/vars';
+@import '../../../../styles/scss/globals/vars';
 
 .table-row:not(:first-of-type) {
   border-top: 2px solid white;
@@ -13,15 +14,15 @@ th:not(:last-of-type) {
 }
 
 .ai-table {
-  .bx--table-sort,
-  &.bx--data-table--sort th:first-of-type .bx--table-sort {
+  .#{$prefix}--table-sort,
+  &.#{$prefix}--data-table--sort th:first-of-type .#{$prefix}--table-sort {
     padding-left: 0;
   }
-  &.bx--data-table th button {
+  &.#{$prefix}--data-table th button {
     align-items: flex-end;
     padding-bottom: $spacing-05;
   }
-  &.bx--data-table th:last-of-type {
+  &.#{$prefix}--data-table th:last-of-type {
     position: inherit;
   }
 }
