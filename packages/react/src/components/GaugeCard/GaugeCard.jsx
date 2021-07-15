@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import classnames from 'classnames';
 import { gray20, yellow } from '@carbon/colors';
 
-import { CARD_CONTENT_PADDING, CARD_SIZES, DASHBOARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_CONTENT_PADDING, CARD_SIZES } from '../../constants/LayoutConstants';
 import { CardPropTypes, GaugeCardPropTypes } from '../../constants/CardPropTypes';
 import Card from '../Card/Card';
 import DataStateRenderer from '../Card/DataStateRenderer';
@@ -86,8 +86,7 @@ const GaugeCard = ({
         paddingRight: CARD_CONTENT_PADDING,
         paddingBottom: CARD_CONTENT_PADDING,
         paddingLeft: CARD_CONTENT_PADDING,
-        rowGap:
-          others.breakpoint === DASHBOARD_SIZES.SMALL && size === CARD_SIZES.SMALL ? 0 : '1rem',
+        rowGap: size === CARD_SIZES.SMALL ? 0 : '1rem',
       };
 
   const resizeHandles = isResizable ? getResizeHandles(children) : [];

@@ -1175,7 +1175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       "paddingLeft": 16,
                       "paddingRight": 16,
                       "paddingTop": 0,
-                      "rowGap": "1rem",
+                      "rowGap": 0,
                     }
                   }
                 >
@@ -4054,7 +4054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       "paddingLeft": 16,
                       "paddingRight": 16,
                       "paddingTop": 0,
-                      "rowGap": "1rem",
+                      "rowGap": 0,
                     }
                   }
                 >
@@ -6968,7 +6968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       "paddingLeft": 16,
                       "paddingRight": 16,
                       "paddingTop": 0,
-                      "rowGap": "1rem",
+                      "rowGap": 0,
                     }
                   }
                 >
@@ -12502,7 +12502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       "paddingLeft": 16,
                       "paddingRight": 16,
                       "paddingTop": 0,
-                      "rowGap": "1rem",
+                      "rowGap": 0,
                     }
                   }
                 >
@@ -29321,7 +29321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       "paddingLeft": 16,
                       "paddingRight": 16,
                       "paddingTop": 0,
-                      "rowGap": "1rem",
+                      "rowGap": 0,
                     }
                   }
                 >
