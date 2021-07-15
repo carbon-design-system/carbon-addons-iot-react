@@ -61,10 +61,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--action-list"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={-1}
                   type="button"
                 >
@@ -86,7 +91,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
-                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -125,11 +129,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-for-card-table-list-table-toolbar-content"
             >
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
                 data-testid="download-button"
                 disabled={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Download table content"
                 type="button"
@@ -153,11 +162,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
                 data-testid="filter-button"
                 disabled={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Filters"
                 type="button"
@@ -1135,8 +1149,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-30"
-                id="bx-pagination-select-30-count-label"
+                htmlFor="bx-pagination-select-31"
+                id="bx-pagination-select-31-count-label"
               >
                 Items per page:
               </label>
@@ -1155,7 +1169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-30"
+                        id="bx-pagination-select-31"
                         onChange={[Function]}
                         value={10}
                       >
@@ -1220,7 +1234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-30-right"
+                    htmlFor="bx-pagination-select-31-right"
                   >
                     Page number, of 10 pages
                   </label>
@@ -1233,7 +1247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-30-right"
+                        id="bx-pagination-select-31-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -1346,17 +1360,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--pagination__control-buttons"
               >
                 <button
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Previous page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Previous page"
@@ -1376,17 +1396,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                 </button>
                 <button
-                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Next page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Next page"
@@ -1476,10 +1502,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--action-list"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={-1}
                   type="button"
                 >
@@ -1501,7 +1532,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
-                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -1540,21 +1570,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-for-card-table-list-table-toolbar-content"
             >
               <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
+                aria-labelledby="table-for-card-table-list-toolbar-search-search"
+                className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                role="search"
               >
                 <div
-                  aria-labelledby="table-for-card-table-list-toolbar-search-search"
-                  className="bx--search bx--search--sm table-toolbar-search"
-                  role="search"
+                  className="bx--search-magnifier"
                 >
                   <svg
                     aria-hidden={true}
-                    className="bx--search-magnifier"
+                    className="bx--search-magnifier-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -1567,55 +1592,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                     />
                   </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="table-for-card-table-list-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search-search"
-                  >
-                    Search
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    data-testid="table-for-card-table-list-table-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Search"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
                 </div>
+                <label
+                  className="bx--label"
+                  htmlFor="table-for-card-table-list-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  data-testid="table-for-card-table-list-table-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
               </div>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Download table content"
                 type="button"
@@ -1639,11 +1671,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Filters"
                 type="button"
@@ -1716,11 +1753,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                 </div>
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
                   data-testid="card-toolbar-expand-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   title="Expand to fullscreen"
                   type="button"
@@ -2651,8 +2693,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-29"
-                id="bx-pagination-select-29-count-label"
+                htmlFor="bx-pagination-select-30"
+                id="bx-pagination-select-30-count-label"
               >
                 Items per page:
               </label>
@@ -2671,7 +2713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-29"
+                        id="bx-pagination-select-30"
                         onChange={[Function]}
                         value={10}
                       >
@@ -2736,7 +2778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-29-right"
+                    htmlFor="bx-pagination-select-30-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -2749,7 +2791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-29-right"
+                        id="bx-pagination-select-30-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -2798,17 +2840,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--pagination__control-buttons"
               >
                 <button
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Previous page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Previous page"
@@ -2828,17 +2876,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                 </button>
                 <button
-                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Next page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Next page"
@@ -2928,10 +2982,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--action-list"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={-1}
                   type="button"
                 >
@@ -2953,7 +3012,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
-                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -2992,21 +3050,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-for-card-table-list-table-toolbar-content"
             >
               <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
+                aria-labelledby="table-for-card-table-list-toolbar-search-search"
+                className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                role="search"
               >
                 <div
-                  aria-labelledby="table-for-card-table-list-toolbar-search-search"
-                  className="bx--search bx--search--sm table-toolbar-search"
-                  role="search"
+                  className="bx--search-magnifier"
                 >
                   <svg
                     aria-hidden={true}
-                    className="bx--search-magnifier"
+                    className="bx--search-magnifier-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -3019,55 +3072,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                     />
                   </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="table-for-card-table-list-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search-search"
-                  >
-                    Search
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    data-testid="table-for-card-table-list-table-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Search"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
                 </div>
+                <label
+                  className="bx--label"
+                  htmlFor="table-for-card-table-list-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  data-testid="table-for-card-table-list-table-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
               </div>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Download table content"
                 type="button"
@@ -3091,11 +3151,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Filters"
                 type="button"
@@ -4342,8 +4407,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-27"
-                id="bx-pagination-select-27-count-label"
+                htmlFor="bx-pagination-select-28"
+                id="bx-pagination-select-28-count-label"
               >
                 Items per page:
               </label>
@@ -4362,7 +4427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-27"
+                        id="bx-pagination-select-28"
                         onChange={[Function]}
                         value={10}
                       >
@@ -4427,7 +4492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-27-right"
+                    htmlFor="bx-pagination-select-28-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -4440,7 +4505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-27-right"
+                        id="bx-pagination-select-28-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -4489,17 +4554,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--pagination__control-buttons"
               >
                 <button
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Previous page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Previous page"
@@ -4519,17 +4590,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                 </button>
                 <button
-                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Next page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Next page"
@@ -4618,10 +4695,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--action-list"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={-1}
                   type="button"
                 >
@@ -4639,21 +4721,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-for-card-undefined-table-toolbar-content"
             >
               <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
+                aria-labelledby="table-for-card-undefined-toolbar-search-search"
+                className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                role="search"
               >
                 <div
-                  aria-labelledby="table-for-card-undefined-toolbar-search-search"
-                  className="bx--search bx--search--sm table-toolbar-search"
-                  role="search"
+                  className="bx--search-magnifier"
                 >
                   <svg
                     aria-hidden={true}
-                    className="bx--search-magnifier"
+                    className="bx--search-magnifier-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -4666,66 +4743,78 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                     />
                   </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="table-for-card-undefined-toolbar-search"
-                    id="table-for-card-undefined-toolbar-search-search"
-                  >
-                    Search
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    data-testid="table-for-card-undefined-table-toolbar-search"
-                    id="table-for-card-undefined-toolbar-search"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Search"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
                 </div>
+                <label
+                  className="bx--label"
+                  htmlFor="table-for-card-undefined-toolbar-search"
+                  id="table-for-card-undefined-toolbar-search-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  data-testid="table-for-card-undefined-table-toolbar-search"
+                  id="table-for-card-undefined-toolbar-search"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
               </div>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="table-for-card-undefined-table-toolbar-clear-filters-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
                 __Clear all filters__
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Download table content"
                 type="button"
@@ -4749,11 +4838,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Filters"
                 type="button"
@@ -5235,8 +5329,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-31"
-                id="bx-pagination-select-31-count-label"
+                htmlFor="bx-pagination-select-32"
+                id="bx-pagination-select-32-count-label"
               >
                 Items per page:
               </label>
@@ -5255,7 +5349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-31"
+                        id="bx-pagination-select-32"
                         onChange={[Function]}
                         value={10}
                       >
@@ -5320,7 +5414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-31-right"
+                    htmlFor="bx-pagination-select-32-right"
                   >
                     Page number, of 1 pages
                   </label>
@@ -5333,7 +5427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-31-right"
+                        id="bx-pagination-select-32-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -5374,17 +5468,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--pagination__control-buttons"
               >
                 <button
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Previous page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Previous page"
@@ -5404,17 +5504,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                 </button>
                 <button
-                  className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Next page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Next page"
@@ -5504,10 +5610,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--action-list"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={-1}
                   type="button"
                 >
@@ -5529,7 +5640,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
-                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -5568,21 +5678,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-for-card-table-list-table-toolbar-content"
             >
               <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
+                aria-labelledby="table-for-card-table-list-toolbar-search-search"
+                className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                role="search"
               >
                 <div
-                  aria-labelledby="table-for-card-table-list-toolbar-search-search"
-                  className="bx--search bx--search--sm table-toolbar-search"
-                  role="search"
+                  className="bx--search-magnifier"
                 >
                   <svg
                     aria-hidden={true}
-                    className="bx--search-magnifier"
+                    className="bx--search-magnifier-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -5595,55 +5700,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                     />
                   </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="table-for-card-table-list-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search-search"
-                  >
-                    Search
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    data-testid="table-for-card-table-list-table-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Search"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
                 </div>
+                <label
+                  className="bx--label"
+                  htmlFor="table-for-card-table-list-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  data-testid="table-for-card-table-list-table-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
               </div>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Download table content"
                 type="button"
@@ -5667,11 +5779,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Filters"
                 type="button"
@@ -6438,8 +6555,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-23"
-                id="bx-pagination-select-23-count-label"
+                htmlFor="bx-pagination-select-24"
+                id="bx-pagination-select-24-count-label"
               >
                 Items per page:
               </label>
@@ -6458,7 +6575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-23"
+                        id="bx-pagination-select-24"
                         onChange={[Function]}
                         value={10}
                       >
@@ -6523,7 +6640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-23-right"
+                    htmlFor="bx-pagination-select-24-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -6536,7 +6653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-23-right"
+                        id="bx-pagination-select-24-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -6585,17 +6702,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--pagination__control-buttons"
               >
                 <button
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Previous page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Previous page"
@@ -6615,17 +6738,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                 </button>
                 <button
-                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Next page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Next page"
@@ -6715,10 +6844,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--action-list"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={-1}
                   type="button"
                 >
@@ -6740,7 +6874,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
-                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -6779,21 +6912,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-for-card-table-list-table-toolbar-content"
             >
               <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
+                aria-labelledby="table-for-card-table-list-toolbar-search-search"
+                className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                role="search"
               >
                 <div
-                  aria-labelledby="table-for-card-table-list-toolbar-search-search"
-                  className="bx--search bx--search--sm table-toolbar-search"
-                  role="search"
+                  className="bx--search-magnifier"
                 >
                   <svg
                     aria-hidden={true}
-                    className="bx--search-magnifier"
+                    className="bx--search-magnifier-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -6806,55 +6934,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                     />
                   </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="table-for-card-table-list-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search-search"
-                  >
-                    Search
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    data-testid="table-for-card-table-list-table-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Search"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
                 </div>
+                <label
+                  className="bx--label"
+                  htmlFor="table-for-card-table-list-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  data-testid="table-for-card-table-list-table-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
               </div>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Download table content"
                 type="button"
@@ -6878,11 +7013,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Filters"
                 type="button"
@@ -6955,11 +7095,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                 </div>
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
                   data-testid="card-toolbar-expand-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   title="Expand to fullscreen"
                   type="button"
@@ -8876,8 +9021,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-26"
-                id="bx-pagination-select-26-count-label"
+                htmlFor="bx-pagination-select-27"
+                id="bx-pagination-select-27-count-label"
               >
                 Items per page:
               </label>
@@ -8896,7 +9041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-26"
+                        id="bx-pagination-select-27"
                         onChange={[Function]}
                         value={10}
                       >
@@ -8961,7 +9106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-26-right"
+                    htmlFor="bx-pagination-select-27-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -8974,7 +9119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-26-right"
+                        id="bx-pagination-select-27-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -9023,17 +9168,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--pagination__control-buttons"
               >
                 <button
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Previous page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Previous page"
@@ -9053,17 +9204,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                 </button>
                 <button
-                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Next page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Next page"
@@ -9153,10 +9310,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--action-list"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={-1}
                   type="button"
                 >
@@ -9178,7 +9340,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
-                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -9217,21 +9378,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-for-card-table-list-table-toolbar-content"
             >
               <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
+                aria-labelledby="table-for-card-table-list-toolbar-search-search"
+                className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                role="search"
               >
                 <div
-                  aria-labelledby="table-for-card-table-list-toolbar-search-search"
-                  className="bx--search bx--search--sm table-toolbar-search"
-                  role="search"
+                  className="bx--search-magnifier"
                 >
                   <svg
                     aria-hidden={true}
-                    className="bx--search-magnifier"
+                    className="bx--search-magnifier-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -9244,55 +9400,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                     />
                   </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="table-for-card-table-list-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search-search"
-                  >
-                    Search
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    data-testid="table-for-card-table-list-table-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Search"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
                 </div>
+                <label
+                  className="bx--label"
+                  htmlFor="table-for-card-table-list-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  data-testid="table-for-card-table-list-table-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
               </div>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Download table content"
                 type="button"
@@ -9316,11 +9479,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Filters"
                 type="button"
@@ -11153,8 +11321,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-22"
-                id="bx-pagination-select-22-count-label"
+                htmlFor="bx-pagination-select-23"
+                id="bx-pagination-select-23-count-label"
               >
                 Items per page:
               </label>
@@ -11173,7 +11341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-22"
+                        id="bx-pagination-select-23"
                         onChange={[Function]}
                         value={10}
                       >
@@ -11238,7 +11406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-22-right"
+                    htmlFor="bx-pagination-select-23-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -11251,7 +11419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-22-right"
+                        id="bx-pagination-select-23-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -11300,17 +11468,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--pagination__control-buttons"
               >
                 <button
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Previous page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Previous page"
@@ -11330,17 +11504,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                 </button>
                 <button
-                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Next page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Next page"
@@ -11430,10 +11610,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--action-list"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={-1}
                   type="button"
                 >
@@ -11455,7 +11640,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
-                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -11494,21 +11678,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-for-card-table-list-table-toolbar-content"
             >
               <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
+                aria-labelledby="table-for-card-table-list-toolbar-search-search"
+                className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                role="search"
               >
                 <div
-                  aria-labelledby="table-for-card-table-list-toolbar-search-search"
-                  className="bx--search bx--search--sm table-toolbar-search"
-                  role="search"
+                  className="bx--search-magnifier"
                 >
                   <svg
                     aria-hidden={true}
-                    className="bx--search-magnifier"
+                    className="bx--search-magnifier-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -11521,55 +11700,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                     />
                   </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="table-for-card-table-list-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search-search"
-                  >
-                    Search
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    data-testid="table-for-card-table-list-table-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Search"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
                 </div>
+                <label
+                  className="bx--label"
+                  htmlFor="table-for-card-table-list-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  data-testid="table-for-card-table-list-table-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
               </div>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Download table content"
                 type="button"
@@ -11593,11 +11779,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Filters"
                 type="button"
@@ -11670,11 +11861,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                 </div>
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
                   data-testid="card-toolbar-expand-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   title="Expand to fullscreen"
                   type="button"
@@ -12940,8 +13136,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-28"
-                id="bx-pagination-select-28-count-label"
+                htmlFor="bx-pagination-select-29"
+                id="bx-pagination-select-29-count-label"
               >
                 Items per page:
               </label>
@@ -12960,7 +13156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-28"
+                        id="bx-pagination-select-29"
                         onChange={[Function]}
                         value={10}
                       >
@@ -13025,7 +13221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-28-right"
+                    htmlFor="bx-pagination-select-29-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -13038,7 +13234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-28-right"
+                        id="bx-pagination-select-29-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -13087,17 +13283,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--pagination__control-buttons"
               >
                 <button
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Previous page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Previous page"
@@ -13117,17 +13319,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                 </button>
                 <button
-                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Next page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Next page"
@@ -13217,10 +13425,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--action-list"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={-1}
                   type="button"
                 >
@@ -13242,7 +13455,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
-                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -13281,21 +13493,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-for-card-table-list-table-toolbar-content"
             >
               <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
+                aria-labelledby="table-for-card-table-list-toolbar-search-search"
+                className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                role="search"
               >
                 <div
-                  aria-labelledby="table-for-card-table-list-toolbar-search-search"
-                  className="bx--search bx--search--sm table-toolbar-search"
-                  role="search"
+                  className="bx--search-magnifier"
                 >
                   <svg
                     aria-hidden={true}
-                    className="bx--search-magnifier"
+                    className="bx--search-magnifier-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -13308,55 +13515,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                     />
                   </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="table-for-card-table-list-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search-search"
-                  >
-                    Search
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    data-testid="table-for-card-table-list-table-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Search"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
                 </div>
+                <label
+                  className="bx--label"
+                  htmlFor="table-for-card-table-list-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  data-testid="table-for-card-table-list-table-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
               </div>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Download table content"
                 type="button"
@@ -13380,11 +13594,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Filters"
                 type="button"
@@ -15076,8 +15295,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-25"
-                id="bx-pagination-select-25-count-label"
+                htmlFor="bx-pagination-select-26"
+                id="bx-pagination-select-26-count-label"
               >
                 Items per page:
               </label>
@@ -15096,7 +15315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-25"
+                        id="bx-pagination-select-26"
                         onChange={[Function]}
                         value={10}
                       >
@@ -15161,7 +15380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-25-right"
+                    htmlFor="bx-pagination-select-26-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -15174,7 +15393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-25-right"
+                        id="bx-pagination-select-26-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -15223,17 +15442,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--pagination__control-buttons"
               >
                 <button
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Previous page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Previous page"
@@ -15253,17 +15478,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                 </button>
                 <button
-                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Next page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Next page"
@@ -15353,10 +15584,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--action-list"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={-1}
                   type="button"
                 >
@@ -15378,7 +15614,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
-                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -15417,21 +15652,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-for-card-table-list-table-toolbar-content"
             >
               <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
+                aria-labelledby="table-for-card-table-list-toolbar-search-search"
+                className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                role="search"
               >
                 <div
-                  aria-labelledby="table-for-card-table-list-toolbar-search-search"
-                  className="bx--search bx--search--sm table-toolbar-search"
-                  role="search"
+                  className="bx--search-magnifier"
                 >
                   <svg
                     aria-hidden={true}
-                    className="bx--search-magnifier"
+                    className="bx--search-magnifier-icon"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -15444,55 +15674,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                     />
                   </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="table-for-card-table-list-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search-search"
-                  >
-                    Search
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    data-testid="table-for-card-table-list-table-toolbar-search"
-                    id="table-for-card-table-list-toolbar-search"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Search"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
                 </div>
+                <label
+                  className="bx--label"
+                  htmlFor="table-for-card-table-list-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  data-testid="table-for-card-table-list-table-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
               </div>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="download-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Download table content"
                 type="button"
@@ -15516,11 +15753,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                 data-testid="filter-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 title="Filters"
                 type="button"
@@ -17810,8 +18052,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-24"
-                id="bx-pagination-select-24-count-label"
+                htmlFor="bx-pagination-select-25"
+                id="bx-pagination-select-25-count-label"
               >
                 Items per page:
               </label>
@@ -17830,7 +18072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-24"
+                        id="bx-pagination-select-25"
                         onChange={[Function]}
                         value={10}
                       >
@@ -17895,7 +18137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-24-right"
+                    htmlFor="bx-pagination-select-25-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -17908,7 +18150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-24-right"
+                        id="bx-pagination-select-25-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -17957,17 +18199,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--pagination__control-buttons"
               >
                 <button
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   disabled={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Previous page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Previous page"
@@ -17987,17 +18235,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </svg>
                 </button>
                 <button
-                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Next page
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Next page"

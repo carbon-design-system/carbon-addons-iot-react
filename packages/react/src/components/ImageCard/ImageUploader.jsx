@@ -168,7 +168,8 @@ const ImageUploader = ({
           <Button
             size={buttonSize}
             onClick={handleUploadByURL}
-            testId={`${testId}-url-upload-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-url-upload-button`}
           >
             {i18n.uploadByURLButton}
           </Button>
@@ -176,7 +177,8 @@ const ImageUploader = ({
             size={buttonSize}
             onClick={handleCancelFromURLClick}
             kind="ghost"
-            testId={`${testId}-url-cancel-button`}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-url-cancel-button`}
           >
             {i18n.uploadByURLCancel}
           </Button>
@@ -203,7 +205,8 @@ const ImageUploader = ({
               size={buttonSize}
               onClick={onBrowseClick}
               kind="tertiary"
-              testId={`${testId}-browse-button`}
+              // TODO: pass testId in v3 to override defaults
+              // testId={`${testId}-browse-button`}
             >
               {i18n.browseImages}
             </Button>
@@ -212,7 +215,8 @@ const ImageUploader = ({
                 size={buttonSize}
                 onClick={handleFromURLClick}
                 kind="tertiary"
-                testId={`${testId}-insert-from-url-button`}
+                // TODO: pass testId in v3 to override defaults
+                // testId={`${testId}-insert-from-url-button`}
               >
                 {i18n.insertUrl}
               </Button>

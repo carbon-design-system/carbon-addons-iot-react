@@ -688,7 +688,8 @@ const DashboardEditor = ({
                   deleteLabelText={i18n.imageGalleryDeleteLabelText}
                   deleteModalLabelText={i18n.imageGalleryDeleteModalLabelText}
                   deleteModalTitleText={i18n.imageGalleryDeleteModalTitleText}
-                  testId={`${testId}-image-gallery-modal`}
+                  // TODO: pass testId in v3 to override defaults
+                  // testId={`${testId}-image-gallery-modal`}
                 />
                 <DashboardGrid
                   isEditable

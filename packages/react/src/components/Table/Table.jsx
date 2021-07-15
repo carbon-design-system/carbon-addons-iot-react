@@ -778,13 +778,17 @@ const Table = (props) => {
               ),
             }}
             data={data}
+            // TODO: remove id in V3.
             testId={`${id || testId}-table-toolbar`}
           />
         ) : null
       }
       {view.selectedAdvancedFilterIds.length ? (
         <section className={`${iotPrefix}--table__advanced-filters-container`}>
-          <FilterTags testId={`${testId}-filter-tags`}>
+          <FilterTags
+            // TODO: remove id in V3.
+            testId={`${id || testId}-filter-tags`}
+          >
             {view.advancedFilters
               .filter((advFilter) => view.selectedAdvancedFilterIds.includes(advFilter.filterId))
               .map((advancedFilter) => {
@@ -798,7 +802,8 @@ const Table = (props) => {
                         actions.toolbar.onRemoveAdvancedFilter(e, advancedFilter.filterId);
                       }
                     }}
-                    data-testid={`${testId}-filter-tag-${advancedFilter.filterId}`}
+                    // TODO: remove id in V3.
+                    data-testid={`${id || testId}-filter-tag-${advancedFilter.filterId}`}
                   >
                     {advancedFilter.filterTitleText}
                   </Tag>
@@ -985,7 +990,7 @@ const Table = (props) => {
                 aggregations,
                 ordering: view.table.ordering,
               }}
-              testId={`${id}-table-foot`}
+              testId={`${id || testId}-table-foot`}
               showExpanderColumn={showExpanderColumn}
             />
           ) : null}

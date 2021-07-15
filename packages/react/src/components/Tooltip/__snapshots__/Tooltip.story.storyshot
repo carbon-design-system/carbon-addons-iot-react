@@ -38,7 +38,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           id="top-left"
         >
           <div
-            aria-describedby={null}
+            aria-describedby="tooltip-body"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
             onClick={[Function]}
@@ -87,7 +87,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           id="top-center"
         >
           <div
-            aria-describedby={null}
+            aria-describedby="tooltip-body"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
             onClick={[Function]}
@@ -136,7 +136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           id="top-right"
         >
           <div
-            aria-describedby={null}
+            aria-describedby="tooltip-body"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
             onClick={[Function]}
@@ -195,7 +195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           id="left-center"
         >
           <div
-            aria-describedby={null}
+            aria-describedby="tooltip-body"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
             onClick={[Function]}
@@ -244,7 +244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           id="center"
         >
           <div
-            aria-describedby={null}
+            aria-describedby="tooltip-body"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
             onClick={[Function]}
@@ -293,7 +293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           id="right-center"
         >
           <div
-            aria-describedby={null}
+            aria-describedby="tooltip-body"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
             onClick={[Function]}
@@ -352,7 +352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           id="bottom-left"
         >
           <div
-            aria-describedby={null}
+            aria-describedby="tooltip-body"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
             onClick={[Function]}
@@ -401,7 +401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           id="bottom-center"
         >
           <div
-            aria-describedby={null}
+            aria-describedby="tooltip-body"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
             onClick={[Function]}
@@ -450,7 +450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           id="bottom-right"
         >
           <div
-            aria-describedby={null}
+            aria-describedby="tooltip-body"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
             onClick={[Function]}
@@ -509,7 +509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     >
       Tooltip label
       <div
-        aria-describedby={null}
+        aria-describedby="tooltip-body"
         aria-labelledby="withIcon"
         className="bx--tooltip__trigger"
         onBlur={[Function]}
@@ -562,7 +562,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      aria-describedby={null}
       aria-labelledby="withoutIcon"
       className="bx--tooltip__label"
       id="withoutIcon"
@@ -601,7 +600,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       id="customIconOnly"
     >
       <div
-        aria-describedby={null}
         aria-label="Helpful Information"
         className="bx--tooltip__trigger"
         onBlur={[Function]}
@@ -668,7 +666,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     >
       Tooltip label
       <div
-        aria-describedby={null}
         aria-labelledby="customIcon"
         className="bx--tooltip__trigger"
         onBlur={[Function]}
@@ -710,11 +707,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   className="storybook-container"
 >
   <button
+    aria-describedby={null}
     aria-pressed={null}
     className="iot--btn bx--btn bx--btn--primary"
     data-testid="Button"
     disabled={false}
+    onBlur={[Function]}
     onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     style={
       Object {
         "margin": "4px 20px",
@@ -727,11 +729,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     Hide
   </button>
   <button
+    aria-describedby={null}
     aria-pressed={null}
     className="iot--btn bx--btn bx--btn--primary"
     data-testid="Button"
     disabled={false}
+    onBlur={[Function]}
     onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     style={
       Object {
         "margin": "4px 20px",
@@ -753,7 +760,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   >
     <div
       aria-controls="uncontrolled"
-      aria-describedby="uncontrolled"
       aria-expanded={true}
       aria-labelledby="uncontrolled"
       className="bx--tooltip__label"
@@ -793,10 +799,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onMouseOut={[Function]}
         onMouseOver={[Function]}
         open={true}
-        role="tooltip"
         style={
           Object {
-            "margin": 0,
             "opacity": 1,
             "position": "absolute",
             "top": "0px",
@@ -808,7 +812,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           className="bx--tooltip__caret"
         />
         <div
-          aria-labelledby="uncontrolled"
           className="bx--tooltip__content"
           role="dialog"
         >
