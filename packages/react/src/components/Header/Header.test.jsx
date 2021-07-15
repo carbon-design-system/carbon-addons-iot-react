@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, act } from '@testing-library/react';
 import { User20, Help20, Checkbox16 } from '@carbon/icons-react';
 import userEvent from '@testing-library/user-event';
 
@@ -95,6 +95,14 @@ describe('Header', () => {
       },
     ],
   };
+
+  it('should be selectable by testId', () => {
+    render(<Header {...HeaderProps} hasSideNav testId="__header__" />);
+    expect(screen.getByTestId('__header__')).toBeDefined();
+    expect(screen.getByTestId('__header__-menu-button')).toBeDefined();
+    expect(screen.getByTestId('__header__-name')).toBeDefined();
+    expect(screen.getByTestId('__header__-action-group')).toBeDefined();
+  });
 
   it('should render', () => {
     const { container } = render(<Header {...HeaderProps} />);
@@ -372,7 +380,7 @@ describe('Header', () => {
     userEvent.click(overflowMenuButton);
     expect(screen.getByText('Watson')).toBeVisible();
     expect(screen.getByText('Custom icon 1')).toBeVisible();
-    userEvent.click(screen.getByRole('button', { name: 'help' }));
+    userEvent.click(screen.getByRole('menuitem', { name: 'help' }));
     expect(screen.getByText('This is a link')).toBeVisible();
     userEvent.click(screen.getByRole('button', { name: 'help' }));
     expect(screen.queryByText('Custom icon 1')).toBeNull();
@@ -380,6 +388,11 @@ describe('Header', () => {
     expect(screen.getByText('Custom icon 1')).toBeVisible();
     userEvent.click(screen.getAllByLabelText('open and close list of options')[0]);
     expect(screen.queryByText('Custom icon 1')).toBeNull();
+    act(() => {
+      userEvent.click(screen.getByLabelText('Open menu', { selector: 'svg' }));
+    });
+    expect(screen.getByText('Watson')).toBeVisible();
+    expect(screen.getByText('Custom icon 1')).toBeVisible();
     HTMLElement.prototype.getBoundingClientRect = originalBounding;
     window.innerWidth = originalWidth;
   });

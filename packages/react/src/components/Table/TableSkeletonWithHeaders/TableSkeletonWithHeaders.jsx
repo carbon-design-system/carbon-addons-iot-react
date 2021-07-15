@@ -32,7 +32,6 @@ const defaultProps = {
   rowCount: 10,
   columns: [],
   testId: '',
-  testID: '',
   showExpanderColumn: false,
 };
 

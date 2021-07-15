@@ -640,6 +640,7 @@ const TableCard = ({
       hideHeader
       // Use the Table's loading state rather than Card's
       isLoading={false}
+      // TODO: remove deprecated testID in v3.
       testId={testID || testId}
       {...others}
     >
