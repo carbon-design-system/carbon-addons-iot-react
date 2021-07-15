@@ -12,7 +12,6 @@ import { Modal } from '../Modal';
 import { getTableColumns, mockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
 import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
-import EmptyTable from './EmptyTable/EmptyTable';
 import TableBodyRow from './TableBody/TableBodyRow/TableBodyRow';
 import TableHead from './TableHead/TableHead';
 import { initialState } from './Table.story';
@@ -141,7 +140,7 @@ describe('Table', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
   afterEach(() => {
-    console.error.mockClear();
+    jest.clearAllMocks();
   });
   afterAll(() => {
     console.error.mockRestore();
@@ -284,41 +283,97 @@ describe('Table', () => {
   });
 
   it('custom emptystate only renders with no filters', () => {
-    const wrapper = mount(
+    const { rerender } = render(
       <Table
         columns={tableColumns}
         data={[]}
         actions={mockActions}
         options={options}
         view={merge({}, view, {
-          table: { emptyState: <div id="customEmptyState">emptyState</div> },
+          table: { emptyState: <div id="customEmptyState">My empty state</div> },
         })}
       />
     );
     // Should render the custom empty state
-    expect(wrapper.find('#customEmptyState')).toHaveLength(1);
+    expect(screen.getByText('My empty state')).toBeTruthy();
 
-    const wrapper2 = mount(
+    rerender(
       <Table
         columns={tableColumns}
         data={[]}
         actions={mockActions}
         options={options}
-        i18n={{ emptyButtonLabelWithFilters: 'Clear all filters' }}
+        i18n={{ emptyButtonLabelWithFilters: 'Clear all my filters' }}
         view={merge({}, view, {
           filters: [{ columnId: 'col', value: 'value' }],
-          table: { emptyState: <div id="customEmptyState">emptyState</div> },
+          table: { emptyState: <div id="customEmptyState">My empty state</div> },
         })}
       />
     );
     // Should not render the empty state
-    expect(wrapper2.find('#customEmptyState')).toHaveLength(0);
+    expect(screen.queryByText('My empty state')).not.toBeTruthy();
 
-    // Click the button and make sure the right action fires
-    const emptyTable = wrapper2.find(EmptyTable);
-    emptyTable.find('button').simulate('click');
+    userEvent.click(screen.getByRole('button', { name: 'Clear all my filters' }));
     expect(mockActions.toolbar.onApplySearch).toHaveBeenCalled();
     expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalled();
+  });
+
+  it('can handle missing actions for custom emptystate with filters', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={[]}
+        actions={{}}
+        options={options}
+        i18n={{ emptyButtonLabelWithFilters: 'Clear all my filters' }}
+        view={merge({}, view, {
+          filters: [{ columnId: 'col', value: 'value' }],
+          table: { emptyState: <div id="customEmptyState">My empty state</div> },
+        })}
+      />
+    );
+    userEvent.click(screen.getByRole('button', { name: 'Clear all my filters' }));
+    expect(mockActions.toolbar.onApplySearch).not.toHaveBeenCalled();
+    expect(mockActions.toolbar.onClearAllFilters).not.toHaveBeenCalled();
+  });
+
+  it('triggers onColumnResize callback when column widths are modified', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn();
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+    const ordering = [
+      { columnId: 'col1', isHidden: false },
+      { columnId: 'col2', isHidden: false },
+      { columnId: 'col3', isHidden: false },
+    ];
+    const columns = [
+      { id: 'col1', name: 'Column 1', width: '100px' },
+      { id: 'col2', name: 'Column 2', width: '100px' },
+      { id: 'col3', name: 'Column 3', width: '100px' },
+    ];
+
+    render(
+      <Table
+        columns={columns}
+        data={[{ id: 'row-1', values: { col1: 'a', col2: 'b', col3: 'c' } }]}
+        actions={mockActions}
+        options={{ hasResize: true, hasColumnSelection: true }}
+        view={{ table: { ordering }, toolbar: { activeBar: 'column' } }}
+      />
+    );
+
+    const toggleHideCol2Button = screen.getAllByText('Column 2')[1];
+    fireEvent.click(toggleHideCol2Button);
+
+    expect(mockActions.table.onColumnResize).toHaveBeenCalledWith([
+      { id: 'col1', name: 'Column 1', width: '150px' },
+      { id: 'col2', name: 'Column 2', width: '100px' },
+      { id: 'col3', name: 'Column 3', width: '150px' },
+    ]);
+
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
   it('validate row count function ', () => {
@@ -660,6 +715,13 @@ describe('Table', () => {
       render(<Table columns={columns} data={[tableData[0]]} options={options} />);
     };
 
+    it('wraps cell text when there are no otions', () => {
+      render(<Table columns={tableColumns} data={[tableData[0]]} options={false} />);
+      expectWrapping();
+      expectNoTruncation();
+      expect.assertions(5);
+    });
+
     it('wraps cell text by default', () => {
       renderDefaultTable();
       expectWrapping();
@@ -990,6 +1052,10 @@ describe('Table', () => {
     expect(screen.getAllByText(i18nTest.emptyButtonLabel)[0]).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyMessage)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyButtonLabel)).not.toBeInTheDocument();
+  });
+
+  it('has default i18n currentPage function', () => {
+    expect(defaultProps({}).i18n.currentPage(2)).toEqual('page 2');
   });
 
   it('Table in modal select all', () => {
@@ -1733,6 +1799,23 @@ describe('Table', () => {
         expect.stringContaining(
           `Only one of props 'options.hasFilter' or 'options.hasAdvancedFilter' can be specified in 'Table'.`
         )
+      );
+      global.__DEV__ = __DEV__;
+    });
+
+    it('throws an error when hasAdvancedFilter is not boolean or undefined', () => {
+      const { __DEV__ } = global;
+      global.__DEV__ = true;
+      render(
+        <Table
+          id="test"
+          columns={tableColumns}
+          data={tableData}
+          options={{ hasAdvancedFilter: 'true' }}
+        />
+      );
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(`'options.hasAdvancedFilter' should be a boolean or undefined.`)
       );
       global.__DEV__ = __DEV__;
     });

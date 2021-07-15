@@ -43,11 +43,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
           data-testid="Card-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -140,11 +145,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
           data-testid="Card-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -282,11 +292,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
             </button>
           </div>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -379,11 +394,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
           data-testid="Card-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -521,11 +541,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
             </button>
           </div>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -663,11 +688,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
             </button>
           </div>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"

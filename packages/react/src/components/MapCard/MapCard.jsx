@@ -161,6 +161,7 @@ const MapCard = ({
           />
         </div>
         <div
+          data-testid={`${testID || testId}-settings`}
           className={classnames(`${BASE_CLASS_NAME}-settings`, {
             [`${BASE_CLASS_NAME}-settings--open`]: isSettingPanelOpen,
           })}

@@ -429,6 +429,8 @@ export const ImageCardPropTypes = {
     id: PropTypes.string,
     src: PropTypes.string,
     zoomMax: PropTypes.number,
+    /** value for object-fit property - contain, cover, fill */
+    displayOption: PropTypes.string,
   }).isRequired,
   values: PropTypes.shape({
     hotspots: PropTypes.array,

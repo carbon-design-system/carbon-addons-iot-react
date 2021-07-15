@@ -44,7 +44,7 @@ const StructuredList = ({
           [`${iotPrefix}--composed-structured-list__wrapper`]: isFixedWidth,
         })}
         selection
-        data-testid={`${testId}-wrapper`}
+        data-testid={testId}
       >
         <StructuredListHead data-testid={`${testId}-head`} className={StructuredListHeadClassName}>
           <StructuredListRow head>
@@ -62,7 +62,7 @@ const StructuredList = ({
             ))}
           </StructuredListRow>
         </StructuredListHead>
-        <StructuredListBody data-testid={testId}>
+        <StructuredListBody data-testid={`${testId}-body`}>
           {data.map((item) => (
             <StructuredListRow
               data-testid={`${testId}-row-${item.id}`}

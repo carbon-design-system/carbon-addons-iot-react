@@ -15,6 +15,7 @@ import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import Card from '../Card/Card';
 import { getResizeHandles } from '../../utils/cardUtilityFunctions';
+import deprecate from '../../internal/deprecate';
 
 const ListCard = ({
   id,
@@ -70,7 +71,7 @@ const ListCard = ({
         <StructuredListWrapper>
           <StructuredListBody
             // TODO: remove deprecated 'testID' in v3.
-            data-testid={`${testID || testID}-list-body`}
+            data-testid={`${testID || testId}-list-body`}
           >
             {data
               ? data.map((item) => {
@@ -124,6 +125,13 @@ ListCard.propTypes = {
   hasMoreData: PropTypes.bool,
   loadData: PropTypes.func.isRequired,
   layout: PropTypes.string,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 };
 
 ListCard.defaultProps = {
@@ -131,6 +139,8 @@ ListCard.defaultProps = {
   hasMoreData: false,
   layout: '',
   data: [],
+  // TODO: replace with 'list-card' in v3. to set better defaults instead of inheriting from Card
+  testId: 'Card',
 };
 
 ListCard.displayName = 'ListCard';

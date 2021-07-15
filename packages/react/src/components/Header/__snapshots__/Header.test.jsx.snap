@@ -61,7 +61,7 @@ exports[`Header should render 1`] = `
     >
       <div
         class="bx--header__global"
-        data-testid="header-action-group-global-bar"
+        data-testid="header-action-group"
       >
         <div
           class="bx--header__submenu bx--header-action-btn action-btn__group"
@@ -71,16 +71,16 @@ exports[`Header should render 1`] = `
             aria-expanded="false"
             aria-haspopup="menu"
             aria-label="help"
-            class="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+            class="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             tabindex="0"
             title="help"
             type="button"
           >
-            <span
+            <div
               class="bx--assistive-text"
             >
               help
-            </span>
+            </div>
             <svg
               aria-hidden="true"
               class="bx--header__menu-item bx--header__menu-title"

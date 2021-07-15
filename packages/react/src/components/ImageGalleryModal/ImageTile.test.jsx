@@ -32,7 +32,7 @@ describe('ImageTile', () => {
         toggleImageSelection={mockToggle}
       />
     );
-    expect(screen.queryByText('Delete')).toBeNull();
+    expect(screen.queryByLabelText('Delete')).toBeNull();
 
     render(
       <ImageTile
@@ -42,9 +42,9 @@ describe('ImageTile', () => {
         toggleImageSelection={mockToggle}
       />
     );
-    expect(screen.queryByText('Delete')).toBeDefined();
+    expect(screen.queryByLabelText('Delete')).toBeDefined();
     expect(mockDelete).not.toHaveBeenCalled();
-    fireEvent.click(screen.queryByText('Delete'));
+    fireEvent.click(screen.queryByLabelText('Delete'));
     expect(mockDelete).toHaveBeenCalled();
   });
 });

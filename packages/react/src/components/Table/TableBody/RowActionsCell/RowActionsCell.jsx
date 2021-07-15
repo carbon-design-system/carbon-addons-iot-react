@@ -70,6 +70,10 @@ const onClick = (e, id, action, onApplyRowAction) => {
   e.preventDefault();
   e.stopPropagation();
 };
+const renderBundledIconUsingName = (iconName, label) => {
+  const Icon = icons[iconName];
+  return <Icon aria-label={label} />;
+};
 
 class RowActionsCell extends React.Component {
   state = {
@@ -196,9 +200,7 @@ class RowActionsCell extends React.Component {
                               title={action.labelText}
                             >
                               {typeof action.renderIcon === 'string' ? (
-                                React.createElement(icons[action.renderIcon], {
-                                  'aria-label': action.labelText,
-                                })
+                                renderBundledIconUsingName(action.renderIcon, action.labelText)
                               ) : (
                                 <action.renderIcon description={action.labelText} />
                               )}

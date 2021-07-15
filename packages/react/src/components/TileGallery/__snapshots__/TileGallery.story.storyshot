@@ -52,21 +52,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--search bx--search--xl"
                 role="search"
               >
-                <svg
-                  aria-hidden={true}
+                <div
                   className="bx--search-magnifier"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="bx--search-magnifier-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                    />
+                  </svg>
+                </div>
                 <label
                   className="bx--label"
                   htmlFor="gallery-search"
@@ -130,6 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="List"
                 >
                   List
                 </span>
@@ -145,16 +150,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="Grid"
                 >
                   Grid
                 </span>
               </button>
             </div>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -179,7 +191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-78"
+                    aria-controls="accordion-item-1447"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -209,7 +221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-78"
+                    id="accordion-item-1447"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -609,7 +621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-79"
+                    aria-controls="accordion-item-1448"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -639,7 +651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-79"
+                    id="accordion-item-1448"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -1348,21 +1360,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--search bx--search--xl"
                 role="search"
               >
-                <svg
-                  aria-hidden={true}
+                <div
                   className="bx--search-magnifier"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="bx--search-magnifier-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                    />
+                  </svg>
+                </div>
                 <label
                   className="bx--label"
                   htmlFor="gallery-search"
@@ -1426,6 +1442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="__ListText__"
                 >
                   __ListText__
                 </span>
@@ -1441,16 +1458,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="__GridText__"
                 >
                   __GridText__
                 </span>
               </button>
             </div>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -1475,7 +1499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-84"
+                    aria-controls="accordion-item-1454"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1505,7 +1529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-84"
+                    id="accordion-item-1454"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -1669,7 +1693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onAnimationEnd={[Function]}
           >
             <button
-              aria-controls="accordion-item-82"
+              aria-controls="accordion-item-1451"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -1699,7 +1723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </button>
             <div
               className="bx--accordion__content"
-              id="accordion-item-82"
+              id="accordion-item-1451"
             >
               <div
                 className="tile-gallery--section--items"
@@ -2124,7 +2148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onAnimationEnd={[Function]}
           >
             <button
-              aria-controls="accordion-item-83"
+              aria-controls="accordion-item-1452"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -2154,7 +2178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </button>
             <div
               className="bx--accordion__content"
-              id="accordion-item-83"
+              id="accordion-item-1452"
             >
               <div
                 className="tile-gallery--section--items"
@@ -2348,6 +2372,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <span
           className="bx--content-switcher__label"
+          title="List"
         >
           List
         </span>
@@ -2363,6 +2388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <span
           className="bx--content-switcher__label"
+          title="Grid"
         >
           Grid
         </span>
@@ -2404,7 +2430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-80"
+                aria-controls="accordion-item-1449"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2434,7 +2460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-80"
+                id="accordion-item-1449"
               >
                 <div
                   className="tile-gallery--section--items"
@@ -2859,7 +2885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-81"
+                aria-controls="accordion-item-1450"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2889,7 +2915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-81"
+                id="accordion-item-1450"
               >
                 <div
                   className="tile-gallery--section--items"

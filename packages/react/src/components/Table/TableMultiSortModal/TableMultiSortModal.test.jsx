@@ -108,11 +108,11 @@ describe('TableMultiSortModal', () => {
     userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
     expect(callbacks.onCancelMultiSortColumns).toHaveBeenCalled();
 
-    userEvent.click(screen.getByText('Add column'));
+    userEvent.click(screen.getByRole('button', { name: 'Add column' }));
     expect(callbacks.onAddMultiSortColumn).toHaveBeenCalledWith(0);
-    userEvent.click(screen.queryAllByText('Remove column')[1]);
+    userEvent.click(screen.queryAllByRole('button', { name: 'Remove column' })[1]);
     expect(callbacks.onRemoveMultiSortColumn).toHaveBeenCalledWith(1);
-    userEvent.click(screen.getByText('Add column'));
+    userEvent.click(screen.getByRole('button', { name: 'Add column' }));
     expect(callbacks.onAddMultiSortColumn).toHaveBeenCalledWith(0);
     userEvent.click(screen.getByRole('button', { name: 'Sort' }));
     expect(callbacks.onSaveMultiSortColumns).toHaveBeenCalledWith([
