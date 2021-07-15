@@ -16,9 +16,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="Hero__StyledHero-nej8yx-0 fTphDS"
+        data-testid="hero"
       >
         <p
           className="bx--skeleton__text"
+          data-testid="hero-loading"
           style={
             Object {
               "width": "30%",
@@ -59,12 +61,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="Hero__StyledHero-nej8yx-0 fTphDS"
+        data-testid="hero"
       >
         <div
           className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
         >
           <div
             className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+            data-testid="hero-title"
           >
             Page Title
           </div>
@@ -72,6 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             aria-label="Close,"
             className="bx--modal-close"
             data-modal-close={true}
+            data-testid="hero-close-button"
             onClick={[Function]}
             type="button"
           >
@@ -104,22 +109,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
           data-testid="Button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Cancel
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--primary"
           data-testid="Button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -147,12 +162,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="Hero__StyledHero-nej8yx-0 fTphDS"
+        data-testid="hero"
       >
         <div
           className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
         >
           <div
             className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+            data-testid="hero-title"
           >
             Page Title
           </div>
@@ -160,6 +177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             aria-label="Close,"
             className="bx--modal-close"
             data-modal-close={true}
+            data-testid="hero-close-button"
             onClick={[Function]}
             type="button"
           >
@@ -182,6 +200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         </div>
         <p
           className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
+          data-testid="hero-description"
         >
           My blurrrrbbbb!!
         </p>
@@ -197,22 +216,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
           data-testid="Button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Cancel
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--primary"
           data-testid="Button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -240,6 +269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="Hero__StyledHero-nej8yx-0 fTphDS"
+        data-testid="hero"
       >
         <div
           className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
@@ -291,6 +321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         >
           <div
             className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+            data-testid="hero-title"
           >
             Page Title
           </div>
@@ -298,6 +329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             aria-label="Close,"
             className="bx--modal-close"
             data-modal-close={true}
+            data-testid="hero-close-button"
             onClick={[Function]}
             type="button"
           >
@@ -330,22 +362,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
           data-testid="Button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Cancel
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--primary"
           data-testid="Button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >

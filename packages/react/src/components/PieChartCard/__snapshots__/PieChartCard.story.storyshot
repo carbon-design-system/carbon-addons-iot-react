@@ -49,11 +49,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             data-testid="basicCardStoryTest-toolbar"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
               data-testid="basicCardStoryTest-toolbar-close-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Close"
               type="button"
@@ -122,10 +127,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     className="bx--action-list"
                   >
                     <button
+                      aria-describedby={null}
                       aria-pressed={null}
                       className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                       disabled={false}
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                       tabIndex={-1}
                       type="button"
                     >
@@ -138,11 +148,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   data-testid="basicCardStory-table-table-toolbar-content"
                 >
                   <button
+                    aria-describedby={null}
                     aria-pressed={null}
                     className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
                     data-testid="download-button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     title="Download table content"
                     type="button"
@@ -175,19 +190,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     }
                   >
                     <button
+                      aria-describedby={null}
                       aria-label=""
-                      className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="flyout-menu-button"
                       disabled={false}
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                       tabIndex={0}
                       type="button"
                     >
-                      <span
+                      <div
                         className="bx--assistive-text"
+                        onMouseEnter={[Function]}
                       >
                         
-                      </span>
+                      </div>
                       <svg
                         aria-hidden={true}
                         aria-label=""
@@ -210,7 +231,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       data-floating-menu-container={true}
                     >
                       <div
-                        aria-describedby={null}
                         aria-expanded={false}
                         aria-label=""
                         className="bx--tooltip__label"
@@ -578,11 +598,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           data-testid="basicCardStoryTest-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -675,11 +700,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           data-testid="basicCardStoryTest-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -772,11 +802,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           data-testid="basicCardStoryTest-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -869,11 +904,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           data-testid="basicCardStoryTest-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -966,11 +1006,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           data-testid="basicCardStoryTest-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -1066,11 +1111,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           data-testid="basicCardStoryTest-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="basicCardStoryTest-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"

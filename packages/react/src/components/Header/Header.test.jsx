@@ -96,6 +96,14 @@ describe('Header', () => {
     ],
   };
 
+  it('should be selectable by testId', () => {
+    render(<Header {...HeaderProps} hasSideNav testId="__header__" />);
+    expect(screen.getByTestId('__header__')).toBeDefined();
+    expect(screen.getByTestId('__header__-menu-button')).toBeDefined();
+    expect(screen.getByTestId('__header__-name')).toBeDefined();
+    expect(screen.getByTestId('__header__-action-group')).toBeDefined();
+  });
+
   it('should render', () => {
     const { container } = render(<Header {...HeaderProps} />);
     expect(container).toMatchSnapshot();
@@ -372,7 +380,7 @@ describe('Header', () => {
     userEvent.click(overflowMenuButton);
     expect(screen.getByText('Watson')).toBeVisible();
     expect(screen.getByText('Custom icon 1')).toBeVisible();
-    userEvent.click(screen.getByRole('button', { name: 'help' }));
+    userEvent.click(screen.getByRole('menuitem', { name: 'help' }));
     expect(screen.getByText('This is a link')).toBeVisible();
     userEvent.click(screen.getByRole('button', { name: 'help' }));
     expect(screen.queryByText('Custom icon 1')).toBeNull();

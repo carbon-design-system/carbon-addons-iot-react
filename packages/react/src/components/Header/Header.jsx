@@ -77,6 +77,8 @@ const propTypes = {
     openMenu: PropTypes.string,
     closeMenu: PropTypes.string,
   }),
+
+  testId: PropTypes.string,
 };
 
 export const APP_SWITCHER = 'AppSwitcher';
@@ -96,6 +98,7 @@ const defaultProps = {
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
   },
+  testId: 'header',
 };
 
 /**
@@ -115,6 +118,7 @@ const Header = ({
   url,
   appSwitcherLabel,
   i18n,
+  testId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const theShortAppName = shortAppName || appName;
@@ -144,19 +148,27 @@ const Header = ({
       ];
 
   return (
-    <CarbonHeader className={className} aria-label={mergedI18n.mainHeader}>
+    <CarbonHeader data-testid={testId} className={className} aria-label={mergedI18n.mainHeader}>
       <SkipToContent href={skipto} />
       {hasSideNav && (
-        <HeaderMenuButton aria-label={mergedI18n.openMenu} onClick={onClickSideNavExpand} />
+        <HeaderMenuButton
+          data-testid={`${testId}-menu-button`}
+          aria-label={mergedI18n.openMenu}
+          onClick={onClickSideNavExpand}
+        />
       )}
-      <HeaderName href={url} prefix={prefix}>
+      <HeaderName data-testid={`${testId}-name`} href={url} prefix={prefix}>
         <span>{appName}</span>
         {theShortAppName ? (
           <span className={`${iotPrefix}--header__short-name`}>{theShortAppName}</span>
         ) : null}
         {subtitle ? <div className={`${iotPrefix}--header__subtitle`}>{subtitle}</div> : null}
       </HeaderName>
-      <HeaderActionGroup actionItems={actionItems} i18n={mergedI18n} />
+      <HeaderActionGroup
+        actionItems={actionItems}
+        i18n={mergedI18n}
+        testId={`${testId}-action-group`}
+      />
     </CarbonHeader>
   );
 };
