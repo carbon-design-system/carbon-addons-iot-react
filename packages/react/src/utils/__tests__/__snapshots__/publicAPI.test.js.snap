@@ -3361,7 +3361,6 @@ Map {
       "hasRowSelection": false,
       "rowCount": 10,
       "showExpanderColumn": false,
-      "testID": "",
       "testId": "",
     },
     "propTypes": Object {
