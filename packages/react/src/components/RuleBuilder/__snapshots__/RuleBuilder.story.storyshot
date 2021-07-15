@@ -1994,6 +1994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 className="iot--list-builder__container"
+                data-testid="select-users"
               >
                 <div
                   className="iot--list-builder__all"
@@ -2005,6 +2006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--list-header-container"
+                      data-testid="list-header"
                     >
                       <div
                         className="iot--list-header"
@@ -2055,6 +2057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <input
                             autoComplete="off"
                             className="bx--search-input"
+                            data-testid="list-header-search-input"
                             id="iot--list-builder__all--search"
                             onChange={[Function]}
                             onKeyDown={[Function]}
@@ -2124,6 +2127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--list-header-container"
+                      data-testid="list-header"
                     >
                       <div
                         className="iot--list-header"
@@ -2174,6 +2178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <input
                             autoComplete="off"
                             className="bx--search-input"
+                            data-testid="list-header-search-input"
                             id="iot--list-builder__selected--search"
                             onChange={[Function]}
                             onKeyDown={[Function]}
@@ -2350,6 +2355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 className="iot--list-builder__container"
+                data-testid="select-users"
               >
                 <div
                   className="iot--list-builder__all"
@@ -2361,6 +2367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--list-header-container"
+                      data-testid="list-header"
                     >
                       <div
                         className="iot--list-header"
@@ -2411,6 +2418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <input
                             autoComplete="off"
                             className="bx--search-input"
+                            data-testid="list-header-search-input"
                             id="iot--list-builder__all--search"
                             onChange={[Function]}
                             onKeyDown={[Function]}
@@ -2480,6 +2488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--list-header-container"
+                      data-testid="list-header"
                     >
                       <div
                         className="iot--list-header"
@@ -2530,6 +2539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <input
                             autoComplete="off"
                             className="bx--search-input"
+                            data-testid="list-header-search-input"
                             id="iot--list-builder__selected--search"
                             onChange={[Function]}
                             onKeyDown={[Function]}
@@ -6118,6 +6128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 className="iot--list-builder__container"
+                data-testid="select-users"
               >
                 <div
                   className="iot--list-builder__all"
@@ -6129,6 +6140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--list-header-container"
+                      data-testid="list-header"
                     >
                       <div
                         className="iot--list-header"
@@ -6179,6 +6191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <input
                             autoComplete="off"
                             className="bx--search-input"
+                            data-testid="list-header-search-input"
                             id="iot--list-builder__all--search"
                             onChange={[Function]}
                             onKeyDown={[Function]}
@@ -6499,6 +6512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--list-header-container"
+                      data-testid="list-header"
                     >
                       <div
                         className="iot--list-header"
@@ -6549,6 +6563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <input
                             autoComplete="off"
                             className="bx--search-input"
+                            data-testid="list-header-search-input"
                             id="iot--list-builder__selected--search"
                             onChange={[Function]}
                             onKeyDown={[Function]}
@@ -6784,6 +6799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 className="iot--list-builder__container"
+                data-testid="select-users"
               >
                 <div
                   className="iot--list-builder__all"
@@ -6795,6 +6811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--list-header-container"
+                      data-testid="list-header"
                     >
                       <div
                         className="iot--list-header"
@@ -6845,6 +6862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <input
                             autoComplete="off"
                             className="bx--search-input"
+                            data-testid="list-header-search-input"
                             id="iot--list-builder__all--search"
                             onChange={[Function]}
                             onKeyDown={[Function]}
@@ -7165,6 +7183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="iot--list-header-container"
+                      data-testid="list-header"
                     >
                       <div
                         className="iot--list-header"
@@ -7215,6 +7234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <input
                             autoComplete="off"
                             className="bx--search-input"
+                            data-testid="list-header-search-input"
                             id="iot--list-builder__selected--search"
                             onChange={[Function]}
                             onKeyDown={[Function]}

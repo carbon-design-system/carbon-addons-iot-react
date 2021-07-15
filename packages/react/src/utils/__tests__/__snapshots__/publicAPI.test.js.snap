@@ -17344,6 +17344,7 @@ Map {
       "hasMoreData": false,
       "isLoading": false,
       "layout": "",
+      "testId": "Card",
     },
     "displayName": "ListCard",
     "propTypes": Object {
@@ -21469,7 +21470,7 @@ Map {
         "$$typeof": Symbol(react.forward_ref),
         "render": [Function],
       },
-      "testID": "menu-button",
+      "testId": "menu-button",
     },
     "propTypes": Object {
       "children": Object {
@@ -21525,7 +21526,8 @@ Map {
         ],
         "type": "oneOfType",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -21547,7 +21549,7 @@ Map {
       "onAdd": null,
       "onRemove": null,
       "selectedItems": Array [],
-      "testID": "list-builder",
+      "testId": "list-builder",
     },
     "propTypes": Object {
       "i18n": Object {
@@ -21674,7 +21676,8 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -21782,7 +21785,7 @@ Map {
       "mapControls": Array [],
       "size": "LARGEWIDE",
       "stops": Array [],
-      "testID": "map-card",
+      "testId": "map-card",
     },
     "propTypes": Object {
       "availableActions": Object {

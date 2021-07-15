@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.61](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.60...v2.146.0-next.61) (2021-07-15)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.146.0-next.60](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.59...v2.146.0-next.60) (2021-07-15)
+
+
+### Bug Fixes
+
+* **rule-builder:** prevent state update during render ([0914f48](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0914f481d5a867889e09541494e441acff57186d))
+
+
+
+
+
 # [2.146.0-next.59](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.58...v2.146.0-next.59) (2021-07-14)
 
 
