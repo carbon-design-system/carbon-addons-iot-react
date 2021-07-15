@@ -1,5 +1,4 @@
-/* eslint-disable no-underscore-dangle */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button,
@@ -308,7 +307,7 @@ const DateTimePicker = ({
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
 
   // Refs
-  const datePickerRef = useRef(null);
+  const [datePickerElem, setDatePickerElem] = useState(null);
   const relativeSelect = useRef(null);
 
   const dateTimePickerBaseValue = {
@@ -332,10 +331,14 @@ const DateTimePicker = ({
     },
   };
 
+  const handleDatePickerRef = useCallback((node) => {
+    setDatePickerElem(node);
+  }, []);
+
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (datePickerRef && datePickerRef.current) {
-        datePickerRef.current.cal.open();
+      if (datePickerElem) {
+        datePickerElem.cal.open();
         // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
         // the only way to display the calendar inline is to reparent its DOM to our component
         const wrapper = document.getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`);
@@ -343,14 +346,14 @@ const DateTimePicker = ({
           const dp = document
             .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
             .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
-          dp.appendChild(datePickerRef.current.cal.calendarContainer);
+          dp.appendChild(datePickerElem.cal.calendarContainer);
         }
       }
     }, 0);
     return () => {
       clearTimeout(timeout);
     };
-  }, [datePickerRef, id]);
+  }, [datePickerElem, id]);
 
   /**
    * Parses a value object into a human readable value
@@ -477,18 +480,14 @@ const DateTimePicker = ({
   };
 
   useEffect(() => {
-    if (
-      datePickerRef.current &&
-      datePickerRef.current.inputField &&
-      datePickerRef.current.toInputField
-    ) {
+    if (datePickerElem && datePickerElem.inputField && datePickerElem.toInputField) {
       if (focusOnFirstField) {
-        datePickerRef.current.inputField.focus();
+        datePickerElem.inputField.focus();
       } else {
-        datePickerRef.current.toInputField.focus();
+        datePickerElem.toInputField.focus();
       }
     }
-  }, [focusOnFirstField]);
+  }, [datePickerElem, focusOnFirstField]);
 
   const onDatePickerChange = ([start, end]) => {
     const newAbsolute = { ...absoluteValue };
@@ -893,7 +892,7 @@ const DateTimePicker = ({
                       <DatePicker
                         datePickerType="range"
                         dateFormat="m/d/Y"
-                        ref={datePickerRef}
+                        ref={handleDatePickerRef}
                         onChange={onDatePickerChange}
                         onClose={onDatePickerClose}
                         value={
