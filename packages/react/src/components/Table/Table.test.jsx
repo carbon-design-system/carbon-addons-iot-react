@@ -140,27 +140,7 @@ describe('Table', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
   afterEach(() => {
-    console.error.mockClear();
-
-    mockActions.pagination.onChangePage.mockClear();
-    mockActions.toolbar.onApplyFilter.mockClear();
-    mockActions.toolbar.onToggleFilter.mockClear();
-    mockActions.toolbar.onToggleColumnSelection.mockClear();
-    mockActions.toolbar.onClearAllFilters.mockClear();
-    mockActions.toolbar.onCancelBatchAction.mockClear();
-    mockActions.toolbar.onApplyBatchAction.mockClear();
-    mockActions.toolbar.onApplySearch.mockClear();
-    mockActions.toolbar.onDownloadCSV.mockClear();
-    mockActions.toolbar.onShowRowEdit.mockClear();
-    mockActions.table.onRowSelected.mockClear();
-    mockActions.table.onRowClicked.mockClear();
-    mockActions.table.onRowExpanded.mockClear();
-    mockActions.table.onSelectAll.mockClear();
-    mockActions.table.onChangeSort.mockClear();
-    mockActions.table.onApplyRowAction.mockClear();
-    mockActions.table.onEmptyStateAction.mockClear();
-    mockActions.table.onChangeOrdering.mockClear();
-    mockActions.table.onColumnResize.mockClear();
+    jest.clearAllMocks();
   });
   afterAll(() => {
     console.error.mockRestore();
@@ -310,7 +290,7 @@ describe('Table', () => {
     expect(mockActions.toolbar.onClearAllFilters).not.toHaveBeenCalled();
   });
 
-  it('triggers onColumnResize callback', () => {
+  it('triggers onColumnResize callback when column widths are modified', () => {
     const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
     const mockGetBoundingClientRect = jest.fn();
     Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
