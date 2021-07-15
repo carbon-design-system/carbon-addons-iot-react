@@ -82,6 +82,7 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer, onChange, i18n, t
     <TagContainer
       key={`${hasOverflow}-Tag-Container`}
       id={id}
+      // TODO: remove id in v3
       data-testid={id || testId}
       className={classnames(`${iotPrefix}--filtertags-container`, {
         [`${iotPrefix}--filtertags-container__wrap`]: hasOverflow,

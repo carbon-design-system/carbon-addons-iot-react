@@ -10,7 +10,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
   >
     <div
       aria-controls="tooltip"
-      aria-describedby="tooltip"
       aria-expanded={true}
       className="bx--tooltip__trigger"
       onBlur={[Function]}
@@ -64,11 +63,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       onMouseOut={[Function]}
       onMouseOver={[Function]}
       open={true}
-      role="tooltip"
       style={
         Object {
           "left": "0px",
-          "margin": 0,
           "opacity": 1,
           "position": "absolute",
           "right": "auto",
@@ -80,7 +77,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
-        aria-labelledby="tooltipTrigger"
         className="bx--tooltip__content"
         role="dialog"
       >
@@ -179,7 +175,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
   >
     <div
       aria-controls="tooltip"
-      aria-describedby="tooltip"
       aria-expanded={true}
       className="bx--tooltip__trigger"
       onBlur={[Function]}
@@ -233,11 +228,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       onMouseOut={[Function]}
       onMouseOver={[Function]}
       open={true}
-      role="tooltip"
       style={
         Object {
           "left": "0px",
-          "margin": 0,
           "opacity": 1,
           "position": "absolute",
           "right": "auto",
@@ -249,7 +242,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
-        aria-labelledby="tooltipTrigger"
         className="bx--tooltip__content"
         role="dialog"
       >
@@ -358,7 +350,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
   >
     <div
       aria-controls="tooltip"
-      aria-describedby="tooltip"
       aria-expanded={true}
       className="bx--tooltip__trigger"
       onBlur={[Function]}
@@ -412,11 +403,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       onMouseOut={[Function]}
       onMouseOver={[Function]}
       open={true}
-      role="tooltip"
       style={
         Object {
           "left": "0px",
-          "margin": 0,
           "opacity": 1,
           "position": "absolute",
           "right": "auto",
@@ -428,7 +417,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
-        aria-labelledby="tooltipTrigger"
         className="bx--tooltip__content"
         role="dialog"
       >
@@ -581,7 +569,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
   >
     <div
       aria-controls="tooltip"
-      aria-describedby="tooltip"
       aria-expanded={true}
       className="bx--tooltip__trigger"
       onBlur={[Function]}
@@ -635,11 +622,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       onMouseOut={[Function]}
       onMouseOver={[Function]}
       open={true}
-      role="tooltip"
       style={
         Object {
           "left": "0px",
-          "margin": 0,
           "opacity": 1,
           "position": "absolute",
           "right": "auto",
@@ -651,7 +636,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
-        aria-labelledby="tooltipTrigger"
         className="bx--tooltip__content"
         role="dialog"
       >
