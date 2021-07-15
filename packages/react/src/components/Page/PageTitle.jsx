@@ -29,15 +29,18 @@ const propTypes = {
   section: PropTypes.node,
   /** Title of the page  */
   title: PropTypes.node,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
   section: null,
   title: null,
+  testId: 'page-title',
 };
 
-const PageTitle = ({ title, section }) => (
-  <StyledPageTitle>
+const PageTitle = ({ title, section, testId }) => (
+  <StyledPageTitle data-testid={testId}>
     {title ? (
       <StyledPageTitleH1>
         {section ? <StyledPageSection>{`${section} /`}</StyledPageSection> : null}
