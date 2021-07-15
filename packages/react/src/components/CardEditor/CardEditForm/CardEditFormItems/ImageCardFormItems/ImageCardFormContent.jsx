@@ -107,6 +107,7 @@ const ImageCardFormItems = ({
       {isHotspotModalShowing ? (
         <HotspotEditorModal
           cardConfig={cardConfig}
+          displayOption={cardConfig.content?.displayOption}
           getValidDataItems={getValidDataItems}
           dataItems={dataItems}
           availableDimensions={availableDimensions}

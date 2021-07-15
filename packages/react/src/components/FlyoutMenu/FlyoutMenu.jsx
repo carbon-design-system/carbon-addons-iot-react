@@ -109,11 +109,11 @@ const FlyoutMenu = ({
   const getFlyoutMenuOffset = React.useCallback(
     (tooltipElement, flyoutDirection, tooltipButtonElement, flipped) => {
       let topOffset = 0;
-      let leftOffset = 0;
+      let leftOffset = -2;
 
       const caretWidth = 16;
-      const caretHeight = 14;
-      const borderWidth = 1;
+      const caretHeight = 12;
+      const borderWidth = 2;
 
       const tooltipContent = tooltipElement.querySelector('[role="dialog"]');
       const tooltipWidth = tooltipContent ? tooltipContent.getBoundingClientRect().width : 0;
@@ -132,10 +132,11 @@ const FlyoutMenu = ({
         case FlyoutMenuDirection.LeftEnd:
           topOffset =
             -tooltipHeight / 2 + 2 * caretHeight + caretWidth - (48 - buttonWidth) + borderWidth;
+          leftOffset = -caretWidth / 2;
           rtlOffset = 0;
           break;
         case FlyoutMenuDirection.RightStart:
-          topOffset = tooltipHeight / 2 - caretHeight - borderWidth;
+          topOffset = tooltipHeight / 2 - caretHeight - 2 * borderWidth;
           rtlOffset = -rtlOffset;
           break;
 
@@ -146,7 +147,7 @@ const FlyoutMenu = ({
           break;
         case FlyoutMenuDirection.TopStart:
           leftOffset = tooltipWidth / 2;
-          topOffset = caretHeight - 2 * borderWidth;
+          topOffset = caretHeight;
           break;
         case FlyoutMenuDirection.TopEnd:
           leftOffset = -tooltipWidth / 2 + buttonWidth;
@@ -159,7 +160,7 @@ const FlyoutMenu = ({
         default:
           // Bottom Start
           leftOffset = tooltipWidth / 2;
-          topOffset = -caretHeight + 2 * borderWidth;
+          topOffset = -caretHeight - 2 * borderWidth;
       }
 
       if (document.dir === 'rtl') {

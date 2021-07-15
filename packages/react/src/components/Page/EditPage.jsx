@@ -129,10 +129,20 @@ const EditPage = ({
           />
           <StyledPageContent data-testid={`${testId}-content`}>{children}</StyledPageContent>
           <StyledPageFooter>
-            <Button kind="secondary" onClick={onClose} testId={`${testId}-close-button`}>
+            <Button
+              kind="secondary"
+              onClick={onClose}
+              // TODO: pass testId in v3 to override defaults
+              // testId={`${testId}-close-button`}
+            >
               {cancelLabel}
             </Button>
-            <Button onClick={handleSave} loading={isSaving} testId={`${testId}-save-button`}>
+            <Button
+              onClick={handleSave}
+              loading={isSaving}
+              // TODO: pass testId in v3 to override defaults
+              // testId={`${testId}-save-button`}
+            >
               {saveLabel}
             </Button>
           </StyledPageFooter>

@@ -5,6 +5,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
 import { ButtonSkeleton } from 'carbon-components-react';
+import classnames from 'classnames';
 
 import { SideNav, Header } from '../../index';
 import { SideNavPropTypes } from '../SideNav/SideNav';
@@ -18,6 +19,10 @@ import Walkme from '../Walkme/Walkme';
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
+import IdleLogoutConfirmationModal, {
+  IdleLogoutConfirmationModalIdleTimeoutPropTypes,
+  IdleLogoutConfirmationModalI18NPropTypes,
+} from './IdleLogoutConfirmationModal/IdleLogoutConfirmationModal';
 import SuiteHeaderI18N from './i18n';
 
 const ROUTE_TYPES = {
@@ -37,6 +42,7 @@ export const SuiteHeaderRoutePropTypes = {
   navigator: PropTypes.string,
   admin: PropTypes.string,
   logout: PropTypes.string,
+  logoutInactivity: PropTypes.string,
   whatsNew: PropTypes.string,
   gettingStarted: PropTypes.string,
   documentation: PropTypes.string,
@@ -84,6 +90,7 @@ export const SuiteHeaderI18NPropTypes = {
   surveyTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   surveyText: PropTypes.string,
   surveyPrivacyPolicy: PropTypes.string,
+  ...IdleLogoutConfirmationModalI18NPropTypes,
 };
 
 const defaultProps = {
@@ -98,6 +105,8 @@ const defaultProps = {
   applications: null,
   sideNavProps: null,
   surveyData: null,
+  idleTimeoutData: null,
+  onStayLoggedIn: () => {},
   onSideNavToggled: async () => Promise.resolve(true),
   onRouteChange: async () => Promise.resolve(true),
   i18n: SuiteHeaderI18N.en,
@@ -135,6 +144,10 @@ const propTypes = {
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** If surveyData is present, show a ToastNotification */
   surveyData: PropTypes.shape(SuiteHeaderSurveyDataPropTypes),
+  /** If idleTimeoutData is present, instantiate IdleLogoutConfirmationModal */
+  idleTimeoutData: PropTypes.shape(IdleLogoutConfirmationModalIdleTimeoutPropTypes),
+  /** Function called when idle timer is restarted */
+  onStayLoggedIn: PropTypes.func,
   /** Function called when side nav button is toggled */
   onSideNavToggled: PropTypes.func,
   /** Function called before any route change. Returns a Promise<Boolean>. False means the redirect will not happen. This function should never throw an error. */
@@ -170,6 +183,8 @@ const SuiteHeader = ({
   applications,
   sideNavProps,
   surveyData,
+  idleTimeoutData,
+  onStayLoggedIn,
   onSideNavToggled,
   onRouteChange,
   i18n,
@@ -269,6 +284,15 @@ const SuiteHeader = ({
           onCloseButtonClick={() => setShowToast(false)}
         />
       ) : null}
+      {idleTimeoutData ? (
+        <IdleLogoutConfirmationModal
+          idleTimeoutData={idleTimeoutData}
+          routes={routes}
+          onRouteChange={onRouteChange}
+          onStayLoggedIn={onStayLoggedIn}
+          i18n={i18n}
+        />
+      ) : null}
       <SuiteHeaderLogoutModal
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
@@ -304,7 +328,7 @@ const SuiteHeader = ({
       )}
       <Header
         testId={testId}
-        className={[`${settings.iotPrefix}--suite-header`, className].filter((i) => i).join(' ')}
+        className={classnames(`${settings.iotPrefix}--suite-header`, className)}
         url={navigatorRoute}
         hasSideNav={hasSideNav || sideNavProps !== null}
         onClickSideNavExpand={(evt) => {

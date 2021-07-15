@@ -133,6 +133,60 @@ describe('HotspotEditorModal', () => {
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
+  it('should be selectable by testId', async () => {
+    const { rerender } = render(
+      <HotspotEditorModal
+        backgroundColors={getSelectableColors()}
+        borderColors={getSelectableColors()}
+        cardConfig={getCardConfig()}
+        dataItems={getDataItems()}
+        defaultHotspotType="fixed"
+        fontColors={getSelectableColors()}
+        hotspotIconFillColors={getSelectableColors()}
+        hotspotIcons={getSelectableIcons()}
+        label={landscape}
+        onClose={jest.fn()}
+        onFetchDynamicDemoHotspots={() => {
+          return new Promise((resolve) => resolve(getDemoDynamicHotspots()));
+        }}
+        onSave={jest.fn()}
+        testId="hotspot_editor_modal"
+      />
+    );
+
+    expect(screen.getByTestId('ComposedModal')).toBeDefined();
+    expect(screen.getByTestId('hotspot_editor_modal-loading-hotspots')).toBeDefined();
+
+    rerender(
+      <HotspotEditorModal
+        backgroundColors={getSelectableColors()}
+        borderColors={getSelectableColors()}
+        cardConfig={getCardConfig()}
+        dataItems={getDataItems()}
+        defaultHotspotType="fixed"
+        fontColors={getSelectableColors()}
+        hotspotIconFillColors={getSelectableColors()}
+        hotspotIcons={getSelectableIcons()}
+        label={landscape}
+        onClose={jest.fn()}
+        onFetchDynamicDemoHotspots={() => {
+          return new Promise((resolve) => resolve(getDemoDynamicHotspots()));
+        }}
+        onSave={jest.fn()}
+        testId="hotspot_editor_modal"
+        showTooManyHotspotsInfo
+      />
+    );
+
+    await waitFor(() => expect(screen.getByTestId('hotspot-35-65')).toBeTruthy());
+    expect(screen.getByTestId('ComposedModal')).toBeDefined();
+    expect(screen.getByTestId('hotspot_editor_modal-data-source-tab')).toBeDefined();
+    expect(screen.getByTestId('dynamic-hotspot-source-picker')).toBeDefined();
+    expect(screen.getByTestId('dynamic-hotspot-source-picker-x-coordinate-dropdown')).toBeDefined();
+    expect(screen.getByTestId('dynamic-hotspot-source-picker-y-coordinate-dropdown')).toBeDefined();
+    expect(screen.getByTestId('hotspot_editor_modal-too-many-hotspots-notification')).toBeDefined();
+  });
+
   it('renders initial hotspots', async () => {
     render(
       <HotspotEditorModal
