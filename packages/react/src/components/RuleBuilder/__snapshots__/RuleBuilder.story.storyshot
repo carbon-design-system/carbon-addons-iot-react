@@ -30,11 +30,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--rule-builder-wrap--header-actions"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="favorite"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Favorite"
             type="button"
@@ -58,11 +63,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </svg>
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="share"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Share"
             type="button"
@@ -86,11 +96,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </svg>
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="delete"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Delete"
             type="button"
@@ -117,11 +132,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </svg>
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--rule-builder-wrap--header-actions-save iot--btn bx--btn bx--btn--sm bx--btn--primary"
             data-testid="rule-builder-save"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -174,11 +194,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               role="presentation"
             >
               <button
-                aria-controls="tab-35__panel"
                 aria-selected={true}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-35"
                 role="tab"
                 tabIndex={0}
                 type="button"
@@ -193,11 +211,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               role="presentation"
             >
               <button
-                aria-controls="tab-36__panel"
                 aria-selected={false}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-36"
                 role="tab"
                 tabIndex={-1}
                 type="button"
@@ -323,11 +339,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="iot--rule-builder-header__buttons"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--ghost"
                   data-testid="rule-builder-header-add-rule-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
@@ -349,11 +370,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </svg>
                 </button>
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--ghost"
                   data-testid="rule-builder-header-add-group-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
@@ -537,18 +563,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="iot--rule-builder-rule__actions"
               >
                 <button
-                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="rsiru4rjba-remove-rule-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Remove rule
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Remove rule"
@@ -568,18 +600,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </svg>
                 </button>
                 <button
-                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="rsiru4rjba-add-rule-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Add new rule
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Add new rule"
@@ -599,18 +637,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </svg>
                 </button>
                 <button
-                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="rsiru4rjba-add-group-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Add new rule group
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Add new rule group"
@@ -648,7 +692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-10"
+                aria-controls="accordion-item-558"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -678,7 +722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-10"
+                id="accordion-item-558"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -758,7 +802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-11"
+                aria-controls="accordion-item-559"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -788,7 +832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-11"
+                id="accordion-item-559"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -822,10 +866,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--action-list"
                         >
                           <button
+                            aria-describedby={null}
                             aria-pressed={null}
                             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                             disabled={false}
+                            onBlur={[Function]}
                             onClick={[Function]}
+                            onFocus={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
                             tabIndex={-1}
                             type="button"
                           >
@@ -843,21 +892,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-testid="edit-table-table-toolbar-content"
                       >
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          tabIndex="0"
+                          aria-labelledby="edit-table-toolbar-search-search"
+                          className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                          role="search"
                         >
                           <div
-                            aria-labelledby="edit-table-toolbar-search-search"
-                            className="bx--search bx--search--sm table-toolbar-search"
-                            role="search"
+                            className="bx--search-magnifier"
                           >
                             <svg
                               aria-hidden={true}
-                              className="bx--search-magnifier"
+                              className="bx--search-magnifier-icon"
                               fill="currentColor"
                               focusable="false"
                               height={16}
@@ -870,57 +914,64 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                               />
                             </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="edit-table-toolbar-search"
-                              id="edit-table-toolbar-search-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              autoComplete="off"
-                              className="bx--search-input"
-                              data-testid="edit-table-table-toolbar-search"
-                              id="edit-table-toolbar-search"
-                              onChange={[Function]}
-                              onKeyDown={[Function]}
-                              placeholder="Search"
-                              role="searchbox"
-                              tabIndex="-1"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
-                            >
-                              <svg
-                                aria-hidden={true}
-                                fill="currentColor"
-                                focusable="false"
-                                height={16}
-                                preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={16}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                                />
-                              </svg>
-                            </button>
                           </div>
+                          <label
+                            className="bx--label"
+                            htmlFor="edit-table-toolbar-search"
+                            id="edit-table-toolbar-search-search"
+                          >
+                            Search
+                          </label>
+                          <input
+                            autoComplete="off"
+                            className="bx--search-input"
+                            data-testid="edit-table-table-toolbar-search"
+                            id="edit-table-toolbar-search"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="Search"
+                            role="searchbox"
+                            tabIndex="0"
+                            type="text"
+                            value=""
+                          />
+                          <button
+                            aria-label="Clear search input"
+                            className="bx--search-close bx--search-close--hidden"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                              />
+                            </svg>
+                          </button>
                         </div>
                         <button
+                          aria-describedby={null}
                           aria-labelledby="add-editors-label"
                           aria-pressed={null}
                           className="iot--btn bx--btn bx--btn--ghost"
                           data-testid="rule-builder-add-edit-users"
                           disabled={false}
                           id="add-editors-button"
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -1330,10 +1381,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--action-list"
                         >
                           <button
+                            aria-describedby={null}
                             aria-pressed={null}
                             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                             disabled={false}
+                            onBlur={[Function]}
                             onClick={[Function]}
+                            onFocus={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
                             tabIndex={-1}
                             type="button"
                           >
@@ -1351,21 +1407,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-testid="read-table-table-toolbar-content"
                       >
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          tabIndex="0"
+                          aria-labelledby="read-table-toolbar-search-search"
+                          className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                          role="search"
                         >
                           <div
-                            aria-labelledby="read-table-toolbar-search-search"
-                            className="bx--search bx--search--sm table-toolbar-search"
-                            role="search"
+                            className="bx--search-magnifier"
                           >
                             <svg
                               aria-hidden={true}
-                              className="bx--search-magnifier"
+                              className="bx--search-magnifier-icon"
                               fill="currentColor"
                               focusable="false"
                               height={16}
@@ -1378,57 +1429,64 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                               />
                             </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="read-table-toolbar-search"
-                              id="read-table-toolbar-search-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              autoComplete="off"
-                              className="bx--search-input"
-                              data-testid="read-table-table-toolbar-search"
-                              id="read-table-toolbar-search"
-                              onChange={[Function]}
-                              onKeyDown={[Function]}
-                              placeholder="Search"
-                              role="searchbox"
-                              tabIndex="-1"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
-                            >
-                              <svg
-                                aria-hidden={true}
-                                fill="currentColor"
-                                focusable="false"
-                                height={16}
-                                preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={16}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                                />
-                              </svg>
-                            </button>
                           </div>
+                          <label
+                            className="bx--label"
+                            htmlFor="read-table-toolbar-search"
+                            id="read-table-toolbar-search-search"
+                          >
+                            Search
+                          </label>
+                          <input
+                            autoComplete="off"
+                            className="bx--search-input"
+                            data-testid="read-table-table-toolbar-search"
+                            id="read-table-toolbar-search"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="Search"
+                            role="searchbox"
+                            tabIndex="0"
+                            type="text"
+                            value=""
+                          />
+                          <button
+                            aria-label="Clear search input"
+                            className="bx--search-close bx--search-close--hidden"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                              />
+                            </svg>
+                          </button>
                         </div>
                         <button
+                          aria-describedby={null}
                           aria-labelledby="read-only-access-label"
                           aria-pressed={null}
                           className="iot--btn bx--btn bx--btn--ghost"
                           data-testid="rule-builder-add-read-users"
                           disabled={false}
                           id="add-read-users"
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -1819,33 +1877,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         className="iot--rule-builder-wrap--footer"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--rule-builder-wrap--footer-actions-cancel iot--btn bx--btn bx--btn--secondary"
           data-testid="rule-builder-cancel"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Cancel
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--rule-builder-wrap--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
           data-testid="preview"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Preview results
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--rule-builder-wrap--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
           data-testid="apply"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -1953,21 +2026,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--sm"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--list-builder__all--search"
@@ -2068,21 +2145,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--sm"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--list-builder__selected--search"
@@ -2158,22 +2239,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
             >
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="ComposedModal-modal-secondary-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
                 Cancel
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                 data-testid="ComposedModal-modal-primary-button"
                 disabled={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
@@ -2291,21 +2382,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--sm"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--list-builder__all--search"
@@ -2406,21 +2501,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--sm"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--list-builder__selected--search"
@@ -2496,22 +2595,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
             >
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="ComposedModal-modal-secondary-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
                 Cancel
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                 data-testid="ComposedModal-modal-primary-button"
                 disabled={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
@@ -2568,11 +2677,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--rule-builder-wrap--header-actions"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="favorite"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Favorite"
             type="button"
@@ -2596,11 +2710,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </svg>
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="share"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Share"
             type="button"
@@ -2624,11 +2743,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </svg>
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
             data-testid="delete"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Delete"
             type="button"
@@ -2655,11 +2779,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </svg>
           </button>
           <button
+            aria-describedby={null}
             aria-pressed={null}
             className="iot--rule-builder-wrap--header-actions-save iot--btn bx--btn bx--btn--sm bx--btn--primary"
             data-testid="rule-builder-save"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -2712,11 +2841,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               role="presentation"
             >
               <button
-                aria-controls="tab-37__panel"
                 aria-selected={true}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-37"
                 role="tab"
                 tabIndex={0}
                 type="button"
@@ -2731,11 +2858,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               role="presentation"
             >
               <button
-                aria-controls="tab-38__panel"
                 aria-selected={false}
                 className="bx--tabs--scrollable__nav-link"
                 href="#"
-                id="tab-38"
                 role="tab"
                 tabIndex={-1}
                 type="button"
@@ -2861,11 +2986,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="iot--rule-builder-header__buttons"
               >
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--ghost"
                   data-testid="rule-builder-header-add-rule-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
@@ -2887,11 +3017,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </svg>
                 </button>
                 <button
+                  aria-describedby={null}
                   aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--ghost"
                   data-testid="rule-builder-header-add-group-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
@@ -3075,18 +3210,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="iot--rule-builder-rule__actions"
               >
                 <button
-                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="rsiru4rjba-remove-rule-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Remove rule
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Remove rule"
@@ -3106,18 +3247,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </svg>
                 </button>
                 <button
-                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="rsiru4rjba-add-rule-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Add new rule
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Add new rule"
@@ -3137,18 +3284,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </svg>
                 </button>
                 <button
-                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="rsiru4rjba-add-group-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Add new rule group
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Add new rule group"
@@ -3330,18 +3483,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="iot--rule-builder-rule__actions"
               >
                 <button
-                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="34bvyub9jq-remove-rule-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Remove rule
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Remove rule"
@@ -3361,18 +3520,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </svg>
                 </button>
                 <button
-                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="34bvyub9jq-add-rule-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Add new rule
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Add new rule"
@@ -3392,18 +3557,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </svg>
                 </button>
                 <button
-                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  aria-describedby={null}
+                  className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="34bvyub9jq-add-group-button"
                   disabled={false}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   tabIndex={0}
                   type="button"
                 >
-                  <span
+                  <div
                     className="bx--assistive-text"
+                    onMouseEnter={[Function]}
                   >
                     Add new rule group
-                  </span>
+                  </div>
                   <svg
                     aria-hidden="true"
                     aria-label="Add new rule group"
@@ -3661,18 +3832,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   className="iot--rule-builder-rule__actions"
                 >
                   <button
-                    className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="ewc2z5kyfu-remove-rule-button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Remove rule
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Remove rule"
@@ -3692,18 +3869,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </svg>
                   </button>
                   <button
-                    className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="ewc2z5kyfu-add-rule-button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Add new rule
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Add new rule"
@@ -3723,18 +3906,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </svg>
                   </button>
                   <button
-                    className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="ewc2z5kyfu-add-group-button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Add new rule group
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Add new rule group"
@@ -3916,18 +4105,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   className="iot--rule-builder-rule__actions"
                 >
                   <button
-                    className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="hks7h2zin4-remove-rule-button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Remove rule
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Remove rule"
@@ -3947,18 +4142,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </svg>
                   </button>
                   <button
-                    className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="hks7h2zin4-add-rule-button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Add new rule
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Add new rule"
@@ -3978,18 +4179,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </svg>
                   </button>
                   <button
-                    className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="hks7h2zin4-add-group-button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Add new rule group
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Add new rule group"
@@ -4247,18 +4454,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="iot--rule-builder-rule__actions"
                   >
                     <button
-                      className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      aria-describedby={null}
+                      className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="wg9hlv197c-remove-rule-button"
                       disabled={false}
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                       tabIndex={0}
                       type="button"
                     >
-                      <span
+                      <div
                         className="bx--assistive-text"
+                        onMouseEnter={[Function]}
                       >
                         Remove rule
-                      </span>
+                      </div>
                       <svg
                         aria-hidden="true"
                         aria-label="Remove rule"
@@ -4278,18 +4491,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      aria-describedby={null}
+                      className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="wg9hlv197c-add-rule-button"
                       disabled={false}
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                       tabIndex={0}
                       type="button"
                     >
-                      <span
+                      <div
                         className="bx--assistive-text"
+                        onMouseEnter={[Function]}
                       >
                         Add new rule
-                      </span>
+                      </div>
                       <svg
                         aria-hidden="true"
                         aria-label="Add new rule"
@@ -4309,18 +4528,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      aria-describedby={null}
+                      className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="wg9hlv197c-add-group-button"
                       disabled={false}
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                       tabIndex={0}
                       type="button"
                     >
-                      <span
+                      <div
                         className="bx--assistive-text"
+                        onMouseEnter={[Function]}
                       >
                         Add new rule group
-                      </span>
+                      </div>
                       <svg
                         aria-hidden="true"
                         aria-label="Add new rule group"
@@ -4578,18 +4803,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="iot--rule-builder-rule__actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        aria-describedby={null}
+                        className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="7kadk2wfv8-remove-rule-button"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Remove rule
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Remove rule"
@@ -4609,18 +4840,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </svg>
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        aria-describedby={null}
+                        className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="7kadk2wfv8-add-rule-button"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Add new rule
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Add new rule"
@@ -4640,18 +4877,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </svg>
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        aria-describedby={null}
+                        className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="7kadk2wfv8-add-group-button"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Add new rule group
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Add new rule group"
@@ -4833,18 +5076,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="iot--rule-builder-rule__actions"
                     >
                       <button
-                        className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        aria-describedby={null}
+                        className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="49mf09vjhn-remove-rule-button"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Remove rule
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Remove rule"
@@ -4864,18 +5113,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </svg>
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        aria-describedby={null}
+                        className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="49mf09vjhn-add-rule-button"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Add new rule
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Add new rule"
@@ -4895,18 +5150,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </svg>
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        aria-describedby={null}
+                        className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                         data-testid="49mf09vjhn-add-group-button"
                         disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                         tabIndex={0}
                         type="button"
                       >
-                        <span
+                        <div
                           className="bx--assistive-text"
+                          onMouseEnter={[Function]}
                         >
                           Add new rule group
-                        </span>
+                        </div>
                         <svg
                           aria-hidden="true"
                           aria-label="Add new rule group"
@@ -4947,7 +5208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-12"
+                aria-controls="accordion-item-598"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -4977,7 +5238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-12"
+                id="accordion-item-598"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -5137,7 +5398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-13"
+                aria-controls="accordion-item-599"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -5167,7 +5428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-13"
+                id="accordion-item-599"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -5201,10 +5462,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--action-list"
                         >
                           <button
+                            aria-describedby={null}
                             aria-pressed={null}
                             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                             disabled={false}
+                            onBlur={[Function]}
                             onClick={[Function]}
+                            onFocus={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
                             tabIndex={-1}
                             type="button"
                           >
@@ -5222,21 +5488,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-testid="edit-table-table-toolbar-content"
                       >
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          tabIndex="0"
+                          aria-labelledby="edit-table-toolbar-search-search"
+                          className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                          role="search"
                         >
                           <div
-                            aria-labelledby="edit-table-toolbar-search-search"
-                            className="bx--search bx--search--sm table-toolbar-search"
-                            role="search"
+                            className="bx--search-magnifier"
                           >
                             <svg
                               aria-hidden={true}
-                              className="bx--search-magnifier"
+                              className="bx--search-magnifier-icon"
                               fill="currentColor"
                               focusable="false"
                               height={16}
@@ -5249,57 +5510,64 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                               />
                             </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="edit-table-toolbar-search"
-                              id="edit-table-toolbar-search-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              autoComplete="off"
-                              className="bx--search-input"
-                              data-testid="edit-table-table-toolbar-search"
-                              id="edit-table-toolbar-search"
-                              onChange={[Function]}
-                              onKeyDown={[Function]}
-                              placeholder="Search"
-                              role="searchbox"
-                              tabIndex="-1"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
-                            >
-                              <svg
-                                aria-hidden={true}
-                                fill="currentColor"
-                                focusable="false"
-                                height={16}
-                                preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={16}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                                />
-                              </svg>
-                            </button>
                           </div>
+                          <label
+                            className="bx--label"
+                            htmlFor="edit-table-toolbar-search"
+                            id="edit-table-toolbar-search-search"
+                          >
+                            Search
+                          </label>
+                          <input
+                            autoComplete="off"
+                            className="bx--search-input"
+                            data-testid="edit-table-table-toolbar-search"
+                            id="edit-table-toolbar-search"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="Search"
+                            role="searchbox"
+                            tabIndex="0"
+                            type="text"
+                            value=""
+                          />
+                          <button
+                            aria-label="Clear search input"
+                            className="bx--search-close bx--search-close--hidden"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                              />
+                            </svg>
+                          </button>
                         </div>
                         <button
+                          aria-describedby={null}
                           aria-labelledby="add-editors-label"
                           aria-pressed={null}
                           className="iot--btn bx--btn bx--btn--ghost"
                           data-testid="rule-builder-add-edit-users"
                           disabled={false}
                           id="add-editors-button"
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -5473,10 +5741,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--action-list"
                         >
                           <button
+                            aria-describedby={null}
                             aria-pressed={null}
                             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                             disabled={false}
+                            onBlur={[Function]}
                             onClick={[Function]}
+                            onFocus={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
                             tabIndex={-1}
                             type="button"
                           >
@@ -5494,21 +5767,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-testid="read-table-table-toolbar-content"
                       >
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          tabIndex="0"
+                          aria-labelledby="read-table-toolbar-search-search"
+                          className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                          role="search"
                         >
                           <div
-                            aria-labelledby="read-table-toolbar-search-search"
-                            className="bx--search bx--search--sm table-toolbar-search"
-                            role="search"
+                            className="bx--search-magnifier"
                           >
                             <svg
                               aria-hidden={true}
-                              className="bx--search-magnifier"
+                              className="bx--search-magnifier-icon"
                               fill="currentColor"
                               focusable="false"
                               height={16}
@@ -5521,57 +5789,64 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                               />
                             </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="read-table-toolbar-search"
-                              id="read-table-toolbar-search-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              autoComplete="off"
-                              className="bx--search-input"
-                              data-testid="read-table-table-toolbar-search"
-                              id="read-table-toolbar-search"
-                              onChange={[Function]}
-                              onKeyDown={[Function]}
-                              placeholder="Search"
-                              role="searchbox"
-                              tabIndex="-1"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
-                            >
-                              <svg
-                                aria-hidden={true}
-                                fill="currentColor"
-                                focusable="false"
-                                height={16}
-                                preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 32 32"
-                                width={16}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                                />
-                              </svg>
-                            </button>
                           </div>
+                          <label
+                            className="bx--label"
+                            htmlFor="read-table-toolbar-search"
+                            id="read-table-toolbar-search-search"
+                          >
+                            Search
+                          </label>
+                          <input
+                            autoComplete="off"
+                            className="bx--search-input"
+                            data-testid="read-table-table-toolbar-search"
+                            id="read-table-toolbar-search"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="Search"
+                            role="searchbox"
+                            tabIndex="0"
+                            type="text"
+                            value=""
+                          />
+                          <button
+                            aria-label="Clear search input"
+                            className="bx--search-close bx--search-close--hidden"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                              />
+                            </svg>
+                          </button>
                         </div>
                         <button
+                          aria-describedby={null}
                           aria-labelledby="read-only-access-label"
                           aria-pressed={null}
                           className="iot--btn bx--btn bx--btn--ghost"
                           data-testid="rule-builder-add-read-users"
                           disabled={false}
                           id="add-read-users"
+                          onBlur={[Function]}
                           onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -5726,33 +6001,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         className="iot--rule-builder-wrap--footer"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--rule-builder-wrap--footer-actions-cancel iot--btn bx--btn bx--btn--secondary"
           data-testid="rule-builder-cancel"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Cancel
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--rule-builder-wrap--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
           data-testid="preview"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Preview results
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--rule-builder-wrap--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
           data-testid="apply"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -5860,21 +6150,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--sm"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--list-builder__all--search"
@@ -6054,11 +6348,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   className="iot--list-item--content--row-actions"
                                 >
                                   <button
+                                    aria-describedby={null}
                                     aria-label="Add"
-                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                     data-testid="Button"
                                     disabled={false}
+                                    onBlur={[Function]}
                                     onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
                                     role="button"
                                     style={
                                       Object {
@@ -6068,11 +6367,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     tabIndex={0}
                                     type="button"
                                   >
-                                    <span
+                                    <div
                                       className="bx--assistive-text"
+                                      onMouseEnter={[Function]}
                                     >
                                       Add
-                                    </span>
+                                    </div>
                                     <svg
                                       aria-hidden="true"
                                       aria-label="Add"
@@ -6137,11 +6437,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   className="iot--list-item--content--row-actions"
                                 >
                                   <button
+                                    aria-describedby={null}
                                     aria-label="Add"
-                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                     data-testid="Button"
                                     disabled={false}
+                                    onBlur={[Function]}
                                     onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
                                     role="button"
                                     style={
                                       Object {
@@ -6151,11 +6456,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     tabIndex={0}
                                     type="button"
                                   >
-                                    <span
+                                    <div
                                       className="bx--assistive-text"
+                                      onMouseEnter={[Function]}
                                     >
                                       Add
-                                    </span>
+                                    </div>
                                     <svg
                                       aria-hidden="true"
                                       aria-label="Add"
@@ -6214,21 +6520,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--sm"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--list-builder__selected--search"
@@ -6306,11 +6616,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   className="iot--list-item--content--row-actions"
                                 >
                                   <button
+                                    aria-describedby={null}
                                     aria-label="Remove"
-                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                     data-testid="Button"
                                     disabled={false}
+                                    onBlur={[Function]}
                                     onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
                                     style={
                                       Object {
                                         "color": "black",
@@ -6319,11 +6634,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     tabIndex={0}
                                     type="button"
                                   >
-                                    <span
+                                    <div
                                       className="bx--assistive-text"
+                                      onMouseEnter={[Function]}
                                     >
                                       Remove
-                                    </span>
+                                    </div>
                                     <svg
                                       aria-hidden="true"
                                       aria-label="Remove"
@@ -6357,22 +6673,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
             >
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="ComposedModal-modal-secondary-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
                 Cancel
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                 data-testid="ComposedModal-modal-primary-button"
                 disabled={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
@@ -6490,21 +6816,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--sm"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--list-builder__all--search"
@@ -6643,11 +6973,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   className="iot--list-item--content--row-actions"
                                 >
                                   <button
+                                    aria-describedby={null}
                                     aria-label="Add"
-                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                     data-testid="Button"
                                     disabled={false}
+                                    onBlur={[Function]}
                                     onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
                                     role="button"
                                     style={
                                       Object {
@@ -6657,11 +6992,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     tabIndex={0}
                                     type="button"
                                   >
-                                    <span
+                                    <div
                                       className="bx--assistive-text"
+                                      onMouseEnter={[Function]}
                                     >
                                       Add
-                                    </span>
+                                    </div>
                                     <svg
                                       aria-hidden="true"
                                       aria-label="Add"
@@ -6726,11 +7062,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   className="iot--list-item--content--row-actions"
                                 >
                                   <button
+                                    aria-describedby={null}
                                     aria-label="Add"
-                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                     data-testid="Button"
                                     disabled={false}
+                                    onBlur={[Function]}
                                     onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
                                     role="button"
                                     style={
                                       Object {
@@ -6740,11 +7081,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     tabIndex={0}
                                     type="button"
                                   >
-                                    <span
+                                    <div
                                       className="bx--assistive-text"
+                                      onMouseEnter={[Function]}
                                     >
                                       Add
-                                    </span>
+                                    </div>
                                     <svg
                                       aria-hidden="true"
                                       aria-label="Add"
@@ -6844,21 +7186,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--search bx--search--sm"
                           role="search"
                         >
-                          <svg
-                            aria-hidden={true}
+                          <div
                             className="bx--search-magnifier"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                            />
-                          </svg>
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                          </div>
                           <label
                             className="bx--label"
                             htmlFor="iot--list-builder__selected--search"
@@ -6936,11 +7282,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   className="iot--list-item--content--row-actions"
                                 >
                                   <button
+                                    aria-describedby={null}
                                     aria-label="Remove"
-                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                                     data-testid="Button"
                                     disabled={false}
+                                    onBlur={[Function]}
                                     onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
                                     style={
                                       Object {
                                         "color": "black",
@@ -6949,11 +7300,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     tabIndex={0}
                                     type="button"
                                   >
-                                    <span
+                                    <div
                                       className="bx--assistive-text"
+                                      onMouseEnter={[Function]}
                                     >
                                       Remove
-                                    </span>
+                                    </div>
                                     <svg
                                       aria-hidden="true"
                                       aria-label="Remove"
@@ -6987,22 +7339,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
             >
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
                 data-testid="ComposedModal-modal-secondary-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
                 Cancel
               </button>
               <button
+                aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                 data-testid="ComposedModal-modal-primary-button"
                 disabled={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
