@@ -1,0 +1,27 @@
+@import '~carbon-components/scss/globals/scss/vars';
+
+.table-row:not(:first-of-type) {
+  border-top: 2px solid white;
+}
+
+th:not(:last-of-type) {
+  border-right: 2px solid white;
+
+  &.table-selection-column {
+    border-right: none;
+  }
+}
+
+.ai-table {
+  .bx--table-sort,
+  &.bx--data-table--sort th:first-of-type .bx--table-sort {
+    padding-left: 0;
+  }
+  &.bx--data-table th button {
+    align-items: flex-end;
+    padding-bottom: $spacing-05;
+  }
+  &.bx--data-table th:last-of-type {
+    position: inherit;
+  }
+}
