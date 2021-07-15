@@ -1,6 +1,6 @@
 {
   "name": "@ai-apps/angular",
-  "version": "2.146.0-next.27",
+  "version": "2.146.0-next.59",
   "description": "AI Applications PAL in Angular",
   "main": "index.js",
   "scripts": {
@@ -98,9 +98,10 @@
     "zone.js": "0.11.3"
   },
   "dependencies": {
-    "@ai-apps/styles": "^2.146.0-next.27",
+    "@ai-apps/styles": "^2.146.0-next.59",
     "@carbon/icons": "10.20.0",
     "@carbon/telemetry": "0.0.0-alpha.6",
+    "date-fns": "^2.22.1",
     "flatpickr": "4.6.1"
   }
 }
