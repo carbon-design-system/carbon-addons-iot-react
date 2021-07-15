@@ -876,7 +876,8 @@ export class AITableModel implements PaginationModel {
    * @param itemArray TableItem[] | TableHeaderItem[]
    * @returns the number of columns as if now cells were merged
    */
-  protected effectiveRowLength(itemArray: any[]) { // `any[]` should be `TableItem[] | TableHeaderItem[]` but typescript
-    return itemArray.reduce((len, item) => (len + (item.colSpan || 1)), 0);
+  protected effectiveRowLength(itemArray: any[]) {
+    // `any[]` should be `TableItem[] | TableHeaderItem[]` but typescript
+    return itemArray.reduce((len, item) => len + (item.colSpan || 1), 0);
   }
 }

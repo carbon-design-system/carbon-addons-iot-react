@@ -71,7 +71,9 @@ storiesOf('Table', module)
         customSort: (index: number) => {
           if (simpleModel.getClosestHeader(index).sorted) {
             // if already sorted flip sorting direction
-            simpleModel.getClosestHeader(index).ascending = simpleModel.getClosestHeader(index).descending;
+            simpleModel.getClosestHeader(index).ascending = simpleModel.getClosestHeader(
+              index
+            ).descending;
           }
           simpleModel.sort(index);
         },
