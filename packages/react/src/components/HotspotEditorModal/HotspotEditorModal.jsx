@@ -161,6 +161,8 @@ const propTypes = {
   }),
   /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -215,6 +217,7 @@ const defaultProps = {
         return 'Close menu';
     }
   },
+  testId: 'hotspot-editor-modal',
 };
 
 const getSelectedHotspotsList = (selectedHotspot, hotspots) => {
@@ -255,8 +258,8 @@ const HotspotEditorModal = ({
   open,
   showTooManyHotspotsInfo,
   i18n,
-
   translateWithId,
+  testId,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -439,6 +442,7 @@ const HotspotEditorModal = ({
         translateWithId={translateWithId}
         dataItems={myDataItems}
         onChange={updateHotspotDataSource}
+        testId={`${testId}-data-source-tab`}
       />
     ) : null;
   };
@@ -461,15 +465,22 @@ const HotspotEditorModal = ({
           selectedSourceIdY={dynamicHotspotSourceY}
           onClear={clearDynamicHotspotsSource}
           translateWithId={translateWithId}
+          // TODO: pass testId in v3 to override defaults
+          // testId={`${testId}-hotspot-source-picker`}
         />
         {showTooManyHotspotsInfo ? (
-          <InlineNotification kind="info" title={tooManyHotspotsInfoText} />
+          <InlineNotification
+            kind="info"
+            title={tooManyHotspotsInfoText}
+            data-testid={`${testId}-too-many-hotspots-notification`}
+          />
         ) : null}
 
         {dynamicHotspotsLoading ? (
           <InlineLoading
             className={`${iotPrefix}--hotspot-editor-modal__dynamic-loading`}
             description={loadingDynamicHotspotsText}
+            data-testid={`${testId}-loading-hotspots`}
           />
         ) : (
           <Tabs selected={0}>
@@ -496,6 +507,7 @@ const HotspotEditorModal = ({
                   infoMessageText: fixedTypeTooltipInfoText,
                 }}
                 translateWithId={translateWithId}
+                testId={`${testId}-tooltip-tab`}
               />
             </Tab>
             <Tab disabled={hasNonEditableContent} label={fixedTypeDataSourceTabLabelText}>
@@ -509,7 +521,7 @@ const HotspotEditorModal = ({
 
   const renderTextHotspotPage = () => {
     return (
-      <Tabs selected={0}>
+      <Tabs selected={0} data-testid={`${testId}-hotspot-text-tabs`}>
         <Tab label={textStyleLabelText}>
           <HotspotTextStyleTab
             maxBorderWidth={maxBorderWidth}
@@ -554,6 +566,8 @@ const HotspotEditorModal = ({
 
   return (
     <ComposedModal
+      // TODO: pass testId in v3 to override defaults
+      // testId={testId}
       className={`${iotPrefix}--hotspot-editor-modal`}
       header={{
         label,
@@ -620,9 +634,20 @@ const HotspotEditorModal = ({
             );
           }}
           selectedIndex={currentType === hotspotTypes.TEXT ? 1 : 0}
+          data-testid={`${testId}-content-switcher`}
         >
-          <Switch key="hotspots" name="hotspots" text={hotspotsText} />
-          <Switch key="labels" name="labels" text={labelsText} />
+          <Switch
+            key="hotspots"
+            name="hotspots"
+            text={hotspotsText}
+            data-testid={`${testId}-hotspots-switch`}
+          />
+          <Switch
+            key="labels"
+            name="labels"
+            text={labelsText}
+            data-testid={`${testId}-labels-switch`}
+          />
         </ContentSwitcher>
         {currentType === hotspotTypes.TEXT ? renderTextHotspotPage() : renderHotspotsPage()}
       </div>

@@ -27,21 +27,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              className="bx--toolbar-action bx--toolbar-search-container-expandable"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              tabIndex="0"
+              aria-labelledby="29-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                aria-labelledby="29-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                role="search"
+                className="bx--search-magnifier"
               >
                 <svg
                   aria-hidden={true}
-                  className="bx--search-magnifier"
+                  className="bx--search-magnifier-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -54,47 +49,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                   />
                 </svg>
-                <label
-                  className="bx--label"
-                  htmlFor="29"
-                  id="29-search"
-                >
-                  Filter table
-                </label>
-                <input
-                  autoComplete="off"
-                  className="bx--search-input"
-                  id="29"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Enter a value"
-                  role="searchbox"
-                  tabIndex="-1"
-                  type="text"
-                  value=""
-                />
-                <button
-                  aria-label="Clear search input"
-                  className="bx--search-close bx--search-close--hidden"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
-                </button>
               </div>
+              <label
+                className="bx--label"
+                htmlFor="29"
+                id="29-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                id="29"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               className="iot--tile-catalog--tile-canvas--header--select"
@@ -364,21 +361,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              className="bx--toolbar-action bx--toolbar-search-container-expandable"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              tabIndex="0"
+              aria-labelledby="30-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                aria-labelledby="30-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                role="search"
+                className="bx--search-magnifier"
               >
                 <svg
                   aria-hidden={true}
-                  className="bx--search-magnifier"
+                  className="bx--search-magnifier-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -391,47 +383,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                   />
                 </svg>
-                <label
-                  className="bx--label"
-                  htmlFor="30"
-                  id="30-search"
-                >
-                  Filter table
-                </label>
-                <input
-                  autoComplete="off"
-                  className="bx--search-input"
-                  id="30"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Enter a value"
-                  role="searchbox"
-                  tabIndex="-1"
-                  type="text"
-                  value=""
-                />
-                <button
-                  aria-label="Clear search input"
-                  className="bx--search-close bx--search-close--hidden"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
-                </button>
               </div>
+              <label
+                className="bx--label"
+                htmlFor="30"
+                id="30-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                id="30"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               className="iot--tile-catalog--tile-canvas--header--select"
@@ -608,21 +602,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              className="bx--toolbar-action bx--toolbar-search-container-expandable"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              tabIndex="0"
+              aria-labelledby="32-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                aria-labelledby="32-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                role="search"
+                className="bx--search-magnifier"
               >
                 <svg
                   aria-hidden={true}
-                  className="bx--search-magnifier"
+                  className="bx--search-magnifier-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -635,47 +624,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                   />
                 </svg>
-                <label
-                  className="bx--label"
-                  htmlFor="32"
-                  id="32-search"
-                >
-                  Filter table
-                </label>
-                <input
-                  autoComplete="off"
-                  className="bx--search-input"
-                  id="32"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Enter a value"
-                  role="searchbox"
-                  tabIndex="-1"
-                  type="text"
-                  value=""
-                />
-                <button
-                  aria-label="Clear search input"
-                  className="bx--search-close bx--search-close--hidden"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
-                </button>
               </div>
+              <label
+                className="bx--label"
+                htmlFor="32"
+                id="32-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                id="32"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               className="iot--tile-catalog--tile-canvas--header--select"
@@ -801,21 +792,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              className="bx--toolbar-action bx--toolbar-search-container-expandable"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              tabIndex="0"
+              aria-labelledby="31-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                aria-labelledby="31-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                role="search"
+                className="bx--search-magnifier"
               >
                 <svg
                   aria-hidden={true}
-                  className="bx--search-magnifier"
+                  className="bx--search-magnifier-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -828,47 +814,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                   />
                 </svg>
-                <label
-                  className="bx--label"
-                  htmlFor="31"
-                  id="31-search"
-                >
-                  Filter table
-                </label>
-                <input
-                  autoComplete="off"
-                  className="bx--search-input"
-                  id="31"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Enter a value"
-                  role="searchbox"
-                  tabIndex="-1"
-                  type="text"
-                  value=""
-                />
-                <button
-                  aria-label="Clear search input"
-                  className="bx--search-close bx--search-close--hidden"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
-                </button>
               </div>
+              <label
+                className="bx--label"
+                htmlFor="31"
+                id="31-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                id="31"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               className="iot--tile-catalog--tile-canvas--header--select"
@@ -997,21 +985,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              className="bx--toolbar-action bx--toolbar-search-container-expandable"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              tabIndex="0"
+              aria-labelledby="35-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                aria-labelledby="35-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                role="search"
+                className="bx--search-magnifier"
               >
                 <svg
                   aria-hidden={true}
-                  className="bx--search-magnifier"
+                  className="bx--search-magnifier-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1024,47 +1007,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                   />
                 </svg>
-                <label
-                  className="bx--label"
-                  htmlFor="35"
-                  id="35-search"
-                >
-                  Filter table
-                </label>
-                <input
-                  autoComplete="off"
-                  className="bx--search-input"
-                  id="35"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Enter a value"
-                  role="searchbox"
-                  tabIndex="-1"
-                  type="text"
-                  value=""
-                />
-                <button
-                  aria-label="Clear search input"
-                  className="bx--search-close bx--search-close--hidden"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
-                </button>
               </div>
+              <label
+                className="bx--label"
+                htmlFor="35"
+                id="35-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                id="35"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               className="iot--tile-catalog--tile-canvas--header--select"
@@ -1447,21 +1432,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              className="bx--toolbar-action bx--toolbar-search-container-expandable"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              tabIndex="0"
+              aria-labelledby="33-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                aria-labelledby="33-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                role="search"
+                className="bx--search-magnifier"
               >
                 <svg
                   aria-hidden={true}
-                  className="bx--search-magnifier"
+                  className="bx--search-magnifier-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -1474,47 +1454,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                   />
                 </svg>
-                <label
-                  className="bx--label"
-                  htmlFor="33"
-                  id="33-search"
-                >
-                  Filter table
-                </label>
-                <input
-                  autoComplete="off"
-                  className="bx--search-input"
-                  id="33"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Enter a value"
-                  role="searchbox"
-                  tabIndex="-1"
-                  type="text"
-                  value=""
-                />
-                <button
-                  aria-label="Clear search input"
-                  className="bx--search-close bx--search-close--hidden"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
-                </button>
               </div>
+              <label
+                className="bx--label"
+                htmlFor="33"
+                id="33-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                id="33"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               className="iot--tile-catalog--tile-canvas--header--select"
@@ -2018,21 +2000,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              className="bx--toolbar-action bx--toolbar-search-container-expandable"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              tabIndex="0"
+              aria-labelledby="34-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                aria-labelledby="34-search"
-                className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                role="search"
+                className="bx--search-magnifier"
               >
                 <svg
                   aria-hidden={true}
-                  className="bx--search-magnifier"
+                  className="bx--search-magnifier-icon"
                   fill="currentColor"
                   focusable="false"
                   height={16}
@@ -2045,47 +2022,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                   />
                 </svg>
-                <label
-                  className="bx--label"
-                  htmlFor="34"
-                  id="34-search"
-                >
-                  Filter table
-                </label>
-                <input
-                  autoComplete="off"
-                  className="bx--search-input"
-                  id="34"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Enter a value"
-                  role="searchbox"
-                  tabIndex="-1"
-                  type="text"
-                  value=""
-                />
-                <button
-                  aria-label="Clear search input"
-                  className="bx--search-close bx--search-close--hidden"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
-                </button>
               </div>
+              <label
+                className="bx--label"
+                htmlFor="34"
+                id="34-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                id="34"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               className="iot--tile-catalog--tile-canvas--header--select"

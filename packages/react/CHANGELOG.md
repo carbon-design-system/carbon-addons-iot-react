@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.59](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.58...v2.146.0-next.59) (2021-07-14)
+
+
+### Bug Fixes
+
+* **repo:** visual regressions on flyout menu and table ([3ea785e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3ea785e8298c0227c5bed3425450be7dc0613c41))
+
+
+### Features
+
+* **repo:** upgrade Carbon to 10.39/7.39 ([8f9710d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8f9710d761fc78d70c75acb66aff3199c96b77bc))
+
+
+
+
+
+# [2.146.0-next.58](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.57...v2.146.0-next.58) (2021-07-14)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add hover style and fix bottom border ([773b2a0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/773b2a0f915349ff94f8e1b7f1e7a3f53a52f5b0))
+* **datetimepicker:** adjust react styles to better match the design ([eada8c3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eada8c3077b9bd57699366c7584de5532454f2dd))
+
+
+### Features
+
+* **datetimepicker:** add angular datetime picker ([6b2b7b0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6b2b7b00073a7ee7cfb73747ac36965fc25cc49e))
+
+
+
+
+
+# [2.146.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.56...v2.146.0-next.57) (2021-07-14)
+
+
+### Bug Fixes
+
+* **rowactionscell:** fixed rendering of icons by name ([07248ce](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/07248ce067d06b14146f16e3418525f47446101f))
+
+
+
+
+
+# [2.146.0-next.56](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.55...v2.146.0-next.56) (2021-07-14)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.146.0-next.55](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.54...v2.146.0-next.55) (2021-07-13)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.146.0-next.54](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.53...v2.146.0-next.54) (2021-07-13)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
 # [2.146.0-next.53](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.52...v2.146.0-next.53) (2021-07-13)
 
 **Note:** Version bump only for package carbon-addons-iot-react

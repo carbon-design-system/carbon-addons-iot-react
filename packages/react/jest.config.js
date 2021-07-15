@@ -28,9 +28,12 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
+    './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': all90Covered,
     './src/components/Breadcrumb/Breadcrumb.jsx': all90Covered,
     './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
+    './src/components/Table/TableBody/TableBodyRow/TableBodyRow.jsx': all90Covered,
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
+    './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
