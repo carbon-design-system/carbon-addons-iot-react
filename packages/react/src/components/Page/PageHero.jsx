@@ -53,6 +53,8 @@ const propTypes = {
   /** Optional What to render in the right side of the hero */
   rightContent: PropTypes.node,
   className: PropTypes.string,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -65,6 +67,7 @@ const defaultProps = {
   leftContent: null,
   rightContent: null,
   switcher: null,
+  testId: 'page-hero',
 };
 
 const StyledPageHero = styled.div`
@@ -123,6 +126,7 @@ const PageHero = ({
   leftContent,
   rightContent,
   switcher,
+  testId,
 }) => {
   if (__DEV__) {
     warning(
@@ -131,15 +135,19 @@ const PageHero = ({
     );
   }
   return (
-    <StyledPageHero className={className}>
+    <StyledPageHero data-testid={testId} className={className}>
       {crumb || (
         <Fragment>
           {leftContent ? <StyledLeftContent>{leftContent}</StyledLeftContent> : null}
           <StyledTitle>
-            <PageTitle section={section} title={title} />
-            {switcher && switcher.options.length ? <PageSwitcher switcher={switcher} /> : null}
+            <PageTitle section={section} title={title} testId={`${testId}-page-title`} />
+            {switcher && switcher.options.length ? (
+              <PageSwitcher switcher={switcher} testId={`${testId}-page-switcher`} />
+            ) : null}
             <StyledPageHeroWrap>
-              {blurb ? <StyledPageBlurb>{blurb}</StyledPageBlurb> : null}
+              {blurb ? (
+                <StyledPageBlurb data-testid={`${testId}-page-blurb`}>{blurb}</StyledPageBlurb>
+              ) : null}
             </StyledPageHeroWrap>
           </StyledTitle>
           {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}

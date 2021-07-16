@@ -126,6 +126,7 @@ class IdleTimer {
   cleanUp() {
     clearInterval(this.intervalHandler);
     this.cleanUpUserActivityListeners();
+    this.onIdleTimeoutWarning = () => {};
   }
 }
 
