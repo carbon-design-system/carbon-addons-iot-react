@@ -6114,6 +6114,7 @@ Map {
       "onSort": [Function],
       "selectedSortOption": "",
       "sortOptions": Array [],
+      "testId": "tile-catalog-new",
       "tiles": Array [],
       "title": "",
     },
@@ -6179,6 +6180,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "tiles": Object {
         "args": Array [
           Object {
@@ -6207,6 +6211,7 @@ Map {
       "onChange": null,
       "onClick": null,
       "spinner": false,
+      "testId": "time-picker-spinner",
       "value": "",
     },
     "propTypes": Object {
@@ -6270,6 +6275,9 @@ Map {
       },
       "spinner": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "value": Object {
         "type": "string",
@@ -18598,11 +18606,16 @@ Map {
     },
   },
   "TileGallery" => Object {
-    "defaultProps": Object {},
+    "defaultProps": Object {
+      "testId": "tile-gallery",
+    },
     "propTypes": Object {
       "children": Object {
         "isRequired": true,
         "type": "node",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -18610,6 +18623,7 @@ Map {
     "defaultProps": Object {
       "isOpen": true,
       "onClick": [Function],
+      "testId": "tile-gallery-section",
       "title": null,
     },
     "propTypes": Object {
@@ -18622,6 +18636,9 @@ Map {
       },
       "onClick": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "string",
@@ -18636,6 +18653,7 @@ Map {
       "icon": null,
       "mode": "grid",
       "onClick": [Function],
+      "testId": "tile-gallery-item",
       "thumbnail": null,
     },
     "propTypes": Object {
@@ -18701,6 +18719,9 @@ Map {
       "onClick": Object {
         "type": "func",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "thumbnail": Object {
         "type": "node",
       },
@@ -18718,6 +18739,7 @@ Map {
       },
       "onChange": [Function],
       "selectedIndex": 0,
+      "testId": "tile-gallery-view-switcher",
     },
     "propTypes": Object {
       "i18n": Object {
@@ -18739,6 +18761,9 @@ Map {
       "selectedIndex": Object {
         "type": "number",
       },
+      "testId": Object {
+        "type": "string",
+      },
     },
   },
   "TileGallerySearch" => Object {
@@ -18750,6 +18775,7 @@ Map {
       },
       "onChange": [Function],
       "searchValue": "",
+      "testId": "tile-gallery-search-input",
       "width": "304px",
     },
     "propTypes": Object {
@@ -18773,6 +18799,9 @@ Map {
         "type": "func",
       },
       "searchValue": Object {
+        "type": "string",
+      },
+      "testId": Object {
         "type": "string",
       },
       "width": Object {
@@ -18800,6 +18829,7 @@ Map {
         "searchPlaceHolderText": "Search for something",
       },
       "isButtonDisabled": false,
+      "testId": "stateful-tile-gallery",
     },
     "propTypes": Object {
       "buttonClassName": Object {
@@ -18956,6 +18986,9 @@ Map {
       },
       "isButtonDisabled": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "isRequired": true,
