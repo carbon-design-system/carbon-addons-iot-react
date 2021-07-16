@@ -305,7 +305,7 @@ Map {
     "defaultProps": Object {
       "id": "EmptyTable",
       "onEmptyStateAction": null,
-      "testID": "",
+      "testId": "",
     },
     "propTypes": Object {
       "emptyState": Object {
@@ -355,7 +355,8 @@ Map {
       "onEmptyStateAction": Object {
         "type": "func",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "totalColumns": Object {
@@ -483,6 +484,7 @@ Map {
         "wrapCellText": "always",
       },
       "secondaryTitle": null,
+      "testId": null,
       "title": null,
       "tooltip": null,
       "useZebraStyles": false,
@@ -1233,6 +1235,9 @@ Map {
       "secondaryTitle": Object {
         "type": "string",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "tooltip": Object {
         "type": "node",
       },
@@ -1765,6 +1770,7 @@ Map {
       "selectAllText": "Select all",
       "showExpanderColumn": false,
       "testID": "",
+      "testId": "",
     },
     "propTypes": Object {
       "actions": Object {
@@ -2324,7 +2330,8 @@ Map {
         "isRequired": true,
         "type": "shape",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -2352,7 +2359,7 @@ Map {
       "shouldLazyRender": false,
       "showExpanderColumn": false,
       "singleRowEditButtons": null,
-      "testID": "",
+      "testId": "",
       "totalColumns": 0,
     },
     "propTypes": Object {
@@ -2812,7 +2819,8 @@ Map {
         "isRequired": true,
         "type": "string",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "totalColumns": Object {
@@ -2856,7 +2864,7 @@ Map {
       },
       "overrides": undefined,
       "sendingData": false,
-      "testID": "TableSaveViewModal",
+      "testId": "TableSaveViewModal",
       "titleInputInvalid": false,
       "titleInputInvalidText": undefined,
       "viewDescription": undefined,
@@ -3002,7 +3010,8 @@ Map {
       "sendingData": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "titleInputInvalid": Object {
@@ -3042,7 +3051,7 @@ Map {
       "overrides": undefined,
       "pagination": undefined,
       "searchValueDefault": "",
-      "testID": "TableManageViewsModal",
+      "testId": "TableManageViewsModal",
     },
     "propTypes": Object {
       "actions": Object {
@@ -3307,7 +3316,8 @@ Map {
       "searchValueDefault": Object {
         "type": "string",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "views": Object {
@@ -3351,7 +3361,7 @@ Map {
       "hasRowSelection": false,
       "rowCount": 10,
       "showExpanderColumn": false,
-      "testID": "",
+      "testId": "",
     },
     "propTypes": Object {
       "columns": Object {
@@ -3392,7 +3402,8 @@ Map {
       "showExpanderColumn": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -3461,7 +3472,7 @@ Map {
         "toggleAggregations": "Toggle aggregations",
       },
       "secondaryTitle": null,
-      "testID": "",
+      "testId": "",
       "tooltip": null,
     },
     "propTypes": Object {
@@ -3856,7 +3867,8 @@ Map {
         "isRequired": true,
         "type": "shape",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "tooltip": Object {
@@ -4239,6 +4251,7 @@ Map {
       "pagination": null,
       "search": null,
       "selectedTileId": null,
+      "testId": "tile-catalog",
       "title": null,
     },
     "propTypes": Object {
@@ -4308,6 +4321,9 @@ Map {
         "type": "shape",
       },
       "selectedTileId": Object {
+        "type": "string",
+      },
+      "testId": Object {
         "type": "string",
       },
       "tiles": Object {
@@ -4426,6 +4442,9 @@ Map {
         "type": "shape",
       },
       "selectedTileId": Object {
+        "type": "string",
+      },
+      "testId": Object {
         "type": "string",
       },
       "tiles": Object {
@@ -21747,6 +21766,7 @@ Map {
       "idx": undefined,
       "onClose": undefined,
       "openNextSheet": undefined,
+      "testId": "",
       "title": "Title",
     },
     "propTypes": Object {
@@ -21787,6 +21807,9 @@ Map {
       "openNextSheet": Object {
         "type": "func",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "type": "string",
       },
@@ -21798,6 +21821,7 @@ Map {
       "className": undefined,
       "isOpen": false,
       "onCloseAllTearSheets": undefined,
+      "testId": "",
     },
     "propTypes": Object {
       "children": Object {
@@ -21811,6 +21835,9 @@ Map {
       },
       "onCloseAllTearSheets": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },

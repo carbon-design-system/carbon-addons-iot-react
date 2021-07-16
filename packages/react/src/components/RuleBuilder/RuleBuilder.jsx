@@ -334,7 +334,7 @@ const RuleBuilder = ({
                 <div className={`${baseClass}--user-container`}>
                   <StatefulTable
                     id="edit-table"
-                    testID={`${testId}-edit-users-table`}
+                    testId={`${testId}-edit-users-table`}
                     secondaryTitle={mergedI18n.editorAccessLabel}
                     options={{
                       hasSearch: true,
@@ -379,7 +379,7 @@ const RuleBuilder = ({
                   />
                   <StatefulTable
                     id="read-table"
-                    testID={`${testId}-read-users-table`}
+                    testId={`${testId}-read-users-table`}
                     secondaryTitle={mergedI18n.readOnlyAccessLabel}
                     options={{
                       hasSearch: true,

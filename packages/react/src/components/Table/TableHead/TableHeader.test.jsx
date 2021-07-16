@@ -59,6 +59,7 @@ describe('TableHeader', () => {
       </table>
     );
 
+    expect(screen.getByTestId('test-header')).toBeDefined();
     expect(() => userEvent.click(screen.getByTestId('test-header'))).not.toThrowError();
   });
 });

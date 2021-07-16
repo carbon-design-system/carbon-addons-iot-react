@@ -68,7 +68,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     translateWithId: t,
     thStyle,
     initialWidth,
-    testID,
+    testId,
     ...rest
   },
   ref
@@ -78,7 +78,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       // eslint-disable-next-line react/jsx-filename-extension
       <th
         {...rest}
-        data-testid={testID}
+        data-testid={testId}
         width={initialWidth}
         className={headerClassName}
         scope={scope}
@@ -125,7 +125,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       aria-sort={ariaSort}
       ref={ref}
       style={thStyle}
-      data-testid={testID}
+      data-testid={testId}
     >
       <ButtonTag {...buttonProps}>
         {!hasTooltip ? (
@@ -218,7 +218,7 @@ TableHeader.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   thStyle: PropTypes.object,
 
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 /* istanbul ignore next: ignoring the default onClick */
@@ -236,7 +236,7 @@ TableHeader.defaultProps = {
   translateWithId,
   thStyle: {},
   initialWidth: undefined,
-  testID: '',
+  testId: '',
 };
 
 TableHeader.translationKeys = Object.values(translationKeys);
