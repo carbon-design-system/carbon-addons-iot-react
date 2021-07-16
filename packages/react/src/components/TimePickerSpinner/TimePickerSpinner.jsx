@@ -38,6 +38,7 @@ const propTypes = {
     hours: PropTypes.string,
     minutes: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -55,6 +56,7 @@ const defaultProps = {
     hours: 'hours',
     minutes: 'minutes',
   },
+  testId: 'time-picker-spinner',
 };
 
 const TimePickerSpinner = ({
@@ -67,6 +69,7 @@ const TimePickerSpinner = ({
   is12hour,
   defaultTimegroup,
   i18n,
+  testId,
   ...others
 }) => {
   const [pickerValue, setPickerValue] = useState(value || '');
@@ -223,6 +226,7 @@ const TimePickerSpinner = ({
         onKeyUp={onInputKeyUp}
         onBlur={onInputBlur}
         disabled={disabled}
+        data-testid={testId}
         {...others}
       >
         {children}
@@ -241,6 +245,7 @@ const TimePickerSpinner = ({
               title={`${i18n.increment} ${timeGroupForLabel}`}
               aria-label={`${i18n.increment} ${timeGroupForLabel}`}
               disabled={disabled}
+              data-testid={`${testId}-up-button`}
             >
               <CaretUpGlyph className="up-icon" />
             </button>
@@ -257,6 +262,7 @@ const TimePickerSpinner = ({
               title={`${i18n.decrement} ${timeGroupForLabel}`}
               aria-label={`${i18n.decrement} ${timeGroupForLabel}`}
               disabled={disabled}
+              data-testid={`${testId}-down-button`}
             >
               <CaretDownGlyph className="down-icon" />
             </button>

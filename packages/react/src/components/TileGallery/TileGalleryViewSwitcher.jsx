@@ -11,6 +11,7 @@ const propTypes = {
     listText: PropTypes.string,
     gridText: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -20,13 +21,18 @@ const defaultProps = {
     listText: 'List',
     gridText: 'Grid',
   },
+  testId: 'tile-gallery-view-switcher',
 };
 
-const TileGalleryViewSwitcher = ({ onChange, selectedIndex, i18n }) => {
+const TileGalleryViewSwitcher = ({ onChange, selectedIndex, i18n, testId }) => {
   return (
-    <ContentSwitcher onChange={(event) => onChange(event)} selectedIndex={selectedIndex}>
-      <Switch name="list" text={i18n.listText} />
-      <Switch name="grid" text={i18n.gridText} />
+    <ContentSwitcher
+      onChange={(event) => onChange(event)}
+      selectedIndex={selectedIndex}
+      data-testid={testId}
+    >
+      <Switch name="list" text={i18n.listText} data-testid={`${testId}-list-switch`} />
+      <Switch name="grid" text={i18n.gridText} data-testid={`${testId}-grid-switch`} />
     </ContentSwitcher>
   );
 };
