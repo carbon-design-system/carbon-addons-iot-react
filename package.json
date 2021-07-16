@@ -39,6 +39,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint-staged && lerna run --stream pre-commit",
+      "pre-push": "lerna run --stream pre-push",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
