@@ -7,7 +7,14 @@ import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
 
 export { OverflowMenuItem } from 'carbon-components-react';
 
-export const OverflowMenu = ({ direction, menuOffset, useAutoPositioning, flipped, ...props }) => {
+export const OverflowMenu = ({
+  direction,
+  menuOffset,
+  useAutoPositioning,
+  flipped,
+  testId,
+  ...props
+}) => {
   const [calculateMenuOffset, { adjustedDirection, adjustedFlipped }] = usePopoverPositioning({
     direction,
     flipped,
@@ -18,6 +25,7 @@ export const OverflowMenu = ({ direction, menuOffset, useAutoPositioning, flippe
 
   return (
     <CarbonOverflowMenu
+      data-testid={testId}
       {...props}
       direction={adjustedDirection}
       flipped={adjustedFlipped}
@@ -30,11 +38,13 @@ export const OverflowMenu = ({ direction, menuOffset, useAutoPositioning, flippe
 OverflowMenu.propTypes = {
   ...CarbonOverflowMenu.propTypes,
   useAutoPositioning: PropTypes.bool,
+  testId: PropTypes.string,
 };
 
 OverflowMenu.defaultProps = {
   ...CarbonOverflowMenu.defaultProps,
   useAutoPositioning: false,
+  testId: 'overflow-menu',
 };
 
 export default OverflowMenu;
