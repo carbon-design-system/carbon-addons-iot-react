@@ -2,7 +2,7 @@ name: Test
 
 on: [push, pull_request]
 env:
-CYPRESS_CACHE_FOLDER: cypress/cache
+  CYPRESS_CACHE_FOLDER: cypress/cache
 
 jobs:
   test-react:
