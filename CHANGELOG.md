@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.63](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.62...v2.146.0-next.63) (2021-07-16)
+
+
+### Bug Fixes
+
+* **gauge-card:** only check card size for rowGap ([689b64d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/689b64d5e4b52957007a2c7190ee824f0fcc798b))
+* **gauge-card:** remove text size ([aea117a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aea117ab728bcb4173af5cc60c89c66af74d08d9))
+* **gauge-card:** remove unnecessary div ([cddad27](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cddad27493aeeae19f31f0bd0c7f0c0298840dbb))
+* **gauge-card:** trends were cutoff on bottom of card ([daebc9c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/daebc9c0f1c5c5a60ea12bf80597507774856361))
+* **guage-card:** small card overflow, add multiple gauge story ([7a2382d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7a2382d9b6278ae9bc1754d8aef0d16d77220395))
+
+
+
+
+
+# [2.146.0-next.62](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.61...v2.146.0-next.62) (2021-07-16)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.146.0-next.61](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.60...v2.146.0-next.61) (2021-07-15)
 
 **Note:** Version bump only for package ibm-ai-applications
