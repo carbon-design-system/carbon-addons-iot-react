@@ -52,6 +52,7 @@ const propTypes = {
     cancelLabel: PropTypes.string,
     closeLabel: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -62,6 +63,7 @@ const defaultProps = {
     cancelLabel: 'Cancel',
     closeLabel: 'Close,',
   },
+  testId: 'edit-page',
 };
 
 /**
@@ -77,6 +79,7 @@ const EditPage = ({
   i18n,
   isLoading,
   blurb,
+  testId,
   ...others
 }) => {
   if (__DEV__) {
@@ -100,23 +103,46 @@ const EditPage = ({
     }
   };
   return (
-    <StyledEditPage className={className}>
+    <StyledEditPage data-testid={testId} className={className}>
       {isLoading ? (
         <Fragment>
-          <Hero {...others} description={blurb} onClose={onClose} i18n={i18n} isLoading />
+          <Hero
+            {...others}
+            description={blurb}
+            onClose={onClose}
+            i18n={i18n}
+            isLoading
+            testId={`${testId}-hero`}
+          />
           <StyledPageContent>
             <SkeletonText width="30%" />
           </StyledPageContent>
         </Fragment>
       ) : (
         <Fragment>
-          <Hero {...others} description={blurb} onClose={onClose} i18n={i18n} />
-          <StyledPageContent>{children}</StyledPageContent>
+          <Hero
+            {...others}
+            description={blurb}
+            onClose={onClose}
+            i18n={i18n}
+            testId={`${testId}-hero`}
+          />
+          <StyledPageContent data-testid={`${testId}-content`}>{children}</StyledPageContent>
           <StyledPageFooter>
-            <Button kind="secondary" onClick={onClose}>
+            <Button
+              kind="secondary"
+              onClick={onClose}
+              // TODO: pass testId in v3 to override defaults
+              // testId={`${testId}-close-button`}
+            >
               {cancelLabel}
             </Button>
-            <Button onClick={handleSave} loading={isSaving}>
+            <Button
+              onClick={handleSave}
+              loading={isSaving}
+              // TODO: pass testId in v3 to override defaults
+              // testId={`${testId}-save-button`}
+            >
               {saveLabel}
             </Button>
           </StyledPageFooter>

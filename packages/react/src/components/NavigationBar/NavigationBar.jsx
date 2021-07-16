@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Tabs, Tab, Button } from 'carbon-components-react';
+import { Tabs, Tab } from 'carbon-components-react';
 import { spacing09 } from '@carbon/layout';
 
+import Button from '../Button';
 import { COLORS, PADDING, SIZES } from '../../styles/styles';
 
 const StyledNavigationContainer = styled.div`
@@ -115,6 +116,8 @@ const propTypes = {
   hero: PropTypes.node,
   /** workarea renders directly above tabs if passed */
   workArea: PropTypes.node,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -124,19 +127,21 @@ const defaultProps = {
   hero: null,
   onSelectionChange: null,
   workArea: null,
+  testId: 'navigation-bar',
 };
 
 /**
  * This component is just wrapping up the Carbon Tabs, adding some optional action buttons at the right side.  And for now automatically rendering a page hero component across all tabs
  */
-const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...others }) => (
+const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, testId, ...others }) => (
   <Fragment>
     {workArea || null}
-    <StyledNavigationContainer hasActions={actions.length > 0}>
+    <StyledNavigationContainer data-testid={testId} hasActions={actions.length > 0}>
       {workArea ? <StyledOverlay /> : null}
       {hero}
       <StyledTabToContent>
         <Tabs
+          data-testid={`${testId}-tabs`}
           {...others}
           onSelectionChange={(index) => onSelectionChange && onSelectionChange(tabs[index].id)}
         >
@@ -150,9 +155,9 @@ const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...ot
         </Tabs>
       </StyledTabToContent>
       {actions && actions.length > 0 ? (
-        <StyledActions>
+        <StyledActions data-testid={`${testId}-actions`}>
           {actions.map(({ id, ...other }) => (
-            <Button key={id} {...other} />
+            <Button key={id} {...other} testId={`${testId}-button-${id}`} />
           ))}
         </StyledActions>
       ) : null}

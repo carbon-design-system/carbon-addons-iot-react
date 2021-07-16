@@ -22,6 +22,7 @@ export const mockActions = {
     onApplyRowAction: jest.fn(),
     onEmptyStateAction: jest.fn(),
     onChangeOrdering: jest.fn(),
+    onColumnResize: jest.fn(),
   },
 };
 

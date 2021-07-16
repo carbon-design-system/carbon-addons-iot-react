@@ -56,6 +56,8 @@ export const PageWizardPropTypes = {
   afterFooterContent: PropTypes.node,
   /** Make the ProgressIndicator clickable */
   isClickable: PropTypes.bool,
+
+  testId: PropTypes.string,
 };
 
 export const defaultProps = {
@@ -79,6 +81,7 @@ export const defaultProps = {
   beforeFooterContent: null,
   afterFooterContent: null,
   isClickable: false,
+  testId: 'page-wizard',
 };
 
 const PageWizard = ({
@@ -100,6 +103,7 @@ const PageWizard = ({
   beforeFooterContent,
   afterFooterContent,
   isClickable,
+  testId,
 }) => {
   const children = ch.length ? ch : [ch];
   const steps = React.Children.map(children, (step) => step.props);
@@ -165,6 +169,7 @@ const PageWizard = ({
 
   return (
     <div
+      data-testid={testId}
       className={classnames(
         isProgressIndicatorVertical ? `${iotPrefix}--page-wizard` : null,
         className,
@@ -185,10 +190,15 @@ const PageWizard = ({
             onClickItem={setStep}
             isVerticalMode={isProgressIndicatorVertical}
             isClickable={isClickable}
+            // TODO: pass down the testId in v3 instead of falling back to the
+            // default.
+            // testId={`${testId}-progress-indicator`}
           />
         </div>
       ) : null}
-      <div className={`${iotPrefix}--page-wizard--content`}>{currentStepToRender}</div>
+      <div data-testid={`${testId}-content`} className={`${iotPrefix}--page-wizard--content`}>
+        {currentStepToRender}
+      </div>
     </div>
   );
 };

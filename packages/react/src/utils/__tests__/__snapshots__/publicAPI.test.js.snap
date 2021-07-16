@@ -4543,6 +4543,7 @@ Map {
       "onClickItem": null,
       "showLabels": true,
       "stepWidth": null,
+      "testId": "iot--progress-indicator-testid",
     },
     "propTypes": Object {
       "className": Object {
@@ -4616,6 +4617,9 @@ Map {
       },
       "stepWidth": Object {
         "type": "number",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -7350,6 +7354,7 @@ Map {
       "rightContent": null,
       "section": null,
       "switcher": null,
+      "testId": "page-hero",
       "title": null,
     },
     "propTypes": Object {
@@ -7410,6 +7415,9 @@ Map {
         ],
         "type": "shape",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "type": "node",
       },
@@ -7418,6 +7426,7 @@ Map {
   "PageWorkArea" => Object {
     "defaultProps": Object {
       "isOpen": false,
+      "testId": "page-work-area",
     },
     "propTypes": Object {
       "children": Object {
@@ -7426,6 +7435,9 @@ Map {
       },
       "isOpen": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -7438,6 +7450,7 @@ Map {
         "saveLabel": "Save",
       },
       "isLoading": false,
+      "testId": "edit-page",
     },
     "propTypes": Object {
       "breadcrumb": Object {
@@ -7522,6 +7535,7 @@ Map {
       "hero": null,
       "hidden": false,
       "onSelectionChange": null,
+      "testId": "navigation-bar",
       "workArea": null,
     },
     "propTypes": Object {
@@ -7581,6 +7595,9 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "workArea": Object {
         "type": "node",
@@ -17344,6 +17361,7 @@ Map {
       "hasMoreData": false,
       "isLoading": false,
       "layout": "",
+      "testId": "Card",
     },
     "displayName": "ListCard",
     "propTypes": Object {
@@ -18125,6 +18143,7 @@ Map {
       "onNext": null,
       "sendingData": false,
       "setStep": null,
+      "testId": "page-wizard",
     },
     "propTypes": Object {
       "afterFooterContent": Object {
@@ -18214,6 +18233,9 @@ Map {
       },
       "setStep": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -21469,7 +21491,7 @@ Map {
         "$$typeof": Symbol(react.forward_ref),
         "render": [Function],
       },
-      "testID": "menu-button",
+      "testId": "menu-button",
     },
     "propTypes": Object {
       "children": Object {
@@ -21525,7 +21547,8 @@ Map {
         ],
         "type": "oneOfType",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -21547,7 +21570,7 @@ Map {
       "onAdd": null,
       "onRemove": null,
       "selectedItems": Array [],
-      "testID": "list-builder",
+      "testId": "list-builder",
     },
     "propTypes": Object {
       "i18n": Object {
@@ -21674,7 +21697,8 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -21782,7 +21806,7 @@ Map {
       "mapControls": Array [],
       "size": "LARGEWIDE",
       "stops": Array [],
-      "testID": "map-card",
+      "testId": "map-card",
     },
     "propTypes": Object {
       "availableActions": Object {
