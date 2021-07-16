@@ -1,6 +1,8 @@
 name: Test
 
 on: [push, pull_request]
+env:
+CYPRESS_CACHE_FOLDER: cypress/cache
 
 jobs:
   test-react:
@@ -31,6 +33,7 @@ jobs:
           path: |
             node_modules
             */*/node_modules
+            cypress/cache
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install dependencies

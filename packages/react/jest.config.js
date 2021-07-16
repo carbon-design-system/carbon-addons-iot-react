@@ -24,12 +24,6 @@ module.exports = {
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
   coverageDirectory: 'jest/coverage',
   coverageThreshold: {
-    global: {
-      statements: 80,
-      branches: 80,
-      functions: 80,
-      lines: 80,
-    },
     './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': all90Covered,
     './src/components/Breadcrumb/Breadcrumb.jsx': all90Covered,
     './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
@@ -37,12 +31,6 @@ module.exports = {
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/Table/Table.jsx': all90Covered,
-    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor).jsx': {
-      statements: 80,
-      branches: 80,
-      functions: 80,
-      lines: 80,
-    },
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
