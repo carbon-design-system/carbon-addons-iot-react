@@ -66,6 +66,8 @@ const propTypes = {
     saveLabel: PropTypes.string,
     cancelLabel: PropTypes.string,
   }),
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -103,6 +105,7 @@ const defaultProps = {
     userTypeLabel: 'User',
     modalPrimaryButtonLabel: 'OK',
   },
+  testId: 'rule-builder',
 };
 
 const baseClass = `${iotPrefix}--rule-builder-wrap`;
@@ -118,6 +121,7 @@ const RuleBuilder = ({
   ruleEditor: RuleEditor,
   onChange,
   i18n,
+  testId,
 }) => {
   const [currentFilter, setCurrentFilter] = React.useState(filter);
   const [modalState, setModalState] = React.useState({
@@ -245,15 +249,18 @@ const RuleBuilder = ({
     <section
       className={classnames(baseClass, className)}
       id={currentFilter?.id}
-      data-testid={currentFilter?.id || 'rule-builder'}
+      // TODO: change this to use only testId in v3.
+      data-testid={currentFilter?.id || testId}
     >
       <header className={`${baseClass}--header`}>
         <div>
-          <h1 className={`${baseClass}--header-title`}>
+          <h1 className={`${baseClass}--header-title`} data-testid={`${testId}-title`}>
             {currentFilter?.filterTitleText || defaultTitleText}
           </h1>
           {currentFilter?.filterMetaText && (
-            <p className={`${baseClass}--header-metatext`}>{currentFilter?.filterMetaText}</p>
+            <p data-testid={`${testId}-metatext`} className={`${baseClass}--header-metatext`}>
+              {currentFilter?.filterMetaText}
+            </p>
           )}
         </div>
         <div className={`${baseClass}--header-actions`}>
@@ -269,15 +276,24 @@ const RuleBuilder = ({
         </div>
       </header>
       <div className={`${baseClass}--body`}>
-        <Tabs className={`${baseClass}--tabs`}>
-          <Tab className={`${baseClass}--tab`} label={mergedI18n.filterTabText}>
+        <Tabs data-testid={`${testId}-tabs`} className={`${baseClass}--tabs`}>
+          <Tab
+            className={`${baseClass}--tab`}
+            label={mergedI18n.filterTabText}
+            data-testid={`${testId}-editor-tab`}
+          >
             <Editor
               defaultRules={currentFilter.filterRules}
               columns={currentFilter.filterColumns}
               onChange={handleOnChange}
+              testId={`${testId}-editor`}
             />
           </Tab>
-          <Tab className={`${baseClass}--tab`} label={mergedI18n.sharingTabText}>
+          <Tab
+            className={`${baseClass}--tab`}
+            label={mergedI18n.sharingTabText}
+            data-testid={`${testId}-sharing-tab`}
+          >
             <Accordion>
               <AccordionItem title={mergedI18n.detailsAccordionText} open>
                 <TextInput
@@ -289,12 +305,14 @@ const RuleBuilder = ({
                   defaultValue={currentFilter.filterTitleText}
                   placeholder="Untitled 01"
                   onChange={(e) => handleOnChange(e.target.value, 'TITLE')}
+                  data-testid={`${testId}-title-input`}
                 />
                 <FilterTags
                   hasOverflow
                   tagContainer={RuleBuilderTags}
                   onChange={handleOnChange}
                   i18n={mergedI18n}
+                  testId={`${testId}-tags`}
                 >
                   {currentFilter?.filterTags?.map((tag) => (
                     <Tag
@@ -305,6 +323,7 @@ const RuleBuilder = ({
                         marginRight: '1rem',
                       }}
                       onClose={handleTagClose(tag)}
+                      data-testid={`${testId}-tag-${tag}`}
                     >
                       {tag}
                     </Tag>
@@ -315,6 +334,7 @@ const RuleBuilder = ({
                 <div className={`${baseClass}--user-container`}>
                   <StatefulTable
                     id="edit-table"
+                    testID={`${testId}-edit-users-table`}
                     secondaryTitle={mergedI18n.editorAccessLabel}
                     options={{
                       hasSearch: true,
@@ -359,6 +379,7 @@ const RuleBuilder = ({
                   />
                   <StatefulTable
                     id="read-table"
+                    testID={`${testId}-read-users-table`}
                     secondaryTitle={mergedI18n.readOnlyAccessLabel}
                     options={{
                       hasSearch: true,

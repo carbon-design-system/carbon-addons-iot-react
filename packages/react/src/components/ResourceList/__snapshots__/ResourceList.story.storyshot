@@ -6,6 +6,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
 >
   <section
     className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    data-testid="resource-list"
   >
     <div
       className="bx--structured-list-tbody"
@@ -13,6 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
       <label
         aria-label="Item A"
         className=" bx--structured-list-row"
+        data-testid="resource-list-row-row-0"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -61,6 +63,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
       <label
         aria-label="Item B"
         className=" bx--structured-list-row"
+        data-testid="resource-list-row-row-1"
         onClick={[Function]}
         tabIndex={1}
       >
@@ -109,6 +112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
       <label
         aria-label="Item C"
         className=" bx--structured-list-row"
+        data-testid="resource-list-row-row-2"
         onClick={[Function]}
         tabIndex={2}
       >
@@ -165,6 +169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
 >
   <section
     className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    data-testid="resource-list"
   >
     <div
       className="bx--structured-list-tbody"
@@ -172,6 +177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
       <label
         aria-label="Item A"
         className=" bx--structured-list-row"
+        data-testid="resource-list-row-row-0"
         onClick={[Function]}
         tabIndex={-1}
       >
@@ -195,7 +201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="Button"
+            data-testid="resource-list-custom-action-row-0"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -227,6 +233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
       <label
         aria-label="Item B"
         className=" bx--structured-list-row"
+        data-testid="resource-list-row-row-1"
         onClick={[Function]}
         tabIndex={-1}
       >
@@ -250,7 +257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="Button"
+            data-testid="resource-list-custom-action-row-1"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -282,6 +289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
       <label
         aria-label="Item C"
         className=" bx--structured-list-row"
+        data-testid="resource-list-row-row-2"
         onClick={[Function]}
         tabIndex={-1}
       >
@@ -305,7 +313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="Button"
+            data-testid="resource-list-custom-action-row-2"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -345,6 +353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
 >
   <section
     className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    data-testid="resource-list"
   >
     <div
       className="bx--structured-list-tbody"
@@ -352,6 +361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
       <label
         aria-label="Item A"
         className=" bx--structured-list-row"
+        data-testid="resource-list-row-row-0"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -423,6 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
       <label
         aria-label="Item B"
         className=" bx--structured-list-row"
+        data-testid="resource-list-row-row-1"
         onClick={[Function]}
         tabIndex={1}
       >
@@ -494,6 +505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
       <label
         aria-label="Item C"
         className=" bx--structured-list-row"
+        data-testid="resource-list-row-row-2"
         onClick={[Function]}
         tabIndex={2}
       >

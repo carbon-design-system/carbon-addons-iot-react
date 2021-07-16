@@ -63,6 +63,7 @@ const propTypes = {
     addRule: PropTypes.string,
     addGroup: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -72,9 +73,10 @@ const defaultProps = {
     addRule: 'Add rule',
     addGroup: 'Add group',
   },
+  testId: 'rule-builder-editor',
 };
 
-const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n }) => {
+const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n, testId }) => {
   const [tree, setTree] = React.useState(defaultRules);
 
   const mergedI18n = React.useMemo(
@@ -140,13 +142,14 @@ const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n }) => {
   );
 
   return (
-    <div data-testid="rule-builder-editor">
+    <div data-testid={testId}>
       <RuleBuilderHeader
         id={tree.id}
         groupLogic={tree.groupLogic}
         onAddRule={handleAddRule}
         onChange={handleChange}
         i18n={mergedI18n}
+        testId={`${testId}-header`}
       />
       {tree.rules.map((rule) => {
         return (
@@ -158,6 +161,7 @@ const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n }) => {
             onChange={handleChange}
             columns={columns}
             i18n={mergedI18n}
+            testId={`${testId}-rule-${rule.id}`}
           />
         );
       })}
