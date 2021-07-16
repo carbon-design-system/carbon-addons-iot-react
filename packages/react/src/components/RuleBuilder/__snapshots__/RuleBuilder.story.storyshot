@@ -1009,7 +1009,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="edit-table"
                           id="edit-table"
-                          testID="rule-builder-edit-users-table"
                           title={null}
                         >
                           <thead
@@ -1525,7 +1524,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="read-table"
                           id="read-table"
-                          testID="rule-builder-read-users-table"
                           title={null}
                         >
                           <thead
@@ -1934,6 +1932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </footer>
       <div
         className="iot--select-users-modal"
+        data-testid="select-users-modal-container"
       >
         <div
           className="bx--modal iot--composed-modal--large iot--composed-modal"
@@ -2295,6 +2294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </div>
       <div
         className="iot--select-users-modal"
+        data-testid="select-users-modal-container"
       >
         <div
           className="bx--modal iot--composed-modal--large iot--composed-modal"
@@ -5625,7 +5625,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="edit-table"
                           id="edit-table"
-                          testID="rule-builder-edit-users-table"
                           title={null}
                         >
                           <thead
@@ -5905,7 +5904,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           className="bx--data-table bx--data-table--no-border"
                           data-testid="read-table"
                           id="read-table"
-                          testID="rule-builder-read-users-table"
                           title={null}
                         >
                           <thead
@@ -6078,6 +6076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </footer>
       <div
         className="iot--select-users-modal"
+        data-testid="select-users-modal-container"
       >
         <div
           className="bx--modal iot--composed-modal--large iot--composed-modal"
@@ -6749,6 +6748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </div>
       <div
         className="iot--select-users-modal"
+        data-testid="select-users-modal-container"
       >
         <div
           className="bx--modal iot--composed-modal--large iot--composed-modal"

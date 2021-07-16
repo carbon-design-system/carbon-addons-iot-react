@@ -5,6 +5,7 @@ import merge from 'lodash/merge';
 import ComposedModal from '../../ComposedModal/ComposedModal';
 import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';
+import deprecate from '../../../internal/deprecate';
 
 import TableSaveViewForm from './TableSaveViewForm';
 
@@ -58,8 +59,14 @@ const propTypes = {
   }),
   /** Disables the form and shows spinner on save button when true */
   sendingData: PropTypes.bool,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
   /** When true it will show that the title field has invalid input */
   titleInputInvalid: PropTypes.bool,
   /** Used to describe the input validation error for the the title field */
@@ -87,7 +94,7 @@ const defaultProps = {
   },
   overrides: undefined,
   sendingData: false,
-  testID: 'TableSaveViewModal',
+  testId: 'TableSaveViewModal',
   titleInputInvalid: false,
   titleInputInvalidText: undefined,
   viewDescription: undefined,
@@ -102,6 +109,7 @@ const TableSaveViewModal = ({
   overrides,
   sendingData,
   testID,
+  testId,
   titleInputInvalid,
   titleInputInvalidText,
   viewDescription,
@@ -145,7 +153,8 @@ const TableSaveViewModal = ({
         isPrimaryButtonDisabled: formValues.title === '',
       }}
       iconDescription={closeIconDescription}
-      testID={testID}
+      // TODO: remove deprecated 'testID' in v3
+      testID={testID || testId}
       error={error}
       header={{
         title: modalTitle,
@@ -172,7 +181,8 @@ const TableSaveViewModal = ({
           defaultCheckboxLabelText,
           publicCheckboxLabelText,
         }}
-        testID={`${testID}-form`}
+        // TODO: remove deprecated 'testID' in v3
+        testID={`${testID || testId}-form`}
         {...overrides?.tableSaveViewForm?.props}
       />
     </MyComposedModal>

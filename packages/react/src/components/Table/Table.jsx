@@ -279,6 +279,8 @@ const propTypes = {
   /** Specify the error message that need to be displayed by default.
    * Incase we use view.table.errorState property then the error state will be displayed instead of error message */
   error: PropTypes.string,
+
+  testId: PropTypes.string,
 };
 
 export const defaultProps = (baseProps) => ({
@@ -442,6 +444,9 @@ export const defaultProps = (baseProps) => ({
     buttonLabelOnTableError: 'Refresh the page',
   },
   error: null,
+  // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
+  // previously used as testId.
+  testId: null,
 });
 
 const Table = (props) => {
@@ -463,6 +468,7 @@ const Table = (props) => {
     secondaryTitle,
     tooltip,
     error,
+    testId,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -673,7 +679,7 @@ const Table = (props) => {
   return (
     <TableContainer
       style={style}
-      data-testid={`${id}-table-container`}
+      data-testid={`${id || testId}-table-container`}
       className={classnames(className, `${iotPrefix}--table-container`)}
     >
       {
@@ -772,13 +778,17 @@ const Table = (props) => {
               ),
             }}
             data={data}
-            testID={`${id}-table-toolbar`}
+            // TODO: remove id in V3.
+            testId={`${id || testId}-table-toolbar`}
           />
         ) : null
       }
       {view.selectedAdvancedFilterIds.length ? (
         <section className={`${iotPrefix}--table__advanced-filters-container`}>
-          <FilterTags>
+          <FilterTags
+            // TODO: remove id in V3.
+            testId={`${id || testId}-filter-tags`}
+          >
             {view.advancedFilters
               .filter((advFilter) => view.selectedAdvancedFilterIds.includes(advFilter.filterId))
               .map((advancedFilter) => {
@@ -792,6 +802,8 @@ const Table = (props) => {
                         actions.toolbar.onRemoveAdvancedFilter(e, advancedFilter.filterId);
                       }
                     }}
+                    // TODO: remove id in V3.
+                    data-testid={`${id || testId}-filter-tag-${advancedFilter.filterId}`}
                   >
                     {advancedFilter.filterTitleText}
                   </Tag>
@@ -803,7 +815,8 @@ const Table = (props) => {
       <div className="addons-iot-table-container">
         <CarbonTable
           id={id}
-          data-testid={id}
+          // TODO: remove id in v3
+          data-testid={id || testId}
           className={classnames({
             [`${iotPrefix}--data-table--resize`]: options.hasResize,
             [`${iotPrefix}--data-table--fixed`]:
@@ -862,7 +875,8 @@ const Table = (props) => {
               selection: { isSelectAllSelected, isSelectAllIndeterminate },
             }}
             hasFastFilter={options?.hasFilter === 'onKeyPress'}
-            testID={`${id}-table-head`}
+            // TODO: remove id in v3
+            testId={`${id || testId}-table-head`}
             showExpanderColumn={showExpanderColumn}
           />
 
@@ -873,13 +887,14 @@ const Table = (props) => {
                 columns={visibleColumns}
                 {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
                 rowCount={view.table.loadingState.rowCount}
-                testID={`${id}-table-skeleton`}
+                // TODO: remove 'id' in v3.
+                testId={`${id || testId}-table-skeleton`}
                 showExpanderColumn={showExpanderColumn}
               />
             ) : error ? (
               <ErrorTable
                 id={id}
-                testID={`${id}-table-error-body`}
+                testId={`${id || testId}-table-error-body`}
                 i18n={i18n}
                 totalColumns={totalColumns}
                 error={error}
@@ -931,7 +946,8 @@ const Table = (props) => {
                   'onRowExpanded',
                   'onRowClicked'
                 )}
-                testID={`${id}-table-body`}
+                // TODO: remove 'id' in v3.
+                testId={`${id || testId}-table-body`}
                 showExpanderColumn={showExpanderColumn}
               />
             ) : (
@@ -959,7 +975,8 @@ const Table = (props) => {
                     ? actions.table.onEmptyStateAction
                     : undefined // if not filtered then show normal empty state
                 }
-                testID={`${id}-table-empty`}
+                // TODO: remove 'id' in v3.
+                testId={`${id || testId}-table-empty`}
               />
             )
           }
@@ -973,7 +990,7 @@ const Table = (props) => {
                 aggregations,
                 ordering: view.table.ordering,
               }}
-              testID={`${id}-table-foot`}
+              testId={`${id || testId}-table-foot`}
               showExpanderColumn={showExpanderColumn}
             />
           ) : null}
@@ -1003,7 +1020,7 @@ const Table = (props) => {
           pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
-          testID={`${id}-table-pagination`}
+          testId={`${id || testId}-table-pagination`}
         />
       ) : null}
       {options.hasMultiSort && (

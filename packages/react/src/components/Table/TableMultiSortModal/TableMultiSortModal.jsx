@@ -217,7 +217,7 @@ const TableMultiSortModal = ({
 
   return (
     <ComposedModal
-      testID={testId}
+      testId={testId}
       className={`${iotPrefix}--table-multi-sort-modal`}
       header={{
         title: i18n.multiSortModalTitle,
