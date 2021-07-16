@@ -249,7 +249,7 @@ const SelectUsersModal = ({
   const selectedList = displaySelectedUsersList(selectedUsers);
 
   return (
-    <div testId={`${testId}-container`} className={`${iotPrefix}--select-users-modal`}>
+    <div data-testid={`${testId}-container`} className={`${iotPrefix}--select-users-modal`}>
       <ComposedModal
         isLarge
         footer={{
