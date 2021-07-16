@@ -39,7 +39,7 @@ const RowActionsError = ({
     return null;
   }
   const { title, message, learnMoreURL } = rowActionsError;
-  return rowActionsError ? (
+  return (
     <Fragment>
       <Tooltip
         tabIndex={0}
@@ -76,7 +76,7 @@ const RowActionsError = ({
       </Tooltip>
       <span className={`${iotPrefix}--row-actions-error--span`}>{actionFailedText}</span>
     </Fragment>
-  ) : null;
+  );
 };
 
 RowActionsError.propTypes = propTypes;

@@ -62,7 +62,9 @@ const GaugeCard = ({
   size,
   className,
   dataState,
+  // TODO: remove deprecated testID in v3.
   testID,
+  testId,
   ...others
 }) => {
   const [loadedState, setLoadedState] = useState(false);
@@ -93,7 +95,8 @@ const GaugeCard = ({
       title={title}
       size={size}
       resizeHandles={resizeHandles}
-      testId={testID}
+      // TODO: remove deprecated testID in v3.
+      testId={testID || testId}
       {...others}
       tooltip={tooltip}
       isLoading={isLoading}

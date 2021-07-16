@@ -7,6 +7,7 @@ const fixture = {
       navigator: 'https://mockedworkspace.home.my-domain',
       admin: 'https://admin.my-domain',
       logout: 'https://home.my-domain/logout',
+      logoutInactivity: 'https://home.my-domain/logout/inactivity',
       whatsNew: 'https://www.ibm.com',
       gettingStarted: 'https://www.ibm.com',
       documentation: 'https://www.ibm.com',
@@ -57,10 +58,19 @@ const fixture = {
       surveyTitle: 'Enjoying {solutionName}?',
       surveyText: 'Click here to help us improve the product',
       surveyPrivacyPolicy: 'IBM Privacy Policy',
+      sessionTimeoutModalHeading: 'Session Timeout',
+      sessionTimeoutModalBody: 'You will be logged out due to inactivity in {countdown} seconds.',
+      sessionTimeoutModalLogoutButton: 'Log out',
+      sessionTimeoutModalStayLoggedInButton: 'Stay logged in',
     },
     surveyData: {
       surveyLink: 'https://www.ibm.com',
       privacyLink: 'http://www.ibm.com/en/privacy',
+    },
+    idleTimeoutData: {
+      timeout: 60,
+      countdown: 20,
+      cookieName: '_user_inactivity_timeout',
     },
   },
 };
