@@ -13,6 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
   >
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper"
+      data-testid="dropdown"
     >
       <label
         className="bx--label"
@@ -99,6 +100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
   >
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper bx--dropdown__wrapper--inline bx--list-box__wrapper--inline"
+      data-testid="dropdown"
     >
       <label
         className="bx--label"
@@ -180,6 +182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
   >
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper"
+      data-testid="dropdown"
     >
       <label
         className="bx--label"
@@ -293,6 +296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
   >
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper"
+      data-testid="dropdown"
     >
       <label
         className="bx--label"

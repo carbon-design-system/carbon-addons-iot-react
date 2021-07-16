@@ -232,6 +232,7 @@ const ProgressIndicator = ({
   stepWidth,
   isClickable,
   onClickItem,
+  testId,
 }) => {
   const [currentStep, setCurrentStep] = useState(currentItemId || items[0].id);
 
@@ -291,7 +292,7 @@ const ProgressIndicator = ({
   });
 
   return newItems.length > 1 ? (
-    <ul className={classes} data-testid={`${iotPrefix}--progress-indicator-testid`}>
+    <ul className={classes} data-testid={testId}>
       {newItems.map(
         (
           { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },
@@ -342,6 +343,7 @@ ProgressIndicator.propTypes = {
   isVerticalMode: PropTypes.bool,
   isClickable: PropTypes.bool,
   onClickItem: PropTypes.func,
+  testId: PropTypes.string,
 };
 
 ProgressIndicator.defaultProps = {
@@ -353,6 +355,7 @@ ProgressIndicator.defaultProps = {
   isVerticalMode: false,
   isClickable: false,
   onClickItem: null,
+  testId: `${iotPrefix}--progress-indicator-testid`,
 };
 
 export default ProgressIndicator;

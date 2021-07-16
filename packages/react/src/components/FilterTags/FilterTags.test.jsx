@@ -26,6 +26,46 @@ describe('Filtertags', () => {
     delete HTMLElement.prototype.scrollWidth;
   });
 
+  it('should be selectable by testId', () => {
+    const { rerender } = render(
+      <FilterTags id="FILTER_TAGS_CONTAINER">
+        {tagData.map((tag) => (
+          <Tag
+            key={`tag-${tag.id}`}
+            filter
+            type={tag.type}
+            title="Clear Filter"
+            style={{ marginRight: '1rem' }}
+          >
+            {tag.text}
+          </Tag>
+        ))}
+      </FilterTags>
+    );
+    expect(screen.getByTestId('FILTER_TAGS_CONTAINER')).toBeDefined();
+    expect(screen.getByTestId('filter-tags-overflow-menu')).toBeDefined();
+
+    rerender(
+      <FilterTags testId="filter_tags">
+        {tagData.map((tag) => (
+          <Tag
+            key={`tag-${tag.id}`}
+            filter
+            type={tag.type}
+            title="Clear Filter"
+            style={{ marginRight: '1rem' }}
+          >
+            {tag.text}
+          </Tag>
+        ))}
+      </FilterTags>
+    );
+    expect(screen.getByTestId('filter-tag-container')).toBeDefined();
+    expect(screen.getByTestId('filter_tags-overflow-menu')).toBeDefined();
+    userEvent.click(screen.getByTestId('filter_tags-overflow-menu'));
+    expect(screen.getByTestId('filter_tags-overflow-menu-item-0')).toBeDefined();
+  });
+
   it('will render tags without overflow when size is large enough', () => {
     const { rerender } = render(
       <FilterTags>

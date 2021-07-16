@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import NavigationBar from './NavigationBar';
 
@@ -11,6 +12,33 @@ const commonNavigationBarProps = {
 };
 
 describe('NavigationBar', () => {
+  it('should be selectable by testId', () => {
+    render(
+      <NavigationBar
+        {...commonNavigationBarProps}
+        testId="navigation_bar"
+        actions={[
+          {
+            id: 'button1',
+            children: 'New Entity Type',
+            onClick: jest.fn(),
+          },
+          {
+            id: 'button2',
+            children: 'Button 2',
+            kind: 'secondary',
+            onClick: jest.fn(),
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByTestId('navigation_bar')).toBeDefined();
+    expect(screen.getByTestId('navigation_bar-tabs')).toBeDefined();
+    expect(screen.getByTestId('navigation_bar-actions')).toBeDefined();
+    expect(screen.getByTestId('navigation_bar-button-button1')).toBeDefined();
+    expect(screen.getByTestId('navigation_bar-button-button2')).toBeDefined();
+  });
   it('onSelectionChange', () => {
     const wrapper = mount(<NavigationBar {...commonNavigationBarProps} />);
     const tab1 = wrapper.find('[data-id="tab1"]');

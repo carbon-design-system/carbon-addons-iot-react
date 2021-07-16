@@ -8,6 +8,7 @@ import { white } from '@carbon/colors';
 
 import { keyCodes } from '../../../constants/KeyCodeConstants';
 import { HeaderActionItemPropTypes } from '../Header';
+import deprecate from '../../../internal/deprecate';
 
 import HeaderActionMenu from './HeaderActionMenu';
 import HeaderActionPanel from './HeaderActionPanel';
@@ -19,8 +20,13 @@ export const HeaderActionPropTypes = {
   item: PropTypes.shape(HeaderActionItemPropTypes).isRequired,
   /** unique index for the menu item */
   index: PropTypes.number.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 
   /** render only the label instead of the button */
   renderLabel: PropTypes.bool,
@@ -37,7 +43,7 @@ export const HeaderActionPropTypes = {
 };
 
 const defaultProps = {
-  testID: 'header-action',
+  testId: 'header-action',
   renderLabel: false,
   defaultExpanded: false,
   onClose: null,
@@ -55,7 +61,16 @@ const defaultProps = {
  * Consists of nav buttons that can be clicked to perform actions, open header panels (side panels),
  * or dropdown menus
  */
-const HeaderAction = ({ item, index, testID, renderLabel, defaultExpanded, onClose, i18n }) => {
+const HeaderAction = ({
+  item,
+  index,
+  testID,
+  testId,
+  renderLabel,
+  defaultExpanded,
+  onClose,
+  i18n,
+}) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const parentContainerRef = useRef(null);
   const menuButtonRef = useRef(null);
@@ -149,7 +164,7 @@ const HeaderAction = ({ item, index, testID, renderLabel, defaultExpanded, onClo
             ref={menuButtonRef}
             onToggleExpansion={toggleExpandedState}
             label={item.label}
-            data-testid={testID}
+            data-testid={testID || testId}
             title={item.label}
             childContent={item.childContent}
           />
