@@ -11,14 +11,17 @@ const StyledDiv = styled.div`
 const propTypes = {
   isOpen: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
   isOpen: false,
+  testId: 'page-work-area',
 };
 
 /** work area with transitions */
-const PageWorkArea = ({ isOpen, children }) => (isOpen ? <StyledDiv>{children}</StyledDiv> : null);
+const PageWorkArea = ({ isOpen, children, testId }) =>
+  isOpen ? <StyledDiv data-testid={testId}>{children}</StyledDiv> : null;
 
 PageWorkArea.propTypes = propTypes;
 PageWorkArea.defaultProps = defaultProps;

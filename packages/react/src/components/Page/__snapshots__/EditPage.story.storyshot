@@ -13,14 +13,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+      data-testid="edit-page"
     >
       <div
         className="Hero__StyledHero-nej8yx-0 fTphDS"
-        data-testid="hero"
+        data-testid="edit-page-hero"
       >
         <p
           className="bx--skeleton__text"
-          data-testid="hero-loading"
+          data-testid="edit-page-hero-loading"
           style={
             Object {
               "width": "30%",
@@ -58,17 +59,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+      data-testid="edit-page"
     >
       <div
         className="Hero__StyledHero-nej8yx-0 fTphDS"
-        data-testid="hero"
+        data-testid="edit-page-hero"
       >
         <div
           className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
         >
           <div
             className="Hero__StyledTitle-nej8yx-2 bbRUKN"
-            data-testid="hero-title"
+            data-testid="edit-page-hero-title"
           >
             Page Title
           </div>
@@ -76,7 +78,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             aria-label="Close,"
             className="bx--modal-close"
             data-modal-close={true}
-            data-testid="hero-close-button"
+            data-testid="edit-page-hero-close-button"
             onClick={[Function]}
             type="button"
           >
@@ -100,6 +102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <div
         className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
+        data-testid="edit-page-content"
       >
         <div>
           child
@@ -159,17 +162,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+      data-testid="edit-page"
     >
       <div
         className="Hero__StyledHero-nej8yx-0 fTphDS"
-        data-testid="hero"
+        data-testid="edit-page-hero"
       >
         <div
           className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
         >
           <div
             className="Hero__StyledTitle-nej8yx-2 bbRUKN"
-            data-testid="hero-title"
+            data-testid="edit-page-hero-title"
           >
             Page Title
           </div>
@@ -177,7 +181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             aria-label="Close,"
             className="bx--modal-close"
             data-modal-close={true}
-            data-testid="hero-close-button"
+            data-testid="edit-page-hero-close-button"
             onClick={[Function]}
             type="button"
           >
@@ -200,13 +204,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         </div>
         <p
           className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
-          data-testid="hero-description"
+          data-testid="edit-page-hero-description"
         >
           My blurrrrbbbb!!
         </p>
       </div>
       <div
         className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
+        data-testid="edit-page-content"
       >
         <div>
           child
@@ -266,10 +271,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   >
     <div
       className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+      data-testid="edit-page"
     >
       <div
         className="Hero__StyledHero-nej8yx-0 fTphDS"
-        data-testid="hero"
+        data-testid="edit-page-hero"
       >
         <div
           className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
@@ -321,7 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         >
           <div
             className="Hero__StyledTitle-nej8yx-2 bbRUKN"
-            data-testid="hero-title"
+            data-testid="edit-page-hero-title"
           >
             Page Title
           </div>
@@ -329,7 +335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             aria-label="Close,"
             className="bx--modal-close"
             data-modal-close={true}
-            data-testid="hero-close-button"
+            data-testid="edit-page-hero-close-button"
             onClick={[Function]}
             type="button"
           >
@@ -353,6 +359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </div>
       <div
         className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
+        data-testid="edit-page-content"
       >
         <div>
           child
