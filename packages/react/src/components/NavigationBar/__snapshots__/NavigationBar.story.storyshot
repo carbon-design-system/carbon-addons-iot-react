@@ -11,6 +11,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
   </div>
   <div
     className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+    data-testid="navigation-bar"
   >
     <div
       className="page-title-bar"
@@ -60,6 +61,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
     >
       <div
         className="bx--tabs--scrollable"
+        data-testid="navigation-bar-tabs"
         hidden={false}
         onScroll={[Function]}
         selected={0}
@@ -101,11 +103,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-27__panel"
               aria-selected={true}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-27"
               role="tab"
               tabIndex={0}
               type="button"
@@ -120,11 +120,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-28__panel"
               aria-selected={false}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-28"
               role="tab"
               tabIndex={-1}
               type="button"
@@ -196,12 +194,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
     </div>
     <div
       className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
+      data-testid="navigation-bar-actions"
     >
       <button
+        aria-describedby={null}
         aria-pressed={null}
-        className="bx--btn bx--btn--primary"
+        className="iot--btn bx--btn bx--btn--primary"
+        data-testid="navigation-bar-button-button1"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >
@@ -218,6 +223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
 >
   <div
     className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+    data-testid="navigation-bar"
   >
     <div
       className="page-title-bar"
@@ -267,6 +273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
     >
       <div
         className="bx--tabs--scrollable"
+        data-testid="navigation-bar-tabs"
         hidden={false}
         onScroll={[Function]}
         selected={0}
@@ -308,11 +315,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-21__panel"
               aria-selected={true}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-21"
               role="tab"
               tabIndex={0}
               type="button"
@@ -327,11 +332,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-22__panel"
               aria-selected={false}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-22"
               role="tab"
               tabIndex={-1}
               type="button"
@@ -411,6 +414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
 >
   <div
     className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+    data-testid="navigation-bar"
   >
     <div
       className="page-title-bar"
@@ -460,6 +464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
     >
       <div
         className="bx--tabs--scrollable"
+        data-testid="navigation-bar-tabs"
         hidden={false}
         onScroll={[Function]}
         selected={1}
@@ -501,11 +506,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-23__panel"
               aria-selected={false}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-23"
               role="tab"
               tabIndex={-1}
               type="button"
@@ -520,11 +523,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-24__panel"
               aria-selected={true}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-24"
               role="tab"
               tabIndex={0}
               type="button"
@@ -604,6 +605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
 >
   <div
     className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+    data-testid="navigation-bar"
   >
     <div
       className="page-title-bar"
@@ -653,6 +655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
     >
       <div
         className="bx--tabs--scrollable"
+        data-testid="navigation-bar-tabs"
         hidden={false}
         onScroll={[Function]}
         selected={0}
@@ -694,11 +697,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-25__panel"
               aria-selected={true}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-25"
               role="tab"
               tabIndex={0}
               type="button"
@@ -713,11 +714,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
             role="presentation"
           >
             <button
-              aria-controls="tab-26__panel"
               aria-selected={false}
               className="bx--tabs--scrollable__nav-link"
               href="#"
-              id="tab-26"
               role="tab"
               tabIndex={-1}
               type="button"
@@ -789,22 +788,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
     </div>
     <div
       className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
+      data-testid="navigation-bar-actions"
     >
       <button
+        aria-describedby={null}
         aria-pressed={null}
-        className="bx--btn bx--btn--primary"
+        className="iot--btn bx--btn bx--btn--primary"
+        data-testid="navigation-bar-button-button1"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >
         New Entity Type
       </button>
       <button
+        aria-describedby={null}
         aria-pressed={null}
-        className="bx--btn bx--btn--secondary"
+        className="iot--btn bx--btn bx--btn--secondary"
+        data-testid="navigation-bar-button-button2"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         tabIndex={0}
         type="button"
       >

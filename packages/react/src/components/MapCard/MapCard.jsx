@@ -43,7 +43,7 @@ const defaultProps = {
   mapControls: [],
   size: CARD_SIZES.LARGEWIDE,
   stops: [],
-  testID: 'map-card',
+  testId: 'map-card',
 };
 
 const MapCard = ({
@@ -66,7 +66,9 @@ const MapCard = ({
   isSettingPanelOpen,
   settingsContent: SettingsContent,
   dropRef,
+  // TODO: remove deprecated 'testID' in v3.
   testID,
+  testId,
   ...others
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
@@ -84,7 +86,8 @@ const MapCard = ({
   const controls =
     mapControls.length || layeredControls.length ? (
       <MapControls
-        testID={`${testID}-map-controls`}
+        // TODO: remove deprecated 'testID' in v3.
+        testId={`${testID || testId}-map-controls`}
         controls={mapControls}
         layeredControls={layeredControls}
         tooltipPosition={tooltipPosition}
@@ -112,7 +115,8 @@ const MapCard = ({
       onCardAction={onCardAction}
       contentClassName={`${BASE_CLASS_NAME}-card-content`}
       className={`${BASE_CLASS_NAME}`}
-      testId={testID}
+      // TODO: remove deprecated 'testID' in v3.
+      testId={testID || testId}
       {...others}
     >
       <>
@@ -132,7 +136,8 @@ const MapCard = ({
           >
             {controls}
             <ZoomControl
-              testID={`${testID}-zoom-control`}
+              // TODO: remove deprecated 'testID' in v3.
+              testId={`${testID || testId}-zoom-control`}
               i18n={{ zoomIn: mergedI18n.zoomIn, zoomOut: mergedI18n.zoomOut }}
               onZoomIn={onZoomIn}
               onZoomOut={onZoomOut}
@@ -141,7 +146,8 @@ const MapCard = ({
             />
           </div>
           <Legend
-            testID={`${testID}-legend`}
+            // TODO: remove deprecated 'testID' in v3.
+            testId={`${testID || testId}-legend`}
             hideLegendText={mergedI18n.hideLegend}
             showLegendText={mergedI18n.showLegend}
             titleText={mergedI18n.legendTitle}
@@ -155,6 +161,7 @@ const MapCard = ({
           />
         </div>
         <div
+          data-testid={`${testID || testId}-settings`}
           className={classnames(`${BASE_CLASS_NAME}-settings`, {
             [`${BASE_CLASS_NAME}-settings--open`]: isSettingPanelOpen,
           })}

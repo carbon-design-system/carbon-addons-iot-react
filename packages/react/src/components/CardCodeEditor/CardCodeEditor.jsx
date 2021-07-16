@@ -44,7 +44,7 @@ const propTypes = {
   // eslint-disable-next-line react/require-default-props
   testID: deprecate(
     PropTypes.string,
-    `The 'testID' prop is deprecated. Please use 'testId' instead.`
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
   ),
   testId: PropTypes.string,
 };
