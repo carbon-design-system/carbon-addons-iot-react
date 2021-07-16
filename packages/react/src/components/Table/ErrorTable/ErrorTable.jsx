@@ -4,6 +4,7 @@ import { DataTable } from 'carbon-components-react';
 
 import EmptyState from '../../EmptyState';
 import { settings } from '../../../constants/Settings';
+import deprecate from '../../../internal/deprecate';
 
 const { TableBody, TableCell, TableRow } = DataTable;
 const { iotPrefix } = settings;
@@ -11,7 +12,13 @@ const { iotPrefix } = settings;
 const propTypes = {
   /** The unique id of the table */
   id: PropTypes.string,
-  testID: PropTypes.string,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
   /** set of internationalized labels */
   i18n: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element])
@@ -25,14 +32,23 @@ const propTypes = {
 
 const defaultProps = {
   id: 'ErrorTable',
-  testID: 'ErrorTable',
+  testId: 'ErrorTable',
   error: null,
   errorState: null,
   onErrorStateAction: null,
 };
 
-const ErrorTable = ({ id, testID, i18n, totalColumns, error, errorState, onErrorStateAction }) => (
-  <TableBody id={id} data-testid={testID}>
+const ErrorTable = ({
+  id,
+  testID,
+  testId,
+  i18n,
+  totalColumns,
+  error,
+  errorState,
+  onErrorStateAction,
+}) => (
+  <TableBody id={id} data-testid={testID || testId}>
     <TableRow className={`${iotPrefix}--empty-table--table-row`}>
       <TableCell colSpan={totalColumns}>
         <div className="empty-table-cell--default">

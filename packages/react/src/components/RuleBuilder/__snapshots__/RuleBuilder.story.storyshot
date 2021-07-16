@@ -22,6 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div>
           <h1
             className="iot--rule-builder-wrap--header-title"
+            data-testid="rule-builder-title"
           >
             Undefined
           </h1>
@@ -154,6 +155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       >
         <div
           className="iot--rule-builder-wrap--tabs bx--tabs--scrollable"
+          data-testid="rule-builder-tabs"
           onScroll={[Function]}
           selected={0}
         >
@@ -189,6 +191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <li
               className="iot--rule-builder-wrap--tab bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+              data-testid="rule-builder-editor-tab"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="presentation"
@@ -206,6 +209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </li>
             <li
               className="iot--rule-builder-wrap--tab bx--tabs--scrollable__nav-item"
+              data-testid="rule-builder-sharing-tab"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="presentation"
@@ -260,7 +264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--rule-builder-header"
-              data-testid="rule-builder-header"
+              data-testid="rule-builder-editor-header"
             >
               <div>
                 <div
@@ -342,7 +346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   aria-describedby={null}
                   aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--ghost"
-                  data-testid="rule-builder-header-add-rule-button"
+                  data-testid="rule-builder-editor-header-add-rule-button"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -373,7 +377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   aria-describedby={null}
                   aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--ghost"
-                  data-testid="rule-builder-header-add-group-button"
+                  data-testid="rule-builder-editor-header-add-group-button"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -742,6 +746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <input
                         className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
+                        data-testid="rule-builder-title-input"
                         disabled={false}
                         id="rule-builder-title-input"
                         onChange={[Function]}
@@ -1927,6 +1932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </footer>
       <div
         className="iot--select-users-modal"
+        data-testid="select-users-modal-container"
       >
         <div
           className="bx--modal iot--composed-modal--large iot--composed-modal"
@@ -2288,6 +2294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </div>
       <div
         className="iot--select-users-modal"
+        data-testid="select-users-modal-container"
       >
         <div
           className="bx--modal iot--composed-modal--large iot--composed-modal"
@@ -2674,11 +2681,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div>
           <h1
             className="iot--rule-builder-wrap--header-title"
+            data-testid="rule-builder-title"
           >
             My Filter
           </h1>
           <p
             className="iot--rule-builder-wrap--header-metatext"
+            data-testid="rule-builder-metatext"
           >
             last updated: Thursday, February 25, 2021
           </p>
@@ -2811,6 +2820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       >
         <div
           className="iot--rule-builder-wrap--tabs bx--tabs--scrollable"
+          data-testid="rule-builder-tabs"
           onScroll={[Function]}
           selected={0}
         >
@@ -2846,6 +2856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <li
               className="iot--rule-builder-wrap--tab bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+              data-testid="rule-builder-editor-tab"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="presentation"
@@ -2863,6 +2874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </li>
             <li
               className="iot--rule-builder-wrap--tab bx--tabs--scrollable__nav-item"
+              data-testid="rule-builder-sharing-tab"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="presentation"
@@ -2917,7 +2929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--rule-builder-header"
-              data-testid="rule-builder-header"
+              data-testid="rule-builder-editor-header"
             >
               <div>
                 <div
@@ -2999,7 +3011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   aria-describedby={null}
                   aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--ghost"
-                  data-testid="rule-builder-header-add-rule-button"
+                  data-testid="rule-builder-editor-header-add-rule-button"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -3030,7 +3042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   aria-describedby={null}
                   aria-pressed={null}
                   className="iot--btn bx--btn bx--btn--ghost"
-                  data-testid="rule-builder-header-add-group-button"
+                  data-testid="rule-builder-editor-header-add-group-button"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -5268,6 +5280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <input
                         className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
+                        data-testid="rule-builder-title-input"
                         defaultValue="My Filter"
                         disabled={false}
                         id="rule-builder-title-input"
@@ -5324,6 +5337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     <div
                       aria-label="Clear Filter fav"
                       className="bx--tag bx--tag--filter"
+                      data-testid="rule-builder-tag-fav"
                       id="tag-26"
                       style={
                         Object {
@@ -5363,6 +5377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     <div
                       aria-label="Clear Filter other-tag"
                       className="bx--tag bx--tag--filter"
+                      data-testid="rule-builder-tag-other-tag"
                       id="tag-27"
                       style={
                         Object {
@@ -6061,6 +6076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </footer>
       <div
         className="iot--select-users-modal"
+        data-testid="select-users-modal-container"
       >
         <div
           className="bx--modal iot--composed-modal--large iot--composed-modal"
@@ -6732,6 +6748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </div>
       <div
         className="iot--select-users-modal"
+        data-testid="select-users-modal-container"
       >
         <div
           className="bx--modal iot--composed-modal--large iot--composed-modal"

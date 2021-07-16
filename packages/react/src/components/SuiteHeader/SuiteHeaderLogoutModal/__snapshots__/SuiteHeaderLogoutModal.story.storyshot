@@ -6,6 +6,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 >
   <div
     className="bx--modal bx--modal-tall is-visible"
+    data-testid="suite-header-logout-modal"
     onBlur={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}

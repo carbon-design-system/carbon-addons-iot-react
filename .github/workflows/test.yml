@@ -33,6 +33,15 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
+      - name: Cache Cypress binary
+        uses: actions/cache@v2
+        if: steps.changes.outputs.react == 'true'
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            cypress-${{ runner.os }}-cypress-
+
       - name: Install dependencies
         if: steps.changes.outputs.react == 'true'
         run: |
@@ -40,11 +49,27 @@ jobs:
           yarn lerna run --stream postinstall
           yarn lerna link
 
-      - name: Run tests, collect coverage
+      - name: Run Jest tests, collect coverage
         if: steps.changes.outputs.react == 'true'
         run: |
           cd packages/react
           yarn test:ci
+
+      - name: Run Cypress tests, collect coverage
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd packages/react
+          yarn test:e2e:ci
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          HEIGHT: 900
+          WIDTH: 1680
+
+      - name: Copy, combine, and report coverage
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd packages/react
+          yarn reports
 
       - name: Coveralls
         uses: coverallsapp/github-action@master

@@ -19,6 +19,29 @@ const getTiles = (num) => {
 };
 
 describe('TileCatalogNew', () => {
+  it('should be selectable by testId', () => {
+    render(
+      <TileCatalogNew
+        tiles={getTiles(4, 'Tile')}
+        title="Test Tile Catalog"
+        numRows={1}
+        numColumns={2}
+        hasSearch
+        hasSort
+        hasPagination
+        testId="tile_catalog_new"
+      />
+    );
+    expect(screen.getByTestId('tile_catalog_new')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-grid')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-header')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-title')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-sort-select')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-search-input')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-pagination-backward-button')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-pagination-foreward-button')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-pagination-page-2-button')).toBeDefined();
+  });
   it('TileCatalogNew gets rendered', () => {
     render(
       <TileCatalogNew

@@ -81,6 +81,25 @@ const tableData = Array(20)
   }));
 
 describe('TableFoot', () => {
+  it('should be selectable by testId', () => {
+    const label = 'Total';
+    const tableFootTestId = 'table_foot';
+
+    render(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          tableState={{
+            aggregations: { label, columns: [{ id: 'c', value: '10' }] },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(screen.getByTestId(tableFootTestId)).toBeDefined();
+  });
+
   it('shows aggregation label in first column unless that column has an aggregated value', () => {
     const label = 'Total';
     const tableTestId = 'table-test';
@@ -90,7 +109,7 @@ describe('TableFoot', () => {
     const { rerender } = render(
       <table>
         <TableFoot
-          testID={tableFootTestId}
+          testId={tableFootTestId}
           tableState={{
             aggregations: { label, columns: [{ id: 'c', value: '10' }] },
             ordering,
@@ -104,7 +123,7 @@ describe('TableFoot', () => {
     rerender(
       <table>
         <TableFoot
-          testID={tableFootTestId}
+          testId={tableFootTestId}
           tableState={{
             aggregations: { label, columns: [{ id: 'a', value: '10' }] },
             ordering,
@@ -156,7 +175,7 @@ describe('TableFoot', () => {
     const { rerender, container } = render(
       <table>
         <TableFoot
-          testID={tableFootTestId}
+          testId={tableFootTestId}
           options={{
             hasRowActions: true,
             hasRowExpansion: true,
@@ -176,7 +195,7 @@ describe('TableFoot', () => {
     rerender(
       <table>
         <TableFoot
-          testID={tableFootTestId}
+          testId={tableFootTestId}
           options={{
             hasAggregations: true,
             hasRowActions: true,
@@ -208,7 +227,7 @@ describe('TableFoot', () => {
     render(
       <table>
         <TableFoot
-          testID={tableFootTestId}
+          testId={tableFootTestId}
           options={{
             hasRowActions: true,
             hasRowExpansion: true,

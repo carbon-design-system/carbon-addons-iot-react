@@ -15,7 +15,9 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   /** i18n strings */
   i18n: PropTypes.shape({}),
+  testId: PropTypes.string,
 };
+
 const defaultProps = {
   i18n: {
     ariaLabelPreviousPage: 'Previous page',
@@ -24,9 +26,10 @@ const defaultProps = {
     ariaLabelPage: 'page',
     ariaLabelSelect: 'select page number',
   },
+  testId: 'tile-pagination',
 };
 
-const TilePagination = ({ page, numPages, onChange, i18n }) => {
+const TilePagination = ({ page, numPages, onChange, i18n, testId }) => {
   const [selectedValue, setSelectedValue] = useState();
 
   const getPageButton = (pageNumber) => (
@@ -39,6 +42,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       })}
       aria-current={i18n.ariaLabelPage}
       aria-disabled={page === pageNumber}
+      data-testid={`${testId}-page-${pageNumber}-button`}
     >
       <span className="bx--pagination-nav__accessibility-label">{i18n.ariaLabelPage}</span>
       {pageNumber}
@@ -57,6 +61,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
             onChange(Number(evt.target.value));
             setSelectedValue('default');
           }}
+          data-testid={`${testId}-page-select`}
         >
           <option value="default" hidden data-page="" />
           {Array.from({ length: pageNumber }, (v, i) => (
@@ -203,6 +208,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
               }
             )}
             aria-disabled="true"
+            data-testid={`${testId}-backward-button`}
           >
             <span className={`${prefix}--pagination-nav__accessibility-label`}>
               {i18n.ariaLabelPreviousPage}
@@ -244,6 +250,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
                 [`${prefix}--pagination-nav__page--disabled`]: page === numPages,
               }
             )}
+            data-testid={`${testId}-foreward-button`}
           >
             <span className={`${prefix}--pagination-nav__accessibility-label`}>
               {i18n.ariaLabelNextPage}
