@@ -814,7 +814,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 }
               }
             >
-              <div>
+              <div
+                data-testid="tile-catalog-new"
+              >
                 <div
                   className="iot--tile-catalog--canvas-container"
                 >
@@ -823,6 +825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   >
                     <div
                       className="iot--tile-catalog--tile-canvas--header"
+                      data-testid="tile-catalog-new-header"
                     >
                       <div
                         className="iot--tile-catalog--tile-canvas--header--select"
@@ -833,6 +836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     >
                       <div
                         className="iot--tile-catalog--grid-container"
+                        data-testid="tile-catalog-new-grid"
                         style={
                           Object {
                             "--columns": "repeat(2, 1fr)",
@@ -1323,7 +1327,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 }
               }
             >
-              <div>
+              <div
+                data-testid="tile-catalog-new"
+              >
                 <div
                   className="iot--tile-catalog--canvas-container"
                 >
@@ -1332,6 +1338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   >
                     <div
                       className="iot--tile-catalog--tile-canvas--header"
+                      data-testid="tile-catalog-new-header"
                     >
                       <div
                         className="iot--tile-catalog--tile-canvas--header--select"
@@ -1342,6 +1349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     >
                       <div
                         className="iot--tile-catalog--grid-container"
+                        data-testid="tile-catalog-new-grid"
                         style={
                           Object {
                             "--columns": "repeat(2, 1fr)",
@@ -1829,7 +1837,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   }
                 }
               >
-                <div>
+                <div
+                  data-testid="tile-catalog-new"
+                >
                   <div
                     className="iot--tile-catalog--canvas-container"
                   >
@@ -1838,6 +1848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     >
                       <div
                         className="iot--tile-catalog--tile-canvas--header"
+                        data-testid="tile-catalog-new-header"
                       >
                         <div
                           className="iot--tile-catalog--tile-canvas--header--select"
@@ -1848,6 +1859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       >
                         <div
                           className="iot--tile-catalog--grid-container"
+                          data-testid="tile-catalog-new-grid"
                           style={
                             Object {
                               "--columns": "repeat(2, 1fr)",
@@ -1927,7 +1939,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   }
                 }
               >
-                <div>
+                <div
+                  data-testid="tile-catalog-new"
+                >
                   <div
                     className="iot--tile-catalog--canvas-container"
                   >
@@ -1936,6 +1950,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     >
                       <div
                         className="iot--tile-catalog--tile-canvas--header"
+                        data-testid="tile-catalog-new-header"
                       >
                         <div
                           className="iot--tile-catalog--tile-canvas--header--select"
@@ -1946,6 +1961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       >
                         <div
                           className="iot--tile-catalog--grid-container"
+                          data-testid="tile-catalog-new-grid"
                           style={
                             Object {
                               "--columns": "repeat(2, 1fr)",
@@ -2034,6 +2050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               <button
                                 aria-disabled="true"
                                 className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
+                                data-testid="tile-catalog-new-pagination-backward-button"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -2070,6 +2087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 aria-current="page"
                                 aria-disabled={true}
                                 className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
+                                data-testid="tile-catalog-new-pagination-page-1-button"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -2088,6 +2106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 aria-current="page"
                                 aria-disabled={false}
                                 className="bx--pagination-nav__page"
+                                data-testid="tile-catalog-new-pagination-page-2-button"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -2104,6 +2123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <button
                                 className="bx--pagination-nav__page bx--pagination-nav__page--direction"
+                                data-testid="tile-catalog-new-pagination-foreward-button"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -2156,7 +2176,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   }
                 }
               >
-                <div>
+                <div
+                  data-testid="tile-catalog-new"
+                >
                   <div
                     className="iot--tile-catalog--canvas-container"
                   >
@@ -2165,6 +2187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     >
                       <div
                         className="iot--tile-catalog--tile-canvas--header"
+                        data-testid="tile-catalog-new-header"
                       >
                         <div
                           className="iot--tile-catalog--tile-canvas--header--select"
@@ -2175,6 +2198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       >
                         <div
                           className="iot--tile-catalog--grid-container"
+                          data-testid="tile-catalog-new-grid"
                           style={
                             Object {
                               "--columns": "repeat(2, 1fr)",
@@ -2263,6 +2287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               <button
                                 aria-disabled="true"
                                 className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
+                                data-testid="tile-catalog-new-pagination-backward-button"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -2299,6 +2324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 aria-current="page"
                                 aria-disabled={true}
                                 className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
+                                data-testid="tile-catalog-new-pagination-page-1-button"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -2317,6 +2343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 aria-current="page"
                                 aria-disabled={false}
                                 className="bx--pagination-nav__page"
+                                data-testid="tile-catalog-new-pagination-page-2-button"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -2333,6 +2360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <button
                                 className="bx--pagination-nav__page bx--pagination-nav__page--direction"
+                                data-testid="tile-catalog-new-pagination-foreward-button"
                                 onClick={[Function]}
                                 type="button"
                               >

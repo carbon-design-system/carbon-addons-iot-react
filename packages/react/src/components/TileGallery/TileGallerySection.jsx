@@ -11,23 +11,29 @@ const propTypes = {
   isOpen: PropTypes.bool,
   /** Callback for accordion item click */
   onClick: PropTypes.func,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
   isOpen: true,
   onClick: () => {},
   title: null,
+  testId: 'tile-gallery-section',
 };
 
-const TileGallerySection = ({ children, title, isOpen, onClick }) => {
+const TileGallerySection = ({ children, title, isOpen, onClick, testId }) => {
   const [open, setOpen] = useState(isOpen);
 
-  const galleryItems = <div className="tile-gallery--section--items">{children}</div>;
+  const galleryItems = (
+    <div data-testid={`${testId}-items`} className="tile-gallery--section--items">
+      {children}
+    </div>
+  );
 
   return (
-    <div className="tile-gallery--section">
+    <div data-testid={testId} className="tile-gallery--section">
       {title ? (
-        <Accordion>
+        <Accordion data-testid={`${testId}-accordion`}>
           <AccordionItem
             title={title}
             onHeadingClick={(evt) => {
@@ -35,6 +41,7 @@ const TileGallerySection = ({ children, title, isOpen, onClick }) => {
               onClick(evt);
             }}
             open={open}
+            data-testid={`${testId}-accordion-item`}
           >
             {galleryItems}
           </AccordionItem>

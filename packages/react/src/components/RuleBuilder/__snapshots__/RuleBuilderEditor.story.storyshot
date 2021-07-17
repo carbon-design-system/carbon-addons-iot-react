@@ -9,7 +9,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--rule-builder-header"
-      data-testid="rule-builder-header"
+      data-testid="rule-builder-editor-header"
     >
       <div>
         <div
@@ -91,7 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-rule-button"
+          data-testid="rule-builder-editor-header-add-rule-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -122,7 +122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-group-button"
+          data-testid="rule-builder-editor-header-add-group-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -2306,7 +2306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--rule-builder-header"
-      data-testid="rule-builder-header"
+      data-testid="rule-builder-editor-header"
     >
       <div>
         <div
@@ -2388,7 +2388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-rule-button"
+          data-testid="rule-builder-editor-header-add-rule-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -2419,7 +2419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-group-button"
+          data-testid="rule-builder-editor-header-add-group-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -2734,7 +2734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--rule-builder-header"
-      data-testid="rule-builder-header"
+      data-testid="rule-builder-editor-header"
     >
       <div>
         <div
@@ -2816,7 +2816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-rule-button"
+          data-testid="rule-builder-editor-header-add-rule-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -2847,7 +2847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-group-button"
+          data-testid="rule-builder-editor-header-add-group-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}

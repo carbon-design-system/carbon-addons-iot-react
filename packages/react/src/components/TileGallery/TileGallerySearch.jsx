@@ -13,6 +13,7 @@ const propTypes = {
   searchValue: PropTypes.string,
   onChange: PropTypes.func,
   width: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -24,9 +25,10 @@ const defaultProps = {
   searchValue: '',
   onChange: () => {},
   width: '304px',
+  testId: 'tile-gallery-search-input',
 };
 
-const TileGallerySearch = ({ i18n, searchValue, onChange, width }) => {
+const TileGallerySearch = ({ i18n, searchValue, onChange, width, testId }) => {
   return (
     <div>
       <Search
@@ -37,6 +39,7 @@ const TileGallerySearch = ({ i18n, searchValue, onChange, width }) => {
         onChange={(event) => onChange(event)}
         closeButtonLabelText={i18n.closeButtonText}
         id="gallery-search"
+        data-testid={testId}
       />
     </div>
   );

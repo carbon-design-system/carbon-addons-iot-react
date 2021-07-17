@@ -13,6 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   >
     <div
       className="iot--suite-header-profile"
+      data-testid="suite-header-profile"
     >
       <h5>
         Profile
@@ -66,6 +67,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   >
     <div
       className="iot--suite-header-profile"
+      data-testid="suite-header-profile"
     >
       <h5>
         Profile
@@ -126,6 +128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   >
     <div
       className="iot--suite-header-profile"
+      data-testid="suite-header-profile"
     >
       <h5>
         Profile
@@ -189,6 +192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   >
     <div
       className="iot--suite-header-profile"
+      data-testid="suite-header-profile"
     >
       <h5>
         Profile

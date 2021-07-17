@@ -23,6 +23,7 @@ const defaultProps = {
     requestAccess: 'Contact your administrator to request application access.',
     learnMoreLink: 'Learn more',
   },
+  testId: 'suite-header-app-switcher',
 };
 
 const propTypes = {
@@ -36,6 +37,7 @@ const propTypes = {
     requestAccess: PropTypes.string,
     learnMoreLink: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const SuiteHeaderAppSwitcher = ({
@@ -45,6 +47,7 @@ const SuiteHeaderAppSwitcher = ({
   noAccessLink,
   i18n,
   onRouteChange,
+  testId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${settings.iotPrefix}--suite-header-app-switcher`;
@@ -78,7 +81,7 @@ const SuiteHeaderAppSwitcher = ({
   }, [allApplicationsLink, onRouteChange]);
 
   return (
-    <ul className={baseClassName}>
+    <ul data-testid={testId} className={baseClassName}>
       <li className={`${baseClassName}--nav-link`}>
         <p>{mergedI18n.myApplications}</p>
         {allApplicationsLink === null ? (
@@ -88,7 +91,7 @@ const SuiteHeaderAppSwitcher = ({
         ) : (
           <Button
             kind="tertiary"
-            testId="suite-header-app-switcher--all-applications"
+            testId={`${testId}--all-applications`}
             onClick={handleAllApplicationRoute}
             onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], handleAllApplicationRoute)}
             renderIcon={ArrowRight16}
@@ -118,7 +121,7 @@ const SuiteHeaderAppSwitcher = ({
             >
               <Button
                 kind="ghost"
-                testId={`suite-header-app-switcher--${id}`}
+                testId={`${testId}--${id}`}
                 onClick={eventHandler}
                 onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
               >

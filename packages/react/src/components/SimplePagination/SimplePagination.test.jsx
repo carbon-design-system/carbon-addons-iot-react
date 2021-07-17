@@ -1,9 +1,27 @@
+import { render, screen } from '@testing-library/react';
 import { mount } from 'enzyme';
 import React from 'react';
 
 import SimplePagination from './SimplePagination';
 
 describe('SimplePagination', () => {
+  it('should be selectable by testID or testId', () => {
+    const mockPage = jest.fn();
+    const { rerender } = render(
+      <SimplePagination page={2} maxPage={4} onPage={mockPage} testID="SIMPLE_PAGINATION" />
+    );
+    expect(screen.getByTestId('SIMPLE_PAGINATION')).toBeDefined();
+    expect(screen.getByTestId('SIMPLE_PAGINATION-forward-button')).toBeDefined();
+    expect(screen.getByTestId('SIMPLE_PAGINATION-backward-button')).toBeDefined();
+
+    rerender(
+      <SimplePagination page={2} maxPage={4} onPage={mockPage} testID="simple_pagination" />
+    );
+
+    expect(screen.getByTestId('simple_pagination')).toBeDefined();
+    expect(screen.getByTestId('simple_pagination-forward-button')).toBeDefined();
+    expect(screen.getByTestId('simple_pagination-backward-button')).toBeDefined();
+  });
   it('only one page', () => {
     const mockPage = jest.fn();
     const wrapper = mount(<SimplePagination page={1} maxPage={1} onPage={mockPage} />);

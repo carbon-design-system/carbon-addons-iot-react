@@ -63,6 +63,8 @@ export const SideNavPropTypes = {
     openText: PropTypes.string,
     sideNavLabelText: PropTypes.string,
   }),
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -73,14 +75,15 @@ const defaultProps = {
     openText: 'Open',
     sideNavLabelText: 'Side navigation',
   },
+  testId: 'side-nav',
 };
 
 /**
  * Side Navigation. part of UI shell
  */
-const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) => {
+const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, testId, ...props }) => {
   const nav = links
-    .map((link) => {
+    .map((link, index) => {
       const enabled = link.isEnabled ? link.isEnabled : false;
       if (!enabled) {
         return null;
@@ -95,6 +98,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
             <SideNavMenuItem
               key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
               isActive={childlink.isActive}
+              data-testid={`${testId}-menu-item-${index}`}
               {...childlink.metaData}
             >
               {childlink.content}
@@ -108,6 +112,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
             aria-label="dropdown"
             key={`menu-link-${links.indexOf(link)}-dropdown`}
             title={link.linkContent}
+            data-testid={`${testId}-menu-${index}`}
           >
             {children}
           </SideNavMenu>
@@ -121,6 +126,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
           href={link.metaData.href}
           renderIcon={link.icon}
           isActive={link.isActive}
+          data-testid={`${testId}-link-${index}`}
           {...link.metaData}
         >
           {link.linkContent}
@@ -136,6 +142,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
 
   return (
     <CarbonSideNav
+      data-testid={testId}
       className={classnames(`${iotPrefix}--side-nav`, {
         [`${iotPrefix}--side-nav--expanded`]: isSideNavExpanded,
         [`${prefix}--side-nav--expanded`]: isSideNavExpanded,
