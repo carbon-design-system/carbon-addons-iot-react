@@ -9,7 +9,9 @@ import { IconService } from 'carbon-components-angular';
   template: `
     <div
       role="button"
-      tabindex="0"
+      [attr.tabindex]="
+        this.item.isSelectable && !this.item.disabled && !this.item.isDraggable ? 0 : undefined
+      "
       class="iot--list-item"
       [ngClass]="{
         'iot--list-item__selectable': item.isSelectable,
@@ -22,23 +24,25 @@ import { IconService } from 'carbon-components-angular';
       <div class="iot--list-item-editable--drag-preview">
         {{ item.value }}
       </div>
-      <svg
-        *ngIf="draggable && item.isDraggable"
-        class="iot--list-item--handle"
-        ibmIcon="draggable"
-        size="16"
-      ></svg>
       <div
         *ngIf="nestingLevel > 0"
         class="iot--list-item--nesting-offset"
         [ngStyle]="{ width: 30 * nestingLevel + 'px' }"
       ></div>
+      <svg
+        *ngIf="draggable && item.isDraggable"
+        class="iot--list-item--handle"
+        [ngClass]="{ 'iot--list-item--handle__disabled': item.disabled }"
+        ibmIcon="draggable"
+        size="16"
+      ></svg>
       <div
         *ngIf="item.hasChildren()"
         role="button"
-        (click)="item.expand(!item.expanded)"
-        tabindex="0"
+        (click)="!item.disabled ? item.expand(!item.expanded) : undefined"
+        tabindex="!item.disabled ? 0 : undefined"
         class="iot--list-item--expand-icon"
+        [ngClass]="{ 'iot--list-item--expand-icon__disabled': item.disabled }"
       >
         <svg *ngIf="!item.expanded" ibmIcon="chevron--down" size="16"></svg>
         <svg *ngIf="item.expanded" ibmIcon="chevron--up" size="16"></svg>

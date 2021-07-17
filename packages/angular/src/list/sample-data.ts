@@ -89,6 +89,7 @@ export const nestedDraggableListItems = [
   }),
   new AIListItem({
     value: 'United States of America',
+    disabled: true,
     isSelectable: true,
     expanded: true,
     isCategory: true,
