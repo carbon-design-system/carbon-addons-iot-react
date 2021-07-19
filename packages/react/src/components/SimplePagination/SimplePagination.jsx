@@ -4,6 +4,7 @@ import { CaretLeft16, CaretRight16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
+import deprecate from '../../internal/deprecate';
 
 const { iotPrefix, prefix } = settings;
 
@@ -26,8 +27,13 @@ export const SimplePaginationPropTypes = {
   totalItems: PropTypes.number,
   /** Internationalized label for the word 'Items' */
   totalItemsText: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const SimplePaginationDefaultProps = {
@@ -37,7 +43,7 @@ const SimplePaginationDefaultProps = {
   prevPageText: 'Prev page',
   totalItemsText: 'Items',
   totalItems: undefined,
-  testID: `${iotPrefix}-simple-pagination`,
+  testId: `${iotPrefix}-simple-pagination`,
 };
 
 /** This is a lighter weight pagination component than the default Carbon one */
@@ -51,7 +57,9 @@ const SimplePagination = ({
   page,
   maxPage,
   onPage,
+  // TODO: remove deprecated 'testID' in v3
   testID,
+  testId,
 }) => {
   const hasPrev = page > 1;
   const hasNext = page <= maxPage - 1;
@@ -60,7 +68,7 @@ const SimplePagination = ({
   const handlePrev = () => onPage(page - 1);
 
   return (
-    <div className={`${iotPrefix}-simple-pagination-container`} data-testid={testID}>
+    <div className={`${iotPrefix}-simple-pagination-container`} data-testid={testID || testId}>
       {totalItems ? (
         <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
           {`${totalItems} ${totalItemsText}`}
@@ -82,6 +90,7 @@ const SimplePagination = ({
               tabIndex={hasPrev ? 0 : -1}
               onClick={hasPrev ? handlePrev : undefined}
               onKeyDown={hasPrev ? (evt) => handleEnterKeyDown(evt, handlePrev) : undefined}
+              data-testid={`${testID || testId}-backward-button`}
             >
               <CaretLeft16
                 dir="ltr"
@@ -103,6 +112,7 @@ const SimplePagination = ({
               tabIndex={hasNext ? 0 : -1}
               onClick={hasNext ? handleNext : undefined}
               onKeyDown={hasNext ? (evt) => handleEnterKeyDown(evt, handleNext) : undefined}
+              data-testid={`${testID || testId}-forward-button`}
             >
               <CaretRight16
                 dir="ltr"

@@ -43,6 +43,7 @@ const ValueCard = ({
   fontSize,
   isNumberValueCompact,
   testID,
+  testId,
   ...others
 }) => {
   const availableActions = {
@@ -83,7 +84,8 @@ const ValueCard = ({
         [`${BASE_CLASS_NAME}__horizontal`]: layout === CARD_LAYOUTS.HORIZONTAL,
         [`${BASE_CLASS_NAME}__vertical`]: layout === CARD_LAYOUTS.VERTICAL,
       })}
-      testId={testID}
+      // TODO: remove deprecated 'testID' in v3.
+      testId={testID || testId}
       {...others}
     >
       <div
@@ -92,7 +94,7 @@ const ValueCard = ({
         })}
       >
         {!dataState ? (
-          content.attributes.map((attribute) => (
+          content.attributes.map((attribute, index) => (
             <Attribute
               key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
                 attribute.dataFilter || {}
@@ -122,10 +124,18 @@ const ValueCard = ({
               customFormatter={customFormatter}
               fontSize={fontSize}
               isNumberValueCompact={isNumberValueCompact}
+              // TODO: remove deprecated 'testID' in v3.
+              testId={`${testID || testId}-attribute-${index}`}
             />
           ))
         ) : (
-          <DataStateRenderer dataState={dataState} size={newSize} id={id} />
+          <DataStateRenderer
+            dataState={dataState}
+            size={newSize}
+            id={id}
+            // TODO: remove deprecated 'testID' in v3.
+            testId={`${testID || testId}-data-state`}
+          />
         )}
       </div>
       {resizeHandles}
@@ -145,6 +155,8 @@ ValueCard.defaultProps = {
   cardVariables: null,
   customFormatter: null,
   isNumberValueCompact: false,
+  // TODO: fix this default in V3, so that cards are unique not inherited from the base Card
+  testId: 'Card',
 };
 
 export default ValueCard;

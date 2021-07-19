@@ -10,6 +10,37 @@ import ValueCard from './ValueCard';
 const { iotPrefix } = settings;
 
 describe('ValueCard', () => {
+  it('should be selectable by testID or testId', () => {
+    const { rerender } = render(
+      <ValueCard
+        id="myIdTest"
+        title="Health score"
+        content={{ attributes: [{ label: 'title', dataSourceId: 'v' }] }}
+        size={CARD_SIZES.SMALL}
+        values={{ v: 'value' }}
+        testID="VALUE_CARD"
+      />
+    );
+    expect(screen.getByTestId('VALUE_CARD')).toBeDefined();
+    expect(screen.getByTestId('VALUE_CARD-attribute-0-threshold-label')).toBeDefined();
+    expect(screen.getByTestId('VALUE_CARD-attribute-0-value')).toBeDefined();
+    expect(screen.getByTestId('VALUE_CARD-title')).toBeDefined();
+    rerender(
+      <ValueCard
+        id="myIdTest"
+        title="Health score"
+        content={{ attributes: [{ label: 'title', dataSourceId: 'v' }] }}
+        size={CARD_SIZES.SMALL}
+        values={{ v: 'value' }}
+        testID="value_card"
+      />
+    );
+    expect(screen.getByTestId('value_card')).toBeDefined();
+    expect(screen.getByTestId('value_card-attribute-0-threshold-label')).toBeDefined();
+    expect(screen.getByTestId('value_card-attribute-0-value')).toBeDefined();
+    expect(screen.getByTestId('value_card-title')).toBeDefined();
+  });
+
   it('DataState prop shows DataState elements instead of content', () => {
     const wrapperWithoutDataState = mount(
       <ValueCard

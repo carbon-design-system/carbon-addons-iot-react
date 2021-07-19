@@ -14,6 +14,7 @@ const propTypes = {
   /** onCloseAllTearSheets optional function. When provided, it will run when the closeAllTearSheets function is called from a child component */
   onCloseAllTearSheets: PropTypes.func,
   children: PropTypes.node,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -21,11 +22,13 @@ const defaultProps = {
   className: undefined,
   onCloseAllTearSheets: undefined,
   children: undefined,
+  // TODO: set default in v3
+  testId: '',
 };
 
 const baseClassName = `${iotPrefix}--tear-sheet-wrapper`;
 
-const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children }) => {
+const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children, testId }) => {
   const [activeTearSheetIdx, setActiveTearSheetIdx] = useState(null);
   const childrenArray = useMemo(() => Children.toArray(children).slice(0, 2), [children]); // Limit of 2 TearSheets
   const [containers] = useState(childrenArray.map(() => createRef()));
@@ -80,7 +83,8 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
       className={classnames(baseClassName, className, {
         ...animationClasses?.overlay?.reduce((acc, curr) => ({ ...acc, [curr]: isOpen }), {}),
       })}
-      data-testid={`${iotPrefix}--tear-sheet-wrapper`}
+      // TODO: use only testId in v3.
+      data-testid={testId || `${iotPrefix}--tear-sheet-wrapper`}
     >
       {childrenArray.map((tearSheet, idx, arr) => {
         const newTearSheet = cloneElement(tearSheet, {
@@ -94,7 +98,8 @@ const TearSheetWrapper = ({ isOpen, className, onCloseAllTearSheets, children })
           <div
             id={`container-${idx}`}
             key={`container-${idx}`}
-            data-testid={`container-${idx}`}
+            // TODO: use only testId in v3.
+            data-testid={testId ? `${testId}-container-${idx}` : `container-${idx}`}
             className={classnames(`${baseClassName}--container`, {
               ...animationClasses?.[`container${idx}`]?.reduce(
                 (acc, curr) => ({ ...acc, [curr]: true }),

@@ -4791,7 +4791,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <button
                 aria-describedby={null}
                 aria-pressed={null}
-                className="bx--btn bx--btn--secondary"
+                className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="table-for-card-undefined-table-toolbar-clear-filters-button"
                 disabled={false}
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -17072,6 +17073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             title="pressure: 68 >= 10"
                           >
                             <svg
+                              data-testid="card-icon"
                               fill="black"
                               focusable="true"
                               height={16}
@@ -17254,6 +17256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             title="pressure: 10 >= 10"
                           >
                             <svg
+                              data-testid="card-icon"
                               fill="black"
                               focusable="true"
                               height={16}
@@ -17982,6 +17985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             title="pressure: 10 >= 10"
                           >
                             <svg
+                              data-testid="card-icon"
                               fill="black"
                               focusable="true"
                               height={16}

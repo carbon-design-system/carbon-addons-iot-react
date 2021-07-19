@@ -10,6 +10,7 @@ import {
   TableColumnsPropTypes,
   RowActionsStatePropTypes,
 } from '../TablePropTypes';
+import deprecate from '../../../internal/deprecate';
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
 
@@ -97,7 +98,13 @@ const propTypes = {
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
-  testID: PropTypes.string,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -123,7 +130,7 @@ const defaultProps = {
   singleRowEditButtons: null,
   langDir: 'ltr',
   showExpanderColumn: false,
-  testID: '',
+  testId: '',
 };
 
 const TableBody = ({
@@ -157,7 +164,9 @@ const TableBody = ({
   rowEditMode,
   singleRowEditButtons,
   langDir,
+  // TODO: remove deprecated 'testID' in v3
   testID,
+  testId,
   showExpanderColumn,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
@@ -322,7 +331,7 @@ const TableBody = ({
   };
 
   return (
-    <CarbonTableBody data-testid={testID}>
+    <CarbonTableBody data-testid={testID || testId}>
       {rows.map((row) => {
         return shouldLazyRender ? (
           <VisibilitySensor
