@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgLineGraphIcon(props) {
   return (
-    <svg width={40} height={34} xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg width={40} height={34} {...props}>
       <g transform="translate(0 1)" fillRule="nonzero" fill="none">
         <path
           fill="#0062FF"

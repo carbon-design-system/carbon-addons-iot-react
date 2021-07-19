@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgEmptystate404Icon(props) {
   return (
-    <svg width={80} height={80} xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg width={80} height={80} {...props}>
       <defs>
         <linearGradient
           x1="54.837%"
