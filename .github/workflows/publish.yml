@@ -36,9 +36,6 @@ jobs:
           yarn lerna run --stream postinstall
           yarn lerna link
 
-      - name: Validate formatting
-        run: yarn format:check
-
       - name: Build
         run: yarn build
 

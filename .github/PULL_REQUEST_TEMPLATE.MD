@@ -21,7 +21,7 @@ Closes #
 **Things to look for during review**
 
 - [ ] Make sure all references to `iot` or `bx` class prefix is using the prefix variable
-- [ ] All major areas have a `data-testid` attribute. New test ids should have test written to ensure they are not changed or removed.
+- [ ] (React) All major areas have a `data-testid` attribute. New test ids should have test written to ensure they are not changed or removed.
 - [ ] UI should be checked in RTL mode to ensure the proper handling of layout and text.
 - [ ] All strings should be translatable.
 - [ ] The code should pass a11y scans (The storybook a11y knob should show no violations). New components should have a11y test written.
