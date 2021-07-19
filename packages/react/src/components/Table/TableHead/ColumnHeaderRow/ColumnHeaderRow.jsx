@@ -37,7 +37,7 @@ class ColumnHeaderRow extends Component {
     onColumnSelectionConfig: PropTypes.func,
     columnSelectionConfigText: PropTypes.string,
     isDisabled: PropTypes.bool,
-    testID: PropTypes.string,
+    testId: PropTypes.string,
     /** shows an additional column that can expand/shrink as the table is resized  */
     showExpanderColumn: PropTypes.bool.isRequired,
   };
@@ -46,7 +46,7 @@ class ColumnHeaderRow extends Component {
     onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
     columnSelectionConfigText: defaultI18NPropTypes.columnSelectionConfig,
     isDisabled: false,
-    testID: '',
+    testId: '',
   };
 
   reorderColumn = (srcIndex, destIndex) => {
@@ -76,7 +76,7 @@ class ColumnHeaderRow extends Component {
       onColumnSelectionConfig,
       columnSelectionConfigText,
       isDisabled,
-      testID,
+      testId,
       showExpanderColumn,
     } = this.props;
 
@@ -85,7 +85,7 @@ class ColumnHeaderRow extends Component {
     );
     return (
       <DragAndDrop>
-        <TableRow data-testid={testID} className={`${iotPrefix}--column-header-row--table-row`}>
+        <TableRow data-testid={testId} className={`${iotPrefix}--column-header-row--table-row`}>
           {hasRowSelection === 'multi' ? (
             <TableHeader className={`${iotPrefix}--column-header-row--table-header`} />
           ) : null}

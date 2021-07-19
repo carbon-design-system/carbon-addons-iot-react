@@ -21,6 +21,7 @@ import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import { OverflowMenu, OverflowMenuItem } from '../../../index';
 import { usePrevious } from '../../../hooks/usePrevious';
+import deprecate from '../../../internal/deprecate';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -115,7 +116,13 @@ const propTypes = {
   i18n: I18NPropTypes,
   /** should we filter on each keypress */
   hasFastFilter: PropTypes.bool,
-  testID: PropTypes.string,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
 };
@@ -134,6 +141,7 @@ const defaultProps = {
   },
   hasFastFilter: true,
   testID: '',
+  testId: '',
   showExpanderColumn: false,
 };
 
@@ -146,6 +154,7 @@ const PADDING_WITH_OVERFLOW_AND_SORT = 58;
 
 const TableHead = ({
   testID,
+  testId,
   tableId,
   options,
   options: {
@@ -343,12 +352,14 @@ const TableHead = ({
       className={classnames({ lightweight })}
       onMouseMove={hasResize ? forwardMouseEvent : null}
       onMouseUp={hasResize ? forwardMouseEvent : null}
-      data-testid={testID}
+      // TODO: remove deprecated 'testID' in v3
+      data-testid={testID || testId}
     >
       <TableRow>
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
-            data-testid={`${testID}-row-expansion-column`}
+            // TODO: remove deprecated 'testID' in v3
+            data-testid={`${testID || testId}-row-expansion-column`}
             className={classnames({
               [`${iotPrefix}--table-expand-resize`]: hasResize,
             })}
@@ -357,7 +368,8 @@ const TableHead = ({
 
         {hasRowSelection === 'multi' ? (
           <TableHeader
-            testID={`${testID}-row-selection-column`}
+            // TODO: remove deprecated 'testID' in v3
+            testId={`${testID || testId}-row-selection-column`}
             className={classnames(`${iotPrefix}--table-header-checkbox`, {
               [`${iotPrefix}--table-header-checkbox-resize`]: hasResize,
             })}
@@ -410,7 +422,8 @@ const TableHead = ({
 
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
-              testID={`${testID}-column-${matchingColumnMeta.id}`}
+              // TODO: remove deprecated 'testID' in v3
+              testId={`${testID || testId}-column-${matchingColumnMeta.id}`}
               width={initialColumnWidths[matchingColumnMeta.id]}
               initialWidth={initialColumnWidths[matchingColumnMeta.id]}
               id={`column-${matchingColumnMeta.id}`}
@@ -503,13 +516,15 @@ const TableHead = ({
 
         {showExpanderColumn ? (
           <TableHeader
-            testID={`${testID}-expander-column`}
+            // TODO: remove deprecated 'testID' in v3
+            testId={`${testID || testId}-expander-column`}
             className={classnames(`${iotPrefix}--table-header-expander-column`)}
           />
         ) : null}
         {options.hasRowActions ? (
           <TableHeader
-            testID={`${testID}-row-actions-column`}
+            // TODO: remove deprecated 'testID' in v3
+            testId={`${testID || testId}-row-actions-column`}
             className={classnames(`${iotPrefix}--table-header-row-action-column`, {
               [`${iotPrefix}--table-header-row-action-column--extra-wide`]: hasSingleRowEdit,
             })}
@@ -518,7 +533,8 @@ const TableHead = ({
       </TableRow>
       {filterBarActive && (
         <FilterHeaderRow
-          testID={`${testID}-filter-header-row`}
+          // TODO: remove deprecated 'testID' in v3
+          testId={`${testID || testId}-filter-header-row`}
           key={!hasFastFilter && JSON.stringify(filters)}
           columns={columns.map((column) => ({
             ...column.filter,
@@ -544,7 +560,8 @@ const TableHead = ({
       )}
       {activeBar === 'column' && (
         <ColumnHeaderRow
-          testID={`${testID}-column-header-row`}
+          // TODO: remove deprecated 'testID' in v3
+          testId={`${testID || testId}-column-header-row`}
           columns={columns.map((column) => ({
             id: column.id,
             name: column.name,

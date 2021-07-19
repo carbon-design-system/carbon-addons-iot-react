@@ -36,6 +36,32 @@ const timeSeriesCardProps = {
 };
 
 describe('TimeSeriesCard', () => {
+  it('should be selectable by testID or testId', () => {
+    const { rerender } = render(
+      <TimeSeriesCard
+        {...timeSeriesCardProps}
+        size={CARD_SIZES.MEDIUM}
+        isExpanded
+        testID="TIME_SERIES_CARD"
+      />
+    );
+
+    expect(screen.getByTestId('TIME_SERIES_CARD')).toBeDefined();
+    expect(screen.getByTestId('TimeSeries-table')).toBeDefined();
+
+    rerender(
+      <TimeSeriesCard
+        {...timeSeriesCardProps}
+        size={CARD_SIZES.MEDIUM}
+        isExpanded
+        testId="time_series_card"
+      />
+    );
+
+    expect(screen.getByTestId('time_series_card')).toBeDefined();
+    expect(screen.getByTestId('TimeSeries-table')).toBeDefined();
+  });
+
   it('does not show line chart when loading', () => {
     let wrapper = mount(
       <TimeSeriesCard {...timeSeriesCardProps} isLoading size={CARD_SIZES.MEDIUM} />

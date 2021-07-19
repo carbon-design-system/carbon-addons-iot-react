@@ -66,6 +66,36 @@ describe('SuiteHeader', () => {
     jest.useRealTimers();
   });
 
+  it('should be selectable with testId', () => {
+    render(
+      <SuiteHeader
+        {...commonProps}
+        sideNavProps={{
+          links: [
+            {
+              isEnabled: true,
+              icon: Chip,
+              metaData: {
+                label: 'Devices',
+                href: 'https://google.com',
+                element: 'a',
+                target: '_blank',
+              },
+              linkContent: 'Devices',
+            },
+          ],
+        }}
+        testId="suite_header"
+      />
+    );
+    expect(screen.getByTestId('suite_header')).toBeDefined();
+    expect(screen.getByTestId('suite_header-name')).toBeDefined();
+    expect(screen.getByTestId('suite_header-menu-button')).toBeDefined();
+    expect(screen.getByTestId('suite_header-action-group')).toBeDefined();
+    expect(screen.getByTestId('suite_header-app-switcher')).toBeDefined();
+    expect(screen.getByTestId('suite_header-logout-modal')).toBeDefined();
+    expect(screen.getByTestId('suite_header-profile')).toBeDefined();
+  });
   it('renders with sidenav', () => {
     render(
       <SuiteHeader

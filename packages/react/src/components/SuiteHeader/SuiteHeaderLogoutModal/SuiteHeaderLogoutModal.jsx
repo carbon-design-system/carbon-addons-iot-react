@@ -11,6 +11,7 @@ const defaultProps = {
     primaryButton: 'Log out',
     body: 'Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.',
   },
+  testId: 'suite-header-logout-modal',
 };
 
 const propTypes = {
@@ -23,9 +24,10 @@ const propTypes = {
     secondaryButton: PropTypes.string,
     body: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
-const SuiteHeaderLogoutModal = ({ isOpen, onClose, onLogout, i18n }) => {
+const SuiteHeaderLogoutModal = ({ isOpen, onClose, onLogout, i18n, testId }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   return (
     <Modal
@@ -36,6 +38,7 @@ const SuiteHeaderLogoutModal = ({ isOpen, onClose, onLogout, i18n }) => {
       onSecondarySubmit={onClose}
       onRequestSubmit={onLogout}
       onRequestClose={onClose}
+      data-testid={testId}
     >
       {mergedI18N.body}
     </Modal>

@@ -74,7 +74,7 @@ class FilterHeaderRow extends Component {
     /** should we filter as the user types or after they press enter */
     hasFastFilter: PropTypes.bool,
 
-    testID: PropTypes.string,
+    testId: PropTypes.string,
     /** shows an additional column that can expand/shrink as the table is resized  */
     showExpanderColumn: PropTypes.bool.isRequired,
   };
@@ -92,7 +92,7 @@ class FilterHeaderRow extends Component {
     closeMenuText: 'Close menu',
     lightweight: false,
     hasFastFilter: true,
-    testID: '',
+    testId: '',
   };
 
   state = {
@@ -181,12 +181,12 @@ class FilterHeaderRow extends Component {
       lightweight,
       isDisabled,
       hasFastFilter,
-      testID,
+      testId,
       showExpanderColumn,
     } = this.props;
     const { filterValues } = this.state;
     return isVisible ? (
-      <TableRow data-testid={testID}>
+      <TableRow data-testid={testId}>
         {hasRowSelection === 'multi' ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}
@@ -362,7 +362,7 @@ class FilterHeaderRow extends Component {
         ) : null}
         {showExpanderColumn ? (
           <TableHeader
-            testID={`${testID}-expander-column`}
+            data-testid={`${testId}-expander-column`}
             className={`${iotPrefix}--filter-header-row--header`}
           />
         ) : null}
