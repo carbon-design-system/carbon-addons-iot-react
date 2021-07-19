@@ -19,6 +19,37 @@ const commonWizardProps = {
 };
 
 describe('WizardModal', () => {
+  it('should be selectable by testId', () => {
+    const mockValidateStepFunction = jest.fn();
+    render(
+      <WizardModal
+        {...commonWizardProps}
+        steps={[
+          {
+            label: 'step1',
+            content: 'page 1',
+            onValidate: mockValidateStepFunction,
+          },
+          {
+            label: 'step2',
+            content: 'page 2',
+            onValidate: mockValidateStepFunction,
+          },
+          {
+            label: 'step3',
+            content: 'page 3',
+            onValidate: mockValidateStepFunction,
+          },
+        ]}
+        testId="wizard_modal"
+      />
+    );
+
+    expect(screen.getByTestId('ComposedModal')).toBeDefined();
+    expect(screen.getByTestId('wizard_modal-content')).toBeDefined();
+    expect(screen.getByTestId('iot--progress-indicator-testid')).toBeDefined();
+    expect(screen.getByTestId('wizard_modal-footer')).toBeDefined();
+  });
   it('handleNext', () => {
     const mockValidateStepFunction = jest.fn();
     const wrapper = mount(
