@@ -39,7 +39,7 @@ simpleModel.setData([
   ],
 ]);
 
-storiesOf('Table', module)
+storiesOf('Components/Table', module)
   .addDecorator(
     moduleMetadata({
       imports: [AITableModule],
