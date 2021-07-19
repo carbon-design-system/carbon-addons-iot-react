@@ -186,10 +186,10 @@ const ComboBox = ({
     }
   };
 
-  const combinedItems = useMemo(
-    () => (inputValue ? [inputValue, ...listItems] : listItems),
-    [inputValue, listItems]
-  );
+  const combinedItems = useMemo(() => (inputValue ? [inputValue, ...listItems] : listItems), [
+    inputValue,
+    listItems,
+  ]);
 
   const shouldFilterItemForTags = ({
     item,

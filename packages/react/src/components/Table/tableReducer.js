@@ -191,22 +191,21 @@ export const filterData = (data, filters, columns, advancedFilters) => {
 // Little utility to search
 export const searchData = (data, searchString) =>
   searchString && searchString !== ''
-    ? data.filter(
-        (
-          { values } // globally check row values for a match
-        ) =>
-          // eslint-disable-next-line array-callback-return, consistent-return
-          Object.values(values).find((value) => {
-            if (
-              typeof value === 'number' ||
-              typeof value === 'string' ||
-              typeof value === 'boolean'
-            ) {
-              if (!isNil(value)) {
-                return caseInsensitiveSearch([value.toString()], searchString.toString());
-              }
+    ? data.filter((
+        { values } // globally check row values for a match
+      ) =>
+        // eslint-disable-next-line array-callback-return, consistent-return
+        Object.values(values).find((value) => {
+          if (
+            typeof value === 'number' ||
+            typeof value === 'string' ||
+            typeof value === 'boolean'
+          ) {
+            if (!isNil(value)) {
+              return caseInsensitiveSearch([value.toString()], searchString.toString());
             }
-          })
+          }
+        })
       )
     : data;
 

@@ -193,10 +193,10 @@ const TableCard = ({
   const newSize = getUpdatedCardSize(size);
 
   /** adds the id to the card action */
-  const cachedOnCardAction = useCallback(
-    (...args) => onCardAction(id, ...args),
-    [onCardAction, id]
-  );
+  const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [
+    onCardAction,
+    id,
+  ]);
 
   const renderActionCell = (cellItem) => {
     const actionList = JSON.parse(cellItem.value);

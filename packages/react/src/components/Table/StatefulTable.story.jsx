@@ -168,7 +168,8 @@ SimpleStatefulExample.storyName = 'simple stateful table';
 
 SimpleStatefulExample.parameters = {
   info: {
-    text: 'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+    text:
+      'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
     propTables: [Table],
     propTablesExclude: [StatefulTable],
   },
@@ -349,7 +350,8 @@ SimpleStatefulExampleWithColumnOverflowMenu.storyName =
 
 SimpleStatefulExampleWithColumnOverflowMenu.parameters = {
   info: {
-    text: 'This is an example of the <StatefulTable> component that implements the overflow menu in the column header. Refer to the source files under /src/components/Table/TableHead for details. ',
+    text:
+      'This is an example of the <StatefulTable> component that implements the overflow menu in the column header. Refer to the source files under /src/components/Table/TableHead for details. ',
     propTables: [Table],
     propTablesExclude: [StatefulTable],
   },
@@ -385,7 +387,8 @@ SimpleStatefulExampleWithAlignment.storyName = 'Simple Stateful Example with ali
 
 SimpleStatefulExampleWithAlignment.parameters = {
   info: {
-    text: 'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+    text:
+      'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
     propTables: [Table],
     propTablesExclude: [StatefulTable],
   },
@@ -415,7 +418,8 @@ StatefulExampleWithEveryThirdRowUnselectable.storyName =
 
 StatefulExampleWithEveryThirdRowUnselectable.parameters = {
   info: {
-    text: 'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+    text:
+      'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
     propTables: [Table],
     propTablesExclude: [StatefulTable],
   },

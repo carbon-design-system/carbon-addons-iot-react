@@ -259,8 +259,7 @@ const ListItem = ({
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
                     [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                    [`${iotPrefix}--list-item--content--values--value__with-actions`]:
-                      hasRowActions,
+                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                   })}
                   title={value}
                 >
@@ -280,8 +279,7 @@ const ListItem = ({
                     `${iotPrefix}--list-item--content--values--value`,
                     `${iotPrefix}--list-item--content--values--value__large`,
                     {
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]:
-                        hasRowActions,
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     }
                   )}
@@ -297,8 +295,7 @@ const ListItem = ({
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
                     [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                    [`${iotPrefix}--list-item--content--values--value__with-actions`]:
-                      hasRowActions,
+                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                   })}
                   title={value}
                 >
@@ -312,8 +309,7 @@ const ListItem = ({
                         : secondaryValue
                     }
                     className={classnames(`${iotPrefix}--list-item--content--values--value`, {
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]:
-                        hasRowActions,
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     })}
                   >

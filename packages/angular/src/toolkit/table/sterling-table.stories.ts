@@ -12,7 +12,8 @@ const simpleModel = new SCTableModel();
 simpleModel.header = [
   [
     new TableHeaderItem({
-      data: 'Name Name Name Name Name Name Name Name Name Name \
+      data:
+        'Name Name Name Name Name Name Name Name Name Name \
 	Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name \
 	Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name \
 	Name Name Name Name Name Name Name Name Name Name \
