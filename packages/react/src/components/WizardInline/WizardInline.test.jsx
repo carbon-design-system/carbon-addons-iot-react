@@ -1,10 +1,30 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import WizardInline from './WizardInline';
 import { itemsAndComponents } from './WizardInline.story';
 
 describe('WizardInline', () => {
+  it('should be selectable by testId', () => {
+    render(
+      <WizardInline
+        title="Wizard Title"
+        items={itemsAndComponents}
+        currentItemId="step1"
+        onClose={() => {}}
+        onBack={jest.fn()}
+        onSubmit={jest.fn()}
+        testId="wizard_inline"
+      />
+    );
+    expect(screen.getByTestId('wizard_inline')).toBeDefined();
+    expect(screen.getByTestId('wizard_inline-header-page-title-bar')).toBeDefined();
+    expect(screen.getByTestId('wizard_inline-content')).toBeDefined();
+    expect(screen.getByTestId('iot--progress-indicator-testid')).toBeDefined();
+    expect(screen.getByTestId('wizard_inline-footer')).toBeDefined();
+    expect(screen.getAllByTestId('Button').length).toBeGreaterThan(0);
+  });
   it('deprecation notice', () => {
     // globally this is false, but we need it true so the warning pops
     const originalDEV = global.__DEV__;
