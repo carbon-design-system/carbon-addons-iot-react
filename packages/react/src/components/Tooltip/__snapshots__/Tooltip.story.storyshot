@@ -791,6 +791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <div
         className="bx--tooltip bx--tooltip--shown bx--tooltip--bottom bx--tooltip--align-center"
         data-floating-menu-direction="bottom"
+        data-testid="tooltip"
         id="uncontrolled"
         onBlur={[Function]}
         onContextMenu={[Function]}
