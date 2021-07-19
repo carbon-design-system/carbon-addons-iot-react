@@ -1979,7 +1979,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <div
                             className="iot--value-card__attribute-label"
                           >
-                            <span>
+                            <span
+                              data-testid="Card-attribute-0-threshold-label"
+                            >
                               Torque Min
                             </span>
                           </div>
@@ -1991,6 +1993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             >
                               <span
                                 className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                                data-testid="Card-attribute-0-value"
                                 style={
                                   Object {
                                     "--value-renderer-color": null,
@@ -2004,6 +2007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </div>
                             <span
                               className="iot--value-card__attribute-unit"
+                              data-testid="Card-attribute-0-unit"
                               style={
                                 Object {
                                   "--default-font-size": "1.25rem",
@@ -9993,7 +9997,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          <span>
+                          <span
+                            data-testid="Card-attribute-0-threshold-label"
+                          >
                             Key 1
                           </span>
                         </div>
@@ -10005,6 +10011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <span
                               className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                              data-testid="Card-attribute-0-value"
                               style={
                                 Object {
                                   "--value-renderer-color": null,
@@ -10018,6 +10025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </div>
                           <span
                             className="iot--value-card__attribute-unit"
+                            data-testid="Card-attribute-0-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -10039,7 +10047,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          <span>
+                          <span
+                            data-testid="Card-attribute-1-threshold-label"
+                          >
                             Key 2
                           </span>
                         </div>
@@ -10051,6 +10061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <span
                               className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                              data-testid="Card-attribute-1-value"
                               style={
                                 Object {
                                   "--value-renderer-color": null,
@@ -10064,6 +10075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </div>
                           <span
                             className="iot--value-card__attribute-unit"
+                            data-testid="Card-attribute-1-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21245,7 +21257,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          <span>
+                          <span
+                            data-testid="Card-attribute-0-threshold-label"
+                          >
                             Torque
                           </span>
                         </div>
@@ -21257,6 +21271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <span
                               className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                              data-testid="Card-attribute-0-value"
                               style={
                                 Object {
                                   "--value-renderer-color": null,
@@ -21270,6 +21285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </div>
                           <span
                             className="iot--value-card__attribute-unit"
+                            data-testid="Card-attribute-0-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21291,7 +21307,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <div
                           className="iot--value-card__attribute-label"
                         >
-                          <span>
+                          <span
+                            data-testid="Card-attribute-1-threshold-label"
+                          >
                             Pressure
                           </span>
                         </div>
@@ -21303,6 +21321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <span
                               className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                              data-testid="Card-attribute-1-value"
                               style={
                                 Object {
                                   "--value-renderer-color": null,
@@ -21316,6 +21335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </div>
                           <span
                             className="iot--value-card__attribute-unit"
+                            data-testid="Card-attribute-1-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",

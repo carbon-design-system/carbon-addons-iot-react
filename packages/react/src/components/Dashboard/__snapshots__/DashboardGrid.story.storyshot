@@ -741,7 +741,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 <div
                   className="iot--value-card__attribute-label"
                 >
-                  <span />
+                  <span
+                    data-testid="Card-attribute-0-threshold-label"
+                  />
                 </div>
                 <div
                   className="iot--value-card__attribute"
@@ -751,6 +753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   >
                     <span
                       className="iot--value-card__value-renderer--value"
+                      data-testid="Card-attribute-0-value"
                       style={
                         Object {
                           "--value-renderer-color": null,
@@ -764,6 +767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </div>
                   <span
                     className="iot--value-card__attribute-unit"
+                    data-testid="Card-attribute-0-unit"
                     style={
                       Object {
                         "--default-font-size": "1.25rem",
@@ -775,6 +779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 </div>
                 <div
                   className="iot--value-card__attribute-secondary-value"
+                  data-testid="Card-attribute-0-secondary-value"
                   style={
                     Object {
                       "--secondary-value-color": "red",
@@ -784,6 +789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <svg
                     aria-label="trending down"
                     className="iot--value-card__attribute_trend-icon"
+                    data-testid="Card-attribute-0-trending-down"
                     fill="currentColor"
                     focusable="false"
                     height={16}
@@ -3681,6 +3687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         }
                       >
                         <svg
+                          data-testid="card-icon"
                           fill="purple"
                           focusable="true"
                           height={25}

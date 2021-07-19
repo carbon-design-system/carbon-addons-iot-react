@@ -246,6 +246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
         </ul>
         <div
           className="iot--wizard-modal__content"
+          data-testid="wizard-modal-content"
         >
           page 1
         </div>
@@ -255,6 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
       >
         <div
           className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          data-testid="wizard-modal-footer"
         >
           <button
             aria-describedby={null}
@@ -548,6 +550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
         </ul>
         <div
           className="iot--wizard-modal__content"
+          data-testid="wizard-modal-content"
         >
           page 1
         </div>
@@ -564,6 +567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
         </div>
         <div
           className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          data-testid="wizard-modal-footer"
         >
           <button
             aria-describedby={null}
@@ -847,6 +851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
         </ul>
         <div
           className="iot--wizard-modal__content"
+          data-testid="wizard-modal-content"
         >
           page 3
         </div>
@@ -856,6 +861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
       >
         <div
           className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          data-testid="wizard-modal-footer"
         >
           <button
             aria-describedby={null}
