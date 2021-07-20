@@ -48,10 +48,10 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
       bottom: ${(props) => (!props.isExpanded ? '0px' : '25px')};
       ${(props) => (props.isExpanded ? `width: calc(100% - 50px)` : ``)}
     }
-    .bx--data-table-container {
+    .bx--data-table-content {
       ${(props) =>
         props.data && props.data.length > 0 && !props.isExpanded
-          ? `max-height: 435px;`
+          ? `max-height: 523px;`
           : `height: 90%;`}
     }
 
@@ -79,7 +79,7 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
     .bx--data-table tbody tr {
       height: 2.5rem;
     }
-    .bx--data-table-container + .bx--pagination {
+    .bx--data-table-content + .bx--pagination {
       border: 1px solid #dfe3e6;
     }
 
@@ -646,7 +646,7 @@ const TableCard = ({
     >
       {({ height }) => {
         const numberOfRowsPerPage = Math.max(
-          !isNil(height) && height !== 0 ? Math.floor((height - 48) / 48) : 10,
+          !isNil(height) && height !== 0 ? Math.floor((height - 56) / 56) : 10,
           1 // at least pass 1 row per page
         );
         return (
