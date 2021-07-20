@@ -1,7 +1,7 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import '../../../../styles/scss/globals/vars';
 
-.table-row:not(:first-of-type) {
+tr.table-row:not(:first-of-type) {
   border-top: 2px solid white;
 }
 
@@ -22,7 +22,8 @@ th:not(:last-of-type) {
     align-items: flex-end;
     padding-bottom: $spacing-05;
   }
-  &.#{$prefix}--data-table th:last-of-type {
+  &.#{$prefix}--data-table th {
     position: inherit;
+    height: 100%;
   }
 }

@@ -6,23 +6,30 @@
   top: 0;
 }
 
+.#{$prefix}--table-header-label {
+  line-height: 3rem;
+}
+
 .#{$prefix}--data-table--compact {
   .table-head-cell-text,
-  .table-head-cell-icons {
+  .table-head-cell-icons,
+  .#{$prefix}--table-header-label {
     line-height: 24px;
   }
 }
 
 .#{$prefix}--data-table--short {
   .table-head-cell-text,
-  .table-head-cell-icons {
+  .table-head-cell-icons,
+  .#{$prefix}--table-header-label {
     line-height: 32px;
   }
 }
 
 .#{$prefix}--data-table--tall {
   .table-head-cell-text,
-  .table-head-cell-icons {
+  .table-head-cell-icons,
+  .#{$prefix}--table-header-label {
     line-height: 64px;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
 import { TableHeadCell } from 'carbon-components-angular';
 
 @Component({
@@ -112,4 +112,6 @@ import { TableHeadCell } from 'carbon-components-angular';
   styleUrls: ['./table-head-cell.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class AITableHeadCell extends TableHeadCell {}
+export class AITableHeadCell extends TableHeadCell {
+  @HostBinding('class.iot--table-head-cell') cssClass = true;
+}
