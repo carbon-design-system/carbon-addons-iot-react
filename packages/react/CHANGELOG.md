@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.65](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.64...v2.146.0-next.65) (2021-07-20)
+
+
+### Bug Fixes
+
+* **date-time-picker:** use callback ref for the DatePicker ([76af718](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/76af71881e5b754f608a65ae252964527e549551))
+* **datetimepicker:** pin flatpickr to fix absolute date range ([d1537e9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d1537e936c4fe15e28ab7b87bd6859d164f6f76a))
+* **repo:** fix cypress config to run e2e tests ([f63d697](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f63d697d7cf7084be76260b9fd5c970e37277cd7))
+
+
+
+
+
 # [2.146.0-next.64](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.63...v2.146.0-next.64) (2021-07-16)
 
 **Note:** Version bump only for package carbon-addons-iot-react
