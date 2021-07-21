@@ -795,7 +795,7 @@ const DateTimePicker = ({
                   })}
                 </OrderedList>
               ) : (
-                <div>
+                <>
                   {showRelativeOption ? (
                     <FormGroup
                       legendText={strings.customRangeLabel}
@@ -820,7 +820,7 @@ const DateTimePicker = ({
                     </FormGroup>
                   ) : null}
                   {showRelativeOption && customRangeKind === PICKER_KINDS.RELATIVE ? (
-                    <div>
+                    <>
                       <FormGroup
                         legendText={strings.lastLabel}
                         className={`${iotPrefix}--date-time-picker__menu-formgroup`}
@@ -900,7 +900,7 @@ const DateTimePicker = ({
                           ) : null}
                         </div>
                       </FormGroup>
-                    </div>
+                    </>
                   ) : (
                     <div data-testid={`${testId}-datepicker`}>
                       <div className={`${iotPrefix}--date-time-picker__datepicker`}>
@@ -958,7 +958,7 @@ const DateTimePicker = ({
                       )}
                     </div>
                   )}
-                </div>
+                </>
               )}
             </div>
           </FlyoutMenu>

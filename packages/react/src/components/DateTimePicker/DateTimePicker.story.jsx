@@ -56,7 +56,7 @@ export const Default = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
-      renderPresetTooltipText={() => 'User tooltip'}
+      // renderPresetTooltipText={() => 'User tooltip'}
     />
   );
 };

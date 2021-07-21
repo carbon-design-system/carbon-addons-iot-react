@@ -52,7 +52,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
-          aria-label="Helpful description"
+          aria-label="Calendar"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
@@ -63,11 +63,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <span
             className="bx--assistive-text"
           >
-            Helpful description
+            Calendar
           </span>
           <svg
             aria-hidden="true"
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
@@ -90,7 +90,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             aria-describedby={null}
             aria-expanded={false}
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--tooltip__label"
             id="test-trigger-id-2"
             onBlur={[Function]}
@@ -136,7 +136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
-          aria-label="Helpful description"
+          aria-label="Calendar"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
@@ -147,11 +147,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <span
             className="bx--assistive-text"
           >
-            Helpful description
+            Calendar
           </span>
           <svg
             aria-hidden="true"
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
@@ -174,7 +174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             aria-describedby={null}
             aria-expanded={false}
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--tooltip__label"
             id="test-trigger-id-2"
             onBlur={[Function]}
@@ -246,7 +246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
-          aria-label="Helpful description"
+          aria-label="Calendar"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
@@ -257,11 +257,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <span
             className="bx--assistive-text"
           >
-            Helpful description
+            Calendar
           </span>
           <svg
             aria-hidden="true"
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
@@ -284,7 +284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             aria-describedby={null}
             aria-expanded={false}
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--tooltip__label"
             id="test-trigger-id-2"
             onBlur={[Function]}
@@ -340,7 +340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
-          aria-label="Helpful description"
+          aria-label="Calendar"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
@@ -351,11 +351,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <span
             className="bx--assistive-text"
           >
-            Helpful description
+            Calendar
           </span>
           <svg
             aria-hidden="true"
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
@@ -378,7 +378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             aria-describedby={null}
             aria-expanded={false}
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--tooltip__label"
             id="test-trigger-id-2"
             onBlur={[Function]}
@@ -434,7 +434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
-          aria-label="Helpful description"
+          aria-label="Calendar"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
@@ -445,11 +445,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <span
             className="bx--assistive-text"
           >
-            Helpful description
+            Calendar
           </span>
           <svg
             aria-hidden="true"
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
@@ -472,7 +472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             aria-describedby={null}
             aria-expanded={false}
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--tooltip__label"
             id="test-trigger-id-2"
             onBlur={[Function]}
@@ -544,7 +544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
-          aria-label="Helpful description"
+          aria-label="Calendar"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
@@ -555,11 +555,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <span
             className="bx--assistive-text"
           >
-            Helpful description
+            Calendar
           </span>
           <svg
             aria-hidden="true"
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
@@ -582,7 +582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             aria-describedby={null}
             aria-expanded={false}
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--tooltip__label"
             id="test-trigger-id-2"
             onBlur={[Function]}
@@ -638,7 +638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
-          aria-label="Helpful description"
+          aria-label="Calendar"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
@@ -649,11 +649,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <span
             className="bx--assistive-text"
           >
-            Helpful description
+            Calendar
           </span>
           <svg
             aria-hidden="true"
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
@@ -676,7 +676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             aria-describedby={null}
             aria-expanded={false}
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--tooltip__label"
             id="test-trigger-id-2"
             onBlur={[Function]}
@@ -748,7 +748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
-          aria-label="Helpful description"
+          aria-label="Calendar"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
@@ -759,11 +759,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <span
             className="bx--assistive-text"
           >
-            Helpful description
+            Calendar
           </span>
           <svg
             aria-hidden="true"
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
@@ -786,7 +786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             aria-describedby={null}
             aria-expanded={false}
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--tooltip__label"
             id="test-trigger-id-2"
             onBlur={[Function]}
@@ -858,7 +858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
-          aria-label="Helpful description"
+          aria-label="Calendar"
           className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
@@ -869,11 +869,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <span
             className="bx--assistive-text"
           >
-            Helpful description
+            Calendar
           </span>
           <svg
             aria-hidden="true"
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
@@ -896,7 +896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             aria-describedby={null}
             aria-expanded={false}
-            aria-label="Helpful description"
+            aria-label="Calendar"
             className="bx--tooltip__label"
             id="test-trigger-id-2"
             onBlur={[Function]}

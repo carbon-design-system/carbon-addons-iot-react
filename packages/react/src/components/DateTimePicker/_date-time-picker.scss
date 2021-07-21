@@ -1,9 +1,11 @@
 @import '../../globals/vars';
 @import '~@carbon/motion/scss/motion.scss';
 
+// wraps the entire component
 .#{$iot-prefix}--date-time-picker__wrapper {
   width: var(--wrapper-width);
 
+  // open menu content
   .#{$iot-prefix}--flyout-menu--content {
     padding: 0;
   }
@@ -26,17 +28,31 @@
     animation: none;
   }
 
+  // hide the date picker inputs
+  .#{$prefix}--date-picker--range {
+    position: absolute;
+  }
+  .#{$prefix}--date-picker-container {
+    opacity: 0;
+  }
+
   .#{$prefix}--number {
-    margin-right: $spacing-05;
     .#{$prefix}--number__input-wrapper {
       input {
         min-width: 8.5rem;
-        padding-right: $spacing-03;
+        padding-right: 0;
+      }
+    }
+
+    .#{$prefix}--number__controls {
+      // this prevents the number input icons from being pushed to the left
+      button.#{$prefix}--number__control-btn {
+        padding-right: 0;
       }
     }
   }
 
-  .#{$prefix}--select-input {
+  .#{$prefix}--select {
     width: 8.5rem;
   }
 
@@ -70,21 +86,6 @@
         text-overflow: ellipsis;
       }
     }
-
-    .#{$iot-prefix}--date-time-picker__menu {
-      display: none;
-      cursor: default;
-      box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
-      position: absolute;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background-color: $carbon--white-0;
-      z-index: 9100;
-      &.#{$iot-prefix}--date-time-picker__menu-expanded {
-        display: block;
-      }
-    }
   }
 
   .#{$iot-prefix}--date-time-picker__box--light {
@@ -93,6 +94,7 @@
 
   .#{$iot-prefix}--date-time-picker__menu-scroll {
     overflow-y: auto;
+    padding-top: 0.75rem;
 
     .#{$prefix}--fieldset {
       margin-bottom: $spacing-lg;
@@ -102,8 +104,13 @@
     .#{$iot-prefix}--date-time-picker__fields-wrapper {
       display: flex;
       align-items: flex-end;
+
       .#{$prefix}--label {
         margin-bottom: 0;
+      }
+
+      .#{$prefix}--form-item + .#{$prefix}--form-item {
+        margin-left: 1rem;
       }
     }
 
@@ -170,17 +177,16 @@ html[dir='rtl'] {
         padding-right: $spacing-05;
         padding-left: $spacing-09;
       }
-      .#{$iot-prefix}--date-time-picker__menu {
-        .#{$iot-prefix}--date-time-picker__menu-scroll {
-          .#{$iot-prefix}--date-time-picker__listitem {
-            border-right: 2px solid transparent;
-            border-left: none;
-          }
 
-          .#{$iot-prefix}--date-time-picker__listitem--preset {
-            &.#{$iot-prefix}--date-time-picker__listitem--preset-selected {
-              border-right-color: $carbon--blue-60;
-            }
+      .#{$iot-prefix}--date-time-picker__menu-scroll {
+        .#{$iot-prefix}--date-time-picker__listitem {
+          border-right: 2px solid transparent;
+          border-left: none;
+        }
+
+        .#{$iot-prefix}--date-time-picker__listitem--preset {
+          &.#{$iot-prefix}--date-time-picker__listitem--preset-selected {
+            border-right-color: $carbon--blue-60;
           }
         }
       }
