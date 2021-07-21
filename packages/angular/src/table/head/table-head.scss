@@ -24,6 +24,8 @@ th:not(:last-of-type) {
   }
   &.#{$prefix}--data-table th {
     position: inherit;
-    height: 100%;
+  }
+  .#{$iot-prefix}--table-head-cell {
+    vertical-align: bottom;
   }
 }
