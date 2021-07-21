@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.66](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.65...v2.146.0-next.66) (2021-07-20)
+
+
+### Bug Fixes
+
+* **timeseriescard:** Passing truncation type `’none’` to chart tooltip options so that tooltip labels don’t get truncated. When the chart y label label is very long, it will stretch the width of the tooltip. ([44e2c87](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/44e2c8748e79aa9eda4da4742ef0b6a5d7b15c44))
+
+
+
+
+
 # [2.146.0-next.65](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.64...v2.146.0-next.65) (2021-07-20)
 
 
