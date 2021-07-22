@@ -6307,7 +6307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="iot--list-item--nesting-offset"
                             style={
                               Object {
-                                "width": "30px",
+                                "width": "32px",
                               }
                             }
                           />
@@ -6348,7 +6348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="iot--list-item--nesting-offset"
                             style={
                               Object {
-                                "width": "30px",
+                                "width": "32px",
                               }
                             }
                           />
@@ -6437,7 +6437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="iot--list-item--nesting-offset"
                             style={
                               Object {
-                                "width": "30px",
+                                "width": "32px",
                               }
                             }
                           />
@@ -6979,7 +6979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="iot--list-item--nesting-offset"
                             style={
                               Object {
-                                "width": "30px",
+                                "width": "32px",
                               }
                             }
                           />
@@ -7068,7 +7068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="iot--list-item--nesting-offset"
                             style={
                               Object {
-                                "width": "30px",
+                                "width": "32px",
                               }
                             }
                           />
@@ -7157,7 +7157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="iot--list-item--nesting-offset"
                             style={
                               Object {
-                                "width": "30px",
+                                "width": "32px",
                               }
                             }
                           />
