@@ -206,7 +206,7 @@
         }
       }
       &__disabled {
-        opacity: 0.4;
+        color: $disabled-02;
       }
     }
     &--row-actions {
@@ -215,7 +215,7 @@
       overflow: none;
       display: flex;
       position: absolute;
-      right: 0;
+      right: -$spacing-03;
     }
   }
   &--nesting-offset {

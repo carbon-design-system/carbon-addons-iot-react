@@ -20,15 +20,11 @@ import { IconService } from 'carbon-components-angular';
         'iot--list-item__large': item.size === 'lg'
       }"
       (click)="selectionType === 'single' ? handleSelect(!item.selected) : null"
+      (keyup.Space)="selectionType === 'single' ? handleSelect(!item.selected) : null"
     >
       <div class="iot--list-item-editable--drag-preview">
         {{ item.value }}
       </div>
-      <div
-        *ngIf="nestingLevel > 0"
-        class="iot--list-item--nesting-offset"
-        [ngStyle]="{ width: 30 * nestingLevel + 'px' }"
-      ></div>
       <svg
         *ngIf="draggable && item.isDraggable"
         class="iot--list-item--handle"
@@ -37,10 +33,16 @@ import { IconService } from 'carbon-components-angular';
         size="16"
       ></svg>
       <div
+        *ngIf="nestingLevel > 0"
+        class="iot--list-item--nesting-offset"
+        [ngStyle]="{ width: 30 * nestingLevel + 'px' }"
+      ></div>
+      <div
         *ngIf="item.hasChildren()"
         role="button"
         (click)="!item.disabled ? item.expand(!item.expanded) : undefined"
-        tabindex="!item.disabled ? 0 : undefined"
+        (keyup.Space)="!item.disabled ? item.expand(!item.expanded) : undefined"
+        [tabindex]="!item.disabled ? 0 : undefined"
         class="iot--list-item--expand-icon"
         [ngClass]="{ 'iot--list-item--expand-icon__disabled': item.disabled }"
       >

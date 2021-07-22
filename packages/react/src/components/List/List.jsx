@@ -171,7 +171,7 @@ const List = forwardRef((props, ref) => {
           id={item.id}
           index={index}
           key={`${item.id}-list-item-${level}-${value}`}
-          nestingLevel={isCategory ? level - 1 : level}
+          nestingLevel={item?.children && item.children.length > 0 ? level - 1 : level}
           value={value}
           icon={
             editingStyleIsMultiple(editingStyle) ? (

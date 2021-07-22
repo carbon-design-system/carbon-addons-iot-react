@@ -143,7 +143,7 @@ const ListItem = ({
       <div
         className={`${iotPrefix}--list-item--nesting-offset`}
         style={{
-          width: `${nestingLevel * 30}px`,
+          width: `${nestingLevel * 32}px`,
         }}
       />
     ) : null;
@@ -235,8 +235,8 @@ const ListItem = ({
       }}
     >
       {renderDragPreview()}
-      {renderNestingOffset()}
       {dragIcon()}
+      {renderNestingOffset()}
       {renderExpander()}
       <div
         className={classnames(
