@@ -246,6 +246,7 @@ const List = forwardRef((props, ref) => {
           buttons={buttons}
           search={search}
           i18n={mergedI18n}
+          testId={`${testId}-header`}
           {...overrides?.header?.props}
         />
 

@@ -8,6 +8,87 @@ import RuleBuilder from './RuleBuilder';
 const RULE_ID_MATCH = expect.stringMatching(/[a-zA-Z0-9]/gi);
 
 describe('The RuleBuilder', () => {
+  it('should be selectable by testId', () => {
+    const handleSave = jest.fn();
+    const handleCancel = jest.fn();
+    const handleFavorite = jest.fn();
+    const handleShare = jest.fn();
+    const handleDelete = jest.fn();
+    const handleApply = jest.fn();
+    const handlePreview = jest.fn();
+
+    render(
+      <RuleBuilder
+        testId="rule_builder"
+        filter={{
+          filterMetaText: 'meta text',
+          filterTags: ['tag-1', 'tag-2'],
+          filterColumns: [
+            {
+              id: 'column1',
+              name: 'Column 1',
+            },
+            {
+              id: 'column2',
+              name: 'Column 2',
+            },
+            {
+              id: 'column3',
+              name: 'Column 3',
+            },
+          ],
+        }}
+        onSave={handleSave}
+        onCancel={handleCancel}
+        actionBar={[
+          {
+            actionId: 'favorite',
+            actionLabel: 'Favorite',
+            actionIcon: Star16,
+            actionCallback: handleFavorite,
+          },
+          {
+            actionId: 'share',
+            actionLabel: 'Share',
+            actionIcon: Share16,
+            actionCallback: handleShare,
+          },
+          {
+            actionId: 'delete',
+            actionLabel: 'Delete',
+            actionIcon: TrashCan16,
+            actionCallback: handleDelete,
+          },
+        ]}
+        footerButtons={[
+          {
+            buttonId: 'preview',
+            buttonLabel: 'Preview results',
+            buttonCallback: handlePreview,
+          },
+          {
+            buttonId: 'apply',
+            buttonLabel: 'Apply',
+            buttonCallback: handleApply,
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByTestId('rule_builder')).toBeDefined();
+    expect(screen.getByTestId('rule_builder-tabs')).toBeDefined();
+    expect(screen.getByTestId('rule_builder-editor')).toBeDefined();
+    expect(screen.getByTestId('rule_builder-title')).toBeDefined();
+    expect(screen.getByTestId('rule_builder-metatext')).toBeDefined();
+    expect(screen.getByTestId('rule_builder-title-input')).toBeDefined();
+    expect(screen.getByTestId('rule_builder-editor-tab')).toBeDefined();
+    expect(screen.getByTestId('rule_builder-sharing-tab')).toBeDefined();
+    expect(screen.getByTestId('rule_builder-title-input')).toBeDefined();
+    expect(screen.getByTestId('filter-tag-container')).toBeDefined();
+    expect(screen.getByTestId('read-table')).toBeDefined();
+    expect(screen.getByTestId('edit-table')).toBeDefined();
+  });
+
   it('should render and include action bar and footer elements', () => {
     const handleSave = jest.fn();
     const handleCancel = jest.fn();

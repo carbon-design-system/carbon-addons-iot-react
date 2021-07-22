@@ -4,9 +4,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 <div
   className="storybook-container"
 >
-  <div>
+  <div
+    data-testid="file-drop"
+  >
     <strong
       className="bx--label"
+      data-testid="file-drop-title"
     >
       Upload Files
     </strong>
@@ -16,6 +19,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
           "json",
         ]
       }
+      data-testid="file-drop-file-input"
       multiple={true}
       onChange={[Function]}
       style={
@@ -27,6 +31,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
     />
     <div
       className="iot--file-drop__text"
+      data-testid="file-drop-drop-zone"
       onDragLeave={[Function]}
       onDragOver={[Function]}
       onDrop={[Function]}
@@ -44,6 +49,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
         >
           <button
             className="iot--file-drop__link-button"
+            data-testid="file-drop-link-button"
             type="button"
           >
             Try it out!
@@ -67,21 +73,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 >
   <div
     className="bx--form-item"
+    data-testid="file-drop"
     id="FileUploader"
   >
     <strong
       className="bx--label"
+      data-testid="file-drop-title"
     >
       Upload Files
     </strong>
     <p
       className="bx--label-description"
+      data-testid="file-drop-description"
     >
       Any file can be uploaded.  Feel free to upload more than one!
     </p>
     <label
       aria-disabled={false}
       className="bx--btn bx--btn--secondary"
+      data-testid="file-drop-uploader-button"
       htmlFor="id12"
       onKeyDown={[Function]}
       tabIndex={0}
@@ -116,21 +126,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 >
   <div
     className="bx--form-item"
+    data-testid="file-drop"
     id="FileUploader"
   >
     <strong
       className="bx--label"
+      data-testid="file-drop-title"
     >
       Upload Files
     </strong>
     <p
       className="bx--label-description"
+      data-testid="file-drop-description"
     >
       Only one file can be uploaded
     </p>
     <label
       aria-disabled={false}
       className="bx--btn bx--btn--secondary"
+      data-testid="file-drop-uploader-button"
       htmlFor="id13"
       onKeyDown={[Function]}
       tabIndex={0}
@@ -163,14 +177,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 <div
   className="storybook-container"
 >
-  <div>
+  <div
+    data-testid="file-drop"
+  >
     <strong
       className="bx--label"
+      data-testid="file-drop-title"
     >
       Upload Files
     </strong>
     <input
       accept={Array []}
+      data-testid="file-drop-file-input"
       multiple={true}
       onChange={[Function]}
       style={
@@ -182,6 +200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
     />
     <div
       className="iot--file-drop__text"
+      data-testid="file-drop-drop-zone"
       onDragLeave={[Function]}
       onDragOver={[Function]}
       onDrop={[Function]}
@@ -199,6 +218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
         >
           <button
             className="iot--file-drop__link-button"
+            data-testid="file-drop-link-button"
             type="button"
           >
             Try it out!
@@ -220,14 +240,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 <div
   className="storybook-container"
 >
-  <div>
+  <div
+    data-testid="file-drop"
+  >
     <strong
       className="bx--label"
+      data-testid="file-drop-title"
     >
       Upload Files
     </strong>
     <input
       accept={Array []}
+      data-testid="file-drop-file-input"
       multiple={false}
       onChange={[Function]}
       style={
@@ -239,6 +263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
     />
     <div
       className="iot--file-drop__text"
+      data-testid="file-drop-drop-zone"
       onDragLeave={[Function]}
       onDragOver={[Function]}
       onDrop={[Function]}
@@ -256,6 +281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
         >
           <button
             className="iot--file-drop__link-button"
+            data-testid="file-drop-link-button"
             type="button"
           >
             Try it out!
@@ -277,14 +303,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 <div
   className="storybook-container"
 >
-  <div>
+  <div
+    data-testid="file-drop"
+  >
     <strong
       className="bx--label"
+      data-testid="file-drop-title"
     >
       Upload Files
     </strong>
     <input
       accept={Array []}
+      data-testid="file-drop-file-input"
       multiple={false}
       onChange={[Function]}
       style={
@@ -296,6 +326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
     />
     <div
       className="iot--file-drop__text"
+      data-testid="file-drop-drop-zone"
       onDragLeave={[Function]}
       onDragOver={[Function]}
       onDrop={[Function]}
@@ -313,6 +344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
         >
           <button
             className="iot--file-drop__link-button"
+            data-testid="file-drop-link-button"
             type="button"
           >
             Try it out!

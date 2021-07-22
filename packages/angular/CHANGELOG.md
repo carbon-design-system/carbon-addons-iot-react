@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.59](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.58...v2.146.0-next.59) (2021-07-14)
+
+**Note:** Version bump only for package @ai-apps/angular
+
+
+
+
+
+# [2.146.0-next.58](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.57...v2.146.0-next.58) (2021-07-14)
+
+
+### Features
+
+* **datetimepicker:** add angular datetime picker ([6b2b7b0](https://github.com/IBM/carbon-components-angular/commit/6b2b7b00073a7ee7cfb73747ac36965fc25cc49e))
+
+
+
+
+
 # [2.146.0-next.27](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.26...v2.146.0-next.27) (2021-06-11)
 
 **Note:** Version bump only for package @ai-apps/angular

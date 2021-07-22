@@ -9,6 +9,45 @@ import { tableColumns, tableData, actions2 } from '../../utils/sample';
 import TableCard from './TableCard';
 
 describe('TableCard', () => {
+  it('should be selectable by testID or testId', () => {
+    const onCardAction = jest.fn();
+
+    const tableDataWithActions = tableData.map((item) => {
+      return {
+        ...item,
+        actions: actions2,
+      };
+    });
+
+    const { rerender } = render(
+      <TableCard
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableDataWithActions}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testID="TABLE_CARD"
+      />
+    );
+    expect(screen.getByTestId('TABLE_CARD')).toBeDefined();
+
+    rerender(
+      <TableCard
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableDataWithActions}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testId="table_card"
+      />
+    );
+    expect(screen.getByTestId('table_card')).toBeDefined();
+  });
+
   it('Row specific link variables populate correctly', () => {
     const tableLinkColumns = [
       ...tableColumns,

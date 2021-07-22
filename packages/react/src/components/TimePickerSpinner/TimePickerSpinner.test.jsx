@@ -20,6 +20,13 @@ describe('TimePickerSpinner', () => {
     jest.clearAllTimers();
   });
 
+  it('should be selectable by testId', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner testId="time_picker_spinner" />);
+    expect(screen.getByTestId('time_picker_spinner')).toBeDefined();
+    expect(screen.getByTestId('time_picker_spinner-up-button')).toBeDefined();
+    expect(screen.getByTestId('time_picker_spinner-down-button')).toBeDefined();
+  });
+
   it('with spinner', () => {
     render(<TimePickerSpinner {...timePickerProps} spinner />);
     expect(screen.queryAllByRole('button')).toHaveLength(2);

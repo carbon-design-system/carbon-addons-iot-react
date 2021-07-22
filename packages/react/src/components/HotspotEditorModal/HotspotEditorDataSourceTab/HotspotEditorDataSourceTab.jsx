@@ -7,6 +7,7 @@ import DataSeriesFormItemModal from '../../CardEditor/CardEditForm/CardEditFormI
 import List from '../../List/List';
 import Button from '../../Button/Button';
 import { settings } from '../../../constants/Settings';
+import deprecate from '../../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -55,8 +56,13 @@ const propTypes = {
   translateWithId: PropTypes.func.isRequired,
   /** callback when image input value changes */
   onChange: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
   /** An array of data source items that can be selected for the specified hotspot */
   dataItems: PropTypes.arrayOf(
     PropTypes.shape({
@@ -85,7 +91,7 @@ const defaultProps = {
   },
   dataItems: [],
   availableDimensions: {},
-  testID: 'HotspotEditorDataSourceTab',
+  testId: 'HotspotEditorDataSourceTab',
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -101,7 +107,9 @@ const HotspotEditorDataSourceTab = ({
   i18n,
   onChange,
   availableDimensions,
+  // TODO: remove the deprecated testID prop in v3.
   testID,
+  testId,
   translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -143,7 +151,7 @@ const HotspotEditorDataSourceTab = ({
   }));
 
   return (
-    <div data-testid={testID}>
+    <div data-testid={testID || testId}>
       <DataSeriesFormItemModal
         isLarge
         cardConfig={cardConfig}
@@ -169,11 +177,13 @@ const HotspotEditorDataSourceTab = ({
           onChange={handleSelectionChange}
           titleText={mergedI18n.dataItemText}
           translateWithId={translateWithId}
+          data-testid={`${testId}-multiselect`}
         />
       </div>
       <List
         // need to force an empty "empty state"
         emptyState={<div />}
+        testId={`${testId}-data-source-list`}
         title=""
         items={selectedItemsArray?.map((dataItem) => ({
           id: dataItem.dataSourceId,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import {
   DatePicker,
@@ -274,8 +274,8 @@ const DateTimePicker = ({
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
 
   // Refs
-  const datePickerRef = React.createRef();
-  const relativeSelect = React.createRef(null);
+  const [datePickerElem, setDatePickerElem] = useState(null);
+  const relativeSelect = useRef(null);
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -298,10 +298,14 @@ const DateTimePicker = ({
     },
   };
 
+  const handleDatePickerRef = useCallback((node) => {
+    setDatePickerElem(node);
+  }, []);
+
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (datePickerRef && datePickerRef.current) {
-        datePickerRef.current.cal.open();
+      if (datePickerElem) {
+        datePickerElem.cal.open();
         // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
         // the only way to display the calendar inline is to reparent its DOM to our component
         const wrapper = document.getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`);
@@ -309,14 +313,14 @@ const DateTimePicker = ({
           const dp = document
             .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
             .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
-          dp.appendChild(datePickerRef.current.cal.calendarContainer);
+          dp.appendChild(datePickerElem.cal.calendarContainer);
         }
       }
     }, 0);
     return () => {
       clearTimeout(timeout);
     };
-  }, [datePickerRef, id]);
+  }, [datePickerElem, id]);
 
   /**
    * Parses a value object into a human readable value
@@ -438,36 +442,27 @@ const DateTimePicker = ({
     [absoluteValue, relativeValue]
   );
 
-  useEffect(
-    () => {
-      if (
-        datePickerRef.current &&
-        datePickerRef.current.inputField &&
-        datePickerRef.current.toInputField
-      ) {
-        if (focusOnFirstField) {
-          datePickerRef.current.inputField.focus();
-        } else {
-          datePickerRef.current.toInputField.focus();
-        }
+  useEffect(() => {
+    if (datePickerElem && datePickerElem.inputField && datePickerElem.toInputField) {
+      if (focusOnFirstField) {
+        datePickerElem.inputField.focus();
+      } else {
+        datePickerElem.toInputField.focus();
       }
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [focusOnFirstField]
-  );
+    }
+  }, [datePickerElem, focusOnFirstField]);
 
-  const onDatePickerChange = (range) => {
+  const onDatePickerChange = ([start, end]) => {
     const newAbsolute = { ...absoluteValue };
-
-    if (range[1]) {
+    if (end) {
       setFocusOnFirstField(!focusOnFirstField);
-      newAbsolute.start = range[0]; // eslint-disable-line prefer-destructuring
+      newAbsolute.start = start;
       newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
-      newAbsolute.end = range[1]; // eslint-disable-line prefer-destructuring
+      newAbsolute.end = end;
       newAbsolute.endDate = dayjs(newAbsolute.end).format('MM/DD/YYYY');
     }
 
-    newAbsolute.start = range[0]; // eslint-disable-line prefer-destructuring
+    newAbsolute.start = start;
     newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
 
     setAbsoluteValue(newAbsolute);
@@ -677,6 +672,7 @@ const DateTimePicker = ({
           <Button
             kind="secondary"
             className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}
+            size="field"
             {...others}
             onClick={toggleIsCustomRange}
           >
@@ -687,6 +683,7 @@ const DateTimePicker = ({
             kind="secondary"
             className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-cancel`}
             onClick={onCancelClick}
+            size="field"
             {...others}
           >
             {strings.cancelBtnLabel}
@@ -695,6 +692,7 @@ const DateTimePicker = ({
         <Button
           kind="primary"
           className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-apply`}
+          size="field"
           {...others}
           onClick={onApplyClick}
         >
@@ -795,7 +793,7 @@ const DateTimePicker = ({
                   })}
                 </OrderedList>
               ) : (
-                <>
+                <div className={`${iotPrefix}--date-time-picker__custom-wrapper`}>
                   {showRelativeOption ? (
                     <FormGroup
                       legendText={strings.customRangeLabel}
@@ -840,6 +838,7 @@ const DateTimePicker = ({
                                 ? `${i18n.decrement} ${i18n.number}`
                                 : null
                             }
+                            light
                           />
                           <Select
                             {...others}
@@ -849,6 +848,7 @@ const DateTimePicker = ({
                             }
                             onChange={onRelativeLastIntervalChange}
                             hideLabel
+                            light
                           >
                             {intervals.map((interval, i) => {
                               return (
@@ -874,6 +874,7 @@ const DateTimePicker = ({
                             defaultValue={relativeValue ? relativeValue.relativeToWhen : ''}
                             onChange={onRelativeToWhenChange}
                             hideLabel
+                            light
                           >
                             {relatives.map((relative, i) => {
                               return (
@@ -896,6 +897,7 @@ const DateTimePicker = ({
                               onChange={onRelativeToTimeChange}
                               spinner
                               autoComplete="off"
+                              light
                             />
                           ) : null}
                         </div>
@@ -907,7 +909,7 @@ const DateTimePicker = ({
                         <DatePicker
                           datePickerType="range"
                           dateFormat="m/d/Y"
-                          ref={datePickerRef}
+                          ref={handleDatePickerRef}
                           onChange={onDatePickerChange}
                           onClose={onDatePickerClose}
                           value={
@@ -941,6 +943,7 @@ const DateTimePicker = ({
                               onChange={onAbsoluteStartTimeChange}
                               spinner
                               autoComplete="off"
+                              light
                             />
                             <TimePickerSpinner
                               id={`${id}-end-time`}
@@ -950,6 +953,7 @@ const DateTimePicker = ({
                               onChange={onAbsoluteEndTimeChange}
                               spinner
                               autoComplete="off"
+                              light
                             />
                           </div>
                         </FormGroup>
@@ -958,7 +962,7 @@ const DateTimePicker = ({
                       )}
                     </div>
                   )}
-                </>
+                </div>
               )}
             </div>
           </FlyoutMenu>

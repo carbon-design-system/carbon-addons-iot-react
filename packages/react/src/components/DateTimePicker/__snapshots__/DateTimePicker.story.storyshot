@@ -21,7 +21,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         className="iot--date-time-picker__field"
         data-testid="date-time-picker__field"
       >
-        <div
+        <span
           className="bx--tooltip--definition bx--tooltip--a11y"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -29,22 +29,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <button
             aria-describedby="definition-tooltip-2"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+            onBlur={[Function]}
             onFocus={[Function]}
             type="button"
           >
             Last 30 minutes
           </button>
-          <div
+          <span
             className="bx--assistive-text"
             id="definition-tooltip-2"
             role="tooltip"
           >
             2018-10-28 07:04 to Now
-          </div>
-        </div>
+          </span>
+        </span>
       </div>
       <div
         className="iot--flyout-menu iot--flyout-menu__bottom"
+        data-testid="flyout-menu-container"
         style={
           Object {
             "--tooltip-visibility": "hidden",
@@ -52,19 +54,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Calendar
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Calendar"
@@ -88,7 +96,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           data-floating-menu-container={true}
         >
           <div
-            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -129,6 +136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
     >
       <div
         className="iot--flyout-menu iot--flyout-menu__bottom"
+        data-testid="flyout-menu-container"
         style={
           Object {
             "--tooltip-visibility": "hidden",
@@ -136,19 +144,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Calendar
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Calendar"
@@ -172,7 +186,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           data-floating-menu-container={true}
         >
           <div
-            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -215,7 +228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         className="iot--date-time-picker__field"
         data-testid="date-time-picker__field"
       >
-        <div
+        <span
           className="bx--tooltip--definition bx--tooltip--a11y"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -223,22 +236,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <button
             aria-describedby="definition-tooltip-10"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+            onBlur={[Function]}
             onFocus={[Function]}
             type="button"
           >
             Last 30 minutes
           </button>
-          <div
+          <span
             className="bx--assistive-text"
             id="definition-tooltip-10"
             role="tooltip"
           >
             2018-10-28 07:04 to Now
-          </div>
-        </div>
+          </span>
+        </span>
       </div>
       <div
         className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
+        data-testid="flyout-menu-container"
         style={
           Object {
             "--tooltip-visibility": "hidden",
@@ -246,19 +261,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Calendar
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Calendar"
@@ -282,7 +303,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           data-floating-menu-container={true}
         >
           <div
-            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -333,6 +353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       </div>
       <div
         className="iot--flyout-menu iot--flyout-menu__bottom"
+        data-testid="flyout-menu-container"
         style={
           Object {
             "--tooltip-visibility": "hidden",
@@ -340,19 +361,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Calendar
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Calendar"
@@ -376,7 +403,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           data-floating-menu-container={true}
         >
           <div
-            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -427,6 +453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       </div>
       <div
         className="iot--flyout-menu iot--flyout-menu__bottom"
+        data-testid="flyout-menu-container"
         style={
           Object {
             "--tooltip-visibility": "hidden",
@@ -434,19 +461,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Calendar
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Calendar"
@@ -470,7 +503,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           data-floating-menu-container={true}
         >
           <div
-            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -513,7 +545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         className="iot--date-time-picker__field"
         data-testid="date-time-picker__field"
       >
-        <div
+        <span
           className="bx--tooltip--definition bx--tooltip--a11y"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -521,22 +553,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <button
             aria-describedby="definition-tooltip-4"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+            onBlur={[Function]}
             onFocus={[Function]}
             type="button"
           >
             Last 12 hours
           </button>
-          <div
+          <span
             className="bx--assistive-text"
             id="definition-tooltip-4"
             role="tooltip"
           >
             2018-10-27 19:34 to Now
-          </div>
-        </div>
+          </span>
+        </span>
       </div>
       <div
         className="iot--flyout-menu iot--flyout-menu__bottom"
+        data-testid="flyout-menu-container"
         style={
           Object {
             "--tooltip-visibility": "hidden",
@@ -544,19 +578,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Calendar
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Calendar"
@@ -580,7 +620,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           data-floating-menu-container={true}
         >
           <div
-            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -631,6 +670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       </div>
       <div
         className="iot--flyout-menu iot--flyout-menu__bottom"
+        data-testid="flyout-menu-container"
         style={
           Object {
             "--tooltip-visibility": "hidden",
@@ -638,19 +678,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Calendar
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Calendar"
@@ -674,7 +720,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           data-floating-menu-container={true}
         >
           <div
-            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -717,7 +762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         className="iot--date-time-picker__field"
         data-testid="date-time-picker__field"
       >
-        <div
+        <span
           className="bx--tooltip--definition bx--tooltip--a11y"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -725,22 +770,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <button
             aria-describedby="definition-tooltip-8"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+            onBlur={[Function]}
             onFocus={[Function]}
             type="button"
           >
             Last 12 hours
           </button>
-          <div
+          <span
             className="bx--assistive-text"
             id="definition-tooltip-8"
             role="tooltip"
           >
             2018-10-27 19:34 to Now
-          </div>
-        </div>
+          </span>
+        </span>
       </div>
       <div
         className="iot--flyout-menu iot--flyout-menu__bottom"
+        data-testid="flyout-menu-container"
         style={
           Object {
             "--tooltip-visibility": "hidden",
@@ -748,19 +795,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Calendar
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Calendar"
@@ -784,7 +837,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           data-floating-menu-container={true}
         >
           <div
-            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -827,7 +879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         className="iot--date-time-picker__field"
         data-testid="date-time-picker__field"
       >
-        <div
+        <span
           className="bx--tooltip--definition bx--tooltip--a11y"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -835,22 +887,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <button
             aria-describedby="definition-tooltip-6"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+            onBlur={[Function]}
             onFocus={[Function]}
             type="button"
           >
             Last 12 hours
           </button>
-          <div
+          <span
             className="bx--assistive-text"
             id="definition-tooltip-6"
             role="tooltip"
           >
             2018-10-27 19:34 to Now
-          </div>
-        </div>
+          </span>
+        </span>
       </div>
       <div
         className="iot--flyout-menu iot--flyout-menu__bottom"
+        data-testid="flyout-menu-container"
         style={
           Object {
             "--tooltip-visibility": "hidden",
@@ -858,19 +912,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         }
       >
         <button
+          aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Calendar
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Calendar"
@@ -894,7 +954,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           data-floating-menu-container={true}
         >
           <div
-            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"

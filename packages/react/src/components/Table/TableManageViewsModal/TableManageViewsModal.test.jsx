@@ -47,6 +47,17 @@ describe('TableManageViewsModal', () => {
     jest.clearAllMocks();
   });
 
+  it('should be selectable by testID or testId', () => {
+    const { rerender } = render(
+      <TableManageViewsModal views={testViews} actions={actions} open testID={testID} />
+    );
+    expect(screen.getByTestId(testID)).toBeDefined();
+    rerender(
+      <TableManageViewsModal views={testViews} actions={actions} open testId={`${testID}-two`} />
+    );
+    expect(screen.getByTestId(`${testID}-two`)).toBeDefined();
+  });
+
   it('shows the search input', () => {
     render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
     expect(screen.getByPlaceholderText(i18n.searchPlaceholderText)).toBeVisible();

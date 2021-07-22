@@ -6,12 +6,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 >
   <div
     className="iot--tile-catalog"
+    data-testid="tile-catalog"
   >
     <div
       className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
     />
     <div
       className="iot--tile-group"
+      data-testid="tile-catalog-loading-group"
     >
       <div
         className="bx--tile iot--tile-catalog--empty-tile"
@@ -147,16 +150,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 >
   <div
     className="iot--tile-catalog"
+    data-testid="tile-catalog"
   >
     <div
       className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
     />
     <div
       className="iot--tile-group"
+      data-testid="tile-catalog-group"
     >
       <input
         checked={true}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test1"
         id="test1"
         name="entityType"
         onChange={[Function]}
@@ -240,6 +247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test2"
         id="test2"
         name="entityType"
         onChange={[Function]}
@@ -323,6 +331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test3"
         id="test3"
         name="entityType"
         onChange={[Function]}
@@ -406,6 +415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test4"
         id="test4"
         name="entityType"
         onChange={[Function]}
@@ -489,6 +499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test5"
         id="test5"
         name="entityType"
         onChange={[Function]}
@@ -572,6 +583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test6"
         id="test6"
         name="entityType"
         onChange={[Function]}
@@ -655,6 +667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test7"
         id="test7"
         name="entityType"
         onChange={[Function]}
@@ -777,12 +790,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   >
     <div
       className="iot--tile-catalog"
+      data-testid="tile-catalog"
     >
       <div
         className="iot--tile-catalog--header"
+        data-testid="tile-catalog-header"
       />
       <div
         className="bx--tile iot--tile-catalog--empty-tile"
+        data-testid="tile-catalog-empty"
       >
         In error state
       </div>
@@ -797,16 +813,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 >
   <div
     className="iot--tile-catalog"
+    data-testid="tile-catalog"
   >
     <div
       className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
     />
     <div
       className="iot--tile-group"
+      data-testid="tile-catalog-group"
     >
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test1"
         id="test1"
         name="entityType"
         onChange={[Function]}
@@ -890,6 +910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test2"
         id="test2"
         name="entityType"
         onChange={[Function]}
@@ -973,6 +994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test3"
         id="test3"
         name="entityType"
         onChange={[Function]}
@@ -1056,6 +1078,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test4"
         id="test4"
         name="entityType"
         onChange={[Function]}
@@ -1139,6 +1162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test5"
         id="test5"
         name="entityType"
         onChange={[Function]}
@@ -1222,6 +1246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test6"
         id="test6"
         name="entityType"
         onChange={[Function]}
@@ -1305,6 +1330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test7"
         id="test7"
         name="entityType"
         onChange={[Function]}
@@ -1420,12 +1446,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 >
   <div
     className="iot--tile-catalog"
+    data-testid="tile-catalog"
   >
     <div
       className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
     />
     <div
       className="iot--tile-group"
+      data-testid="tile-catalog-loading-group"
     >
       <div
         className="bx--tile iot--tile-catalog--empty-tile"
@@ -1561,16 +1590,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 >
   <div
     className="iot--tile-catalog"
+    data-testid="tile-catalog"
   >
     <div
       className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
     />
     <div
       className="iot--tile-group"
+      data-testid="tile-catalog-group"
     >
       <input
         checked={true}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test1"
         id="test1"
         name="entityType"
         onChange={[Function]}
@@ -1654,6 +1687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test2"
         id="test2"
         name="entityType"
         onChange={[Function]}
@@ -1737,6 +1771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test3"
         id="test3"
         name="entityType"
         onChange={[Function]}
@@ -1820,6 +1855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test4"
         id="test4"
         name="entityType"
         onChange={[Function]}
@@ -1903,6 +1939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test5"
         id="test5"
         name="entityType"
         onChange={[Function]}
@@ -1986,6 +2023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test6"
         id="test6"
         name="entityType"
         onChange={[Function]}
@@ -2091,6 +2129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </span>
         <div
           className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
+          data-testid="iot-simple-pagination-backward-button"
           role="button"
           tabIndex={-1}
         >
@@ -2114,6 +2153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
+          data-testid="iot-simple-pagination-forward-button"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"
@@ -2149,26 +2189,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 >
   <div
     className="iot--tile-catalog"
+    data-testid="tile-catalog"
   >
     <div
       className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
     >
       <div
-        className="bx--toolbar-action bx--toolbar-search-container-expandable"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        tabIndex="0"
+        aria-labelledby="entityType-searchbox-search"
+        className="bx--search bx--search--sm bx--toolbar-search-container-expandable"
+        role="search"
       >
         <div
-          aria-labelledby="entityType-searchbox-search"
-          className="bx--search bx--search--sm"
-          role="search"
+          className="bx--search-magnifier"
         >
           <svg
             aria-hidden={true}
-            className="bx--search-magnifier"
+            className="bx--search-magnifier-icon"
             fill="currentColor"
             focusable="false"
             height={16}
@@ -2181,55 +2218,60 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
             />
           </svg>
-          <label
-            className="bx--label"
-            htmlFor="entityType-searchbox"
-            id="entityType-searchbox-search"
-          >
-            Search catalog
-          </label>
-          <input
-            autoComplete="off"
-            className="bx--search-input"
-            id="entityType-searchbox"
-            onChange={[Function]}
-            onKeyDown={[Function]}
-            placeholder="Search catalog"
-            role="searchbox"
-            tabIndex="-1"
-            type="text"
-            value=""
-          />
-          <button
-            aria-label="Clear search input"
-            className="bx--search-close bx--search-close--hidden"
-            onClick={[Function]}
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
         </div>
+        <label
+          className="bx--label"
+          htmlFor="entityType-searchbox"
+          id="entityType-searchbox-search"
+        >
+          Search catalog
+        </label>
+        <input
+          autoComplete="off"
+          className="bx--search-input"
+          data-testid="tile-catalog-search-input"
+          id="entityType-searchbox"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Search catalog"
+          role="searchbox"
+          tabIndex="0"
+          type="text"
+          value=""
+        />
+        <button
+          aria-label="Clear search input"
+          className="bx--search-close bx--search-close--hidden"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
     <div
       className="iot--tile-group"
+      data-testid="tile-catalog-group"
     >
       <input
         checked={true}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test1"
         id="test1"
         name="entityType"
         onChange={[Function]}
@@ -2313,6 +2355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test2"
         id="test2"
         name="entityType"
         onChange={[Function]}
@@ -2396,6 +2439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test3"
         id="test3"
         name="entityType"
         onChange={[Function]}
@@ -2479,6 +2523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test4"
         id="test4"
         name="entityType"
         onChange={[Function]}
@@ -2562,6 +2607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test5"
         id="test5"
         name="entityType"
         onChange={[Function]}
@@ -2645,6 +2691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <input
         checked={false}
         className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test6"
         id="test6"
         name="entityType"
         onChange={[Function]}
@@ -2750,6 +2797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </span>
         <div
           className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
+          data-testid="iot-simple-pagination-backward-button"
           role="button"
           tabIndex={-1}
         >
@@ -2773,6 +2821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
+          data-testid="iot-simple-pagination-forward-button"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"

@@ -190,6 +190,9 @@ export const formatGraphTick = (
   if (interval === 'month' && sameYear) {
     return currentTimestamp.format('MMM');
   }
+  if (interval === 'year' && index === 0) {
+    return currentTimestamp.format('YYYY');
+  }
   if (interval === 'year' && sameYear) {
     return ''; // if we're on the year boundary and the same year, then don't repeat
   }
