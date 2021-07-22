@@ -445,6 +445,9 @@ const TimeSeriesCard = ({
       },
       containerResizable: true,
       tooltip: {
+        truncation: {
+          type: 'none',
+        },
         valueFormatter: (tooltipValue) =>
           chartValueFormatter(tooltipValue, newSize, unit, locale, decimalPrecision),
         customHTML: (...args) =>

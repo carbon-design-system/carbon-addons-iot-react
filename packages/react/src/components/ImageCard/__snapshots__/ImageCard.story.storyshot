@@ -175,6 +175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                     }
                   >
                     <svg
+                      data-testid="card-icon"
                       fill="purple"
                       focusable="true"
                       height={25}
@@ -228,6 +229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                     }
                   >
                     <svg
+                      data-testid="card-icon"
                       fill="red"
                       focusable="true"
                       height={25}
@@ -476,6 +478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 >
                   <svg
                     aria-hidden={true}
+                    data-testid="card-icon"
                     fill="purple"
                     focusable="false"
                     height={25}
@@ -625,6 +628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 >
                   <svg
                     aria-hidden={true}
+                    data-testid="card-icon"
                     fill="blue"
                     focusable="false"
                     height={25}
