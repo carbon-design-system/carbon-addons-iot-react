@@ -696,7 +696,7 @@ const DateTimePicker = ({
           kind="primary"
           className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-apply`}
           {...others}
-          onClick={onApplyClick}
+          onClick={() => onApplyClick()}
         >
           {strings.applyBtnLabel}
         </Button>
