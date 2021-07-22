@@ -80,7 +80,8 @@
 
     .#{$iot-prefix}--date-time-picker__field {
       padding-left: $spacing-05;
-      border-bottom: 1px solid $carbon--gray-50 & > span {
+
+      & > span {
         overflow: hidden;
         text-overflow: ellipsis;
       }
