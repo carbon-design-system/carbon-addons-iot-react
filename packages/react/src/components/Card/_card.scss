@@ -8,14 +8,15 @@ $iot-header-padding: $spacing-05;
 
 .#{$iot-prefix}--card--wrapper {
   background: white;
-  border: solid $spacing-01 transparent;
+  box-sizing: border-box;
+  outline: solid $spacing-01 transparent;
   height: var(--card-default-height);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 
   &__selected {
-    border: solid $spacing-01 $interactive-02;
+    outline: solid $spacing-01 $interactive-02;
     box-sizing: border-box;
   }
 }
@@ -31,18 +32,26 @@ $iot-header-padding: $spacing-05;
 }
 
 .#{$iot-prefix}--card--title {
+  display: flex;
   flex: 1;
+  flex-direction: column;
   // min-width value is required to ensure flex child with text properly truncates
   // https://css-tricks.com/flexbox-truncated-text/
   min-width: 0;
-  display: flex;
+  padding-top: 0.85rem;
 
   & + *:not(.#{$iot-prefix}--card--toolbar) {
     margin-left: $spacing-05;
   }
 }
 
-.#{$iot-prefix}--card--title--text {
+.#{$iot-prefix}--card--title--wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.#{$iot-prefix}--card--title--text,
+.#{$iot-prefix}--card--subtitle--text {
   @include type-style('productive-heading-01');
   display: block;
   overflow: hidden;
@@ -50,17 +59,18 @@ $iot-header-padding: $spacing-05;
   white-space: nowrap;
 }
 
+.#{$iot-prefix}--card--subtitle--text {
+  font-weight: normal;
+  width: calc(100% - 1.75rem);
+}
+
 .#{$iot-prefix}--card--header {
   flex: 0 0 $spacing-09;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   font-weight: bold;
-  padding: 0 $iot-header-padding;
-}
-
-.#{$iot-prefix}--card--header > .#{$iot-prefix}--card--toolbar {
-  margin-right: calc(#{$iot-header-padding} * -1);
+  padding: 0 0 0 $iot-header-padding;
 }
 
 html[dir='rtl'] .#{$iot-prefix}--card--header .#{$iot-prefix}--card--toolbar {
@@ -70,6 +80,7 @@ html[dir='rtl'] .#{$iot-prefix}--card--header .#{$iot-prefix}--card--toolbar {
 
 .#{$iot-prefix}--card--content {
   flex: 1;
+  padding: 0 $spacing-05 $spacing-05;
   position: relative;
   height: var(--card-content-height);
   overflow-x: visible;
@@ -83,6 +94,12 @@ html[dir='rtl'] .#{$iot-prefix}--card--header .#{$iot-prefix}--card--toolbar {
 .#{$iot-prefix}--card--skeleton-wrapper {
   padding: var(--card-content-padding);
   width: 80%;
+}
+
+.#{$iot-prefix}--card--footer--wrapper {
+  border-top: 1px solid $ui-03;
+  padding: 0 $spacing-05;
+  max-height: 3rem;
 }
 
 .#{$iot-prefix}--card--empty-message-wrapper {

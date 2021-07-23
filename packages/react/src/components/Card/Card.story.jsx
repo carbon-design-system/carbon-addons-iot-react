@@ -6,6 +6,7 @@ import { Tree16 } from '@carbon/icons-react';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
+import Button from '../Button';
 
 import CardREADME from './Card.mdx';
 import Card from './Card';
@@ -125,6 +126,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           'title',
           'Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.'
         )}
+        subtitle="lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse"
         id="facilitycard-basic"
         size={size}
         isLoading={boolean('isloading', false)}
@@ -144,6 +146,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         tabIndex={0}
+        cardFooter={() => <Button kind="ghost">Footer Content</Button>}
         tooltip={<p>this is the external tooltip content</p>}
       />
     </div>
@@ -179,6 +182,7 @@ export const BasicWithRenderProp = () => {
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         tabIndex={0}
+        cardFooter={() => <Button kind="ghost">Footer Content</Button>}
       >
         {(childSize) => (
           <p>
