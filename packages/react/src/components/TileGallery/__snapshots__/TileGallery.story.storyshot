@@ -13,7 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   >
     <div
       className="page-title-bar"
-      data-testid="page-title-bar"
+      data-testid="stateful-tile-gallery-page-title-bar"
       style={
         Object {
           "--header-offset": "48px",
@@ -45,6 +45,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="extra-content"
+            data-testid="stateful-tile-gallery-extra-content"
           >
             <div>
               <div
@@ -52,21 +53,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--search bx--search--xl"
                 role="search"
               >
-                <svg
-                  aria-hidden={true}
+                <div
                   className="bx--search-magnifier"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="bx--search-magnifier-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                    />
+                  </svg>
+                </div>
                 <label
                   className="bx--label"
                   htmlFor="gallery-search"
@@ -77,6 +82,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <input
                   autoComplete="off"
                   className="bx--search-input"
+                  data-testid="stateful-tile-gallery-search-input"
                   id="gallery-search"
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -116,12 +122,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--content-switcher"
+              data-testid="stateful-tile-gallery-switcher"
               onChange={[Function]}
               role="tablist"
             >
               <button
                 aria-selected={false}
                 className="bx--content-switcher-btn"
+                data-testid="stateful-tile-gallery-switcher-list-switch"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="tab"
@@ -130,6 +138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="List"
                 >
                   List
                 </span>
@@ -137,6 +146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <button
                 aria-selected={true}
                 className="bx--content-switcher-btn bx--content-switcher--selected"
+                data-testid="stateful-tile-gallery-switcher-grid-switch"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="tab"
@@ -145,16 +155,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="Grid"
                 >
                   Grid
                 </span>
               </button>
             </div>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -167,19 +184,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="tile-gallery"
+            data-testid="stateful-tile-gallery"
           >
             <div
               className="tile-gallery--section"
+              data-testid="stateful-tile-gallery-section-id1"
             >
               <ul
                 className="bx--accordion bx--accordion--end"
+                data-testid="stateful-tile-gallery-section-id1-accordion"
               >
                 <li
                   className="bx--accordion__item bx--accordion__item--active"
+                  data-testid="stateful-tile-gallery-section-id1-accordion-item"
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-78"
+                    aria-controls="accordion-item-1447"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -209,13 +230,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-78"
+                    id="accordion-item-1447"
                   >
                     <div
                       className="tile-gallery--section--items"
+                      data-testid="stateful-tile-gallery-section-id1-items"
                     >
                       <a
                         className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        data-testid="stateful-tile-gallery-section-id1-item-0"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         rel={null}
@@ -274,6 +297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             </span>
                             <div
                               className="overflow-menu"
+                              data-testId="stateful-tile-gallery-section-id1-item-0-overflow-menu"
                               onClick={[Function]}
                               role="presentation"
                             >
@@ -333,6 +357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </a>
                       <a
                         className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        data-testid="stateful-tile-gallery-section-id1-item-1"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         rel={null}
@@ -419,6 +444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             </span>
                             <div
                               className="overflow-menu"
+                              data-testId="stateful-tile-gallery-section-id1-item-1-overflow-menu"
                               onClick={[Function]}
                               role="presentation"
                             >
@@ -478,6 +504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </a>
                       <a
                         className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        data-testid="stateful-tile-gallery-section-id1-item-2"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         rel={null}
@@ -536,6 +563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             </span>
                             <div
                               className="overflow-menu"
+                              data-testId="stateful-tile-gallery-section-id1-item-2-overflow-menu"
                               onClick={[Function]}
                               role="presentation"
                             >
@@ -600,16 +628,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="tile-gallery--section"
+              data-testid="stateful-tile-gallery-section-id2"
             >
               <ul
                 className="bx--accordion bx--accordion--end"
+                data-testid="stateful-tile-gallery-section-id2-accordion"
               >
                 <li
                   className="bx--accordion__item bx--accordion__item--active"
+                  data-testid="stateful-tile-gallery-section-id2-accordion-item"
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-79"
+                    aria-controls="accordion-item-1448"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -639,13 +670,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-79"
+                    id="accordion-item-1448"
                   >
                     <div
                       className="tile-gallery--section--items"
+                      data-testid="stateful-tile-gallery-section-id2-items"
                     >
                       <a
                         className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        data-testid="stateful-tile-gallery-section-id2-item-0"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         rel={null}
@@ -704,6 +737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             </span>
                             <div
                               className="overflow-menu"
+                              data-testId="stateful-tile-gallery-section-id2-item-0-overflow-menu"
                               onClick={[Function]}
                               role="presentation"
                             >
@@ -763,6 +797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </a>
                       <a
                         className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        data-testid="stateful-tile-gallery-section-id2-item-1"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         rel={null}
@@ -849,6 +884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             </span>
                             <div
                               className="overflow-menu"
+                              data-testId="stateful-tile-gallery-section-id2-item-1-overflow-menu"
                               onClick={[Function]}
                               role="presentation"
                             >
@@ -908,6 +944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </a>
                       <a
                         className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        data-testid="stateful-tile-gallery-section-id2-item-2"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         rel={null}
@@ -966,6 +1003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             </span>
                             <div
                               className="overflow-menu"
+                              data-testId="stateful-tile-gallery-section-id2-item-2-overflow-menu"
                               onClick={[Function]}
                               role="presentation"
                             >
@@ -1049,6 +1087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   >
     <a
       className="bx--link bx--tile bx--tile--clickable not-active tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+      data-testid="tile-gallery-item"
       onClick={[Function]}
       onKeyDown={[Function]}
       rel={null}
@@ -1118,6 +1157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </span>
           <div
             className="overflow-menu"
+            data-testId="tile-gallery-item-overflow-menu"
             onClick={[Function]}
             role="presentation"
           >
@@ -1192,6 +1232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   >
     <a
       className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-list-title"
+      data-testid="tile-gallery-item"
       onClick={[Function]}
       onKeyDown={[Function]}
       rel={null}
@@ -1222,6 +1263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </span>
           <div
             className="overflow-menu"
+            data-testId="tile-gallery-item-overflow-menu"
             onClick={[Function]}
             role="presentation"
           >
@@ -1309,7 +1351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   >
     <div
       className="page-title-bar"
-      data-testid="page-title-bar"
+      data-testid="stateful-tile-gallery-page-title-bar"
       style={
         Object {
           "--header-offset": "48px",
@@ -1341,6 +1383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="extra-content"
+            data-testid="stateful-tile-gallery-extra-content"
           >
             <div>
               <div
@@ -1348,21 +1391,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--search bx--search--xl"
                 role="search"
               >
-                <svg
-                  aria-hidden={true}
+                <div
                   className="bx--search-magnifier"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden={true}
+                    className="bx--search-magnifier-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                    />
+                  </svg>
+                </div>
                 <label
                   className="bx--label"
                   htmlFor="gallery-search"
@@ -1373,6 +1420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <input
                   autoComplete="off"
                   className="bx--search-input"
+                  data-testid="stateful-tile-gallery-search-input"
                   id="gallery-search"
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -1412,12 +1460,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--content-switcher"
+              data-testid="stateful-tile-gallery-switcher"
               onChange={[Function]}
               role="tablist"
             >
               <button
                 aria-selected={false}
                 className="bx--content-switcher-btn"
+                data-testid="stateful-tile-gallery-switcher-list-switch"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="tab"
@@ -1426,6 +1476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="__ListText__"
                 >
                   __ListText__
                 </span>
@@ -1433,6 +1484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <button
                 aria-selected={true}
                 className="bx--content-switcher-btn bx--content-switcher--selected"
+                data-testid="stateful-tile-gallery-switcher-grid-switch"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="tab"
@@ -1441,16 +1493,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--content-switcher__label"
+                  title="__GridText__"
                 >
                   __GridText__
                 </span>
               </button>
             </div>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -1463,19 +1522,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="tile-gallery"
+            data-testid="stateful-tile-gallery"
           >
             <div
               className="tile-gallery--section"
+              data-testid="stateful-tile-gallery-section-id1"
             >
               <ul
                 className="bx--accordion bx--accordion--end"
+                data-testid="stateful-tile-gallery-section-id1-accordion"
               >
                 <li
                   className="bx--accordion__item bx--accordion__item--active"
+                  data-testid="stateful-tile-gallery-section-id1-accordion-item"
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-84"
+                    aria-controls="accordion-item-1454"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1505,13 +1568,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-84"
+                    id="accordion-item-1454"
                   >
                     <div
                       className="tile-gallery--section--items"
+                      data-testid="stateful-tile-gallery-section-id1-items"
                     >
                       <a
                         className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                        data-testid="stateful-tile-gallery-section-id1-item-0"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         rel={null}
@@ -1570,6 +1635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             </span>
                             <div
                               className="overflow-menu"
+                              data-testId="stateful-tile-gallery-section-id1-item-0-overflow-menu"
                               onClick={[Function]}
                               role="presentation"
                             >
@@ -1660,16 +1726,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     >
       <div
         className="tile-gallery--section"
+        data-testid="tile-gallery-section"
       >
         <ul
           className="bx--accordion bx--accordion--end"
+          data-testid="tile-gallery-section-accordion"
         >
           <li
             className="bx--accordion__item bx--accordion__item--active"
+            data-testid="tile-gallery-section-accordion-item"
             onAnimationEnd={[Function]}
           >
             <button
-              aria-controls="accordion-item-82"
+              aria-controls="accordion-item-1451"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -1699,13 +1768,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </button>
             <div
               className="bx--accordion__content"
-              id="accordion-item-82"
+              id="accordion-item-1451"
             >
               <div
                 className="tile-gallery--section--items"
+                data-testid="tile-gallery-section-items"
               >
                 <a
                   className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                  data-testid="tile-gallery-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   rel={null}
@@ -1775,6 +1846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                       <div
                         className="overflow-menu"
+                        data-testId="tile-gallery-item-overflow-menu"
                         onClick={[Function]}
                         role="presentation"
                       >
@@ -1834,6 +1906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </a>
                 <a
                   className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                  data-testid="tile-gallery-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   rel={null}
@@ -1899,6 +1972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                       <div
                         className="overflow-menu"
+                        data-testId="tile-gallery-item-overflow-menu"
                         onClick={[Function]}
                         role="presentation"
                       >
@@ -1958,6 +2032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </a>
                 <a
                   className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                  data-testid="tile-gallery-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   rel={null}
@@ -2051,6 +2126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                       <div
                         className="overflow-menu"
+                        data-testId="tile-gallery-item-overflow-menu"
                         onClick={[Function]}
                         role="presentation"
                       >
@@ -2115,16 +2191,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       </div>
       <div
         className="tile-gallery--section"
+        data-testid="tile-gallery-section"
       >
         <ul
           className="bx--accordion bx--accordion--end"
+          data-testid="tile-gallery-section-accordion"
         >
           <li
             className="bx--accordion__item bx--accordion__item--active"
+            data-testid="tile-gallery-section-accordion-item"
             onAnimationEnd={[Function]}
           >
             <button
-              aria-controls="accordion-item-83"
+              aria-controls="accordion-item-1452"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -2154,13 +2233,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </button>
             <div
               className="bx--accordion__content"
-              id="accordion-item-83"
+              id="accordion-item-1452"
             >
               <div
                 className="tile-gallery--section--items"
+                data-testid="tile-gallery-section-items"
               >
                 <a
                   className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                  data-testid="tile-gallery-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   rel={null}
@@ -2254,6 +2335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                       <div
                         className="overflow-menu"
+                        data-testId="tile-gallery-item-overflow-menu"
                         onClick={[Function]}
                         role="presentation"
                       >
@@ -2334,12 +2416,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   >
     <div
       className="bx--content-switcher"
+      data-testid="tile-gallery-view-switcher"
       onChange={[Function]}
       role="tablist"
     >
       <button
         aria-selected={true}
         className="bx--content-switcher-btn bx--content-switcher--selected"
+        data-testid="tile-gallery-view-switcher-list-switch"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="tab"
@@ -2348,6 +2432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <span
           className="bx--content-switcher__label"
+          title="List"
         >
           List
         </span>
@@ -2355,6 +2440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <button
         aria-selected={false}
         className="bx--content-switcher-btn"
+        data-testid="tile-gallery-view-switcher-grid-switch"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="tab"
@@ -2363,6 +2449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <span
           className="bx--content-switcher__label"
+          title="Grid"
         >
           Grid
         </span>
@@ -2392,19 +2479,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     >
       <div
         className="tile-gallery"
+        data-testid="tile-gallery"
       >
         <div
           className="tile-gallery--section"
+          data-testid="tile-gallery-section"
         >
           <ul
             className="bx--accordion bx--accordion--end"
+            data-testid="tile-gallery-section-accordion"
           >
             <li
               className="bx--accordion__item bx--accordion__item--active"
+              data-testid="tile-gallery-section-accordion-item"
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-80"
+                aria-controls="accordion-item-1449"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2434,13 +2525,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-80"
+                id="accordion-item-1449"
               >
                 <div
                   className="tile-gallery--section--items"
+                  data-testid="tile-gallery-section-items"
                 >
                   <a
                     className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    data-testid="tile-gallery-item"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     rel={null}
@@ -2510,6 +2603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         </span>
                         <div
                           className="overflow-menu"
+                          data-testId="tile-gallery-item-overflow-menu"
                           onClick={[Function]}
                           role="presentation"
                         >
@@ -2569,6 +2663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </a>
                   <a
                     className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    data-testid="tile-gallery-item"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     rel={null}
@@ -2634,6 +2729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         </span>
                         <div
                           className="overflow-menu"
+                          data-testId="tile-gallery-item-overflow-menu"
                           onClick={[Function]}
                           role="presentation"
                         >
@@ -2693,6 +2789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </a>
                   <a
                     className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    data-testid="tile-gallery-item"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     rel={null}
@@ -2786,6 +2883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         </span>
                         <div
                           className="overflow-menu"
+                          data-testId="tile-gallery-item-overflow-menu"
                           onClick={[Function]}
                           role="presentation"
                         >
@@ -2850,16 +2948,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="tile-gallery--section"
+          data-testid="tile-gallery-section"
         >
           <ul
             className="bx--accordion bx--accordion--end"
+            data-testid="tile-gallery-section-accordion"
           >
             <li
               className="bx--accordion__item bx--accordion__item--active"
+              data-testid="tile-gallery-section-accordion-item"
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-81"
+                aria-controls="accordion-item-1450"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2889,13 +2990,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-81"
+                id="accordion-item-1450"
               >
                 <div
                   className="tile-gallery--section--items"
+                  data-testid="tile-gallery-section-items"
                 >
                   <a
                     className="bx--link bx--tile bx--tile--clickable null tile-gallery-item bx--tile bx--tile--clickable tile-card-title"
+                    data-testid="tile-gallery-item"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     rel={null}
@@ -2989,6 +3092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         </span>
                         <div
                           className="overflow-menu"
+                          data-testId="tile-gallery-item-overflow-menu"
                           onClick={[Function]}
                           role="presentation"
                         >

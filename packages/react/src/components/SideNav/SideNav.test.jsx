@@ -153,6 +153,13 @@ describe('SideNav', () => {
     };
   });
 
+  it('should be selectable by testId', () => {
+    testLibraryRender(<SideNav {...mockProps} testId="side_nav" />);
+    expect(screen.getByTestId('side_nav')).toBeDefined();
+    expect(screen.getByTestId('side_nav-link-0')).toBeDefined();
+    expect(screen.getByTestId('side_nav-menu-item-2')).toBeDefined();
+  });
+
   it('should render two levels of navigation links', () => {
     const wrapper = mount(<SideNav {...mockProps} />);
     expect(render(wrapper.find('ul'))).toHaveLength(2);

@@ -32,6 +32,7 @@ const propTypes = {
     close: PropTypes.string,
   }),
   children: PropTypes.node,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -48,6 +49,8 @@ const defaultProps = {
     close: 'Close',
   },
   children: undefined,
+  // TODO: set default testId in v3.
+  testId: '',
 };
 
 const TearSheet = ({
@@ -62,6 +65,7 @@ const TearSheet = ({
   goToPreviousSheet,
   i18n,
   children,
+  testId,
 }) => {
   const onCloseButton = () => {
     if (onClose) {
@@ -73,7 +77,8 @@ const TearSheet = ({
   };
   return (
     <div
-      data-testid={`${iotPrefix}--tear-sheet-${idx}`}
+      // TODO: use only testId in v3.
+      data-testid={testId || `${iotPrefix}--tear-sheet-${idx}`}
       className={classnames(`${iotPrefix}--tear-sheet`, className)}
     >
       <div
@@ -89,7 +94,8 @@ const TearSheet = ({
           tooltipAlignment="end"
           tooltipPosition="bottom"
           onClick={onCloseButton}
-          testId={`tearSheetCloseBtn${idx}`}
+          // TODO: use only testId in v3.
+          testId={testId ? `${testId}-close-button-${idx}` : `tearSheetCloseBtn${idx}`}
         />
         <h2>{title}</h2>
         <span className={`${iotPrefix}--tear-sheet--header--description`}>{description}</span>

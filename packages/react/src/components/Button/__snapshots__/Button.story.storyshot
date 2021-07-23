@@ -14,12 +14,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     }
   >
     <button
+      aria-describedby={null}
       aria-pressed={null}
       className="some-class iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
       type="button"
     >
@@ -30,21 +34,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
       className="some-class iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       href="#"
+      onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
     >
       Link
     </a>
      
     <p
+      aria-describedby={null}
       aria-pressed={null}
       className="some-class iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}
       href="#"
+      onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
       type="button"
     >
@@ -52,13 +63,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     </p>
      
     <a
+      aria-describedby={null}
       aria-pressed={null}
       className="some-class iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}
       href="#"
+      onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
       type="button"
     >
@@ -73,19 +88,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   className="storybook-container"
 >
   <button
-    className="some-class iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+    aria-describedby={null}
+    className="some-class iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
     data-testid="Button"
     disabled={false}
+    onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
     type="button"
   >
-    <span
+    <div
       className="bx--assistive-text"
+      onMouseEnter={[Function]}
     >
       Button icon
-    </span>
+    </div>
     <svg
       aria-hidden="true"
       aria-label="Button icon"
@@ -112,20 +132,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   className="storybook-container"
 >
   <button
+    aria-describedby={null}
     aria-pressed={null}
-    className="some-class iot--btn bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+    className="some-class iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
     data-testid="Button"
     disabled={false}
+    onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
     type="button"
   >
-    <span
+    <div
       className="bx--assistive-text"
+      onMouseEnter={[Function]}
     >
       Button icon
-    </span>
+    </div>
     <svg
       aria-hidden="true"
       aria-label="Button icon"
@@ -155,24 +180,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
     className="bx--btn-set"
   >
     <button
+      aria-describedby={null}
       aria-pressed={null}
       className="some-class iot--btn bx--btn bx--btn--secondary"
       data-testid="Button"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
       type="button"
     >
       Secondary button
     </button>
     <button
+      aria-describedby={null}
       aria-pressed={null}
       className="some-class iot--btn bx--btn bx--btn--primary"
       data-testid="Button"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
       type="button"
     >
@@ -187,11 +220,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   className="storybook-container"
 >
   <button
+    aria-describedby={null}
     aria-pressed={null}
     className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
     data-testid="Button"
     disabled={true}
+    onBlur={[Function]}
     onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
     type="button"
   >
@@ -238,11 +276,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   className="storybook-container"
 >
   <button
+    aria-describedby={null}
     aria-pressed={null}
     className="iot--btn bx--btn bx--btn--secondary bx--btn--disabled"
     data-testid="Button"
     disabled={true}
+    onBlur={[Function]}
     onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
     type="button"
   >
@@ -289,11 +332,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   className="storybook-container"
 >
   <button
+    aria-describedby={null}
     aria-pressed={null}
     className="iot--btn bx--btn bx--btn--primary"
     data-testid="Button"
     disabled={false}
+    onBlur={[Function]}
     onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
     type="button"
   >
@@ -319,7 +367,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
      
     <div
       className="bx--skeleton bx--btn"
-      size="small"
     />
   </div>
 </div>

@@ -7,17 +7,12 @@ import {
   Edit20,
   OverflowMenuVertical20,
 } from '@carbon/icons-react';
-import {
-  DataTable,
-  Button,
-  Tooltip,
-  OverflowMenu,
-  OverflowMenuItem,
-} from 'carbon-components-react';
+import { DataTable, Tooltip, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classnames from 'classnames';
 import isNil from 'lodash/isNil';
 import pick from 'lodash/pick';
 
+import Button from '../../Button';
 import deprecate from '../../../internal/deprecate';
 import {
   TableSearchPropTypes,
@@ -141,7 +136,13 @@ const propTypes = {
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
 
-  testID: PropTypes.string,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -150,7 +151,7 @@ const defaultProps = {
   },
   secondaryTitle: null,
   tooltip: null,
-  testID: '',
+  testId: '',
 };
 
 const TableToolbar = ({
@@ -204,16 +205,20 @@ const TableToolbar = ({
     ordering,
   },
   data,
+  // TODO: remove deprecated 'testID' in v3
   testID,
+  testId,
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   return (
     <CarbonTableToolbar
-      data-testid={testID}
+      // TODO: remove deprecated 'testID' in v3
+      data-testid={testID || testId}
       className={classnames(`${iotPrefix}--table-toolbar`, className)}
     >
       <TableBatchActions
-        data-testid={`${testID}-batch-actions`}
+        // TODO: remove deprecated 'testID' in v3
+        data-testid={`${testID || testId}-batch-actions`}
         className={`${iotPrefix}--table-batch-actions`}
         onCancel={onCancelBatchAction}
         shouldShowBatchActions={shouldShowBatchActions}
@@ -260,7 +265,8 @@ const TableToolbar = ({
         <div className={`${iotPrefix}--table-row-edit-actions`}>{rowEditBarButtons}</div>
       ) : (
         <TableToolbarContent
-          data-testid={`${testID}-content`}
+          // TODO: remove deprecated 'testID' in v3
+          data-testid={`${testID || testId}-content`}
           className={`${iotPrefix}--table-toolbar-content`}
         >
           {hasSearch ? (
@@ -284,11 +290,17 @@ const TableToolbar = ({
                 onApplySearch(event?.target?.value || defaultValue);
               }}
               disabled={isDisabled}
-              data-testid={`${testID}-search`}
+              // TODO: remove deprecated 'testID' in v3
+              data-testid={`${testID || testId}-search`}
             />
           ) : null}
           {totalFilters > 0 ? (
-            <Button kind="secondary" onClick={onClearAllFilters} disabled={isDisabled}>
+            <Button
+              kind="secondary"
+              onClick={onClearAllFilters}
+              disabled={isDisabled}
+              testId={`${testId}-clear-filters-button`}
+            >
               {i18n.clearAllFilters}
             </Button>
           ) : null}

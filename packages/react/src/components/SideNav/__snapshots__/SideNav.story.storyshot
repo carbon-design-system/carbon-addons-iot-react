@@ -79,20 +79,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           data-testid="header-action-group"
         >
           <button
+            aria-describedby={null}
             aria-label="user"
             aria-pressed={null}
-            className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+            className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-user-global"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
-            <span
+            <div
               className="bx--assistive-text"
+              onMouseEnter={[Function]}
             >
               user
-            </span>
+            </div>
             <svg
               aria-hidden={true}
               className="bx--header__menu-item bx--header__menu-title"
@@ -120,6 +126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       aria-hidden={true}
       aria-label="Side navigation"
       className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
+      data-testid="side-nav"
       onBlur={[Function]}
       onFocus={[Function]}
       onMouseEnter={[Function]}
@@ -188,6 +195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             >
               <button
                 className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-0"
                 label="Yet another link"
                 onClick={[Function]}
                 title="Yet another link"
@@ -207,6 +215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           <a
             aria-label="Devices"
             className="bx--side-nav__link"
+            data-testid="side-nav-link-1"
             href="https://google.com"
             label="Devices"
             target="_blank"
@@ -302,6 +311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             >
               <button
                 className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-2"
                 label="Link 1"
                 onClick={[Function]}
                 title="Link 1"
@@ -318,6 +328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             >
               <a
                 className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-2"
                 href="/?path=/story/watson-iot-sidenav--sidenav-component"
                 label="Link 2"
                 onClick={[Function]}
@@ -392,6 +403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             >
               <button
                 className="bx--side-nav__link bx--side-nav__link--current"
+                data-testid="side-nav-menu-item-3"
                 label="Yet another link"
                 onClick={[Function]}
                 title="Yet another link"

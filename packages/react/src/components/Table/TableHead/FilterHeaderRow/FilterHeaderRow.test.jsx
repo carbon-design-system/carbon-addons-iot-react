@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { ComboBox, TextInput } from 'carbon-components-react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { settings } from '../../../../constants/Settings';
 
@@ -20,6 +20,18 @@ describe('FilterHeaderRow', () => {
   });
   afterAll(() => {
     console.error.mockRestore();
+  });
+
+  it('should be selectable by testId', () => {
+    render(
+      <FilterHeaderRow
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[{ id: 'col1', isFilterable: true }]}
+        testId="filter_header_row"
+      />
+    );
+    expect(screen.getByTestId('filter_header_row')).toBeDefined();
   });
 
   it('text input change updates state', () => {

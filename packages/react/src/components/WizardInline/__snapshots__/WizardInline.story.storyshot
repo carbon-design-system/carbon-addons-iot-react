@@ -6,6 +6,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
 >
   <div
     className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+    data-testid="wizard-inline"
   >
     <div
       className="bx--modal-container"
@@ -13,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="iot--wizard-inline__header page-title-bar"
-        data-testid="page-title-bar"
+        data-testid="wizard-inline-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -49,10 +50,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             className="page-title-bar-header-right"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--modal-close iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Close"
               type="button"
@@ -336,6 +343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       >
         <div
           className="iot--wizard-inline__sidebar"
+          data-testid="wizard-inline-sidebar"
           style={
             Object {
               "--min-width": "200px",
@@ -350,7 +358,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           className="bx--modal-content"
           data-id="WizardInlineContent"
         >
-          <div>
+          <div
+            data-testid="wizard-inline-content"
+          >
             <div
               style={
                 Object {
@@ -383,24 +393,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           </div>
           <div
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            data-testid="wizard-inline-footer"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Cancel
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -420,6 +441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
 >
   <div
     className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+    data-testid="wizard-inline"
   >
     <div
       className="bx--modal-container"
@@ -427,7 +449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="iot--wizard-inline__header page-title-bar"
-        data-testid="page-title-bar"
+        data-testid="wizard-inline-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -458,10 +480,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             className="page-title-bar-header-right"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--modal-close iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Close"
               type="button"
@@ -742,7 +770,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           className="bx--modal-content"
           data-id="WizardInlineContent"
         >
-          <div>
+          <div
+            data-testid="wizard-inline-content"
+          >
             <div
               style={
                 Object {
@@ -767,24 +797,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         >
           <div
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            data-testid="wizard-inline-footer"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Back
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -804,6 +845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
 >
   <div
     className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+    data-testid="wizard-inline"
   >
     <div
       className="bx--modal-container"
@@ -811,7 +853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="iot--wizard-inline__header page-title-bar"
-        data-testid="page-title-bar"
+        data-testid="wizard-inline-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -842,10 +884,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             className="page-title-bar-header-right"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--modal-close iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Close"
               type="button"
@@ -1116,7 +1164,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           className="bx--modal-content"
           data-id="WizardInlineContent"
         >
-          <div>
+          <div
+            data-testid="wizard-inline-content"
+          >
             <div
               style={
                 Object {
@@ -1150,24 +1200,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           </div>
           <div
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            data-testid="wizard-inline-footer"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Back
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -1187,6 +1248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
 >
   <div
     className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+    data-testid="wizard-inline"
   >
     <div
       className="bx--modal-container"
@@ -1194,7 +1256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="iot--wizard-inline__header page-title-bar"
-        data-testid="page-title-bar"
+        data-testid="wizard-inline-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -1225,10 +1287,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             className="page-title-bar-header-right"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--modal-close iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Close"
               type="button"
@@ -1512,6 +1580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       >
         <div
           className="iot--wizard-inline__sidebar"
+          data-testid="wizard-inline-sidebar"
           style={
             Object {
               "--min-width": "200px",
@@ -1526,7 +1595,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           className="bx--modal-content"
           data-id="WizardInlineContent"
         >
-          <div>
+          <div
+            data-testid="wizard-inline-content"
+          >
             <div
               style={
                 Object {
@@ -1550,24 +1621,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         >
           <div
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            data-testid="wizard-inline-footer"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Cancel
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -1587,6 +1669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
 >
   <div
     className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+    data-testid="wizard-inline"
   >
     <div
       className="bx--modal-container"
@@ -1594,7 +1677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="iot--wizard-inline__header page-title-bar"
-        data-testid="page-title-bar"
+        data-testid="wizard-inline-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -1625,10 +1708,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             className="page-title-bar-header-right"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--modal-close iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Close"
               type="button"
@@ -1909,7 +1998,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           className="bx--modal-content"
           data-id="WizardInlineContent"
         >
-          <div>
+          <div
+            data-testid="wizard-inline-content"
+          >
             <div
               style={
                 Object {
@@ -1934,24 +2025,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         >
           <div
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            data-testid="wizard-inline-footer"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Back
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
@@ -1971,6 +2073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
 >
   <div
     className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+    data-testid="wizard-inline"
   >
     <div
       className="bx--modal-container"
@@ -1978,7 +2081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
     >
       <div
         className="iot--wizard-inline__header page-title-bar"
-        data-testid="page-title-bar"
+        data-testid="wizard-inline-header-page-title-bar"
         style={
           Object {
             "--header-offset": "48px",
@@ -2009,10 +2112,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             className="page-title-bar-header-right"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="bx--modal-close iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               title="Close"
               type="button"
@@ -2293,6 +2402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
       </ul>
       <div
         className="WizardInline__StyledMessageBox-sc-8orpb0-2 jGtpBI bx--inline-notification bx--inline-notification--error"
+        data-testid="wizard-inline-error-notification"
         kind="error"
         role="alert"
       >
@@ -2369,7 +2479,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           className="bx--modal-content"
           data-id="WizardInlineContent"
         >
-          <div>
+          <div
+            data-testid="wizard-inline-content"
+          >
             <div
               style={
                 Object {
@@ -2393,24 +2505,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
         >
           <div
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            data-testid="wizard-inline-footer"
           >
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--secondary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
               Cancel
             </button>
             <button
+              aria-describedby={null}
               aria-pressed={null}
               className="iot--btn bx--btn bx--btn--primary"
               data-testid="Button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >

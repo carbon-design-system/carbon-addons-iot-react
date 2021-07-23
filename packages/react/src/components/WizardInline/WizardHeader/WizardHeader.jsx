@@ -29,6 +29,7 @@ class WizardHeader extends Component {
     showLabels: PropTypes.bool,
     stepWidth: PropTypes.number,
     isClickable: PropTypes.bool,
+    testId: PropTypes.string,
   };
 
   static defaultProps = {
@@ -40,6 +41,7 @@ class WizardHeader extends Component {
     onClose: null,
     closeButtonTitle: 'Close',
     isClickable: false,
+    testId: 'wizard-header',
   };
 
   state = {};
@@ -57,10 +59,17 @@ class WizardHeader extends Component {
       onClose,
       closeButtonTitle,
       isClickable,
+      testId,
     } = this.props;
 
     const closeButton = (
-      <Button className="bx--modal-close" title={closeButtonTitle} type="button">
+      <Button
+        className="bx--modal-close"
+        title={closeButtonTitle}
+        type="button"
+        // TODO: pass testId in v3 to override defaults
+        // testId={`${testId}-close-button`}
+      >
         <Close20 onClick={onClose} />
       </Button>
     );
@@ -72,6 +81,7 @@ class WizardHeader extends Component {
           title={title}
           description={blurb || description}
           extraContent={onClose ? closeButton : null}
+          testId={`${testId}-page-title-bar`}
         />
         <ProgressIndicator
           className={`${iotPrefix}--wizard-inline__progress-indicator`}
@@ -81,6 +91,8 @@ class WizardHeader extends Component {
           onClickItem={setItem}
           stepWidth={stepWidth}
           isClickable={isClickable}
+          // TODO: pass testId in v3 to override defaults
+          // testId={`${testId}-progress-indicator`}
         />
       </Fragment>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Edit16 from '@carbon/icons-react';
+import { render, screen } from '@testing-library/react';
 
 import ResourceList from './ResourceList';
 
@@ -26,6 +27,25 @@ const resourceData = [
 ];
 
 describe('ResourceList', () => {
+  it('should be selectable by testId', () => {
+    const actionClick = jest.fn();
+    render(
+      <ResourceList
+        design="normal"
+        data={resourceData}
+        customAction={{
+          onClick: actionClick,
+          label: 'Configure',
+          icon: Edit16,
+        }}
+        testId="resource_list"
+      />
+    );
+    expect(screen.getByTestId('resource_list')).toBeDefined();
+    expect(screen.getByTestId('resource_list-row-row-0')).toBeDefined();
+    expect(screen.getByTestId('resource_list-custom-action-row-0')).toBeDefined();
+  });
+
   // handle click function test
   it('onRowClick', () => {
     const onRowClick = jest.fn();

@@ -1,6 +1,9 @@
 # Coverage directory used by tools like istanbul
 coverage
-
+packages/react/jest
+packages/react/cypress/coverage
+.nyc_output
+packages/react/reports
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 lib
 es
@@ -41,3 +44,11 @@ package-lock.json
 results
 
 .vscode
+
+# Cypress artifacts
+packages/react/cypress/videos/
+packages/react/cypress/screenshots/
+packages/react/cypress/snapshots/
+packages/react/cypress-visual-report/
+packages/react/cypress-visual-screenshots/comparison/
+packages/react/cypress-visual-screenshots/diff

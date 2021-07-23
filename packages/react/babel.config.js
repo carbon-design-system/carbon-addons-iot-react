@@ -64,6 +64,9 @@ module.exports = function generateConfig(api) {
       test: {
         plugins: ['require-context-hook'],
       },
+      e2e: {
+        plugins: ['istanbul', 'require-context-hook'],
+      },
     },
   };
 };

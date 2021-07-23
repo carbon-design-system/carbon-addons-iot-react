@@ -305,7 +305,7 @@ Map {
     "defaultProps": Object {
       "id": "EmptyTable",
       "onEmptyStateAction": null,
-      "testID": "",
+      "testId": "",
     },
     "propTypes": Object {
       "emptyState": Object {
@@ -355,7 +355,8 @@ Map {
       "onEmptyStateAction": Object {
         "type": "func",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "totalColumns": Object {
@@ -483,6 +484,7 @@ Map {
         "wrapCellText": "always",
       },
       "secondaryTitle": null,
+      "testId": null,
       "title": null,
       "tooltip": null,
       "useZebraStyles": false,
@@ -1233,6 +1235,9 @@ Map {
       "secondaryTitle": Object {
         "type": "string",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "tooltip": Object {
         "type": "node",
       },
@@ -1765,6 +1770,7 @@ Map {
       "selectAllText": "Select all",
       "showExpanderColumn": false,
       "testID": "",
+      "testId": "",
     },
     "propTypes": Object {
       "actions": Object {
@@ -2324,7 +2330,8 @@ Map {
         "isRequired": true,
         "type": "shape",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -2352,7 +2359,7 @@ Map {
       "shouldLazyRender": false,
       "showExpanderColumn": false,
       "singleRowEditButtons": null,
-      "testID": "",
+      "testId": "",
       "totalColumns": 0,
     },
     "propTypes": Object {
@@ -2812,7 +2819,8 @@ Map {
         "isRequired": true,
         "type": "string",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "totalColumns": Object {
@@ -2856,7 +2864,7 @@ Map {
       },
       "overrides": undefined,
       "sendingData": false,
-      "testID": "TableSaveViewModal",
+      "testId": "TableSaveViewModal",
       "titleInputInvalid": false,
       "titleInputInvalidText": undefined,
       "viewDescription": undefined,
@@ -3002,7 +3010,8 @@ Map {
       "sendingData": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "titleInputInvalid": Object {
@@ -3042,7 +3051,7 @@ Map {
       "overrides": undefined,
       "pagination": undefined,
       "searchValueDefault": "",
-      "testID": "TableManageViewsModal",
+      "testId": "TableManageViewsModal",
     },
     "propTypes": Object {
       "actions": Object {
@@ -3290,7 +3299,8 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
-            "testID": Object {
+            "testID": [Function],
+            "testId": Object {
               "type": "string",
             },
             "totalItems": Object {
@@ -3306,7 +3316,8 @@ Map {
       "searchValueDefault": Object {
         "type": "string",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "views": Object {
@@ -3350,7 +3361,7 @@ Map {
       "hasRowSelection": false,
       "rowCount": 10,
       "showExpanderColumn": false,
-      "testID": "",
+      "testId": "",
     },
     "propTypes": Object {
       "columns": Object {
@@ -3391,7 +3402,8 @@ Map {
       "showExpanderColumn": Object {
         "type": "bool",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -3460,7 +3472,7 @@ Map {
         "toggleAggregations": "Toggle aggregations",
       },
       "secondaryTitle": null,
-      "testID": "",
+      "testId": "",
       "tooltip": null,
     },
     "propTypes": Object {
@@ -3855,7 +3867,8 @@ Map {
         "isRequired": true,
         "type": "shape",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "tooltip": Object {
@@ -3875,6 +3888,7 @@ Map {
       },
       "isClickable": false,
       "onBack": null,
+      "testId": "wizard-modal",
     },
     "propTypes": Object {
       "currentStepIndex": Object {
@@ -3954,6 +3968,9 @@ Map {
         "isRequired": true,
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
     },
   },
   "WizardInline" => Object {
@@ -3982,6 +3999,7 @@ Map {
       "sidebar": null,
       "stepWidth": 8,
       "submitLabel": "Add",
+      "testId": "wizard-inline",
       "title": null,
     },
     "propTypes": Object {
@@ -4087,6 +4105,9 @@ Map {
       },
       "submitLabel": Object {
         "type": "node",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "string",
@@ -4119,6 +4140,7 @@ Map {
       "sidebar": null,
       "stepWidth": 8,
       "submitLabel": "Add",
+      "testId": "wizard-inline",
       "title": null,
     },
     "propTypes": Object {
@@ -4225,6 +4247,9 @@ Map {
       "submitLabel": Object {
         "type": "node",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "type": "string",
       },
@@ -4238,6 +4263,7 @@ Map {
       "pagination": null,
       "search": null,
       "selectedTileId": null,
+      "testId": "tile-catalog",
       "title": null,
     },
     "propTypes": Object {
@@ -4307,6 +4333,9 @@ Map {
         "type": "shape",
       },
       "selectedTileId": Object {
+        "type": "string",
+      },
+      "testId": Object {
         "type": "string",
       },
       "tiles": Object {
@@ -4427,6 +4456,9 @@ Map {
       "selectedTileId": Object {
         "type": "string",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "tiles": Object {
         "args": Array [
           Object {
@@ -4493,7 +4525,7 @@ Map {
       "pageOfPagesText": [Function],
       "pageText": null,
       "prevPageText": "Prev page",
-      "testID": "iot-simple-pagination",
+      "testId": "iot-simple-pagination",
       "totalItems": undefined,
       "totalItemsText": "Items",
     },
@@ -4522,7 +4554,8 @@ Map {
       "prevPageText": Object {
         "type": "string",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
       "totalItems": Object {
@@ -4543,6 +4576,7 @@ Map {
       "onClickItem": null,
       "showLabels": true,
       "stepWidth": null,
+      "testId": "iot--progress-indicator-testid",
     },
     "propTypes": Object {
       "className": Object {
@@ -4616,6 +4650,9 @@ Map {
       },
       "stepWidth": Object {
         "type": "number",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -4750,6 +4787,7 @@ Map {
       "design": "normal",
       "extraContent": null,
       "onRowClick": [Function],
+      "testId": "resource-list",
     },
     "displayName": "ResourceList",
     "propTypes": Object {
@@ -4815,6 +4853,9 @@ Map {
       },
       "onRowClick": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -6085,6 +6126,7 @@ Map {
       "onSort": [Function],
       "selectedSortOption": "",
       "sortOptions": Array [],
+      "testId": "tile-catalog-new",
       "tiles": Array [],
       "title": "",
     },
@@ -6150,6 +6192,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "tiles": Object {
         "args": Array [
           Object {
@@ -6178,6 +6223,7 @@ Map {
       "onChange": null,
       "onClick": null,
       "spinner": false,
+      "testId": "time-picker-spinner",
       "value": "",
     },
     "propTypes": Object {
@@ -6241,6 +6287,9 @@ Map {
       },
       "spinner": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "value": Object {
         "type": "string",
@@ -7350,6 +7399,7 @@ Map {
       "rightContent": null,
       "section": null,
       "switcher": null,
+      "testId": "page-hero",
       "title": null,
     },
     "propTypes": Object {
@@ -7410,6 +7460,9 @@ Map {
         ],
         "type": "shape",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "type": "node",
       },
@@ -7418,6 +7471,7 @@ Map {
   "PageWorkArea" => Object {
     "defaultProps": Object {
       "isOpen": false,
+      "testId": "page-work-area",
     },
     "propTypes": Object {
       "children": Object {
@@ -7426,6 +7480,9 @@ Map {
       },
       "isOpen": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -7438,6 +7495,7 @@ Map {
         "saveLabel": "Save",
       },
       "isLoading": false,
+      "testId": "edit-page",
     },
     "propTypes": Object {
       "breadcrumb": Object {
@@ -7522,6 +7580,7 @@ Map {
       "hero": null,
       "hidden": false,
       "onSelectionChange": null,
+      "testId": "navigation-bar",
       "workArea": null,
     },
     "propTypes": Object {
@@ -7581,6 +7640,9 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "workArea": Object {
         "type": "node",
@@ -7745,6 +7807,7 @@ Map {
         "sideNavLabelText": "Side navigation",
       },
       "isSideNavExpanded": false,
+      "testId": "side-nav",
     },
     "propTypes": Object {
       "defaultExpanded": Object {
@@ -7817,6 +7880,9 @@ Map {
         "isRequired": true,
         "type": "arrayOf",
       },
+      "testId": Object {
+        "type": "string",
+      },
     },
   },
   "SuiteHeader" => Object {
@@ -7880,6 +7946,7 @@ Map {
       "routes": null,
       "sideNavProps": null,
       "surveyData": null,
+      "testId": "suite-header",
       "userDisplayName": null,
       "username": null,
       "walkmeLang": "en",
@@ -8311,6 +8378,9 @@ Map {
               "isRequired": true,
               "type": "arrayOf",
             },
+            "testId": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -8333,6 +8403,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "userDisplayName": Object {
         "type": "string",
@@ -8357,6 +8430,7 @@ Map {
         "profileTitle": "Profile",
       },
       "onRequestLogout": null,
+      "testId": "suite-header-profile",
       "username": "",
     },
     "propTypes": Object {
@@ -8386,6 +8460,9 @@ Map {
       "onRequestLogout": Object {
         "type": "func",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "username": Object {
         "type": "string",
       },
@@ -8403,6 +8480,7 @@ Map {
         "requestAccess": "Contact your administrator to request application access.",
       },
       "onRouteChange": [Function],
+      "testId": "suite-header-app-switcher",
     },
     "propTypes": Object {
       "allApplicationsLink": Object {
@@ -8453,6 +8531,9 @@ Map {
       "onRouteChange": Object {
         "type": "func",
       },
+      "testId": Object {
+        "type": "string",
+      },
     },
   },
   "SuiteHeaderLogoutModal" => Object {
@@ -8464,6 +8545,7 @@ Map {
         "secondaryButton": "Cancel",
       },
       "isOpen": false,
+      "testId": "suite-header-logout-modal",
     },
     "propTypes": Object {
       "i18n": Object {
@@ -8495,6 +8577,9 @@ Map {
       "onLogout": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -12657,6 +12742,7 @@ Map {
       "isNumberValueCompact": false,
       "locale": "en",
       "size": "MEDIUM",
+      "testId": "Card",
       "values": null,
     },
     "propTypes": Object {
@@ -17344,6 +17430,7 @@ Map {
       "hasMoreData": false,
       "isLoading": false,
       "layout": "",
+      "testId": "Card",
     },
     "displayName": "ListCard",
     "propTypes": Object {
@@ -18125,6 +18212,7 @@ Map {
       "onNext": null,
       "sendingData": false,
       "setStep": null,
+      "testId": "page-wizard",
     },
     "propTypes": Object {
       "afterFooterContent": Object {
@@ -18214,6 +18302,9 @@ Map {
       },
       "setStep": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -18528,11 +18619,16 @@ Map {
     },
   },
   "TileGallery" => Object {
-    "defaultProps": Object {},
+    "defaultProps": Object {
+      "testId": "tile-gallery",
+    },
     "propTypes": Object {
       "children": Object {
         "isRequired": true,
         "type": "node",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -18540,6 +18636,7 @@ Map {
     "defaultProps": Object {
       "isOpen": true,
       "onClick": [Function],
+      "testId": "tile-gallery-section",
       "title": null,
     },
     "propTypes": Object {
@@ -18552,6 +18649,9 @@ Map {
       },
       "onClick": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "type": "string",
@@ -18566,6 +18666,7 @@ Map {
       "icon": null,
       "mode": "grid",
       "onClick": [Function],
+      "testId": "tile-gallery-item",
       "thumbnail": null,
     },
     "propTypes": Object {
@@ -18631,6 +18732,9 @@ Map {
       "onClick": Object {
         "type": "func",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "thumbnail": Object {
         "type": "node",
       },
@@ -18648,6 +18752,7 @@ Map {
       },
       "onChange": [Function],
       "selectedIndex": 0,
+      "testId": "tile-gallery-view-switcher",
     },
     "propTypes": Object {
       "i18n": Object {
@@ -18669,6 +18774,9 @@ Map {
       "selectedIndex": Object {
         "type": "number",
       },
+      "testId": Object {
+        "type": "string",
+      },
     },
   },
   "TileGallerySearch" => Object {
@@ -18680,6 +18788,7 @@ Map {
       },
       "onChange": [Function],
       "searchValue": "",
+      "testId": "tile-gallery-search-input",
       "width": "304px",
     },
     "propTypes": Object {
@@ -18703,6 +18812,9 @@ Map {
         "type": "func",
       },
       "searchValue": Object {
+        "type": "string",
+      },
+      "testId": Object {
         "type": "string",
       },
       "width": Object {
@@ -18730,6 +18842,7 @@ Map {
         "searchPlaceHolderText": "Search for something",
       },
       "isButtonDisabled": false,
+      "testId": "stateful-tile-gallery",
     },
     "propTypes": Object {
       "buttonClassName": Object {
@@ -18886,6 +18999,9 @@ Map {
       },
       "isButtonDisabled": Object {
         "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
       },
       "title": Object {
         "isRequired": true,
@@ -19113,7 +19229,8 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
-            "testID": Object {
+            "testID": [Function],
+            "testId": Object {
               "type": "string",
             },
             "totalItems": Object {
@@ -19577,6 +19694,8 @@ Map {
         "args": Array [
           Array [
             "sm",
+            "md",
+            "lg",
             "xl",
           ],
         ],
@@ -21467,7 +21586,7 @@ Map {
         "$$typeof": Symbol(react.forward_ref),
         "render": [Function],
       },
-      "testID": "menu-button",
+      "testId": "menu-button",
     },
     "propTypes": Object {
       "children": Object {
@@ -21523,7 +21642,8 @@ Map {
         ],
         "type": "oneOfType",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -21545,7 +21665,7 @@ Map {
       "onAdd": null,
       "onRemove": null,
       "selectedItems": Array [],
-      "testID": "list-builder",
+      "testId": "list-builder",
     },
     "propTypes": Object {
       "i18n": Object {
@@ -21672,7 +21792,8 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "testID": Object {
+      "testID": [Function],
+      "testId": Object {
         "type": "string",
       },
     },
@@ -21691,6 +21812,7 @@ Map {
       "idx": undefined,
       "onClose": undefined,
       "openNextSheet": undefined,
+      "testId": "",
       "title": "Title",
     },
     "propTypes": Object {
@@ -21731,6 +21853,9 @@ Map {
       "openNextSheet": Object {
         "type": "func",
       },
+      "testId": Object {
+        "type": "string",
+      },
       "title": Object {
         "type": "string",
       },
@@ -21742,6 +21867,7 @@ Map {
       "className": undefined,
       "isOpen": false,
       "onCloseAllTearSheets": undefined,
+      "testId": "",
     },
     "propTypes": Object {
       "children": Object {
@@ -21755,6 +21881,9 @@ Map {
       },
       "onCloseAllTearSheets": Object {
         "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -21780,7 +21909,7 @@ Map {
       "mapControls": Array [],
       "size": "LARGEWIDE",
       "stops": Array [],
-      "testID": "map-card",
+      "testId": "map-card",
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -23343,6 +23472,8 @@ Map {
         "args": Array [
           Array [
             "sm",
+            "md",
+            "lg",
             "xl",
           ],
         ],
@@ -23497,11 +23628,26 @@ Map {
       "feedback": Object {
         "type": "string",
       },
+      "feedbackTimeout": Object {
+        "type": "number",
+      },
       "hideCopyButton": Object {
         "type": "bool",
       },
       "light": Object {
         "type": "bool",
+      },
+      "maxCollapsedNumberOfRows": Object {
+        "type": "number",
+      },
+      "maxExpandedNumberOfRows": Object {
+        "type": "number",
+      },
+      "minCollapsedNumberOfRows": Object {
+        "type": "number",
+      },
+      "minExpandedNumberOfRows": Object {
+        "type": "number",
       },
       "onClick": Object {
         "type": "func",
@@ -23660,9 +23806,7 @@ Map {
       "className": Object {
         "type": "string",
       },
-      "light": Object {
-        "type": "bool",
-      },
+      "light": [Function],
       "onChange": Object {
         "isRequired": true,
         "type": "func",
@@ -23683,6 +23827,8 @@ Map {
         "args": Array [
           Array [
             "sm",
+            "md",
+            "lg",
             "xl",
           ],
         ],
@@ -23762,9 +23908,7 @@ Map {
         "overflowMenuOnHover": Object {
           "type": "bool",
         },
-        "shouldShowBorder": Object {
-          "type": "bool",
-        },
+        "shouldShowBorder": [Function],
         "size": Object {
           "args": Array [
             Array [
@@ -23772,6 +23916,11 @@ Map {
               "short",
               "normal",
               "tall",
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
             ],
           ],
           "type": "oneOf",
@@ -24125,7 +24274,9 @@ Map {
           "args": Array [
             Array [
               "small",
+              "sm",
               "normal",
+              "lg",
             ],
           ],
           "type": "oneOf",
@@ -24340,6 +24491,11 @@ Map {
             "short",
             "normal",
             "tall",
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
           ],
         ],
         "type": "oneOf",
@@ -24403,6 +24559,12 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "disable": Object {
+        "type": "array",
+      },
+      "enable": Object {
+        "type": "array",
       },
       "light": Object {
         "type": "bool",
@@ -24495,6 +24657,9 @@ Map {
         "type": "func",
       },
       "onClose": Object {
+        "type": "func",
+      },
+      "onOpen": Object {
         "type": "func",
       },
       "short": Object {
@@ -24599,6 +24764,8 @@ Map {
         "args": Array [
           Array [
             "sm",
+            "md",
+            "lg",
             "xl",
           ],
         ],
@@ -24727,6 +24894,8 @@ Map {
         "args": Array [
           Array [
             "sm",
+            "md",
+            "lg",
             "xl",
           ],
         ],
@@ -24902,6 +25071,9 @@ Map {
             "default",
             "field",
             "small",
+            "sm",
+            "md",
+            "lg",
           ],
         ],
         "type": "oneOf",
@@ -24972,6 +25144,9 @@ Map {
             "default",
             "field",
             "small",
+            "sm",
+            "md",
+            "lg",
           ],
         ],
         "type": "oneOf",
@@ -25029,6 +25204,9 @@ Map {
             "default",
             "field",
             "small",
+            "sm",
+            "md",
+            "lg",
           ],
         ],
         "type": "oneOf",
@@ -25068,6 +25246,9 @@ Map {
             "default",
             "field",
             "small",
+            "sm",
+            "md",
+            "lg",
           ],
         ],
         "type": "oneOf",
@@ -25099,6 +25280,7 @@ Map {
   },
   "FormGroup" => Object {
     "defaultProps": Object {
+      "hasMargin": true,
       "invalid": false,
       "message": false,
       "messageText": "",
@@ -25110,8 +25292,14 @@ Map {
       "className": Object {
         "type": "string",
       },
+      "hasMargin": Object {
+        "type": "bool",
+      },
       "invalid": Object {
         "type": "bool",
+      },
+      "legendId": Object {
+        "type": "node",
       },
       "legendText": Object {
         "isRequired": true,
@@ -25178,6 +25366,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "columns": Object {
+        "type": "number",
       },
       "condensed": Object {
         "type": "bool",
@@ -25489,10 +25680,24 @@ Map {
       "inline": Object {
         "type": "bool",
       },
+      "renderIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "size": Object {
         "args": Array [
           Array [
             "sm",
+            "md",
             "lg",
           ],
         ],
@@ -25641,6 +25846,7 @@ Map {
           Array [
             "xs",
             "sm",
+            "md",
             "lg",
           ],
         ],
@@ -25759,6 +25965,7 @@ Map {
       "defaultProps": Object {
         "ariaLabel": "Choose an item",
         "compareItems": [Function],
+        "direction": "bottom",
         "disabled": false,
         "filterItems": [Function],
         "initialSelectedItems": Array [],
@@ -25777,6 +25984,15 @@ Map {
         "compareItems": Object {
           "isRequired": true,
           "type": "func",
+        },
+        "direction": Object {
+          "args": Array [
+            Array [
+              "top",
+              "bottom",
+            ],
+          ],
+          "type": "oneOf",
         },
         "disabled": Object {
           "type": "bool",
@@ -25871,6 +26087,8 @@ Map {
           "args": Array [
             Array [
               "sm",
+              "md",
+              "lg",
               "xl",
             ],
           ],
@@ -26024,6 +26242,8 @@ Map {
         "args": Array [
           Array [
             "sm",
+            "md",
+            "lg",
             "xl",
           ],
         ],
@@ -26061,229 +26281,24 @@ Map {
     "render": [Function],
   },
   "ToastNotification" => Object {
-    "defaultProps": Object {
-      "hideCloseButton": false,
-      "iconDescription": "closes notification",
-      "kind": "error",
-      "notificationType": "toast",
-      "onCloseButtonClick": [Function],
-      "role": "alert",
-      "timeout": 0,
-      "title": "provide a title",
-    },
-    "propTypes": Object {
-      "caption": Object {
-        "type": "node",
-      },
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "hideCloseButton": Object {
-        "type": "bool",
-      },
-      "iconDescription": Object {
-        "type": "string",
-      },
-      "kind": Object {
-        "args": Array [
-          Array [
-            "error",
-            "info",
-            "info-square",
-            "success",
-            "warning",
-            "warning-alt",
-          ],
-        ],
-        "isRequired": true,
-        "type": "oneOf",
-      },
-      "lowContrast": Object {
-        "type": "bool",
-      },
-      "notificationType": Object {
-        "type": "string",
-      },
-      "onCloseButtonClick": Object {
-        "type": "func",
-      },
-      "role": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "statusIconDescription": Object {
-        "type": "string",
-      },
-      "subtitle": Object {
-        "type": "node",
-      },
-      "timeout": Object {
-        "type": "number",
-      },
-      "title": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "InlineNotification" => Object {
-    "defaultProps": Object {
-      "hideCloseButton": false,
-      "iconDescription": "closes notification",
-      "notificationType": "inline",
-      "onCloseButtonClick": [Function],
-      "role": "alert",
-    },
-    "propTypes": Object {
-      "actions": Object {
-        "type": "node",
-      },
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "hideCloseButton": Object {
-        "type": "bool",
-      },
-      "iconDescription": Object {
-        "type": "string",
-      },
-      "kind": Object {
-        "args": Array [
-          Array [
-            "error",
-            "info",
-            "info-square",
-            "success",
-            "warning",
-            "warning-alt",
-          ],
-        ],
-        "isRequired": true,
-        "type": "oneOf",
-      },
-      "lowContrast": Object {
-        "type": "bool",
-      },
-      "notificationType": Object {
-        "type": "string",
-      },
-      "onCloseButtonClick": Object {
-        "type": "func",
-      },
-      "role": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "statusIconDescription": Object {
-        "type": "string",
-      },
-      "subtitle": Object {
-        "type": "node",
-      },
-      "title": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "NotificationActionButton" => Object {
-    "propTypes": Object {
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "onClick": Object {
-        "type": "func",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "NotificationButton" => Object {
-    "defaultProps": Object {
-      "ariaLabel": "close notification",
-      "iconDescription": "close icon",
-      "notificationType": "toast",
-      "renderIcon": Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "render": [Function],
-      },
-      "type": "button",
-    },
-    "propTypes": Object {
-      "ariaLabel": Object {
-        "type": "string",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "iconDescription": Object {
-        "type": "string",
-      },
-      "name": Object {
-        "type": "string",
-      },
-      "notificationType": Object {
-        "args": Array [
-          Array [
-            "toast",
-            "inline",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "renderIcon": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "func",
-            },
-            Object {
-              "type": "object",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "type": Object {
-        "type": "string",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "NotificationTextDetails" => Object {
-    "defaultProps": Object {
-      "notificationType": "toast",
-      "title": "title",
-    },
-    "propTypes": Object {
-      "caption": Object {
-        "type": "node",
-      },
-      "children": Object {
-        "type": "node",
-      },
-      "notificationType": Object {
-        "args": Array [
-          Array [
-            "toast",
-            "inline",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "subtitle": Object {
-        "type": "node",
-      },
-      "title": Object {
-        "type": "string",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "NumberInput" => Object {
     "$$typeof": Symbol(react.forward_ref),
@@ -26291,6 +26306,7 @@ Map {
   },
   "OrderedList" => Object {
     "defaultProps": Object {
+      "isExpressive": false,
       "native": false,
       "nested": false,
     },
@@ -26300,6 +26316,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "isExpressive": Object {
+        "type": "bool",
       },
       "native": Object {
         "type": "bool",
@@ -26449,7 +26468,9 @@ Map {
       "page": Object {
         "type": "number",
       },
-      "pageInputDisabled": [Function],
+      "pageInputDisabled": Object {
+        "type": "bool",
+      },
       "pageNumberText": Object {
         "type": "string",
       },
@@ -26458,6 +26479,9 @@ Map {
       },
       "pageSize": Object {
         "type": "number",
+      },
+      "pageSizeInputDisabled": Object {
+        "type": "bool",
       },
       "pageSizes": Object {
         "args": Array [
@@ -26658,6 +26682,38 @@ Map {
     },
   },
   "Search" => Object {
+    "contextType": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": FeatureFlagScope {
+        "flags": Map {
+          "enable-css-custom-properties" => false,
+          "enable-use-controlled-state-with-value" => false,
+          "enable-css-grid" => false,
+          "enable-v11-release" => false,
+        },
+      },
+      "_currentValue2": FeatureFlagScope {
+        "flags": Map {
+          "enable-css-custom-properties" => false,
+          "enable-use-controlled-state-with-value" => false,
+          "enable-css-grid" => false,
+          "enable-v11-release" => false,
+        },
+      },
+      "_threadCount": 0,
+    },
     "defaultProps": Object {
       "closeButtonLabelText": "Clear search input",
       "onChange": [Function],
@@ -26707,10 +26763,24 @@ Map {
       "placeholder": Object {
         "type": "string",
       },
+      "renderIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "size": Object {
         "args": Array [
           Array [
             "sm",
+            "md",
             "lg",
             "xl",
           ],
@@ -26842,6 +26912,8 @@ Map {
         "args": Array [
           Array [
             "sm",
+            "md",
+            "lg",
             "xl",
           ],
         ],
@@ -27038,143 +27110,28 @@ Map {
     },
   },
   "StructuredListWrapper" => Object {
-    "defaultProps": Object {
-      "ariaLabel": "Structured list section",
-      "selection": false,
-    },
-    "propTypes": Object {
-      "ariaLabel": Object {
-        "type": "string",
-      },
-      "border": [Function],
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "selection": Object {
-        "type": "bool",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "StructuredListHead" => Object {
-    "propTypes": Object {
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "StructuredListBody" => Object {
-    "defaultProps": Object {
-      "onKeyDown": [Function],
-    },
-    "propTypes": Object {
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "head": Object {
-        "type": "bool",
-      },
-      "onKeyDown": Object {
-        "type": "func",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "StructuredListRow" => Object {
-    "defaultProps": Object {
-      "head": false,
-      "label": false,
-      "onKeyDown": [Function],
-      "tabIndex": 0,
-    },
-    "propTypes": Object {
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "head": Object {
-        "type": "bool",
-      },
-      "label": Object {
-        "type": "bool",
-      },
-      "onKeyDown": Object {
-        "type": "func",
-      },
-      "tabIndex": Object {
-        "type": "number",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "StructuredListInput" => Object {
-    "defaultProps": Object {
-      "onChange": [Function],
-      "title": "title",
-      "value": "value",
-    },
-    "propTypes": Object {
-      "className": Object {
-        "type": "string",
-      },
-      "defaultChecked": Object {
-        "type": "bool",
-      },
-      "id": Object {
-        "type": "string",
-      },
-      "name": Object {
-        "type": "string",
-      },
-      "onChange": Object {
-        "type": "func",
-      },
-      "title": Object {
-        "type": "string",
-      },
-      "value": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "string",
-            },
-            Object {
-              "type": "number",
-            },
-          ],
-        ],
-        "isRequired": true,
-        "type": "oneOfType",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "StructuredListCell" => Object {
-    "defaultProps": Object {
-      "head": false,
-      "noWrap": false,
-    },
-    "propTypes": Object {
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "head": Object {
-        "type": "bool",
-      },
-      "noWrap": Object {
-        "type": "bool",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "Tab" => Object {
     "defaultProps": Object {
@@ -27352,6 +27309,7 @@ Map {
         "args": Array [
           Array [
             "sm",
+            "md",
           ],
         ],
         "type": "oneOf",
@@ -27508,6 +27466,9 @@ Map {
         "hideLabel": Object {
           "type": "bool",
         },
+        "hidePasswordLabel": Object {
+          "type": "string",
+        },
         "id": Object {
           "isRequired": true,
           "type": "string",
@@ -27532,6 +27493,9 @@ Map {
           "type": "func",
         },
         "placeholder": Object {
+          "type": "string",
+        },
+        "showPasswordLabel": Object {
           "type": "string",
         },
         "size": Object {
@@ -27620,6 +27584,9 @@ Map {
           "isRequired": true,
           "type": "string",
         },
+        "inline": Object {
+          "type": "bool",
+        },
         "invalid": Object {
           "type": "bool",
         },
@@ -27637,6 +27604,9 @@ Map {
           "type": "func",
         },
         "onClick": Object {
+          "type": "func",
+        },
+        "onTogglePasswordVisibility": Object {
           "type": "func",
         },
         "placeholder": Object {
@@ -27669,6 +27639,15 @@ Map {
           ],
           "type": "oneOf",
         },
+        "type": Object {
+          "args": Array [
+            Array [
+              "password",
+              "text",
+            ],
+          ],
+          "type": "oneOf",
+        },
         "value": Object {
           "args": Array [
             Array [
@@ -27681,6 +27660,12 @@ Map {
             ],
           ],
           "type": "oneOfType",
+        },
+        "warn": Object {
+          "type": "bool",
+        },
+        "warnText": Object {
+          "type": "node",
         },
       },
       "render": [Function],
@@ -27753,10 +27738,15 @@ Map {
       "placeholder": Object {
         "type": "string",
       },
+      "readOnly": Object {
+        "type": "bool",
+      },
       "size": Object {
         "args": Array [
           Array [
             "sm",
+            "md",
+            "lg",
             "xl",
           ],
         ],
@@ -27836,10 +27826,7 @@ Map {
   },
   "SelectableTile" => Object {
     "defaultProps": Object {
-      "handleClick": [Function],
-      "handleKeyDown": [Function],
       "light": false,
-      "onChange": [Function],
       "selected": false,
       "tabIndex": 0,
       "title": "title",
@@ -27852,12 +27839,11 @@ Map {
       "className": Object {
         "type": "string",
       },
-      "handleClick": Object {
-        "type": "func",
+      "disabled": Object {
+        "type": "bool",
       },
-      "handleKeyDown": Object {
-        "type": "func",
-      },
+      "handleClick": [Function],
+      "handleKeyDown": [Function],
       "iconDescription": [Function],
       "id": Object {
         "type": "string",
@@ -27869,6 +27855,12 @@ Map {
         "type": "string",
       },
       "onChange": Object {
+        "type": "func",
+      },
+      "onClick": Object {
+        "type": "func",
+      },
+      "onKeyDown": Object {
         "type": "func",
       },
       "selected": Object {
@@ -27930,6 +27922,12 @@ Map {
       "onBeforeClick": Object {
         "type": "func",
       },
+      "onClick": Object {
+        "type": "func",
+      },
+      "onKeyUp": Object {
+        "type": "func",
+      },
       "tabIndex": Object {
         "type": "number",
       },
@@ -27978,6 +27976,9 @@ Map {
         "type": "string",
       },
       "defaultChecked": Object {
+        "type": "bool",
+      },
+      "disabled": Object {
         "type": "bool",
       },
       "iconDescription": [Function],
@@ -28129,6 +28130,8 @@ Map {
         "args": Array [
           Array [
             "sm",
+            "md",
+            "lg",
             "xl",
           ],
         ],
@@ -28180,57 +28183,8 @@ Map {
     },
   },
   "Toggle" => Object {
-    "defaultProps": Object {
-      "aria-label": "Toggle",
-      "defaultToggled": false,
-      "labelA": "Off",
-      "labelB": "On",
-      "onToggle": [Function],
-    },
-    "propTypes": Object {
-      "aria-label": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "defaultToggled": Object {
-        "type": "bool",
-      },
-      "id": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "labelA": Object {
-        "isRequired": true,
-        "type": "node",
-      },
-      "labelB": Object {
-        "isRequired": true,
-        "type": "node",
-      },
-      "labelText": Object {
-        "type": "node",
-      },
-      "onChange": Object {
-        "type": "func",
-      },
-      "onToggle": Object {
-        "type": "func",
-      },
-      "size": Object {
-        "args": Array [
-          Array [
-            "sm",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "toggled": Object {
-        "type": "bool",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "ToggleSmall" => Object {
     "defaultProps": Object {
@@ -28402,6 +28356,9 @@ Map {
       "id": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
       "onFocus": Object {
         "type": "func",
       },
@@ -28437,7 +28394,6 @@ Map {
         "type": "oneOf",
       },
       "children": Object {
-        "isRequired": true,
         "type": "node",
       },
       "className": Object {
@@ -28454,8 +28410,17 @@ Map {
         ],
         "type": "oneOf",
       },
+      "disabled": Object {
+        "type": "bool",
+      },
       "id": Object {
         "type": "string",
+      },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onClick": Object {
+        "type": "func",
       },
       "onFocus": Object {
         "type": "func",
@@ -28463,14 +28428,31 @@ Map {
       "onMouseEnter": Object {
         "type": "func",
       },
+      "onMouseLeave": Object {
+        "type": "func",
+      },
+      "renderIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "tooltipText": Object {
         "isRequired": true,
-        "type": "string",
+        "type": "node",
       },
     },
   },
   "UnorderedList" => Object {
     "defaultProps": Object {
+      "isExpressive": false,
       "nested": false,
     },
     "propTypes": Object {
@@ -28479,6 +28461,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "isExpressive": Object {
+        "type": "bool",
       },
       "nested": Object {
         "type": "bool",
@@ -28609,6 +28594,21 @@ Map {
       "href": Object {
         "type": "string",
       },
+      "size": Object {
+        "args": Array [
+          Array [
+            "default",
+            "field",
+            "small",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+            "2xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "small": Object {
         "type": "bool",
       },
@@ -28647,6 +28647,8 @@ Map {
         "args": Array [
           Array [
             "sm",
+            "md",
+            "lg",
             "xl",
           ],
         ],
