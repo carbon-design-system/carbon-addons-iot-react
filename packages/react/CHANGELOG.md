@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.67](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.66...v2.146.0-next.67) (2021-07-22)
+
+
+### Bug Fixes
+
+* **timeseriescard:** xaxis format incorrect with one datapoint in year interval ([faf0cd2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/faf0cd29945afcddcdf425721fe4b0ba520df27c))
+
+
+
+
+
 # [2.146.0-next.66](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.65...v2.146.0-next.66) (2021-07-20)
 
 
