@@ -166,7 +166,9 @@ export class TabHeader extends IBMTabHeader implements OnChanges, AfterViewInit 
     const target = event.target as HTMLElement;
     const button = target.closest('button');
     const buttonRect = button.getBoundingClientRect();
-    const menuRect = button.parentElement.querySelector('.bx--context-menu').getBoundingClientRect();
+    const menuRect = button.parentElement
+      .querySelector('.bx--context-menu')
+      .getBoundingClientRect();
     this.menuOpen = !this.menuOpen;
     this.menuPosition = {
       top: buttonRect.top + buttonRect.height,

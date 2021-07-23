@@ -16,7 +16,7 @@ import { NgModule } from '@angular/core';
 import Edit16 from '@carbon/icons/es/edit/16';
 
 @NgModule({
-  imports: [IconModule]
+  imports: [IconModule],
 })
 class StoryIconModule {
   constructor(protected iconService: IconService) {
@@ -35,7 +35,7 @@ storiesOf('Components/Tabs', module)
         DropdownModule,
         ModalModule,
         InputModule,
-        StoryIconModule
+        StoryIconModule,
       ],
     })
   )
@@ -62,7 +62,7 @@ storiesOf('Components/Tabs', module)
         {
           key: 'one',
           title: 'One',
-          demoContent: 'Tab content 1'
+          demoContent: 'Tab content 1',
         },
         {
           key: 'two',
@@ -196,8 +196,8 @@ storiesOf('Components/Tabs', module)
                 title: 'Close',
                 icon: 'close',
                 onClick: this.removeTab.bind(this),
-              }
-            ]
+              },
+            ],
           },
           {
             key: 'three',
@@ -208,8 +208,8 @@ storiesOf('Components/Tabs', module)
                 title: 'Close',
                 icon: 'close',
                 onClick: this.removeTab.bind(this),
-              }
-            ]
+              },
+            ],
           },
         ]);
         return this.controller;
@@ -229,12 +229,13 @@ storiesOf('Components/Tabs', module)
               title: 'Close',
               icon: 'close',
               onClick: this.removeTab.bind(this),
-            }
-          ]
+            },
+          ],
         });
       },
     },
-  })).add('With tab management', () => ({
+  }))
+  .add('With tab management', () => ({
     template: `
       <ai-tabs [controller]="getController()">
         <ai-tab-actions>
@@ -298,7 +299,7 @@ storiesOf('Components/Tabs', module)
                 title: 'Edit',
                 icon: 'edit',
                 onClick: this.editTab.bind(this),
-              }
+              },
             ],
           },
           {
@@ -315,8 +316,8 @@ storiesOf('Components/Tabs', module)
                 title: 'Edit',
                 icon: 'edit',
                 onClick: this.editTab.bind(this),
-              }
-            ]
+              },
+            ],
           },
           {
             key: 'three',
@@ -332,8 +333,8 @@ storiesOf('Components/Tabs', module)
                 title: 'Edit',
                 icon: 'edit',
                 onClick: this.editTab.bind(this),
-              }
-            ]
+              },
+            ],
           },
         ]);
         return this.controller;
@@ -376,9 +377,9 @@ storiesOf('Components/Tabs', module)
               title: 'Edit',
               icon: 'edit',
               onClick: this.editTab.bind(this),
-            }
-          ]
+            },
+          ],
         });
       },
     },
-  }));;
+  }));

@@ -1,5 +1,10 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
-import { DocumentService, DropdownList, DropdownService, ListItem } from 'carbon-components-angular';
+import {
+  DocumentService,
+  DropdownList,
+  DropdownService,
+  ListItem,
+} from 'carbon-components-angular';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TabController } from './tab-controller.class';

@@ -16,11 +16,11 @@ const path = require('path');
 // =================================
 const dirs = {
   DIST: 'dist',
-  SRC: 'src'
+  SRC: 'src',
 };
 
 const globs = {
-  scss: `${dirs.SRC}/**/*.scss`
+  scss: `${dirs.SRC}/**/*.scss`,
 };
 
 const licenseTemplate = `/**

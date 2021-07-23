@@ -40,7 +40,7 @@ export class TabController {
   }
 
   updateTab(updatedTab: Tab) {
-    const updatedTabs = this.tabSource.getValue().map(tab => {
+    const updatedTabs = this.tabSource.getValue().map((tab) => {
       if (tab.key === updatedTab.key) {
         return updatedTab;
       }
@@ -51,11 +51,9 @@ export class TabController {
 
   removeTab(key: any): any {
     const tabs = this.tabSource.getValue();
-    const index = tabs.findIndex(tab => tab.key === key);
-    const filteredTabs = tabs.filter(tab => tab.key !== key);
+    const index = tabs.findIndex((tab) => tab.key === key);
+    const filteredTabs = tabs.filter((tab) => tab.key !== key);
     this.setTabs(filteredTabs);
     return index > 0 ? filteredTabs[index - 1].key : filteredTabs[0]?.key;
   }
-
-
 }
