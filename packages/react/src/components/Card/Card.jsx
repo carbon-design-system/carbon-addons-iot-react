@@ -425,7 +425,11 @@ const Card = (props) => {
                           {subtitle}
                         </Tooltip>
                       ) : (
-                        <p ref={subTitleRef} className={`${iotPrefix}--card--subtitle--text`}>
+                        <p
+                          ref={subTitleRef}
+                          data-testid={`${testID || testId}-subtitle`}
+                          className={`${iotPrefix}--card--subtitle--text`}
+                        >
                           {subtitle}
                         </p>
                       )}
@@ -486,7 +490,10 @@ const Card = (props) => {
                   )}
                 </CardContent>
                 {CardFooter ? (
-                  <div className={`${iotPrefix}--card--footer--wrapper`}>
+                  <div
+                    className={`${iotPrefix}--card--footer--wrapper`}
+                    data-testid={`${testID || testId}-footer`}
+                  >
                     <CardFooter />
                   </div>
                 ) : null}
