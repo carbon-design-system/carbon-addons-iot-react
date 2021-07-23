@@ -1,3 +1,6 @@
+@import '../../globals/vars';
+@import '../../vendor/carbon-components/scss/globals/scss/typography';
+
 .#{$iot-prefix}--tear-sheet {
   background-color: $ui-01;
   display: flex;
