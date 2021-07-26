@@ -371,6 +371,19 @@ describe('DateTimePicker', () => {
     expect(screen.getByText('2020-04-01 12:34 to 2020-04-06 10:49')).toBeVisible();
   });
 
+  it('changing the absolute range and applying', () => {
+    render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />);
+    // first open the menu and select custom range
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    // Select absolute
+    expect(screen.getByText(/Absolute/)).toBeInTheDocument();
+    userEvent.click(screen.getAllByLabelText('Increment hours')[0]);
+    expect(screen.getByText('2020-04-01 13:34 to 2020-04-06 10:49')).toBeVisible();
+    userEvent.click(screen.getByText('Apply'));
+    // This should be displayed
+    expect(screen.getByText('2020-04-01 13:34 to 2020-04-06 10:49')).toBeVisible();
+  });
+
   it('i18n string test', () => {
     const i18nTest = {
       toLabel: 'to-label',

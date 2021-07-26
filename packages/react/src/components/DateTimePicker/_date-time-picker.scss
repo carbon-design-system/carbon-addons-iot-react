@@ -28,6 +28,11 @@
     animation: none;
   }
 
+  // move up the tooltip
+  .bx--tooltip[data-floating-menu-direction='bottom'] {
+    margin-top: 0rem;
+  }
+
   // hide the date picker inputs
   .#{$prefix}--date-picker--range {
     position: absolute;
