@@ -9,7 +9,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--rule-builder-header"
-      data-testid="rule-builder-header"
+      data-testid="rule-builder-editor-header"
     >
       <div>
         <div
@@ -88,11 +88,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         className="iot--rule-builder-header__buttons"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
-          className="bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-rule-button"
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="rule-builder-editor-header-add-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -114,11 +119,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
-          className="bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-group-button"
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="rule-builder-editor-header-add-group-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -302,18 +312,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         className="iot--rule-builder-rule__actions"
       >
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="rsiru4rjba-remove-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Remove rule
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Remove rule"
@@ -333,18 +349,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="rsiru4rjba-add-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Add new rule
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Add new rule"
@@ -364,18 +386,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="rsiru4rjba-add-group-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Add new rule group
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Add new rule group"
@@ -557,18 +585,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         className="iot--rule-builder-rule__actions"
       >
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="34bvyub9jq-remove-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Remove rule
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Remove rule"
@@ -588,18 +622,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="34bvyub9jq-add-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Add new rule
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Add new rule"
@@ -619,18 +659,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="34bvyub9jq-add-group-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Add new rule group
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Add new rule group"
@@ -888,18 +934,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--rule-builder-rule__actions"
         >
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+            aria-describedby={null}
+            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="ewc2z5kyfu-remove-rule-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
-            <span
+            <div
               className="bx--assistive-text"
+              onMouseEnter={[Function]}
             >
               Remove rule
-            </span>
+            </div>
             <svg
               aria-hidden="true"
               aria-label="Remove rule"
@@ -919,18 +971,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+            aria-describedby={null}
+            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="ewc2z5kyfu-add-rule-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
-            <span
+            <div
               className="bx--assistive-text"
+              onMouseEnter={[Function]}
             >
               Add new rule
-            </span>
+            </div>
             <svg
               aria-hidden="true"
               aria-label="Add new rule"
@@ -950,18 +1008,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+            aria-describedby={null}
+            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="ewc2z5kyfu-add-group-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
-            <span
+            <div
               className="bx--assistive-text"
+              onMouseEnter={[Function]}
             >
               Add new rule group
-            </span>
+            </div>
             <svg
               aria-hidden="true"
               aria-label="Add new rule group"
@@ -1143,18 +1207,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--rule-builder-rule__actions"
         >
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+            aria-describedby={null}
+            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="hks7h2zin4-remove-rule-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
-            <span
+            <div
               className="bx--assistive-text"
+              onMouseEnter={[Function]}
             >
               Remove rule
-            </span>
+            </div>
             <svg
               aria-hidden="true"
               aria-label="Remove rule"
@@ -1174,18 +1244,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+            aria-describedby={null}
+            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="hks7h2zin4-add-rule-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
-            <span
+            <div
               className="bx--assistive-text"
+              onMouseEnter={[Function]}
             >
               Add new rule
-            </span>
+            </div>
             <svg
               aria-hidden="true"
               aria-label="Add new rule"
@@ -1205,18 +1281,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </svg>
           </button>
           <button
-            className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+            aria-describedby={null}
+            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="hks7h2zin4-add-group-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
-            <span
+            <div
               className="bx--assistive-text"
+              onMouseEnter={[Function]}
             >
               Add new rule group
-            </span>
+            </div>
             <svg
               aria-hidden="true"
               aria-label="Add new rule group"
@@ -1474,18 +1556,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             className="iot--rule-builder-rule__actions"
           >
             <button
-              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              aria-describedby={null}
+              className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
               data-testid="wg9hlv197c-remove-rule-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Remove rule
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Remove rule"
@@ -1505,18 +1593,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </svg>
             </button>
             <button
-              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              aria-describedby={null}
+              className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
               data-testid="wg9hlv197c-add-rule-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Add new rule
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Add new rule"
@@ -1536,18 +1630,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </svg>
             </button>
             <button
-              className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+              aria-describedby={null}
+              className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
               data-testid="wg9hlv197c-add-group-button"
               disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               tabIndex={0}
               type="button"
             >
-              <span
+              <div
                 className="bx--assistive-text"
+                onMouseEnter={[Function]}
               >
                 Add new rule group
-              </span>
+              </div>
               <svg
                 aria-hidden="true"
                 aria-label="Add new rule group"
@@ -1805,18 +1905,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--rule-builder-rule__actions"
             >
               <button
-                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                aria-describedby={null}
+                className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="7kadk2wfv8-remove-rule-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Remove rule
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Remove rule"
@@ -1836,18 +1942,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                aria-describedby={null}
+                className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="7kadk2wfv8-add-rule-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add new rule
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add new rule"
@@ -1867,18 +1979,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                aria-describedby={null}
+                className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="7kadk2wfv8-add-group-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add new rule group
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add new rule group"
@@ -2060,18 +2178,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--rule-builder-rule__actions"
             >
               <button
-                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                aria-describedby={null}
+                className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="49mf09vjhn-remove-rule-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Remove rule
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Remove rule"
@@ -2091,18 +2215,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                aria-describedby={null}
+                className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="49mf09vjhn-add-rule-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add new rule
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add new rule"
@@ -2122,18 +2252,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </svg>
               </button>
               <button
-                className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                aria-describedby={null}
+                className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="49mf09vjhn-add-group-button"
                 disabled={false}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
                 type="button"
               >
-                <span
+                <div
                   className="bx--assistive-text"
+                  onMouseEnter={[Function]}
                 >
                   Add new rule group
-                </span>
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Add new rule group"
@@ -2170,7 +2306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--rule-builder-header"
-      data-testid="rule-builder-header"
+      data-testid="rule-builder-editor-header"
     >
       <div>
         <div
@@ -2249,11 +2385,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         className="iot--rule-builder-header__buttons"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
-          className="bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-rule-button"
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="rule-builder-editor-header-add-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -2275,11 +2416,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
-          className="bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-group-button"
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="rule-builder-editor-header-add-group-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -2463,18 +2609,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         className="iot--rule-builder-rule__actions"
       >
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="rsiru4rjba-remove-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Remove rule
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Remove rule"
@@ -2494,18 +2646,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="rsiru4rjba-add-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Add new rule
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Add new rule"
@@ -2525,18 +2683,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="rsiru4rjba-add-group-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Add new rule group
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Add new rule group"
@@ -2570,7 +2734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="iot--rule-builder-header"
-      data-testid="rule-builder-header"
+      data-testid="rule-builder-editor-header"
     >
       <div>
         <div
@@ -2649,11 +2813,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         className="iot--rule-builder-header__buttons"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
-          className="bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-rule-button"
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="rule-builder-editor-header-add-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -2675,11 +2844,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
-          className="bx--btn bx--btn--ghost"
-          data-testid="rule-builder-header-add-group-button"
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="rule-builder-editor-header-add-group-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -2863,18 +3037,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         className="iot--rule-builder-rule__actions"
       >
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="rsiru4rjba-remove-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Remove rule
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Remove rule"
@@ -2894,18 +3074,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="rsiru4rjba-add-rule-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Add new rule
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Add new rule"
@@ -2925,18 +3111,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </svg>
         </button>
         <button
-          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="rsiru4rjba-add-group-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Add new rule group
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Add new rule group"

@@ -7,6 +7,7 @@ import warning from 'warning';
 import { Button } from '../../index';
 import { settings } from '../../constants/Settings';
 import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
+import deprecate from '../../internal/deprecate';
 
 import CardGalleryList from './CardGalleryList/CardGalleryList';
 import CardEditForm from './CardEditForm/CardEditForm';
@@ -115,8 +116,14 @@ const propTypes = {
   }),
   currentBreakpoint: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
+  // TODO: remove deprecated testID in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
     simpleBar: PropTypes.string,
@@ -152,7 +159,7 @@ const defaultProps = {
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
   isSummaryDashboard: false,
-  testID: 'card-editor',
+  testId: 'card-editor',
   dataSeriesItemLinks: null,
   onEditDataItems: null,
 };
@@ -175,7 +182,9 @@ const CardEditor = ({
   icons,
   i18n,
   currentBreakpoint,
+  // TODO: remove deprecated testID in v3
   testID,
+  testId,
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
@@ -195,7 +204,11 @@ const CardEditor = ({
   const showGallery = isNil(cardConfig);
 
   return (
-    <div className={baseClassName} data-testid={testID}>
+    <div
+      className={baseClassName}
+      // TODO: remove deprecated testID in v3
+      data-testid={testID || testId}
+    >
       {showGallery ? (
         <div className={`${baseClassName}--header`}>
           <h2 className={`${baseClassName}--header--title`}>{mergedI18n.galleryHeader}</h2>
@@ -208,7 +221,8 @@ const CardEditor = ({
             onAddCard={onAddCard}
             supportedCardTypes={supportedCardTypes}
             i18n={mergedI18n}
-            data-testid={`${testID}-card-gallery-list`}
+            // TODO: remove deprecated testID in v3
+            testId={`${testID || testId}-card-gallery-list`}
           />
         ) : (
           <CardEditForm
@@ -230,7 +244,14 @@ const CardEditor = ({
       </div>
       {showGallery ? null : (
         <div className={`${baseClassName}--footer`}>
-          <Button kind="ghost" size="small" renderIcon={Apps16} onClick={onShowGallery}>
+          <Button
+            kind="ghost"
+            size="small"
+            renderIcon={Apps16}
+            onClick={onShowGallery}
+            // TODO: remove deprecated testID in v3 and pass testId to overrride defaults
+            // testId={`${testID || testId}-add-card-button`}
+          >
             {mergedI18n.addCardButton}
           </Button>
         </div>
@@ -244,6 +265,8 @@ const CardEditor = ({
             renderIcon={Data116}
             onClick={onEditDataItems}
             iconDescription={mergedI18n.editDataItems}
+            // TODO: remove deprecated testID in v3
+            // testId={`${testID || testId}-edit-button`}
           >
             {mergedI18n.editDataItems}
           </Button>

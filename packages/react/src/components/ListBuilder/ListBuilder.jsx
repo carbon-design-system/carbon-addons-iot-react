@@ -5,6 +5,7 @@ import { ArrowRight16, Subtract16 } from '@carbon/icons-react';
 import HierarchyList from '../List/HierarchyList';
 import { settings } from '../../constants/Settings';
 import Button from '../Button/Button';
+import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -33,7 +34,13 @@ export const ListBuilderItemPropTypes = {
 };
 
 const propTypes = {
-  testID: PropTypes.string,
+  // TODO: remove deprecated testID in v3.
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 
   /** the list of all items available to select in the ListBuilder */
   items: PropTypes.arrayOf(PropTypes.shape(ListBuilderItemPropTypes)),
@@ -78,7 +85,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  testID: 'list-builder',
+  testId: 'list-builder',
 
   items: [],
 
@@ -106,7 +113,17 @@ const defaultProps = {
   },
 };
 
-const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onRemove }) => {
+const ListBuilder = ({
+  // TODO: remove deprecated testID in v3.
+  testID,
+  testId,
+  items,
+  itemCount,
+  selectedItems,
+  i18n,
+  onAdd,
+  onRemove,
+}) => {
   const mergedI18n = {
     ...defaultProps.i18n,
     ...i18n,
@@ -137,7 +154,8 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
             : () => [
                 <Button
                   key={`${item.id}-list-item-button`}
-                  testID={`${testID}-add-button-${item.id}`}
+                  // TODO: remove deprecated testID in v3.
+                  testId={`${testID || testId}-add-button-${item.id}`}
                   role="button"
                   aria-label={mergedI18n.addLabel}
                   renderIcon={ArrowRight16}
@@ -157,7 +175,7 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
           },
         };
       }) ?? [],
-    [handleAdd, items, mergedI18n.addLabel, testID]
+    [handleAdd, items, mergedI18n.addLabel, testID, testId]
   );
 
   const selectedListItems = useMemo(
@@ -169,7 +187,8 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
             : () => [
                 <Button
                   key={`${selectedItem.id}-list-item-button`}
-                  testID={`${testID}-add-button-${selectedItem.id}`}
+                  // TODO: remove deprecated testID in v3.
+                  testId={`${testID || testId}-add-button-${selectedItem.id}`}
                   role="button"
                   aria-label={mergedI18n.removeLabel}
                   renderIcon={Subtract16}
@@ -189,12 +208,16 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
           },
         };
       }) ?? [],
-    [handleRemove, mergedI18n.removeLabel, selectedItems, testID]
+    [handleRemove, mergedI18n.removeLabel, selectedItems, testID, testId]
   );
 
   return (
-    <div className={`${iotPrefix}--list-builder__container`}>
-      <div className={`${iotPrefix}--list-builder__all`} data-testid={`${testID}__all`}>
+    <div data-testid={testID || testId} className={`${iotPrefix}--list-builder__container`}>
+      <div
+        className={`${iotPrefix}--list-builder__all`}
+        // TODO: remove deprecated testID in v3.
+        data-testid={`${testID || testId}__all`}
+      >
         <HierarchyList
           title={allListTitle(itemCount ?? allListItems.length)}
           items={allListItems}
@@ -206,7 +229,11 @@ const ListBuilder = ({ testID, items, itemCount, selectedItems, i18n, onAdd, onR
           }}
         />
       </div>
-      <div className={`${iotPrefix}--list-builder__selected`} data-testid={`${testID}__selected`}>
+      <div
+        className={`${iotPrefix}--list-builder__selected`}
+        // TODO: remove deprecated testID in v3.
+        data-testid={`${testID || testId}__selected`}
+      >
         <HierarchyList
           title={selectedListTitle(selectedListItems.length)}
           items={selectedListItems}

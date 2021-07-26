@@ -27,6 +27,18 @@ const itemsWithoutIcons = [
 ];
 
 describe('Dropdown with Icon and Labels', () => {
+  it('should be selectable with testId', () => {
+    const { rerender } = render(
+      <Dropdown items={itemsWithoutIcons} {...iconDropdownProps} data-testid="dropdown_test" />
+    );
+
+    expect(screen.getAllByTestId('dropdown_test')).toBeDefined();
+
+    rerender(<Dropdown items={itemsWithoutIcons} {...iconDropdownProps} testId="dropdown_TEST" />);
+
+    expect(screen.getAllByTestId('dropdown_TEST')).toBeDefined();
+  });
+
   it('Renders default', () => {
     render(<Dropdown items={itemsWithoutIcons} {...iconDropdownProps} />);
 

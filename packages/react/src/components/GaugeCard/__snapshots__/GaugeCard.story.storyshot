@@ -25,9 +25,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Health"
         >
           <div
@@ -41,7 +43,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
           >
             
             <div
-              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -89,10 +90,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
           className="iot--gauge-container"
           style={
             Object {
-              "paddingBottom": 0,
+              "paddingBottom": 16,
               "paddingLeft": 16,
               "paddingRight": 16,
               "paddingTop": 0,
+              "rowGap": 0,
             }
           }
         >
@@ -105,32 +107,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
                 "--gauge-bg": "#e0e0e0",
                 "--gauge-colors": "green",
                 "--gauge-max-value": 100,
-                "--gauge-size": "80px",
+                "--gauge-size": "68px",
                 "--gauge-trend-color": "",
                 "--gauge-value": 81,
-                "--stroke-dash": 183.21768355735674,
-                "--stroke-dash-array": 226.1946710584651,
+                "--stroke-dash": 152.68140296446393,
+                "--stroke-dash-array": 188.49555921538757,
               }
             }
           >
             <circle
               className="iot--gauge-bg"
-              cx={40}
-              cy={40}
-              r={36}
+              cx={34}
+              cy={34}
+              r={30}
             />
             <circle
               className="iot--gauge-fg"
-              cx={40}
-              cy={40}
-              r={36}
+              cx={34}
+              cy={34}
+              r={30}
             />
             <text
               className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
               id="gauge-label"
               textAnchor="middle"
-              x={40}
-              y="33"
+              x={34}
+              y={42}
             >
               <tspan>
                 81
@@ -185,9 +187,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Health"
         >
           <div
@@ -201,7 +205,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
           >
             
             <div
-              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -237,12 +240,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
         </span>
         <div
           className="iot--card--toolbar"
+          data-testid="Card-toolbar"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            data-testid="Card-toolbar-expand-button"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             title="Expand to fullscreen"
             type="button"
@@ -283,10 +293,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
           className="iot--gauge-container"
           style={
             Object {
-              "paddingBottom": 0,
+              "paddingBottom": 16,
               "paddingLeft": 16,
               "paddingRight": 16,
               "paddingTop": 0,
+              "rowGap": 0,
             }
           }
         >
@@ -299,32 +310,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
                 "--gauge-bg": "#e0e0e0",
                 "--gauge-colors": "green",
                 "--gauge-max-value": 100,
-                "--gauge-size": "80px",
+                "--gauge-size": "68px",
                 "--gauge-trend-color": "",
                 "--gauge-value": 81,
-                "--stroke-dash": 183.21768355735674,
-                "--stroke-dash-array": 226.1946710584651,
+                "--stroke-dash": 152.68140296446393,
+                "--stroke-dash-array": 188.49555921538757,
               }
             }
           >
             <circle
               className="iot--gauge-bg"
-              cx={40}
-              cy={40}
-              r={36}
+              cx={34}
+              cy={34}
+              r={30}
             />
             <circle
               className="iot--gauge-fg"
-              cx={40}
-              cy={40}
-              r={36}
+              cx={34}
+              cy={34}
+              r={30}
             />
             <text
               className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
               id="gauge-label"
               textAnchor="middle"
-              x={40}
-              y="33"
+              x={34}
+              y={42}
             >
               <tspan>
                 81
@@ -379,9 +390,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
     >
       <div
         className="iot--card--header"
+        data-testid="Card-header"
       >
         <span
           className="iot--card--title"
+          data-testid="Card-title"
           title="Health"
         >
           <div
@@ -395,7 +408,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
           >
             
             <div
-              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -460,7 +472,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
               className="iot--data-state-grid"
             >
               <div
-                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__icon-GaugeCard"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__icon-GaugeCard"
@@ -508,6 +519,282 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
         }
       }
     />
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/GaugeCard with multiple gauges 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "4rem",
+        "width": "232px",
+      }
+    }
+  >
+    <div
+      className="iot--card iot--gauge-card iot--card--wrapper"
+      data-testid="Card"
+      id="GaugeCard"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "304px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Health"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Health
+          </div>
+          <div
+            className="bx--tooltip__label"
+            id="card-tooltip-trigger-GaugeCard"
+          >
+            
+            <div
+              className="bx--tooltip__trigger"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                description={null}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role={null}
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                />
+                <path
+                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                />
+              </svg>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "256px",
+          }
+        }
+      >
+        <div
+          className="iot--gauge-container"
+          style={
+            Object {
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 0,
+              "rowGap": "1rem",
+            }
+          }
+        >
+          <svg
+            aria-labelledby="gauge-label"
+            className="iot--gauge"
+            percent="0"
+            style={
+              Object {
+                "--gauge-bg": "#e0e0e0",
+                "--gauge-colors": "green",
+                "--gauge-max-value": 100,
+                "--gauge-size": "68px",
+                "--gauge-trend-color": "",
+                "--gauge-value": 81,
+                "--stroke-dash": 152.68140296446393,
+                "--stroke-dash-array": 188.49555921538757,
+              }
+            }
+          >
+            <circle
+              className="iot--gauge-bg"
+              cx={34}
+              cy={34}
+              r={30}
+            />
+            <circle
+              className="iot--gauge-fg"
+              cx={34}
+              cy={34}
+              r={30}
+            />
+            <text
+              className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
+              id="gauge-label"
+              textAnchor="middle"
+              x={34}
+              y={42}
+            >
+              <tspan>
+                81
+              </tspan>
+              <tspan>
+                %
+              </tspan>
+            </text>
+          </svg>
+          <div
+            className="iot--gauge-trend iot--gauge-trend__up"
+          >
+            <p
+              style={
+                Object {
+                  "--gauge-trend-color": "",
+                }
+              }
+            >
+              12%
+            </p>
+          </div>
+          <svg
+            aria-labelledby="gauge-label"
+            className="iot--gauge"
+            percent="0"
+            style={
+              Object {
+                "--gauge-bg": "#e0e0e0",
+                "--gauge-colors": "red",
+                "--gauge-max-value": 100,
+                "--gauge-size": "68px",
+                "--gauge-trend-color": "",
+                "--gauge-value": 32,
+                "--stroke-dash": 60.31857894892402,
+                "--stroke-dash-array": 188.49555921538757,
+              }
+            }
+          >
+            <circle
+              className="iot--gauge-bg"
+              cx={34}
+              cy={34}
+              r={30}
+            />
+            <circle
+              className="iot--gauge-fg"
+              cx={34}
+              cy={34}
+              r={30}
+            />
+            <text
+              className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
+              id="gauge-label"
+              textAnchor="middle"
+              x={34}
+              y={42}
+            >
+              <tspan>
+                32
+              </tspan>
+              <tspan>
+                %
+              </tspan>
+            </text>
+          </svg>
+          <div
+            className="iot--gauge-trend iot--gauge-trend__down"
+          >
+            <p
+              style={
+                Object {
+                  "--gauge-trend-color": "",
+                }
+              }
+            >
+              23%
+            </p>
+          </div>
+          <svg
+            aria-labelledby="gauge-label"
+            className="iot--gauge"
+            percent="0"
+            style={
+              Object {
+                "--gauge-bg": "#e0e0e0",
+                "--gauge-colors": "#f1c21b",
+                "--gauge-max-value": 100,
+                "--gauge-size": "68px",
+                "--gauge-trend-color": "",
+                "--gauge-value": 74,
+                "--stroke-dash": 139.4867138193868,
+                "--stroke-dash-array": 188.49555921538757,
+              }
+            }
+          >
+            <circle
+              className="iot--gauge-bg"
+              cx={34}
+              cy={34}
+              r={30}
+            />
+            <circle
+              className="iot--gauge-fg"
+              cx={34}
+              cy={34}
+              r={30}
+            />
+            <text
+              className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
+              id="gauge-label"
+              textAnchor="middle"
+              x={34}
+              y={42}
+            >
+              <tspan>
+                74
+              </tspan>
+              <tspan>
+                %
+              </tspan>
+            </text>
+          </svg>
+          <div
+            className="iot--gauge-trend iot--gauge-trend__up"
+          >
+            <p
+              style={
+                Object {
+                  "--gauge-trend-color": "",
+                }
+              }
+            >
+              12%
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

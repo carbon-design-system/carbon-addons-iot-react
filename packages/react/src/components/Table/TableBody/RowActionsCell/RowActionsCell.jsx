@@ -1,15 +1,10 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Button,
-  DataTable,
-  OverflowMenu,
-  OverflowMenuItem,
-  Loading,
-} from 'carbon-components-react';
+import { DataTable, OverflowMenu, OverflowMenuItem, Loading } from 'carbon-components-react';
 import classnames from 'classnames';
 import omit from 'lodash/omit';
 
+import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import icons from '../../../../utils/bundledIcons';
@@ -74,6 +69,10 @@ const onClick = (e, id, action, onApplyRowAction) => {
   onApplyRowAction(action, id);
   e.preventDefault();
   e.stopPropagation();
+};
+const renderBundledIconUsingName = (iconName, label) => {
+  const Icon = icons[iconName];
+  return <Icon aria-label={label} />;
 };
 
 class RowActionsCell extends React.Component {
@@ -159,7 +158,7 @@ class RowActionsCell extends React.Component {
                       {...omit(others, ['isOverflow', 'isDelete', 'isEdit', 'hasDivider'])}
                       iconDescription={labelText || iconDescription}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
-                      data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
+                      testId={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
                       hasIconOnly={!labelText}
                       tooltipPosition="left"
@@ -201,9 +200,7 @@ class RowActionsCell extends React.Component {
                               title={action.labelText}
                             >
                               {typeof action.renderIcon === 'string' ? (
-                                React.createElement(icons[action.renderIcon], {
-                                  'aria-label': action.labelText,
-                                })
+                                renderBundledIconUsingName(action.renderIcon, action.labelText)
                               ) : (
                                 <action.renderIcon description={action.labelText} />
                               )}

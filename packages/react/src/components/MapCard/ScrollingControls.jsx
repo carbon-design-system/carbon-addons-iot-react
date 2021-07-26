@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'carbon-components-react';
 import { ChevronUp32, ChevronDown32 } from '@carbon/icons-react';
 import classnames from 'classnames';
 
+import Button from '../Button';
 import { settings } from '../../constants/Settings';
 import { MapControlPropType } from '../../constants/CardPropTypes';
 
@@ -16,14 +16,14 @@ const propTypes = {
   scrollUpIconDescriptionText: PropTypes.string,
   scrollDownIconDescriptionText: PropTypes.string,
   tooltipPosition: PropTypes.string,
-  testID: PropTypes.string,
+  testId: PropTypes.string,
   /** Number of visible items shown between the scroll buttons */
   visibleItemsCount: PropTypes.number,
 };
 
 const defaultProps = {
   visibleItemsCount: 6,
-  testID: 'map-scroll-controls',
+  testId: 'map-scroll-controls',
   tooltipPosition: 'left',
   scrollUpIconDescriptionText: 'Scroll up',
   scrollDownIconDescriptionText: 'Scroll down',
@@ -35,7 +35,7 @@ const ScrollingControls = ({
   tooltipPosition,
   scrollUpIconDescriptionText,
   scrollDownIconDescriptionText,
-  testID,
+  testId,
 }) => {
   const scrollContainerRef = useRef();
   const buttonHeightPx = 40;
@@ -57,9 +57,9 @@ const ScrollingControls = ({
   };
 
   return (
-    <div data-testid={testID} className={classnames(`${BASE_CLASS_NAME}__container`)}>
+    <div data-testid={testId} className={classnames(`${BASE_CLASS_NAME}__container`)}>
       <Button
-        data-testid={`${testID}-scroll-up`}
+        testId={`${testId}-scroll-up`}
         className={classnames(`${BASE_CLASS_NAME}__btn`, `${BASE_CLASS_NAME}__scroll-btn`)}
         disabled={scrollUpDisabled}
         kind="ghost"
@@ -72,7 +72,7 @@ const ScrollingControls = ({
       />
       {scrollUpDisabled ? null : <div className={`${BASE_CLASS_NAME}__gradient`} />}
       <div
-        data-testid={`${testID}-scroll-area`}
+        data-testid={`${testId}-scroll-area`}
         ref={scrollContainerRef}
         style={{
           [`--visble-items-count`]: visibleItemsCount,
@@ -105,7 +105,7 @@ const ScrollingControls = ({
         />
       )}
       <Button
-        data-testid={`${testID}-scroll-down`}
+        testId={`${testId}-scroll-down`}
         className={classnames(`${BASE_CLASS_NAME}__btn`, `${BASE_CLASS_NAME}__scroll-btn`)}
         disabled={scrollDownDisabled}
         kind="ghost"

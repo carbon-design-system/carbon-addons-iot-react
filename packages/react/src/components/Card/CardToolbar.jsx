@@ -2,12 +2,13 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import { Close16, Popup16, Settings16 } from '@carbon/icons-react';
-import { OverflowMenu, OverflowMenuItem, Button } from 'carbon-components-react';
+import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
+import Button from '../Button';
 
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
@@ -64,6 +65,7 @@ const propTypes = {
     expandLabel: PropTypes.string,
     settingsLabel: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -90,6 +92,7 @@ const defaultProps = {
     expandLabel: 'Expand',
     settingsLabel: 'Settings',
   },
+  testId: 'card-toolbar',
 };
 
 const CardToolbar = ({
@@ -103,7 +106,7 @@ const CardToolbar = ({
   timeRangeOptions: timeRangeOptionsProp,
   onCardAction,
   className,
-  customToolbarContent,
+  testId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   // maps the timebox internal label to a translated string
@@ -137,7 +140,7 @@ const CardToolbar = ({
   );
 
   return isEditable ? (
-    <div className={classnames(className, `${iotPrefix}--card--toolbar`)}>
+    <div data-testid={testId} className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {(availableActions.clone || availableActions.delete) && (
         <OverflowMenu
           flipped
@@ -152,6 +155,7 @@ const CardToolbar = ({
               itemText={mergedI18n.cloneCardLabel}
               title={mergedI18n.cloneCardLabel}
               requireTitle
+              data-testid={`${testId}-clone-button`}
             />
           )}
           {availableActions.delete && (
@@ -163,14 +167,14 @@ const CardToolbar = ({
               itemText={mergedI18n.deleteCardLabel}
               title={mergedI18n.deleteCardLabel}
               requireTitle
+              data-testid={`${testId}-delete-button`}
             />
           )}
         </OverflowMenu>
       )}
     </div>
   ) : (
-    <div className={classnames(className, `${iotPrefix}--card--toolbar`)}>
-      {customToolbarContent}
+    <div data-testid={testId} className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {availableActions.range ? (
         <CardRangePicker
           width={width}
@@ -179,6 +183,7 @@ const CardToolbar = ({
           timeRangeOptions={timeRangeOptions}
           onCardAction={onCardAction}
           cardWidth={width}
+          testId={`${testId}-range-picker`}
         />
       ) : null}
       {availableActions.settings ? (
@@ -187,6 +192,7 @@ const CardToolbar = ({
           onClick={() => onCardAction(CARD_ACTIONS.ON_SETTINGS_CLICK)}
           iconDescription={mergedI18n.settingsLabel}
           renderIcon={Settings16}
+          testId={`${testId}-settings-button`}
         />
       ) : null}
       {availableActions.expand ? (
@@ -197,6 +203,7 @@ const CardToolbar = ({
               onClick={() => onCardAction(CARD_ACTIONS.CLOSE_EXPANDED_CARD)}
               iconDescription={mergedI18n.closeLabel}
               renderIcon={Close16}
+              testId={`${testId}-close-button`}
             />
           ) : (
             <ToolbarSVGWrapper
@@ -206,6 +213,7 @@ const CardToolbar = ({
               }}
               iconDescription={mergedI18n.expandLabel}
               renderIcon={renderExpandIcon}
+              testId={`${testId}-expand-button`}
             />
           )}
         </>

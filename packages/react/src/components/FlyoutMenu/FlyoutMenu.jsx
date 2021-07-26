@@ -44,7 +44,9 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     <Button
       className={`${iotPrefix}--flyout-menu__cancel`}
       kind="secondary"
-      testID="flyout-menu-cancel"
+      // TODO: in v3 pass testId from parent and insert here to allow it to be configurable
+      // ie. `${testId}-menu-cancel`
+      testId="flyout-menu-cancel"
       onClick={() => {
         setIsOpen(false);
 
@@ -59,7 +61,9 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     <Button
       className={`${iotPrefix}--flyout-menu__submit`}
       aria-label={i18n.applyButtonText}
-      testID="flyout-menu-apply"
+      // TODO: in v3 pass testId from parent and insert here to allow it to be configurable
+      // ie. `${testId}-menu-cancel`
+      testId="flyout-menu-apply"
       onClick={() => {
         setIsOpen(false);
         if (onApply) {
@@ -105,11 +109,11 @@ const FlyoutMenu = ({
   const getFlyoutMenuOffset = React.useCallback(
     (tooltipElement, flyoutDirection, tooltipButtonElement, flipped) => {
       let topOffset = 0;
-      let leftOffset = 0;
+      let leftOffset = -2;
 
       const caretWidth = 16;
-      const caretHeight = 14;
-      const borderWidth = 1;
+      const caretHeight = 12;
+      const borderWidth = 2;
 
       const tooltipContent = tooltipElement.querySelector('[role="dialog"]');
       const tooltipWidth = tooltipContent ? tooltipContent.getBoundingClientRect().width : 0;
@@ -128,10 +132,11 @@ const FlyoutMenu = ({
         case FlyoutMenuDirection.LeftEnd:
           topOffset =
             -tooltipHeight / 2 + 2 * caretHeight + caretWidth - (48 - buttonWidth) + borderWidth;
+          leftOffset = -caretWidth / 2;
           rtlOffset = 0;
           break;
         case FlyoutMenuDirection.RightStart:
-          topOffset = tooltipHeight / 2 - caretHeight - borderWidth;
+          topOffset = tooltipHeight / 2 - caretHeight - 2 * borderWidth;
           rtlOffset = -rtlOffset;
           break;
 
@@ -142,7 +147,7 @@ const FlyoutMenu = ({
           break;
         case FlyoutMenuDirection.TopStart:
           leftOffset = tooltipWidth / 2;
-          topOffset = caretHeight - 2 * borderWidth;
+          topOffset = caretHeight;
           break;
         case FlyoutMenuDirection.TopEnd:
           leftOffset = -tooltipWidth / 2 + buttonWidth;
@@ -155,7 +160,7 @@ const FlyoutMenu = ({
         default:
           // Bottom Start
           leftOffset = tooltipWidth / 2;
-          topOffset = -caretHeight + 2 * borderWidth;
+          topOffset = -caretHeight - 2 * borderWidth;
       }
 
       if (document.dir === 'rtl') {
@@ -211,6 +216,7 @@ const FlyoutMenu = ({
 
   return (
     <div
+      data-testid={`${testId}-container`}
       style={{
         '--tooltip-visibility': hideTooltip ? 'hidden' : 'visible',
       }}
@@ -232,7 +238,7 @@ const FlyoutMenu = ({
         disabled={disabled}
         hasIconOnly
         kind="ghost"
-        testID={`${testId}-button`}
+        testId={`${testId}-button`}
         size={buttonSize}
         renderIcon={renderIcon}
         onClick={() => {

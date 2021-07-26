@@ -96,6 +96,18 @@ describe('PieChartCard', () => {
     console.error = originalError;
     global.__DEV__ = originalDev;
   });
+
+  it('should be selectable by testId or testID', async () => {
+    const { testID, ...props } = pieChartCardProps;
+    const { rerender } = render(<PieChartCard {...props} isExpanded testId="pie_chart_card" />);
+    expect(screen.getByTestId('pie_chart_card')).toBeDefined();
+    expect(screen.getByTestId('pie_chart_card-table')).toBeDefined();
+
+    rerender(<PieChartCard {...props} isExpanded testID="PIE_CHART_CARD" />);
+    expect(screen.getByTestId('PIE_CHART_CARD')).toBeDefined();
+    expect(screen.getByTestId('PIE_CHART_CARD-table')).toBeDefined();
+  });
+
   it('shows loading skeleton for isLoading even for empty data  ', async () => {
     const loadingSkeletonQuery = '.iot--pie-chart-container svg.chart-skeleton';
     const { container, rerender } = render(<PieChartCard {...pieChartCardProps} />);

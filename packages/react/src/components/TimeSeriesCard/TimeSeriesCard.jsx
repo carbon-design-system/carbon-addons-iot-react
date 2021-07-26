@@ -145,6 +145,13 @@ const TimeSeriesCardPropTypes = {
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the dayjs formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -195,6 +202,9 @@ const TimeSeriesCard = ({
   domainRange,
   tooltipDateFormatPattern,
   showTimeInGMT,
+  // TODO: remove deprecated 'testID' in v3
+  testID,
+  testId,
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
@@ -435,6 +445,9 @@ const TimeSeriesCard = ({
       },
       containerResizable: true,
       tooltip: {
+        truncation: {
+          type: 'none',
+        },
         valueFormatter: (tooltipValue) =>
           chartValueFormatter(tooltipValue, newSize, unit, locale, decimalPrecision),
         customHTML: (...args) =>
@@ -515,6 +528,7 @@ const TimeSeriesCard = ({
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
       isLoading={isLoading}
       resizeHandles={resizeHandles}
+      testId={testID || testId}
     >
       {!isChartDataEmpty ? (
         <>
@@ -539,6 +553,7 @@ const TimeSeriesCard = ({
           </div>
           {isExpanded ? (
             <StatefulTable
+              testId={`${testId}-table`}
               id="TimeSeries-table"
               className={`${iotPrefix}--time-series-card--stateful-table`}
               columns={tableColumns}

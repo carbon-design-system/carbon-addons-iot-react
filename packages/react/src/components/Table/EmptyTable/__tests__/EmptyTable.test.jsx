@@ -10,6 +10,31 @@ const commonTableProps = {
 };
 
 describe('EmptyTable', () => {
+  it('should be selectable by testID and testId', () => {
+    const { rerender } = render(
+      <EmptyTable
+        {...commonTableProps}
+        emptyState={<span>my custom element</span>}
+        testID="EMPTY"
+      />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
+    );
+    expect(screen.getByTestId('EMPTY')).toBeDefined();
+
+    rerender(
+      <EmptyTable
+        {...commonTableProps}
+        emptyState={<span>my custom element</span>}
+        testId="empty"
+      />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
+    );
+    expect(screen.getByTestId('empty')).toBeDefined();
+  });
   it('custom empty state', () => {
     render(<EmptyTable {...commonTableProps} emptyState={<span>my custom element</span>} />, {
       container: document.body.appendChild(document.createElement('table')),

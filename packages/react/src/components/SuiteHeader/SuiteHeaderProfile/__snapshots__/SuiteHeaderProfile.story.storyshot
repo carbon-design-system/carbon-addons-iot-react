@@ -13,6 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   >
     <div
       className="iot--suite-header-profile"
+      data-testid="suite-header-profile"
     >
       <h5>
         Profile
@@ -66,6 +67,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   >
     <div
       className="iot--suite-header-profile"
+      data-testid="suite-header-profile"
     >
       <h5>
         Profile
@@ -126,6 +128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   >
     <div
       className="iot--suite-header-profile"
+      data-testid="suite-header-profile"
     >
       <h5>
         Profile
@@ -155,11 +158,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
           data-testid="suite-header-profile--profile"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -184,6 +192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   >
     <div
       className="iot--suite-header-profile"
+      data-testid="suite-header-profile"
     >
       <h5>
         Profile
@@ -213,11 +222,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--suite-header-profile--manage-button"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
           data-testid="suite-header-profile--profile"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -228,11 +242,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--suite-header-profile--logout"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
           data-testid="suite-header-profile--logout"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >

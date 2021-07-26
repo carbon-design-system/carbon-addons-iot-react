@@ -36,22 +36,6 @@ jobs:
           yarn lerna run --stream postinstall
           yarn lerna link
 
-      - name: Validate formatting
-        run: yarn format:check
-
-      - name: Lint
-        run: yarn lint
-
-      - name: Test, collect coverage
-        run: yarn test:ci
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: "./packages/react/coverage/lcov.info"
-          base-path: "packages/react"
-
       - name: Build
         run: yarn build
 

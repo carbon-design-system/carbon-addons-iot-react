@@ -24,6 +24,8 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         !message.includes(
           'Warning: \nThe prop `blurb` for WizardInline has been deprecated in favor of `description`'
         ) &&
+        // TODO: remove deprecated testID in v3.
+        !message.includes(`The 'testID' prop has been deprecated. Please use 'testId' instead.`) &&
         !message.includes('Warning: Function components cannot be given refs.') &&
         !message.includes('Failed to initialize WebGL.')
       ) {
@@ -108,11 +110,11 @@ describe(`Storybook Snapshot tests and console checks`, () => {
 
         // needed for menubutton using carbon menu
         if (
-          element.props?.className?.includes('bx--context-menu-option') ||
-          element.props?.className?.includes('bx--context-menu-divider')
+          element.props?.className?.includes('bx--menu-option') ||
+          element.props?.className?.includes('bx--menu-divider')
         ) {
           const parentNode = document.createElement('div');
-          parentNode.classList.add('bx--context-menu');
+          parentNode.classList.add('bx--menu');
           return {
             ...element,
             parentNode,

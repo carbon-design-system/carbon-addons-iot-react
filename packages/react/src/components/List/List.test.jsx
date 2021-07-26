@@ -18,6 +18,22 @@ describe('List', () => {
         isSelectable: true,
       }));
 
+  it('should be selectable by testId', () => {
+    render(
+      <List
+        title="list"
+        items={getListItems(5)}
+        search={{
+          onChange: jest.fn(),
+        }}
+        testId="LIST"
+      />
+    );
+    expect(screen.getByTestId('LIST')).toBeDefined();
+    expect(screen.getByTestId('LIST-header')).toBeDefined();
+    expect(screen.getByTestId('LIST-header-search-input')).toBeDefined();
+  });
+
   it('List when pagination is null', () => {
     const renderedElement = render(<UnconnectedList title="list" items={getListItems(5)} />);
     expect(renderedElement.container.innerHTML).toBeTruthy();

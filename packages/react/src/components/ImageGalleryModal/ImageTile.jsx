@@ -1,10 +1,11 @@
-import { SelectableTile, Button } from 'carbon-components-react';
+import { SelectableTile } from 'carbon-components-react';
 import { TrashCan16 } from '@carbon/icons-react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import { settings } from '../../constants/Settings';
+import Button from '../Button';
 
 const { iotPrefix } = settings;
 
@@ -21,6 +22,7 @@ const propTypes = {
   }),
   /** function called with the image id if they click the delete button */
   onDelete: PropTypes.func,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -32,6 +34,7 @@ const defaultProps = {
     deleteButtonLabel: 'Delete',
   },
   onDelete: null,
+  testId: 'image-tile',
 };
 
 const matchFilename = /([^\\/]+)\.(\w+)$/;
@@ -51,6 +54,7 @@ const ImageTile = ({
   onDelete,
   i18n: { deleteButtonLabel },
   title,
+  testId,
 }) => {
   return (
     <SelectableTile
@@ -61,12 +65,13 @@ const ImageTile = ({
       selected={isSelected}
       onChange={toggleImageSelection}
       light
+      data-testid={testId}
     >
-      <div className={`${iotPrefix}--image-tile__title`}>
+      <div data-testid={`${testId}-title`} className={`${iotPrefix}--image-tile__title`}>
         <span>{title ?? extractFileName(src) ?? src}</span>
       </div>
       <div className={`${iotPrefix}--image-tile__image-container`}>
-        <img src={src} alt={alt} />
+        <img src={src} alt={alt} data-testid={`${testId}-image`} />
         {onDelete ? (
           <Button
             className={`${iotPrefix}--image-tile__title__delete`}
@@ -78,6 +83,7 @@ const ImageTile = ({
               event.stopPropagation();
               onDelete(id);
             }}
+            testId={`${testId}-delete-button`}
           />
         ) : null}
       </div>

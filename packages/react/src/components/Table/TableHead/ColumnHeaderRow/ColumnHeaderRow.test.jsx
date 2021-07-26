@@ -24,6 +24,22 @@ const commonTableHeadProps = {
 };
 
 describe('TableHead', () => {
+  it('should be selectable by testId', () => {
+    const onChangeOrdering = jest.fn();
+    render(
+      <UnconnectedColumnHeaderRow
+        {...commonTableHeadProps}
+        showExpanderColumn={false}
+        onChangeOrdering={onChangeOrdering}
+        testId="column_header_row"
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
+    );
+    expect(screen.getByTestId('column_header_row')).toBeDefined();
+  });
+
   it('can reorder columns', () => {
     const onChangeOrdering = jest.fn();
     render(

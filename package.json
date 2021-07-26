@@ -33,11 +33,13 @@
     "format:check": "prettier --check \"**/*.{scss,css,js,jsx,md,ts}\" --loglevel warn",
     "publish-npm": "bash ./scripts/release.sh",
     "version": "yarn format",
-    "storybook": "node ./scripts/storybook.js"
+    "storybook": "node ./scripts/storybook.js",
+    "sync-styles": "bash ./scripts/sync-styles.sh"
   },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint-staged && lerna run --stream pre-commit",
+      "pre-push": "lerna run --stream pre-push",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -76,6 +78,7 @@
     "react-test-renderer": "16.14.0",
     "react-dom": "16.14.0",
     "react": "16.14.0",
-    "webpack": "4"
+    "webpack": "4",
+    "flatpickr": "4.6.1"
   }
 }

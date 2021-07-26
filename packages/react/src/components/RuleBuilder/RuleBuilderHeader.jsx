@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Button } from 'carbon-components-react';
 import { Add32, TextNewLine32 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
+import Button from '../Button';
 import { settings } from '../../constants/Settings';
+import deprecate from '../../internal/deprecate';
 
 import GroupLogic from './GroupLogic';
 import { GroupLogicPropType } from './RuleBuilderPropTypes';
@@ -17,7 +18,7 @@ const defaultProps = {
   },
   // the default logic for the primary rule builder group. Can be ALL or ANY
   groupLogic: 'ALL',
-  testID: 'rule-builder-header',
+  testId: 'rule-builder-header',
 };
 
 const propTypes = {
@@ -29,10 +30,16 @@ const propTypes = {
   }),
   onAddRule: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  testID: PropTypes.string,
+  // TODO: remove the deprecated 'testID' in v3.
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 };
 
-const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID }) => {
+const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID, testId }) => {
   const mergedI18n = React.useMemo(
     () => ({
       ...defaultProps.i18n,
@@ -54,11 +61,16 @@ const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID }
     [id, onChange]
   );
   return (
-    <div data-testid={testID} className={`${iotPrefix}--rule-builder-header`}>
+    <div
+      // TODO: remove the deprecated 'testID' in v3.
+      data-testid={testID || testId}
+      className={`${iotPrefix}--rule-builder-header`}
+    >
       <GroupLogic id={id} selected={groupLogic} onChange={handleChangeGroupLogic} />
       <div className={`${iotPrefix}--rule-builder-header__buttons`}>
         <Button
-          data-testid={`${testID}-add-rule-button`}
+          // TODO: remove the deprecated 'testID' in v3.
+          testId={`${testID || testId}-add-rule-button`}
           kind="ghost"
           renderIcon={Add32}
           onClick={onAddRule()}
@@ -66,7 +78,8 @@ const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID }
           {mergedI18n.addRule}
         </Button>
         <Button
-          data-testid={`${testID}-add-group-button`}
+          // TODO: remove the deprecated 'testID' in v3.
+          testId={`${testID || testId}-add-group-button`}
           kind="ghost"
           renderIcon={TextNewLine32}
           onClick={onAddRule(undefined, true)}

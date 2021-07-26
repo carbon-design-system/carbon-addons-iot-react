@@ -173,6 +173,8 @@ const TableCard = ({
   timeRangeOptions,
   availableActions,
   isLoading,
+  testID,
+  testId,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -638,6 +640,8 @@ const TableCard = ({
       hideHeader
       // Use the Table's loading state rather than Card's
       isLoading={false}
+      // TODO: remove deprecated testID in v3.
+      testId={testID || testId}
       {...others}
     >
       {({ height }) => {

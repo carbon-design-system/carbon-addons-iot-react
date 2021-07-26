@@ -28,6 +28,7 @@ const propTypes = {
       })
     ).isRequired,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -35,12 +36,22 @@ const defaultProps = {
     onChange: null,
     selectedIndex: null,
   },
+  testId: 'page-switcher',
 };
 
-const PageSwitcher = ({ switcher: { onChange, selectedIndex, options } }) => (
-  <StyledContentSwitcher onChange={(id) => onChange(id)} selectedIndex={selectedIndex}>
+const PageSwitcher = ({ switcher: { onChange, selectedIndex, options }, testId }) => (
+  <StyledContentSwitcher
+    onChange={(id) => onChange(id)}
+    selectedIndex={selectedIndex}
+    data-testid={testId}
+  >
     {options.map((item) => (
-      <Switch key={item.id} text={item.text} data-tip={item.text} />
+      <Switch
+        key={item.id}
+        text={item.text}
+        data-tip={item.text}
+        data-testid={`${testId}-switch-${item.id}`}
+      />
     ))}
   </StyledContentSwitcher>
 );

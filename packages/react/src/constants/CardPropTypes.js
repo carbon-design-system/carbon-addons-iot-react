@@ -14,8 +14,8 @@ import {
   purple50,
 } from '@carbon/colors';
 
-import deprecate from '../internal/deprecate';
 import { bundledIconNames } from '../utils/bundledIcons';
+import deprecate from '../internal/deprecate';
 
 import {
   CARD_LAYOUTS,
@@ -429,6 +429,8 @@ export const ImageCardPropTypes = {
     id: PropTypes.string,
     src: PropTypes.string,
     zoomMax: PropTypes.number,
+    /** value for object-fit property - contain, cover, fill */
+    displayOption: PropTypes.string,
   }).isRequired,
   values: PropTypes.shape({
     hotspots: PropTypes.array,
@@ -734,7 +736,11 @@ export const CardPropTypes = {
   /** Optionally adds tab index to card container */
   tabIndex: PropTypes.number,
   /** For testing */
-  testID: PropTypes.string,
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
   /** the locale of the card, needed for number and date formatting */
   locale: PropTypes.string,
   /** a way to pass down dashboard grid resize handles, only used by other card types */

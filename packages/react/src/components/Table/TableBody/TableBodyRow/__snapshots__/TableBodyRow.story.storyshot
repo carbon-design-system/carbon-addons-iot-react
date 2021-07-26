@@ -83,18 +83,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   data-testid="row-action-container-background"
                 >
                   <button
-                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-end"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Add
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Add"
@@ -207,18 +213,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   data-testid="row-action-container-background"
                 >
                   <button
-                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-end"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Add
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Add"
@@ -377,18 +389,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   data-testid="row-action-container-background"
                 >
                   <button
-                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-end"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Add
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Add"
@@ -500,18 +518,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   data-testid="row-action-container-background"
                 >
                   <button
-                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-end"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     tabIndex={0}
                     type="button"
                   >
-                    <span
+                    <div
                       className="bx--assistive-text"
+                      onMouseEnter={[Function]}
                     >
                       Add
-                    </span>
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Add"
@@ -675,7 +699,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     
                     <div
-                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}

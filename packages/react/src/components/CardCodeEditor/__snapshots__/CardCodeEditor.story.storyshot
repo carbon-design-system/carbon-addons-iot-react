@@ -70,17 +70,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         className="bx--modal-content"
       >
         <button
-          className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--editor-expand iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          data-testid="card-code-editor-expand-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Expand
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Expand"
@@ -104,11 +111,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </button>
         <div
           className="iot--editor-copy-wrapper"
+          data-testid="card-code-editor"
         >
           <button
             aria-label={null}
             aria-live="polite"
             className="iot--editor-copy bx--copy-btn bx--copy"
+            data-testid="card-code-editor-copy-button"
             onAnimationEnd={[Function]}
             onClick={[Function]}
             title="Copy to clipboard"
@@ -189,22 +198,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
           data-testid="ComposedModal-modal-secondary-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Cancel
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--primary"
           data-testid="ComposedModal-modal-primary-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
@@ -293,17 +312,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         className="bx--modal-content"
       >
         <button
-          className="iot--editor-expand bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+          aria-describedby={null}
+          className="iot--editor-expand iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          data-testid="card-code-editor-expand-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
-          <span
+          <div
             className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
             Expand
-          </span>
+          </div>
           <svg
             aria-hidden="true"
             aria-label="Expand"
@@ -327,11 +353,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </button>
         <div
           className="iot--editor-copy-wrapper"
+          data-testid="card-code-editor"
         >
           <button
             aria-label={null}
             aria-live="polite"
             className="iot--editor-copy bx--copy-btn bx--copy"
+            data-testid="card-code-editor-copy-button"
             onAnimationEnd={[Function]}
             onClick={[Function]}
             title="Copy to clipboard"
@@ -412,22 +440,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
           data-testid="ComposedModal-modal-secondary-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
           Cancel
         </button>
         <button
+          aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--primary"
           data-testid="ComposedModal-modal-primary-button"
           disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           tabIndex={0}
           type="button"
         >
