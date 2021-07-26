@@ -375,13 +375,20 @@ describe('DateTimePicker', () => {
     render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />);
     // first open the menu and select custom range
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    // Select custom range
+    expect(screen.getByText(/Custom range/i)).toBeInTheDocument();
+    userEvent.click(screen.getByText(/Custom range/i));
     // Select absolute
     expect(screen.getByText(/Absolute/)).toBeInTheDocument();
-    userEvent.click(screen.getAllByLabelText('Increment hours')[0]);
-    expect(screen.getByText('2020-04-01 13:34 to 2020-04-06 10:49')).toBeVisible();
+    userEvent.click(screen.getByText(/Absolute/i));
+    // github.com/haoxins/react-flatpickr/issues/92
+    fireEvent.mouseDown(screen.getByLabelText('April 10, 2020'), { which: 1 });
+    fireEvent.mouseDown(screen.getByLabelText('April 11, 2020'), { which: 1 });
+    jest.runAllTimers();
+    expect(screen.getByTitle('2020-04-10 12:34 to 2020-04-11 10:49')).toBeVisible();
     userEvent.click(screen.getByText('Apply'));
     // This should be displayed
-    expect(screen.getByText('2020-04-01 13:34 to 2020-04-06 10:49')).toBeVisible();
+    expect(screen.getByTitle('2020-04-10 12:34 to 2020-04-11 10:49')).toBeVisible();
   });
 
   it('i18n string test', () => {
