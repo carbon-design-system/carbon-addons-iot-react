@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.68](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.67...v2.146.0-next.68) (2021-07-23)
+
+
+### Bug Fixes
+
+* **bx:** use of prefix in TableCard file ([23b9ed6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/23b9ed691e3c5b4d61ad629c15948854611714c2))
+* **tablecard:** table content fit in the card; ([70f879f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/70f879f4074b70ac969737cb0132362343407bc0))
+
+
+
+
+
 # [2.146.0-next.67](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.66...v2.146.0-next.67) (2021-07-22)
 
 
