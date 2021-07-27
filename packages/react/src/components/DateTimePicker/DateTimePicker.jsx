@@ -31,42 +31,45 @@ import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 
 const { iotPrefix } = settings;
 
+export const DateTimePickerDefaultValuePropTypes = PropTypes.oneOfType([
+  PropTypes.exact({
+    timeRangeKind: PropTypes.oneOf([PICKER_KINDS.PRESET]).isRequired,
+    timeRangeValue: PropTypes.exact({
+      id: PropTypes.string,
+      label: PropTypes.string.isRequired,
+      offset: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+  PropTypes.exact({
+    timeRangeKind: PropTypes.oneOf([PICKER_KINDS.RELATIVE]).isRequired,
+    timeRangeValue: PropTypes.exact({
+      lastNumber: PropTypes.number.isRequired,
+      lastInterval: PropTypes.string.isRequired,
+      relativeToWhen: PropTypes.string.isRequired,
+      relativeToTime: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  PropTypes.exact({
+    timeRangeKind: PropTypes.oneOf([PICKER_KINDS.ABSOLUTE]).isRequired,
+    timeRangeValue: PropTypes.exact({
+      startDate: PropTypes.string.isRequired,
+      startTime: PropTypes.string.isRequired,
+      endDate: PropTypes.string.isRequired,
+      endTime: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+]);
+
 const propTypes = {
   testId: PropTypes.string,
   /** default value for the picker */
-  defaultValue: PropTypes.oneOfType([
-    PropTypes.exact({
-      timeRangeKind: PropTypes.oneOf([PICKER_KINDS.PRESET]).isRequired,
-      timeRangeValue: PropTypes.exact({
-        id: PropTypes.string,
-        label: PropTypes.string.isRequired,
-        offset: PropTypes.number.isRequired,
-      }).isRequired,
-    }).isRequired,
-    PropTypes.exact({
-      timeRangeKind: PropTypes.oneOf([PICKER_KINDS.RELATIVE]).isRequired,
-      timeRangeValue: PropTypes.exact({
-        lastNumber: PropTypes.number.isRequired,
-        lastInterval: PropTypes.string.isRequired,
-        relativeToWhen: PropTypes.string.isRequired,
-        relativeToTime: PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
-    PropTypes.exact({
-      timeRangeKind: PropTypes.oneOf([PICKER_KINDS.ABSOLUTE]).isRequired,
-      timeRangeValue: PropTypes.exact({
-        startDate: PropTypes.string.isRequired,
-        startTime: PropTypes.string.isRequired,
-        endDate: PropTypes.string.isRequired,
-        endTime: PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
-  ]),
+  defaultValue: DateTimePickerDefaultValuePropTypes,
   /** the dayjs.js format for the human readable interval value */
   dateTimeMask: PropTypes.string,
   /** a list of options to for the default presets */
   presets: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string,
       label: PropTypes.string,
       offset: PropTypes.number,
     })
@@ -308,13 +311,8 @@ const DateTimePicker = ({
         datePickerElem.cal.open();
         // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
         // the only way to display the calendar inline is to reparent its DOM to our component
-        const wrapper = document.getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`);
-        if (typeof wrapper !== 'undefined' && wrapper !== null) {
-          const dp = document
-            .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
-            .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
-          dp.appendChild(datePickerElem.cal.calendarContainer);
-        }
+        const dp = document.getElementById(`${id}-${iotPrefix}--date-time-picker__datepicker`);
+        dp.appendChild(datePickerElem.cal.calendarContainer);
       }
     }, 0);
     return () => {
@@ -755,6 +753,9 @@ const DateTimePicker = ({
             }}
             direction={FlyoutMenuDirection.BottomEnd}
             customFooter={CustomFooter}
+            renderInPortal
+            tooltipClassName={`${iotPrefix}--date-time-picker--tooltip`}
+            tooltipContentClassName={`${iotPrefix}--date-time-picker--menu`}
           >
             <div className={`${iotPrefix}--date-time-picker__menu-scroll`} role="listbox">
               {!isCustomRange ? (
@@ -787,7 +788,7 @@ const DateTimePicker = ({
                           }
                         )}
                       >
-                        {strings.presetLabels[i] || preset.label}
+                        {preset.label || strings.presetLabels[i]}
                       </ListItem>
                     );
                   })}
@@ -855,7 +856,7 @@ const DateTimePicker = ({
                                 <SelectItem
                                   key={i}
                                   value={interval.value}
-                                  text={strings.intervalLabels[i] || interval.label}
+                                  text={interval.label || strings.intervalLabels[i]}
                                 />
                               );
                             })}
@@ -882,8 +883,8 @@ const DateTimePicker = ({
                                   key={i}
                                   value={relative.value}
                                   text={
-                                    strings.relativeLabels.filter((x) => x === relative.label)[0] ||
-                                    relative.label
+                                    relative.label ||
+                                    strings.relativeLabels.filter((x) => x === relative.label)[0]
                                   }
                                 />
                               );
@@ -905,7 +906,10 @@ const DateTimePicker = ({
                     </>
                   ) : (
                     <div data-testid={`${testId}-datepicker`}>
-                      <div className={`${iotPrefix}--date-time-picker__datepicker`}>
+                      <div
+                        id={`${id}-${iotPrefix}--date-time-picker__datepicker`}
+                        className={`${iotPrefix}--date-time-picker__datepicker`}
+                      >
                         <DatePicker
                           datePickerType="range"
                           dateFormat="m/d/Y"

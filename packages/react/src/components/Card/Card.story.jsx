@@ -226,6 +226,39 @@ export const WithCustomRangeSelector = () => {
 
 WithCustomRangeSelector.storyName = 'with custom range selector';
 
+export const WithDateTimePickerRangeSelector = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  return (
+    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <Card
+        title={text('title', 'Card Title')}
+        id="facilitycard-with-loading"
+        size={size}
+        isLoading={boolean('isLoading', false)}
+        isEmpty={boolean('isEmpty', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        breakpoint="lg"
+        onCardAction={action('onCardAction')}
+        availableActions={{
+          range: true,
+          useDateTimePicker: true,
+        }}
+        timeRangeOptions={object('timeRangeOptions', {
+          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 * 60 },
+          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 * 60 },
+          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 * 60 },
+          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 * 60 },
+          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 * 60 },
+          lastHour: { label: 'Last Hour', offset: 60 * 60 },
+        })}
+      />
+    </div>
+  );
+};
+
+WithDateTimePickerRangeSelector.storyName = 'with datetimepicker range selector';
+
 export const SizeGallery = () => {
   return Object.keys(CARD_SIZES).map((i) => (
     <React.Fragment key={`card-${i}`}>

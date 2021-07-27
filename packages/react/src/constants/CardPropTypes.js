@@ -16,6 +16,7 @@ import {
 
 import { bundledIconNames } from '../utils/bundledIcons';
 import deprecate from '../internal/deprecate';
+import { DateTimePickerDefaultValuePropTypes } from '../components/DateTimePicker/DateTimePicker';
 
 import {
   CARD_LAYOUTS,
@@ -512,17 +513,29 @@ export const CardSizesToDimensionsPropTypes = PropTypes.shape({
 
 export const TimeRangeOptionsPropTypes = (props, propName, componentName) => {
   let error;
+  const timeRangeProp = props[propName];
   // if the
   if (props[propName]) {
-    const timeRangeKeys = Object.keys(props[propName]);
-    // only validate the options if they are populated
-    if (timeRangeKeys.length > 0) {
+    const timeRangeKeys = Object.keys(timeRangeProp);
+    // only validate the options if they are populated and they are strings
+    if (timeRangeKeys.length > 0 && typeof timeRangeProp[timeRangeKeys[0]] === 'string') {
       // throw error if timeRangeOptions does not include 'this' or 'last'
       const isError = timeRangeKeys.some((key) => !key.includes('this') && !key.includes('last'));
 
       if (isError) {
         error = new Error(
           `\`${componentName}\` prop \`${propName}\` key's should include \`this\` or \`last\` i.e. \`{ thisWeek: 'This week', lastWeek: 'Last week'}\``
+        );
+      }
+    } else if (timeRangeKeys.length > 0 && typeof timeRangeProp[timeRangeKeys[0]] === 'object') {
+      // throw error if timeRangeOptions does not label or offset fields
+      const isError = timeRangeKeys.some(
+        (key) => !timeRangeProp[key].label || !timeRangeProp[key].offset || !timeRangeProp[key].id
+      );
+
+      if (isError) {
+        error = new Error(
+          `\`${componentName}\` prop \`${propName}\` each key needs a label, offset and id`
         );
       }
     }
@@ -663,7 +676,7 @@ export const CardPropTypes = {
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
   /** Optional selected range to pass at the card level */
-  timeRange: PropTypes.string,
+  timeRange: PropTypes.oneOfType([PropTypes.string, DateTimePickerDefaultValuePropTypes]),
   /** Generates the available time range selection options. Each option should include 'this' or 'last'.
    * i.e. { thisWeek: 'This week', lastWeek: 'Last week'}
    */
@@ -674,6 +687,7 @@ export const CardPropTypes = {
     delete: PropTypes.bool,
     expand: PropTypes.bool,
     range: PropTypes.bool,
+    useDateTimePicker: PropTypes.bool, // TODO: can remove once we make a major version change
     settings: PropTypes.bool,
   }),
   /** All the labels that need translation */

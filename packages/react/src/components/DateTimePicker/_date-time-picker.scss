@@ -5,17 +5,72 @@
 .#{$iot-prefix}--date-time-picker__wrapper {
   width: var(--wrapper-width);
 
-  // open menu content
-  .#{$iot-prefix}--flyout-menu--content {
-    padding: 0;
-  }
-
   .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition {
     font-size: 100%;
     border-bottom: none;
     letter-spacing: unset;
   }
 
+  .#{$iot-prefix}--date-time-picker__box--full {
+    background-color: $ui-01;
+    color: $carbon--gray-100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .#{$iot-prefix}--date-time-picker__field {
+      padding-left: $spacing-05;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      & span {
+        white-space: nowrap;
+      }
+
+      &:hover {
+        background-color: $hover-ui;
+      }
+
+      &:focus {
+        outline: 2px solid $carbon--blue-60;
+        border-bottom: none;
+      }
+    }
+  }
+
+  .#{$iot-prefix}--date-time-picker__box--light {
+    background-color: $field-02;
+  }
+}
+
+// move up the tooltip
+.#{$iot-prefix}--date-time-picker--tooltip.bx--tooltip[data-floating-menu-direction='bottom'] {
+  margin-top: -0.5rem;
+}
+
+// open menu content
+.#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
+  padding: 0;
+
+  .#{$iot-prefix}--date-time-picker__menu-scroll {
+    overflow-y: auto;
+    padding-top: 0.75rem;
+
+    .#{$prefix}--fieldset {
+      margin-bottom: $spacing-lg;
+      padding: 0 $spacing-baseline;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .#{$iot-prefix}--date-time-picker__custom-wrapper {
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  // TODO
   .flatpickr-calendar.open {
     padding-bottom: 0;
     position: unset !important;
@@ -28,9 +83,8 @@
     animation: none;
   }
 
-  // move up the tooltip
-  .bx--tooltip[data-floating-menu-direction='bottom'] {
-    margin-top: 0rem;
+  .#{$prefix}--select {
+    width: 8.5rem;
   }
 
   // hide the date picker inputs
@@ -57,10 +111,6 @@
     }
   }
 
-  .#{$prefix}--select {
-    width: 8.5rem;
-  }
-
   .#{$iot-prefix}--time-picker__wrapper {
     &.#{$iot-prefix}--time-picker__wrapper--with-spinner:first-of-type {
       margin-right: $spacing-05;
@@ -76,111 +126,62 @@
     }
   }
 
-  .#{$iot-prefix}--date-time-picker__box--full {
-    background-color: $ui-01;
-    color: $carbon--gray-100;
+  .#{$iot-prefix}--date-time-picker__fields-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-end;
 
-    .#{$iot-prefix}--date-time-picker__field {
-      padding-left: $spacing-05;
+    .#{$prefix}--label {
+      margin-bottom: 0;
+    }
 
-      & > span {
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      &:hover {
-        background-color: $hover-ui;
-      }
-
-      &:focus {
-        outline: 2px solid $carbon--blue-60;
-        border-bottom: none;
-      }
+    .#{$prefix}--form-item + .#{$prefix}--form-item {
+      margin-left: 1rem;
     }
   }
 
-  .#{$iot-prefix}--date-time-picker__box--light {
-    background-color: $field-02;
+  .#{$iot-prefix}--date-time-picker__no-formgroup {
+    margin-bottom: $spacing-05;
   }
 
-  .#{$iot-prefix}--date-time-picker__menu-scroll {
-    overflow-y: auto;
-    padding-top: 0.75rem;
+  &.#{$iot-prefix}--date-time-picker__menu-formgroup {
+    display: block;
+    padding-top: 1rem;
+  }
 
-    .#{$prefix}--fieldset {
-      margin-bottom: $spacing-lg;
-      padding: 0 $spacing-baseline;
+  .#{$iot-prefix}--date-time-picker__listitem {
+    padding: $spacing-04 $spacing-baseline;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    border-bottom: 1px solid $ui-03;
+  }
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+  .#{$iot-prefix}--date-time-picker__listitem--preset {
+    &:hover,
+    &:focus {
+      background-color: $hover-ui;
     }
 
-    .#{$iot-prefix}--date-time-picker__custom-wrapper {
-      padding-top: 1rem;
-      padding-bottom: 2rem;
-    }
-
-    .#{$iot-prefix}--date-time-picker__fields-wrapper {
-      display: flex;
-      align-items: flex-end;
-
-      .#{$prefix}--label {
-        margin-bottom: 0;
-      }
-
-      .#{$prefix}--form-item + .#{$prefix}--form-item {
-        margin-left: 1rem;
-      }
-    }
-
-    .#{$iot-prefix}--date-time-picker__no-formgroup {
-      margin-bottom: $spacing-05;
-    }
-
-    &.#{$iot-prefix}--date-time-picker__menu-formgroup {
-      display: block;
-      padding-top: 1rem;
-    }
-
-    .#{$iot-prefix}--date-time-picker__listitem {
-      padding: $spacing-04 $spacing-baseline;
-      cursor: pointer;
-      border-left: 4px solid transparent;
-      border-bottom: 1px solid $ui-03;
-    }
-
-    .#{$iot-prefix}--date-time-picker__listitem--preset {
-      &:hover,
-      &:focus {
-        background-color: $hover-ui;
-      }
-
-      &.#{$iot-prefix}--date-time-picker__listitem--preset-selected {
-        background-color: $carbon--gray-20;
-        border-left-color: $carbon--blue-60;
-      }
-    }
-
-    .#{$iot-prefix}--date-time-picker__listitem--current {
-      color: $carbon--gray-60;
-      cursor: default;
-    }
-
-    .#{$iot-prefix}--date-time-picker__listitem--custom {
-      color: $carbon--blue-60;
+    &.#{$iot-prefix}--date-time-picker__listitem--preset-selected {
+      background-color: $carbon--gray-20;
+      border-left-color: $carbon--blue-60;
     }
   }
 
-  .#{$iot-prefix}--date-time-picker__menu-btn-set {
-    display: flex;
+  .#{$iot-prefix}--date-time-picker__listitem--current {
+    color: $carbon--gray-60;
+    cursor: default;
+  }
 
-    .#{$iot-prefix}--date-time-picker__menu-btn {
-      flex-grow: 1;
-    }
+  .#{$iot-prefix}--date-time-picker__listitem--custom {
+    color: $carbon--blue-60;
+  }
+}
+
+.#{$iot-prefix}--date-time-picker__menu-btn-set {
+  display: flex;
+
+  .#{$iot-prefix}--date-time-picker__menu-btn {
+    flex-grow: 1;
   }
 }
 
@@ -203,17 +204,19 @@ html[dir='rtl'] {
         padding-right: $spacing-05;
         padding-left: $spacing-09;
       }
+    }
+  }
 
-      .#{$iot-prefix}--date-time-picker__menu-scroll {
-        .#{$iot-prefix}--date-time-picker__listitem {
-          border-right: 2px solid transparent;
-          border-left: none;
-        }
+  .#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
+    .#{$iot-prefix}--date-time-picker__menu-scroll {
+      .#{$iot-prefix}--date-time-picker__listitem {
+        border-right: 2px solid transparent;
+        border-left: none;
+      }
 
-        .#{$iot-prefix}--date-time-picker__listitem--preset {
-          &.#{$iot-prefix}--date-time-picker__listitem--preset-selected {
-            border-right-color: $carbon--blue-60;
-          }
+      .#{$iot-prefix}--date-time-picker__listitem--preset {
+        &.#{$iot-prefix}--date-time-picker__listitem--preset-selected {
+          border-right-color: $carbon--blue-60;
         }
       }
     }

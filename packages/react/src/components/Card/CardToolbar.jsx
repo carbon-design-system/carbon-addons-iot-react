@@ -8,6 +8,7 @@ import classnames from 'classnames';
 import { settings } from '../../constants/Settings';
 import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
+import DateTimePicker from '../DateTimePicker/DateTimePicker';
 import Button from '../Button';
 
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
@@ -136,6 +137,8 @@ const CardToolbar = ({
     ]
   );
 
+  const handleDateTimePickerChange = (...args) => console.log('datetimepickerchange', args);
+
   return isEditable ? (
     <div data-testid={testId} className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {(availableActions.clone || availableActions.delete) && (
@@ -173,15 +176,34 @@ const CardToolbar = ({
   ) : (
     <div data-testid={testId} className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {availableActions.range ? (
-        <CardRangePicker
-          width={width}
-          i18n={mergedI18n}
-          timeRange={timeRange}
-          timeRangeOptions={timeRangeOptions}
-          onCardAction={onCardAction}
-          cardWidth={width}
-          testId={`${testId}-range-picker`}
-        />
+        !availableActions.useDateTimePicker ? (
+          <CardRangePicker
+            width={width}
+            i18n={mergedI18n}
+            timeRange={timeRange}
+            timeRangeOptions={timeRangeOptions}
+            onCardAction={onCardAction}
+            cardWidth={width}
+            testId={`${testId}-range-picker`}
+          />
+        ) : (
+          <DateTimePicker
+            i18n={mergedI18n}
+            presets={Object.entries(timeRangeOptions).reduce(
+              (acc, [timeRangeOptionKey, timeRangeOption]) => {
+                acc.push({
+                  id: timeRangeOptionKey,
+                  label: timeRangeOption.label || mergedI18n.timeRange,
+                  offset: timeRangeOption.offset,
+                });
+                return acc;
+              },
+              []
+            )}
+            defaultValue={timeRange}
+            onApply={handleDateTimePickerChange}
+          />
+        )
       ) : null}
       {availableActions.settings ? (
         <ToolbarSVGWrapper
