@@ -76,6 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -233,6 +234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -396,6 +398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -794,6 +797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="With validation"
                       >
                         With validation
                       </p>
@@ -1199,6 +1203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="With validation"
                       >
                         With validation
                       </p>
@@ -1457,6 +1462,536 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageWizard With steps spaced equally 1`] = `
+<div
+  className="storybook-container"
+>
+  <div>
+    <div
+      className=""
+      data-testid="page-wizard"
+    >
+      <div
+        className="iot--page-wizard--progress--horizontal"
+      >
+        <ul
+          className="iot--progress-indicator"
+          data-testid="iot--progress-indicator-testid"
+        >
+          <li
+            className="iot--progress-step iot--progress-step--current"
+            style={
+              Object {
+                "flexGrow": 1,
+              }
+            }
+          >
+            <button
+              aria-disabled={false}
+              className="iot--progress-step-button iot--progress-step-button--main-step"
+              data-testid="iot--progress-step-button-main-first-step"
+              disabled={false}
+              onClick={null}
+              onKeyDown={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <div
+                className="iot--progress-step-line"
+              />
+              <span
+                className="iot--progress-step-icon"
+                title="This is displayed when step icon is hovered"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="10"
+                  />
+                  <path
+                    d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
+                  />
+                  <text
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                    x="50%"
+                    y="55%"
+                  >
+                    1
+                  </text>
+                </svg>
+              </span>
+              <div
+                className="iot--progress-text"
+              >
+                <p
+                  className="iot--progress-text-label"
+                  title="First Step"
+                  value="This is displayed when step icon is hovered"
+                >
+                  First Step
+                </p>
+                <p
+                  className="iot--progress-text-label--optional"
+                  title="Optional label"
+                >
+                  Optional label
+                </p>
+              </div>
+            </button>
+          </li>
+          <li
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "flexGrow": 1,
+              }
+            }
+          >
+            <button
+              aria-disabled={false}
+              className="iot--progress-step-button iot--progress-step-button--main-step iot--progress-step-button--clickable"
+              data-testid="iot--progress-step-button-main-second-step"
+              disabled={false}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="iot--progress-step-line"
+              />
+              <span
+                className="iot--progress-step-icon"
+                title="Second Step"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  />
+                  <text
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                    x="50%"
+                    y="55%"
+                  >
+                    2
+                  </text>
+                </svg>
+              </span>
+              <div
+                className="iot--progress-text"
+              >
+                <p
+                  className="iot--progress-text-label"
+                  title="Second Step"
+                  value="Second Step"
+                >
+                  Second Step
+                </p>
+              </div>
+            </button>
+          </li>
+          <li
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "flexGrow": 1,
+              }
+            }
+          >
+            <button
+              aria-disabled={false}
+              className="iot--progress-step-button iot--progress-step-button--sub-step iot--progress-step-button--clickable"
+              data-testid="iot--progress-step-button-sub-sub-step-1"
+              disabled={false}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="iot--progress-step-line--sub"
+              />
+              <span
+                className="iot--progress-step-icon"
+                title="Sub Step 1"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  />
+                </svg>
+              </span>
+              <div
+                className="iot--progress-text"
+              >
+                <p
+                  className="iot--progress-text-label"
+                  title="Sub Step 1"
+                  value="Sub Step 1"
+                >
+                  Sub Step 1
+                </p>
+              </div>
+            </button>
+          </li>
+          <li
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "flexGrow": 1,
+              }
+            }
+          >
+            <button
+              aria-disabled={false}
+              className="iot--progress-step-button iot--progress-step-button--sub-step iot--progress-step-button--clickable"
+              data-testid="iot--progress-step-button-sub-sub-step-2"
+              disabled={false}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="iot--progress-step-line--sub"
+              />
+              <span
+                className="iot--progress-step-icon"
+                title="Sub Step 2"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  />
+                </svg>
+              </span>
+              <div
+                className="iot--progress-text"
+              >
+                <p
+                  className="iot--progress-text-label"
+                  title="Sub Step 2"
+                  value="Sub Step 2"
+                >
+                  Sub Step 2
+                </p>
+                <p
+                  className="iot--progress-text-label--optional"
+                  title="Optional label"
+                >
+                  Optional label
+                </p>
+              </div>
+            </button>
+          </li>
+          <li
+            className="iot--progress-step iot--progress-step--invalid"
+            style={
+              Object {
+                "flexGrow": 1,
+              }
+            }
+          >
+            <button
+              aria-disabled={false}
+              className="iot--progress-step-button iot--progress-step-button--sub-step iot--progress-step-button--clickable"
+              data-testid="iot--progress-step-button-sub-sub-step-3"
+              disabled={false}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="iot--progress-step-line--sub"
+              />
+              <span
+                className="iot--progress-step-icon"
+                title="Sub Step 3"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  />
+                  <path
+                    d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
+                  />
+                </svg>
+              </span>
+              <div
+                className="iot--progress-text"
+              >
+                <p
+                  className="iot--progress-text-label"
+                  title="Sub Step 3"
+                  value="Sub Step 3"
+                >
+                  Sub Step 3
+                </p>
+              </div>
+            </button>
+          </li>
+          <li
+            className="iot--progress-step iot--progress-step--disabled iot--progress-step--invalid"
+            style={
+              Object {
+                "flexGrow": 1,
+              }
+            }
+          >
+            <button
+              aria-disabled={true}
+              className="iot--progress-step-button iot--progress-step-button--sub-step"
+              data-testid="iot--progress-step-button-sub-sub-step-4"
+              disabled={true}
+              onClick={null}
+              onKeyDown={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <div
+                className="iot--progress-step-line--sub"
+              />
+              <span
+                className="iot--progress-step-icon"
+                title="Sub Step 4"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  />
+                  <path
+                    d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
+                  />
+                </svg>
+              </span>
+              <div
+                className="iot--progress-text"
+              >
+                <p
+                  className="iot--progress-text-label"
+                  title="Sub Step 4"
+                  value="Sub Step 4"
+                >
+                  Sub Step 4
+                </p>
+              </div>
+            </button>
+          </li>
+          <li
+            className="iot--progress-step iot--progress-step--disabled"
+            style={
+              Object {
+                "flexGrow": 1,
+              }
+            }
+          >
+            <button
+              aria-disabled={true}
+              className="iot--progress-step-button iot--progress-step-button--main-step"
+              data-testid="iot--progress-step-button-main-third-step"
+              disabled={true}
+              onClick={null}
+              onKeyDown={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                className="iot--progress-step-icon"
+                title="Third Step"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  />
+                  <text
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                    x="50%"
+                    y="55%"
+                  >
+                    3
+                  </text>
+                </svg>
+              </span>
+              <div
+                className="iot--progress-text"
+              >
+                <p
+                  className="iot--progress-text-label"
+                  title="Third Step"
+                  value="Third Step"
+                >
+                  Third Step
+                </p>
+                <p
+                  className="iot--progress-text-label--optional"
+                  title="Optional label"
+                >
+                  Optional label
+                </p>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="iot--page-wizard--content"
+        data-testid="page-wizard-content"
+      >
+        <div
+          className="iot--page-wizard--step"
+          id="step1"
+        >
+          <div
+            className="iot--page-wizard--step--title"
+          >
+            Step 1: Define the data
+          </div>
+          <div
+            className="iot--page-wizard--step--description"
+          >
+            You can create summaries lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+             
+            <a
+              href="www.ibm.com"
+            >
+              An embedded link
+            </a>
+             is good to have sometimes.
+          </div>
+          <div
+            className="iot--page-wizard--step--content"
+          >
+            <h1>
+              A table could go here
+            </h1>
+            <h3>
+              Some other form items could go here
+            </h3>
+            <h4>
+              And other things here
+            </h4>
+          </div>
+          <div
+            className="iot--page-wizard--step--extra-content"
+          >
+            <h4>
+              What are time grains?
+            </h4>
+            <p>
+              Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est. Duis blandit tellus ultricies justo sagittis, tempus ornare purus tristique. Quisque nisi tortor, semper ac efficitur tincidunt, feugiat vel ligula. Aenean consequat, massa nec rhoncus vulputate, metus ex dictum ante, at posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tempus sem. Vestibulum quis consequat orci. Sed vel ultrices libero, eu malesuada quam.
+            </p>
+          </div>
+          <div
+            className="iot--page-wizard--content--actions"
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Next
+            </button>
           </div>
         </div>
       </div>
@@ -1763,6 +2298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -1920,6 +2456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -2083,6 +2620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -2481,6 +3019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="With validation"
                       >
                         With validation
                       </p>
@@ -2767,6 +3306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -2924,6 +3464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -3087,6 +3628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -3485,6 +4027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="Optional label"
                       >
                         Optional label
                       </p>
@@ -3642,6 +4185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="Optional label"
                       >
                         Optional label
                       </p>
@@ -3805,6 +4349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="Optional label"
                       >
                         Optional label
                       </p>

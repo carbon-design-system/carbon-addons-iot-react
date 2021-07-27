@@ -410,6 +410,27 @@ export const WithHorizontalProgressIndicator = () => (
 
 WithHorizontalProgressIndicator.storyName = 'With Horizontal ProgressIndicator';
 
+export const WithSpaceEqually = () => (
+  <div>
+    <PageWizard
+      currentStepId="step1"
+      onClose={action('closed', () => {})}
+      onSubmit={action('submit', () => {})}
+      onNext={action('next', () => {})}
+      onBack={action('back', () => {})}
+      setStep={action('step clicked', () => {})}
+      onClearError={action('Clear error', () => {})}
+      isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
+      isClickable
+      spaceEqually={boolean('Space Equally', true)}
+    >
+      {content.slice(0, 7)}
+    </PageWizard>
+  </div>
+);
+
+WithSpaceEqually.storyName = 'With steps spaced equally';
+
 export const OnlyOneStepInPageTitleBar = () => (
   <div>
     <PageTitleBar

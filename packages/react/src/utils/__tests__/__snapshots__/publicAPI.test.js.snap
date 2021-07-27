@@ -4575,6 +4575,7 @@ Map {
       "items": null,
       "onClickItem": null,
       "showLabels": true,
+      "spaceEqually": false,
       "stepWidth": null,
       "testId": "iot--progress-indicator-testid",
     },
@@ -4646,6 +4647,9 @@ Map {
         "type": "func",
       },
       "showLabels": Object {
+        "type": "bool",
+      },
+      "spaceEqually": Object {
         "type": "bool",
       },
       "stepWidth": Object {
@@ -18212,6 +18216,7 @@ Map {
       "onNext": null,
       "sendingData": false,
       "setStep": null,
+      "spaceEqually": false,
       "testId": "page-wizard",
     },
     "propTypes": Object {
@@ -18302,6 +18307,9 @@ Map {
       },
       "setStep": Object {
         "type": "func",
+      },
+      "spaceEqually": Object {
+        "type": "bool",
       },
       "testId": Object {
         "type": "string",
@@ -18529,6 +18537,7 @@ Map {
       "onNext": null,
       "sendingData": false,
       "setStep": null,
+      "spaceEqually": false,
     },
     "propTypes": Object {
       "afterFooterContent": Object {
@@ -18615,6 +18624,9 @@ Map {
       },
       "setStep": Object {
         "type": "func",
+      },
+      "spaceEqually": Object {
+        "type": "bool",
       },
     },
   },
