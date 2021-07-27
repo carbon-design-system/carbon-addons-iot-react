@@ -200,18 +200,6 @@ describe('DateTimePicker', () => {
 
     userEvent.click(screen.getByText('Apply'));
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
-    // calling twice for some reason
-    // expect(dateTimePickerProps.onApply).toHaveBeenCalledWith({
-    //   timeRangeKind: 'RELATIVE',
-    //   timeRangeValue: {
-    //     end: '2018-09-20T20:30:34.000Z',
-    //     lastInterval: 'DAYS',
-    //     lastNumber: 20,
-    //     relativeToTime: '15:30',
-    //     relativeToWhen: 'YESTERDAY',
-    //     start: '2018-08-31T20:30:34.000Z',
-    //   },
-    // });
   });
 
   it('should render with a predefined absolute range', () => {
