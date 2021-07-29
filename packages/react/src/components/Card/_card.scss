@@ -5,6 +5,8 @@
 @import './data-state-renderer';
 
 $iot-header-padding: $spacing-05;
+$tooltipSize: 1.5rem;
+$lineHeightSize: 1.29em;
 
 .#{$iot-prefix}--card--wrapper {
   background: white;
@@ -48,7 +50,7 @@ $iot-header-padding: $spacing-05;
 }
 
 .#{$iot-prefix}--card--header--tooltip {
-  flex-basis: 1.5rem;
+  flex-basis: $tooltipSize;
 }
 
 .#{$iot-prefix}--card--title--text,
@@ -57,7 +59,7 @@ $iot-header-padding: $spacing-05;
   overflow: hidden;
   word-break: break-all;
   -webkit-line-clamp: 1;
-  max-height: 1.29em;
+  max-height: $lineHeightSize;
   display: -webkit-box;
   min-width: 0;
   /* autoprefixer: ignore next */
@@ -66,26 +68,26 @@ $iot-header-padding: $spacing-05;
 
 .#{$iot-prefix}--card--title--text__wrapped {
   -webkit-line-clamp: 2;
-  max-height: calc(1.29em * 2);
+  max-height: calc(#{$lineHeightSize} * 2);
   word-break: normal;
 }
 
 .#{$iot-prefix}--card--title--text {
-  max-width: calc(100% - 1.5rem);
+  max-width: calc(100% - #{$tooltipSize});
 }
 
 .#{$iot-prefix}--card--subtitle--text {
   @include type-style('productive-heading-01');
   font-weight: normal;
   width: 100%;
-  max-width: calc(100% - 1.5rem);
+  max-width: calc(100% - #{$tooltipSize});
 
   &__padded {
-    margin-right: 1.5rem;
+    margin-right: $tooltipSize;
   }
 
   html[dir='rtl'] &__padded {
-    margin-left: 1.5rem;
+    margin-left: $tooltipSize;
     margin-right: unset;
   }
 }
