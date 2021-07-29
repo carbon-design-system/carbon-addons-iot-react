@@ -410,7 +410,6 @@ const Card = (props) => {
                       ) : (
                         <div
                           ref={titleRef}
-                          style={{ '--flex-basis': titleRef.current?.scrollWidth }}
                           className={classnames(`${iotPrefix}--card--title--text`, {
                             [`${iotPrefix}--card--title--text__wrapped`]: hasTitleWrap && !subtitle,
                           })}
@@ -432,7 +431,7 @@ const Card = (props) => {
                       )}
                       {!subtitle ? null : hasSubTitleTooltip ? (
                         <Tooltip
-                          data-testid={`${testID || testId}-subtitle-tooltip`}
+                          data-testid={`${testID || testId}-subtitle`}
                           ref={subTitleRef}
                           showIcon={false}
                           triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {

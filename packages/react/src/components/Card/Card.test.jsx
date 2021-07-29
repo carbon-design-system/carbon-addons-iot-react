@@ -28,10 +28,11 @@ describe('Card', () => {
     rerender(
       <Card
         {...cardProps}
+        subtitle="Subtitle text"
         size={CARD_SIZES.SMALL}
         availableActions={{ range: true, expand: true }}
         testId="card_test"
-        cardFooter={() => <Button kind="ghost">Footer Content</Button>}
+        footerContent={() => <Button kind="ghost">Footer Content</Button>}
       />
     );
     expect(screen.getByTestId('card_test')).toBeTruthy();
