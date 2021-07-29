@@ -128,7 +128,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         )}
         subtitle={select(
           'subtitle',
-          ['lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse', false],
+          ['lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse', undefined],
           'lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse'
         )}
         hasTitleWrap={boolean('wrap title', true)}

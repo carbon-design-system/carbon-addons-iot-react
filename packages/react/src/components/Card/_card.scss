@@ -40,6 +40,7 @@ $iot-header-padding: $spacing-05;
   min-width: 0;
   margin-top: 0.85rem;
   padding-right: $spacing-05;
+  width: 100%;
 
   & + *:not(.#{$iot-prefix}--card--toolbar) {
     margin-left: $spacing-05;
@@ -70,15 +71,14 @@ $iot-header-padding: $spacing-05;
 }
 
 .#{$iot-prefix}--card--title--text {
-  flex-grow: 1;
-  flex-basis: calc(100% - 1.5rem);
+  max-width: calc(100% - 1.5rem);
 }
 
 .#{$iot-prefix}--card--subtitle--text {
   @include type-style('productive-heading-01');
   font-weight: normal;
-  flex-grow: 1;
-  flex-basis: calc(100% - 1.5rem);
+  width: 100%;
+  max-width: calc(100% - 1.5rem);
 
   &__padded {
     margin-right: 1.5rem;
