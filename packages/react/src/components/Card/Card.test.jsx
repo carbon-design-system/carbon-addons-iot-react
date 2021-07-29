@@ -232,7 +232,7 @@ describe('Card', () => {
         size={CARD_SIZES.SMALL}
         availableActions={{ range: true, expand: true }}
         renderExpandIcon={Tree16}
-        cardFooter={() => <Button kind="ghost">Footer Content</Button>}
+        footerContent={() => <Button kind="ghost">Footer Content</Button>}
       />
     );
 

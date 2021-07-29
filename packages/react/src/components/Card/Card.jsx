@@ -173,6 +173,8 @@ export const defaultProps = {
   size: CARD_SIZES.MEDIUM,
   layout: CARD_LAYOUTS.HORIZONTAL,
   title: undefined,
+  subtitle: undefined,
+  hasTitleWrap: false,
   toolbar: undefined,
   hideHeader: false,
   timeRange: undefined,
@@ -237,6 +239,7 @@ export const defaultProps = {
   onBlur: undefined,
   tabIndex: undefined,
   testId: CardWrapper.defaultProps.testId,
+  footerContent: undefined,
 };
 
 /** Dumb component that renders the card basics */
@@ -246,6 +249,7 @@ const Card = (props) => {
     children,
     title,
     subtitle,
+    hasTitleWrap,
     layout,
     isLoading,
     isEmpty,
@@ -272,7 +276,7 @@ const Card = (props) => {
     testID,
     testId,
     contentClassName,
-    cardFooter: CardFooter,
+    footerContent: CardFooter,
     ...others
   } = props;
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
@@ -323,7 +327,7 @@ const Card = (props) => {
   };
 
   // Ensure the title and subtitle have a tooltip only if their text is truncated
-  const titleRef = React.createRef();
+  const titleRef = useRef();
   const subTitleRef = useRef();
   const hasTitleTooltip = useHasTextOverflow(titleRef);
   const hasSubTitleTooltip = useHasTextOverflow(subTitleRef);
@@ -386,52 +390,68 @@ const Card = (props) => {
                       // TODO: remove deprecated testID prop in v3
                       testId={`${testID || testId}-title`}
                     >
-                      <div className={`${iotPrefix}--card--title--wrapper`}>
-                        {hasTitleTooltip ? (
-                          <Tooltip
-                            data-testid={`${testID || testId}-title-tooltip`}
-                            ref={titleRef}
-                            showIcon={false}
-                            triggerClassName={`${iotPrefix}--card--title--text`}
-                            triggerText={title}
-                          >
-                            {title}
-                          </Tooltip>
-                        ) : (
-                          <div ref={titleRef} className={`${iotPrefix}--card--title--text`}>
-                            {title}
-                          </div>
-                        )}
-                        {tooltip && (
-                          <Tooltip
-                            data-testid={`${testID || testId}-tooltip`}
-                            triggerId={`card-tooltip-trigger-${id}`}
-                            tooltipId={`card-tooltip-${id}`}
-                            id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
-                            triggerText=""
-                          >
-                            {tooltip}
-                          </Tooltip>
-                        )}
-                      </div>
-                      {hasSubTitleTooltip ? (
+                      {hasTitleTooltip ? (
+                        <Tooltip
+                          data-testid={`${testID || testId}-title-tooltip`}
+                          ref={titleRef}
+                          showIcon={false}
+                          triggerClassName={classnames(
+                            `${iotPrefix}--card--title--text__overflow`,
+                            `${iotPrefix}--card--title--text`,
+                            {
+                              [`${iotPrefix}--card--title--text__wrapped`]:
+                                hasTitleWrap && !subtitle,
+                            }
+                          )}
+                          triggerText={title}
+                        >
+                          {title}
+                        </Tooltip>
+                      ) : (
+                        <div
+                          ref={titleRef}
+                          style={{ '--flex-basis': titleRef.current?.scrollWidth }}
+                          className={classnames(`${iotPrefix}--card--title--text`, {
+                            [`${iotPrefix}--card--title--text__wrapped`]: hasTitleWrap && !subtitle,
+                          })}
+                        >
+                          {title}
+                        </div>
+                      )}
+                      {tooltip && (
+                        <Tooltip
+                          data-testid={`${testID || testId}-tooltip`}
+                          triggerId={`card-tooltip-trigger-${id}`}
+                          tooltipId={`card-tooltip-${id}`}
+                          triggerClassName={`${iotPrefix}--card--header--tooltip`}
+                          id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
+                          triggerText=""
+                        >
+                          {tooltip}
+                        </Tooltip>
+                      )}
+                      {!subtitle ? null : hasSubTitleTooltip ? (
                         <Tooltip
                           data-testid={`${testID || testId}-subtitle-tooltip`}
                           ref={subTitleRef}
                           showIcon={false}
-                          triggerClassName={`${iotPrefix}--card--subtitle--text`}
+                          triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {
+                            [`${iotPrefix}--card--subtitle--text__padded`]: tooltip,
+                          })}
                           triggerText={subtitle}
                         >
                           {subtitle}
                         </Tooltip>
                       ) : (
-                        <p
+                        <div
                           ref={subTitleRef}
                           data-testid={`${testID || testId}-subtitle`}
-                          className={`${iotPrefix}--card--subtitle--text`}
+                          className={classnames(`${iotPrefix}--card--subtitle--text`, {
+                            [`${iotPrefix}--card--subtitle--text__padded`]: tooltip,
+                          })}
                         >
                           {subtitle}
-                        </p>
+                        </div>
                       )}
                     </CardTitle>
                     {cardToolbar}

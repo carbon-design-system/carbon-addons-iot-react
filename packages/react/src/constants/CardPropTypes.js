@@ -639,6 +639,8 @@ export const MapCardPropTypes = {
 
 export const CardPropTypes = {
   title: PropTypes.string,
+  subtitle: PropTypes.string,
+  hasTitleWrap: PropTypes.bool,
   id: PropTypes.string,
   isLoading: PropTypes.bool,
   isEmpty: PropTypes.bool,
@@ -749,4 +751,5 @@ export const CardPropTypes = {
    * This allows additional information to be passed to be used in the Card Editor for this type.
    * You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render * */
   renderEditContent: PropTypes.func,
+  footerContent: PropTypes.elementType,
 };

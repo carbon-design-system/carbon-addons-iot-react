@@ -32,36 +32,62 @@ $iot-header-padding: $spacing-05;
 }
 
 .#{$iot-prefix}--card--title {
+  align-items: flex-start;
   display: flex;
-  flex: 1;
-  flex-direction: column;
+  flex-wrap: wrap;
   // min-width value is required to ensure flex child with text properly truncates
   // https://css-tricks.com/flexbox-truncated-text/
   min-width: 0;
-  padding-top: 0.85rem;
+  margin-top: 0.85rem;
+  padding-right: $spacing-05;
 
   & + *:not(.#{$iot-prefix}--card--toolbar) {
     margin-left: $spacing-05;
   }
 }
 
-.#{$iot-prefix}--card--title--wrapper {
-  align-items: center;
-  display: flex;
+.#{$iot-prefix}--card--header--tooltip {
+  flex-basis: 1.5rem;
 }
 
 .#{$iot-prefix}--card--title--text,
 .#{$iot-prefix}--card--subtitle--text {
   @include type-style('productive-heading-01');
-  display: block;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  word-break: break-all;
+  -webkit-line-clamp: 1;
+  max-height: 1.29em;
+  display: -webkit-box;
+  min-width: 0;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+.#{$iot-prefix}--card--title--text__wrapped {
+  -webkit-line-clamp: 2;
+  max-height: calc(1.29em * 2);
+  word-break: normal;
+}
+
+.#{$iot-prefix}--card--title--text {
+  flex-grow: 1;
+  flex-basis: calc(100% - 1.5rem);
 }
 
 .#{$iot-prefix}--card--subtitle--text {
+  @include type-style('productive-heading-01');
   font-weight: normal;
-  width: calc(100% - 1.75rem);
+  flex-grow: 1;
+  flex-basis: calc(100% - 1.5rem);
+
+  &__padded {
+    margin-right: 1.5rem;
+  }
+
+  html[dir='rtl'] &__padded {
+    margin-left: 1.5rem;
+    margin-right: unset;
+  }
 }
 
 .#{$iot-prefix}--card--header {

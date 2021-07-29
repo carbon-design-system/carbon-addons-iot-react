@@ -126,7 +126,12 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           'title',
           'Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.'
         )}
-        subtitle="lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse"
+        subtitle={select(
+          'subtitle',
+          ['lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse', false],
+          'lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse'
+        )}
+        hasTitleWrap={boolean('wrap title', true)}
         id="facilitycard-basic"
         size={size}
         isLoading={boolean('isloading', false)}
@@ -135,18 +140,18 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         isExpanded={boolean('isExpanded', false)}
         breakpoint={breakpoint}
         availableActions={object('availableActions', {
-          range: true,
+          range: false,
           expand: true,
-          edit: true,
-          clone: false,
-          delete: false,
+          edit: false,
+          clone: true,
+          delete: true,
         })}
         onCardAction={action('onCardAction')}
         onFocus={action('onFocus')}
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         tabIndex={0}
-        cardFooter={() => <Button kind="ghost">Footer Content</Button>}
+        footerContent={() => <Button kind="ghost">Footer Content</Button>}
         tooltip={<p>this is the external tooltip content</p>}
       />
     </div>
@@ -182,7 +187,7 @@ export const BasicWithRenderProp = () => {
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         tabIndex={0}
-        cardFooter={() => <Button kind="ghost">Footer Content</Button>}
+        footerContent={() => <Button kind="ghost">Footer Content</Button>}
       >
         {(childSize) => (
           <p>
