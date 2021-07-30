@@ -16,7 +16,7 @@ import {
 
 import { bundledIconNames } from '../utils/bundledIcons';
 import deprecate from '../internal/deprecate';
-import { DateTimePickerDefaultValuePropTypes } from '../components/DateTimePicker/DateTimePicker';
+import { DateTimePickerDefaultValuePropTypes } from '../components/DateTimePicker/DateTimePickerV2';
 
 import {
   CARD_LAYOUTS,

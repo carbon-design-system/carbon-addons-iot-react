@@ -11,7 +11,7 @@ import { DATE_PICKER_ICON_ONLY, TimeRangeOptionsPropTypes } from '../../constant
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 import DateTimePicker, {
   DateTimePickerDefaultValuePropTypes,
-} from '../DateTimePicker/DateTimePicker';
+} from '../DateTimePicker/DateTimePickerV2';
 import Button from '../Button';
 import { PRESET_VALUES } from '../../constants/DateConstants';
 

@@ -274,7 +274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--dropdown__wrapper bx--list-box__wrapper"
                     data-testid="14p5ho3pcu-group-logic-dropdown"
                   >
-                    
+
                     <div
                       className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                       id="14p5ho3pcu"
@@ -414,7 +414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--dropdown__wrapper bx--list-box__wrapper"
                 data-testid="rsiru4rjba-column-dropdown"
               >
-                
+
                 <div
                   className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                   id="rsiru4rjba-column-dropdown"
@@ -478,7 +478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--dropdown__wrapper bx--list-box__wrapper"
                 data-testid="rsiru4rjba-operand-dropdown"
               >
-                
+
                 <div
                   className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                   id="rsiru4rjba-operand-dropdown"
@@ -696,7 +696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-553"
+                aria-controls="accordion-item-567"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -726,7 +726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-553"
+                id="accordion-item-567"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -807,7 +807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-554"
+                aria-controls="accordion-item-568"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -837,7 +837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-554"
+                id="accordion-item-568"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -1345,7 +1345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                         className="iot--empty-state--text"
                                         data-testid="EmptyState-body"
                                       >
-                                        
+
                                       </p>
                                     </div>
                                   </div>
@@ -1860,7 +1860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                         className="iot--empty-state--text"
                                         data-testid="EmptyState-body"
                                       >
-                                        
+
                                       </p>
                                     </div>
                                   </div>
@@ -2939,7 +2939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--dropdown__wrapper bx--list-box__wrapper"
                     data-testid="14p5ho3pcu-group-logic-dropdown"
                   >
-                    
+
                     <div
                       className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                       id="14p5ho3pcu"
@@ -3079,7 +3079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--dropdown__wrapper bx--list-box__wrapper"
                 data-testid="rsiru4rjba-column-dropdown"
               >
-                
+
                 <div
                   className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                   id="rsiru4rjba-column-dropdown"
@@ -3143,7 +3143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--dropdown__wrapper bx--list-box__wrapper"
                 data-testid="rsiru4rjba-operand-dropdown"
               >
-                
+
                 <div
                   className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                   id="rsiru4rjba-operand-dropdown"
@@ -3352,7 +3352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--dropdown__wrapper bx--list-box__wrapper"
                 data-testid="34bvyub9jq-column-dropdown"
               >
-                
+
                 <div
                   className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                   id="34bvyub9jq-column-dropdown"
@@ -3416,7 +3416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--dropdown__wrapper bx--list-box__wrapper"
                 data-testid="34bvyub9jq-operand-dropdown"
               >
-                
+
                 <div
                   className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                   id="34bvyub9jq-operand-dropdown"
@@ -3628,7 +3628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--dropdown__wrapper bx--list-box__wrapper"
                     data-testid="i34imt0geh-group-logic-dropdown"
                   >
-                    
+
                     <div
                       className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                       id="i34imt0geh"
@@ -3701,7 +3701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
                   data-testid="ewc2z5kyfu-column-dropdown"
                 >
-                  
+
                   <div
                     className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                     id="ewc2z5kyfu-column-dropdown"
@@ -3765,7 +3765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
                   data-testid="ewc2z5kyfu-operand-dropdown"
                 >
-                  
+
                   <div
                     className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                     id="ewc2z5kyfu-operand-dropdown"
@@ -3974,7 +3974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
                   data-testid="hks7h2zin4-column-dropdown"
                 >
-                  
+
                   <div
                     className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                     id="hks7h2zin4-column-dropdown"
@@ -4038,7 +4038,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   className="bx--dropdown__wrapper bx--list-box__wrapper"
                   data-testid="hks7h2zin4-operand-dropdown"
                 >
-                  
+
                   <div
                     className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                     id="hks7h2zin4-operand-dropdown"
@@ -4250,7 +4250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="bx--dropdown__wrapper bx--list-box__wrapper"
                       data-testid="qzn8477mbg-group-logic-dropdown"
                     >
-                      
+
                       <div
                         className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                         id="qzn8477mbg"
@@ -4323,7 +4323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--dropdown__wrapper bx--list-box__wrapper"
                     data-testid="wg9hlv197c-column-dropdown"
                   >
-                    
+
                     <div
                       className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                       id="wg9hlv197c-column-dropdown"
@@ -4387,7 +4387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     className="bx--dropdown__wrapper bx--list-box__wrapper"
                     data-testid="wg9hlv197c-operand-dropdown"
                   >
-                    
+
                     <div
                       className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                       id="wg9hlv197c-operand-dropdown"
@@ -4599,7 +4599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         className="bx--dropdown__wrapper bx--list-box__wrapper"
                         data-testid="eobo3s5tie-group-logic-dropdown"
                       >
-                        
+
                         <div
                           className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                           id="eobo3s5tie"
@@ -4672,7 +4672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="bx--dropdown__wrapper bx--list-box__wrapper"
                       data-testid="7kadk2wfv8-column-dropdown"
                     >
-                      
+
                       <div
                         className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                         id="7kadk2wfv8-column-dropdown"
@@ -4736,7 +4736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="bx--dropdown__wrapper bx--list-box__wrapper"
                       data-testid="7kadk2wfv8-operand-dropdown"
                     >
-                      
+
                       <div
                         className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                         id="7kadk2wfv8-operand-dropdown"
@@ -4945,7 +4945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="bx--dropdown__wrapper bx--list-box__wrapper"
                       data-testid="49mf09vjhn-column-dropdown"
                     >
-                      
+
                       <div
                         className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                         id="49mf09vjhn-column-dropdown"
@@ -5009,7 +5009,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       className="bx--dropdown__wrapper bx--list-box__wrapper"
                       data-testid="49mf09vjhn-operand-dropdown"
                     >
-                      
+
                       <div
                         className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
                         id="49mf09vjhn-operand-dropdown"
@@ -5230,7 +5230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-593"
+                aria-controls="accordion-item-607"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -5260,7 +5260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-593"
+                id="accordion-item-607"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -5423,7 +5423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-594"
+                aria-controls="accordion-item-608"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -5453,7 +5453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-594"
+                id="accordion-item-608"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -7474,13 +7474,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <span>
           RuleBuilder
            is an
-           
+
           <a
             href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
           >
             experimental component
           </a>
-           
+
           and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
         </span>
       </div>
