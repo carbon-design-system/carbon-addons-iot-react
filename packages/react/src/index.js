@@ -37,6 +37,7 @@ export BarChartCard from './components/BarChartCard/BarChartCard';
 export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';
 export DateTimePicker from './components/DateTimePicker/DateTimePicker';
+export DateTimePickerV2 from './components/DateTimePicker/DateTimePickerV2';
 export TableViewDropdown from './components/Table/TableViewDropdown/TableViewDropdown';
 export IconDropdown from './components/IconDropdown/IconDropdown';
 export EmptyState from './components/EmptyState/EmptyState';
