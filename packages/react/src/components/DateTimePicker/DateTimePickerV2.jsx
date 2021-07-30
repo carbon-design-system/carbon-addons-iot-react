@@ -318,10 +318,10 @@ const DateTimePicker = ({
         datePickerElem.cal.open();
         // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
         // the only way to display the calendar inline is to reparent its DOM to our component
-        const wrapper = document.getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`);
+        const wrapper = document.getElementById(`${id}-${iotPrefix}--date-time-pickerv2__wrapper`);
         if (typeof wrapper !== 'undefined' && wrapper !== null) {
           const dp = document
-            .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
+            .getElementById(`${id}-${iotPrefix}--date-time-pickerv2__wrapper`)
             .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
           dp.appendChild(datePickerElem.cal.calendarContainer);
         }
@@ -716,8 +716,8 @@ const DateTimePicker = ({
     <>
       <div
         data-testid={testId}
-        id={`${id}-${iotPrefix}--date-time-picker__wrapper`}
-        className={`${iotPrefix}--date-time-picker__wrapper`}
+        id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
+        className={`${iotPrefix}--date-time-pickerv2__wrapper`}
         style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
       >
         <div
