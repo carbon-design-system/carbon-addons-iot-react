@@ -36,7 +36,7 @@ export const defaultAbsoluteValue = {
 };
 
 export default {
-  title: '1 - Watson IoT/DateTimePickerV2 Experimental',
+  title: '2 - Watson IoT Experimental/☢️ DateTimePickerV2',
   parameters: {
     docs: {
       inlineStories: false,

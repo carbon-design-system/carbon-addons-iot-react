@@ -16,6 +16,7 @@ import {
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import uuid from 'uuid';
+import warning from 'warning';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -247,6 +248,15 @@ const DateTimePicker = ({
   hasIconOnly,
   ...others
 }) => {
+  React.useEffect(() => {
+    if (__DEV__) {
+      warning(
+        false,
+        'The `ColorDropdown` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
+      );
+    }
+  }, []);
+
   const strings = useMemo(
     () => ({
       ...defaultProps.i18n,

@@ -5,13 +5,14 @@ import userEvent from '@testing-library/user-event';
 
 import '@testing-library/jest-dom/extend-expect';
 import dayjs from '../../utils/dayjs';
-
-import DateTimePicker, {
+import {
   INTERVAL_VALUES,
   RELATIVE_VALUES,
   PRESET_VALUES,
   PICKER_KINDS,
-} from './DateTimePicker';
+} from '../../constants/DateConstants';
+
+import DateTimePicker from './DateTimePicker';
 import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePicker.story';
 
 const defaultPresets = [
