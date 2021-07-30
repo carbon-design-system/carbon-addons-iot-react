@@ -15,7 +15,7 @@ const items = [
   {
     id: 'step1',
     label: 'First step is very, very long',
-    secondaryLabel: 'Optional label',
+    secondaryLabel: 'Optional label is very, very long',
     description: 'This is displayed when step icon is hovered',
   },
   {
@@ -69,21 +69,25 @@ export const Stateful = () => (
 
 Stateful.storyName = 'stateful';
 
-export const Presentation = () => (
-  <ProgressIndicator
-    items={items}
-    currentItemId={select(
-      'id',
-      items.map((item) => item.id),
-      items[0].id
-    )}
-    onClickItem={action('onClickItem')}
-    stepWidth={number('stepWidth', 6)}
-    showLabels={boolean('showlabels', true)}
-    isVerticalMode={boolean('isVerticalMode', false)}
-    isClickable={boolean('isClickable', true)}
-  />
-);
+export const Presentation = () => {
+  const spaceEquallyFlag = boolean('spaceEqually', false);
+  return (
+    <ProgressIndicator
+      items={items}
+      currentItemId={select(
+        'id',
+        items.map((item) => item.id),
+        items[0].id
+      )}
+      onClickItem={action('onClickItem')}
+      stepWidth={!spaceEquallyFlag ? number('stepWidth', 6) : null}
+      showLabels={boolean('showlabels', true)}
+      isVerticalMode={boolean('isVerticalMode', false)}
+      isClickable={boolean('isClickable', true)}
+      spaceEqually={spaceEquallyFlag}
+    />
+  );
+};
 
 Presentation.storyName = 'presentation';
 
@@ -131,45 +135,6 @@ Skeleton.parameters = {
         `,
   },
 };
-
-const onlyMainSteps = [
-  {
-    id: 'step1',
-    label: 'First step is very, very long',
-    secondaryLabel: 'Optional label is very, very long',
-    description: 'This is displayed when step icon is hovered',
-  },
-  {
-    id: 'step2',
-    label: 'Second Step',
-    secondaryLabel: 'Optional label',
-  },
-  {
-    id: 'step3',
-    label: 'Third Step',
-    secondaryLabel: 'Optional label',
-    disabled: true,
-  },
-  { id: 'step4', label: 'Fourth Step', invalid: true },
-  { id: 'step5', label: 'Fifth Step', secondaryLabel: 'Optional label is very, very long' },
-];
-
-export const SpaceEqually = () => {
-  const spaceEquallyFlag = boolean('spaceEqually', false);
-  return (
-    <ProgressIndicator
-      items={onlyMainSteps}
-      currentItemId="step2"
-      stepWidth={!spaceEquallyFlag ? number('stepWidth', 6) : null}
-      showLabels={boolean('showlabels', true)}
-      isVerticalMode={boolean('isVerticalMode', false)}
-      isClickable={boolean('isClickable', true)}
-      spaceEqually={spaceEquallyFlag}
-    />
-  );
-};
-
-SpaceEqually.storyName = 'Steps spaced equally';
 
 export const CarbonDefaultProgressIndicator = () => (
   <CarbonProgressIndicator
