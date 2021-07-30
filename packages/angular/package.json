@@ -102,6 +102,7 @@
     "@carbon/icons": "10.20.0",
     "@carbon/telemetry": "0.0.0-alpha.6",
     "date-fns": "^2.22.1",
-    "flatpickr": "4.6.1"
+    "flatpickr": "4.6.1",
+    "gulp-sass": "^5.0.0"
   }
 }

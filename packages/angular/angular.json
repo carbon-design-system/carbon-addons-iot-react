@@ -70,7 +70,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "ai",
-      "style": "css"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "ai"
