@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.69](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.68...v2.146.0-next.69) (2021-07-27)
+
+
+### Bug Fixes
+
+* **suiteheader:** Minor documentation changes in `SuiteHeader.mdx` to mention support for `idleTimeoutData`. ([9ae005f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ae005f481473b32a01c9da34db312ca52320fa7))
+
+
+
+
+
 # [2.146.0-next.68](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.67...v2.146.0-next.68) (2021-07-23)
 
 
