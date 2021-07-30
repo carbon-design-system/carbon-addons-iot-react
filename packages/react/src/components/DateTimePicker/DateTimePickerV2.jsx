@@ -700,8 +700,8 @@ const DateTimePicker = ({
     <>
       <div
         data-testid={testId}
-        id={`${id}-${iotPrefix}--date-time-picker__wrapper`}
-        className={`${iotPrefix}--date-time-picker__wrapper`}
+        id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
+        className={`${iotPrefix}--date-time-pickerv2__wrapper`}
         style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
       >
         <div

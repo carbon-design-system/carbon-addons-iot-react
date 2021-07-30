@@ -2,7 +2,7 @@
 @import '~@carbon/motion/scss/motion.scss';
 
 // wraps the entire component
-.#{$iot-prefix}--date-time-picker__wrapper {
+.#{$iot-prefix}--date-time-pickerv2__wrapper {
   width: var(--wrapper-width);
 
   .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition {
@@ -207,7 +207,7 @@
 }
 
 html[dir='rtl'] {
-  .#{$iot-prefix}--date-time-picker__wrapper {
+  .#{$iot-prefix}--date-time-pickerv2__wrapper {
     .#{$prefix}--number {
       margin-right: unset;
       margin-left: $spacing-05;

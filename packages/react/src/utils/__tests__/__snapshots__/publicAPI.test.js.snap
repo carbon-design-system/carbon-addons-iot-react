@@ -5315,7 +5315,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -6437,6 +6452,7 @@ Map {
       "defaultValue": null,
       "disabled": false,
       "expanded": false,
+      "hasIconOnly": false,
       "hasTimeInput": true,
       "i18n": Object {
         "absoluteLabel": "Absolute",
@@ -6687,6 +6703,9 @@ Map {
       "expanded": Object {
         "type": "bool",
       },
+      "hasIconOnly": Object {
+        "type": "bool",
+      },
       "hasTimeInput": Object {
         "type": "bool",
       },
@@ -6929,27 +6948,27 @@ Map {
         Object {
           "id": "item-01",
           "label": "Last 30 minutes",
-          "offset": 1800,
+          "offset": 30,
         },
         Object {
           "id": "item-02",
           "label": "Last 1 hour",
-          "offset": 3600,
+          "offset": 60,
         },
         Object {
           "id": "item-03",
           "label": "Last 6 hours",
-          "offset": 21600,
+          "offset": 360,
         },
         Object {
           "id": "item-04",
           "label": "Last 12 hours",
-          "offset": 43200,
+          "offset": 720,
         },
         Object {
           "id": "item-05",
           "label": "Last 24 hours",
-          "offset": 86400,
+          "offset": 1440,
         },
       ],
       "relatives": Array [
@@ -11674,7 +11693,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -12557,7 +12591,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -13594,7 +13643,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -14694,7 +14758,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -15840,7 +15919,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -16796,7 +16890,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -17894,7 +18003,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -18887,7 +19011,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -22289,7 +22428,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -23643,7 +23797,22 @@ Map {
               "type": "bool",
             },
             "useDateTimePicker": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],

@@ -424,11 +424,11 @@ describe('DateTimePicker', () => {
 
     const relatives = [
       {
-        label: 'today2',
+        label: 'today',
         value: RELATIVE_VALUES.TODAY,
       },
       {
-        label: 'yesterday2',
+        label: 'yesterday',
         value: RELATIVE_VALUES.YESTERDAY,
       },
     ];
