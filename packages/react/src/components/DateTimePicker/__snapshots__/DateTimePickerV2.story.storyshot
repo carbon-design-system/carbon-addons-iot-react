@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTimePickerV2 Experimental Default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Default 1`] = `
 <div
   className="storybook-container"
 >
@@ -27,7 +27,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onMouseLeave={[Function]}
         >
           <button
-            aria-describedby="definition-tooltip-2"
+            aria-describedby="definition-tooltip-12"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -37,7 +37,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </button>
           <span
             className="bx--assistive-text"
-            id="definition-tooltip-2"
+            id="definition-tooltip-12"
             role="tooltip"
           >
             2018-10-28 07:04 to Now
@@ -117,7 +117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTimePickerV2 Experimental Icon only 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Icon only 1`] = `
 <div
   className="storybook-container"
 >
@@ -207,7 +207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTimePickerV2 Experimental Light version 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Light version 1`] = `
 <div
   className="storybook-container"
 >
@@ -234,7 +234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onMouseLeave={[Function]}
         >
           <button
-            aria-describedby="definition-tooltip-10"
+            aria-describedby="definition-tooltip-20"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -244,7 +244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </button>
           <span
             className="bx--assistive-text"
-            id="definition-tooltip-10"
+            id="definition-tooltip-20"
             role="tooltip"
           >
             2018-10-28 07:04 to Now
@@ -324,7 +324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTimePickerV2 Experimental Locale 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Locale 1`] = `
 <div
   className="storybook-container"
 >
@@ -424,7 +424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTimePickerV2 Experimental Selected absolute 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Selected absolute 1`] = `
 <div
   className="storybook-container"
 >
@@ -524,7 +524,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTimePickerV2 Experimental Selected preset 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Selected preset 1`] = `
 <div
   className="storybook-container"
 >
@@ -551,7 +551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onMouseLeave={[Function]}
         >
           <button
-            aria-describedby="definition-tooltip-4"
+            aria-describedby="definition-tooltip-14"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -561,7 +561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </button>
           <span
             className="bx--assistive-text"
-            id="definition-tooltip-4"
+            id="definition-tooltip-14"
             role="tooltip"
           >
             2018-10-27 19:34 to Now
@@ -641,7 +641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTimePickerV2 Experimental Selected relative 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Selected relative 1`] = `
 <div
   className="storybook-container"
 >
@@ -741,7 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTimePickerV2 Experimental Without a custom range link 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Without a custom range link 1`] = `
 <div
   className="storybook-container"
 >
@@ -768,7 +768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onMouseLeave={[Function]}
         >
           <button
-            aria-describedby="definition-tooltip-8"
+            aria-describedby="definition-tooltip-18"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -778,7 +778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </button>
           <span
             className="bx--assistive-text"
-            id="definition-tooltip-8"
+            id="definition-tooltip-18"
             role="tooltip"
           >
             2018-10-27 19:34 to Now
@@ -858,7 +858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTimePickerV2 Experimental Without a relative option 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Without a relative option 1`] = `
 <div
   className="storybook-container"
 >
@@ -885,7 +885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onMouseLeave={[Function]}
         >
           <button
-            aria-describedby="definition-tooltip-6"
+            aria-describedby="definition-tooltip-16"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -895,7 +895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </button>
           <span
             className="bx--assistive-text"
-            id="definition-tooltip-6"
+            id="definition-tooltip-16"
             role="tooltip"
           >
             2018-10-27 19:34 to Now
@@ -975,7 +975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DateTimePickerV2 Experimental ️⚠️ Experimental Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 ️⚠️ Experimental Notice  1`] = `
 <div
   className="storybook-container"
 >
