@@ -2,10 +2,12 @@ import { mount } from 'enzyme';
 import React from 'react';
 import { Tooltip } from 'carbon-components-react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Popup16, Tree16 } from '@carbon/icons-react';
 
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
+import { PICKER_KINDS } from '../../constants/DateConstants';
 
 import CardRangePicker from './CardRangePicker';
 import Card from './Card';
@@ -140,7 +142,7 @@ describe('Card', () => {
     // isExpanded renders the modal wrapper around it
     expect(wrapper.find('.bx--modal')).toHaveLength(1);
   });
-  it('card actions', () => {
+  it('card actions for expand/collapse', () => {
     const mockOnCardAction = jest.fn();
     const wrapper = mount(
       <Card
@@ -191,6 +193,56 @@ describe('Card', () => {
     const thirdElement = await screen.findByText('Delete card');
     fireEvent.click(thirdElement);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.DELETE_CARD);
+  });
+  it('card actions for default range picker', () => {
+    const mockOnCardAction = jest.fn();
+    render(
+      <Card
+        {...cardProps}
+        isExpanded
+        size={CARD_SIZES.LARGE}
+        tooltip={tooltipElement}
+        onCardAction={mockOnCardAction}
+        availableActions={{ expand: true, range: true }}
+      />
+    );
+    // pop out the calendar
+    userEvent.click(screen.getAllByTitle(`Select time range`)[0]);
+
+    // select a default range
+    userEvent.click(screen.getByText(`Last 24 hrs`));
+
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CHANGE_TIME_RANGE, {
+      range: 'last24Hours',
+    });
+  });
+  it('card actions for dateTime range picker', () => {
+    const mockOnCardAction = jest.fn();
+    render(
+      <Card
+        {...cardProps}
+        isExpanded
+        size={CARD_SIZES.LARGE}
+        tooltip={tooltipElement}
+        onCardAction={mockOnCardAction}
+        availableActions={{ expand: true, range: true, useDateTimePicker: true }}
+      />
+    );
+    // pop out the calendar
+    userEvent.click(screen.getAllByLabelText(`Calendar`)[0]);
+
+    const hourLabel = 'Last 24 hours';
+
+    // select a default range
+    userEvent.click(screen.getByText(hourLabel));
+
+    // apply the default range
+    userEvent.click(screen.getByText('Apply'));
+
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CHANGE_TIME_RANGE, {
+      timeRangeKind: PICKER_KINDS.PRESET,
+      timeRangeValue: { id: 'item-05', label: hourLabel, offset: 24 * 60 },
+    });
   });
   it('card toolbar renders in header only when there are actions', () => {
     const wrapperWithActions = mount(

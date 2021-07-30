@@ -6,6 +6,7 @@ import { Tree16 } from '@carbon/icons-react';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
+import { INTERVAL_VALUES, RELATIVE_VALUES, PICKER_KINDS } from '../../constants/DateConstants';
 
 import CardREADME from './Card.mdx';
 import Card from './Card';
@@ -227,29 +228,29 @@ export const WithCustomRangeSelector = () => {
 WithCustomRangeSelector.storyName = 'with custom range selector';
 
 export const WithDateTimePickerRangeSelector = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const dateTimePickerSetting = select('useDateTimePicker', [true, 'iconOnly'], 'iconOnly');
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `300px`, margin: 20 }}>
       <Card
-        title={text('title', 'Card Title')}
-        id="facilitycard-with-loading"
-        size={size}
-        isLoading={boolean('isLoading', false)}
-        isEmpty={boolean('isEmpty', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpanded', false)}
+        title="Card with date picker"
+        id="facilitycard-with-date-picker"
+        size={CARD_SIZES.MEDIUM}
+        isLoading={false}
+        isEmpty={false}
+        isEditable={false}
+        isExpanded={false}
         breakpoint="lg"
         onCardAction={action('onCardAction')}
         availableActions={{
           range: true,
-          useDateTimePicker: true,
+          useDateTimePicker: dateTimePickerSetting,
         }}
         timeRangeOptions={object('timeRangeOptions', {
-          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 * 60 },
-          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 * 60 },
-          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 * 60 },
-          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 * 60 },
-          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 * 60 },
+          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
+          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 },
+          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 },
+          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 },
+          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 },
           lastHour: { label: 'Last Hour', offset: 60 * 60 },
         })}
       />
@@ -258,6 +259,50 @@ export const WithDateTimePickerRangeSelector = () => {
 };
 
 WithDateTimePickerRangeSelector.storyName = 'with datetimepicker range selector';
+
+export const WithDateTimePickerRangeSelectorExistingValue = () => {
+  const defaultRelativeValue = {
+    timeRangeKind: PICKER_KINDS.RELATIVE,
+    timeRangeValue: {
+      lastNumber: 20,
+      lastInterval: INTERVAL_VALUES.MINUTES,
+      relativeToWhen: RELATIVE_VALUES.TODAY,
+      relativeToTime: '13:30',
+    },
+  };
+  const dateTimePickerSetting = select('useDateTimePicker', [true, 'iconOnly'], true);
+  return (
+    <div style={{ width: `400px`, margin: 20 }}>
+      <Card
+        title={text('title', 'Card Title')}
+        id="facilitycard-with-datepicker-existing-value"
+        size={CARD_SIZES.MEDIUM}
+        isLoading={false}
+        isEmpty={false}
+        isEditable={false}
+        isExpanded={false}
+        breakpoint="lg"
+        onCardAction={action('onCardAction')}
+        availableActions={{
+          range: true,
+          useDateTimePicker: dateTimePickerSetting,
+        }}
+        timeRange={defaultRelativeValue}
+        timeRangeOptions={object('timeRangeOptions', {
+          last48Hours: { id: 'last48Hours', label: 'Last 48 Hours', offset: 48 * 60 },
+          last24Hours: { id: 'last24Hours', label: 'Last 24 Hours', offset: 24 * 60 },
+          last8Hours: { id: 'last8Hours', label: 'Last 8 Hours', offset: 8 * 60 },
+          last4Hours: { id: 'last4Hours', label: 'Last 4 Hours', offset: 4 * 60 },
+          last2Hours: { id: 'last2Hours', label: 'Last 2 Hours', offset: 2 * 60 },
+          lastHour: { id: 'lastHour', label: 'Last Hour', offset: 60 },
+        })}
+      />
+    </div>
+  );
+};
+
+WithDateTimePickerRangeSelectorExistingValue.storyName =
+  'with datetimepicker range selector with existing value';
 
 export const SizeGallery = () => {
   return Object.keys(CARD_SIZES).map((i) => (

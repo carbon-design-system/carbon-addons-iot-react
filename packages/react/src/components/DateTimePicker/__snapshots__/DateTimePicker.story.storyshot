@@ -27,7 +27,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onMouseLeave={[Function]}
         >
           <button
-            aria-describedby="definition-tooltip-2"
+            aria-describedby="definition-tooltip-4"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -37,10 +37,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </button>
           <span
             className="bx--assistive-text"
-            id="definition-tooltip-2"
+            id="definition-tooltip-4"
             role="tooltip"
           >
-            2018-10-28 07:04 to Now
+            2018-10-27 01:34 to Now
           </span>
         </span>
       </div>
@@ -93,7 +93,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </button>
         <div
           className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
         >
           <div
             aria-expanded={false}
@@ -183,7 +182,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </button>
         <div
           className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
         >
           <div
             aria-expanded={false}
@@ -234,7 +232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onMouseLeave={[Function]}
         >
           <button
-            aria-describedby="definition-tooltip-10"
+            aria-describedby="definition-tooltip-12"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -244,10 +242,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </button>
           <span
             className="bx--assistive-text"
-            id="definition-tooltip-10"
+            id="definition-tooltip-12"
             role="tooltip"
           >
-            2018-10-28 07:04 to Now
+            2018-10-27 01:34 to Now
           </span>
         </span>
       </div>
@@ -300,7 +298,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </button>
         <div
           className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
         >
           <div
             aria-expanded={false}
@@ -400,7 +397,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </button>
         <div
           className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
         >
           <div
             aria-expanded={false}
@@ -500,7 +496,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </button>
         <div
           className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
         >
           <div
             aria-expanded={false}
@@ -551,7 +546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onMouseLeave={[Function]}
         >
           <button
-            aria-describedby="definition-tooltip-4"
+            aria-describedby="definition-tooltip-6"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -561,10 +556,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </button>
           <span
             className="bx--assistive-text"
-            id="definition-tooltip-4"
+            id="definition-tooltip-6"
             role="tooltip"
           >
-            2018-10-27 19:34 to Now
+            2018-09-28 07:34 to Now
           </span>
         </span>
       </div>
@@ -617,7 +612,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </button>
         <div
           className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
         >
           <div
             aria-expanded={false}
@@ -717,7 +711,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </button>
         <div
           className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
         >
           <div
             aria-expanded={false}
@@ -768,7 +761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onMouseLeave={[Function]}
         >
           <button
-            aria-describedby="definition-tooltip-8"
+            aria-describedby="definition-tooltip-10"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -778,10 +771,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </button>
           <span
             className="bx--assistive-text"
-            id="definition-tooltip-8"
+            id="definition-tooltip-10"
             role="tooltip"
           >
-            2018-10-27 19:34 to Now
+            2018-09-28 07:34 to Now
           </span>
         </span>
       </div>
@@ -834,7 +827,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </button>
         <div
           className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
         >
           <div
             aria-expanded={false}
@@ -885,7 +877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onMouseLeave={[Function]}
         >
           <button
-            aria-describedby="definition-tooltip-6"
+            aria-describedby="definition-tooltip-8"
             className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -895,10 +887,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </button>
           <span
             className="bx--assistive-text"
-            id="definition-tooltip-6"
+            id="definition-tooltip-8"
             role="tooltip"
           >
-            2018-10-27 19:34 to Now
+            2018-09-28 07:34 to Now
           </span>
         </span>
       </div>
@@ -951,7 +943,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </button>
         <div
           className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
         >
           <div
             aria-expanded={false}

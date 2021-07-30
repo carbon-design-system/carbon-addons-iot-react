@@ -1,15 +1,19 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import { Close16, Popup16, Settings16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classnames from 'classnames';
+import keyBy from 'lodash/keyBy';
 
 import { settings } from '../../constants/Settings';
-import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
+import { DATE_PICKER_ICON_ONLY, TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
-import DateTimePicker from '../DateTimePicker/DateTimePicker';
+import DateTimePicker, {
+  DateTimePickerDefaultValuePropTypes,
+} from '../DateTimePicker/DateTimePicker';
 import Button from '../Button';
+import { PRESET_VALUES } from '../../constants/DateConstants';
 
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
@@ -31,7 +35,8 @@ export const ToolbarSVGWrapper = (props) => {
 
 const propTypes = {
   /** set of available actions for the card */
-  availableActions: PropTypes.objectOf(PropTypes.bool).isRequired,
+  availableActions: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.bool, PropTypes.string]))
+    .isRequired,
   /** is the card editable */
   isEditable: PropTypes.bool,
   /** is the card expanded */
@@ -46,6 +51,10 @@ const propTypes = {
   /** Generates the available time range selection options. Each option should include 'this' or 'last'.
    * i.e. { thisWeek: 'This week', lastWeek: 'Last week'}
    */
+  timeRange: PropTypes.oneOfType([
+    CardRangePickerPropTypes.timeRange,
+    DateTimePickerDefaultValuePropTypes,
+  ]),
   timeRangeOptions: TimeRangeOptionsPropTypes, // eslint-disable-line react/require-default-props
   i18n: PropTypes.shape({
     last24Hours: PropTypes.string,
@@ -73,6 +82,7 @@ const defaultProps = {
   renderExpandIcon: Popup16,
   className: null,
   timeRangeOptions: null,
+  timeRange: null,
   i18n: {
     last24Hours: 'Last 24 hours',
     last7Days: 'Last 7 days',
@@ -112,18 +122,22 @@ const CardToolbar = ({
   // Also needs to reassign itself if i18n changes
   const timeRangeOptions = useMemo(
     () =>
-      timeRangeOptionsProp || {
-        last24Hours: mergedI18n.last24HoursLabel,
-        last7Days: mergedI18n.last7DaysLabel,
-        lastMonth: mergedI18n.lastMonthLabel,
-        lastQuarter: mergedI18n.lastQuarterLabel,
-        lastYear: mergedI18n.lastYearLabel,
-        thisWeek: mergedI18n.thisWeekLabel,
-        thisMonth: mergedI18n.thisMonthLabel,
-        thisQuarter: mergedI18n.thisQuarterLabel,
-        thisYear: mergedI18n.thisYearLabel,
-      },
+      timeRangeOptionsProp ||
+      (availableActions?.useDateTimePicker // if we're using date time picker default to those options
+        ? keyBy(PRESET_VALUES, 'id')
+        : {
+            last24Hours: mergedI18n.last24HoursLabel,
+            last7Days: mergedI18n.last7DaysLabel,
+            lastMonth: mergedI18n.lastMonthLabel,
+            lastQuarter: mergedI18n.lastQuarterLabel,
+            lastYear: mergedI18n.lastYearLabel,
+            thisWeek: mergedI18n.thisWeekLabel,
+            thisMonth: mergedI18n.thisMonthLabel,
+            thisQuarter: mergedI18n.thisQuarterLabel,
+            thisYear: mergedI18n.thisYearLabel,
+          }),
     [
+      availableActions,
       mergedI18n.last24HoursLabel,
       mergedI18n.last7DaysLabel,
       mergedI18n.lastMonthLabel,
@@ -137,7 +151,12 @@ const CardToolbar = ({
     ]
   );
 
-  const handleDateTimePickerChange = (...args) => console.log('datetimepickerchange', args);
+  const handleDateTimePickerChange = useCallback(
+    (selectedValue) => {
+      onCardAction('CHANGE_TIME_RANGE', selectedValue);
+    },
+    [onCardAction]
+  );
 
   return isEditable ? (
     <div data-testid={testId} className={classnames(className, `${iotPrefix}--card--toolbar`)}>
@@ -188,7 +207,9 @@ const CardToolbar = ({
           />
         ) : (
           <DateTimePicker
+            id={testId}
             i18n={mergedI18n}
+            hasIconOnly={availableActions.useDateTimePicker === DATE_PICKER_ICON_ONLY}
             presets={Object.entries(timeRangeOptions).reduce(
               (acc, [timeRangeOptionKey, timeRangeOption]) => {
                 acc.push({

@@ -16,6 +16,7 @@ import {
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import uuid from 'uuid';
+import cloneDeep from 'lodash/cloneDeep';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -37,6 +38,7 @@ export const DateTimePickerDefaultValuePropTypes = PropTypes.oneOfType([
     timeRangeValue: PropTypes.exact({
       id: PropTypes.string,
       label: PropTypes.string.isRequired,
+      /** offset is in minutes */
       offset: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
@@ -195,15 +197,9 @@ const defaultProps = {
     toLabel: 'to',
     toNowLabel: 'to Now',
     calendarLabel: 'Calendar',
-    presetLabels: [
-      'Last 30 minutes',
-      'Last 1 hour',
-      'Last 6 hours',
-      'Last 12 hours',
-      'Last 24 hours',
-    ],
-    intervalLabels: ['minutes', 'hours', 'days', 'weeks', 'months', 'years'],
-    relativeLabels: ['Today', 'Yesterday'],
+    presetLabels: [],
+    intervalLabels: [],
+    relativeLabels: [],
     customRangeLinkLabel: 'Custom Range',
     customRangeLabel: 'Custom range',
     relativeLabel: 'Relative',
@@ -332,7 +328,7 @@ const DateTimePicker = ({
   const parseValue = (value) => {
     setCurrentValue(value);
     let readableValue = '';
-    const returnValue = { ...value };
+    const returnValue = cloneDeep(value);
     switch (value.kind) {
       case PICKER_KINDS.RELATIVE: {
         let endDate = dayjs();
@@ -788,13 +784,16 @@ const DateTimePicker = ({
                           }
                         )}
                       >
-                        {preset.label || strings.presetLabels[i]}
+                        {strings.presetLabels[i] || preset.label}
                       </ListItem>
                     );
                   })}
                 </OrderedList>
               ) : (
-                <div className={`${iotPrefix}--date-time-picker__custom-wrapper`}>
+                <div
+                  className={`${iotPrefix}--date-time-picker__custom-wrapper`}
+                  style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
+                >
                   {showRelativeOption ? (
                     <FormGroup
                       legendText={strings.customRangeLabel}
@@ -856,7 +855,7 @@ const DateTimePicker = ({
                                 <SelectItem
                                   key={i}
                                   value={interval.value}
-                                  text={interval.label || strings.intervalLabels[i]}
+                                  text={strings.intervalLabels[i] || interval.label}
                                 />
                               );
                             })}
@@ -882,10 +881,7 @@ const DateTimePicker = ({
                                 <SelectItem
                                   key={i}
                                   value={relative.value}
-                                  text={
-                                    relative.label ||
-                                    strings.relativeLabels.filter((x) => x === relative.label)[0]
-                                  }
+                                  text={strings.relativeLabels[i] || relative.label}
                                 />
                               );
                             })}

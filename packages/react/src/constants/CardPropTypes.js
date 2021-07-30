@@ -530,12 +530,12 @@ export const TimeRangeOptionsPropTypes = (props, propName, componentName) => {
     } else if (timeRangeKeys.length > 0 && typeof timeRangeProp[timeRangeKeys[0]] === 'object') {
       // throw error if timeRangeOptions does not label or offset fields
       const isError = timeRangeKeys.some(
-        (key) => !timeRangeProp[key].label || !timeRangeProp[key].offset || !timeRangeProp[key].id
+        (key) => !timeRangeProp[key].label || !timeRangeProp[key].offset
       );
 
       if (isError) {
         error = new Error(
-          `\`${componentName}\` prop \`${propName}\` each key needs a label, offset and id`
+          `\`${componentName}\` prop \`${propName}\` each keyed object needs a label and offset.`
         );
       }
     }
@@ -650,6 +650,8 @@ export const MapCardPropTypes = {
   dropRef: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func]),
 };
 
+export const DATE_PICKER_ICON_ONLY = 'iconOnly';
+
 export const CardPropTypes = {
   title: PropTypes.string,
   id: PropTypes.string,
@@ -687,7 +689,11 @@ export const CardPropTypes = {
     delete: PropTypes.bool,
     expand: PropTypes.bool,
     range: PropTypes.bool,
-    useDateTimePicker: PropTypes.bool, // TODO: can remove once we make a major version change
+    /** Use icon only version of the dateTimePicker by sending 'iconOnly' */
+    useDateTimePicker: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['iconOnly']), // 'iconOnly' will only show icon
+    ]), // TODO: can remove once we make a major version change
     settings: PropTypes.bool,
   }),
   /** All the labels that need translation */
@@ -764,3 +770,6 @@ export const CardPropTypes = {
    * You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render * */
   renderEditContent: PropTypes.func,
 };
+function newFunction() {
+  return 'iconOnly';
+}
