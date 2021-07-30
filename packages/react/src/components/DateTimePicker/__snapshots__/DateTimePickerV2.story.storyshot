@@ -5,9 +5,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-picker__wrapper"
+    className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-picker__wrapper"
+    id="datetimepicker-iot--date-time-pickerv2__wrapper"
     style={
       Object {
         "--wrapper-width": "20rem",
@@ -122,9 +122,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-picker__wrapper"
+    className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-picker__wrapper"
+    id="datetimepicker-iot--date-time-pickerv2__wrapper"
     style={
       Object {
         "--wrapper-width": "3rem",
@@ -212,9 +212,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-picker__wrapper"
+    className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-picker__wrapper"
+    id="datetimepicker-iot--date-time-pickerv2__wrapper"
     style={
       Object {
         "--wrapper-width": "20rem",
@@ -329,9 +329,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-picker__wrapper"
+    className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
-    id="datetimepicker25-iot--date-time-picker__wrapper"
+    id="datetimepicker25-iot--date-time-pickerv2__wrapper"
     style={
       Object {
         "--wrapper-width": "20rem",
@@ -429,9 +429,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-picker__wrapper"
+    className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-picker__wrapper"
+    id="datetimepicker-iot--date-time-pickerv2__wrapper"
     style={
       Object {
         "--wrapper-width": "20rem",
@@ -529,9 +529,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-picker__wrapper"
+    className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-picker__wrapper"
+    id="datetimepicker-iot--date-time-pickerv2__wrapper"
     style={
       Object {
         "--wrapper-width": "20rem",
@@ -646,9 +646,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-picker__wrapper"
+    className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-picker__wrapper"
+    id="datetimepicker-iot--date-time-pickerv2__wrapper"
     style={
       Object {
         "--wrapper-width": "20rem",
@@ -746,9 +746,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-picker__wrapper"
+    className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-picker__wrapper"
+    id="datetimepicker-iot--date-time-pickerv2__wrapper"
     style={
       Object {
         "--wrapper-width": "20rem",
@@ -863,9 +863,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-picker__wrapper"
+    className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-picker__wrapper"
+    id="datetimepicker-iot--date-time-pickerv2__wrapper"
     style={
       Object {
         "--wrapper-width": "20rem",
