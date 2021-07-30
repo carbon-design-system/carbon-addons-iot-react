@@ -4,6 +4,15 @@
 // wraps the entire component
 .#{$iot-prefix}--date-time-pickerv2__wrapper {
   width: var(--wrapper-width);
+  cursor: pointer;
+  max-height: 41px;
+  &:focus {
+    outline: $spacing-01 solid $interactive-03;
+  }
+
+  &:hover {
+    background-color: $hover-ui;
+  }
 
   // open menu content
   .#{$iot-prefix}--flyout-menu--content {
@@ -26,23 +35,6 @@
     margin-right: auto;
     -webkit-animation: none;
     animation: none;
-  }
-
-  // hide the shadow around the button
-  .#{$iot-prefix}--flyout-menu__open {
-    box-shadow: unset;
-  }
-
-  // allow the bottom border from the field to become visible
-  .#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__bottom-start
-    .#{$prefix}--tooltip__content::after,
-  .#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__bottom-end
-    .#{$prefix}--tooltip__content::after,
-  .#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__top-start
-    .#{$prefix}--tooltip__content::after,
-  .#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__top-end
-    .#{$prefix}--tooltip__content::after {
-    background-color: unset;
   }
 
   // move up the tooltip
@@ -93,6 +85,7 @@
     }
   }
 
+  // the text version of this
   .#{$iot-prefix}--date-time-picker__box--full {
     background-color: $ui-01;
     color: $carbon--gray-100;
@@ -100,6 +93,26 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid $ui-04;
+    &::selection {
+      color: none;
+      background: none;
+    }
+
+    // the whole thing should pickup the hover
+    &:hover {
+      background-color: inherit;
+    }
+
+    // hide the shadow around the button for the text version
+    .#{$iot-prefix}--flyout-menu__open {
+      box-shadow: unset;
+    }
+
+    // the button should always inherit the background color
+    .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light)
+      .#{$iot-prefix}--flyout-menu--trigger-button {
+      background-color: inherit;
+    }
 
     .#{$iot-prefix}--date-time-picker__field {
       padding-left: $spacing-05;
@@ -111,14 +124,30 @@
         white-space: nowrap;
       }
 
-      &:hover {
-        background-color: $hover-ui;
-      }
-
       &:focus {
         outline: $spacing-01 solid $carbon--blue-60;
         border-bottom: none;
       }
+      // tooltip has default left outline
+      .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition.#{$prefix}--tooltip--bottom:focus {
+        outline: unset;
+      }
+    }
+    .#{$iot-prefix}--flyout-menu.#{$iot-prefix}--flyout-menu__bottom:hover,
+    .#{$iot-prefix}--flyout-menu--trigger-button:hover {
+      background-color: inherit;
+    }
+
+    // allow the bottom border from the field to become visible
+    .#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__bottom-start
+      .#{$prefix}--tooltip__content::after,
+    .#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__bottom-end
+      .#{$prefix}--tooltip__content::after,
+    .#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__top-start
+      .#{$prefix}--tooltip__content::after,
+    .#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__top-end
+      .#{$prefix}--tooltip__content::after {
+      background-color: unset;
     }
   }
 
