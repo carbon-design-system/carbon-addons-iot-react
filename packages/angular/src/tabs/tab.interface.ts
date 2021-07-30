@@ -1,3 +1,9 @@
+export interface TabAction {
+  title: string;
+  icon?: string;
+  onClick?: (tab: Tab) => void;
+}
+
 export interface Tab {
   /**
    * String title for the tab header and item in the tab dropdown
@@ -13,8 +19,9 @@ export interface Tab {
    * Optional value to indicate the selection status of the Tab
    */
   selected?: boolean;
+  actions?: TabAction[];
   /**
-   * to allow expansion of the Tab interface with propertys as needed
+   * to allow expansion of the Tab interface with properties as needed
    */
   [property: string]: any;
 }

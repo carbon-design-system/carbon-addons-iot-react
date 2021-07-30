@@ -3,6 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.69](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.68...v2.146.0-next.69) (2021-07-27)
+
+
+### Bug Fixes
+
+* **suiteheader:** Minor documentation changes in `SuiteHeader.mdx` to mention support for `idleTimeoutData`. ([9ae005f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ae005f481473b32a01c9da34db312ca52320fa7))
+
+
+
+
+
+# [2.146.0-next.68](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.67...v2.146.0-next.68) (2021-07-23)
+
+
+### Bug Fixes
+
+* **bx:** use of prefix in TableCard file ([23b9ed6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/23b9ed691e3c5b4d61ad629c15948854611714c2))
+* **tablecard:** table content fit in the card; ([70f879f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/70f879f4074b70ac969737cb0132362343407bc0))
+
+
+
+
+
+# [2.146.0-next.67](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.66...v2.146.0-next.67) (2021-07-22)
+
+
+### Bug Fixes
+
+* **timeseriescard:** xaxis format incorrect with one datapoint in year interval ([faf0cd2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/faf0cd29945afcddcdf425721fe4b0ba520df27c))
+
+
+
+
+
+# [2.146.0-next.66](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.65...v2.146.0-next.66) (2021-07-20)
+
+
+### Bug Fixes
+
+* **timeseriescard:** Passing truncation type `’none’` to chart tooltip options so that tooltip labels don’t get truncated. When the chart y label label is very long, it will stretch the width of the tooltip. ([44e2c87](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/44e2c8748e79aa9eda4da4742ef0b6a5d7b15c44))
+
+
+
+
+
+# [2.146.0-next.65](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.64...v2.146.0-next.65) (2021-07-20)
+
+
+### Bug Fixes
+
+* **date-time-picker:** use callback ref for the DatePicker ([76af718](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/76af71881e5b754f608a65ae252964527e549551))
+* **datetimepicker:** pin flatpickr to fix absolute date range ([d1537e9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d1537e936c4fe15e28ab7b87bd6859d164f6f76a))
+* **repo:** fix cypress config to run e2e tests ([f63d697](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f63d697d7cf7084be76260b9fd5c970e37277cd7))
+
+
+
+
+
 # [2.146.0-next.64](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.63...v2.146.0-next.64) (2021-07-16)
 
 **Note:** Version bump only for package ibm-ai-applications
