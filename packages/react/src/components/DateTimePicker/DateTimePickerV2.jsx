@@ -17,6 +17,7 @@ import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import cloneDeep from 'lodash/cloneDeep';
+import warning from 'warning';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -246,6 +247,17 @@ const DateTimePicker = ({
   hasIconOnly,
   ...others
 }) => {
+  // keeps track of the flyout menu state
+  const [isFlyoutOpen, setIsFlyoutOpen] = useState();
+  React.useEffect(() => {
+    if (__DEV__) {
+      warning(
+        false,
+        'The `ColorDropdown` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
+      );
+    }
+  }, []);
+
   const strings = useMemo(
     () => ({
       ...defaultProps.i18n,
@@ -696,6 +708,8 @@ const DateTimePicker = ({
     );
   };
 
+  console.log('is flyout open', isFlyoutOpen);
+
   return (
     <>
       <div
@@ -703,9 +717,22 @@ const DateTimePicker = ({
         id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
         className={`${iotPrefix}--date-time-pickerv2__wrapper`}
         style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
+        role="button"
+        tabIndex="0"
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') {
+            setIsFlyoutOpen((flyoutOpen) => !flyoutOpen);
+            // have to do this to stop the mouse click from being fired
+            event.preventDefault();
+          }
+        }}
+        onClick={() => {
+          setIsFlyoutOpen((flyoutOpen) => !flyoutOpen);
+        }}
       >
         <div
-          className={classnames(`${iotPrefix}--date-time-picker__box--full`, {
+          className={classnames({
+            [`${iotPrefix}--date-time-picker__box--full`]: !hasIconOnly,
             [`${iotPrefix}--date-time-picker__box--light`]: light,
           })}
         >
@@ -732,11 +759,13 @@ const DateTimePicker = ({
           ) : null}
 
           <FlyoutMenu
-            buttonSize="default"
+            isOpen={isFlyoutOpen}
+            buttonSize="small"
             renderIcon={Calendar16}
             disabled={false}
             buttonProps={{
               tooltipPosition: 'top',
+              tabIndex: -1,
             }}
             hideTooltip
             iconDescription={strings.calendarLabel}
