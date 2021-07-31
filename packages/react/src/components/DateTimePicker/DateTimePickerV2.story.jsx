@@ -175,18 +175,20 @@ LightVersion.storyName = 'Light version';
 
 export const IconOnly = () => {
   return (
-    <DateTimePicker
-      id="datetimepicker"
-      dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
-      relatives={[
-        {
-          label: 'Yesterday',
-          value: RELATIVE_VALUES.YESTERDAY,
-        },
-      ]}
-      hasTimeInput={boolean('hasTimeInput', true)}
-      hasIconOnly={boolean('hasIconOnly', true)}
-    />
+    <div style={{ paddingLeft: '20rem' }}>
+      <DateTimePicker
+        id="datetimepicker"
+        dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+        relatives={[
+          {
+            label: 'Yesterday',
+            value: RELATIVE_VALUES.YESTERDAY,
+          },
+        ]}
+        hasTimeInput={boolean('hasTimeInput', true)}
+        hasIconOnly={boolean('hasIconOnly', true)}
+      />
+    </div>
   );
 };
 

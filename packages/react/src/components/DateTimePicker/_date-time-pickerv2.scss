@@ -4,6 +4,15 @@
 // wraps the entire component
 .#{$iot-prefix}--date-time-pickerv2__wrapper {
   width: var(--wrapper-width);
+  cursor: pointer;
+  max-height: 41px;
+  &:focus {
+    outline: $spacing-01 solid $interactive-03;
+  }
+
+  &:hover {
+    background-color: $hover-ui;
+  }
 
   .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition {
     font-size: 100%;
@@ -11,6 +20,7 @@
     letter-spacing: unset;
   }
 
+  // the text version of this
   .#{$iot-prefix}--date-time-picker__box--full {
     background-color: $ui-01;
     color: $carbon--gray-100;
@@ -18,6 +28,26 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid $ui-04;
+    &::selection {
+      color: none;
+      background: none;
+    }
+
+    // the whole thing should pickup the hover
+    &:hover {
+      background-color: inherit;
+    }
+
+    // hide the shadow around the button for the text version
+    .#{$iot-prefix}--flyout-menu__open {
+      box-shadow: unset;
+    }
+
+    // the button should always inherit the background color
+    .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light)
+      .#{$iot-prefix}--flyout-menu--trigger-button {
+      background-color: inherit;
+    }
 
     .#{$iot-prefix}--date-time-picker__field {
       padding-left: $spacing-05;
@@ -34,6 +64,10 @@
       &:focus {
         outline: 2px solid $carbon--blue-60;
         border-bottom: none;
+      }
+      // tooltip has default left outline
+      .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition.#{$prefix}--tooltip--bottom:focus {
+        outline: unset;
       }
     }
   }
