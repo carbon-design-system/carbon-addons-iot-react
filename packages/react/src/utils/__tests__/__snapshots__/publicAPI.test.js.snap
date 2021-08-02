@@ -6746,30 +6746,14 @@ Map {
         "endTimeLabel": "End time",
         "hours": "hours",
         "increment": "Increment",
-        "intervalLabels": Array [
-          "minutes",
-          "hours",
-          "days",
-          "weeks",
-          "months",
-          "years",
-        ],
+        "intervalLabels": Array [],
         "invalidNumberLabel": "Number is not valid",
         "lastLabel": "Last",
         "minutes": "minutes",
         "number": "number",
-        "presetLabels": Array [
-          "Last 30 minutes",
-          "Last 1 hour",
-          "Last 6 hours",
-          "Last 12 hours",
-          "Last 24 hours",
-        ],
+        "presetLabels": Array [],
         "relativeLabel": "Relative",
-        "relativeLabels": Array [
-          "Today",
-          "Yesterday",
-        ],
+        "relativeLabels": Array [],
         "relativeToLabel": "Relative to",
         "startTimeLabel": "Start time",
         "toLabel": "to",
@@ -7115,6 +7099,9 @@ Map {
           Object {
             "args": Array [
               Object {
+                "id": Object {
+                  "type": "string",
+                },
                 "label": Object {
                   "type": "string",
                 },
@@ -20122,9 +20109,11 @@ Map {
         "$$typeof": Symbol(react.forward_ref),
         "render": [Function],
       },
+      "renderInPortal": false,
       "tabIndex": 0,
       "testId": "flyout-menu",
       "tooltipClassName": "",
+      "tooltipContentClassName": "",
       "tooltipId": "flyout-tooltip",
       "triggerId": "flyout-trigger-id",
       "useAutoPositioning": false,
@@ -20244,6 +20233,9 @@ Map {
         ],
         "type": "oneOfType",
       },
+      "renderInPortal": Object {
+        "type": "bool",
+      },
       "tabIndex": Object {
         "type": "number",
       },
@@ -20251,6 +20243,9 @@ Map {
         "type": "string",
       },
       "tooltipClassName": Object {
+        "type": "string",
+      },
+      "tooltipContentClassName": Object {
         "type": "string",
       },
       "tooltipId": Object {
