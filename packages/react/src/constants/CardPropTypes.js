@@ -769,6 +769,3 @@ export const CardPropTypes = {
    * You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render * */
   renderEditContent: PropTypes.func,
 };
-function newFunction() {
-  return 'iconOnly';
-}
