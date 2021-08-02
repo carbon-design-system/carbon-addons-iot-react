@@ -253,7 +253,7 @@ const DateTimePicker = ({
     if (__DEV__) {
       warning(
         false,
-        'The `ColorDropdown` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
+        'The `DateTimePickerV2` is an experimental component and could be lacking unit test and documentation. Be aware that minor version bumps could introduce breaking changes. For the reasons listed above use of this component in production is highly discouraged'
       );
     }
   }, []);
@@ -832,7 +832,7 @@ const DateTimePicker = ({
               ) : (
                 <div
                   className={`${iotPrefix}--date-time-picker__custom-wrapper`}
-                  style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
+                  style={{ '--wrapper-width': '20rem' }}
                 >
                   {showRelativeOption ? (
                     <FormGroup
