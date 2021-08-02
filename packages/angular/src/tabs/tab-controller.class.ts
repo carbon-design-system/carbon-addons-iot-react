@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { Tab } from './tab.interface';
 
 export class TabController {
-  public selection = new Subject<any>();
+  public selection = new BehaviorSubject<any>(null);
   public tabListWithSelection: Observable<Tab[]>;
   public tabList: Observable<Tab[]>;
   private tabSource = new BehaviorSubject<Tab[]>([]);
@@ -39,13 +39,21 @@ export class TabController {
     this.selection.next(key);
   }
 
-  removeTab(tabToRemove: Tab) {
-    const filteredTabs = this.tabSource.getValue().filter((tab) => tab !== tabToRemove);
-    this.setTabs(filteredTabs);
+  updateTab(updatedTab: Tab) {
+    const updatedTabs = this.tabSource.getValue().map((tab) => {
+      if (tab.key === updatedTab.key) {
+        return updatedTab;
+      }
+      return tab;
+    });
+    this.setTabs(updatedTabs);
   }
 
-  removeTabAt(indexToRemove: number) {
-    const filteredTabs = this.tabSource.getValue().filter((_, index) => index !== indexToRemove);
+  removeTab(key: any): any {
+    const tabs = this.tabSource.getValue();
+    const index = tabs.findIndex((tab) => tab.key === key);
+    const filteredTabs = tabs.filter((tab) => tab.key !== key);
     this.setTabs(filteredTabs);
+    return index > 0 ? filteredTabs[index - 1].key : filteredTabs[0]?.key;
   }
 }
