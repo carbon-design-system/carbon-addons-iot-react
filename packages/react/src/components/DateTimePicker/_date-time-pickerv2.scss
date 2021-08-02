@@ -79,18 +79,12 @@
   }
 }
 
-// move up the tooltip
-.#{$prefix}--tooltip[data-floating-menu-direction='bottom'] {
-  margin-top: -$spacing-01;
-}
-
 // open menu content
 .#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
   padding: 0;
 
   .#{$iot-prefix}--date-time-picker__menu-scroll {
     overflow-y: auto;
-    padding-top: 0.75rem;
     width: var(--wrapper-width);
 
     .#{$prefix}--fieldset {
@@ -104,8 +98,8 @@
 
     .#{$iot-prefix}--date-time-picker__custom-wrapper {
       width: var(--wrapper-width);
-      padding-top: 1rem;
-      padding-bottom: 2rem;
+      padding-top: $spacing-05;
+      padding-bottom: $spacing-07;
     }
   }
 
@@ -173,7 +167,7 @@
     }
 
     .#{$prefix}--form-item + .#{$prefix}--form-item {
-      margin-left: 1rem;
+      margin-left: $spacing-05;
     }
   }
 
@@ -183,7 +177,7 @@
 
   &.#{$iot-prefix}--date-time-picker__menu-formgroup {
     display: block;
-    padding-top: 1rem;
+    padding-top: $spacing-05;
   }
 
   .#{$iot-prefix}--date-time-picker__listitem {
@@ -244,10 +238,28 @@
 }
 
 html[dir='rtl'] {
-  .#{$iot-prefix}--date-time-pickerv2__wrapper {
+  .#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
+    .#{$iot-prefix}--date-time-picker__fields-wrapper {
+      .#{$prefix}--form-item + .#{$prefix}--form-item,
+      .#{$prefix}--form-item + .#{$iot-prefix}--time-picker__wrapper {
+        margin-right: $spacing-05;
+        margin-left: unset;
+      }
+    }
+
+    // this should be global to all number controls RtL
     .#{$prefix}--number {
-      margin-right: unset;
-      margin-left: $spacing-05;
+      .#{$prefix}--number__input-wrapper {
+        input {
+          min-width: 8.5rem;
+          padding-right: $spacing-05;
+        }
+      }
+
+      .#{$prefix}--number__controls {
+        right: unset;
+        left: 0;
+      }
     }
 
     .#{$iot-prefix}--time-picker__wrapper {
@@ -263,9 +275,6 @@ html[dir='rtl'] {
         padding-left: $spacing-09;
       }
     }
-  }
-
-  .#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
     .#{$iot-prefix}--date-time-picker__menu-scroll {
       .#{$iot-prefix}--date-time-picker__listitem {
         border-right: 2px solid transparent;
