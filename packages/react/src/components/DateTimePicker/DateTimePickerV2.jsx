@@ -776,6 +776,7 @@ const DateTimePicker = ({
               top: 0,
               left: 0,
             }}
+            testId={`${testId}-datepicker-flyout`}
             direction={FlyoutMenuDirection.BottomEnd}
             customFooter={CustomFooter}
             tooltipFocusTrap={false}

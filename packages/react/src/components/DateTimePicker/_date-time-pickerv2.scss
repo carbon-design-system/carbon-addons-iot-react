@@ -90,7 +90,6 @@
 
   .#{$iot-prefix}--date-time-picker__menu-scroll {
     overflow-y: auto;
-    padding-top: 0.75rem;
     width: var(--wrapper-width);
 
     .#{$prefix}--fieldset {
@@ -104,8 +103,8 @@
 
     .#{$iot-prefix}--date-time-picker__custom-wrapper {
       width: var(--wrapper-width);
-      padding-top: 1rem;
-      padding-bottom: 2rem;
+      padding-top: $spacing-05;
+      padding-bottom: $spacing-07;
     }
   }
 

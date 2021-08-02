@@ -239,7 +239,6 @@ describe('DateTimePicker', () => {
     // There should only be one on the relative page
     expect(screen.getAllByTitle(/Increment hours/).length).toEqual(1);
 
-    userEvent.click(screen.getByTestId('date-time-picker__field'));
     userEvent.click(screen.getAllByText('Absolute')[0]);
 
     // There should be two on the Absolute page
@@ -377,6 +376,19 @@ describe('DateTimePicker', () => {
     userEvent.click(screen.getByText('Apply'));
     // This should be displayed
     expect(screen.getByTitle('2020-04-10 12:34 to 2020-04-11 10:49')).toBeVisible();
+  });
+
+  it('verify flyout testids exist', () => {
+    render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />);
+
+    // the initial flyout id should be there
+    expect(screen.getByTestId('date-time-picker-datepicker-flyout-container')).toBeInTheDocument();
+
+    // first open the menu
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+
+    // now the menu should be there
+    expect(screen.getByTestId('date-time-picker-datepicker-flyout')).toBeInTheDocument();
   });
 
   it('i18n string test', () => {
