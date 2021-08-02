@@ -6450,7 +6450,6 @@ Map {
       "defaultValue": null,
       "disabled": false,
       "expanded": false,
-      "hasIconOnly": false,
       "hasTimeInput": true,
       "i18n": Object {
         "absoluteLabel": "Absolute",
@@ -6699,9 +6698,6 @@ Map {
         "type": "bool",
       },
       "expanded": Object {
-        "type": "bool",
-      },
-      "hasIconOnly": Object {
         "type": "bool",
       },
       "hasTimeInput": Object {
