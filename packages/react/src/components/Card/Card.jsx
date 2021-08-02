@@ -295,7 +295,9 @@ const Card = (props) => {
     [availableActions]
   );
 
-  const hasToolbarActions = Object.values(mergedAvailableActions).includes(true);
+  const hasToolbarActions = Boolean(
+    Object.values(mergedAvailableActions).find((action) => action !== false)
+  );
 
   const strings = {
     ...defaultProps.i18n,

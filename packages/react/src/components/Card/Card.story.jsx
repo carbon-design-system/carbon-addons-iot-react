@@ -228,7 +228,7 @@ export const WithCustomRangeSelector = () => {
 WithCustomRangeSelector.storyName = 'with custom range selector';
 
 export const WithDateTimePickerRangeSelector = () => {
-  const dateTimePickerSetting = select('useDateTimePicker', [true, 'iconOnly'], 'iconOnly');
+  const dateTimePickerSetting = select('range', [true, false, 'iconOnly', 'full'], 'iconOnly');
   return (
     <div style={{ width: `300px`, margin: 20 }}>
       <Card
@@ -242,8 +242,7 @@ export const WithDateTimePickerRangeSelector = () => {
         breakpoint="lg"
         onCardAction={action('onCardAction')}
         availableActions={{
-          range: true,
-          useDateTimePicker: dateTimePickerSetting,
+          range: dateTimePickerSetting,
         }}
         timeRangeOptions={object('timeRangeOptions', {
           last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
@@ -270,7 +269,7 @@ export const WithDateTimePickerRangeSelectorExistingValue = () => {
       relativeToTime: '13:30',
     },
   };
-  const dateTimePickerSetting = select('useDateTimePicker', [true, 'iconOnly'], true);
+  const dateTimePickerSetting = select('range', [true, false, 'iconOnly', 'full'], 'full');
   return (
     <div style={{ width: `400px`, margin: 20 }}>
       <Card
@@ -284,8 +283,7 @@ export const WithDateTimePickerRangeSelectorExistingValue = () => {
         breakpoint="lg"
         onCardAction={action('onCardAction')}
         availableActions={{
-          range: true,
-          useDateTimePicker: dateTimePickerSetting,
+          range: dateTimePickerSetting,
         }}
         timeRange={defaultRelativeValue}
         timeRangeOptions={object('timeRangeOptions', {

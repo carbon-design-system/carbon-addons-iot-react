@@ -206,6 +206,7 @@ const CardToolbar = ({
             testId={`${testId}-range-picker`}
           />
         ) : (
+          // string values mean use the new picker
           <DateTimePicker
             id={testId}
             i18n={mergedI18n}

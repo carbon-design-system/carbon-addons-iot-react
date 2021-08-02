@@ -5309,12 +5309,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -5324,6 +5318,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -5331,6 +5326,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],
@@ -11687,12 +11685,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -11702,6 +11694,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -11709,6 +11702,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],
@@ -12585,12 +12581,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -12600,6 +12590,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -12607,6 +12598,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],
@@ -13637,12 +13631,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -13652,6 +13640,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -13659,6 +13648,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],
@@ -14752,12 +14744,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -14767,6 +14753,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -14774,6 +14761,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],
@@ -15913,12 +15903,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -15928,6 +15912,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -15935,6 +15920,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],
@@ -16884,12 +16872,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -16899,6 +16881,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -16906,6 +16889,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],
@@ -17997,12 +17983,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -18012,6 +17992,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -18019,6 +18000,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],
@@ -19005,12 +18989,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -19020,6 +18998,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -19027,6 +19006,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],
@@ -22426,12 +22408,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -22441,6 +22417,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -22448,6 +22425,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],
@@ -23795,12 +23775,6 @@ Map {
               "type": "bool",
             },
             "range": Object {
-              "type": "bool",
-            },
-            "settings": Object {
-              "type": "bool",
-            },
-            "useDateTimePicker": Object {
               "args": Array [
                 Array [
                   Object {
@@ -23810,6 +23784,7 @@ Map {
                     "args": Array [
                       Array [
                         "iconOnly",
+                        "full",
                       ],
                     ],
                     "type": "oneOf",
@@ -23817,6 +23792,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
             },
           },
         ],

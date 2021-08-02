@@ -691,7 +691,7 @@ export const CardPropTypes = {
     range: PropTypes.oneOfType([
       PropTypes.bool, // previous simple range selector
       /** Use the new datepicker */
-      PropTypes.oneOf([Object.values(DATE_PICKER_OPTIONS)]), // these are the new'iconOnly' will only show icon, 'full' shows whole field
+      PropTypes.oneOf(Object.values(DATE_PICKER_OPTIONS)), // these are the new'iconOnly' will only show icon, 'full' shows whole field
     ]),
     settings: PropTypes.bool,
   }),
