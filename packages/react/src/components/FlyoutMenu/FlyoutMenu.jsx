@@ -95,6 +95,7 @@ const FlyoutMenu = ({
   tooltipClassName,
   tooltipContentClassName,
   passive,
+  tooltipFocusTrap,
   hideTooltip,
   customFooter: CustomFooter,
   onApply,
@@ -271,6 +272,7 @@ const FlyoutMenu = ({
             iconDescription={iconDescription}
             data-testid={testId}
             showIcon={false}
+            focusTrap={tooltipFocusTrap}
             open={typeof isOpen === 'boolean' ? isOpen : isControlledOpen}
             direction={tooltipDirection}
             menuOffset={calculateMenuOffset}
@@ -323,6 +325,11 @@ const propTypes = {
    * The CSS class names of the tooltip content.
    */
   tooltipContentClassName: PropTypes.string,
+
+  /**
+   * whether to send focus to the tooltip when it's expanded
+   */
+  tooltipFocusTrap: PropTypes.bool,
 
   /**
    * Where to put the flyout menu, relative to the trigger UI.
@@ -434,6 +441,7 @@ const defaultProps = {
   children: undefined,
   tooltipClassName: '',
   tooltipContentClassName: '',
+  tooltipFocusTrap: true,
   passive: false,
   hideTooltip: true,
   customFooter: null,

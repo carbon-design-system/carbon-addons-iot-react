@@ -778,6 +778,7 @@ const DateTimePicker = ({
             }}
             direction={FlyoutMenuDirection.BottomEnd}
             customFooter={CustomFooter}
+            tooltipFocusTrap={false}
             renderInPortal
             tooltipClassName={classnames(`${iotPrefix}--date-time-picker--tooltip`, {
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
@@ -790,7 +791,7 @@ const DateTimePicker = ({
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
-              tabIndex="0"
+              tabIndex="-1"
             >
               {!isCustomRange ? (
                 <OrderedList nested={false}>
