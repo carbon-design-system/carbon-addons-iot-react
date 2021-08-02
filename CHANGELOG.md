@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.70](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.69...v2.146.0-next.70) (2021-07-30)
+
+
+### Features
+
+* **tabs:** add tab actions ([030df06](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/030df060d9629d2835e0ffb7248aa2a326ccef20))
+
+
+
+
+
 # [2.146.0-next.69](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.68...v2.146.0-next.69) (2021-07-27)
 
 
