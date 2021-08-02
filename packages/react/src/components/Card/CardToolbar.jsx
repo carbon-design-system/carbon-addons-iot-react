@@ -123,7 +123,7 @@ const CardToolbar = ({
   const timeRangeOptions = useMemo(
     () =>
       timeRangeOptionsProp ||
-      (availableActions?.useDateTimePicker // if we're using date time picker default to those options
+      (typeof availableActions?.range === 'string' // if we're using date time picker default to those options
         ? keyBy(PRESET_VALUES, 'id')
         : {
             last24Hours: mergedI18n.last24HoursLabel,

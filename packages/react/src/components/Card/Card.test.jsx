@@ -8,6 +8,7 @@ import { Popup16, Tree16 } from '@carbon/icons-react';
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
 import { PICKER_KINDS } from '../../constants/DateConstants';
+import { DATE_PICKER_OPTIONS } from '../../constants/CardPropTypes';
 
 import CardRangePicker from './CardRangePicker';
 import Card from './Card';
@@ -225,7 +226,7 @@ describe('Card', () => {
         size={CARD_SIZES.LARGE}
         tooltip={tooltipElement}
         onCardAction={mockOnCardAction}
-        availableActions={{ expand: true, range: true, useDateTimePicker: true }}
+        availableActions={{ expand: true, range: DATE_PICKER_OPTIONS.FULL }}
       />
     );
     // pop out the calendar
