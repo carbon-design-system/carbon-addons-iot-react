@@ -650,7 +650,7 @@ export const MapCardPropTypes = {
   dropRef: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func]),
 };
 
-export const DATE_PICKER_ICON_ONLY = 'iconOnly';
+export const DATE_PICKER_OPTIONS = { ICON_ONLY: 'iconOnly', FULL: 'full' };
 
 export const CardPropTypes = {
   title: PropTypes.string,
@@ -688,12 +688,11 @@ export const CardPropTypes = {
     clone: PropTypes.bool,
     delete: PropTypes.bool,
     expand: PropTypes.bool,
-    range: PropTypes.bool,
-    /** Use icon only version of the dateTimePicker by sending 'iconOnly' */
-    useDateTimePicker: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.oneOf(['iconOnly']), // 'iconOnly' will only show icon
-    ]), // TODO: can remove once we make a major version change
+    range: PropTypes.oneOfType([
+      PropTypes.bool, // previous simple range selector
+      /** Use the new datepicker */
+      PropTypes.oneOf([Object.values(DATE_PICKER_OPTIONS)]), // these are the new'iconOnly' will only show icon, 'full' shows whole field
+    ]),
     settings: PropTypes.bool,
   }),
   /** All the labels that need translation */

@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import keyBy from 'lodash/keyBy';
 
 import { settings } from '../../constants/Settings';
-import { DATE_PICKER_ICON_ONLY, TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
+import { DATE_PICKER_OPTIONS, TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 import DateTimePicker, {
   DateTimePickerDefaultValuePropTypes,
@@ -195,7 +195,7 @@ const CardToolbar = ({
   ) : (
     <div data-testid={testId} className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {availableActions.range ? (
-        !availableActions.useDateTimePicker ? (
+        typeof availableActions.range === 'boolean' ? ( // boolean is the old range picker
           <CardRangePicker
             width={width}
             i18n={mergedI18n}
@@ -209,9 +209,7 @@ const CardToolbar = ({
           <DateTimePicker
             id={testId}
             i18n={mergedI18n}
-            hasIconOnly={
-              width < 320 || availableActions.useDateTimePicker === DATE_PICKER_ICON_ONLY
-            }
+            hasIconOnly={width < 320 || availableActions.range === DATE_PICKER_OPTIONS.ICON_ONLY}
             presets={Object.entries(timeRangeOptions).reduce(
               (acc, [timeRangeOptionKey, timeRangeOption]) => {
                 acc.push({
