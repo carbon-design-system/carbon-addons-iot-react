@@ -552,7 +552,9 @@ const DateTimePicker = ({
     }
   };
 
-  const toggleIsCustomRange = () => {
+  const toggleIsCustomRange = (event) => {
+    // stop the event from bubbling
+    event.stopPropagation();
     setIsCustomRange(!isCustomRange);
 
     // If value was changed reset when going back to Preset
@@ -708,8 +710,6 @@ const DateTimePicker = ({
     );
   };
 
-  console.log('is flyout open', isFlyoutOpen);
-
   return (
     <>
       <div
@@ -760,7 +760,7 @@ const DateTimePicker = ({
 
           <FlyoutMenu
             isOpen={isFlyoutOpen}
-            buttonSize="small"
+            buttonSize={hasIconOnly ? 'default' : 'small'}
             renderIcon={Calendar16}
             disabled={false}
             buttonProps={{
@@ -778,11 +778,21 @@ const DateTimePicker = ({
             }}
             direction={FlyoutMenuDirection.BottomEnd}
             customFooter={CustomFooter}
+            tooltipFocusTrap={false}
             renderInPortal
-            tooltipClassName={`${iotPrefix}--date-time-picker--tooltip`}
+            tooltipClassName={classnames(`${iotPrefix}--date-time-picker--tooltip`, {
+              [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
+            })}
             tooltipContentClassName={`${iotPrefix}--date-time-picker--menu`}
           >
-            <div className={`${iotPrefix}--date-time-picker__menu-scroll`} role="listbox">
+            <div
+              className={`${iotPrefix}--date-time-picker__menu-scroll`}
+              style={{ '--wrapper-width': '20rem' }}
+              role="listbox"
+              onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
+              onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
+              tabIndex="-1"
+            >
               {!isCustomRange ? (
                 <OrderedList nested={false}>
                   {tooltipValue ? (

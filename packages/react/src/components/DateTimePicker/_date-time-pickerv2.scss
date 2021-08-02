@@ -5,7 +5,7 @@
 .#{$iot-prefix}--date-time-pickerv2__wrapper {
   width: var(--wrapper-width);
   cursor: pointer;
-  max-height: 41px;
+
   &:focus {
     outline: $spacing-01 solid $interactive-03;
   }
@@ -32,6 +32,8 @@
       color: none;
       background: none;
     }
+    max-height: 40px;
+    height: 40px;
 
     // the whole thing should pickup the hover
     &:hover {
@@ -77,14 +79,9 @@
   }
 }
 
-// hide the shadow around the button
-.#{$iot-prefix}--flyout-menu__open {
-  box-shadow: unset;
-}
-
 // move up the tooltip
 .#{$prefix}--tooltip[data-floating-menu-direction='bottom'] {
-  margin-top: -$spacing-02;
+  margin-top: -$spacing-01;
 }
 
 // open menu content
@@ -94,6 +91,7 @@
   .#{$iot-prefix}--date-time-picker__menu-scroll {
     overflow-y: auto;
     padding-top: 0.75rem;
+    width: var(--wrapper-width);
 
     .#{$prefix}--fieldset {
       margin-bottom: $spacing-lg;
@@ -223,6 +221,11 @@
   .#{$iot-prefix}--date-time-picker__menu-btn {
     flex-grow: 1;
   }
+}
+
+// icon tooltip needs to be moved up a little more
+.#{$iot-prefix}--date-time-picker--tooltip--icon.#{$prefix}--tooltip[data-floating-menu-direction='bottom'] {
+  margin-top: -0.35rem;
 }
 
 // allow the bottom border from the field to become visible (but not in the iconOnly case)

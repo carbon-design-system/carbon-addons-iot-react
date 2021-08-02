@@ -209,7 +209,9 @@ const CardToolbar = ({
           <DateTimePicker
             id={testId}
             i18n={mergedI18n}
-            hasIconOnly={availableActions.useDateTimePicker === DATE_PICKER_ICON_ONLY}
+            hasIconOnly={
+              width < 320 || availableActions.useDateTimePicker === DATE_PICKER_ICON_ONLY
+            }
             presets={Object.entries(timeRangeOptions).reduce(
               (acc, [timeRangeOptionKey, timeRangeOption]) => {
                 acc.push({

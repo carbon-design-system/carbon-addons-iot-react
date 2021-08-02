@@ -21468,6 +21468,7 @@ Map {
       "testId": "flyout-menu",
       "tooltipClassName": "",
       "tooltipContentClassName": "",
+      "tooltipFocusTrap": true,
       "tooltipId": "flyout-tooltip",
       "triggerId": "flyout-trigger-id",
       "useAutoPositioning": false,
@@ -21601,6 +21602,9 @@ Map {
       },
       "tooltipContentClassName": Object {
         "type": "string",
+      },
+      "tooltipFocusTrap": Object {
+        "type": "bool",
       },
       "tooltipId": Object {
         "type": "string",

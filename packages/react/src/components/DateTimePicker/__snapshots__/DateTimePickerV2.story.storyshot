@@ -8,11 +8,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
     id="datetimepicker-iot--date-time-pickerv2__wrapper"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
     style={
       Object {
         "--wrapper-width": "20rem",
       }
     }
+    tabIndex="0"
   >
     <div
       className="iot--date-time-picker__box--full"
@@ -56,7 +60,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
           onBlur={[Function]}
@@ -64,7 +68,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onFocus={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="button"
         >
           <div
@@ -121,9 +125,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-pickerv2__wrapper"
-    data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-pickerv2__wrapper"
     style={
       Object {
         "paddingLeft": "20rem",
@@ -134,17 +135,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       className="iot--date-time-pickerv2__wrapper"
       data-testid="date-time-picker"
       id="datetimepicker-iot--date-time-pickerv2__wrapper"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
       style={
         Object {
           "--wrapper-width": "3rem",
         }
       }
+      tabIndex="0"
     >
       <div
         className=""
       >
         <div
-          className="iot--flyout-menu--tooltip-anchor"
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="flyout-menu-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
         >
           <button
             aria-describedby={null}
@@ -157,7 +168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             onFocus={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             <div
@@ -186,7 +197,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </button>
           <div
             className="iot--flyout-menu--tooltip-anchor"
-            data-floating-menu-container={true}
           >
             <div
               aria-expanded={false}
@@ -219,11 +229,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
     id="datetimepicker-iot--date-time-pickerv2__wrapper"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
     style={
       Object {
         "--wrapper-width": "20rem",
       }
     }
+    tabIndex="0"
   >
     <div
       className="iot--date-time-picker__box--full iot--date-time-picker__box--light"
@@ -267,7 +281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
           onBlur={[Function]}
@@ -275,7 +289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onFocus={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="button"
         >
           <div
@@ -335,11 +349,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
     id="datetimepicker25-iot--date-time-pickerv2__wrapper"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
     style={
       Object {
         "--wrapper-width": "20rem",
       }
     }
+    tabIndex="0"
   >
     <div
       className="iot--date-time-picker__box--full"
@@ -366,7 +384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
           onBlur={[Function]}
@@ -374,7 +392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onFocus={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="button"
         >
           <div
@@ -434,11 +452,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
     id="datetimepicker-iot--date-time-pickerv2__wrapper"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
     style={
       Object {
         "--wrapper-width": "20rem",
       }
     }
+    tabIndex="0"
   >
     <div
       className="iot--date-time-picker__box--full"
@@ -465,7 +487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
           onBlur={[Function]}
@@ -473,7 +495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onFocus={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="button"
         >
           <div
@@ -533,11 +555,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
     id="datetimepicker-iot--date-time-pickerv2__wrapper"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
     style={
       Object {
         "--wrapper-width": "20rem",
       }
     }
+    tabIndex="0"
   >
     <div
       className="iot--date-time-picker__box--full"
@@ -581,7 +607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
           onBlur={[Function]}
@@ -589,7 +615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onFocus={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="button"
         >
           <div
@@ -649,11 +675,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
     id="datetimepicker-iot--date-time-pickerv2__wrapper"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
     style={
       Object {
         "--wrapper-width": "20rem",
       }
     }
+    tabIndex="0"
   >
     <div
       className="iot--date-time-picker__box--full"
@@ -680,7 +710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
           onBlur={[Function]}
@@ -688,7 +718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onFocus={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="button"
         >
           <div
@@ -748,11 +778,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
     id="datetimepicker-iot--date-time-pickerv2__wrapper"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
     style={
       Object {
         "--wrapper-width": "20rem",
       }
     }
+    tabIndex="0"
   >
     <div
       className="iot--date-time-picker__box--full"
@@ -796,7 +830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
           onBlur={[Function]}
@@ -804,7 +838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onFocus={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="button"
         >
           <div
@@ -864,11 +898,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     className="iot--date-time-pickerv2__wrapper"
     data-testid="date-time-picker"
     id="datetimepicker-iot--date-time-pickerv2__wrapper"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
     style={
       Object {
         "--wrapper-width": "20rem",
       }
     }
+    tabIndex="0"
   >
     <div
       className="iot--date-time-picker__box--full"
@@ -912,7 +950,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-describedby={null}
           aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="flyout-menu-button"
           disabled={false}
           onBlur={[Function]}
@@ -920,7 +958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onFocus={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="button"
         >
           <div
@@ -1023,13 +1061,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <span>
           DateTimePickerV2
            is an
-
+           
           <a
             href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
           >
             experimental component
           </a>
-
+           
           and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
         </span>
       </div>
