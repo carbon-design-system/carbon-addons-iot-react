@@ -5,6 +5,7 @@ import { Close16, Popup16, Settings16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classnames from 'classnames';
 import keyBy from 'lodash/keyBy';
+import isNil from 'lodash/isNil';
 
 import { settings } from '../../constants/Settings';
 import { DATE_PICKER_OPTIONS, TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
@@ -210,7 +211,10 @@ const CardToolbar = ({
           <DateTimePicker
             id={testId}
             i18n={mergedI18n}
-            hasIconOnly={width < 320 || availableActions.range === DATE_PICKER_OPTIONS.ICON_ONLY}
+            hasIconOnly={
+              // make sure the card is actually sized
+              (width > 0 && width < 320) || availableActions.range === DATE_PICKER_OPTIONS.ICON_ONLY
+            }
             presets={Object.entries(timeRangeOptions).reduce(
               (acc, [timeRangeOptionKey, timeRangeOption]) => {
                 acc.push({
