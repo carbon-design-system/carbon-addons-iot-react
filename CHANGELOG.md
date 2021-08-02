@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.71](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.70...v2.146.0-next.71) (2021-08-02)
+
+
+### Bug Fixes
+
+* **datetimepicker:** adjust margin ([26f46a5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/26f46a5c60fed1d6b965fc167f79a7951614ef1b))
+* **datetimepicker:** fix styles to look like the old picker ([1a956d3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1a956d36c5d20c74a8b91d02f768b57d41f0ec99))
+* **datetimepicker:** remove bottom border ([573817a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/573817a71101006d809a9eb14e37303c1a75f5fb))
+* **datetimepickerv2:** do not steal focus for parity ([6b73bf8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6b73bf814a8f852cf0edd412263cd1b30c799276))
+* **datetimepickerv2:** fix pr issues with styling testing ([dc04550](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dc04550122d682ffb5c15d81b92c6259b530cdec))
+* **datetimepickerv2:** ux fixes to make it the same ([6a797a7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6a797a76f141894d8b1c99485ffb6524a341d53c))
+* **scss:** separate the datetimepickerv2 classes ([c3b9880](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c3b98807ff4d5ff1dac596c8d0998347fd9f6b72))
+* **styles:** fix all rtl issues ([2bab7f0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2bab7f020243877d4ddb5e9202ee17e541a03fda))
+
+
+### Features
+
+* **datetimepicker:** add hasicononly prop ([32b82a5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/32b82a58826db7623320f933eaedd769d61c6840))
+* **datetimepicker:** swap dropdown to flyoutmenu ([cfcef72](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cfcef726ab8924e9535cb4ba34f4fa55a576c782))
+* **datetimepicker:** update styles for flyout ([cd6a811](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cd6a811f6a2dd18d6c009f35f1662f1ff9c39fc9))
+* **datetimepickerv2:** add new datetimepickerv2 with iconOnly ([8f20794](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8f207941e5cd291b6551854d7ee27e7b3ab78f9f))
+
+
+### Reverts
+
+* **datetimepicker:** go back to previous version ([8f27900](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8f279003d0a2b750c3d3cd10b809c686d27331ae))
+* **datetimepicker:** revert to original version ([82fce5a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/82fce5a96281ee4f4d5be51a1825753d1d4ebb35))
+
+
+
+
+
 # [2.146.0-next.70](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.69...v2.146.0-next.70) (2021-07-30)
 
 
