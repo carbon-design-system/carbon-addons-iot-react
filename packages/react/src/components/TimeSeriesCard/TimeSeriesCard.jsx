@@ -243,9 +243,19 @@ const TimeSeriesCard = ({
   const objectAgnosticThresholds = JSON.stringify(thresholds);
 
   const sampleValues = useMemo(
-    () => isEditable ? generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds):[],
+    () =>
+      isEditable
+        ? generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds)
+        : [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [objectAgnosticSeries, timeDataSourceId, interval, timeRange, objectAgnosticThresholds, isEditable]
+    [
+      objectAgnosticSeries,
+      timeDataSourceId,
+      interval,
+      timeRange,
+      objectAgnosticThresholds,
+      isEditable,
+    ]
   );
 
   const values = useMemo(() => (isEditable ? sampleValues : valuesProp), [
