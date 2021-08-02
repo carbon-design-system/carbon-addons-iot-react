@@ -5,7 +5,6 @@ import { Close16, Popup16, Settings16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classnames from 'classnames';
 import keyBy from 'lodash/keyBy';
-import isNil from 'lodash/isNil';
 
 import { settings } from '../../constants/Settings';
 import { DATE_PICKER_OPTIONS, TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
