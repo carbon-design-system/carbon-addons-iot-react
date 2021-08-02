@@ -6726,6 +6726,427 @@ Map {
       },
     },
   },
+  "DateTimePickerV2" => Object {
+    "defaultProps": Object {
+      "dateTimeMask": "YYYY-MM-DD HH:mm",
+      "defaultValue": null,
+      "disabled": false,
+      "expanded": false,
+      "hasIconOnly": false,
+      "hasTimeInput": true,
+      "i18n": Object {
+        "absoluteLabel": "Absolute",
+        "applyBtnLabel": "Apply",
+        "backBtnLabel": "Back",
+        "calendarLabel": "Calendar",
+        "cancelBtnLabel": "Cancel",
+        "customRangeLabel": "Custom range",
+        "customRangeLinkLabel": "Custom Range",
+        "decrement": "Decrement",
+        "endTimeLabel": "End time",
+        "hours": "hours",
+        "increment": "Increment",
+        "intervalLabels": Array [],
+        "invalidNumberLabel": "Number is not valid",
+        "lastLabel": "Last",
+        "minutes": "minutes",
+        "number": "number",
+        "presetLabels": Array [],
+        "relativeLabel": "Relative",
+        "relativeLabels": Array [],
+        "relativeToLabel": "Relative to",
+        "startTimeLabel": "Start time",
+        "toLabel": "to",
+        "toNowLabel": "to Now",
+      },
+      "id": undefined,
+      "intervals": Array [
+        Object {
+          "label": "minutes",
+          "value": "MINUTES",
+        },
+        Object {
+          "label": "hours",
+          "value": "HOURS",
+        },
+        Object {
+          "label": "days",
+          "value": "DAYS",
+        },
+        Object {
+          "label": "weeks",
+          "value": "WEEKS",
+        },
+        Object {
+          "label": "months",
+          "value": "MONTHS",
+        },
+        Object {
+          "label": "years",
+          "value": "YEARS",
+        },
+      ],
+      "light": false,
+      "locale": "en",
+      "onApply": null,
+      "onCancel": null,
+      "presets": Array [
+        Object {
+          "id": "item-01",
+          "label": "Last 30 minutes",
+          "offset": 30,
+        },
+        Object {
+          "id": "item-02",
+          "label": "Last 1 hour",
+          "offset": 60,
+        },
+        Object {
+          "id": "item-03",
+          "label": "Last 6 hours",
+          "offset": 360,
+        },
+        Object {
+          "id": "item-04",
+          "label": "Last 12 hours",
+          "offset": 720,
+        },
+        Object {
+          "id": "item-05",
+          "label": "Last 24 hours",
+          "offset": 1440,
+        },
+      ],
+      "relatives": Array [
+        Object {
+          "label": "Today",
+          "value": "TODAY",
+        },
+        Object {
+          "label": "Yesterday",
+          "value": "YESTERDAY",
+        },
+      ],
+      "renderPresetTooltipText": null,
+      "showCustomRangeLink": true,
+      "showRelativeOption": true,
+      "testId": "date-time-picker",
+    },
+    "propTypes": Object {
+      "dateTimeMask": Object {
+        "type": "string",
+      },
+      "defaultValue": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "PRESET",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "timeRangeValue": Object {
+                    "args": Array [
+                      Object {
+                        "id": Object {
+                          "type": "string",
+                        },
+                        "label": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "offset": Object {
+                          "isRequired": true,
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                },
+              ],
+              "isRequired": true,
+              "type": "exact",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "RELATIVE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "timeRangeValue": Object {
+                    "args": Array [
+                      Object {
+                        "lastInterval": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "lastNumber": Object {
+                          "isRequired": true,
+                          "type": "number",
+                        },
+                        "relativeToTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "relativeToWhen": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                },
+              ],
+              "isRequired": true,
+              "type": "exact",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "ABSOLUTE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "timeRangeValue": Object {
+                    "args": Array [
+                      Object {
+                        "endDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "endTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                },
+              ],
+              "isRequired": true,
+              "type": "exact",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "expanded": Object {
+        "type": "bool",
+      },
+      "hasIconOnly": Object {
+        "type": "bool",
+      },
+      "hasTimeInput": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "absoluteLabel": Object {
+              "type": "string",
+            },
+            "applyBtnLabel": Object {
+              "type": "string",
+            },
+            "backBtnLabel": Object {
+              "type": "string",
+            },
+            "calendarLabel": Object {
+              "type": "string",
+            },
+            "cancelBtnLabel": Object {
+              "type": "string",
+            },
+            "customRangeLabel": Object {
+              "type": "string",
+            },
+            "customRangeLinkLabel": Object {
+              "type": "string",
+            },
+            "decrement": Object {
+              "type": "string",
+            },
+            "endTimeLabel": Object {
+              "type": "string",
+            },
+            "hours": Object {
+              "type": "string",
+            },
+            "increment": Object {
+              "type": "string",
+            },
+            "intervalLabels": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "invalidNumberLabel": Object {
+              "type": "string",
+            },
+            "lastLabel": Object {
+              "type": "string",
+            },
+            "minutes": Object {
+              "type": "string",
+            },
+            "presetLabels": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "relativeLabel": Object {
+              "type": "string",
+            },
+            "relativeLabels": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "relativeToLabel": Object {
+              "type": "string",
+            },
+            "startTimeLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
+              "type": "string",
+            },
+            "toNowLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "id": Object {
+        "type": "string",
+      },
+      "intervals": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "label": Object {
+                  "type": "string",
+                },
+                "value": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "locale": Object {
+        "type": "string",
+      },
+      "onApply": Object {
+        "type": "func",
+      },
+      "onCancel": Object {
+        "type": "func",
+      },
+      "presets": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "id": Object {
+                  "type": "string",
+                },
+                "label": Object {
+                  "type": "string",
+                },
+                "offset": Object {
+                  "type": "number",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "relatives": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "label": Object {
+                  "type": "string",
+                },
+                "value": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "renderPresetTooltipText": Object {
+        "type": "func",
+      },
+      "showCustomRangeLink": Object {
+        "type": "bool",
+      },
+      "showRelativeOption": Object {
+        "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+    },
+  },
   "TableViewDropdown" => Object {
     "defaultProps": Object {
       "disabled": false,
@@ -17353,76 +17774,6 @@ Map {
       },
     },
   },
-  "CARD_TYPES" => Object {
-    "BAR": "BAR",
-    "CUSTOM": "CUSTOM",
-    "DONUT": "DONUT",
-    "GAUGE": "GAUGE",
-    "IMAGE": "IMAGE",
-    "LIST": "LIST",
-    "PIE": "PIE",
-    "TABLE": "TABLE",
-    "TIMESERIES": "TIMESERIES",
-    "VALUE": "VALUE",
-  },
-  "CARD_SIZES" => Object {
-    "LARGE": "LARGE",
-    "LARGETHIN": "LARGETHIN",
-    "LARGEWIDE": "LARGEWIDE",
-    "MEDIUM": "MEDIUM",
-    "MEDIUMTHIN": "MEDIUMTHIN",
-    "MEDIUMWIDE": "MEDIUMWIDE",
-    "SMALL": "SMALL",
-    "SMALLFULL": "SMALLFULL",
-    "SMALLWIDE": "SMALLWIDE",
-  },
-  "CARD_ACTIONS" => Object {
-    "CHANGE_TIME_RANGE": "CHANGE_TIME_RANGE",
-    "CLONE_CARD": "CLONE_CARD",
-    "CLOSE_EXPANDED_CARD": "CLOSE_EXPANDED_CARD",
-    "DELETE_CARD": "DELETE_CARD",
-    "EDIT_CARD": "EDIT_CARD",
-    "ON_CARD_CHANGE": "ON_CARD_CHANGE",
-    "ON_SETTINGS_CLICK": "ON_SETTINGS_CLICK",
-    "OPEN_EXPANDED_CARD": "OPEN_EXPANDED_CARD",
-    "UPDATE_DATA": "UPDATE_DATA",
-  },
-  "DASHBOARD_BREAKPOINTS" => Object {
-    "lg": 1056,
-    "max": 1584,
-    "md": 672,
-    "sm": 480,
-    "xl": 1312,
-    "xs": 320,
-  },
-  "DASHBOARD_SIZES" => Object {
-    "LARGE": "lg",
-    "MAX": "max",
-    "MEDIUM": "md",
-    "SMALL": "sm",
-    "XLARGE": "xl",
-    "XSMALL": "xs",
-  },
-  "TIME_SERIES_TYPES" => Object {
-    "BAR": "BAR",
-    "LINE": "LINE",
-  },
-  "BAR_CHART_TYPES" => Object {
-    "GROUPED": "GROUPED",
-    "SIMPLE": "SIMPLE",
-    "STACKED": "STACKED",
-  },
-  "DASHBOARD_EDITOR_CARD_TYPES" => Object {
-    "ALERT": "ALERT",
-    "GROUPED_BAR": "GROUPED_BAR",
-    "IMAGE": "IMAGE",
-    "LIST": "LIST",
-    "SIMPLE_BAR": "SIMPLE_BAR",
-    "STACKED_BAR": "STACKED_BAR",
-    "TABLE": "TABLE",
-    "TIMESERIES": "TIMESERIES",
-    "VALUE": "VALUE",
-  },
   "DragAndDrop" => Object {},
   "ListCard" => Object {
     "defaultProps": Object {
@@ -19758,9 +20109,12 @@ Map {
         "$$typeof": Symbol(react.forward_ref),
         "render": [Function],
       },
+      "renderInPortal": false,
       "tabIndex": 0,
       "testId": "flyout-menu",
       "tooltipClassName": "",
+      "tooltipContentClassName": "",
+      "tooltipFocusTrap": true,
       "tooltipId": "flyout-tooltip",
       "triggerId": "flyout-trigger-id",
       "useAutoPositioning": false,
@@ -19880,6 +20234,9 @@ Map {
         ],
         "type": "oneOfType",
       },
+      "renderInPortal": Object {
+        "type": "bool",
+      },
       "tabIndex": Object {
         "type": "number",
       },
@@ -19888,6 +20245,12 @@ Map {
       },
       "tooltipClassName": Object {
         "type": "string",
+      },
+      "tooltipContentClassName": Object {
+        "type": "string",
+      },
+      "tooltipFocusTrap": Object {
+        "type": "bool",
       },
       "tooltipId": Object {
         "type": "string",
@@ -29671,6 +30034,81 @@ Map {
   "findMatchingThresholds" => Object {},
   "determineMaxValueCardAttributeCount" => Object {},
   "csvDownloadHandler" => Object {},
+  "CARD_TYPES" => Object {
+    "BAR": "BAR",
+    "CUSTOM": "CUSTOM",
+    "DONUT": "DONUT",
+    "GAUGE": "GAUGE",
+    "IMAGE": "IMAGE",
+    "LIST": "LIST",
+    "PIE": "PIE",
+    "TABLE": "TABLE",
+    "TIMESERIES": "TIMESERIES",
+    "VALUE": "VALUE",
+  },
+  "CARD_SIZES" => Object {
+    "LARGE": "LARGE",
+    "LARGETHIN": "LARGETHIN",
+    "LARGEWIDE": "LARGEWIDE",
+    "MEDIUM": "MEDIUM",
+    "MEDIUMTHIN": "MEDIUMTHIN",
+    "MEDIUMWIDE": "MEDIUMWIDE",
+    "SMALL": "SMALL",
+    "SMALLFULL": "SMALLFULL",
+    "SMALLWIDE": "SMALLWIDE",
+  },
+  "CARD_ACTIONS" => Object {
+    "CHANGE_TIME_RANGE": "CHANGE_TIME_RANGE",
+    "CLONE_CARD": "CLONE_CARD",
+    "CLOSE_EXPANDED_CARD": "CLOSE_EXPANDED_CARD",
+    "DELETE_CARD": "DELETE_CARD",
+    "EDIT_CARD": "EDIT_CARD",
+    "ON_CARD_CHANGE": "ON_CARD_CHANGE",
+    "ON_SETTINGS_CLICK": "ON_SETTINGS_CLICK",
+    "OPEN_EXPANDED_CARD": "OPEN_EXPANDED_CARD",
+    "UPDATE_DATA": "UPDATE_DATA",
+  },
+  "DASHBOARD_BREAKPOINTS" => Object {
+    "lg": 1056,
+    "max": 1584,
+    "md": 672,
+    "sm": 480,
+    "xl": 1312,
+    "xs": 320,
+  },
+  "DASHBOARD_SIZES" => Object {
+    "LARGE": "lg",
+    "MAX": "max",
+    "MEDIUM": "md",
+    "SMALL": "sm",
+    "XLARGE": "xl",
+    "XSMALL": "xs",
+  },
+  "TIME_SERIES_TYPES" => Object {
+    "BAR": "BAR",
+    "LINE": "LINE",
+  },
+  "BAR_CHART_TYPES" => Object {
+    "GROUPED": "GROUPED",
+    "SIMPLE": "SIMPLE",
+    "STACKED": "STACKED",
+  },
+  "DASHBOARD_EDITOR_CARD_TYPES" => Object {
+    "ALERT": "ALERT",
+    "GROUPED_BAR": "GROUPED_BAR",
+    "IMAGE": "IMAGE",
+    "LIST": "LIST",
+    "SIMPLE_BAR": "SIMPLE_BAR",
+    "STACKED_BAR": "STACKED_BAR",
+    "TABLE": "TABLE",
+    "TIMESERIES": "TIMESERIES",
+    "VALUE": "VALUE",
+  },
+  "PICKER_KINDS" => Object {
+    "ABSOLUTE": "ABSOLUTE",
+    "PRESET": "PRESET",
+    "RELATIVE": "RELATIVE",
+  },
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",
     "TABLE_ACTION_CANCEL": "TABLE_ACTION_CANCEL",
