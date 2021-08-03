@@ -636,6 +636,7 @@ const TableCard = ({
       isResizable={isResizable}
       isExpanded={isExpanded}
       i18n={mergedI18n}
+      locale={locale}
       resizeHandles={resizeHandles}
       hideHeader
       // Use the Table's loading state rather than Card's

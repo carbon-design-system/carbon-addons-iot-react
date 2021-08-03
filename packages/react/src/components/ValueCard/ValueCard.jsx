@@ -78,6 +78,7 @@ const ValueCard = ({
       isResizable={isResizable}
       resizeHandles={resizeHandles}
       i18n={i18n}
+      locale={locale}
       id={id}
       className={classnames({
         // allows attribute overflow scrolling

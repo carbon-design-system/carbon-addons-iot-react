@@ -121,6 +121,7 @@ const ComboChartCard = ({
       timeRange={timeRange}
       size={increaseSmallCardSize(sizeProp, 'ComboChartCard')}
       testId={testID || testId}
+      locale={locale}
       {...others}
     >
       <div className={`${iotPrefix}--combo-chart-card__container`}>
