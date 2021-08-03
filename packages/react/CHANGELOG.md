@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.72](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.71...v2.146.0-next.72) (2021-08-03)
+
+
+### Bug Fixes
+
+* **card:** use icon only of datetimepicker in small formats ([cb7d206](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cb7d206460b71e31914fa8dcd68f68f2be69cf86))
+* **cardproptypes:** fix lint error ([995b55a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/995b55afad1cbc9b8bc6ed4d6b8029596eacdd99))
+* **cardtoolbar:** only hide text if we can confirm size ([669909b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/669909b6860c4677f5244103975517cc4b6ad02a))
+* **cardtoolbar:** set valid preset values ([89efb11](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/89efb11aa78872abbc8ef351185547b7fab2a19c))
+* **lint:** fix linting error with timeseriescard ([20dee02](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/20dee02c95672e1157310157b7be7ed62220065f))
+* **lint:** fixing linting issue in cardtoolbar ([bbadd64](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bbadd643a22868d968de6c1a99a79c92544cf8eb))
+* **tablecard:** do not force range to boolean ([3d761fa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3d761faea4bedff434f07a297e4f5371766e0b23))
+
+
+### Features
+
+* **card:** datetimepicker ([2497243](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2497243a040792919608530296e1e176c78251f8))
+* **datetimepicker:** allow it to float ([1e92788](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1e927888b50a7c3b66da8c7069f03f0156683ee0))
+
+
+### Reverts
+
+* **datetimepicker:** revert changes to datetimepicker ([08c5771](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/08c5771c475693659679320928c4f67f9d6c6e15))
+
+
+
+
+
 # [2.146.0-next.71](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.70...v2.146.0-next.71) (2021-08-02)
 
 
