@@ -371,7 +371,6 @@ describe('DateTimePicker', () => {
     // github.com/haoxins/react-flatpickr/issues/92
     fireEvent.mouseDown(screen.getByLabelText('April 10, 2020'), { which: 1 });
     fireEvent.mouseDown(screen.getByLabelText('April 11, 2020'), { which: 1 });
-    jest.runAllTimers();
     expect(screen.getByTitle('2020-04-10 12:34 to 2020-04-11 10:49')).toBeVisible();
     userEvent.click(screen.getByText('Apply'));
     // This should be displayed
@@ -445,11 +444,11 @@ describe('DateTimePicker', () => {
 
     const relatives = [
       {
-        label: 'today',
+        label: 'today2',
         value: RELATIVE_VALUES.TODAY,
       },
       {
-        label: 'yesterday',
+        label: 'yesterday2',
         value: RELATIVE_VALUES.YESTERDAY,
       },
     ];

@@ -20,17 +20,17 @@ export const PRESET_VALUES = [
   {
     id: 'item-03',
     label: 'Last 6 hours',
-    offset: 360,
+    offset: 6 * 60,
   },
   {
     id: 'item-04',
     label: 'Last 12 hours',
-    offset: 720,
+    offset: 12 * 60,
   },
   {
     id: 'item-05',
     label: 'Last 24 hours',
-    offset: 1440,
+    offset: 24 * 60,
   },
 ];
 
