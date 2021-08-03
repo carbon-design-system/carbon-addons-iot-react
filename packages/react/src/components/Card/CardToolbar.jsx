@@ -74,6 +74,7 @@ const propTypes = {
     settingsLabel: PropTypes.string,
   }),
   testId: PropTypes.string,
+  locale: PropTypes.string,
 };
 
 const defaultProps = {
@@ -81,6 +82,7 @@ const defaultProps = {
   isExpanded: false,
   renderExpandIcon: Popup16,
   className: null,
+  locale: 'en',
   timeRangeOptions: null,
   timeRange: null,
   i18n: {
@@ -115,6 +117,7 @@ const CardToolbar = ({
   onCardAction,
   className,
   testId,
+  locale,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   // maps the timebox internal label to a translated string
@@ -210,6 +213,8 @@ const CardToolbar = ({
           <DateTimePicker
             id={testId}
             i18n={mergedI18n}
+            dateTimeMask="L HH:mm"
+            locale={locale}
             hasIconOnly={
               // make sure the card is actually sized
               (width > 0 && width < 320) || availableActions.range === DATE_PICKER_OPTIONS.ICON_ONLY

@@ -239,6 +239,7 @@ export const WithDateTimePickerRangeSelector = () => {
         isEmpty={false}
         isEditable={false}
         isExpanded={false}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         breakpoint="lg"
         onCardAction={action('onCardAction')}
         availableActions={{
@@ -281,6 +282,7 @@ export const WithDateTimePickerRangeSelectorExistingValue = () => {
         isEditable={false}
         isExpanded={false}
         breakpoint="lg"
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         onCardAction={action('onCardAction')}
         availableActions={{
           range: dateTimePickerSetting,

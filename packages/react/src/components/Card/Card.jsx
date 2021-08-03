@@ -364,6 +364,7 @@ const Card = (props) => {
                 isEditable={isEditable}
                 isExpanded={isExpanded}
                 timeRange={timeRange}
+                locale={others.locale}
                 timeRangeOptions={timeRangeOptions}
                 onCardAction={cachedOnCardAction}
                 // TODO: remove deprecated testID prop in v3
