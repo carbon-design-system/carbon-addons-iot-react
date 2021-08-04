@@ -1898,7 +1898,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-141"
+                    aria-controls="accordion-item-143"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1928,7 +1928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-141"
+                    id="accordion-item-143"
                   >
                     <div
                       className="toggle-group"
@@ -1976,7 +1976,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-142"
+                    aria-controls="accordion-item-144"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2006,7 +2006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-142"
+                    id="accordion-item-144"
                   >
                     More Map settings
                   </div>
@@ -2017,7 +2017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-143"
+                    aria-controls="accordion-item-145"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2047,7 +2047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-143"
+                    id="accordion-item-145"
                   >
                     Even more settings
                   </div>
