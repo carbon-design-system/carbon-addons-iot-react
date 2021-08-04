@@ -1,9 +1,10 @@
-import React, { useCallback, useMemo, useRef } from 'react';
+import React, { useCallback, useMemo, useRef, useEffect } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import SizeMe from 'react-sizeme';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -279,6 +280,16 @@ const Card = (props) => {
     footerContent: CardFooter,
     ...others
   } = props;
+
+  // TODO: remove once final version of range prop is supported
+  useEffect(() => {
+    if (__DEV__ && typeof availableActions?.range === 'string') {
+      warning(
+        false,
+        'The Card components availableActions.range is an experimental property and may be subject to change.'
+      );
+    }
+  }, [availableActions]);
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 
@@ -302,7 +313,9 @@ const Card = (props) => {
     [availableActions]
   );
 
-  const hasToolbarActions = Object.values(mergedAvailableActions).includes(true);
+  const hasToolbarActions = Boolean(
+    Object.values(mergedAvailableActions).find((action) => action !== false)
+  );
 
   const strings = {
     ...defaultProps.i18n,

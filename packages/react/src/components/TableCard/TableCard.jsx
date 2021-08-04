@@ -610,7 +610,7 @@ const TableCard = ({
   const mergedAvailableActions = {
     ...availableActions,
     expand: isExpandable,
-    range: true,
+    range: availableActions?.range || true,
   };
 
   const cardToolbar = (
