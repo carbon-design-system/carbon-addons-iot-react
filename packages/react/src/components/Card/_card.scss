@@ -52,6 +52,11 @@ $lineHeightSize: 1.375em;
 .#{$iot-prefix}--card--header--tooltip {
   flex-basis: $tooltipSize;
   margin-top: $spacing-02;
+
+  html[dir='rtl'] &.#{$prefix}--tooltip__label .#{$prefix}--tooltip__trigger {
+    margin-left: unset;
+    margin-right: $spacing-03;
+  }
 }
 
 .#{$iot-prefix}--card--title--text,
