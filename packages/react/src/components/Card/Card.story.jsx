@@ -152,7 +152,11 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         tabIndex={0}
-        footerContent={() => <Button kind="ghost">Footer Content</Button>}
+        footerContent={() => (
+          <Button size="sm" kind="ghost">
+            Footer Content
+          </Button>
+        )}
         tooltip={<p>this is the external tooltip content</p>}
       />
     </div>

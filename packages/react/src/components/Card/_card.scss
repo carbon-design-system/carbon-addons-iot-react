@@ -6,7 +6,7 @@
 
 $iot-header-padding: $spacing-05;
 $tooltipSize: 1.5rem;
-$lineHeightSize: 1.29em;
+$lineHeightSize: 1.375em;
 
 .#{$iot-prefix}--card--wrapper {
   background: white;
@@ -40,7 +40,7 @@ $lineHeightSize: 1.29em;
   // min-width value is required to ensure flex child with text properly truncates
   // https://css-tricks.com/flexbox-truncated-text/
   min-width: 0;
-  margin-top: 0.85rem;
+  margin-top: $spacing-03;
   padding-right: $spacing-05;
   width: 100%;
 
@@ -51,11 +51,11 @@ $lineHeightSize: 1.29em;
 
 .#{$iot-prefix}--card--header--tooltip {
   flex-basis: $tooltipSize;
+  margin-top: $spacing-02;
 }
 
 .#{$iot-prefix}--card--title--text,
 .#{$iot-prefix}--card--subtitle--text {
-  @include type-style('productive-heading-01');
   overflow: hidden;
   word-break: break-all;
   -webkit-line-clamp: 1;
@@ -73,11 +73,14 @@ $lineHeightSize: 1.29em;
 }
 
 .#{$iot-prefix}--card--title--text {
+  @include type-style('productive-heading-02');
+  color: $text-01;
   max-width: calc(100% - #{$tooltipSize});
 }
 
 .#{$iot-prefix}--card--subtitle--text {
-  @include type-style('productive-heading-01');
+  @include type-style('label-01');
+  color: $text-01;
   font-weight: normal;
   width: 100%;
   max-width: calc(100% - #{$tooltipSize});
@@ -125,9 +128,11 @@ html[dir='rtl'] .#{$iot-prefix}--card--header .#{$iot-prefix}--card--toolbar {
 }
 
 .#{$iot-prefix}--card--footer--wrapper {
+  align-items: center;
   border-top: 1px solid $ui-03;
+  display: flex;
   padding: 0 $spacing-05;
-  max-height: 3rem;
+  height: 2.5rem;
 }
 
 .#{$iot-prefix}--card--empty-message-wrapper {
