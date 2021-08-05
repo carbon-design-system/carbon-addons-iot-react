@@ -5,7 +5,7 @@
 @import './data-state-renderer';
 
 $iot-header-padding: $spacing-05;
-$tooltipSize: 1.5rem;
+$tooltipSize: 2rem;
 $lineHeightSize: 1.375em;
 
 .#{$iot-prefix}--card--wrapper {
@@ -44,6 +44,11 @@ $lineHeightSize: 1.375em;
   padding-right: $spacing-05;
   width: 100%;
 
+  html[dir='rtl'] & {
+    padding-left: $spacing-05;
+    padding-right: unset;
+  }
+
   & + *:not(.#{$iot-prefix}--card--toolbar) {
     margin-left: $spacing-05;
   }
@@ -52,9 +57,7 @@ $lineHeightSize: 1.375em;
 .#{$iot-prefix}--card--header--tooltip {
   flex-basis: $tooltipSize;
   margin-top: $spacing-02;
-
-  html[dir='rtl'] &.#{$prefix}--tooltip__label .#{$prefix}--tooltip__trigger {
-    margin-left: unset;
+  .#{$prefix}--tooltip__trigger {
     margin-right: $spacing-03;
   }
 }
@@ -66,7 +69,7 @@ $lineHeightSize: 1.375em;
   -webkit-line-clamp: 1;
   max-height: $lineHeightSize;
   display: -webkit-box;
-  min-width: 0;
+  min-width: 3rem;
   /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
 }
@@ -108,11 +111,10 @@ $lineHeightSize: 1.375em;
   justify-content: space-between;
   font-weight: bold;
   padding: 0 0 0 $iot-header-padding;
-}
 
-html[dir='rtl'] .#{$iot-prefix}--card--header .#{$iot-prefix}--card--toolbar {
-  margin-right: 0;
-  margin-left: calc(#{$iot-header-padding} * -1);
+  html[dir='rtl'] & {
+    padding: 0 $iot-header-padding 0 0;
+  }
 }
 
 .#{$iot-prefix}--card--content {
