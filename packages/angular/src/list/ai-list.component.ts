@@ -34,16 +34,14 @@ export enum SelectionType {
         <div
           *ngIf="!items || items.length < 1"
           class="iot--list--empty-state iot--list--empty-state__full-height"
+          (drop)="isDragging ? handleDrop(null, 0) : undefined"
+          (dragover)="$event.preventDefault()"
         >
           <ng-container *ngIf="!isTemplate(emptyState)">
             <svg ibmIcon="bee" size="32"></svg>
             <p>{{ emptyState }}</p>
           </ng-container>
-          <ng-container
-            *ngIf="isTemplate(emptyState)"
-            #customTemplate
-            [ngTemplateOutlet]="emptyState"
-          >
+          <ng-container *ngIf="isTemplate(emptyState)" [ngTemplateOutlet]="emptyState">
           </ng-container>
         </div>
       </div>
@@ -56,14 +54,15 @@ export enum SelectionType {
           [draggable]="itemsDraggable && data.item.isDraggable"
           [disabled]="data.item.disabled"
           [size]="data.item.size"
-          [isDragging]="draggingState.isDragging"
-          (dragStart)="
-            setDraggingState({ isDragging: true, item: data.item, parent: data.parentItem })
-          "
-          (dragEnd)="setDraggingState({ isDragging: false, item: null, parent: null })"
+          [isDragging]="isDragging"
+          (dragStart)="handleDragStart(data.item)"
+          (dragEnd)="handleDragEnd($event, data.item, data.parentItem)"
           (droppedAbove)="handleDrop(data.parentItem, data.index)"
           (droppedBelow)="handleDrop(data.parentItem, data.index + 1)"
           (droppedNested)="handleDrop(data.item, 0)"
+          (dragOverBelow)="handleDragOver($event, data.parentItem)"
+          (dragOverAbove)="handleDragOver($event, data.parentItem)"
+          (dragOverNested)="handleDragOver($event, data.item)"
         >
           <ai-list-item
             [item]="data.item"
@@ -121,6 +120,36 @@ export class AIListComponent implements OnInit {
    */
   @Input() itemsDraggable: boolean;
 
+  @Input() set isDragging(isDragging: boolean) {
+    let shouldEmit = false;
+    if (this._isDragging !== isDragging) {
+      shouldEmit = true;
+    }
+    this._isDragging = isDragging;
+    if (shouldEmit) {
+      this.isDraggingChange.emit(isDragging);
+    }
+  }
+
+  get isDragging() {
+    return this._isDragging;
+  }
+
+  @Input() set draggedItem(draggedItem: AIListItem) {
+    let shouldEmit = false;
+    if (this._draggedItem !== draggedItem) {
+      shouldEmit = true;
+    }
+    this._draggedItem = draggedItem;
+    if (shouldEmit) {
+      this.draggedItemChange.emit(draggedItem);
+    }
+  }
+
+  get draggedItem() {
+    return this._draggedItem;
+  }
+
   /**
    * Indicates whether a search bar should be rendered in the list header.
    */
@@ -140,9 +169,13 @@ export class AIListComponent implements OnInit {
    */
   @Output() onSearch = new EventEmitter<string>();
 
+  @Output() isDraggingChange = new EventEmitter<boolean>();
+  @Output() draggedItemChange = new EventEmitter<AIListItem>();
+
   searchString = '';
 
-  draggingState = { isDragging: false, item: null, parent: null };
+  protected _isDragging = false;
+  protected _draggedItem: AIListItem = null;
 
   constructor(protected iconService: IconService) {}
 
@@ -150,37 +183,52 @@ export class AIListComponent implements OnInit {
     this.iconService.register(Bee32);
   }
 
-  setDraggingState(data: any) {
-    this.draggingState = Object.assign({}, this.draggingState, data);
+  handleDragStart(item: AIListItem) {
+    this.isDragging = true;
+    this.draggedItem = item;
+  }
+
+  handleDragEnd(dragEvent: DragEvent, item: AIListItem, parent: AIListItem) {
+    const dragEffect = dragEvent.dataTransfer.dropEffect;
+
+    // Remove the original item if the dragged item has been successfully moved to a new position.
+    if (dragEffect !== 'none') {
+      if (parent === null) {
+        const droppedItemIndex = this.items.findIndex((listItem: AIListItem) => listItem === item);
+        this.items.splice(droppedItemIndex, 1);
+      } else {
+        const droppedItemIndex = parent.items.findIndex(
+          (listItem: AIListItem) => listItem === item
+        );
+        parent.items.splice(droppedItemIndex, 1);
+      }
+    }
+
+    this.isDragging = false;
+    this.draggedItem = null;
+  }
+
+  handleDragOver(dragEvent: DragEvent, receiver: AIListItem) {
+    // Only allow dropping if:
+    // 1. The dragged item is not being dropped onto one of its' own children.
+    // 2. The dragged item is not being dropped onto itself.
+    if (
+      this.draggedItem &&
+      !this.draggedItem.hasItem(receiver) &&
+      (receiver === null || receiver.id !== this.draggedItem.id)
+    ) {
+      dragEvent.preventDefault();
+    }
   }
 
   handleDrop(receiver: AIListItem, index: number) {
-    // Don't allow list items to be dropped as one of its own children, and also
-    // don't allow list items to be dropped on itself.
-    if (
-      !this.draggingState.item.hasItem(receiver) &&
-      (receiver === null || receiver.id !== this.draggingState.item.id)
-    ) {
-      // Remove the `draggedItem` from its original position.
-      // If `draggedItemParent` is null it means `draggedItem` is a top level list item.
-      if (this.draggingState.parent === null) {
-        const droppedItemIndex = this.items.findIndex(
-          (item: AIListItem) => item.id === this.draggingState.item.id
-        );
-        this.items.splice(droppedItemIndex, 1);
-      } else {
-        this.draggingState.parent.removeItem(this.draggingState.item);
-      }
-
-      // Place `draggedItem` as a child of `receivingItem` at the given `index`.
-      // If `receiver` is null it means put `draggedItem` as a top level list item.
-      if (receiver === null) {
-        this.items.splice(index, 0, this.draggingState.item);
-      } else {
-        receiver.addItem(this.draggingState.item, index);
-      }
+    // A copy of the dragged item is created so that the original can be removed in `handleDragEnd`.
+    const item = new AIListItem(this.draggedItem);
+    if (receiver === null) {
+      this.items.splice(index, 0, item);
+    } else {
+      receiver.addItem(item, index);
     }
-    this.setDraggingState({ isDragging: false, item: null, parent: null });
   }
 
   handleSelect(selectedItem: AIListItem) {

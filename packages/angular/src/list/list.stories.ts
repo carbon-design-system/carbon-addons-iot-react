@@ -32,17 +32,42 @@ storiesOf('Components/List', module)
   }))
   .add('Hierarchy list draggable items', () => ({
     template: `
-      <ai-list
-        [items]="items"
-        selectionType="multi"
-        title="City Populations"
-        [hasSearch]="true"
-        [itemsDraggable]="true"
-      >
-      </ai-list>
+    <div style="display: flex">
+      <div style="height: 600px; width: 400px; margin-right: 40px">
+        <ai-list
+          [items]="items"
+          selectionType="multi"
+          [isFullHeight]="true"
+          title="City Populations"
+          emptyState="No list items to show, drag items here to add some"
+          [hasSearch]="true"
+          [itemsDraggable]="true"
+          [(isDragging)]="isDragging"
+          [(draggedItem)]="draggedItem"
+        >
+        </ai-list>
+      </div>
+      <div style="height: 600px; width: 400px">
+        <ai-list
+          [items]="secondaryItems"
+          selectionType="multi"
+          [isFullHeight]="true"
+          title="City Populations"
+          emptyState="No list items to show, drag items here to add some"
+          [hasSearch]="true"
+          [itemsDraggable]="true"
+          [(isDragging)]="isDragging"
+          [(draggedItem)]="draggedItem"
+        >
+        </ai-list>
+      </div>
+    </div>
     `,
     props: {
       items: nestedDraggableListItems,
+      secondaryItems: [],
+      isDragging: false,
+      draggedItem: null,
     },
   }))
   .add('With row actions', () => ({

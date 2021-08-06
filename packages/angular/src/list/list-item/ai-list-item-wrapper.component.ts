@@ -9,9 +9,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
         class="iot--list-item-editable--drag-container"
         role="listitem"
         [draggable]="true"
-        (dragstart)="dragStart.emit()"
-        (dragend)="dragEnd.emit()"
-        (dragover)="onDragOver($event)"
+        (dragstart)="dragStart.emit($event)"
+        (dragend)="dragEnd.emit($event)"
       >
         <div
           class="iot--list-item-editable--drop-targets"
@@ -21,11 +20,22 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
           <div
             aiListTarget
             targetPosition="nested"
-            (dropping)="droppedNested.emit()"
+            (dropping)="droppedNested.emit($event)"
+            (dragOver)="dragOverNested.emit($event)"
             [targetSize]="100"
           ></div>
-          <div aiListTarget targetPosition="above" (dropping)="droppedAbove.emit()"></div>
-          <div aiListTarget targetPosition="below" (dropping)="droppedBelow.emit()"></div>
+          <div
+            aiListTarget
+            targetPosition="above"
+            (dropping)="droppedAbove.emit($event)"
+            (dragOver)="dragOverAbove.emit($event)"
+          ></div>
+          <div
+            aiListTarget
+            targetPosition="below"
+            (dropping)="droppedBelow.emit($event)"
+            (dragOver)="dragOverBelow.emit($event)"
+          ></div>
         </div>
         <ng-container [ngTemplateOutlet]="listItem"></ng-container>
       </div>
@@ -57,13 +67,15 @@ export class AIListItemWrapperComponent {
 
   @Output() dragEnd = new EventEmitter<any>();
 
+  @Output() dragOverAbove = new EventEmitter<any>();
+
+  @Output() dragOverBelow = new EventEmitter<any>();
+
+  @Output() dragOverNested = new EventEmitter<any>();
+
   @Output() droppedBelow = new EventEmitter<any>();
 
   @Output() droppedAbove = new EventEmitter<any>();
 
   @Output() droppedNested = new EventEmitter<any>();
-
-  onDragOver(ev: any) {
-    ev.preventDefault();
-  }
 }

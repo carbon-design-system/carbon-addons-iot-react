@@ -10,6 +10,12 @@ export class AIListTargetDirective {
 
   @Output() dropping = new EventEmitter();
 
+  @Output() dragOver = new EventEmitter();
+
+  @Output() dragLeave = new EventEmitter();
+
+  @Output() dragEnter = new EventEmitter();
+
   isActive = false;
 
   @HostBinding('class.iot--list-item-editable--drop-target-nested') get isNested() {
@@ -41,18 +47,24 @@ export class AIListTargetDirective {
   }
 
   @HostListener('dragenter', ['$event'])
-  handleDrag(event: DragEvent) {
-    event.preventDefault();
+  handleDragEnter(event: DragEvent) {
     this.isActive = true;
+    this.dragEnter.emit(event);
   }
 
-  @HostListener('drop')
-  handleDrop() {
-    this.dropping.emit();
+  @HostListener('dragover', ['$event'])
+  dragover(event: DragEvent) {
+    this.dragOver.emit(event);
   }
 
-  @HostListener('dragleave')
-  handleLeave() {
+  @HostListener('drop', ['$event'])
+  handleDrop(event: DragEvent) {
+    this.dropping.emit(event);
+  }
+
+  @HostListener('dragleave', ['event'])
+  handleLeave(event: DragEvent) {
     this.isActive = false;
+    this.dragLeave.emit(event);
   }
 }

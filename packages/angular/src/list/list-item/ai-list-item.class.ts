@@ -69,7 +69,19 @@ export class AIListItem {
   isDraggable = false;
 
   constructor(rawData?: any) {
-    Object.assign(this, {}, rawData);
+    Object.assign(
+      this,
+      {},
+      {
+        ...rawData,
+        items:
+          rawData.items && rawData.items.length > 0
+            ? rawData.items.map((item: any) =>
+                item instanceof AIListItem ? item : new AIListItem(item)
+              )
+            : [],
+      }
+    );
   }
 
   /**
