@@ -12,7 +12,7 @@ export default {
 
   parameters: {
     component: EmptyState,
-
+    storyshots: { disable: true },
     info: `
     Empty states occur in an app when no data is available to be displayed to the user. An empty state most commonly occurs the first time that a user interacts with a product or page, but is also used when data was deleted or is not available.
 

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useUniqueId } from '../../hooks/useUniqueId';
 
 function SvgEmptystateErrorIcon(props) {
-  const id = useUniqueId();
+  const id = useUniqueId() || 'errorIcon';
   return (
     <svg width={80} height={80} {...props}>
       <defs>

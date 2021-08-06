@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useUniqueId } from '../../hooks/useUniqueId';
 
 function SvgEmptystateNotauthorizedIcon(props) {
-  const id = useUniqueId();
+  const id = useUniqueId() || 'NotAuthorizedIcon';
   return (
     <svg width={80} height={80} {...props}>
       <defs>

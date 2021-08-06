@@ -3,14 +3,14 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import {
-  EmptystateErrorIcon as ErrorImage,
-  Emptystate404Icon as Error404Image,
-  EmptystateDefaultIcon as EmptyImage,
-  EmptystateSuccessIcon as SuccessImage,
-  EmptystateNoresultsIcon as NoResultImage,
-  EmptystateNotauthorizedIcon as NotAuthImage,
-  DashboardIcon as CustomIcon,
-} from '../../icons/components';
+  EmptyStateErrorIcon as ErrorImage,
+  EmptyState404Icon as Error404Image,
+  EmptyStateDefaultIcon as EmptyImage,
+  EmptyStateSuccessIcon as SuccessImage,
+  EmptyStateNotAuthorizedIcon as NotAuthImage,
+  EmptyStateNoResultsIcon as NoResultImage,
+} from '../../icons/static';
+import { DashboardIcon as CustomIcon } from '../../icons/components';
 
 import EmptyState from './EmptyState';
 

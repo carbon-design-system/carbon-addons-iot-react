@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useUniqueId } from '../../hooks/useUniqueId';
 
 function SvgEmptystateSuccessIcon(props) {
-  const id = useUniqueId();
+  const id = useUniqueId() || 'successIcon';
   return (
     <svg width={80} height={80} {...props}>
       <defs>

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useUniqueId } from '../../hooks/useUniqueId';
 
 function EmptyStateNoResultsIcon(props) {
-  const id = useUniqueId();
+  const id = useUniqueId() || 'noResultsIcon';
   return (
     <svg width={80} height={80} {...props}>
       <defs>
