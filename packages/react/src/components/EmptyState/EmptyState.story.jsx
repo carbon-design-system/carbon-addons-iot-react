@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { text, select } from '@storybook/addon-knobs';
 
 import { DashboardIcon } from '../../icons/components';
+import { Tabs, Tab } from '../Tabs';
 
 import EmptyState from './EmptyState';
 
@@ -153,6 +154,22 @@ export const WithCustomIcon = () => (
     }}
   />
 );
+
+export const TabsWithEmptyState = () => {
+  return (
+    <Tabs selected={1}>
+      <Tab>
+        <EmptyState key="1" icon="no-result" title="No results found" />
+      </Tab>
+      <Tab>
+        <EmptyState key="2" icon="no-result" title="No results found" />
+      </Tab>
+      <Tab>
+        <EmptyState key="3" icon="no-result" title="No results found" />
+      </Tab>
+    </Tabs>
+  );
+};
 
 export const Playground = () => (
   <EmptyState

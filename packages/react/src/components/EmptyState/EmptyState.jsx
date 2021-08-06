@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { ButtonKinds } from 'carbon-components-react/es/prop-types/types';
+import uuid from 'uuid';
 
 import Button from '../Button';
 import { Link } from '../Link';
@@ -83,6 +84,7 @@ const EmptyState = ({ title, icon, body, action, secondaryAction, className, tes
         React.createElement(typeof icon === 'string' ? icons[icon] : icon, {
           className: `${iotPrefix}--empty-state--icon`,
           alt: '',
+          id: uuid.v4(),
           'data-testid': `${testID || testId}-icon`,
         })}
       <h3
