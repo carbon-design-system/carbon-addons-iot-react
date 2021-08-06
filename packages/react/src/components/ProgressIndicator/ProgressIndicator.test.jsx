@@ -60,4 +60,11 @@ describe('ProgressIndicator', () => {
     screen.getByTestId('iot--progress-step-button-main-second-step').click();
     expect(mockOnClickItem).toHaveBeenCalledWith('step2');
   });
+
+  it('should make steps spaced equally within available flex container ', () => {
+    render(<ProgressIndicator items={mockItems} spaceEqually />);
+    screen.getAllByRole('listitem').forEach((eachli) => {
+      expect(eachli).toHaveStyle(`flex-grow: 1`);
+    });
+  });
 });

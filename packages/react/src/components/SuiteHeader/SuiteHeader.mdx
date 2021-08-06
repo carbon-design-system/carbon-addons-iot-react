@@ -28,6 +28,7 @@ const SuiteHeaderWithDataFetchingExample = () => {
     applications: null,
     i18n: null,
     surveyData: null,
+    idleTimeoutData: null,
   });
   useEffect(() => {
     fetch('http://localhost:3001/internal/uiresources?id=masthead&lang=en&surveyId=test', {
@@ -55,6 +56,7 @@ const SuiteHeaderWithDataFetchingExample = () => {
       applications={data.applications}
       i18n={data.i18n}
       surveyData={data.surveyData}
+      idleTimeoutData={data.idleTimeoutData}
     />
   );
 };
@@ -73,6 +75,7 @@ const SuiteHeaderWithDataFetchingUtilExample = () => {
     applications: null,
     i18n: null,
     surveyData: null,
+    idleTimeoutData: null,
   });
   useEffect(() => {
     uiresources({
@@ -92,6 +95,7 @@ const SuiteHeaderWithDataFetchingUtilExample = () => {
       applications={data.applications}
       i18n={data.i18n}
       surveyData={data.surveyData}
+      idleTimeoutData={data.idleTimeoutData}
     />
   );
 };
@@ -119,6 +123,7 @@ const SuiteHeaderWithDataFetchingHookExample = () => {
       applications={data.applications}
       i18n={data.i18n}
       surveyData={data.surveyData}
+      idleTimeoutData={data.idleTimeoutData}
     />
   );
 };
@@ -140,6 +145,7 @@ const SuiteHeaderWithDataFetchingHookExample = () => {
 | applications                                         | arrayOf  | null                              | Applications to render in AppSwitcher                                                                                                                       |
 | sideNavProps                                         | shape    | null                              | side navigation component                                                                                                                                   |
 | surveyData                                           | shape    | null                              | If surveyData is present, show a ToastNotification                                                                                                          |
+| idleTimeoutData                                      | shape    | null                              | If idleTimeoutData is present, user inactivity detection is enabled                                                                                         |
 | onSideNavToggled                                     | function | async () => Promise.resolve(true) | Function called when side nav button is toggled                                                                                                             |
 | onRouteChange                                        | function | async () => Promise.resolve(true) | Function called before any route change. Returns a Promise\<Boolean\>. False means the redirect will not happen. This function should never throw an error. |
 | i18n                                                 | shape    | SuiteHeaderI18N.en                | I18N strings                                                                                                                                                |
