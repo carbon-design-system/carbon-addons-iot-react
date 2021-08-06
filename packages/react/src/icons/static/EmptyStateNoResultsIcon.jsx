@@ -1,8 +1,9 @@
 import * as React from 'react';
 
-/* eslint-disable react/prop-types */
-function SvgEmptystateNoresultsIcon(props) {
-  const { id } = props;
+import { useUniqueId } from '../../hooks/useUniqueId';
+
+function EmptyStateNoResultsIcon(props) {
+  const id = useUniqueId();
   return (
     <svg width={80} height={80} {...props}>
       <defs>
@@ -216,4 +217,4 @@ function SvgEmptystateNoresultsIcon(props) {
   );
 }
 
-export default SvgEmptystateNoresultsIcon;
+export default EmptyStateNoResultsIcon;

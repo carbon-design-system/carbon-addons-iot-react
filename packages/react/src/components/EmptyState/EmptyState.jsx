@@ -7,15 +7,14 @@ import Button from '../Button';
 import { Link } from '../Link';
 import { settings } from '../../constants/Settings';
 import {
-  EmptystateErrorIcon as ErrorImage,
-  Emptystate404Icon as Error404Image,
-  EmptystateDefaultIcon as EmptyImage,
-  EmptystateSuccessIcon as SuccessImage,
-  EmptystateNoresultsIcon as NoResultImage,
-  EmptystateNotauthorizedIcon as NotAuthImage,
-} from '../../icons/components';
+  EmptyStateErrorIcon as ErrorImage,
+  EmptyState404Icon as Error404Image,
+  EmptyStateDefaultIcon as EmptyImage,
+  EmptyStateSuccessIcon as SuccessImage,
+  EmptyStateNotAuthorizedIcon as NotAuthImage,
+  EmptyStateNoResultsIcon as NoResultImage,
+} from '../../icons/static';
 import deprecate from '../../internal/deprecate';
-import { useUniqueId } from '../../hooks/useUniqueId';
 
 const { iotPrefix } = settings;
 
@@ -74,7 +73,6 @@ const defaultProps = {
  * For reference, visit https://pages.github.ibm.com/ai-applications/design/components/empty-states/usage/
  */
 const EmptyState = ({ title, icon, body, action, secondaryAction, className, testId, testID }) => {
-  const uniqueId = useUniqueId();
   return (
     <div
       className={classnames(`${iotPrefix}--empty-state`, className)}
@@ -86,7 +84,6 @@ const EmptyState = ({ title, icon, body, action, secondaryAction, className, tes
           React.createElement(typeof icon === 'string' ? icons[icon] : icon, {
             className: `${iotPrefix}--empty-state--icon`,
             alt: '',
-            id: uniqueId,
             'data-testid': `${testID || testId}-icon`,
           })}
         <h3

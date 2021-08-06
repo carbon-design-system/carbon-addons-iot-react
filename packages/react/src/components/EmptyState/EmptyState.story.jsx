@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, select } from '@storybook/addon-knobs';
+import { text, select, boolean } from '@storybook/addon-knobs';
 
 import { DashboardIcon } from '../../icons/components';
 import { Tabs, Tab } from '../Tabs';
@@ -157,15 +157,15 @@ export const WithCustomIcon = () => (
 
 export const TabsWithEmptyState = () => {
   return (
-    <Tabs selected={1}>
+    <Tabs selected={1} light={boolean('light', false)}>
       <Tab>
-        <EmptyState key="1" icon="no-result" title="No results found" />
+        <EmptyState icon="no-result" title="No results found" />
       </Tab>
       <Tab>
-        <EmptyState key="2" icon="no-result" title="No results found" />
+        <EmptyState icon="no-result" title="No results found" />
       </Tab>
       <Tab>
-        <EmptyState key="3" icon="no-result" title="No results found" />
+        <EmptyState icon="no-result" title="No results found" />
       </Tab>
     </Tabs>
   );

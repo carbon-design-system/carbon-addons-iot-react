@@ -2,7 +2,8 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, object, array } from '@storybook/addon-knobs';
 
-import { DataScientistIcon, EmptystateDefaultIcon } from '../../icons/components';
+import { DataScientistIcon } from '../../icons/components';
+import { EmptyStateDefaultIcon } from '../../icons/static';
 import {
   NumberInput,
   TextInput,
@@ -1328,7 +1329,7 @@ export const WithCustomCards = () => {
         CUSTOM1: 'My custom1 type',
         CUSTOM2: 'My custom2 type',
       }}
-      icons={{ CUSTOM1: <DataScientistIcon />, CUSTOM2: <EmptystateDefaultIcon /> }}
+      icons={{ CUSTOM1: <DataScientistIcon />, CUSTOM2: <EmptyStateDefaultIcon /> }}
       onAddImage={action('onAddImage')}
       onImport={action('onImport')}
       onExport={action('onExport')}
