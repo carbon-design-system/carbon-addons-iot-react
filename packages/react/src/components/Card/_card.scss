@@ -88,7 +88,7 @@ $lineHeightSize: 1.375em;
 
 .#{$iot-prefix}--card--subtitle--text {
   @include type-style('label-01');
-  color: $text-01;
+  color: $text-02;
   font-weight: normal;
   width: 100%;
   max-height: 1.34em;
