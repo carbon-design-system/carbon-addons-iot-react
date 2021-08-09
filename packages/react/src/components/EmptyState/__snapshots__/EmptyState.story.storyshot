@@ -2913,7 +2913,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <p
           className="iot--empty-state--text"
           data-testid="EmptyState-body"
-        />
+        >
+          We couldn't find anything. Sorry.
+        </p>
       </div>
     </div>
   </div>
@@ -3254,7 +3256,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <p
           className="iot--empty-state--text"
           data-testid="EmptyState-body"
-        />
+        >
+          We couldn't find anything. Sorry.
+        </p>
       </div>
     </div>
   </div>
@@ -3595,7 +3599,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <p
           className="iot--empty-state--text"
           data-testid="EmptyState-body"
-        />
+        >
+          We couldn't find anything. Sorry.
+        </p>
       </div>
     </div>
   </div>
