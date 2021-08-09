@@ -139,8 +139,9 @@ $lineHeightSize: 1.375em;
   align-items: center;
   border-top: 1px solid $ui-03;
   display: flex;
-  padding: 0 $spacing-05;
   height: 2.5rem;
+  overflow: hidden;
+  padding: 0 $spacing-05;
 }
 
 .#{$iot-prefix}--card--empty-message-wrapper {
