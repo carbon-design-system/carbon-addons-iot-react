@@ -45,6 +45,8 @@ const StatefulPageWizardPropTypes = {
   beforeFooterContent: PropTypes.node,
   /** Content to render after footer buttons (on right side, in LTR) */
   afterFooterContent: PropTypes.node,
+  /** Specify whether the progress steps should be split equally in size in the div */
+  spaceEqually: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -67,6 +69,7 @@ const defaultProps = {
   beforeFooterContent: null,
   afterFooterContent: null,
   setStep: null,
+  spaceEqually: false,
 };
 
 const StatefulPageWizard = ({
