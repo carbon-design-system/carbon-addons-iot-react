@@ -7,12 +7,12 @@ import Button from '../Button';
 import { Link } from '../Link';
 import { settings } from '../../constants/Settings';
 import {
-  EmptyStateErrorIcon as ErrorImage,
-  EmptyState404Icon as Error404Image,
-  EmptyStateDefaultIcon as EmptyImage,
-  EmptyStateSuccessIcon as SuccessImage,
-  EmptyStateNotAuthorizedIcon as NotAuthImage,
-  EmptyStateNoResultsIcon as NoResultImage,
+  EmptystateErrorIcon as ErrorImage,
+  Emptystate404Icon as Error404Image,
+  EmptystateDefaultIcon as EmptyImage,
+  EmptystateSuccessIcon as SuccessImage,
+  EmptystateNotauthorizedIcon as NotAuthImage,
+  EmptystateNoresultsIcon as NoResultImage,
 } from '../../icons/static';
 import deprecate from '../../internal/deprecate';
 
