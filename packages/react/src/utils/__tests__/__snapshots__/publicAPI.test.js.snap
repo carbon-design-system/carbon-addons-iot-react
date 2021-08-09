@@ -31833,11 +31833,11 @@ Map {
   "ListIcon" => Object {},
   "SimpleBarGraphIcon" => Object {},
   "ValueKpiIcon" => Object {},
-  "EmptyStateDefaultIcon" => Object {},
-  "EmptyState404Icon" => Object {},
-  "EmptyStateErrorIcon" => Object {},
-  "EmptyStateNoResultsIcon" => Object {},
-  "EmptyStateNotAuthorizedIcon" => Object {},
-  "EmptyStateSuccessIcon" => Object {},
+  "EmptystateDefaultIcon" => Object {},
+  "Emptystate404Icon" => Object {},
+  "EmptystateErrorIcon" => Object {},
+  "EmptystateNoresultsIcon" => Object {},
+  "EmptystateNotauthorizedIcon" => Object {},
+  "EmptystateSuccessIcon" => Object {},
 }
 `;

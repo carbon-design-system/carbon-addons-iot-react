@@ -5384,7 +5384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
-                  EmptyStateDefaultIcon
+                  EmptystateDefaultIcon
                 </div>
               </div>
               <div
@@ -5399,7 +5399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
-                  EmptyState404Icon
+                  Emptystate404Icon
                 </div>
               </div>
               <div
@@ -5414,7 +5414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
-                  EmptyStateErrorIcon
+                  EmptystateErrorIcon
                 </div>
               </div>
               <div
@@ -5429,7 +5429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
-                  EmptyStateNoResultsIcon
+                  EmptystateNoresultsIcon
                 </div>
               </div>
               <div
@@ -5444,7 +5444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
-                  EmptyStateNotAuthorizedIcon
+                  EmptystateNotauthorizedIcon
                 </div>
               </div>
               <div
@@ -5459,7 +5459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
-                  EmptyStateSuccessIcon
+                  EmptystateSuccessIcon
                 </div>
               </div>
             </div>
