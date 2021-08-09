@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.74](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.73...v2.146.0-next.74) (2021-08-09)
+
+
+### Bug Fixes
+
+* **side-panel:** import typography ([71c89bc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/71c89bc3cad6cbdea5f8958e55fd15b607222998))
+* **side-panel:** panel height ([1bd4d5d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1bd4d5d7bae50ec0151aaf9607d2173d50424a5e))
+* **side-panel:** updated design specs ([2e7bc2c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2e7bc2ccedde832aedaf92268c35814ab662ae59))
+
+
+### Features
+
+* **side-panel:** add custom icon support ([2a73944](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2a739440a02866dc1c422ac8ad7020c50f93f3e7))
+* **side-panel:** initial ([df9072e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/df9072eb9188b0f15a0342438f90c7c338f149f6))
+
+
+
+
+
 # [2.146.0-next.73](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.72...v2.146.0-next.73) (2021-08-05)
 
 
