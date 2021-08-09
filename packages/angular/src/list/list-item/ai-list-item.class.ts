@@ -77,7 +77,7 @@ export class AIListItem {
               item instanceof AIListItem ? item : new AIListItem(item)
             )
           : [],
-    }
+    };
     Object.assign(this, {}, data);
   }
 
