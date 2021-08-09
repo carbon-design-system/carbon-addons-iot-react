@@ -6,14 +6,14 @@ import { spacing06 } from '@carbon/layout';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-
-// eslint-disable-next-line no-unused-vars
-import DateTimePicker, {
+import {
   INTERVAL_VALUES,
   RELATIVE_VALUES,
   PICKER_KINDS,
   PRESET_VALUES,
-} from './DateTimePicker';
+} from '../../constants/DateConstants';
+
+import DateTimePicker from './DateTimePicker';
 
 export const defaultRelativeValue = {
   timeRangeKind: PICKER_KINDS.RELATIVE,
