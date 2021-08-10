@@ -3,9 +3,10 @@
 @import './card-range-picker';
 @import './card-toolbar';
 @import './data-state-renderer';
+@import '../../../../styles/src/globals/_mixins.scss';
 
 $iot-header-padding: $spacing-05;
-$tooltipSize: 2rem;
+$tooltipSize: $spacing-07;
 $lineHeightSize: 1.375em;
 
 .#{$iot-prefix}--card--wrapper {
@@ -64,17 +65,12 @@ $lineHeightSize: 1.375em;
 
 .#{$iot-prefix}--card--title--text,
 .#{$iot-prefix}--card--subtitle--text {
-  overflow: hidden;
+  @include multiline-text-overflow(1, $lineHeightSize);
   word-break: break-all;
-  -webkit-line-clamp: 1;
-  max-height: $lineHeightSize;
-  display: -webkit-box;
   min-width: 3rem;
-  /* autoprefixer: ignore next */
-  -webkit-box-orient: vertical;
 }
 
-.#{$iot-prefix}--card--title--text__wrapped {
+.#{$iot-prefix}--card--title--text--wrapped {
   -webkit-line-clamp: 2;
   max-height: calc(#{$lineHeightSize} * 2);
   word-break: normal;
@@ -94,11 +90,11 @@ $lineHeightSize: 1.375em;
   max-height: 1.34em;
   max-width: calc(100% - #{$tooltipSize});
 
-  &__padded {
+  &--padded {
     margin-right: $tooltipSize;
   }
 
-  html[dir='rtl'] &__padded {
+  html[dir='rtl'] &--padded {
     margin-left: $tooltipSize;
     margin-right: unset;
   }

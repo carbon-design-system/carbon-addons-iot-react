@@ -412,7 +412,7 @@ const Card = (props) => {
                             `${iotPrefix}--card--title--text__overflow`,
                             `${iotPrefix}--card--title--text`,
                             {
-                              [`${iotPrefix}--card--title--text__wrapped`]:
+                              [`${iotPrefix}--card--title--text--wrapped`]:
                                 hasTitleWrap && !subtitle,
                             }
                           )}
@@ -424,7 +424,7 @@ const Card = (props) => {
                         <div
                           ref={titleRef}
                           className={classnames(`${iotPrefix}--card--title--text`, {
-                            [`${iotPrefix}--card--title--text__wrapped`]: hasTitleWrap && !subtitle,
+                            [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
                           })}
                         >
                           {title}
@@ -448,7 +448,7 @@ const Card = (props) => {
                           ref={subTitleRef}
                           showIcon={false}
                           triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {
-                            [`${iotPrefix}--card--subtitle--text__padded`]: tooltip,
+                            [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
                           })}
                           triggerText={subtitle}
                         >
@@ -459,7 +459,7 @@ const Card = (props) => {
                           ref={subTitleRef}
                           data-testid={`${testID || testId}-subtitle`}
                           className={classnames(`${iotPrefix}--card--subtitle--text`, {
-                            [`${iotPrefix}--card--subtitle--text__padded`]: tooltip,
+                            [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
                           })}
                         >
                           {subtitle}
