@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-/* eslint-disable no-else-return, no-useless-return */
 const useHasTextOverflow = (elementRef) => {
   const [isOverflowed, setIsOverflowed] = useState(false);
 
