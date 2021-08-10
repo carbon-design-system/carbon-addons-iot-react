@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.75](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.74...v2.146.0-next.75) (2021-08-10)
+
+
+### Bug Fixes
+
+* **empty-state:** add body prop to story, and enable storyshots ([644163c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/644163c3f1142c5dca8f27bbabc5ac7d7ac1ee8f))
+* **emptystate:** provide unique id to render mulitple instances ([13069d3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/13069d30ec424c27a92ed684788d12743d442ec4))
+* **emptystate:** provide unique ids for svgs ([9a29005](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9a29005436caeff0938fd4c4ca549ae9f3064062))
+* **emptystate:** revert to old name for icons ([d59c3f8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d59c3f8fd9994f86f71b25c5a3eae34eb881a0b3))
+* **emptystate:** use original export names to avoid break ([5b8e605](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5b8e6058bf71155d6828b88c176f6d9e9db5a669))
+* **emptystates:** fixed snapshot test so wouldnt change each time ([48e1687](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/48e16879a9137e0d22d933c672eec81615023b59))
+* **icons:** svg with ids cannot be dynamimcally generated. given uuid ([7aca51a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7aca51abd709fa133912d68b5ab7530580dcf9b9))
+
+
+
+
+
+# [2.146.0-next.74](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.73...v2.146.0-next.74) (2021-08-09)
+
+
+### Bug Fixes
+
+* **side-panel:** import typography ([71c89bc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/71c89bc3cad6cbdea5f8958e55fd15b607222998))
+* **side-panel:** panel height ([1bd4d5d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1bd4d5d7bae50ec0151aaf9607d2173d50424a5e))
+* **side-panel:** updated design specs ([2e7bc2c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2e7bc2ccedde832aedaf92268c35814ab662ae59))
+
+
+### Features
+
+* **side-panel:** add custom icon support ([2a73944](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2a739440a02866dc1c422ac8ad7020c50f93f3e7))
+* **side-panel:** initial ([df9072e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/df9072eb9188b0f15a0342438f90c7c338f149f6))
+
+
+
+
+
 # [2.146.0-next.73](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.72...v2.146.0-next.73) (2021-08-05)
 
 
