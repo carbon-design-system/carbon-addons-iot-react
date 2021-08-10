@@ -1710,6 +1710,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -3190,6 +3196,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -4877,6 +4889,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -5818,6 +5836,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -7052,6 +7076,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -9518,6 +9548,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -11818,6 +11854,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -13633,6 +13675,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -15792,6 +15840,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}

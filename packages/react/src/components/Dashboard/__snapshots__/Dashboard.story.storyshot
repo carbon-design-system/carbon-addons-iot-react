@@ -1453,6 +1453,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   <div
                     className="iot--card--toolbar-date-range-wrapper"
                   >
+                    <div
+                      className="iot--card--toolbar-timerange-label"
+                      id="timeRange"
+                    >
+                      Last 7 days
+                    </div>
                     <button
                       aria-expanded={false}
                       aria-haspopup={true}
@@ -1780,6 +1786,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <div
                           className="iot--card--toolbar-date-range-wrapper"
                         >
+                          <div
+                            className="iot--card--toolbar-timerange-label"
+                            id="timeRange"
+                          >
+                            Default
+                          </div>
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
@@ -2426,6 +2438,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   <div
                     className="iot--card--toolbar-date-range-wrapper"
                   >
+                    <div
+                      className="iot--card--toolbar-timerange-label"
+                      id="timeRange"
+                    >
+                      Last year
+                    </div>
                     <button
                       aria-expanded={false}
                       aria-haspopup={true}
@@ -4380,6 +4398,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   <div
                     className="iot--card--toolbar-date-range-wrapper"
                   >
+                    <div
+                      className="iot--card--toolbar-timerange-label"
+                      id="timeRange"
+                    >
+                      Last 7 days
+                    </div>
                     <button
                       aria-expanded={false}
                       aria-haspopup={true}
@@ -4707,6 +4731,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <div
                           className="iot--card--toolbar-date-range-wrapper"
                         >
+                          <div
+                            className="iot--card--toolbar-timerange-label"
+                            id="timeRange"
+                          >
+                            Default
+                          </div>
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
@@ -5353,6 +5383,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   <div
                     className="iot--card--toolbar-date-range-wrapper"
                   >
+                    <div
+                      className="iot--card--toolbar-timerange-label"
+                      id="timeRange"
+                    >
+                      Last year
+                    </div>
                     <button
                       aria-expanded={false}
                       aria-haspopup={true}
@@ -7342,6 +7378,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   <div
                     className="iot--card--toolbar-date-range-wrapper"
                   >
+                    <div
+                      className="iot--card--toolbar-timerange-label"
+                      id="timeRange"
+                    >
+                      Last 7 days
+                    </div>
                     <button
                       aria-expanded={false}
                       aria-haspopup={true}
@@ -7669,6 +7711,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <div
                           className="iot--card--toolbar-date-range-wrapper"
                         >
+                          <div
+                            className="iot--card--toolbar-timerange-label"
+                            id="timeRange"
+                          >
+                            Default
+                          </div>
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
@@ -8315,6 +8363,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   <div
                     className="iot--card--toolbar-date-range-wrapper"
                   >
+                    <div
+                      className="iot--card--toolbar-timerange-label"
+                      id="timeRange"
+                    >
+                      Last year
+                    </div>
                     <button
                       aria-expanded={false}
                       aria-haspopup={true}
@@ -9729,6 +9783,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <div
                           className="iot--card--toolbar-date-range-wrapper"
                         >
+                          <div
+                            className="iot--card--toolbar-timerange-label"
+                            id="timeRange"
+                          >
+                            Default
+                          </div>
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
@@ -12924,6 +12984,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   <div
                     className="iot--card--toolbar-date-range-wrapper"
                   >
+                    <div
+                      className="iot--card--toolbar-timerange-label"
+                      id="timeRange"
+                    >
+                      Last 7 days
+                    </div>
                     <button
                       aria-expanded={false}
                       aria-haspopup={true}
@@ -13251,6 +13317,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <div
                           className="iot--card--toolbar-date-range-wrapper"
                         >
+                          <div
+                            className="iot--card--toolbar-timerange-label"
+                            id="timeRange"
+                          >
+                            Default
+                          </div>
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
@@ -13897,6 +13969,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   <div
                     className="iot--card--toolbar-date-range-wrapper"
                   >
+                    <div
+                      className="iot--card--toolbar-timerange-label"
+                      id="timeRange"
+                    >
+                      Last year
+                    </div>
                     <button
                       aria-expanded={false}
                       aria-haspopup={true}
@@ -30383,6 +30461,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   <div
                     className="iot--card--toolbar-date-range-wrapper"
                   >
+                    <div
+                      className="iot--card--toolbar-timerange-label"
+                      id="timeRange"
+                    >
+                      Last 7 days
+                    </div>
                     <button
                       aria-expanded={false}
                       aria-haspopup={true}
@@ -30710,6 +30794,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <div
                           className="iot--card--toolbar-date-range-wrapper"
                         >
+                          <div
+                            className="iot--card--toolbar-timerange-label"
+                            id="timeRange"
+                          >
+                            Default
+                          </div>
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
@@ -31356,6 +31446,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   <div
                     className="iot--card--toolbar-date-range-wrapper"
                   >
+                    <div
+                      className="iot--card--toolbar-timerange-label"
+                      id="timeRange"
+                    >
+                      Last year
+                    </div>
                     <button
                       aria-expanded={false}
                       aria-haspopup={true}
